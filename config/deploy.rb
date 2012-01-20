@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 `ssh-add`
 
-#default_run_options[:pty] = true                  # problem with ubuntu
+default_run_options[:pty] = true                  # problem with ubuntu
 set :ssh_options, :forward_agent => true          # ssh forwarding
 
 set :application, "game server"
