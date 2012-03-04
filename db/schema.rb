@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(:version => 20120304184655) do
 
   create_table "map_nodes", :force => true do |t|
     t.string   "path"
-    t.decimal  "min_x"
-    t.decimal  "min_y"
-    t.decimal  "max_x"
-    t.decimal  "max_y"
+    t.decimal  "min_x",      :default => 0.0
+    t.decimal  "min_y",      :default => 0.0
+    t.decimal  "max_x",      :default => 0.0
+    t.decimal  "max_y",      :default => 0.0
     t.integer  "parent_id"
-    t.boolean  "leaf"
+    t.boolean  "leaf",       :default => true
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
