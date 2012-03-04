@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Path:</b>
+  <%= @map_node.path %>
+</p>
+
+<p>
+  <b>Min x:</b>
+  <%= @map_node.min_x %>
+</p>
+
+<p>
+  <b>Min y:</b>
+  <%= @map_node.min_y %>
+</p>
+
+<p>
+  <b>Max x:</b>
+  <%= @map_node.max_x %>
+</p>
+
+<p>
+  <b>Max y:</b>
+  <%= @map_node.max_y %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @map_node.parent_id %>
+</p>
+
+<p>
+  <b>Leaf:</b>
+  <%= @map_node.leaf %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @map_node.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_node_path(@map_node) %> |
+<%= link_to 'Back', map_nodes_path %>

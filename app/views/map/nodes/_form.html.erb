@@ -1,0 +1,49 @@
+<%= form_for(@map_node) do |f| %>
+  <% if @map_node.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@map_node.errors.count, "error") %> prohibited this map_node from being saved:</h2>
+
+      <ul>
+      <% @map_node.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :min_x %><br />
+    <%= f.text_field :min_x %>
+  </div>
+  <div class="field">
+    <%= f.label :min_y %><br />
+    <%= f.text_field :min_y %>
+  </div>
+  <div class="field">
+    <%= f.label :max_x %><br />
+    <%= f.text_field :max_x %>
+  </div>
+  <div class="field">
+    <%= f.label :max_y %><br />
+    <%= f.text_field :max_y %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :leaf %><br />
+    <%= f.check_box :leaf %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

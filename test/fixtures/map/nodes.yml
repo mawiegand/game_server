@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  path: MyString
+  min_x: 9.99
+  min_y: 9.99
+  max_x: 9.99
+  max_y: 9.99
+  parent_id: 1
+  leaf: false
+  level: 1
+
+two:
+  path: MyString
+  min_x: 9.99
+  min_y: 9.99
+  max_x: 9.99
+  max_y: 9.99
+  parent_id: 1
+  leaf: false
+  level: 1

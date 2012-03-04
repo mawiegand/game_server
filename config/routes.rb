@@ -1,4 +1,9 @@
 GameServer::Application.routes.draw do
+  
+  namespace :map do 
+    resources :nodes 
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
