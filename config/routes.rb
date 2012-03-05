@@ -2,6 +2,7 @@ GameServer::Application.routes.draw do
   
   namespace :map do 
     resources :nodes 
+    resources :subtrees, :only => [ :show ]
   end
 
   # The priority is based upon order of creation:
