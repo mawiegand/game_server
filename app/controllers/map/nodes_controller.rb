@@ -32,13 +32,7 @@ class Map::NodesController < ApplicationController
   #  GET /map/nodes/root.json
   def show
     
-    if (params[:id] == 'root')                               # root node
-      @map_node = Map::Node.root
-    elsif !params[:id].blank? and params[:id][0..1] == 'qt'  # microsoft quad-tree path
-      @map_node = Map::Node.find_by_path(params[:id][2..(params[:id].length)])
-    else                                                     # access by id (primary key)
-      @map_node = Map::Node.find(params[:id])
-    end
+    @map_node = Map::Node.find_by_address(params[:id])
     
     last_modified = nil 
     last_modified = @map_node.updated_at unless @map_node.nil?

@@ -79,4 +79,24 @@ class Map::Node < ActiveRecord::Base
   # Please put any implementation specific code below this line!
   
   
+  
+  # Finder method for various options of how to address individual nodes.
+  # Nodes can be addressed using one of the following three methods:
+  # 1. by string 'root' - this addresses the root node (no parent_id, level 0)
+  # 2. by id - this uses the unique primary key, the automatically-assigned 
+  #    auto_increment during node-creation
+  # 3. by Microsoft's quad-tree path - qt0101 addresses he upper-left, upper-right,
+  #    upper-left, upper-right child of the root node. Remember to always put the
+  #    prefix 'qt' in front of the address in order to use this scheme.
+  # Does not throw an exception but returns nil if nothing is found.
+  def self.find_by_address(address)
+    if (address == 'root')                           # root node
+      @map_node = Map::Node.root
+    elsif !address.blank? and address[0..1] == 'qt'  # microsoft quad-tree path
+      @map_node = Map::Node.find_by_path(address[2..(address.length)])
+    else                                             # access by id (primary key)
+      @map_node = Map::Node.find_by_id(address)
+    end
+  end
+  
 end
