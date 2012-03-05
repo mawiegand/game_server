@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304184655) do
+ActiveRecord::Schema.define(:version => 20120305172001) do
 
   create_table "map_nodes", :force => true do |t|
     t.string   "path"
@@ -25,5 +25,8 @@ ActiveRecord::Schema.define(:version => 20120304184655) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "map_nodes", ["parent_id"], :name => "index_map_nodes_on_parent_id"
+  add_index "map_nodes", ["path"], :name => "index_map_nodes_on_path"
 
 end
