@@ -1,5 +1,8 @@
 <h1>Listing map_nodes</h1>
 
+<%= will_paginate @map_nodes %>
+
+
 <table>
   <tr>
     <th>Path</th>
@@ -31,7 +34,8 @@
   </tr>
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'New Node', new_map_node_path %>
+
+<%= will_paginate @map_nodes %>

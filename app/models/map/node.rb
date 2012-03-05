@@ -15,6 +15,7 @@ class Map::Node < ActiveRecord::Base
     Map::Node.create({ level: 0, path: "" })
   end
   
+  # path: uses microsoft quad-tree notation
   def create_children
     self.children.create({    # node 0: upper left
       level: self.level+1, path: self.path+"0", 
@@ -26,15 +27,15 @@ class Map::Node < ActiveRecord::Base
       min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
       min_y: self.min_y, max_y: (self.max_y+self.min_y) / 2.0
     })
-    self.children.create({    # node 2: lower right
+    self.children.create({    # node 2: lower left
       level: self.level+1, path: self.path+"2", 
-      min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
-      min_y: (self.max_y+self.min_y) / 2.0, max_y: self.max_y
-    })
-    self.children.create({    # node 3: lower left
-      level: self.level+1, path: self.path+"3", 
       min_x: self.min_x, max_x: (self.max_x+self.min_x) / 2.0,
       min_y: (self.max_y+self.min_y) / 2.0, max_y: max_y
+    })
+    self.children.create({    # node 3: lower right
+      level: self.level+1, path: self.path+"3", 
+      min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
+      min_y: (self.max_y+self.min_y) / 2.0, max_y: self.max_y
     })
 
     self.leaf = false

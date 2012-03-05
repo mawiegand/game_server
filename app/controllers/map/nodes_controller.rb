@@ -2,7 +2,7 @@ class Map::NodesController < ApplicationController
   # GET /map/nodes
   # GET /map/nodes.json
   def index
-    @map_nodes = Map::Node.all
+    @map_nodes = Map::Node.paginate(:page => params[:page], :per_page => 64)
 
     respond_to do |format|
       format.html # index.html.erb

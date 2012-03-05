@@ -8,10 +8,20 @@
 
 
 root = Map::Node.create_root_node
-root.min_x = -8.0
-root.min_y = -8.0
-root.max_x = 8.0
-root.max_y = 8.0
-root.save
-root.create_children
-root.children[0].create_children
+root.min_x = -20037508.342789244
+root.min_y = -20037508.342789244
+root.max_x = 20037508.342789244
+root.max_y = 20037508.342789244
+
+nodes = [ root ]
+
+while !nodes.empty?
+  
+  node = nodes.pop
+  
+  if node.max_x - node.min_x > 1000.0 * 1000.0   # 1000 km
+    node.create_children
+    node.children.each { |n| nodes.insert 0, n }
+  end
+  
+end

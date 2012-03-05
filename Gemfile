@@ -10,6 +10,9 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'thin'
 
+gem 'will_paginate'
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,9 +29,6 @@ gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
