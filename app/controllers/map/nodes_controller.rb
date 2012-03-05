@@ -13,8 +13,15 @@ class Map::NodesController < ApplicationController
   # GET /map/nodes/1
   # GET /map/nodes/1.json
   def show
-    @map_node = Map::Node.find(params[:id])
-
+    
+    if (params[:id] == 'root')
+      @map_node = Map::Node.root
+    elsif
+      
+    else
+      @map_node = Map::Node.find(params[:id])
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @map_node }
