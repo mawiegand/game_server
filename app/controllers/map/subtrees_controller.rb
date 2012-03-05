@@ -30,6 +30,7 @@ class Map::SubtreesController < ApplicationController
   def show
     
     map_node = Map::Node.find_by_address(params[:id])
+    raise NotFoundError if map_node.nil?
     
     last_modified = nil 
     last_modified = map_node.updated_at unless map_node.nil?

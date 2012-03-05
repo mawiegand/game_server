@@ -1,8 +1,12 @@
 GameServer::Application.routes.draw do
   
-  namespace :map do 
-    resources :nodes 
-    resources :subtrees, :only => [ :show ]
+  scope "(:locale)", :locale => /en|de/ do   
+
+    namespace :map do 
+      resources :nodes 
+      resources :subtrees, :only => [ :show ]
+    end
+    
   end
 
   # The priority is based upon order of creation:
