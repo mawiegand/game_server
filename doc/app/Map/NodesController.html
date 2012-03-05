@@ -164,7 +164,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 47</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:map_node</span>])
 
@@ -204,7 +204,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 79</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">destroy</span>
@@ -240,7 +240,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 41</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -305,7 +305,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 31</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>
 
@@ -335,16 +335,34 @@
 
         <div class="method-description">
           
-          <p>GET /map/nodes/1 GET /map/nodes/1.json</p>
+          <p>Shows individual nodes. There are two possibilities for addressing nodes:</p>
+<ol><li>
+<p>by their id (auto_increment assigned on node creation) or</p>
+</li><li>
+<p>by their quad-tree path (e.g. nodes/qt0101 translates to the forth-level
+node that  is the upper-left, upper-rigth, upper-left, upper-right child of
+the root node.</p>
+</li></ol>
+
+<p>The root node is a special node that can be accessed directly via “root”.</p>
+
+<pre>GET /map/nodes/1           # html representation of the node with id 1
+GET /map/nodes/1.json      # json representation of the node with id 1
+GET /map/nodes/qt1         # the node at quad-tree path '1'
+GET /map/nodes/qt1.json    
+GET /map/nodes/root        # the root node (no parent, level 0)
+GET /map/nodes/root.json</pre>
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'root'</span>)
     <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">root</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>].<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>][<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'qt'</span>    <span class="ruby-comment"># microsoft quad-tree path</span>
+    <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find_by_path</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>][<span class="ruby-value">2</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>].<span class="ruby-identifier">length</span>)])
   <span class="ruby-keyword">else</span>
     <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-keyword">end</span>
@@ -380,7 +398,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 63</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 

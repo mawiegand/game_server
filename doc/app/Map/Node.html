@@ -123,11 +123,11 @@
   <div id="description" class="description">
     
 <p>This model realizes a quad-tree (of nodes and leafs) for representing maps
-using the common tiling. Internally, tiles are encoded using the MSN -
-quad-tree path, but the implementation should also provide conversions to
-Google / OSM tile-naming schemes on both sides, the server back-end (in
-here, or in the lib) and the client-frontend (using a JavaScript
-implementation of the naming-scheme conversions).</p>
+using the common tiling. Internally, tiles are encoded using the Microsoft
+- quad-tree path, but the implementation should also provide conversions to
+Google (XYZ) / OSM tile-naming schemes (TMS) on both sides, the server
+back-end (in here, or in the lib) and the client-frontend (using a
+JavaScript implementation of the naming-scheme conversions).</p>
 
 <p>Surface coordinates in here are in X-Y coordinates, units are meters! The
 implementation  should provide means for converting these coordinates to
@@ -174,7 +174,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="create_root_node-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 33</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_root_node</span>
   <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">create</span>({ <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span> })
 <span class="ruby-keyword">end</span></pre>
@@ -204,7 +204,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="root-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 38</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">root</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>.<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -234,9 +234,9 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="roots-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 43</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>
-  <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;level = 0&quot;</span>)
+  <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;parent_id IS NULL AND level = 0&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div><!-- roots-source -->
           
@@ -270,7 +270,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="create_children-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 48</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create_children</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>({    <span class="ruby-comment"># node 0: upper left</span>
     <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;0&quot;</span>, 

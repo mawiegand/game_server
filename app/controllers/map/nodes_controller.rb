@@ -10,14 +10,25 @@ class Map::NodesController < ApplicationController
     end
   end
 
-  # GET /map/nodes/1
-  # GET /map/nodes/1.json
+  # Shows individual nodes. There are two possibilities for addressing nodes:
+  # 1. by their id (auto_increment assigned on node creation) or
+  # 2. by their quad-tree path (e.g. nodes/qt0101 translates to the forth-level node that 
+  #    is the upper-left, upper-rigth, upper-left, upper-right child of the root node.
+  #
+  # The root node is a special node that can be accessed directly via "root".
+  #
+  #  GET /map/nodes/1           # html representation of the node with id 1
+  #  GET /map/nodes/1.json      # json representation of the node with id 1
+  #  GET /map/nodes/qt1         # the node at quad-tree path '1'
+  #  GET /map/nodes/qt1.json    
+  #  GET /map/nodes/root        # the root node (no parent, level 0)
+  #  GET /map/nodes/root.json
   def show
     
     if (params[:id] == 'root')
       @map_node = Map::Node.root
-    elsif
-      
+    elsif !params[:id].blank? and params[:id][0..1] == 'qt'    # microsoft quad-tree path
+      @map_node = Map::Node.find_by_path(params[:id][2..(params[:id].length)])
     else
       @map_node = Map::Node.find(params[:id])
     end
