@@ -25,17 +25,22 @@ class Map::NodesController < ApplicationController
   #  GET /map/nodes/root.json
   def show
     
-    if (params[:id] == 'root')
+    if (params[:id] == 'root')                               # root node
       @map_node = Map::Node.root
-    elsif !params[:id].blank? and params[:id][0..1] == 'qt'    # microsoft quad-tree path
+    elsif !params[:id].blank? and params[:id][0..1] == 'qt'  # microsoft quad-tree path
       @map_node = Map::Node.find_by_path(params[:id][2..(params[:id].length)])
-    else
+    else                                                     # access by id (primary key)
       @map_node = Map::Node.find(params[:id])
     end
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @map_node }
+    last_modified = nil 
+    last_modified = @map_node.updated_at unless @map_node.nil?
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @map_node }
+      end
     end
   end
 
