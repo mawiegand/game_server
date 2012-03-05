@@ -72,11 +72,15 @@
     
     <li><a href="#method-c-create_root_node">::create_root_node</a>
     
+    <li><a href="#method-c-find_by_address">::find_by_address</a>
+    
     <li><a href="#method-c-root">::root</a>
     
     <li><a href="#method-c-roots">::roots</a>
     
     <li><a href="#method-i-create_children">#create_children</a>
+    
+    <li><a href="#method-i-subtree">#subtree</a>
     
   </ul>
 </nav>
@@ -106,6 +110,10 @@
     <li><a href="../Map/NodesController.html">Map::NodesController</a>
   
     <li><a href="../Map/NodesHelper.html">Map::NodesHelper</a>
+  
+    <li><a href="../Map/SubtreesController.html">Map::SubtreesController</a>
+  
+    <li><a href="../Map/SubtreesHelper.html">Map::SubtreesHelper</a>
   
     <li><a href="../ApplicationController.html">ApplicationController</a>
   
@@ -174,7 +182,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="create_root_node-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 34</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_root_node</span>
   <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">create</span>({ <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span> })
 <span class="ruby-keyword">end</span></pre>
@@ -186,6 +194,56 @@ set appropriate default values in the schema defintion.</p>
 
         
       </div><!-- create_root_node-method -->
+
+    
+      <div id="method-c-find_by_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_address</span><span
+            class="method-args">(address)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finder method for various options of how to address individual nodes. Nodes
+can be addressed using one of the following three methods:</p>
+<ol><li>
+<p>by string ‘root’ - this addresses the root node (no parent_id, level 0)</p>
+</li><li>
+<p>by id - this uses the unique primary key, the automatically-assigned 
+auto_increment during node-creation</p>
+</li><li>
+<p>by Microsoft’s quad-tree path - qt0101 addresses he upper-left,
+upper-right, upper-left, upper-right child of the root node. Remember to
+always put the prefix ‘qt’ in front of the address in order to use this
+scheme.</p>
+</li></ol>
+
+<p>Does not throw an exception but returns nil if nothing is found.</p>
+          
+
+          
+          <div class="method-source-code" id="find_by_address-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_by_address</span>(<span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">address</span> <span class="ruby-operator">==</span> <span class="ruby-string">'root'</span>)                           <span class="ruby-comment"># root node</span>
+    <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">root</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">address</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">address</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'qt'</span>  <span class="ruby-comment"># microsoft quad-tree path</span>
+    <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find_by_path</span>(<span class="ruby-identifier">address</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">address</span>.<span class="ruby-identifier">length</span>)])
+  <span class="ruby-keyword">else</span>                                             <span class="ruby-comment"># access by id (primary key)</span>
+    <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_address-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_address-method -->
 
     
       <div id="method-c-root" class="method-detail ">
@@ -204,7 +262,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="root-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">root</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>.<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -234,7 +292,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="roots-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 44</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>
   <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;parent_id IS NULL AND level = 0&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -270,7 +328,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="create_children-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 49</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create_children</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>({    <span class="ruby-comment"># node 0: upper left</span>
     <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;0&quot;</span>, 
@@ -304,6 +362,45 @@ set appropriate default values in the schema defintion.</p>
 
         
       </div><!-- create_children-method -->
+
+    
+      <div id="method-i-subtree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subtree</span><span
+            class="method-args">(num_levels)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns the subtree starting at this node. Expands the tree to a maximum of
+num_levels levels. Should be used with care: extremely database heavy,  due
+to branching factor of 4 do not querry more than 4 or 5 levels at max (will
+already take seconds to process).</p>
+          
+
+          
+          <div class="method-source-code" id="subtree-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subtree</span>(<span class="ruby-identifier">num_levels</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">num_levels</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span>)
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c0</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c1</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c2</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c3</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subtree-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subtree-method -->
 
     
     </section><!-- public-instance-method-details -->

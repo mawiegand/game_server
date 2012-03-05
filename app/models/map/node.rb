@@ -10,6 +10,7 @@
 # within the server and within the client. TODO: look-up the projection internals.
 class Map::Node < ActiveRecord::Base
 
+  # ###################################################################################################
   #
   # act_as_quadtree
   #
@@ -20,63 +21,82 @@ class Map::Node < ActiveRecord::Base
   #            "act_as_quadtree" facilities. Any code, that's implementation (game-server) specific
   #            should go below this block (look for "end_as_quadtree"). Thanks, Sascha.
   #
+  # ###################################################################################################
   
-  # association of parent-nodes with child-nodes. the parent id (foreign key) is stored in the
-  # field parent_id. when a child is changed, the parent's timestamp is updated as well. the idea
-  # here is to easily help find the subtrees that have been changed.
-  belongs_to :parent, :class_name => "Node", :foreign_key => "parent_id", :touch => true
-  has_many :children, :class_name => "Node", :foreign_key => "parent_id", :order => :path, :dependent => :destroy
+    # association of parent-nodes with child-nodes. the parent id (foreign key) is stored in the
+    # field parent_id. when a child is changed, the parent's timestamp is updated as well. the idea
+    # here is to easily help find the subtrees that have been changed.
+    belongs_to :parent, :class_name => "Node", :foreign_key => "parent_id", :touch => true
+    has_many :children, :class_name => "Node", :foreign_key => "parent_id", :order => :path, :dependent => :destroy
 
-  # a class method that creates the root node of the quad tree. the root node has no parent_id set
-  # and is at level zero. if the quad-tree should partition a two-dimensional continous space, the
-  # user should set min/max x and y on the root node right after creation. An alternative option is
-  # to set appropriate default values in the schema defintion.
-  def self.create_root_node
-    Map::Node.create({ level: 0, path: "" })
-  end
+    # a class method that creates the root node of the quad tree. the root node has no parent_id set
+    # and is at level zero. if the quad-tree should partition a two-dimensional continous space, the
+    # user should set min/max x and y on the root node right after creation. An alternative option is
+    # to set appropriate default values in the schema defintion.
+    def self.create_root_node
+      Map::Node.create({ level: 0, path: "" })
+    end
   
-  # returns the first root found in the database (level = 0)
-  def self.root
-    self.roots.first
-  end
+    # returns the first root found in the database (level = 0)
+    def self.root
+      self.roots.first
+    end
   
-  # returns all root nodes in the database (level = 0)
-  def self.roots
-    Map::Node.where("parent_id IS NULL AND level = 0")
-  end
+    # returns all root nodes in the database (level = 0)
+    def self.roots
+      Map::Node.where("parent_id IS NULL AND level = 0")
+    end
   
-  # path: uses microsoft quad-tree notation
-  def create_children
-    self.children.create({    # node 0: upper left
-      level: self.level+1, path: self.path+"0", 
-      min_x: self.min_x, max_x: (self.max_x+self.min_x) / 2.0,
-      min_y: self.min_y, max_y: (self.max_y+self.min_y) / 2.0
-    })
-    self.children.create({    # node 1: upper right
-      level: self.level+1, path: self.path+"1", 
-      min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
-      min_y: self.min_y, max_y: (self.max_y+self.min_y) / 2.0
-    })
-    self.children.create({    # node 2: lower left
-      level: self.level+1, path: self.path+"2", 
-      min_x: self.min_x, max_x: (self.max_x+self.min_x) / 2.0,
-      min_y: (self.max_y+self.min_y) / 2.0, max_y: max_y
-    })
-    self.children.create({    # node 3: lower right
-      level: self.level+1, path: self.path+"3", 
-      min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
-      min_y: (self.max_y+self.min_y) / 2.0, max_y: self.max_y
-    })
+    # path: uses microsoft quad-tree notation
+    def create_children
+      self.children.create({    # node 0: upper left
+        level: self.level+1, path: self.path+"0", 
+        min_x: self.min_x, max_x: (self.max_x+self.min_x) / 2.0,
+        min_y: self.min_y, max_y: (self.max_y+self.min_y) / 2.0
+      })
+      self.children.create({    # node 1: upper right
+        level: self.level+1, path: self.path+"1", 
+        min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
+        min_y: self.min_y, max_y: (self.max_y+self.min_y) / 2.0
+      })
+      self.children.create({    # node 2: lower left
+        level: self.level+1, path: self.path+"2", 
+        min_x: self.min_x, max_x: (self.max_x+self.min_x) / 2.0,
+        min_y: (self.max_y+self.min_y) / 2.0, max_y: max_y
+      })
+      self.children.create({    # node 3: lower right
+        level: self.level+1, path: self.path+"3", 
+        min_x: (self.max_x+self.min_x) / 2.0, max_x: self.max_x,
+        min_y: (self.max_y+self.min_y) / 2.0, max_y: self.max_y
+      })
 
-    self.leaf = false
-    self.save
-  end
+      self.leaf = false
+      self.save
+    end
+    
+    # returns the subtree starting at this node. Expands the tree to a maximum of
+    # num_levels levels. Should be used with care: extremely database heavy, 
+    # due to branching factor of 4 do not querry more than 4 or 5 levels at max
+    # (will already take seconds to process).
+    def subtree(num_levels)
+      if (num_levels > 0 && !self.leaf?)
+        self[:c0] = self.children[0].subtree num_levels-1
+        self[:c1] = self.children[1].subtree num_levels-1
+        self[:c2] = self.children[2].subtree num_levels-1
+        self[:c3] = self.children[3].subtree num_levels-1
+      end
+      return self
+    end
+      
   
+  # ###################################################################################################  
   #
   # end of act_as_quadtree
   #
+  # ###################################################################################################
   
-  # Please put any implementation specific code below this line!
+  
+  # Please put any game-server implementation-specific code below this line!
   
   
   
