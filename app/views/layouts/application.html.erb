@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GameServer</title>
+  <title>5dentity | <%= @title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class=wrapper>
+  
+<header class="site-header">
+  <span class="site-name">5dentity</span>
+  
+  <nav class="site-navigation">  
+  <ul>
+    <li><%= link_to I18n.translate("application.layout.map_nodes"), map_nodes_path %></li>
+    <li><%= link_to I18n.translate("application.layout.map_subtrees"), map_subtree_path(:root) %></li>
+  </ul>
+  </nav>  
+</header>
+  
+<section class="content">
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>  
+</section>
+
+<div class="push clear"></div>
+</div>
+
+<div class="clear">&nbsp;</div>
+
+<footer class="site-footer">
+  <%= debug(params) if Rails.env.development? %>
+</footer>
 
 </body>
 </html>
