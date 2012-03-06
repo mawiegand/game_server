@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'thin'
 
+gem 'therubyracer'          # missing javascript runtime
+
 gem 'will_paginate'
 
 
