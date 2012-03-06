@@ -76,14 +76,20 @@ class Map::Node < ActiveRecord::Base
     
     # returns the subtree starting at this node. Expands the tree to a maximum of
     # num_levels levels. Should be used with care: extremely database heavy, 
-    # due to branching factor of 4 do not querry more than 4 or 5 levels at max
-    # (will already take seconds to process).
-    def subtree(num_levels)
-      if (num_levels > 0 && !self.leaf?)
-        self[:c0] = self.children[0].subtree num_levels-1
-        self[:c1] = self.children[1].subtree num_levels-1
-        self[:c2] = self.children[2].subtree num_levels-1
-        self[:c3] = self.children[3].subtree num_levels-1
+    # due to branching factor of 4 do not querry more than 5 or 6 levels at max
+    # (will already take several hundreds of ms to process).
+    #
+    # With the optional timestamp-argument it's possible to restrict expansion of
+    # nodes to those parts of the subtree, that have changed recently (after the
+    # given timestamp). If this argument is not specified, the whole requested
+    # subtree will be expanded.
+    def subtree(num_levels, modified_since_timestamp = nil)
+      if (num_levels > 0 && !self.leaf? &&                 
+          (!modified_since_timestamp || self.updated_at > modified_since_timestamp))
+        self[:c0] = self.children[0].subtree num_levels-1, modified_since_timestamp
+        self[:c1] = self.children[1].subtree num_levels-1, modified_since_timestamp
+        self[:c2] = self.children[2].subtree num_levels-1, modified_since_timestamp
+        self[:c3] = self.children[3].subtree num_levels-1, modified_since_timestamp
       end
       return self
     end

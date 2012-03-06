@@ -1,3 +1,5 @@
+require 'json'
+
 class Map::SubtreesController < ApplicationController
   
   # Shows whole subtrees below a given node. Does not need any authentication; the map 
@@ -39,13 +41,16 @@ class Map::SubtreesController < ApplicationController
       
       @max_levels = 3                          # default cut-off depth: after 3 levels
       @max_levels = Integer(params[:levels]) unless params[:levels].blank?
-      @max_levels = 5 if @max_levels > 5       # absolute maximum depth -> prevent too long processing
-      
-      @map_subtree = map_node.subtree @max_levels
+      @max_levels = 6 if @max_levels > 6       # absolute maximum depth -> prevent too long processing
+
+      if_modified_since = nil
+      if_modified_since = Time.httpdate(request.env['HTTP_IF_MODIFIED_SINCE']) unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?
+
+      @map_subtree = map_node.subtree(@max_levels, if_modified_since)
             
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @map_subtree }
+        format.json { render json: @map_subtree  }
       end
     end
     

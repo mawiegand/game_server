@@ -12,7 +12,7 @@
     end
     
     string = "<div #{ class_str } style='width: #{width}px; height: #{width}px; border: solid black #{levels+1}px; margin: -#{levels+1}px; display: inline-block; text-align: center; overflow: visible; #{ node.leaf? ? 'font-weight: bold;' : ''}'>"
-    if node.leaf? || levels == 0
+    if node.leaf? || levels == 0 || node[:c0].blank?
       string += node.path
     else
       string += render_node(node[:c0], width/2, levels-1)
