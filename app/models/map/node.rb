@@ -99,10 +99,10 @@ class Map::Node < ActiveRecord::Base
     def expand_ancestors
       if self.parent
         c = self.path[path.length-1]  # 'address' of this node; which child is it?
-        self.parent[:c0] = self if c == '0'
-        self.parent[:c1] = self if c == '1'
-        self.parent[:c2] = self if c == '2'
-        self.parent[:c3] = self if c == '3'
+        self.parent[:c0] = c == '0' ? self : self.parent.children[0]
+        self.parent[:c1] = c == '1' ? self : self.parent.children[1]
+        self.parent[:c2] = c == '2' ? self : self.parent.children[2]
+        self.parent[:c3] = c == '3' ? self : self.parent.children[3]
 
         return self.parent.expand_ancestors
       else
