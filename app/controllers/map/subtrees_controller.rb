@@ -16,10 +16,16 @@ class Map::SubtreesController < ApplicationController
   # what would transmit a maximum number of (1+4+4*4+4*4*4) = (5+16+64) = 85 
   # nodes in total. A parameter of levels=4 would already lead to up to 341 nodes.
   #
+  # Another optional parameter (ancestors=[true|false]) determines, whether the ancestors
+  # of the querried subtree up to the root node should be expanded and included in the 
+  # response. This can be used to always receive small subtrees (locally expanded) that
+  # can be easily integrated into an existing tree.
+  #
   # The action supports conditional get. Set 'if_modified_since' in the HTTP request header
   # to a RFC-compliant date (e.g. "Sun, 04 Mar 2012, 03:55:10 GMT"). This would return nothing
   # in case not a single node in the subtree has been changed after the given date or a
-  # subtree with only the branches, in which a change occurred.
+  # subtree with only the branches, in which a change occurred. Ancestors, when querried, are
+  # always included, independent of their modification date.
   #
   # The root node is a special node that can be accessed directly via "root".
   #
@@ -48,7 +54,7 @@ class Map::SubtreesController < ApplicationController
 
       @map_subtree = map_node.subtree(@max_levels, if_modified_since)
       
-      if params[:ancestors] == 'true'                   # should also include ancestors?
+      if params[:ancestors] == 'true' || params[:ancestors] == '1' # should also include ancestors?
         @map_subtree = @map_subtree.expand_ancestors
       end
             
