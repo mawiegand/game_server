@@ -47,6 +47,10 @@ class Map::SubtreesController < ApplicationController
       if_modified_since = Time.httpdate(request.env['HTTP_IF_MODIFIED_SINCE']) unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?
 
       @map_subtree = map_node.subtree(@max_levels, if_modified_since)
+      
+      if params[:ancestors] == 'true'                   # should also include ancestors?
+        @map_subtree = @map_subtree.expand_ancestors
+      end
             
       respond_to do |format|
         format.html # show.html.erb

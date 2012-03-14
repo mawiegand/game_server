@@ -93,6 +93,22 @@ class Map::Node < ActiveRecord::Base
       end
       return self
     end
+    
+    # expands the ancestors of the given node (or subtree) and returns a subtree 
+    # with a complete 'path' from the root node to this particular node.
+    def expand_ancestors
+      if self.parent
+        c = self.path[path.length-1]  # 'address' of this node; which child is it?
+        self.parent[:c0] = self if c == '0'
+        self.parent[:c1] = self if c == '1'
+        self.parent[:c2] = self if c == '2'
+        self.parent[:c3] = self if c == '3'
+
+        return self.parent.expand_ancestors
+      else
+        return self
+      end
+    end
       
   
   # ###################################################################################################  
