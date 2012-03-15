@@ -73,7 +73,8 @@ class Map::Node < ActiveRecord::Base
       self.leaf = false
       self.save
     end
-    
+
+
     # returns the subtree starting at this node. Expands the tree to a maximum of
     # num_levels levels. Should be used with care: extremely database heavy, 
     # due to branching factor of 4 do not querry more than 5 or 6 levels at max
@@ -91,6 +92,34 @@ class Map::Node < ActiveRecord::Base
         self[:c2] = self.children[2].subtree num_levels-1, modified_since_timestamp
         self[:c3] = self.children[3].subtree num_levels-1, modified_since_timestamp
       end
+      return self
+    end
+
+    
+    # returns the subtree spanning the given target area starting at this node. 
+    # Expands the tree to level level inside the area specified by x, y, width, 
+    # height (in meters on earth-surface). Thus, nodes that have no overlap with 
+    # this area are _not_ expanded.
+    def subtree_for_area(x, y, width, height, level)
+      if self.leaf? || self.level == level       # stop expansion, maximal depth reached
+        return self
+      end
+      
+      ix = [self.min_x, x].max
+      iy = [self.min_y, y].max
+      iwidth = ([self.max_x, x+width].min) - ix
+      iheight = ([self.max_y, y+height].min) -iy
+      
+      if iwidth <= 0 || iheight <= 0             # stop, no overlap with target region
+        return self
+      end
+      
+      # continue with recursive expansion of child nodes
+      self[:c0] = self.children[0].subtree_for_area x,y,width,height, level
+      self[:c1] = self.children[1].subtree_for_area x,y,width,height, level
+      self[:c2] = self.children[2].subtree_for_area x,y,width,height, level
+      self[:c3] = self.children[3].subtree_for_area x,y,width,height, level
+
       return self
     end
     

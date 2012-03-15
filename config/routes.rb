@@ -6,6 +6,7 @@ GameServer::Application.routes.draw do
       namespace :map do 
         resources :nodes 
         resources :subtrees, :only => [ :show ]
+        resource :area, :only => [ :show ]
       end
     end
   end
