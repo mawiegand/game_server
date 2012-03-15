@@ -1,13 +1,16 @@
-# This model realizes a quad-tree (of nodes and leafs) for representing maps using the common
-# tiling. Internally, tiles are encoded using the Microsoft - quad-tree path, but the
-# implementation
-# should also provide conversions to Google (XYZ) / OSM tile-naming schemes (TMS) on both sides, the server
-# back-end (in here, or in the lib) and the client-frontend (using a JavaScript implementation
-# of the naming-scheme conversions).
+require 'mapping/global_mercator'
+
+# This model realizes a quad-tree (of nodes and leafs) for representing maps
+# using the common tiling. Internally, tiles are encoded using the Microsoft 
+# - quad-tree path, but the implementation should also provide conversions to
+# Google (XYZ) / OSM tile-naming schemes (TMS) on both sides, the server
+# back-end (in here, or in the lib) and the client-frontend (using a
+# JavaScript implementation of the naming-scheme conversions).
 #
-# Surface coordinates in here are in X-Y coordinates, units are meters! The implementation 
-# should provide means for converting these coordinates to longitude / latitude on both sides,
-# within the server and within the client. TODO: look-up the projection internals.
+# Surface coordinates in here are in X-Y coordinates, units are meters! The
+# implementation should provide means for converting these coordinates to 
+# longitude / latitude on both sides, within the server and within the client. 
+# TODO: look-up the projection internals.
 class Map::Node < ActiveRecord::Base
 
   # ###################################################################################################
