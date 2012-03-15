@@ -12,14 +12,14 @@ class Map::Node < ActiveRecord::Base
 
   # ###################################################################################################
   #
-  # act_as_quadtree
+  # acts_as_quadtree
   #
-  # The following code is an adaption of "act_as_tree" from David Heinemeir Hansson for quad-trees.
-  # Later, it should go into a (possibly public) plugin "act_as_quadtree" or "act_as_maptree".
+  # The following code is an adaption of "acts_as_tree" from David Heinemeir Hansson for quad-trees.
+  # Later, it should go into a (possibly public) plugin "acts_as_quadtree" or "acts_as_maptree".
   #
   # ATTENTION: please put only code in this part of the source file that belongs to the 
-  #            "act_as_quadtree" facilities. Any code, that's implementation (game-server) specific
-  #            should go below this block (look for "end_as_quadtree"). Thanks, Sascha.
+  #            "acts_as_quadtree" facilities. Any code, that's implementation (game-server) specific
+  #            should go below this block (look for "end of acts_as_quadtree"). Thanks, Sascha.
   #
   # ###################################################################################################
   
@@ -142,7 +142,7 @@ class Map::Node < ActiveRecord::Base
   
   # ###################################################################################################  
   #
-  # end of act_as_quadtree
+  # end of acts_as_quadtree
   #
   # ###################################################################################################
   
