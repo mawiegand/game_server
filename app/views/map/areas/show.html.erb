@@ -31,7 +31,7 @@
 $(document).ready(function () {
   $('.leaf').click(function() {
     var path = 'qt' + $(this).html();
-    document.location = '/map/nodes/' + path;  // jump to clicked node !
+    document.location = '/game_server/map/nodes/' + path;  // jump to clicked node !
   });
 });
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.subtree').click(function() {
     var path = 'qt' + $(this).html();
-    document.location = '/map/subtrees/' + path + '?levels=3';  // jump to clicked subtree !
+    document.location = '/game_server/map/subtrees/' + path + '?levels=3';  // jump to clicked subtree !
   });
 });
 </script>
