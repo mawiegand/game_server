@@ -8,7 +8,9 @@ GameServer::Application.routes.draw do
 
       namespace :map do 
         
-        resources :nodes 
+        resources :nodes do 
+          resources :regions
+        end
         resources :subtrees, :only => [ :show ]
         resource :area, :only => [ :show ]
         
