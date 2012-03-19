@@ -38,11 +38,11 @@ class Map::NodesController < ApplicationController
     
     last_modified = nil 
     last_modified = @map_node.updated_at unless @map_node.nil?
-    
+        
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @map_node }
+        format.json { render :json => @map_node.to_json(:except => @map_node.attributes.delete_if { |k,v| !v.blank? }.keys ) }
       end
     end
   end

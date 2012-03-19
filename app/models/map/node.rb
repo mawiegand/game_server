@@ -31,6 +31,8 @@ class Map::Node < ActiveRecord::Base
     # here is to easily help find the subtrees that have been changed.
     belongs_to :parent, :class_name => "Node", :foreign_key => "parent_id", :touch => true
     has_many :children, :class_name => "Node", :foreign_key => "parent_id", :order => :path, :dependent => :destroy
+    
+    has_one  :region, :class_name => "Region", :foreign_key => "node_id", :dependent => :destroy
 
     # a class method that creates the root node of the quad tree. the root node has no parent_id set
     # and is at level zero. if the quad-tree should partition a two-dimensional continous space, the

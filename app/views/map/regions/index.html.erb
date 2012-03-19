@@ -1,0 +1,39 @@
+<h1>Listing map_regions</h1>
+
+<table>
+  <tr>
+    <th>Node</th>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Owner name</th>
+    <th>Alliance</th>
+    <th>Alliance tag</th>
+    <th>Count outposts</th>
+    <th>Count settlements</th>
+    <th>Terrain</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @map_regions.each do |map_region| %>
+  <tr>
+    <td><%= map_region.node_id %></td>
+    <td><%= map_region.name %></td>
+    <td><%= map_region.owner_id %></td>
+    <td><%= map_region.owner_name %></td>
+    <td><%= map_region.alliance_id %></td>
+    <td><%= map_region.alliance_tag %></td>
+    <td><%= map_region.count_outposts %></td>
+    <td><%= map_region.count_settlements %></td>
+    <td><%= map_region.terrain_id %></td>
+    <td><%= link_to 'Show', map_region %></td>
+    <td><%= link_to 'Edit', edit_map_region_path(map_region) %></td>
+    <td><%= link_to 'Destroy', map_region, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Region', new_map_region_path %>

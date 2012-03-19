@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Node:</b>
+  <%= @map_region.node_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @map_region.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @map_region.owner_id %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%= @map_region.owner_name %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @map_region.alliance_id %>
+</p>
+
+<p>
+  <b>Alliance tag:</b>
+  <%= @map_region.alliance_tag %>
+</p>
+
+<p>
+  <b>Count outposts:</b>
+  <%= @map_region.count_outposts %>
+</p>
+
+<p>
+  <b>Count settlements:</b>
+  <%= @map_region.count_settlements %>
+</p>
+
+<p>
+  <b>Terrain:</b>
+  <%= @map_region.terrain_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_region_path(@map_region) %> |
+<%= link_to 'Back', map_regions_path %>

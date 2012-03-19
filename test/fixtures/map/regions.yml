@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  node_id: 1
+  name: MyString
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  count_outposts: 1
+  count_settlements: 1
+  terrain_id: 1
+
+two:
+  node_id: 1
+  name: MyString
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  count_outposts: 1
+  count_settlements: 1
+  terrain_id: 1
