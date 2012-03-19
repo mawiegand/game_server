@@ -42,7 +42,11 @@ class Map::NodesController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render :json => @map_node.to_json(:except => @map_node.attributes.delete_if { |k,v| !v.blank? }.keys ) }
+        format.json do 
+          options = { :except => @map_node.attributes.delete_if { |k,v| !v.blank? }.keys }
+          options[:include] = :region if @map_node.leaf?
+          render :json => @map_node.to_json(options) 
+        end
       end
     end
   end

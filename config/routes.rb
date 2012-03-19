@@ -1,6 +1,8 @@
 GameServer::Application.routes.draw do
   
 
+  namespace :map do resources :locations end
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
 
@@ -11,6 +13,7 @@ GameServer::Application.routes.draw do
         resource :area, :only => [ :show ]
         
         resources :regions
+        resources :locations
       end
     end
   end

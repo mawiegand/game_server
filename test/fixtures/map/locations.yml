@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  region_id: 1
+  slot: 1
+  type: 1
+  level: 1
+  count_markers: 1
+  count_armies: 1
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_name: MyString
+  visible: false
+
+two:
+  region_id: 1
+  slot: 1
+  type: 1
+  level: 1
+  count_markers: 1
+  count_armies: 1
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_name: MyString
+  visible: false

@@ -7,3 +7,5 @@ de:
     layout:
       map_nodes: Knoten
       map_subtrees: Baum
+      map_locations: Orte
+      map_regions: Regionen

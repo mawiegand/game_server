@@ -7,4 +7,6 @@ en:
     layout:
       map_nodes: Nodes
       map_subtrees: Tree
+      map_locations: Locations
+      map_regions: Regions
 

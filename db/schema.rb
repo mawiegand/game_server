@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319131952) do
+ActiveRecord::Schema.define(:version => 20120319142839) do
+
+  create_table "map_locations", :force => true do |t|
+    t.integer  "region_id"
+    t.integer  "slot"
+    t.integer  "type_id"
+    t.integer  "level"
+    t.integer  "count_markers"
+    t.integer  "count_armies"
+    t.integer  "owner_id"
+    t.string   "owner_name"
+    t.integer  "alliance_id"
+    t.string   "alliance_tag"
+    t.boolean  "visible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "map_nodes", :force => true do |t|
     t.string   "path"
@@ -43,6 +59,9 @@ ActiveRecord::Schema.define(:version => 20120319131952) do
     t.integer  "terrain_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fortress_level"
   end
+
+  add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
 
 end

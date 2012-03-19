@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Region:</b>
+  <%= @map_location.region_id %>
+</p>
+
+<p>
+  <b>Slot:</b>
+  <%= @map_location.slot %>
+</p>
+
+<p>
+  <b>TypeId:</b>
+  <%= @map_location.type_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @map_location.level %>
+</p>
+
+<p>
+  <b>Count markers:</b>
+  <%= @map_location.count_markers %>
+</p>
+
+<p>
+  <b>Count armies:</b>
+  <%= @map_location.count_armies %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @map_location.owner_id %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%= @map_location.owner_name %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @map_location.alliance_id %>
+</p>
+
+<p>
+  <b>Alliance Tag:</b>
+  <%= @map_location.alliance_tag %>
+</p>
+
+<p>
+  <b>Visible:</b>
+  <%= @map_location.visible %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_location_path(@map_location) %> |
+<%= link_to 'Back', map_locations_path %>

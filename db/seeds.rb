@@ -3,6 +3,45 @@ require 'mapping/global_mercator'
 # This file seeds the database after its creation (or a reset)
 # Everything a "blank" game needs to be ready to be started should go in here.
 
+
+# DUMMY DATA FOR TESTING
+
+alliances=[ { id: 0,
+              members: [ 14, 15, 16, 17 ] },    # players without alliance
+            { id: 1,
+              tag: 'DW', 
+              name: 'DireWolves', 
+              members: [ 1, 2, 3, 4, 5 ] },
+            { id: 2,
+              tag: 'Yetis', 
+              name: 'Nackte Yetis', 
+              members: [ 6, 7, 8 ]  }, 
+            { id: 3,
+              tag: 'NORD', 
+              name: 'Die Nordmaenner', 
+              members: [ 9, 10, 11, 12, 13 ] }  
+          ];
+          
+characters=[ {}, 
+             { id: 1, name: 'Egbert' },
+             { id: 2, name: 'Paffi' },
+             { id: 3, name: 'David' },
+             { id: 4, name: 'Enzio' },
+             { id: 5, name: 'Kurt Kugel' },
+             { id: 6, name: 'Bonzo' },
+             { id: 7, name: 'Haumi' },
+             { id: 8, name: 'Haubi' },
+             { id: 9, name: 'Hubert K.' },
+             { id: 10, name: 'Peter Schmidt' },
+             { id: 11, name: 'Dicker' },
+             { id: 12, name: 'Gandalf' },
+             { id: 13, name: 'Grubtsch' },
+             { id: 14, name: 'Noob' },
+             { id: 15, name: 'Newby' },
+             { id: 16, name: 'OberNoob' },
+             { id: 17, name: 'Neuling' },
+          ];
+
 # ############################################################################
 # 
 #   Seed the map
@@ -92,6 +131,51 @@ for i in (5..12)
     end
   end
     
+end
+
+# create regions and locations
+
+nodes = Map::Node.find_all_by_leaf true
+
+while !nodes.empty?
+  node = nodes.pop
+  region = node.build_region
+  
+  for pos in 0..8
+    location = region.locations.build
+    location.slot = pos
+
+    if (pos == 0)  # slot 0: fortress
+      location.type_id = 1 # 1: fortress
+    else
+      if (rand(4) < 2)
+        location.type_id = 0 # 0: empty 
+      else
+        location.type_id = rand(2)+2  # 2: settlement, 3: outpost
+      end
+    end
+    location.level = rand(10) if location.type_id > 0
+    
+    if (rand(10) < 1) 
+      location.count_markers = 1
+    end
+    
+    if location.type_id > 0
+      ally = alliances[rand(alliances.length)]  # choose ally
+      char = characters[ally[:members][rand(ally[:members].length)]] # choose member
+      location.owner_id = char[:id]
+      location.owner_name = char[:name]
+      location.alliance_id = ally[:id] unless ally[:id] == 0
+      location.alliance_tag = ally[:tag] unless ally[:id] == 0
+    end
+    
+    location.save
+  end
+  
+  region.owner_id = region.locations[0].owner_id
+  region.owner_name = region.locations[0].owner_name
+  
+  region.save
 end
 
 # ############################################################################
