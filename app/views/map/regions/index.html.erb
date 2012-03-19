@@ -1,5 +1,8 @@
 <h1>Listing map_regions</h1>
 
+<%= will_paginate @map_regions %>
+
+
 <table>
   <tr>
     <th>Node</th>
@@ -37,3 +40,6 @@
 <br />
 
 <%= link_to 'New Region', new_map_region_path %>
+
+
+<%= will_paginate @map_regions %>

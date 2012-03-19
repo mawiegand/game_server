@@ -2,7 +2,7 @@ class Map::LocationsController < ApplicationController
   # GET /map/locations
   # GET /map/locations.json
   def index
-    @map_locations = Map::Location.all
+    @map_locations = Map::Location.paginate(:page => params[:page], :per_page => 64)
 
     respond_to do |format|
       format.html # index.html.erb

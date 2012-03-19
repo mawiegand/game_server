@@ -174,6 +174,8 @@ while !nodes.empty?
   
   region.owner_id = region.locations[0].owner_id
   region.owner_name = region.locations[0].owner_name
+  region.alliance_id = region.locations[0].alliance_id
+  region.alliance_tag = region.locations[0].alliance_tag
   
   region.save
 end
