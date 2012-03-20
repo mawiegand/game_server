@@ -182,6 +182,10 @@ while !nodes.empty?
   region.alliance_id = region.locations[0].alliance_id
   region.alliance_tag = region.locations[0].alliance_tag
   
+  region.fortress_level = region.locations[0].level
+  
+  region.terrain_id = rand(4)
+  
   region.save
 end
 
