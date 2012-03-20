@@ -1,6 +1,8 @@
 <h1>Listing map_locations</h1>
 
-<%= will_paginate @map_locations %>
+<%= if @paginate
+  will_paginate @map_locations 
+end %>
 
 
 <table>
@@ -45,4 +47,6 @@
 
 <%= link_to 'New Location', new_map_location_path %>
 
-<%= will_paginate @map_locations %>
+<%= if @paginate
+  will_paginate @map_locations 
+end %>

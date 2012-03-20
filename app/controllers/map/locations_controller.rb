@@ -2,11 +2,28 @@ class Map::LocationsController < ApplicationController
   # GET /map/locations
   # GET /map/locations.json
   def index
-    @map_locations = Map::Location.paginate(:page => params[:page], :per_page => 64)
-
+    
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @map_locations }
+      format.html do
+        if params.has_key?(:region_id)  
+          @map_region = Map::Region.find_by_id(params[:region_id])
+          raise NotFoundError.new('Page Not Found') if @map_region.nil?
+          @map_locations = @map_region.locations.nil? ? [] : @map_region.locations 
+        else
+          @map_locations =  Map::Location.paginate(:page => params[:page], :per_page => 64)    
+          @paginate = true    
+        end
+      end
+      format.json do
+        if params.has_key?(:region_id)  
+          @map_region = Map::Region.find_by_id(params[:region_id])
+          raise NotFoundError.new('Page Not Found') if @map_region.nil?
+          @map_locations = @map_region.locations.nil? ? [] : @map_region.locations 
+        else
+          raise ForbiddenError.new('Access Forbidden')        
+        end        
+        render json: @map_locations
+      end
     end
   end
 
