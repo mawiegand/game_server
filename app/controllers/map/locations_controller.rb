@@ -30,11 +30,21 @@ class Map::LocationsController < ApplicationController
   # GET /map/locations/1
   # GET /map/locations/1.json
   def show
-    @map_location = Map::Location.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @map_location }
+    @map_location = Map::Location.find_by_id(params[:id])
+    
+    raise NotFoundError if @map_location.nil?
+    
+    last_modified = nil 
+    last_modified = @map_location.updated_at unless @map_location.nil?
+        
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do 
+          options = { :except => @map_location.attributes.delete_if { |k,v| !v.blank? }.keys }
+          render :json => @map_location.to_json(options) 
+        end
+      end
     end
   end
 
