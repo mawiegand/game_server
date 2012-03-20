@@ -68,7 +68,7 @@ while !nodes.empty?
   
   node = nodes.pop
   
-  if node && node.level < 5
+  if node && node.level < 4
     node.create_children
     node.children.each { |n| nodes.insert 0, n }
   end
@@ -116,21 +116,26 @@ def check_split_neighbours node
   return nodes
 end
 
-for i in (5..12)
-  nodes = Map::Node.find_all_by_level i
-  
-  while !nodes.empty?
+def split_all_nodes(nodes, randmax=1, randtrue=1)
+    while !nodes.empty?
     node = nodes.pop
     node.reload
-    if node.leaf && rand(i-3) < 1   # only split nodes that haven't been split before
+    if node.leaf && rand(randmax) < randtrue     # only split nodes that haven't been split before  #-3
       node.create_children
-      split_nodes = check_split_neighbours(node) # need to check neighbours: don't wanna create to large level-jumps
+      split_nodes = check_split_neighbours(node) # need to check neighbours: don't wanna create too large level-jumps
       if split_nodes && split_nodes.length > 0
-        nodes = nodes + split_nodes # afterwards nodes may be twice in array
+        split_all_nodes(split_nodes)             #  have to split all neighbouring nodes (with probability 1)
       end
     end
   end
-    
+end
+
+for i in (4..9)
+  nodes = Map::Node.find_all_by_level i
+  
+  puts "INFO: working on level #{i}."
+  
+  split_all_nodes(nodes, i-1, 1)     # i-3 (when starting with level 5)
 end
 
 # create regions and locations
