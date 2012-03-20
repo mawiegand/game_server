@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319142839) do
+ActiveRecord::Schema.define(:version => 20120320230844) do
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20120319142839) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "count_settlementes"
+    t.integer  "count_settlements"
     t.integer  "total_army_strength"
   end
 

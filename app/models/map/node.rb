@@ -106,6 +106,7 @@ class Map::Node < ActiveRecord::Base
     # height (in meters on earth-surface). Thus, nodes that have no overlap with 
     # this area are _not_ expanded.
     def subtree_for_area(x, y, width, height, level)
+      
       if self.leaf? || self.level == level       # stop expansion, maximal depth reached
         return self
       end
@@ -172,6 +173,25 @@ class Map::Node < ActiveRecord::Base
       @map_node = Map::Node.find_by_path(address[2..(address.length)])
     else                                             # access by id (primary key)
       @map_node = Map::Node.find_by_id(address)
+    end
+  end
+  
+  def recount_settlements(recursive=false)
+    if self.leaf?
+      if (recursive) 
+        self.region.recount_settlements
+      end
+      self.count_settlements = self.region.count_settlements
+    else
+      count = 0;
+      self.children.each do |child|
+        if (recursive)
+          child.recount_settlements(recursive)
+        end
+        count += child.count_settlements
+      end
+      self.count_settlements = count
+      self.save
     end
   end
   

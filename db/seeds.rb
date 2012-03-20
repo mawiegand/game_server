@@ -189,6 +189,8 @@ while !nodes.empty?
   region.save
 end
 
+Map::Node.root.recount_settlements true # recursively update number of settlements for whole map
+
 # ############################################################################
 #
 #   end of map seeding
