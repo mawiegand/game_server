@@ -60,7 +60,9 @@ class Map::SubtreesController < ApplicationController
             
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @map_subtree  }
+        format.json do
+          render json: @map_subtree.to_json()  
+        end
       end
     end
     

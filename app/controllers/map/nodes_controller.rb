@@ -44,7 +44,6 @@ class Map::NodesController < ApplicationController
         format.html # show.html.erb
         format.json do 
           options = { :except => @map_node.attributes.delete_if { |k,v| !v.blank? }.keys }
-          options[:include] = :region if @map_node.leaf?
           render :json => @map_node.to_json(options) 
         end
       end

@@ -197,9 +197,10 @@ class Map::Node < ActiveRecord::Base
   
   # include region information for leaf nodes
   def serializable_hash(options = nil)
+    # logger.debug "called serialiazable hash for #{self.path} with options #{ options}."
     options ||= {}
     hash = super options
-    hash[:region] = self.region.serializable_hash if self.leaf? && !self.region.nil?
+    hash[:region] = self.region.serializable_hash(options) if self.leaf? && !self.region.nil?
     hash
   end
   
