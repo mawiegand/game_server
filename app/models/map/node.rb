@@ -195,4 +195,12 @@ class Map::Node < ActiveRecord::Base
     self.save
   end
   
+  # include region information for leaf nodes
+  def serializable_hash(options = nil)
+    options ||= {}
+    hash = super options
+    hash[:region] = self.region.serializable_hash if self.leaf? && !self.region.nil?
+    hash
+  end
+  
 end
