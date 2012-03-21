@@ -191,8 +191,8 @@ class Map::Node < ActiveRecord::Base
         count += child.count_settlements
       end
       self.count_settlements = count
-      self.save
     end
+    self.save
   end
   
 end

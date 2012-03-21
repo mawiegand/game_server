@@ -13,6 +13,8 @@
     <th>Parent</th>
     <th>Leaf</th>
     <th>Level</th>
+    <th>Count Settlements</th>
+    <th>Total Army Stregth</th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,6 +30,8 @@
     <td><%= map_node.parent_id %></td>
     <td><%= map_node.leaf %></td>
     <td><%= map_node.level %></td>
+    <td><%= map_node.count_settlements %></td>
+    <td><%= map_node.total_army_strength %></td>
     <td><%= link_to 'Show', map_node %></td>
     <td><%= link_to 'Edit', edit_map_node_path(map_node) %></td>
     <td><%= link_to 'Destroy', map_node, confirm: 'Are you sure?', method: :delete %></td>
