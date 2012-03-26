@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  home_settlement_id: 1
+  home_settlement_name: MyString
+  location_id: 1
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  ap_max: 1
+  ap_present: 1
+  ap_seconds_per_point: 1
+  ap_last: 2012-03-26 17:20:35
+  mode: 1
+  stance: 1
+  size_max: 1
+  size_present: 1
+  strength: 1
+  exp: 1
+  rank: 1
+  target_region_id: 1
+  target_location_id: 1
+  target_reached_at: 2012-03-26 17:20:35
+  battle_retreat: false
+  battle_id: 1
+
+two:
+  name: MyString
+  home_settlement_id: 1
+  home_settlement_name: MyString
+  location_id: 1
+  owner_id: 1
+  owner_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  ap_max: 1
+  ap_present: 1
+  ap_seconds_per_point: 1
+  ap_last: 2012-03-26 17:20:35
+  mode: 1
+  stance: 1
+  size_max: 1
+  size_present: 1
+  strength: 1
+  exp: 1
+  rank: 1
+  target_region_id: 1
+  target_location_id: 1
+  target_reached_at: 2012-03-26 17:20:35
+  battle_retreat: false
+  battle_id: 1
