@@ -131,7 +131,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (4..4)
+for i in (4..9)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."
@@ -218,7 +218,7 @@ while !locations.empty?
       army.alliance_tag = ally[:tag] unless ally[:id] == 0
 
       army.ap_max = 4
-      army.ap_present = rand(6)
+      army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
       army.mode = 0

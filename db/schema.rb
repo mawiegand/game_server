@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327081333) do
+ActiveRecord::Schema.define(:version => 20120327101336) do
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120327081333) do
     t.boolean  "visible"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "armies_changed_at"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20120327081333) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "fortress_level"
+    t.datetime "armies_changed_at"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -96,5 +98,11 @@ ActiveRecord::Schema.define(:version => 20120327081333) do
     t.datetime "updated_at"
     t.integer  "region_id"
   end
+
+  add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
+  add_index "military_armies", ["owner_id"], :name => "index_military_armies_on_owner_id"
+  add_index "military_armies", ["region_id"], :name => "index_military_armies_on_region_id"
+  add_index "military_armies", ["target_location_id"], :name => "index_military_armies_on_target_location_id"
+  add_index "military_armies", ["target_region_id"], :name => "index_military_armies_on_target_region_id"
 
 end

@@ -1,44 +1,91 @@
 class Military::ArmiesController < ApplicationController
-  # GET /military/armies
-  # GET /military/armies.json
+  
+  @@short_fields = [:id, :name, :region_id, :location_id, :onwer_id, :owner_name, :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :strength, :rank, :target_region_id, :target_location_id, :updated_at]
+  @@aggregate_fields = [:id, :owner_id, :alliance_id, :stance, :strength]
+ 
+  # Returns a list of armies in a region or at a location. There are three 
+  # modes to request the list for JSON:
+  # - armies.json?aggregate: returns a very condensed list that only features
+  #   the fields needed to calculate the aggregated army display for a region
+  # - armies.json?short: returns a shortened list of the armies that contains
+  #   the information needed to place the army on the map, but no detailed
+  #   information that would be needed for a mouse-over or the detailed
+  #   information.
+  # - armies.json: returns a complete list with all the fields of all armies.
+  #
+  #  GET /map/regions/:region_id/armies
+  #  GET /map/regions/:region_id/armies.json
+  #  GET /map/locations/:location_id/armies
+  #  GET /map/locations/:location_id/armies.json
+  #  GET /military/armies
   def index
+
+    last_modified = nil 
 
     if params.has_key?(:region_id)  
       @map_region = Map::Region.find(params[:region_id])
       raise NotFoundError.new('Page Not Found') if @map_region.nil?
       @military_armies = @map_region.armies 
+      last_modified =  @map_region.armies_changed_at
     elsif params.has_key?(:location_id)  
       @map_location = Map::Location.find(params[:location_id])
       raise NotFoundError.new('Page Not Found') if @map_location.nil?
       @military_armies = @map_location.armies
+      last_modified =  @map_location.armies_changed_at
     end   
 
-    respond_to do |format|
-      
-      format.html do
-        if @military_armies.nil?
-          @military_armies =  Military::Army.paginate(:page => params[:page], :per_page => 50)    
-          @paginate = true   
-        end 
-      end
-      
-      format.json do
-        if @military_armies.nil?  
-          raise ForbiddenError.new('Access Forbidden')        
-        end        
-        render json: @military_armies
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @military_armies.nil?
+            @military_armies =  Military::Army.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @military_armies.nil?  
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+          if params.has_key?(:short)
+            render json: @military_armies, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @military_armies, :only => @@aggregate_fields          
+          else
+            render json: @military_armies
+          end
+        end
       end
     end
   end
 
+  # Returns detailed information to the army with the given id. For JSON, 
+  # there are two different modes of request:
+  # - army.json?short: returns a shortened list of the armies that contains
+  #   the information needed to place the army on the map, but no detailed
+  #   information that would be needed for a mouse-over or the detailed
+  #   information.
+  # - army: returns a complete list with all the fields of all armies.
+  #
   # GET /military/armies/1
   # GET /military/armies/1.json
   def show
     @military_army = Military::Army.find(params[:id])
+    raise NotFoundError.new('Page Not Found') if @military_army.nil?
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @military_army }
+    last_modified = nil 
+    last_modified =  @military_army.updated_at
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do
+          if params.has_key?(:short)
+            render json: @military_army, :only => @@short_fields
+          else
+            render json: @military_army
+          end 
+        end
+      end
     end
   end
 
@@ -101,4 +148,5 @@ class Military::ArmiesController < ApplicationController
       format.json { head :ok }
     end
   end
+
 end

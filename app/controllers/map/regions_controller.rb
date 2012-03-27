@@ -1,5 +1,6 @@
 class Map::RegionsController < ApplicationController
   
+  
   # GET /map/regions
   def index
 
