@@ -20,6 +20,7 @@ GameServer::Application.routes.draw do
         
         resources :regions do
           resources :locations
+          resources :armies, :module => "military"
         end
         resources :locations
       end

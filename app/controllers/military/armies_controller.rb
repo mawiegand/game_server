@@ -2,11 +2,32 @@ class Military::ArmiesController < ApplicationController
   # GET /military/armies
   # GET /military/armies.json
   def index
-    @military_armies = Military::Army.all
+
+    if params.has_key?(:region_id)  
+      @map_region = Map::Region.find(params[:region_id])
+      raise NotFoundError.new('Page Not Found') if @map_region.nil?
+      @military_armies = @map_region.armies 
+    elsif params.has_key?(:location_id)  
+      @map_location = Map::Location.find(params[:location_id])
+      raise NotFoundError.new('Page Not Found') if @map_location.nil?
+      @military_armies = @map_location.armies
+    end   
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @military_armies }
+      
+      format.html do
+        if @military_armies.nil?
+          @military_armies =  Military::Army.paginate(:page => params[:page], :per_page => 50)    
+          @paginate = true   
+        end 
+      end
+      
+      format.json do
+        if @military_armies.nil?  
+          raise ForbiddenError.new('Access Forbidden')        
+        end        
+        render json: @military_armies
+      end
     end
   end
 
