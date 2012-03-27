@@ -1,8 +1,14 @@
 GameServer::Application.routes.draw do
   
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
+
+      namespace :military do 
+        resources :armies 
+      end
+
 
       namespace :map do 
         

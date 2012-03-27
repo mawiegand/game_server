@@ -53,6 +53,7 @@ characters=[ {},
 
 # create the top-level root node that spans the whole world
 
+
 root = Map::Node.create_root_node     
 
 root.min_x = -20037508.342789244
@@ -130,7 +131,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (4..9)
+for i in (4..4)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."
@@ -139,6 +140,8 @@ for i in (4..9)
 end
 
 # create regions and locations
+
+puts "INFO: creating regions and locations."
 
 nodes = Map::Node.find_all_by_leaf true
 
@@ -188,6 +191,52 @@ while !nodes.empty?
   
   region.save
 end
+
+puts "INFO: creating armies."
+
+
+locations = Map::Location.all
+
+while !locations.empty?
+  
+  location = locations.pop
+  
+  if (location.type_id == 0 && rand(4) < 1) || (location.type_id != 0 && rand(4) < 3)
+  
+    for i in (0..(rand(3)))
+  
+      army = location.armies.build
+      army.region = location.region
+  
+      army.name = 'Rotte'
+  
+      ally = alliances[rand(alliances.length)]  # choose ally
+      char = characters[ally[:members][rand(ally[:members].length)]] # choose member
+      army.owner_id = char[:id]
+      army.owner_name = char[:name]
+      army.alliance_id = ally[:id] unless ally[:id] == 0
+      army.alliance_tag = ally[:tag] unless ally[:id] == 0
+
+      army.ap_max = 4
+      army.ap_present = rand(6)
+      army.ap_seconds_per_point = 3600*6
+
+      army.mode = 0
+      army.stance = rand(3)
+      army.size_max = 1200
+      army.size_present = rand(army.size_max)+1
+      army.strength = army.size_present * (rand(10)+10)
+      army.exp = rand(1000000)
+      army.rank = army.exp / 10000
+  
+      army.save
+  
+    end
+  end
+  
+end
+
+puts "INFO: recalculating aggregated values."
 
 Map::Node.root.recount_settlements true # recursively update number of settlements for whole map
 
