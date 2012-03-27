@@ -164,7 +164,7 @@ while !nodes.empty?
     if (rand(10) < 1) 
       location.count_markers = 1
     end
-    
+        
     if location.type_id > 0
       ally = alliances[rand(alliances.length)]  # choose ally
       char = characters[ally[:members][rand(ally[:members].length)]] # choose member
