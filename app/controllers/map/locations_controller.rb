@@ -30,7 +30,17 @@ class Map::LocationsController < ApplicationController
   # GET /map/locations/1
   # GET /map/locations/1.json
   def show
-    @map_location = Map::Location.find_by_id(params[:id])
+    if params.has_key?(:region_id)  
+      @map_region = Map::Region.find_by_id(params[:region_id])
+      raise NotFoundError.new('Page Not Found') if @map_region.nil?
+      if params.has_key?(:slot) 
+        @map_location = @map_region.locations.find_by_slot(params[:slot]) 
+      else
+        @map_location = @map_region.locations.find_by_id(params[:id]) 
+      end
+    else
+      @map_location = Map::Location.find_by_id(params[:id])
+    end
     
     raise NotFoundError if @map_location.nil?
     

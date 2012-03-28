@@ -20,13 +20,19 @@ GameServer::Application.routes.draw do
         
         resources :regions do
           resources :locations
-          resources :armies, :module => "military"
+          resources :armies, :module => "military"              
+#          resources :slots,  :controller => 'locations', :only => [ :show, :index ]  
         end
         resources :locations do
           resources :armies, :module => "military"
         end
+        
+        match 'regions/:region_id/slots',       :via => :get, :controller => 'locations', :action => 'index'
+        match 'regions/:region_id/slots/:slot', :via => :get, :controller => 'locations', :action => 'show'
+        match 'regions/:region_id/fortress',    :via => :get, :controller => 'locations', :action => 'show', :slot => 0
       end
     end
+
   end
 
   # The priority is based upon order of creation:
