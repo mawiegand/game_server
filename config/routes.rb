@@ -21,7 +21,7 @@ GameServer::Application.routes.draw do
         resources :regions do
           resources :locations
           resources :armies, :module => "military"              
-#          resources :slots,  :controller => 'locations', :only => [ :show, :index ]  
+#         resources :slots,  :controller => 'locations', :only => [ :show, :index ]  
         end
         resources :locations do
           resources :armies, :module => "military"
