@@ -178,6 +178,9 @@ while !nodes.empty?
     end
     
     location.save
+    if (pos == 0)
+      region.fortress_id = location.id
+    end
   end
   
   region.owner_id = region.locations[0].owner_id

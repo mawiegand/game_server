@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327101336) do
+ActiveRecord::Schema.define(:version => 20120330112444) do
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20120327101336) do
     t.datetime "updated_at"
     t.integer  "fortress_level"
     t.datetime "armies_changed_at"
+    t.integer  "fortress_id"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
