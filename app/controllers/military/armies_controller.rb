@@ -25,7 +25,11 @@ class Military::ArmiesController < ApplicationController
     if params.has_key?(:region_id)  
       @map_region = Map::Region.find(params[:region_id])
       raise NotFoundError.new('Page Not Found') if @map_region.nil?
-      @military_armies = @map_region.armies 
+      if params.has_key?(:fortress_only)
+        @military_armies = @map_region.locations[0].armies
+      else
+        @military_armies = @map_region.armies 
+      end
       last_modified =  @map_region.armies_changed_at
     elsif params.has_key?(:location_id)  
       @map_location = Map::Location.find(params[:location_id])
