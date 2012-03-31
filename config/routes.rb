@@ -9,6 +9,8 @@ GameServer::Application.routes.draw do
         resources :armies 
       end
 
+      resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            
+
 
       namespace :map do 
         
@@ -20,7 +22,7 @@ GameServer::Application.routes.draw do
         
         resources :regions do
           resources :locations
-          resources :armies, :module => "military"              
+#         resources :armies, :module => 'military'             # doesn't work, since it looks for Map::Military::ArmiesController instead of Military::ArmiesController
 #         resources :slots,  :controller => 'locations', :only => [ :show, :index ]  
         end
         resources :locations do
@@ -31,6 +33,8 @@ GameServer::Application.routes.draw do
         match 'regions/:region_id/slots/:slot', :via => :get, :controller => 'locations', :action => 'show'
         match 'regions/:region_id/fortress',    :via => :get, :controller => 'locations', :action => 'show', :slot => 0
       end
+      
+      
     end
 
   end
