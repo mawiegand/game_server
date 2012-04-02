@@ -29,7 +29,7 @@ namespace :deploy do
 
   desc "Reset DB"
   task :reset do
-    run 'cd #{current_path}; bundle exec rake RAILS_ENV="production" db:reset'
+    run "cd #{current_path}; bundle exec rake RAILS_ENV=\"production\" db:reset"
     restart
   end
 
