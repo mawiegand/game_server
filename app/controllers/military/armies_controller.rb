@@ -140,7 +140,7 @@ class Military::ArmiesController < ApplicationController
     respond_to do |format|
       if @military_army.update_attributes(params[:military_army])
         format.html { redirect_to @military_army, notice: 'Army was successfully updated.' }
-        format.json { head :ok }
+        format.json { render json: true, status: :ok }
       else
         format.html { render action: "edit" }
         format.json { render json: @military_army.errors, status: :unprocessable_entity }
