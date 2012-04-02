@@ -36,6 +36,10 @@ class Military::ArmiesController < ApplicationController
       raise NotFoundError.new('Page Not Found') if @map_location.nil?
       @military_armies = @map_location.armies
       last_modified =  @map_location.armies_changed_at
+    elsif params.has_key?(:target_location_id)
+      @military_armies = Military::Army.find_by_target_location_id(params[:target_location_id])
+    else 
+      @asked_for_index = true
     end   
 
     render_not_modified_or(last_modified) do
@@ -47,9 +51,10 @@ class Military::ArmiesController < ApplicationController
           end 
         end
         format.json do
-          if @military_armies.nil?  
+          if @asked_for_index 
             raise ForbiddenError.new('Access Forbidden')        
           end  
+          @military_armies = [] if @military_armies.nil?  # necessary? or ok to send 'null' ?
           if params.has_key?(:short)
             render json: @military_armies, :only => @@short_fields
           elsif params.has_key?(:aggregate)
