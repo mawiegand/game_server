@@ -5,7 +5,7 @@ class Military::Army < ActiveRecord::Base
   
   belongs_to :target_location, :class_name => "Map::Location", :foreign_key => "target_location_id"
   belongs_to :target_region, :class_name => "Map::Region", :foreign_key => "target_region_id"
-  
+    
   after_save :set_parent_change_timestamps
   
   
