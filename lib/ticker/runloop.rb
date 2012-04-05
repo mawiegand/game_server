@@ -9,6 +9,8 @@ module Ticker
       self.sleep_delay      = DEFAULT_SLEEP_DELAY
     end    
     
+    reset 
+    
     def initialize(options={})
       @quiet = options.has_key?(:quiet) ? options[:quiet] : true
       self.class.sleep_delay  = options[:sleep_delay] if options.has_key?(:sleep_delay)
@@ -37,7 +39,7 @@ module Ticker
 
       loop do
         break if @exit
-        sleep(1)
+        sleep(self.class.sleep_delay)
         say "Ending another loop.", Logger::DEBUG
       end
     end

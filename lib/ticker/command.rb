@@ -4,7 +4,6 @@ rescue LoadError
   raise "You need to add gem 'daemons' to your Gemfile if you wish to use it."
 end
 require 'optparse'
-#require 'ticker/runloop'
 
 # this daemon's runloop is based on delayed_job https://github.com/collectiveidea/delayed_job/
 
