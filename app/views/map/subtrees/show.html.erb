@@ -1,8 +1,10 @@
+<div style="height:1024px">
+  <div class="tree" style="position: relative;">
 <%
 
   # Recuresive function to constrct a hierarchy of divs that matches the quad-tree's
   # structure.
-  def render_node(node, width, levels) 
+  def render_node(node, width, levels, toplevel) 
     class_str = ''
     
     if node.leaf?
@@ -10,27 +12,32 @@
     elsif levels == 0
       class_str = 'class="subtree"'
     end
-    
-    string = "<div #{ class_str } style='width: #{width}px; height: #{width}px; border: solid black #{levels+1}px; margin: -#{levels+1}px; display: inline-block; text-align: center; overflow: visible; #{ node.leaf? ? 'font-weight: bold;' : ''}'>"
+
+    c = Integer(node.path[node.path.length - 1]) if node.path.length > 0
+    string = "<div #{class_str} style='position:absolute; top: #{ toplevel || c < 2 ? 0 : width }px; left: #{ toplevel || c % 2 == 0 ? 0 : width }px; width: #{width}px; height: #{width}px; border: solid black #{levels + 1}px; margin: -#{levels + 1}px; display: block; text-align: center; overflow: visible; #{node.leaf? ? 'font-weight: bold;' : ''}'>"
+
+ #   string = "<div #{ class_str } style='width: #{width}px; height: #{width}px; border: solid black #{levels+1}px; margin: -#{levels+1}px; display: inline-block; text-align: center; overflow: visible; #{ node.leaf? ? 'font-weight: bold;' : ''}'>"
     if node.leaf? || levels == 0 || node[:c0].blank?
-      string += node.path
+      string += "<div class=\"path\" style=\"margin: 6px;\">#{ node.path }</div><br/>S: #{ node.count_settlements }"
     else
-      string += render_node(node[:c0], width/2, levels-1)
-      string += render_node(node[:c1], width/2, levels-1)
-      string += render_node(node[:c2], width/2, levels-1)
-      string += render_node(node[:c3], width/2, levels-1)
+      string += render_node(node[:c0], width/2, levels-1, false)
+      string += render_node(node[:c1], width/2, levels-1, false)
+      string += render_node(node[:c2], width/2, levels-1, false)
+      string += render_node(node[:c3], width/2, levels-1, false)
     end
     string += "</div>"
   end
 %>
 
-<%= raw(render_node(@map_subtree, 1024, @max_levels)) %>
+<%= raw(render_node(@map_subtree, 1024, @max_levels, true)) %>
+  </div>
+</div>
 
 <script>
 /** attach clickable links to leafs -> open nodes#show for that node */
 $(document).ready(function () {
   $('.leaf').click(function() {
-    var path = 'qt' + $(this).html();
+    var path = 'qt' + $(this).find('.path').html();
     document.location = '/game_server/map/nodes/' + path;  // jump to clicked node !
   });
 });
@@ -38,7 +45,7 @@ $(document).ready(function () {
 /** attach clickable links to subtrees -> enter that particular subtree */
 $(document).ready(function () {
   $('.subtree').click(function() {
-    var path = 'qt' + $(this).html();
+    var path = 'qt' + $(this).find('.path').html();
     document.location = '/game_server/map/subtrees/' + path + '?levels=3';  // jump to clicked subtree !
   });
 });
