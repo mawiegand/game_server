@@ -1,0 +1,11 @@
+<% content_for :military_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.military.armies"), military_armies_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:military_content) ? yield(:military_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

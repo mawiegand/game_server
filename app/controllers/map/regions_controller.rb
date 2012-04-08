@@ -1,4 +1,5 @@
 class Map::RegionsController < ApplicationController
+  layout 'map'
   
   
   # GET /map/regions

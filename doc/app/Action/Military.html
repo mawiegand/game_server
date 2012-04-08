@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>module Action::Military - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/action/military.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-table_name_prefix">::table_name_prefix</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Map.html">Map</a>
+  
+    <li><a href="../Map/AreasController.html">Map::AreasController</a>
+  
+    <li><a href="../Map/AreasHelper.html">Map::AreasHelper</a>
+  
+    <li><a href="../Map/Location.html">Map::Location</a>
+  
+    <li><a href="../Map/LocationsController.html">Map::LocationsController</a>
+  
+    <li><a href="../Map/LocationsHelper.html">Map::LocationsHelper</a>
+  
+    <li><a href="../Map/Node.html">Map::Node</a>
+  
+    <li><a href="../Map/NodesController.html">Map::NodesController</a>
+  
+    <li><a href="../Map/NodesHelper.html">Map::NodesHelper</a>
+  
+    <li><a href="../Map/Region.html">Map::Region</a>
+  
+    <li><a href="../Map/RegionsController.html">Map::RegionsController</a>
+  
+    <li><a href="../Map/RegionsHelper.html">Map::RegionsHelper</a>
+  
+    <li><a href="../Map/SubtreesController.html">Map::SubtreesController</a>
+  
+    <li><a href="../Map/SubtreesHelper.html">Map::SubtreesHelper</a>
+  
+    <li><a href="../Action.html">Action</a>
+  
+    <li><a href="../Action/Military.html">Action::Military</a>
+  
+    <li><a href="../Action/Military/MoveArmyAction.html">Action::Military::MoveArmyAction</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsController.html">Action::Military::MoveArmyActionsController</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsHelper.html">Action::Military::MoveArmyActionsHelper</a>
+  
+    <li><a href="../Events.html">Events</a>
+  
+    <li><a href="../Events/Event.html">Events::Event</a>
+  
+    <li><a href="../Events/EventsController.html">Events::EventsController</a>
+  
+    <li><a href="../Events/EventsHelper.html">Events::EventsHelper</a>
+  
+    <li><a href="../Military.html">Military</a>
+  
+    <li><a href="../Military/ArmiesController.html">Military::ArmiesController</a>
+  
+    <li><a href="../Military/ArmiesHelper.html">Military::ArmiesHelper</a>
+  
+    <li><a href="../Military/Army.html">Military::Army</a>
+  
+    <li><a href="../Ticker.html">Ticker</a>
+  
+    <li><a href="../Ticker/Command.html">Ticker::Command</a>
+  
+    <li><a href="../Ticker/Runloop.html">Ticker::Runloop</a>
+  
+    <li><a href="../Mapping.html">Mapping</a>
+  
+    <li><a href="../Mapping/GlobalMercator.html">Mapping::GlobalMercator</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../BadRequestError.html">BadRequestError</a>
+  
+    <li><a href="../BearerAuthError.html">BearerAuthError</a>
+  
+    <li><a href="../BearerAuthInsufficientScope.html">BearerAuthInsufficientScope</a>
+  
+    <li><a href="../BearerAuthInvalidRequest.html">BearerAuthInvalidRequest</a>
+  
+    <li><a href="../BearerAuthInvalidToken.html">BearerAuthInvalidToken</a>
+  
+    <li><a href="../ForbiddenError.html">ForbiddenError</a>
+  
+    <li><a href="../NotFoundError.html">NotFoundError</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Action::Military</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-table_name_prefix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">table_name_prefix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="table_name_prefix-source">
+            <pre><span class="ruby-comment"># File app/models/action/military.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">table_name_prefix</span>
+  <span class="ruby-string">'action_military_'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- table_name_prefix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- table_name_prefix-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

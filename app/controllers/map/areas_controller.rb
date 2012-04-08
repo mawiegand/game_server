@@ -1,4 +1,5 @@
 class Map::AreasController < ApplicationController
+  layout 'map'
   
   def show
 

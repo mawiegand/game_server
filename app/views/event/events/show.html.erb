@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @event_event.character_id %>
+</p>
+
+<p>
+  <b>Execute at:</b>
+  <%= @event_event.execute_at %>
+</p>
+
+<p>
+  <b>Event type:</b>
+  <%= @event_event.event_type %>
+</p>
+
+<p>
+  <b>Locked at:</b>
+  <%= @event_event.locked_at %>
+</p>
+
+<p>
+  <b>Locked by:</b>
+  <%= @event_event.locked_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_event_path(@event_event) %> |
+<%= link_to 'Back', event_events_path %>

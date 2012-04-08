@@ -15,10 +15,12 @@
   
   <nav class="site-navigation">  
   <ul>
-    <li><%= link_to I18n.translate("application.layout.map_regions"), map_regions_path %></li>
-    <li><%= link_to I18n.translate("application.layout.map_locations"), map_locations_path %></li>
-    <li><%= link_to I18n.translate("application.layout.map_nodes"), map_nodes_path %></li>
-    <li><%= link_to I18n.translate("application.layout.map_subtrees"), map_subtree_path(:root) %></li>
+    <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
+    <%= yield :map_links %>
+    <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
+    <%= yield :military_links %>
+    <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
+    <%= yield :event_links %>
   </ul>
   </nav>  
 </header>
@@ -27,7 +29,7 @@
   <% flash.each do |key, value| %>
     <div class="flash <%= key %>"><%= value %></div>
   <% end %>
-  <%= yield %>  
+  <%= content_for?(:content) ? yield(:content) : yield %>
 </section>
 
 <div class="push clear"></div>

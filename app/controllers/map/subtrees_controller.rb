@@ -1,6 +1,8 @@
 require 'json'
 
 class Map::SubtreesController < ApplicationController
+  layout 'map'
+ 
   
   # Shows whole subtrees below a given node. Does not need any authentication; the map 
   # structure is public and therefore world-readable.

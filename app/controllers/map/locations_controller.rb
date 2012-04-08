@@ -1,4 +1,7 @@
 class Map::LocationsController < ApplicationController
+  layout 'map'
+
+
   # GET /map/locations
   # GET /map/locations.json
   def index

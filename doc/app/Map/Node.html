@@ -80,7 +80,15 @@
     
     <li><a href="#method-i-create_children">#create_children</a>
     
+    <li><a href="#method-i-expand_ancestors">#expand_ancestors</a>
+    
+    <li><a href="#method-i-recount_settlements">#recount_settlements</a>
+    
+    <li><a href="#method-i-serializable_hash">#serializable_hash</a>
+    
     <li><a href="#method-i-subtree">#subtree</a>
+    
+    <li><a href="#method-i-subtree_for_area">#subtree_for_area</a>
     
   </ul>
 </nav>
@@ -105,19 +113,85 @@
   
     <li><a href="../Map.html">Map</a>
   
+    <li><a href="../Map/AreasController.html">Map::AreasController</a>
+  
+    <li><a href="../Map/AreasHelper.html">Map::AreasHelper</a>
+  
+    <li><a href="../Map/Location.html">Map::Location</a>
+  
+    <li><a href="../Map/LocationsController.html">Map::LocationsController</a>
+  
+    <li><a href="../Map/LocationsHelper.html">Map::LocationsHelper</a>
+  
     <li><a href="../Map/Node.html">Map::Node</a>
   
     <li><a href="../Map/NodesController.html">Map::NodesController</a>
   
     <li><a href="../Map/NodesHelper.html">Map::NodesHelper</a>
   
+    <li><a href="../Map/Region.html">Map::Region</a>
+  
+    <li><a href="../Map/RegionsController.html">Map::RegionsController</a>
+  
+    <li><a href="../Map/RegionsHelper.html">Map::RegionsHelper</a>
+  
     <li><a href="../Map/SubtreesController.html">Map::SubtreesController</a>
   
     <li><a href="../Map/SubtreesHelper.html">Map::SubtreesHelper</a>
   
+    <li><a href="../Action.html">Action</a>
+  
+    <li><a href="../Action/Military.html">Action::Military</a>
+  
+    <li><a href="../Action/Military/MoveArmyAction.html">Action::Military::MoveArmyAction</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsController.html">Action::Military::MoveArmyActionsController</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsHelper.html">Action::Military::MoveArmyActionsHelper</a>
+  
+    <li><a href="../Events.html">Events</a>
+  
+    <li><a href="../Events/Event.html">Events::Event</a>
+  
+    <li><a href="../Events/EventsController.html">Events::EventsController</a>
+  
+    <li><a href="../Events/EventsHelper.html">Events::EventsHelper</a>
+  
+    <li><a href="../Military.html">Military</a>
+  
+    <li><a href="../Military/ArmiesController.html">Military::ArmiesController</a>
+  
+    <li><a href="../Military/ArmiesHelper.html">Military::ArmiesHelper</a>
+  
+    <li><a href="../Military/Army.html">Military::Army</a>
+  
+    <li><a href="../Ticker.html">Ticker</a>
+  
+    <li><a href="../Ticker/Command.html">Ticker::Command</a>
+  
+    <li><a href="../Ticker/Runloop.html">Ticker::Runloop</a>
+  
+    <li><a href="../Mapping.html">Mapping</a>
+  
+    <li><a href="../Mapping/GlobalMercator.html">Mapping::GlobalMercator</a>
+  
     <li><a href="../ApplicationController.html">ApplicationController</a>
   
     <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../BadRequestError.html">BadRequestError</a>
+  
+    <li><a href="../BearerAuthError.html">BearerAuthError</a>
+  
+    <li><a href="../BearerAuthInsufficientScope.html">BearerAuthInsufficientScope</a>
+  
+    <li><a href="../BearerAuthInvalidRequest.html">BearerAuthInvalidRequest</a>
+  
+    <li><a href="../BearerAuthInvalidToken.html">BearerAuthInvalidToken</a>
+  
+    <li><a href="../ForbiddenError.html">ForbiddenError</a>
+  
+    <li><a href="../NotFoundError.html">NotFoundError</a>
   
   </ul>
 </nav>
@@ -131,16 +205,19 @@
   <div id="description" class="description">
     
 <p>This model realizes a quad-tree (of nodes and leafs) for representing maps
-using the common tiling. Internally, tiles are encoded using the Microsoft
-- quad-tree path, but the implementation should also provide conversions to
-Google (XYZ) / OSM tile-naming schemes (TMS) on both sides, the server
+using the common tiling. Internally, tiles are encoded using the Microsoft</p>
+<ul><li>
+<p>quad-tree path, but the implementation should also provide conversions to</p>
+</li></ul>
+
+<p>Google (XYZ) / OSM tile-naming schemes (TMS) on both sides, the server
 back-end (in here, or in the lib) and the client-frontend (using a
 JavaScript implementation of the naming-scheme conversions).</p>
 
 <p>Surface coordinates in here are in X-Y coordinates, units are meters! The
-implementation  should provide means for converting these coordinates to
+implementation should provide means for converting these coordinates to 
 longitude / latitude on both sides, within the server and within the
-client. TODO: look-up the projection internals.</p>
+client.  TODO: look-up the projection internals.</p>
 
   </div><!-- description -->
 
@@ -182,7 +259,7 @@ set appropriate default values in the schema defintion.</p>
 
           
           <div class="method-source-code" id="create_root_node-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 36</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_root_node</span>
   <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">create</span>({ <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span> })
 <span class="ruby-keyword">end</span></pre>
@@ -226,7 +303,7 @@ scheme.</p>
 
           
           <div class="method-source-code" id="find_by_address-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 112</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_by_address</span>(<span class="ruby-identifier">address</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">address</span> <span class="ruby-operator">==</span> <span class="ruby-string">'root'</span>)                           <span class="ruby-comment"># root node</span>
     <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">root</span>
@@ -262,7 +339,7 @@ scheme.</p>
 
           
           <div class="method-source-code" id="root-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 41</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">root</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>.<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -292,7 +369,7 @@ scheme.</p>
 
           
           <div class="method-source-code" id="roots-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 46</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">roots</span>
   <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;parent_id IS NULL AND level = 0&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -328,7 +405,7 @@ scheme.</p>
 
           
           <div class="method-source-code" id="create_children-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 51</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create_children</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>({    <span class="ruby-comment"># node 0: upper left</span>
     <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;0&quot;</span>, 
@@ -364,11 +441,131 @@ scheme.</p>
       </div><!-- create_children-method -->
 
     
+      <div id="method-i-expand_ancestors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expand_ancestors</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>expands the ancestors of the given node (or subtree) and returns a subtree 
+with a complete ‘path’ from the root node to this particular node.</p>
+          
+
+          
+          <div class="method-source-code" id="expand_ancestors-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expand_ancestors</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>
+    <span class="ruby-identifier">c</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span>[<span class="ruby-identifier">path</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]  <span class="ruby-comment"># 'address' of this node; which child is it?</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>[<span class="ruby-value">:c0</span>] = <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">'0'</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>[<span class="ruby-value">:c1</span>] = <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">'1'</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>[<span class="ruby-value">:c2</span>] = <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">'2'</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>[<span class="ruby-value">:c3</span>] = <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">'3'</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">3</span>]
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">expand_ancestors</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- expand_ancestors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- expand_ancestors-method -->
+
+    
+      <div id="method-i-recount_settlements" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recount_settlements</span><span
+            class="method-args">(recursive=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recount_settlements-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recount_settlements</span>(<span class="ruby-identifier">recursive</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">recursive</span>) 
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">region</span>.<span class="ruby-identifier">recount_settlements</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count_settlements</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">region</span>.<span class="ruby-identifier">count_settlements</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>;
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">recursive</span>)
+        <span class="ruby-identifier">child</span>.<span class="ruby-identifier">recount_settlements</span>(<span class="ruby-identifier">recursive</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">count_settlements</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count_settlements</span> = <span class="ruby-identifier">count</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recount_settlements-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recount_settlements-method -->
+
+    
+      <div id="method-i-serializable_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">serializable_hash</span><span
+            class="method-args">(options = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>include region information for leaf nodes</p>
+          
+
+          
+          <div class="method-source-code" id="serializable_hash-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">serializable_hash</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-comment"># logger.debug &quot;called serialiazable hash for #{self.path} with options #{ options}.&quot;</span>
+  <span class="ruby-identifier">options</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">hash</span> = <span class="ruby-keyword">super</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">hash</span>[<span class="ruby-value">:region</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">region</span>.<span class="ruby-identifier">serializable_hash</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">region</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- serializable_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- serializable_hash-method -->
+
+    
       <div id="method-i-subtree" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">subtree</span><span
-            class="method-args">(num_levels)</span>
+            class="method-args">(num_levels, modified_since_timestamp = nil)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
@@ -377,19 +574,25 @@ scheme.</p>
           
           <p>returns the subtree starting at this node. Expands the tree to a maximum of
 num_levels levels. Should be used with care: extremely database heavy,  due
-to branching factor of 4 do not querry more than 4 or 5 levels at max (will
-already take seconds to process).</p>
+to branching factor of 4 do not querry more than 5 or 6 levels at max (will
+already take several hundreds of ms to process).</p>
+
+<p>With the optional timestamp-argument it’s possible to restrict expansion of
+nodes to those parts of the subtree, that have changed recently (after the
+given timestamp). If this argument is not specified, the whole requested
+subtree will be expanded.</p>
           
 
           
           <div class="method-source-code" id="subtree-source">
-            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 81</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">subtree</span>(<span class="ruby-identifier">num_levels</span>)
-  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">num_levels</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span>)
-    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c0</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
-    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c1</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
-    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c2</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
-    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c3</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subtree</span>(<span class="ruby-identifier">num_levels</span>, <span class="ruby-identifier">modified_since_timestamp</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">num_levels</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span> <span class="ruby-operator">&amp;&amp;</span>                 
+      (<span class="ruby-operator">!</span><span class="ruby-identifier">modified_since_timestamp</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">updated_at</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">modified_since_timestamp</span>))
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c0</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>, <span class="ruby-identifier">modified_since_timestamp</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c1</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>, <span class="ruby-identifier">modified_since_timestamp</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c2</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>, <span class="ruby-identifier">modified_since_timestamp</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">:c3</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">subtree</span> <span class="ruby-identifier">num_levels</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>, <span class="ruby-identifier">modified_since_timestamp</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
@@ -401,6 +604,59 @@ already take seconds to process).</p>
 
         
       </div><!-- subtree-method -->
+
+    
+      <div id="method-i-subtree_for_area" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subtree_for_area</span><span
+            class="method-args">(x, y, width, height, level)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns the subtree spanning the given target area starting at this node. 
+Expands the tree to level level inside the area specified by x, y, width, 
+height (in meters on earth-surface). Thus, nodes that have no overlap with 
+this area are <em>not</em> expanded.</p>
+          
+
+          
+          <div class="method-source-code" id="subtree_for_area-source">
+            <pre><span class="ruby-comment"># File app/models/map/node.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subtree_for_area</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">level</span>)
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">leaf?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">level</span>       <span class="ruby-comment"># stop expansion, maximal depth reached</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">ix</span> = [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">min_x</span>, <span class="ruby-identifier">x</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-identifier">iy</span> = [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">min_y</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-identifier">iwidth</span> = ([<span class="ruby-keyword">self</span>.<span class="ruby-identifier">max_x</span>, <span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-identifier">width</span>].<span class="ruby-identifier">min</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">ix</span>
+  <span class="ruby-identifier">iheight</span> = ([<span class="ruby-keyword">self</span>.<span class="ruby-identifier">max_y</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-identifier">height</span>].<span class="ruby-identifier">min</span>) <span class="ruby-operator">-</span><span class="ruby-identifier">iy</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">iwidth</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">iheight</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>             <span class="ruby-comment"># stop, no overlap with target region</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># continue with recursive expansion of child nodes</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">:c0</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">subtree_for_area</span> <span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>, <span class="ruby-identifier">level</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">:c1</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">subtree_for_area</span> <span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>, <span class="ruby-identifier">level</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">:c2</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">subtree_for_area</span> <span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>, <span class="ruby-identifier">level</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">:c3</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">subtree_for_area</span> <span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>, <span class="ruby-identifier">level</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subtree_for_area-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subtree_for_area-method -->
 
     
     </section><!-- public-instance-method-details -->

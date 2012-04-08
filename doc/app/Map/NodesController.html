@@ -107,19 +107,85 @@
   
     <li><a href="../Map.html">Map</a>
   
+    <li><a href="../Map/AreasController.html">Map::AreasController</a>
+  
+    <li><a href="../Map/AreasHelper.html">Map::AreasHelper</a>
+  
+    <li><a href="../Map/Location.html">Map::Location</a>
+  
+    <li><a href="../Map/LocationsController.html">Map::LocationsController</a>
+  
+    <li><a href="../Map/LocationsHelper.html">Map::LocationsHelper</a>
+  
     <li><a href="../Map/Node.html">Map::Node</a>
   
     <li><a href="../Map/NodesController.html">Map::NodesController</a>
   
     <li><a href="../Map/NodesHelper.html">Map::NodesHelper</a>
   
+    <li><a href="../Map/Region.html">Map::Region</a>
+  
+    <li><a href="../Map/RegionsController.html">Map::RegionsController</a>
+  
+    <li><a href="../Map/RegionsHelper.html">Map::RegionsHelper</a>
+  
     <li><a href="../Map/SubtreesController.html">Map::SubtreesController</a>
   
     <li><a href="../Map/SubtreesHelper.html">Map::SubtreesHelper</a>
   
+    <li><a href="../Action.html">Action</a>
+  
+    <li><a href="../Action/Military.html">Action::Military</a>
+  
+    <li><a href="../Action/Military/MoveArmyAction.html">Action::Military::MoveArmyAction</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsController.html">Action::Military::MoveArmyActionsController</a>
+  
+    <li><a href="../Action/Military/MoveArmyActionsHelper.html">Action::Military::MoveArmyActionsHelper</a>
+  
+    <li><a href="../Events.html">Events</a>
+  
+    <li><a href="../Events/Event.html">Events::Event</a>
+  
+    <li><a href="../Events/EventsController.html">Events::EventsController</a>
+  
+    <li><a href="../Events/EventsHelper.html">Events::EventsHelper</a>
+  
+    <li><a href="../Military.html">Military</a>
+  
+    <li><a href="../Military/ArmiesController.html">Military::ArmiesController</a>
+  
+    <li><a href="../Military/ArmiesHelper.html">Military::ArmiesHelper</a>
+  
+    <li><a href="../Military/Army.html">Military::Army</a>
+  
+    <li><a href="../Ticker.html">Ticker</a>
+  
+    <li><a href="../Ticker/Command.html">Ticker::Command</a>
+  
+    <li><a href="../Ticker/Runloop.html">Ticker::Runloop</a>
+  
+    <li><a href="../Mapping.html">Mapping</a>
+  
+    <li><a href="../Mapping/GlobalMercator.html">Mapping::GlobalMercator</a>
+  
     <li><a href="../ApplicationController.html">ApplicationController</a>
   
     <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../BadRequestError.html">BadRequestError</a>
+  
+    <li><a href="../BearerAuthError.html">BearerAuthError</a>
+  
+    <li><a href="../BearerAuthInsufficientScope.html">BearerAuthInsufficientScope</a>
+  
+    <li><a href="../BearerAuthInvalidRequest.html">BearerAuthInvalidRequest</a>
+  
+    <li><a href="../BearerAuthInvalidToken.html">BearerAuthInvalidToken</a>
+  
+    <li><a href="../ForbiddenError.html">ForbiddenError</a>
+  
+    <li><a href="../NotFoundError.html">NotFoundError</a>
   
   </ul>
 </nav>
@@ -168,7 +234,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 66</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:map_node</span>])
 
@@ -208,7 +274,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 98</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">destroy</span>
@@ -244,7 +310,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 60</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -308,7 +374,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 50</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>
 
@@ -367,13 +433,18 @@ GET /map/nodes/root.json</pre>
   
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find_by_address</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFoundError</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">nil?</span>
+  
   <span class="ruby-identifier">last_modified</span> = <span class="ruby-keyword">nil</span> 
   <span class="ruby-identifier">last_modified</span> = <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">updated_at</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">nil?</span>
-  
+      
   <span class="ruby-identifier">render_not_modified_or</span>(<span class="ruby-identifier">last_modified</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@map_node</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> <span class="ruby-keyword">do</span> 
+        <span class="ruby-identifier">options</span> = { <span class="ruby-value">:except</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> }.<span class="ruby-identifier">keys</span> }
+        <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@map_node</span>.<span class="ruby-identifier">to_json</span>(<span class="ruby-identifier">options</span>) 
+      <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -403,7 +474,7 @@ GET /map/nodes/root.json</pre>
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 82</span>
+            <pre><span class="ruby-comment"># File app/controllers/map/nodes_controller.rb, line 87</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@map_node</span> = <span class="ruby-constant">Map</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 

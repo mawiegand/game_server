@@ -100,6 +100,10 @@ nav ul {
   margin:0px;
 }
 
+nav ul ul {
+  display: inline;
+}
+
 nav ul li {
   display: inline;
   text-decoration: none;
@@ -124,6 +128,23 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+  text-decoration: none;
+  
+  -moz-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  -webkit-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset;  
+}
+
+
+nav ul.submenue li a {
+  color: #888;
+  border: none;
+  -moz-box-shadow: none ;
+  -webkit-box-shadow: none ;
+  box-shadow: none ;
+}
+
+nav ul.submenue li a:hover {
   text-decoration: none;
   
   -moz-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;

@@ -1,0 +1,14 @@
+<% content_for :map_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.map.nodes"), map_nodes_path %></li>
+    <li><%= link_to I18n.translate("application.layout.map.subtree"), map_subtree_path(:root) %></li>
+    <li><%= link_to I18n.translate("application.layout.map.regions"), map_regions_path %></li>
+    <li><%= link_to I18n.translate("application.layout.map.locations"), map_locations_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:map_content) ? yield(:map_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

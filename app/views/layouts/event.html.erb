@@ -1,0 +1,11 @@
+<% content_for :event_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.event.events"), event_events_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:event_content) ? yield(:event_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

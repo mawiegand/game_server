@@ -76,7 +76,29 @@
   </ul>
 </nav>
 
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-default_url_options">#default_url_options</a>
+    
+    <li><a href="#method-i-get_locale_from_params">#get_locale_from_params</a>
+    
+    <li><a href="#method-i-render_html_for_exception">#render_html_for_exception</a>
+    
+    <li><a href="#method-i-render_json_for_exception">#render_json_for_exception</a>
+    
+    <li><a href="#method-i-render_response_for_exception">#render_response_for_exception</a>
+    
+    <li><a href="#method-i-set_locale">#set_locale</a>
+    
+    <li><a href="#method-i-time_action">#time_action</a>
+    
+  </ul>
+</nav>
+
   </div>
 
   <div id="project-metadata">
@@ -97,19 +119,85 @@
   
     <li><a href="./Map.html">Map</a>
   
+    <li><a href="./Map/AreasController.html">Map::AreasController</a>
+  
+    <li><a href="./Map/AreasHelper.html">Map::AreasHelper</a>
+  
+    <li><a href="./Map/Location.html">Map::Location</a>
+  
+    <li><a href="./Map/LocationsController.html">Map::LocationsController</a>
+  
+    <li><a href="./Map/LocationsHelper.html">Map::LocationsHelper</a>
+  
     <li><a href="./Map/Node.html">Map::Node</a>
   
     <li><a href="./Map/NodesController.html">Map::NodesController</a>
   
     <li><a href="./Map/NodesHelper.html">Map::NodesHelper</a>
   
+    <li><a href="./Map/Region.html">Map::Region</a>
+  
+    <li><a href="./Map/RegionsController.html">Map::RegionsController</a>
+  
+    <li><a href="./Map/RegionsHelper.html">Map::RegionsHelper</a>
+  
     <li><a href="./Map/SubtreesController.html">Map::SubtreesController</a>
   
     <li><a href="./Map/SubtreesHelper.html">Map::SubtreesHelper</a>
   
+    <li><a href="./Action.html">Action</a>
+  
+    <li><a href="./Action/Military.html">Action::Military</a>
+  
+    <li><a href="./Action/Military/MoveArmyAction.html">Action::Military::MoveArmyAction</a>
+  
+    <li><a href="./Action/Military/MoveArmyActionsController.html">Action::Military::MoveArmyActionsController</a>
+  
+    <li><a href="./Action/Military/MoveArmyActionsHelper.html">Action::Military::MoveArmyActionsHelper</a>
+  
+    <li><a href="./Events.html">Events</a>
+  
+    <li><a href="./Events/Event.html">Events::Event</a>
+  
+    <li><a href="./Events/EventsController.html">Events::EventsController</a>
+  
+    <li><a href="./Events/EventsHelper.html">Events::EventsHelper</a>
+  
+    <li><a href="./Military.html">Military</a>
+  
+    <li><a href="./Military/ArmiesController.html">Military::ArmiesController</a>
+  
+    <li><a href="./Military/ArmiesHelper.html">Military::ArmiesHelper</a>
+  
+    <li><a href="./Military/Army.html">Military::Army</a>
+  
+    <li><a href="./Ticker.html">Ticker</a>
+  
+    <li><a href="./Ticker/Command.html">Ticker::Command</a>
+  
+    <li><a href="./Ticker/Runloop.html">Ticker::Runloop</a>
+  
+    <li><a href="./Mapping.html">Mapping</a>
+  
+    <li><a href="./Mapping/GlobalMercator.html">Mapping::GlobalMercator</a>
+  
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./BadRequestError.html">BadRequestError</a>
+  
+    <li><a href="./BearerAuthError.html">BearerAuthError</a>
+  
+    <li><a href="./BearerAuthInsufficientScope.html">BearerAuthInsufficientScope</a>
+  
+    <li><a href="./BearerAuthInvalidRequest.html">BearerAuthInvalidRequest</a>
+  
+    <li><a href="./BearerAuthInvalidToken.html">BearerAuthInvalidToken</a>
+  
+    <li><a href="./ForbiddenError.html">ForbiddenError</a>
+  
+    <li><a href="./NotFoundError.html">NotFoundError</a>
   
   </ul>
 </nav>
@@ -138,6 +226,247 @@
 
     <!-- Methods -->
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-default_url_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_url_options</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method adds the locale to all rails-generated path, e.g. root_path.
+Based on I18n documentation in rails guides: <a
+href="http://guides.rubyonrails.org/i18n.html">guides.rubyonrails.org/i18n.html</a></p>
+          
+
+          
+          <div class="method-source-code" id="default_url_options-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_url_options</span>(<span class="ruby-identifier">options</span>={})
+  { <span class="ruby-value">:locale</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">locale</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_url_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_url_options-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-get_locale_from_params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_locale_from_params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks whether the user specified locale is available.</p>
+          
+
+          
+          <div class="method-source-code" id="get_locale_from_params-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_locale_from_params</span> 
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:locale</span>]
+  <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">available_locales</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:locale</span>].<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:locale</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_locale_from_params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_locale_from_params-method -->
+
+    
+      <div id="method-i-render_html_for_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_html_for_exception</span><span
+            class="method-args">(exception)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render_html_for_exception-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_html_for_exception</span>(<span class="ruby-identifier">exception</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:bad_request</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">BadRequestError</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:not_found</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NotFoundError</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:forbidden</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">ForbiddenError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render_html_for_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render_html_for_exception-method -->
+
+    
+      <div id="method-i-render_json_for_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_json_for_exception</span><span
+            class="method-args">(exception)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render_json_for_exception-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_json_for_exception</span>(<span class="ruby-identifier">exception</span>)
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:bad_request</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>  <span class="ruby-operator">==</span> <span class="ruby-constant">BadRequestError</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:not_found</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>    <span class="ruby-operator">==</span> <span class="ruby-constant">NotFoundError</span> 
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:forbidden</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>    <span class="ruby-operator">==</span> <span class="ruby-constant">ForbiddenError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render_json_for_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render_json_for_exception-method -->
+
+    
+      <div id="method-i-render_response_for_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_response_for_exception</span><span
+            class="method-args">(exception)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render_response_for_exception-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_response_for_exception</span>(<span class="ruby-identifier">exception</span>)  
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-string">&quot;%s: '%s', for request '%s' from %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>, <span class="ruby-identifier">request</span>.<span class="ruby-identifier">remote_ip</span>] )
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {
+      <span class="ruby-identifier">render_html_for_exception</span> <span class="ruby-identifier">exception</span>
+    }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { 
+      <span class="ruby-identifier">render_json_for_exception</span> <span class="ruby-identifier">exception</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render_response_for_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render_response_for_exception-method -->
+
+    
+      <div id="method-i-set_locale" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_locale</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the locale according to the user specified locale or to the default
+locale, if not specified or specified is not available.</p>
+          
+
+          
+          <div class="method-source-code" id="set_locale-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_locale</span>
+  <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">locale</span> = <span class="ruby-identifier">get_locale_from_params</span> <span class="ruby-operator">||</span> <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">default_locale</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_locale-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_locale-method -->
+
+    
+      <div id="method-i-time_action" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">time_action</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="time_action-source">
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">time_action</span>
+  <span class="ruby-identifier">started</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">elapsed</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">started</span>
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Executing #{controller_name}::#{action_name} took #{elapsed*1000}ms in real-time.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- time_action-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- time_action-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

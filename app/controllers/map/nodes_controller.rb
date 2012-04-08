@@ -1,4 +1,5 @@
 class Map::NodesController < ApplicationController
+  layout 'map'
   
   # TODO: define what's accessible by the API and what's accessible by the website (admin area)
   # TODO: define accessibility and readability of attributes (per role)
