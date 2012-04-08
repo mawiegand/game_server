@@ -1,0 +1,33 @@
+<h1>Listing action_military_move_army_actions</h1>
+
+<table>
+  <tr>
+    <th>Army</th>
+    <th>Starting location</th>
+    <th>Starting region</th>
+    <th>Target location</th>
+    <th>Target region</th>
+    <th>Sender ip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @action_military_move_army_actions.each do |action_military_move_army_action| %>
+  <tr>
+    <td><%= action_military_move_army_action.army_id %></td>
+    <td><%= action_military_move_army_action.starting_location_id %></td>
+    <td><%= action_military_move_army_action.starting_region_id %></td>
+    <td><%= action_military_move_army_action.target_location_id %></td>
+    <td><%= action_military_move_army_action.target_region_id %></td>
+    <td><%= action_military_move_army_action.sender_ip %></td>
+    <td><%= link_to 'Show', action_military_move_army_action %></td>
+    <td><%= link_to 'Edit', edit_action_military_move_army_action_path(action_military_move_army_action) %></td>
+    <td><%= link_to 'Destroy', action_military_move_army_action, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Move army action', new_action_military_move_army_action_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Army:</b>
+  <%= @action_military_move_army_action.army_id %>
+</p>
+
+<p>
+  <b>Starting location:</b>
+  <%= @action_military_move_army_action.starting_location_id %>
+</p>
+
+<p>
+  <b>Starting region:</b>
+  <%= @action_military_move_army_action.starting_region_id %>
+</p>
+
+<p>
+  <b>Target location:</b>
+  <%= @action_military_move_army_action.target_location_id %>
+</p>
+
+<p>
+  <b>Target region:</b>
+  <%= @action_military_move_army_action.target_region_id %>
+</p>
+
+<p>
+  <b>Sender ip:</b>
+  <%= @action_military_move_army_action.sender_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_action_military_move_army_action_path(@action_military_move_army_action) %> |
+<%= link_to 'Back', action_military_move_army_actions_path %>

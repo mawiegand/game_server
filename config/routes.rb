@@ -2,6 +2,7 @@ GameServer::Application.routes.draw do
   
 
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
 
@@ -10,7 +11,6 @@ GameServer::Application.routes.draw do
       end
 
       resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            
-
 
       namespace :map do 
         
@@ -33,7 +33,16 @@ GameServer::Application.routes.draw do
         match 'regions/:region_id/slots/:slot', :via => :get, :controller => 'locations', :action => 'show'
         match 'regions/:region_id/fortress',    :via => :get, :controller => 'locations', :action => 'show', :slot => 0
       end
-      
+
+      namespace :event do 
+        resources :events 
+      end
+
+      namespace :action do  
+        namespace :military do 
+          resources :move_army_actions 
+        end 
+      end
       
     end
 

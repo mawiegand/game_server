@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  army_id: 1
+  starting_location_id: 1
+  starting_region_id: 
+  target_location_id: 1
+  target_region_id: 1
+  sender_ip: MyString
+
+two:
+  army_id: 1
+  starting_location_id: 1
+  starting_region_id: 
+  target_location_id: 1
+  target_region_id: 1
+  sender_ip: MyString

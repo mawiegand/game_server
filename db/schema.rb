@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330112444) do
+ActiveRecord::Schema.define(:version => 20120408180953) do
+
+  create_table "action_military_move_army_actions", :force => true do |t|
+    t.integer  "army_id"
+    t.integer  "starting_location_id"
+    t.integer  "starting_region_id"
+    t.integer  "target_location_id"
+    t.integer  "target_region_id"
+    t.string   "sender_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "character_id"
+    t.datetime "target_reached_at"
+    t.integer  "event_id"
+    t.integer  "next_action_id"
+  end
+
+  create_table "event_events", :force => true do |t|
+    t.integer  "character_id"
+    t.datetime "execute_at"
+    t.string   "event_type"
+    t.datetime "locked_at"
+    t.string   "locked_by"
+    t.integer  "error_code"
+    t.integer  "localized_error_description"
+    t.datetime "finished_at"
+    t.boolean  "blocked"
+    t.string   "blocked_by"
+    t.string   "localized_blocked_reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
