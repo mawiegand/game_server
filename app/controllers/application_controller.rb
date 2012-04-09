@@ -18,6 +18,27 @@ class ApplicationController < ActionController::Base
 
   protected
   
+    # returns the currently logged-id character's id. This method does not
+    # exectue a database request, it completely relies on the id sent with 
+    # the authentication token. 
+    # 
+    # TODO: at present, always returns 5
+    def current_character_id
+      5 # from seeds: 5 -> Egbert
+    end
+    
+    # returns the currently logged-id character. The character is determined 
+    # with the help of the authentication token sent witht he request. This
+    # method thus relies on current_character_id . If no authentication token
+    # was sent with the request, this method returns nil.
+    def current_character
+      if current_character_id == 0
+        return nil
+      else 
+        return Fundamental::Character.find(current_character_id)
+      end
+    end
+  
     def time_action
       started = Time.now
       yield

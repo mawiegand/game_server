@@ -8,6 +8,9 @@ GameServer::Application.routes.draw do
     scope "(:locale)", :locale => /en|de/ do   
 
       namespace :fundamental do 
+        
+        match '/characters/self', :to => 'characters#self'
+
         resources :characters
         resources :alliances do
           resources :characters
