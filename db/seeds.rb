@@ -6,7 +6,7 @@ require 'mapping/global_mercator'
 
 # DUMMY DATA FOR TESTING
 
-alliances=[ { id: 0,
+alliance_data=[ { id: 0,
               members: [ 14, 15, 16, 17 ] },    # players without alliance
             { id: 1,
               tag: 'DW', 
@@ -22,7 +22,7 @@ alliances=[ { id: 0,
               members: [ 9, 10, 11, 12, 13 ] }  
           ];
           
-characters=[ {}, 
+character_data=[ {}, 
              { id: 1, name: 'Egbert' },
              { id: 2, name: 'Paffi' },
              { id: 3, name: 'David' },
@@ -41,6 +41,26 @@ characters=[ {},
              { id: 16, name: 'OberNoob' },
              { id: 17, name: 'Neuling' },
           ];
+          
+alliance_data.each do |ally|
+  if ally[:id] == 0
+    ally[:members].each do |member|
+      Fundamental::Character.create( name: character_data[member][:name] )
+    end
+  else 
+    alliance = Fundamental::Alliance.create( tag: ally[:tag], name: ally[:name] )
+    ally[:members].each do |member| 
+      character =  alliance.members.build( name: character_data[member][:name] )
+      character.alliance_tag = alliance.tag
+      character.save
+    end
+    alliance.save
+  end
+end
+
+alliances = Fundamental::Alliance.all
+characters = Fundamental::Character.all
+
 
 # ############################################################################
 # 
@@ -169,12 +189,13 @@ while !nodes.empty?
     end
         
     if location.type_id > 0
-      ally = alliances[rand(alliances.length)]  # choose ally
-      char = characters[ally[:members][rand(ally[:members].length)]] # choose member
+      char = characters[rand(characters.length)] # choose member
+      ally = char.alliance                       # choose ally
+      
       location.owner_id = char[:id]
       location.owner_name = char[:name]
-      location.alliance_id = ally[:id] unless ally[:id] == 0
-      location.alliance_tag = ally[:tag] unless ally[:id] == 0
+      location.alliance_id = ally[:id] unless ally.blank?
+      location.alliance_tag = ally[:tag] unless ally.blank?
     end
     
     location.save
@@ -213,12 +234,12 @@ while !locations.empty?
   
       army.name = 'Rotte'
   
-      ally = alliances[rand(alliances.length)]  # choose ally
-      char = characters[ally[:members][rand(ally[:members].length)]] # choose member
+      char = characters[rand(characters.length)] # choose member
+      ally = char.alliance                       # choose ally
       army.owner_id = char[:id]
       army.owner_name = char[:name]
-      army.alliance_id = ally[:id] unless ally[:id] == 0
-      army.alliance_tag = ally[:tag] unless ally[:id] == 0
+      army.alliance_id = ally[:id] unless ally.blank?
+      army.alliance_tag = ally[:tag] unless ally.blank?
 
       army.ap_max = 4
       army.ap_present = rand(army.ap_max+1)
