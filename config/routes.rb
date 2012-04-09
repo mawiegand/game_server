@@ -9,8 +9,12 @@ GameServer::Application.routes.draw do
 
       namespace :fundamental do 
         resources :characters
-        resources :alliances
-        resources :guilds 
+        resources :alliances do
+          resources :characters
+        end
+        resources :guilds do
+          resources :characters
+        end
       end
 
 
@@ -19,6 +23,8 @@ GameServer::Application.routes.draw do
       end
 
       resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            
+      resources :armies, :path => "/fundamental/characters/:character_id/armies", :module => 'military'            
+      resources :armies, :path => "/fundamental/alliances/:alliance_id/armies", :module => 'military'            
 
       namespace :map do 
         

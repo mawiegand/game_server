@@ -38,6 +38,16 @@ class Military::ArmiesController < ApplicationController
       raise NotFoundError.new('Page Not Found') if @map_location.nil?
       @military_armies = @map_location.armies
       last_modified =  @map_location.armies_changed_at
+    elsif params.has_key?(:alliance_id)  
+      @alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Page Not Found') if @alliance.nil?
+      @military_armies = @alliance.armies
+      # todo -> determine last_modified
+    elsif params.has_key?(:character_id)  
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Page Not Found') if @character.nil?
+      @military_armies = @character.armies
+      # todo -> determine last_modified
     elsif params.has_key?(:target_location_id)
       @military_armies = Military::Army.find_by_target_location_id(params[:target_location_id])
     else 
