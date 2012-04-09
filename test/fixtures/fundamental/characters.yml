@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: MyString
+  premium_account: false
+  name: MyString
+  lvel: 1
+  exp: 1
+  att: 1
+  def: 1
+  wins: 1
+  losses: 1
+  health_max: 1
+  health_present: 1.5
+  health_updated_at: 2012-04-09 03:18:52
+  locked: false
+  locked_by: MyString
+  locked_at: 2012-04-09 03:18:52
+  skill_points: 1
+  alliance_id: 1
+  alliance_tag: MyString
+  base_location_id: 1
+  region_location_id: 1
+
+two:
+  identifier: MyString
+  premium_account: false
+  name: MyString
+  lvel: 1
+  exp: 1
+  att: 1
+  def: 1
+  wins: 1
+  losses: 1
+  health_max: 1
+  health_present: 1.5
+  health_updated_at: 2012-04-09 03:18:52
+  locked: false
+  locked_by: MyString
+  locked_at: 2012-04-09 03:18:52
+  skill_points: 1
+  alliance_id: 1
+  alliance_tag: MyString
+  base_location_id: 1
+  region_location_id: 1

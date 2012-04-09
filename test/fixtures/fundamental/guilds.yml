@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  abbrev: MyString
+  description: MyString
+  logo: MyString
+  leader_id: 1
+  invitation_only: false
+  visible: false
+  membership_public: false
+
+two:
+  name: MyString
+  abbrev: MyString
+  description: MyString
+  logo: MyString
+  leader_id: 1
+  invitation_only: false
+  visible: false
+  membership_public: false

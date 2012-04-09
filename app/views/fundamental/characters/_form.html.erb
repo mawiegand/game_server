@@ -1,0 +1,97 @@
+<%= form_for(@fundamental_character) do |f| %>
+  <% if @fundamental_character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_character.errors.count, "error") %> prohibited this fundamental_character from being saved:</h2>
+
+      <ul>
+      <% @fundamental_character.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :premium_account %><br />
+    <%= f.check_box :premium_account %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lvel %><br />
+    <%= f.number_field :lvel %>
+  </div>
+  <div class="field">
+    <%= f.label :exp %><br />
+    <%= f.number_field :exp %>
+  </div>
+  <div class="field">
+    <%= f.label :att %><br />
+    <%= f.number_field :att %>
+  </div>
+  <div class="field">
+    <%= f.label :def %><br />
+    <%= f.number_field :def %>
+  </div>
+  <div class="field">
+    <%= f.label :wins %><br />
+    <%= f.number_field :wins %>
+  </div>
+  <div class="field">
+    <%= f.label :losses %><br />
+    <%= f.number_field :losses %>
+  </div>
+  <div class="field">
+    <%= f.label :health_max %><br />
+    <%= f.number_field :health_max %>
+  </div>
+  <div class="field">
+    <%= f.label :health_present %><br />
+    <%= f.text_field :health_present %>
+  </div>
+  <div class="field">
+    <%= f.label :health_updated_at %><br />
+    <%= f.datetime_select :health_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :locked %><br />
+    <%= f.check_box :locked %>
+  </div>
+  <div class="field">
+    <%= f.label :locked_by %><br />
+    <%= f.text_field :locked_by %>
+  </div>
+  <div class="field">
+    <%= f.label :locked_at %><br />
+    <%= f.datetime_select :locked_at %>
+  </div>
+  <div class="field">
+    <%= f.label :skill_points %><br />
+    <%= f.number_field :skill_points %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_tag %><br />
+    <%= f.text_field :alliance_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :base_location_id %><br />
+    <%= f.number_field :base_location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :region_location_id %><br />
+    <%= f.number_field :region_location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

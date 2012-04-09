@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408180953) do
+ActiveRecord::Schema.define(:version => 20120409013710) do
 
   create_table "action_military_move_army_actions", :force => true do |t|
     t.integer  "army_id"
@@ -40,6 +40,55 @@ ActiveRecord::Schema.define(:version => 20120408180953) do
     t.boolean  "blocked"
     t.string   "blocked_by"
     t.string   "localized_blocked_reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_alliances", :force => true do |t|
+    t.string   "tag"
+    t.string   "name"
+    t.string   "description"
+    t.string   "banner"
+    t.integer  "leader_id"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_characters", :force => true do |t|
+    t.string   "identifier"
+    t.boolean  "premium_account"
+    t.string   "name"
+    t.integer  "lvel"
+    t.integer  "exp"
+    t.integer  "att"
+    t.integer  "def"
+    t.integer  "wins"
+    t.integer  "losses"
+    t.integer  "health_max"
+    t.float    "health_present"
+    t.datetime "health_updated_at"
+    t.boolean  "locked"
+    t.string   "locked_by"
+    t.datetime "locked_at"
+    t.integer  "skill_points"
+    t.integer  "alliance_id"
+    t.string   "alliance_tag"
+    t.integer  "base_location_id"
+    t.integer  "region_location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_guilds", :force => true do |t|
+    t.string   "name"
+    t.string   "abbrev"
+    t.string   "description"
+    t.string   "logo"
+    t.integer  "leader_id"
+    t.boolean  "invitation_only"
+    t.boolean  "visible"
+    t.boolean  "membership_public"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

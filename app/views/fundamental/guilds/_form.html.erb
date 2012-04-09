@@ -1,0 +1,49 @@
+<%= form_for(@fundamental_guild) do |f| %>
+  <% if @fundamental_guild.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_guild.errors.count, "error") %> prohibited this fundamental_guild from being saved:</h2>
+
+      <ul>
+      <% @fundamental_guild.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :abbrev %><br />
+    <%= f.text_field :abbrev %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.text_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :leader_id %><br />
+    <%= f.number_field :leader_id %>
+  </div>
+  <div class="field">
+    <%= f.label :invitation_only %><br />
+    <%= f.check_box :invitation_only %>
+  </div>
+  <div class="field">
+    <%= f.label :visible %><br />
+    <%= f.check_box :visible %>
+  </div>
+  <div class="field">
+    <%= f.label :membership_public %><br />
+    <%= f.check_box :membership_public %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

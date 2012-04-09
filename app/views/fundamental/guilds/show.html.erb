@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fundamental_guild.name %>
+</p>
+
+<p>
+  <b>Abbrev:</b>
+  <%= @fundamental_guild.abbrev %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @fundamental_guild.description %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= @fundamental_guild.logo %>
+</p>
+
+<p>
+  <b>Leader:</b>
+  <%= @fundamental_guild.leader_id %>
+</p>
+
+<p>
+  <b>Invitation only:</b>
+  <%= @fundamental_guild.invitation_only %>
+</p>
+
+<p>
+  <b>Visible:</b>
+  <%= @fundamental_guild.visible %>
+</p>
+
+<p>
+  <b>Membership public:</b>
+  <%= @fundamental_guild.membership_public %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_guild_path(@fundamental_guild) %> |
+<%= link_to 'Back', fundamental_guilds_path %>

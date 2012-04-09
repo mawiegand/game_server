@@ -5,6 +5,11 @@ en:
   
   application:
     layout:
+      fundamental:
+        category: Fundamental
+        characters: Characters
+        alliances: Alliances
+        guilds: Guilds
       map:
         category: Map
         nodes: Nodes

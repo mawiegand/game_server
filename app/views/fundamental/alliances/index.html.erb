@@ -1,0 +1,33 @@
+<h1>Listing fundamental_alliances</h1>
+
+<table>
+  <tr>
+    <th>Tag</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Banner</th>
+    <th>Leader</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_alliances.each do |fundamental_alliance| %>
+  <tr>
+    <td><%= fundamental_alliance.tag %></td>
+    <td><%= fundamental_alliance.name %></td>
+    <td><%= fundamental_alliance.description %></td>
+    <td><%= fundamental_alliance.banner %></td>
+    <td><%= fundamental_alliance.leader_id %></td>
+    <td><%= fundamental_alliance.password %></td>
+    <td><%= link_to 'Show', fundamental_alliance %></td>
+    <td><%= link_to 'Edit', edit_fundamental_alliance_path(fundamental_alliance) %></td>
+    <td><%= link_to 'Destroy', fundamental_alliance, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Alliance', new_fundamental_alliance_path %>

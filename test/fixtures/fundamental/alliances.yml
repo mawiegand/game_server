@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tag: MyString
+  name: MyString
+  description: MyString
+  banner: MyString
+  leader_id: 1
+  password: MyString
+
+two:
+  tag: MyString
+  name: MyString
+  description: MyString
+  banner: MyString
+  leader_id: 1
+  password: MyString

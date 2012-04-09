@@ -1,0 +1,37 @@
+<h1>Listing fundamental_guilds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbrev</th>
+    <th>Description</th>
+    <th>Logo</th>
+    <th>Leader</th>
+    <th>Invitation only</th>
+    <th>Visible</th>
+    <th>Membership public</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_guilds.each do |fundamental_guild| %>
+  <tr>
+    <td><%= fundamental_guild.name %></td>
+    <td><%= fundamental_guild.abbrev %></td>
+    <td><%= fundamental_guild.description %></td>
+    <td><%= fundamental_guild.logo %></td>
+    <td><%= fundamental_guild.leader_id %></td>
+    <td><%= fundamental_guild.invitation_only %></td>
+    <td><%= fundamental_guild.visible %></td>
+    <td><%= fundamental_guild.membership_public %></td>
+    <td><%= link_to 'Show', fundamental_guild %></td>
+    <td><%= link_to 'Edit', edit_fundamental_guild_path(fundamental_guild) %></td>
+    <td><%= link_to 'Destroy', fundamental_guild, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Guild', new_fundamental_guild_path %>

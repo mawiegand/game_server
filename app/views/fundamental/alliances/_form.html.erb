@@ -1,0 +1,41 @@
+<%= form_for(@fundamental_alliance) do |f| %>
+  <% if @fundamental_alliance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_alliance.errors.count, "error") %> prohibited this fundamental_alliance from being saved:</h2>
+
+      <ul>
+      <% @fundamental_alliance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tag %><br />
+    <%= f.text_field :tag %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :banner %><br />
+    <%= f.text_field :banner %>
+  </div>
+  <div class="field">
+    <%= f.label :leader_id %><br />
+    <%= f.number_field :leader_id %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
