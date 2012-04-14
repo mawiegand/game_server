@@ -75,15 +75,31 @@ class Fundamental::AllianceShoutsController < ApplicationController
   # POST /fundamental/alliance_shouts
   # POST /fundamental/alliance_shouts.json
   def create
-    @fundamental_alliance_shout = Fundamental::AllianceShout.new(params[:fundamental_alliance_shout])
 
     respond_to do |format|
-      if @fundamental_alliance_shout.save
-        format.html { redirect_to @fundamental_alliance_shout, notice: 'Alliance shout was successfully created.' }
-        format.json { render json: @fundamental_alliance_shout, status: :created, location: @fundamental_alliance_shout }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @fundamental_alliance_shout.errors, status: :unprocessable_entity }
+      format.html do 
+        @fundamental_alliance_shout = Fundamental::AllianceShout.new(params[:fundamental_alliance_shout])
+        if @fundamental_alliance_shout.save
+          redirect_to @fundamental_alliance_shout, notice: 'Alliance shout was successfully created.' 
+        else 
+          render action: "new"
+        end
+      end
+      format.json do
+        raise ForbiddenError.new('No current character.') if current_character.nil?
+        raise ForbiddenError.new('Current character is in no alliance.') if current_character.alliance.nil?
+        raise BadRequestError.new('No message sent.') if params[:fundamental_alliance_shout][:message].blank?
+        
+        new_message = { :message => params[:fundamental_alliance_shout][:message],
+                        :character_id => current_character.id,
+                        :alliance_id => current_character.alliance_id }
+        
+        @fundamental_alliance_shout = Fundamental::AllianceShout.new(new_message)        
+        if @fundamental_alliance_shout.save
+          render json: @fundamental_alliance_shout, status: :created, location: @fundamental_alliance_shout 
+        else 
+          format.json { render json: @fundamental_alliance_shout.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
