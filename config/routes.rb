@@ -4,7 +4,6 @@ GameServer::Application.routes.draw do
 
 
 
-  namespace :fundamental do resources :alliance_shouts end
 
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
@@ -13,9 +12,13 @@ GameServer::Application.routes.draw do
         
         match '/characters/self', :to => 'characters#self'
 
-        resources :characters
+        resources :alliance_shouts
+        resources :characters do
+          resources :alliance_shouts
+        end
         resources :alliances do
           resources :characters
+          resources :alliance_shouts
         end
         resources :guilds do
           resources :characters

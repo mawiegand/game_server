@@ -1,16 +1,46 @@
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
   
-  # GET /fundamental/characters
-  # GET /fundamental/characters.json
+  
   def index
-    @fundamental_characters = Fundamental::Character.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_characters }
+    last_modified = nil 
+
+    if params.has_key?(:alliance_id)  
+      @alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Page Not Found') if @alliance.nil?
+      @fundamental_characters = @alliance.members
+      # todo -> determine last_modified
+    else 
+      @asked_for_index = true
+    end   
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @fundamental_characters.nil?
+            @fundamental_characters =  Fundamental::Character.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+          @fundamental_characters = [] if @fundamental_characters.nil?  # necessary? or ok to send 'null' ?
+          if params.has_key?(:short)
+            render json: @fundamental_characters, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @fundamental_characters, :only => @@aggregate_fields          
+          else
+            render json: @fundamental_characters
+          end
+        end
+      end
     end
   end
+  
+  
 
   def self
     # this is to handle a bug in Safari (and other browsers), that lose a custom Authorization header when following a redirect

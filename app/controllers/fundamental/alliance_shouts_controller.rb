@@ -1,12 +1,47 @@
 class Fundamental::AllianceShoutsController < ApplicationController
-  # GET /fundamental/alliance_shouts
-  # GET /fundamental/alliance_shouts.json
-  def index
-    @fundamental_alliance_shouts = Fundamental::AllianceShout.all
+  layout 'fundamental'
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_alliance_shouts }
+
+  def index
+
+    last_modified = nil 
+
+    if params.has_key?(:alliance_id)  
+      @alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Page Not Found') if @alliance.nil?
+      @fundamental_alliance_shouts = @alliance.shouts
+      # todo -> determine last_modified
+    elsif params.has_key?(:character_id)  
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Page Not Found') if @character.nil?
+      @fundamental_alliance_shouts = @character.alliance_shouts
+      # todo -> determine last_modified
+    else
+      @asked_for_index = true
+    end   
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @fundamental_alliance_shouts.nil?
+            @fundamental_alliance_shouts =  Fundamental::AllianceShout.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+          @fundamental_alliance_shouts = [] if @fundamental_alliance_shouts.nil?  # necessary? or ok to send 'null' ?
+          if params.has_key?(:short)
+            render json: @fundamental_alliance_shouts, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @fundamental_alliance_shouts, :only => @@aggregate_fields          
+          else
+            render json: @fundamental_alliance_shouts
+          end
+        end
+      end
     end
   end
 
