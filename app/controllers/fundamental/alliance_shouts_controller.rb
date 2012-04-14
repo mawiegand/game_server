@@ -9,13 +9,13 @@ class Fundamental::AllianceShoutsController < ApplicationController
     if params.has_key?(:alliance_id)  
       @alliance = Fundamental::Alliance.find(params[:alliance_id])
       raise NotFoundError.new('Page Not Found') if @alliance.nil?
-      @fundamental_alliance_shouts = @alliance.shouts
-      # todo -> determine last_modified
+      @fundamental_alliance_shouts = @alliance.shouts(:order=>'created_at desc')
+      last_modified = @fundamental_alliance_shouts[0][:created_at] unless @fundamental_alliance_shouts.empty?
     elsif params.has_key?(:character_id)  
       @character = Fundamental::Character.find(params[:character_id])
       raise NotFoundError.new('Page Not Found') if @character.nil?
-      @fundamental_alliance_shouts = @character.alliance_shouts
-      # todo -> determine last_modified
+      @fundamental_alliance_shouts = @character.alliance_shouts(:order=>'created_at desc')
+      last_modified = @fundamental_alliance_shouts[0][:created_at] unless @fundamental_alliance_shouts.empty?
     else
       @asked_for_index = true
     end   
@@ -32,13 +32,14 @@ class Fundamental::AllianceShoutsController < ApplicationController
           if @asked_for_index 
             raise ForbiddenError.new('Access Forbidden')        
           end  
+          @fundamental_alliance_shouts = @fundamental_alliance_shouts.limit(10)
           @fundamental_alliance_shouts = [] if @fundamental_alliance_shouts.nil?  # necessary? or ok to send 'null' ?
           if params.has_key?(:short)
             render json: @fundamental_alliance_shouts, :only => @@short_fields
           elsif params.has_key?(:aggregate)
             render json: @fundamental_alliance_shouts, :only => @@aggregate_fields          
           else
-            render json: @fundamental_alliance_shouts
+            render json: @fundamental_alliance_shouts.to_json(:methods => :posted_ago_in_words)
           end
         end
       end

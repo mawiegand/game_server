@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414123414) do
+ActiveRecord::Schema.define(:version => 20120414182720) do
 
   create_table "action_military_move_army_actions", :force => true do |t|
     t.integer  "army_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120414123414) do
 
   add_index "fundamental_alliance_shouts", ["alliance_id"], :name => "index_fundamental_alliance_shouts_on_alliance_id"
   add_index "fundamental_alliance_shouts", ["character_id"], :name => "index_fundamental_alliance_shouts_on_character_id"
+  add_index "fundamental_alliance_shouts", ["created_at"], :name => "index_fundamental_alliance_shouts_on_created_at"
 
   create_table "fundamental_alliances", :force => true do |t|
     t.string   "tag"
