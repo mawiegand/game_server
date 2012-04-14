@@ -4,6 +4,8 @@ GameServer::Application.routes.draw do
 
 
 
+  namespace :fundamental do resources :alliance_shouts end
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
 
