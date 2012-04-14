@@ -1,0 +1,31 @@
+<h1>Listing fundamental_alliance_shouts</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Alliance</th>
+    <th>Deleted</th>
+    <th>Reported</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_alliance_shouts.each do |fundamental_alliance_shout| %>
+  <tr>
+    <td><%= fundamental_alliance_shout.character_id %></td>
+    <td><%= fundamental_alliance_shout.alliance_id %></td>
+    <td><%= fundamental_alliance_shout.deleted %></td>
+    <td><%= fundamental_alliance_shout.reported %></td>
+    <td><%= fundamental_alliance_shout.message %></td>
+    <td><%= link_to 'Show', fundamental_alliance_shout %></td>
+    <td><%= link_to 'Edit', edit_fundamental_alliance_shout_path(fundamental_alliance_shout) %></td>
+    <td><%= link_to 'Destroy', fundamental_alliance_shout, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Alliance shout', new_fundamental_alliance_shout_path %>

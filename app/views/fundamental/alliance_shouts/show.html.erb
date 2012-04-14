@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @fundamental_alliance_shout.character_id %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @fundamental_alliance_shout.alliance_id %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @fundamental_alliance_shout.deleted %>
+</p>
+
+<p>
+  <b>Reported:</b>
+  <%= @fundamental_alliance_shout.reported %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @fundamental_alliance_shout.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_alliance_shout_path(@fundamental_alliance_shout) %> |
+<%= link_to 'Back', fundamental_alliance_shouts_path %>

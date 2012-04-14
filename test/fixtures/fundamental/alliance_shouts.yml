@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  alliance_id: 1
+  deleted: false
+  reported: false
+  message: MyString
+
+two:
+  character_id: 1
+  alliance_id: 1
+  deleted: false
+  reported: false
+  message: MyString
