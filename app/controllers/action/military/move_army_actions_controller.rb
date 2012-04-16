@@ -41,7 +41,24 @@ class Action::Military::MoveArmyActionsController < ApplicationController
   # POST /action/military/move_army_actions.json
   def create
     @action_military_move_army_action = Action::Military::MoveArmyAction.new(params[:action_military_move_army_action])
-
+    army = @action_military_move_army_action.army
+    @action_military_move_army_action.starting_location_id = army.location_id
+    @action_military_move_army_action.starting_region_id = army.region_id
+    
+    # now fetch and fill the target region id
+    target_location = @action_military_move_army_action.target_location 
+    raise BadRequestError.new('target location does not exist') if target_location.nil?
+    @action_military_move_army_action.target_region_id = target_location.region_id
+    
+    
+    # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
+    raise BadRequestError.new('army not found') if army.blank?
+    raise BadRequestError.new('could not get army\'s current location') if @action_military_move_army_action.starting_location_id != army.location_id
+    raise BadRequestError.new('could not get army\'s current region') if @action_military_move_army_action.starting_region_id != army.region_id
+    if 1  # TODO: !admin
+      raise ForbiddenError.new('tried to move army not owned by character') if !army.owned_by?(current_character_id)
+    end
+    
     respond_to do |format|
       if @action_military_move_army_action.save
         format.html { redirect_to @action_military_move_army_action, notice: 'Move army action was successfully created.' }

@@ -8,7 +8,7 @@ class ActionsController < ApplicationController
           url: action_military_move_army_actions_path,
           method: 'POST',
           name: 'Move Army',
-          parameters: 'military_army[id], military_army[target_location_id]',
+          parameters: 'action_military_move_army_action[army_id], action_military_move_army_action[target_location_id]',
         },
         { # CHANGE ARMY NAME
           url: military_army_path(1),

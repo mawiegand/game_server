@@ -12,6 +12,10 @@ class Military::Army < ActiveRecord::Base
   after_save :set_parent_change_timestamps
   
   
+  def owned_by?(character_id)
+    self.owner_id === character_id
+  end
+  
   private
   
     def set_parent_change_timestamps
