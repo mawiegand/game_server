@@ -5,6 +5,7 @@
     <th>Character</th>
     <th>Execute at</th>
     <th>Event type</th>
+    <th>Local event id</th>
     <th>Locked at</th>
     <th>Locked by</th>
     <th></th>
@@ -17,10 +18,11 @@
     <td><%= event_event.character_id %></td>
     <td><%= event_event.execute_at %></td>
     <td><%= event_event.event_type %></td>
+    <td><%= event_event.local_event_id %></td>
     <td><%= event_event.locked_at %></td>
     <td><%= event_event.locked_by %></td>
     <td><%= link_to 'Show', event_event %></td>
-    <td><%= link_to 'Edit', edit_event_event_path(events_event) %></td>
+    <td><%= link_to 'Edit', edit_event_event_path(event_event) %></td>
     <td><%= link_to 'Destroy', event_event, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

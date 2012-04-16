@@ -15,6 +15,8 @@
   
   <nav class="site-navigation">  
   <ul>
+    <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
+    <%= yield :event_links %>
     <li><%= link_to I18n.translate("application.layout.action.category"), action_path %></li>
     <%= yield :action_links %>
     <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
@@ -23,8 +25,6 @@
     <%= yield :map_links %>
     <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
     <%= yield :military_links %>
-    <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
-    <%= yield :event_links %>
   </ul>
   </nav>  
 </header>

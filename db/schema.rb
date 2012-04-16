@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414182720) do
+ActiveRecord::Schema.define(:version => 20120416220928) do
 
   create_table "action_military_move_army_actions", :force => true do |t|
     t.integer  "army_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120414182720) do
     t.string   "localized_blocked_reason"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "local_event_id"
   end
 
   create_table "fundamental_alliance_shouts", :force => true do |t|

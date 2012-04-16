@@ -74,6 +74,18 @@ class Action::Military::MoveArmyActionsController < ApplicationController
       raise BadRequestError.new('could not create movement action')
     end
     
+    #create entry for event table
+    event = Event::Event.new(
+      character_id: current_character_id,
+      execute_at: @action_military_move_army_action.army.target_reached_at,
+      event_type: "action_military_move_army_action",
+      local_event_id: @action_military_move_army_action.id,
+    )
+        
+    if !event.save # this is the final step; this makes sure, something is actually executed
+      raise BadRequestError.new('could not create event')
+    end
+        
     respond_to do |format|
       format.html { redirect_to @action_military_move_army_action, notice: 'Move army action was successfully created.' }
       format.json { render json: @action_military_move_army_action, status: :created, location: @action_military_move_army_action }
