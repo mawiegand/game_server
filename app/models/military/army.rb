@@ -16,6 +16,14 @@ class Military::Army < ActiveRecord::Base
     self.owner_id === character_id
   end
   
+  def moving?
+    !self.target_location_id.blank? || self.mode === 1 # 1 : moving?!
+  end
+  
+  def fighting?
+    self.mode === 2 # 2: fighting?
+  end
+  
   private
   
     def set_parent_change_timestamps

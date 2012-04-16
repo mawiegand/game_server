@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Army</th>
     <th>Starting location</th>
     <th>Starting region</th>
@@ -15,7 +16,13 @@
 
 <% @action_military_move_army_actions.each do |action_military_move_army_action| %>
   <tr>
-    <td><%= action_military_move_army_action.army_id %></td>
+    <td><%= action_military_move_army_action.id %></td>
+    <td><%= if action_military_move_army_action.army_id
+              link_to action_military_move_army_action.army_id, action_military_move_army_action.army
+            else     
+              action_military_move_army_action.army_id
+            end %>
+    </td>
     <td><%= action_military_move_army_action.starting_location_id %></td>
     <td><%= action_military_move_army_action.starting_region_id %></td>
     <td><%= action_military_move_army_action.target_location_id %></td>

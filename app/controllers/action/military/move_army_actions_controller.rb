@@ -44,29 +44,39 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     army = @action_military_move_army_action.army
     @action_military_move_army_action.starting_location_id = army.location_id
     @action_military_move_army_action.starting_region_id = army.region_id
+    @action_military_move_army_action.sender_ip = request.remote_ip  #@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
     
     # now fetch and fill the target region id
     target_location = @action_military_move_army_action.target_location 
     raise BadRequestError.new('target location does not exist') if target_location.nil?
     @action_military_move_army_action.target_region_id = target_location.region_id
     
-    
     # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
     raise BadRequestError.new('army not found') if army.blank?
+    raise BadRequestError.new('army is already moving') if army.moving?
     raise BadRequestError.new('could not get army\'s current location') if @action_military_move_army_action.starting_location_id != army.location_id
     raise BadRequestError.new('could not get army\'s current region') if @action_military_move_army_action.starting_region_id != army.region_id
     if 1  # TODO: !admin
       raise ForbiddenError.new('tried to move army not owned by character') if !army.owned_by?(current_character_id)
     end
     
+    # check movement possible? (starting and target location valid movement?)
+    
+    @action_military_move_army_action.army.target_location_id = @action_military_move_army_action.target_location_id
+    @action_military_move_army_action.army.target_region_id = @action_military_move_army_action.target_region_id
+    @action_military_move_army_action.army.mode = 1 # 1: moving?
+    @action_military_move_army_action.army.target_reached_at = DateTime.now.advance(minutes: 1) # for first tests, should be 15 minutes in future
+    
+    if !@action_military_move_army_action.army.save  # save army first; better have no movement action than a movement action without the army being properly set (could result in second movement action)
+      raise BadRequestError.new('could not modify army properly')
+    end
+    if !@action_military_move_army_action.save 
+      raise BadRequestError.new('could not create movement action')
+    end
+    
     respond_to do |format|
-      if @action_military_move_army_action.save
-        format.html { redirect_to @action_military_move_army_action, notice: 'Move army action was successfully created.' }
-        format.json { render json: @action_military_move_army_action, status: :created, location: @action_military_move_army_action }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @action_military_move_army_action.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to @action_military_move_army_action, notice: 'Move army action was successfully created.' }
+      format.json { render json: @action_military_move_army_action, status: :created, location: @action_military_move_army_action }
     end
   end
 
