@@ -66,6 +66,8 @@ GameServer::Application.routes.draw do
         end 
       end
       
+      resource :action, :only => [ :show ]
+      
     end
 
   end

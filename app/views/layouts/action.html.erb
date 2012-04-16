@@ -1,0 +1,8 @@
+<% content_for :action_links do %>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:action_content) ? yield(:action_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

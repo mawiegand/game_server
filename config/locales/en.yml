@@ -5,6 +5,8 @@ en:
   
   application:
     layout:
+      action:
+        category: Action
       fundamental:
         category: Fundamental
         characters: Characters
