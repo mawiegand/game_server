@@ -68,8 +68,13 @@ GameServer::Application.routes.draw do
       
       resource :action, :only => [ :show ]
       
-    end
+      resources :sessions, :module => :auth,    :only => [:new, :create, :destroy] # staff login to backend
 
+      root :to => 'auth/sessions#new'             # redirect to signin
+    
+      match '/signin',  :to => 'auth/sessions#new'
+      match '/signout', :to => 'auth/sessions#destroy'
+    end    
   end
 
   # The priority is based upon order of creation:

@@ -1,6 +1,8 @@
 class Military::ArmiesController < ApplicationController
   layout 'military'
 
+#  before_filter :authenticate
+
   
   @@short_fields = [:id, :name, :region_id, :location_id, :owner_id, :owner_name, :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :strength, :rank, :target_region_id, :target_location_id, :updated_at]
   @@aggregate_fields = [:id, :owner_id, :alliance_id, :stance, :strength, :updated_at]

@@ -1,0 +1,18 @@
+<div class="signin-panel-wrapper">
+<div class="signin-heading"><%= I18n.translate 'sessions.signin.heading' %></div> 
+<div class="signin-panel">
+
+<%= form_for(:session, :url => sessions_path, :html => { :id => 'loginForm'}) do |f| %>
+  <div class="field">
+    <%= f.label I18n.translate 'sessions.signin.form.login' %><br/>
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.translate 'sessions.signin.form.password' %><br/>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.translate('sessions.signin.form.submit_button'), :class => "button-on-white" %>
+  </div>
+<% end %>
+</div>

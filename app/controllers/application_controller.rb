@@ -3,6 +3,8 @@ require 'exception/http_exceptions'
 class ApplicationController < ActionController::Base
 
   include ApplicationHelper
+  include Auth::SessionsHelper
+
 
   before_filter :set_locale  # get the locale from the user parameters
   around_filter :time_action

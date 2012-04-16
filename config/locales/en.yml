@@ -25,4 +25,24 @@ en:
       event:
         category: Event
         events: Events
+        
+        
+  sessions:
+        
+    signin:
+      title: Sign In
+      
+      heading: Sign In - Staff
+      form:
+        login: Login
+        password: Password
+        submit_button: Sign In
+                
+      flash:
+        invalid: Invalid login/password combination.
+        
+    authorization:
+      access_denied:
+        admin: "The page you requested may only be accessed by admins."
+        staff: "The page you requested may only be accessed by staff."
 
