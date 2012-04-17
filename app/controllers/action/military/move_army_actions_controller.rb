@@ -53,12 +53,10 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     
     # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
     raise BadRequestError.new('army not found') if army.blank?
-    raise BadRequestError.new('army is already moving') if army.moving?
-    raise BadRequestError.new('could not get army\'s current location') if @action_military_move_army_action.starting_location_id != army.location_id
-    raise BadRequestError.new('could not get army\'s current region') if @action_military_move_army_action.starting_region_id != army.region_id
-    if 1  # TODO: !admin
-      raise ForbiddenError.new('tried to move army not owned by character') if !army.owned_by?(current_character_id)
-    end
+    
+    role = army.owned_by?(current_character_id) ? :owner : :character # TODO: staff / admin
+        
+    raise BadRequestError.new('Invalid action.') unless @action_military_move_army_action.valid_action?(role)
     
     # check movement possible? (starting and target location valid movement?)
     
