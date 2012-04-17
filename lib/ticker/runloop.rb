@@ -11,6 +11,27 @@ module Ticker
     
     reset 
     
+    
+    def self.before_fork
+      unless @files_to_reopen
+        @files_to_reopen = []
+        ObjectSpace.each_object(File) do |file|
+          @files_to_reopen << file unless file.closed?
+        end
+      end
+    end
+
+    def self.after_fork
+      # Re-open file handles
+      @files_to_reopen.each do |file|
+        begin
+          file.reopen file.path, "a+"
+          file.sync = true
+        rescue ::Exception
+        end
+      end
+    end
+    
     def initialize(options={})
       @quiet = options.has_key?(:quiet) ? options[:quiet] : true
       self.class.sleep_delay  = options[:sleep_delay] if options.has_key?(:sleep_delay)
@@ -39,7 +60,14 @@ module Ticker
 
       loop do
         break if @exit
-        sleep(self.class.sleep_delay)
+        
+        next_event = lock_next_event
+        if !next_event || 1
+          sleep(self.class.sleep_delay)
+        else 
+          # call handler and finish event
+        end
+        
         say "Ending another loop.", Logger::DEBUG
       end
     end
@@ -53,6 +81,27 @@ module Ticker
       puts text unless @quiet
       logger.add level, "#{Time.now.strftime('%FT%T%z')}: #{text}" if logger
     end 
+    
+    
+    
+    protected
+      
+      def lock_next_event
+        next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at DESC').first unless Rails.env.development?
+        next_event = Event::Event.where("locked_at IS NULL AND execute_at < date('now')").order('execute_at DESC').first if Rails.env.development?
+        
+        if next_event
+          say "Next event: " + next_event.inspect
+          return next_event
+        else
+          say "idle"
+          return nil
+        end
+      end
+      
+      def finish_event(event)
+        
+      end
 
   end
 end

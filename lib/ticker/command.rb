@@ -52,6 +52,7 @@ module Ticker
     end
 
     def run_process(process_name, dir)
+      Ticker::Runloop.before_fork      
       Daemons.run_proc(process_name, :dir => dir, :dir_mode => :normal, :ARGV => @args) do |*args|
         $0 = File.join(@options[:prefix], process_name) if @options[:prefix]
         run process_name
@@ -60,13 +61,14 @@ module Ticker
 
     def run(worker_name = nil)
       Dir.chdir(Rails.root)
-      
+
       logname = if Rails.env.development?
         'ticker_development.log'
       else
         'ticker_production.log'
       end
-      
+
+      Ticker::Runloop.after_fork      
       Ticker::Runloop.logger ||= Logger.new(File.join(Rails.root, 'log', logname))
 
       runloop = Ticker::Runloop.new(@options)
@@ -76,5 +78,9 @@ module Ticker
       STDERR.puts e.message
       exit 1
     end
+    
+    
+
+      
   end
 end
