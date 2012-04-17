@@ -8,6 +8,8 @@ class Military::Army < ActiveRecord::Base
   
   belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id"  
   belongs_to :owner, :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
+  
+  has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id"
     
   after_save :set_parent_change_timestamps
   

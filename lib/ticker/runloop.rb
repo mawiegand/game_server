@@ -1,7 +1,27 @@
+require 'ticker/movement_handler'
+
 module Ticker
+
+  def self.add_handler_class(handlerClass)
+    unless @handler_classes 
+      @handler_classes = []
+    end
+    @handler_classes.push handlerClass
+  end
+  
+  def self.handler_classes
+    return @handler_classes
+  end
+  
+  # register handlers that should be used by the runloop
+  Ticker.add_handler_class(Ticker::MovementHandler);
+
   class Runloop
     
     DEFAULT_SLEEP_DELAY      = 1
+    
+
+
 
     cattr_accessor :sleep_delay, :logger
 
@@ -10,6 +30,19 @@ module Ticker
     end    
     
     reset 
+    
+    def handlers
+      unless @handlers 
+        @handlers = {}
+      end
+      @handlers
+    end
+    
+    def register_event_handler(handler)
+      handlers[handler.event_type] = handler
+      handler.runloop = self
+      say "Registered handler for events of type #{ handler.event_type }."
+    end
     
     
     def self.before_fork
@@ -35,6 +68,7 @@ module Ticker
     def initialize(options={})
       @quiet = options.has_key?(:quiet) ? options[:quiet] : true
       self.class.sleep_delay  = options[:sleep_delay] if options.has_key?(:sleep_delay)
+      Ticker.handler_classes.each { |handler| self.register_event_handler(handler.new) }
     end
 
     # Every worker has a unique name which by default is the pid of the process. There are some
@@ -62,10 +96,15 @@ module Ticker
         break if @exit
         
         next_event = lock_next_event
-        if !next_event || 1
+        if !next_event
           sleep(self.class.sleep_delay)
         else 
-          # call handler and finish event
+          handler = handlers[next_event.event_type]
+          if handler 
+            handler.process_event next_event
+          else
+            say "No handler registered for this event type.", Logger::ERROR
+          end
         end
         
         say "Ending another loop.", Logger::DEBUG
@@ -88,20 +127,22 @@ module Ticker
       
       def lock_next_event
         next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at DESC').first unless Rails.env.development?
-        next_event = Event::Event.where("locked_at IS NULL AND execute_at < date('now')").order('execute_at DESC').first if Rails.env.development?
+    #    next_event = Event::Event.where("locked_at IS NULL AND execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
+        next_event = Event::Event.where("execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
         
         if next_event
-          say "Next event: " + next_event.inspect
+          say "Process event  #{next_event.id} of type #{next_event.event_type} (#{next_event.local_event_id})  that should be executed at #{next_event.execute_at}.", Logger::INFO
+          next_event.locked_at = DateTime.now
+          next_event.locked_by = 'ticker'
+          next_event.save
+          
           return next_event
         else
-          say "idle"
+          say "idle", Logger::INFO
           return nil
         end
       end
       
-      def finish_event(event)
-        
-      end
 
   end
 end
