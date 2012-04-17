@@ -12,7 +12,14 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
     raise BadRequestError.new('army not found') if self.army.blank?
     raise BadRequestError.new('could not get army\'s current location') if self.starting_location_id != army.location_id
     raise BadRequestError.new('could not get army\'s current region') if self.starting_region_id != army.region_id
-    if (role != :owner && role != :admin  && role != staff) || self.army.moving?
+    
+        # check movement possible? (starting and target location neighbours?)
+    
+    if (role != :owner && role != :admin  && role != staff) || self.army.moving? || self.army.fighting?
+      return false
+    end
+    
+    if (self.army.ap_present < 1.0)   # enough action points?
       return false
     end
     

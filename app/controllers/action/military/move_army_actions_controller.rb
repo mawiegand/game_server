@@ -57,13 +57,12 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     role = army.owned_by?(current_character_id) ? :owner : :character # TODO: staff / admin
         
     raise BadRequestError.new('Invalid action.') unless @action_military_move_army_action.valid_action?(role)
-    
-    # check movement possible? (starting and target location valid movement?)
-    
+        
     @action_military_move_army_action.army.target_location_id = @action_military_move_army_action.target_location_id
     @action_military_move_army_action.army.target_region_id = @action_military_move_army_action.target_region_id
     @action_military_move_army_action.army.mode = 1 # 1: moving?
     @action_military_move_army_action.army.target_reached_at = DateTime.now.advance(seconds: 15) # for first tests, should be 15 minutes in future
+    @action_military_move_army_action.army.ap_present -= 1
     
     if !@action_military_move_army_action.army.save  # save army first; better have no movement action than a movement action without the army being properly set (could result in second movement action)
       raise BadRequestError.new('could not modify army properly')
