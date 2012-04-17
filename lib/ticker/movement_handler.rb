@@ -40,9 +40,14 @@ class Ticker::MovementHandler
         runloop.say "Army #{action.army_id} could not be moved to new location. Save did fail.", Logger::ERROR
         return
       end
-      runloop.say "Movement completed."      
+      runloop.say "Movement completed, cleaning up and destroying event."      
+      action.region.armies_changed_at = DateTime.now
+      action.region.save
+      action.location.armies_changed_at = DateTime.now
+      action.location.save
       action.destroy
       event.destroy
+      runloop.say "Movement handler completed."
     end
   end
 end
