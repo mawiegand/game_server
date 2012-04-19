@@ -1,4 +1,7 @@
 class Action::Military::MoveArmyActionsController < ApplicationController
+  layout 'action'
+  
+  
   # GET /action/military/move_army_actions
   # GET /action/military/move_army_actions.json
   def index

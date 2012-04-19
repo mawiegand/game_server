@@ -7,6 +7,9 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
   belongs_to :target_location, :class_name => "Map::Location", :foreign_key => "target_location_id"
   belongs_to :target_region, :class_name => "Map::Region", :foreign_key => "target_region_id"
   
+  has_one    :event, :class_name => "Event::Event", :foreign_key => "local_event_id"
+
+  
   def valid_action?(role = :character)
     # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
     raise BadRequestError.new('army not found') if self.army.blank?

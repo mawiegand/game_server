@@ -14,6 +14,13 @@ class Military::Army < ActiveRecord::Base
   after_save :set_parent_change_timestamps
   
   
+  # returns whether an action point update is overdue
+#  def needs_ap_update?
+#    logger.debug("Time since last ap update #{(Time.now - ap_last)}") if !ap_last.nil?
+#    logger.debug((ap_present < ap_max).to_s)
+#    ap_present < ap_max && !ap_last.nil? && ((Time.now - ap_last) >= 3600 #HELDENDUELL_CONFIG['health_update_every'])
+#  end  
+  
   def owned_by?(character_id)
     self.owner_id === character_id
   end
