@@ -10,6 +10,8 @@ class Military::Army < ActiveRecord::Base
   belongs_to :owner, :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   
   has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id"
+  
+  validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   after_find :update_ap_if_necessary
   after_save :set_parent_change_timestamps
