@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416220928) do
+ActiveRecord::Schema.define(:version => 20120426132828) do
 
   create_table "action_military_move_army_actions", :force => true do |t|
     t.integer  "army_id"
@@ -177,7 +177,6 @@ ActiveRecord::Schema.define(:version => 20120416220928) do
     t.integer  "ap_max"
     t.integer  "ap_present"
     t.integer  "ap_seconds_per_point"
-    t.datetime "ap_last"
     t.integer  "mode"
     t.integer  "stance"
     t.integer  "size_max"
@@ -193,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20120416220928) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "region_id"
+    t.datetime "ap_next"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
