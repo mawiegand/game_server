@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+<Rules>
+  <General>
+    <Languages>
+      <Language locale="en_US">English (US)</Language>
+      <Language locale="de_DE">Deutsch</Language>
+    </Languages>
+  </General>
+  <UnitCategories>
+    <UnitCategory id="infantry">
+      <Name>Infantry</Name>
+      <Name lang="de_DE">Fußtruppen</Name>
+      <Description>
+        <p>English description here.</p>
+      </Description>
+      <Description lang="de_DE">
+        <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
+      </Description>
+      <Ability id="prevent-flanking" />
+    </UnitCategory>
+    <UnitCategory id="cavalry">
+      <Name>cavalry</Name>
+      <Name lang="de_DE">Reiter</Name>
+      <Description>
+        <p>English description here.</p>
+      </Description>
+      <Description lang="de_DE">
+        <p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>
+      </Description>
+      <Ability id="flanking" />
+    </UnitCategory>
+    <UnitCategory id="artillery">
+      <Name>artillery</Name>
+      <Name lang="de_DE">Fernkämpfer</Name>
+      <Description>
+        <p>English description here.</p>
+      </Description>
+      <Description lang="de_DE">
+        <p>Die Fernkämpfer schießen aus sicherer Distanz auf den Gegner, vorzugsweise auf Fußsoldaten. Im Nahkampf sind sie extrem anfällig.</p>
+      </Description>
+    </UnitCategory>
+  </UnitCategories>
+  <UnitTypes>
+    <Unit id="thrower" category="artillery">
+      <Name>Stone Hurler</Name>
+      <Name lang="de_DE">Kieselsteinwerfer</Name>
+      <Description lang="de_DE">
+        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>1</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">8</CriticalDamage>
+      <Armor>2</Armor>
+      <Hitpoints>30</Hitpoints>
+      <Effectiveness category="infantry">1</Effectiveness>
+      <Effectiveness category="cavalry">0.2</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
+    <Unit id="skewer" category="infantry">
+      <Name>Skewer</Name>
+      <Name lang="de_DE">Bratspießträger</Name>
+      <Description lang="de_DE">
+        <p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Skewer Crew training 101: "stick'em with the pointy end!"</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>1</Initiative>
+      <Attack>10</Attack>
+      <CriticalDamage chance="0.01">2</CriticalDamage>
+      <Armor>8</Armor>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
+      <Effectiveness category="cavalry">1</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
+    <Unit id="light_cavalry" category="cavalry">
+      <Name>Ostrich Riders</Name>
+      <Name lang="de_DE">Straußenreiter</Name>
+      <Description lang="de_DE">
+        <p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Ostrich riders are very quick, but only lightly armored.</p>
+      </Description>
+      <Velocity>1.5</Velocity>
+      <ActionPoints>5</ActionPoints>
+      <Initiative>1</Initiative>
+      <Attack>10</Attack>
+      <CriticalDamage chance="0.002">10</CriticalDamage>
+      <Armor>4</Armor>
+      <Hitpoints>60</Hitpoints>
+      <Effectiveness category="infantry">0.3</Effectiveness>
+      <Effectiveness category="cavalry">1</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
+	</UnitTypes>
+</Rules>

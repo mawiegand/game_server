@@ -1,5 +1,3 @@
-unit_infantry
-unit_archer
-unit_freerider
-science_masonry
-science_archery
+unit_thrower
+unit_skewer
+unit_light_cavalry
