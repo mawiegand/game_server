@@ -11,13 +11,21 @@ gem 'thin'
 
 group :production do
   gem 'pg'
+	gem 'awe_native_extensions'
+end
+
+group :ticker_development do
+  gem 'pg'
+	gem 'awe_native_extensions'
+end
+
+group :development do
+  gem 'rails-erd'
 end
 
 gem 'therubyracer'          # missing javascript runtime
 
 gem 'will_paginate'
-
-
 
 # Gems used only for assets and not required
 # in production environments by default.
