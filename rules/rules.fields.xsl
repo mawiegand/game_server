@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- This stylesheet specifies the XSL Transformations to generate a list of
      database columns needed for the present rules document. Mainly extracts
      the identifiers (id) of all entities and prefixes them with the entity
      category (building, unit, etc.). The output is a newline-seperated list 
-     of the database column names (lower-cased, of the form 'category_id').-->
+     of the database column names (lower-cased, of the form 'category_id').
+     
+     Author: Sascha Lange <sascha@5dlab.com>.
+     
+     All rights reserved, (c) 5D Lab GmbH, 2012. -->
+     
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="text" encoding="UTF-8"/>
   
