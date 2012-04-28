@@ -5,6 +5,7 @@ GameServer::Application.routes.draw do
 
 
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
 
@@ -64,6 +65,7 @@ GameServer::Application.routes.draw do
         namespace :military do 
           resources :move_army_actions 
           resources :cancel_move_army_actions 
+          resources :attack_army_actions
         end 
       end
       

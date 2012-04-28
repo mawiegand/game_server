@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426132828) do
+ActiveRecord::Schema.define(:version => 20120428152248) do
+
+  create_table "action_military_attack_army_actions", :force => true do |t|
+    t.integer  "attacker_id"
+    t.integer  "defender_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "action_military_move_army_actions", :force => true do |t|
     t.integer  "army_id"
