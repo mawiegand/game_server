@@ -75,9 +75,9 @@
 
 <!--Common Leafs-->
 <!ELEMENT Description (p*)>
-<!ATTLIST Description lang IDREF "en_EN">
+<!ATTLIST Description lang IDREF "en_US">
 <!ELEMENT Name (#PCDATA)>
-<!ATTLIST Name lang IDREF "en_EN">
+<!ATTLIST Name lang IDREF "en_US">
 <!ELEMENT p (#PCDATA)>
 <!ELEMENT Position (#PCDATA)>
 <!ELEMENT Velocity (#PCDATA)>

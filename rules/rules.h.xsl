@@ -4,9 +4,25 @@
      from the rules.xml. 
      
      This file is based on the C-code generation in the open source project
-     Uga-Agga that was initially designed and written by Sascha Lange. This
-     adapted version of the transformations is written and maintained by 
-     Sascha Lange and Patrick Fox. 
+     Uga-Agga that was initially designed and written in 2002 by Sascha Lange 
+     and was later modified and extended by Marcus Lunzenauer, Elmar Ludwig, 
+     and others. This adapted version of the transformations is written and
+     maintained by Sascha Lange and Patrick Fox. 
+     
+     The main difference to UA's approach that we can't use compile-time 
+     initialization here, as it's not possible to initialize static objects
+     at compile time in C++. Static initialization in C++ is done at runtime,
+     just before main is called (or even lazyly, on first access). Thus, its
+     no difference to use "explicit" runtime initialization in the constructor
+     of a Rules-singleton, what makes the generated code much simpler to read.
+     
+     ATTENTION: whereas runtime initialization is NO problem in the ticker
+     (initializes once, runs infinitely) it _would_ be a problem inside a
+     CGI-script language that instantiates freshly with each HTTP request
+     (always have to do the whole initializiation procedure) but _should_
+     not be a problem with WSGI / stand-alone-approaches like rails, where
+     a persistent process answers incomming HTTP requests. (HOPEFULLY,
+     HAVE TO CHECK FOR NATIVE MODULES INSIDE RAILS). 
      
      Author: Sascha Lange <sascha@5dlab.com>.
      
@@ -43,6 +59,8 @@ enum LocaleSpecifier
   MAX_LOCALE
 };
 
+class EntityType;
+
 class Language
 {
 public:
@@ -57,21 +75,23 @@ public:
 class ProductionCost
 {
 public:
-  const Entity *type;
+  const EntityType *type;
   const char *cost;
+
+  ProductionCost(const EntityType *type, const char* cost) { this->type = type; this->cost = cost; }
 };
 
 class Requirement
 {
 public: 
-  const Entity *type;
+  const EntityType *type;
   double minimum;
   double maximum;
 };
 
 /** base class of all interactable / buildable entities in the game that
   * are defined in the rules. */
-class Entity	
+class EntityType	
 {
 public:
   int objectId;
@@ -80,10 +100,31 @@ public:
   const char *dbFieldName;
   const char *maxLevel;
   int hidden;
+  
+  virtual ~EntityType();
+  EntityType(int objectId, 
+             const char* dbFieldName);
+             
+  /** returns the name for the given locale-id, that is the id'th entry in the
+   * list of languages (Language::languages). Returns 0 in case id is out of 
+   * range (id >= MAX_LOCALE) or there hasn't been specified a name for that
+   * particular locale. */
+  const char* getLocalizedName(int id) const;
+  
+  /** returns the localized name for the given locale. In case the given 
+   * locale does not exist or there hasn't been specified a name for this 
+   * locale, the method returns the localized name for the DEFAULT LOCALE, 
+   * that is the locale at position 0. */
+  const char* getLocalizedName(const char* locale) const;
+  
+  const char* getLocalizedDescription(int id) const;
+  const char* getLocalizedDescription(const char* locale) const;
+  
+  virtual const char* toString(char* buf, int size);
 };
 
 /** base class of all entities that can be build. */
-class BuildableEntity : public Entity
+class BuildableEntityType : public EntityType
 {
 public: 
   int position;
@@ -95,9 +136,12 @@ public:
 
   const Requirement *requirements;
   int num_requirements;
+  
+  BuildableEntityType(int objectId, 
+                      const char* dbFieldName);
 };
 
-class Resource : public Entity
+class ResourceType : public EntityType
 {
 public: 
   double ratingValue;
@@ -109,17 +153,19 @@ public:
   const char *safeStorage;
 };
 
-class Unit : public BuildableEntity
+class UnitType : public BuildableEntityType
 {
 public: 
   int velocity;
   int initiative;
+  int actionPoints;
   int attack;
   int armor;
   int criticalHitDamage;
   double criticalHitChance;
+  int hitpoints;
   
-  int visible;
+  int invisible;
   int warpoints;
     
   int encumbranceList[MAX_RESOURCE];
@@ -128,27 +174,44 @@ public:
   double spyChance;
   double spyQuality;
   double antiSpyChance;
+  
+  UnitType(int objectId, 
+           const char* dbFieldName);
+  ~UnitType();
+  
+  const char* toString(char* buf, int size);
 };
 
-class Building : public BuildableEntity
+class BuildingType : public BuildableEntityType
 {
 };
 
-class Science : public BuildableEntity
+class ScienceType : public BuildableEntityType
 {
 };
 
-class Effect : public Entity
+class EffectType : public EntityType
 {
 };
 
 class Rules 
 {
 public:
-  static const Resource *resources;
-  static const Building *buildings;
-  static const Science *sciences;
-  static const Unit *units;
+  ResourceType *resourceTypes[MAX_RESOURCE];
+  BuildingType *buildingTypes[MAX_BUILDING];
+  ScienceType *scienceTypes[MAX_SCIENCE];
+  UnitType *unitTypes[MAX_UNIT];
+
+  /** access the rules-singleton */
+  static Rules* theRules() {
+    return Rules::_theRules;
+  }; 
+  
+  Rules();
+  ~Rules();
+  
+protected:
+  static Rules* _theRules;
 };
 
 
