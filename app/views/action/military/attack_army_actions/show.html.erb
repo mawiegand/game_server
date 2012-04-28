@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Attacker:</b>
+  <%= @action_military_attack_army_action.attacker_id %>
+</p>
+
+<p>
+  <b>Defender:</b>
+  <%= @action_military_attack_army_action.defender_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_action_military_attack_army_action_path(@action_military_attack_army_action) %> |
+<%= link_to 'Back', action_military_attack_army_actions_path %>
