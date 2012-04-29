@@ -1,6 +1,9 @@
 <% content_for :rules_links do %>
 <ul class="submenue">
-  <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
+  <li><%= link_to I18n.translate("application.layout.rules.all"), game_rules_rules_path %></li>
+  <li><%= link_to I18n.translate("application.layout.rules.resources"), game_rules_rules_path(:resources => '') %></li>
+  <li><%= link_to I18n.translate("application.layout.rules.units"), game_rules_rules_path(:units => '') %></li>
+  <li><%= link_to I18n.translate("application.layout.rules.sciences"), game_rules_rules_path(:sciences => '') %></li>
 </ul>
 <% end %>
 

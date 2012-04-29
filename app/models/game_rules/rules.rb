@@ -30,6 +30,7 @@ class GameRules::Rules
   include ActiveModel::Serializers::Xml
   include ActiveModel::Conversion
   extend ActiveModel::Naming
+  self.include_root_in_json = false
 
   attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types
   
