@@ -1,5 +1,10 @@
+# Controller to display and download (clients) the present game rules. The 
+# are automatically generated form the human-readable rules.xml file.
+# It's possible to download the rules as a whole or to ask the controller
+# for individual types of entities by appending [ units, sciences, ... ]
+# to the url. It's also possible to just ask for the version of the rules.
 class GameRules::RulesController < ApplicationController
-  layout 'action'
+  layout 'rules'
   
   def show
     @only = []
@@ -13,7 +18,7 @@ class GameRules::RulesController < ApplicationController
     @rules = GameRules::Rules.the_rules
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # show.html.erb
       format.json { render :json => @rules.to_json( @only.length > 0 ? {:only => @only } : {} )}
     end    
   end

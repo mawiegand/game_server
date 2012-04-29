@@ -5,6 +5,8 @@ en:
   
   application:
     layout:
+      rules:
+        category: Rules
       action:
         category: Action
       fundamental:

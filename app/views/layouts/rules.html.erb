@@ -1,0 +1,11 @@
+<% content_for :rules_links do %>
+<ul class="submenue">
+  <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
+</ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:rules_content) ? yield(:rules_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
