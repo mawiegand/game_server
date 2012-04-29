@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {	
-	Rules* rules = Rules::theRules();
+	const Rules* rules = Rules::theRules();
 	
 	char buf[1000];
 	

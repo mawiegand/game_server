@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
-<!ELEMENT General (Languages)>
+<!ELEMENT General (Game, Version, Languages)>
+<!ELEMENT Game (#PCDATA)>
+<!ATTLIST Game 
+  branch CDATA #REQUIRED
+  tag CDATA #IMPLIED
+>
+<!ELEMENT Version EMPTY>
+<!ATTLIST Version 
+  major CDATA #REQUIRED
+  minor CDATA #REQUIRED
+  build CDATA #REQUIRED
+>
 
 <!--Languages-->
 <!ELEMENT Languages (Language*)>
