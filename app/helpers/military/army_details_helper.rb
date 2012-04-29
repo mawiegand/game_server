@@ -1,0 +1,2 @@
+module Military::ArmyDetailsHelper
+end

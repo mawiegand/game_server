@@ -1,0 +1,23 @@
+<h1>Listing military_army_details</h1>
+
+<table>
+  <tr>
+    <th>Army</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_army_details.each do |military_army_detail| %>
+  <tr>
+    <td><%= military_army_detail.army_id %></td>
+    <td><%= link_to 'Show', military_army_detail %></td>
+    <td><%= link_to 'Edit', edit_military_army_detail_path(military_army_detail) %></td>
+    <td><%= link_to 'Destroy', military_army_detail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Army detail', new_military_army_detail_path %>
