@@ -41,7 +41,7 @@
 </xsl:template>
 
 <!-- Rules -->
-<xsl:template match="Rules">
+<xsl:template match="Rules"># encoding: utf-8  
 
 require 'active_model'
 
@@ -61,63 +61,68 @@ require 'active_model'
 # rules/rules.ruby.xsl) for the list of authors.
 #
 # All rights reserved. Copyright (C) 2012 5D Lab GmbH.
-module GameRules<xsl:text><![CDATA[
+
+<xsl:text><![CDATA[
+
+# Object holding all the configurable game rules. Comes with a version number
+# in order to allow to check for recency of the rules. Contains several 
+# hashes that have all the details regarding resources, units, buildings and
+# sciences in this particular game.
+class GameRules::Rules
+  include ActiveModel::Serializers::JSON
+  include ActiveModel::Serializers::Xml
+  include ActiveModel::Conversion
+  extend ActiveModel::Naming
+
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types
   
+  def attributes 
+    { 
+      'version'        => version,
+      'unit_types'     => unit_types,
+      'resource_types' => resource_types,
+      'building_types' => building_types,
+      'science_types'  => science_types,  
+    }
+  end
+  
+  def initialize(attributes = {})
+    if !Rails.logger.nil?
+      Rails.logger.debug('RULES: running game rules initializer.')
+    end
+  
+    attributes.each do | name, value |
+      send("#{name}=", value)
+    end
+  end
+  
+  def persisted?
+    false
+  end
+  
+
   # returns the rules-singleton containing all the present rules. Should not
   # be modified by the program. Uses conditional assignment to construct the
   # rules object on first access.
-  def self.rules
-    @rules ||= Rules.new(
-]]></xsl:text>
-      :version => { :major => <xsl:value-of select="//General/Version/@major" />, 
-                    :minor => <xsl:value-of select="//General/Version/@minor" />, 
-                    :build => <xsl:value-of select="//General/Version/@build" />, 
-      },
+  def self.the_rules
+    @the_rules ||= GameRules::Rules.new(
+  ]]></xsl:text>
+        :version => { :major => <xsl:value-of select="//General/Version/@major" />, 
+                      :minor => <xsl:value-of select="//General/Version/@minor" />, 
+                      :build => <xsl:value-of select="//General/Version/@build" />, 
+        },
 
-<xsl:apply-templates select="UnitTypes" />
+  <xsl:apply-templates select="UnitTypes" />
 
-<xsl:text><![CDATA[
+  <xsl:text><![CDATA[
     )
   end
-  
-  # Object holding all the configurable game rules. Comes with a version number
-  # in order to allow to check for recency of the rules. Contains several 
-  # hashes that have all the details regarding resources, units, buildings and
-  # sciences in this particular game.
-  class Rules
-    include ActiveModel::Serializers::JSON
-    include ActiveModel::Serializers::Xml
-    include ActiveModel::Conversion
-    extend ActiveModel::Naming
-  
-    attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types
-    
-    def attributes 
-      { 
-        'version'        => version,
-        'unit_types'     => unit_types,
-        'resource_types' => resource_types,
-        'building_types' => building_types,
-        'science_types'  => science_types,  
-      }
-    end
-    
-    def initialize(attributes = {})
-      attributes.each do | name, value |
-        send("#{name}=", value)
-      end
-    end
-    
-    def persisted?
-      false
-    end
-  end
-  
 end
+
 
 # INLINED TEST CODE: (uncomment to run)
 
-#puts GameRules::rules.to_json
+#puts GameRules::Rules.the_rules.to_json
 #GameRules.rules.unit_types.each do |value| 
 #  puts value[:name][:de_DE] 
 #end
