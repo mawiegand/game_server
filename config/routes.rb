@@ -32,7 +32,10 @@ GameServer::Application.routes.draw do
 
 
       namespace :military do 
-        resources :armies 
+        resources :armies do
+          resources :army_details
+        end
+        resources :army_details
       end
 
       resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            

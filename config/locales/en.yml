@@ -28,6 +28,7 @@ en:
       military:
         category: Military
         armies: Armies
+        army_details: ArmyDetails
       event:
         category: Event
         events: Events
