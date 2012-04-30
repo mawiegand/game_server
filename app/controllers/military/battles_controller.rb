@@ -1,4 +1,6 @@
 class Military::BattlesController < ApplicationController
+  layout 'military'
+
   # GET /military/battles
   # GET /military/battles.json
   def index

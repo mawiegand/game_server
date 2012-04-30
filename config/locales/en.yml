@@ -28,11 +28,16 @@ en:
       military:
         category: Military
         armies: Armies
-        army_details: ArmyDetails
+        army_details: A.Details
+        battles: Battles
+        rounds: Rounds
+        battle_factions: Factions
+        battle_faction_results: F.Results
+        participants: Participants
+        participant_results: P.Results
       event:
         category: Event
         events: Events
-        
         
   sessions:
         

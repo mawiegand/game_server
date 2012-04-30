@@ -29,7 +29,7 @@
                     restart of the backend to be in sync again. Examples are
                     changes to attribute values or formulas. Introduction of
                     new entities (e.g. a new unit) or new attributes are no
-                    exemaples of a minor change.
+                    examples of a minor change.
                  E) The major number has to be incremented for all changes 
                     that do not only need a reload to sync everything, but
                     that do or might need a change of source code, either
