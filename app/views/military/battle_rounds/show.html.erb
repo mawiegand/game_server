@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_round.battle_id %>
+</p>
+
+<p>
+  <b>Round num:</b>
+  <%= @military_battle_round.round_num %>
+</p>
+
+<p>
+  <b>Executed at:</b>
+  <%= @military_battle_round.executed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_round_path(@military_battle_round) %> |
+<%= link_to 'Back', military_battle_rounds_path %>

@@ -1,0 +1,37 @@
+<h1>Listing military_battle_participant_results</h1>
+
+<table>
+  <tr>
+    <th>Battle</th>
+    <th>Round</th>
+    <th>Army</th>
+    <th>Battle faction result</th>
+    <th>Retreat tried</th>
+    <th>Retreat succeeded</th>
+    <th>Kills</th>
+    <th>Experience gained</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_participant_results.each do |military_battle_participant_result| %>
+  <tr>
+    <td><%= military_battle_participant_result.battle_id %></td>
+    <td><%= military_battle_participant_result.round_id %></td>
+    <td><%= military_battle_participant_result.army_id %></td>
+    <td><%= military_battle_participant_result.battle_faction_result_id %></td>
+    <td><%= military_battle_participant_result.retreat_tried %></td>
+    <td><%= military_battle_participant_result.retreat_succeeded %></td>
+    <td><%= military_battle_participant_result.kills %></td>
+    <td><%= military_battle_participant_result.experience_gained %></td>
+    <td><%= link_to 'Show', military_battle_participant_result %></td>
+    <td><%= link_to 'Edit', edit_military_battle_participant_result_path(military_battle_participant_result) %></td>
+    <td><%= link_to 'Destroy', military_battle_participant_result, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle participant result', new_military_battle_participant_result_path %>

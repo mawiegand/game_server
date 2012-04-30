@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120429225318) do
+ActiveRecord::Schema.define(:version => 20120430155529) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -200,6 +200,7 @@ ActiveRecord::Schema.define(:version => 20120429225318) do
     t.datetime "updated_at"
     t.integer  "region_id"
     t.datetime "ap_next"
+    t.boolean  "garrison"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -215,6 +216,93 @@ ActiveRecord::Schema.define(:version => 20120429225318) do
     t.integer  "unit_thrower"
     t.integer  "unit_skewer"
     t.integer  "unit_light_cavalry"
+  end
+
+  create_table "military_battle_faction_results", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "round_id"
+    t.integer  "faction_id"
+    t.integer  "leader_id"
+    t.string   "given_command"
+    t.string   "executed_command"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "military_battle_factions", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "faction_num"
+    t.integer  "leader_id"
+    t.datetime "joined_at"
+    t.string   "present_command"
+    t.integer  "total_casualties"
+    t.integer  "total_kills"
+    t.decimal  "total_damage_inflicted"
+    t.decimal  "total_damage_taken"
+    t.integer  "total_hitpoints"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "military_battle_participant_results", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "round_id"
+    t.integer  "army_id"
+    t.integer  "battle_faction_result_id"
+    t.boolean  "retreat_tried"
+    t.boolean  "retreat_succeeded"
+    t.integer  "kills"
+    t.integer  "experience_gained"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "unit_thrower"
+    t.integer  "unit_thrower_casualties"
+    t.decimal  "unit_thrower_damage_taken"
+    t.decimal  "unit_thrower_damage_inflicted"
+    t.integer  "unit_skewer"
+    t.integer  "unit_skewer_casualties"
+    t.decimal  "unit_skewer_damage_taken"
+    t.decimal  "unit_skewer_damage_inflicted"
+    t.integer  "unit_light_cavalry"
+    t.integer  "unit_light_cavalry_casualties"
+    t.decimal  "unit_light_cavalry_damage_taken"
+    t.decimal  "unit_light_cavalry_damage_inflicted"
+  end
+
+  create_table "military_battle_participants", :force => true do |t|
+    t.integer  "army_id"
+    t.integer  "battle_id"
+    t.integer  "faction_id"
+    t.datetime "joined_at"
+    t.boolean  "retreat"
+    t.integer  "retreat_to_region_id"
+    t.integer  "retreat_to_location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "military_battle_rounds", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "round_num"
+    t.datetime "executed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "military_battles", :force => true do |t|
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "next_round_at"
+    t.integer  "initiator_id"
+    t.integer  "opponent_id"
+    t.integer  "location_id"
+    t.integer  "region_id"
+    t.integer  "importance_rating"
+    t.integer  "decisiveness"
+    t.integer  "factions_count"
+    t.integer  "rounds_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

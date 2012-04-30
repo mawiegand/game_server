@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Army:</b>
+  <%= @military_battle_participant.army_id %>
+</p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_participant.battle_id %>
+</p>
+
+<p>
+  <b>Faction:</b>
+  <%= @military_battle_participant.faction_id %>
+</p>
+
+<p>
+  <b>Joined at:</b>
+  <%= @military_battle_participant.joined_at %>
+</p>
+
+<p>
+  <b>Retreat:</b>
+  <%= @military_battle_participant.retreat %>
+</p>
+
+<p>
+  <b>Retreat to region:</b>
+  <%= @military_battle_participant.retreat_to_region_id %>
+</p>
+
+<p>
+  <b>Retreat to location:</b>
+  <%= @military_battle_participant.retreat_to_location_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_participant_path(@military_battle_participant) %> |
+<%= link_to 'Back', military_battle_participants_path %>

@@ -2,10 +2,6 @@ GameServer::Application.routes.draw do
   
 
 
-
-
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -36,11 +32,28 @@ GameServer::Application.routes.draw do
           resources :army_details
         end
         resources :army_details
+        resources :battles do
+          resources :battle_rounds 
+          resources :battle_participants 
+          resources :battle_factions
+        end
+        resources :battle_factions do
+          resources :battle_participants 
+        end
+        resources :battle_participants 
+        
+        resources :battle_participant_results 
+        resources :battle_faction_results
+        resources :battle_rounds
       end
 
       resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            
       resources :armies, :path => "/fundamental/characters/:character_id/armies", :module => 'military'            
       resources :armies, :path => "/fundamental/alliances/:alliance_id/armies", :module => 'military'            
+
+      resources :battles, :path => "/map/regions/:region_id/battles", :module => 'military'            
+      resources :battles, :path => "/map/locations/:location_id/battles", :module => 'military'            
+
 
       namespace :map do 
         

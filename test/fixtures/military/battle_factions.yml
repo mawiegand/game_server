@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_id: 1
+  faction_num: 1
+  leader_id: 1
+  joined_at: 2012-04-30 15:16:01
+  present_command: MyString
+  total_casualties: 1
+  total_kills: 1
+  total_damage_inflicted: 
+  total_damage_taken: 9.99
+  total_hitpoints: 1
+
+two:
+  battle_id: 1
+  faction_num: 1
+  leader_id: 1
+  joined_at: 2012-04-30 15:16:01
+  present_command: MyString
+  total_casualties: 1
+  total_kills: 1
+  total_damage_inflicted: 
+  total_damage_taken: 9.99
+  total_hitpoints: 1

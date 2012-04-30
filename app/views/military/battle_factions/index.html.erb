@@ -1,0 +1,41 @@
+<h1>Listing military_battle_factions</h1>
+
+<table>
+  <tr>
+    <th>Battle</th>
+    <th>Faction num</th>
+    <th>Leader</th>
+    <th>Joined at</th>
+    <th>Present command</th>
+    <th>Total casualties</th>
+    <th>Total kills</th>
+    <th>Total damage inflicted</th>
+    <th>Total damage taken</th>
+    <th>Total hitpoints</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_factions.each do |military_battle_faction| %>
+  <tr>
+    <td><%= military_battle_faction.battle_id %></td>
+    <td><%= military_battle_faction.faction_num %></td>
+    <td><%= military_battle_faction.leader_id %></td>
+    <td><%= military_battle_faction.joined_at %></td>
+    <td><%= military_battle_faction.present_command %></td>
+    <td><%= military_battle_faction.total_casualties %></td>
+    <td><%= military_battle_faction.total_kills %></td>
+    <td><%= military_battle_faction.total_damage_inflicted %></td>
+    <td><%= military_battle_faction.total_damage_taken %></td>
+    <td><%= military_battle_faction.total_hitpoints %></td>
+    <td><%= link_to 'Show', military_battle_faction %></td>
+    <td><%= link_to 'Edit', edit_military_battle_faction_path(military_battle_faction) %></td>
+    <td><%= link_to 'Destroy', military_battle_faction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle faction', new_military_battle_faction_path %>

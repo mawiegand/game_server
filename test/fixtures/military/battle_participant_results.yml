@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_id: 1
+  round_id: 1
+  army_id: 1
+  battle_faction_result_id: 1
+  retreat_tried: false
+  retreat_succeeded: false
+  kills: 1
+  experience_gained: 1
+
+two:
+  battle_id: 1
+  round_id: 1
+  army_id: 1
+  battle_faction_result_id: 1
+  retreat_tried: false
+  retreat_succeeded: false
+  kills: 1
+  experience_gained: 1

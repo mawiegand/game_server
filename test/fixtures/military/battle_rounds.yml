@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_id: 1
+  round_num: 1
+  executed_at: 2012-04-30 15:41:10
+
+two:
+  battle_id: 1
+  round_num: 1
+  executed_at: 2012-04-30 15:41:10

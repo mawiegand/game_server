@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_faction_result.battle_id %>
+</p>
+
+<p>
+  <b>Round:</b>
+  <%= @military_battle_faction_result.round_id %>
+</p>
+
+<p>
+  <b>Faction:</b>
+  <%= @military_battle_faction_result.faction_id %>
+</p>
+
+<p>
+  <b>Leader:</b>
+  <%= @military_battle_faction_result.leader_id %>
+</p>
+
+<p>
+  <b>Given command:</b>
+  <%= @military_battle_faction_result.given_command %>
+</p>
+
+<p>
+  <b>Executed command:</b>
+  <%= @military_battle_faction_result.executed_command %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_faction_result_path(@military_battle_faction_result) %> |
+<%= link_to 'Back', military_battle_faction_results_path %>

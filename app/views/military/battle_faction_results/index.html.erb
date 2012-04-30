@@ -1,0 +1,33 @@
+<h1>Listing military_battle_faction_results</h1>
+
+<table>
+  <tr>
+    <th>Battle</th>
+    <th>Round</th>
+    <th>Faction</th>
+    <th>Leader</th>
+    <th>Given command</th>
+    <th>Executed command</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_faction_results.each do |military_battle_faction_result| %>
+  <tr>
+    <td><%= military_battle_faction_result.battle_id %></td>
+    <td><%= military_battle_faction_result.round_id %></td>
+    <td><%= military_battle_faction_result.faction_id %></td>
+    <td><%= military_battle_faction_result.leader_id %></td>
+    <td><%= military_battle_faction_result.given_command %></td>
+    <td><%= military_battle_faction_result.executed_command %></td>
+    <td><%= link_to 'Show', military_battle_faction_result %></td>
+    <td><%= link_to 'Edit', edit_military_battle_faction_result_path(military_battle_faction_result) %></td>
+    <td><%= link_to 'Destroy', military_battle_faction_result, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle faction result', new_military_battle_faction_result_path %>

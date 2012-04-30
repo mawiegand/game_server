@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_id: 1
+  round_id: 1
+  faction_id: 1
+  leader_id: 1
+  given_command: MyString
+  executed_command: MyString
+
+two:
+  battle_id: 1
+  round_id: 1
+  faction_id: 1
+  leader_id: 1
+  given_command: MyString
+  executed_command: MyString

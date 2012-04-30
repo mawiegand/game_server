@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  army_id: 1
+  battle_id: 1
+  faction_id: 1
+  joined_at: 2012-04-30 15:38:18
+  retreat: false
+  retreat_to_region_id: 1
+  retreat_to_location_id: 1
+
+two:
+  army_id: 1
+  battle_id: 1
+  faction_id: 1
+  joined_at: 2012-04-30 15:38:18
+  retreat: false
+  retreat_to_region_id: 1
+  retreat_to_location_id: 1

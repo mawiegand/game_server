@@ -1,0 +1,43 @@
+<h1>Listing military_battles</h1>
+
+<table>
+  <tr>
+    <th>Started at</th>
+    <th>Ended at</th>
+    <th>Next round at</th>
+    <th>Initiator</th>
+    <th>Opponent</th>
+    <th>Location</th>
+    <th>Region</th>
+    <th>Importance rating</th>
+    <th>Decisiveness</th>
+    <th>Factions count</th>
+    <th>Rounds count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battles.each do |military_battle| %>
+  <tr>
+    <td><%= military_battle.started_at %></td>
+    <td><%= military_battle.ended_at %></td>
+    <td><%= military_battle.next_round_at %></td>
+    <td><%= military_battle.initiator_id %></td>
+    <td><%= military_battle.opponent_id %></td>
+    <td><%= military_battle.location_id %></td>
+    <td><%= military_battle.region_id %></td>
+    <td><%= military_battle.importance_rating %></td>
+    <td><%= military_battle.decisiveness %></td>
+    <td><%= military_battle.factions_count %></td>
+    <td><%= military_battle.rounds_count %></td>
+    <td><%= link_to 'Show', military_battle %></td>
+    <td><%= link_to 'Edit', edit_military_battle_path(military_battle) %></td>
+    <td><%= link_to 'Destroy', military_battle, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle', new_military_battle_path %>
