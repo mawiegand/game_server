@@ -76,6 +76,28 @@ class Military::Army < ActiveRecord::Base
     self.mode === 2 # 2: fighting?
   end
   
+  
+  def update_from_details
+    vel = 0.0
+    n = 0
+    
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+        n += self.details[unit_type[:db_field]] 
+        if unit_type[:velocity] < vel 
+          vel = unit_type[:velocity]
+        end
+      end
+    end
+    
+    self.velocity = vel > 0 ? vel : 1.0   # velocity must always be larger than zero
+    self.size_present = n
+    
+    self.save
+    
+  end
+
+  
   private
   
     def set_parent_change_timestamps
