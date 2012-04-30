@@ -3,6 +3,11 @@
 <table>
   <tr>
     <th>Army</th>
+<% Military::ArmyDetail.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <th><%= attribute %></th>
+<%end
+end %>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +16,11 @@
 <% @military_army_details.each do |military_army_detail| %>
   <tr>
     <td><%= military_army_detail.army_id %></td>
+<% military_army_detail.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <td><%= value %></td>
+<%end
+end %>
     <td><%= link_to 'Show', military_army_detail %></td>
     <td><%= link_to 'Edit', edit_military_army_detail_path(military_army_detail) %></td>
     <td><%= link_to 'Destroy', military_army_detail, confirm: 'Are you sure?', method: :delete %></td>
