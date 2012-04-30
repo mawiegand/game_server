@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Army</th>
 <% Military::ArmyDetail.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'unit_' %>
@@ -15,6 +16,7 @@ end %>
 
 <% @military_army_details.each do |military_army_detail| %>
   <tr>
+    <td><%= military_army_detail.id %></td>
     <td><%= military_army_detail.army_id %></td>
 <% military_army_detail.attributes.each do |attribute, value| 
   if attribute.start_with? 'unit_' %>
