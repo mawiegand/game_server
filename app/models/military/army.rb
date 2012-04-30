@@ -78,7 +78,7 @@ class Military::Army < ActiveRecord::Base
   
   
   def update_from_details
-    vel = 0.0
+    vel = 99999
     n = 0
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
