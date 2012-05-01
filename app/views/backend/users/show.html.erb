@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @backend_user.email %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @backend_user.salt %>
+</p>
+
+<p>
+  <b>Encrypted Password:</b>
+  <%= @backend_user.encrypted_password %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @backend_user.admin %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%= @backend_user.staff %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @backend_user.firstname %>
+</p>
+
+<p>
+  <b>Surname:</b>
+  <%= @backend_user.surname %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%= @backend_user.login %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @backend_user.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_backend_user_path(@backend_user) %> |
+<%= link_to 'Back', backend_users_path %>

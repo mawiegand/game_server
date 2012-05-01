@@ -13,17 +13,18 @@ class Auth::SessionsController < ApplicationController
   # that later. Should be connected to identity provider
   # in the future.
   def create
-    
-    if !params[:session] || params[:session][:login].blank? || params[:session][:password].blank? || 
-       params[:session][:login] != "admin" || params[:session][:password] != "sonnen"
-      logger.warn('BACK-END: login attempt with wrong user credentials for user #{params[:session][:login]}.')
+    user = Backend::User.authenticate(params[:session][:login],
+                                      params[:session][:password])
+                                     
+    if user.nil?
       flash.now[:error] = I18n.translate('sessions.signin.flash.invalid')
       @title = I18n.translate('sessions.signin.title')
       render 'new'
     else 
       sign_in_to_backend(params[:session][:login])
-      redirect_to users_url
-    end
+      redirect_to game_rules_rules_url
+    end    
+
   end
   
   # Sings the user out by destroying the session.

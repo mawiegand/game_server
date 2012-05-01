@@ -1,0 +1,35 @@
+<h1>Listing backend_users</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Admin</th>
+    <th>Staff</th>
+    <th>Firstname</th>
+    <th>Surname</th>
+    <th>Login</th>
+    <th>Deleted</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @backend_users.each do |backend_user| %>
+  <tr>
+    <td><%= backend_user.email %></td>
+    <td><%= backend_user.admin %></td>
+    <td><%= backend_user.staff %></td>
+    <td><%= backend_user.firstname %></td>
+    <td><%= backend_user.surname %></td>
+    <td><%= backend_user.login %></td>
+    <td><%= backend_user.deleted %></td>
+    <td><%= link_to 'Show', backend_user %></td>
+    <td><%= link_to 'Edit', edit_backend_user_path(backend_user) %></td>
+    <td><%= link_to 'Destroy', backend_user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_backend_user_path %>
