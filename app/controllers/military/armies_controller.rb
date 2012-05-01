@@ -81,7 +81,7 @@ class Military::ArmiesController < ApplicationController
           elsif params.has_key?(:aggregate)
             render json: @military_armies, :only => @@aggregate_fields          
           else
-            render json: @military_armies
+            render json: @military_armies, :methods => [ :details ]
           end
         end
       end
@@ -114,7 +114,7 @@ class Military::ArmiesController < ApplicationController
           elsif params.has_key?(:aggregate)
             render json: @military_army, :only => @@aggregate_fields          
           else
-            render json: @military_army
+            render json: @military_army, :methods => [ :details ]
           end 
         end
       end

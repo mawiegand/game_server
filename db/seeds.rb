@@ -151,7 +151,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (4..4)
+for i in (4..9)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."
@@ -248,8 +248,6 @@ while !locations.empty?
       army.mode = 0
       army.stance = rand(3)
       army.size_max = 1200
-      army.size_present = rand(army.size_max)+1
-      army.strength = army.size_present * (rand(10)+10)
       army.exp = rand(1000000)
       army.rank = army.exp / 10000
       army.garrison = false
@@ -285,8 +283,6 @@ while !locations.empty?
       army.mode = 0
       army.stance = rand(3)
       army.size_max = 1200
-      army.size_present = rand(army.size_max)+1
-      army.strength = army.size_present * (rand(10)+10)
       army.exp = rand(1000000)
       army.rank = army.exp / 10000
       army.garrison = true
