@@ -16,20 +16,12 @@
   <xsl:strip-space elements="*"/>
       
   <xsl:template match="Rules">  
-    <xsl:apply-templates select="//Building|//Resource|//Science|//Unit" />
+    <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory" />
   </xsl:template>
 
-  <!-- special resource template introducing an additional database column for
-       the production rates. -->
-  <xsl:template match="Resource"> 
-    <xsl:value-of select="translate(local-name(), $uppercase, $smallcase)"/>_<xsl:value-of select="@id"/> 
-    <xsl:call-template name="Newline" />
-    <xsl:value-of select="translate(local-name(), $uppercase, $smallcase)"/>_<xsl:value-of select="@id"/>_rate
-  </xsl:template>
 
-  <!-- standard template for database relevant entities needing one column. 
-       -->
-  <xsl:template match="Building|Science|Unit"> 
+  <!-- standard template for database relevant entities -->
+  <xsl:template match="Building|Science|Unit|Resource|UnitCategory"> 
     <xsl:value-of select="translate(local-name(), $uppercase, $smallcase)"/>_<xsl:value-of select="@id"/>  
     <xsl:call-template name="Newline" />
   </xsl:template>

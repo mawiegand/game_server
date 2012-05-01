@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430155530) do
+ActiveRecord::Schema.define(:version => 20120501122517) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -202,6 +202,9 @@ ActiveRecord::Schema.define(:version => 20120430155530) do
     t.datetime "ap_next"
     t.boolean  "garrison"
     t.decimal  "velocity"
+    t.decimal  "unitcategory_infantry_strength"
+    t.decimal  "unitcategory_cavalry_strength"
+    t.decimal  "unitcategory_artillery_strength"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -243,6 +246,9 @@ ActiveRecord::Schema.define(:version => 20120430155530) do
     t.integer  "total_hitpoints"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "unitcategory_infantry_strength"
+    t.decimal  "unitcategory_cavalry_strength"
+    t.decimal  "unitcategory_artillery_strength"
   end
 
   create_table "military_battle_participant_results", :force => true do |t|

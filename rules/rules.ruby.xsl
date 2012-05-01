@@ -75,11 +75,12 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories
   
   def attributes 
     { 
       'version'        => version,
+      'unit_categories'=> unit_categories,
       'unit_types'     => unit_types,
       'resource_types' => resource_types,
       'building_types' => building_types,
@@ -113,6 +114,7 @@ class GameRules::Rules
                       :build => <xsl:value-of select="//General/Version/@build" />, 
         },
 
+  <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
 
   <xsl:text><![CDATA[
@@ -151,6 +153,7 @@ end
         {               #   <xsl:value-of select="Name"/>
           :numeric_id  => <xsl:value-of select="position()-1"/>, 
           :id          => :<xsl:value-of select="@id"/>,
+					:category    => :<xsl:value-of select="@category"/>,
           :db_field    => :unit_<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
@@ -199,6 +202,30 @@ end
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF UNIT TYPES
+</xsl:template>
+
+
+
+<xsl:template match="UnitCategories">
+  
+      :unit_categories => [  # ALL UNIT CATEGORIES
+<xsl:for-each select="UnitCategory">
+        {               #   <xsl:value-of select="Name"/>
+          :numeric_id  => <xsl:value-of select="position()-1"/>, 
+          :id          => :<xsl:value-of select="@id"/>,
+          :db_field    => :unitcategory_<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:if test="Position">
+	        :position    => <xsl:value-of select="Position"/>,
+</xsl:if>
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF UNIT CATEGORIES
 </xsl:template>
 
 

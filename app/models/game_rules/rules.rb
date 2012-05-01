@@ -32,11 +32,12 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories
   
   def attributes 
     { 
       'version'        => version,
+      'unit_categories'=> unit_categories,
       'unit_types'     => unit_types,
       'resource_types' => resource_types,
       'building_types' => building_types,
@@ -72,11 +73,77 @@ class GameRules::Rules
 
   
   
+      :unit_categories => [  # ALL UNIT CATEGORIES
+
+        {               #   Infantry
+          :numeric_id  => 0, 
+          :id          => :infantry,
+          :db_field    => :unitcategory_infantry,
+          :name        => {
+            
+            :en_US => "Infantry",
+  
+            :de_DE => "Fußtruppen",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>English description here.</p>",
+  
+            :de_DE => "<p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>",
+                
+          },
+
+        },              #   END OF Infantry
+        {               #   cavalry
+          :numeric_id  => 1, 
+          :id          => :cavalry,
+          :db_field    => :unitcategory_cavalry,
+          :name        => {
+            
+            :en_US => "cavalry",
+  
+            :de_DE => "Reiter",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>English description here.</p>",
+  
+            :de_DE => "<p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>",
+                
+          },
+
+        },              #   END OF cavalry
+        {               #   artillery
+          :numeric_id  => 2, 
+          :id          => :artillery,
+          :db_field    => :unitcategory_artillery,
+          :name        => {
+            
+            :en_US => "artillery",
+  
+            :de_DE => "Fernkämpfer",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>English description here.</p>",
+  
+            :de_DE => "<p>Die Fernkämpfer schießen aus sicherer Distanz auf den Gegner, vorzugsweise auf Fußsoldaten. Im Nahkampf sind sie extrem anfällig.</p>",
+                
+          },
+
+        },              #   END OF artillery
+      ],                # END OF UNIT CATEGORIES
+
+  
       :unit_types => [  # ALL UNIT TYPES
 
         {               #   Stone Hurler
           :numeric_id  => 0, 
           :id          => :thrower,
+					:category    => :artillery,
           :db_field    => :unit_thrower,
           :name        => {
             
@@ -107,6 +174,7 @@ class GameRules::Rules
         {               #   Skewer
           :numeric_id  => 1, 
           :id          => :skewer,
+					:category    => :infantry,
           :db_field    => :unit_skewer,
           :name        => {
             
@@ -137,6 +205,7 @@ class GameRules::Rules
         {               #   Ostrich Riders
           :numeric_id  => 2, 
           :id          => :light_cavalry,
+					:category    => :cavalry,
           :db_field    => :unit_light_cavalry,
           :name        => {
             

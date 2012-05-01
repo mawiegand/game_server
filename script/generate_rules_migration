@@ -25,8 +25,9 @@ end
 # science_) because an Army does not need to  know about them. In this case
 # you would add a line "Army => [ 'unit_' ]," to the hash.
 hash_of_models = { 
+  Military::Army            => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
   Military::ArmyDetail      => [ { :prefix => 'unit_', :postfix => '' } ],
-  Military::BattleFaction   => [ { :prefix => 'ucategory_', :postfix => '_strength', :type => ':decimal' } ],
+  Military::BattleFaction   => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
   Military::BattleParticipantResult    => [ { :prefix => 'unit_', :postfix => '' },
                                             { :prefix => 'unit_', :postfix => '_casualties' },
                                             { :prefix => 'unit_', :postfix => '_damage_taken', :type => ':decimal' },
@@ -39,7 +40,7 @@ timestamp = DateTime.now
 
 fields = ""
 
-str  = "class Rules < ActiveRecord::Migration\n"
+str  = "class Rules#{timestamp.strftime('%Y%m%d%H%M%S')} < ActiveRecord::Migration\n"
 str += "  def change\n"
 
 hash_of_models.each do | model, prefixes |
@@ -63,7 +64,7 @@ str += "end\n"
 
 
 if fields.length > 1
-  file = File.new(File.join(Rails.root, 'db', 'migrate', timestamp.strftime('%Y%m%d%H%M%S')+'_rules.rb'), 'w' );
+  file = File.new(File.join(Rails.root, 'db', 'migrate', timestamp.strftime('%Y%m%d%H%M%S')+'_rules'+timestamp.strftime('%Y%m%d%H%M%S')+'.rb'), 'w' );
   if file
     
     file.syswrite(str)
