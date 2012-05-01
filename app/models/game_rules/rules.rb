@@ -166,8 +166,8 @@ class GameRules::Rules
           :attack      => 15,
           :armor       => 2,
           :hitpoints   => 30,
-          :criticalHitDamage => 8,
-          :criticalHitChance => 0.01,
+          :critical_hit_damage => 8,
+          :critical_hit_chance => 0.01,
 
 
         },              #   END OF Stone Hurler
@@ -197,8 +197,8 @@ class GameRules::Rules
           :attack      => 10,
           :armor       => 8,
           :hitpoints   => 90,
-          :criticalHitDamage => 2,
-          :criticalHitChance => 0.01,
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
 
 
         },              #   END OF Skewer
@@ -228,8 +228,8 @@ class GameRules::Rules
           :attack      => 10,
           :armor       => 4,
           :hitpoints   => 60,
-          :criticalHitDamage => 10,
-          :criticalHitChance => 0.002,
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.002,
 
 
         },              #   END OF Ostrich Riders

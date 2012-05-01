@@ -20,6 +20,21 @@ class ApplicationController < ActionController::Base
 
   protected
   
+    def self.expand_fields(m, fields) 
+      result = []
+      fields.each do | field |
+        if field.is_a?(String)
+          m.attributes.each do | attrib, value |
+            result.push attrib if attrib.start_with? field
+          end
+        else
+          result.push field
+        end
+      end
+      result
+    end
+          
+  
     # returns the currently logged-id character's id. This method does not
     # exectue a database request, it completely relies on the id sent with 
     # the authentication token. 

@@ -23,7 +23,6 @@ end %>
     <th>Size present</th>
     <th>Velocity</th>
     <th>Strength</th>
-    <th>Army</th>
 <% Military::Army.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'unitcategory_' %>
     <th><%= attribute %></th>
@@ -60,9 +59,9 @@ end %>
     <td><%= military_army.size_present %></td>
     <td><%= military_army.velocity %></td>
     <td><%= military_army.strength %></td>
-<% Military::Army.new.attributes.each do |attribute, value| 
+<% military_army.attributes.each do |attribute, value| 
   if attribute.start_with? 'unitcategory_' %>
-    <th><%= value %></th>
+    <td><%= value %></td>
 <%end
 end %>
     <td><%= military_army.exp %></td>

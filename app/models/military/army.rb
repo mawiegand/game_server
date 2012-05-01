@@ -77,9 +77,27 @@ class Military::Army < ActiveRecord::Base
   end
   
   
+  # implement an arbitrary formula calculating the unit's strength here. is
+  # used to caclulate the army's strength and the strength of particular
+  # troop categories (infantry, artillery, etc.)
+  # Present implementation: attack value + critical damage * chance for 
+  # critical hit. Will be the average inflicted damage ignoring the 
+  # opponents armor and efficiencies.
+  def self.calc_unit_strength(unit_type)
+    (unit_type[:attack] + unit_type[:critical_hit_damage] * unit_type[:critical_hit_chance]) 
+  end
+  
+  # this method updates the aggregated army information from the unit-details.
+  # it updates 
+  #  A) the velocity to be the MIN of all unit types in the army
+  #  B) the size to be the sum of the individual units
+  #  C) the strength (per category as well as the total) to the sum of the
+  #     individual unit's strengths multiplied by their number.
   def update_from_details
     vel = 99999
     n = 0
+    
+    strength_per_cat = {};
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       if !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
@@ -87,11 +105,24 @@ class Military::Army < ActiveRecord::Base
         if unit_type[:velocity] < vel 
           vel = unit_type[:velocity]
         end
+        cat = unit_type[:category]
+        strength_per_cat[cat] ||= 0.0
+        strength_per_cat[cat] += Military::Army.calc_unit_strength(unit_type) * self.details[unit_type[:db_field]]
       end
     end
     
     self.velocity = vel > 0 ? vel : 1.0   # velocity must always be larger than zero
     self.size_present = n
+    
+    logger.debug "Strengthes per category: #{strength_per_cat}."
+        
+    self.strength = 0.0
+    
+    GameRules::Rules.the_rules.unit_categories.each do | unit_category |
+      value = strength_per_cat[unit_category[:id]] || 0
+      self.send((unit_category[:db_field].to_s+'_strength=').to_sym, value)
+      self.strength += value
+    end
     
     self.save
     
