@@ -18,7 +18,7 @@ module Auth
     # and sets the current_backend_user. The backend_user to sign-in
     # must have been authenticated (e.g. checked credentials) before hand.
     def sign_in_to_backend(backend_user)
-      cookies.permanent.signed[:remember_token] = [backend_user, request.remote_ip]
+      cookies.permanent.signed[:remember_token] = [backend_user.id, backend_user.salt]
       self.current_backend_user = backend_user
     end
   
@@ -30,13 +30,13 @@ module Auth
   
     # True, in case the present user is an admin user.
     def backend_admin?
-      !current_backend_user.nil? && current_backend_user == 'admin'
+      !current_backend_user.nil? && current_backend_user.admin?
     end
   
     # True, in case the present user is a staff memeber. Admins always have
     # staff status, even when their staff flag hasn't been set properly.
     def backend_staff?
-      backend_admin? || (!current_backend_user.nil? && current_backend_user == 'staff') # admin is always staff
+      backend_admin? || (!current_backend_user.nil? && current_backend_user.staff?) # admin is always staff
     end
   
     # Signs the present user out by destroying the cookie and unsetting
@@ -65,12 +65,16 @@ module Auth
     # Returns the identity matching the remember token or nil, if it hasn't been
     # set or is not valid.
     def backend_user_from_remember_token
-      user, ip = remember_token
-      if user == 'admin' && request.remote_ip == ip
-        return user
-      else
-        return nil
-      end
+      identity = Backend::User.authenticate_with_salt(*remember_token)
+#      request_authorization[:grant_type] = :session
+#      request_authorization[:privileged] = true
+      return identity
+#      user, ip = remember_token
+#      if !user.blank? && request.remote_ip == ip
+#        return user
+#      else
+#        return nil
+#      end
     end
 
     # Returns either the remember_token that has been set in the cookie

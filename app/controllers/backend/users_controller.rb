@@ -1,4 +1,7 @@
 class Backend::UsersController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /backend/users
   # GET /backend/users.json
   def index

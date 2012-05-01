@@ -21,7 +21,7 @@ class Auth::SessionsController < ApplicationController
       @title = I18n.translate('sessions.signin.title')
       render 'new'
     else 
-      sign_in_to_backend(params[:session][:login])
+      sign_in_to_backend(user)
       redirect_to game_rules_rules_url
     end    
 

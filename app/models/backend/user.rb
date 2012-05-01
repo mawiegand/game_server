@@ -1,5 +1,8 @@
 require 'base64'
 #
+# THIS CODE IS COPIED FROM IDENTIY PROVIDER; SHOULD IMPLEMENT
+# A GENERATOR FOR THIS?  
+#
 # For security reasons, plain-text passwords are *not* stored in 
 # the database. Instead, the passwords are salted (to prevent
 # attacks with rainbow tables) and hashed before storing them.
@@ -33,13 +36,13 @@ class Backend::User < ActiveRecord::Base
   
   attr_accessible :login, :firstname, :surname, :password, :password_confirmation, :as => :owner
   attr_accessible *accessible_attributes(:owner), :email, :as => :creator # fields accesible during creation
-  attr_accessible :login, :firstname, :surname, :activated, :deleted, :staff, :as => :staff
+  attr_accessible :login, :firstname, :surname, :deleted, :staff, :as => :staff
   attr_accessible *accessible_attributes(:staff), :email, :admin, :password, :password_confirmation, :as => :admin
     
   attr_readable :login, :id, :admin, :staff,               :as => :default 
   attr_readable *readable_attributes(:default), :created_at,  :as => :user
-  attr_readable *readable_attributes(:user), :email, :firstname, :surname, :activated, :updated_at, :deleted,         :as => :owner
-  attr_readable *readable_attributes(:user), :email, :firstname, :surname, :activated, :updated_at, :deleted, :salt,  :as => :staff
+  attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted,         :as => :owner
+  attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted, :salt,  :as => :staff
   attr_readable *readable_attributes(:staff),   :as => :admin
   
   @email_regex      = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
