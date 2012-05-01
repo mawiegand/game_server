@@ -4,7 +4,7 @@ class Military::ArmiesController < ApplicationController
 #  before_filter :authenticate
 
   
-  @@short_fields = [:id, :name, :region_id, :location_id, :owner_id, :owner_name, :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :strength, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
+  @@short_fields = [:id, :name, :region_id, :location_id, :owner_id, :owner_name, :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :garrison, :velocity, :stance, :size_present, :strength, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
   @@aggregate_fields = [:id, :owner_id, :alliance_id, :stance, :strength, :updated_at]
  
   # Returns a list of armies in a region or at a location. There are three 
