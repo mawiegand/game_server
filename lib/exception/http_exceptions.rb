@@ -4,6 +4,15 @@ end
 class NotFoundError               < ArgumentError
 end
 
+class ConflictError               < ArgumentError   # 409
+end
+
+class UnprocessableEntityError    < ArgumentError   # 422
+end
+
+class UnauthorizedError           < RuntimeError
+end
+
 class ForbiddenError              < RuntimeError
 end
 

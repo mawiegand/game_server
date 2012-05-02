@@ -3,6 +3,14 @@ require 'mapping/global_mercator'
 # This file seeds the database after its creation (or a reset)
 # Everything a "blank" game needs to be ready to be started should go in here.
 
+user = Backend::User.new()
+user.login = 'admin'
+user.email = 'info@5dlab.com'
+user.password = '5dlab5dlab'
+user.admin = true
+user.staff = true
+user.deleted = false
+user.save
 
 # DUMMY DATA FOR TESTING
 
