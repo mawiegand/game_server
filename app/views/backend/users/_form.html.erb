@@ -15,21 +15,29 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+
   <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
   </div>
+
   <div class="field">
-    <%= f.label :string %><br />
-    <%= f.text_field :string %>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
   </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation %>
+  </div>
+  
   <div class="field">
     <%= f.label :admin %><br />
     <%= f.check_box :admin %>
   </div>
   <div class="field">
     <%= f.label :staff %><br />
-    <%= f.text_field :staff %>
+    <%= f.check_box :staff %>
   </div>
   <div class="field">
     <%= f.label :firstname %><br />
@@ -39,10 +47,7 @@
     <%= f.label :surname %><br />
     <%= f.text_field :surname %>
   </div>
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

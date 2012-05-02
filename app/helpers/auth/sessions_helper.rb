@@ -1,6 +1,14 @@
 module Auth
   module SessionsHelper
 
+
+    def admin?
+      backend_admin?
+    end
+    
+    def staff?
+      backend_staff?
+    end
   
     # Checks whether the present user has admin-status and redirects to 
     # sign-in otherwise.

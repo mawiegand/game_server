@@ -5,6 +5,9 @@ en:
   
   application:
     layout:
+      backend:
+        category: Backend
+        users: Users
       rules:
         category: Rules
         all: All

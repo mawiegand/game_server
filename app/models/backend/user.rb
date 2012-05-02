@@ -78,14 +78,14 @@ class Backend::User < ActiveRecord::Base
       :find_deleted => false,    # by default: don't return deleted users
     }.merge(options).delete_if { |key, value| value.nil? }  # merge 'over' default values
     
-    user = Backend::User.find_by_id(user_identifier) if Identity.valid_id?(user_identifier)
-    user = Backend::User.find(:first, :conditions => ["lower(login) = lower(?)", user_identifier]) if user.nil? && Backend::User.valid_user?(user_identifier)
+    user = Backend::User.find_by_id(user_identifier) if Backend::User.valid_id?(user_identifier)
+    user = Backend::User.find(:first, :conditions => ["lower(login) = lower(?)", user_identifier]) if user.nil? && Backend::User.valid_login?(user_identifier)
     # article about a method to generate a case-insensitive dynamic finder to replace the
     # code above: http://devblog.aoteastudios.com/2009/12/add-case-insensitive-finders-by.html
     
     user = nil if user && user.deleted && options[:find_deleted] == false    #don't return delted users if not explicitly being told so
     
-    return identity
+    return user
   end
   
   # checks a potentialPassword (plain-text) against the "stored"
