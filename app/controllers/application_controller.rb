@@ -21,6 +21,12 @@ class ApplicationController < ActionController::Base
 
   protected
   
+    # receives an array of fields and expands string-(wildcard)-fields in 
+    # that array to matching attributes of the model. returns an array with
+    # all symbol-elements from fields plus the attributes obtained by 
+    # expanding the strings. A string-field matches an attribute in case
+    # the attribute starts with this string (case-sensitive). For example
+    # "unit_" matches attributes :unit_type, :unit_infantry, etc. .
     def self.expand_fields(m, fields) 
       result = []
       fields.each do | field |
@@ -36,26 +42,7 @@ class ApplicationController < ActionController::Base
     end
           
   
-    # returns the currently logged-id character's id. This method does not
-    # exectue a database request, it completely relies on the id sent with 
-    # the authentication token. 
-    # 
-    # TODO: at present, always returns 5
-    def current_character_id
-      5 # from seeds: 5 -> Egbert
-    end
-    
-    # returns the currently logged-id character. The character is determined 
-    # with the help of the authentication token sent witht he request. This
-    # method thus relies on current_character_id . If no authentication token
-    # was sent with the request, this method returns nil.
-    def current_character
-      if current_character_id == 0
-        return nil
-      else 
-        return Fundamental::Character.find(current_character_id)
-      end
-    end
+
   
     def time_action
       started = Time.now

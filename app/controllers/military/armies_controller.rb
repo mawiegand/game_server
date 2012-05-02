@@ -1,9 +1,8 @@
 class Military::ArmiesController < ApplicationController
   layout 'military'
 
-#  before_filter :authenticate
+  before_filter :authenticate
 
-  
   @@short_fields = ApplicationController.expand_fields(
     Military::Army.new,
     [ :id, :name, :region_id, :location_id, :owner_id, :owner_name, :garrison,

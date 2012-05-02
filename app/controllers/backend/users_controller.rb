@@ -1,7 +1,8 @@
 class Backend::UsersController < ApplicationController
   layout 'backend'
   
-  before_filter :authenticate
+  before_filter :deny_api
+  before_filter :authenticate_backend
   
   # GET /backend/users
   # GET /backend/users.json

@@ -31,7 +31,7 @@ alliance_data=[ { id: 0,
           ];
           
 character_data=[ {}, 
-             { id: 1, name: 'Egbert' },
+             { id: 1, name: 'Egbert', identifier: 'eOmKvNkXSRLmbTDQ' },
              { id: 2, name: 'Paffi' },
              { id: 3, name: 'David' },
              { id: 4, name: 'Enzio' },
@@ -60,6 +60,7 @@ alliance_data.each do |ally|
     ally[:members].each do |member| 
       character =  alliance.members.build( name: character_data[member][:name] )
       character.alliance_tag = alliance.tag
+      character.identifier = character_data[member][:identifier] unless character_data[member][:identifier].blank?
       character.save
     end
     alliance.save
