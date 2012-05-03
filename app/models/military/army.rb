@@ -12,6 +12,9 @@ class Military::Army < ActiveRecord::Base
   has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id"
   has_one    :details, :class_name => "Military::ArmyDetail", :foreign_key => "army_id"
   
+  has_one    :battle_faction, :class_name => "Military::BattleFaction", :foreign_key => "army_id"
+  has_one    :battle_participant, :class_name => "Military::BattleParticipant", :foreign_key => "army_id"
+  
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   after_find :update_ap_if_necessary
