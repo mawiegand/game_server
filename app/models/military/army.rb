@@ -79,6 +79,10 @@ class Military::Army < ActiveRecord::Base
     self.mode === 2 # 2: fighting?
   end
   
+  def able_to_overrun?(defender)
+    return false
+  end
+  
   
   # implement an arbitrary formula calculating the unit's strength here. is
   # used to caclulate the army's strength and the strength of particular
