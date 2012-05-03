@@ -79,10 +79,24 @@ class Military::Army < ActiveRecord::Base
     self.mode === 2 # 2: fighting?
   end
   
+  # this methods tests if the army is able to overrun another army.
+  # the defending army may not be a garrison army and may not
+  # contain a unit, which is not overrunnable. the attacking army must
+  # also exceed the defending army by factor 'overrunnable_threshold'
   def able_to_overrun?(defender)
-    return false
+    
+    if defender.garrison
+      return false
+    end
+    
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      if !unit_type[:overrunnable] && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+        return false
+      end
+    end
+    
+    return self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
   end
-  
   
   # implement an arbitrary formula calculating the unit's strength here. is
   # used to caclulate the army's strength and the strength of particular

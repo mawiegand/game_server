@@ -28,7 +28,7 @@ class Military::Battle < ActiveRecord::Base
     elsif (!defender.battle_id.nil? && defender.battle_id > 0)   # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.faction.id))
-    elsif attacker.able_to_overrun(defender)                     # C)
+    elsif attacker.able_to_overrun?(defender)                     # C)
       self.overrun(attacker, defender)
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
@@ -36,8 +36,26 @@ class Military::Battle < ActiveRecord::Base
       Military::Battle.create_battle_between(attacker, defender)
     end
   end
+  
+  def self.overrun(attacker, defender)
+    # attacker
+    attacker.victories += 1            # add victory
 
+    killed_units = 0                   # calculate number of killed units
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      if !defender.details[unit_type[:db_field]].nil? && defender.details[unit_type[:db_field]] > 0
+        killed_units += defender.details[unit_type[:db_field]]
+      end
+    end
 
+    attacker.kills += killed_units               # add kills
+    attacker.save
+    # create message
+
+    # defender:
+    Military::Army.destroy(defender.id)
+    # create message
+  end
   
   def self.create_battle_between(attacker, defender)
       
