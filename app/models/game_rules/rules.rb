@@ -166,7 +166,7 @@ class GameRules::Rules
           :attack      => 15,
           :armor       => 2,
           :hitpoints   => 30,
-          :overrunnable => false,
+          :overrunnable => true,
           :critical_hit_damage => 8,
           :critical_hit_chance => 0.01,
 
@@ -198,7 +198,7 @@ class GameRules::Rules
           :attack      => 10,
           :armor       => 8,
           :hitpoints   => 90,
-          :overrunnable => false,
+          :overrunnable => true,
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
