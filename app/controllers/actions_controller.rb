@@ -16,6 +16,12 @@ class ActionsController < ApplicationController
           name: 'Cancel Move Army',
           parameters: 'action_military_cancel_move_army_action[army_id]',
         },
+        { # ATTACK ARMY
+          url: action_military_attack_army_actions_path,
+          method: 'POST',
+          name: 'Attack Army',
+          parameters: 'action_military_attack_army_action[attacker_id], action_military_attack_army_action[defender_id]',
+        },
         { # CHANGE ARMY NAME
           url: military_army_path(1),
           method: 'PUT',
