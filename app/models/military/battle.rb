@@ -28,13 +28,19 @@ class Military::Battle < ActiveRecord::Base
     elsif (!defender.battle_id.nil? && defender.battle_id > 0)   # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.faction.id))
-    else                                                         # C) create new battle (not involved, yet)
+    elsif attacker.able_to_overrun(defender)                     # C)
+      self.overrun(attacker, defender)
+    elsif defender.able_to_overrun?(attacker)                    # D)
+      self.overrun(defender, attacker)
+    else                                                         # E) create new battle (not involved, yet)
       Military::Battle.create_battle_between(attacker, defender)
     end
   end
+
+
   
   def self.create_battle_between(attacker, defender)
-    
+      
   end
 
   def other_factions(id)
@@ -46,7 +52,7 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def add_army(army, faction)
-
+    
   end
   
   
