@@ -7,7 +7,7 @@ class Military::ArmiesController < ApplicationController
     Military::Army.new,
     [ :id, :name, :region_id, :location_id, :owner_id, :owner_name, :garrison,
       'unitcategory_',
-      :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, 
+      :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :size_max, 
       :strength,  :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
   )
 

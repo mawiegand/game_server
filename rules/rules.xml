@@ -126,7 +126,7 @@
       <Attack>15</Attack>
       <CriticalDamage chance="0.01">8</CriticalDamage>
       <Armor>2</Armor>
-      <Overrunnable>false</Overrunnable>
+      <Overrunnable>true</Overrunnable>
       <Hitpoints>30</Hitpoints>
       <Effectiveness category="infantry">1</Effectiveness>
       <Effectiveness category="cavalry">0.2</Effectiveness>
@@ -147,7 +147,7 @@
       <Attack>10</Attack>
       <CriticalDamage chance="0.01">2</CriticalDamage>
       <Armor>8</Armor>
-      <Overrunnable>false</Overrunnable>
+      <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
       <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
       <Effectiveness category="cavalry">1</Effectiveness>

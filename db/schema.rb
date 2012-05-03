@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503204555) do
+ActiveRecord::Schema.define(:version => 20120503214644) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -219,6 +219,8 @@ ActiveRecord::Schema.define(:version => 20120503204555) do
     t.decimal  "unitcategory_infantry_strength"
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
+    t.integer  "kills"
+    t.integer  "victories"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
