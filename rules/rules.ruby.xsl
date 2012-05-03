@@ -173,6 +173,7 @@ end
           :attack      => <xsl:value-of select="Attack"/>,
           :armor       => <xsl:value-of select="Armor"/>,
           :hitpoints   => <xsl:value-of select="Hitpoints"/>,
+          :overrunnable => <xsl:value-of select="Overrunnable"/>,
           :critical_hit_damage => <xsl:value-of select="CriticalDamage"/>,
           :critical_hit_chance => <xsl:value-of select="CriticalDamage/@chance"/>,
 <xsl:if test="Invisible">

@@ -503,6 +503,7 @@ const struct GameObject *science_type[] = {
   unit->attack = <xsl:value-of select="Attack"/>;
   unit->armor = <xsl:value-of select="Armor"/>;
   unit->hitpoints = <xsl:value-of select="Hitpoints"/>;
+  unit->overrunnable = <xsl:value-of select="Overrunnable"/>;
   unit->criticalHitDamage = <xsl:value-of select="CriticalDamage"/>;
   unit->criticalHitChance = <xsl:value-of select="CriticalDamage/@chance"/>;
 
