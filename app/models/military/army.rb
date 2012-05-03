@@ -12,6 +12,7 @@ class Military::Army < ActiveRecord::Base
   has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id"
   has_one    :details, :class_name => "Military::ArmyDetail", :foreign_key => "army_id"
   
+  belongs_to :battle, :class_name => "Military::Battle", :foreign_key => "battle_id", :inverse_of => :armies
   has_one    :battle_faction, :class_name => "Military::BattleFaction", :foreign_key => "army_id"
   has_one    :battle_participant, :class_name => "Military::BattleParticipant", :foreign_key => "army_id"
   

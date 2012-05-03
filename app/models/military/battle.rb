@@ -14,7 +14,6 @@ class Military::Battle < ActiveRecord::Base
   belongs_to :location,     :class_name => "Map::Location",           :foreign_key => "location_id",   :inverse_of => :battles
   
   
-  
   # starts a fight between two armies. if one of the armies is already 
   # involved in an ongoing battle, the other is added to the opposing
   # faction.
@@ -28,7 +27,7 @@ class Military::Battle < ActiveRecord::Base
     elsif (!defender.battle_id.nil? && defender.battle_id > 0)   # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.faction.id))
-    elsif attacker.able_to_overrun?(defender)                     # C)
+    elsif attacker.able_to_overrun?(defender)                    # C) 
       self.overrun(attacker, defender)
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
@@ -58,7 +57,36 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def self.create_battle_between(attacker, defender)
+    battle = Military::Battle.create(
+      :started_at => DateTime.now,
+      :next_round_at => DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
+      :initiator_id => attacker.owner_id,
+      :opponent_id => defender.owner_id,
+      :location_id => attacker.location_id,
+      :region_id => attacker.region_id
+    )
+    attacker.battle = battle
+    defender.battle = battle
+    attacker.save
+    defender.save
+    
+    faction0 = battle.factions.create(
+      :faction_num => 0,
+      :leader_id => attacker.owner_id,
+      :joined_at => DateTime.now)
       
+    faction1 = battle.factions.create(
+      :faction_num => 1,
+      :leader_id => defender.owner_id,
+      :joined_at => DateTime.now)
+      
+    battle.add_army(attacker, faction0)
+    battle.add_army(defender, faction1)
+    
+    #add defenders of garrison, if necessary
+    #create event
+    
+    battle
   end
 
   def other_factions(id)
@@ -70,7 +98,9 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def add_army(army, faction)
-    
+    faction.participants.create(:battle_id => faction.battle_id, :faction_id => faction.id, 
+                                :joined_at => DateTime.now, :retreat => false)
+    faction.update_from_participants
   end
   
   

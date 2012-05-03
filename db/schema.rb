@@ -322,8 +322,8 @@ ActiveRecord::Schema.define(:version => 20120503214644) do
     t.integer  "region_id"
     t.integer  "importance_rating"
     t.integer  "decisiveness"
-    t.integer  "factions_count"
-    t.integer  "rounds_count"
+    t.integer  "battle_factions_count"
+    t.integer  "battle_rounds_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
