@@ -23,10 +23,10 @@ class Military::Battle < ActiveRecord::Base
     
     if (!attacker.battle_id.nil? && attacker.battle_id > 0)      # A) add defender to attacker's battle
       battle = attacker.battle
-      battle.add_army(defender, battle.other_faction(attacker.faction.id))
+      battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
     elsif (!defender.battle_id.nil? && defender.battle_id > 0)   # B) add attacker to defender's battle
       battle = defender.battle
-      battle.add_army(attacker, battle.other_faction(defender.faction.id))
+      battle.add_army(attacker, battle.other_faction(defender.battle_participant.faction_id))
     elsif attacker.able_to_overrun?(defender)                    # C) 
       self.overrun(attacker, defender)
     elsif defender.able_to_overrun?(attacker)                    # D)
@@ -72,6 +72,10 @@ class Military::Battle < ActiveRecord::Base
   end
 
   def other_factions(id)
+    puts "HERE"
+    puts     self.factions.where("id != ?", id).inspect
+    puts self.factions.inspect
+    
     self.factions.where("id != ?", id)
   end
   
@@ -80,7 +84,7 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def add_army(army, faction)
-    faction.participants.create(:battle_id => faction.battle_id, :faction_id => faction.id, 
+    faction.participants.create(:battle_id => faction.battle_id, :army_id => army.id,
                                 :joined_at => DateTime.now, :retreat => false)
     faction.update_from_participants
   end

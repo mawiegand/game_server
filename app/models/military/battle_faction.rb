@@ -2,7 +2,7 @@ class Military::BattleFaction < ActiveRecord::Base
 
   belongs_to :battle, :class_name => "Military::Battle", :foreign_key => "battle_id",  :inverse_of => :factions,    :counter_cache => true
 
-  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :faction  
+  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "faction_id", :inverse_of => :faction  
 
 
   def update_from_participants
@@ -16,7 +16,12 @@ class Military::BattleFaction < ActiveRecord::Base
     self.participants.each do | participant |
       GameRules::Rules.the_rules.unit_categories.each do | unit_category |        
         field = (unit_category[:db_field].to_s+'_strength').to_sym
-        self[field] += participant.army[field]
+        Rails.logger.debug field
+        Rails.logger.debug self
+        Rails.logger.debug participant
+        Rails.logger.debug self.participants
+
+        self[field] += participant.army.send(field)
       end
     end    
   end
