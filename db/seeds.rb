@@ -255,6 +255,9 @@ while !locations.empty?
       army.ap_seconds_per_point = 3600*6
 
       army.mode = 0
+      army.kills = 0
+      army.victories = 0
+      
       army.stance = rand(3)
       army.size_max = 1200
       army.exp = rand(1000000)
