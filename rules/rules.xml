@@ -87,12 +87,7 @@
         <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
       </Description>
       <Ability id="prevent-flanking" />
-			<TargetPriorities testType="line_size_test">
-				<TargetList>
-					<Target id="cavalry" />
-					<Target id="artillery" />
-					<Target id="infantry" />
-				</TargetList>
+			<TargetPriorities testType="no_test">
 				<TargetList>
 					<Target id="infantry" />
 					<Target id="cavalry" />
@@ -110,6 +105,18 @@
         <p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>
       </Description>
       <Ability id="flanking" />
+			<TargetPriorities testType="line_size_test" testCategory="infantry">
+				<TargetList>
+					<Target id="cavalry" />
+					<Target id="artillery" />
+					<Target id="infantry" />
+				</TargetList>
+				<TargetList>
+					<Target id="infantry" />
+					<Target id="cavalry" />
+					<Target id="artillery" />
+				</TargetList>
+			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="artillery">
       <Name>artillery</Name>
@@ -120,6 +127,13 @@
       <Description lang="de_DE">
         <p>Die Fernkämpfer schießen aus sicherer Distanz auf den Gegner, vorzugsweise auf Fußsoldaten. Im Nahkampf sind sie extrem anfällig.</p>
       </Description>
+			<TargetPriorities testType="no_test">
+				<TargetList>
+					<Target id="infantry" />
+					<Target id="artillery" />
+					<Target id="cavalry" />
+				</TargetList>
+			</TargetPriorities>
     </UnitCategory>
   </UnitCategories>
   <UnitTypes>

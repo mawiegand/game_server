@@ -51,6 +51,7 @@
 <!ELEMENT TargetPriorities (TargetList, TargetList)>
 <!ATTLIST TargetPriorities
 	testType CDATA #REQUIRED
+	testCategory IDREF #IMPLIED
 >
 
 <!ELEMENT TargetList (Target)>
