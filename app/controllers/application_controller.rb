@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   around_filter :time_action
 
   rescue_from BearerAuthError, :with => :render_response_for_bearer_auth_exception
-  rescue_from NotFoundError, BadRequestError, ForbiddenError, :with => :render_response_for_exception
+  rescue_from NotFoundError, BadRequestError, ForbiddenError, InternalServerError, NotImplementedError, ServiceUnavailableError, 
+    :with => :render_response_for_exception
 
   # This method adds the locale to all rails-generated path, e.g. root_path.
   # Based on I18n documentation in rails guides:
@@ -82,6 +83,11 @@ class ApplicationController < ActionController::Base
       head :conflict if exception.class         == ConflictError
       head :unprocessable_entity if exception.class == UnprocessableEntityError
       head :unauthorized if exception.class     == UnauthorizedError
+      
+      # 5xx
+      head :internal_server_error if exception.class     == IntenalServerError
+      head :not_implemented if exception.class     == NotImplementedError
+      head :service_unavailable if exception.class     == ServiceUnavailableError
     end
     
     def render_html_for_exception(exception)
@@ -91,6 +97,11 @@ class ApplicationController < ActionController::Base
       render :text => exception.message, :status => :conflict      if exception.class == ConflictError      
       render :text => exception.message, :status => :unprocessable_entity    if exception.class == UnprocessableEntityError      
       render :text => exception.message, :status => :unauthorized  if exception.class == UnauthorizedError      
+      
+      # 5xx
+      render :text => exception.message, :status => :internal_server_error  if exception.class == IntenalServerError      
+      render :text => exception.message, :status => :not_implemented  if exception.class == NotImplementedError      
+      render :text => exception.message, :status => :service_unavailable  if exception.class == ServiceUnavailableError      
     end
 
 

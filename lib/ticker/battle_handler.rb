@@ -1,4 +1,5 @@
 require 'ticker/runloop'
+require 'awe_native_extensions'
 
 class Ticker::BattleHandler
   
@@ -21,6 +22,9 @@ class Ticker::BattleHandler
     else
       runloop.say "Process battle round #{ battle.battle_rounds_count || 0} for battle #{ battle.id } at loc #{ battle.location_id} in reg #{ battle.region_id }."
     
+      battle = Battle::Battle.new
+      
+    
       # FILL C++-BATTLE CLASS
       
       # EXECUTE ROUND
@@ -38,7 +42,7 @@ class Ticker::BattleHandler
       runloop.say "Battle round completed, cleaning up and destroying event."      
 
 
-      event.destroy
+#      event.destroy
       runloop.say "Battle handler completed."
     end
   end
