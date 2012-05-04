@@ -122,14 +122,14 @@
       </Description>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
-      <Initiative>1</Initiative>
-      <Attack>15</Attack>
-      <CriticalDamage chance="0.01">8</CriticalDamage>
+      <Initiative>8</Initiative>
+      <Attack>18</Attack>
+      <CriticalDamage chance="0.01">10</CriticalDamage>
       <Armor>2</Armor>
-      <Hitpoints>30</Hitpoints>
+      <Hitpoints>90</Hitpoints>
       <Effectiveness category="infantry">1</Effectiveness>
-      <Effectiveness category="cavalry">0.2</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
+      <Effectiveness category="cavalry">0.3</Effectiveness>
+      <Effectiveness category="artillery">0.75</Effectiveness>
     </Unit>
     <Unit id="skewer" category="infantry">
       <Name>Skewer</Name>
@@ -142,10 +142,10 @@
       </Description>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
-      <Initiative>1</Initiative>
-      <Attack>10</Attack>
-      <CriticalDamage chance="0.01">2</CriticalDamage>
-      <Armor>8</Armor>
+      <Initiative>15</Initiative>
+      <Attack>14</Attack>
+      <CriticalDamage chance="0.01" >6</CriticalDamage>
+      <Armor>14</Armor>
       <Hitpoints>90</Hitpoints>
       <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
       <Effectiveness category="cavalry">1</Effectiveness>
@@ -162,8 +162,28 @@
       </Description>
       <Velocity>1.5</Velocity>
       <ActionPoints>5</ActionPoints>
-      <Initiative>1</Initiative>
-      <Attack>10</Attack>
+      <Initiative>26</Initiative>
+      <Attack>16</Attack>
+      <CriticalDamage chance="0.001">10</CriticalDamage>
+      <Armor>3</Armor>
+      <Hitpoints>95</Hitpoints>
+      <Effectiveness category="infantry">0.3</Effectiveness>
+      <Effectiveness category="cavalry">0.75</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
+    <Unit id="tree_huggers" category="infantry">
+      <Name>Tree Huggers</Name>
+      <Name lang="de_DE">Baum-Brutalos</Name>
+      <Description lang="de_DE">
+        <p>Baum-Brutalos sind Tier2-Einheiten</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
+      </Description>
+      <Velocity>0.9</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>14</Initiative>
+      <Attack>20</Attack>
       <CriticalDamage chance="0.002">10</CriticalDamage>
       <Armor>4</Armor>
       <Hitpoints>60</Hitpoints>
@@ -171,5 +191,26 @@
       <Effectiveness category="cavalry">1</Effectiveness>
       <Effectiveness category="artillery">1</Effectiveness>
     </Unit>
+	  <Unit id="sabre_riders" category="cavalry">
+      <Name>Sabretooth-Riders</Name>
+      <Name lang="de_DE">Säbelzahnreiter</Name>
+      <Description lang="de_DE">
+        <p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>It's not so much the riders themselves that are feared...</p>
+      </Description>
+      <Velocity>1.4</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>28</Initiative>
+      <Attack>21</Attack>
+      <CriticalDamage chance="0.002">14</CriticalDamage>
+      <Armor>15</Armor>
+      <Hitpoints>140</Hitpoints>
+      <Effectiveness category="infantry">0.4</Effectiveness>
+      <Effectiveness category="cavalry">0,6</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
 	</UnitTypes>
+	
 </Rules>
