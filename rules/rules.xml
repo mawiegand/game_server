@@ -194,6 +194,7 @@
       <Attack>16</Attack>
       <CriticalDamage chance="0.001">10</CriticalDamage>
       <Armor>3</Armor>
+      <Overrunnable>true</Overrunnable>
       <Hitpoints>95</Hitpoints>
       <Effectiveness category="infantry">0.3</Effectiveness>
       <Effectiveness category="cavalry">0.75</Effectiveness>
@@ -235,10 +236,32 @@
       <Attack>21</Attack>
       <CriticalDamage chance="0.002">14</CriticalDamage>
       <Armor>15</Armor>
+      <Overrunnable>true</Overrunnable>
       <Hitpoints>140</Hitpoints>
       <Effectiveness category="infantry">0.4</Effectiveness>
       <Effectiveness category="cavalry">0,6</Effectiveness>
       <Effectiveness category="artillery">1</Effectiveness>
+    </Unit>
+    <Unit id="squirrel_hunters" category="artillery">
+      <Name>Squirrel-Hunters</Name>
+      <Name lang="de_DE">Hörnchen-Jäger</Name>
+      <Description lang="de_DE">
+        <p>T2 Sniper-Einheit, braucht noch guten Namen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Used to shooting at small furry animals, these guys are great at aiming.</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>7</Initiative>
+      <Attack>14</Attack>
+      <CriticalDamage chance="0.1">10</CriticalDamage>
+      <Armor>0</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">1</Effectiveness>
+      <Effectiveness category="cavalry">0,4</Effectiveness>
+      <Effectiveness category="artillery">0,7</Effectiveness>
     </Unit>
 	</UnitTypes>
 	
