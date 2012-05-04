@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale  # get the locale from the user parameters
   around_filter :time_action
 
+  rescue_from BearerAuthError, :with => :render_response_for_bearer_auth_exception
   rescue_from NotFoundError, BadRequestError, ForbiddenError, :with => :render_response_for_exception
 
   # This method adds the locale to all rails-generated path, e.g. root_path.
@@ -20,26 +21,28 @@ class ApplicationController < ActionController::Base
 
   protected
   
-    # returns the currently logged-id character's id. This method does not
-    # exectue a database request, it completely relies on the id sent with 
-    # the authentication token. 
-    # 
-    # TODO: at present, always returns 5
-    def current_character_id
-      5 # from seeds: 5 -> Egbert
-    end
-    
-    # returns the currently logged-id character. The character is determined 
-    # with the help of the authentication token sent witht he request. This
-    # method thus relies on current_character_id . If no authentication token
-    # was sent with the request, this method returns nil.
-    def current_character
-      if current_character_id == 0
-        return nil
-      else 
-        return Fundamental::Character.find(current_character_id)
+    # receives an array of fields and expands string-(wildcard)-fields in 
+    # that array to matching attributes of the model. returns an array with
+    # all symbol-elements from fields plus the attributes obtained by 
+    # expanding the strings. A string-field matches an attribute in case
+    # the attribute starts with this string (case-sensitive). For example
+    # "unit_" matches attributes :unit_type, :unit_infantry, etc. .
+    def self.expand_fields(m, fields) 
+      result = []
+      fields.each do | field |
+        if field.is_a?(String)
+          m.attributes.each do | attrib, value |
+            result.push attrib if attrib.start_with? field
+          end
+        else
+          result.push field
+        end
       end
+      result
     end
+          
+  
+
   
     def time_action
       started = Time.now
@@ -76,13 +79,51 @@ class ApplicationController < ActionController::Base
       head :bad_request if exception.class  == BadRequestError
       head :not_found if exception.class    == NotFoundError 
       head :forbidden if exception.class    == ForbiddenError
+      head :conflict if exception.class         == ConflictError
+      head :unprocessable_entity if exception.class == UnprocessableEntityError
+      head :unauthorized if exception.class     == UnauthorizedError
     end
     
     def render_html_for_exception(exception)
       render :text => exception.message, :status => :bad_request if exception.class == BadRequestError
       render :text => exception.message, :status => :not_found   if exception.class == NotFoundError
       render :text => exception.message, :status => :forbidden   if exception.class == ForbiddenError
+      render :text => exception.message, :status => :conflict      if exception.class == ConflictError      
+      render :text => exception.message, :status => :unprocessable_entity    if exception.class == UnprocessableEntityError      
+      render :text => exception.message, :status => :unauthorized  if exception.class == UnauthorizedError      
     end
 
+
+    # hanlde exceptions raised by a failed attempt to authorize with a bearer 
+    # token of the resource and produce correct repsonses and headers. 
+    def render_response_for_bearer_auth_exception(exception)
+      info =   { :code => :bad_request }   # no description for unknwon (new or mislead) exception
+      if exception.kind_of? BearerAuthInvalidRequest
+        info = { :code => :bad_request,  :headers => { 'WWW-Authenticate' => 'Bearer realm="HeldenDuell", error="invalid_request", error_description ="'+exception.message+'"' } }
+      elsif exception.kind_of?(BearerAuthInvalidToken) 
+        info = { :code => :unauthorized, :headers => { 'WWW-Authenticate' => 'Bearer realm="HeldenDuell", error="invalid_token", error_description ="'+exception.message+'"' } }
+      elsif exception.kind_of? BearerAuthInsufficientScope
+        info = { :code => :forbidden,    :headers => { 'WWW-Authenticate' => 'Bearer realm="HeldenDuell", error="insufficient_scope", error_description ="'+exception.message+'"' } }
+      elsif exception.instance_of?(BearerAuthError)
+        info = { :code => :unauthorized, :headers => { 'WWW-Authenticate' => 'Bearer realm="HeldenDuell"' } }  # no error_code! (due to specs)
+      end
+      
+      if info[:headers]
+        info[:headers].each do |key, value|
+          headers[key] = value
+        end
+      end
+
+      logger.warn("%s: '%s', for request '%s' from %s" % [exception.class, exception.message, request.url, request.remote_ip] )
+
+      respond_to do |format|
+        format.html {
+          render :text => exception.message, :status => info[:code]
+        }
+        format.json {
+          head info[:code]
+        }
+      end
+    end
 
 end

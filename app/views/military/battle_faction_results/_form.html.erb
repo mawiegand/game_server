@@ -1,0 +1,41 @@
+<%= form_for(@military_battle_faction_result) do |f| %>
+  <% if @military_battle_faction_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@military_battle_faction_result.errors.count, "error") %> prohibited this military_battle_faction_result from being saved:</h2>
+
+      <ul>
+      <% @military_battle_faction_result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :battle_id %><br />
+    <%= f.number_field :battle_id %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.number_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :faction_id %><br />
+    <%= f.number_field :faction_id %>
+  </div>
+  <div class="field">
+    <%= f.label :leader_id %><br />
+    <%= f.number_field :leader_id %>
+  </div>
+  <div class="field">
+    <%= f.label :given_command %><br />
+    <%= f.text_field :given_command %>
+  </div>
+  <div class="field">
+    <%= f.label :executed_command %><br />
+    <%= f.text_field :executed_command %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

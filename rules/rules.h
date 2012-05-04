@@ -132,6 +132,7 @@ public:
   int actionPoints;
   int attack;
   int armor;
+  bool overrunnable;
   int criticalHitDamage;
   double criticalHitChance;
   int hitpoints;

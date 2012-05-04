@@ -1,7 +1,24 @@
 <% if (@only.length == 0 || @only.include?(:version)) && !@rules.version.nil? %>
   <h1>Game Rules @<%= "#{@rules.version[:major]}.#{@rules.version[:minor]}.#{@rules.version[:build]}"%></h1>
+  <hr />
 <% end %>
 
+
+<% if (@only.length == 0 || @only.include?(:unit_categories)) && !@rules.unit_categories.nil? %>
+  <h1>Unit Categories</h1>
+  <% @rules.unit_categories.each do |unit| %>
+    <h2><%= unit[:name][:en_US] %></h2>
+    <table>
+      <% unit.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  <hr />
+<% end %>
 
 
 <% if (@only.length == 0 || @only.include?(:unit_types)) && !@rules.unit_types.nil? %>
@@ -17,6 +34,8 @@
       <% end %>
     </table>
   <% end %>
+  <hr />
+
 <% end %>
 
 
@@ -34,4 +53,6 @@
       <% end %>
     </table>
   <% end %>
+  <hr />
+
 <% end %>

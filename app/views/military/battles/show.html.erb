@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Started at:</b>
+  <%= @military_battle.started_at %>
+</p>
+
+<p>
+  <b>Ended at:</b>
+  <%= @military_battle.ended_at %>
+</p>
+
+<p>
+  <b>Next round at:</b>
+  <%= @military_battle.next_round_at %>
+</p>
+
+<p>
+  <b>Initiator:</b>
+  <%= @military_battle.initiator_id %>
+</p>
+
+<p>
+  <b>Opponent:</b>
+  <%= @military_battle.opponent_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @military_battle.location_id %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @military_battle.region_id %>
+</p>
+
+<p>
+  <b>Importance rating:</b>
+  <%= @military_battle.importance_rating %>
+</p>
+
+<p>
+  <b>Decisiveness:</b>
+  <%= @military_battle.decisiveness %>
+</p>
+
+<p>
+  <b>Factions count:</b>
+  <%= @military_battle.factions_count %>
+</p>
+
+<p>
+  <b>Rounds count:</b>
+  <%= @military_battle.rounds_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_path(@military_battle) %> |
+<%= link_to 'Back', military_battles_path %>

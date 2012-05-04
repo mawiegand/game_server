@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  salt: MyString
+  string: 
+  admin: false
+  staff: MyString
+  firstname: MyString
+  surname: MyString
+  login: MyString
+
+two:
+  email: MyString
+  salt: MyString
+  string: 
+  admin: false
+  staff: MyString
+  firstname: MyString
+  surname: MyString
+  login: MyString

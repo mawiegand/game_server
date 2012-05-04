@@ -1,0 +1,2 @@
+module Military::BattleFactionResultsHelper
+end

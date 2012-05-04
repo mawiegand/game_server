@@ -5,6 +5,17 @@
   <%= @military_army_detail.army_id %>
 </p>
 
+  
+<% @military_army_detail.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <p>
+      <b><%= attribute %>:</b>
+      <%= value %>
+    </p>
+<%end
+end%>
+
+
 
 <%= link_to 'Edit', edit_military_army_detail_path(@military_army_detail) %> |
 <%= link_to 'Back', military_army_details_path %>

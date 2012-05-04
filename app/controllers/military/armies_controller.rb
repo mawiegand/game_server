@@ -1,11 +1,17 @@
 class Military::ArmiesController < ApplicationController
   layout 'military'
 
-#  before_filter :authenticate
+  before_filter :authenticate
 
-  
-  @@short_fields = [:id, :name, :region_id, :location_id, :owner_id, :owner_name, :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :strength, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
-  @@aggregate_fields = [:id, :owner_id, :alliance_id, :stance, :strength, :updated_at]
+  @@short_fields = ApplicationController.expand_fields(
+    Military::Army.new,
+    [ :id, :name, :region_id, :location_id, :owner_id, :owner_name, :garrison,
+      'unitcategory_',
+      :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :size_max, 
+      :strength,  :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
+  )
+
+  @@aggregate_fields = [:id, :garrison, :owner_id, :alliance_id, :stance, :strength, :updated_at]
  
   # Returns a list of armies in a region or at a location. There are three 
   # modes to request the list for JSON:
@@ -74,7 +80,7 @@ class Military::ArmiesController < ApplicationController
           elsif params.has_key?(:aggregate)
             render json: @military_armies, :only => @@aggregate_fields          
           else
-            render json: @military_armies
+            render json: @military_armies, :methods => [ :details ]
           end
         end
       end
@@ -107,7 +113,7 @@ class Military::ArmiesController < ApplicationController
           elsif params.has_key?(:aggregate)
             render json: @military_army, :only => @@aggregate_fields          
           else
-            render json: @military_army
+            render json: @military_army, :methods => [ :details ]
           end 
         end
       end

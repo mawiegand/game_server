@@ -38,15 +38,28 @@
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Unit-->
-<!ELEMENT UnitCategory (Name+, Description+, Position?, Ability*)>
+<!ELEMENT UnitCategory (Name+, Description+, Position?, Ability*, TargetPriorities?)>
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Description+, Position?, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Hitpoints, Effectiveness*, Encumbrance*)>
+<!ELEMENT Unit (Name+, Description+, Position?, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
 >
+
+<!ELEMENT TargetPriorities (TargetList, TargetList)>
+<!ATTLIST TargetPriorities
+	testType CDATA #REQUIRED
+	testCategory IDREF #IMPLIED
+>
+
+<!ELEMENT TargetList (Target)>
+<!ELEMENT Target EMPTY>
+<!ATTLIST Target
+ id IDREF #REQUIRED
+>
+
 
 <!--Webinterface: Production-->
 <!ELEMENT Cost (#PCDATA | object)*>
@@ -79,6 +92,7 @@
 >
 <!ELEMENT Armor (#PCDATA)>
 <!ELEMENT Hitpoints (#PCDATA)>
+<!ELEMENT Overrunnable (#PCDATA)>
 <!ELEMENT Effectiveness (#PCDATA)>
 <!ATTLIST Effectiveness 
   category IDREF #REQUIRED

@@ -1,0 +1,35 @@
+<h1>Listing military_battle_participants</h1>
+
+<table>
+  <tr>
+    <th>Army</th>
+    <th>Battle</th>
+    <th>Faction</th>
+    <th>Joined at</th>
+    <th>Retreat</th>
+    <th>Retreat to region</th>
+    <th>Retreat to location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_participants.each do |military_battle_participant| %>
+  <tr>
+    <td><%= military_battle_participant.army_id %></td>
+    <td><%= military_battle_participant.battle_id %></td>
+    <td><%= military_battle_participant.faction_id %></td>
+    <td><%= military_battle_participant.joined_at %></td>
+    <td><%= military_battle_participant.retreat %></td>
+    <td><%= military_battle_participant.retreat_to_region_id %></td>
+    <td><%= military_battle_participant.retreat_to_location_id %></td>
+    <td><%= link_to 'Show', military_battle_participant %></td>
+    <td><%= link_to 'Edit', edit_military_battle_participant_path(military_battle_participant) %></td>
+    <td><%= link_to 'Destroy', military_battle_participant, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle participant', new_military_battle_participant_path %>

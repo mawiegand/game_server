@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_participant_result.battle_id %>
+</p>
+
+<p>
+  <b>Round:</b>
+  <%= @military_battle_participant_result.round_id %>
+</p>
+
+<p>
+  <b>Army:</b>
+  <%= @military_battle_participant_result.army_id %>
+</p>
+
+<p>
+  <b>Battle faction result:</b>
+  <%= @military_battle_participant_result.battle_faction_result_id %>
+</p>
+
+<p>
+  <b>Retreat tried:</b>
+  <%= @military_battle_participant_result.retreat_tried %>
+</p>
+
+<p>
+  <b>Retreat succeeded:</b>
+  <%= @military_battle_participant_result.retreat_succeeded %>
+</p>
+
+<p>
+  <b>Kills:</b>
+  <%= @military_battle_participant_result.kills %>
+</p>
+
+<p>
+  <b>Experience gained:</b>
+  <%= @military_battle_participant_result.experience_gained %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_participant_result_path(@military_battle_participant_result) %> |
+<%= link_to 'Back', military_battle_participant_results_path %>

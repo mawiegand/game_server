@@ -1,0 +1,27 @@
+<h1>Listing military_battle_rounds</h1>
+
+<table>
+  <tr>
+    <th>Battle</th>
+    <th>Round num</th>
+    <th>Executed at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_rounds.each do |military_battle_round| %>
+  <tr>
+    <td><%= military_battle_round.battle_id %></td>
+    <td><%= military_battle_round.round_num %></td>
+    <td><%= military_battle_round.executed_at %></td>
+    <td><%= link_to 'Show', military_battle_round %></td>
+    <td><%= link_to 'Edit', edit_military_battle_round_path(military_battle_round) %></td>
+    <td><%= link_to 'Destroy', military_battle_round, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle round', new_military_battle_round_path %>

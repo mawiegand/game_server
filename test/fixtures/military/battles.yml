@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  started_at: 2012-04-30 14:54:52
+  ended_at: 2012-04-30 14:54:52
+  next_round_at: 2012-04-30 14:54:52
+  initiator_id: 1
+  opponent_id: 1
+  location_id: 1
+  region_id: 1
+  importance_rating: 1
+  decisiveness: 1
+  factions_count: 1
+  rounds_count: 1
+
+two:
+  started_at: 2012-04-30 14:54:52
+  ended_at: 2012-04-30 14:54:52
+  next_round_at: 2012-04-30 14:54:52
+  initiator_id: 1
+  opponent_id: 1
+  location_id: 1
+  region_id: 1
+  importance_rating: 1
+  decisiveness: 1
+  factions_count: 1
+  rounds_count: 1

@@ -1,0 +1,61 @@
+<%= form_for(@military_battle) do |f| %>
+  <% if @military_battle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@military_battle.errors.count, "error") %> prohibited this military_battle from being saved:</h2>
+
+      <ul>
+      <% @military_battle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :started_at %><br />
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_at %><br />
+    <%= f.datetime_select :ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :next_round_at %><br />
+    <%= f.datetime_select :next_round_at %>
+  </div>
+  <div class="field">
+    <%= f.label :initiator_id %><br />
+    <%= f.number_field :initiator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :opponent_id %><br />
+    <%= f.number_field :opponent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :region_id %><br />
+    <%= f.number_field :region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :importance_rating %><br />
+    <%= f.number_field :importance_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :decisiveness %><br />
+    <%= f.number_field :decisiveness %>
+  </div>
+  <div class="field">
+    <%= f.label :factions_count %><br />
+    <%= f.number_field :factions_count %>
+  </div>
+  <div class="field">
+    <%= f.label :rounds_count %><br />
+    <%= f.number_field :rounds_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

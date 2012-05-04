@@ -15,6 +15,15 @@
     <%= f.label :army_id %><br />
     <%= f.number_field :army_id %>
   </div>
+<% Military::ArmyDetail.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <div class="field">
+      <%= f.label attribute %><br />
+      <%= f.number_field attribute %>
+    </div>
+<%end
+end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

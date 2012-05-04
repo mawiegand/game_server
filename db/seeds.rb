@@ -3,6 +3,14 @@ require 'mapping/global_mercator'
 # This file seeds the database after its creation (or a reset)
 # Everything a "blank" game needs to be ready to be started should go in here.
 
+user = Backend::User.new()
+user.login = 'admin'
+user.email = 'info@5dlab.com'
+user.password = '5dlab5dlab'
+user.admin = true
+user.staff = true
+user.deleted = false
+user.save
 
 # DUMMY DATA FOR TESTING
 
@@ -23,7 +31,7 @@ alliance_data=[ { id: 0,
           ];
           
 character_data=[ {}, 
-             { id: 1, name: 'Egbert' },
+             { id: 1, name: 'Egbert', identifier: 'eOmKvNkXSRLmbTDQ' },
              { id: 2, name: 'Paffi' },
              { id: 3, name: 'David' },
              { id: 4, name: 'Enzio' },
@@ -52,6 +60,7 @@ alliance_data.each do |ally|
     ally[:members].each do |member| 
       character =  alliance.members.build( name: character_data[member][:name] )
       character.alliance_tag = alliance.tag
+      character.identifier = character_data[member][:identifier] unless character_data[member][:identifier].blank?
       character.save
     end
     alliance.save
@@ -246,16 +255,58 @@ while !locations.empty?
       army.ap_seconds_per_point = 3600*6
 
       army.mode = 0
+      army.kills = 0
+      army.victories = 0
+      
       army.stance = rand(3)
       army.size_max = 1200
-      army.size_present = rand(army.size_max)+1
-      army.strength = army.size_present * (rand(10)+10)
       army.exp = rand(1000000)
       army.rank = army.exp / 10000
-  
+      army.garrison = false
       army.save
   
+      details = army.build_details
+      
+      GameRules::Rules.the_rules.unit_types.each do |unit_type| 
+        details[unit_type[:db_field]] = rand(100)
+      end
+      
+      details.save
     end
+  end
+  
+  if (location.type_id != 0)
+      army = location.armies.build
+      army.region = location.region
+  
+      army.name = 'Garnison'
+  
+      char = location.owner                      # choose member
+      ally = char.alliance                       # choose ally
+      army.owner_id = char[:id]
+      army.owner_name = char[:name]
+      army.alliance_id = ally[:id] unless ally.blank?
+      army.alliance_tag = ally[:tag] unless ally.blank?
+
+      army.ap_max = 4
+      army.ap_present = rand(army.ap_max+1)
+      army.ap_seconds_per_point = 3600*6
+
+      army.mode = 0
+      army.stance = rand(3)
+      army.size_max = 1200
+      army.exp = rand(1000000)
+      army.rank = army.exp / 10000
+      army.garrison = true
+      army.save
+      
+      details = army.build_details
+      
+      GameRules::Rules.the_rules.unit_types.each do |unit_type| 
+        details[unit_type[:db_field]] = rand(100)
+      end
+      
+      details.save
   end
   
 end

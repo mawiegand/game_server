@@ -1,0 +1,49 @@
+<%= form_for(@military_battle_participant_result) do |f| %>
+  <% if @military_battle_participant_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@military_battle_participant_result.errors.count, "error") %> prohibited this military_battle_participant_result from being saved:</h2>
+
+      <ul>
+      <% @military_battle_participant_result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :battle_id %><br />
+    <%= f.number_field :battle_id %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.number_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :army_id %><br />
+    <%= f.number_field :army_id %>
+  </div>
+  <div class="field">
+    <%= f.label :battle_faction_result_id %><br />
+    <%= f.number_field :battle_faction_result_id %>
+  </div>
+  <div class="field">
+    <%= f.label :retreat_tried %><br />
+    <%= f.check_box :retreat_tried %>
+  </div>
+  <div class="field">
+    <%= f.label :retreat_succeeded %><br />
+    <%= f.check_box :retreat_succeeded %>
+  </div>
+  <div class="field">
+    <%= f.label :kills %><br />
+    <%= f.number_field :kills %>
+  </div>
+  <div class="field">
+    <%= f.label :experience_gained %><br />
+    <%= f.number_field :experience_gained %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

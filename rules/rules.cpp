@@ -58,6 +58,7 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 18;
   unit->armor = 2;
   unit->hitpoints = 90;
+  unit->overrunnable = true;
   unit->criticalHitDamage = 10;
   unit->criticalHitChance = 0.01;
 
@@ -81,6 +82,7 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 14;
   unit->armor = 14;
   unit->hitpoints = 90;
+  unit->overrunnable = true;
   unit->criticalHitDamage = 6;
   unit->criticalHitChance = 0.01;
 
@@ -104,6 +106,7 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 16;
   unit->armor = 3;
   unit->hitpoints = 95;
+  unit->overrunnable = ;
   unit->criticalHitDamage = 10;
   unit->criticalHitChance = 0.001;
 
@@ -127,6 +130,7 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 20;
   unit->armor = 4;
   unit->hitpoints = 60;
+  unit->overrunnable = true;
   unit->criticalHitDamage = 10;
   unit->criticalHitChance = 0.002;
 
@@ -150,6 +154,7 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 21;
   unit->armor = 15;
   unit->hitpoints = 140;
+  unit->overrunnable = ;
   unit->criticalHitDamage = 14;
   unit->criticalHitChance = 0.002;
 

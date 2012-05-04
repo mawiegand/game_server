@@ -25,24 +25,35 @@ end
 # science_) because an Army does not need to  know about them. In this case
 # you would add a line "Army => [ 'unit_' ]," to the hash.
 hash_of_models = { 
-  Military::ArmyDetail   => [ 'unit_' ],
+  Military::Army            => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
+  Military::ArmyDetail      => [ { :prefix => 'unit_', :postfix => '' } ],
+  Military::BattleFaction   => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
+  Military::BattleParticipantResult    => [ { :prefix => 'unit_', :postfix => '' },
+                                            { :prefix => 'unit_', :postfix => '_casualties' },
+                                            { :prefix => 'unit_', :postfix => '_damage_taken', :type => ':decimal' },
+                                            { :prefix => 'unit_', :postfix => '_damage_inflicted', :type => ':decimal' },
+                                          ],
+
 }
 
 timestamp = DateTime.now
 
 fields = ""
 
-str  = "class Rules < ActiveRecord::Migration\n"
+str  = "class Rules#{timestamp.strftime('%Y%m%d%H%M%S')} < ActiveRecord::Migration\n"
 str += "  def change\n"
 
 hash_of_models.each do | model, prefixes |
   
   list_of_attributes.each do | attribute |
-
-    if !model.new.has_attribute?(attribute) && prefixes.any? { | prefix |  attribute.start_with? prefix }
-      fields += "    add_column :#{ model.table_name },   :#{ attribute },   :integer\n"
+    
+    prefixes.each do | prefix |
+      
+      if attribute.start_with?(prefix[:prefix]) && !model.new.has_attribute?(attribute+prefix[:postfix])
+        fields += "    add_column :#{ model.table_name },   :#{ attribute+prefix[:postfix] },   #{ prefix[:type].nil? ? ':integer' : prefix[:type]  }\n"
+      end
+      
     end
-
   end
 end
 
@@ -51,9 +62,11 @@ str += fields
 str += "  end\n"
 str += "end\n"
 
+
 if fields.length > 1
-  file = File.new(File.join(Rails.root, 'db', 'migrate', timestamp.strftime('%Y%m%d%H%M%S')+'_rules.rb'), 'w' );
+  file = File.new(File.join(Rails.root, 'db', 'migrate', timestamp.strftime('%Y%m%d%H%M%S')+'_rules'+timestamp.strftime('%Y%m%d%H%M%S')+'.rb'), 'w' );
   if file
+    
     file.syswrite(str)
     file.close
     puts "Created new migration. run rake db:migrate to apply."

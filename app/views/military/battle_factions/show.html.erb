@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_faction.battle_id %>
+</p>
+
+<p>
+  <b>Faction num:</b>
+  <%= @military_battle_faction.faction_num %>
+</p>
+
+<p>
+  <b>Leader:</b>
+  <%= @military_battle_faction.leader_id %>
+</p>
+
+<p>
+  <b>Joined at:</b>
+  <%= @military_battle_faction.joined_at %>
+</p>
+
+<p>
+  <b>Present command:</b>
+  <%= @military_battle_faction.present_command %>
+</p>
+
+<p>
+  <b>Total casualties:</b>
+  <%= @military_battle_faction.total_casualties %>
+</p>
+
+<p>
+  <b>Total kills:</b>
+  <%= @military_battle_faction.total_kills %>
+</p>
+
+<p>
+  <b>Total damage inflicted:</b>
+  <%= @military_battle_faction.total_damage_inflicted %>
+</p>
+
+<p>
+  <b>Total damage taken:</b>
+  <%= @military_battle_faction.total_damage_taken %>
+</p>
+
+<p>
+  <b>Total hitpoints:</b>
+  <%= @military_battle_faction.total_hitpoints %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_faction_path(@military_battle_faction) %> |
+<%= link_to 'Back', military_battle_factions_path %>
