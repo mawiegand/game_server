@@ -87,6 +87,18 @@
         <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
       </Description>
       <Ability id="prevent-flanking" />
+			<TargetPriorities testType="line_size_test">
+				<TargetList>
+					<Target id="cavalry" />
+					<Target id="artillery" />
+					<Target id="infantry" />
+				</TargetList>
+				<TargetList>
+					<Target id="infantry" />
+					<Target id="cavalry" />
+					<Target id="artillery" />
+				</TargetList>
+			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="cavalry">
       <Name>cavalry</Name>

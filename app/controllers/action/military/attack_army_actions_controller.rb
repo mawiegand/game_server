@@ -24,14 +24,10 @@ class Action::Military::AttackArmyActionsController < ApplicationController
 
     raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode == 0 || attacker.battle_id.nil?
 
-    battle = Military::Battle.start_fight_between(attacker, defender)    
+    Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
     
     respond_to do |format|
-      if battle
-        format.json { render json: {}, status: :ok }
-      else
-        format.json { render json: {:error => 'error'}, status: :unprocessable_entity }
-      end
+      format.json { render json: {}, status: :ok }
     end
   end
 end
