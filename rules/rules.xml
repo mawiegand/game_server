@@ -192,7 +192,7 @@
       <ActionPoints>5</ActionPoints>
       <Initiative>26</Initiative>
       <Attack>16</Attack>
-      <CriticalDamage chance="0.001">10</CriticalDamage>
+      <CriticalDamage chance="0.01">10</CriticalDamage>
       <Armor>3</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>95</Hitpoints>
@@ -209,17 +209,17 @@
       <Description lang="en_US">
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
       </Description>
-      <Velocity>0.9</Velocity>
+      <Velocity>0.95</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>14</Initiative>
       <Attack>20</Attack>
-      <CriticalDamage chance="0.002">10</CriticalDamage>
+      <CriticalDamage chance="0.02">9</CriticalDamage>
       <Armor>4</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>60</Hitpoints>
-      <Effectiveness category="infantry">0.3</Effectiveness>
+      <Hitpoints>140</Hitpoints>
+      <Effectiveness category="infantry">0.8</Effectiveness>
       <Effectiveness category="cavalry">1</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
+      <Effectiveness category="artillery">0,8</Effectiveness>
     </Unit>
 	  <Unit id="sabre_riders" category="cavalry">
       <Name>Sabretooth-Riders</Name>
@@ -234,7 +234,7 @@
       <ActionPoints>4</ActionPoints>
       <Initiative>28</Initiative>
       <Attack>21</Attack>
-      <CriticalDamage chance="0.002">14</CriticalDamage>
+      <CriticalDamage chance="0.02">14</CriticalDamage>
       <Armor>15</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>140</Hitpoints>
@@ -254,11 +254,11 @@
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>7</Initiative>
-      <Attack>14</Attack>
-      <CriticalDamage chance="0.1">10</CriticalDamage>
+      <Attack>19</Attack>
+      <CriticalDamage chance="0.2">19</CriticalDamage>
       <Armor>0</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>90</Hitpoints>
+      <Hitpoints>100</Hitpoints>
       <Effectiveness category="infantry">1</Effectiveness>
       <Effectiveness category="cavalry">0,4</Effectiveness>
       <Effectiveness category="artillery">0,7</Effectiveness>
