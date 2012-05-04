@@ -225,12 +225,12 @@ class GameRules::Rules
 
           :velocity    => 1,
           :action_points => 4,
-          :initiative  => 1,
-          :attack      => 15,
+          :initiative  => 8,
+          :attack      => 18,
           :armor       => 2,
-          :hitpoints   => 30,
+          :hitpoints   => 90,
           :overrunnable => true,
-          :critical_hit_damage => 8,
+          :critical_hit_damage => 10,
           :critical_hit_chance => 0.01,
 
 
@@ -257,12 +257,12 @@ class GameRules::Rules
 
           :velocity    => 1,
           :action_points => 4,
-          :initiative  => 1,
-          :attack      => 10,
-          :armor       => 8,
+          :initiative  => 15,
+          :attack      => 14,
+          :armor       => 14,
           :hitpoints   => 90,
           :overrunnable => true,
-          :critical_hit_damage => 2,
+          :critical_hit_damage => 6,
           :critical_hit_chance => 0.01,
 
 
@@ -289,8 +289,40 @@ class GameRules::Rules
 
           :velocity    => 1.5,
           :action_points => 5,
-          :initiative  => 1,
-          :attack      => 10,
+          :initiative  => 26,
+          :attack      => 16,
+          :armor       => 3,
+          :hitpoints   => 95,
+          :overrunnable => ,
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.001,
+
+
+        },              #   END OF Ostrich Riders
+        {               #   Tree Huggers
+          :numeric_id  => 3, 
+          :id          => :tree_huggers,
+					:category    => :infantry,
+          :db_field    => :unit_tree_huggers,
+          :name        => {
+            
+            :en_US => "Tree Huggers",
+  
+            :de_DE => "Baum-Brutalos",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Baum-Brutalos sind Tier2-Einheiten</p>",
+  
+            :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>",
+                
+          },
+
+          :velocity    => 0.9,
+          :action_points => 4,
+          :initiative  => 14,
+          :attack      => 20,
           :armor       => 4,
           :hitpoints   => 60,
           :overrunnable => true,
@@ -298,7 +330,39 @@ class GameRules::Rules
           :critical_hit_chance => 0.002,
 
 
-        },              #   END OF Ostrich Riders
+        },              #   END OF Tree Huggers
+        {               #   Sabretooth-Riders
+          :numeric_id  => 4, 
+          :id          => :sabre_riders,
+					:category    => :cavalry,
+          :db_field    => :unit_sabre_riders,
+          :name        => {
+            
+            :en_US => "Sabretooth-Riders",
+  
+            :de_DE => "Säbelzahnreiter",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
+  
+            :en_US => "<p>It's not so much the riders themselves that are feared...</p>",
+                
+          },
+
+          :velocity    => 1.4,
+          :action_points => 4,
+          :initiative  => 28,
+          :attack      => 21,
+          :armor       => 15,
+          :hitpoints   => 140,
+          :overrunnable => ,
+          :critical_hit_damage => 14,
+          :critical_hit_chance => 0.002,
+
+
+        },              #   END OF Sabretooth-Riders
       ],                # END OF UNIT TYPES
 
     )

@@ -54,12 +54,12 @@ Rules::Rules() : version(Version(1,0,0))
   
   unit->velocity = 1;
   unit->actionPoints = 4;
-  unit->initiative = 1;
-  unit->attack = 15;
+  unit->initiative = 8;
+  unit->attack = 18;
   unit->armor = 2;
-  unit->hitpoints = 30;
+  unit->hitpoints = 90;
   unit->overrunnable = true;
-  unit->criticalHitDamage = 8;
+  unit->criticalHitDamage = 10;
   unit->criticalHitChance = 0.01;
 
 
@@ -78,12 +78,12 @@ Rules::Rules() : version(Version(1,0,0))
   
   unit->velocity = 1;
   unit->actionPoints = 4;
-  unit->initiative = 1;
-  unit->attack = 10;
-  unit->armor = 8;
+  unit->initiative = 15;
+  unit->attack = 14;
+  unit->armor = 14;
   unit->hitpoints = 90;
   unit->overrunnable = true;
-  unit->criticalHitDamage = 2;
+  unit->criticalHitDamage = 6;
   unit->criticalHitChance = 0.01;
 
 
@@ -102,8 +102,32 @@ Rules::Rules() : version(Version(1,0,0))
   
   unit->velocity = 1.5;
   unit->actionPoints = 5;
-  unit->initiative = 1;
-  unit->attack = 10;
+  unit->initiative = 26;
+  unit->attack = 16;
+  unit->armor = 3;
+  unit->hitpoints = 95;
+  unit->overrunnable = ;
+  unit->criticalHitDamage = 10;
+  unit->criticalHitChance = 0.001;
+
+
+	
+
+  this->unitTypes[2] = unit; 
+
+  /* Tree Huggers */
+  unit = new UnitType(3, 
+                      "tree_huggers");
+
+  unit->name[LOCALE_en_US] = "Tree Huggers";
+  unit->name[LOCALE_de_DE] = "Baum-Brutalos";
+  unit->description[LOCALE_de_DE] = "<p>Baum-Brutalos sind Tier2-Einheiten</p>";
+  unit->description[LOCALE_en_US] = "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>";
+  
+  unit->velocity = 0.9;
+  unit->actionPoints = 4;
+  unit->initiative = 14;
+  unit->attack = 20;
   unit->armor = 4;
   unit->hitpoints = 60;
   unit->overrunnable = true;
@@ -113,7 +137,31 @@ Rules::Rules() : version(Version(1,0,0))
 
 	
 
-  this->unitTypes[2] = unit; 
+  this->unitTypes[3] = unit; 
+
+  /* Sabretooth-Riders */
+  unit = new UnitType(4, 
+                      "sabre_riders");
+
+  unit->name[LOCALE_en_US] = "Sabretooth-Riders";
+  unit->name[LOCALE_de_DE] = "Säbelzahnreiter";
+  unit->description[LOCALE_de_DE] = "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>";
+  unit->description[LOCALE_en_US] = "<p>It's not so much the riders themselves that are feared...</p>";
+  
+  unit->velocity = 1.4;
+  unit->actionPoints = 4;
+  unit->initiative = 28;
+  unit->attack = 21;
+  unit->armor = 15;
+  unit->hitpoints = 140;
+  unit->overrunnable = ;
+  unit->criticalHitDamage = 14;
+  unit->criticalHitChance = 0.002;
+
+
+	
+
+  this->unitTypes[4] = unit; 
 
 };
 

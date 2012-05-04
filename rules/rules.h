@@ -21,7 +21,7 @@
 #define MAX_RESOURCE 0
 #define MAX_BUILDING 0
 #define MAX_SCIENCE 0
-#define MAX_UNIT 3
+#define MAX_UNIT 5
 
 enum LocaleSpecifier
 {
