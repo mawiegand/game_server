@@ -94,6 +94,23 @@ class GameRules::Rules
                 
           },
 
+          :target_priorities => {
+            :test_type => :no_test,
+
+            :results => [
+              
+              [
+                
+                  :infantry,
+                
+                  :cavalry,
+                
+                  :artillery,
+                
+              ],
+       
+            ],
+          },
         },              #   END OF Infantry
         {               #   cavalry
           :numeric_id  => 1, 
@@ -114,6 +131,35 @@ class GameRules::Rules
                 
           },
 
+          :target_priorities => {
+            :test_type => :line_size_test,
+
+            :test_category => :infantry,
+
+            :results => [
+              
+              [
+                
+                  :cavalry,
+                
+                  :artillery,
+                
+                  :infantry,
+                
+              ],
+
+              [
+                
+                  :cavalry,
+                
+                  :infantry,
+                
+                  :artillery,
+                
+              ],
+       
+            ],
+          },
         },              #   END OF cavalry
         {               #   artillery
           :numeric_id  => 2, 
@@ -134,6 +180,23 @@ class GameRules::Rules
                 
           },
 
+          :target_priorities => {
+            :test_type => :no_test,
+
+            :results => [
+              
+              [
+                
+                  :infantry,
+                
+                  :artillery,
+                
+                  :cavalry,
+                
+              ],
+       
+            ],
+          },
         },              #   END OF artillery
       ],                # END OF UNIT CATEGORIES
 
