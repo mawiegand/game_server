@@ -1,60 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Started at:</b>
-  <%= @military_battle.started_at %>
-</p>
+<div class="battle-info panel">
+<h1>Battle at Location <%= @military_battle.location.slot %> in Region <%= @military_battle.region.id %></h1>
 
-<p>
-  <b>Ended at:</b>
-  <%= @military_battle.ended_at %>
-</p>
-
-<p>
-  <b>Next round at:</b>
-  <%= @military_battle.next_round_at %>
-</p>
-
-<p>
-  <b>Initiator:</b>
-  <%= @military_battle.initiator_id %>
-</p>
-
-<p>
-  <b>Opponent:</b>
-  <%= @military_battle.opponent_id %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @military_battle.location_id %>
-</p>
-
-<p>
-  <b>Region:</b>
-  <%= @military_battle.region_id %>
-</p>
-
-<p>
-  <b>Importance rating:</b>
-  <%= @military_battle.importance_rating %>
-</p>
-
-<p>
-  <b>Decisiveness:</b>
-  <%= @military_battle.decisiveness %>
-</p>
-
-<p>
-  <b>Factions count:</b>
-  <%= @military_battle.factions_count %>
-</p>
-
-<p>
-  <b>Rounds count:</b>
-  <%= @military_battle.rounds_count %>
-</p>
-
+<ul>
+  <li>Started at: <%= @military_battle.started_at %></li>
+  <li>Initiated by <b><%= "#{@military_battle.initiator.name} | #{@military_battle.initiator.alliance_tag}"%></b> with an attack on <b><%= "#{@military_battle.opponent.name} | #{@military_battle.opponent.alliance_tag}"%></b></li>
+</ul>
 
 <%= link_to 'Edit', edit_military_battle_path(@military_battle) %> |
 <%= link_to 'Back', military_battles_path %>
+
+</div>
+
+
+<div class="round-info panel panel-border">
+<% if @military_battle.rounds.empty? %>
+<h1>No rounds!</h2>
+<% else %>
+<h1>Before Round <%= @military_battle.battle_rounds_count %></h1>
+
+<ul>
+  <li>Round <%= @military_battle.rounds.last.round_num %>: <%= @military_battle.rounds.last.executed_at %></li>
+  <li>Next: <%= @military_battle.next_round_at %></li>
+</ul>
+<% end %>
+</div>
+
+
+<div class="panel">
+<table class="factions-overview">
+<tr>
+  <th>Faction A (Initiator)</th>
+  <th>Faction B (Opponent)</th>
+</tr>
+<tr>
+  <td>
+    <% @military_battle.factions.first.participants.each do | participant | %>
+      <%= link_to participant.army.owner.name, participant.army.owner %> |
+      <%= if (participant.army.owner.alliance) 
+            link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+          else 
+            ""
+          end %> with
+      <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%><br/>
+    <% end %>    
+  </td>
+  <td>
+    <% @military_battle.factions.last.participants.each do | participant | %>
+      <%= link_to participant.army.owner.name, participant.army.owner %> |
+      <%= if (participant.army.owner.alliance) 
+            link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+          else 
+            ""
+          end %> with
+      <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%><br/>
+    <% end %>
+  </td>
+</tr>
+</table>
+</div>

@@ -132,14 +132,22 @@ class Ticker::BattleHandler
   
   def create_awe_test_for(category)
     awe_priority_test = nil
+    
+    puts 'CREATE TEST'
 
     if category[:target_priorities][:test_type] == :no_test          # NO TEST
+      
+      puts 'CREATE NO TEST'
+      
       awe_priority_test = Battle::NoTest.new
       category[:target_priorities][:results][0].each do | target |
         awe_priority_test.pushCategoryToPriority(target)
       end
       
-    elsif category[:target_priorities][:test_type] == :line_size_test# LINE SIZE TEST
+    elsif category[:target_priorities][:test_type] == :line_size_test # LINE SIZE TEST
+      
+      puts 'CREATE LINE SIZE TEST'
+      
       awe_priority_test = Battle::LineSizeTest.new(category[:target_priorities][:test_category])
       category[:target_priorities][:results][0].each do | target |
         awe_priority_test.pushCategoryToPriorityOnSuccess(target)
@@ -158,9 +166,12 @@ class Ticker::BattleHandler
     rules.unit_categories.each do | category |
       puts category.inspect
       awe_category = Battle::UnitCategory.new(category[:id])
+      awe_category.categoryId = category[:id]
       awe_category.test = create_awe_test_for(category)
       awe_battle.addUnitCategory(awe_category)
     end
+    
+    puts "finished categories"
 
     # fill factions
     battle.factions.each do |faction|
@@ -170,6 +181,8 @@ class Ticker::BattleHandler
       fill_awe_faction(faction, awe_faction)
       awe_battle.addFaction(awe_faction)
     end
+    
+    puts "finished factions"
     
     awe_battle
   end
