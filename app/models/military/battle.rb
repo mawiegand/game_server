@@ -32,8 +32,10 @@ class Military::Battle < ActiveRecord::Base
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
     else                                                         # E) create new battle (not involved, yet)
-      Military::Battle.create_battle_between(attacker, defender)
+      battle = Military::Battle.create_battle_between(attacker, defender)
+      battle.create_event_for_next_round
     end
+        
   end
   
   def self.overrun(attacker, defender)
@@ -84,9 +86,20 @@ class Military::Battle < ActiveRecord::Base
     battle.add_army(defender, faction1)
     
     #add defenders of garrison, if necessary
-    #create event
-    
     battle
+  end
+  
+  def create_event_for_next_round
+    #create entry for event table
+    event = Event::Event.new(
+        character_id: battle.initiator_id,
+        execute_at: battle.next_round_at,
+        event_type: "military_battle",
+        local_event_id: battle.id,
+    )
+    if !event.save # this is the final step; this makes sure, something is actually executed
+      raise BadRequestError.new('could not create event')
+    end
   end
 
   def other_factions(id)
