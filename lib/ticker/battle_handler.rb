@@ -85,10 +85,46 @@ class Ticker::BattleHandler
       extract_results_from_awe_faction(awe_faction, faction, faction_results)
     end       
   
+    battle
   end
 
   def extract_results_from_awe_faction(awe_faction, faction, faction_results)
+    (0..(awe_faction.numArmies-1)).each do | a |
+      awe_army = awe_faction.getArmy(a)
+      participant = faction.participants[a]
+      participant_results = faction_results.participant_results.build(
+        :battle_id => faction.battle_id,
+        :round_id => faction_results.round.id,
+  #      :faction_id => faction.id,             # TODO: add to database
+        :army_id => participant.army.id,
+  #      :kills => awe_army.numKills,
+  #      :experience_gained => awe_army.experienceGained,
+      )
+      extract_results_from_awe_participant(awe_army, participant, participant_results)
 
+      if !participant_results.save
+        raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
+      end
+      
+    end
+    
+    faction_results
+  end
+  
+  def extract_results_from_awe_participant(awe_army, participant, participant_results)
+    rules = GameRules::Rules.the_rules
+    
+    (0..(awe_army.numUnits-1)).each do | u |
+      awe_unit = awe_army.getUnit(u)
+      unit_type = rules.unit_types[awe_unit.unitTypeId]
+      
+      participant_results[unit_type[:db_field]] = awe_unit.numUnitsAtStart
+      participant_results[unit_type[:db_field]+'_casualties'] = awe_unit.numDeaths
+  #    participant_results[unit_type[:db_field]+'_damage_taken'] = awe_unit.damageTaken
+  #    participant_results[unit_type[:db_field]+'_damage_inflicted'] = awe_unit.damageInflicted
+
+      # update survivors on army
+    end
   end
   
   
@@ -120,6 +156,7 @@ class Ticker::BattleHandler
     # fill unit categories
     rules = GameRules::Rules.the_rules
     rules.unit_categories.each do | category |
+      puts category.inspect
       awe_category = Battle::UnitCategory.new(category[:id])
       awe_category.test = create_awe_test_for(category)
       awe_battle.addUnitCategory(awe_category)
@@ -138,7 +175,6 @@ class Ticker::BattleHandler
   end
   
   def fill_awe_faction(faction, awe_faction)
-    puts ' in FILL FACTION'
     faction.participants.each do |participant|
       awe_army = Battle::Army.new(participant.army.owner_id)  # why player id?
       raise InternalServerError.new('could not create an instance of Battle::Army (awe_native_extension).') if awe_army.nil?
@@ -155,12 +191,13 @@ class Ticker::BattleHandler
     rules = GameRules::Rules.the_rules
     
     rules.unit_types.each do | unit_type |
-      if !participant.army[unit_type[:db_field]].nil? && participant.army[unit_type[:db_field]] > 0
+      if !participant.army.details[unit_type[:db_field]].nil? && participant.army.details[unit_type[:db_field]] > 0
         awe_unit = Battle::Unit.new
         raise InternalServerError.new('could not create an instance of Battle::Unit (awe_native_extension).') if awe_unit.nil?
         
-        fill_awe_unit(participant.army[unit_type[:db_field]], unit_type, awe_unit)
+        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit)
         awe_army.addUnit(awe_unit)
+
       end
     end
     
@@ -178,10 +215,10 @@ class Ticker::BattleHandler
     awe_unit.baseDamage = unit_type[:attack]
     awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     awe_unit.criticalProbability = unit_type[:critical_hit_chance]
-    qwe_unit.hitpoints = unit_type[:hitpoints]
-    qwe_unit.initiative = unit_type[:initiative]
-    qwe_unit.amor = unit_type[:armor]
-    
+    awe_unit.hitpoints = unit_type[:hitpoints]
+    awe_unit.initiative = unit_type[:initiative]
+    awe_unit.armor = unit_type[:armor]
+        
     awe_unit
   end
   
