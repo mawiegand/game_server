@@ -112,8 +112,8 @@
 					<Target id="infantry" />
 				</TargetList>
 				<TargetList>
-					<Target id="infantry" />
 					<Target id="cavalry" />
+					<Target id="infantry" />
 					<Target id="artillery" />
 				</TargetList>
 			</TargetPriorities>
