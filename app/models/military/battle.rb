@@ -21,6 +21,8 @@ class Military::Battle < ActiveRecord::Base
     raise BadRequestError.new('both armies are already fighting') unless attacker.battle_id.nil? || defender.battle_id.nil?
     raise BadRequestError.new('armies NOT at same location') unless attacker.location_id == defender.location_id
     
+    battle = nil
+    
     if (!attacker.battle_id.nil? && attacker.battle_id > 0)      # A) add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
@@ -32,8 +34,11 @@ class Military::Battle < ActiveRecord::Base
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
     else                                                         # E) create new battle (not involved, yet)
-      Military::Battle.create_battle_between(attacker, defender)
+      battle = Military::Battle.create_battle_between(attacker, defender)
+      battle.create_event_for_next_round
     end
+    
+    return battle
   end
   
   def self.overrun(attacker, defender)
@@ -84,9 +89,20 @@ class Military::Battle < ActiveRecord::Base
     battle.add_army(defender, faction1)
     
     #add defenders of garrison, if necessary
-    #create event
-    
     battle
+  end
+  
+  def create_event_for_next_round
+    #create entry for event table
+    event = Event::Event.new(
+        character_id: self.initiator_id,
+        execute_at: self.next_round_at,
+        event_type: "military_battle",
+        local_event_id: self.id,
+    )
+    if !event.save # this is the final step; this makes sure, something is actually executed
+      raise BadRequestError.new('could not create event')
+    end
   end
 
   def other_factions(id)

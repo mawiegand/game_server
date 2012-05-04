@@ -29,7 +29,7 @@
                     restart of the backend to be in sync again. Examples are
                     changes to attribute values or formulas. Introduction of
                     new entities (e.g. a new unit) or new attributes are no
-                    examples of a minor change.
+                    exemaples of a minor change.
                  E) The major number has to be incremented for all changes 
                     that do not only need a reload to sync everything, but
                     that do or might need a change of source code, either
@@ -87,13 +87,6 @@
         <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
       </Description>
       <Ability id="prevent-flanking" />
-			<TargetPriorities testType="no_test">
-				<TargetList>
-					<Target id="infantry" />
-					<Target id="cavalry" />
-					<Target id="artillery" />
-				</TargetList>
-			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="cavalry">
       <Name>cavalry</Name>
@@ -105,18 +98,6 @@
         <p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>
       </Description>
       <Ability id="flanking" />
-			<TargetPriorities testType="line_size_test" testCategory="infantry">
-				<TargetList>
-					<Target id="cavalry" />
-					<Target id="artillery" />
-					<Target id="infantry" />
-				</TargetList>
-				<TargetList>
-					<Target id="cavalry" />
-					<Target id="infantry" />
-					<Target id="artillery" />
-				</TargetList>
-			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="artillery">
       <Name>artillery</Name>
@@ -127,13 +108,6 @@
       <Description lang="de_DE">
         <p>Die Fernkämpfer schießen aus sicherer Distanz auf den Gegner, vorzugsweise auf Fußsoldaten. Im Nahkampf sind sie extrem anfällig.</p>
       </Description>
-			<TargetPriorities testType="no_test">
-				<TargetList>
-					<Target id="infantry" />
-					<Target id="artillery" />
-					<Target id="cavalry" />
-				</TargetList>
-			</TargetPriorities>
     </UnitCategory>
   </UnitCategories>
   <UnitTypes>
@@ -148,15 +122,14 @@
       </Description>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
-      <Initiative>8</Initiative>
-      <Attack>18</Attack>
-      <CriticalDamage chance="0.01">10</CriticalDamage>
+      <Initiative>1</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">8</CriticalDamage>
       <Armor>2</Armor>
-      <Overrunnable>true</Overrunnable>
-      <Hitpoints>90</Hitpoints>
+      <Hitpoints>30</Hitpoints>
       <Effectiveness category="infantry">1</Effectiveness>
-      <Effectiveness category="cavalry">0.3</Effectiveness>
-      <Effectiveness category="artillery">0.75</Effectiveness>
+      <Effectiveness category="cavalry">0.2</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
     </Unit>
     <Unit id="skewer" category="infantry">
       <Name>Skewer</Name>
@@ -169,11 +142,10 @@
       </Description>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
-      <Initiative>15</Initiative>
-      <Attack>14</Attack>
-      <CriticalDamage chance="0.01" >6</CriticalDamage>
-      <Armor>14</Armor>
-      <Overrunnable>true</Overrunnable>
+      <Initiative>1</Initiative>
+      <Attack>10</Attack>
+      <CriticalDamage chance="0.01" >2</CriticalDamage>
+      <Armor>8</Armor>
       <Hitpoints>90</Hitpoints>
       <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
       <Effectiveness category="cavalry">1</Effectiveness>
@@ -190,56 +162,41 @@
       </Description>
       <Velocity>1.5</Velocity>
       <ActionPoints>5</ActionPoints>
-      <Initiative>26</Initiative>
-      <Attack>16</Attack>
-      <CriticalDamage chance="0.001">10</CriticalDamage>
-      <Armor>3</Armor>
-      <Hitpoints>95</Hitpoints>
-      <Effectiveness category="infantry">0.3</Effectiveness>
-      <Effectiveness category="cavalry">0.75</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
-    </Unit>
-    <Unit id="tree_huggers" category="infantry">
-      <Name>Tree Huggers</Name>
-      <Name lang="de_DE">Baum-Brutalos</Name>
-      <Description lang="de_DE">
-        <p>Baum-Brutalos sind Tier2-Einheiten</p> 
-      </Description>
-      <Description lang="en_US">
-        <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
-      </Description>
-      <Velocity>0.9</Velocity>
-      <ActionPoints>4</ActionPoints>
-      <Initiative>14</Initiative>
-      <Attack>20</Attack>
+      <Initiative>1</Initiative>
+      <Attack>10</Attack>
       <CriticalDamage chance="0.002">10</CriticalDamage>
       <Armor>4</Armor>
-      <Overrunnable>true</Overrunnable>
       <Hitpoints>60</Hitpoints>
       <Effectiveness category="infantry">0.3</Effectiveness>
       <Effectiveness category="cavalry">1</Effectiveness>
       <Effectiveness category="artillery">1</Effectiveness>
     </Unit>
-	  <Unit id="sabre_riders" category="cavalry">
-      <Name>Sabretooth-Riders</Name>
-      <Name lang="de_DE">Säbelzahnreiter</Name>
-      <Description lang="de_DE">
-        <p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p> 
-      </Description>
-      <Description lang="en_US">
-        <p>It's not so much the riders themselves that are feared...</p>
-      </Description>
-      <Velocity>1.4</Velocity>
-      <ActionPoints>4</ActionPoints>
-      <Initiative>28</Initiative>
-      <Attack>21</Attack>
-      <CriticalDamage chance="0.002">14</CriticalDamage>
-      <Armor>15</Armor>
-      <Hitpoints>140</Hitpoints>
-      <Effectiveness category="infantry">0.4</Effectiveness>
-      <Effectiveness category="cavalry">0,6</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
-    </Unit>
 	</UnitTypes>
+	<BuildingCategories>
+	  <BuildingCategory id="resources">
+      <Name>Resources</Name>
+      <Name lang="de_DE">Ressourcen</Name>
+      <Description>
+        <p>Resources Buildings produce resources over time.</p>
+      </Description>
+      <Description lang="de_DE">
+        <p>Ressourcen-Gebäude produzieren kontinuierlich Ressourcen.</p>
+      </Description>
+      <Ability id="produce resources" />
+    </UnitCategory>
+    <BuildingCategory id="defensive">
+      <Name>Defensive</Name>
+      <Name lang="de_DE">Verteidigung</Name>
+      <Description>
+        <p>Defensive Buildings give combat bonuses to the settlement's garrison.</p>
+        <!-- and other armies fighting on their side? -->
+      </Description>
+      <Description lang="de_DE">
+        <p>Defensiv-Gebäude verleihen den Garnisons-Truppen einen Kampfbonus.</p>
+      </Description>
+      <Ability id="produce resources" />
+    </UnitCategory>
+  </BuildingCategories>
+  
 	
 </Rules>

@@ -205,7 +205,13 @@ end
       ],                # END OF UNIT TYPES
 </xsl:template>
 
-
+<xsl:template match="TargetList">
+              [
+                <xsl:for-each select="Target">
+                  :<xsl:value-of select="@id" />,
+                </xsl:for-each>
+              ],
+</xsl:template>
 
 <xsl:template match="UnitCategories">
   
@@ -224,10 +230,21 @@ end
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
+          :target_priorities => {
+            :test_type => :<xsl:value-of select="TargetPriorities/@testType"/>,
+<xsl:if test="TargetPriorities/@testCategory">
+            :test_category => :<xsl:value-of select="TargetPriorities/@testCategory"/>,
+</xsl:if>
+            :results => [
+              <xsl:apply-templates select="TargetPriorities/TargetList" />       
+            ],
+          },
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF UNIT CATEGORIES
 </xsl:template>
+
+
 
 
 
