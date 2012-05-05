@@ -151,9 +151,9 @@ end
       :unit_types => [  # ALL UNIT TYPES
 <xsl:for-each select="Unit">
         {               #   <xsl:value-of select="Name"/>
-          :numeric_id  => <xsl:value-of select="position()-1"/>, 
-          :id          => :<xsl:value-of select="@id"/>,
-					:category    => :<xsl:value-of select="@category"/>,
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+					:category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
           :db_field    => :unit_<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
@@ -210,7 +210,7 @@ end
 <xsl:template match="TargetList">
               [
                 <xsl:for-each select="Target">
-                  :<xsl:value-of select="@id" />,
+                  <xsl:value-of select="count(id(@id)/preceding-sibling::*)" />,
                 </xsl:for-each>
               ],
 </xsl:template>
@@ -220,8 +220,8 @@ end
       :unit_categories => [  # ALL UNIT CATEGORIES
 <xsl:for-each select="UnitCategory">
         {               #   <xsl:value-of select="Name"/>
-          :numeric_id  => <xsl:value-of select="position()-1"/>, 
-          :id          => :<xsl:value-of select="@id"/>,
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
           :db_field    => :unitcategory_<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
@@ -235,7 +235,7 @@ end
           :target_priorities => {
             :test_type => :<xsl:value-of select="TargetPriorities/@testType"/>,
 <xsl:if test="TargetPriorities/@testCategory">
-            :test_category => :<xsl:value-of select="TargetPriorities/@testCategory"/>,
+            :test_category => <xsl:value-of select="count(id(TargetPriorities/@testCategory)/preceding-sibling::*)"/>,
 </xsl:if>
             :results => [
               <xsl:apply-templates select="TargetPriorities/TargetList" />       
