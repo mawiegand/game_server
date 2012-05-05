@@ -18,8 +18,8 @@ class Military::Battle < ActiveRecord::Base
   # involved in an ongoing battle, the other is added to the opposing
   # faction.
   def self.start_fight_between(attacker, defender)
-    raise BadRequestError.new('both armies are already fighting') unless attacker.battle_id.nil? || defender.battle_id.nil?
-    raise BadRequestError.new('armies NOT at same location') unless attacker.location_id == defender.location_id
+    raise ArgumentError.new('both armies are already fighting') if !attacker.battle_id.nil? && !defender.battle_id.nil?
+    raise ArgumentError.new('armies NOT at same location') unless attacker.location_id == defender.location_id
     
     battle = nil
     
@@ -101,7 +101,7 @@ class Military::Battle < ActiveRecord::Base
         local_event_id: self.id,
     )
     if !event.save # this is the final step; this makes sure, something is actually executed
-      raise BadRequestError.new('could not create event')
+      raise ArgumentError.new('could not create event')
     end
   end
 

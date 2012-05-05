@@ -28,4 +28,29 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
+  def is_enemy_of?(opponent)
+    return !self.is_neutral? && !opponent.is_neutral? && self.alliance != opponent.alliance  
+  end
+  
+  def is_neutral?
+    return self.alliance.nil?    
+  end
+  
+  def lives_in_region?(region)
+    return !self.locations.where("region_id = ?", region.id).empty?
+  end
+  
+  def right_of_way_at(location)
+    if location.right_of_way == 0          # all
+      return true
+    elsif location.right_of_way == 1       # no_enemies
+      return !self.is_enemy_of?(location.owner)
+    elsif location.right_of_way == 2       # no_neutrals
+      return !self.is_enemy_of?(location.owner) && !self.is_neutral?  
+    elsif location.right_of_way == 3       # no_residents
+      return !self.is_enemy_of?(location.owner) && !self.is_neutral? && self.lives_in_region?(location.region)
+    else                                   # forgotten anyone?
+      return false
+    end
+  end  
 end

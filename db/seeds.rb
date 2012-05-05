@@ -160,7 +160,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (4..9)
+for i in (4..4)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."
@@ -184,12 +184,14 @@ while !nodes.empty?
 
     if (pos == 0)  # slot 0: fortress
       location.type_id = 1 # 1: fortress
+      location.right_of_way = rand(4)
     else
       if (rand(4) < 2)
         location.type_id = 0 # 0: empty 
       else
         location.type_id = rand(2)+2  # 2: settlement, 3: outpost
       end
+      location.right_of_way = 0
     end
     location.level = rand(10) if location.type_id > 0
     
@@ -287,12 +289,18 @@ while !locations.empty?
       army.owner_name = char[:name]
       army.alliance_id = ally[:id] unless ally.blank?
       army.alliance_tag = ally[:tag] unless ally.blank?
+      
+      army.home_settlement_id = location.id
+      army.home_settlement_name = "Name"
 
       army.ap_max = 4
       army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
       army.mode = 0
+      army.kills = 0
+      army.victories = 0
+
       army.stance = rand(3)
       army.size_max = 1200
       army.exp = rand(1000000)

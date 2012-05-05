@@ -76,7 +76,28 @@ class Military::Army < ActiveRecord::Base
   end
   
   def fighting?
-    self.mode === 2 # 2: fighting?
+    # self.mode === 2 # 2: fighting?
+    !self.battle_id.nil? && self.battle_id > 0
+  end
+  
+  def relation_to(other_army)
+    if other_army.nil?
+      return Fundamental::Relation::RELATION_TYPE_UNKNOWN
+    end
+
+    if self.owner_id == other_army.owner_id
+      return Fundamental::Relation::RELATION_TYPE_SELF
+    elsif self.alliance_id.nil?
+      return Fundamental::Relation::RELATION_TYPE_NEUTRAL
+    elsif other_army.alliance_id.nil?
+      return Fundamental::Relation::RELATION_TYPE_NEUTRAL
+    elsif self.alliance_id == other_army.alliance_id
+      return Fundamental::Relation::RELATION_TYPE_SAME_ALLIANCE
+    elsif self.alliance_id != other_army.alliance_id
+      return Fundamental::Relation::RELATION_TYPE_AT_WAR
+    else
+      return Fundamental::Relation::RELATION_TYPE_UNKNOWN
+    end
   end
   
   # this methods tests if the army is able to overrun another army.
@@ -96,18 +117,28 @@ class Military::Army < ActiveRecord::Base
     end
     
     return self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
-  end
+  end  
   
   # checks if a change in the army causes a new battle with 
   # existing armies at current location
   def check_for_battle_at(location)
-    armies_at_location = location.armies
+    garrison_army = location.garrison_army
     
-    location.armies.each do |opponent|
-      
+    started_battles = 0
+    unless garrison_army.nil?
+      location.armies.each do |other_army|
+        if (other_army != garrison_army &&
+            other_army.owner_id != garrison_army.owner_id &&
+            !other_army.fighting? &&
+            !other_army.owner.right_of_way_at(location))
+          puts "new battle"
+          Military::Battle.start_fight_between(garrison_army, other_army)
+          started_battles += 1
+        end
+      end
     end
     
-    puts 'battlecheck'
+    return started_battles
   end
   
   # implement an arbitrary formula calculating the unit's strength here. is
