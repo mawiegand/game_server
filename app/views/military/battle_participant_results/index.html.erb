@@ -10,6 +10,11 @@
     <th>Retreat succeeded</th>
     <th>Kills</th>
     <th>Experience gained</th>
+<% Military::BattleParticipantResult.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <th><%= attribute %></th>
+<%end
+end %>
     <th></th>
     <th></th>
     <th></th>
@@ -25,6 +30,11 @@
     <td><%= military_battle_participant_result.retreat_succeeded %></td>
     <td><%= military_battle_participant_result.kills %></td>
     <td><%= military_battle_participant_result.experience_gained %></td>
+<% military_battle_participant_result.attributes.each do |attribute, value| 
+  if attribute.start_with? 'unit_' %>
+    <td><%= value %></td>
+<%end
+end%>
     <td><%= link_to 'Show', military_battle_participant_result %></td>
     <td><%= link_to 'Edit', edit_military_battle_participant_result_path(military_battle_participant_result) %></td>
     <td><%= link_to 'Destroy', military_battle_participant_result, confirm: 'Are you sure?', method: :delete %></td>
