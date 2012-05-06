@@ -224,7 +224,9 @@ class Ticker::BattleHandler
   def fill_awe_unit(number, unit_type, awe_unit)
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
-    awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
+	#puts unit_type
+    #awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
+	awe_unit.unitCategoryId = unit_type[:category]
     awe_unit.baseDamage = unit_type[:attack]
     awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     awe_unit.criticalProbability = unit_type[:critical_hit_chance]
