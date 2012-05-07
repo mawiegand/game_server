@@ -293,9 +293,9 @@ class GameRules::Rules
           :attack      => 16,
           :armor       => 3,
           :hitpoints   => 95,
-          :overrunnable => ,
+          :overrunnable => true,
           :critical_hit_damage => 10,
-          :critical_hit_chance => 0.001,
+          :critical_hit_chance => 0.01,
 
 
         },              #   END OF Ostrich Riders
@@ -319,15 +319,15 @@ class GameRules::Rules
                 
           },
 
-          :velocity    => 0.9,
+          :velocity    => 0.95,
           :action_points => 4,
           :initiative  => 14,
           :attack      => 20,
           :armor       => 4,
-          :hitpoints   => 60,
+          :hitpoints   => 140,
           :overrunnable => true,
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.002,
+          :critical_hit_damage => 9,
+          :critical_hit_chance => 0.02,
 
 
         },              #   END OF Tree Huggers
@@ -357,12 +357,76 @@ class GameRules::Rules
           :attack      => 21,
           :armor       => 15,
           :hitpoints   => 140,
-          :overrunnable => ,
+          :overrunnable => true,
           :critical_hit_damage => 14,
-          :critical_hit_chance => 0.002,
+          :critical_hit_chance => 0.02,
 
 
         },              #   END OF Sabretooth-Riders
+        {               #   Squirrel-Hunters
+          :numeric_id  => 5, 
+          :id          => :squirrel_hunters,
+					:category    => :artillery,
+          :db_field    => :unit_squirrel_hunters,
+          :name        => {
+            
+            :en_US => "Squirrel-Hunters",
+  
+            :de_DE => "Hörnchen-Jäger",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>T2 Sniper-Einheit, braucht noch guten Namen.</p>",
+  
+            :en_US => "<p>Used to shooting at small furry animals, these guys are great at aiming.</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 7,
+          :attack      => 19,
+          :armor       => 0,
+          :hitpoints   => 100,
+          :overrunnable => true,
+          :critical_hit_damage => 19,
+          :critical_hit_chance => 0.2,
+
+
+        },              #   END OF Squirrel-Hunters
+        {               #   Squirrel-Hunters
+          :numeric_id  => 6, 
+          :id          => :clubbers,
+					:category    => :infantry,
+          :db_field    => :unit_clubbers,
+          :name        => {
+            
+            :en_US => "Squirrel-Hunters",
+  
+            :de_DE => "Keulenkrieger",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Alternative T1, besser gegen Inf, anfälliger.</p>",
+  
+            :en_US => "<p>Decription goes here.</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+          :overrunnable => true,
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+
+        },              #   END OF Squirrel-Hunters
       ],                # END OF UNIT TYPES
 
     )
