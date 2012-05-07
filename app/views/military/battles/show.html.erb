@@ -31,7 +31,14 @@
     <% elsif !@military_battle.event.locked_by.blank? %>
       Event: <span style="color: #FB0;">blocked</span> unblock
     <% else %>
-      Event: <%= @military_battle.event.execute_at %> execute now
+      Event: <%= @military_battle.event.execute_at %> 
+      <% @event_event = @military_battle.event
+         @event_event.execute_at = DateTime.now # attention: this changes the event (without saving, but duoh..)  %>  
+      <%= form_for(@military_battle.event) do |f| %>
+        <%= f.hidden_field :id %>
+        <%= f.hidden_field :execute_at %>
+        <%= f.submit 'Execute NOW!'%>
+      <% end %>
     <% end %>
 
 </div>

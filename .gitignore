@@ -17,3 +17,9 @@
 .project
 .DS_Store
 client
+
+/rules/rules_test
+/rules/*.rb
+/rules/*.h
+/rules/*.cpp
+/rules/*.o
