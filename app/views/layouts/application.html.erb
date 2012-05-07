@@ -12,24 +12,36 @@
   
 <header class="site-header">
   <span class="site-name">Augmented Worlds Engine</span>
+  <nav class="backend-user">  
+    <ul>
+      <% if signed_in_to_backend? %>
+        <li><%= link_to current_backend_user.login, current_backend_user %></li>
+        <li><%= link_to I18n.translate("application.layout.signout"), signout_path %></li>
+      <% else %>
+        <li><%= link_to I18n.translate("application.layout.signin"), signin_path %></li>
+      <% end %>
+    </ul>
+  </nav><br/>
   
   <nav class="site-navigation">  
-  <ul>
-    <li><%= link_to I18n.translate("application.layout.backend.category"), backend_users_path %></li>
-    <%= yield :backend_links %>
-    <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
-    <%= yield :rules_links %>
-    <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
-    <%= yield :event_links %>
-    <li><%= link_to I18n.translate("application.layout.action.category"), action_path %></li>
-    <%= yield :action_links %>
-    <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
-    <%= yield :fundamental_links %>
-    <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
-    <%= yield :map_links %>
-    <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
-    <%= yield :military_links %>
-  </ul>
+  <% if signed_in_to_backend? && backend_staff? %>
+    <ul>
+      <li><%= link_to I18n.translate("application.layout.backend.category"), backend_users_path %></li>
+      <%= yield :backend_links %>
+      <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
+      <%= yield :rules_links %>
+      <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
+      <%= yield :event_links %>
+      <li><%= link_to I18n.translate("application.layout.action.category"), action_path %></li>
+      <%= yield :action_links %>
+      <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
+      <%= yield :fundamental_links %>
+      <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
+      <%= yield :map_links %>
+      <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
+      <%= yield :military_links %>
+    </ul>
+  <% end %>
   </nav>  
 </header>
   

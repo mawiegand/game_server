@@ -45,6 +45,7 @@ class Ticker::MovementHandler
       action.region.save
       action.location.armies_changed_at = DateTime.now
       action.location.save
+      action.army.check_for_battle_at(army.location)
       action.destroy
       event.destroy
       runloop.say "Movement handler completed."

@@ -5,6 +5,8 @@ en:
   
   application:
     layout:
+      signout: Sign Out
+      signin: Sign In
       backend:
         category: Backend
         users: Users

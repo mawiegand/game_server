@@ -16,7 +16,7 @@ end
 
 group :ticker_development do
   gem 'pg'
-#	gem 'awe_native_extensions'
+	gem 'awe_native_extensions'
 end
 
 group :development do

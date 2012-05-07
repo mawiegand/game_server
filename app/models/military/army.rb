@@ -98,6 +98,18 @@ class Military::Army < ActiveRecord::Base
     return self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
   end
   
+  # checks if a change in the army causes a new battle with 
+  # existing armies at current location
+  def check_for_battle_at(location)
+    armies_at_location = location.armies
+    
+    location.armies.each do |opponent|
+      
+    end
+    
+    puts 'battlecheck'
+  end
+  
   # implement an arbitrary formula calculating the unit's strength here. is
   # used to caclulate the army's strength and the strength of particular
   # troop categories (infantry, artillery, etc.)

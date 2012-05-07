@@ -76,8 +76,8 @@ class GameRules::Rules
       :unit_categories => [  # ALL UNIT CATEGORIES
 
         {               #   Infantry
-          :numeric_id  => 0, 
-          :id          => :infantry,
+          :id          => 0, 
+          :symbolic_id => :infantry,
           :db_field    => :unitcategory_infantry,
           :name        => {
             
@@ -100,12 +100,9 @@ class GameRules::Rules
             :results => [
               
               [
-                
-                  :infantry,
-                
-                  :cavalry,
-                
-                  :artillery,
+                0,
+                1,
+                2,
                 
               ],
        
@@ -113,8 +110,8 @@ class GameRules::Rules
           },
         },              #   END OF Infantry
         {               #   cavalry
-          :numeric_id  => 1, 
-          :id          => :cavalry,
+          :id          => 1, 
+          :symbolic_id => :cavalry,
           :db_field    => :unitcategory_cavalry,
           :name        => {
             
@@ -134,27 +131,21 @@ class GameRules::Rules
           :target_priorities => {
             :test_type => :line_size_test,
 
-            :test_category => :infantry,
+            :test_category => 0,
 
             :results => [
               
               [
-                
-                  :cavalry,
-                
-                  :artillery,
-                
-                  :infantry,
+                1,
+                2,
+                0,
                 
               ],
 
               [
-                
-                  :cavalry,
-                
-                  :infantry,
-                
-                  :artillery,
+                1,
+                0,
+                2,
                 
               ],
        
@@ -162,8 +153,8 @@ class GameRules::Rules
           },
         },              #   END OF cavalry
         {               #   artillery
-          :numeric_id  => 2, 
-          :id          => :artillery,
+          :id          => 2, 
+          :symbolic_id => :artillery,
           :db_field    => :unitcategory_artillery,
           :name        => {
             
@@ -186,12 +177,9 @@ class GameRules::Rules
             :results => [
               
               [
-                
-                  :infantry,
-                
-                  :artillery,
-                
-                  :cavalry,
+                0,
+                2,
+                1,
                 
               ],
        
@@ -204,9 +192,9 @@ class GameRules::Rules
       :unit_types => [  # ALL UNIT TYPES
 
         {               #   Stone Hurler
-          :numeric_id  => 0, 
-          :id          => :thrower,
-					:category    => :artillery,
+          :id          => 0, 
+          :symbolic_id => :thrower,
+					:category    => 2,
           :db_field    => :unit_thrower,
           :name        => {
             
@@ -229,16 +217,18 @@ class GameRules::Rules
           :attack      => 18,
           :armor       => 2,
           :hitpoints   => 90,
+
           :overrunnable => true,
+
           :critical_hit_damage => 10,
           :critical_hit_chance => 0.01,
 
 
         },              #   END OF Stone Hurler
         {               #   Skewer
-          :numeric_id  => 1, 
-          :id          => :skewer,
-					:category    => :infantry,
+          :id          => 1, 
+          :symbolic_id => :skewer,
+					:category    => 0,
           :db_field    => :unit_skewer,
           :name        => {
             
@@ -261,16 +251,18 @@ class GameRules::Rules
           :attack      => 14,
           :armor       => 14,
           :hitpoints   => 90,
+
           :overrunnable => true,
+
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.01,
 
 
         },              #   END OF Skewer
         {               #   Ostrich Riders
-          :numeric_id  => 2, 
-          :id          => :light_cavalry,
-					:category    => :cavalry,
+          :id          => 2, 
+          :symbolic_id => :light_cavalry,
+					:category    => 1,
           :db_field    => :unit_light_cavalry,
           :name        => {
             
@@ -293,16 +285,18 @@ class GameRules::Rules
           :attack      => 16,
           :armor       => 3,
           :hitpoints   => 95,
+
           :overrunnable => true,
+
           :critical_hit_damage => 10,
           :critical_hit_chance => 0.01,
 
 
         },              #   END OF Ostrich Riders
         {               #   Tree Huggers
-          :numeric_id  => 3, 
-          :id          => :tree_huggers,
-					:category    => :infantry,
+          :id          => 3, 
+          :symbolic_id => :tree_huggers,
+					:category    => 0,
           :db_field    => :unit_tree_huggers,
           :name        => {
             
@@ -325,16 +319,18 @@ class GameRules::Rules
           :attack      => 20,
           :armor       => 4,
           :hitpoints   => 140,
+
           :overrunnable => true,
+
           :critical_hit_damage => 9,
           :critical_hit_chance => 0.02,
 
 
         },              #   END OF Tree Huggers
         {               #   Sabretooth-Riders
-          :numeric_id  => 4, 
-          :id          => :sabre_riders,
-					:category    => :cavalry,
+          :id          => 4, 
+          :symbolic_id => :sabre_riders,
+					:category    => 1,
           :db_field    => :unit_sabre_riders,
           :name        => {
             
@@ -357,16 +353,18 @@ class GameRules::Rules
           :attack      => 21,
           :armor       => 15,
           :hitpoints   => 140,
+
           :overrunnable => true,
+
           :critical_hit_damage => 14,
           :critical_hit_chance => 0.02,
 
 
         },              #   END OF Sabretooth-Riders
         {               #   Squirrel-Hunters
-          :numeric_id  => 5, 
-          :id          => :squirrel_hunters,
-					:category    => :artillery,
+          :id          => 5, 
+          :symbolic_id => :squirrel_hunters,
+					:category    => 2,
           :db_field    => :unit_squirrel_hunters,
           :name        => {
             
@@ -389,16 +387,18 @@ class GameRules::Rules
           :attack      => 19,
           :armor       => 0,
           :hitpoints   => 100,
+
           :overrunnable => true,
+
           :critical_hit_damage => 19,
           :critical_hit_chance => 0.2,
 
 
         },              #   END OF Squirrel-Hunters
         {               #   Squirrel-Hunters
-          :numeric_id  => 6, 
-          :id          => :clubbers,
-					:category    => :infantry,
+          :id          => 6, 
+          :symbolic_id => :clubbers,
+					:category    => 0,
           :db_field    => :unit_clubbers,
           :name        => {
             
@@ -421,7 +421,9 @@ class GameRules::Rules
           :attack      => 15,
           :armor       => 0,
           :hitpoints   => 90,
+
           :overrunnable => true,
+
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
