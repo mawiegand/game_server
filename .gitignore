@@ -23,4 +23,4 @@ client
 /rules/*.h
 /rules/*.cpp
 /rules/*.o
-/rules/database_file
+/rules/database_fields
