@@ -106,9 +106,9 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 16;
   unit->armor = 3;
   unit->hitpoints = 95;
-  unit->overrunnable = ;
+  unit->overrunnable = true;
   unit->criticalHitDamage = 10;
-  unit->criticalHitChance = 0.001;
+  unit->criticalHitChance = 0.01;
 
 
 	
@@ -124,15 +124,15 @@ Rules::Rules() : version(Version(1,0,0))
   unit->description[LOCALE_de_DE] = "<p>Baum-Brutalos sind Tier2-Einheiten</p>";
   unit->description[LOCALE_en_US] = "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>";
   
-  unit->velocity = 0.9;
+  unit->velocity = 0.95;
   unit->actionPoints = 4;
   unit->initiative = 14;
   unit->attack = 20;
   unit->armor = 4;
-  unit->hitpoints = 60;
+  unit->hitpoints = 140;
   unit->overrunnable = true;
-  unit->criticalHitDamage = 10;
-  unit->criticalHitChance = 0.002;
+  unit->criticalHitDamage = 9;
+  unit->criticalHitChance = 0.02;
 
 
 	
@@ -154,14 +154,62 @@ Rules::Rules() : version(Version(1,0,0))
   unit->attack = 21;
   unit->armor = 15;
   unit->hitpoints = 140;
-  unit->overrunnable = ;
+  unit->overrunnable = true;
   unit->criticalHitDamage = 14;
-  unit->criticalHitChance = 0.002;
+  unit->criticalHitChance = 0.02;
 
 
 	
 
   this->unitTypes[4] = unit; 
+
+  /* Squirrel-Hunters */
+  unit = new UnitType(5, 
+                      "squirrel_hunters");
+
+  unit->name[LOCALE_en_US] = "Squirrel-Hunters";
+  unit->name[LOCALE_de_DE] = "Hörnchen-Jäger";
+  unit->description[LOCALE_de_DE] = "<p>T2 Sniper-Einheit, braucht noch guten Namen.</p>";
+  unit->description[LOCALE_en_US] = "<p>Used to shooting at small furry animals, these guys are great at aiming.</p>";
+  
+  unit->velocity = 1;
+  unit->actionPoints = 4;
+  unit->initiative = 7;
+  unit->attack = 19;
+  unit->armor = 0;
+  unit->hitpoints = 100;
+  unit->overrunnable = true;
+  unit->criticalHitDamage = 19;
+  unit->criticalHitChance = 0.2;
+
+
+	
+
+  this->unitTypes[5] = unit; 
+
+  /* Squirrel-Hunters */
+  unit = new UnitType(6, 
+                      "clubbers");
+
+  unit->name[LOCALE_en_US] = "Squirrel-Hunters";
+  unit->name[LOCALE_de_DE] = "Keulenkrieger";
+  unit->description[LOCALE_de_DE] = "<p>Alternative T1, besser gegen Inf, anfälliger.</p>";
+  unit->description[LOCALE_en_US] = "<p>Decription goes here.</p>";
+  
+  unit->velocity = 1;
+  unit->actionPoints = 4;
+  unit->initiative = 16;
+  unit->attack = 15;
+  unit->armor = 0;
+  unit->hitpoints = 90;
+  unit->overrunnable = true;
+  unit->criticalHitDamage = 2;
+  unit->criticalHitChance = 0.01;
+
+
+	
+
+  this->unitTypes[6] = unit; 
 
 };
 
