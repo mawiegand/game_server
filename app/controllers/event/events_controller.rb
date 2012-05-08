@@ -42,7 +42,7 @@ class Event::EventsController < ApplicationController
   # POST /events/events
   # POST /events/events.json
   def create
-    @event_event = Event::Event.new(params[:events_event])
+    @event_event = Event::Event.new(params[:event_event])
 
     respond_to do |format|
       if @event_event.save
@@ -61,7 +61,7 @@ class Event::EventsController < ApplicationController
     @event_event = Event::Event.find(params[:id])
 
     respond_to do |format|
-      if @event_event.update_attributes(params[:events_event])
+      if @event_event.update_attributes(params[:event_event])
         format.html { redirect_to @event_event, notice: 'Event was successfully updated.' }
         format.json { head :ok }
       else

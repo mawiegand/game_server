@@ -395,6 +395,40 @@ class GameRules::Rules
 
 
         },              #   END OF Squirrel-Hunters
+        {               #   Squirrel-Hunters
+          :id          => 6, 
+          :symbolic_id => :clubbers,
+					:category    => 0,
+          :db_field    => :unit_clubbers,
+          :name        => {
+            
+            :en_US => "Squirrel-Hunters",
+  
+            :de_DE => "Keulenkrieger",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Alternative T1, besser gegen Inf, anfälliger.</p>",
+  
+            :en_US => "<p>Decription goes here.</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+
+        },              #   END OF Squirrel-Hunters
       ],                # END OF UNIT TYPES
 
     )

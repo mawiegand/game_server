@@ -95,9 +95,9 @@ class Ticker::BattleHandler
       participant_results = faction_results.participant_results.build(
         :battle_id => faction.battle_id,
         :round_id => faction_results.round.id,
-  #      :faction_id => faction.id,             # TODO: add to database
+        :battle_faction_result_id => faction_results.id,             # TODO: add faction to database, rename this field (strip battle_)
         :army_id => participant.army.id,
-  #      :kills => awe_army.numKills,
+        :kills => awe_army.numKills,
   #      :experience_gained => awe_army.experienceGained,
       )
       extract_results_from_awe_participant(awe_army, participant, participant_results)
@@ -119,9 +119,9 @@ class Ticker::BattleHandler
       unit_type = rules.unit_types[awe_unit.unitTypeId]
       
       participant_results[unit_type[:db_field]] = awe_unit.numUnitsAtStart
-      participant_results[unit_type[:db_field]+'_casualties'] = awe_unit.numDeaths
-  #    participant_results[unit_type[:db_field]+'_damage_taken'] = awe_unit.damageTaken
-  #    participant_results[unit_type[:db_field]+'_damage_inflicted'] = awe_unit.damageInflicted
+      participant_results[(unit_type[:db_field].to_s+'_casualties').to_sym] = awe_unit.numDeaths
+      participant_results[(unit_type[:db_field].to_s+'_damage_taken').to_sym] = awe_unit.damageTaken
+      participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = awe_unit.damageInflicted
 
       # update survivors on army
     end
@@ -224,7 +224,9 @@ class Ticker::BattleHandler
   def fill_awe_unit(number, unit_type, awe_unit)
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
-    awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
+	#puts unit_type
+    #awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
+	awe_unit.unitCategoryId = unit_type[:category]
     awe_unit.baseDamage = unit_type[:attack]
     awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     awe_unit.criticalProbability = unit_type[:critical_hit_chance]

@@ -197,6 +197,16 @@
       <Ability id="produce resources" />
     </UnitCategory>
   </BuildingCategories>
-  
+  <BuildingTypes>
+    <Building id="Garrison">
+      <Name>Garrison's Den</Name>
+      <Name lang="de_DE">Garnisons-Höhle</Name>
+      <Description lang="de_DE">
+        <p>Jede Gesellschaft hat so ihre Verrückten. Clevere Häuptlinge setzen sie zum Wohle aller ein, indem sie die Spinner in eine Höhle sperren und auf Feinde der Siedlung loslassen, wenn es zu einem Kampf kommt.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Every society has its lunatics. Clever chieftains lock them in a cave and unleash them on their enemies, should they come to close to their settlement. </p>
+      </Description>
+    </Building>
 	
 </Rules>

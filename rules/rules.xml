@@ -263,6 +263,27 @@
       <Effectiveness category="cavalry">0,4</Effectiveness>
       <Effectiveness category="artillery">0,7</Effectiveness>
     </Unit>
+	  <Unit id="clubbers" category="infantry">
+      <Name>Squirrel-Hunters</Name>
+      <Name lang="de_DE">Keulenkrieger</Name>
+      <Description lang="de_DE">
+        <p>Alternative T1, besser gegen Inf, anfälliger.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Decription goes here.</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>16</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">2</CriticalDamage>
+      <Armor>0</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0,9</Effectiveness>
+      <Effectiveness category="cavalry">0,9</Effectiveness>
+      <Effectiveness category="artillery">0,7</Effectiveness>
+    </Unit>
 	</UnitTypes>
 	
 </Rules>
