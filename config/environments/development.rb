@@ -30,5 +30,4 @@ GameServer::Application.configure do
   
   config.assets.prefix = "/game_server/assets"
 
-
 end

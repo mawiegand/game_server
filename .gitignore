@@ -25,4 +25,4 @@ client
 /rules/*.o
 /rules/database_fields
 
-/config/thin_local.yml
+config/thin_local.yml

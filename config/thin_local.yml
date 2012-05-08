@@ -1,5 +1,5 @@
 ---
-pid: /var/run/game_server.pid
+pid: /var/run/thin/game_server.pid
 timeout: 30
 wait: 30
 log: log/thin.log
@@ -10,5 +10,5 @@ environment: development
 max_persistent_conns: 512
 servers: 2
 daemonize: true
-chdir: /Users/pfox/Developer/Exist/Workspace/game_server
-socket: /var/run/game_server.sock
+chdir: /Users/pfox/Developer/5D-Workspace/game_server
+socket: /var/run/thin/game_server.sock
