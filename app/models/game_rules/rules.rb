@@ -103,6 +103,7 @@ class GameRules::Rules
                 0,
                 1,
                 2,
+                3,
                 
               ],
        
@@ -139,6 +140,7 @@ class GameRules::Rules
                 1,
                 2,
                 0,
+                3,
                 
               ],
 
@@ -146,19 +148,20 @@ class GameRules::Rules
                 1,
                 0,
                 2,
+                3,
                 
               ],
        
             ],
           },
         },              #   END OF cavalry
-        {               #   artillery
+        {               #   Ranged Troops
           :id          => 2, 
           :symbolic_id => :artillery,
           :db_field    => :unitcategory_artillery,
           :name        => {
             
-            :en_US => "artillery",
+            :en_US => "Ranged Troops",
   
             :de_DE => "Fernkämpfer",
                 
@@ -180,12 +183,48 @@ class GameRules::Rules
                 0,
                 2,
                 1,
+                3,
                 
               ],
        
             ],
           },
-        },              #   END OF artillery
+        },              #   END OF Ranged Troops
+        {               #   Siege Weapons
+          :id          => 3, 
+          :symbolic_id => :siege,
+          :db_field    => :unitcategory_siege,
+          :name        => {
+            
+            :en_US => "Siege Weapons",
+  
+            :de_DE => "Belagerungsgeräte",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>Siege Weapons support armies in battle against settlements.</p>",
+  
+            :de_DE => "<p>Belagerungsgerät dient der Unterstützung im Kampf gegen Siedlungen.</p>",
+                
+          },
+
+          :target_priorities => {
+            :test_type => :no_test,
+
+            :results => [
+              
+              [
+                3,
+                2,
+                0,
+                1,
+                
+              ],
+       
+            ],
+          },
+        },              #   END OF Siege Weapons
       ],                # END OF UNIT CATEGORIES
 
   
@@ -429,6 +468,74 @@ class GameRules::Rules
 
 
         },              #   END OF Squirrel-Hunters
+        {               #   Catapult
+          :id          => 7, 
+          :symbolic_id => :catapult,
+					:category    => 3,
+          :db_field    => :unit_catapult,
+          :name        => {
+            
+            :en_US => "Catapult",
+  
+            :de_DE => "Katapult",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p>",
+  
+            :en_US => "<p>Decription goes here.</p>",
+                
+          },
+
+          :velocity    => 0.7,
+          :action_points => 4,
+          :initiative  => 16,
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+
+        },              #   END OF Catapult
+        {               #   Battering Ram
+          :id          => 8, 
+          :symbolic_id => :ram,
+					:category    => 3,
+          :db_field    => :unit_ram,
+          :name        => {
+            
+            :en_US => "Battering Ram",
+  
+            :de_DE => "Rammbock",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p>",
+  
+            :en_US => "<p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>",
+                
+          },
+
+          :velocity    => 0.9,
+          :action_points => 4,
+          :initiative  => 16,
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+
+        },              #   END OF Battering Ram
       ],                # END OF UNIT TYPES
 
     )
