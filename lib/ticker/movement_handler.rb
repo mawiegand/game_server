@@ -28,6 +28,8 @@ class Ticker::MovementHandler
         runloop.say "Army #{ action.army_id } is at loc #{ action.army.location_id } but it was expected to be at loc #{ action.starting_location_id }.", Logger::ERROR
         return ;
       end
+
+      target_location = action.army.target_location
       
       action.army.location_id = action.target_location_id  
       action.army.region_id = action.target_region_id  
@@ -45,7 +47,8 @@ class Ticker::MovementHandler
       action.region.save
       action.location.armies_changed_at = DateTime.now
       action.location.save
-      action.army.check_for_battle_at(army.location)
+      started_battles = action.army.check_for_battle_at(target_location)
+      runloop.say "Started #{started_battles} battles automatically."      
       action.destroy
       event.destroy
       runloop.say "Movement handler completed."

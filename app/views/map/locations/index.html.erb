@@ -18,6 +18,7 @@ end %>
     <th>Alliance</th>
     <th>Alliance tag</th>
     <th>Visible</th>
+    <th>Right of Way</th>
     <th></th>
     <th></th>
     <th></th>
@@ -36,6 +37,7 @@ end %>
     <td><%= map_location.alliance_id %></td>
     <td><%= map_location.alliance_tag %></td>
     <td><%= map_location.visible %></td>
+    <td><%= map_location.right_of_way %></td>
     <td><%= link_to 'Show', map_location %></td>
     <td><%= link_to 'Edit', edit_map_location_path(map_location) %></td>
     <td><%= link_to 'Destroy', map_location, confirm: 'Are you sure?', method: :delete %></td>

@@ -6,6 +6,14 @@ class Map::Location < ActiveRecord::Base
   has_many :armies, :class_name => "Military::Army", :foreign_key => "location_id"
   
   has_many :battles, :class_name => "Military::Battle", :inverse_of => :location
-
-
+  
+  def garrison_army
+    self.armies.each do |army|
+      if army.garrison 
+        return army
+      end
+    end
+    
+    return nil
+  end
 end

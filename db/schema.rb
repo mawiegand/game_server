@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503214644) do
+ActiveRecord::Schema.define(:version => 20120504180417) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20120503214644) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "armies_changed_at"
+    t.integer  "right_of_way"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"

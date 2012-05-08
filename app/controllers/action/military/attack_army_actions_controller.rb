@@ -1,4 +1,5 @@
 class Action::Military::AttackArmyActionsController < ApplicationController
+  layout 'action'
 
   # GET /action/military/attack_army_actions/new
   # GET /action/military/attack_army_actions/new.json
