@@ -24,3 +24,5 @@ client
 /rules/*.cpp
 /rules/*.o
 /rules/database_fields
+
+/config/thin_local.yml
