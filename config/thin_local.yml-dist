@@ -1,5 +1,5 @@
 ---
-pid: /var/run/thin/game_server.pid
+pid: /opt/local/var/run/thin/game_server.pid
 timeout: 30
 wait: 30
 log: log/thin.log
@@ -10,7 +10,5 @@ environment: development
 max_persistent_conns: 512
 servers: 2
 daemonize: true
-socket: /var/run/thin/game_server.sock
-
-# enter correct local path
-chdir: /path/to/game_server
+chdir: /Users/slange/Documents/Code/wackadoo/game_server
+socket: /opt/local/var/run/thin/game_server.sock
