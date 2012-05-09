@@ -43,12 +43,21 @@ class Fundamental::CharactersController < ApplicationController
   
 
   def self
-    # this is to handle a bug in Safari (and other browsers), that lose a custom Authorization header when following a redirect
-    #if !params[:access_token].blank? && request_authorization && request_authorization[:method] != :header  # if a_t was in body (POST) or query (GET), append it as argument 
-    #  redirect_to polymorphic_path(current_identity, :access_token => params[:access_token])
-    #else
+    
+    if !current_character && request_access_token &&  request_access_token.valid? &&
+       request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
+       !request_access_token.identifier.blank? &&
+       request_authorization && request_authorization[:grant_type] == :bearer
+       
+      character = Fundamental::Character.create_new_character(request_access_token.identifier)
+      raise InternalServerError.new('Could not create Character for new User.') if character.blank?      
+      redirect_to fundamental_character_path(character.id)
+      
+    elsif !current_character
+      raise NotFoundError.new("Could not find user's character.")
+    else
       redirect_to fundamental_character_path(current_character_id)
-    #end
+    end
   end
 
   # GET /fundamental/characters/1

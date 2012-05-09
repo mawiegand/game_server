@@ -28,6 +28,40 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
+  def self.create_new_character(identifier)
+    character = Fundamental::Character.new({
+      identifier: identifier,
+      name: 'WackyUser'
+    });
+    
+    if !character.save
+      raise InternalServerError.new('Could not create new character.') 
+    end
+    
+    location = Map::Location.find_empty
+    if !location || !character.claim_location(location)
+      character.destroy
+      raise InternalServerError.new('Could not claim an empty location.')
+    end
+    
+    # HERE: create base (as soon as model implemented)
+    location.type_id = 1 # base
+    location.level = 1   # starting level
+    location.save
+    
+    return character 
+  end
+  
+  # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
+  def claim_location(location)
+    location.owner_id = self.id
+    location.owner_name = self.name
+    location.alliance_id = self.alliance_id
+    location.alliance_tag = self.alliance_tag
+    location.save
+  end
+    
+  
   def is_enemy_of?(opponent)
     return !self.is_neutral? && !opponent.is_neutral? && self.alliance != opponent.alliance  
   end
@@ -53,4 +87,6 @@ class Fundamental::Character < ActiveRecord::Base
       return false
     end
   end  
+  
+
 end

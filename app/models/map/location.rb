@@ -6,6 +6,10 @@ class Map::Location < ActiveRecord::Base
   has_many :armies, :class_name => "Military::Army", :foreign_key => "location_id"
   
   has_many :battles, :class_name => "Military::Battle", :inverse_of => :location
+
+  def self.find_empty
+    Map::Location.where("type_id = ?", 0).offset(Random.rand(Map::Location.where("type_id = ?", 0).count)).first
+  end
   
   def garrison_army
     self.armies.each do |army|
@@ -16,4 +20,6 @@ class Map::Location < ActiveRecord::Base
     
     return nil
   end
+  
+    
 end

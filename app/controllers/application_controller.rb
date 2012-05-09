@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
       head :unauthorized if exception.class     == UnauthorizedError
       
       # 5xx
-      head :internal_server_error if exception.class     == IntenalServerError
+      head :internal_server_error if exception.class     == InternalServerError
       head :not_implemented if exception.class     == NotImplementedError
       head :service_unavailable if exception.class     == ServiceUnavailableError
     end
@@ -99,7 +99,7 @@ class ApplicationController < ActionController::Base
       render :text => exception.message, :status => :unauthorized  if exception.class == UnauthorizedError      
       
       # 5xx
-      render :text => exception.message, :status => :internal_server_error  if exception.class == IntenalServerError      
+      render :text => exception.message, :status => :internal_server_error  if exception.class == InternalServerError      
       render :text => exception.message, :status => :not_implemented  if exception.class == NotImplementedError      
       render :text => exception.message, :status => :service_unavailable  if exception.class == ServiceUnavailableError      
     end
