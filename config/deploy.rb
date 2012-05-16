@@ -45,9 +45,8 @@ namespace :deploy do
   
   desc "Compile Rules"
   task :compile_rules do
-    run "echo compile_rules"
+    run "cd #{current_path}/rules; make"
   end
   
   after "deploy:update_code", :compile_rules
-  
 end
