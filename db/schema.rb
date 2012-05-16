@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504180417) do
+ActiveRecord::Schema.define(:version => 20120517002433) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(:version => 20120504180417) do
     t.decimal  "unitcategory_artillery_strength"
     t.integer  "kills"
     t.integer  "victories"
+    t.decimal  "unitcategory_siege_strength"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -237,6 +238,12 @@ ActiveRecord::Schema.define(:version => 20120504180417) do
     t.integer  "unit_thrower"
     t.integer  "unit_skewer"
     t.integer  "unit_light_cavalry"
+    t.integer  "unit_tree_huggers"
+    t.integer  "unit_sabre_riders"
+    t.integer  "unit_squirrel_hunters"
+    t.integer  "unit_clubbers"
+    t.integer  "unit_catapult"
+    t.integer  "unit_ram"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
@@ -266,6 +273,7 @@ ActiveRecord::Schema.define(:version => 20120504180417) do
     t.decimal  "unitcategory_infantry_strength"
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
+    t.decimal  "unitcategory_siege_strength"
   end
 
   create_table "military_battle_participant_results", :force => true do |t|
@@ -291,6 +299,30 @@ ActiveRecord::Schema.define(:version => 20120504180417) do
     t.integer  "unit_light_cavalry_casualties"
     t.decimal  "unit_light_cavalry_damage_taken"
     t.decimal  "unit_light_cavalry_damage_inflicted"
+    t.integer  "unit_tree_huggers"
+    t.integer  "unit_tree_huggers_casualties"
+    t.decimal  "unit_tree_huggers_damage_taken"
+    t.decimal  "unit_tree_huggers_damage_inflicted"
+    t.integer  "unit_sabre_riders"
+    t.integer  "unit_sabre_riders_casualties"
+    t.decimal  "unit_sabre_riders_damage_taken"
+    t.decimal  "unit_sabre_riders_damage_inflicted"
+    t.integer  "unit_squirrel_hunters"
+    t.integer  "unit_squirrel_hunters_casualties"
+    t.decimal  "unit_squirrel_hunters_damage_taken"
+    t.decimal  "unit_squirrel_hunters_damage_inflicted"
+    t.integer  "unit_clubbers"
+    t.integer  "unit_clubbers_casualties"
+    t.decimal  "unit_clubbers_damage_taken"
+    t.decimal  "unit_clubbers_damage_inflicted"
+    t.integer  "unit_catapult"
+    t.integer  "unit_catapult_casualties"
+    t.decimal  "unit_catapult_damage_taken"
+    t.decimal  "unit_catapult_damage_inflicted"
+    t.integer  "unit_ram"
+    t.integer  "unit_ram_casualties"
+    t.decimal  "unit_ram_damage_taken"
+    t.decimal  "unit_ram_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|
