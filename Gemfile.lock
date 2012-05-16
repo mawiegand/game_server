@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:wackadoo/awe_native_extensions.git
+  revision: 12cc36debbb0edf0ed4fdfb61500a277f13f5e1f
+  specs:
+    awe_native_extensions (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,7 +37,6 @@ GEM
       multi_json (~> 1.0)
     ansi (1.4.1)
     arel (2.2.1)
-    awe_native_extensions (0.0.1)
     builder (3.0.0)
     capistrano (2.9.0)
       highline
@@ -140,7 +145,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awe_native_extensions
+  awe_native_extensions!
   capistrano
   coffee-rails (~> 3.1.1)
   jquery-rails
