@@ -42,4 +42,12 @@ namespace :deploy do
   task :stop do
     run "cd #{current_path}; bundle exec thin -C config/thin_server.yml stop"
   end
+  
+  desc "Compile Rules"
+  task :compile_rules do
+    run "echo compile_rules"
+  end
+  
+  after "deploy:migrate", :compile_rules
+  
 end
