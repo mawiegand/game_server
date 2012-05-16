@@ -48,5 +48,4 @@ namespace :deploy do
     run "cd #{current_path}/rules; make"
   end
   
-  after "deploy:update_code", :compile_rules
 end
