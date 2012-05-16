@@ -48,6 +48,6 @@ namespace :deploy do
     run "echo compile_rules"
   end
   
-  after "deploy:migrate", :compile_rules
+  after "deploy:update_code", :compile_rules
   
 end
