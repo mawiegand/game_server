@@ -28,10 +28,10 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
-  def self.create_new_character(identifier)
+  def self.create_new_character(identifier, name)
     character = Fundamental::Character.new({
       identifier: identifier,
-      name: 'WackyUser'
+      name: name,
     });
     
     if !character.save
@@ -48,6 +48,13 @@ class Fundamental::Character < ActiveRecord::Base
     location.type_id = 1 # base
     location.level = 1   # starting level
     location.save
+    
+    character.base_location_id = location.id
+    character.base_region_id = location.region_id
+    
+    if !character.save
+      raise InternalServerError.new('Could not save the base of the character.')
+    end
     
     return character 
   end

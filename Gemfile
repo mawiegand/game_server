@@ -8,8 +8,7 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'thin'
-
-
+gem 'httparty'
 
 group :production do
   gem 'pg'

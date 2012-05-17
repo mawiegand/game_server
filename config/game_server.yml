@@ -6,10 +6,17 @@ defaults: &defaults
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
   
   scope: 'wackadoo'
+
+  default_character_name: 'WackyUser'
+  
+  identity_provider_base_url: 'https://wackadoo.de/identity_provider'
       
 development:
   <<: *defaults
   base_time_factor: 1
+  identity_provider_base_url: 'https://localhost/identity_provider'
+
+
 
 test:
   <<: *defaults
