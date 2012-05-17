@@ -51,6 +51,7 @@ class Fundamental::Character < ActiveRecord::Base
     
     character.base_location_id = location.id
     character.base_region_id = location.region_id
+    character.base_node_id = location.region.node_id
     
     if !character.save
       raise InternalServerError.new('Could not save the base of the character.')
