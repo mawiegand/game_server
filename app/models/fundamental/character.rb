@@ -45,7 +45,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     # HERE: create base (as soon as model implemented)
-    location.type_id = 1 # base
+    location.type_id = 2 # base
     location.level = 1   # starting level
     location.save
     
