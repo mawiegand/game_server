@@ -17,7 +17,7 @@ end
 
 group :ticker_development do
   gem 'pg'
-#	gem 'awe_native_extensions', :path => '/usr/lib/ruby/gems/1.9.1/gems/awe_native_extensions-0.0.1/'
+	gem 'awe_native_extensions', :git => "git@github.com:wackadoo/awe_native_extensions.git"
 end
 
 group :development do
