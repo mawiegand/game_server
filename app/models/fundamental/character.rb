@@ -9,6 +9,11 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :regions, :class_name => "Map::Region", :foreign_key => "owner_id"
   has_many :alliance_shouts, :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_one :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
+
+  has_one :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
+  has_one :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner
+  has_one :archive, :class_name => "Messaging::Archive", :foreign_key => "owner_id", :inverse_of => :owner
+
  
   @identifier_regex = /[a-z]{16}/i 
   
@@ -56,6 +61,10 @@ class Fundamental::Character < ActiveRecord::Base
     if !character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
+    
+    character.create_inbox
+    character.create_outbox
+    character.create_archive
     
     return character 
   end
