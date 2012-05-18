@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Owner:</b>
+  <%= @messaging_outbox.owner_id %>
+</p>
+
+<p>
+  <b>Messages count:</b>
+  <%= @messaging_outbox.messages_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_messaging_outbox_path(@messaging_outbox) %> |
+<%= link_to 'Back', messaging_outboxes_path %>

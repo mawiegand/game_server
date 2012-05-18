@@ -1,0 +1,57 @@
+<h1>Listing settlement_settlements</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Region</th>
+    <th>Location</th>
+    <th>Node</th>
+    <th>Owner</th>
+    <th>Alliance</th>
+    <th>Level</th>
+    <th>Founded at</th>
+    <th>Founder</th>
+    <th>Defense bonus</th>
+    <th>Morale</th>
+    <th>Tax rate</th>
+    <th>Owns region</th>
+    <th>Taxable</th>
+    <th>Command points</th>
+    <th>Armies count</th>
+    <th>Garrison</th>
+    <th>Besieged</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @settlement_settlements.each do |settlement_settlement| %>
+  <tr>
+    <td><%= settlement_settlement.type_id %></td>
+    <td><%= settlement_settlement.region_id %></td>
+    <td><%= settlement_settlement.location_id %></td>
+    <td><%= settlement_settlement.node_id %></td>
+    <td><%= settlement_settlement.owner_id %></td>
+    <td><%= settlement_settlement.alliance_id %></td>
+    <td><%= settlement_settlement.level %></td>
+    <td><%= settlement_settlement.founded_at %></td>
+    <td><%= settlement_settlement.founder_id %></td>
+    <td><%= settlement_settlement.defense_bonus %></td>
+    <td><%= settlement_settlement.morale %></td>
+    <td><%= settlement_settlement.tax_rate %></td>
+    <td><%= settlement_settlement.owns_region %></td>
+    <td><%= settlement_settlement.taxable %></td>
+    <td><%= settlement_settlement.command_points %></td>
+    <td><%= settlement_settlement.armies_count %></td>
+    <td><%= settlement_settlement.garrison_id %></td>
+    <td><%= settlement_settlement.besieged %></td>
+    <td><%= link_to 'Show', settlement_settlement %></td>
+    <td><%= link_to 'Edit', edit_settlement_settlement_path(settlement_settlement) %></td>
+    <td><%= link_to 'Destroy', settlement_settlement, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Settlement', new_settlement_settlement_path %>

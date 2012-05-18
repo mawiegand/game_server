@@ -1,0 +1,49 @@
+<%= form_for(@settlement_history) do |f| %>
+  <% if @settlement_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@settlement_history.errors.count, "error") %> prohibited this settlement_history from being saved:</h2>
+
+      <ul>
+      <% @settlement_history.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :settlement_id %><br />
+    <%= f.number_field :settlement_id %>
+  </div>
+  <div class="field">
+    <%= f.label :event_type %><br />
+    <%= f.text_field :event_type %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_name %><br />
+    <%= f.text_field :owner_name %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_tag %><br />
+    <%= f.text_field :alliance_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :points %><br />
+    <%= f.number_field :points %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

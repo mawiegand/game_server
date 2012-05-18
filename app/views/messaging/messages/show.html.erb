@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Recipient:</b>
+  <%= @messaging_message.recipient_id %>
+</p>
+
+<p>
+  <b>Sender:</b>
+  <%= @messaging_message.sender_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @messaging_message.type_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @messaging_message.subject %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @messaging_message.body %>
+</p>
+
+<p>
+  <b>Send at:</b>
+  <%= @messaging_message.send_at %>
+</p>
+
+<p>
+  <b>Reported:</b>
+  <%= @messaging_message.reported %>
+</p>
+
+<p>
+  <b>Reporter:</b>
+  <%= @messaging_message.reporter_id %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @messaging_message.flag %>
+</p>
+
+
+<%= link_to 'Edit', edit_messaging_message_path(@messaging_message) %> |
+<%= link_to 'Back', messaging_messages_path %>

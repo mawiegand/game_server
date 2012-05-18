@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Settlement:</b>
+  <%= @settlement_history.settlement_id %>
+</p>
+
+<p>
+  <b>Event type:</b>
+  <%= @settlement_history.event_type %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @settlement_history.owner_id %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%= @settlement_history.owner_name %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @settlement_history.alliance_id %>
+</p>
+
+<p>
+  <b>Alliance tag:</b>
+  <%= @settlement_history.alliance_tag %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @settlement_history.level %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @settlement_history.points %>
+</p>
+
+
+<%= link_to 'Edit', edit_settlement_history_path(@settlement_history) %> |
+<%= link_to 'Back', settlement_histories_path %>

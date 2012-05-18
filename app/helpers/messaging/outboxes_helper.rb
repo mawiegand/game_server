@@ -1,0 +1,2 @@
+module Messaging::OutboxesHelper
+end

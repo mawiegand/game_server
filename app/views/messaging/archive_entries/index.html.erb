@@ -1,0 +1,31 @@
+<h1>Listing messaging_archive_entries</h1>
+
+<table>
+  <tr>
+    <th>Inbox</th>
+    <th>Owner</th>
+    <th>Message</th>
+    <th>Sender</th>
+    <th>Subject</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messaging_archive_entries.each do |messaging_archive_entry| %>
+  <tr>
+    <td><%= messaging_archive_entry.inbox_id %></td>
+    <td><%= messaging_archive_entry.owner_id %></td>
+    <td><%= messaging_archive_entry.message_id %></td>
+    <td><%= messaging_archive_entry.sender_id %></td>
+    <td><%= messaging_archive_entry.subject %></td>
+    <td><%= link_to 'Show', messaging_archive_entry %></td>
+    <td><%= link_to 'Edit', edit_messaging_archive_entry_path(messaging_archive_entry) %></td>
+    <td><%= link_to 'Destroy', messaging_archive_entry, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Archive entry', new_messaging_archive_entry_path %>

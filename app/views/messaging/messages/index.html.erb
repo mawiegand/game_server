@@ -1,0 +1,39 @@
+<h1>Listing messaging_messages</h1>
+
+<table>
+  <tr>
+    <th>Recipient</th>
+    <th>Sender</th>
+    <th>Type</th>
+    <th>Subject</th>
+    <th>Body</th>
+    <th>Send at</th>
+    <th>Reported</th>
+    <th>Reporter</th>
+    <th>Flag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messaging_messages.each do |messaging_message| %>
+  <tr>
+    <td><%= messaging_message.recipient_id %></td>
+    <td><%= messaging_message.sender_id %></td>
+    <td><%= messaging_message.type_id %></td>
+    <td><%= messaging_message.subject %></td>
+    <td><%= messaging_message.body %></td>
+    <td><%= messaging_message.send_at %></td>
+    <td><%= messaging_message.reported %></td>
+    <td><%= messaging_message.reporter_id %></td>
+    <td><%= messaging_message.flag %></td>
+    <td><%= link_to 'Show', messaging_message %></td>
+    <td><%= link_to 'Edit', edit_messaging_message_path(messaging_message) %></td>
+    <td><%= link_to 'Destroy', messaging_message, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Message', new_messaging_message_path %>

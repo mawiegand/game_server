@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517183126) do
+ActiveRecord::Schema.define(:version => 20120518165028) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -188,6 +188,71 @@ ActiveRecord::Schema.define(:version => 20120517183126) do
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
 
+  create_table "messaging_archive_entries", :force => true do |t|
+    t.integer  "archivebox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "sender_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_archives", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_inbox_entries", :force => true do |t|
+    t.integer  "inbox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "sender_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_inboxes", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_messages", :force => true do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.integer  "type_id"
+    t.string   "subject"
+    t.string   "body"
+    t.datetime "send_at"
+    t.boolean  "reported"
+    t.integer  "reporter_id"
+    t.integer  "flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_outbox_entries", :force => true do |t|
+    t.integer  "outbox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "recipient_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_outboxes", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "military_armies", :force => true do |t|
     t.string   "name"
     t.integer  "home_settlement_id"
@@ -358,6 +423,55 @@ ActiveRecord::Schema.define(:version => 20120517183126) do
     t.integer  "decisiveness"
     t.integer  "battle_factions_count"
     t.integer  "battle_rounds_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "settlement_histories", :force => true do |t|
+    t.integer  "settlement_id"
+    t.string   "event_type"
+    t.integer  "owner_id"
+    t.string   "owner_name"
+    t.integer  "alliance_id"
+    t.string   "alliance_tag"
+    t.integer  "level"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "settlement_settlements", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "region_id"
+    t.integer  "location_id"
+    t.integer  "node_id"
+    t.integer  "owner_id"
+    t.integer  "alliance_id"
+    t.integer  "level"
+    t.datetime "founded_at"
+    t.datetime "founder_id"
+    t.decimal  "defense_bonus"
+    t.decimal  "morale"
+    t.decimal  "tax_rate"
+    t.boolean  "owns_region"
+    t.boolean  "taxable"
+    t.integer  "command_points"
+    t.integer  "armies_count"
+    t.integer  "garrison_id"
+    t.boolean  "besieged"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "points"
+  end
+
+  create_table "settlement_slots", :force => true do |t|
+    t.integer  "settlement_id"
+    t.integer  "slot_num"
+    t.string   "type"
+    t.integer  "max_level"
+    t.integer  "building_id"
+    t.integer  "level"
+    t.integer  "construction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

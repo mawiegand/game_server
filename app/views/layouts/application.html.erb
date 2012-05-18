@@ -36,8 +36,12 @@
       <%= yield :action_links %>
       <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
       <%= yield :fundamental_links %>
+      <li><%= link_to I18n.translate("application.layout.messaging.category"), messaging_inboxes_path %></li>
+      <%= yield :messaging_links %>
       <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
       <%= yield :map_links %>
+      <li><%= link_to I18n.translate("application.layout.settlement.category"), settlement_settlements_path %></li>
+      <%= yield :settlement_links %>
       <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
       <%= yield :military_links %>
     </ul>

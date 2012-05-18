@@ -1,0 +1,25 @@
+<%= form_for(@messaging_archive) do |f| %>
+  <% if @messaging_archive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@messaging_archive.errors.count, "error") %> prohibited this messaging_archive from being saved:</h2>
+
+      <ul>
+      <% @messaging_archive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :messages_count %><br />
+    <%= f.number_field :messages_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

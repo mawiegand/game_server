@@ -1,0 +1,2 @@
+module Settlement::HistoriesHelper
+end

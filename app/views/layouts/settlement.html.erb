@@ -1,0 +1,13 @@
+<% content_for :settlement_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.settlement.settlements"), settlement_settlements_path %></li>
+    <li><%= link_to I18n.translate("application.layout.settlement.slots"), settlement_slots_path %></li>
+    <li><%= link_to I18n.translate("application.layout.settlement.history"), settlement_histories_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:settlement_content) ? yield(:settlement_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

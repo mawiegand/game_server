@@ -24,12 +24,23 @@ en:
         alliances: Alliances
         guilds: Guilds
         alliance_shouts: Ally-Shouts
+      messaging:
+        category: Messaging
+        inboxes: Inboxes
+        outboxes: Outboxes
+        archives: Archives
+        reported: Abuse
       map:
         category: Map
         nodes: Nodes
         subtree: Tree
         locations: Locations
         regions: Regions
+      settlement:
+        category: Settlement
+        settlements: All
+        slots: Slots
+        history: History Events
       military:
         category: Military
         armies: Armies
