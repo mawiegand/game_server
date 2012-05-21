@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Settlement:</b>
+  <%= @settlement_slot.settlement_id %>
+</p>
+
+<p>
+  <b>Slot num:</b>
+  <%= @settlement_slot.slot_num %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @settlement_slot.type %>
+</p>
+
+<p>
+  <b>Max level:</b>
+  <%= @settlement_slot.max_level %>
+</p>
+
+<p>
+  <b>Building:</b>
+  <%= @settlement_slot.building_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @settlement_slot.level %>
+</p>
+
+<p>
+  <b>Construction:</b>
+  <%= @settlement_slot.construction_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_settlement_slot_path(@settlement_slot) %> |
+<%= link_to 'Back', settlement_slots_path %>

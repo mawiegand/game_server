@@ -1,0 +1,89 @@
+<%= form_for(@settlement_settlement) do |f| %>
+  <% if @settlement_settlement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@settlement_settlement.errors.count, "error") %> prohibited this settlement_settlement from being saved:</h2>
+
+      <ul>
+      <% @settlement_settlement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :region_id %><br />
+    <%= f.number_field :region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :node_id %><br />
+    <%= f.number_field :node_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :founded_at %><br />
+    <%= f.datetime_select :founded_at %>
+  </div>
+  <div class="field">
+    <%= f.label :founder_id %><br />
+    <%= f.datetime_select :founder_id %>
+  </div>
+  <div class="field">
+    <%= f.label :defense_bonus %><br />
+    <%= f.text_field :defense_bonus %>
+  </div>
+  <div class="field">
+    <%= f.label :morale %><br />
+    <%= f.text_field :morale %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_rate %><br />
+    <%= f.text_field :tax_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :owns_region %><br />
+    <%= f.check_box :owns_region %>
+  </div>
+  <div class="field">
+    <%= f.label :taxable %><br />
+    <%= f.check_box :taxable %>
+  </div>
+  <div class="field">
+    <%= f.label :command_points %><br />
+    <%= f.number_field :command_points %>
+  </div>
+  <div class="field">
+    <%= f.label :armies_count %><br />
+    <%= f.number_field :armies_count %>
+  </div>
+  <div class="field">
+    <%= f.label :garrison_id %><br />
+    <%= f.number_field :garrison_id %>
+  </div>
+  <div class="field">
+    <%= f.label :besieged %><br />
+    <%= f.check_box :besieged %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

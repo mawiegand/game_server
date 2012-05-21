@@ -1,0 +1,31 @@
+<h1>Listing messaging_outbox_entries</h1>
+
+<table>
+  <tr>
+    <th>Outbox</th>
+    <th>Owner</th>
+    <th>Message</th>
+    <th>Recipient</th>
+    <th>Subject</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messaging_outbox_entries.each do |messaging_outbox_entry| %>
+  <tr>
+    <td><%= messaging_outbox_entry.outbox_id %></td>
+    <td><%= messaging_outbox_entry.owner_id %></td>
+    <td><%= messaging_outbox_entry.message_id %></td>
+    <td><%= messaging_outbox_entry.recipient_id %></td>
+    <td><%= messaging_outbox_entry.subject %></td>
+    <td><%= link_to 'Show', messaging_outbox_entry %></td>
+    <td><%= link_to 'Edit', edit_messaging_outbox_entry_path(messaging_outbox_entry) %></td>
+    <td><%= link_to 'Destroy', messaging_outbox_entry, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Outbox entry', new_messaging_outbox_entry_path %>

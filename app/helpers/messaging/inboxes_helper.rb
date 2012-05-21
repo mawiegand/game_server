@@ -1,0 +1,2 @@
+module Messaging::InboxesHelper
+end

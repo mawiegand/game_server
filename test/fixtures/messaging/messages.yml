@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  recipient_id: 1
+  sender_id: 1
+  type_id: 1
+  subject: MyString
+  body: MyString
+  send_at: 2012-05-18 18:40:14
+  reported: false
+  reporter_id: 1
+  flag: 1
+
+two:
+  recipient_id: 1
+  sender_id: 1
+  type_id: 1
+  subject: MyString
+  body: MyString
+  send_at: 2012-05-18 18:40:14
+  reported: false
+  reporter_id: 1
+  flag: 1

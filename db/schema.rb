@@ -111,11 +111,12 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "alliance_id"
     t.string   "alliance_tag"
     t.integer  "base_location_id"
-    t.integer  "region_location_id"
+    t.integer  "base_region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "frog_amount"
     t.datetime "premium_expiration"
+    t.integer  "base_node_id"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -189,6 +190,71 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
 
+  create_table "messaging_archive_entries", :force => true do |t|
+    t.integer  "archivebox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "sender_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_archives", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_inbox_entries", :force => true do |t|
+    t.integer  "inbox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "sender_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_inboxes", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_messages", :force => true do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.integer  "type_id"
+    t.string   "subject"
+    t.string   "body"
+    t.datetime "send_at"
+    t.boolean  "reported"
+    t.integer  "reporter_id"
+    t.integer  "flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_outbox_entries", :force => true do |t|
+    t.integer  "outbox_id"
+    t.integer  "owner_id"
+    t.integer  "message_id"
+    t.integer  "recipient_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messaging_outboxes", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "messages_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "military_armies", :force => true do |t|
     t.string   "name"
     t.integer  "home_settlement_id"
@@ -224,6 +290,7 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.decimal  "unitcategory_artillery_strength"
     t.integer  "kills"
     t.integer  "victories"
+    t.decimal  "unitcategory_siege_strength"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -239,6 +306,12 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "unit_thrower"
     t.integer  "unit_skewer"
     t.integer  "unit_light_cavalry"
+    t.integer  "unit_tree_huggers"
+    t.integer  "unit_sabre_riders"
+    t.integer  "unit_squirrel_hunters"
+    t.integer  "unit_clubbers"
+    t.integer  "unit_catapult"
+    t.integer  "unit_ram"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
@@ -268,6 +341,7 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.decimal  "unitcategory_infantry_strength"
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
+    t.decimal  "unitcategory_siege_strength"
   end
 
   create_table "military_battle_participant_results", :force => true do |t|
@@ -293,6 +367,30 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "unit_light_cavalry_casualties"
     t.decimal  "unit_light_cavalry_damage_taken"
     t.decimal  "unit_light_cavalry_damage_inflicted"
+    t.integer  "unit_tree_huggers"
+    t.integer  "unit_tree_huggers_casualties"
+    t.decimal  "unit_tree_huggers_damage_taken"
+    t.decimal  "unit_tree_huggers_damage_inflicted"
+    t.integer  "unit_sabre_riders"
+    t.integer  "unit_sabre_riders_casualties"
+    t.decimal  "unit_sabre_riders_damage_taken"
+    t.decimal  "unit_sabre_riders_damage_inflicted"
+    t.integer  "unit_squirrel_hunters"
+    t.integer  "unit_squirrel_hunters_casualties"
+    t.decimal  "unit_squirrel_hunters_damage_taken"
+    t.decimal  "unit_squirrel_hunters_damage_inflicted"
+    t.integer  "unit_clubbers"
+    t.integer  "unit_clubbers_casualties"
+    t.decimal  "unit_clubbers_damage_taken"
+    t.decimal  "unit_clubbers_damage_inflicted"
+    t.integer  "unit_catapult"
+    t.integer  "unit_catapult_casualties"
+    t.decimal  "unit_catapult_damage_taken"
+    t.decimal  "unit_catapult_damage_inflicted"
+    t.integer  "unit_ram"
+    t.integer  "unit_ram_casualties"
+    t.decimal  "unit_ram_damage_taken"
+    t.decimal  "unit_ram_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|
@@ -340,6 +438,19 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.datetime "updated_at"
   end
 
+  create_table "settlement_histories", :force => true do |t|
+    t.integer  "settlement_id"
+    t.string   "event_type"
+    t.integer  "owner_id"
+    t.string   "owner_name"
+    t.integer  "alliance_id"
+    t.string   "alliance_tag"
+    t.integer  "level"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shop_transactions", :force => true do |t|
     t.integer  "character_id"
     t.integer  "credit_amount_booked"
@@ -347,6 +458,42 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "credit_amount_after"
     t.string   "offer"
     t.integer  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "settlement_settlements", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "region_id"
+    t.integer  "location_id"
+    t.integer  "node_id"
+    t.integer  "owner_id"
+    t.integer  "alliance_id"
+    t.integer  "level"
+    t.datetime "founded_at"
+    t.datetime "founder_id"
+    t.decimal  "defense_bonus"
+    t.decimal  "morale"
+    t.decimal  "tax_rate"
+    t.boolean  "owns_region"
+    t.boolean  "taxable"
+    t.integer  "command_points"
+    t.integer  "armies_count"
+    t.integer  "garrison_id"
+    t.boolean  "besieged"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "points"
+  end
+
+  create_table "settlement_slots", :force => true do |t|
+    t.integer  "settlement_id"
+    t.integer  "slot_num"
+    t.string   "type"
+    t.integer  "max_level"
+    t.integer  "building_id"
+    t.integer  "level"
+    t.integer  "construction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

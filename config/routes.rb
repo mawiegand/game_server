@@ -29,7 +29,31 @@ GameServer::Application.routes.draw do
           resources :characters
         end
       end
+      
+      namespace :messaging do 
+        resources :archives do
+          resources :archive_entries
+        end
+        resources :outboxes do
+          resources :outbox_entries
+        end
+        resources :inboxes do
+          resources :inbox_entries 
+        end
+        resources :inbox_entries 
+        resources :outbox_entries
+        resources :archive_entries
+        resources :messages
+      end
 
+      namespace :settlement do 
+        resources :settlements do 
+          resources :slots 
+          resources :histories
+        end
+        resources :slots 
+        resources :histories
+      end
 
       namespace :military do 
         resources :armies do

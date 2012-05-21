@@ -1,0 +1,2 @@
+module Messaging::ArchivesHelper
+end

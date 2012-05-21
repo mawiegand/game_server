@@ -1,0 +1,37 @@
+<%= form_for(@messaging_outbox_entry) do |f| %>
+  <% if @messaging_outbox_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@messaging_outbox_entry.errors.count, "error") %> prohibited this messaging_outbox_entry from being saved:</h2>
+
+      <ul>
+      <% @messaging_outbox_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :outbox_id %><br />
+    <%= f.number_field :outbox_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :message_id %><br />
+    <%= f.number_field :message_id %>
+  </div>
+  <div class="field">
+    <%= f.label :recipient_id %><br />
+    <%= f.number_field :recipient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

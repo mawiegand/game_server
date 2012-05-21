@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Inbox:</b>
+  <%= @messaging_archive_entry.inbox_id %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @messaging_archive_entry.owner_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @messaging_archive_entry.message_id %>
+</p>
+
+<p>
+  <b>Sender:</b>
+  <%= @messaging_archive_entry.sender_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @messaging_archive_entry.subject %>
+</p>
+
+
+<%= link_to 'Edit', edit_messaging_archive_entry_path(@messaging_archive_entry) %> |
+<%= link_to 'Back', messaging_archive_entries_path %>

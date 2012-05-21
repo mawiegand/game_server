@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Owner:</b>
+  <%= @messaging_archive.owner_id %>
+</p>
+
+<p>
+  <b>Messages count:</b>
+  <%= @messaging_archive.messages_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_messaging_archive_path(@messaging_archive) %> |
+<%= link_to 'Back', messaging_archives_path %>

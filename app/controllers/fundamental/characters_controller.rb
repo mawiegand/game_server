@@ -1,6 +1,9 @@
+require 'httparty'
+
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
   
+  include Fundamental::CharactersHelper
   
   def index
 
@@ -48,8 +51,11 @@ class Fundamental::CharactersController < ApplicationController
        request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
        !request_access_token.identifier.blank? &&
        request_authorization && request_authorization[:grant_type] == :bearer
-       
-      character = Fundamental::Character.create_new_character(request_access_token.identifier)
+      
+      identity = fetch_identity(request_access_token.identifier)
+      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'        
+              
+      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?      
       redirect_to fundamental_character_path(character.id)
       

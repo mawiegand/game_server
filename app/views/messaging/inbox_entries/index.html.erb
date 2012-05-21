@@ -1,0 +1,31 @@
+<h1>Listing messaging_inbox_entries</h1>
+
+<table>
+  <tr>
+    <th>Inbox</th>
+    <th>Owner</th>
+    <th>Message</th>
+    <th>Sender</th>
+    <th>Subject</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messaging_inbox_entries.each do |messaging_inbox_entry| %>
+  <tr>
+    <td><%= messaging_inbox_entry.inbox_id %></td>
+    <td><%= messaging_inbox_entry.owner_id %></td>
+    <td><%= messaging_inbox_entry.message_id %></td>
+    <td><%= messaging_inbox_entry.sender_id %></td>
+    <td><%= messaging_inbox_entry.subject %></td>
+    <td><%= link_to 'Show', messaging_inbox_entry %></td>
+    <td><%= link_to 'Edit', edit_messaging_inbox_entry_path(messaging_inbox_entry) %></td>
+    <td><%= link_to 'Destroy', messaging_inbox_entry, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inbox entry', new_messaging_inbox_entry_path %>
