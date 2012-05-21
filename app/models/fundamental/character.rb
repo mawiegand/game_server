@@ -36,12 +36,8 @@ class Fundamental::Character < ActiveRecord::Base
   def self.create_new_character(identifier, name)
     character = Fundamental::Character.new({
       identifier: identifier,
-<<<<<<< HEAD
-      name: 'WackyUser',
       frog_amount: 0,       # temporary hack
-=======
       name: name,
->>>>>>> eb2e20c66dbea82239dc113a24bc247b2f6c2bcd
     });
     
     if !character.save
