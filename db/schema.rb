@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519130805) do
+ActiveRecord::Schema.define(:version => 20120521000226) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(:version => 20120519130805) do
     t.integer  "region_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "frog_amount"
+    t.datetime "premium_expiration"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -325,6 +327,26 @@ ActiveRecord::Schema.define(:version => 20120519130805) do
     t.integer  "decisiveness"
     t.integer  "battle_factions_count"
     t.integer  "battle_rounds_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_offers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "price"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_transactions", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "credit_amount_booked"
+    t.integer  "credit_amount_before"
+    t.integer  "credit_amount_after"
+    t.string   "offer"
+    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

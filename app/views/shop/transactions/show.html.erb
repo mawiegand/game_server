@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @shop_transaction.character_id %>
+</p>
+
+<p>
+  <b>Credit amount booked:</b>
+  <%= @shop_transaction.credit_amount_booked %>
+</p>
+
+<p>
+  <b>Credit amount before:</b>
+  <%= @shop_transaction.credit_amount_before %>
+</p>
+
+<p>
+  <b>Credit amount after:</b>
+  <%= @shop_transaction.credit_amount_after %>
+</p>
+
+<p>
+  <b>Offer:</b>
+  <%= @shop_transaction.offer %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @shop_transaction.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_transaction_path(@shop_transaction) %> |
+<%= link_to 'Back', shop_transactions_path %>

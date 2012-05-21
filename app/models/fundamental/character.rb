@@ -9,6 +9,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :regions, :class_name => "Map::Region", :foreign_key => "owner_id"
   has_many :alliance_shouts, :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_one :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
+  has_many :shop_transactions, :class_name => "Shop::Transaction", :foreign_key => "character_id"
  
   @identifier_regex = /[a-z]{16}/i 
   
@@ -31,7 +32,8 @@ class Fundamental::Character < ActiveRecord::Base
   def self.create_new_character(identifier)
     character = Fundamental::Character.new({
       identifier: identifier,
-      name: 'WackyUser'
+      name: 'WackyUser',
+      frog_amount: 0,       # temporary hack
     });
     
     if !character.save

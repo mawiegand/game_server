@@ -43,6 +43,10 @@ en:
       event:
         category: Event
         events: Events
+      shop:
+        category: Shop
+        offers: Offers
+        transactions: Transactions
         
   sessions:
         

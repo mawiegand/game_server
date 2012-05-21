@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  credit_amount_booked: 1
+  credit_amount_before: 1
+  credit_amount_after: 1
+  offer: MyString
+  state: 1
+
+two:
+  character_id: 1
+  credit_amount_booked: 1
+  credit_amount_before: 1
+  credit_amount_after: 1
+  offer: MyString
+  state: 1

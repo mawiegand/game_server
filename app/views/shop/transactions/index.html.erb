@@ -1,0 +1,33 @@
+<h1>Listing shop_transactions</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Credit amount booked</th>
+    <th>Credit amount before</th>
+    <th>Credit amount after</th>
+    <th>Offer</th>
+    <th>State</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_transactions.each do |shop_transaction| %>
+  <tr>
+    <td><%= shop_transaction.character_id %></td>
+    <td><%= shop_transaction.credit_amount_booked %></td>
+    <td><%= shop_transaction.credit_amount_before %></td>
+    <td><%= shop_transaction.credit_amount_after %></td>
+    <td><%= shop_transaction.offer %></td>
+    <td><%= shop_transaction.state %></td>
+    <td><%= link_to 'Show', shop_transaction %></td>
+    <td><%= link_to 'Edit', edit_shop_transaction_path(shop_transaction) %></td>
+    <td><%= link_to 'Destroy', shop_transaction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transaction', new_shop_transaction_path %>

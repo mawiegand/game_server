@@ -5,6 +5,8 @@ defaults: &defaults
   
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
   
+  payment_provider_base_url: 'https://uni.patrickfox.de/payment_provider/'
+  
   scope: 'wackadoo'
       
 development:

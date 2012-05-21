@@ -1,10 +1,5 @@
 GameServer::Application.routes.draw do
   
-
-
-
-  namespace :shop do resources :offers end
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -96,6 +91,11 @@ GameServer::Application.routes.draw do
           resources :cancel_move_army_actions 
           resources :attack_army_actions
         end 
+      end
+      
+      namespace :shop do
+        resources :offers
+        resources :transactions
       end
       
       resource :action, :only => [ :show ]
