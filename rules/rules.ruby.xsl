@@ -75,12 +75,13 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories
   
   def attributes 
     { 
       'version'        => version,
       'unit_categories'=> unit_categories,
+      'building_categories'=> building_categories,
       'unit_types'     => unit_types,
       'resource_types' => resource_types,
       'building_types' => building_types,
@@ -116,6 +117,7 @@ class GameRules::Rules
 
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
+  <xsl:apply-templates select="BuildingCategories" />
 
   <xsl:text><![CDATA[
     )
@@ -244,6 +246,30 @@ end
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF UNIT CATEGORIES
+</xsl:template>
+
+
+
+
+<xsl:template match="BuildingCategories">
+  
+      :building_categories => [  # ALL BUILDING CATEGORIES
+<xsl:for-each select="BuildingCategory">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:if test="Position">
+	        :position    => <xsl:value-of select="Position"/>,
+</xsl:if>
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF BUILDING CATEGORIES
 </xsl:template>
 
 

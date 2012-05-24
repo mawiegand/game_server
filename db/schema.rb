@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "base_region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "frog_amount"
-    t.datetime "premium_expiration"
     t.integer  "base_node_id"
+    t.integer  "frog_amount",        :default => 0
+    t.datetime "premium_expiration"
   end
 
   create_table "fundamental_guilds", :force => true do |t|

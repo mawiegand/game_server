@@ -32,12 +32,13 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories
   
   def attributes 
     { 
       'version'        => version,
       'unit_categories'=> unit_categories,
+      'building_categories'=> building_categories,
       'unit_types'     => unit_types,
       'resource_types' => resource_types,
       'building_types' => building_types,
@@ -537,6 +538,49 @@ class GameRules::Rules
 
         },              #   END OF Battering Ram
       ],                # END OF UNIT TYPES
+
+  
+      :building_categories => [  # ALL BUILDING CATEGORIES
+
+        {               #   Fortification
+          :id          => 0, 
+          :symbolic_id => :building_category_fortress_main,
+          :name        => {
+            
+            :en_US => "Fortification",
+  
+            :de_DE => "Festungsanlagen",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Allgemeine Verbesserungen, die in Festungen gebaut werden können.</p>",
+  
+            :en_US => "<p>Improvements to be build in fortresses.</p>",
+                
+          },
+
+        },              #   END OF Fortification
+        {               #   Towers
+          :id          => 1, 
+          :symbolic_id => :building_category_fortress_tower,
+          :name        => {
+            
+            :en_US => "Towers",
+  
+            :de_DE => "Türme",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In Türmen untergebrachte militärische Verbesserungen von Festungen.</p>",
+  
+            :en_US => "<p>Towers that extend the military abilities of fortresses.</p>",
+                
+          },
+
+        },              #   END OF Towers
+      ],                # END OF BUILDING CATEGORIES
 
     )
   end
