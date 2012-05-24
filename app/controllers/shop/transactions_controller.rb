@@ -1,4 +1,8 @@
 class Shop::TransactionsController < ApplicationController
+
+  include Shop::ShopHelper
+
+  before_filter :authenticate
   
   # GET /shop/transactions
   # GET /shop/transactions.json
@@ -60,7 +64,8 @@ class Shop::TransactionsController < ApplicationController
     
     logger.debug virtual_bank_transaction.inspect
     
-    provider_response = HTTParty.post('https://uni.patrickfox.de/payment_provider/virtual_bank/transactions.json', {query: {virtual_bank_transaction: virtual_bank_transaction}}).parsed_response
+    provider_response = post_virtual_bank_transaction(virtual_bank_transaction)
+    
     logger.debug '------------------------------------'
     logger.debug provider_response.inspect
     logger.debug '------------------------------------'

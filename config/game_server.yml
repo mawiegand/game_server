@@ -5,7 +5,7 @@ defaults: &defaults
   
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
   
-  payment_provider_base_url: 'https://uni.patrickfox.de/payment_provider/'
+  payment_provider_base_url: 'https://wackadoo.de/payment_provider'
   
   scope: 'wackadoo'
 
@@ -16,8 +16,10 @@ defaults: &defaults
 development:
   <<: *defaults
   base_time_factor: 1
-  identity_provider_base_url: 'https://localhost/identity_provider'
+  
+  identity_provider_base_url: 'https://home.patrickfox.de/identity_provider'
 
+  payment_provider_base_url: 'https://home.patrickfox.de/payment_provider'
 
 
 test:

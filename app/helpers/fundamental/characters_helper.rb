@@ -1,7 +1,7 @@
 module Fundamental::CharactersHelper
   
   def fetch_identity(identifier)
-    response = HTTParty.get(GAME_SERVER_CONFIG['identity_provider_base_url'] + '/identities/'+request_access_token.identifier+'.json')   
+    response = HTTParty.get(GAME_SERVER_CONFIG['identity_provider_base_url'] + '/identities/' + request_access_token.identifier + '.json')   
     if !response.nil? && response['identifier'] 
       return response
     else 

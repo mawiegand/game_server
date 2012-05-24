@@ -14,7 +14,7 @@ html {
 body {
   min-width: 480px;
   
-  background-image: url("/assets/background.jpg");
+  background-image: url("/game_server/assets/background.jpg");
   padding: 0px;
   margin: 0px;
   min-height: 100%;

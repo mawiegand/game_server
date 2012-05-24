@@ -20,6 +20,7 @@ GameServer::Application.routes.draw do
         resources :alliance_shouts
         resources :characters do
           resources :alliance_shouts
+          resource :account, :module => "shop", :only => [ :show ]
         end
         resources :alliances do
           resources :characters
@@ -120,6 +121,7 @@ GameServer::Application.routes.draw do
       namespace :shop do
         resources :offers
         resources :transactions
+        resource :account, :only => [ :show ]
       end
       
       resource :action, :only => [ :show ]

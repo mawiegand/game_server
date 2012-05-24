@@ -18,7 +18,7 @@ require 'five_d'
   # '5dentity':
   #  accessToken = FiveDAccessToken.generate_access_token('xyz', ['5dentity'])
   #  accessToken.token   # => signed and b64-encoded access token string to be send to client
-  class FiveD::AccessToken 
+  class FiveD::AccessToken
     
     @@shared_secret = 'ARandomStringWithGoodEntropy'
     @@expiration    = 3600000                 # expiration in seconds

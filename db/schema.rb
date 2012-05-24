@@ -429,15 +429,6 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.datetime "updated_at"
   end
 
-  create_table "shop_offers", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.integer  "price"
-    t.integer  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "settlement_histories", :force => true do |t|
     t.integer  "settlement_id"
     t.string   "event_type"
@@ -447,17 +438,6 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.string   "alliance_tag"
     t.integer  "level"
     t.integer  "points"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "shop_transactions", :force => true do |t|
-    t.integer  "character_id"
-    t.integer  "credit_amount_booked"
-    t.integer  "credit_amount_before"
-    t.integer  "credit_amount_after"
-    t.string   "offer"
-    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -494,6 +474,26 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "building_id"
     t.integer  "level"
     t.integer  "construction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_offers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "price"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_transactions", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "credit_amount_booked"
+    t.integer  "credit_amount_before"
+    t.integer  "credit_amount_after"
+    t.string   "offer"
+    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
