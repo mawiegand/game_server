@@ -20,7 +20,10 @@
 
 <!--Types-->
 <!ELEMENT ResourceTypes (Resource*)>
+<!ELEMENT SettlementTypes (Settlement*)>
 <!ELEMENT BuildingTypes (Building*)>
+<!ELEMENT BuildingCategories (BuildingCategory*)>
+<!ELEMENT BuildingGroups (BuildingGroup*)>
 <!ELEMENT ScienceTypes (Science*)>
 <!ELEMENT UnitTypes (Unit*)>
 <!ELEMENT UnitCategories (UnitCategory*)>
@@ -29,15 +32,52 @@
 <!ELEMENT Resource (Name+, RatingValue, TakeoverValue, StealRatio, DestroyRatio, SafeStorage, MaxStorage, Production)>
 <!ATTLIST Resource id ID #REQUIRED hidden (0 | 1) "0">
 
-<!--Building-->
-<!ELEMENT Building (Name+, Description+, Position?, RatingValue, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement | EffectReq)*)>
-<!ATTLIST Building id ID #REQUIRED hidden (0 | 1) "0">
+<!--Settlements-->
+<!ELEMENT Settlement (Name+, Description+, BuildingSlot*)>
+<!ATTLIST Settlement 
+  id ID #REQUIRED
+	conquerable (true | false) "false"
+	destroyable (true | false) "false"
+>
+
+<!ELEMENT BuildingSlot (BuildingOption+)>
+<!ATTLIST BuildingSlot 
+  id ID #REQUIRED
+	number CDATA #REQUIRED
+	max-level CDATA #REQUIRED 
+>
+
+<!ELEMENT BuildingOption EMPTY>
+<!ATTLIST BuildingOption 
+  id ID #REQUIRED
+	category IDREF #REQUIRED 
+>
+
+<!--Buildings-->
+
+<!ELEMENT BuildingCategory (Name+, Description+, Position?)>
+<!ATTLIST BuildingCategory 
+  id ID #REQUIRED 
+>
+
+<!ELEMENT BuildingGroup EMPTY>
+<!ATTLIST BuildingGroup 
+  id ID #REQUIRED 
+>
+
+<!ELEMENT Building (Name+, Description+, Position?, Cost*, ProductionTime, Requirement*)>
+<!ATTLIST Building 
+  id ID #REQUIRED 
+  category IDREF #REQUIRED
+  group IDREF #REQUIRED
+  hidden (0 | 1) "0"
+>
 
 <!--Science-->
 <!ELEMENT Science (Name+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement | EffectReq)*)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
-<!--Unit-->
+<!--Units-->
 <!ELEMENT UnitCategory (Name+, Description+, Position?, Ability*, TargetPriorities?)>
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 

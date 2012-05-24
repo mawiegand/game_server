@@ -76,6 +76,23 @@
       <Language locale="de_DE">Deutsch</Language>
     </Languages>
   </General>
+  <SettlementTypes>
+    <Settlement id="fortress" conquerable="true" destroyable="false">
+      <Name lang="de_DE">Festung</Name>
+      <Name lang="en_US">Fortress</Name>
+      <Description lang="de_DE">Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.</Description>
+      <Description lang="en_US">English Description.</Description>
+      <BuildingSlot number="0" max-level="10">
+        <BuildingOption building="building_category_fortress_main" />
+      </BuildingSlot>
+      <BuildingSlot number="1" max-level="10">
+        <BuildingOption category="building_category_fortress_tower" />
+      </BuildingSlot>
+      <BuildingSlot number="2" max-level="10">
+        <BuildingOption category="building_category_fortress_tower" />
+      </BuildingSlot>
+    </Settlement>
+ </SettlementTypes>
   <UnitCategories>
     <UnitCategory id="infantry">
       <Name>Infantry</Name>
@@ -370,5 +387,26 @@
       
     </Unit>
 	</UnitTypes>
-	
+	<BuildingCategories>
+	  <BuildingCategory id="building_category_fortress_main">
+      <Name>Fortification</Name>
+      <Name lang="de_DE">Festungsanlagen</Name>
+      <Description lang="de_DE">
+        <p>Allgemeine Verbesserungen, die in Festungen gebaut werden können.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Improvements to be build in fortresses.</p>
+      </Description>
+	  </BuildingCategory>
+	  <BuildingCategory id="building_category_fortress_tower">
+      <Name>Towers</Name>
+      <Name lang="de_DE">Türme</Name>
+      <Description lang="de_DE">
+        <p>In Türmen untergebrachte militärische Verbesserungen von Festungen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Towers that extend the military abilities of fortresses.</p>
+      </Description>
+	  </BuildingCategory>
+  </BuildingCategories>
 </Rules>
