@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+  <SettlementTypes>
+    <Settlement id="fortress" conquerable="true" destroyable="false">
+      <Name lang="de_DE">Festung</Name>
+      <Name lang="en_US">Fortress</Name>
+      <Description lang="de_DE">Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.</Description>
+      <Description lang="en_US">English Description.</Description>
+      <BuildingSlot number="0" max-level="10">
+        <BuildingOption building="building_category_fortress_main" />
+      </BuildingSlot>
+      <BuildingSlot number="1" max-level="10">
+        <BuildingOption category="building_category_fortress_tower" />
+      </BuildingSlot>
+      <BuildingSlot number="2" max-level="10">
+        <BuildingOption category="building_category_fortress_tower" />
+      </BuildingSlot>
+    </Settlement>
+ </SettlementTypes>
+  

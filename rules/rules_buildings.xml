@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+	<BuildingCategories>
+	  <BuildingCategory id="building_category_fortress_main">
+      <Name>Fortification</Name>
+      <Name lang="de_DE">Festungsanlagen</Name>
+      <Description lang="de_DE">
+        <p>Allgemeine Verbesserungen, die in Festungen gebaut werden können.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Improvements to be build in fortresses.</p>
+      </Description>
+	  </BuildingCategory>
+	  <BuildingCategory id="building_category_fortress_tower">
+      <Name>Towers</Name>
+      <Name lang="de_DE">Türme</Name>
+      <Description lang="de_DE">
+        <p>In Türmen untergebrachte militärische Verbesserungen von Festungen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Towers that extend the military abilities of fortresses.</p>
+      </Description>
+	  </BuildingCategory>
+  </BuildingCategories>

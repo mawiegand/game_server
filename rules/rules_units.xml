@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+  <UnitTypes>
+    <Unit id="thrower" category="artillery">
+      <Name>Stone Hurler</Name>
+      <Name lang="de_DE">Kieselsteinwerfer</Name>
+      <Description lang="de_DE">
+        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>8</Initiative>
+      <Attack>18</Attack>
+      <CriticalDamage chance="0.01">10</CriticalDamage>
+      <Armor>2</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">1</Effectiveness>
+      <Effectiveness category="cavalry">0.3</Effectiveness>
+      <Effectiveness category="artillery">0.75</Effectiveness>
+      <Effectiveness category="siege">0.75</Effectiveness>
+      
+    </Unit>
+    <Unit id="skewer" category="infantry">
+      <Name>Skewer</Name>
+      <Name lang="de_DE">Bratspießträger</Name>
+      <Description lang="de_DE">
+        <p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Skewer Crew training 101: stick'em with the pointy end!</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>15</Initiative>
+      <Attack>14</Attack>
+      <CriticalDamage chance="0.01" >6</CriticalDamage>
+      <Armor>14</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
+      <Effectiveness category="cavalry">1</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+      <Effectiveness category="siege">1</Effectiveness>
+      
+    </Unit>
+    <Unit id="light_cavalry" category="cavalry">
+      <Name>Ostrich Riders</Name>
+      <Name lang="de_DE">Straußenreiter</Name>
+      <Description lang="de_DE">
+        <p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Ostrich riders are very quick, but only lightly armored.</p>
+      </Description>
+      <Velocity>1.5</Velocity>
+      <ActionPoints>5</ActionPoints>
+      <Initiative>26</Initiative>
+      <Attack>16</Attack>
+      <CriticalDamage chance="0.01">10</CriticalDamage>
+      <Armor>3</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>95</Hitpoints>
+      <Effectiveness category="infantry">0.3</Effectiveness>
+      <Effectiveness category="cavalry">0.75</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+      <Effectiveness category="siege">0.4</Effectiveness>
+      
+    </Unit>
+    <Unit id="tree_huggers" category="infantry">
+      <Name>Tree Huggers</Name>
+      <Name lang="de_DE">Baum-Brutalos</Name>
+      <Description lang="de_DE">
+        <p>Baum-Brutalos sind Tier2-Einheiten</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
+      </Description>
+      <Velocity>0.95</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>14</Initiative>
+      <Attack>20</Attack>
+      <CriticalDamage chance="0.02">9</CriticalDamage>
+      <Armor>4</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>140</Hitpoints>
+      <Effectiveness category="infantry">0.8</Effectiveness>
+      <Effectiveness category="cavalry">1</Effectiveness>
+      <Effectiveness category="artillery">0,8</Effectiveness>
+      <Effectiveness category="siege">1</Effectiveness>
+      
+    </Unit>
+	  <Unit id="sabre_riders" category="cavalry">
+      <Name>Sabretooth-Riders</Name>
+      <Name lang="de_DE">Säbelzahnreiter</Name>
+      <Description lang="de_DE">
+        <p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>It's not so much the riders themselves that are feared...</p>
+      </Description>
+      <Velocity>1.4</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>28</Initiative>
+      <Attack>21</Attack>
+      <CriticalDamage chance="0.02">14</CriticalDamage>
+      <Armor>15</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>140</Hitpoints>
+      <Effectiveness category="infantry">0.4</Effectiveness>
+      <Effectiveness category="cavalry">0,6</Effectiveness>
+      <Effectiveness category="artillery">1</Effectiveness>
+      <Effectiveness category="siege">0.4</Effectiveness>
+      
+    </Unit>
+    <Unit id="squirrel_hunters" category="artillery">
+      <Name>Squirrel-Hunters</Name>
+      <Name lang="de_DE">Hörnchen-Jäger</Name>
+      <Description lang="de_DE">
+        <p>T2 Sniper-Einheit, braucht noch guten Namen.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Used to shooting at small furry animals, these guys are great at aiming.</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>7</Initiative>
+      <Attack>19</Attack>
+      <CriticalDamage chance="0.2">19</CriticalDamage>
+      <Armor>0</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>100</Hitpoints>
+      <Effectiveness category="infantry">1</Effectiveness>
+      <Effectiveness category="cavalry">0,4</Effectiveness>
+      <Effectiveness category="artillery">0,7</Effectiveness>
+      <Effectiveness category="siege">0.4</Effectiveness>
+      
+    </Unit>
+	  <Unit id="clubbers" category="infantry">
+      <Name>Squirrel-Hunters</Name>
+      <Name lang="de_DE">Keulenkrieger</Name>
+      <Description lang="de_DE">
+        <p>Alternative T1, besser gegen Inf, anfälliger.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Decription goes here.</p>
+      </Description>
+      <Velocity>1</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>16</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">2</CriticalDamage>
+      <Armor>0</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0,9</Effectiveness>
+      <Effectiveness category="cavalry">0,9</Effectiveness>
+      <Effectiveness category="artillery">0,7</Effectiveness>
+      <Effectiveness category="siege">0.8</Effectiveness>
+      
+    </Unit>
+    <Unit id="catapult" category="siege">
+      <Name>Catapult</Name>
+      <Name lang="de_DE">Katapult</Name>
+      <Description lang="de_DE">
+        <p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>Decription goes here.</p>
+      </Description>
+      <Velocity>0.7</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>16</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">2</CriticalDamage>
+      <Armor>0</Armor>
+      <!--needs special ability: destroy semi-random building level-->
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0,2</Effectiveness>
+      <Effectiveness category="cavalry">0,1</Effectiveness>
+      <Effectiveness category="artillery">0,2</Effectiveness>
+      <Effectiveness category="siege">1</Effectiveness>
+      
+    </Unit>
+	  <Unit id="ram" category="siege">
+      <Name>Battering Ram</Name>
+      <Name lang="de_DE">Rammbock</Name>
+      <Description lang="de_DE">
+        <p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>
+      </Description>
+      <Velocity>0.9</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>16</Initiative>
+      <Attack>15</Attack>
+      <CriticalDamage chance="0.01">2</CriticalDamage>
+      <Armor>0</Armor>
+      <!--needs special ability: destroy wall level -->
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="infantry">0,2</Effectiveness>
+      <Effectiveness category="cavalry">0,1</Effectiveness>
+      <Effectiveness category="artillery">0,2</Effectiveness>
+      <Effectiveness category="siege">1</Effectiveness>
+      
+    </Unit>
+	</UnitTypes>
