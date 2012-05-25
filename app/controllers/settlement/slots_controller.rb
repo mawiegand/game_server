@@ -15,6 +15,8 @@ class Settlement::SlotsController < ApplicationController
       if @settlement_settlement.owner == current_character
         if_modified_since = Time.httpdate(request.env['HTTP_IF_MODIFIED_SINCE'])
         @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
+        @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
+        last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot         
       else
         raise ForbiddenError.new('Access Forbidden')
       end
@@ -34,8 +36,6 @@ class Settlement::SlotsController < ApplicationController
           if @asked_for_index 
             raise ForbiddenError.new('Access Forbidden')        
           end  
-          
-          logger.debug '--' + @settlement_slots.inspect
           
           if params.has_key?(:short)
             render json: @settlement_slots, :only => @@short_fields
