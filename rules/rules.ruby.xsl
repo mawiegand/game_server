@@ -267,7 +267,7 @@ end
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
 					:category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
-          :db_field    => <xsl:value-of select="@id"/>,
+          :db_field    => :<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
           },

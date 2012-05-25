@@ -592,7 +592,7 @@ class GameRules::Rules
           :id          => 0, 
           :symbolic_id => :building_inventor_tower,
 					:category    => 1,
-          :db_field    => building_inventor_tower,
+          :db_field    => :building_inventor_tower,
           :name        => {
             
             :de_DE => "Tüftler",

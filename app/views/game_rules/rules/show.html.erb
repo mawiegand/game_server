@@ -20,6 +20,24 @@
   <hr />
 <% end %>
 
+<% if (@only.length == 0 || @only.include?(:building_types)) && !@rules.building_types.nil? %>
+  <h1>Building Types</h1>
+  <% @rules.building_types.each do |building| %>
+    <h2><%= building[:name][:en_US] %></h2>
+    <table>
+      <% building.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  <hr />
+<% end %>
+
+
+
 <% if (@only.length == 0 || @only.include?(:unit_categories)) && !@rules.unit_categories.nil? %>
   <h1>Unit Categories</h1>
   <% @rules.unit_categories.each do |unit| %>
