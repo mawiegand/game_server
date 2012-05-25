@@ -1,14 +1,54 @@
 class Settlement::SlotsController < ApplicationController
   layout 'settlement'
 
+  before_filter :authenticate
+
+  # Returns a list of slots for a settlement
+  #
+  # GET /settlement/settlement/:settlement_id/slots
+  # GET /settlement/settlement/:settlement_id/slots.json
   # GET /settlement/slots
   # GET /settlement/slots.json
   def index
-    @settlement_slots = Settlement::Slot.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @settlement_slots }
+    last_modified = nil
+    
+    if params.has_key?(:settlement_id)
+      @own_settlements = Settlement::Settlement.find(:all, :conditions => {:owner_id => current_character.id});
+      @settlement_slots = []
+      @own_settlements.each do |settlement|
+        settlement.slots.each do |slot|
+          @settlement_slots << slot
+        end
+      end
+    else 
+      @asked_for_index = true
+    end   
+    
+    logger.debug params.inspect
+    logger.debug @settlement_slots.inspect
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @settlement_slots.nil?
+            @settlement_slots = Settlement::Slot.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+          
+          if params.has_key?(:short)
+            render json: @settlement_slots, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @settlement_slots, :only => @@aggregate_fields          
+          else
+            render json: @settlement_slots
+          end
+        end
+      end
     end
   end
 

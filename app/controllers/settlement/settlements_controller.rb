@@ -6,12 +6,31 @@ class Settlement::SettlementsController < ApplicationController
   # GET /settlement/settlements
   # GET /settlement/settlements.json
   def index
-    logger.debug current_character.inspect
-    @settlement_settlements = Settlement::Settlement.find_by_owner_id(current_character.id);
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @settlement_settlements }
+    last_modified = nil
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @settlement_settlements.nil?
+            @settlement_settlements = Settlement::Settlement.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          @settlement_settlements = Settlement::Settlement.find(:all, :conditions => {:owner_id => current_character.id});
+          @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
+          
+          logger.debug @settlement_settlements.inspect
+          
+          if params.has_key?(:short)
+            render json: @settlement_settlements, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @settlement_settlements, :only => @@aggregate_fields          
+          else
+            render json: @settlement_settlements
+          end
+        end
+      end
     end
   end
 
