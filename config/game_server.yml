@@ -17,9 +17,9 @@ development:
   <<: *defaults
   base_time_factor: 1
   
-  identity_provider_base_url: 'https://home.patrickfox.de/identity_provider'
+  identity_provider_base_url: 'https://uni.patrickfox.de/identity_provider'
 
-  payment_provider_base_url: 'https://home.patrickfox.de/payment_provider'
+  payment_provider_base_url: 'https://uni.patrickfox.de/payment_provider'
 
 
 test:

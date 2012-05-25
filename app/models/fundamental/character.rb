@@ -10,6 +10,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :alliance_shouts, :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_one :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
   has_many :shop_transactions, :class_name => "Shop::Transaction", :foreign_key => "character_id"
+  has_many :settlements, :class_name => "Settlement::Settlement", :foreign_key => "owner_id"
 
   has_one :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
   has_one :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner

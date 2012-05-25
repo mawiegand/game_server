@@ -1,10 +1,13 @@
 class Settlement::SettlementsController < ApplicationController
   layout 'settlement'
+  
+  before_filter :authenticate
 
   # GET /settlement/settlements
   # GET /settlement/settlements.json
   def index
-    @settlement_settlements = Settlement::Settlement.all
+    logger.debug current_character.inspect
+    @settlement_settlements = Settlement::Settlement.find_by_owner_id(current_character.id);
 
     respond_to do |format|
       format.html # index.html.erb
