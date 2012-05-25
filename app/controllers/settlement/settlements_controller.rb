@@ -5,8 +5,21 @@ class Settlement::SettlementsController < ApplicationController
 
   # GET /settlement/settlements
   # GET /settlement/settlements.json
+  # GET /fundamental/character/:character_id/settlements
+  # GET /fundamental/character/:character_id/settlements.json
   def index
     last_modified = nil
+    
+    if params.has_key?(:character_id)
+      if params[:character_id] == current_character.id.to_s
+        @settlement_settlements = Settlement::Settlement.find(:all, :conditions => {:owner_id => params[:character_id]});
+        @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
+      else
+        raise ForbiddenError.new('Access Forbidden')        
+      end
+    else 
+      @asked_for_index = true
+    end   
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
@@ -17,11 +30,10 @@ class Settlement::SettlementsController < ApplicationController
           end 
         end
         format.json do
-          @settlement_settlements = Settlement::Settlement.find(:all, :conditions => {:owner_id => current_character.id});
-          @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
-          
-          logger.debug @settlement_settlements.inspect
-          
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+
           if params.has_key?(:short)
             render json: @settlement_settlements, :only => @@short_fields
           elsif params.has_key?(:aggregate)
@@ -37,8 +49,12 @@ class Settlement::SettlementsController < ApplicationController
   # GET /settlement/settlements/1
   # GET /settlement/settlements/1.json
   def show
-    @settlement_settlement = Settlement::Settlement.find(params[:id])
-
+    if params[:character_id] == current_character.id
+      @settlement_settlement = Settlement::Settlement.find(params[:id], :conditions => {:owner_id => params[:character_id]})
+    else
+      raise ForbiddenError.new('Access Forbidden')
+    end        
+  
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @settlement_settlement }

@@ -18,15 +18,18 @@ GameServer::Application.routes.draw do
         match '/characters/self', :to => 'characters#self'
 
         resources :alliance_shouts
+        
         resources :characters do
           resources :alliance_shouts
-          resources :settlements          
           resource :account, :module => "shop", :only => [ :show ]
+          resources :settlements, :module => 'settlement'          
         end
+        
         resources :alliances do
           resources :characters
           resources :alliance_shouts
         end
+        
         resources :guilds do
           resources :characters
         end
@@ -83,7 +86,6 @@ GameServer::Application.routes.draw do
 
       resources :battles, :path => "/map/regions/:region_id/battles", :module => 'military'            
       resources :battles, :path => "/map/locations/:location_id/battles", :module => 'military'            
-
 
       namespace :map do 
         
