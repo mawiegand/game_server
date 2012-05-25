@@ -1,5 +1,9 @@
 <h1>Listing settlement_settlements</h1>
 
+<%= if (@paginate) 
+  will_paginate @settlement_settlements 
+end %>
+
 <table>
   <tr>
     <th>Type</th>
@@ -51,6 +55,10 @@
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate) 
+  will_paginate @settlement_settlements 
+end %>
 
 <br />
 
