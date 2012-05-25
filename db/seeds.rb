@@ -177,6 +177,7 @@ nodes = Map::Node.find_all_by_leaf true
 while !nodes.empty?
   node = nodes.pop
   region = node.build_region
+  region.save
   
   for pos in 0..8
     location = region.locations.build
@@ -185,7 +186,11 @@ while !nodes.empty?
     if (pos == 0)  # slot 0: fortress
       location.type_id = 1 # 1: fortress
       location.create_settlement({
-        :type_id => location.type_id,
+        :type_id    => location.type_id,
+        :region_id  => location.region_id,
+        :node_id    => node.id,
+        :founded_at => DateTime.now,
+        :owns_region=> true,
       })
       location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[location.type_id][:building_slots])
       location.right_of_way = rand(4)
@@ -202,28 +207,30 @@ while !nodes.empty?
     if (rand(10) < 1) 
       location.count_markers = 1
     end
-        
+          
     if location.type_id > 0
       char = characters[rand(characters.length)] # choose member
       ally = char.alliance                       # choose ally
       
-      location.owner_id = char[:id]
-      location.owner_name = char[:name]
-      location.alliance_id = ally[:id] unless ally.blank?
-      location.alliance_tag = ally[:tag] unless ally.blank?
+      if location.type_id == 1
+        location.settlement.owner_id    = char[:id]
+        location.settlement.alliance_id = ally[:id] unless ally.blank?
+        location.settlement.founder_id  = char[:id]
+        location.settlement.save
+      else
+        location.owner_id = char[:id]
+        location.owner_name = char[:name]
+        location.alliance_id = ally[:id]   unless ally.blank?
+        location.alliance_tag = ally[:tag] unless ally.blank?
+        location.save
+      end
     end
     
-    location.save
     if (pos == 0)
       region.fortress_id = location.id
     end
   end
-  
-  region.owner_id = region.locations[0].owner_id
-  region.owner_name = region.locations[0].owner_name
-  region.alliance_id = region.locations[0].alliance_id
-  region.alliance_tag = region.locations[0].alliance_tag
-  
+    
   region.fortress_level = region.locations[0].level
   
   region.terrain_id = rand(4)

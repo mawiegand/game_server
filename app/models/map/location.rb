@@ -23,5 +23,21 @@ class Map::Location < ActiveRecord::Base
     return nil
   end
   
+  
+  # sets the owner_id and alliance_id to the new values. If theses
+  # values changed, also updates the owner name and alliance tag.
+  def set_owner_and_alliance(new_owner_id, new_alliance_id)
+    if (new_owner_id != self.owner_id)
+      self.owner_id = new_owner_id
+      self.owner_name = self.owner.name     if !self.owner.nil?
+    end
+    if (new_alliance_id != self.alliance_id)
+      self.alliance_id = new_alliance_id
+      self.alliance_tag = self.alliance.tag if !self.alliance.nil?   
+    end
+  end
+  
+
+  
     
 end
