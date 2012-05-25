@@ -42,14 +42,12 @@
 
 <!ELEMENT BuildingSlot (BuildingOption+)>
 <!ATTLIST BuildingSlot 
-  id ID #REQUIRED
 	number CDATA #REQUIRED
 	max-level CDATA #REQUIRED 
 >
 
 <!ELEMENT BuildingOption EMPTY>
 <!ATTLIST BuildingOption 
-  id ID #REQUIRED
 	category IDREF #REQUIRED 
 >
 
