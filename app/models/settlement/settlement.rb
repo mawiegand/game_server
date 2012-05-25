@@ -1,6 +1,8 @@
 class Settlement::Settlement < ActiveRecord::Base
 
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
+  belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
+  belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",   :inverse_of => :settlement  
   belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",     :inverse_of => :settlements 
   
@@ -19,7 +21,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def init
     level         ||= 1
     defense_bonus = 0     if defense_bonus.nil?
-    morale        = 1.0   if defense_bonus.nil?
+    morale        = 1.0   if morale.nil?
     tax_rate      = 0.1   if tax_rate.nil? && owns_region
     taxable       = !owns_region
     command_points= 0     if command_points.nil?
