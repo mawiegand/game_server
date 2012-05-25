@@ -180,7 +180,7 @@ def create_settlement(node, location, type_id)
     :region_id   => location.region_id,
     :node_id     => node.id,
     :founded_at  => DateTime.now,
-    :owns_region => true,
+    :owns_region => type_id == 1,  # fortress?
   })
   location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
 end
