@@ -10,7 +10,7 @@ class Map::Location < ActiveRecord::Base
 
 
   def self.find_empty
-    Map::Location.where("type_id = ?", 0).offset(Random.rand(Map::Location.where("type_id = ?", 0).count)).first
+    Map::Location.where("settlement_type_id = ?", 0).offset(Random.rand(Map::Location.where("settlement_type_id = ?", 0).count)).first
   end
   
   def garrison_army

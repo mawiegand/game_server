@@ -11,7 +11,7 @@ class Map::Region < ActiveRecord::Base
   has_many :battles, :class_name => "Military::Battle", :inverse_of => :region
   
   def recount_settlements
-    self.count_settlements = self.locations.where('type_id = 2').count
+    self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save
   end
 

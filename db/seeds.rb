@@ -184,44 +184,45 @@ while !nodes.empty?
     location.slot = pos
 
     if (pos == 0)  # slot 0: fortress
-      location.type_id = 1 # 1: fortress
+      location.settlement_type_id = 1 # 1: fortress
       location.create_settlement({
-        :type_id    => location.type_id,
+        :type_id    => location.settlement_type_id,
         :region_id  => location.region_id,
         :node_id    => node.id,
         :founded_at => DateTime.now,
         :owns_region=> true,
       })
-      location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[location.type_id][:building_slots])
+      location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[location.settlement_type_id][:building_slots])
       location.right_of_way = rand(4)
     else
       if (rand(4) < 2)
-        location.type_id = 0 # 0: empty 
+        location.settlement_type_id = 0 # 0: empty 
       else
-        location.type_id = rand(2)+2  # 2: settlement, 3: outpost
+        location.settlement_type_id = rand(2)+2  # 2: settlement, 3: outpost
       end
       location.right_of_way = 0
     end
-    location.level = rand(10) if location.type_id > 0
     
     if (rand(10) < 1) 
       location.count_markers = 1
     end
           
-    if location.type_id > 0
+    if location.settlement_type_id > 0
       char = characters[rand(characters.length)] # choose member
       ally = char.alliance                       # choose ally
       
-      if location.type_id == 1
+      if location.settlement_type_id == 1
         location.settlement.owner_id    = char[:id]
         location.settlement.alliance_id = ally[:id] unless ally.blank?
         location.settlement.founder_id  = char[:id]
+        location.settlement.level = rand(10) 
         location.settlement.save
       else
         location.owner_id = char[:id]
         location.owner_name = char[:name]
         location.alliance_id = ally[:id]   unless ally.blank?
         location.alliance_tag = ally[:tag] unless ally.blank?
+        location.settlement_level = rand(10) 
         location.save
       end
     end
@@ -230,8 +231,6 @@ while !nodes.empty?
       region.fortress_id = location.id
     end
   end
-    
-  region.fortress_level = region.locations[0].level
   
   region.terrain_id = rand(4)
   
@@ -247,7 +246,7 @@ while !locations.empty?
   
   location = locations.pop
   
-  if (location.type_id == 0 && rand(4) < 1) || (location.type_id != 0 && rand(4) < 3)
+  if (location.settlement_type_id == 0 && rand(4) < 1) || (location.settlement_type_id != 0 && rand(4) < 3)
   
     for i in (0..(rand(3)))
   
@@ -288,7 +287,7 @@ while !locations.empty?
     end
   end
   
-  if (location.type_id != 0)
+  if (location.settlement_type_id != 0)
       army = location.armies.build
       army.region = location.region
   

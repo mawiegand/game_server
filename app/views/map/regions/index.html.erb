@@ -9,10 +9,9 @@ end %>
   <tr>
     <th>Node</th>
     <th>Name</th>
+    <th>Settlement Type and Size</th>
     <th>Owner</th>
-    <th>Owner name</th>
     <th>Alliance</th>
-    <th>Alliance tag</th>
     <th>Count outposts</th>
     <th>Count settlements</th>
     <th>Terrain</th>
@@ -25,10 +24,9 @@ end %>
   <tr>
     <td><%= map_region.node_id %></td>
     <td><%= map_region.name %></td>
-    <td><%= map_region.owner_id %></td>
-    <td><%= map_region.owner_name %></td>
-    <td><%= map_region.alliance_id %></td>
-    <td><%= map_region.alliance_tag %></td>
+    <td><%= "#{GameRules::Rules.the_rules.settlement_types[map_region.settlement_type_id][:name][:en_US]} T#{map_region.settlement_type_id}" unless map_region.settlement_type_id.blank? %> <%= "L#{map_region.settlement_level}" unless map_region.settlement_level.nil? %></td>
+    <td><%= map_region.owner_name %> <%= "(#{ map_region.owner_id})"  unless map_region.owner_id.blank? %></td>
+    <td><%= map_region.alliance_tag %> <%="(#{ map_region.alliance_id})"  unless map_region.alliance_id.blank? %></td>
     <td><%= map_region.count_outposts %></td>
     <td><%= map_region.count_settlements %></td>
     <td><%= map_region.terrain_id %></td>

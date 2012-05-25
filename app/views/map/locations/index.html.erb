@@ -9,14 +9,11 @@ end %>
   <tr>
     <th>Region</th>
     <th>Slot</th>
-    <th>Type id</th>
-    <th>Level</th>
+    <th>Settlement Type and Size</th>
     <th>Count markers</th>
     <th>Count armies</th>
     <th>Owner</th>
-    <th>Owner name</th>
     <th>Alliance</th>
-    <th>Alliance tag</th>
     <th>Visible</th>
     <th>Right of Way</th>
     <th></th>
@@ -28,14 +25,11 @@ end %>
   <tr>
     <td><%= map_location.region_id %></td>
     <td><%= map_location.slot %></td>
-    <td><%= map_location.type_id %></td>
-    <td><%= map_location.level %></td>
+    <td><%= "#{GameRules::Rules.the_rules.settlement_types[map_location.settlement_type_id][:name][:en_US]} T#{map_location.settlement_type_id}" unless map_location.settlement_type_id.blank? || map_location.settlement_type_id > 1 %> <%= "L#{map_location.settlement_level}" unless map_location.settlement_level.nil? %></td>
     <td><%= map_location.count_markers %></td>
     <td><%= map_location.count_armies %></td>
-    <td><%= map_location.owner_id %></td>
-    <td><%= map_location.owner_name %></td>
-    <td><%= map_location.alliance_id %></td>
-    <td><%= map_location.alliance_tag %></td>
+    <td><%= map_location.owner_name %> <%= "(#{ map_location.owner_id})"  unless map_location.owner_id.blank? %></td>
+    <td><%= map_location.alliance_tag %> <%="(#{ map_location.alliance_id})"  unless map_location.alliance_id.blank? %></td>
     <td><%= map_location.visible %></td>
     <td><%= map_location.right_of_way %></td>
     <td><%= link_to 'Show', map_location %></td>

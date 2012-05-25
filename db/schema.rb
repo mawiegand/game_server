@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521000226) do
+ActiveRecord::Schema.define(:version => 20120525131851) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
     t.integer  "slot"
-    t.integer  "type_id"
-    t.integer  "level"
+    t.integer  "settlement_type_id"
+    t.integer  "settlement_level"
     t.integer  "count_markers"
     t.integer  "count_armies"
     t.integer  "owner_id"
@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
-  add_index "map_locations", ["type_id"], :name => "index_map_locations_on_type_id"
+  add_index "map_locations", ["settlement_type_id"], :name => "index_map_locations_on_type_id"
 
   create_table "map_nodes", :force => true do |t|
     t.string   "path"
@@ -183,9 +183,10 @@ ActiveRecord::Schema.define(:version => 20120521000226) do
     t.integer  "terrain_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "fortress_level"
+    t.integer  "settlement_level"
     t.datetime "armies_changed_at"
     t.integer  "fortress_id"
+    t.integer  "settlement_type_id"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
