@@ -75,7 +75,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :settlement_types
   
   def attributes 
     { 
@@ -86,6 +86,7 @@ class GameRules::Rules
       'resource_types' => resource_types,
       'building_types' => building_types,
       'science_types'  => science_types,  
+      'settlement_types'  => settlement_types,  
     }
   end
   
@@ -119,6 +120,7 @@ class GameRules::Rules
   <xsl:apply-templates select="UnitTypes" />
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
+  <xsl:apply-templates select="SettlementTypes" />
 
   <xsl:text><![CDATA[
     )
@@ -307,6 +309,43 @@ end
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF BUILDING CATEGORIES
+</xsl:template>
+
+
+
+<xsl:template match="SettlementTypes">
+# ## SETTLEMENT TYPES ########################################################
+  
+      :settlement_types => [  # ALL SETTLEMENT TYPES
+<xsl:for-each select="Settlement">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:if test="Position">
+	        :position    => <xsl:value-of select="Position"/>,
+</xsl:if>
+
+<xsl:if test="count(BuildingSlot)">
+          :building_slots => {
+            <xsl:for-each select="BuildingSlot">
+            <xsl:value-of select="@number"/> => {
+              :max_level => <xsl:value-of select="@max-level"/>,
+              :options   => {},
+            },
+            </xsl:for-each>
+          },
+</xsl:if>
+
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF SETTLEMENT TYPES
 </xsl:template>
 
 

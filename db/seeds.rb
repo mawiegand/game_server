@@ -184,6 +184,10 @@ while !nodes.empty?
 
     if (pos == 0)  # slot 0: fortress
       location.type_id = 1 # 1: fortress
+      location.create_settlement({
+        :type_id => location.type_id,
+      })
+      location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[location.type_id][:building_slots])
       location.right_of_way = rand(4)
     else
       if (rand(4) < 2)

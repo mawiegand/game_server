@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.0
+# Version: 0.0.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :settlement_types
   
   def attributes 
     { 
@@ -43,6 +43,7 @@ class GameRules::Rules
       'resource_types' => resource_types,
       'building_types' => building_types,
       'science_types'  => science_types,  
+      'settlement_types'  => settlement_types,  
     }
   end
   
@@ -67,9 +68,9 @@ class GameRules::Rules
   def self.the_rules
     @the_rules ||= GameRules::Rules.new(
   
-        :version => { :major => 1, 
+        :version => { :major => 0, 
                       :minor => 0, 
-                      :build => 0, 
+                      :build => 1, 
         },
 
   
@@ -615,6 +616,70 @@ class GameRules::Rules
 
         },              #   END OF Tüftler
       ],                # END OF BUILDING TYPES
+
+# ## SETTLEMENT TYPES ########################################################
+  
+      :settlement_types => [  # ALL SETTLEMENT TYPES
+
+        {               #   Unbesiedelt
+          :id          => 0, 
+          :symbolic_id => :settlement_none,
+          :name        => {
+            
+            :de_DE => "Unbesiedelt",
+  
+            :en_US => "Wilderness",
+                
+          },
+          :description => {
+            
+            :de_DE => "Unbesiedeltes Gebiet. Spieler können hier siedeln.",
+  
+            :en_US => "Unclaimed location. Players can settle here.",
+                
+          },
+
+
+
+        },              #   END OF Unbesiedelt
+        {               #   Festung
+          :id          => 1, 
+          :symbolic_id => :settlement_fortress,
+          :name        => {
+            
+            :de_DE => "Festung",
+  
+            :en_US => "Fortress",
+                
+          },
+          :description => {
+            
+            :de_DE => "Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.",
+  
+            :en_US => "English Description.",
+                
+          },
+
+          :building_slots => {
+            0 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            1 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            2 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            
+          },
+
+
+
+        },              #   END OF Festung
+      ],                # END OF SETTLEMENT TYPES
 
     )
   end

@@ -3,6 +3,21 @@
   <hr />
 <% end %>
 
+<% if (@only.length == 0 || @only.include?(:settlement_types)) && !@rules.settlement_types.nil? %>
+  <h1>Settlement Types</h1>
+  <% @rules.settlement_types.each do |settlement| %>
+    <h2><%= settlement[:name][:en_US] %></h2>
+    <table>
+      <% settlement.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  <hr />
+<% end %>
 
 <% if (@only.length == 0 || @only.include?(:building_categories)) && !@rules.building_categories.nil? %>
   <h1>Building Categories</h1>
