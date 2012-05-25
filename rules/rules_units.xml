@@ -90,7 +90,7 @@
       <Hitpoints>140</Hitpoints>
       <Effectiveness category="infantry">0.8</Effectiveness>
       <Effectiveness category="cavalry">1</Effectiveness>
-      <Effectiveness category="artillery">0,8</Effectiveness>
+      <Effectiveness category="artillery">0.8</Effectiveness>
       <Effectiveness category="siege">1</Effectiveness>
       
     </Unit>
@@ -112,7 +112,7 @@
       <Overrunnable>true</Overrunnable>
       <Hitpoints>140</Hitpoints>
       <Effectiveness category="infantry">0.4</Effectiveness>
-      <Effectiveness category="cavalry">0,6</Effectiveness>
+      <Effectiveness category="cavalry">0.6</Effectiveness>
       <Effectiveness category="artillery">1</Effectiveness>
       <Effectiveness category="siege">0.4</Effectiveness>
       
@@ -135,8 +135,8 @@
       <Overrunnable>true</Overrunnable>
       <Hitpoints>100</Hitpoints>
       <Effectiveness category="infantry">1</Effectiveness>
-      <Effectiveness category="cavalry">0,4</Effectiveness>
-      <Effectiveness category="artillery">0,7</Effectiveness>
+      <Effectiveness category="cavalry">0.4</Effectiveness>
+      <Effectiveness category="artillery">0.7</Effectiveness>
       <Effectiveness category="siege">0.4</Effectiveness>
       
     </Unit>
@@ -157,9 +157,9 @@
       <Armor>0</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
-      <Effectiveness category="infantry">0,9</Effectiveness>
-      <Effectiveness category="cavalry">0,9</Effectiveness>
-      <Effectiveness category="artillery">0,7</Effectiveness>
+      <Effectiveness category="infantry">0.9</Effectiveness>
+      <Effectiveness category="cavalry">0.9</Effectiveness>
+      <Effectiveness category="artillery">0.7</Effectiveness>
       <Effectiveness category="siege">0.8</Effectiveness>
       
     </Unit>
@@ -181,9 +181,9 @@
       <!--needs special ability: destroy semi-random building level-->
       <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
-      <Effectiveness category="infantry">0,2</Effectiveness>
-      <Effectiveness category="cavalry">0,1</Effectiveness>
-      <Effectiveness category="artillery">0,2</Effectiveness>
+      <Effectiveness category="infantry">0.2</Effectiveness>
+      <Effectiveness category="cavalry">0.1</Effectiveness>
+      <Effectiveness category="artillery">0.2</Effectiveness>
       <Effectiveness category="siege">1</Effectiveness>
       
     </Unit>
@@ -205,9 +205,9 @@
       <!--needs special ability: destroy wall level -->
       <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
-      <Effectiveness category="infantry">0,2</Effectiveness>
-      <Effectiveness category="cavalry">0,1</Effectiveness>
-      <Effectiveness category="artillery">0,2</Effectiveness>
+      <Effectiveness category="infantry">0.2</Effectiveness>
+      <Effectiveness category="cavalry">0.1</Effectiveness>
+      <Effectiveness category="artillery">0.2</Effectiveness>
       <Effectiveness category="siege">1</Effectiveness>
       
     </Unit>
