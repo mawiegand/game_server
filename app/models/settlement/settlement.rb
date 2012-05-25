@@ -3,19 +3,16 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
-  belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",   :inverse_of => :settlement  
-  belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",     :inverse_of => :settlements 
+  belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
+  belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
   
-  has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id", :inverse_of => :settlement
+  has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
+  has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   
   after_initialize :init
   
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
-
-  def owns_region?
-    owns_region == true
-  end
   
   # set default values in an after_initialize handler. 
   def init
