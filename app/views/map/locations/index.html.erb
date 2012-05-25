@@ -25,7 +25,7 @@ end %>
   <tr>
     <td><%= map_location.region_id %></td>
     <td><%= map_location.slot %></td>
-    <td><%= "#{GameRules::Rules.the_rules.settlement_types[map_location.settlement_type_id][:name][:en_US]} T#{map_location.settlement_type_id}" unless map_location.settlement_type_id.blank? || map_location.settlement_type_id > 1 %> <%= "L#{map_location.settlement_level}" unless map_location.settlement_level.nil? %></td>
+    <td><%= "#{GameRules::Rules.the_rules.settlement_types[map_location.settlement_type_id][:name][:en_US]} T#{map_location.settlement_type_id}" unless map_location.settlement_type_id.blank? %> <%= "L#{map_location.settlement_level}" unless map_location.settlement_level.nil? %></td>
     <td><%= map_location.count_markers %></td>
     <td><%= map_location.count_armies %></td>
     <td><%= map_location.owner_name %> <%= "(#{ map_location.owner_id})"  unless map_location.owner_id.blank? %></td>
