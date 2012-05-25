@@ -24,9 +24,6 @@ class Settlement::SlotsController < ApplicationController
       @asked_for_index = true
     end   
     
-    logger.debug params.inspect
-    logger.debug @settlement_slots.inspect
-    
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
@@ -59,7 +56,12 @@ class Settlement::SlotsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @settlement_slot }
+      format.json do
+        unless @settlement_slot.settlement.owner == current_character
+          raise ForbiddenError.new('Access Forbidden')        
+        end
+        render json: @settlement_slot
+      end
     end
   end
 
