@@ -6,13 +6,12 @@ end %>
 
 <table>
   <tr>
-    <th>Type</th>
     <th>Region</th>
     <th>Location</th>
     <th>Node</th>
+    <th>Type</th>
     <th>Owner</th>
     <th>Alliance</th>
-    <th>Level</th>
     <th>Founded at</th>
     <th>Founder</th>
     <th>Defense bonus</th>
@@ -31,15 +30,14 @@ end %>
 
 <% @settlement_settlements.each do |settlement_settlement| %>
   <tr>
-    <td><%= settlement_settlement.type_id %></td>
     <td><%= settlement_settlement.region_id %></td>
     <td><%= settlement_settlement.location_id %></td>
     <td><%= settlement_settlement.node_id %></td>
-    <td><%= settlement_settlement.owner_id %></td>
-    <td><%= settlement_settlement.alliance_id %></td>
-    <td><%= settlement_settlement.level %></td>
+    <td><%= "#{GameRules::Rules.the_rules.settlement_types[settlement_settlement.type_id][:name][:en_US]} T#{settlement_settlement.type_id}" unless settlement_settlement.type_id.blank? %> <%= "L#{settlement_settlement.level}" unless settlement_settlement.level.nil? %></td>
+    <td><%= "#{settlement_settlement.owner.name} (#{ settlement_settlement.owner_id})"  unless settlement_settlement.owner_id.blank? %></td>
+    <td><%= "#{settlement_settlement.alliance.tag} (#{ settlement_settlement.alliance_id})"  unless settlement_settlement.alliance_id.blank? %></td>
     <td><%= settlement_settlement.founded_at %></td>
-    <td><%= settlement_settlement.founder_id %></td>
+    <td><%= "#{settlement_settlement.founder.name} (#{ settlement_settlement.founder_id})"  unless settlement_settlement.founder_id.blank? %></td>
     <td><%= settlement_settlement.defense_bonus %></td>
     <td><%= settlement_settlement.morale %></td>
     <td><%= settlement_settlement.tax_rate %></td>

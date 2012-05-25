@@ -23,5 +23,77 @@
       <BuildingOption category="building_category_fortress_tower" />
     </BuildingSlot>
   </Settlement>
+  <Settlement id="settlement_home_base" conquerable="false" destroyable="false">
+    <Name lang="de_DE">Heimatstadt</Name>
+    <Name lang="en_US">Home Town</Name>
+    <Description lang="de_DE">Die Hauptsiedlung eines Stammes.</Description>
+    <Description lang="en_US">English Description.</Description>
+    <BuildingSlot number="0" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="1" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="2" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="3" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>    
+    <BuildingSlot number="4" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="5" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="6" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="7" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="8" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="9" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="10" max-level="10">
+      <BuildingOption category="building_category_wall" />
+    </BuildingSlot>
+    <BuildingSlot number="10" max-level="10">
+      <BuildingOption category="building_category_fortification" />
+    </BuildingSlot>
+    <BuildingSlot number="10" max-level="10">
+      <BuildingOption category="building_category_fortification" />
+    </BuildingSlot>
+  </Settlement>
+  <Settlement id="settlement_outpost" conquerable="true" destroyable="true">
+    <Name lang="de_DE">Außenposten</Name>
+    <Name lang="en_US">Outpost</Name>
+    <Description lang="de_DE">Außenlager eines Stammes.</Description>
+    <Description lang="en_US">English Description.</Description>
+    <BuildingSlot number="0" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="1" max-level="20">
+      <BuildingOption category="building_category_large_buildings" />
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="2" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="3" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+    <BuildingSlot number="4" max-level="10">
+      <BuildingOption category="building_category_small_buildings" />
+    </BuildingSlot>
+  </Settlement>
 </SettlementTypes>
   

@@ -11,16 +11,16 @@
      Augmented Worlds Engine. The contents of this file are also automatically
      communicated to a game client connecting to the game instance.
      
-     Versioning: The versioning scheme of this file MUST adheren strictly to
+     Versioning: The versioning scheme of this file MUST adhere strictly to
                  the following rules in order to guarantee correct functioning
                  of ticker, backend and client:
                  
                  A) the version number consists of a major, minor and build 
-                    number, all seperated by colons (major.minor.build).
+                    number, all separated by colons (major.minor.build).
                  B) with EVERY SINGLE edit & commit of this file the version
                     number has to be incremented.
                  C) The build number may be incremented for 'beautification'
-                    changes. This are changes that don't change the game-logic
+                    changes. These are changes that don't change the game-logic
                     but only concern the meta information like names and 
                     descriptions.
                  D) The minor number has to be incremented for changes that

@@ -679,6 +679,128 @@ class GameRules::Rules
 
 
         },              #   END OF Festung
+        {               #   Heimatstadt
+          :id          => 2, 
+          :symbolic_id => :settlement_home_base,
+          :name        => {
+            
+            :de_DE => "Heimatstadt",
+  
+            :en_US => "Home Town",
+                
+          },
+          :description => {
+            
+            :de_DE => "Die Hauptsiedlung eines Stammes.",
+  
+            :en_US => "English Description.",
+                
+          },
+
+          :building_slots => {
+            0 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            1 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            2 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            3 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            4 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            5 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            6 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            7 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            8 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            9 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            10 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            10 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            10 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            
+          },
+
+
+
+        },              #   END OF Heimatstadt
+        {               #   Außenposten
+          :id          => 3, 
+          :symbolic_id => :settlement_outpost,
+          :name        => {
+            
+            :de_DE => "Außenposten",
+  
+            :en_US => "Outpost",
+                
+          },
+          :description => {
+            
+            :de_DE => "Außenlager eines Stammes.",
+  
+            :en_US => "English Description.",
+                
+          },
+
+          :building_slots => {
+            0 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            1 => {
+              :max_level => 20,
+              :options   => {},
+            },
+            2 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            3 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            4 => {
+              :max_level => 10,
+              :options   => {},
+            },
+            
+          },
+
+
+
+        },              #   END OF Außenposten
       ],                # END OF SETTLEMENT TYPES
 
     )
