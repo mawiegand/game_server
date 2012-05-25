@@ -229,6 +229,8 @@ class GameRules::Rules
       ],                # END OF UNIT CATEGORIES
 
   
+# ## UNIT TYPES ##############################################################
+
       :unit_types => [  # ALL UNIT TYPES
 
         {               #   Stone Hurler
@@ -581,6 +583,38 @@ class GameRules::Rules
 
         },              #   END OF Towers
       ],                # END OF BUILDING CATEGORIES
+
+# ## BUILDING TYPES ##########################################################
+  
+      :building_types => [  # ALL BUILDING TYPES
+
+        {               #   Tüftler
+          :id          => 0, 
+          :symbolic_id => :building_inventor_tower,
+					:category    => 1,
+          :db_field    => building_inventor_tower,
+          :name        => {
+            
+            :de_DE => "Tüftler",
+  
+            :en_US => "Inventor",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>",
+  
+            :en_US => "<p>Builds war machines.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+        },              #   END OF Tüftler
+      ],                # END OF BUILDING TYPES
 
     )
   end

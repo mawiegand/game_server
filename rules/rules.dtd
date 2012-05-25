@@ -65,11 +65,14 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Description+, Position?, Cost*, ProductionTime, Requirement*)>
+<!ELEMENT Building (Name+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
   group IDREF #REQUIRED
+	buyable (false | true) "true"
+	demolishable (false | true) "true"
+	destructable (false | true) "true"
   hidden (0 | 1) "0"
 >
 

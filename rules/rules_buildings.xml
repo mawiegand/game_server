@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
-	<BuildingCategories>
-	  <BuildingCategory id="building_category_fortress_main">
-      <Name>Fortification</Name>
-      <Name lang="de_DE">Festungsanlagen</Name>
-      <Description lang="de_DE">
-        <p>Allgemeine Verbesserungen, die in Festungen gebaut werden können.</p> 
-      </Description>
-      <Description lang="en_US">
-        <p>Improvements to be build in fortresses.</p>
-      </Description>
-	  </BuildingCategory>
-	  <BuildingCategory id="building_category_fortress_tower">
-      <Name>Towers</Name>
-      <Name lang="de_DE">Türme</Name>
-      <Description lang="de_DE">
-        <p>In Türmen untergebrachte militärische Verbesserungen von Festungen.</p> 
-      </Description>
-      <Description lang="en_US">
-        <p>Towers that extend the military abilities of fortresses.</p>
-      </Description>
-	  </BuildingCategory>
-  </BuildingCategories>
+<BuildingTypes>
+  <Building id="building_inventor_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+    <Name lang="de_DE">Tüftler</Name>
+    <Name lang="en_US">Inventor</Name>
+    <Description lang="de_DE">
+      <p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Builds war machines.</p>
+    </Description>
+    <Requirement id="science_mechanics" min_level="1" />
+    <Requirement id="building_fortress_fortification" min_level="1" />  
+    <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+    <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+    <ProductionTime shortenable="true">2**Level*60</ProductionTime>             
+    <Abilities> <!-- just for grouping -->
+      <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
+      <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+    </Abilities>
+  </Building>
+</BuildingTypes>

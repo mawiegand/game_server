@@ -118,6 +118,7 @@ class GameRules::Rules
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
   <xsl:apply-templates select="BuildingCategories" />
+  <xsl:apply-templates select="BuildingTypes" />
 
   <xsl:text><![CDATA[
     )
@@ -150,6 +151,8 @@ end
 
 <xsl:template match="UnitTypes">
   
+# ## UNIT TYPES ##############################################################
+
       :unit_types => [  # ALL UNIT TYPES
 <xsl:for-each select="Unit">
         {               #   <xsl:value-of select="Name"/>
@@ -209,6 +212,9 @@ end
       ],                # END OF UNIT TYPES
 </xsl:template>
 
+
+
+
 <xsl:template match="TargetList">
               [
                 <xsl:for-each select="Target">
@@ -249,6 +255,37 @@ end
 </xsl:template>
 
 
+
+
+
+<xsl:template match="BuildingTypes">
+# ## BUILDING TYPES ##########################################################
+  
+      :building_types => [  # ALL BUILDING TYPES
+<xsl:for-each select="Building">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+					:category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+          :db_field    => <xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+          :hidden      => <xsl:value-of select="@hidden"/>,
+<xsl:if test="Position">
+	        :position    => <xsl:value-of select="Position"/>,
+</xsl:if>
+          :buyable     => <xsl:value-of select="@buyable"/>,
+          :demolishable=> <xsl:value-of select="@demolishable"/>,
+          :destructable=> <xsl:value-of select="@destructable"/>,
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF BUILDING TYPES
+</xsl:template>
 
 
 <xsl:template match="BuildingCategories">

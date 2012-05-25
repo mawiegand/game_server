@@ -84,9 +84,6 @@ Rules::~Rules()
 
 Rules::Rules() : version(Version(<xsl:value-of select="//General/Version/@major"/>,<xsl:value-of select="//General/Version/@minor"/>,<xsl:value-of select="//General/Version/@build"/>))
 {
-<xsl:apply-templates select="ResourceTypes"/>
-<xsl:apply-templates select="BuildingTypes"/>
-<xsl:apply-templates select="ScienceTypes"/>
 <xsl:apply-templates select="UnitTypes"/>
 };
 
@@ -357,58 +354,7 @@ const struct GameObject *resource_type[] = {
 };
 </xsl:template>
 
-<xsl:template match="BuildingTypes">
-/********************** building types *********************/
 
-<xsl:for-each select="Building">
-<xsl:call-template name="costs">
-<xsl:with-param name="name" select="concat('building_cost_', position()-1)"/>
-</xsl:call-template>
-<xsl:call-template name="requirements">
-<xsl:with-param name="name" select="concat('building_req_', position()-1)"/>
-</xsl:call-template>
-</xsl:for-each>
-
-static const struct Building building_type_list[] = {
-<xsl:for-each select="Building">
-  { /* <xsl:value-of select="Name"/> */
-    {
-      {
-	{ .class = BUILDING_CLASS },
-
-	.object_id   = <xsl:value-of select="position()-1"/>,
-	.name        = {<xsl:apply-templates select="Name"/>},
-	.description = {<xsl:apply-templates select="Description"/>},
-	.dbFieldName = "<xsl:value-of select="@id"/>",
-	.maxLevel    = "<xsl:apply-templates select="MaxDevelopmentLevel"/>",
-	.hidden      = <xsl:value-of select="@hidden"/>
-      },
-
-<xsl:if test="Position">
-      .position    = <xsl:value-of select="Position"/>,
-</xsl:if>
-      .ratingValue = <xsl:value-of select="RatingValue"/>,
-
-      .productionTime = "<xsl:apply-templates select="ProductionTime"/>",
-      <xsl:call-template name="get_costs">
-      <xsl:with-param name="name" select="concat('building_cost_', position()-1)"/>
-      </xsl:call-template>
-
-      <xsl:call-template name="get_requirements">
-      <xsl:with-param name="name" select="concat('building_req_', position()-1)"/>
-      </xsl:call-template>
-    }
-  },
-</xsl:for-each>
-};
-
-const struct class building_class;
-
-const struct GameObject *building_type[] = {
-<xsl:for-each select="Building">
-  (const struct GameObject *) (building_type_list + <xsl:value-of select="position()-1"/>),</xsl:for-each>
-};
-</xsl:template>
 
 <xsl:template match="ScienceTypes">
 /********************** science types *********************/

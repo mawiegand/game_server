@@ -80,4 +80,5 @@
   <xi:include href="rules_units.xml"  />
   <xi:include href="rules_unitcategories.xml"  />
   <xi:include href="rules_buildings.xml"  />
+  <xi:include href="rules_buildingcategories.xml"  />
 </Rules>
