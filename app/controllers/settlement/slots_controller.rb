@@ -53,15 +53,12 @@ class Settlement::SlotsController < ApplicationController
   # GET /settlement/slots/1.json
   def show
     @settlement_slot = Settlement::Slot.find(params[:id])
+    raise NotFoundError.new('Page Not Found') if @settlement_slot.nil?
+    raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_slot.settlement.owner_id)
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json do
-        unless @settlement_slot.settlement.owner == current_character
-          raise ForbiddenError.new('Access Forbidden')        
-        end
-        render json: @settlement_slot
-      end
+      format.json { render json: @settlement_slot }
     end
   end
 
