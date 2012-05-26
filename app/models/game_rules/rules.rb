@@ -257,6 +257,17 @@ class GameRules::Rules
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 8,
+          :effectiveness => {
+            
+            :infantry => 1,
+  
+            :cavalry => 0.3,
+  
+            :artillery => 0.75,
+  
+            :siege => 0.75,
+                
+          },
           :attack      => 18,
           :armor       => 2,
           :hitpoints   => 90,
@@ -291,6 +302,17 @@ class GameRules::Rules
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 15,
+          :effectiveness => {
+            
+            :infantry => 0.6,
+  
+            :cavalry => 1,
+  
+            :artillery => 1,
+  
+            :siege => 1,
+                
+          },
           :attack      => 14,
           :armor       => 14,
           :hitpoints   => 90,
@@ -325,6 +347,17 @@ class GameRules::Rules
           :velocity    => 1.5,
           :action_points => 5,
           :initiative  => 26,
+          :effectiveness => {
+            
+            :infantry => 0.3,
+  
+            :cavalry => 0.75,
+  
+            :artillery => 1,
+  
+            :siege => 0.4,
+                
+          },
           :attack      => 16,
           :armor       => 3,
           :hitpoints   => 95,
@@ -359,6 +392,17 @@ class GameRules::Rules
           :velocity    => 0.95,
           :action_points => 4,
           :initiative  => 14,
+          :effectiveness => {
+            
+            :infantry => 0.8,
+  
+            :cavalry => 1,
+  
+            :artillery => 0.8,
+  
+            :siege => 1,
+                
+          },
           :attack      => 20,
           :armor       => 4,
           :hitpoints   => 140,
@@ -393,6 +437,17 @@ class GameRules::Rules
           :velocity    => 1.4,
           :action_points => 4,
           :initiative  => 28,
+          :effectiveness => {
+            
+            :infantry => 0.4,
+  
+            :cavalry => 0.6,
+  
+            :artillery => 1,
+  
+            :siege => 0.4,
+                
+          },
           :attack      => 21,
           :armor       => 15,
           :hitpoints   => 140,
@@ -427,6 +482,17 @@ class GameRules::Rules
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 7,
+          :effectiveness => {
+            
+            :infantry => 1,
+  
+            :cavalry => 0.4,
+  
+            :artillery => 0.7,
+  
+            :siege => 0.4,
+                
+          },
           :attack      => 19,
           :armor       => 0,
           :hitpoints   => 100,
@@ -461,6 +527,17 @@ class GameRules::Rules
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 16,
+          :effectiveness => {
+            
+            :infantry => 0.9,
+  
+            :cavalry => 0.9,
+  
+            :artillery => 0.7,
+  
+            :siege => 0.8,
+                
+          },
           :attack      => 15,
           :armor       => 0,
           :hitpoints   => 90,
@@ -495,6 +572,17 @@ class GameRules::Rules
           :velocity    => 0.7,
           :action_points => 4,
           :initiative  => 16,
+          :effectiveness => {
+            
+            :infantry => 0.2,
+  
+            :cavalry => 0.1,
+  
+            :artillery => 0.2,
+  
+            :siege => 1,
+                
+          },
           :attack      => 15,
           :armor       => 0,
           :hitpoints   => 90,
@@ -529,6 +617,17 @@ class GameRules::Rules
           :velocity    => 0.9,
           :action_points => 4,
           :initiative  => 16,
+          :effectiveness => {
+            
+            :infantry => 0.2,
+  
+            :cavalry => 0.1,
+  
+            :artillery => 0.2,
+  
+            :siege => 1,
+                
+          },
           :attack      => 15,
           :armor       => 0,
           :hitpoints   => 90,

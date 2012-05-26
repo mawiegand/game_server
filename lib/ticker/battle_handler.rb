@@ -20,6 +20,9 @@ class Ticker::BattleHandler
     if battle.nil?
       #runloop.say "Could not find battle for id #{ event.local_event_id }.", Logger::ERROR
     else
+      #switch off the garbage collection, to prevent the garbage collector marking not initialized SWIG obects
+      gcstate = GC.disable
+
       #runloop.say "Process battle round #{ battle.battle_rounds_count || 0} for battle #{ battle.id } at loc #{ battle.location_id} in reg #{ battle.region_id }."
     
       ## create and fill the AWE battle
@@ -51,9 +54,12 @@ class Ticker::BattleHandler
       
       runloop.say "Battle round completed, cleaning up and destroying event."      
 
+      #reenable garbage collection if it was enabled before
+      GC.enable unless gcstate
 
 #     event.destroy
       runloop.say "Battle handler completed."
+
     end
   end
   
@@ -233,10 +239,26 @@ class Ticker::BattleHandler
     awe_unit.hitpoints = unit_type[:hitpoints]
     awe_unit.initiative = unit_type[:initiative]
     awe_unit.armor = unit_type[:armor]
+    #effectiveness
+    unit_type[:effectiveness].each {
+      |s,e|
+      cat_id = get_unit_category_id(s)
+      awe_unit.setEffectivenessFor(cat_id, e)
+    }
         
     awe_unit
   end
-  
+
+  def get_unit_category_id(category_symbol)
+    rules = GameRules::Rules.the_rules
+    rules.unit_categories.each {
+      |c|
+      if (c[:symbolic_id] == category_symbol)
+        return c[:id]
+      end
+    } 
+    raise InternalServerError.new('could not find the associated unit_category for a symbol.')
+  end
   
 end
 

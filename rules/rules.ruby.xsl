@@ -147,6 +147,10 @@ end
 <xsl:template match="Description">
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
+
+<xsl:template match="Effectiveness">
+            :<xsl:value-of select="@category"/> => <xsl:apply-templates/>,
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
 	
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
 
@@ -177,6 +181,9 @@ end
           :velocity    => <xsl:value-of select="Velocity"/>,
           :action_points => <xsl:value-of select="ActionPoints"/>,
           :initiative  => <xsl:value-of select="Initiative"/>,
+          :effectiveness => {
+            <xsl:apply-templates select="Effectiveness" />              
+          },
           :attack      => <xsl:value-of select="Attack"/>,
           :armor       => <xsl:value-of select="Armor"/>,
           :hitpoints   => <xsl:value-of select="Hitpoints"/>,
