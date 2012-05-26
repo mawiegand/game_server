@@ -26,6 +26,9 @@ class Settlement::Settlement < ActiveRecord::Base
     points        = 0     if points.nil?
   end
   
+  # creates building slotes for the present settlements according to the given
+  # spec. The spec is an array of building options. Usually, you would like to
+  # pass the corresponding array from the game rules to this method.
   def create_building_slots_according_to(spec)
     spec.each do |number, details|
       self.slots.create({
@@ -36,6 +39,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
   end
   
+  # propagates local changes to the location, where some fields are mirrored
+  # for performance reasons.
   def propagate_information_to_location
     if !self.location.nil?
       self.location.set_owner_and_alliance(owner_id, alliance_id)
@@ -46,6 +51,8 @@ class Settlement::Settlement < ActiveRecord::Base
     return true
   end
   
+  # propagates local changes to the region, where some fields are mirrored
+  # for performance reasons.
   def propagate_information_to_region
     if self.owns_region? && !self.region.nil?
       self.region.set_owner_and_alliance(owner_id, alliance_id)
