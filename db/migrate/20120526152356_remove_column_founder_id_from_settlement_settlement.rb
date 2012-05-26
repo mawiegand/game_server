@@ -1,9 +1,5 @@
 class RemoveColumnFounderIdFromSettlementSettlement < ActiveRecord::Migration
-  def up
-    change_column :settlement_settlements, :founder_id, :integer
-  end
-  
-  def down
-    change_column :settlement_settlements, :founder_id, :datetime    
+  def change
+    remove_column :settlement_settlements, :founder_id
   end
 end
