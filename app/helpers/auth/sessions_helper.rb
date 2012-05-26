@@ -24,6 +24,37 @@ module Auth
   # authorization filters) for both. This complexity unfortunately is 
   # necessary in order to achieve D.
   module SessionsHelper
+    
+  # Roles (access authorization)  
+  
+  # returns the highest possible role of the current backend user / current
+  # character concerning access to a specific resource. Caller has to provide
+  # the resource owner's id and its belonging alliance id, which are stored
+  # usually together with the resource. If the resource does not have a 
+  # specific owner or owning alliance, pass in nil instead of the id. 
+  # 
+  # Presently, this method assumes there has been set a current_character 
+  # if signed_in? is true. 
+  #
+  # The returned role is one of (from highest access to lowest):
+  #  - admin
+  #  - staff
+  #  - owner
+  #  - ally
+  #  - default
+  def determine_access_role(resource_owner_id, resource_alliance_id)
+    if signed_in?     # make this decision early in order to prevent unnecessary access to backend_users table
+      return :owner     if !resource_owner_id.nil?    && resource_owner_id    == current_character.id 
+      return :ally      if !resource_alliance_id.nil? && resource_alliance_id == current_character.alliance_id
+    else
+      return :admin     if admin?
+      return :staff     if staff?
+    end
+    return :default
+  end
+    
+    
+  # Authentication and Protocol Authorization
 
   def requested_json?
     return request.format == "application/json"
@@ -71,7 +102,7 @@ module Auth
   def signed_in?
     !current_character.nil?
   end
-  
+    
   # Sets the current_identity to the given identity.
   def current_character=(character)
     @current_character = character
