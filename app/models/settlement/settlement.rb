@@ -9,10 +9,17 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   
+  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
+  attr_readable *readable_attributes(:default), :defense_bonus, :morale,                   :as => :ally 
+  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :armies_count, :as => :owner
+  attr_readable *readable_attributes(:owner),                                              :as => :staff
+  attr_readable *readable_attributes(:staff),                                              :as => :admin
+
   after_initialize :init
   
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
+  
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?

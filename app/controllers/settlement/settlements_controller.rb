@@ -2,6 +2,7 @@ class Settlement::SettlementsController < ApplicationController
   layout 'settlement'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:index, :show]
 
   # GET /settlement/settlements
   # GET /settlement/settlements.json
