@@ -11,7 +11,7 @@ class Settlement::SettlementsController < ApplicationController
     last_modified = nil
     
     if params.has_key?(:character_id)
-      if params[:character_id] == current_character.id.to_s
+      if staff? || (!params[:character_id].blank? && params[:character_id] == current_character.id.to_s)
         @settlement_settlements = Settlement::Settlement.find(:all, :conditions => {:owner_id => params[:character_id]});
         @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
       else

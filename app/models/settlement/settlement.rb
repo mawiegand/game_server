@@ -21,7 +21,7 @@ class Settlement::Settlement < ActiveRecord::Base
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
       :type_id     => type_id,
-      :level       => 1,
+      :level       => 1,                           # start with level 1
       :founded_at  => DateTime.now,
       :founder_id  => owner.id,
       :owner_id    => owner.id,

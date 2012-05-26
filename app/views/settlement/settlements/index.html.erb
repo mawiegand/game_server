@@ -34,10 +34,10 @@ end %>
     <td><%= settlement_settlement.location_id %></td>
     <td><%= settlement_settlement.node_id %></td>
     <td><%= "#{GameRules::Rules.the_rules.settlement_types[settlement_settlement.type_id][:name][:en_US]} T#{settlement_settlement.type_id}" unless settlement_settlement.type_id.blank? %> <%= "L#{settlement_settlement.level}" unless settlement_settlement.level.nil? %></td>
-    <td><%= "#{settlement_settlement.owner.name} (#{ settlement_settlement.owner_id})"  unless settlement_settlement.owner_id.blank? %></td>
-    <td><%= "#{settlement_settlement.alliance.tag} (#{ settlement_settlement.alliance_id})"  unless settlement_settlement.alliance_id.blank? %></td>
+    <td><%= settlement_settlement.owner_id.nil?  ? "" : link_to("#{settlement_settlement.owner_id}", fundamental_character_path(settlement_settlement.owner_id)) %></td>
+    <td><%= settlement_settlement.alliance_id.nil? ? "" : link_to("#{settlement_settlement.alliance_id}", fundamental_alliance_path(settlement_settlement.alliance_id))  %></td>
     <td><%= settlement_settlement.founded_at %></td>
-    <td><%= "#{settlement_settlement.founder.name} (#{ settlement_settlement.founder_id})"  unless settlement_settlement.founder_id.blank? %></td>
+    <td><%= settlement_settlement.founder_id.nil?  ? "" : link_to("#{settlement_settlement.founder_id}", fundamental_character_path(settlement_settlement.founder_id)) %></td>
     <td><%= settlement_settlement.defense_bonus %></td>
     <td><%= settlement_settlement.morale %></td>
     <td><%= settlement_settlement.tax_rate %></td>
