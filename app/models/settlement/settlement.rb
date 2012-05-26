@@ -13,8 +13,22 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
 
-  def owns_region?
-    owns_region == true
+
+  def self.create_settlement_at_location(location, type_id, owner)
+    raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
+    
+    location.create_settlement({
+      :region_id   => location.region_id,
+      :node_id     => location.region.node_id,
+      :type_id     => type_id,
+      :level       => 1,
+      :founded_at  => DateTime.now,
+      :founder_id  => owner.id,
+      :owner_id    => owner.id,
+      :alliance_id => owner.alliance_id,
+      :owns_region => type_id == 1,  # fortress?
+    })
+    location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
   end
   
   # set default values in an after_initialize handler. 

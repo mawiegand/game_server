@@ -51,11 +51,8 @@ class Fundamental::Character < ActiveRecord::Base
       raise InternalServerError.new('Could not claim an empty location.')
     end
     
-    # HERE: create base (as soon as model implemented)
-    location.type_id = 2 # base
-    location.level = 1   # starting level
-    location.save
-    
+    Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
+        
     character.base_location_id = location.id
     character.base_region_id = location.region_id
     character.base_node_id = location.region.node_id
@@ -73,11 +70,8 @@ class Fundamental::Character < ActiveRecord::Base
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
-    location.owner_id = self.id
-    location.owner_name = self.name
-    location.alliance_id = self.alliance_id
-    location.alliance_tag = self.alliance_tag
-    location.save
+    # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
+    return true
   end
     
   
