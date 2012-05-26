@@ -219,6 +219,13 @@ while !nodes.empty?
       location.settlement.founder_id  = char[:id]
       location.settlement.level = rand(10) 
       location.settlement.save
+      
+      if (location.settlement.type_id == 2 && char.base_node_id.nil?) # 2: home base
+        char.base_node_id = node.id
+        char.base_location_id = location.id
+        char.base_region_id = location.region_id
+        char.save
+      end
     end
     
     if (pos == 0)

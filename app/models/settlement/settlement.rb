@@ -3,16 +3,16 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
-  belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",   :inverse_of => :settlement  
-  belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",     :inverse_of => :settlements 
+  belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
+  belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
   
-  has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id", :inverse_of => :settlement
+  has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
+  has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   
   after_initialize :init
   
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
-
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -43,6 +43,9 @@ class Settlement::Settlement < ActiveRecord::Base
     points        = 0     if points.nil?
   end
   
+  # creates building slotes for the present settlements according to the given
+  # spec. The spec is an array of building options. Usually, you would like to
+  # pass the corresponding array from the game rules to this method.
   def create_building_slots_according_to(spec)
     spec.each do |number, details|
       self.slots.create({
@@ -53,6 +56,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
   end
   
+  # propagates local changes to the location, where some fields are mirrored
+  # for performance reasons.
   def propagate_information_to_location
     if !self.location.nil?
       self.location.set_owner_and_alliance(owner_id, alliance_id)
@@ -63,6 +68,8 @@ class Settlement::Settlement < ActiveRecord::Base
     return true
   end
   
+  # propagates local changes to the region, where some fields are mirrored
+  # for performance reasons.
   def propagate_information_to_region
     if self.owns_region? && !self.region.nil?
       self.region.set_owner_and_alliance(owner_id, alliance_id)
