@@ -49,15 +49,26 @@ class Settlement::SettlementsController < ApplicationController
   # GET /settlement/settlements/1
   # GET /settlement/settlements/1.json
   def show
-    if params[:character_id] == current_character.id
-      @settlement_settlement = Settlement::Settlement.find(params[:id], :conditions => {:owner_id => params[:character_id]})
-    else
-      raise ForbiddenError.new('Access Forbidden')
-    end        
-  
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @settlement_settlement }
+    @settlement_settlement = Settlement::Settlement.find(params[:id])
+    raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
+    raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_settlement.owner_id)
+
+    last_modified = nil 
+    last_modified =  @settlement_settlement.updated_at
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do
+          if params.has_key?(:short)
+            render json: @settlement_settlement, :only => @@short_fields
+          elsif params.has_key?(:aggregate)
+            render json: @settlement_settlement, :only => @@aggregate_fields          
+          else
+            render json: @settlement_settlement
+          end 
+        end
+      end
     end
   end
 
