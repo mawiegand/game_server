@@ -62,7 +62,7 @@
   </Building>
   
   <Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-    <Name lang="de_DE">Ballistisches Erpobungszentrum</Name>
+    <Name lang="de_DE">Ballistisches Erprobungszentrum</Name>
     <Name lang="en_US">Ballistic R+D</Name>
     <Description lang="de_DE">
       <p>Schulungszentrum für alle Distanzkämpfer.</p>
