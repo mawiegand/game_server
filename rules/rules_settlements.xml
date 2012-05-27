@@ -65,10 +65,10 @@
     <BuildingSlot number="10" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
-    <BuildingSlot number="10" max-level="10">
+    <BuildingSlot number="11" max-level="10">
       <BuildingOption category="building_category_fortification" />
     </BuildingSlot>
-    <BuildingSlot number="10" max-level="10">
+    <BuildingSlot number="12" max-level="10">
       <BuildingOption category="building_category_fortification" />
     </BuildingSlot>
   </Settlement>
