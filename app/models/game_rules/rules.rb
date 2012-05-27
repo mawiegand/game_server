@@ -714,6 +714,110 @@ class GameRules::Rules
           :destructable=> true,
 
         },              #   END OF Tüftler
+        {               #   Reitmeisterrei
+          :id          => 1, 
+          :symbolic_id => :building_cavalry_tower,
+					:category    => 1,
+          :db_field    => :building_cavalry_tower,
+          :name        => {
+            
+            :de_DE => "Reitmeisterrei",
+  
+            :en_US => "Cavalry Command",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>",
+  
+            :en_US => "<p>Trains Cavalry Units.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+        },              #   END OF Reitmeisterrei
+        {               #   Truppenunterkunft
+          :id          => 2, 
+          :symbolic_id => :building_infantry_tower,
+					:category    => 1,
+          :db_field    => :building_infantry_tower,
+          :name        => {
+            
+            :de_DE => "Truppenunterkunft",
+  
+            :en_US => "Vertical Barracks",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Unterkunft für Fußtruppen.</p>",
+  
+            :en_US => "<p>Hosts troops.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+        },              #   END OF Truppenunterkunft
+        {               #   Ballistisches Erpobungszentrum
+          :id          => 3, 
+          :symbolic_id => :building_ballistic_tower,
+					:category    => 1,
+          :db_field    => :building_ballistic_tower,
+          :name        => {
+            
+            :de_DE => "Ballistisches Erpobungszentrum",
+  
+            :en_US => "Ballistic R+D",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Schulungszentrum für alle Distanzkämpfer.</p>",
+  
+            :en_US => "<p>Trains artillery.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+        },              #   END OF Ballistisches Erpobungszentrum
+        {               #   Festungsanlagen
+          :id          => 4, 
+          :symbolic_id => :building_fortress_fortification,
+					:category    => 0,
+          :db_field    => :building_fortress_fortification,
+          :name        => {
+            
+            :de_DE => "Festungsanlagen",
+  
+            :en_US => "Fortifications",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
+  
+            :en_US => "<p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+        },              #   END OF Festungsanlagen
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################

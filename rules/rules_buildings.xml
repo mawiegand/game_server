@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <BuildingTypes>
-  <Building id="building_inventor_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+  <Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
     <Name lang="de_DE">Tüftler</Name>
     <Name lang="en_US">Inventor</Name>
     <Description lang="de_DE">
@@ -21,4 +21,80 @@
       <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
     </Abilities>
   </Building>
+
+  <Building id="building_cavalry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+    <Name lang="de_DE">Reitmeisterrei</Name>
+    <Name lang="en_US">Cavalry Command</Name>
+    <Description lang="de_DE">
+      <p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Trains Cavalry Units.</p>
+    </Description>
+    <Requirement id="science_riding" min_level="1" />
+    <Requirement id="building_fortress_fortification" min_level="1" />  
+    <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+    <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+    <ProductionTime shortenable="true">2**Level*60</ProductionTime>             
+    <Abilities> <!-- just for grouping -->
+      <UnitProduction category="unit_category_cavalry" queue="unit_cavalry_queue" />
+      <UnitProductionSpeedup category="unit_category_cavalry">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+    </Abilities>
+  </Building>
+
+  <Building id="building_infantry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+    <Name lang="de_DE">Truppenunterkunft</Name>
+    <Name lang="en_US">Vertical Barracks</Name>
+    <Description lang="de_DE">
+      <p>Unterkunft für Fußtruppen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Hosts troops.</p>
+    </Description>
+    <Requirement id="building_fortress_fortification" min_level="1" />  
+    <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+    <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+    <ProductionTime shortenable="true">2**Level*60</ProductionTime>             
+    <Abilities> <!-- just for grouping -->
+      <UnitProduction category="unit_category_infantry" queue="unit_infantry_queue" />
+      <UnitProductionSpeedup category="unit_category_infantry">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+    </Abilities>
+  </Building>
+  
+  <Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+    <Name lang="de_DE">Ballistisches Erpobungszentrum</Name>
+    <Name lang="en_US">Ballistic R+D</Name>
+    <Description lang="de_DE">
+      <p>Schulungszentrum für alle Distanzkämpfer.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Trains artillery.</p>
+    </Description>
+    <Requirement id="science_ballistics" min_level="1" />
+    <Requirement id="building_fortress_fortification" min_level="1" />  
+    <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+    <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+    <ProductionTime shortenable="true">2**Level*60</ProductionTime>             
+    <Abilities> <!-- just for grouping -->
+      <UnitProduction category="unit_category_artillery" queue="unit_artillery_queue" />
+      <UnitProductionSpeedup category="unit_category_artillery">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+    </Abilities>
+  </Building>
+  
+  <Building id="building_fortress_fortification" group="military" category="building_category_fortress_fortification" buyable="true" destructable="false" demolishable="false">  
+    <Name lang="de_DE">Festungsanlagen</Name>
+    <Name lang="en_US">Fortifications</Name>
+    <Description lang="de_DE">
+      <p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>
+    </Description>
+    <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+    <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+    <ProductionTime shortenable="true">2**Level*60</ProductionTime>             
+    <Abilities> <!-- just for grouping -->
+    </Abilities>
+  </Building>
+
 </BuildingTypes>
