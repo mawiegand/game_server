@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  queue_id: 1
+  job_id: 1
+  started_at: 2012-05-27 17:05:16
+  finished_at: 2012-05-27 17:05:16
+  progress: 1.5
+
+two:
+  queue_id: 1
+  job_id: 1
+  started_at: 2012-05-27 17:05:16
+  finished_at: 2012-05-27 17:05:16
+  progress: 1.5

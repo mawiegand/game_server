@@ -1,0 +1,31 @@
+<h1>Listing construction_active_jobs</h1>
+
+<table>
+  <tr>
+    <th>Queue</th>
+    <th>Job</th>
+    <th>Started at</th>
+    <th>Finished at</th>
+    <th>Progress</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @construction_active_jobs.each do |construction_active_job| %>
+  <tr>
+    <td><%= construction_active_job.queue_id %></td>
+    <td><%= construction_active_job.job_id %></td>
+    <td><%= construction_active_job.started_at %></td>
+    <td><%= construction_active_job.finished_at %></td>
+    <td><%= construction_active_job.progress %></td>
+    <td><%= link_to 'Show', construction_active_job %></td>
+    <td><%= link_to 'Edit', edit_construction_active_job_path(construction_active_job) %></td>
+    <td><%= link_to 'Destroy', construction_active_job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Active job', new_construction_active_job_path %>

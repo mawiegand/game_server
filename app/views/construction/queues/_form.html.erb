@@ -1,0 +1,41 @@
+<%= form_for(@construction_queue) do |f| %>
+  <% if @construction_queue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@construction_queue.errors.count, "error") %> prohibited this construction_queue from being saved:</h2>
+
+      <ul>
+      <% @construction_queue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :settlement_id %><br />
+    <%= f.number_field :settlement_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.text_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :max_length %><br />
+    <%= f.number_field :max_length %>
+  </div>
+  <div class="field">
+    <%= f.label :threads %><br />
+    <%= f.number_field :threads %>
+  </div>
+  <div class="field">
+    <%= f.label :jobs_count %><br />
+    <%= f.number_field :jobs_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

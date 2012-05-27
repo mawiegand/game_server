@@ -41,6 +41,11 @@ en:
         settlements: All
         slots: Slots
         history: History Events
+      construction:
+        category: Construction
+        queues: Queues
+        jobs: Jobs
+        active_jobs: Act. Jobs
       military:
         category: Military
         armies: Armies

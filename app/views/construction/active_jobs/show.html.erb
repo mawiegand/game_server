@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Queue:</b>
+  <%= @construction_active_job.queue_id %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @construction_active_job.job_id %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @construction_active_job.started_at %>
+</p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @construction_active_job.finished_at %>
+</p>
+
+<p>
+  <b>Progress:</b>
+  <%= @construction_active_job.progress %>
+</p>
+
+
+<%= link_to 'Edit', edit_construction_active_job_path(@construction_active_job) %> |
+<%= link_to 'Back', construction_active_jobs_path %>

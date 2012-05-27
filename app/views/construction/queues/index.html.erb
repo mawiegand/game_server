@@ -1,0 +1,33 @@
+<h1>Listing construction_queues</h1>
+
+<table>
+  <tr>
+    <th>Settlement</th>
+    <th>Type</th>
+    <th>Speed</th>
+    <th>Max length</th>
+    <th>Threads</th>
+    <th>Jobs count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @construction_queues.each do |construction_queue| %>
+  <tr>
+    <td><%= construction_queue.settlement_id %></td>
+    <td><%= construction_queue.type_id %></td>
+    <td><%= construction_queue.speed %></td>
+    <td><%= construction_queue.max_length %></td>
+    <td><%= construction_queue.threads %></td>
+    <td><%= construction_queue.jobs_count %></td>
+    <td><%= link_to 'Show', construction_queue %></td>
+    <td><%= link_to 'Edit', edit_construction_queue_path(construction_queue) %></td>
+    <td><%= link_to 'Destroy', construction_queue, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Queue', new_construction_queue_path %>

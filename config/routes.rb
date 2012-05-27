@@ -127,6 +127,12 @@ GameServer::Application.routes.draw do
         resource :account, :only => [ :show ]
       end
       
+      namespace :construction do
+        resources :active_jobs
+        resources :queues
+        resources :jobs
+      end
+
       resource :action, :only => [ :show ]
       
       resources :sessions, :module => :auth,    :only => [:new, :create, :destroy] # staff login to backend
