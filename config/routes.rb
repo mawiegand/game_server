@@ -55,6 +55,7 @@ GameServer::Application.routes.draw do
         resources :settlements do 
           resources :slots 
           resources :histories
+          resources :queues, :module => 'construction'
         end
         resources :slots 
         resources :histories
@@ -129,7 +130,9 @@ GameServer::Application.routes.draw do
       
       namespace :construction do
         resources :active_jobs
-        resources :queues
+        resources :queues do
+          resources :jobs
+        end
         resources :jobs
       end
 
