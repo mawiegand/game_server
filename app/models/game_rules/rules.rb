@@ -690,9 +690,9 @@ class GameRules::Rules
 
         {               #   Tüftler
           :id          => 0, 
-          :symbolic_id => :building_inventor_tower,
+          :symbolic_id => :building_siege_tower,
 					:category    => 1,
-          :db_field    => :building_inventor_tower,
+          :db_field    => :building_siege_tower,
           :name        => {
             
             :de_DE => "Tüftler",
@@ -766,14 +766,14 @@ class GameRules::Rules
           :destructable=> true,
 
         },              #   END OF Truppenunterkunft
-        {               #   Ballistisches Erpobungszentrum
+        {               #   Ballistisches Erprobungszentrum
           :id          => 3, 
-          :symbolic_id => :building_ballistic_tower,
+          :symbolic_id => :building_artillery_tower,
 					:category    => 1,
-          :db_field    => :building_ballistic_tower,
+          :db_field    => :building_artillery_tower,
           :name        => {
             
-            :de_DE => "Ballistisches Erpobungszentrum",
+            :de_DE => "Ballistisches Erprobungszentrum",
   
             :en_US => "Ballistic R+D",
                 
@@ -791,7 +791,7 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-        },              #   END OF Ballistisches Erpobungszentrum
+        },              #   END OF Ballistisches Erprobungszentrum
         {               #   Festungsanlagen
           :id          => 4, 
           :symbolic_id => :building_fortress_fortification,
@@ -945,11 +945,11 @@ class GameRules::Rules
               :max_level => 10,
               :options   => {},
             },
-            10 => {
+            11 => {
               :max_level => 10,
               :options   => {},
             },
-            10 => {
+            12 => {
               :max_level => 10,
               :options   => {},
             },
