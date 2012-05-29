@@ -1,0 +1,13 @@
+<% content_for :construction_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.construction.queues"), construction_queues_path %></li>
+    <li><%= link_to I18n.translate("application.layout.construction.jobs"), construction_jobs_path %></li>
+    <li><%= link_to I18n.translate("application.layout.construction.active_jobs"), construction_active_jobs_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:construction_content) ? yield(:construction_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

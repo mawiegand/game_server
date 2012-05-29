@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526153125) do
+ActiveRecord::Schema.define(:version => 20120527150516) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -45,6 +45,39 @@ ActiveRecord::Schema.define(:version => 20120526153125) do
     t.string   "surname"
     t.string   "login"
     t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "construction_active_jobs", :force => true do |t|
+    t.integer  "queue_id"
+    t.integer  "job_id"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.float    "progress",    :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "construction_jobs", :force => true do |t|
+    t.integer  "queue_id"
+    t.integer  "slot_id"
+    t.integer  "building_type_id"
+    t.integer  "position"
+    t.integer  "level_before"
+    t.integer  "level_after"
+    t.string   "job_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "construction_queues", :force => true do |t|
+    t.integer  "settlement_id"
+    t.integer  "type_id"
+    t.float    "speed",         :default => 1.0
+    t.integer  "max_length"
+    t.integer  "threads"
+    t.integer  "jobs_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,2 @@
+module Construction::QueuesHelper
+end

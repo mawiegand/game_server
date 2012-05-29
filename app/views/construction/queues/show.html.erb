@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Settlement:</b>
+  <%= @construction_queue.settlement_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @construction_queue.type_id %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @construction_queue.speed %>
+</p>
+
+<p>
+  <b>Max length:</b>
+  <%= @construction_queue.max_length %>
+</p>
+
+<p>
+  <b>Threads:</b>
+  <%= @construction_queue.threads %>
+</p>
+
+<p>
+  <b>Jobs count:</b>
+  <%= @construction_queue.jobs_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_construction_queue_path(@construction_queue) %> |
+<%= link_to 'Back', construction_queues_path %>

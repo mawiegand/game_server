@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Queue:</b>
+  <%= @construction_job.queue_id %>
+</p>
+
+<p>
+  <b>Slot:</b>
+  <%= @construction_job.slot_id %>
+</p>
+
+<p>
+  <b>Building type:</b>
+  <%= @construction_job.building_type_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @construction_job.position %>
+</p>
+
+<p>
+  <b>Level before:</b>
+  <%= @construction_job.level_before %>
+</p>
+
+<p>
+  <b>Level after:</b>
+  <%= @construction_job.level_after %>
+</p>
+
+<p>
+  <b>Job type:</b>
+  <%= @construction_job.job_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_construction_job_path(@construction_job) %> |
+<%= link_to 'Back', construction_jobs_path %>

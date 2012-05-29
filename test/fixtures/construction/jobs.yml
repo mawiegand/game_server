@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  queue_id: 1
+  slot_id: 1
+  building_type_id: 1
+  position: 1
+  level_before: 1
+  level_after: 1
+  job_type: MyString
+
+two:
+  queue_id: 1
+  slot_id: 1
+  building_type_id: 1
+  position: 1
+  level_before: 1
+  level_after: 1
+  job_type: MyString

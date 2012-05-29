@@ -55,6 +55,7 @@ GameServer::Application.routes.draw do
         resources :settlements do 
           resources :slots 
           resources :histories
+          resources :queues, :module => 'construction'
         end
         resources :slots 
         resources :histories
@@ -130,6 +131,14 @@ GameServer::Application.routes.draw do
         resource :account, :only => [ :show ]
       end
       
+      namespace :construction do
+        resources :active_jobs
+        resources :queues do
+          resources :jobs
+        end
+        resources :jobs
+      end
+
       resource :action, :only => [ :show ]
       
       resources :sessions, :module => :auth,    :only => [:new, :create, :destroy] # staff login to backend

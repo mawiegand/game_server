@@ -1,0 +1,2 @@
+module Construction::JobsHelper
+end

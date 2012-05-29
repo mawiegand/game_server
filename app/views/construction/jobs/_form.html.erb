@@ -1,0 +1,45 @@
+<%= form_for(@construction_job) do |f| %>
+  <% if @construction_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@construction_job.errors.count, "error") %> prohibited this construction_job from being saved:</h2>
+
+      <ul>
+      <% @construction_job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :queue_id %><br />
+    <%= f.number_field :queue_id %>
+  </div>
+  <div class="field">
+    <%= f.label :slot_id %><br />
+    <%= f.number_field :slot_id %>
+  </div>
+  <div class="field">
+    <%= f.label :building_type_id %><br />
+    <%= f.number_field :building_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.number_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :level_before %><br />
+    <%= f.number_field :level_before %>
+  </div>
+  <div class="field">
+    <%= f.label :level_after %><br />
+    <%= f.number_field :level_after %>
+  </div>
+  <div class="field">
+    <%= f.label :job_type %><br />
+    <%= f.text_field :job_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
