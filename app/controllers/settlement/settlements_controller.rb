@@ -28,6 +28,7 @@ class Settlement::SettlementsController < ApplicationController
       else
         @settlement_settlements = [ @location.settlement ]
         role = determine_access_role(@location.settlement.owner_id, @location.settlement.alliance_id)
+        last_modified = @location.settlement.updated_at
       end
     else                                        # return the complete index, whereas this will only be allowed for the backend (see below)
       @asked_for_index = true
