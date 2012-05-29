@@ -11,12 +11,25 @@ class Settlement::SettlementsController < ApplicationController
   def index
     last_modified = nil
     
-    if params.has_key?(:character_id)
+    role = :default # assume lowest possible authorization
+
+    if params.has_key?(:character_id)           # find all settlements belonging to a player
       @character = Fundamental::Character.find(params[:character_id])
       raise NotFoundError.new('Character not found.') if @character.nil?
       @settlement_settlements = @character.settlements
       @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
-    else 
+      role = determine_access_role(@character.id, @character.alliance_id)
+    elsif params.has_key?(:location_id)         # find "all" settlements at a location (will be one or empty)
+      @location = Map::Location.find(params[:location_id])
+      raise NotFoundError.new('Location not found.') if @location.nil?
+      if @location.settlement.nil?
+        @settlement_settlements = []
+        role = determine_access_role(nil, nil)  # check for staff and admin, otherwise will be :default
+      else
+        @settlement_settlements = [ @location.settlement ]
+        role = determine_access_role(@location.settlement.owner_id, @location.settlement.alliance_id)
+      end
+    else                                        # return the complete index, whereas this will only be allowed for the backend (see below)
       @asked_for_index = true
     end   
     
@@ -33,7 +46,6 @@ class Settlement::SettlementsController < ApplicationController
             raise ForbiddenError.new('Access Forbidden')        
           end  
 
-          role = determine_access_role(@character.id, @character.alliance_id)
           logger.debug "Access with role #{role}."
 
           render json: @settlement_settlements, :only => Settlement::Settlement.readable_attributes(role)

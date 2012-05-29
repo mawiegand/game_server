@@ -59,6 +59,9 @@ GameServer::Application.routes.draw do
         resources :slots 
         resources :histories
       end
+      
+      resources :settlements, :path => "/map/locations/:location_id/settlements", :module => 'settlement'            
+
 
       namespace :military do 
         resources :armies do
@@ -81,6 +84,7 @@ GameServer::Application.routes.draw do
       end
 
       resources :armies, :path => "/map/regions/:region_id/armies", :module => 'military'            
+      resources :armies, :path => "/map/locations/:location_id/armies", :module => 'military'            
       resources :armies, :path => "/fundamental/characters/:character_id/armies", :module => 'military'            
       resources :armies, :path => "/fundamental/alliances/:alliance_id/armies", :module => 'military'            
 
@@ -101,7 +105,6 @@ GameServer::Application.routes.draw do
 #         resources :slots,  :controller => 'locations', :only => [ :show, :index ]  
         end
         resources :locations do
-          resources :armies, :module => "military"
         end
         
         match 'regions/:region_id/slots',       :via => :get, :controller => 'locations', :action => 'index'
