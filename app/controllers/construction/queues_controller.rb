@@ -1,14 +1,39 @@
 class Construction::QueuesController < ApplicationController
   layout 'construction'
 
-  # GET /construction/queues
-  # GET /construction/queues.json
+  # GET /settlement/settlements/:settlement_id/queues
+  # GET /settlement/settlements/:settlement_id/queues.json
   def index
-    @construction_queues = Construction::Queue.all
+    last_modified = nil
+    
+    if params.has_key?(:settlement_id)
+      @settlement = Settlement::Settlement.find(params[:settlement_id])
+      raise NotFoundError.new('Settlement not found.') if @settlement.nil?
+      @construction_queues = @settlement.queues
+      @construction_queues = [] if @construction_queues.nil?  # necessary? or ok to send 'null' ?
+    else 
+      @asked_for_index = true
+    end   
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @construction_queues }
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @construction_queues.nil?
+            @construction_queues = Construction::Queue.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+
+          # role = determine_access_role(@character.id, @character.alliance_id)
+          # logger.debug "Access with role #{role}."
+
+          render :json => @construction_queues.to_json(:include => :active_jobs)
+        end
+      end
     end
   end
 
@@ -19,7 +44,10 @@ class Construction::QueuesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @construction_queue }
+      format.json do
+        logger.debug @construction_queue.inspect
+        render :json => @construction_queue.to_json(:include => :active_jobs)
+      end
     end
   end
 
