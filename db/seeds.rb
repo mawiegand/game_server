@@ -98,7 +98,7 @@ while !nodes.empty?
   
   node = nodes.pop
   
-  if node && node.level < 5
+  if node && node.level < 4
     node.create_children
     node.children.each { |n| nodes.insert 0, n }
   end
@@ -160,7 +160,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (5..8)
+for i in (4..4)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."

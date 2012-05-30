@@ -343,6 +343,12 @@ end
             <xsl:for-each select="BuildingSlot">
             <xsl:value-of select="@number"/> => {
               :max_level => <xsl:value-of select="@max-level"/>,
+              <xsl:if test="@building">
+              :building  => <xsl:value-of select="count(id(@building)/preceding-sibling::*)"/>,
+              </xsl:if>
+              <xsl:if test="@level">
+              :level  => <xsl:value-of select="@level"/>,
+              </xsl:if>
               :options   => {},
             },
             </xsl:for-each>

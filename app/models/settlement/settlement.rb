@@ -58,8 +58,8 @@ class Settlement::Settlement < ActiveRecord::Base
     spec.each do |number, details|
       self.slots.create({
         :slot_num => number,
-        :building_id => nil,
-        :level => 0, 
+        :building_id => details[:building].blank? ? nil : details[:building],
+        :level => details[:level].blank? ? 0 : details[:level], 
       })
     end
   end

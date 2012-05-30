@@ -866,14 +866,25 @@ class GameRules::Rules
           :building_slots => {
             0 => {
               :max_level => 10,
+              
+              :building  => 4,
+              
+              :level  => 1,
+              
               :options   => {},
             },
             1 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             2 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             
@@ -903,54 +914,93 @@ class GameRules::Rules
           :building_slots => {
             0 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             1 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             2 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             3 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             4 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             5 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             6 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             7 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             8 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             9 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             10 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             11 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             12 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             
@@ -980,22 +1030,37 @@ class GameRules::Rules
           :building_slots => {
             0 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             1 => {
               :max_level => 20,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             2 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             3 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             4 => {
               :max_level => 10,
+              
+              :level  => 0,
+              
               :options   => {},
             },
             

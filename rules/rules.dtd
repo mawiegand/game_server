@@ -44,6 +44,8 @@
 <!ATTLIST BuildingSlot 
 	number CDATA #REQUIRED
 	max-level CDATA #REQUIRED 
+	building IDREF #IMPLIED 
+	level CDATA "0" 
 >
 
 <!ELEMENT BuildingOption EMPTY>
