@@ -59,7 +59,14 @@ class Construction::JobsController < ApplicationController
     logger.debug params.inspect
     logger.debug "------------"
     
+    
     @construction_job = Construction::Job.new(@job)
+    queue = @construction_job.queue
+    @construction_job.level_after = @construction_job.level_before + 1
+    @construction_job.position = queue.max_position + 1
+    @construction_job.save
+    
+    queue.check_for_new_jobs
     
     respond_to do |format|
       if @construction_job.save
