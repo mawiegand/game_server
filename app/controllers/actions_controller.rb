@@ -37,6 +37,14 @@ class ActionsController < ApplicationController
           parameters: 'fundamental_alliance_shout[message]',
         },
       ],
+      Construction: [
+        { # NEW JOB
+          url: construction_jobs_path,
+          method: 'POST',
+          name: 'Create Construction Job',
+          parameters: 'construction_job[queue_id], construction_job[slot_id], construction_job[building_type_id], construction_job[level_before], construction_job[job_type]' 
+        },
+      ],
     }
     
     respond_to do |format|
