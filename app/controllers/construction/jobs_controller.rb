@@ -1,5 +1,7 @@
 class Construction::JobsController < ApplicationController
   layout 'construction'
+  
+  before_filter :authenticate
 
   # GET /construction/jobs
   # GET /construction/jobs.json
@@ -50,9 +52,15 @@ class Construction::JobsController < ApplicationController
     # -> Methode in Queue-Model?
     # wenn ja, aus Job neuen ActiveJob erzeugen
     # Fertigstellungszeitpunkt passend berechnen (queue.speed) und Formel
-    
-    @construction_job = Construction::Job.new(params[:construction_job])
 
+    @job = params[:construction_job]
+    
+    logger.debug "------------"
+    logger.debug params.inspect
+    logger.debug "------------"
+    
+    @construction_job = Construction::Job.new(@job)
+    
     respond_to do |format|
       if @construction_job.save
         format.html { redirect_to @construction_job, notice: 'Job was successfully created.' }
