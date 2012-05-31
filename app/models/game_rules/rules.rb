@@ -876,21 +876,30 @@ class GameRules::Rules
               
               :level  => 1,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             1 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              1,
+              
+              ],
             },
             2 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              1,
+              
+              ],
             },
             
           },
@@ -922,91 +931,134 @@ class GameRules::Rules
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             1 => {
               :max_level => 20,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             2 => {
               :max_level => 20,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             3 => {
               :max_level => 20,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             4 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             5 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             6 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             7 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             8 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             9 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             10 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             11 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             12 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             
           },
@@ -1038,35 +1090,52 @@ class GameRules::Rules
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             1 => {
               :max_level => 20,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              0,
+              
+              ],
             },
             2 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             3 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             4 => {
               :max_level => 10,
               
               :level  => 0,
               
-              :options   => {},
+              :options   => [
+              0,
+              
+              ],
             },
             
           },

@@ -350,7 +350,11 @@ end
               <xsl:if test="@level">
               :level  => <xsl:value-of select="@level"/>,
               </xsl:if>
-              :options   => {},
+              :options   => [
+              <xsl:for-each select="BuildingOption">
+                <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+              </xsl:for-each>
+              ],
             },
             </xsl:for-each>
           },
