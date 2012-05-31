@@ -20,8 +20,7 @@ class Construction::Queue < ActiveRecord::Base
         active_job = next_job.build_active_job
         active_job.queue = self
         active_job.started_at = Time.now
-        # TODO calculate finished_at
-        active_job.finished_at = Time.now
+        active_job.finished_at = Time.now + next_job.building_time
         next_job.save
         
         # test again
