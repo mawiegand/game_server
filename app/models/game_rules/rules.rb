@@ -712,6 +712,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :production_time => '2*LEVEL*60',
 
         },              #   END OF Tüftler
         {               #   Reitmeisterrei
@@ -738,6 +739,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :production_time => '2*LEVEL*60',
 
         },              #   END OF Reitmeisterrei
         {               #   Truppenunterkunft
@@ -764,6 +766,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :production_time => '2*LEVEL*60',
 
         },              #   END OF Truppenunterkunft
         {               #   Ballistisches Erprobungszentrum
@@ -790,6 +793,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :production_time => '2*LEVEL*60',
 
         },              #   END OF Ballistisches Erprobungszentrum
         {               #   Festungsanlagen
@@ -816,6 +820,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :production_time => '2*LEVEL*60',
 
         },              #   END OF Festungsanlagen
       ],                # END OF BUILDING TYPES

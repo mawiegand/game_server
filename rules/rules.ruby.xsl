@@ -290,6 +290,7 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+          :production_time => '<xsl:value-of select="ProductionTime"/>',
 
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
