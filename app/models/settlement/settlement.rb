@@ -120,17 +120,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
     queue = self.queues.where("type_id = ?", queue_type_id).first
     raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
-    if origin_type    == :building
-      queue.speedup_buildings = queue.speedup_buildings + delta
-    elsif origin_type == :sciences
-      queue.speedup_sciences = queue.speedup_sciences + delta
-    elsif origin_type == :alliance
-      queue.speedup_alliance = queue.speedup_alliance + delta
-    elsif origin_type == :effects
-      queue.speedup_effects = queue.speedup_effects + delta
-    else 
-      raise InternalServerError.new('Could not add speedup bonus of type #{origin_type.to_s}.');
-    end
+    queue.add_speedup(origin_type, delta)
     queue.save
   end
 

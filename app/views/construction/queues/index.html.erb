@@ -31,3 +31,10 @@
 <br />
 
 <%= link_to 'New Queue', new_construction_queue_path %>
+
+
+<ul>
+  <li>Speed is listed with the individual speed-ups per origin in this order: buildings, sciences, alliance, effects.</li>
+  <li>Base-Speed is 1 (100%) and is always added to the speed-ups.</li>
+  <li>Minimal speed is slightly above zero (prevent division by zero); negative speed-ups that would add-up to a smaller number than 0 are cut-off.</li>
+</ul>
