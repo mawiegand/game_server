@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(:version => 20120601141913) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "alliance_queue_alliance_research_unlock_count"
+    t.integer  "alliance_queue_alliance_research_unlock_count", :default => 0
   end
 
   create_table "fundamental_characters", :force => true do |t|
@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(:version => 20120601141913) do
     t.integer  "base_node_id"
     t.integer  "frog_amount",                           :default => 0
     t.datetime "premium_expiration"
-    t.integer  "character_queue_research_unlock_count"
+    t.integer  "character_queue_research_unlock_count", :default => 0
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -504,9 +504,9 @@ ActiveRecord::Schema.define(:version => 20120601141913) do
     t.datetime "updated_at"
     t.integer  "points"
     t.integer  "founder_id"
-    t.integer  "settlement_queue_buildings_unlock_count"
-    t.integer  "settlement_queue_fortifications_unlock_count"
-    t.integer  "settlement_queue_infantry_unlock_count"
+    t.integer  "settlement_queue_buildings_unlock_count",      :default => 0
+    t.integer  "settlement_queue_fortifications_unlock_count", :default => 0
+    t.integer  "settlement_queue_infantry_unlock_count",       :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|
