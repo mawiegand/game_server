@@ -55,6 +55,21 @@
 	category IDREF #REQUIRED 
 >
 
+<!--Abilities-->
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*)>
+
+<!ELEMENT UnlockQueue EMPTY>
+<!ATTLIST UnlockQueue 
+  queue IDREF #REQUIRED 
+  level	CDATA "1"
+>
+
+<!ELEMENT SpeedupQueue (#PCDATA)>
+<!ATTLIST SpeedupQueue 
+  queue IDREF #REQUIRED 
+  domain (settlement | character | alliance) "settlement"
+>
+
 <!--Buildings-->
 
 <!ELEMENT BuildingCategory (Name+, Description+, Position?)>

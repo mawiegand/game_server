@@ -293,7 +293,7 @@ end
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
           :production_time => '<xsl:value-of select="ProductionTime"/>',
-
+<xsl:apply-templates select="Abilities" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF BUILDING TYPES
@@ -398,6 +398,39 @@ end
 
 
 
+
+<xsl:template match="Abilities">
+          :abilities   => {
+<xsl:if test="count(SpeedupQueue)">
+            :speedup_queue => [
+<xsl:apply-templates select="//SpeedupQueue" />
+            ],
+</xsl:if>
+<xsl:if test="count(UnlockQueue)">
+            :unlock_queue => [
+<xsl:apply-templates select="//UnlockQueue" />
+            ],
+</xsl:if>
+          },
+</xsl:template>
+
+
+<xsl:template match="SpeedupQueue">
+              {
+                :queue_type_id     => <xsl:value-of select="count(id(@queue)/preceding-sibling::*)" />,
+                :queue_type_id_sym => :<xsl:value-of select="@queue" />,
+                :domain            => :<xsl:value-of select="@domain" />,
+                :speedup_formula   => "<xsl:apply-templates />",
+              },
+</xsl:template>
+
+
+<xsl:template match="UnlockQueue">
+              {
+                :queue_type_id     => <xsl:value-of select="count(id(@queue)/preceding-sibling::*)" />,
+                :queue_type_id_sym => :<xsl:value-of select="@queue" />,
+              },
+</xsl:template>
 
 </xsl:stylesheet>
 

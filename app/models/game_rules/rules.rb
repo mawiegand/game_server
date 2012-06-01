@@ -715,6 +715,10 @@ class GameRules::Rules
           :destructable=> true,
           :production_time => '2*LEVEL*60',
 
+          :abilities   => {
+
+          },
+
         },              #   END OF Tüftler
         {               #   Reitmeisterrei
           :id          => 1, 
@@ -742,6 +746,10 @@ class GameRules::Rules
           :destructable=> true,
           :production_time => '2*LEVEL*60',
 
+          :abilities   => {
+
+          },
+
         },              #   END OF Reitmeisterrei
         {               #   Truppenunterkunft
           :id          => 2, 
@@ -768,6 +776,10 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
           :production_time => '2*LEVEL*60',
+
+          :abilities   => {
+
+          },
 
         },              #   END OF Truppenunterkunft
         {               #   Ballistisches Erprobungszentrum
@@ -822,6 +834,42 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
           :production_time => '2*LEVEL*60',
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(LEVEL-1,2.0)*0.10",
+              },
+
+              {
+                :queue_type_id     => 1,
+                :queue_type_id_sym => :queue_fortifications,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(LEVEL-1,2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+              },
+
+              {
+                :queue_type_id     => 1,
+                :queue_type_id_sym => :queue_fortifications,
+              },
+
+            ],
+
+          },
 
         },              #   END OF Festungsanlagen
       ],                # END OF BUILDING TYPES
