@@ -3,14 +3,39 @@ class Construction::JobsController < ApplicationController
   
   before_filter :authenticate
 
-  # GET /construction/jobs
-  # GET /construction/jobs.json
+  # GET /construction/queues/:queue_id/jobs
+  # GET /construction/queues/:queue_id/jobs.json
   def index
-    @construction_jobs = Construction::Job.all
+    last_modified = nil
+    
+    if params.has_key?(:queue_id)
+      @queue = Construction::Queue.find(params[:queue_id])
+      raise NotFoundError.new('Queue not found.') if @queue.nil?
+      @construction_jobs = @queue.jobs
+      @construction_jobs = [] if @construction_jobs.nil?  # necessary? or ok to send 'null' ?
+    else 
+      @asked_for_index = true
+    end   
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @construction_jobs }
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @construction_jobs.nil?
+            @construction_jobs = Construction::Job.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+
+          # role = determine_access_role(@character.id, @character.alliance_id)
+          # logger.debug "Access with role #{role}."
+
+          render :json => @construction_jobs.to_json(:include => :active_jobs)
+        end
+      end
     end
   end
 

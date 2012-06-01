@@ -1,5 +1,9 @@
 <h1>Listing construction_active_jobs</h1>
 
+<%= if (@paginate) 
+  will_paginate @construction_active_jobs 
+end %>
+
 <table>
   <tr>
     <th>Queue</th>
@@ -25,6 +29,10 @@
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate) 
+  will_paginate @construction_active_jobs 
+end %>
 
 <br />
 
