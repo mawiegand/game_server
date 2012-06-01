@@ -56,11 +56,20 @@ class Settlement::Settlement < ActiveRecord::Base
   # pass the corresponding array from the game rules to this method.
   def create_building_slots_according_to(spec)
     spec.each do |number, details|
-      self.slots.create({
+      slot = self.slots.create({
         :slot_num => number,
-        :building_id => details[:building].blank? ? nil : details[:building],
-        :level => details[:level].blank? ? 0 : details[:level], 
       })
+      
+      if !details[:building].blank?
+        slot.create_building(details[:building]);
+        logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
+        
+        if !details[:level].blank? 
+          while slot.level < details[:level]
+            slot.upgrade_building
+          end
+        end
+      end
     end
   end
   

@@ -13,7 +13,13 @@ class Settlement::Slot < ActiveRecord::Base
   # This method does NOT handle resource-costs etc., it's just 
   # responsible for updating the slot and propagating all effects
   # that are related to this change.
-  def create_building(building_id)
+  def create_building(building_id_to_build)
+    raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.building_id.nil?
+    self.building_id = building_id_to_build
+    self.level = 1
+    self.save
+    
+    # TODO: propagation of depending values needs to be implemented
   end
   
   # upgrades the building in this slot by one level. Also calls
@@ -25,7 +31,11 @@ class Settlement::Slot < ActiveRecord::Base
   # responsible for updating the slot and propagating all effects
   # that are related to this change.
   def upgrade_building
-    # TODO: needs to be implemented
+    raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
+    self.level = self.level + 1
+    self.save
+    
+    # TODO: propagation of depending values needs to be implemented
   end
   
   # downgrades the building in this slot by one level. If the level
