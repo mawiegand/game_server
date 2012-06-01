@@ -1,4 +1,6 @@
 class Settlement::Slot < ActiveRecord::Base
+  
+  include GameRules::RulesHelper
 
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id",  :inverse_of => :slots
   
@@ -84,7 +86,12 @@ class Settlement::Slot < ActiveRecord::Base
     if building_type[:abilities]
       if building_type[:abilities][:unlock_queue]
         building_type[:abilities][:unlock_queue].each do |rule| 
-          propagate_unlock_queue(building_id, rule, old_level, new_level)
+          propagate_unlock_queue(rule, old_level, new_level)
+        end
+      end
+      if building_type[:abilities][:speedup_queue]
+        building_type[:abilities][:speedup_queue].each do |rule| 
+          propagate_speedup_queue(rule, old_level, new_level)
         end
       end
     end
@@ -92,7 +99,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   # propagates unlock to the correct domain increasing or decreasing the
   # unlock counter as necessary
-  def propagate_unlock_queue(building_id, rule, old_level, new_level)
+  def propagate_unlock_queue(rule, old_level, new_level)
     unlock_field = GameRules::Rules.the_rules().queue_types[rule[:queue_type_id]][:unlock_field]
     if old_level < new_level && new_level == rule[:level]
       self.settlement[unlock_field] = self.settlement[unlock_field] + 1
@@ -100,6 +107,25 @@ class Settlement::Slot < ActiveRecord::Base
     elsif old_level > new_level && old_level == rule[:level]
       self.settlement[unlock_field] = self.settlement[unlock_field] - 1
       self.settlement.save # save immediately, will destroy queue as a side effect
+    end
+  end
+  
+  # propagates speedup to the correct domain increasing or decreasing the
+  # speedup on that queue
+  def propagate_speedup_queue(rule, old_level, new_level)
+    formula = parse_formula(rule[:speedup_formula])
+    old_value = eval_formula(formula, old_level)
+    new_value = eval_formula(formula, new_level)
+    delta = new_value - old_value        # delta will be added, might be negative (that's abolutely ok)
+    
+    if rule[:domain] == :settlement
+      self.settlement.propagate_speedup_to_queue(:building, rule[:queue_type_id], delta)
+    elsif rule[:domain] == :character 
+      logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
+    elsif rule[:domain] == :alliance 
+      logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
+    else
+      logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      
     end
   end
 

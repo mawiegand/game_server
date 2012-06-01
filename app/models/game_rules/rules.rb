@@ -843,14 +843,14 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(LEVEL-1,2.0)*0.10",
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
               },
 
               {
                 :queue_type_id     => 1,
                 :queue_type_id_sym => :queue_fortifications,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(LEVEL-1,2.0)*0.10",
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
               },
 
             ],

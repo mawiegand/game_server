@@ -75,49 +75,6 @@ class Settlement::Settlement < ActiveRecord::Base
     end
   end
   
-  # propagates local changes to the location, where some fields are mirrored
-  # for performance reasons.
-  def propagate_information_to_location
-    if !self.location.nil?
-      self.location.set_owner_and_alliance(owner_id, alliance_id)
-      self.location.settlement_level   = self.level   if (self.location.settlement_level   != self.level)
-      self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
-      self.location.save
-    end
-    return true
-  end
-  
-  # propagates local changes to the region, where some fields are mirrored
-  # for performance reasons.
-  def propagate_information_to_region
-    if self.owns_region? && !self.region.nil?
-      self.region.set_owner_and_alliance(owner_id, alliance_id)
-      self.region.settlement_level   = self.level     if (self.region.settlement_level   != self.level)
-      self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
-      self.region.save
-    end
-    return true
-  end
-  
-  def manage_queues_as_needed
-    if self.changed?
-      queue_types = GameRules::Rules.the_rules().queue_types
-      
-      changes.each do | attribute, change |           # iterate through all changed attributes
-        queue_types.each do |queue|                   # must test it against every queue
-          if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
-            if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
-              create_queue(queue)
-            elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
-              destroy_queue(queue)
-            end
-          end
-        end
-      end
-    end
-    return true
-  end
-  
   def create_queue(queue_type)
     if queue_type[:category]    == :queue_category_construction
       create_construction_queue(queue_type)
@@ -159,6 +116,69 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
   end
+  
+  def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
+    queue = self.queues.where("type_id = ?", queue_type_id).first
+    raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
+    if origin_type    == :building
+      queue.speedup_buildings = queue.speedup_buildings + delta
+    elsif origin_type == :sciences
+      queue.speedup_sciences = queue.speedup_sciences + delta
+    elsif origin_type == :alliance
+      queue.speedup_alliance = queue.speedup_alliance + delta
+    elsif origin_type == :effects
+      queue.speedup_effects = queue.speedup_effects + delta
+    else 
+      raise InternalServerError.new('Could not add speedup bonus of type #{origin_type.to_s}.');
+    end
+    queue.save
+  end
+
+  
+  protected
+  
+    # propagates local changes to the location, where some fields are mirrored
+    # for performance reasons.
+    def propagate_information_to_location
+      if !self.location.nil?
+        self.location.set_owner_and_alliance(owner_id, alliance_id)
+        self.location.settlement_level   = self.level   if (self.location.settlement_level   != self.level)
+        self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
+        self.location.save
+      end
+      return true
+    end
+  
+    # propagates local changes to the region, where some fields are mirrored
+    # for performance reasons.
+    def propagate_information_to_region
+      if self.owns_region? && !self.region.nil?
+        self.region.set_owner_and_alliance(owner_id, alliance_id)
+        self.region.settlement_level   = self.level     if (self.region.settlement_level   != self.level)
+        self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
+        self.region.save
+      end
+      return true
+    end
+  
+    def manage_queues_as_needed
+      if self.changed?
+        queue_types = GameRules::Rules.the_rules().queue_types
+      
+        changes.each do | attribute, change |           # iterate through all changed attributes
+          queue_types.each do |queue|                   # must test it against every queue
+            if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
+              if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
+                create_queue(queue)
+              elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
+                destroy_queue(queue)
+              end
+            end
+          end
+        end
+      end
+      return true
+    end
     
     
 
