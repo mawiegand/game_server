@@ -17,7 +17,9 @@ class Settlement::Slot < ActiveRecord::Base
     raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.building_id.nil?
     self.building_id = building_id_to_build
     self.level = 1
+    propagate_abilities(building_id_to_build, 0, 1)
     self.save
+
     
     # TODO: propagation of depending values needs to be implemented
   end
@@ -33,6 +35,7 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
+    propagate_abilities(self.building_id, self.level-1, self.level)
     self.save
     
     # TODO: propagation of depending values needs to be implemented
@@ -72,4 +75,33 @@ class Settlement::Slot < ActiveRecord::Base
       # TODO:   needs to be implemented
     end
   end
+  
+  def propagate_abilities(building_id, old_level, new_level)
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    if building_type[:abilities]
+      if building_type[:abilities][:unlock_queue]
+        building_type[:abilities][:unlock_queue].each do |rule| 
+          propagate_unlock_queue(building_id, rule, old_level, new_level)
+        end
+      end
+    end
+  end
+  
+  def propagate_unlock_queue(building_id, rule, old_level, new_level)
+    unlock_field = GameRules::Rules.the_rules().queue_types[rule[:queue_type_id]][:unlock_field]
+    if old_level < new_level && new_level == rule[:level]
+      self.settlement[unlock_field] = self.settlement[unlock_field] + 1
+      if self.settlement[unlock_field] == 1
+        self.settlement.save # save immediately to create queue as a side effect
+      end
+    elsif old_level > new_level && old_level == rule[:level]
+      self.settlement[unlock_field] = self.settlement[unlock_field] - 1
+      if self.settlement[unlock_field] == 0
+        self.settlement.save # save immediately to destroy queue as a side effect
+      end      
+    end
+  end
+
+  
 end

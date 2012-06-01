@@ -429,6 +429,7 @@ end
               {
                 :queue_type_id     => <xsl:value-of select="count(id(@queue)/preceding-sibling::*)" />,
                 :queue_type_id_sym => :<xsl:value-of select="@queue" />,
+                :level             => <xsl:value-of select="@level" />,
               },
 </xsl:template>
 

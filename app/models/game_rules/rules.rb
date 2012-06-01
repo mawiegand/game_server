@@ -860,11 +860,13 @@ class GameRules::Rules
               {
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
+                :level             => 1,
               },
 
               {
                 :queue_type_id     => 1,
                 :queue_type_id_sym => :queue_fortifications,
+                :level             => 1,
               },
 
             ],
