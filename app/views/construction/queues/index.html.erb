@@ -17,7 +17,7 @@
   <tr>
     <td><%= construction_queue.settlement_id %></td>
     <td><%= construction_queue.type_id %></td>
-    <td><%= construction_queue.speed %></td>
+    <td><%= construction_queue.speed %><%= " (BASE +#{construction_queue.speedup_buildings} +#{construction_queue.speedup_sciences} +#{construction_queue.speedup_alliance} +#{construction_queue.speedup_effects})" %></td>
     <td><%= construction_queue.max_length %></td>
     <td><%= construction_queue.threads %></td>
     <td><%= construction_queue.jobs_count %></td>

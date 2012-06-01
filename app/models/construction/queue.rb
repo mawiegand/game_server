@@ -5,6 +5,8 @@ class Construction::Queue < ActiveRecord::Base
   has_many   :jobs,        :class_name => "Construction::Job",       :foreign_key => "queue_id",      :inverse_of => :queue,   :order => 'position ASC'
   has_many   :active_jobs, :class_name => "Construction::ActiveJob", :foreign_key => "queue_id",      :inverse_of => :queue
   
+  before_save :update_speed
+  
   # checks if there are unused threads in this queue and if there
   # is a new job to execute in  this thread. In this case a new active job
   # is created. Recursive invokation for testing another thread.
@@ -42,15 +44,19 @@ class Construction::Queue < ActiveRecord::Base
 
   protected
 
-  def reset_job_positions
-    if !self.jobs.empty? && self.jobs.last.position > 1000
-      ActiveRecord::Base.transaction do
-        self.jobs.each do |job|
-          job.position -= 1000
-          job.save
+    def reset_job_positions
+      if !self.jobs.empty? && self.jobs.last.position > 1000
+        ActiveRecord::Base.transaction do
+          self.jobs.each do |job|
+            job.position -= 1000
+            job.save
+          end
         end
       end
     end
-  end
+
+    def update_speed
+      self.speed = 1.0 + self.speedup_buildings + self.speedup_sciences + self.speedup_alliance + self.speedup_effects
+    end
 
 end

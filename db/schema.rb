@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601101147) do
+ActiveRecord::Schema.define(:version => 20120601105928) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -74,16 +74,16 @@ ActiveRecord::Schema.define(:version => 20120601101147) do
   create_table "construction_queues", :force => true do |t|
     t.integer  "settlement_id"
     t.integer  "type_id"
-    t.decimal  "speed",             :default => 1.0
+    t.decimal  "speed",             :default => 0.0
     t.integer  "max_length"
     t.integer  "threads"
     t.integer  "jobs_count"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "speedup_buildings"
-    t.decimal  "speedup_sciences"
-    t.decimal  "speedup_alliance"
-    t.decimal  "speedup_effects"
+    t.decimal  "speedup_buildings", :default => 0.0
+    t.decimal  "speedup_sciences",  :default => 0.0
+    t.decimal  "speedup_alliance",  :default => 0.0
+    t.decimal  "speedup_effects",   :default => 0.0
   end
 
   create_table "event_events", :force => true do |t|
