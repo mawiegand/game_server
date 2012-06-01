@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<QueueCategories>
+  <QueueCategory id="queue_category_construction" />
+  <QueueCategory id="queue_category_training" />
+  <QueueCategory id="queue_category_research" />
+</QueueCategories>

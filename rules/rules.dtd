@@ -27,6 +27,8 @@
 <!ELEMENT ScienceTypes (Science*)>
 <!ELEMENT UnitTypes (Unit*)>
 <!ELEMENT UnitCategories (UnitCategory*)>
+<!ELEMENT QueueTypes (Queue*)>
+<!ELEMENT QueueCategories (QueueCategory*)>
 
 <!--Resource-->
 <!ELEMENT Resource (Name+, RatingValue, TakeoverValue, StealRatio, DestroyRatio, SafeStorage, MaxStorage, Production)>
@@ -102,6 +104,31 @@
 <!ATTLIST Target
  id IDREF #REQUIRED
 >
+
+
+
+<!--Queues-->
+
+<!ELEMENT QueueCategory EMPTY>
+<!ATTLIST QueueCategory 
+  id ID #REQUIRED 
+>
+
+<!ELEMENT Queue (ProductionCategory*)>
+<!ATTLIST Queue 
+  id ID #REQUIRED 
+  category IDREF #REQUIRED
+	domain (settlement  | player | alliance) "settlement"
+	base_threads CDATA #REQUIRED
+	base_slots CDATA #REQUIRED
+>
+
+
+<!ELEMENT ProductionCategory EMPTY>
+<!ATTLIST ProductionCategory 
+  category IDREF #REQUIRED 
+>
+
 
 
 <!--Webinterface: Production-->

@@ -75,7 +75,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :settlement_types
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
   
   def attributes 
     { 
@@ -87,6 +87,7 @@ class GameRules::Rules
       'building_types' => building_types,
       'science_types'  => science_types,  
       'settlement_types'  => settlement_types,  
+      'queue_types'    => queue_types,  
     }
   end
   
@@ -121,6 +122,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="QueueTypes" />
 
   <xsl:text><![CDATA[
     )
@@ -366,6 +368,32 @@ end
       ],                # END OF SETTLEMENT TYPES
 </xsl:template>
 
+
+
+
+
+<xsl:template match="QueueTypes">
+# ## QUEUE TYPES #############################################################
+  
+      :queue_types => [  # ALL QUEUE TYPES
+<xsl:for-each select="Queue">
+        {               #   <xsl:value-of select="@id"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+          :domain      => :<xsl:value-of select="@domain"/>,
+          :base_threads => <xsl:value-of select="@base_threads"/>,
+          :base_slots   => <xsl:value-of select="@base_slots"/>,
+
+          :produces    => [
+            <xsl:for-each select="ProductionCategory">
+              <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+            </xsl:for-each>
+          ],
+        },              #   END OF <xsl:value-of select="@id"/>
+</xsl:for-each>
+      ],                # END OF QUEUE TYPES
+</xsl:template>
 
 
 

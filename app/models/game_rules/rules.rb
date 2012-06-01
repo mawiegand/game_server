@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :settlement_types
+  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
   
   def attributes 
     { 
@@ -44,6 +44,7 @@ class GameRules::Rules
       'building_types' => building_types,
       'science_types'  => science_types,  
       'settlement_types'  => settlement_types,  
+      'queue_types'    => queue_types,  
     }
   end
   
@@ -1144,6 +1145,64 @@ class GameRules::Rules
 
         },              #   END OF Außenposten
       ],                # END OF SETTLEMENT TYPES
+
+# ## QUEUE TYPES #############################################################
+  
+      :queue_types => [  # ALL QUEUE TYPES
+
+        {               #   queue_buildings
+          :id          => 0, 
+          :symbolic_id => :queue_buildings,
+          :category    => 0,
+          :domain      => :settlement,
+          :base_threads => 1,
+          :base_slots   => 4,
+
+          :produces    => [
+            0,
+            1,
+            
+          ],
+        },              #   END OF queue_buildings
+        {               #   queue_fortifications
+          :id          => 1, 
+          :symbolic_id => :queue_fortifications,
+          :category    => 0,
+          :domain      => :settlement,
+          :base_threads => 1,
+          :base_slots   => 4,
+
+          :produces    => [
+            
+          ],
+        },              #   END OF queue_fortifications
+        {               #   queue_infantry
+          :id          => 2, 
+          :symbolic_id => :queue_infantry,
+          :category    => 1,
+          :domain      => :settlement,
+          :base_threads => 1,
+          :base_slots   => 4,
+
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_infantry
+        {               #   queue_research
+          :id          => 3, 
+          :symbolic_id => :queue_research,
+          :category    => 2,
+          :domain      => :player,
+          :base_threads => 1,
+          :base_slots   => 4,
+
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_research
+      ],                # END OF QUEUE TYPES
 
     )
   end
