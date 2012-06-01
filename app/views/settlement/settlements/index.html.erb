@@ -23,6 +23,11 @@ end %>
     <th>Armies count</th>
     <th>Garrison</th>
     <th>Besieged</th>
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'settlement_queue' %>
+    <th><%= attribute %></th>
+<%end
+end %>
     <th></th>
     <th></th>
     <th></th>
@@ -47,6 +52,11 @@ end %>
     <td><%= settlement_settlement.armies_count %></td>
     <td><%= settlement_settlement.garrison_id %></td>
     <td><%= settlement_settlement.besieged %></td>
+<% settlement_settlement.attributes.each do |attribute, value| 
+  if attribute.start_with? 'settlement_queue' %>
+    <td><%= value %></td>
+<%end
+end %>
     <td><%= link_to 'Show', settlement_settlement %></td>
     <td><%= link_to 'Edit', edit_settlement_settlement_path(settlement_settlement) %></td>
     <td><%= link_to 'Destroy', settlement_settlement, confirm: 'Are you sure?', method: :delete %></td>
