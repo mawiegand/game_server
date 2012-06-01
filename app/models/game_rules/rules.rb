@@ -1204,10 +1204,11 @@ class GameRules::Rules
           :id          => 0, 
           :symbolic_id => :queue_buildings,
           :unlock_field=> :settlement_queue_buildings_unlock_count,
-          :category    => 0,
+          :category_id => 0,
+					:category    => :queue_category_construction,
           :domain      => :settlement,
-          :base_threads => 1,
-          :base_slots   => 4,
+          :base_threads=> 1,
+          :base_slots  => 4,
 
           :produces    => [
             0,
@@ -1219,10 +1220,11 @@ class GameRules::Rules
           :id          => 1, 
           :symbolic_id => :queue_fortifications,
           :unlock_field=> :settlement_queue_fortifications_unlock_count,
-          :category    => 0,
+          :category_id => 0,
+					:category    => :queue_category_construction,
           :domain      => :settlement,
-          :base_threads => 1,
-          :base_slots   => 4,
+          :base_threads=> 1,
+          :base_slots  => 4,
 
           :produces    => [
             
@@ -1232,10 +1234,11 @@ class GameRules::Rules
           :id          => 2, 
           :symbolic_id => :queue_infantry,
           :unlock_field=> :settlement_queue_infantry_unlock_count,
-          :category    => 1,
+          :category_id => 1,
+					:category    => :queue_category_training,
           :domain      => :settlement,
-          :base_threads => 1,
-          :base_slots   => 4,
+          :base_threads=> 1,
+          :base_slots  => 4,
 
           :produces    => [
             0,
@@ -1246,10 +1249,11 @@ class GameRules::Rules
           :id          => 3, 
           :symbolic_id => :queue_research,
           :unlock_field=> :character_queue_research_unlock_count,
-          :category    => 2,
+          :category_id => 2,
+					:category    => :queue_category_research,
           :domain      => :character,
-          :base_threads => 1,
-          :base_slots   => 4,
+          :base_threads=> 1,
+          :base_slots  => 4,
 
           :produces    => [
             0,
@@ -1260,10 +1264,11 @@ class GameRules::Rules
           :id          => 4, 
           :symbolic_id => :queue_alliance_research,
           :unlock_field=> :alliance_queue_alliance_research_unlock_count,
-          :category    => 2,
+          :category_id => 2,
+					:category    => :queue_category_research,
           :domain      => :alliance,
-          :base_threads => 1,
-          :base_slots   => 1,
+          :base_threads=> 1,
+          :base_slots  => 1,
 
           :produces    => [
             0,

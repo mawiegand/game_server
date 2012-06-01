@@ -381,10 +381,11 @@ end
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :unlock_field=> :<xsl:value-of select="@domain"/>_<xsl:value-of select="@id"/>_unlock_count,
-          :category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+          :category_id => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
+					:category    => :<xsl:value-of select="@category"/>,
           :domain      => :<xsl:value-of select="@domain"/>,
-          :base_threads => <xsl:value-of select="@base_threads"/>,
-          :base_slots   => <xsl:value-of select="@base_slots"/>,
+          :base_threads=> <xsl:value-of select="@base_threads"/>,
+          :base_slots  => <xsl:value-of select="@base_slots"/>,
 
           :produces    => [
             <xsl:for-each select="ProductionCategory">

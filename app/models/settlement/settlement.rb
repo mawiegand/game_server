@@ -18,6 +18,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_initialize :init
   
+  before_save :manage_queues_as_needed
+  
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
   
@@ -97,6 +99,47 @@ class Settlement::Settlement < ActiveRecord::Base
     return true
   end
   
+  
+  def manage_queues_as_needed
+    if self.changed?
+      queue_types = GameRules::Rules.the_rules().queue_types
+      
+      changes.each do | attribute, change |           # iterate through all changed attributes
+        queue_types.each do |queue|                   # must test it against every queue
+          if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
+            if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
+              create_queue(queue)
+            elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
+              destroy_queue(queue)
+            end
+          end
+        end
+      end
+    end
+    return true
+  end
+  
+  
+  def create_queue(queue_type)
+    if queue_type[:category] == :queue_category_construction
+      create_construction_queue(queue_type)
+    elsif queue_type[:category] == :queue_category_training
+      logger.error "Creation of queue type #{queue_type[:category]} not yet implemented."
+    elsif queue_type[:category] == :queue_category_research
+      logger.error "Creation of queue type #{queue_type[:category]} not yet implemented."
+    else
+      logger.error "Could not create queue of unkown type #{queue_type[:category]}."
+    end
+  end
+  
+  
+  def create_construction_queue(queue_type)
+    self.queues.create({
+      :type_id    => queue_type[:id], 
+      :threads    => queue_type[:base_threads],
+      :max_length => queue_type[:base_slots],      
+    });
+  end
     
 
 end

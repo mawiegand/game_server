@@ -75,7 +75,9 @@ class Settlement::Slot < ActiveRecord::Base
       # TODO:   needs to be implemented
     end
   end
-  
+
+
+  # possible improvement: save domain once, after applying all changes.  
   def propagate_abilities(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
@@ -88,18 +90,16 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
   
+  # propagates unlock to the correct domain increasing or decreasing the
+  # unlock counter as necessary
   def propagate_unlock_queue(building_id, rule, old_level, new_level)
     unlock_field = GameRules::Rules.the_rules().queue_types[rule[:queue_type_id]][:unlock_field]
     if old_level < new_level && new_level == rule[:level]
       self.settlement[unlock_field] = self.settlement[unlock_field] + 1
-      if self.settlement[unlock_field] == 1
-        self.settlement.save # save immediately to create queue as a side effect
-      end
+      self.settlement.save # save immediately, will create queue as a side effect
     elsif old_level > new_level && old_level == rule[:level]
       self.settlement[unlock_field] = self.settlement[unlock_field] - 1
-      if self.settlement[unlock_field] == 0
-        self.settlement.save # save immediately to destroy queue as a side effect
-      end      
+      self.settlement.save # save immediately, will destroy queue as a side effect
     end
   end
 
