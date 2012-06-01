@@ -380,6 +380,7 @@ end
         {               #   <xsl:value-of select="@id"/>
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
+          :unlock_field=> :<xsl:value-of select="@domain"/>_<xsl:value-of select="@id"/>_unlock_count,
           :category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
           :domain      => :<xsl:value-of select="@domain"/>,
           :base_threads => <xsl:value-of select="@base_threads"/>,

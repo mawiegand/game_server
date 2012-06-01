@@ -16,15 +16,27 @@
   <xsl:strip-space elements="*"/>
       
   <xsl:template match="Rules">  
-    <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory" />
+    <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory|//Queue" />
   </xsl:template>
 
 
   <!-- standard template for database relevant entities -->
-  <xsl:template match="Building|Science|Unit|Resource|UnitCategory"> 
+  <xsl:template match="Science|Unit|Resource|UnitCategory"> 
     <xsl:value-of select="translate(local-name(), $uppercase, $smallcase)"/>_<xsl:value-of select="@id"/>  
     <xsl:call-template name="Newline" />
   </xsl:template>
+  
+  <!-- new standard template for database relevant entities (does not prepend building_, science_, etc.) -->
+  <xsl:template match="Building"> 
+    <xsl:value-of select="@id"/>  
+    <xsl:call-template name="Newline" />
+  </xsl:template>
+  
+  <!-- template for generating queue unlock count entries -->
+  <xsl:template match="Queue"> 
+    <xsl:value-of select="@domain"/>_<xsl:value-of select="@id"/><xsl:text>_unlock_count</xsl:text>
+    <xsl:call-template name="Newline" />
+  </xsl:template>  
   
   <!-- Helper variables for realizing lower-case and upper-case with the 
        help of translate. translate('Word', $uppercase, $smallcase) does

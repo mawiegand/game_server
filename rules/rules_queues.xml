@@ -11,7 +11,10 @@
   <Queue id="queue_infantry" category="queue_category_training" base_threads="1" base_slots="4">
     <ProductionCategory category="unit_category_infantry" />
   </Queue>
-  <Queue id="queue_research" category="queue_category_research" domain="player" base_threads="1" base_slots="4">
+  <Queue id="queue_research" category="queue_category_research" domain="character" base_threads="1" base_slots="4">
     <ProductionCategory category="science_category_player" />
+  </Queue>
+  <Queue id="queue_alliance_research" category="queue_category_research" domain="alliance" base_threads="1" base_slots="1">
+    <ProductionCategory category="science_category_alliance" />
   </Queue>
 </QueueTypes>

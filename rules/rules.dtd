@@ -118,7 +118,7 @@
 <!ATTLIST Queue 
   id ID #REQUIRED 
   category IDREF #REQUIRED
-	domain (settlement  | player | alliance) "settlement"
+	domain (settlement  | character | alliance) "settlement"
 	base_threads CDATA #REQUIRED
 	base_slots CDATA #REQUIRED
 >

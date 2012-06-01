@@ -33,7 +33,9 @@ hash_of_models = {
                                             { :prefix => 'unit_', :postfix => '_damage_taken', :type => ':decimal' },
                                             { :prefix => 'unit_', :postfix => '_damage_inflicted', :type => ':decimal' },
                                           ],
-
+  Settlement::Settlement    => [ { :prefix => 'settlement_queue', :postfix => '', :options => { :default => 0 } } ],  # add unlock count to settlements
+  Fundamental::Character    => [ { :prefix => 'character_queue', :postfix => '', :options => { :default => 0 } } ],   # add unlock count to characters
+  Fundamental::Alliance     => [ { :prefix => 'alliance_queue', :postfix => '', :options => { :default => 0 } } ],    # add unlock count to alliances
 }
 
 timestamp = DateTime.now
@@ -50,7 +52,7 @@ hash_of_models.each do | model, prefixes |
     prefixes.each do | prefix |
       
       if attribute.start_with?(prefix[:prefix]) && !model.new.has_attribute?(attribute+prefix[:postfix])
-        fields += "    add_column :#{ model.table_name },   :#{ attribute+prefix[:postfix] },   #{ prefix[:type].nil? ? ':integer' : prefix[:type]  }\n"
+        fields += "    add_column :#{ model.table_name },   :#{ attribute+prefix[:postfix] },   #{ prefix[:type].nil? ? ':integer' : prefix[:type]  }, :options => #{ prefix[:options].nil? ? '{}' : prefix[:options] }    \n"
       end
       
     end

@@ -1153,6 +1153,7 @@ class GameRules::Rules
         {               #   queue_buildings
           :id          => 0, 
           :symbolic_id => :queue_buildings,
+          :unlock_field=> :settlement_queue_buildings_unlock_count,
           :category    => 0,
           :domain      => :settlement,
           :base_threads => 1,
@@ -1167,6 +1168,7 @@ class GameRules::Rules
         {               #   queue_fortifications
           :id          => 1, 
           :symbolic_id => :queue_fortifications,
+          :unlock_field=> :settlement_queue_fortifications_unlock_count,
           :category    => 0,
           :domain      => :settlement,
           :base_threads => 1,
@@ -1179,6 +1181,7 @@ class GameRules::Rules
         {               #   queue_infantry
           :id          => 2, 
           :symbolic_id => :queue_infantry,
+          :unlock_field=> :settlement_queue_infantry_unlock_count,
           :category    => 1,
           :domain      => :settlement,
           :base_threads => 1,
@@ -1192,8 +1195,9 @@ class GameRules::Rules
         {               #   queue_research
           :id          => 3, 
           :symbolic_id => :queue_research,
+          :unlock_field=> :character_queue_research_unlock_count,
           :category    => 2,
-          :domain      => :player,
+          :domain      => :character,
           :base_threads => 1,
           :base_slots   => 4,
 
@@ -1202,6 +1206,20 @@ class GameRules::Rules
             
           ],
         },              #   END OF queue_research
+        {               #   queue_alliance_research
+          :id          => 4, 
+          :symbolic_id => :queue_alliance_research,
+          :unlock_field=> :alliance_queue_alliance_research_unlock_count,
+          :category    => 2,
+          :domain      => :alliance,
+          :base_threads => 1,
+          :base_slots   => 1,
+
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_alliance_research
       ],                # END OF QUEUE TYPES
 
     )
