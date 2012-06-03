@@ -1,6 +1,8 @@
 class Construction::QueuesController < ApplicationController
   layout 'construction'
 
+  before_filter :authenticate
+
   # GET /settlement/settlements/:settlement_id/queues
   # GET /settlement/settlements/:settlement_id/queues.json
   def index
@@ -30,7 +32,7 @@ class Construction::QueuesController < ApplicationController
 
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
-
+          
           render :json => @construction_queues.to_json(:include => :active_jobs)
         end
       end
