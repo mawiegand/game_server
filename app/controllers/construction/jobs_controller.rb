@@ -33,7 +33,7 @@ class Construction::JobsController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
 
-          render :json => @construction_jobs.to_json(:include => :active_jobs)
+          render :json => @construction_jobs.to_json(:include => :active_job)
         end
       end
     end
