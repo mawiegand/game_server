@@ -69,21 +69,7 @@ class Construction::JobsController < ApplicationController
   # POST /construction/queues/:queue_id/jobs
   # POST /construction/queues/:queue_id/jobs.json
   def create
-    # queue holen mit Fehlerbehandlung
-    # Job erzeugen mit Fehlerbehandlung
-    # 
-    
-    # Kucken ob neuer Job direkt gestartet werden kann
-    # -> Methode in Queue-Model?
-    # wenn ja, aus Job neuen ActiveJob erzeugen
-    # Fertigstellungszeitpunkt passend berechnen (queue.speed) und Formel
-
     @job = params[:construction_job]
-    
-    logger.debug "------------"
-    logger.debug params.inspect
-    logger.debug "------------"
-    
     
     @construction_job = Construction::Job.new(@job)
     queue = @construction_job.queue
@@ -91,6 +77,7 @@ class Construction::JobsController < ApplicationController
     @construction_job.position = queue.max_position + 1
     @construction_job.save
     
+    queue.reload
     queue.check_for_new_jobs
     
     respond_to do |format|
