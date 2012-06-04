@@ -1,7 +1,7 @@
+require 'util/formula'
+
 class Settlement::Slot < ActiveRecord::Base
   
-  include GameRules::RulesHelper
-
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id",  :inverse_of => :slots
   
   has_many   :jobs,        :class_name => "Contstruction::Job",      :foreign_key => "slot_id",        :inverse_of => :slot
@@ -118,9 +118,9 @@ class Settlement::Slot < ActiveRecord::Base
   # propagates speedup to the correct domain increasing or decreasing the
   # speedup on that queue
   def propagate_speedup_queue(rule, old_level, new_level)
-    formula = parse_formula(rule[:speedup_formula])
-    old_value = eval_formula(formula, old_level)
-    new_value = eval_formula(formula, new_level)
+    formula = Util::Formula.parse_from_formula(rule[:speedup_formula])
+    old_value = formula.apply(old_level)
+    new_value = formula.apply(new_level)
     delta = new_value - old_value        # delta will be added, might be negative (that's abolutely ok)
     
     if rule[:domain] == :settlement

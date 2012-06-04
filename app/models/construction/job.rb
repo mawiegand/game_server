@@ -1,6 +1,6 @@
+require 'util/formula'
+
 class Construction::Job < ActiveRecord::Base
-  
-  include GameRules::RulesHelper
   
   has_one    :active_job,  :class_name => "Construction::ActiveJob", :foreign_key => "job_id",    :inverse_of => :job
   
@@ -13,7 +13,7 @@ class Construction::Job < ActiveRecord::Base
   
   def building_time
     rules = GameRules::Rules.the_rules
-    formula = parse_formula(rules.building_types[self.building_type_id][:production_time])
-    eval_formula(formula, self.level_before)
+    formula = Util::Formula.parse_from_formula(rules.building_types[self.building_type_id][:production_time])
+    formula.apply(self.level_before)
   end
 end
