@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601141913) do
+ActiveRecord::Schema.define(:version => 20120604152316) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -62,13 +62,13 @@ ActiveRecord::Schema.define(:version => 20120601141913) do
   create_table "construction_jobs", :force => true do |t|
     t.integer  "queue_id"
     t.integer  "slot_id"
-    t.integer  "building_type_id"
     t.integer  "position"
     t.integer  "level_before"
     t.integer  "level_after"
     t.string   "job_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "building_id"
   end
 
   create_table "construction_queues", :force => true do |t|

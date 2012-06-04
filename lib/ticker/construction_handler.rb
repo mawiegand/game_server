@@ -33,13 +33,13 @@ class Ticker::ConstructionHandler
         runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR
         
         slot = job.slot 
-        runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR if slot.nil?
+        runloop.say "No slot given for job '#{ job.id }'.", Logger::ERROR if slot.nil?
         
         if slot.empty?
           
           # TODO check requirements like enough resources 
           
-          slot.create_building(job.building_type_id)
+          slot.create_building(job.building_id)
         else
           runloop.say "Could not create building, slot id #{ slot.id } is not empty", Logger::ERROR
         end

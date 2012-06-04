@@ -13,7 +13,7 @@ class Construction::Job < ActiveRecord::Base
   
   def building_time
     rules = GameRules::Rules.the_rules
-    formula = Util::Formula.parse_from_formula(rules.building_types[self.building_type_id][:production_time])
+    formula = Util::Formula.parse_from_formula(rules.building_types[self.building_id][:production_time])
     formula.apply(self.level_before)
   end
 end
