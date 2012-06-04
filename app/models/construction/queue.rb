@@ -25,6 +25,10 @@ class Construction::Queue < ActiveRecord::Base
         active_job.finished_at = Time.now + (next_job.building_time / self.speed)
         next_job.save
         
+        logger.debug '---> ' + next_job.building_time.to_s + ' ' + self.speed.to_s + ' ' + (next_job.building_time / self.speed).to_s
+        
+        self.create_event_for_job(active_job)
+        
         # test again
         self.check_for_new_jobs
       end
@@ -32,6 +36,19 @@ class Construction::Queue < ActiveRecord::Base
     
     # don't let the position numbers get to large
     self.reset_job_positions
+  end
+  
+  def create_event_for_job(active_job)
+    #create entry for event table
+    event = Event::Event.new(
+        character_id: self.settlement.owner_id,   # get current character id
+        execute_at: active_job.finished_at,
+        event_type: "construction_active_job",
+        local_event_id: active_job.id,
+    )
+    if !event.save # this is the final step; this makes sure, something is actually executed
+      raise ArgumentError.new('could not create event')
+    end
   end
   
   def max_position

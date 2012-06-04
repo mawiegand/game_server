@@ -7,6 +7,11 @@ class Settlement::Slot < ActiveRecord::Base
   has_many   :jobs,        :class_name => "Contstruction::Job",      :foreign_key => "slot_id",        :inverse_of => :slot
 
 
+  def empty?
+    return self.building_id.nil?
+  end
+
+
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
   # (= does not check the rules). calls all necesary handlers to

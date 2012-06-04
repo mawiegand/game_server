@@ -1,5 +1,6 @@
 require 'ticker/movement_handler'
 require 'ticker/battle_handler'
+require 'ticker/construction_handler'
 
 module Ticker
 
@@ -17,6 +18,7 @@ module Ticker
   # register handlers that should be used by the runloop
   Ticker.add_handler_class(Ticker::MovementHandler);
   Ticker.add_handler_class(Ticker::BattleHandler);
+  Ticker.add_handler_class(Ticker::ConstructionHandler);
 
   class Runloop
     

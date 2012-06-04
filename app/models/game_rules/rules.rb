@@ -713,7 +713,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*LEVEL*60',
+          :production_time => '2*(LEVEL+1)*60',
 
           :abilities   => {
 
@@ -744,7 +744,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*LEVEL*60',
+          :production_time => '2*(LEVEL+1)*60',
 
           :abilities   => {
 
@@ -775,7 +775,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*LEVEL*60',
+          :production_time => '2*(LEVEL+1)*60',
 
           :abilities   => {
 
@@ -806,7 +806,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*LEVEL*60',
+          :production_time => '2*(LEVEL+1)*60',
 
         },              #   END OF Ballistisches Erprobungszentrum
         {               #   Festungsanlagen
@@ -833,7 +833,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
-          :production_time => '2*LEVEL*60',
+          :production_time => '2*(LEVEL+1)*60',
 
           :abilities   => {
 
