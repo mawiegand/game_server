@@ -28,31 +28,45 @@ class Ticker::ConstructionHandler
       
       runloop.say "Process active construction job #{ active_job.job_id } type '#{ job.job_type }' in settlement #{ active_job.queue.settlement_id }"
       
+      slot = job.slot 
+      if slot.nil?
+        runloop.say "No slot given for job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
+      
       # construction code
       if job.job_type == 'create'
-        runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR
-        
-        slot = job.slot 
-        runloop.say "No slot given for job '#{ job.id }'.", Logger::ERROR if slot.nil?
-        
         if slot.empty?
-          
           # TODO check requirements like enough resources 
           
           slot.create_building(job.building_id)
         else
           runloop.say "Could not create building, slot id #{ slot.id } is not empty", Logger::ERROR
-        end
-        
+        end        
       elsif job.job_type == 'upgrade'
-        runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR
+        if !slot.empty?
+          # TODO check requirements like enough resources 
+          
+          slot.upgrade_building(job.building_id)
+        else
+          runloop.say "Could not upgrade building, slot id #{ slot.id } is empty", Logger::ERROR
+        end        
       elsif job.job_type == 'downgrade'
-        runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR
+        if !slot.empty?
+          # TODO check requirements like enough resources 
+          
+          slot.downgrade_building(job.building_id)
+        else
+          runloop.say "Could not destroy building, slot id #{ slot.id } is empty", Logger::ERROR
+        end        
       elsif job.job_type == 'destroy'
-        runloop.say "Valid job type '#{ job.job_type }'.", Logger::ERROR
-      else
-        runloop.say "Invalid job type '#{ job.job_type }'.", Logger::ERROR
-        return
+        if !slot.empty?
+          # TODO check requirements like enough resources 
+          
+          slot.destroy_building(job.building_id)
+        else
+          runloop.say "Could not destroy building, slot id #{ slot.id } is empty", Logger::ERROR
+        end        
       end
       
       queue = job.queue
