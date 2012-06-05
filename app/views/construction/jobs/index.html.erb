@@ -20,8 +20,8 @@ end %>
 
 <% @construction_jobs.each do |construction_job| %>
   <tr>
-    <td><%= construction_job.queue_id %></td>
-    <td><%= construction_job.slot_id %></td>
+    <td><%= link_to("#{construction_job.queue_id}", construction_queue_path(construction_job.queue_id)) %></td>
+    <td><%= link_to("#{construction_job.slot_id}", settlement_slot_path(construction_job.slot_id)) %></td>
     <td><%= construction_job.building_id %></td>
     <td><%= construction_job.position %></td>
     <td><%= construction_job.level_before %></td>
