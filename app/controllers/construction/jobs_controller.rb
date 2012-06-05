@@ -73,12 +73,15 @@ class Construction::JobsController < ApplicationController
     
     @construction_job = Construction::Job.new(@job)
     queue = @construction_job.queue
-    @construction_job.level_after = @construction_job.level_before + 1
+    @construction_job.level_after = @construction_job.next_level
     @construction_job.position = queue.max_position + 1
     @construction_job.save
     
     queue.reload
     queue.check_for_new_jobs
+    
+    slot = @construction_job.slot
+    slot.job_created(@construction_job)
     
     respond_to do |format|
       if @construction_job.save
@@ -111,6 +114,11 @@ class Construction::JobsController < ApplicationController
   # DELETE /construction/jobs/1.json
   def destroy
     @construction_job = Construction::Job.find(params[:id])
+    
+    # test if there are jobs depending on this one, if not, remove job
+    
+    # call cancel at slot to remove the building id if there is no building in slot
+    @construction_job.slot.job_cancelled(@construction_job)
     @construction_job.destroy
 
     respond_to do |format|

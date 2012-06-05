@@ -8,7 +8,7 @@ class Settlement::Slot < ActiveRecord::Base
 
 
   def empty?
-    return self.building_id.nil?
+    return self.level == 0 || self.level.nil?
   end
 
 
@@ -133,6 +133,24 @@ class Settlement::Slot < ActiveRecord::Base
       logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      
     end
   end
-
+  
+  # method is called whenever a user cancels a planned job
+  def job_created(job)
+    
+    if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
+      self.building_id = job.building_id
+      self.level = 0
+      self.save
+    end
+  end
+  
+  # method is called whenever a user cancels a planned job
+  def job_cancelled(job)
+    if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
+      self.building_id = nil
+      self.level = nil
+      self.save
+    end
+  end
   
 end
