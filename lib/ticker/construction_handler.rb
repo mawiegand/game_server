@@ -34,12 +34,17 @@ class Ticker::ConstructionHandler
         return
       end 
       
+      runloop.say "1"
+
       # construction code
       if job.job_type == 'create'
+        runloop.say "2"
         if slot.empty?
           # TODO check requirements like enough resources 
-          
+          runloop.say "3"
+
           slot.create_building(job.building_id)
+          runloop.say "4"
         else
           runloop.say "Could not create building, slot id #{ slot.id } is not empty", Logger::ERROR
         end        
@@ -47,7 +52,7 @@ class Ticker::ConstructionHandler
         if !slot.empty?
           # TODO check requirements like enough resources 
           
-          slot.upgrade_building(job.building_id)
+          slot.upgrade_building
         else
           runloop.say "Could not upgrade building, slot id #{ slot.id } is empty", Logger::ERROR
         end        
@@ -55,7 +60,7 @@ class Ticker::ConstructionHandler
         if !slot.empty?
           # TODO check requirements like enough resources 
           
-          slot.downgrade_building(job.building_id)
+          slot.downgrade_building
         else
           runloop.say "Could not destroy building, slot id #{ slot.id } is empty", Logger::ERROR
         end        
@@ -63,7 +68,7 @@ class Ticker::ConstructionHandler
         if !slot.empty?
           # TODO check requirements like enough resources 
           
-          slot.destroy_building(job.building_id)
+          slot.destroy_building
         else
           runloop.say "Could not destroy building, slot id #{ slot.id } is empty", Logger::ERROR
         end        

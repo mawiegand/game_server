@@ -15,7 +15,7 @@
     <Requirement id="building_fortress_fortification" min_level="1" />  
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*6</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
     <Abilities> <!-- just for grouping -->
       <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
       <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
@@ -35,7 +35,7 @@
     <Requirement id="building_fortress_fortification" min_level="1" />  
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*6</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
     <Abilities> <!-- just for grouping -->
       <UnitProduction category="unit_category_cavalry" queue="unit_cavalry_queue" />
       <UnitProductionSpeedup category="unit_category_cavalry">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
@@ -54,7 +54,7 @@
     <Requirement id="building_fortress_fortification" min_level="1" />  
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*6</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
     <Abilities> <!-- just for grouping -->
       <UnitProduction category="unit_category_infantry" queue="unit_infantry_queue" />
       <UnitProductionSpeedup category="unit_category_infantry">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
@@ -74,7 +74,7 @@
     <Requirement id="building_fortress_fortification" min_level="1" />  
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*6</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
   </Building>
   
   <Building id="building_fortress_fortification" group="military" category="building_category_fortress_fortification" buyable="true" destructable="false" demolishable="false">  
@@ -88,7 +88,7 @@
     </Description>
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*6</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
     <Abilities> <!-- just for grouping -->
       <UnlockQueue  queue="queue_buildings" />
       <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>

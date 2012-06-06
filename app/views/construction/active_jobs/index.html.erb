@@ -6,6 +6,7 @@ end %>
 
 <table>
   <tr>
+    <th>Event</th>
     <th>Queue</th>
     <th>Job</th>
     <th>Started at</th>
@@ -18,6 +19,7 @@ end %>
 
 <% @construction_active_jobs.each do |construction_active_job| %>
   <tr>
+    <td><%= construction_active_job.event_id %></td>
     <td><%= construction_active_job.queue_id %></td>
     <td><%= construction_active_job.job_id %></td>
     <td><%= construction_active_job.started_at %></td>

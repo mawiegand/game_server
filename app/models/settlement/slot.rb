@@ -21,7 +21,7 @@ class Settlement::Slot < ActiveRecord::Base
   # responsible for updating the slot and propagating all effects
   # that are related to this change.
   def create_building(building_id_to_build)
-    raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.building_id.nil?
+    raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.empty?
     self.building_id = building_id_to_build
     self.level = 1
     propagate_abilities(building_id_to_build, 0, 1)
@@ -136,6 +136,8 @@ class Settlement::Slot < ActiveRecord::Base
   
   # method is called whenever a user cancels a planned job
   def job_created(job)
+    
+    logger.debug '----> ' + job.inspect
     
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = job.building_id

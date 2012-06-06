@@ -73,7 +73,6 @@ class Construction::JobsController < ApplicationController
     
     @construction_job = Construction::Job.new(@job)
     queue = @construction_job.queue
-    @construction_job.level_after = @construction_job.next_level
     @construction_job.position = queue.max_position + 1
     @construction_job.save
     
@@ -117,9 +116,17 @@ class Construction::JobsController < ApplicationController
     
     # test if there are jobs depending on this one, if not, remove job
     
+    queue = @construction_job.queue
+    
     # call cancel at slot to remove the building id if there is no building in slot
-    @construction_job.slot.job_cancelled(@construction_job)
-    @construction_job.destroy
+    if @construction_job.last_in_slot
+      @construction_job.slot.job_cancelled(@construction_job)
+      @construction_job.destroy
+      
+      queue.check_for_new_jobs
+    else
+      raise ForbiddenError.new('Could only remove last job of slot')        
+    end
 
     respond_to do |format|
       format.html { redirect_to construction_jobs_url }

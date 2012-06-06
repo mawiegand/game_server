@@ -42,7 +42,7 @@ class ActionsController < ApplicationController
           url: construction_jobs_path,
           method: 'POST',
           name: 'Create Construction Job',
-          parameters: 'construction_job[queue_id], construction_job[slot_id], construction_job[building_id], construction_job[level_before], construction_job[job_type]' 
+          parameters: 'construction_job[queue_id], construction_job[slot_id], construction_job[building_id], construction_job[level_after], construction_job[job_type]' 
         },
       ],
     }
