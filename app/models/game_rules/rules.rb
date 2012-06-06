@@ -1209,7 +1209,13 @@ class GameRules::Rules
           :domain      => :settlement,
           :base_threads=> 1,
           :base_slots  => 4,
-
+          :name        => {
+            
+            :en_US => "Construction of Buildings",
+  
+            :de_DE => "Gebäudeproduktion",
+                
+          },
           :produces    => [
             0,
             1,
@@ -1225,7 +1231,13 @@ class GameRules::Rules
           :domain      => :settlement,
           :base_threads=> 1,
           :base_slots  => 4,
-
+          :name        => {
+            
+            :en_US => "Construction of Fortifications",
+  
+            :de_DE => "Aufbau von Verteidigungsanlagen",
+                
+          },
           :produces    => [
             
           ],
@@ -1239,7 +1251,13 @@ class GameRules::Rules
           :domain      => :settlement,
           :base_threads=> 1,
           :base_slots  => 4,
-
+          :name        => {
+            
+            :en_US => "Training of Infantry",
+  
+            :de_DE => "Infanterieausbildung",
+                
+          },
           :produces    => [
             0,
             
@@ -1254,7 +1272,13 @@ class GameRules::Rules
           :domain      => :character,
           :base_threads=> 1,
           :base_slots  => 4,
-
+          :name        => {
+            
+            :en_US => "Forschung",
+  
+            :de_DE => "Research",
+                
+          },
           :produces    => [
             0,
             
@@ -1269,7 +1293,13 @@ class GameRules::Rules
           :domain      => :alliance,
           :base_threads=> 1,
           :base_slots  => 1,
-
+          :name        => {
+            
+            :en_US => "Allianzweite Forschung",
+  
+            :de_DE => "Alliance Research",
+                
+          },
           :produces    => [
             0,
             

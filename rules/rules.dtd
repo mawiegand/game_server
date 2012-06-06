@@ -129,7 +129,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Queue (ProductionCategory*)>
+<!ELEMENT Queue (Name+, ProductionCategory*)>
 <!ATTLIST Queue 
   id ID #REQUIRED 
   category IDREF #REQUIRED

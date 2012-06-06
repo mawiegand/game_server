@@ -386,7 +386,9 @@ end
           :domain      => :<xsl:value-of select="@domain"/>,
           :base_threads=> <xsl:value-of select="@base_threads"/>,
           :base_slots  => <xsl:value-of select="@base_slots"/>,
-
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
           :produces    => [
             <xsl:for-each select="ProductionCategory">
               <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
