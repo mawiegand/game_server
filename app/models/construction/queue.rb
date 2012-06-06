@@ -40,14 +40,14 @@ class Construction::Queue < ActiveRecord::Base
   
   def create_event_for_job(active_job)
     #create entry for event table
-    event = Event::Event.new(
+    event = active_job.build_event(
         character_id: self.settlement.owner_id,   # get current character id
         execute_at: active_job.finished_at,
         event_type: "construction_active_job",
         local_event_id: active_job.id,
     )
-    if !event.save # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event')
+    if !active_job.save  # this is the final step; this makes sure, something is actually executed
+      raise ArgumentError.new('could not create event for active job')
     end
   end
   
@@ -72,7 +72,11 @@ class Construction::Queue < ActiveRecord::Base
       raise InternalServerError.new('Could not add speedup bonus of type #{origin_type.to_s}.');
     end
   end
-
+  
+  def sorted_jobs_for_slot(slot)
+    jobs = self.jobs.select{ |job| job.slot == slot }
+    jobs.sort_by(&:position)
+  end
 
   protected
 
