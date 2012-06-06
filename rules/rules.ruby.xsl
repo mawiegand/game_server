@@ -117,6 +117,7 @@ class GameRules::Rules
                       :build => <xsl:value-of select="//General/Version/@build" />, 
         },
 
+  <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
   <xsl:apply-templates select="BuildingCategories" />
@@ -141,20 +142,51 @@ end
 
 </xsl:template>
 
-<!-- Name, Description -->
+<!-- Name, Flavour (One-Liner, Short Flavour Text), Description -->
 <xsl:template match="Name">
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
   
+<xsl:template match="Flavour">
+            :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
+
 <xsl:template match="Description">
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
+
 
 <xsl:template match="Effectiveness">
             :<xsl:value-of select="@category"/> => <xsl:apply-templates/>,
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 	
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
+
+
+
+<xsl:template match="ResourceTypes">
+# ## RESOURCE TYPES ##########################################################
+  
+      :resource_types => [  # ALL RESOURCE TYPES
+<xsl:for-each select="Resource">
+        {               #   <xsl:value-of select="@id"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :stealable   => <xsl:value-of select="@stealable"/>,
+          :rating_value=> <xsl:value-of select="@ratingValue"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },          
+        },              #   END OF <xsl:value-of select="@id"/>
+</xsl:for-each>
+      ],                # END OF RESOURCE TYPES
+</xsl:template>
 
 
 <xsl:template match="UnitTypes">

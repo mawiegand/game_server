@@ -75,6 +75,120 @@ class GameRules::Rules
         },
 
   
+# ## RESOURCE TYPES ##########################################################
+  
+      :resource_types => [  # ALL RESOURCE TYPES
+
+        {               #   resource_wood
+          :id          => 0, 
+          :symbolic_id => :resource_wood,
+          :stealable   => true,
+          :rating_value=> 1,
+          :name        => {
+            
+            :de_DE => "Holz",
+  
+            :en_US => "Wood",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Ein Brett in Ehren kann niemand verwehren.",
+  
+            :en_US => "Hard as wood.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohtoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffe.</p>",
+  
+            :en_US => "<p>Basic resource for constructing buildings and siege machines.</p>",
+                
+          },          
+        },              #   END OF resource_wood
+        {               #   resource_stone
+          :id          => 1, 
+          :symbolic_id => :resource_stone,
+          :stealable   => true,
+          :rating_value=> 1,
+          :name        => {
+            
+            :de_DE => "Stein",
+  
+            :en_US => "Stone",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Grau, hart, überall zu finden.",
+  
+            :en_US => "Harder than wood.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Steine -- in der STEINzeit DER Rohstoff schlechthin. Kann gesammelt, gestapelt, geschärft und geworfen werden. Mehr muss man nicht sagen.</p>",
+  
+            :en_US => "<p>Basic resource for constructing buildings and weapons.</p>",
+                
+          },          
+        },              #   END OF resource_stone
+        {               #   resource_fur
+          :id          => 2, 
+          :symbolic_id => :resource_fur,
+          :stealable   => true,
+          :rating_value=> 1,
+          :name        => {
+            
+            :de_DE => "Fell",
+  
+            :en_US => "Fur",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!",
+  
+            :en_US => "Softer than wood.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Hällt warm, hällt Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>",
+  
+            :en_US => "<p>Basic resource to be worn by warriors and also utilized in buildings..</p>",
+                
+          },          
+        },              #   END OF resource_fur
+        {               #   resource_cash
+          :id          => 3, 
+          :symbolic_id => :resource_cash,
+          :stealable   => false,
+          :rating_value=> 0,
+          :name        => {
+            
+            :de_DE => "Kröte",
+  
+            :en_US => "Toad",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Jeder mag Kröten! Die Steinzeitwährung.",
+  
+            :en_US => "Everybody loves toads! Stoneage-Cash.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Quasi-Wärhung in der Steinzeit. Gerne genommen in jeglichen Tauschhandeln.</p>",
+  
+            :en_US => "<p>Currency of the stone-age.</p>",
+                
+          },          
+        },              #   END OF resource_cash
+      ],                # END OF RESOURCE TYPES
+
   
       :unit_categories => [  # ALL UNIT CATEGORIES
 

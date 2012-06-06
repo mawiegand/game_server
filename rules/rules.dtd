@@ -31,8 +31,12 @@
 <!ELEMENT QueueCategories (QueueCategory*)>
 
 <!--Resource-->
-<!ELEMENT Resource (Name+, RatingValue, TakeoverValue, StealRatio, DestroyRatio, SafeStorage, MaxStorage, Production)>
-<!ATTLIST Resource id ID #REQUIRED hidden (0 | 1) "0">
+<!ELEMENT Resource (Name+, Flavour+, Description+)>
+<!ATTLIST Resource 
+  id ID #REQUIRED hidden (0 | 1) "0"
+	ratingValue CDATA "1"
+	stealable (true | false) "true"
+>
 
 <!--Settlements-->
 <!ELEMENT Settlement (Name+, Description+, BuildingSlot*)>

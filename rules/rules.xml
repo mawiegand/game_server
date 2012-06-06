@@ -77,10 +77,11 @@
     </Languages>
   </General>
   <xi:include href="rules_settlements.xml" />
-  <xi:include href="rules_units.xml"  />
-  <xi:include href="rules_unitcategories.xml"  />
-  <xi:include href="rules_buildings.xml"  />
-  <xi:include href="rules_buildingcategories.xml"  />
+  <xi:include href="rules_resources.xml" />
+  <xi:include href="rules_units.xml" />
+  <xi:include href="rules_unitcategories.xml" />
+  <xi:include href="rules_buildings.xml" />
+  <xi:include href="rules_buildingcategories.xml" />
   <xi:include href="rules_queuecategories.xml" />
   <xi:include href="rules_queues.xml" />
 </Rules>
