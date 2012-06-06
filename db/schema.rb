@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606143023) do
+ActiveRecord::Schema.define(:version => 20120606141553) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20120606143023) do
     t.float    "progress",    :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "event_id"
   end
 
   create_table "construction_jobs", :force => true do |t|
