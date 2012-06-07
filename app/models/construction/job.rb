@@ -40,13 +40,13 @@ class Construction::Job < ActiveRecord::Base
     return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
     
     # correct level
-    return false if self.job_type == TYPE_CREATE && self.slot.last_level != 1
-    return false if self.job_type == TYPE_UPGRADE && self.level_after != self.slot.last_level + 1
-    return false if self.job_type == TYPE_DOWNGRADE && self.level_after != self.slot.last_level - 1
-    return false if self.job_type == TYPE_DESTROY && (self.slot.last_level != 0 || !self.slot.last_level.nil?)
+    return false if self.job_type == TYPE_CREATE && (self.level_after != 1 || slot.level != 0)
+    return false if self.job_type == TYPE_UPGRADE && (self.level_after != slot.last_level + 1) #  || self.level_after > slot.max_level
+    return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
+    return false if self.job_type == TYPE_DESTROY && (slot.last_level.nil? || slot.last_level != 0)
     
     # correct building id
-    return false if self.building_id != slot.building_id
+    return false if slot.level != 0 && self.building_id != slot.building_id
     
     true
   end
