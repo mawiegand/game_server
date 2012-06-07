@@ -1,6 +1,10 @@
 class Messaging::MessagesController < ApplicationController
   layout 'messaging'
 
+  before_filter :authenticate
+  before_filter :deny_api,      :except => [:show, :create]
+
+
   # GET /messaging/messages
   # GET /messaging/messages.json
   def index
@@ -16,10 +20,23 @@ class Messaging::MessagesController < ApplicationController
   # GET /messaging/messages/1.json
   def show
     @messaging_message = Messaging::Message.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @messaging_message }
+    raise NotFoundError.new('Message Not Found') if @messaging_message.nil?
+    
+    last_modified = @messaging_message.updated_at
+    
+    roleSender    = determine_access_role(@messaging_message.sender_id,    nil)
+    roleRecipient = determine_access_role(@messaging_message.recipient_id, nil)
+    
+    role = roleSender == :default ? roleRecipient : roleSender          # chose the higher role by a trick: roleSender can only be :default or :owner (we do not care which one ot chose for :admin and :staff)
+    raise ForbiddenError.new('Access Forbidden. Messages can only be accessed by sender, recipient and admins.') unless admin? || role == :owner
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html {}
+        format.json do
+          render json: @messaging_message, :only => Messaging::Message.readable_attributes(role)
+        end
+      end
     end
   end
 
@@ -43,16 +60,22 @@ class Messaging::MessagesController < ApplicationController
   # POST /messaging/messages.json
   def create
     @messaging_message = Messaging::Message.new(params[:messaging_message])
+    
+    raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
+    role = determine_access_role(@messaging_message.sender_id,    nil)    
+    raise ForbiddenError.new("Tried to forge a message from another sender.") unless role == :owner || admin? || staff?
 
-    respond_to do |format|
-      if @messaging_message.save
-        format.html { redirect_to @messaging_message, notice: 'Message was successfully created.' }
-        format.json { render json: @messaging_message, status: :created, location: @messaging_message }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @messaging_message.errors, status: :unprocessable_entity }
-      end
+    if !@messaging_message.save 
+      raise BadRequestError.new('could not save and deliver message')  if event.save
     end
+        
+    respond_to do |format|
+      format.html do
+        raise ForbiddenError.new('Backend Access Forbidden.') unless admin? || staff?
+        redirect_to  @messaging_message, notice: 'Message was successfully created.' 
+      end
+      format.json { render json: [], status: :created, location: @messaging_message }
+    end    
   end
 
   # PUT /messaging/messages/1
