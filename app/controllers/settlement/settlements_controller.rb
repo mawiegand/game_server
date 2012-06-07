@@ -17,7 +17,7 @@ class Settlement::SettlementsController < ApplicationController
       @character = Fundamental::Character.find(params[:character_id])
       raise NotFoundError.new('Character not found.') if @character.nil?
       @settlement_settlements = @character.settlements
-      @settlement_settlements = [] if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
+      @settlement_settlements = []                         if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
       role = determine_access_role(@character.id, @character.alliance_id)
     elsif params.has_key?(:location_id)         # find "all" settlements at a location (will be one or empty)
       @location = Map::Location.find(params[:location_id])
@@ -32,6 +32,7 @@ class Settlement::SettlementsController < ApplicationController
       end
     else                                        # return the complete index, whereas this will only be allowed for the backend (see below)
       @asked_for_index = true
+      raise ForbiddenError.new('AccessForbidden') unless admin? || staff?
     end   
     
     render_not_modified_or(last_modified) do
@@ -43,9 +44,7 @@ class Settlement::SettlementsController < ApplicationController
           end 
         end
         format.json do
-          if @asked_for_index 
-            raise ForbiddenError.new('Access Forbidden')        
-          end  
+          raise ForbiddenError.new('Access Forbidden')    if @asked_for_index   
 
           logger.debug "Access with role #{role}."
 
@@ -61,8 +60,7 @@ class Settlement::SettlementsController < ApplicationController
     @settlement_settlement = Settlement::Settlement.find(params[:id])
     raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
 
-    last_modified = nil 
-    last_modified =  @settlement_settlement.updated_at
+    last_modified = @settlement_settlement.updated_at
 
     role = determine_access_role(@settlement_settlement.owner_id, @settlement_settlement.alliance_id)
     logger.debug "Access with role #{role}."

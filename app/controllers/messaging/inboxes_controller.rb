@@ -1,14 +1,41 @@
 class Messaging::InboxesController < ApplicationController
   layout 'messaging'
+  
+  before_filter :authenticate
+  before_filter :deny_api,      :except => [:index, :show]
 
   # GET /messaging/inboxes
   # GET /messaging/inboxes.json
   def index
-    @messaging_inboxes = Messaging::Inbox.all
+    last_modified = nil
+    
+    role = :default # assume lowest possible role
+    
+    if params.has_key?(:character_id)
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Character not found.') if @character.nil?
+      inbox = @character.inbox 
+      last_modified = inbox.updated_at if !inbox.nil?
+      @messaging_inboxes = inbox.nil?  ? [] : [ inbox ]
+      role = determine_access_role(@character.id, @character.alliance_id)
+    else
+      @asked_for_index = true
+      raise ForbiddenError.new('AccessForbidden') unless admin? || staff?
+    end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @messaging_inboxes }
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @messaging_inboxes.nil?
+            @messaging_inboxes = Messaging::Inbox.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          raise ForbiddenError.new('Access Forbidden')    if @asked_for_index      
+          render json: @messaging_inboxes, :only => Messaging::Inbox.readable_attributes(role)
+        end
+      end
     end
   end
 
@@ -16,11 +43,20 @@ class Messaging::InboxesController < ApplicationController
   # GET /messaging/inboxes/1.json
   def show
     @messaging_inbox = Messaging::Inbox.find(params[:id])
+    raise NotFoundError.new('Inbox Not Found') if @messaging_inbox.nil?
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @messaging_inbox }
-    end
+    last_modified = @messaging_inbox.updated_at
+
+    role = determine_access_role(@messaging_inbox.owner_id, nil)  # no alliance access granted
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do
+          render json: @messaging_inbox, :only => Messaging::Inbox.readable_attributes(role)
+        end
+      end
+    end 
   end
 
   # GET /messaging/inboxes/new
