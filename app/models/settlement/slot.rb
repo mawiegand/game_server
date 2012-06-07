@@ -4,7 +4,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id",  :inverse_of => :slots
   
-  has_many   :jobs,        :class_name => "Contstruction::Job",      :foreign_key => "slot_id",        :inverse_of => :slot
+  has_many   :jobs,        :class_name => "Construction::Job",      :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
 
 
   def empty?
@@ -150,6 +150,17 @@ class Settlement::Slot < ActiveRecord::Base
       self.building_id = nil
       self.level = nil
       self.save
+    end
+  end
+  
+  # returns the level of the latest queued jobs, if there are any or
+  # it returns the level of the slot itself
+  # works for upgrades as well as downgrades
+  def last_level
+    if self.jobs.empty?
+      return self.level.nil? ? 0 : self.level
+    else
+      return self.jobs.last.level_after
     end
   end
   

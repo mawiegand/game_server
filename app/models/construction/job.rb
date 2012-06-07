@@ -26,4 +26,34 @@ class Construction::Job < ActiveRecord::Base
     self == self.queue.sorted_jobs_for_slot(self.slot).last
   end
   
+  # checks if a job can be queueable due to requirements like e.g. building levels
+  def queueable?
+    
+    # slot = Settlement::Slot.find(self.slot_id)
+    slot = self.slot
+    
+    logger.debug slot.inspect
+    logger.debug slot.jobs.inspect
+    
+    
+    # same job type if queue has already jobs
+    return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
+    
+    # correct level
+    return false if self.job_type == TYPE_CREATE && self.slot.last_level != 1
+    return false if self.job_type == TYPE_UPGRADE && self.level_after != self.slot.last_level + 1
+    return false if self.job_type == TYPE_DOWNGRADE && self.level_after != self.slot.last_level - 1
+    return false if self.job_type == TYPE_DESTROY && (self.slot.last_level != 0 || !self.slot.last_level.nil?)
+    
+    # correct building id
+    return false if self.building_id != slot.building_id
+    
+    true
+  end
+  
+  # checks if user owns enough resources for job and reduces them instantly
+  def reduce_ressources
+    true
+  end
+  
 end

@@ -72,6 +72,8 @@ class Construction::JobsController < ApplicationController
     @job = params[:construction_job]
     
     @construction_job = Construction::Job.new(@job)
+    raise ForbiddenError.new('wrong requirements') unless @construction_job.queueable?
+    raise ForbiddenError.new('not enough ressources') unless @construction_job.reduce_ressources
     queue = @construction_job.queue
     @construction_job.position = queue.max_position + 1
     @construction_job.save
@@ -122,6 +124,7 @@ class Construction::JobsController < ApplicationController
     if @construction_job.last_in_slot
       @construction_job.slot.job_cancelled(@construction_job)
       @construction_job.destroy
+      queue.reload
       
       queue.check_for_new_jobs
     else
