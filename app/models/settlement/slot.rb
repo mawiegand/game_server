@@ -148,7 +148,6 @@ class Settlement::Slot < ActiveRecord::Base
   def job_cancelled(job)
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = nil
-      self.level = nil
       self.save
     end
   end
