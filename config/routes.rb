@@ -50,9 +50,9 @@ GameServer::Application.routes.draw do
         resources :archive_entries
         resources :messages
       end
-      resources :inboxes, :path => "/fundamental/characters/:character_id/inboxes", :module => 'messaging'            
-      resources :outboxes, :path => "/fundamental/characters/:character_id/outboxes", :module => 'messaging'            
-      resources :archives, :path => "/fundamental/characters/:character_id/archives", :module => 'messaging'            
+      resources :inboxes,  :path => "/fundamental/characters/:character_id/inboxes",  :module => 'messaging', :only => [:index]            
+      resources :outboxes, :path => "/fundamental/characters/:character_id/outboxes", :module => 'messaging', :only => [:index]            
+      resources :archives, :path => "/fundamental/characters/:character_id/archives", :module => 'messaging', :only => [:index]            
 
 
       namespace :settlement do 
