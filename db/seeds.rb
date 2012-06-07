@@ -53,7 +53,10 @@ character_data=[ {},
 alliance_data.each do |ally|
   if ally[:id] == 0
     ally[:members].each do |member|
-      Fundamental::Character.create( name: character_data[member][:name] )
+      character = Fundamental::Character.create( name: character_data[member][:name] )
+      character.create_inbox
+      character.create_outbox
+      character.create_archive
     end
   else 
     alliance = Fundamental::Alliance.create( tag: ally[:tag], name: ally[:name] )
@@ -62,6 +65,10 @@ alliance_data.each do |ally|
       character.alliance_tag = alliance.tag
       character.identifier = character_data[member][:identifier] unless character_data[member][:identifier].blank?
       character.save
+      
+      character.create_inbox
+      character.create_outbox
+      character.create_archive
     end
     alliance.save
   end
