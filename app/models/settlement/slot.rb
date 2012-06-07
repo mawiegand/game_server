@@ -137,8 +137,6 @@ class Settlement::Slot < ActiveRecord::Base
   # method is called whenever a user cancels a planned job
   def job_created(job)
     
-    logger.debug '----> ' + job.inspect
-    
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = job.building_id
       self.level = 0

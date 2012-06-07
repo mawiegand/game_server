@@ -25,8 +25,6 @@ class Construction::Queue < ActiveRecord::Base
         active_job.finished_at = Time.now + (next_job.building_time / self.speed)
         next_job.save
         
-        logger.debug '---> ' + next_job.building_time.to_s + ' ' + self.speed.to_s + ' ' + (next_job.building_time / self.speed).to_s
-        
         self.create_event_for_job(active_job)
         
         # test again
