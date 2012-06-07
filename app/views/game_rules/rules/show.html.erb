@@ -19,6 +19,22 @@
   <hr />
 <% end %>
 
+<% if (@only.length == 0 || @only.include?(:resource_types)) && !@rules.resource_types.nil? %>
+  <h1>Resource Types</h1>
+  <% @rules.resource_types.each do |resource| %>
+    <h2><%= resource[:name][:en_US] %></h2>
+    <table>
+      <% resource.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  <hr />
+<% end %>
+
 
 <% if (@only.length == 0 || @only.include?(:queue_types)) && !@rules.queue_types.nil? %>
   <h1>Queue Types</h1>

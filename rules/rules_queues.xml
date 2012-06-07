@@ -3,18 +3,28 @@
 
 <QueueTypes>
   <Queue id="queue_buildings" category="queue_category_construction" domain="settlement" base_threads="1" base_slots="4">
+    <Name>Construction of Buildings</Name>
+    <Name lang="de_DE">Gebäudeproduktion</Name>
     <ProductionCategory category="building_category_fortress_main" />
     <ProductionCategory category="building_category_fortress_tower" />
   </Queue>
   <Queue id="queue_fortifications" category="queue_category_construction" domain="settlement" base_threads="1" base_slots="4">
+    <Name>Construction of Fortifications</Name>
+    <Name lang="de_DE">Aufbau von Verteidigungsanlagen</Name>
   </Queue>
   <Queue id="queue_infantry" category="queue_category_training" base_threads="1" base_slots="4">
+    <Name>Training of Infantry</Name>
+    <Name lang="de_DE">Infanterieausbildung</Name>
     <ProductionCategory category="unit_category_infantry" />
   </Queue>
   <Queue id="queue_research" category="queue_category_research" domain="character" base_threads="1" base_slots="4">
+    <Name>Forschung</Name>
+    <Name lang="de_DE">Research</Name>
     <ProductionCategory category="science_category_player" />
   </Queue>
   <Queue id="queue_alliance_research" category="queue_category_research" domain="alliance" base_threads="1" base_slots="1">
+    <Name>Allianzweite Forschung</Name>
+    <Name lang="de_DE">Alliance Research</Name>
     <ProductionCategory category="science_category_alliance" />
   </Queue>
 </QueueTypes>
