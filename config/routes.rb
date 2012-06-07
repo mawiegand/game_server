@@ -22,7 +22,7 @@ GameServer::Application.routes.draw do
         resources :characters do
           resources :alliance_shouts
           resource :account, :module => "shop", :only => [ :show ]
-          resources :settlements, :module => 'settlement'          
+          resources :settlements, :module => 'settlement'     
         end
         
         resources :alliances do
@@ -50,6 +50,10 @@ GameServer::Application.routes.draw do
         resources :archive_entries
         resources :messages
       end
+      resources :inboxes, :path => "/fundamental/characters/:character_id/inboxes", :module => 'messaging'            
+      resources :outboxes, :path => "/fundamental/characters/:character_id/outboxes", :module => 'messaging'            
+      resources :archives, :path => "/fundamental/characters/:character_id/archives", :module => 'messaging'            
+
 
       namespace :settlement do 
         resources :settlements do 
