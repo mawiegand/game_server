@@ -16,7 +16,7 @@ class Messaging::InboxEntriesController < ApplicationController
       @inbox = Messaging::Inbox.find(params[:inbox_id])
       raise NotFoundError.new('Inbox not found.') if @inbox.nil?
       role = determine_access_role(@inbox.owner_id, nil)   # no privileged alliance access
-      raise ForbiddenError.new('Access to inbox denied.') unless :role == :owner || admin? || staff?
+      raise ForbiddenError.new('Access to inbox denied.') unless role == :owner || admin? || staff?
       @messaging_inbox_entries = @inbox.entries || []
     else
       @asked_for_index = true
