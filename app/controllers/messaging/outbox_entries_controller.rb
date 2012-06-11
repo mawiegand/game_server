@@ -1,15 +1,42 @@
 class Messaging::OutboxEntriesController < ApplicationController
   layout 'messaging'
 
+  before_filter :authenticate
+  before_filter :deny_api,      :except => [:index]
+
+
   # GET /messaging/outbox_entries
   # GET /messaging/outbox_entries.json
   def index
-    @messaging_outbox_entries = Messaging::OutboxEntry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @messaging_outbox_entries }
+    last_modified = nil
+    
+    role = :default # assume lowest possible role
+    
+    if params.has_key?(:outbox_id)
+      @outbox = Messaging::Outbox.find(params[:outbox_id])
+      raise NotFoundError.new('Outbox not found.') if @outbox.nil?
+      role = determine_access_role(@outbox.owner_id, nil)   # no privileged alliance access
+      raise ForbiddenError.new('Access to outbox denied.') unless role == :owner || admin? || staff?
+      @messaging_outbox_entries = @outbox.entries || []
+    else
+      @asked_for_index = true
+      raise ForbiddenError.new('Access to index of inbox entries forbidden') unless admin? || staff?
     end
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @messaging_outbox_entries.nil?
+            @messaging_outbox_entries = Messaging::OutboxEntry.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          raise ForbiddenError.new('Access Forbidden')    if @asked_for_index      
+          render json: @messaging_outbox_entries, :only => Messaging::OutboxEntry.readable_attributes(role)
+        end
+      end
+    end     
   end
 
   # GET /messaging/outbox_entries/1

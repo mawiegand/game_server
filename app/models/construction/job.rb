@@ -39,14 +39,16 @@ class Construction::Job < ActiveRecord::Base
     # same job type if queue has already jobs
     return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
     
+    logger.debug('before')
     # correct level
-    return false if self.job_type == TYPE_CREATE && (self.level_after != 1 || slot.level != 0)
-    return false if self.job_type == TYPE_UPGRADE && (self.level_after != slot.last_level + 1) #  || self.level_after > slot.max_level
+    return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0))
+    logger.debug('after')
+    return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1) #  || self.level_after > slot.max_level
     return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
-    return false if self.job_type == TYPE_DESTROY && (slot.last_level.nil? || slot.last_level != 0)
+    return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
     # correct building id
-    return false if slot.level != 0 && self.building_id != slot.building_id
+    return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
     
     true
   end
