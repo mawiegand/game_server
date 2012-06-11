@@ -32,9 +32,10 @@ class Construction::Job < ActiveRecord::Base
     # slot = Settlement::Slot.find(self.slot_id)
     slot = self.slot
     
-    logger.debug slot.inspect
-    logger.debug slot.jobs.inspect
+    # logger.debug slot.inspect
+    # logger.debug slot.jobs.inspect
     
+    return false if self.queue && self.queue.max_length <= self.queue.jobs_count
     
     # same job type if queue has already jobs
     return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
