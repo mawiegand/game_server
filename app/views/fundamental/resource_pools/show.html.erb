@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @fundamental_resource_pool.character_id %>
+</p>
+
+<p>
+  <b>Locked at:</b>
+  <%= @fundamental_resource_pool.locked_at %>
+</p>
+
+<p>
+  <b>Locked by:</b>
+  <%= @fundamental_resource_pool.locked_by %>
+</p>
+
+<p>
+  <b>Locked reason:</b>
+  <%= @fundamental_resource_pool.locked_reason %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_resource_pool_path(@fundamental_resource_pool) %> |
+<%= link_to 'Back', fundamental_resource_pools_path %>
