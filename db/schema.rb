@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612143024) do
+ActiveRecord::Schema.define(:version => 20120612184015) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -177,6 +177,19 @@ ActiveRecord::Schema.define(:version => 20120612143024) do
     t.string   "locked_reason"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "productionUpdatedAt"
+    t.decimal  "resource_wood_amount",           :default => 0.0
+    t.decimal  "resource_wood_capacity",         :default => 0.0
+    t.decimal  "resource_wood_production_rate",  :default => 0.0
+    t.decimal  "resource_stone_amount",          :default => 0.0
+    t.decimal  "resource_stone_capacity",        :default => 0.0
+    t.decimal  "resource_stone_production_rate", :default => 0.0
+    t.decimal  "resource_fur_amount",            :default => 0.0
+    t.decimal  "resource_fur_capacity",          :default => 0.0
+    t.decimal  "resource_fur_production_rate",   :default => 0.0
+    t.decimal  "resource_cash_amount",           :default => 0.0
+    t.decimal  "resource_cash_capacity",         :default => 0.0
+    t.decimal  "resource_cash_production_rate",  :default => 0.0
   end
 
   create_table "map_locations", :force => true do |t|
@@ -515,6 +528,38 @@ ActiveRecord::Schema.define(:version => 20120612143024) do
     t.integer  "settlement_queue_buildings_unlock_count",      :default => 0
     t.integer  "settlement_queue_fortifications_unlock_count", :default => 0
     t.integer  "settlement_queue_infantry_unlock_count",       :default => 0
+    t.decimal  "resource_wood_capacity",                       :default => 0.0
+    t.decimal  "resource_wood_production_rate",                :default => 0.0
+    t.decimal  "resource_wood_base_production",                :default => 0.0
+    t.decimal  "resource_wood_production_bonus",               :default => 0.0
+    t.decimal  "resource_wood_production_bonus_buildings",     :default => 0.0
+    t.decimal  "resource_wood_production_bonus_sciences",      :default => 0.0
+    t.decimal  "resource_wood_production_bonus_alliance",      :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",       :default => 0.0
+    t.decimal  "resource_stone_capacity",                      :default => 0.0
+    t.decimal  "resource_stone_production_rate",               :default => 0.0
+    t.decimal  "resource_stone_base_production",               :default => 0.0
+    t.decimal  "resource_stone_production_bonus",              :default => 0.0
+    t.decimal  "resource_stone_production_bonus_buildings",    :default => 0.0
+    t.decimal  "resource_stone_production_bonus_sciences",     :default => 0.0
+    t.decimal  "resource_stone_production_bonus_alliance",     :default => 0.0
+    t.decimal  "resource_stone_production_bonus_effects",      :default => 0.0
+    t.decimal  "resource_fur_capacity",                        :default => 0.0
+    t.decimal  "resource_fur_production_rate",                 :default => 0.0
+    t.decimal  "resource_fur_base_production",                 :default => 0.0
+    t.decimal  "resource_fur_production_bonus",                :default => 0.0
+    t.decimal  "resource_fur_production_bonus_buildings",      :default => 0.0
+    t.decimal  "resource_fur_production_bonus_sciences",       :default => 0.0
+    t.decimal  "resource_fur_production_bonus_alliance",       :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",        :default => 0.0
+    t.decimal  "resource_cash_capacity",                       :default => 0.0
+    t.decimal  "resource_cash_production_rate",                :default => 0.0
+    t.decimal  "resource_cash_base_production",                :default => 0.0
+    t.decimal  "resource_cash_production_bonus",               :default => 0.0
+    t.decimal  "resource_cash_production_bonus_buildings",     :default => 0.0
+    t.decimal  "resource_cash_production_bonus_sciences",      :default => 0.0
+    t.decimal  "resource_cash_production_bonus_alliance",      :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",       :default => 0.0
   end
 
   create_table "settlement_slots", :force => true do |t|

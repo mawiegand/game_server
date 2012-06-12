@@ -90,6 +90,26 @@
   <%= @settlement_settlement.besieged %>
 </p>
 
+<h2>Production Queue Unlocking</h2>
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'settlement_queue' %>
+<p>
+  <b><%= attribute %>:</b>
+  <%= @settlement_settlement[attribute] %>
+</p>
+<%end
+end %>
+
+<h2>Resource Production</h2>
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with?('resource_') %>
+<p>
+  <b><%= attribute %>:</b>
+  <%= @settlement_settlement[attribute] %>
+</p>
+<%end
+end %>
+
 
 <%= link_to 'Edit', edit_settlement_settlement_path(@settlement_settlement) %> |
 <%= link_to 'Back', settlement_settlements_path %>

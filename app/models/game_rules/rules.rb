@@ -827,7 +827,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*(LEVEL+1)*100+10',
+          :production_time => '2*(LEVEL+1)*0+10',
 
           :abilities   => {
 

@@ -25,17 +25,32 @@ end
 # science_) because an Army does not need to  know about them. In this case
 # you would add a line "Army => [ 'unit_' ]," to the hash.
 hash_of_models = { 
-  Military::Army            => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
-  Military::ArmyDetail      => [ { :prefix => 'unit_', :postfix => '' } ],
-  Military::BattleFaction   => [ { :prefix => 'unitcategory_', :postfix => '_strength', :type => ':decimal' } ],
-  Military::BattleParticipantResult    => [ { :prefix => 'unit_', :postfix => '' },
-                                            { :prefix => 'unit_', :postfix => '_casualties' },
-                                            { :prefix => 'unit_', :postfix => '_damage_taken', :type => ':decimal' },
-                                            { :prefix => 'unit_', :postfix => '_damage_inflicted', :type => ':decimal' },
-                                          ],
-  Settlement::Settlement    => [ { :prefix => 'settlement_queue', :postfix => '', :options => { :default => 0.0 } } ],  # add unlock count to settlements
-  Fundamental::Character    => [ { :prefix => 'character_queue', :postfix => '', :options => { :default => 0.0 } } ],   # add unlock count to characters
-  Fundamental::Alliance     => [ { :prefix => 'alliance_queue', :postfix => '', :options => { :default => 0.0 } } ],    # add unlock count to alliances
+  Military::Army             => [ { :prefix => 'unitcategory_',    :postfix => '_strength',                   :type => ':decimal' } ],
+  Military::ArmyDetail       => [ { :prefix => 'unit_',            :postfix => '' } ],
+  Military::BattleFaction    => [ { :prefix => 'unitcategory_',    :postfix => '_strength',                   :type => ':decimal' } ],
+  Military::BattleParticipantResult    => [ { :prefix => 'unit_',  :postfix => '' },
+                                            { :prefix => 'unit_',  :postfix => '_casualties' },
+                                            { :prefix => 'unit_',  :postfix => '_damage_taken',               :type => ':decimal' },
+                                            { :prefix => 'unit_',  :postfix => '_damage_inflicted',           :type => ':decimal' },
+  ],
+  Settlement::Settlement     => [ { :prefix => 'settlement_queue', :postfix => '',                                                 :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_base_production',            :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus',           :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_buildings', :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_sciences',  :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_alliance',  :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_effects',   :type => ':decimal', :options => { :default => 0.0 } },
+  ],  # add unlock count and resource-production fields to settlements
+
+  Fundamental::ResourcePool  => [ { :prefix => 'resource_',        :postfix => '_amount',                     :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
+  ],
+  
+  Fundamental::Character     => [ { :prefix => 'character_queue',  :postfix => '',                                                 :options => { :default => 0.0 } } ],  # add unlock count to characters
+  Fundamental::Alliance      => [ { :prefix => 'alliance_queue',   :postfix => '',                                                 :options => { :default => 0.0 } } ],  # add unlock count to alliances
 }
 
 timestamp = DateTime.now
