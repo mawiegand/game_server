@@ -325,6 +325,15 @@ end
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
           :production_time => '<xsl:value-of select="ProductionTime"/>',
+          :production  => [
+            <xsl:for-each select="Production">
+              {
+                :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+                :symbolic_id        => :<xsl:value-of select="@id"/>,
+                :formula            => "<xsl:apply-templates/>",
+              },
+            </xsl:for-each>
+          ],
 <xsl:apply-templates select="Abilities" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>

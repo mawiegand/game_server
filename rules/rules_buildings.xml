@@ -88,7 +88,10 @@
     </Description>
     <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
     <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
+    <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>     
+    <Production id="resource_wood">LEVEL*5</Production>        
+    <Production id="resource_stone">LEVEL*5</Production>        
+    <Production id="resource_fur">LEVEL</Production>        
     <Abilities> <!-- just for grouping -->
       <UnlockQueue  queue="queue_buildings" />
       <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>

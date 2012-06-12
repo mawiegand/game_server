@@ -156,6 +156,11 @@
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
 
+<!ELEMENT Production (#PCDATA)>
+<!ATTLIST Production
+	id IDREF #REQUIRED
+>
+
 <!--Ability-->
 <!ELEMENT Ability EMPTY>
 <!ATTLIST Ability

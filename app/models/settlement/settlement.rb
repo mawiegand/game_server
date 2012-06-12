@@ -19,6 +19,7 @@ class Settlement::Settlement < ActiveRecord::Base
   after_initialize :init
   
   before_save :manage_queues_as_needed
+  before_save :update_resource_production
   
   after_save :propagate_information_to_region
   after_save :propagate_information_to_location
@@ -124,6 +125,10 @@ class Settlement::Settlement < ActiveRecord::Base
     queue.save
   end
 
+
+  def resource_attributes
+    self.attributes.
+  end
   
   protected
   
@@ -168,6 +173,10 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
       return true
+    end
+    
+    def update_resource_production
+      
     end
     
     

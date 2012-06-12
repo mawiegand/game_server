@@ -828,6 +828,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
           :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+          ],
 
           :abilities   => {
 
@@ -859,6 +862,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
           :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+          ],
 
           :abilities   => {
 
@@ -890,6 +896,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
           :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+          ],
 
           :abilities   => {
 
@@ -921,6 +930,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
           :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+          ],
 
         },              #   END OF Ballistisches Erprobungszentrum
         {               #   Festungsanlagen
@@ -948,6 +960,27 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
           :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_wood,
+                :formula            => "LEVEL*5",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "LEVEL*5",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "LEVEL",
+              },
+            
+          ],
 
           :abilities   => {
 
