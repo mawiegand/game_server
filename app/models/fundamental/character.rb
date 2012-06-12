@@ -4,17 +4,20 @@ class Fundamental::Character < ActiveRecord::Base
 
   belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id"  
   
+  has_one  :resource_pool, :class_name => "Fundamental::ResourcePool", :foreign_key => "character_id", :inverse_of => :owner
+  has_one  :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
+  
+  has_one  :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
+  has_one  :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner
+  has_one  :archive, :class_name => "Messaging::Archive", :foreign_key => "owner_id", :inverse_of => :owner
+
   has_many :armies, :class_name => "Military::Army", :foreign_key => "owner_id"
   has_many :locations, :class_name => "Map::Location", :foreign_key => "owner_id"
   has_many :regions, :class_name => "Map::Region", :foreign_key => "owner_id"
   has_many :alliance_shouts, :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
-  has_one :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
   has_many :shop_transactions, :class_name => "Shop::Transaction", :foreign_key => "character_id"
   has_many :settlements, :class_name => "Settlement::Settlement", :foreign_key => "owner_id"
 
-  has_one :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
-  has_one :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner
-  has_one :archive, :class_name => "Messaging::Archive", :foreign_key => "owner_id", :inverse_of => :owner
 
   @identifier_regex = /[a-z]{16}/i 
   
@@ -60,6 +63,8 @@ class Fundamental::Character < ActiveRecord::Base
     if !character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
+
+    character.create_resource_pool
     
     character.create_inbox
     character.create_outbox

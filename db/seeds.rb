@@ -66,6 +66,8 @@ alliance_data.each do |ally|
       character.identifier = character_data[member][:identifier] unless character_data[member][:identifier].blank?
       character.save
       
+      character.create_resource_pool
+      
       character.create_inbox
       character.create_outbox
       character.create_archive

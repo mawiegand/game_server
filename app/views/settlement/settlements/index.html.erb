@@ -17,15 +17,18 @@ end %>
     <th>Defense bonus</th>
     <th>Morale</th>
     <th>Tax rate</th>
-    <th>Owns region</th>
-    <th>Taxable</th>
     <th>Command points</th>
     <th>Armies count</th>
     <th>Garrison</th>
     <th>Besieged</th>
 <% Settlement::Settlement.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>
-    <th><%= attribute %></th>
+    <th><%= "ulock_"+attribute[17..-14] %></th>
+<%end
+end %>
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with?('resource_') && attribute.end_with?('_capacity') %>
+    <th><%= attribute[(attribute.index('_')+1)..(attribute.rindex('_')-1)]+' production' %></th>
 <%end
 end %>
     <th></th>
@@ -46,8 +49,6 @@ end %>
     <td><%= settlement_settlement.defense_bonus %></td>
     <td><%= settlement_settlement.morale %></td>
     <td><%= settlement_settlement.tax_rate %></td>
-    <td><%= settlement_settlement.owns_region %></td>
-    <td><%= settlement_settlement.taxable %></td>
     <td><%= settlement_settlement.command_points %></td>
     <td><%= settlement_settlement.armies_count %></td>
     <td><%= settlement_settlement.garrison_id %></td>
@@ -55,6 +56,13 @@ end %>
 <% settlement_settlement.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>
     <td><%= value %></td>
+<%end
+end %>
+<% settlement_settlement.attributes.each do |attribute, value| 
+  if attribute.start_with?('resource_') && attribute.end_with?('_capacity') %>
+    <td><%= prefix = attribute[0..(attribute.rindex('_'))]
+     "#{settlement_settlement[prefix+'base_production']} +#{settlement_settlement[prefix+'production_rate']} (=100%+#{settlement_settlement[prefix+'production_bonus_buildings']*100}%+#{settlement_settlement[prefix+'production_bonus_sciences']*100}%+#{settlement_settlement[prefix+'production_bonus_alliance']*100}%+#{settlement_settlement[prefix+'production_bonus_effects']*100}%)"
+     %></td>
 <%end
 end %>
     <td><%= link_to 'Show', settlement_settlement %></td>
