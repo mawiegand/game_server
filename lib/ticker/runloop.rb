@@ -1,6 +1,7 @@
 require 'ticker/movement_handler'
 require 'ticker/battle_handler'
-require 'ticker/construction_handler'
+require 'ticker/construction_active_job_handler'
+require 'ticker/construction_queue_check_handler'
 
 module Ticker
 
@@ -18,14 +19,12 @@ module Ticker
   # register handlers that should be used by the runloop
   Ticker.add_handler_class(Ticker::MovementHandler);
   Ticker.add_handler_class(Ticker::BattleHandler);
-  Ticker.add_handler_class(Ticker::ConstructionHandler);
+  Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler);
+  Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler);
 
   class Runloop
     
     DEFAULT_SLEEP_DELAY      = 1
-    
-
-
 
     cattr_accessor :sleep_delay, :logger
 

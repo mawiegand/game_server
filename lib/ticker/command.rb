@@ -17,7 +17,7 @@ module Ticker
         :identifier => 0
       }
       
-      opts = OptionParser.new do |opts|
+      parser = OptionParser.new do |opts|
         opts.banner = "Usage: #{File.basename($0)} [options] start|stop|restart|run"
 
         opts.on('-h', '--help', 'Show this message') do
@@ -40,7 +40,7 @@ module Ticker
           @options[:prefix] = prefix
         end
       end
-      @args = opts.parse!(args)      
+      @args = parser.parse!(args)      
     end
    
     def daemonize

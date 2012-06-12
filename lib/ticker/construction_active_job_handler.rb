@@ -1,6 +1,6 @@
 require 'ticker/runloop'
 
-class Ticker::ConstructionHandler
+class Ticker::ConstructionActiveJobHandler
   
   def runloop 
     return @runloop 
@@ -86,7 +86,7 @@ class Ticker::ConstructionHandler
         runloop.say "Invalid job type '#{ job.job_type }'.", Logger::ERROR
       end
 
-      runloop.say "Construction handler completed."
+      runloop.say "Construction active job handler completed."
     end
   end
 end

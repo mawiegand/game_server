@@ -8,10 +8,11 @@ class Construction::Queue < ActiveRecord::Base
   before_save :update_speed
   
   # checks if there are unused threads in this queue and if there
-  # is a new job to execute in  this thread. In this case a new active job
-  # is created. Recursive invokation for testing another thread.
+  # is a new job to execute in this thread. In this case a new active job
+  # is created, if there are enough resources to pay the job. Otherwise, an
+  # event is created to check again after a specific time.
+  # Recursive invocation for testing another thread.
   def check_for_new_jobs
-    
     
     # if there are less active jobs than the number of threads to handle a job 
     active_jobs = self.jobs.select{ |job| job.active? }
@@ -23,34 +24,27 @@ class Construction::Queue < ActiveRecord::Base
       if !queued_jobs.empty?
         # create active job 
         next_job = queued_jobs.first
-        active_job = next_job.build_active_job
-        active_job.queue = self
-        active_job.started_at = Time.now
-        active_job.finished_at = Time.now + (next_job.building_time / self.speed)
-        next_job.save
-        
-        self.create_event_for_job(active_job)
-        
-        # test again
-        self.check_for_new_jobs
+        # test if job can be payed
+        if next_job.reduce_resources
+          active_job = next_job.build_active_job
+          active_job.queue = self
+          active_job.started_at = Time.now
+          active_job.finished_at = Time.now + (next_job.building_time / self.speed)
+          next_job.save
+          
+          self.create_event_for_job(active_job)
+          
+          # test again
+          self.check_for_new_jobs
+        else
+          # create event for next queue check
+          self.create_queue_check_event
+        end
       end
     end
     
     # don't let the position numbers get to large
     self.reset_job_positions
-  end
-  
-  def create_event_for_job(active_job)
-    #create entry for event table
-    event = active_job.build_event(
-        character_id: self.settlement.owner_id,   # get current character id
-        execute_at: active_job.finished_at,
-        event_type: "construction_active_job",
-        local_event_id: active_job.id,
-    )
-    if !active_job.save  # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event for active job')
-    end
   end
   
   def max_position
@@ -82,20 +76,46 @@ class Construction::Queue < ActiveRecord::Base
 
   protected
 
-    def reset_job_positions
-      if !self.jobs.empty? && self.jobs.last.position > 1000
-        ActiveRecord::Base.transaction do
-          self.jobs.each do |job|
-            job.position -= 1000
-            job.save
-          end
+  def create_event_for_job(active_job)
+    #create entry for event table
+    event = active_job.build_event(
+        character_id: self.settlement.owner_id,   # get current character id
+        execute_at: active_job.finished_at,
+        event_type: "construction_active_job",
+        local_event_id: active_job.id,
+    )
+    if !active_job.save  # this is the final step; this makes sure, something is actually executed
+      raise ArgumentError.new('could not create event for active job')
+    end
+  end
+  
+  def create_queue_check_event
+    #create entry for event table
+    event = Event::Event.new(
+        character_id: self.settlement.owner_id,   # get current character id
+        execute_at: DateTime.now.advance(:minutes => 2),
+        event_type: "construction_queue_check",
+        local_event_id: self.id,
+    )
+    if !event.save  # this is the final step; this makes sure, something is actually executed
+      raise ArgumentError.new('could not create event for queue check')
+    end
+  end
+  
+  def reset_job_positions
+    if !self.jobs.empty? && self.jobs.last.position > 1000
+      ActiveRecord::Base.transaction do
+        self.jobs.each do |job|
+          job.position -= 1000
+          job.save
         end
       end
     end
+  end
 
-    def update_speed
-      sum = 1.0 + self.speedup_buildings + self.speedup_sciences + self.speedup_alliance + self.speedup_effects
-      self.speed = sum < 0.00001 ? 0.00001 : sum
-    end
+  def update_speed
+    sum = 1.0 + self.speedup_buildings + self.speedup_sciences + self.speedup_alliance + self.speedup_effects
+    self.speed = sum < 0.00001 ? 0.00001 : sum
+  end
 
 end
