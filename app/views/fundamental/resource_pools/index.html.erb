@@ -6,6 +6,11 @@
     <th>Locked at</th>
     <th>Locked by</th>
     <th>Locked reason</th>
+<% Fundamental::ResourcePool.new.attributes.each do |attribute, value| 
+  if attribute.start_with?('resource_') && attribute.end_with?('_capacity') %>
+    <th><%= attribute[(attribute.index('_')+1)..(attribute.rindex('_')-1)]+' production' %></th>
+<%end
+end %>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +22,13 @@
     <td><%= fundamental_resource_pool.locked_at %></td>
     <td><%= fundamental_resource_pool.locked_by %></td>
     <td><%= fundamental_resource_pool.locked_reason %></td>
+<% fundamental_resource_pool.attributes.each do |attribute, value| 
+  if attribute.start_with?('resource_') && attribute.end_with?('_capacity') %>
+    <td><%= prefix = attribute[0..(attribute.rindex('_'))]
+     "#{fundamental_resource_pool[prefix+'amount']} +#{fundamental_resource_pool[prefix+'production_rate']} (MAX: #{(fundamental_resource_pool[prefix+'capacity']/1000.0)}K)"
+     %></td>
+<%end
+end %>
     <td><%= link_to 'Show', fundamental_resource_pool %></td>
     <td><%= link_to 'Edit', edit_fundamental_resource_pool_path(fundamental_resource_pool) %></td>
     <td><%= link_to 'Destroy', fundamental_resource_pool, confirm: 'Are you sure?', method: :delete %></td>

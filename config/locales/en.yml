@@ -20,6 +20,7 @@ en:
         category: Action
       fundamental:
         category: Fundamental
+        resource_pools: Resources
         characters: Characters
         alliances: Alliances
         guilds: Guilds
