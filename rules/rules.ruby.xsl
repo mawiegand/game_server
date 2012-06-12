@@ -14,6 +14,10 @@
      All rights reserved, (c) 5D Lab GmbH, 2012. -->
      
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyzöäü'" />
+<xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ'" />  
+  
 <xsl:output method="text" encoding="UTF-8"/>
 
 <!-- text elements -->
@@ -324,12 +328,41 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+<xsl:if test="Requirement">
+          :requirements=> [
+            <xsl:apply-templates select="Requirement" />
+          ],
+          
+          :cost        => {
+            <xsl:apply-templates select="Cost" />
+          },
+</xsl:if>
           :production_time => '<xsl:value-of select="ProductionTime"/>',
 <xsl:apply-templates select="Abilities" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF BUILDING TYPES
 </xsl:template>
+
+
+<xsl:template match="Requirement">
+            {
+              :symbolic_id => '<xsl:value-of select="@id" />',
+              :id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)" />,
+              :type => '<xsl:value-of select="translate(local-name(id(@id)), $uppercase, $smallcase)"/>',
+<xsl:if test="@min_level">
+              :min_level => <xsl:value-of select="@min_level" />,
+</xsl:if>
+<xsl:if test="@max_level">
+              :max_level => <xsl:value-of select="@max_level" />,
+</xsl:if>
+            },
+</xsl:template> <!-- indentation needed for proper layout in output. -->
+
+
+<xsl:template match="Cost">
+            <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
+            </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 
 <xsl:template match="BuildingCategories">

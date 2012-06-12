@@ -827,7 +827,35 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :production_time => '2*(LEVEL+1)*100+10',
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_mechanics',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],
+          :cost        => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)*0+10',
 
           :abilities   => {
 
@@ -858,6 +886,34 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_riding',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],
+          :cost        => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
           :production_time => '2*(LEVEL+1)*0+10',
 
           :abilities   => {
@@ -889,6 +945,25 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],
+          :cost        => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
           :production_time => '2*(LEVEL+1)*0+10',
 
           :abilities   => {
@@ -920,6 +995,34 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_ballistics',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],
+          :cost        => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
           :production_time => '2*(LEVEL+1)*0+10',
 
         },              #   END OF Ballistisches Erprobungszentrum
@@ -947,6 +1050,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+
           :production_time => '2*(LEVEL+1)*0+10',
 
           :abilities   => {
