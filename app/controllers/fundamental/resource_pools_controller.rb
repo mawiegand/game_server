@@ -1,4 +1,7 @@
 class Fundamental::ResourcePoolsController < ApplicationController
+  layout 'fundamental'
+  
+  
   # GET /fundamental/resource_pools
   # GET /fundamental/resource_pools.json
   def index
