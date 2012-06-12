@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607163120) do
+ActiveRecord::Schema.define(:version => 20120612143024) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -166,6 +166,15 @@ ActiveRecord::Schema.define(:version => 20120607163120) do
     t.boolean  "invitation_only"
     t.boolean  "visible"
     t.boolean  "membership_public"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_resource_pools", :force => true do |t|
+    t.integer  "character_id"
+    t.datetime "locked_at"
+    t.string   "locked_by"
+    t.string   "locked_reason"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

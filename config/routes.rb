@@ -16,19 +16,21 @@ GameServer::Application.routes.draw do
       namespace :fundamental do 
         
         match '/characters/self', :to => 'characters#self'
-
-        resources :alliance_shouts
         
         resources :characters do
           resources :alliance_shouts
-          resource :account, :module => "shop", :only => [ :show ]
-          resources :settlements, :module => 'settlement'     
+          resource  :account,         :module => "shop",      :only => [ :show ]
+          resource  :resource_pools,                          :only => [ :show ] 
+          resources :settlements,     :module => 'settlement'   
         end
+        
+        resources :resource_pools 
         
         resources :alliances do
           resources :characters
           resources :alliance_shouts
         end
+        resources :alliance_shouts
         
         resources :guilds do
           resources :characters

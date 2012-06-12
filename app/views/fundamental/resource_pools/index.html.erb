@@ -1,0 +1,29 @@
+<h1>Listing fundamental_resource_pools</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Locked at</th>
+    <th>Locked by</th>
+    <th>Locked reason</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_resource_pools.each do |fundamental_resource_pool| %>
+  <tr>
+    <td><%= fundamental_resource_pool.character_id %></td>
+    <td><%= fundamental_resource_pool.locked_at %></td>
+    <td><%= fundamental_resource_pool.locked_by %></td>
+    <td><%= fundamental_resource_pool.locked_reason %></td>
+    <td><%= link_to 'Show', fundamental_resource_pool %></td>
+    <td><%= link_to 'Edit', edit_fundamental_resource_pool_path(fundamental_resource_pool) %></td>
+    <td><%= link_to 'Destroy', fundamental_resource_pool, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resource pool', new_fundamental_resource_pool_path %>

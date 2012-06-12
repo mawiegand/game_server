@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  locked_at: 2012-06-12 16:30:24
+  locked_by: MyString
+  locked_reason: MyString
+
+two:
+  character_id: 1
+  locked_at: 2012-06-12 16:30:24
+  locked_by: MyString
+  locked_reason: MyString

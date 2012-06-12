@@ -1,0 +1,33 @@
+<%= form_for(@fundamental_resource_pool) do |f| %>
+  <% if @fundamental_resource_pool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_resource_pool.errors.count, "error") %> prohibited this fundamental_resource_pool from being saved:</h2>
+
+      <ul>
+      <% @fundamental_resource_pool.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :locked_at %><br />
+    <%= f.datetime_select :locked_at %>
+  </div>
+  <div class="field">
+    <%= f.label :locked_by %><br />
+    <%= f.text_field :locked_by %>
+  </div>
+  <div class="field">
+    <%= f.label :locked_reason %><br />
+    <%= f.text_field :locked_reason %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
