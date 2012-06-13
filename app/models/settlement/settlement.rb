@@ -43,6 +43,28 @@ class Settlement::Settlement < ActiveRecord::Base
     location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
   end
   
+  # creates building slotes for the present settlements according to the given
+  # spec. The spec is an array of building options. Usually, you would like to
+  # pass the corresponding array from the game rules to this method.
+  def create_building_slots_according_to(spec)
+    spec.each do |number, details|
+      slot = self.slots.create({
+        :slot_num => number,
+      })
+    
+      if !details[:building].blank?
+        slot.create_building(details[:building]);
+        logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
+      
+        if !details[:level].blank? 
+          while slot.level < details[:level]
+            slot.upgrade_building
+          end
+        end
+      end
+    end
+  end
+  
   # set default values in an after_initialize handler. 
   def init
     level         ||= 1
@@ -131,35 +153,6 @@ class Settlement::Settlement < ActiveRecord::Base
   
 
   protected
-
-    ############################################################################
-    #
-    #  CREATING BUILDING SLOTS
-    #
-    ############################################################################     
-  
-    # creates building slotes for the present settlements according to the given
-    # spec. The spec is an array of building options. Usually, you would like to
-    # pass the corresponding array from the game rules to this method.
-    def create_building_slots_according_to(spec)
-      spec.each do |number, details|
-        slot = self.slots.create({
-          :slot_num => number,
-        })
-      
-        if !details[:building].blank?
-          slot.create_building(details[:building]);
-          logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
-        
-          if !details[:level].blank? 
-            while slot.level < details[:level]
-              slot.upgrade_building
-            end
-          end
-        end
-      end
-    end
-  
   
     ############################################################################
     #

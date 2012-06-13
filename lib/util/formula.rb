@@ -34,8 +34,8 @@ module Util
     
     
     def difference(old_level, new_level)
-      old_value = formula.apply(old_level)
-      new_value = formula.apply(new_level)
+      old_value = apply(old_level)
+      new_value = apply(new_level)
       new_value-old_value
     end
       
