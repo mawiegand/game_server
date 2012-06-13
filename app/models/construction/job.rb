@@ -61,7 +61,7 @@ class Construction::Job < ActiveRecord::Base
   # checks if user owns enough resources for job and reduces them instantly
   def reduce_resources
     # TODO implement
-    false 
+    true 
   end
   
 end
