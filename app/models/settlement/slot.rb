@@ -25,6 +25,7 @@ class Settlement::Slot < ActiveRecord::Base
     self.building_id = building_id_to_build
     self.level = 1
     propagate_resource_production(building_id_to_build, 0, 1)
+    propagate_resource_production_bonus(building_id_to_build, 0, 1)
     propagate_abilities(building_id_to_build, 0, 1)
     self.save    
   end
@@ -41,6 +42,7 @@ class Settlement::Slot < ActiveRecord::Base
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
     propagate_resource_production(self.building_id, self.level-1, self.level)
+    propagate_resource_production_bonus(self.building_id, self.level-1, self.level)
     propagate_abilities(self.building_id, self.level-1, self.level)
     self.save
 
@@ -83,6 +85,11 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
 
+  ############################################################################
+  #
+  #  RESOURCE PRODUCTION CHANGES
+  #
+  ############################################################################
 
   def propagate_resource_production(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
@@ -100,12 +107,45 @@ class Settlement::Slot < ActiveRecord::Base
     attribute = resource_type[:symbolic_id].to_s()+'_base_production'
     
     formula = Util::Formula.parse_from_formula(product[:formula])
-    old_value = formula.apply(old_level)
-    new_value = formula.apply(new_level)
-    delta = new_value - old_value        # delta will be added, might be negative (that's abolutely ok)
+    delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
 
     self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
   end
+  
+  
+  ############################################################################
+  #
+  #  RESOURCE PRODUCTION BONUS CHANGES
+  #
+  ############################################################################
+
+  def propagate_resource_production_bonus(building_id, old_level, new_level)
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    if building_type[:production_bonus]
+      building_type[:production_bonus].each do |bonus|
+        update_resource_production_bonus_for(bonus, old_level, new_level)
+      end
+      self.settlement.save               # if something has changed on settlement, save it  
+    end
+  end
+  
+  def update_resource_production_bonus_for(bonus, old_level, new_level)
+    resource_type = GameRules::Rules.the_rules().resource_types[bonus[:id]]
+    attribute = resource_type[:symbolic_id].to_s()+'_production_bonus_buildings'
+    
+    formula = Util::Formula.parse_from_formula(bonus[:formula])
+    delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
+
+    self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
+  end
+  
+    
+  ############################################################################
+  #
+  #  APPLY SPECIAL ABILITIES
+  #
+  ############################################################################
 
   # possible improvement: save domain once, after applying all changes.  
   def propagate_abilities(building_id, old_level, new_level)
@@ -142,9 +182,7 @@ class Settlement::Slot < ActiveRecord::Base
   # speedup on that queue
   def propagate_speedup_queue(rule, old_level, new_level)
     formula = Util::Formula.parse_from_formula(rule[:speedup_formula])
-    old_value = formula.apply(old_level)
-    new_value = formula.apply(new_level)
-    delta = new_value - old_value        # delta will be added, might be negative (that's abolutely ok)
+    delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
     
     if rule[:domain] == :settlement
       self.settlement.propagate_speedup_to_queue(:building, rule[:queue_type_id], delta)

@@ -31,7 +31,14 @@ module Util
     def apply(level)
       eval(@formula)
     end
-
+    
+    
+    def difference(old_level, new_level)
+      old_value = formula.apply(old_level)
+      new_value = formula.apply(new_level)
+      new_value-old_value
+    end
+      
     protected
 
     def power(base, exp)
