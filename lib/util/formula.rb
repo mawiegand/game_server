@@ -16,7 +16,9 @@ module Util
         'SIGN' => 'sign',
       }
       
-      @formula = formula
+      
+      @formula = formula || "0"   # nil evaluates to 0; good idea?
+
 
       functions.each do |k, v|
         @formula.gsub!(/#{k}/, v)

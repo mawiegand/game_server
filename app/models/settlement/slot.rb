@@ -4,7 +4,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id",  :inverse_of => :slots
   
-  has_many   :jobs,        :class_name => "Construction::Job",      :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
+  has_many   :jobs,        :class_name => "Construction::Job",       :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
 
 
   def empty?
@@ -24,11 +24,9 @@ class Settlement::Slot < ActiveRecord::Base
     raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.empty?
     self.building_id = building_id_to_build
     self.level = 1
+    propagate_resource_production(building_id_to_build, 0, 1)
     propagate_abilities(building_id_to_build, 0, 1)
-    self.save
-
-    
-    # TODO: propagation of depending values needs to be implemented
+    self.save    
   end
   
   # upgrades the building in this slot by one level. Also calls
@@ -42,8 +40,10 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
+    propagate_resource_production(self.building_id, self.level-1, self.level)
     propagate_abilities(self.building_id, self.level-1, self.level)
     self.save
+
     
     # TODO: propagation of depending values needs to be implemented
   end
@@ -83,6 +83,29 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
 
+
+  def propagate_resource_production(building_id, old_level, new_level)
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    if building_type[:production]
+      building_type[:production].each do |product|
+        update_resource_production_for(product, old_level, new_level)
+      end
+      self.settlement.save               # if something has changed on settlement, save it  
+    end
+  end
+  
+  def update_resource_production_for(product, old_level, new_level)
+    resource_type = GameRules::Rules.the_rules().resource_types[product[:id]]
+    attribute = resource_type[:symbolic_id].to_s()+'_base_production'
+    
+    formula = Util::Formula.parse_from_formula(product[:formula])
+    old_value = formula.apply(old_level)
+    new_value = formula.apply(new_level)
+    delta = new_value - old_value        # delta will be added, might be negative (that's abolutely ok)
+
+    self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
+  end
 
   # possible improvement: save domain once, after applying all changes.  
   def propagate_abilities(building_id, old_level, new_level)

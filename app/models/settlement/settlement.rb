@@ -127,7 +127,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
 
   def resource_attributes
-    self.attributes.
+    #self.attributes.
   end
   
   protected
@@ -176,9 +176,7 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     def update_resource_production
-      
+      true
     end
-    
-    
 
 end
