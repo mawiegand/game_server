@@ -20,10 +20,10 @@ class Settlement::Settlement < ActiveRecord::Base
   
   before_save :manage_queues_as_needed
   before_save :update_resource_production
-  
+
+  after_save  :propagate_changes_to_resource_pool  
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
-  after_save  :propagate_changes_to_resource_pool
   
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -94,6 +94,7 @@ class Settlement::Settlement < ActiveRecord::Base
       update_resource_production_bonus(base)
       update_resource_production_rate(base)
     end
+    true
   end  
   
   ############################################################################
@@ -149,6 +150,7 @@ class Settlement::Settlement < ActiveRecord::Base
     raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
     queue.add_speedup(origin_type, delta)
     queue.save
+    true
   end
   
 
@@ -188,11 +190,13 @@ class Settlement::Settlement < ActiveRecord::Base
     def update_resource_production_bonus(base)
       sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]
       self[base+"_production_bonus"] = sum
+      true
     end
         
     def update_resource_production_rate(base)
-        sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]       
-        self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
+      sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]       
+      self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
+      true
     end
     
     
@@ -202,10 +206,11 @@ class Settlement::Settlement < ActiveRecord::Base
     #
     #########################################################################
     
+    
     # propagates local changes to the location, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_location
-      if !self.location.nil?
+      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && !self.location.nil?
         self.location.set_owner_and_alliance(owner_id, alliance_id)
         self.location.settlement_level   = self.level   if (self.location.settlement_level   != self.level)
         self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
@@ -214,10 +219,11 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
   
+  
     # propagates local changes to the region, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_region
-      if self.owns_region? && !self.region.nil?
+      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
         self.region.set_owner_and_alliance(owner_id, alliance_id)
         self.region.settlement_level   = self.level     if (self.region.settlement_level   != self.level)
         self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
@@ -226,9 +232,61 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
     
+    
     def propagate_changes_to_resource_pool
+      if self.owner_id_changed?
+        propagate_changes_to_resource_pool_on_changed_possesion
+      elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
+        changed = false
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+          attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+          if !self.changes[attribute].nil?
+            changed = true
+            change = self.changes[attribute]
+            delta = change[1] - change[0]   # new - old value
+            self.owner.resource_pool[attribute] = self.owner.resource_pool[attribute] + delta
+          end
+        end
+        self.owner.resource_pool.save if changed  # only load character and resource pool, iff there hase been a change!
+      end
+      
+      true
     end
     
+    # this case (owner changed) is a little bit more tricky; bascially,
+    # we need to remove resource produciton from the old owner's pool 
+    # and add it to the new owner's pool. But unfortunately, at the
+    # same time, the rate might have changed (e.g. due to different
+    # science boni). Thus, we need to remove the old production value 
+    # from the old pool and add the new production value to the new
+    # pool.
+    #
+    # Function can handle one or both owners being nil.
+    def propagate_changes_to_resource_pool_on_changed_possesion
+      owner_change = self.changes[:owner_id]
+      if !owner_change.blank?
+        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+          attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+          old_value = self[attribute]
+          new_value = self[attribute]
+          if !self.changes[attribute].nil?
+            prod_change = self.changes[attribute]
+            new_value = change[1] 
+            old_value = change[0]   
+          end
+          
+          old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) + old_value   unless old_owner.nil?
+          new_owner.resource_pool[attribute] = (new_owner.resource_pool[attribute] || 0.0) + new_value   unless new_owner.nil? 
+        end
+
+        old_owner.resource_pool.save   unless old_owner.nil?
+        new_owner.resource_pool.save   unless new_owner.nil?
+      end
+      true
+    end
+    
 
 end

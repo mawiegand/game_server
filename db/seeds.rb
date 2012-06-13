@@ -54,6 +54,9 @@ alliance_data.each do |ally|
   if ally[:id] == 0
     ally[:members].each do |member|
       character = Fundamental::Character.create( name: character_data[member][:name] )
+    
+      character.create_resource_pool
+      
       character.create_inbox
       character.create_outbox
       character.create_archive
