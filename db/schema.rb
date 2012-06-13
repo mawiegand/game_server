@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20120612184015) do
     t.float    "progress",    :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "event_id"
   end
 
   create_table "construction_jobs", :force => true do |t|

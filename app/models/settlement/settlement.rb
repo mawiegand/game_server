@@ -127,9 +127,9 @@ class Settlement::Settlement < ActiveRecord::Base
 
 
   def resource_attributes
-    self.attributes.
-  end
-  
+    # self.attributes.
+  end 
+    
   protected
   
     # propagates local changes to the location, where some fields are mirrored
@@ -178,7 +178,5 @@ class Settlement::Settlement < ActiveRecord::Base
     def update_resource_production
       
     end
-    
-    
 
 end

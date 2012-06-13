@@ -1,4 +1,5 @@
 require 'util/formula'
+require 'game_state/requirements'
 
 class Construction::Job < ActiveRecord::Base
   
@@ -28,27 +29,30 @@ class Construction::Job < ActiveRecord::Base
   
   # checks if a job can be queueable due to requirements like e.g. building levels
   def queueable?
-    
-    # slot = Settlement::Slot.find(self.slot_id)
     slot = self.slot
+    settlement = slot.settlement
+    owner = settlement.owner
     
-    # logger.debug slot.inspect
-    # logger.debug slot.jobs.inspect
+    # get requirements from rules
+    rules = GameRules::Rules.the_rules
+    requirements = rules.building_types[self.building_id][:requirements]
     
+    # test if requirements are met
+    return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
+
+    # test if queue is already full   
     return false if self.queue && self.queue.max_length <= self.queue.jobs_count
     
-    # same job type if queue has already jobs
+    # test same job type if queue has already jobs
     return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
     
-    logger.debug('before')
-    # correct level
+    # test correct level
     return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0))
-    logger.debug('after')
     return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1) #  || self.level_after > slot.max_level
     return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
     return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
-    # correct building id
+    # test correct building id
     return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
     
     true
@@ -57,7 +61,7 @@ class Construction::Job < ActiveRecord::Base
   # checks if user owns enough resources for job and reduces them instantly
   def reduce_resources
     # TODO implement
-    true 
+    false 
   end
   
 end

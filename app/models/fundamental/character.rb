@@ -105,6 +105,5 @@ class Fundamental::Character < ActiveRecord::Base
       return false
     end
   end  
-  
 
 end
