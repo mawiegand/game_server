@@ -21,10 +21,13 @@ class Fundamental::ResourcePoolsController < ApplicationController
     else
       @fundamental_resource_pool = Fundamental::ResourcePool.find(params[:id])
     end
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @fundamental_resource_pool }
+    last_modified =  @fundamental_resource_pool.nil? ? nil : @fundamental_resource_pool.updated_at
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @fundamental_resource_pool }
+      end
     end
   end
 
