@@ -24,7 +24,6 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save  :propagate_changes_to_resource_pool  
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
-  
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
