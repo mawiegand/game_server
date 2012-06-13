@@ -169,9 +169,9 @@
 
 <!--Requirement-->
 <!ELEMENT Requirement EMPTY>
-<!ATTLIST Requirement id IDREF #REQUIRED min CDATA "0" max CDATA #IMPLIED>
+<!ATTLIST Requirement id IDREF #REQUIRED min_level CDATA "0" max_level CDATA #IMPLIED>
 <!ELEMENT EffectReq EMPTY>
-<!ATTLIST EffectReq id IDREF #REQUIRED min CDATA #IMPLIED max CDATA #IMPLIED>
+<!ATTLIST EffectReq id IDREF #REQUIRED min_level CDATA #IMPLIED max_level CDATA #IMPLIED>
 
 <!--Encumbrance-->
 <!ELEMENT Encumbrance EMPTY>
