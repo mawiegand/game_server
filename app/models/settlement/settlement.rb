@@ -55,27 +55,30 @@ class Settlement::Settlement < ActiveRecord::Base
     points        = 0     if points.nil?
   end
   
-  # creates building slotes for the present settlements according to the given
-  # spec. The spec is an array of building options. Usually, you would like to
-  # pass the corresponding array from the game rules to this method.
-  def create_building_slots_according_to(spec)
-    spec.each do |number, details|
-      slot = self.slots.create({
-        :slot_num => number,
-      })
-      
-      if !details[:building].blank?
-        slot.create_building(details[:building]);
-        logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
-        
-        if !details[:level].blank? 
-          while slot.level < details[:level]
-            slot.upgrade_building
-          end
-        end
-      end
+
+  
+  ############################################################################
+  #
+  #  RESOURCES AND RESOURCE PRODUCTION 
+  #
+  ############################################################################   
+  
+  # recalculate the production rate for all resource types on basis of the 
+  # present base production and the production boni from buildings, 
+  # sciences etc..
+  def update_resource_production
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base = resource_type[:symbolic_id].to_s
+      update_resource_production_bonus(base)
+      update_resource_production_rate(base)
     end
-  end
+  end  
+  
+  ############################################################################
+  #
+  #  MANAGING QUEUES 
+  #
+  ############################################################################  
   
   def create_queue(queue_type)
     if queue_type[:category]    == :queue_category_construction
@@ -118,7 +121,7 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
   end
-  
+
   def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
     queue = self.queues.where("type_id = ?", queue_type_id).first
     raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
@@ -126,15 +129,36 @@ class Settlement::Settlement < ActiveRecord::Base
     queue.save
   end
   
-  def update_resource_production
-    GameRules::Rules.the_rules().resource_types.each do |resource_type|
-      base = resource_type[:symbolic_id].to_s
-      update_resource_production_bonus(base)
-      update_resource_production_rate(base)
-    end
-  end   
 
   protected
+
+    ############################################################################
+    #
+    #  CREATING BUILDING SLOTS
+    #
+    ############################################################################     
+  
+    # creates building slotes for the present settlements according to the given
+    # spec. The spec is an array of building options. Usually, you would like to
+    # pass the corresponding array from the game rules to this method.
+    def create_building_slots_according_to(spec)
+      spec.each do |number, details|
+        slot = self.slots.create({
+          :slot_num => number,
+        })
+      
+        if !details[:building].blank?
+          slot.create_building(details[:building]);
+          logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
+        
+          if !details[:level].blank? 
+            while slot.level < details[:level]
+              slot.upgrade_building
+            end
+          end
+        end
+      end
+    end
   
   
     ############################################################################
@@ -211,5 +235,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_changes_to_resource_pool
     end
+    
+
 
 end
