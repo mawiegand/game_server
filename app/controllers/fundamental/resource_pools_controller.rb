@@ -16,7 +16,11 @@ class Fundamental::ResourcePoolsController < ApplicationController
   # GET /fundamental/resource_pools/1
   # GET /fundamental/resource_pools/1.json
   def show
-    @fundamental_resource_pool = Fundamental::ResourcePool.find(params[:id])
+    if params.has_key?(:character_id)  
+      @fundamental_resource_pool = Fundamental::ResourcePool.find_by_character_id(params[:character_id])
+    else
+      @fundamental_resource_pool = Fundamental::ResourcePool.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb

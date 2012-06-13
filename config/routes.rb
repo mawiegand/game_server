@@ -20,7 +20,7 @@ GameServer::Application.routes.draw do
         resources :characters do
           resources :alliance_shouts
           resource  :account,         :module => "shop",      :only => [ :show ]
-          resource  :resource_pools,                          :only => [ :show ] 
+          resource  :resource_pool,                          :only => [ :show ] 
           resources :settlements,     :module => 'settlement'   
         end
         
