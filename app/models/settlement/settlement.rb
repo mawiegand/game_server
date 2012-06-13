@@ -21,8 +21,9 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :manage_queues_as_needed
   before_save :update_resource_production
   
-  after_save :propagate_information_to_region
-  after_save :propagate_information_to_location
+  after_save  :propagate_information_to_region
+  after_save  :propagate_information_to_location
+  after_save  :propagate_changes_to_resource_pool
   
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -124,14 +125,66 @@ class Settlement::Settlement < ActiveRecord::Base
     queue.add_speedup(origin_type, delta)
     queue.save
   end
-
-
-  def resource_attributes
-    # self.attributes.
-  end 
+  
+  def update_resource_production
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base = resource_type[:symbolic_id].to_s
+      update_resource_production_bonus(base)
+      update_resource_production_rate(base)
+    end
+  end   
 
   protected
   
+  
+    ############################################################################
+    #
+    #  UPDATING PRODUCTION QUEUES 
+    #
+    ############################################################################     
+  
+    def manage_queues_as_needed
+      if self.changed?
+        queue_types = GameRules::Rules.the_rules().queue_types
+      
+        changes.each do | attribute, change |           # iterate through all changed attributes
+          queue_types.each do |queue|                   # must test it against every queue
+            if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
+              if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
+                create_queue(queue)
+              elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
+                destroy_queue(queue)
+              end
+            end
+          end
+        end
+      end
+      return true
+    end
+    
+    ############################################################################
+    #
+    #  UPDATING RESOURCE PRODUCTION 
+    #
+    ############################################################################    
+    
+    def update_resource_production_bonus(base)
+      sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]
+      self[base+"_production_bonus"] = sum
+    end
+        
+    def update_resource_production_rate(base)
+        sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]       
+        self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
+    end
+    
+    
+    ############################################################################
+    #
+    #  SPREADING LOCAL CHANGES TO RELATED MODELS 
+    #
+    #########################################################################
+    
     # propagates local changes to the location, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_location
@@ -155,28 +208,8 @@ class Settlement::Settlement < ActiveRecord::Base
       end
       return true
     end
-  
-    def manage_queues_as_needed
-      if self.changed?
-        queue_types = GameRules::Rules.the_rules().queue_types
-      
-        changes.each do | attribute, change |           # iterate through all changed attributes
-          queue_types.each do |queue|                   # must test it against every queue
-            if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
-              if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
-                create_queue(queue)
-              elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
-                destroy_queue(queue)
-              end
-            end
-          end
-        end
-      end
-      return true
-    end
     
-    def update_resource_production
-      true
+    def propagate_changes_to_resource_pool
     end
 
 end
