@@ -16,11 +16,11 @@ class Construction::Queue < ActiveRecord::Base
     
     # if there are less active jobs than the number of threads to handle a job 
     active_jobs = self.jobs.select{ |job| job.active? }
-    logger.debug '--> active_jobs ' + active_jobs.inspect
+    # logger.debug '--> active_jobs ' + active_jobs.inspect
     if active_jobs.count < self.threads
       # if there are inactive jobs
       queued_jobs = self.jobs.select{ |job| !job.active? }
-      logger.debug '--> queued_jobs ' + queued_jobs.inspect
+      # logger.debug '--> queued_jobs ' + queued_jobs.inspect
       if !queued_jobs.empty?
         # create active job 
         next_job = queued_jobs.first
