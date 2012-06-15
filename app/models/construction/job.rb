@@ -59,9 +59,8 @@ class Construction::Job < ActiveRecord::Base
   end
   
   # checks if user owns enough resources for job and reduces them instantly
-  def reduce_resources
-    # TODO implement
-    true 
+  def reduce_resources(resources)
+    self.slot.settlement.owner.resource_pool.remove_resources_transaction(resources)
   end
   
 end

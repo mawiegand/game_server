@@ -17,7 +17,42 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     end
 
     self.productionUpdatedAt = now 
-  end  
+  end    
+  
+  # Adds the given resources to the resource pool.
+  # Will save resources, presently is neither a 
+  # transaction nor an atomar operation. That'll change!
+  # this will NOT update the produced resources
+  def add_resources_transaction(resources)
+    resources.each do |key, value| 
+      self[key.to_s()+'_amount'] += value
+    end
+    self.save
+  end
+  
+  # returns true, iff the resource pool holds at least
+  # resources resources (not considering the resources
+  # produced sinc the last update).
+  def have_at_least_resources(resources) 
+    sufficient = true
+    resources.each do |key, value|
+      sufficient = false if self[key.to_s()+'_amount'] < value
+    end
+    return sufficient
+  end
+  
+  # Removes the given resources from the resource pool.
+  # Will save resources, presently is neither a 
+  # transaction nor an atomar operation. That'll change!
+  # this will NOT update the produced resources  
+  def remove_resources_transaction(resources)
+    update_resource_amount if !have_at_least_resources(resources) # not enough? -> update production     
+    return false           if !have_at_least_resources(resources) # still not enough? -> return false
+    resources.each do |key, value|
+      self[key.to_s()+'_amount'] -= value
+    end     
+    self.save
+  end
   
   protected
   
