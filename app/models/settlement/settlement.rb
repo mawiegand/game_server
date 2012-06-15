@@ -116,8 +116,20 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def destroy_queue(queue_type)
+    queues = []
+    
+    if    queue_type[:category] == :queue_category_construction
+      queues = self.queues
+    elsif queue_type[:category] == :queue_category_training
+      queues = self.training_queues
+    elsif queue_type[:category] == :queue_category_research
+      logger.error "Deletion of queue type #{queue_type[:category]} not yet implemented."
+    else
+      logger.error "Could not delete queue of unkown type #{queue_type[:category]}."
+    end
+    
     raise InternalServerError.new('Could not destroy queue because there is none.') if self.queues.nil?
-    self.queues.each do |queue|
+    queues.each do |queue|
       if queue[:type_id] == queue_type[:id]
         queue.destroy
         return    # return immediately, just one queue of this tpye
@@ -144,8 +156,19 @@ class Settlement::Settlement < ActiveRecord::Base
   end
 
 
-  def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
-    queue = self.queues.where("type_id = ?", queue_type_id).first
+  def propagate_speedup_to_queue(origin_type, queue_type, delta)
+    queue = nil
+    
+    if    queue_type[:category] == :queue_category_construction
+      queue = self.queues.where("type_id = ?", queue_type[:id]).first
+    elsif queue_type[:category] == :queue_category_training
+      queue = self.training_queues.where("type_id = ?", queue_type[:id]).first
+    elsif queue_type[:category] == :queue_category_research
+      logger.error "Speedup for queue type #{queue_type[:category]} not yet implemented."
+    else
+      logger.error "Could not speed up queue of unkown type #{queue_type[:category]}."
+    end
+    
     raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
     queue.add_speedup(origin_type, delta)
     queue.save
