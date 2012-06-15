@@ -106,7 +106,7 @@ class Settlement::Settlement < ActiveRecord::Base
     if queue_type[:category]    == :queue_category_construction
       create_construction_queue(queue_type)
     elsif queue_type[:category] == :queue_category_training
-      logger.error "Creation of queue type #{queue_type[:category]} not yet implemented."
+      create_training_queue(queue_type)
     elsif queue_type[:category] == :queue_category_research
       logger.error "Creation of queue type #{queue_type[:category]} not yet implemented."
     else
@@ -115,17 +115,16 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def destroy_queue(queue_type)
-    if queue_type[:category]    == :queue_category_construction
-      destroy_construction_queue(queue_type)
-    elsif queue_type[:category] == :queue_category_training
-      logger.error "Destruction of queue type #{queue_type[:category]} not yet implemented."
-    elsif queue_type[:category] == :queue_category_research
-      logger.error "Destruction of queue type #{queue_type[:category]} not yet implemented."
-    else
-      logger.error "Could not destroy queue of unkown type #{queue_type[:category]}."
+    raise InternalServerError.new('Could not destroy queue because there is none.') if self.queues.nil?
+    self.queues.each do |queue|
+      if queue[:type_id] == queue_type[:id]
+        queue.destroy
+        return    # return immediately, just one queue of this tpye
+      end
     end
   end
   
+  # creates a construction queue and sets its parameters properly.
   def create_construction_queue(queue_type)
     self.queues.create({
       :type_id    => queue_type[:id], 
@@ -134,15 +133,15 @@ class Settlement::Settlement < ActiveRecord::Base
     })  
   end
   
-  def destroy_construction_queue(queue_type)
-    raise InternalServerError.new('Could not destroy construction queue because there is none.') if self.queues.nil?
-    self.queues.each do |queue|
-      if queue[:type_id] == queue_type[:id]
-        queue.destroy
-        return    # return immediately, just one queue of this tpye
-      end
-    end
+  # creates a training queue and sets its parameters properly.
+  # TOOD: add parameters, as soon as queue available.
+  def create_training_queue(queue_type)
+    self.queues.create({
+      :type_id    => queue_type[:id], 
+      # add queue-specific parameters here
+    })  
   end
+
 
   def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
     queue = self.queues.where("type_id = ?", queue_type_id).first
