@@ -1,0 +1,2 @@
+module Training::ActiveJobsHelper
+end

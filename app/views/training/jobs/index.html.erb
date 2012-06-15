@@ -1,0 +1,29 @@
+<h1>Listing training_jobs</h1>
+
+<table>
+  <tr>
+    <th>Queue</th>
+    <th>Unit</th>
+    <th>Position</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @training_jobs.each do |training_job| %>
+  <tr>
+    <td><%= training_job.queue_id %></td>
+    <td><%= training_job.unit_id %></td>
+    <td><%= training_job.position %></td>
+    <td><%= training_job.quantity %></td>
+    <td><%= link_to 'Show', training_job %></td>
+    <td><%= link_to 'Edit', edit_training_job_path(training_job) %></td>
+    <td><%= link_to 'Destroy', training_job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Job', new_training_job_path %>

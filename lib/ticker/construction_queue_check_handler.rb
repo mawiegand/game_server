@@ -1,4 +1,4 @@
-require 'ticker/runloop'
+ require 'ticker/runloop'
 
 class Ticker::ConstructionQueueCheckHandler
   

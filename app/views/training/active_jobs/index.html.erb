@@ -1,0 +1,45 @@
+<h1>Listing training_active_jobs</h1>
+
+<table>
+  <tr>
+    <th>Queue</th>
+    <th>Job</th>
+    <th>Started total at</th>
+    <th>Finsished total at</th>
+    <th>Progress total</th>
+    <th>Progress updated at</th>
+    <th>Quantity finished</th>
+    <th>Quantity active</th>
+    <th>Started finished at</th>
+    <th>Finished active at</th>
+    <th>Progress active</th>
+    <th>Progress active updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @training_active_jobs.each do |training_active_job| %>
+  <tr>
+    <td><%= training_active_job.queue_id %></td>
+    <td><%= training_active_job.job_id %></td>
+    <td><%= training_active_job.started_total_at %></td>
+    <td><%= training_active_job.finsished_total_at %></td>
+    <td><%= training_active_job.progress_total %></td>
+    <td><%= training_active_job.progress_updated_at %></td>
+    <td><%= training_active_job.quantity_finished %></td>
+    <td><%= training_active_job.quantity_active %></td>
+    <td><%= training_active_job.started_finished_at %></td>
+    <td><%= training_active_job.finished_active_at %></td>
+    <td><%= training_active_job.progress_active %></td>
+    <td><%= training_active_job.progress_active_updated_at %></td>
+    <td><%= link_to 'Show', training_active_job %></td>
+    <td><%= link_to 'Edit', edit_training_active_job_path(training_active_job) %></td>
+    <td><%= link_to 'Destroy', training_active_job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Active job', new_training_active_job_path %>
