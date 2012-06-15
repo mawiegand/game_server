@@ -24,8 +24,9 @@ class Construction::Job < ActiveRecord::Base
   end
   
   def costs
-    costs = {}
     buildingType = GameRules::Rules.the_rules.building_types[self.building_id]
+    return {} if buildingType[:costs].nil?
+    costs = {}
     buildingType[:costs].each do |resource_id, formula|
       f = Util::Formula.parse_from_formula(formula)
       costs[resource_id] = f.apply(self.level_after)

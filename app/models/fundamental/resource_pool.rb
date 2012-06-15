@@ -47,6 +47,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # transaction nor an atomar operation. That'll change!
   # this will NOT update the produced resources  
   def remove_resources_transaction(resources)
+    return true if resources.empty? 
     update_resource_amount if !have_at_least_resources(resources) # not enough? -> update production     
     return false           if !have_at_least_resources(resources) # still not enough? -> return false
     resources.each do |key, value|
