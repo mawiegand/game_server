@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  queue_id: 1
+  job_id: 1
+  started_total_at: 2012-06-15 11:38:52
+  finsished_total_at: 2012-06-15 11:38:52
+  progress_total: 1.5
+  progress_updated_at: 2012-06-15 11:38:52
+  quantity_finished: 1
+  quantity_active: 1
+  started_finished_at: 2012-06-15 11:38:52
+  finished_active_at: 2012-06-15 11:38:52
+  progress_active: 1.5
+  progress_active_updated_at: 2012-06-15 11:38:52
+
+two:
+  queue_id: 1
+  job_id: 1
+  started_total_at: 2012-06-15 11:38:52
+  finsished_total_at: 2012-06-15 11:38:52
+  progress_total: 1.5
+  progress_updated_at: 2012-06-15 11:38:52
+  quantity_finished: 1
+  quantity_active: 1
+  started_finished_at: 2012-06-15 11:38:52
+  finished_active_at: 2012-06-15 11:38:52
+  progress_active: 1.5
+  progress_active_updated_at: 2012-06-15 11:38:52

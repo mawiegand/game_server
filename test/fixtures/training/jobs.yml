@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  queue_id: 1
+  unit_id: 1
+  position: 1
+  quantity: 1
+
+two:
+  queue_id: 1
+  unit_id: 1
+  position: 1
+  quantity: 1

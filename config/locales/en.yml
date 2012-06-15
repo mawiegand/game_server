@@ -57,6 +57,11 @@ en:
         battle_faction_results: F.Results
         participants: Participants
         participant_results: P.Results
+      training:
+        category: Training
+        queues: Queues
+        jobs: Jobs
+        active_jobs: Act. Jobs
       event:
         category: Event
         events: Events

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Settlement:</b>
+  <%= @training_queue.settlement_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @training_queue.type_id %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @training_queue.speed %>
+</p>
+
+<p>
+  <b>Max length:</b>
+  <%= @training_queue.max_length %>
+</p>
+
+<p>
+  <b>Threads:</b>
+  <%= @training_queue.threads %>
+</p>
+
+<p>
+  <b>Jobs count:</b>
+  <%= @training_queue.jobs_count %>
+</p>
+
+<p>
+  <b>Speedup buildings:</b>
+  <%= @training_queue.speedup_buildings %>
+</p>
+
+<p>
+  <b>Speedup sciences:</b>
+  <%= @training_queue.speedup_sciences %>
+</p>
+
+<p>
+  <b>Speedup alliance:</b>
+  <%= @training_queue.speedup_alliance %>
+</p>
+
+<p>
+  <b>Speedup effects:</b>
+  <%= @training_queue.speedup_effects %>
+</p>
+
+
+<%= link_to 'Edit', edit_training_queue_path(@training_queue) %> |
+<%= link_to 'Back', training_queues_path %>

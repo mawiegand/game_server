@@ -844,11 +844,12 @@ class GameRules::Rules
               :id => 4,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 2,
 
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -911,6 +912,7 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -964,6 +966,7 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -1021,11 +1024,14 @@ class GameRules::Rules
               :id => 4,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 0,
+
+              :max_level => 1,
 
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',

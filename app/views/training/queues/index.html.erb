@@ -1,0 +1,41 @@
+<h1>Listing training_queues</h1>
+
+<table>
+  <tr>
+    <th>Settlement</th>
+    <th>Type</th>
+    <th>Speed</th>
+    <th>Max length</th>
+    <th>Threads</th>
+    <th>Jobs count</th>
+    <th>Speedup buildings</th>
+    <th>Speedup sciences</th>
+    <th>Speedup alliance</th>
+    <th>Speedup effects</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @training_queues.each do |training_queue| %>
+  <tr>
+    <td><%= training_queue.settlement_id %></td>
+    <td><%= training_queue.type_id %></td>
+    <td><%= training_queue.speed %></td>
+    <td><%= training_queue.max_length %></td>
+    <td><%= training_queue.threads %></td>
+    <td><%= training_queue.jobs_count %></td>
+    <td><%= training_queue.speedup_buildings %></td>
+    <td><%= training_queue.speedup_sciences %></td>
+    <td><%= training_queue.speedup_alliance %></td>
+    <td><%= training_queue.speedup_effects %></td>
+    <td><%= link_to 'Show', training_queue %></td>
+    <td><%= link_to 'Edit', edit_training_queue_path(training_queue) %></td>
+    <td><%= link_to 'Destroy', training_queue, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Queue', new_training_queue_path %>

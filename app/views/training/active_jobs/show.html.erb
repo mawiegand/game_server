@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Queue:</b>
+  <%= @training_active_job.queue_id %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @training_active_job.job_id %>
+</p>
+
+<p>
+  <b>Started total at:</b>
+  <%= @training_active_job.started_total_at %>
+</p>
+
+<p>
+  <b>Finsished total at:</b>
+  <%= @training_active_job.finsished_total_at %>
+</p>
+
+<p>
+  <b>Progress total:</b>
+  <%= @training_active_job.progress_total %>
+</p>
+
+<p>
+  <b>Progress updated at:</b>
+  <%= @training_active_job.progress_updated_at %>
+</p>
+
+<p>
+  <b>Quantity finished:</b>
+  <%= @training_active_job.quantity_finished %>
+</p>
+
+<p>
+  <b>Quantity active:</b>
+  <%= @training_active_job.quantity_active %>
+</p>
+
+<p>
+  <b>Started finished at:</b>
+  <%= @training_active_job.started_finished_at %>
+</p>
+
+<p>
+  <b>Finished active at:</b>
+  <%= @training_active_job.finished_active_at %>
+</p>
+
+<p>
+  <b>Progress active:</b>
+  <%= @training_active_job.progress_active %>
+</p>
+
+<p>
+  <b>Progress active updated at:</b>
+  <%= @training_active_job.progress_active_updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_training_active_job_path(@training_active_job) %> |
+<%= link_to 'Back', training_active_jobs_path %>
