@@ -234,7 +234,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_changes_to_resource_pool
       if self.owner_id_changed?
-        propagate_changes_to_resource_pool_on_changed_possesion
+        self.propagate_changes_to_resource_pool_on_changed_possession
       elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
         changed = false
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
@@ -261,14 +261,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # pool.
     #
     # Function can handle one or both owners being nil.
-    def propagate_changes_to_resource_pool_on_changed_possesion
+    def propagate_changes_to_resource_pool_on_changed_possession
       owner_change = self.changes[:owner_id]
       if !owner_change.blank?
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+          attribute = resource_type[:symbolic_id].to_s() + '_production_rate'
           old_value = self[attribute]
           new_value = self[attribute]
           if !self.changes[attribute].nil?
