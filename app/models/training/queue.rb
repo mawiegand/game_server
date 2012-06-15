@@ -76,46 +76,46 @@ class Training::Queue < ActiveRecord::Base
 
   protected
   
-  def create_event_for_job(active_job)
-    #create entry for event table
-    event = active_job.build_event(
-        character_id: self.settlement.owner_id,   # get current character id
-        execute_at: active_job.finished_at,
-        event_type: "training_active_job",
-        local_event_id: active_job.id,
-    )
-    if !active_job.save  # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event for active training job')
+    def create_event_for_job(active_job)
+      #create entry for event table
+      event = active_job.build_event(
+          character_id: self.settlement.owner_id,   # get current character id
+          execute_at: active_job.finished_at,
+          event_type: "training_active_job",
+          local_event_id: active_job.id,
+      )
+      if !active_job.save  # this is the final step; this makes sure, something is actually executed
+        raise ArgumentError.new('could not create event for active training job')
+      end
     end
-  end
   
-  def create_queue_check_event
-    #create entry for event table
-    event = Event::Event.new(
-        character_id: self.settlement.owner_id,   # get current character id
-        execute_at: DateTime.now.advance(:minutes => 2),
-        event_type: "training_queue_check",
-        local_event_id: self.id,
-    )
-    if !event.save  # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event for training queue check')
+    def create_queue_check_event
+      #create entry for event table
+      event = Event::Event.new(
+          character_id: self.settlement.owner_id,   # get current character id
+          execute_at: DateTime.now.advance(:minutes => 2),
+          event_type: "training_queue_check",
+          local_event_id: self.id,
+      )
+      if !event.save  # this is the final step; this makes sure, something is actually executed
+        raise ArgumentError.new('could not create event for training queue check')
+      end
     end
-  end
   
-  def reset_job_positions
-    if !self.jobs.empty? && self.jobs.last.position > 1000
-      ActiveRecord::Base.transaction do
-        self.jobs.each do |job|
-          job.position -= 1000
-          job.save
+    def reset_job_positions
+      if !self.jobs.empty? && self.jobs.last.position > 1000
+        ActiveRecord::Base.transaction do
+          self.jobs.each do |job|
+            job.position -= 1000
+            job.save
+          end
         end
       end
     end
-  end
 
-  def update_speed
-    sum = 1.0 + self.speedup_buildings + self.speedup_sciences + self.speedup_alliance + self.speedup_effects
-    self.speed = sum < 0.00001 ? 0.00001 : sum
-  end
+    def update_speed
+      sum = 1.0 + self.speedup_buildings + self.speedup_sciences + self.speedup_alliance + self.speedup_effects
+      self.speed = sum < 0.00001 ? 0.00001 : sum
+    end
 
 end
