@@ -333,7 +333,7 @@ end
             <xsl:apply-templates select="Requirement" />
           ],
           
-          :cost        => {
+          :costs      => {
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>

@@ -9,6 +9,7 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
+  has_many   :training_queues,   :class_name => "Training::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                   :as => :ally 
@@ -136,7 +137,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # creates a training queue and sets its parameters properly.
   # TOOD: add parameters, as soon as queue available.
   def create_training_queue(queue_type)
-    self.queues.create({
+    self.training_queues.create({
       :type_id    => queue_type[:id], 
       # add queue-specific parameters here
     })  
