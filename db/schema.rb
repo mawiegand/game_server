@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615104321) do
+ActiveRecord::Schema.define(:version => 20120615115955) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -79,10 +79,10 @@ ActiveRecord::Schema.define(:version => 20120615104321) do
     t.integer  "jobs_count",        :default => 0,   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "speedup_buildings", :default => 0.0
-    t.decimal  "speedup_sciences",  :default => 0.0
-    t.decimal  "speedup_alliance",  :default => 0.0
-    t.decimal  "speedup_effects",   :default => 0.0
+    t.decimal  "speedup_buildings", :default => 0.0, :null => false
+    t.decimal  "speedup_sciences",  :default => 0.0, :null => false
+    t.decimal  "speedup_alliance",  :default => 0.0, :null => false
+    t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
   create_table "event_events", :force => true do |t|
@@ -626,11 +626,11 @@ ActiveRecord::Schema.define(:version => 20120615104321) do
     t.integer  "speed",             :default => 0
     t.integer  "max_length"
     t.integer  "threads"
-    t.integer  "jobs_count",        :default => 0, :null => false
-    t.integer  "speedup_buildings", :default => 0
-    t.integer  "speedup_sciences",  :default => 0
-    t.integer  "speedup_alliance",  :default => 0
-    t.integer  "speedup_effects",   :default => 0
+    t.integer  "jobs_count",        :default => 0,   :null => false
+    t.decimal  "speedup_buildings", :default => 0.0, :null => false
+    t.decimal  "speedup_sciences",  :default => 0.0, :null => false
+    t.decimal  "speedup_alliance",  :default => 0.0, :null => false
+    t.decimal  "speedup_effects",   :default => 0.0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

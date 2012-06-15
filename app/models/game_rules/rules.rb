@@ -848,8 +848,8 @@ class GameRules::Rules
 
             },
 
-          ],
-          
+          ],          
+
           :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -911,8 +911,8 @@ class GameRules::Rules
 
             },
 
-          ],
-          
+          ],          
+
           :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -965,8 +965,8 @@ class GameRules::Rules
 
             },
 
-          ],
-          
+          ],          
+
           :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -1049,8 +1049,8 @@ class GameRules::Rules
 
             },
 
-          ],
-          
+          ],          
+
           :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -1087,6 +1087,12 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
 
           :production_time => '2*(LEVEL+1)*0+10',
           :production  => [
