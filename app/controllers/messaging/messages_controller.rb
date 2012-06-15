@@ -59,8 +59,26 @@ class Messaging::MessagesController < ApplicationController
   # POST /messaging/messages
   # POST /messaging/messages.json
   def create
-    @messaging_message = Messaging::Message.new(params[:messaging_message])
-    
+    if backend_request?
+      @messaging_message = Messaging::Message.new(params[:messaging_message])
+    else
+      @messaging_message = Messaging::Message.new
+      
+      if params[:message].has_key? :recipient_name
+        recipient = Fundamental::Character.find_by_name(params[:message][:recipient_name])
+        raise BadRequestError.new('Unknown Recipient.')   if recipient.nil?
+        @messaging_message[:recipient_id] = recipient.id
+      else 
+        @messaging_message[:recipient_id] = params[:message][:recipient_id]
+      end
+      
+      if !params[:message].has_key?(:sender_id) && !current_character.nil?
+        @messaging_message[:sender_id] = current_character.id
+      end
+      @messaging_message[:subject] = params[:message][:subject]
+      @messaging_message[:body] = params[:message][:body]
+    end 
+          
     raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
     role = determine_access_role(@messaging_message.sender_id,    nil)    
     raise ForbiddenError.new("Tried to forge a message from another sender.") unless role == :owner || admin? || staff?
