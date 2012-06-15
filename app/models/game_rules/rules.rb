@@ -844,7 +844,7 @@ class GameRules::Rules
               :id => 4,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 1,
 
             },
 
@@ -1045,9 +1045,7 @@ class GameRules::Rules
               :id => 4,
               :type => 'building',
 
-              :min_level => 0,
-
-              :max_level => 1,
+              :min_level => 1,
 
             },
 
