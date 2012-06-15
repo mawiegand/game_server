@@ -480,12 +480,12 @@ end
           :abilities   => {
 <xsl:if test="count(SpeedupQueue)">
             :speedup_queue => [
-<xsl:apply-templates select="//SpeedupQueue" />
+<xsl:apply-templates select="SpeedupQueue" />
             ],
 </xsl:if>
 <xsl:if test="count(UnlockQueue)">
             :unlock_queue => [
-<xsl:apply-templates select="//UnlockQueue" />
+<xsl:apply-templates select="UnlockQueue" />
             ],
 </xsl:if>
           },

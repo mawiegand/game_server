@@ -849,6 +849,7 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -911,13 +912,14 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :production_time => '2*(LEVEL+1)*0+11',
           :production  => [
             
           ],
@@ -964,6 +966,7 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
@@ -976,6 +979,27 @@ class GameRules::Rules
           ],
 
           :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :level             => 1,
+              },
+
+            ],
 
           },
 
@@ -1026,6 +1050,7 @@ class GameRules::Rules
             },
 
           ],
+          
           :cost        => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
