@@ -25,7 +25,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this will NOT update the produced resources
   def add_resources_transaction(resources)
     resources.each do |key, value| 
-      self[key.to_s()+'_amount'] += value
+      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] += value
     end
     self.save
   end
@@ -36,7 +36,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   def have_at_least_resources(resources) 
     sufficient = true
     resources.each do |key, value|
-      sufficient = false if self[key.to_s()+'_amount'] < value
+      logger.debug "EVAL: #{value} , #{self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount']}"
+      sufficient = false if self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] < value
     end
     return sufficient
   end
@@ -49,7 +50,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     update_resource_amount if !have_at_least_resources(resources) # not enough? -> update production     
     return false           if !have_at_least_resources(resources) # still not enough? -> return false
     resources.each do |key, value|
-      self[key.to_s()+'_amount'] -= value
+      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] -= value
     end     
     self.save
   end

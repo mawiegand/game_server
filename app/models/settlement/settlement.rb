@@ -136,7 +136,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # creates a training queue and sets its parameters properly.
   # TOOD: add parameters, as soon as queue available.
   def create_training_queue(queue_type)
-    self.queues.create({
+    self.training_queues.create({
       :type_id    => queue_type[:id], 
       # add queue-specific parameters here
     })  

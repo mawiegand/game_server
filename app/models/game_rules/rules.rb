@@ -850,7 +850,7 @@ class GameRules::Rules
 
           ],
           
-          :cost        => {
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
@@ -913,7 +913,7 @@ class GameRules::Rules
 
           ],
           
-          :cost        => {
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
@@ -967,7 +967,7 @@ class GameRules::Rules
 
           ],
           
-          :cost        => {
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
@@ -1051,7 +1051,7 @@ class GameRules::Rules
 
           ],
           
-          :cost        => {
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
