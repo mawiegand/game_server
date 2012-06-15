@@ -25,7 +25,7 @@ class Construction::Queue < ActiveRecord::Base
         # create active job 
         next_job = queued_jobs.first
         # test if job can be payed
-        if next_job.reduce_resources
+        if next_job.pay_for_job
           active_job = next_job.build_active_job
           active_job.queue = self
           active_job.started_at = Time.now
@@ -85,7 +85,7 @@ class Construction::Queue < ActiveRecord::Base
         local_event_id: active_job.id,
     )
     if !active_job.save  # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event for active job')
+      raise ArgumentError.new('could not create event for active construction job')
     end
   end
   
@@ -98,7 +98,7 @@ class Construction::Queue < ActiveRecord::Base
         local_event_id: self.id,
     )
     if !event.save  # this is the final step; this makes sure, something is actually executed
-      raise ArgumentError.new('could not create event for queue check')
+      raise ArgumentError.new('could not create event for construction queue check')
     end
   end
   

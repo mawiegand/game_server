@@ -1,0 +1,13 @@
+<% content_for :training_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.training.queues"), training_queues_path %></li>
+    <li><%= link_to I18n.translate("application.layout.training.jobs"), training_jobs_path %></li>
+    <li><%= link_to I18n.translate("application.layout.training.active_jobs"), training_active_jobs_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:training_content) ? yield(:training_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

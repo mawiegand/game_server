@@ -1,0 +1,65 @@
+<%= form_for(@training_active_job) do |f| %>
+  <% if @training_active_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training_active_job.errors.count, "error") %> prohibited this training_active_job from being saved:</h2>
+
+      <ul>
+      <% @training_active_job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :queue_id %><br />
+    <%= f.number_field :queue_id %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br />
+    <%= f.number_field :job_id %>
+  </div>
+  <div class="field">
+    <%= f.label :started_total_at %><br />
+    <%= f.datetime_select :started_total_at %>
+  </div>
+  <div class="field">
+    <%= f.label :finsished_total_at %><br />
+    <%= f.datetime_select :finsished_total_at %>
+  </div>
+  <div class="field">
+    <%= f.label :progress_total %><br />
+    <%= f.text_field :progress_total %>
+  </div>
+  <div class="field">
+    <%= f.label :progress_updated_at %><br />
+    <%= f.datetime_select :progress_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_finished %><br />
+    <%= f.number_field :quantity_finished %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_active %><br />
+    <%= f.number_field :quantity_active %>
+  </div>
+  <div class="field">
+    <%= f.label :started_finished_at %><br />
+    <%= f.datetime_select :started_finished_at %>
+  </div>
+  <div class="field">
+    <%= f.label :finished_active_at %><br />
+    <%= f.datetime_select :finished_active_at %>
+  </div>
+  <div class="field">
+    <%= f.label :progress_active %><br />
+    <%= f.text_field :progress_active %>
+  </div>
+  <div class="field">
+    <%= f.label :progress_active_updated_at %><br />
+    <%= f.datetime_select :progress_active_updated_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

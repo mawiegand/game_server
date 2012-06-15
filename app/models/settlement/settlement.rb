@@ -9,6 +9,7 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
+  has_many   :training_queues,   :class_name => "Training::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                   :as => :ally 
@@ -115,8 +116,20 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def destroy_queue(queue_type)
+    queues = []
+    
+    if    queue_type[:category] == :queue_category_construction
+      queues = self.queues
+    elsif queue_type[:category] == :queue_category_training
+      queues = self.training_queues
+    elsif queue_type[:category] == :queue_category_research
+      logger.error "Deletion of queue type #{queue_type[:category]} not yet implemented."
+    else
+      logger.error "Could not delete queue of unkown type #{queue_type[:category]}."
+    end
+    
     raise InternalServerError.new('Could not destroy queue because there is none.') if self.queues.nil?
-    self.queues.each do |queue|
+    queues.each do |queue|
       if queue[:type_id] == queue_type[:id]
         queue.destroy
         return    # return immediately, just one queue of this tpye
@@ -136,15 +149,26 @@ class Settlement::Settlement < ActiveRecord::Base
   # creates a training queue and sets its parameters properly.
   # TOOD: add parameters, as soon as queue available.
   def create_training_queue(queue_type)
-    self.queues.create({
+    self.training_queues.create({
       :type_id    => queue_type[:id], 
       # add queue-specific parameters here
     })  
   end
 
 
-  def propagate_speedup_to_queue(origin_type, queue_type_id, delta)
-    queue = self.queues.where("type_id = ?", queue_type_id).first
+  def propagate_speedup_to_queue(origin_type, queue_type, delta)
+    queue = nil
+    
+    if    queue_type[:category] == :queue_category_construction
+      queue = self.queues.where("type_id = ?", queue_type[:id]).first
+    elsif queue_type[:category] == :queue_category_training
+      queue = self.training_queues.where("type_id = ?", queue_type[:id]).first
+    elsif queue_type[:category] == :queue_category_research
+      logger.error "Speedup for queue type #{queue_type[:category]} not yet implemented."
+    else
+      logger.error "Could not speed up queue of unkown type #{queue_type[:category]}."
+    end
+    
     raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
     queue.add_speedup(origin_type, delta)
     queue.save
@@ -233,7 +257,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_changes_to_resource_pool
       if self.owner_id_changed?
-        propagate_changes_to_resource_pool_on_changed_possesion
+        self.propagate_changes_to_resource_pool_on_changed_possession
       elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
         changed = false
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
@@ -260,14 +284,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # pool.
     #
     # Function can handle one or both owners being nil.
-    def propagate_changes_to_resource_pool_on_changed_possesion
+    def propagate_changes_to_resource_pool_on_changed_possession
       owner_change = self.changes[:owner_id]
       if !owner_change.blank?
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+          attribute = resource_type[:symbolic_id].to_s() + '_production_rate'
           old_value = self[attribute]
           new_value = self[attribute]
           if !self.changes[attribute].nil?

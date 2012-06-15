@@ -54,6 +54,8 @@ class Fundamental::Character < ActiveRecord::Base
       raise InternalServerError.new('Could not claim an empty location.')
     end
     
+    character.create_resource_pool
+
     Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
         
     character.base_location_id = location.id
@@ -63,8 +65,6 @@ class Fundamental::Character < ActiveRecord::Base
     if !character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
-
-    character.create_resource_pool
     
     character.create_inbox
     character.create_outbox

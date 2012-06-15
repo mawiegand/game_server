@@ -183,9 +183,10 @@ class Settlement::Slot < ActiveRecord::Base
   def propagate_speedup_queue(rule, old_level, new_level)
     formula = Util::Formula.parse_from_formula(rule[:speedup_formula])
     delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
+    queue_type = GameRules::Rules.the_rules().queue_types[rule[:queue_type_id]]
     
     if rule[:domain] == :settlement
-      self.settlement.propagate_speedup_to_queue(:building, rule[:queue_type_id], delta)
+      self.settlement.propagate_speedup_to_queue(:building, queue_type, delta)
     elsif rule[:domain] == :character 
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
     elsif rule[:domain] == :alliance 
@@ -209,6 +210,7 @@ class Settlement::Slot < ActiveRecord::Base
   def job_cancelled(job)
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = nil
+      self.level = nil
       self.save
     end
   end

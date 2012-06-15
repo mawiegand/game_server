@@ -848,9 +848,9 @@ class GameRules::Rules
 
             },
 
-          ],
-          
-          :cost        => {
+          ],          
+
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
@@ -911,15 +911,15 @@ class GameRules::Rules
 
             },
 
-          ],
-          
-          :cost        => {
+          ],          
+
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+11',
+          :production_time => '2*(LEVEL+1)+11',
           :production  => [
             
           ],
@@ -965,15 +965,15 @@ class GameRules::Rules
 
             },
 
-          ],
-          
-          :cost        => {
+          ],          
+
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :production_time => '2*(LEVEL+1)+10',
           :production  => [
             
           ],
@@ -1049,15 +1049,15 @@ class GameRules::Rules
 
             },
 
-          ],
-          
-          :cost        => {
+          ],          
+
+          :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :production_time => '2*(LEVEL+1)+10',
           :production  => [
             
           ],
@@ -1088,7 +1088,13 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)+10',
           :production  => [
             
               {
@@ -1122,13 +1128,6 @@ class GameRules::Rules
                 :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
               },
 
-              {
-                :queue_type_id     => 1,
-                :queue_type_id_sym => :queue_fortifications,
-                :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
-              },
-
             ],
 
             :unlock_queue => [
@@ -1136,12 +1135,6 @@ class GameRules::Rules
               {
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
-                :level             => 1,
-              },
-
-              {
-                :queue_type_id     => 1,
-                :queue_type_id_sym => :queue_fortifications,
                 :level             => 1,
               },
 

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Queue:</b>
+  <%= @training_job.queue_id %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @training_job.unit_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @training_job.position %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @training_job.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_training_job_path(@training_job) %> |
+<%= link_to 'Back', training_jobs_path %>

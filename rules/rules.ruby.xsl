@@ -331,9 +331,10 @@ end
 <xsl:if test="Requirement">
           :requirements=> [
             <xsl:apply-templates select="Requirement" />
-          ],
-          
-          :cost        => {
+          ],          
+</xsl:if>
+<xsl:if test="Cost">
+          :costs      => {
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>
