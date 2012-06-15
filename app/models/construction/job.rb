@@ -49,13 +49,13 @@ class Construction::Job < ActiveRecord::Base
     requirements = rules.building_types[self.building_id][:requirements]
     
     # test if requirements are met
-    return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
+    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
 
     # test if queue is already full   
-    return false if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
+    raise ForbiddenError.new('Queue is already full.') if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
     
     # test same job type if queue has already jobs
-    return false if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type
+    raise ForbiddenError.new('Not aloud to mix destruction with construction jobs.')  if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && slot.jobs.first.job_type != TYPE_CREATE
     
     # test correct level
     return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0))
