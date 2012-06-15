@@ -29,6 +29,7 @@ module Util
 
     # Evaluates a parsed formular with a given level
     def apply(level)
+      level = level || 0.0
       eval(@formula)
     end
     
