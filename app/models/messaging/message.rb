@@ -12,7 +12,9 @@ class Messaging::Message < ActiveRecord::Base
   
   after_create :deliver_message
 
-
+  # constants for the message.type_id
+  USER_MESSAGE_TYPE_ID = 0
+  BATTLE_REPORT_TYPE_ID = 1
 
   # creates inbox and outbox entries for the message
   def deliver_message
