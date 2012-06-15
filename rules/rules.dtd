@@ -59,7 +59,7 @@
 	category IDREF #REQUIRED 
 >
 
-<!--Abilities-->
+<!--Abilities of Buildings, Sciences-->
 <!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*)>
 
 <!ELEMENT UnlockQueue EMPTY>
