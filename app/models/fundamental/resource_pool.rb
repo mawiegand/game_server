@@ -56,6 +56,18 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save
   end
   
+  # Adds the given resources to the resource pool.
+  # Will save resources, presently is neither a 
+  # transaction nor an atomar operation. That'll change!
+  # this will NOT update the produced resources  
+  def add_resources_transaction(resources)
+    return if resources.empty? 
+    resources.each do |key, value|
+      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s() + '_amount'] += value
+    end     
+    self.save
+  end
+  
   protected
   
     # updates the resource amounts if the rate changes with this write

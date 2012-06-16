@@ -74,4 +74,8 @@ class Construction::Job < ActiveRecord::Base
     self.slot.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
   end
   
+  def refund_for_job
+    self.slot.settlement.owner.resource_pool.add_resources_transaction(self.costs)
+  end
+  
 end
