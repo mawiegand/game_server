@@ -57,6 +57,15 @@ class Military::Army < ActiveRecord::Base
     end
   end
 
+  def has_units?
+    rules = rules = GameRules::Rules.the_rules
+    rules.unit_types.each do |t|
+      value = self.details[t[:db_field]]
+      return true if ((!value.nil?) && (value > 0))
+    end
+    false
+  end
+
   def update_ap_if_necessary
     update_ap if needs_ap_update?
   end

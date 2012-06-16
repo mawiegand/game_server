@@ -43,6 +43,10 @@ class Ticker::BattleHandler
       extract_results_from_awe_battle(awe_battle, battle)
       
       #  EXTRACT RESULTS (FACTION AND PARTICIPANT RESULTS)
+      
+      # generate message for participants
+      generate_messages_for_battle(awe_battle, battle)
+
       #  CLEANUP KILLED ARMIES 
       #  LET ARMIES RETREAT AND CLEANUP PARTICIPANT AND ARMY
       
@@ -89,6 +93,22 @@ class Ticker::BattleHandler
       end
       
       extract_results_from_awe_faction(awe_faction, faction, faction_results)
+
+      #update the factions itself
+      faction.total_casualties = 0 if (faction.total_casualties.nil?)
+      faction.total_casualties = faction.total_casualties + awe_faction.getTotalCasualties
+      faction.total_kills = 0 if (faction.total_kills.nil?)
+      faction.total_kills = faction.total_kills + awe_faction.getTotalKills
+      faction.total_damage_inflicted = 0 if (faction.total_damage_inflicted.nil?)
+      faction.total_damage_inflicted = faction.total_damage_inflicted + awe_faction.getTotalDamageInflicted
+      faction.total_damage_taken = 0 if (faction.total_damage_taken.nil?)
+      faction.total_damage_taken = faction.total_damage_taken + awe_faction.getTotalDamageTaken
+      faction.total_hitpoints = 0 if (faction.total_hitpoints.nil?)
+      faction.total_hitpoints = awe_faction.getTotalHitpoints
+      if !faction.save
+        raise InternalServerError.new('Server could not update a battle faction.')
+      end
+      
     end       
   
     battle
@@ -104,7 +124,7 @@ class Ticker::BattleHandler
         :battle_faction_result_id => faction_results.id,             # TODO: add faction to database, rename this field (strip battle_)
         :army_id => participant.army.id,
         :kills => awe_army.numKills,
-  #      :experience_gained => awe_army.experienceGained,
+        :experience_gained => awe_army.sumNewExp,
       )
       extract_results_from_awe_participant(awe_army, participant, participant_results)
 
@@ -133,6 +153,261 @@ class Ticker::BattleHandler
     end
   end
   
+  ## MESSAGE GENERATION ######################################################
+
+  def generate_messages_for_battle(awe_battle, battle)
+
+    stats_body = generate_message_stats_body(battle)
+    details_body = generate_message_details_body(battle)
+
+    #search for all characters
+    characters = Hash.new 
+
+    (0..(awe_battle.numFactions-1)).each do | f |
+
+      awe_faction = awe_battle.getFaction(f)
+      faction = battle.factions[f]
+
+      (0..(awe_faction.numArmies-1)).each do | a |
+
+        participant = faction.participants[a]
+        owner = participant.army.owner
+        characters[owner.id] = Array.new if (!characters.has_key?(owner.id))
+        characters[owner.id] << participant
+      end
+    end
+
+    #generate the messages for the characters
+    characters.each do |k,v|
+      message = Messaging::Message.new
+
+      character = v[0].army.owner
+
+      message.recipient_id = character.id
+      message.sender_id = nil
+      message.type_id = Messaging::Message::BATTLE_REPORT_TYPE_ID
+      message.subject = generate_message_subject(battle)
+      message.body = "<h1>"+generate_message_subject(battle)+"</h1>"
+      message.body = message.body + stats_body 
+      message.body = message.body + generate_message_body_for_character(battle, character, v, stats_body, details_body)
+      message.body = message.body + details_body
+      message.send_at = DateTime.now
+      message.reported = false
+      message.flag = 0
+
+      message.save
+    end
+  end
+
+  def generate_message_body_for_character(battle, character, participants, stats_body, details_body)
+    result = "<h2>Your participating armies</h2>\n"
+    participants.each do |v|
+      puts v
+      result = result + generate_participant_body(v)
+    end
+    result
+  end
+
+  def generate_message_subject(battle)
+      return "The battle of "+battle.region.name.to_s;
+  end
+
+  def generate_participant_body(participant)
+    result = participant.army.name.to_s + " ";
+    result = result + "of " + participant.army.home_settlement_name + " " unless participant.army.home_settlement_name.nil?
+    if (participant.army.has_units?)
+      if (participant.retreat)
+        result = result + "RETREATED"
+      else
+        result = result + "<font color='green'>SURVIVED</font>"
+      end
+    else
+      result = result + "<font color='red'>DESTROYED</font>"
+    end
+    result = result + "<br>\n<br>\n"
+    #todo army details
+
+  end
+
+  def generate_message_details_body(battle)
+    result = "<h2>Details</h2>\n"
+    result = result + "<h3>Initiation</h3>\n"
+
+    #TODO
+    
+  end
+
+  def generate_message_stats_body(battle)
+    initiator = battle.initiator
+    opponent = battle.opponent
+    result = "This conflict was initiated by an attack of "+generate_character_message_str(initiator)+" on "+generate_character_message_str(opponent)+" on "+battle.started_at.to_s+"<br>\n<br>\n"
+    
+    result = result+"Participants on side of "+generate_character_message_str(initiator)+" (faction A):<br>\n"
+    initiator_faction = battle.factions.where("leader_id = ?", initiator.id).limit(1)[0]
+    initiator_faction.participants.all.each do |p|
+      owner = p.army.owner
+      result = result + generate_character_message_str(owner) + "<br>\n"
+    end
+    result = result + "<br>\n"
+    
+    result = result+"Participants on side of "+generate_character_message_str(opponent)+" (faction B):<br>\n"
+    opponent_faction = battle.factions.where("leader_id = ?", opponent.id).limit(1)[0]
+    opponent_faction.participants.each do |p|
+      owner = p.army.owner
+      result = result + generate_character_message_str(owner) +"<br>\n"
+    end
+    result = result + "<br>\n"
+
+    rules = GameRules::Rules.the_rules
+    rounds = battle.rounds.order("round_num ASC")
+
+    result = result + "<h2>Faction A</h2>\n"
+    initiator_combined_faction_result = generate_combined_faction_results(initiator_faction, rounds[0])
+    #initiator_faction_results = initiator_faction.faction_results
+    result = result + generate_faction_units_table(initiator_combined_faction_result)
+
+    result = result + "<h2>Faction B</h2>\n"
+    #opponent_faction_results = opponent_faction.faction_results
+    opponent_combined_faction_result = generate_combined_faction_results(opponent_faction, rounds[0])
+    result = result + generate_faction_units_table(opponent_combined_faction_result)
+
+    #stats
+    result = result + generate_stats_table(initiator_combined_faction_result, opponent_combined_faction_result)
+
+    result
+  end
+
+  def generate_stats_table(combined_faction_a_result, combined_faction_b_result)
+    result = "<table>\n"
+
+    result = result + "<tr>\n"
+    result = result + "<td></td>\n";
+    result = result + "<td><b>Faction A</b></td>\n";
+    result = result + "<td><b>Faction B</b></td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "<tr>\n"
+    result = result + "<td>Total Casualties</td>\n";
+    result = result + "<td>"+combined_faction_a_result[:casualties].to_s+"</td>\n";
+    result = result + "<td>"+combined_faction_b_result[:casualties].to_s+"</td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "<tr>\n"
+    result = result + "<td>Total Kills</td>\n";
+    result = result + "<td>"+combined_faction_a_result[:kills].to_s+"</td>\n";
+    result = result + "<td>"+combined_faction_b_result[:kills].to_s+"</td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "<tr>\n"
+    result = result + "<td>Total Damage Inflicted</td>\n";
+    result = result + "<td>"+combined_faction_a_result[:damage_inflicted].round.to_s+"</td>\n";
+    result = result + "<td>"+combined_faction_b_result[:damage_inflicted].round.to_s+"</td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "<tr>\n"
+    result = result + "<td>Total Damage Taken</td>\n";
+    result = result + "<td>"+combined_faction_a_result[:damage_taken].round.to_s+"</td>\n";
+    result = result + "<td>"+combined_faction_b_result[:damage_taken].round.to_s+"</td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "<tr>\n"
+    result = result + "<td>Total Experience</td>\n";
+    result = result + "<td>"+combined_faction_a_result[:experience_gained].to_s+"</td>\n";
+    result = result + "<td>"+combined_faction_b_result[:experience_gained].to_s+"</td>\n";
+    result = result + "</tr>\n";
+
+    result = result + "</table>\n<br>\n<br>\n"
+    result
+  end
+
+  def generate_faction_units_table(combined_faction_result)
+
+    #get the rules
+    rules = GameRules::Rules.the_rules
+    result = "<table>\n<tr>\n<td></td>\n"
+    rules.unit_types.each do |t|
+      result = result + "<td>"+get_unit_type_name(t)+"</td>\n";
+    end
+    result = result + "</tr>\n"
+
+    result = result + "<tr><td>Remaining</td>\n"
+    rules.unit_types.each do |t|
+      result = result + "<td>"+combined_faction_result[:unit_types][t[:db_field]][:remaining].to_s+"</td>\n";
+    end
+    result = result + "</tr>\n"
+
+    result = result + "<tr><td>Casualties</td>\n"
+    rules.unit_types.each do |t|
+      result = result + "<td>"+combined_faction_result[:unit_types][t[:db_field]][:casualties].to_s+"</td>\n";
+    end
+    result = result + "</tr>\n"
+
+    result = result + "</table>\n<br>\n<br>\n"
+    result
+  end
+
+  def generate_combined_faction_results(faction, first_round)
+    results = Hash.new
+    unit_types_results = Hash.new
+    results[:unit_types] = unit_types_results
+    results[:casualties] = faction.total_casualties
+    results[:kills] = faction.total_kills
+    results[:damage_inflicted] = faction.total_damage_inflicted
+    results[:damage_taken] = faction.total_damage_taken
+    results[:experience_gained] = 0
+
+    rules = GameRules::Rules.the_rules
+    rules.unit_types.each do |t|
+      unit_types_results[t[:db_field]] = { 
+        :start => 0, 
+        :casualties => 0, 
+        :remaining => 0,
+      }
+    end
+
+    # write in the initial units
+    faction_result_round_zero = faction.faction_results.where("round_id = ?", first_round.id).limit(1)[0]
+    faction_result_round_zero.participant_results.each do |p|
+      rules.unit_types.each do |t|
+        unit_types_results[t[:db_field]][:start] = unit_types_results[t[:db_field]][:start] + p[t[:db_field]]
+        unit_types_results[t[:db_field]][:remaining] = unit_types_results[t[:db_field]][:remaining] + p[t[:db_field]]
+      end
+    end
+
+    #remove the lost units
+    faction.faction_results.each do |f|
+      f.participant_results.each do |p|
+        rules.unit_types.each do |t|
+          #casualties
+          fieldname_casualties = t[:db_field].to_s + "_casualties"
+          value_casualties = p[fieldname_casualties]
+          if (value_casualties.kind_of?(Integer))
+            unit_types_results[t[:db_field]][:remaining] = unit_types_results[t[:db_field]][:remaining] - value_casualties
+            unit_types_results[t[:db_field]][:casualties] = unit_types_results[t[:db_field]][:casualties] + value_casualties
+          else
+            puts "could not read field "+fieldname_casualties.to_s
+          end
+        end
+        #exp
+        puts p.experience_gained
+        results[:experience_gained] = results[:experience_gained] + p.experience_gained
+      end
+    end
+
+    results
+  end
+
+  def get_unit_type_name(type)
+    type[:name][:en_US]
+  end
+
+  def generate_character_message_str(character)
+    result = character.name
+    if (!character.alliance.nil?) 
+      result = result + " | " + character.alliance.tag
+    end
+    result
+  end
   
   ## FILLING THE BATTLE STRUCTS ##############################################
   
@@ -230,9 +505,9 @@ class Ticker::BattleHandler
   def fill_awe_unit(number, unit_type, awe_unit)
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
-	#puts unit_type
+	  #puts unit_type
     #awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
-	awe_unit.unitCategoryId = unit_type[:category]
+    awe_unit.unitCategoryId = unit_type[:category]
     awe_unit.baseDamage = unit_type[:attack]
     awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     awe_unit.criticalProbability = unit_type[:critical_hit_chance]
