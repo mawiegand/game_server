@@ -72,6 +72,7 @@ class Construction::JobsController < ApplicationController
     @job = params[:construction_job]
     
     @construction_job = Construction::Job.new(@job)
+    raise ForbiddenError.new('not owner of settlement') unless @construction_job.slot.settlement.owner == current_character
     raise ForbiddenError.new('wrong requirements') unless @construction_job.queueable?
     queue = @construction_job.queue
     @construction_job.position = queue.max_position + 1
