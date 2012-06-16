@@ -55,11 +55,11 @@ class Construction::Job < ActiveRecord::Base
     raise ForbiddenError.new('Queue is already full.') if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
     
     # test same job type if queue has already jobs
-    raise ForbiddenError.new('Not aloud to mix destruction with construction jobs.')  if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && slot.jobs.first.job_type != TYPE_CREATE
+    raise ForbiddenError.new('Not allowed to mix destruction with construction jobs.')  if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && slot.jobs.first.job_type != TYPE_CREATE
     
     # test correct level
     return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0) || !slot.jobs.empty?)
-    return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1) #  || self.level_after > slot.max_level
+    return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1) # TODO when max_level available: || self.level_after > (slot.max_level || 10000))
     return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
     return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
