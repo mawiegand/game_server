@@ -87,16 +87,14 @@ class Ticker::ConstructionActiveJobHandler
       end
       
       queue = job.queue
+      if queue.nil?
+        runloop.say "No queue given for job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
       
-      job.destroy
-      # active_job.destroy   # will be automatically destroyed due to dependencies between models
-      # event.destroy
+      job.destroy        # active_job and event will be automatically destroyed due to dependencies between models
       
-      if queue
-        queue.check_for_new_jobs
-      else
-        runloop.say "Invalid job type '#{ job.job_type }'.", Logger::ERROR
-      end
+      queue.check_for_new_jobs
 
       runloop.say "Construction active job handler completed."
     end
