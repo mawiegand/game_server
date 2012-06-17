@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615115955) do
+ActiveRecord::Schema.define(:version => 20120617204002) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -598,17 +598,17 @@ ActiveRecord::Schema.define(:version => 20120615115955) do
     t.integer  "queue_id"
     t.integer  "job_id"
     t.datetime "started_total_at"
-    t.datetime "finsished_total_at"
     t.float    "progress_total"
-    t.datetime "progress_updated_at"
     t.integer  "quantity_finished"
     t.integer  "quantity_active"
-    t.datetime "started_finished_at"
     t.datetime "finished_active_at"
     t.float    "progress_active"
     t.datetime "progress_active_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "progress_total_updated_at"
+    t.datetime "finished_total_at"
+    t.datetime "started_active_at"
   end
 
   create_table "training_jobs", :force => true do |t|

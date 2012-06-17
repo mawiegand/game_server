@@ -1,16 +1,46 @@
 class Training::QueuesController < ApplicationController
   layout 'training'
   
-  # GET /training/queues
-  # GET /training/queues.json
-  def index
-    @training_queues = Training::Queue.all
+  before_filter :authenticate
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @training_queues }
+  # GET /settlement/settlements/:settlement_id/training_queues
+  # GET /settlement/settlements/:settlement_id/training_queues.json
+  def index
+    last_modified = nil
+    
+    if params.has_key?(:settlement_id)
+      @settlement = Settlement::Settlement.find(params[:settlement_id])
+      raise NotFoundError.new('Settlement not found.') if @settlement.nil?
+      @training_queues = @settlement.training_queues
+      @training_queues = [] if @training_queues.nil?  # necessary? or ok to send 'null' ?
+    else 
+      @asked_for_index = true
+    end   
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @training_queues.nil?
+            @training_queues = Training::Queue.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+
+          # role = determine_access_role(@character.id, @character.alliance_id)
+          # logger.debug "Access with role #{role}."
+          
+          render :json => @training_queues.to_json(:include => :active_jobs)
+        end
+      end
     end
   end
+  
+  
+  
 
   # GET /training/queues/1
   # GET /training/queues/1.json
