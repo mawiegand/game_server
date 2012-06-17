@@ -34,17 +34,28 @@ class Ticker::ConstructionActiveJobHandler
         return
       end 
       
-      runloop.say "1"
+      settlement = slot.settlement 
+      if settlement.nil?
+        runloop.say "No settlement given for job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
+      
+      unless event.character == settlement.owner
+        runloop.say "Job creator is not settlement owner in job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
+      
+      # runloop.say "1"
 
       # construction code
       if job.job_type == 'create'
-        runloop.say "2"
+        # runloop.say "2"
         if slot.empty?
           # TODO check requirements like enough resources 
-          runloop.say "3"
+          # runloop.say "3"
 
           slot.create_building(job.building_id)
-          runloop.say "4"
+          # runloop.say "4"
         else
           runloop.say "Could not create building, slot id #{ slot.id } is not empty", Logger::ERROR
         end        
