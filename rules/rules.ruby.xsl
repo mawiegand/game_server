@@ -128,6 +128,9 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
   <xsl:apply-templates select="QueueTypes" />
+  <!--
+  <xsl:apply-templates select="QueueCategories" />
+  -->
 
   <xsl:text><![CDATA[
     )
@@ -510,6 +513,19 @@ end
                 :level             => <xsl:value-of select="@level" />,
               },
 </xsl:template>
+
+<xsl:template match="QueueCategories">
+  
+      :queue_categories => [  # ALL QUEUE CATEGORIES
+<xsl:for-each select="QueueCategory">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF BUILDING CATEGORIES
+</xsl:template>
+
 
 </xsl:stylesheet>
 
