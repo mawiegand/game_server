@@ -23,7 +23,7 @@ class Training::Job < ActiveRecord::Base
     costs = {}
     unitType[:costs].each do |resource_id, formula|
       f = Util::Formula.parse_from_formula(formula)
-      costs[resource_id] = f.apply()
+      costs[resource_id] = (self.quantity - self.quantity_finished) * f.apply()
     end
     return costs
   end
