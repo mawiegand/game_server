@@ -28,8 +28,7 @@ module Util
     end
 
     # Evaluates a parsed formular with a given level
-    def apply(level)
-      level = level || 0.0
+    def apply(level = 0.0)
       eval(@formula)
     end
     
