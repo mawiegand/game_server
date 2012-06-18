@@ -50,6 +50,7 @@ class Settlement::Settlement < ActiveRecord::Base
     spec.each do |number, details|
       slot = self.slots.create({
         :slot_num => number,
+        :max_level => details[:max_level]
       })
     
       if !details[:building].blank?
@@ -151,7 +152,8 @@ class Settlement::Settlement < ActiveRecord::Base
   def create_training_queue(queue_type)
     self.training_queues.create({
       :type_id    => queue_type[:id], 
-      # add queue-specific parameters here
+      :threads    => queue_type[:base_threads],
+      :max_length => queue_type[:base_slots],      
     })  
   end
 

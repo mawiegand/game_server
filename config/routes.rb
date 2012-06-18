@@ -62,13 +62,14 @@ GameServer::Application.routes.draw do
         resources :settlements do 
           resources :slots 
           resources :histories
-          resources :queues, :module => 'construction'
+          # resources :queues, :module => 'construction'
         end
         resources :slots 
         resources :histories
       end
 
       resources :queues, :path => "/settlement/settlements/:settlement_id/construction_queues", :module => 'construction'            
+      resources :queues, :path => "/settlement/settlements/:settlement_id/training_queues", :module => 'training'            
       
       resources :settlements, :path => "/map/locations/:location_id/settlements", :module => 'settlement'            
 

@@ -1,14 +1,41 @@
 class Training::JobsController < ApplicationController
   layout 'training'
   
+  before_filter :authenticate
+
   # GET /training/jobs
   # GET /training/jobs.json
   def index
-    @training_jobs = Training::Job.all
+    last_modified = nil
+    
+    if params.has_key?(:queue_id)
+      @queue = Training::Queue.find(params[:queue_id])
+      raise NotFoundError.new('Queue not found.') if @queue.nil?
+      @training_jobs = @queue.jobs
+      @training_jobs = [] if @training_jobs.nil?  # necessary? or ok to send 'null' ?
+    else 
+      @asked_for_index = true
+    end   
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @training_jobs }
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @training_jobs.nil?
+            @training_jobs = Training::Job.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end  
+
+          # role = determine_access_role(@character.id, @character.alliance_id)
+          # logger.debug "Access with role #{role}."
+
+          render :json => @training_jobs.to_json(:include => :active_job)
+        end
+      end
     end
   end
 
@@ -42,11 +69,23 @@ class Training::JobsController < ApplicationController
   # POST /training/jobs
   # POST /training/jobs.json
   def create
-    @training_job = Training::Job.new(params[:training_job])
-
+    @job = params[:training_job]
+    
+    @training_job = Training::Job.new(@job)
+    raise ForbiddenError.new('wrong requirements') unless @training_job.queueable?
+    queue = @training_job.queue
+    @training_job.position = queue.max_position + 1
+    @training_job.save
+    
+    queue.reload
+    queue.check_for_new_jobs
+    
+    slot = @training_job.slot
+    slot.job_created(@training_job)
+    
     respond_to do |format|
       if @training_job.save
-        format.html { redirect_to @training_job, notice: 'Job was successfully created.' }
+        format.html { redirect_to @training_job, notice: 'training job was successfully created.' }
         format.json { render json: @training_job, status: :created, location: @training_job }
       else
         format.html { render action: "new" }

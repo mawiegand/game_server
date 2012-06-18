@@ -34,17 +34,29 @@ class Ticker::ConstructionActiveJobHandler
         return
       end 
       
-      runloop.say "1"
+      settlement = slot.settlement 
+      if settlement.nil?
+        runloop.say "No settlement given for job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
+      
+      unless event.character == settlement.owner
+        runloop.say "Job creator is not settlement owner in job '#{ job.id }'.", Logger::ERROR
+        job.destroy
+        return
+      end 
+      
+      # runloop.say "1"
 
       # construction code
       if job.job_type == 'create'
-        runloop.say "2"
+        # runloop.say "2"
         if slot.empty?
           # TODO check requirements like enough resources 
-          runloop.say "3"
+          # runloop.say "3"
 
           slot.create_building(job.building_id)
-          runloop.say "4"
+          # runloop.say "4"
         else
           runloop.say "Could not create building, slot id #{ slot.id } is not empty", Logger::ERROR
         end        
@@ -75,16 +87,14 @@ class Ticker::ConstructionActiveJobHandler
       end
       
       queue = job.queue
+      if queue.nil?
+        runloop.say "No queue given for job '#{ job.id }'.", Logger::ERROR
+        return
+      end 
       
-      active_job.job.destroy
-      active_job.destroy
-      event.destroy
+      job.destroy        # active_job and event will be automatically destroyed due to dependencies between models
       
-      if queue
-        queue.check_for_new_jobs
-      else
-        runloop.say "Invalid job type '#{ job.job_type }'.", Logger::ERROR
-      end
+      queue.check_for_new_jobs
 
       runloop.say "Construction active job handler completed."
     end

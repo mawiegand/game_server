@@ -196,9 +196,8 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
   
-  # method is called whenever a user cancels a planned job
+  # method is called whenever a user creates a job for this slot
   def job_created(job)
-    
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = job.building_id
       self.level = 0
@@ -206,7 +205,7 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
   
-  # method is called whenever a user cancels a planned job
+  # method is called whenever a user cancels a planned job for this slot
   def job_cancelled(job)
     if job.job_type == Construction::Job::TYPE_CREATE && self.empty?
       self.building_id = nil
