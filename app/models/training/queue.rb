@@ -28,14 +28,19 @@ class Training::Queue < ActiveRecord::Base
         if next_job.pay_for_job
           active_job = next_job.build_active_job
           active_job.queue = self
-          active_job.started_at = Time.now
-          active_job.finished_at = Time.now + (next_job.building_time / self.speed)
+          
+          now = Time.now
+          
+          active_job.quantity_active = self.threads
+          active_job.started_active_at = now
+          active_job.finished_active_at = now + (self.threads * next_job.training_time / self.speed)
+          
+          active_job.started_total_at = now
+          active_job.finished_total_at = now + (next_job.quantity * next_job.training_time / self.speed)
+          
           next_job.save
           
           self.create_event_for_job(active_job)
-          
-          # test again
-          self.check_for_new_jobs
         else
           # create event for next queue check
           self.create_queue_check_event
@@ -80,7 +85,7 @@ class Training::Queue < ActiveRecord::Base
       #create entry for event table
       event = active_job.build_event(
           character_id: self.settlement.owner_id,   # get current character id
-          execute_at: active_job.finished_at,
+          execute_at: active_job.finished_active_at,
           event_type: "training_active_job",
           local_event_id: active_job.id,
       )
@@ -90,14 +95,17 @@ class Training::Queue < ActiveRecord::Base
     end
   
     def create_queue_check_event
+      
+      # TODO check if there are already current check events
+      
       #create entry for event table
-      event = Event::Event.new(
+      new_event = Event::Event.new(
           character_id: self.settlement.owner_id,   # get current character id
           execute_at: DateTime.now.advance(:minutes => 2),
           event_type: "training_queue_check",
           local_event_id: self.id,
       )
-      if !event.save  # this is the final step; this makes sure, something is actually executed
+      if !new_event.save  # this is the final step; this makes sure, something is actually executed
         raise ArgumentError.new('could not create event for training queue check')
       end
     end
