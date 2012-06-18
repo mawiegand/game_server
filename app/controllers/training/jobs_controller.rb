@@ -79,10 +79,7 @@ class Training::JobsController < ApplicationController
     
     queue.reload
     queue.check_for_new_jobs
-    
-    slot = @training_job.slot
-    slot.job_created(@training_job)
-    
+        
     respond_to do |format|
       if @training_job.save
         format.html { redirect_to @training_job, notice: 'training job was successfully created.' }
@@ -114,11 +111,18 @@ class Training::JobsController < ApplicationController
   # DELETE /training/jobs/1.json
   def destroy
     @training_job = Training::Job.find(params[:id])
-    @training_job.destroy
+    
+    queue = @training_job.queue
+    @training_job.refund_for_job if @training_job.active?
+    @training_job.destroy      
+    queue.reload
+    queue.check_for_new_jobs
 
     respond_to do |format|
-      format.html { redirect_to training_jobs_url }
+      format.html { redirect_to construction_jobs_url }
       format.json { head :ok }
     end
   end
+  
+  
 end

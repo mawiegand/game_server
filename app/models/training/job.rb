@@ -11,16 +11,30 @@ class Training::Job < ActiveRecord::Base
     !self.active_job.nil?
   end
   
-  # calculate building time from formula contained in rules
-  def building_time
+  def training_time
     rules = GameRules::Rules.the_rules
     formula = Util::Formula.parse_from_formula(rules.unit_types[self.unit_id][:production_time])
     formula.apply()
   end
   
+  def costs
+    unitType = GameRules::Rules.the_rules.unit_types[self.unit_id]
+    return {} if unitType[:costs].nil?
+    costs = {}
+    unitType[:costs].each do |resource_id, formula|
+      f = Util::Formula.parse_from_formula(formula)
+      costs[resource_id] = f.apply(self.level_after)
+    end
+    return costs
+  end
+  
+  def last_in_slot
+    self == self.queue.sorted_jobs_for_slot(self.slot).last
+  end
+  
   # checks if a job can be queueable due to requirements like e.g. building levels
   def queueable?
-    slot = self.queue
+    queue = self.queue
     settlement = queue.settlement
     owner = settlement.owner
     
@@ -38,8 +52,12 @@ class Training::Job < ActiveRecord::Base
   end
   
   # checks if user owns enough resources for job and reduces them instantly
-  def reduce_resources(resources)
-    self.queue.settlement.owner.resource_pool.remove_resources_transaction(resources)
+  def pay_for_job
+    self.queue.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
+  end
+  
+  def refund_for_job
+    self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs)
   end
   
 end

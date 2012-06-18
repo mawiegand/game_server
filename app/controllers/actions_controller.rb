@@ -45,6 +45,14 @@ class ActionsController < ApplicationController
           parameters: 'construction_job[queue_id], construction_job[slot_id], construction_job[building_id], construction_job[level_after], construction_job[job_type]' 
         },
       ],
+      Training: [
+        { # NEW JOB
+          url: training_jobs_path,
+          method: 'POST',
+          name: 'Create Training Job',
+          parameters: 'training_job[queue_id], training_job[quantity], training_job[unit_id]' 
+        },
+      ],
     }
     
     respond_to do |format|
