@@ -20,6 +20,11 @@
   <%= @training_job.quantity %>
 </p>
 
+<p>
+  <b>Quantity finished:</b>
+  <%= @training_active_job.quantity_finished %>
+</p>
+
 
 <%= link_to 'Edit', edit_training_job_path(@training_job) %> |
 <%= link_to 'Back', training_jobs_path %>
