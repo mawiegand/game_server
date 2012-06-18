@@ -23,13 +23,9 @@ class Training::Job < ActiveRecord::Base
     costs = {}
     unitType[:costs].each do |resource_id, formula|
       f = Util::Formula.parse_from_formula(formula)
-      costs[resource_id] = f.apply(self.level_after)
+      costs[resource_id] = f.apply()
     end
     return costs
-  end
-  
-  def last_in_slot
-    self == self.queue.sorted_jobs_for_slot(self.slot).last
   end
   
   # checks if a job can be queueable due to requirements like e.g. building levels
@@ -58,6 +54,35 @@ class Training::Job < ActiveRecord::Base
   
   def refund_for_job
     self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs)
+  end
+  
+  # creates the units for tha active job. if there are more units to be build in this job, 
+  # active job will be updated and a new event is created
+  def create_units
+    # units bauen
+    active_job = self.active_job
+    queue = self.queue
+    
+    queue.settlement.add_units_to_garrison(self.unit_id, active_job.quantity_active)
+    quantity_remaining = self.quantity - self.quantity_finished - active_job.quantity_active
+    quantity_next = [queue.threads, quantity_remaining].min
+    
+    if quantity_remaining > 0
+      # job aktualisieren
+      self.quantity_finished += active_job.quantity_active
+      # active_job aktualisieren
+      active_job.quantity_active = quantity_next
+      now = Time.now
+      active_job.started_active_at = now
+      active_job.finished_active_at = now + (quantity_next * self.training_time / queue.speed)
+      active_job.event.destroy
+      self.save
+      
+      active_job.create_ticker_event      
+    else
+      # job wegräumen
+      self.destroy
+    end
   end
   
 end

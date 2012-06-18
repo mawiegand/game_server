@@ -338,6 +338,9 @@ while !locations.empty?
       end
       
       details.save
+      
+      location.settlement.garrison_army = army
+      location.save
   end
   
 end

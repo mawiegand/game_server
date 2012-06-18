@@ -75,6 +75,7 @@ class Training::JobsController < ApplicationController
     raise ForbiddenError.new('wrong requirements') unless @training_job.queueable?
     queue = @training_job.queue
     @training_job.position = queue.max_position + 1
+    @training_job.quantity_finished = 0
     @training_job.save
     
     queue.reload
@@ -119,7 +120,7 @@ class Training::JobsController < ApplicationController
     queue.check_for_new_jobs
 
     respond_to do |format|
-      format.html { redirect_to construction_jobs_url }
+      format.html { redirect_to training_jobs_url }
       format.json { head :ok }
     end
   end

@@ -26,7 +26,7 @@ class Ticker::TrainingActiveJobHandler
         return
       end
       
-      runloop.say "Process active training job #{ active_job.job_id } type '#{ job.job_type }' in settlement #{ active_job.queue.settlement_id }"
+      runloop.say "Process active training job #{ active_job.job_id } in settlement #{ active_job.queue.settlement_id }"
       
       queue = job.queue
       if queue.nil?
@@ -46,13 +46,12 @@ class Ticker::TrainingActiveJobHandler
         return
       end 
       
-      # training code
-      settlement.create_units
+      # update active job and create new event, if more unit are to build
+      job.create_units
       
+      queue.check_for_new_jobs if job.nil?
       
-      job.destroy
-      queue.check_for_new_jobs
-
+      event.destroy
       runloop.say "Training active job handler completed."
     end
   end

@@ -5,11 +5,13 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
   belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
+  belongs_to :garrison_army,   :class_name => "Military::Army",  :foreign_key => "garrison_id"
   
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
-  has_many   :training_queues,   :class_name => "Training::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
+  has_many   :training_queues, :class_name => "Training::Queue", :foreign_key => "settlement_id",      :inverse_of => :settlement
+  
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                   :as => :ally 
@@ -177,6 +179,14 @@ class Settlement::Settlement < ActiveRecord::Base
     true
   end
   
+  def add_units_to_garrison(unit_id, quantity)
+    # create garrison army if it not exists
+    army = self.location.garrison_army
+
+    unit_types = GameRules::Rules.the_rules().unit_types
+    army.details[unit_types[unit_id][:db_field]] += quantity
+    army.details.save
+  end
 
   protected
   

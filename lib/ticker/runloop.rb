@@ -2,6 +2,8 @@ require 'ticker/movement_handler'
 require 'ticker/battle_handler'
 require 'ticker/construction_active_job_handler'
 require 'ticker/construction_queue_check_handler'
+require 'ticker/training_active_job_handler'
+# require 'ticker/training_queue_check_handler'
 
 module Ticker
 
@@ -21,6 +23,8 @@ module Ticker
   Ticker.add_handler_class(Ticker::BattleHandler);
   Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler);
   Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler);
+  Ticker.add_handler_class(Ticker::TrainingActiveJobHandler);
+  # Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler);
 
   class Runloop
     
