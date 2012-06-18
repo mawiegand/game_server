@@ -11,6 +11,9 @@
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
       </Description>
+      <Cost id="resource_stone" round="true">12</Cost>  
+      <Cost id="resource_fur" round="true">2</Cost>    
+      <ProductionTime shortenable="true">500</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>
@@ -34,6 +37,10 @@
       <Description lang="en_US">
         <p>Skewer Crew training 101: stick'em with the pointy end!</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>             
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>15</Initiative>
@@ -57,6 +64,10 @@
       <Description lang="en_US">
         <p>Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>1.5</Velocity>
       <ActionPoints>5</ActionPoints>
       <Initiative>26</Initiative>
@@ -80,6 +91,10 @@
       <Description lang="en_US">
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>0.95</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>14</Initiative>
@@ -103,6 +118,10 @@
       <Description lang="en_US">
         <p>It's not so much the riders themselves that are feared...</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>1.4</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>28</Initiative>
@@ -126,6 +145,10 @@
       <Description lang="en_US">
         <p>Used to shooting at small furry animals, these guys are great at aiming.</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>7</Initiative>
@@ -149,6 +172,10 @@
       <Description lang="en_US">
         <p>Decription goes here.</p>
       </Description>
+      <Cost id="resource_stone" round="true">40</Cost>  
+      <Cost id="resource_wood" round="true">20</Cost>    
+      <Cost id="resource_fur" round="true">12</Cost>    
+      <ProductionTime shortenable="true">1200</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>16</Initiative>
@@ -172,6 +199,10 @@
       <Description lang="en_US">
         <p>Decription goes here.</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>0.7</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>16</Initiative>
@@ -196,6 +227,10 @@
       <Description lang="en_US">
         <p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>
       </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
       <Velocity>0.9</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>16</Initiative>

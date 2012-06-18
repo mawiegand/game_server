@@ -175,57 +175,6 @@ const char* UnitType::toString(char* buf, int size)
 <!-- object -->
 <xsl:template match="object">[<xsl:value-of select="@id"/>]</xsl:template>
 
-<!-- cost -->
-<xsl:template name="cost">
-<xsl:param name="type"/>
-  {
-    .type = (const struct GameObject *) (<xsl:value-of select="$type"/>),
-    .cost = "<xsl:apply-templates/>"
-  },
-</xsl:template>
-
-<!-- costs -->
-<xsl:template name="costs">
-<xsl:param name="name"/>
-<xsl:if test="count(Cost)">
-static const struct ProductionCost <xsl:value-of select="$name"/>[] = {
-<xsl:for-each select="Cost[name(id(@id))='Resource']">
-<xsl:call-template name="cost">
-<xsl:with-param name="type"
-	select="concat('resource_type_list + ', count(id(@id)/preceding-sibling::*))"/>
-</xsl:call-template>
-</xsl:for-each>
-<xsl:for-each select="Cost[name(id(@id))='Building']">
-<xsl:call-template name="cost">
-<xsl:with-param name="type"
-	select="concat('building_type_list + ', count(id(@id)/preceding-sibling::*))"/>
-</xsl:call-template>
-</xsl:for-each>
-<xsl:for-each select="Cost[name(id(@id))='DefenseSystem']">
-<xsl:call-template name="cost">
-<xsl:with-param name="type"
-	select="concat('defenseSystem_type_list + ', count(id(@id)/preceding-sibling::*))"/>
-</xsl:call-template>
-</xsl:for-each>
-<xsl:for-each select="Cost[name(id(@id))='Unit']">
-<xsl:call-template name="cost">
-<xsl:with-param name="type"
-	select="concat('unit_type_list + ', count(id(@id)/preceding-sibling::*))"/>
-</xsl:call-template>
-</xsl:for-each>
-};
-</xsl:if>
-</xsl:template>
-
-<!-- get_costs -->
-<xsl:template name="get_costs">
-<xsl:param name="name"/>
-<xsl:variable name="num_costs" select="count(Cost)"/>
-<xsl:if test="$num_costs">
-      .costs = <xsl:value-of select="$name"/>,
-      .num_costs = <xsl:value-of select="$num_costs"/>,
-</xsl:if>
-</xsl:template>
 
 <!-- requirement -->
 <xsl:template name="requirement">
@@ -360,9 +309,6 @@ const struct GameObject *resource_type[] = {
 /********************** science types *********************/
 
 <xsl:for-each select="Science">
-<xsl:call-template name="costs">
-<xsl:with-param name="name" select="concat('science_cost_', position()-1)"/>
-</xsl:call-template>
 <xsl:call-template name="requirements">
 <xsl:with-param name="name" select="concat('science_req_', position()-1)"/>
 </xsl:call-template>
@@ -389,9 +335,6 @@ static const struct Science science_type_list[] = {
       .ratingValue = 0,
 
       .productionTime = "<xsl:apply-templates select="ProductionTime"/>",
-      <xsl:call-template name="get_costs">
-      <xsl:with-param name="name" select="concat('science_cost_', position()-1)"/>
-      </xsl:call-template>
 
       <xsl:call-template name="get_requirements">
       <xsl:with-param name="name" select="concat('science_req_', position()-1)"/>
@@ -416,9 +359,6 @@ const struct GameObject *science_type[] = {
   UnitType* unit = 0;  // holds partially constructed unit types
 
 <xsl:for-each select="Unit">
-<xsl:call-template name="costs">
-<xsl:with-param name="name" select="concat('unit_cost_', position()-1)"/>
-</xsl:call-template>
 <xsl:call-template name="requirements">
 <xsl:with-param name="name" select="concat('unit_req_', position()-1)"/>
 </xsl:call-template>
@@ -453,10 +393,6 @@ const struct GameObject *science_type[] = {
   unit->criticalHitDamage = <xsl:value-of select="CriticalDamage"/>;
   unit->criticalHitChance = <xsl:value-of select="CriticalDamage/@chance"/>;
 
-
-	<xsl:call-template name="get_costs">
-	<xsl:with-param name="name" select="concat('unit_cost_', position()-1)"/>
-	</xsl:call-template>
 
 	<xsl:call-template name="get_requirements">
 	<xsl:with-param name="name" select="concat('unit_req_', position()-1)"/>

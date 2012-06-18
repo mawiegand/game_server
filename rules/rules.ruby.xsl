@@ -236,6 +236,12 @@ end
 <xsl:if test="Invisible">
           :invisible   => <xsl:value-of select="Invisible"/>,
 </xsl:if>
+          :production_time => '<xsl:value-of select="ProductionTime"/>',
+<xsl:if test="Cost">
+          :costs      => {
+            <xsl:apply-templates select="Cost" />
+          },
+</xsl:if>
 <xsl:if test="count(Encumbrance)">
           :encumbrance => {
 <xsl:for-each select="Encumbrance">

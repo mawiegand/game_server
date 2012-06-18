@@ -106,7 +106,7 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Description+, Position?, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
+<!ELEMENT Unit (Name+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED

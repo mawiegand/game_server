@@ -392,6 +392,14 @@ class GameRules::Rules
           :critical_hit_damage => 10,
           :critical_hit_chance => 0.01,
 
+          :production_time => '500',
+
+          :costs      => {
+            1 => '12',
+            2 => '2',
+            
+          },
+
 
         },              #   END OF Stone Hurler
         {               #   Skewer
@@ -436,6 +444,15 @@ class GameRules::Rules
 
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.01,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
 
 
         },              #   END OF Skewer
@@ -482,6 +499,15 @@ class GameRules::Rules
           :critical_hit_damage => 10,
           :critical_hit_chance => 0.01,
 
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
 
         },              #   END OF Ostrich Riders
         {               #   Tree Huggers
@@ -526,6 +552,15 @@ class GameRules::Rules
 
           :critical_hit_damage => 9,
           :critical_hit_chance => 0.02,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
 
 
         },              #   END OF Tree Huggers
@@ -572,6 +607,15 @@ class GameRules::Rules
           :critical_hit_damage => 14,
           :critical_hit_chance => 0.02,
 
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
 
         },              #   END OF Sabretooth-Riders
         {               #   Squirrel-Hunters
@@ -616,6 +660,15 @@ class GameRules::Rules
 
           :critical_hit_damage => 19,
           :critical_hit_chance => 0.2,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
 
 
         },              #   END OF Squirrel-Hunters
@@ -662,6 +715,15 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
+          :production_time => '1200',
+
+          :costs      => {
+            1 => '40',
+            0 => '20',
+            2 => '12',
+            
+          },
+
 
         },              #   END OF Squirrel-Hunters
         {               #   Catapult
@@ -707,6 +769,15 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
 
         },              #   END OF Catapult
         {               #   Battering Ram
@@ -751,6 +822,15 @@ class GameRules::Rules
 
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
 
 
         },              #   END OF Battering Ram
