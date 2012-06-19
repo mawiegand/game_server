@@ -34,10 +34,10 @@ class Training::Queue < ActiveRecord::Base
           
           active_job.quantity_active = quantity_active
           active_job.started_active_at = now
-          active_job.finished_active_at = now + (quantity_active * next_job.training_time / self.speed)
+          active_job.finished_active_at = now + (next_job.training_time / self.speed)
           
           active_job.started_total_at = now
-          active_job.finished_total_at = now + (next_job.quantity * next_job.training_time / self.speed)
+          active_job.finished_total_at = now + ((1.0 * next_job.quantity / self.threads).ceil * next_job.training_time / self.speed)
           
           next_job.save
           
