@@ -672,14 +672,14 @@ class GameRules::Rules
 
 
         },              #   END OF Squirrel-Hunters
-        {               #   Squirrel-Hunters
+        {               #   Club Warrior
           :id          => 6, 
           :symbolic_id => :clubbers,
 					:category    => 0,
           :db_field    => :unit_clubbers,
           :name        => {
             
-            :en_US => "Squirrel-Hunters",
+            :en_US => "Club Warrior",
   
             :de_DE => "Keulenkrieger",
                 
@@ -725,7 +725,7 @@ class GameRules::Rules
           },
 
 
-        },              #   END OF Squirrel-Hunters
+        },              #   END OF Club Warrior
         {               #   Catapult
           :id          => 7, 
           :symbolic_id => :catapult,
