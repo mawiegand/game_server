@@ -96,18 +96,18 @@ class Training::Queue < ActiveRecord::Base
     end
   
     def create_queue_check_event
-      
-      # TODO check if there are already current check events
-      
-      #create entry for event table
-      new_event = Event::Event.new(
-          character_id: self.settlement.owner_id,   # get current character id
-          execute_at: DateTime.now.advance(:minutes => 2),
-          event_type: "training_queue_check",
-          local_event_id: self.id,
-      )
-      if !new_event.save  # this is the final step; this makes sure, something is actually executed
-        raise ArgumentError.new('could not create event for training queue check')
+      # check if there are already current check events for this queue
+      unless Event::Event.where(event_type: :training_queue_check, local_event_id: self.id).empty?
+        #create entry for event table
+        new_event = Event::Event.new(
+            character_id: self.settlement.owner_id,   # get current character id
+            execute_at: DateTime.now.advance(:minutes => 2),
+            event_type: :training_queue_check,
+            local_event_id: self.id,                  # queue id as local event id
+        )
+        if !new_event.save  # this is the final step; this makes sure, something is actually executed
+          raise ArgumentError.new('could not create event for training queue check')
+        end
       end
     end
   
