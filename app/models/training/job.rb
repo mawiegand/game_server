@@ -72,9 +72,9 @@ class Training::Job < ActiveRecord::Base
       self.quantity_finished += active_job.quantity_active
       # active_job aktualisieren
       active_job.quantity_active = quantity_next
-      now = Time.now
-      active_job.started_active_at = now
-      active_job.finished_active_at = now + (quantity_next * self.training_time / queue.speed)
+      new_start = active_job.finished_active_at
+      active_job.started_active_at = new_start
+      active_job.finished_active_at = new_start + (quantity_next * self.training_time / queue.speed)
       active_job.event.destroy
       self.save
       
