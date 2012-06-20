@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619091713) do
+ActiveRecord::Schema.define(:version => 20120620124848) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -566,10 +566,8 @@ ActiveRecord::Schema.define(:version => 20120619091713) do
     t.integer  "settlement_id"
     t.integer  "slot_num"
     t.string   "type"
-    t.integer  "max_level"
     t.integer  "building_id"
-    t.integer  "level",           :default => 0
-    t.integer  "construction_id"
+    t.integer  "level",         :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -632,7 +630,7 @@ ActiveRecord::Schema.define(:version => 20120619091713) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "speed",             :default => 0.0
+    t.decimal  "speed",             :default => 1.0, :null => false
   end
 
 end

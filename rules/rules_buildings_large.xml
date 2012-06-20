@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+
+<Building id="building_palace" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
+  <Name lang="de_DE">Stammeslager</Name>
+  <Name lang="en_US">Clan camp</Name>
+  <Description lang="de_DE">
+    <p>Hauptgebäude.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Main building.</p>
+  </Description>
+  <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
+  <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>    
+  <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
+  <Production id="resource_wood">10</Production>        
+  <Abilities> <!-- just for grouping -->
+    <UnlockQueue  queue="queue_buildings" />
+    <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.05</SpeedupQueue>
+  </Abilities>
+</Building>
+  

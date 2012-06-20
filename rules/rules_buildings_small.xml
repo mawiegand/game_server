@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<Building id="building_quarry" group="military" category="building_category_small_building" buyable="true" destructable="true">  
+  <Name lang="de_DE">Steinbruch</Name>
+  <Name lang="en_US">Quarry</Name>
+  <Description lang="de_DE">
+    <p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>
+  </Description>
+  <Requirement id="science_simple_tools" min_level="1" />
+  <Requirement id="building_palace" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*30</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*100+10</Cost>    
+  <Production id="resource_stone">FLOOR(LEVEL*5*POW(1.1, LEVEL))+1</Production>        
+  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
+    <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+  </Abilities>
+</Building>
+

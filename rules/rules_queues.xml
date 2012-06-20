@@ -5,8 +5,10 @@
   <Queue id="queue_buildings" category="queue_category_construction" domain="settlement" base_threads="1" base_slots="4">
     <Name>Construction of Buildings</Name>
     <Name lang="de_DE">Gebäudeproduktion</Name>
-    <ProductionCategory category="building_category_fortress_main" />
+    <ProductionCategory category="building_category_fortress_main"  />
     <ProductionCategory category="building_category_fortress_tower" />
+    <ProductionCategory category="building_category_large_building" />
+    <ProductionCategory category="building_category_small_building" />
   </Queue>
   <Queue id="queue_fortifications" category="queue_category_construction" domain="settlement" base_threads="1" base_slots="4">
     <Name>Construction of Fortifications</Name>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
-<BuildingTypes>
+<BuildingTypes xmlns:xi="http://www.w3.org/2001/XInclude">
   <Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
     <Name lang="de_DE">Tüftler</Name>
     <Name lang="en_US">Inventor</Name>
@@ -98,5 +98,8 @@
       <ShowGarrisonArmy />
     </Abilities>
   </Building>
+  
+  <xi:include href="rules_buildings_small.xml" />
+  <xi:include href="rules_buildings_large.xml" />
 
 </BuildingTypes>
