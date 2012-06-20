@@ -23,7 +23,6 @@ class Military::Army < ActiveRecord::Base
   after_find :update_ap_if_necessary
   after_save :set_parent_change_timestamps
   
-  
   def self.regeneration_duration
     GAME_SERVER_CONFIG['ap_regeneration_duration'] * GAME_SERVER_CONFIG['base_time_factor']
   end
