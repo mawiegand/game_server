@@ -1376,11 +1376,11 @@ class GameRules::Rules
 
           :costs      => {
             1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'LEVEL*1000+LEVEL*10',
+            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
             
           },
 
-          :production_time => '120*(MAX(LEVEL-3,0)+10',
+          :production_time => '120*MAX(LEVEL-3,0)+10',
           :production  => [
             
               {

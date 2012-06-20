@@ -12,8 +12,8 @@
     <p>Main building.</p>
   </Description>
   <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*1000+LEVEL*10</Cost>    
-  <ProductionTime shortenable="false">120*(MAX(LEVEL-3,0)+10</ProductionTime>     
+  <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>    
+  <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
   <Production id="resource_wood">10</Production>        
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_buildings" />
