@@ -898,7 +898,7 @@ class GameRules::Rules
         },              #   END OF Defensive Barricade 
         {               #   Large Buildings
           :id          => 3, 
-          :symbolic_id => :building_category_large_buildings,
+          :symbolic_id => :building_category_large_building,
           :name        => {
             
             :en_US => "Large Buildings",
@@ -917,7 +917,7 @@ class GameRules::Rules
         },              #   END OF Large Buildings
         {               #   Standard Buildings
           :id          => 4, 
-          :symbolic_id => :building_category_small_buildings,
+          :symbolic_id => :building_category_small_building,
           :name        => {
             
             :en_US => "Standard Buildings",
@@ -1280,6 +1280,143 @@ class GameRules::Rules
           },
 
         },              #   END OF Festungsanlagen
+        {               #   Steinbruch
+          :id          => 5, 
+          :symbolic_id => :building_quarry,
+					:category    => 4,
+          :db_field    => :building_quarry,
+          :name        => {
+            
+            :de_DE => "Steinbruch",
+  
+            :en_US => "Quarry",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
+  
+            :en_US => "<p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_simple_tools',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_palace',
+              :id => 6,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*30',
+            0 => 'LEVEL*100+10',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "FLOOR(LEVEL*5*POW(1.1, LEVEL))+1",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Steinbruch
+        {               #   Stammeslager
+          :id          => 6, 
+          :symbolic_id => :building_palace,
+					:category    => 3,
+          :db_field    => :building_palace,
+          :name        => {
+            
+            :de_DE => "Stammeslager",
+  
+            :en_US => "Clan camp",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Hauptgebäude.</p>",
+  
+            :en_US => "<p>Main building.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+          :costs      => {
+            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            0 => 'LEVEL*1000+LEVEL*10',
+            
+          },
+
+          :production_time => '120*(MAX(LEVEL-3,0)+10',
+          :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_wood,
+                :formula            => "10",
+              },
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.05",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Stammeslager
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -1396,11 +1533,13 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :level  => 0,
+              :building  => 6,
+              
+              :level  => 1,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1410,8 +1549,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1421,8 +1560,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1432,8 +1571,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1443,7 +1582,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1453,7 +1592,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1463,7 +1602,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1473,7 +1612,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1483,7 +1622,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1493,7 +1632,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1503,7 +1642,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1513,7 +1652,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1523,7 +1662,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1533,7 +1672,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1543,7 +1682,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1553,7 +1692,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1563,7 +1702,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1573,7 +1712,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1583,7 +1722,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1593,7 +1732,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1603,7 +1742,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1613,7 +1752,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1623,7 +1762,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1633,7 +1772,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1643,7 +1782,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1653,7 +1792,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1663,7 +1802,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1673,7 +1812,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1683,7 +1822,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1693,7 +1832,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1703,7 +1842,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1713,7 +1852,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1723,7 +1862,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1733,7 +1872,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1743,7 +1882,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1753,7 +1892,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1763,7 +1902,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1773,7 +1912,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1783,7 +1922,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1793,7 +1932,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1828,8 +1967,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1839,8 +1978,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              0,
+              0,
               
               ],
             },
@@ -1850,7 +1989,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1860,7 +1999,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1870,7 +2009,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              4,
+              0,
               
               ],
             },
@@ -1905,6 +2044,8 @@ class GameRules::Rules
           :produces    => [
             0,
             1,
+            4,
+            3,
             
           ],
         },              #   END OF queue_buildings
