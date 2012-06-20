@@ -877,6 +877,63 @@ class GameRules::Rules
           },
 
         },              #   END OF Towers
+        {               #   Defensive Barricade 
+          :id          => 2, 
+          :symbolic_id => :building_category_wall,
+          :name        => {
+            
+            :en_US => "Defensive Barricade ",
+  
+            :de_DE => "Verteidigungswall",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Grundlegende Verteidigungseinrichtung einer jeden Siedlung.</p>",
+  
+            :en_US => "<p>Fundamental defensive building of any settlement.</p>",
+                
+          },
+
+        },              #   END OF Defensive Barricade 
+        {               #   Large Buildings
+          :id          => 3, 
+          :symbolic_id => :building_category_large_buildings,
+          :name        => {
+            
+            :en_US => "Large Buildings",
+  
+            :de_DE => "Große Gebäude",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wichtige Gebäude, die eine große Grundfläche benötigen.</p>",
+  
+            :en_US => "<p>Advanced buildings that must be build on a large lot.</p>",
+                
+          },
+
+        },              #   END OF Large Buildings
+        {               #   Standard Buildings
+          :id          => 4, 
+          :symbolic_id => :building_category_small_buildings,
+          :name        => {
+            
+            :en_US => "Standard Buildings",
+  
+            :de_DE => "Einfache Gebäude",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Grundlegende Gebäude, die überall, auf großen und kleinen Bauplätzen, gebaut werden können.</p>",
+  
+            :en_US => "<p>Fundamental buildings of any settlement that can be build on large as well as small lots.</p>",
+                
+          },
+
+        },              #   END OF Standard Buildings
       ],                # END OF BUILDING CATEGORIES
 
 # ## BUILDING TYPES ##########################################################
@@ -1327,13 +1384,12 @@ class GameRules::Rules
 
           :building_slots => {
             0 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              2,
               
               ],
             },
@@ -1343,8 +1399,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1354,8 +1410,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1365,18 +1421,19 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
             4 => {
-              :max_level => 10,
+              :max_level => 20,
               
               :level  => 0,
               
               :options   => [
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1386,7 +1443,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1396,7 +1453,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1406,7 +1463,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1416,7 +1473,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1426,7 +1483,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1436,7 +1493,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1446,7 +1503,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1456,7 +1513,287 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
+              
+              ],
+            },
+            13 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            14 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            15 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            16 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            17 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            18 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            19 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            20 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            21 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            22 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            23 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            24 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            25 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            26 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            27 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            28 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            29 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            30 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            31 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            32 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            33 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            34 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            35 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            36 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            37 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            38 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            39 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            40 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
               
               ],
             },
@@ -1491,8 +1828,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1502,8 +1839,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1513,7 +1850,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1523,7 +1860,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1533,7 +1870,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
