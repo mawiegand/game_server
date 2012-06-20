@@ -1538,8 +1538,8 @@ class GameRules::Rules
               :level  => 1,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1549,8 +1549,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1560,8 +1560,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1571,8 +1571,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1582,7 +1582,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1592,7 +1592,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1602,7 +1602,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1612,7 +1612,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1622,7 +1622,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1632,7 +1632,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1642,7 +1642,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1652,7 +1652,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1662,7 +1662,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1672,7 +1672,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1682,7 +1682,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1692,7 +1692,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1702,7 +1702,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1712,7 +1712,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1722,7 +1722,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1732,7 +1732,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1742,7 +1742,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1752,7 +1752,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1762,7 +1762,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1772,7 +1772,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1782,7 +1782,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1792,7 +1792,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1802,7 +1802,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1812,7 +1812,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1822,7 +1822,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1832,7 +1832,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1842,7 +1842,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1852,7 +1852,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1862,7 +1862,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1872,7 +1872,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1882,7 +1882,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1892,7 +1892,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1902,7 +1902,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1912,7 +1912,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1922,7 +1922,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1932,7 +1932,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1967,8 +1967,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1978,8 +1978,8 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
-              0,
+              3,
+              4,
               
               ],
             },
@@ -1989,7 +1989,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -1999,7 +1999,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -2009,7 +2009,7 @@ class GameRules::Rules
               :level  => 0,
               
               :options   => [
-              0,
+              4,
               
               ],
             },
@@ -2044,8 +2044,8 @@ class GameRules::Rules
           :produces    => [
             0,
             1,
-            4,
             3,
+            4,
             
           ],
         },              #   END OF queue_buildings
