@@ -95,6 +95,7 @@
     <Abilities> <!-- just for grouping -->
       <UnlockQueue  queue="queue_buildings" />
       <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
+      <ShowGarrisonArmy />
     </Abilities>
   </Building>
 

@@ -942,7 +942,7 @@ class GameRules::Rules
           ],
 
           :abilities   => {
-
+    
           },
 
         },              #   END OF Tüftler
@@ -1005,7 +1005,7 @@ class GameRules::Rules
           ],
 
           :abilities   => {
-
+    
           },
 
         },              #   END OF Reitmeisterrei
@@ -1080,7 +1080,7 @@ class GameRules::Rules
               },
 
             ],
-
+    
           },
 
         },              #   END OF Truppenunterkunft
@@ -1220,6 +1220,8 @@ class GameRules::Rules
 
             ],
 
+            :show_garrison_army => true,
+    
           },
 
         },              #   END OF Festungsanlagen

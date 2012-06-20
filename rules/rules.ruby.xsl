@@ -498,6 +498,7 @@ end
 <xsl:apply-templates select="UnlockQueue" />
             ],
 </xsl:if>
+<xsl:apply-templates select="ShowGarrisonArmy" />    
           },
 </xsl:template>
 
@@ -518,6 +519,10 @@ end
                 :queue_type_id_sym => :<xsl:value-of select="@queue" />,
                 :level             => <xsl:value-of select="@level" />,
               },
+</xsl:template>
+
+<xsl:template match="ShowGarrisonArmy">
+            :show_garrison_army => true,
 </xsl:template>
 
 <xsl:template match="QueueCategories">
