@@ -9,10 +9,8 @@ end %>
     <th>Settlement</th>
     <th>Slot num</th>
     <th>Type</th>
-    <th>Max level</th>
     <th>Building</th>
     <th>Level</th>
-    <th>Construction</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,10 +21,8 @@ end %>
     <td><%= settlement_slot.settlement_id %></td>
     <td><%= settlement_slot.slot_num %></td>
     <td><%= settlement_slot.type %></td>
-    <td><%= settlement_slot.max_level %></td>
     <td><%= settlement_slot.building_id %></td>
     <td><%= settlement_slot.level %></td>
-    <td><%= settlement_slot.construction_id %></td>
     <td><%= link_to 'Show', settlement_slot %></td>
     <td><%= link_to 'Edit', edit_settlement_slot_path(settlement_slot) %></td>
     <td><%= link_to 'Destroy', settlement_slot, confirm: 'Are you sure?', method: :delete %></td>

@@ -52,7 +52,6 @@ class Settlement::Settlement < ActiveRecord::Base
     spec.each do |number, details|
       slot = self.slots.create({
         :slot_num => number,
-        :max_level => details[:max_level]
       })
     
       if !details[:building].blank?
