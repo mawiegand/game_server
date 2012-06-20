@@ -63,6 +63,14 @@ class Construction::Job < ActiveRecord::Base
     return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
     return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
+    # TODO test if job can be added to queue
+    
+    # TODO test if building_id valig
+    
+    # TODO test if building can be build in slot according to the slots building categories
+    
+    # TODO forgot anything to test? 
+    
     # test correct building id
     return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
     
