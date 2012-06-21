@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621103750) do
+ActiveRecord::Schema.define(:version => 20120621161727) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -459,11 +459,12 @@ ActiveRecord::Schema.define(:version => 20120621103750) do
     t.integer  "battle_id"
     t.integer  "faction_id"
     t.datetime "joined_at"
-    t.boolean  "retreat"
-    t.integer  "retreat_to_region_id"
-    t.integer  "retreat_to_location_id"
+    t.boolean  "retreated"
+    t.integer  "retreated_to_region_id"
+    t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_experience_gained",  :default => 0, :null => false
   end
 
   create_table "military_battle_rounds", :force => true do |t|
