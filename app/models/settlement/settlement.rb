@@ -14,10 +14,10 @@ class Settlement::Settlement < ActiveRecord::Base
   
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
-  attr_readable *readable_attributes(:default), :defense_bonus, :morale,                   :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :armies_count, :as => :owner
-  attr_readable *readable_attributes(:owner),                                              :as => :staff
-  attr_readable *readable_attributes(:staff),                                              :as => :admin
+  attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
+  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :armies_count, :resource_, :as => :owner
+  attr_readable *readable_attributes(:owner),                                                          :as => :staff
+  attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
   after_initialize :init
   
