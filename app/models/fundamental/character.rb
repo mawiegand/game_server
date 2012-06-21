@@ -5,7 +5,7 @@ class Fundamental::Character < ActiveRecord::Base
   belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id"  
   
   has_one  :resource_pool, :class_name => "Fundamental::ResourcePool", :foreign_key => "character_id", :inverse_of => :owner
-  has_one  :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "type_id=2"
+  has_one  :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   
   has_one  :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
   has_one  :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner
