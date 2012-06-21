@@ -223,7 +223,7 @@ class Ticker::BattleHandler
         result += write_out_inital_details(battle, round)
       end
 
-      result += "<h3>Round "+round.round_num.to_s+"</h3>\n"
+      result += "<h3>Round "+(round.round_num+1).to_s+"</h3>\n"
 
       #for each faction result
       initiator_result = ""
