@@ -1341,13 +1341,13 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(LEVEL*5*POW(1.1, LEVEL))+1",
+                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
               },
             
           ],
 
           :abilities   => {
-
+    
           },
 
         },              #   END OF Steinbruch
@@ -1415,7 +1415,7 @@ class GameRules::Rules
               },
 
             ],
-
+    
           },
 
         },              #   END OF Stammeslager

@@ -313,8 +313,8 @@ while !locations.empty?
       army.alliance_id = ally[:id] unless ally.blank?
       army.alliance_tag = ally[:tag] unless ally.blank?
       
-      army.home = location
-      army.home_settlement_name = "Name"
+      army.home = location.settlement
+      army.home_settlement_name = location.settlement.name
 
       army.ap_max = 4
       army.ap_present = rand(army.ap_max+1)

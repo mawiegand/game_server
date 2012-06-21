@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620124848) do
+ActiveRecord::Schema.define(:version => 20120621103750) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -560,6 +560,7 @@ ActiveRecord::Schema.define(:version => 20120620124848) do
     t.decimal  "resource_cash_production_bonus_sciences",      :default => 0.0
     t.decimal  "resource_cash_production_bonus_alliance",      :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",       :default => 0.0
+    t.string   "name",                                         :default => "Settlement", :null => false
   end
 
   create_table "settlement_slots", :force => true do |t|
