@@ -110,7 +110,7 @@ while !nodes.empty?
   
   node = nodes.pop
   
-  if node && node.level < 4
+  if node && node.level < 3
     node.create_children
     node.children.each { |n| nodes.insert 0, n }
   end
@@ -172,7 +172,7 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (4..4)
+for i in (3..3)
   nodes = Map::Node.find_all_by_level i
   
   puts "INFO: working on level #{i}."
@@ -274,6 +274,11 @@ while !locations.empty?
       army.owner_name = char[:name]
       army.alliance_id = ally[:id] unless ally.blank?
       army.alliance_tag = ally[:tag] unless ally.blank?
+      
+      
+      army.home = army.owner.home_location.settlement
+      army.home_settlement_name = army.owner.home_location.settlement.name
+
 
       army.ap_max = 4
       army.ap_present = rand(army.ap_max+1)
@@ -313,8 +318,8 @@ while !locations.empty?
       army.alliance_id = ally[:id] unless ally.blank?
       army.alliance_tag = ally[:tag] unless ally.blank?
       
-      army.home = location
-      army.home_settlement_name = "Name"
+      army.home = location.settlement
+      army.home_settlement_name = location.settlement.name
 
       army.ap_max = 4
       army.ap_present = rand(army.ap_max+1)
@@ -340,6 +345,7 @@ while !locations.empty?
       details.save
       
       location.settlement.garrison_army = army
+      location.settlement.save
       location.save
   end
   

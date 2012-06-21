@@ -14,7 +14,7 @@
   <Requirement id="building_palace" min_level="1" />  
   <Cost id="resource_stone" round="true">LEVEL*30</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*100+10</Cost>    
-  <Production id="resource_stone">FLOOR(LEVEL*5*POW(1.1, LEVEL))+1</Production>        
+  <Production id="resource_stone">LEVEL*5*POW(1.1, LEVEL)+1</Production>        
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
