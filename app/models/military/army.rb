@@ -200,9 +200,70 @@ class Military::Army < ActiveRecord::Base
     end
     
     self.save
-    
   end
 
+  # checks if the given army contains the quantity of units stated as key/value pairs in 'units'. 
+  def contains?(units)
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if units[unit_type[:db_field]].to_i > self.details[unit_type[:db_field]]
+        return false
+      end
+    end
+    true
+  end
+
+  # reduces the units of given army by the units stated as key/value pairs in 'units' 
+  def reduce_units(units)
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      self.details[unit_type[:db_field]] -= units[unit_type[:db_field]].to_i
+    end
+    self.details.save
+  end
+  
+  # creates a new army. create_action must contain the home location id and the units of the new army.
+  def self.create_with_action(create_action)
+    
+    location = Map::Location.find(create_action[:location_id])
+    raise BadRequestError.new('No location for army creation!') if location.nil? 
+    
+    army = Military::Army.new({
+      name: 'New Army',
+      home_settlement_id: location.settlement.id,
+      home_settlement_name: 'Name', # location.settlement.name,
+      ap_max: 4,
+      ap_present: 4,
+      ap_seconds_per_point: 3600,
+      mode: 0,
+      stance: 0, 
+      size_max: 100,
+      exp: 0,
+      rank: 0,
+      ap_next: DateTime.now.advance(:minutes => 1),
+      garrison: false,
+      kills: 0,
+      victories: 0,
+    })
+    
+    army.location = location
+    army.region = location.region
+    army.home = location.settlement
+    army.owner = location.owner
+    army.owner_name = army.owner.name
+    army.alliance = army.owner.alliance
+    army.alliance_tag = army.owner.alliance_tag
+    
+    details = army.build_details()
+    
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if create_action[unit_type[:db_field]]
+        details[unit_type[:db_field]] = create_action[unit_type[:db_field]].to_i
+      else
+        details[unit_type[:db_field]] = 0
+      end
+    end
+    
+    army.save
+  end
   
   private
   

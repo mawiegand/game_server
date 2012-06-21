@@ -39,8 +39,8 @@ class Action::Military::CancelMoveArmyActionsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to new_action_military_cancel_move_army_action_path, notice: 'Move army action was successfully created.' }
-      format.json { render json: @action_military_cancel_move_army_action, status: :created }
+      format.html { redirect_to new_action_military_cancel_move_army_action_path, notice: 'Move army action was successfully executed.' }
+      format.json { render json: {}, status: :created }
     end
   end
   
