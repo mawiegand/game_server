@@ -230,7 +230,7 @@ class Military::Army < ActiveRecord::Base
     army = Military::Army.new({
       name: 'New Army',
       home_settlement_id: location.settlement.id,
-      home_settlement_name: 'Name', # location.settlement.name,
+      home_settlement_name: location.settlement.name,
       ap_max: 4,
       ap_present: 4,
       ap_seconds_per_point: 3600,

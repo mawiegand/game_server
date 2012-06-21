@@ -48,9 +48,11 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     
     location = Map::Location.find(@action[:location_id])
     garrison_army = location.garrison_army
-    logger.debug '---> garrison_army ' + garrison_army.inspect
     
     # TODO owner testen
+    raise BadRequestError.new('not owner of location') unless location.owner == current_character
+    
+    # TODO Werte auf > 0 testen
     
     if garrison_army.contains?(@action)
       garrison_army.reduce_units(@action)
