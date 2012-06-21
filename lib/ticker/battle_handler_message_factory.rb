@@ -2,6 +2,10 @@ require 'ticker/runloop'
 require 'awe_native_extensions'
 
 class Ticker::BattleHandler
+
+  def runloop 
+    return @runloop 
+  end
   
   def generate_messages_for_battle(awe_battle, battle)
 
@@ -109,17 +113,21 @@ class Ticker::BattleHandler
             end
             #read out the casualties
             casualties = participant_result[t[:db_field].to_s + "_casualties"]
-            unit_types_results[t[:db_field]][:casualties] += casualties
-            total_results[:casualties] += casualties
+            if !casualties.nil?
+            	unit_types_results[t[:db_field]][:casualties] += casualties
+            	total_results[:casualties] += casualties
+        	end
 
             #read out the damage_taken
             damage_taken = participant_result[t[:db_field].to_s + "_damage_taken"]
-            total_results[:damage_taken] += damage_taken
+            total_results[:damage_taken] += damage_taken unless damage_taken.nil?
 
             #read out the damage_inflicted
             damage_inflicted = participant_result[t[:db_field].to_s + "_damage_inflicted"]
-            total_results[:damage_inflicted] += damage_inflicted
-            unit_types_results[t[:db_field]][:damage_inflicted] += damage_inflicted
+            if !damage_inflicted.nil?
+            	total_results[:damage_inflicted] += damage_inflicted
+            	unit_types_results[t[:db_field]][:damage_inflicted] += damage_inflicted
+        	end
           end
           start = false
 
@@ -127,7 +135,7 @@ class Ticker::BattleHandler
           total_results[:kills] += participant_result.kills
         end
       else participant_result.length > 1
-        runloop.say("found more than one military_participant_result for army_id="+participant.army_id+" and round_id= "+round.id, Logger::WARN)
+        runloop.say("found more than one military_participant_result for army_id="+participant.army_id.to_s+" and round_id= "+round.id.to_s)#, Logger::WARN)
       end
     end
 
@@ -212,9 +220,11 @@ class Ticker::BattleHandler
 
       if round.round_num == 0
         result += "<h3>Initiation</h3>\n"
-      else
-        result += "<h3>Round "+round.round_num.to_s+"</h3>\n"
+        result += write_out_inital_details(battle, round)
       end
+
+      result += "<h3>Round "+round.round_num.to_s+"</h3>\n"
+
       #for each faction result
       initiator_result = ""
       opponent_result = ""
@@ -252,9 +262,9 @@ class Ticker::BattleHandler
           current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
           rules.unit_types.each do |t|
             current_result += "<td>"+participant_result[t[:db_field]].to_s
-            if round.round_num > 0
+            #if round.round_num > 0
               current_result += " (-"+participant_result[t[:db_field].to_s+"_casualties"].to_s+")"
-            end
+            #end
             current_result += "</td>\n"
           end
           current_result += "</tr>\n"
@@ -263,10 +273,8 @@ class Ticker::BattleHandler
         current_result += "<br><br>\n"
 
         #write out the total result
-        if round.round_num != 0
-          current_result += generate_total_table(faction_result.calculate_total_stats)
-          current_result += "<br><br>\n"
-        end
+        current_result += generate_total_table(faction_result.calculate_total_stats)
+        current_result += "<br><br>\n"
 
         #write into the apropriate output to ensure correct order
         if battle.initiator_id == faction_result.leader_id
@@ -285,6 +293,70 @@ class Ticker::BattleHandler
     end
     result
   end
+
+  def write_out_inital_details(battle, round)
+	  result = ""
+	  rules = GameRules::Rules.the_rules
+
+	  #for each faction result
+	  initiator_result = ""
+	  opponent_result = ""
+	  unknown_result = ""
+
+	  round.faction_results.each do |faction_result|
+	    current_result = ""
+
+	    #Faction name
+	    if battle.initiator_id == faction_result.leader_id
+	      current_result += "<h4>Faction A</h4>"
+	    elsif battle.opponent_id == faction_result.leader_id
+	      current_result += "<h4>Faction B</h4>"
+	    else
+	      current_result += "<h4>Unknown Faction</h4>"
+	      runloop.say("got more than two factions", Logger::WARN)
+	    end
+
+	    #generate table for all armies
+	    current_result += "<table>\n"
+	    current_result += "<tr>\n"
+	    current_result += "<td></td>\n" #army.name
+	    current_result += "<td></td>\n" #character.name
+	    current_result += "<td></td>\n" #character.alliance_tag
+	    rules.unit_types.each do |t|
+	      current_result += "<td>"+get_unit_type_name(t)+"</td>\n"
+	    end
+	    current_result += "</tr>\n"
+
+	    #for all participant_results
+	    faction_result.participant_results.each do |participant_result|
+	      current_result += "<tr>\n"
+	      current_result += "<td>"+participant_result.army.name+"</td>\n" #army.name
+	      current_result += "<td>"+participant_result.army.owner.name+"</td>\n" #character.name
+	      current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
+	      rules.unit_types.each do |t|
+	        current_result += "<td>"+participant_result[t[:db_field]].to_s
+	        current_result += "</td>\n"
+	      end
+	      current_result += "</tr>\n"
+	    end
+	    current_result += "</table>\n"
+	    current_result += "<br><br>\n"
+
+	    #write into the apropriate output to ensure correct order
+	    if battle.initiator_id == faction_result.leader_id
+	      initiator_result += current_result
+	    elsif battle.opponent_id == faction_result.leader_id
+	      opponent_result += current_result
+	    else
+	      unknown_result += current_result
+	    end
+	  end
+
+	  result += initiator_result
+	  result += opponent_result
+	  result += unknown_result
+	  result
+  end 
 
   def generate_total_table(total_hash_map)
     current_result = "<table>\n"
@@ -459,7 +531,7 @@ class Ticker::BattleHandler
             unit_types_results[t[:db_field]][:remaining] = unit_types_results[t[:db_field]][:remaining] - value_casualties
             unit_types_results[t[:db_field]][:casualties] = unit_types_results[t[:db_field]][:casualties] + value_casualties
           else
-            puts "could not read field "+fieldname_casualties.to_s
+            runloop.say("could not read field "+fieldname_casualties.to_s, Logger::WARN)
           end
         end
         #exp

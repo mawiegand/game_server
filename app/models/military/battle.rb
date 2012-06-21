@@ -122,7 +122,7 @@ class Military::Battle < ActiveRecord::Base
   
   def add_army(army, faction)
     faction.participants.create(:battle_id => faction.battle_id, :army_id => army.id,
-                                :joined_at => DateTime.now, :retreat => false)
+                                :joined_at => DateTime.now, :retreated => false)
     faction.update_from_participants
   end
   
