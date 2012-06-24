@@ -44,6 +44,9 @@ module GameState
     # if at least one slot doesn't meet the maximum level requirement of a specific building id return false, otherwise return true
     def self.meet_requirement_max_level?(requirement, slots)
       slots.each do |slot|
+        # TODO, IMPORTANT: vorgehen bei requirements diskutieren. Diese Lösung reicht unter Umständen nicht:
+        # beim bauen (bauauftrag ausführen) reicht es, sollte beim queuen aber vielleicht auch gecheckt werden, was bereits im Bau ist ?
+        # Falls ja: Lösungsvorschlag: im slot-model wird eine Funktion implementiert, die das Level nach Abschluss aller Jobs zurückliefert
         if slot.building_id == requirement[:id] && requirement[:max_level] && slot.level > requirement[:max_level]
           return false
         end

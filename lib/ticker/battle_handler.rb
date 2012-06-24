@@ -43,12 +43,9 @@ class Ticker::BattleHandler
       # extract and store results in database
       extract_results_from_awe_battle(awe_battle, battle)
       
-      #  EXTRACT RESULTS (FACTION AND PARTICIPANT RESULTS)
-      
       # generate message for participants
       generate_messages_for_battle(awe_battle, battle)
 
-      #  CLEANUP KILLED ARMIES 
       #  LET ARMIES RETREAT AND CLEANUP PARTICIPANT AND ARMY
       
       # CONTINUE BATTLE?
@@ -152,6 +149,8 @@ class Ticker::BattleHandler
       participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = awe_unit.damageInflicted
 
       # update survivors on army
+      participant.army.reduce_units(participant_results.get_unit_reduce_hash)
+
     end
   end
   
