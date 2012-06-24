@@ -19,11 +19,14 @@ class Military::BattleFactionResult < ActiveRecord::Base
   	participant_results.each do |participant_result|
   		rules.unit_types.each do |t|
   			#casualties
-  			result[:casualties] += participant_result[t[:db_field].to_s+"_casualties"]
+  			casualties = participant_result[t[:db_field].to_s+"_casualties"]
+  			result[:casualties] += casualties if casualties != nil
   			#damage_taken
-  			result[:damage_taken] += participant_result[t[:db_field].to_s+"_damage_taken"]
+  			damage_taken = participant_result[t[:db_field].to_s+"_damage_taken"]
+  			result[:damage_taken] += damage_taken if damage_taken != nil
   			#damage_inflicted
-  			result[:damage_inflicted] += participant_result[t[:db_field].to_s+"_damage_inflicted"] 
+  			damage_inflicted = participant_result[t[:db_field].to_s+"_damage_inflicted"] 
+  			result[:damage_inflicted] += damage_inflicted if damage_inflicted != nil
     	end
   		#kills
   		result[:kills] += participant_result.kills
