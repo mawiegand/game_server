@@ -1376,6 +1376,21 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_palace',
+              :id => 6,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+          ],          
+
           :costs      => {
             1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
             0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',

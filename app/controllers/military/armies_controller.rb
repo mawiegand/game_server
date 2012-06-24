@@ -157,6 +157,17 @@ class Military::ArmiesController < ApplicationController
   def update
     @military_army = Military::Army.find(params[:id])
 
+    role = determine_access_role(@military_army.owner_id, @military_army.alliance_id)    
+    
+    attributes_to_update = nil
+    if role === :staff || role === :admin
+      attributes_to_update = params[:military_army]
+    elsif role === :owner
+      attributes_to_update = params[:military_army][:name]
+    end
+
+    raise ForbiddenError.new 'tried to update army properties that are forbidden to change for the role.' if attributes_to_update.nil?
+
     respond_to do |format|
       if @military_army.update_attributes(params[:military_army])
         format.html { redirect_to @military_army, notice: 'Army was successfully updated.' }
