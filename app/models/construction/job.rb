@@ -49,6 +49,7 @@ class Construction::Job < ActiveRecord::Base
     requirements = rules.building_types[self.building_id][:requirements]
     
     # test if requirements are met
+    logger.debug requirements.inspect
     raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
 
     # test if queue is already full   
@@ -63,9 +64,13 @@ class Construction::Job < ActiveRecord::Base
     return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)
     return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
+    # test if building ability is unlocked in settlement
+    return false unless settlement.settlement_queue_buildings_unlock_count > 0  
+    
+    
     # TODO test if job can be added to queue
     
-    # TODO test if building_id valig
+    # TODO test if building_id valid
     
     # TODO test if building can be build in slot according to the slots building categories
     
