@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_furrier" group="military" category="building_category_small_building" buyable="true" destructable="true">  
+  <Name lang="de_DE">Kürschner</Name>
+  <Name lang="en_US">Furrier</Name>
+  <Description lang="de_DE">
+    <p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Provides Leather.</p>
+  </Description>
+  <Requirement id="science_simple_tools" min_level="1" />
+  <Requirement id="building_palace" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*100+100</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*100+100</Cost>    
+  <Production id="resource_fur">LEVEL*POW(1.1, LEVEL)+1</Production>        
+  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+  </Abilities>
+</Building>
+
+

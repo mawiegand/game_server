@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_gatherer" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
+  <Name lang="de_DE">Jäger und Sammler</Name>
+  <Name lang="en_US">Hunter-Gatherer</Name>
+  <Description lang="de_DE">
+    <p>Sammelt und jagt alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Collects resources for the daily needs.</p>
+  </Description>
+  <Requirement id="building_palace" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*10+5</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*10+5</Cost>    
+  <Production id="resource_stone">LEVEL</Production>        
+  <Production id="resource_wood">LEVEL</Production>        
+  <Production id="resource_fur">LEVEL/4</Production>        
+  <Production id="resource_toad">MAX(LEVEL-10,0)*1-MAX(LEVEL-11,0)*1+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
+  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+  </Abilities>
+</Building>
+
+

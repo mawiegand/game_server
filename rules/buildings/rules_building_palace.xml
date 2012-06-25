@@ -16,6 +16,7 @@
   <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
   <Production id="resource_wood">10</Production>        
   <Abilities> <!-- just for grouping -->
+    <CommandPoints>2</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.05</SpeedupQueue>
   </Abilities>

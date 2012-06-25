@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_quarry" group="military" category="building_category_small_building" buyable="true" destructable="true">  
+<Building id="building_quarry" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
   <Name lang="de_DE">Steinbruch</Name>
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
@@ -17,8 +17,6 @@
   <Production id="resource_stone">LEVEL*5*POW(1.1, LEVEL)+1</Production>        
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
-    <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
-    <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
   </Abilities>
 </Building>
 

@@ -1308,7 +1308,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_palace',
-              :id => 7,
+              :id => 10,
               :type => 'building',
 
               :min_level => 1,
@@ -1339,8 +1339,224 @@ class GameRules::Rules
           },
 
         },              #   END OF Steinbruch
-        {               #   Feuerstelle
+        {               #   Holzfäller
           :id          => 6, 
+          :symbolic_id => :building_logger,
+					:category    => 4,
+          :db_field    => :building_logger,
+          :name        => {
+            
+            :de_DE => "Holzfäller",
+  
+            :en_US => "Logger",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>",
+  
+            :en_US => "<p>Cuts trees, produces logs.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_simple_tools',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_palace',
+              :id => 10,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100+10',
+            0 => 'LEVEL*30',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_wood,
+                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
+              },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Holzfäller
+        {               #   Kürschner
+          :id          => 7, 
+          :symbolic_id => :building_furrier,
+					:category    => 4,
+          :db_field    => :building_furrier,
+          :name        => {
+            
+            :de_DE => "Kürschner",
+  
+            :en_US => "Furrier",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
+  
+            :en_US => "<p>Provides Leather.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_simple_tools',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_palace',
+              :id => 10,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100+100',
+            0 => 'LEVEL*100+100',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "LEVEL*POW(1.1, LEVEL)+1",
+              },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Kürschner
+        {               #   Jäger und Sammler
+          :id          => 8, 
+          :symbolic_id => :building_gatherer,
+					:category    => 4,
+          :db_field    => :building_gatherer,
+          :name        => {
+            
+            :de_DE => "Jäger und Sammler",
+  
+            :en_US => "Hunter-Gatherer",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Sammelt und jagt alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
+  
+            :en_US => "<p>Collects resources for the daily needs.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_palace',
+              :id => 10,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*10+5',
+            0 => 'LEVEL*10+5',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "LEVEL",
+              },
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_wood,
+                :formula            => "LEVEL",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "LEVEL/4",
+              },
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_toad,
+                :formula            => "MAX(LEVEL-10,0)*1-MAX(LEVEL-11,0)*1+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1",
+              },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Jäger und Sammler
+        {               #   Feuerstelle
+          :id          => 9, 
           :symbolic_id => :building_embassy,
 					:category    => 4,
           :db_field    => :building_embassy,
@@ -1368,7 +1584,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_palace',
-              :id => 7,
+              :id => 10,
               :type => 'building',
 
               :min_level => 5,
@@ -1394,7 +1610,7 @@ class GameRules::Rules
 
         },              #   END OF Feuerstelle
         {               #   Stammeslager
-          :id          => 7, 
+          :id          => 10, 
           :symbolic_id => :building_palace,
 					:category    => 3,
           :db_field    => :building_palace,
@@ -1422,7 +1638,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_palace',
-              :id => 7,
+              :id => 10,
               :type => 'building',
 
               :min_level => 0,
@@ -1472,6 +1688,10 @@ class GameRules::Rules
               },
 
             ],
+
+            :command_points => {
+              :formula   => "2",
+            },
     
           },
 
@@ -1592,7 +1812,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 7,
+              :building  => 10,
               
               :level  => 1,
               
