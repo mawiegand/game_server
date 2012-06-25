@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_logger" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
+  <Name lang="de_DE">Holzfäller</Name>
+  <Name lang="en_US">Logger</Name>
+  <Description lang="de_DE">
+    <p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Cuts trees, produces logs.</p>
+  </Description>
+  <Requirement id="science_simple_tools" min_level="1" />
+  <Requirement id="building_palace" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*100+10</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*30</Cost>    
+  <Production id="resource_wood">LEVEL*5*POW(1.1, LEVEL)+1</Production>        
+  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+  </Abilities>
+</Building>
+
+
