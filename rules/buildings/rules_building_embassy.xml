@@ -11,7 +11,7 @@
   <Description lang="en_US">
     <p>Embassy</p>
   </Description>
-  <Requirement id="building_palace" min_level="5" />  
+  <Requirement id="building_palace" min_level="2" />  
   <Cost id="resource_stone" round="true">LEVEL*200+200</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*100+100</Cost>    
   <ProductionTime shortenable="true">600*LEVEL+30</ProductionTime>             
