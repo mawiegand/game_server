@@ -212,6 +212,24 @@ class Military::Army < ActiveRecord::Base
     true
   end
 
+  # checks if the given army contains at least one unit.
+  def empty?
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if self.details[unit_type[:db_field]] > 0
+        return false
+      end
+    end
+    true
+  end
+
+  # adds the units of given army by the units stated as key/value pairs in 'units' 
+  def add_units(units)
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      self.details[unit_type[:db_field]] += units[unit_type[:db_field]].to_i
+    end
+    self.details.save
+  end
+  
   # reduces the units of given army by the units stated as key/value pairs in 'units' 
   def reduce_units(units)
     GameRules::Rules.the_rules.unit_types.each do | unit_type |

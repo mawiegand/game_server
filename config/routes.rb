@@ -131,6 +131,7 @@ GameServer::Application.routes.draw do
         namespace :military do 
           resources :move_army_actions 
           resources :create_army_actions 
+          resources :change_army_actions 
           resources :cancel_move_army_actions 
           resources :attack_army_actions
         end 
