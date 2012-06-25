@@ -39,7 +39,10 @@ class Training::Job < ActiveRecord::Base
     requirements = rules.unit_types[self.unit_id][:requirements]
     
     # test if requirements are met
-    return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
+    return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement)
+    
+    # test if garrison army is unlocked
+    return false unless settlement.settlement_unlock_garrison_count > 0  
 
     # test if queue is already full   
     return false if self.queue && self.queue.max_length <= self.queue.jobs_count
