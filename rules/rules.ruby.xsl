@@ -498,7 +498,8 @@ end
 <xsl:apply-templates select="UnlockQueue" />
             ],
 </xsl:if>
-<xsl:apply-templates select="ShowGarrisonArmy" />    
+<xsl:apply-templates select="UnlockGarrison" />    
+<xsl:apply-templates select="CommandPoints" />    
           },
 </xsl:template>
 
@@ -521,8 +522,16 @@ end
               },
 </xsl:template>
 
-<xsl:template match="ShowGarrisonArmy">
-            :show_garrison_army => true,
+<xsl:template match="UnlockGarrison">
+            :unlock_garrison => {
+              :level             => <xsl:value-of select="@level" />,            
+            },
+</xsl:template>
+
+<xsl:template match="CommandPoints">
+            :command_points => {
+              :formula   => "<xsl:apply-templates />",
+            },
 </xsl:template>
 
 <xsl:template match="QueueCategories">

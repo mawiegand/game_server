@@ -50,7 +50,7 @@ class Construction::Job < ActiveRecord::Base
     
     # test if requirements are met
     logger.debug requirements.inspect
-    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement) 
+    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement, slot) 
 
     # test if queue is already full   
     raise ForbiddenError.new('Queue is already full.') if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
