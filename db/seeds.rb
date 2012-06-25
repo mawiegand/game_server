@@ -56,6 +56,10 @@ alliance_data.each do |ally|
       character = Fundamental::Character.create( name: character_data[member][:name] )
     
       character.create_resource_pool
+      character.resource_pool.resource_wood_amount = 1000
+      character.resource_pool.resource_stone_amount = 1000
+      character.resource_pool.resource_fur_amount = 10
+      character.resource_pool.save
       
       character.create_inbox
       character.create_outbox
@@ -70,6 +74,10 @@ alliance_data.each do |ally|
       character.save
       
       character.create_resource_pool
+      character.resource_pool.resource_wood_amount = 1000
+      character.resource_pool.resource_stone_amount = 1000
+      character.resource_pool.resource_fur_amount = 10
+      character.resource_pool.save
       
       character.create_inbox
       character.create_outbox
