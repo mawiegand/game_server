@@ -17,6 +17,9 @@
       
   <xsl:template match="Rules">  
     <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory|//Queue" />
+settlement_unlock_garrison_count
+character_unlock_diplomacy_count
+character_unlock_alliance_creation_count
   </xsl:template>
 
 

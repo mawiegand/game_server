@@ -940,52 +940,30 @@ class GameRules::Rules
   
       :building_types => [  # ALL BUILDING TYPES
 
-        {               #   Tüftler
+        {               #   Festungsanlagen
           :id          => 0, 
-          :symbolic_id => :building_siege_tower,
-					:category    => 1,
-          :db_field    => :building_siege_tower,
+          :symbolic_id => :building_fortress_fortification,
+					:category    => 0,
+          :db_field    => :building_fortress_fortification,
           :name        => {
             
-            :de_DE => "Tüftler",
+            :de_DE => "Festungsanlagen",
   
-            :en_US => "Inventor",
+            :en_US => "Fortifications",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>",
+            :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
   
-            :en_US => "<p>Builds war machines.</p>",
+            :en_US => "<p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>",
                 
           },
           :hidden      => 0,
 
           :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'science_mechanics',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 4,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
+          :demolishable=> false,
+          :destructable=> false,
 
           :costs      => {
             1 => 'LEVEL*100',
@@ -993,81 +971,47 @@ class GameRules::Rules
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :production_time => '2*(LEVEL+1)+10',
           :production  => [
             
           ],
 
           :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :level             => 1,
+              },
+
+            ],
+
+            :unlock_garrison => {
+              :level             => 1,            
+            },
+
+            :command_points => {
+              :formula   => "1+(MAX(LEVEL-4,0)*1-MAX(LEVEL-5,0)*1)+(MAX(LEVEL-9,0)*1-MAX(LEVEL-10,0)*1)",
+            },
     
           },
 
-        },              #   END OF Tüftler
-        {               #   Reitmeisterrei
-          :id          => 1, 
-          :symbolic_id => :building_cavalry_tower,
-					:category    => 1,
-          :db_field    => :building_cavalry_tower,
-          :name        => {
-            
-            :de_DE => "Reitmeisterrei",
-  
-            :en_US => "Cavalry Command",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>",
-  
-            :en_US => "<p>Trains Cavalry Units.</p>",
-                
-          },
-          :hidden      => 0,
-
-          :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'science_riding',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 4,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-          :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            
-          },
-
-          :production_time => '2*(LEVEL+1)+11',
-          :production  => [
-            
-          ],
-
-          :abilities   => {
-    
-          },
-
-        },              #   END OF Reitmeisterrei
+        },              #   END OF Festungsanlagen
         {               #   Truppenunterkunft
-          :id          => 2, 
+          :id          => 1, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -1095,7 +1039,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 4,
+              :id => 0,
               :type => 'building',
 
               :min_level => 1,
@@ -1142,7 +1086,7 @@ class GameRules::Rules
 
         },              #   END OF Truppenunterkunft
         {               #   Ballistisches Erprobungszentrum
-          :id          => 3, 
+          :id          => 2, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -1179,7 +1123,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 4,
+              :id => 0,
               :type => 'building',
 
               :min_level => 1,
@@ -1200,30 +1144,52 @@ class GameRules::Rules
           ],
 
         },              #   END OF Ballistisches Erprobungszentrum
-        {               #   Festungsanlagen
-          :id          => 4, 
-          :symbolic_id => :building_fortress_fortification,
-					:category    => 0,
-          :db_field    => :building_fortress_fortification,
+        {               #   Reitmeisterrei
+          :id          => 3, 
+          :symbolic_id => :building_cavalry_tower,
+					:category    => 1,
+          :db_field    => :building_cavalry_tower,
           :name        => {
             
-            :de_DE => "Festungsanlagen",
+            :de_DE => "Reitmeisterrei",
   
-            :en_US => "Fortifications",
+            :en_US => "Cavalry Command",
                 
           },
           :description => {
             
-            :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
+            :de_DE => "<p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>",
   
-            :en_US => "<p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>",
+            :en_US => "<p>Trains Cavalry Units.</p>",
                 
           },
           :hidden      => 0,
 
           :buyable     => true,
-          :demolishable=> false,
-          :destructable=> false,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_riding',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
 
           :costs      => {
             1 => 'LEVEL*100',
@@ -1231,57 +1197,79 @@ class GameRules::Rules
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => '2*(LEVEL+1)+11',
           :production  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_wood,
-                :formula            => "LEVEL*5",
-              },
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_stone,
-                :formula            => "LEVEL*5",
-              },
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "LEVEL",
-              },
             
           ],
 
           :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :level             => 1,
-              },
-
-            ],
-
-            :show_garrison_army => true,
     
           },
 
-        },              #   END OF Festungsanlagen
+        },              #   END OF Reitmeisterrei
+        {               #   Tüftler
+          :id          => 4, 
+          :symbolic_id => :building_siege_tower,
+					:category    => 1,
+          :db_field    => :building_siege_tower,
+          :name        => {
+            
+            :de_DE => "Tüftler",
+  
+            :en_US => "Inventor",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>",
+  
+            :en_US => "<p>Builds war machines.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'science_mechanics',
+              :id => 0,
+              :type => '',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)*0+10',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Tüftler
         {               #   Steinbruch
           :id          => 5, 
           :symbolic_id => :building_quarry,
@@ -1320,7 +1308,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_palace',
-              :id => 6,
+              :id => 7,
               :type => 'building',
 
               :min_level => 1,
@@ -1351,8 +1339,62 @@ class GameRules::Rules
           },
 
         },              #   END OF Steinbruch
-        {               #   Stammeslager
+        {               #   Feuerstelle
           :id          => 6, 
+          :symbolic_id => :building_embassy,
+					:category    => 4,
+          :db_field    => :building_embassy,
+          :name        => {
+            
+            :de_DE => "Feuerstelle",
+  
+            :en_US => "Fire Pit",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Feuerstelle übernimmt in der Steinzeit die Rolle einer Botschaft.</p><p>An der Feuerstelle trifft sich allabendlich der Stamm mit seinen freiwilligen und unfreiwilligen Gästen. Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
+  
+            :en_US => "<p>Embassy</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_palace',
+              :id => 7,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*200+200',
+            0 => 'LEVEL*100+100',
+            
+          },
+
+          :production_time => '600*LEVEL+30',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Feuerstelle
+        {               #   Stammeslager
+          :id          => 7, 
           :symbolic_id => :building_palace,
 					:category    => 3,
           :db_field    => :building_palace,
@@ -1380,7 +1422,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_palace',
-              :id => 6,
+              :id => 7,
               :type => 'building',
 
               :min_level => 0,
@@ -1483,7 +1525,7 @@ class GameRules::Rules
             0 => {
               :max_level => 10,
               
-              :building  => 4,
+              :building  => 0,
               
               :level  => 1,
               
@@ -1550,7 +1592,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 6,
+              :building  => 7,
               
               :level  => 1,
               

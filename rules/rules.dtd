@@ -60,7 +60,12 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*)>
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints* )>
+
+<!ELEMENT UnlockGarrison EMPTY>
+<!ATTLIST UnlockGarrison 
+  level	CDATA "1"
+>
 
 <!ELEMENT UnlockQueue EMPTY>
 <!ATTLIST UnlockQueue 
@@ -73,6 +78,15 @@
   queue IDREF #REQUIRED 
   domain (settlement | character | alliance) "settlement"
 >
+
+<!ELEMENT UnlockDiplomacy EMPTY>
+<!ATTLIST UnlockDiplomacy 
+  level CDATA "1" 
+  foundAllianceLevel CDATA "5"
+>
+
+<!ELEMENT CommandPoints (#PCDATA)>
+
 
 <!--Buildings-->
 
@@ -98,7 +112,7 @@
 >
 
 <!--Science-->
-<!ELEMENT Science (Name+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement | EffectReq)*)>
+<!ELEMENT Science (Name+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, Requirement*)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Units-->
@@ -170,8 +184,6 @@
 <!--Requirement-->
 <!ELEMENT Requirement EMPTY>
 <!ATTLIST Requirement id IDREF #REQUIRED min_level CDATA "0" max_level CDATA #IMPLIED>
-<!ELEMENT EffectReq EMPTY>
-<!ATTLIST EffectReq id IDREF #REQUIRED min_level CDATA #IMPLIED max_level CDATA #IMPLIED>
 
 <!--Encumbrance-->
 <!ELEMENT Encumbrance EMPTY>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621161727) do
+ActiveRecord::Schema.define(:version => 20120625132421) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -152,9 +152,11 @@ ActiveRecord::Schema.define(:version => 20120621161727) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "base_node_id"
-    t.integer  "frog_amount",                           :default => 0
+    t.integer  "frog_amount",                              :default => 0
     t.datetime "premium_expiration"
-    t.integer  "character_queue_research_unlock_count", :default => 0
+    t.integer  "character_queue_research_unlock_count",    :default => 0
+    t.integer  "character_unlock_diplomacy_count",         :default => 0
+    t.integer  "character_unlock_alliance_creation_count", :default => 0
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -562,6 +564,7 @@ ActiveRecord::Schema.define(:version => 20120621161727) do
     t.decimal  "resource_cash_production_bonus_alliance",      :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",       :default => 0.0
     t.string   "name",                                         :default => "Settlement", :null => false
+    t.integer  "settlement_unlock_garrison_count",             :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|

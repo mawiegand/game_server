@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+
+<Building id="building_cavalry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+  <Name lang="de_DE">Reitmeisterrei</Name>
+  <Name lang="en_US">Cavalry Command</Name>
+  <Description lang="de_DE">
+    <p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Trains Cavalry Units.</p>
+  </Description>
+  <Requirement id="science_riding" min_level="1" />
+  <Requirement id="building_fortress_fortification" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+  <ProductionTime shortenable="true">2*(LEVEL+1)+11</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <UnitProduction category="unit_category_cavalry" queue="unit_cavalry_queue" />
+    <UnitProductionSpeedup category="unit_category_cavalry">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+  </Abilities>
+</Building>

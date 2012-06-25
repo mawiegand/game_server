@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+  <Name lang="de_DE">Tüftler</Name>
+  <Name lang="en_US">Inventor</Name>
+  <Description lang="de_DE">
+    <p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Builds war machines.</p>
+  </Description>
+  <Requirement id="science_mechanics" min_level="1" />
+  <Requirement id="building_fortress_fortification" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+  <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <UnitProduction category="unit_category_siege" queue="unit_siege_queue" />
+    <UnitProductionSpeedup category="unit_category_siege">LEVEL*5</UnitProductionSpeedup> <!-- Adds 5% for each level to speedup -->
+  </Abilities>
+</Building>
