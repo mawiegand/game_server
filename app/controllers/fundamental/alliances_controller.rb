@@ -65,7 +65,8 @@ class Fundamental::AlliancesController < ApplicationController
   # PUT /fundamental/alliances/1.json
   def update
     @fundamental_alliance = Fundamental::Alliance.find(params[:id])
-    role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)    
+    role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)   
+    logger.debug "ROLE: " + role.to_s 
 
     raise ForbiddenError.new 'tried to update an alliance without permission.' unless staff? || role == :owner
 
