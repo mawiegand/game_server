@@ -43,6 +43,12 @@ class ActionsController < ApplicationController
         }
       ],
       Fundamental: [
+        { # LEAVE ALLIANCE
+          url: action_fundamental_leave_alliance_actions_path,
+          method: 'POST',
+          name: 'Leave Alliance',
+          parameters: 'leave_alliance_action[alliance_id]',
+        },
         { # SHOUT TO ALLIANCE
           url: fundamental_alliance_shouts_path,
           method: 'POST',
