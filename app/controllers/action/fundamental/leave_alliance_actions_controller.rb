@@ -16,8 +16,6 @@ class Action::Fundamental::LeaveAllianceActionsController < ApplicationControlle
   # POST /action/military/attack_army_actions
   # POST /action/military/attack_army_actions.json
   def create
-    logger.debug params.inspect
-    logger.debug params[:leave_alliance_action].inspect
     alliance = Fundamental::Alliance.find(params[:leave_alliance_action][:alliance_id])
     
     raise BadRequest.new('no current character') if current_character.nil?
