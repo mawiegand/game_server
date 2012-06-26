@@ -9,7 +9,7 @@ class Military::Army < ActiveRecord::Base
   belongs_to :target_location, :class_name => "Map::Location", :foreign_key => "target_location_id"
   belongs_to :target_region, :class_name => "Map::Region", :foreign_key => "target_region_id"
   
-  belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id"  
+  belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :armies
   belongs_to :owner, :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   
   has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id"

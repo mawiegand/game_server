@@ -163,13 +163,15 @@ class Military::ArmiesController < ApplicationController
     if role === :staff || role === :admin
       attributes_to_update = params[:military_army]
     elsif role === :owner
-      attributes_to_update = params[:military_army][:name]
+      attributes_to_update = {
+        name: params[:military_army][:name]
+      }
     end
 
     raise ForbiddenError.new 'tried to update army properties that are forbidden to change for the role.' if attributes_to_update.nil?
 
     respond_to do |format|
-      if @military_army.update_attributes(params[:military_army])
+      if @military_army.update_attributes(attributes_to_update)
         format.html { redirect_to @military_army, notice: 'Army was successfully updated.' }
         format.json { render json: true, status: :ok }
       else
