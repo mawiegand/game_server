@@ -73,7 +73,7 @@ class Fundamental::AlliancesController < ApplicationController
     respond_to do |format|
       if @fundamental_alliance.update_attributes(params[:fundamental_alliance], :as => role)
         format.html { redirect_to @fundamental_alliance, notice: 'Alliance was successfully updated.' }
-        format.json { head :ok }
+        format.json { render json: {}, status: :ok }
       else
         format.html { render action: "edit" }
         format.json { render json: @fundamental_alliance.errors, status: :unprocessable_entity }
