@@ -136,7 +136,9 @@ GameServer::Application.routes.draw do
           resources :attack_army_actions       
         end 
         namespace :fundamental do
+          resources :join_alliance_actions    
           resources :leave_alliance_actions    
+          resources :create_alliance_actions    
         end
       end
       

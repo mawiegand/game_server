@@ -18,7 +18,7 @@ class Action::Fundamental::LeaveAllianceActionsController < ApplicationControlle
   def create
     alliance = Fundamental::Alliance.find(params[:leave_alliance_action][:alliance_id])
     
-    raise BadRequest.new('no current character') if current_character.nil?
+    raise BadRequestError.new('no current character') if current_character.nil?
     raise ForbiddenError.new('tried to leave an alliance although character is in no alliance') if current_character.alliance_id.blank?
     raise ForbiddenError.new('tried to leave an alliance the character is not a member of')  unless current_character.alliance_id == alliance.id
 

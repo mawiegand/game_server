@@ -43,16 +43,34 @@ class ActionsController < ApplicationController
         }
       ],
       Fundamental: [
+        { # CREATE ALLIANCE
+          url: action_fundamental_create_alliance_actions_path,
+          method:     'POST',
+          name:       'Create Alliance',
+          parameters: 'alliance[tag], alliance[name]',
+        },
+        { # JOIN ALLIANCE
+          url: action_fundamental_join_alliance_actions_path,
+          method:     'POST',
+          name:       'Join Alliance',
+          parameters: 'alliance[tag], alliance[password]',
+        },
         { # LEAVE ALLIANCE
           url: action_fundamental_leave_alliance_actions_path,
-          method: 'POST',
-          name: 'Leave Alliance',
+          method:     'POST',
+          name:       'Leave Alliance',
           parameters: 'leave_alliance_action[alliance_id]',
+        },
+        { # CHANGE ALLIANCE PASSWORD
+          url: fundamental_alliances_path,
+          method:     'POST',
+          name:       'Change Alliance Password',
+          parameters: 'fundamental_alliances[password]',
         },
         { # SHOUT TO ALLIANCE
           url: fundamental_alliance_shouts_path,
-          method: 'POST',
-          name: 'Shout to Alliance',
+          method:     'POST',
+          name:       'Shout to Alliance',
           parameters: 'fundamental_alliance_shout[message]',
         },
       ],
