@@ -1,13 +1,7 @@
 class Action::Military::AttackArmyActionsController < ApplicationController
   layout 'action'
 
-  # GET /action/military/attack_army_actions/new
-  # GET /action/military/attack_army_actions/new.json
-  def new
-    respond_to do |format|
-      format.json { render json: { :attacker_id => nil, :defender_id => nil} }
-    end
-  end
+  before_filter :authenticate
 
   # POST /action/military/attack_army_actions
   # POST /action/military/attack_army_actions.json
@@ -26,6 +20,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
     raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode == 0 || attacker.battle_id.nil?
 
     Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
+
     
     respond_to do |format|
       format.json { render json: {}, status: :ok }

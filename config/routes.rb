@@ -129,12 +129,15 @@ GameServer::Application.routes.draw do
 
       namespace :action do  
         namespace :military do 
-          resources :move_army_actions 
-          resources :create_army_actions 
-          resources :change_army_actions 
-          resources :cancel_move_army_actions 
-          resources :attack_army_actions
+          resources :move_army_actions          
+          resources :create_army_actions         
+          resources :change_army_actions         
+          resources :cancel_move_army_actions   
+          resources :attack_army_actions       
         end 
+        namespace :fundamental do
+          resources :leave_alliance_actions    
+        end
       end
       
       namespace :shop do

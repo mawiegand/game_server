@@ -19,6 +19,10 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :settlements, :class_name => "Settlement::Settlement", :foreign_key => "owner_id"
 
 
+  before_save :sync_alliance_tag
+  after_save  :propagate_alliance_membership_changes
+  
+
   @identifier_regex = /[a-z]{16}/i 
   
   def self.find_by_id_or_identifier(user_identifier)
@@ -105,5 +109,54 @@ class Fundamental::Character < ActiveRecord::Base
       return false
     end
   end  
+  
+  # ##########################################################################
+  #
+  #   Alliance related stuff
+  #
+  # ##########################################################################
+  
+  def leave_alliance(alliance)
+    alliance.add_character(self)
+  end
+  
+  def join_alliance(alliance)
+    alliance.remove_character(self)
+  end
+  
+  def sync_alliance_tag
+    alliance_change = self.changes[:alliance_id]
+    if !alliance_change.blank? && !self.alliance.nil?
+      self.alliance_tag = self.alliance.tag
+    end
+  end
+
+  # Function for propagating change of alliance membership to redundant fields.
+  # This uses update_all direct querries because the Rails way of looping
+  # through models (selecting, instantiating, saving) would potentially take
+  # too long (there might be several hundreds of settlements, locations and
+  # armies involved).
+  def propagate_alliance_membership_changes
+    alliance_change     = self.changes[:alliance_id]
+    alliance_tag_change = self.changes[:alliance_tag]    
+    
+    redundancies = [
+      { :model => Map::Location,          :field => :owner_id },
+      { :model => Map::Region,            :field => :owner_id },
+      { :model => Military::Army,         :field => :owner_id },
+      { :model => Settlement::Settlement, :field => :owner_id },
+    ]
+    
+    if !alliance_change.blank? || !alliance_tag_change.blank?
+      set_clause = { :alliance_id  => alliance_change[1], 
+                     :alliance_tag => alliance_tag_change[1] }
+      
+      redundancies.each do |entry| 
+        where_clause = ["#{ entry[:field].to_s } = ?", self.id]
+        entry[:model].update_all(set_clause, where_clause) 
+      end
+    end
+    true
+  end
 
 end
