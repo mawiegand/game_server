@@ -67,7 +67,7 @@ alliance_data.each do |ally|
       character.create_archive
     end
   else 
-    alliance = Fundamental::Alliance.create( tag: ally[:tag], name: ally[:name] )
+    alliance = Fundamental::Alliance.create( tag: ally[:tag], name: ally[:name], leader_id: ally[:members][0] )
     ally[:members].each do |member| 
       character =  alliance.members.build( name: character_data[member][:name] )
       character.alliance_tag = alliance.tag

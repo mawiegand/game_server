@@ -148,8 +148,9 @@ class Fundamental::Character < ActiveRecord::Base
     ]
     
     if !alliance_change.blank? || !alliance_tag_change.blank?
-      set_clause = { :alliance_id  => alliance_change[1], 
-                     :alliance_tag => alliance_tag_change[1] }
+      set_clause = { }
+      set_clause[:alliance_id]  = alliance_change[1]        unless alliance_change.nil?
+      set_clause[:alliance_tag] = alliance_tag_change[1]    unless alliance_tag_change.nil?
       
       redundancies.each do |entry| 
         where_clause = ["#{ entry[:field].to_s } = ?", self.id]

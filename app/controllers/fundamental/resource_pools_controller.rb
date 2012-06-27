@@ -1,6 +1,8 @@
 class Fundamental::ResourcePoolsController < ApplicationController
   layout 'fundamental'
   
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show]
   
   # GET /fundamental/resource_pools
   # GET /fundamental/resource_pools.json
