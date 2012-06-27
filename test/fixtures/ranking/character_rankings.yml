@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  character_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  overall_score: 1
+  overall_rank: 1
+  resource_score: 1
+  resource_rank: 1
+  power_score: 1
+  power_rank: 1
+  num_settlements: 1
+  settlements_rank: 1
+  num_outposts: 1
+  outposts_rank: 1
+  num_fortress: 1
+  fortress_rank: 1
+
+two:
+  character_id: 1
+  character_name: MyString
+  alliance_id: 1
+  alliance_tag: MyString
+  overall_score: 1
+  overall_rank: 1
+  resource_score: 1
+  resource_rank: 1
+  power_score: 1
+  power_rank: 1
+  num_settlements: 1
+  settlements_rank: 1
+  num_outposts: 1
+  outposts_rank: 1
+  num_fortress: 1
+  fortress_rank: 1

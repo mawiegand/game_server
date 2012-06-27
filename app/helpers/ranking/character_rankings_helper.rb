@@ -1,0 +1,2 @@
+module Ranking::CharacterRankingsHelper
+end

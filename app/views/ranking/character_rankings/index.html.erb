@@ -1,0 +1,42 @@
+<h1>Listing ranking_character_rankings</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Overall score</th>
+    <th>Overall rank</th>
+    <th>Resource score</th>
+    <th>Resource rank</th>
+    <th>Power score</th>
+    <th>Power rank</th>
+    <th>Num settlements</th>
+    <th>Settlements rank</th>
+    <th>Num outposts</th>
+    <th>Outposts rank</th>
+    <th>Num fortress</th>
+    <th>Fortress rank</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ranking_character_rankings.each do |ranking_character_ranking| %>
+  <tr>
+    <td><%= ranking_character_ranking.character_name %> | <%= ranking_character_ranking.alliance_tag %></td>
+    <td><%= ranking_character_ranking.overall_score %></td>
+    <td><%= ranking_character_ranking.overall_rank %></td>
+    <td><%= ranking_character_ranking.resource_score %></td>
+    <td><%= ranking_character_ranking.resource_rank %></td>
+    <td><%= ranking_character_ranking.power_score %></td>
+    <td><%= ranking_character_ranking.power_rank %></td>
+    <td><%= ranking_character_ranking.num_settlements %></td>
+    <td><%= ranking_character_ranking.settlements_rank %></td>
+    <td><%= ranking_character_ranking.num_outposts %></td>
+    <td><%= ranking_character_ranking.outposts_rank %></td>
+    <td><%= ranking_character_ranking.num_fortress %></td>
+    <td><%= ranking_character_ranking.fortress_rank %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
