@@ -280,7 +280,7 @@ class Settlement::Settlement < ActiveRecord::Base
             self.owner.resource_pool[attribute] = self.owner.resource_pool[attribute] + delta
           end
         end
-        self.owner.resource_pool.save if changed  # only load character and resource pool, iff there hase been a change!
+        self.owner.resource_pool.save if changed  # only save character and resource pool, if there hase been a change!
       end
       
       true
