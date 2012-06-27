@@ -12,6 +12,7 @@ user.staff = true
 user.deleted = false
 user.save
 
+
 # DUMMY DATA FOR TESTING
 
 alliance_data=[ { id: 0,
@@ -368,3 +369,51 @@ Map::Node.root.recount_settlements true # recursively update number of settlemen
 #   end of map seeding
 #
 # ############################################################################
+
+puts "INFO: creating shop offers."
+
+Shop::ResourceOffer.create({
+  price: 10,
+  amount: 20,
+  resource_id: 3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+Shop::ResourceOffer.create({
+  price: 50,
+  amount: 150,
+  resource_id: 3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 0,
+  duration: 24,
+  bonus: 0.15, 
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 1,
+  duration: 24,
+  bonus: 0.15, 
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 2,
+  duration: 24,
+  bonus: 0.15, 
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+
+
