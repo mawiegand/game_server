@@ -14,7 +14,7 @@ class Shop::BonusOffer < ActiveRecord::Base
         character: character,
         execute_at: effect.finished_at,
         event_type: "resource_effect",
-        local_event_id: self.id,
+        local_event_id: effect.id,
       )
       
       # add global effects to resource pool
