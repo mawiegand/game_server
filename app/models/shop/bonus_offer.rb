@@ -18,7 +18,7 @@ class Shop::BonusOffer < ActiveRecord::Base
       )
       
       # add global effects to resource pool
-      character.resource_pool.add_effect(effect)
+      character.resource_pool.add_effect_transaction(effect)
     end
   end
   
