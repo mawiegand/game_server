@@ -2,26 +2,27 @@ class Fundamental::Character < ActiveRecord::Base
 
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
 
-  belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :members 
+  belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members 
   
-  has_one  :resource_pool, :class_name => "Fundamental::ResourcePool", :foreign_key => "character_id", :inverse_of => :owner
-  has_one  :ranking,       :class_name => "Ranking::CharacterRanking", :foreign_key => "character_id", :inverse_of => :character
-  has_one  :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
+  has_one  :resource_pool,     :class_name => "Fundamental::ResourcePool",  :foreign_key => "character_id", :inverse_of => :owner
+  has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character
+  has_one  :home_location,     :class_name => "Map::Location",              :foreign_key => "owner_id",     :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   
-  has_one  :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
-  has_one  :outbox, :class_name => "Messaging::Outbox", :foreign_key => "owner_id", :inverse_of => :owner
-  has_one  :archive, :class_name => "Messaging::Archive", :foreign_key => "owner_id", :inverse_of => :owner
+  has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
+  has_one  :outbox,            :class_name => "Messaging::Outbox",          :foreign_key => "owner_id",     :inverse_of => :owner
+  has_one  :archive,           :class_name => "Messaging::Archive",         :foreign_key => "owner_id",     :inverse_of => :owner
 
-  has_many :armies, :class_name => "Military::Army", :foreign_key => "owner_id"
-  has_many :locations, :class_name => "Map::Location", :foreign_key => "owner_id"
-  has_many :regions, :class_name => "Map::Region", :foreign_key => "owner_id"
-  has_many :alliance_shouts, :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
-  has_many :shop_transactions, :class_name => "Shop::Transaction", :foreign_key => "character_id"
-  has_many :settlements, :class_name => "Settlement::Settlement", :foreign_key => "owner_id"
+  has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id"
+  has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
+  has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
+  has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
+  has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id"
+  has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id"
 
 
   before_save :sync_alliance_tag
   after_save  :propagate_alliance_membership_changes
+  after_save  :propagate_score_changes
   
 
   @identifier_regex = /[a-z]{16}/i 
@@ -149,7 +150,7 @@ class Fundamental::Character < ActiveRecord::Base
       { :model => Map::Region,               :field => :owner_id },
       { :model => Military::Army,            :field => :owner_id },
       { :model => Settlement::Settlement,    :field => :owner_id },
-      { :model => Ranking::CharacterRanking, :field => :character_id },
+      { :model => Ranking::CharacterRanking, :field => :character_id, :handlers_needed => true },
     ]
     
     if !alliance_change.blank? || !alliance_tag_change.blank?
@@ -158,8 +159,27 @@ class Fundamental::Character < ActiveRecord::Base
       set_clause[:alliance_tag] = alliance_tag_change[1]    unless alliance_tag_change.nil?
       
       redundancies.each do |entry| 
-        where_clause = ["#{ entry[:field].to_s } = ?", self.id]
-        entry[:model].update_all(set_clause, where_clause) 
+        if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
+          entry[:model].where(entry[:field] => self.id).each do |item|
+            item.alliance_id = alliance_change[1]           unless alliance_change.nil?
+            item.alliance_tag = alliance_tag_change[1]      unless alliance_tag_change.nil?
+            item.save
+          end
+        else
+          where_clause = ["#{ entry[:field].to_s } = ?", self.id]
+          entry[:model].update_all(set_clause, where_clause) 
+        end
+      end
+    end
+    true
+  end
+  
+  def propagate_score_changes
+    score_change = self.changes[:score]
+    if !score_change.nil?
+      if !self.ranking.nil?
+        self.ranking.overall_score = score_change[1]
+        self.ranking.save
       end
     end
     true

@@ -27,6 +27,7 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save  :propagate_changes_to_resource_pool  
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
+  after_save  :propagate_score_changes
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -307,11 +308,11 @@ class Settlement::Settlement < ActiveRecord::Base
           new_value = self[attribute]
           if !self.changes[attribute].nil?
             prod_change = self.changes[attribute]
-            new_value = change[1] 
-            old_value = change[0]   
+            new_value = (change[1] || 0)
+            old_value = (change[0] || 0)
           end
           
-          old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) + old_value   unless old_owner.nil?
+          old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) - old_value   unless old_owner.nil?
           new_owner.resource_pool[attribute] = (new_owner.resource_pool[attribute] || 0.0) + new_value   unless new_owner.nil? 
         end
 
@@ -319,6 +320,42 @@ class Settlement::Settlement < ActiveRecord::Base
         new_owner.resource_pool.save   unless new_owner.nil?
       end
       true
+    end
+    
+    def propagate_score_changes
+      if self.owner_id_changed?
+        self.propagate_score_on_changed_possession
+      elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
+        score_change = self.changes[:score] 
+        if !score_change.nil? && self.owner
+          self.owner.score = (self.owner.score || 0) + (score_change[1] || 0) - (score_change[0] || 0) 
+          self.owner.save
+        end
+      end
+      true 
+    end
+    
+    def propagate_score_on_changed_possession
+      owner_change = self.changes[:owner_id]
+      if !owner_change.blank?
+        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+        
+        old_value = new_value = (self.score || 0)
+
+        score_change = self.changes[:score] 
+        if !score_change.nil?
+          new_value = (score_change[1] || 0)
+          old_value = (score_change[0] || 0)
+        end   
+          
+        old_owner.score = (old_owner.score || 0) - old_value   unless old_owner.nil?
+        new_owner.score = (new_owner.score || 0) + new_value   unless new_owner.nil? 
+
+        old_owner.save   unless old_owner.nil?
+        new_owner.save   unless new_owner.nil?
+      end
+      true      
     end
     
 
