@@ -1,4 +1,6 @@
 class Shop::BonusOffersController < ApplicationController
+  layout 'shop'
+  
   # GET /shop/bonus_offers
   # GET /shop/bonus_offers.json
   def index

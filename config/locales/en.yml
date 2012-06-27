@@ -67,7 +67,8 @@ en:
         events: Events
       shop:
         category: Shop
-        offers: Offers
+        resource_offers: Resource Offers
+        bonus_offers: Bonus Offers
         transactions: Transactions
         
   sessions:

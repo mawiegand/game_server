@@ -1,0 +1,13 @@
+<% content_for :shop_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.shop.resource_offers"), shop_resource_offers_path %></li>
+    <li><%= link_to I18n.translate("application.layout.shop.bonus_offers"), shop_bonus_offers_path %></li>
+    <li><%= link_to I18n.translate("application.layout.shop.transactions"), shop_transactions_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:shop_content) ? yield(:shop_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

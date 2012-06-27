@@ -99,15 +99,20 @@ class Construction::JobsController < ApplicationController
   # PUT /construction/jobs/1.json
   def update
     @construction_job = Construction::Job.find(params[:id])
+    
+    #TODO Kröten abziehen
+    
+    if @construction_job.active_job
+      logger.debug '--------- b' 
+      queue = @construction_job.queue
+      @construction_job.finish
+      @construction_job.destroy
+      queue.check_for_new_jobs
+    end
 
     respond_to do |format|
-      if @construction_job.update_attributes(params[:construction_job])
-        format.html { redirect_to @construction_job, notice: 'Job was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @construction_job.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to construction_jobs_url }
+      format.json { head :ok }
     end
   end
 

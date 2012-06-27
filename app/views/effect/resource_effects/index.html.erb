@@ -2,7 +2,8 @@
 
 <table>
   <tr>
-    <th>Speedup</th>
+    <th>Type</th>
+    <th>Bonus</th>
     <th>Resource</th>
     <th>Finished at</th>
     <th></th>
@@ -12,7 +13,8 @@
 
 <% @effect_resource_effects.each do |effect_resource_effect| %>
   <tr>
-    <td><%= effect_resource_effect.speedup %></td>
+    <td><%= effect_resource_effect.type_id %></td>
+    <td><%= effect_resource_effect.bonus %></td>
     <td><%= effect_resource_effect.resource_id %></td>
     <td><%= effect_resource_effect.finished_at %></td>
     <td><%= link_to 'Show', effect_resource_effect %></td>

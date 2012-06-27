@@ -5,7 +5,7 @@ class Effect::ResourceEffect < ActiveRecord::Base
   # creates resource effect from bonus offer 
   def self.create_with_offer(offer)
     Effect::ResourceEffect.create({
-      speedup: offer.speedup / 100.0,
+      bonus: offer.bonus,
       resource_id: offer.resource_id,
       finished_at: Time.now + (offer.duration * 3600), 
     })
