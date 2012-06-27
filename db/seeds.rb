@@ -71,6 +71,7 @@ alliance_data.each do |ally|
   else 
     alliance = Fundamental::Alliance.create({ tag: ally[:tag], name: ally[:name] }, :as => :creator )
     alliance.save
+    alliance.create_ranking({ alliance_tag: ally[:tag] })
     ally[:members].each do |member| 
       character =  alliance.members.build( name: character_data[member][:name] )
       character.alliance_tag = alliance.tag

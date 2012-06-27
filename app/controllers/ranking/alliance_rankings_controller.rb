@@ -4,7 +4,7 @@ class Ranking::AllianceRankingsController < ApplicationController
   # GET /ranking/alliance_rankings
   # GET /ranking/alliance_rankings.json
   def index
-    sort = "resource_score"
+    sort = "overall_score"
     sort = "overall_score" if params[:sort]  == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "num_members" if params[:sort]    == 'members'

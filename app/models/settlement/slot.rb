@@ -6,6 +6,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   has_many   :jobs,        :class_name => "Construction::Job",       :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
 
+  after_save :propagate_level_changes
 
   def empty?
     return self.level == 0 || self.level.nil?
@@ -224,5 +225,17 @@ class Settlement::Slot < ActiveRecord::Base
       return self.jobs.last.level_after
     end
   end
+  
+  protected
+  
+    def propagate_level_changes
+      level_change = self.changes[:level] 
+      if !level_change.nil? 
+        self.settlement.score = (self.settlement.score || 0) + (level_change[1] || 0) - (level_change[0] || 0)   # this will be replaced with a scoring-function
+        self.settlement.level = (self.settlement.level || 0) + (level_change[1] || 0) - (level_change[0] || 0)   # counts level
+        self.settlement.save
+      end
+      true 
+    end
   
 end

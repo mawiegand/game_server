@@ -97,6 +97,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   protected
   
     def update_resource_in_ranking(totalProductionRate)
+      return   if self.owner.nil? || self.owner.ranking.nil?     # NPCs might not have a ranking entry
       self.owner.ranking.resource_score = totalProductionRate
       self.owner.ranking.save
     end
