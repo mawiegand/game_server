@@ -1,0 +1,5 @@
+<% content_for :content do %>
+  <%= content_for?(:ranking_content) ? yield(:ranking_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/extern' %>

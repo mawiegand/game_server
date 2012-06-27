@@ -11,7 +11,7 @@ GameServer::Application.routes.draw do
       end
 
       namespace :ranking do 
-        resources :character_rankings
+        resources :character_rankings, :only => [ :index ]
       end
 
 
