@@ -1,0 +1,12 @@
+<% content_for :effect_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.effect.resource_effects"), effect_resource_effects_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:effect_content) ? yield(:effect_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
+  

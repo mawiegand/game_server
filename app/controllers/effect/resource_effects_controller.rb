@@ -1,4 +1,6 @@
 class Effect::ResourceEffectsController < ApplicationController
+  layout 'effect'
+  
   # GET /effect/resource_effects
   # GET /effect/resource_effects.json
   def index

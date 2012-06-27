@@ -32,6 +32,8 @@
       <%= yield :rules_links %>
       <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
       <%= yield :event_links %>
+      <li><%= link_to I18n.translate("application.layout.effect.category"), effect_resource_effects_path %></li>
+      <%= yield :effect_links %>
       <li><%= link_to I18n.translate("application.layout.action.category"), action_path %></li>
       <%= yield :action_links %>
       <li><%= link_to I18n.translate("application.layout.ranking.category"), ranking_character_rankings_path %></li>
