@@ -44,7 +44,6 @@ class Fundamental::Alliance < ActiveRecord::Base
   
   def determine_new_leader
     if self.members.count > 0
-      logger.debug self.members.first.inspect
       self.leader_id = self.members.first.id
     else
       self.leader_id = nil
