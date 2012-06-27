@@ -64,6 +64,9 @@ en:
         queues: Queues
         jobs: Jobs
         active_jobs: Act. Jobs
+      effect:
+        resource_effects: Resource Effects
+        category: Effect
       event:
         category: Event
         events: Events
