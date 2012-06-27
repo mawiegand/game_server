@@ -1,7 +1,5 @@
 GameServer::Application.routes.draw do
   
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -12,6 +10,7 @@ GameServer::Application.routes.draw do
 
       namespace :ranking do 
         resources :character_rankings, :only => [ :index ]
+        resources :alliance_rankings , :only => [ :index ]
       end
 
 
