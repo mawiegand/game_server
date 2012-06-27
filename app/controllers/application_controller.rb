@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   around_filter :time_action
 
   rescue_from BearerAuthError, :with => :render_response_for_bearer_auth_exception
-  rescue_from NotFoundError, BadRequestError, ForbiddenError, InternalServerError, NotImplementedError, ServiceUnavailableError, 
+  rescue_from NotFoundError, BadRequestError, ForbiddenError, InternalServerError, ConflictError, NotImplementedError, ServiceUnavailableError, 
     :with => :render_response_for_exception
 
   # This method adds the locale to all rails-generated path, e.g. root_path.

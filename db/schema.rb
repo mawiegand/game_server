@@ -577,6 +577,7 @@ ActiveRecord::Schema.define(:version => 20120627013818) do
     t.decimal  "resource_cash_production_bonus_effects",       :default => 0.0
     t.string   "name",                                         :default => "Settlement", :null => false
     t.integer  "settlement_unlock_garrison_count",             :default => 0
+    t.string   "alliance_tag"
   end
 
   create_table "settlement_slots", :force => true do |t|

@@ -1587,7 +1587,7 @@ class GameRules::Rules
               :id => 10,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 2,
 
             },
 
@@ -1605,6 +1605,10 @@ class GameRules::Rules
           ],
 
           :abilities   => {
+
+            :unlock_diplomacy     => 1,
+
+            :unlock_alliance_creation => 5,
     
           },
 

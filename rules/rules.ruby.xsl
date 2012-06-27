@@ -500,6 +500,7 @@ end
 </xsl:if>
 <xsl:apply-templates select="UnlockGarrison" />    
 <xsl:apply-templates select="CommandPoints" />    
+<xsl:apply-templates select="UnlockDiplomacy" />    
           },
 </xsl:template>
 
@@ -528,11 +529,19 @@ end
             },
 </xsl:template>
 
+<xsl:template match="UnlockDiplomacy">
+            :unlock_diplomacy     => <xsl:value-of select="@level" />,
+<xsl:if test="@foundAllianceLevel">
+            :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
+</xsl:if>
+</xsl:template>
+
 <xsl:template match="CommandPoints">
             :command_points => {
               :formula   => "<xsl:apply-templates />",
             },
 </xsl:template>
+
 
 <xsl:template match="QueueCategories">
   
