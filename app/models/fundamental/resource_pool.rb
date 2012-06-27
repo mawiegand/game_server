@@ -1,8 +1,6 @@
 class Fundamental::ResourcePool < ActiveRecord::Base
   
-  
-  
-  belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
+  belongs_to  :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
   before_save :update_resources_on_production_rate_changes
 
@@ -98,16 +96,24 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   protected
   
+    def update_resource_in_ranking(totalProductionRate)
+      self.owner.ranking.resource_score = totalProductionRate
+      self.owner.ranking.save
+    end
+  
     # updates the resource amounts if the rate changes with this write
     def update_resources_on_production_rate_changes
       if self.changed?
         changed = false
+        totalProductionRate = 0;
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+          totalProductionRate += self[attribute]
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
         end
+        update_resource_in_ranking(totalProductionRate) if changed
         update_resource_amount if changed  
       end    
       true
@@ -128,7 +134,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     # change one effect at a time (persently that's given).
     def propagate_global_effect_changes
 
-      if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
+      if (!self.owner.nil? && self.character_id > 0)         # only spread, if there's a resource pool
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
           attribute = resource_type[:symbolic_id].to_s()+'_global_effects'
@@ -138,7 +144,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
             change = self.changes[attribute]
             delta = change[1] - change[0]   # new - old value
             
-            self.character.settlements.each do |settlement|
+            self.owner.settlements.each do |settlement|
               settlement[attributeSettlement] = settlement[attributeSettlement] + delta
               settlement.save
             end

@@ -16,6 +16,8 @@ en:
         resources: Resources
         units: Units
         sciences: Sciences
+      ranking:
+        category: Ranking
       action:
         category: Action
       fundamental:

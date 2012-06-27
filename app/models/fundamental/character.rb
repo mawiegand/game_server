@@ -5,6 +5,7 @@ class Fundamental::Character < ActiveRecord::Base
   belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :members 
   
   has_one  :resource_pool, :class_name => "Fundamental::ResourcePool", :foreign_key => "character_id", :inverse_of => :owner
+  has_one  :ranking,       :class_name => "Ranking::CharacterRanking", :foreign_key => "character_id", :inverse_of => :character
   has_one  :home_location, :class_name => "Map::Location", :foreign_key => "owner_id", :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   
   has_one  :inbox, :class_name => "Messaging::Inbox", :foreign_key => "owner_id", :inverse_of => :owner
@@ -59,6 +60,9 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     character.create_resource_pool
+    character.create_ranking({
+      character_name: name,
+    });
 
     Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
         
@@ -141,10 +145,11 @@ class Fundamental::Character < ActiveRecord::Base
     alliance_tag_change = self.changes[:alliance_tag]    
     
     redundancies = [
-      { :model => Map::Location,          :field => :owner_id },
-      { :model => Map::Region,            :field => :owner_id },
-      { :model => Military::Army,         :field => :owner_id },
-      { :model => Settlement::Settlement, :field => :owner_id },
+      { :model => Map::Location,             :field => :owner_id },
+      { :model => Map::Region,               :field => :owner_id },
+      { :model => Military::Army,            :field => :owner_id },
+      { :model => Settlement::Settlement,    :field => :owner_id },
+      { :model => Ranking::CharacterRanking, :field => :character_id },
     ]
     
     if !alliance_change.blank? || !alliance_tag_change.blank?

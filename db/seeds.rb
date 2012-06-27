@@ -15,7 +15,8 @@ user.save
 
 # DUMMY DATA FOR TESTING
 
-alliance_data=[ { id: 0,
+alliance_data=[ 
+            { id: 0,
               members: [ 14, 15, 16, 17 ] },    # players without alliance
             { id: 1,
               tag: 'DW', 
@@ -54,12 +55,13 @@ character_data=[ {},
 alliance_data.each do |ally|
   if ally[:id] == 0
     ally[:members].each do |member|
-      character = Fundamental::Character.create( name: character_data[member][:name] )
+      character = Fundamental::Character.create({ name: character_data[member][:name] }, :as => :creator)
     
       character.create_resource_pool
-      character.resource_pool.resource_wood_amount = 1000
+      character.create_ranking({ character_name: character.name })
+      character.resource_pool.resource_wood_amount  = 1000
       character.resource_pool.resource_stone_amount = 1000
-      character.resource_pool.resource_fur_amount = 10
+      character.resource_pool.resource_fur_amount   = 10
       character.resource_pool.save
       
       character.create_inbox
@@ -67,7 +69,8 @@ alliance_data.each do |ally|
       character.create_archive
     end
   else 
-    alliance = Fundamental::Alliance.create( tag: ally[:tag], name: ally[:name], leader_id: ally[:members][0] )
+    alliance = Fundamental::Alliance.create({ tag: ally[:tag], name: ally[:name] }, :as => :creator )
+    alliance.save
     ally[:members].each do |member| 
       character =  alliance.members.build( name: character_data[member][:name] )
       character.alliance_tag = alliance.tag
@@ -75,6 +78,7 @@ alliance_data.each do |ally|
       character.save
       
       character.create_resource_pool
+      character.create_ranking({ character_name: character.name, alliance_id: ally[:id], alliance_tag: ally[:tag] })
       character.resource_pool.resource_wood_amount = 1000
       character.resource_pool.resource_stone_amount = 1000
       character.resource_pool.resource_fur_amount = 10
@@ -83,8 +87,12 @@ alliance_data.each do |ally|
       character.create_inbox
       character.create_outbox
       character.create_archive
+      
+      if alliance.leader_id.nil?
+        alliance.leader_id = character.id  
+        alliance.save
+      end
     end
-    alliance.save
   end
 end
 
