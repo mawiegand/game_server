@@ -255,3 +255,32 @@ div.flash {
   box-shadow:  1px 1px 1px RGBA(0,0,0,.1) ;  
 
 }
+
+div.player-ranking {
+  position: absolute;
+  background-color: #DDF;
+  width: 100%;
+  min-width: 400px;
+  min-height: 100%;
+}
+
+div.player-ranking-pane {
+  background-color: #FFF;
+  width: 500px;
+  min-height: 300px;
+  border-radius: 12px;
+  padding: 10px 40px 80px 40px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.player-ranking-pane td, div.player-ranking-pane th {
+  text-align: left;
+  padding-right: 10px;
+}
+
+div.player-ranking-pane td.number, div.player-ranking-pane th.number {
+  text-align: right;
+}
