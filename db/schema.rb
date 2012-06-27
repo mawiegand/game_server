@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627155439) do
+ActiveRecord::Schema.define(:version => 20120627162528) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -509,19 +509,19 @@ ActiveRecord::Schema.define(:version => 20120627155439) do
   create_table "ranking_alliance_rankings", :force => true do |t|
     t.integer  "alliance_id"
     t.string   "alliance_tag"
-    t.integer  "overall_score"
+    t.integer  "overall_score",    :default => 0, :null => false
     t.integer  "overall_rank"
-    t.integer  "resource_score"
+    t.integer  "resource_score",   :default => 0, :null => false
     t.integer  "resource_rank"
-    t.integer  "power_score"
+    t.integer  "power_score",      :default => 0, :null => false
     t.integer  "power_rank"
-    t.integer  "num_settlements"
+    t.integer  "num_settlements",  :default => 0, :null => false
     t.integer  "settlements_rank"
-    t.integer  "num_outposts"
+    t.integer  "num_outposts",     :default => 0, :null => false
     t.integer  "outposts_rank"
-    t.integer  "num_fortress"
+    t.integer  "num_fortress",     :default => 0, :null => false
     t.integer  "fortress_rank"
-    t.integer  "num_members"
+    t.integer  "num_members",      :default => 0, :null => false
     t.integer  "members_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
