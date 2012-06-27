@@ -2,6 +2,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
+  before_save :update_global_effects
   before_save :update_resources_on_production_rate_changes
   
   # updates resource amounts BUT does NOT save to database itself.
@@ -18,17 +19,6 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
     self.productionUpdatedAt = now 
   end    
-  
-  # Adds the given resources to the resource pool.
-  # Will save resources, presently is neither a 
-  # transaction nor an atomar operation. That'll change!
-  # this will NOT update the produced resources
-  def add_resources_transaction(resources)
-    resources.each do |key, value| 
-      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] += value
-    end
-    self.save
-  end
   
   # returns true, iff the resource pool holds at least
   # resources resources (not considering the resources
@@ -67,6 +57,22 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     end     
     self.save
   end
+
+  # adds the given effect to the resource pool.
+  # this adds the speedup value to the appropriate global effects
+  # value and updates the production rates through an after_save handler.   
+  def add_effect(effect)
+    logger.debug '---> in add_effect'
+    logger.debug '---> ' + effect.inspect
+  end
+  
+  # removes the given effect from the resource pool.
+  # this subtracts the speedup value from the appropriate global effects
+  # value and updates the production rates through an after_save handler.   
+  def remove_effect(effect)
+    logger.debug '---> in remove_effect'
+    logger.debug '---> ' + effect.inspect
+  end
   
   protected
   
@@ -80,9 +86,14 @@ class Fundamental::ResourcePool < ActiveRecord::Base
             changed = true
           end
         end
-        update_resource_amount    if changed  
+        update_resource_amount if changed  
       end    
       true
     end
-
+    
+    # updates the production rate if the global effect changes in this write 
+    def update_global_effects
+      logger.debug '---> in update_global_effects: changed ' + self.changes.inspect
+      #
+    end
 end

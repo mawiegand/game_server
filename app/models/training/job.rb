@@ -42,7 +42,14 @@ class Training::Job < ActiveRecord::Base
     return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement)
     
     # test if garrison army is unlocked
-    return false unless settlement.settlement_unlock_garrison_count > 0  
+    return false unless settlement.settlement_unlock_garrison_count > 0
+    
+    # test if army category is unlocked
+    # TODO testen!
+    category = rules.unit_categories[rules.unit_types[self.unit_id][:category]][:symbolic_id]
+    logger.debug 'settlement_queue_' + category = '_unlock_count'
+    logger.debug settlement['settlement_queue_' + category = '_unlock_count'].inspect
+    return false unless settlement['settlement_queue_' + category = '_unlock_count'] > 0
 
     # test if queue is already full   
     return false if self.queue && self.queue.max_length <= self.queue.jobs_count

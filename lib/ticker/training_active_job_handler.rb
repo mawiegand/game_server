@@ -51,7 +51,7 @@ class Ticker::TrainingActiveJobHandler
       
       queue.check_for_new_jobs if job.nil?
       
-      event.destroy
+      # event.destroy unless event.nil?
       runloop.say "Training active job handler completed."
     end
   end

@@ -4,8 +4,10 @@ class ActionsController < ApplicationController
   def show
     
     create_army_action_parameters = 'action_military_create_army_action[location_id]'
+    change_army_action_parameters = 'action_military_change_army_action[location_id], action_military_change_army_action[visible_army_id]'
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       create_army_action_parameters += ', action_military_create_army_action[' + unit_type[:db_field].to_s + ']'
+      change_army_action_parameters += ', action_military_change_army_action[' + unit_type[:db_field].to_s + ']'
     end
     
     
@@ -16,6 +18,12 @@ class ActionsController < ApplicationController
           method: 'POST',
           name: 'Create Army',
           parameters: create_army_action_parameters,
+        },
+        { # CHANGE ARMY
+          url: action_military_change_army_actions_path,
+          method: 'POST',
+          name: 'Change Army',
+          parameters: change_army_action_parameters,
         },
         { # MOVE ARMY
           url: action_military_move_army_actions_path,

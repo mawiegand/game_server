@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @shop_bonus_offer.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shop_bonus_offer.price %>
+</p>
+
+<p>
+  <b>Resource:</b>
+  <%= @shop_bonus_offer.resource_id %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @shop_bonus_offer.duration %>
+</p>
+
+<p>
+  <b>Speedup:</b>
+  <%= @shop_bonus_offer.speedup %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @shop_bonus_offer.started_at %>
+</p>
+
+<p>
+  <b>Ends at:</b>
+  <%= @shop_bonus_offer.ends_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_bonus_offer_path(@shop_bonus_offer) %> |
+<%= link_to 'Back', shop_bonus_offers_path %>

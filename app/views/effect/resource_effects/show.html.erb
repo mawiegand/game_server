@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Speedup:</b>
+  <%= @effect_resource_effect.speedup %>
+</p>
+
+<p>
+  <b>Resource:</b>
+  <%= @effect_resource_effect.resource_id %>
+</p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @effect_resource_effect.finished_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_effect_resource_effect_path(@effect_resource_effect) %> |
+<%= link_to 'Back', effect_resource_effects_path %>

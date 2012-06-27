@@ -1,0 +1,2 @@
+module Effect::ResourceEffectsHelper
+end

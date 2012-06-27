@@ -1,0 +1,35 @@
+<h1>Listing shop_bonus_offers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Resource</th>
+    <th>Duration</th>
+    <th>Speedup</th>
+    <th>Started at</th>
+    <th>Ends at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_bonus_offers.each do |shop_bonus_offer| %>
+  <tr>
+    <td><%= shop_bonus_offer.title %></td>
+    <td><%= shop_bonus_offer.price %></td>
+    <td><%= shop_bonus_offer.resource_id %></td>
+    <td><%= shop_bonus_offer.duration %></td>
+    <td><%= shop_bonus_offer.speedup %></td>
+    <td><%= shop_bonus_offer.started_at %></td>
+    <td><%= shop_bonus_offer.ends_at %></td>
+    <td><%= link_to 'Show', shop_bonus_offer %></td>
+    <td><%= link_to 'Edit', edit_shop_bonus_offer_path(shop_bonus_offer) %></td>
+    <td><%= link_to 'Destroy', shop_bonus_offer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bonus offer', new_shop_bonus_offer_path %>

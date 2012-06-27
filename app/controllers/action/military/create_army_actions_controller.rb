@@ -11,7 +11,6 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     location = Map::Location.find(@action[:location_id])
     garrison_army = location.garrison_army
     
-    # TODO owner testen
     raise BadRequestError.new('not owner of location') unless location.owner == current_character
     
     # TODO Werte auf > 0 testen

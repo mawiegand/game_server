@@ -12,6 +12,9 @@ GameServer::Application.routes.draw do
         resources :users 
       end
 
+      namespace :effect do 
+        resources :resource_effects 
+      end
 
       namespace :fundamental do 
         
@@ -144,6 +147,8 @@ GameServer::Application.routes.draw do
       
       namespace :shop do
         resources :offers
+        resources :resource_offers
+        resources :bonus_offers
         resources :transactions
         resource :account, :only => [ :show ]
       end
