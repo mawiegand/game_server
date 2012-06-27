@@ -69,11 +69,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     logger.debug '---> in add_effect'
     logger.debug '---> ' + effect.inspect
     
-    attribute = resource_type[effect[:resource_id]].to_s()+'_global_effects'
-    amount = effect[:speedup]
+    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_global_effects'
+    amount = effect[:bonus]
     
-    raise BadRequest.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
-    raise BadRequest.new("no amount for effect given") if amount.nil?
+    raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
+    raise BadRequestError.new("no amount for effect given") if amount.nil?
     
     self[attribute] += amount
     self.save
@@ -86,11 +86,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     logger.debug '---> in remove_effect'
     logger.debug '---> ' + effect.inspect
     
-    attribute = resource_type[effect[:resource_id]].to_s()+'_global_effects'
-    amount = effect[:speedup]
+    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_global_effects'
+    amount = effect[:bonus]
     
-    raise BadRequest.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
-    raise BadRequest.new("no amount for effect given") if amount.nil?
+    raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
+    raise BadRequestError.new("no amount for effect given") if amount.nil?
     
     self[attribute] -= amount
     self.save    
