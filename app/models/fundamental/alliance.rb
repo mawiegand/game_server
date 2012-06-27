@@ -39,10 +39,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     }, :as => role);
     
     raise InternalServerError.new('could not create alliance') unless alliance.save
-    alliance.add_character(leader)
-    
     alliance.create_ranking({ alliance_tag: tag })
-
+    alliance.add_character(leader)
     return alliance
   end
   

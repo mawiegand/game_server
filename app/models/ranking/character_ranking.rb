@@ -8,13 +8,9 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   protected
   
     def propagate_change_to_alliance
-        logger.debug "PROPAGATE CHANGE TO ALLIANCE"
-
       if self.alliance_id_changed?
-        logger.debug "CHANGED ALLIANCE ID"
         propagate_score_on_changed_alliance
       elsif !self.alliance.nil?
-        logger.debug "ALLIANCE_ID HAS NOT CHANGED, ALLIANCE IS NOT NILL"
 
         fields_to_propagate = [
           :resource_score,
@@ -28,7 +24,6 @@ class Ranking::CharacterRanking < ActiveRecord::Base
           if !change.nil?
             delta = (change[1] || 0) - (change[0] || 0)
             logger.debug "Delta: #{ delta }, change1: #{change[1]}, change0: #{change[2]}, field: #{field}."
-            puts "Delta: #{ delta }, change1: #{change[1]}, change0: #{change[2]}, field: #{field}."
             set_clause = set_clause + (set_clause.length == 0 ? "" : ", ") + "#{field.to_s} = #{field.to_s} + (#{delta})"
           end
         end
@@ -42,7 +37,6 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   
   
     def propagate_score_on_changed_alliance
-      logger.debug "ON CHANGE ALLIANCE"
       alliance_change = self.changes[:alliance_id]
       if !alliance_change.nil?
         old_alliance = alliance_change[0].nil? ? nil : Ranking::AllianceRanking.find_by_alliance_id(alliance_change[0])
@@ -56,9 +50,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
           old_value = (score_change[0] || 0)
         end  
           
-        puts "new: #{ new_value }, old: #{ old_value }, old_alliance: #{ old_alliance.inspect }, new_ally: #{ new_alliance.inspect }."
         logger.debug "new: #{ new_value }, old: #{ old_value }, old_alliance: #{ old_alliance.inspect }, new_ally: #{ new_alliance.inspect }."
-          
           
         old_alliance.overall_score = (old_alliance.overall_score || 0) - old_value   unless old_alliance.nil?
         new_alliance.overall_score = (new_alliance.overall_score || 0) + new_value   unless new_alliance.nil? 
