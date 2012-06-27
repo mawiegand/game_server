@@ -42,6 +42,15 @@ class Fundamental::Alliance < ActiveRecord::Base
     return alliance
   end
   
+  def determine_new_leader
+    if self.members.count > 0
+      logger.debug self.members.first.inspect
+      self.leader_id = self.members.first.id
+    else
+      self.leader_id = nil
+    end
+  end
+  
   def add_character(character)
     character.alliance_tag = self.tag
     character.alliance_id = self.id
@@ -52,6 +61,11 @@ class Fundamental::Alliance < ActiveRecord::Base
     character.alliance_tag = nil
     character.alliance_id = nil
     character.save
+    
+    if self.leader_id == character.id
+      determine_new_leader
+      self.save
+    end
   end
   
   private
