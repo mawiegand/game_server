@@ -1,6 +1,6 @@
 class Effect::ResourceEffect < ActiveRecord::Base
   
-  has_one    :event,  :class_name => "Event::Event",        :foreign_key => "local_event_id",  :dependent => :destroy
+  has_one    :event,  :class_name => "Event::Event", :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'resource_effect'"
 
   # creates resource effect from bonus offer 
   def self.create_with_offer(offer)
