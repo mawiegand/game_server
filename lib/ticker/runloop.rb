@@ -4,6 +4,7 @@ require 'ticker/construction_active_job_handler'
 require 'ticker/construction_queue_check_handler'
 require 'ticker/training_active_job_handler'
 require 'ticker/training_queue_check_handler'
+require 'ticker/resource_effect_handler'
 
 module Ticker
 
@@ -25,6 +26,7 @@ module Ticker
   Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler);
   Ticker.add_handler_class(Ticker::TrainingActiveJobHandler);
   Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler);
+  Ticker.add_handler_class(Ticker::ResourceEffectHandler);
 
   class Runloop
     
