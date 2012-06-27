@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625132421) do
+ActiveRecord::Schema.define(:version => 20120627013818) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(:version => 20120625132421) do
     t.decimal  "speedup_sciences",  :default => 0.0, :null => false
     t.decimal  "speedup_alliance",  :default => 0.0, :null => false
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
+  end
+
+  create_table "effect_resource_effects", :force => true do |t|
+    t.decimal  "speedup"
+    t.integer  "resource_id"
+    t.datetime "finished_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "event_events", :force => true do |t|
@@ -192,6 +200,10 @@ ActiveRecord::Schema.define(:version => 20120625132421) do
     t.decimal  "resource_cash_amount",           :default => 0.0
     t.decimal  "resource_cash_capacity",         :default => 0.0
     t.decimal  "resource_cash_production_rate",  :default => 0.0
+    t.decimal  "resource_wood_global_effects",   :default => 0.0
+    t.decimal  "resource_stone_global_effects",  :default => 0.0
+    t.decimal  "resource_fur_global_effects",    :default => 0.0
+    t.decimal  "resource_cash_global_effects",   :default => 0.0
   end
 
   create_table "map_locations", :force => true do |t|
@@ -577,11 +589,34 @@ ActiveRecord::Schema.define(:version => 20120625132421) do
     t.datetime "updated_at"
   end
 
+  create_table "shop_bonus_offers", :force => true do |t|
+    t.string   "title"
+    t.integer  "price"
+    t.integer  "resource_id"
+    t.integer  "speedup"
+    t.datetime "started_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "duration"
+  end
+
   create_table "shop_offers", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.integer  "price"
     t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_resource_offers", :force => true do |t|
+    t.string   "title"
+    t.integer  "price"
+    t.integer  "amount"
+    t.integer  "resource_id"
+    t.datetime "started_at"
+    t.datetime "ends_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

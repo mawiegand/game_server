@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  price: 1
+  amount: 1
+  resource_id: 1
+  speedup: 1
+  started_at: 2012-06-26 18:17:36
+  ends_at: 2012-06-26 18:17:36
+
+two:
+  title: MyString
+  price: 1
+  amount: 1
+  resource_id: 1
+  speedup: 1
+  started_at: 2012-06-26 18:17:36
+  ends_at: 2012-06-26 18:17:36

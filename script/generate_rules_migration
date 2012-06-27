@@ -48,6 +48,7 @@ hash_of_models = {
   Fundamental::ResourcePool  => [ { :prefix => 'resource_',        :postfix => '_amount',                     :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_global_effects',             :type => ':decimal', :options => { :default => 0.0 } }, 
   ],
   
   Fundamental::Character     => [ { :prefix => 'character_queue',  :postfix => '',                                                 :options => { :default => 0   } },

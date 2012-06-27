@@ -46,7 +46,14 @@ class Shop::TransactionsController < ApplicationController
   # POST /shop/transactions.json
   def create
     # offer holen
-    offer = Shop::Offer.find(params[:shop_transaction][:offer_id])
+    offer_type = params[:shop_transaction][:offer_type]
+    if offer_type === 'resource'
+      offer = Shop::ResourceOffer.find(params[:shop_transaction][:offer_id])
+    elsif offer_type === 'bonus'
+      offer = Shop::BonusOffer.find(params[:shop_transaction][:offer_id])
+    else
+      raise BadRequestError.new('invalid offer type')
+    end
     
     # lokale transaction erzeugen
     @shop_transaction = Shop::Transaction.create({
@@ -86,14 +93,12 @@ class Shop::TransactionsController < ApplicationController
         @shop_transaction.credit_amount_booked = offer.price
         @shop_transaction.save
 
-        # Offer in Character buchen
-        current_character.frog_amount += offer.amount
-        current_character.save    
+        offer.credit_to(current_character)
       end
 
-        # callback an payment provider
+      # TODO callback an payment provider
         
-        # transaction abschliessen
+      # transaction abschliessen
       @shop_transaction.state = Shop::Transaction::STATE_CLOSED
       @shop_transaction.save
     else  # payment rejected 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @shop_resource_offer.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shop_resource_offer.price %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @shop_resource_offer.amount %>
+</p>
+
+<p>
+  <b>Resource:</b>
+  <%= @shop_resource_offer.resource_id %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @shop_resource_offer.started_at %>
+</p>
+
+<p>
+  <b>Ends at:</b>
+  <%= @shop_resource_offer.ends_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_resource_offer_path(@shop_resource_offer) %> |
+<%= link_to 'Back', shop_resource_offers_path %>

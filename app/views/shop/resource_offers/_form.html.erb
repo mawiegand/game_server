@@ -1,0 +1,41 @@
+<%= form_for(@shop_resource_offer) do |f| %>
+  <% if @shop_resource_offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop_resource_offer.errors.count, "error") %> prohibited this shop_resource_offer from being saved:</h2>
+
+      <ul>
+      <% @shop_resource_offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_id %><br />
+    <%= f.number_field :resource_id %>
+  </div>
+  <div class="field">
+    <%= f.label :started_at %><br />
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_at %><br />
+    <%= f.datetime_select :ends_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
