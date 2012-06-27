@@ -91,4 +91,46 @@ class Construction::Job < ActiveRecord::Base
     self.slot.settlement.owner.resource_pool.add_resources_transaction(self.costs)
   end
   
+  def finish
+    slot = self.slot
+    
+    logger.debug '-----------'
+    logger.debug self.inspect
+    logger.debug '-----------'
+    
+    if self.job_type == 'create'
+      if slot.empty?
+        # TODO check requirements like enough resources 
+
+        slot.create_building(self.building_id)
+      else
+        raise ForbiddenError.new('slot is not empty')
+      end        
+    elsif self.job_type == 'upgrade'
+      if !slot.empty?
+        # TODO check requirements like enough resources 
+        
+        slot.upgrade_building
+      else
+        raise ForbiddenError.new('slot is empty')
+      end        
+    elsif self.job_type == 'downgrade'
+      if !slot.empty?
+        # TODO check requirements like enough resources 
+        
+        slot.downgrade_building
+      else
+        raise ForbiddenError.new('slot is empty')
+      end        
+    elsif self.job_type == 'destroy'
+      if !slot.empty?
+        # TODO check requirements like enough resources 
+        
+        slot.destroy_building
+      else
+        raise ForbiddenError.new('slot is empty')
+      end        
+    end
+  end
+  
 end
