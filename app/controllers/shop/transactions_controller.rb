@@ -1,4 +1,5 @@
 class Shop::TransactionsController < ApplicationController
+  layout 'shop'
 
   include Shop::ShopHelper
 
@@ -93,6 +94,7 @@ class Shop::TransactionsController < ApplicationController
         @shop_transaction.credit_amount_booked = offer.price
         @shop_transaction.save
 
+        # TODO Fehlerbehandlung
         offer.credit_to(current_character)
       end
 

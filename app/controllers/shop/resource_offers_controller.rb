@@ -1,4 +1,5 @@
 class Shop::ResourceOffersController < ApplicationController
+  layout 'shop'
   
   before_filter :authenticate
   
