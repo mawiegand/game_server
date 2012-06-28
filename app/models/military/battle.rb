@@ -126,5 +126,12 @@ class Military::Battle < ActiveRecord::Base
     faction.update_from_participants
   end
   
-  
+  def battle_done?
+    active_factions = 0
+    factions.each do |f|
+      active_factions += 1 if f.has_units_fighting?
+    end
+    (active_factions > 1)
+  end
+
 end

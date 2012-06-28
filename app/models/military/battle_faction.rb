@@ -32,4 +32,11 @@ class Military::BattleFaction < ActiveRecord::Base
     self.save
   end
 
+  def has_units_fighting?
+    participants.each do |p|
+      return true if (!p.retreated && p.has_units?)
+    end
+    false
+  end
+
 end

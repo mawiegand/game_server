@@ -30,6 +30,7 @@ class Ticker::BattleHandler
       awe_battle = Battle::Battle.new
       raise InternalServerError.new('Could not create an instance of Battle::Battle (awe_native_extension).') if awe_battle.nil?
       
+      runloop.say "started filling awe_battle object"
       fill_awe_battle(battle, awe_battle)
       raise InternalServerError.new('BattleHandler failed to instantiate the battle from the persistent storage.') unless awe_battle.isValid 
 
@@ -40,12 +41,30 @@ class Ticker::BattleHandler
       ## calculate one battle round
       awe_battle_calculator.callculateOneTick(awe_battle)  # execute round
       
-      # extract and store results in database
+      ## extract and store results in database & handle retreat
       extract_results_from_awe_battle(awe_battle, battle)
-      
-      # generate message for participants
-      generate_messages_for_battle(awe_battle, battle)
 
+      ## check if the battle is over
+      if battle.battle_done?
+
+        runloop.say "Battle done, starting to send out messages"
+
+        ## generate message for participants
+        generate_messages_for_battle(awe_battle, battle)
+
+        #TODO CLEANUP
+
+
+      else
+
+        ## handle retreats
+        puts "todo"
+
+        # TODO generate new event
+
+
+      end
+      
       #  LET ARMIES RETREAT AND CLEANUP PARTICIPANT AND ARMY
       
       # CONTINUE BATTLE?
@@ -59,10 +78,18 @@ class Ticker::BattleHandler
       #reenable garbage collection if it was enabled before
       GC.enable unless gcstate
 
-#     event.destroy
+      runloop.say "WARNING event is currently not beeing destroyed for debug purposes"
+      #event.destroy
       runloop.say "Battle handler completed."
 
     end
+  end
+
+  ## HANDLE RETREAT ##########################################################
+
+  def handle_retreat_try(participant, participant_results)
+    runloop.say "handeling retreat try"
+
   end
   
   ## EXTRACTING RESULTS FROM BATTLE STRUCTS ##################################
@@ -113,9 +140,17 @@ class Ticker::BattleHandler
   end
 
   def extract_results_from_awe_faction(awe_faction, faction, faction_results)
+    current_participant_index = -1
     (0..(awe_faction.numArmies-1)).each do | a |
       awe_army = awe_faction.getArmy(a)
-      participant = faction.participants[a]
+      #get the participant
+      participant = nil
+      begin
+        current_participant_index += 1
+        raise InternalServerError('Could not match the awe army to a military_battle_participant') if current_participant_index >= faction.participants.length
+        participant = faction.participants[current_participant_index]
+      end while participant.retreated
+      #extract
       participant[:total_experience_gained] = participant[:total_experience_gained] + awe_army.sumNewExp
       participant_results = faction_results.participant_results.build(
         :battle_id => faction.battle_id,
@@ -126,6 +161,10 @@ class Ticker::BattleHandler
         :experience_gained => awe_army.sumNewExp,
       )
       extract_results_from_awe_participant(awe_army, participant, participant_results)
+
+      if participant.army.battle_retreat
+        handle_retreat_try(participant, participant_results)
+      end
 
       if !participant_results.save
         raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
@@ -139,6 +178,15 @@ class Ticker::BattleHandler
   def extract_results_from_awe_participant(awe_army, participant, participant_results)
     rules = GameRules::Rules.the_rules
     
+    #set everything 0 first
+    rules.unit_types.each do | unit_type |
+      participant_results[unit_type[:db_field]] = 0
+      participant_results[(unit_type[:db_field].to_s+'_casualties').to_sym] = 0
+      participant_results[(unit_type[:db_field].to_s+'_damage_taken').to_sym] = 0
+      participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = 0
+    end
+
+    #insert the real data
     (0..(awe_army.numUnits-1)).each do | u |
       awe_unit = awe_army.getUnit(u)
       unit_type = rules.unit_types[awe_unit.unitTypeId]
@@ -159,11 +207,11 @@ class Ticker::BattleHandler
   def create_awe_test_for(category)
     awe_priority_test = nil
     
-    puts 'CREATE TEST'
+    #puts 'CREATE TEST'
 
     if category[:target_priorities][:test_type] == :no_test          # NO TEST
       
-      puts 'CREATE NO TEST'
+      #puts 'CREATE NO TEST'
       
       awe_priority_test = Battle::NoTest.new
       category[:target_priorities][:results][0].each do | target |
@@ -172,7 +220,7 @@ class Ticker::BattleHandler
       
     elsif category[:target_priorities][:test_type] == :line_size_test # LINE SIZE TEST
       
-      puts 'CREATE LINE SIZE TEST'
+      #puts 'CREATE LINE SIZE TEST'
       
       awe_priority_test = Battle::LineSizeTest.new(category[:target_priorities][:test_category])
       category[:target_priorities][:results][0].each do | target |
@@ -197,7 +245,7 @@ class Ticker::BattleHandler
       awe_battle.addUnitCategory(awe_category)
     end
     
-    puts "finished categories"
+    #puts "finished categories"
 
     # fill factions
     battle.factions.each do |faction|
@@ -208,18 +256,20 @@ class Ticker::BattleHandler
       awe_battle.addFaction(awe_faction)
     end
     
-    puts "finished factions"
+    #puts "finished factions"
     
     awe_battle
   end
   
   def fill_awe_faction(faction, awe_faction)
     faction.participants.each do |participant|
-      awe_army = Battle::Army.new(participant.army.owner_id)  # why player id?
+
+      awe_army = Battle::Army.new(participant.army.id)
       raise InternalServerError.new('could not create an instance of Battle::Army (awe_native_extension).') if awe_army.nil?
-      
-      fill_awe_army(participant, awe_army)
-      awe_faction.addArmy(awe_army)
+      unless participant.retreated
+        fill_awe_army(participant, awe_army)
+        awe_faction.addArmy(awe_army)
+      end
     end
     
     awe_faction
@@ -234,7 +284,7 @@ class Ticker::BattleHandler
         awe_unit = Battle::Unit.new
         raise InternalServerError.new('could not create an instance of Battle::Unit (awe_native_extension).') if awe_unit.nil?
         
-        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit)
+        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit, participant.army.battle_retreat )
         awe_army.addUnit(awe_unit)
 
       end
@@ -247,14 +297,20 @@ class Ticker::BattleHandler
   # rules) and the awe object to be filled.
   #
   # TODO: here we need the owner as the army as well and must calculate all modified values (perhaps should be calculated inside Military::Army)
-  def fill_awe_unit(number, unit_type, awe_unit)
+  def fill_awe_unit(number, unit_type, awe_unit, retreat)
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
 	  #puts unit_type
     #awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
     awe_unit.unitCategoryId = unit_type[:category]
-    awe_unit.baseDamage = unit_type[:attack]
-    awe_unit.criticalDamage = unit_type[:critical_hit_damage]
+    #if a army is retreating it does not deal any damage
+    if retreat
+      awe_unit.baseDamage = 0
+      awe_unit.criticalDamage = 0
+    else
+      awe_unit.baseDamage = unit_type[:attack]
+      awe_unit.criticalDamage = unit_type[:critical_hit_damage]
+    end
     awe_unit.criticalProbability = unit_type[:critical_hit_chance]
     awe_unit.hitpoints = unit_type[:hitpoints]
     awe_unit.initiative = unit_type[:initiative]
@@ -281,9 +337,3 @@ class Ticker::BattleHandler
   end
   
 end
-
-
-
-
-
-
