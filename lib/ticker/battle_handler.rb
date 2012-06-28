@@ -81,9 +81,27 @@ class Ticker::BattleHandler
 
   ## HANDLE RETREAT ##########################################################
 
-  def handle_retreat_try(participant, participant_results)
+  def handle_retreat_try(battle, participant, participant_results)
     runloop.say "handeling retreat try"
+    #mark that there was a try
+    participant_results.retreat_succeeded = false
 
+    #check if there is position that the army can retreat to
+    retreat_targets = []
+
+    if battle.location.fortress?
+
+    else
+
+    end
+
+    #shuffle the possible location
+    retreat_targets.shuffle!
+
+    #now do a random experiment for every location
+    retreat_targets.each do |target|
+
+    end
   end
   
   ## EXTRACTING RESULTS FROM BATTLE STRUCTS ##################################
@@ -111,7 +129,7 @@ class Ticker::BattleHandler
         raise InternalServerError.new('Server could not create a new result for a battle faction in persistant storage.')
       end
       
-      extract_results_from_awe_faction(awe_faction, faction, faction_results)
+      extract_results_from_awe_faction(battle, awe_faction, faction, faction_results)
 
       #update the factions itself
       faction.total_casualties = 0 if (faction.total_casualties.nil?)
@@ -133,7 +151,7 @@ class Ticker::BattleHandler
     battle
   end
 
-  def extract_results_from_awe_faction(awe_faction, faction, faction_results)
+  def extract_results_from_awe_faction(battle, awe_faction, faction, faction_results)
     current_participant_index = -1
     (0..(awe_faction.numArmies-1)).each do | a |
       awe_army = awe_faction.getArmy(a)
@@ -156,8 +174,12 @@ class Ticker::BattleHandler
       )
       extract_results_from_awe_participant(awe_army, participant, participant_results)
 
+      #handle the possible retreat
       if participant.army.battle_retreat
-        handle_retreat_try(participant, participant_results)
+        participant_results.retreat_tried = true
+        handle_retreat_try(battle, participant, participant_results)
+      else
+        participant_results.retreat_tried = false
       end
 
       if !participant_results.save
