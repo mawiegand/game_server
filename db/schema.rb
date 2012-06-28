@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628144755) do
+ActiveRecord::Schema.define(:version => 20120628164730) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(:version => 20120628144755) do
     t.integer  "character_unlock_diplomacy_count",         :default => 0
     t.integer  "character_unlock_alliance_creation_count", :default => 0
     t.integer  "score"
+    t.boolean  "npc",                                      :default => false, :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -482,7 +483,7 @@ ActiveRecord::Schema.define(:version => 20120628144755) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0, :null => false
+    t.integer  "total_experience_gained",  :default => 0
   end
 
   create_table "military_battle_rounds", :force => true do |t|
