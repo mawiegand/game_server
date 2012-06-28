@@ -5,7 +5,7 @@ class Military::BattleParticipant < ActiveRecord::Base
   belongs_to :army,    :class_name => "Military::Army",          :foreign_key => "army_id",    :inverse_of => :battle_participant
 
   def has_units?
-  	army.has_units?
+  	(!army.empty?)
   end
 
 end

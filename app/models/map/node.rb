@@ -203,5 +203,85 @@ class Map::Node < ActiveRecord::Base
     hash[:region] = self.region.serializable_hash(options) if self.leaf? && !self.region.nil?
     hash
   end
-  
+
+  def neighbor_nodes
+    result = []
+    def add_neighbors(tms, level, orientation, result)
+      path = Mapping::GlobalMercator.tms_to_quad_tree_tile_code(tms[:x], tms[:y], level);
+      #get the node
+      node = Map::Node.find_by_path(path)
+      if (!node.nil?)
+        if node.leaf
+          result.push node
+        else
+          if (orientation == 0)
+            n0path = path+"0"
+            n0 = Map::Node.find_by_path(n0path)
+            result.push(n0) unless n0.nil?
+            logger.error("could not found a node a level down with path '"+n0path+"'") if n0.nil?
+          
+            n1path = path+"1"
+            n1 = Map::Node.find_by_path(n1path)
+            result.push(n1) unless n1.nil?
+            logger.error("could not found a node a level down with path '"+n1path+"'") if n1.nil?
+
+          elsif (orientation == 1)
+            n0path = path+"0"
+            n0 = Map::Node.find_by_path(n0path)
+            result.push(n0) unless n0.nil?
+            logger.error("could not found a node a level down with path '"+n0path+"'") if n0.nil?
+          
+            n1path = path+"2"
+            n1 = Map::Node.find_by_path(n1path)
+            result.push(n1) unless n1.nil?
+            logger.error("could not found a node a level down with path '"+n1path+"'") if n1.nil?
+
+          elsif (orientation == 2)
+            n0path = path+"2"
+            n0 = Map::Node.find_by_path(n0path)
+            result.push(n0) unless n0.nil?
+            logger.error("could not found a node a level down with path '"+n0path+"'") if n0.nil?
+          
+            n1path = path+"3"
+            n1 = Map::Node.find_by_path(n1path)
+            result.push(n1) unless n1.nil?
+            logger.error("could not found a node a level down with path '"+n1path+"'") if n1.nil?
+
+          elsif (orientation == 3)
+            n0path = path+"1"
+            n0 = Map::Node.find_by_path(n0path)
+            result.push(n0) unless n0.nil?
+            logger.error("could not found a node a level down with path '"+n0path+"'") if n0.nil?
+          
+            n1path = path+"3"
+            n1 = Map::Node.find_by_path(n1path)
+            result.push(n1) unless n1.nil?
+            logger.error("could not found a node a level down with path '"+n1path+"'") if n1.nil?
+
+          end 
+        end
+      else
+        #get the node on top
+        toppath = path[0...(path.length-1)]
+        node = Map::Node.find_by_path(toppath)
+        result.push(node) unless node.nil?
+        logger.error("could not found a node a level up with path '"+toppath+"'") if node.nil?
+      end
+    end
+
+    tms = Mapping::GlobalMercator.quad_tree_to_tms_tile_code(path)
+    if (tms[:x] > 0)
+      add_neighbors({ x: tms[:x]-1, y: tms[:y], zoom:tms[:zoom] }, level, 3, result);
+    end
+    if (tms[:y] > 0)
+      add_neighbors({ x: tms[:x], y: tms[:y]-1, zoom:tms[:zoom] }, level, 0, result); 
+    end
+    if (tms[:y] < ((4**level)-1) ) 
+      add_neighbors({ x: tms[:x], y: tms[:y]+1, zoom:tms[:zoom] }, level, 2, result); 
+    end
+    if (tms[:x] < ((4**level)-1) )
+      add_neighbors({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, level, 1, result);
+    end
+    result
+  end
 end

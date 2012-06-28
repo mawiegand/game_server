@@ -156,7 +156,7 @@ class Ticker::BattleHandler
     end
     #casualties
     result += "<tr>\n"
-    result += "<td>Dead</td>\n";
+    result += "<td>Casualties</td>\n";
     rules.unit_types.each do |t|
       result += "<td>"+unit_types_results[t[:db_field]][:casualties].to_s+"</td>\n"
     end
@@ -172,7 +172,7 @@ class Ticker::BattleHandler
     result += "<tr>\n"
     result += "<td>Damage Inflicted</td>\n";
     rules.unit_types.each do |t|
-      result += "<td>"+unit_types_results[t[:db_field]][:damage_inflicted].round(2).to_s+"</td>\n"
+      result += "<td>"+unit_types_results[t[:db_field]][:damage_inflicted].round(0).to_s+"</td>\n"
     end
     result += "</tr>\n";
     #end unit type stats
@@ -187,18 +187,18 @@ class Ticker::BattleHandler
     result += "</tr>\n"
     #kills
     result += "<tr>\n"
-    result += "<td>Total Casualties</td>\n";
+    result += "<td>Total Kills</td>\n";
     result += "<td>"+total_results[:kills].to_s+"</td>\n"
     result += "</tr>\n"
     #damage inflicted
     result += "<tr>\n"
     result += "<td>Damage Inflicted</td>\n";
-    result += "<td>"+total_results[:damage_inflicted].round(2).to_s+"</td>\n"
+    result += "<td>"+total_results[:damage_inflicted].round(0).to_s+"</td>\n"
     result += "</tr>\n"
     #damage taken
     result += "<tr>\n"
     result += "<td>Damage Taken</td>\n";
-    result += "<td>"+total_results[:damage_taken].round(2).to_s+"</td>\n"
+    result += "<td>"+total_results[:damage_taken].round(0).to_s+"</td>\n"
     result += "</tr>\n"
     #experience
     result += "<tr>\n"
@@ -378,15 +378,15 @@ class Ticker::BattleHandler
     current_result += "</tr>\n"
     current_result += "<tr>\n"
     current_result += "<td>Damage Inflicted</td>\n"
-    current_result += "<td>"+total_hash_map[:damage_inflicted].round(2).to_s+"</td>\n"
+    current_result += "<td>"+total_hash_map[:damage_inflicted].round(0).to_s+"</td>\n"
     current_result += "</tr>\n"
     current_result += "<tr>\n"
     current_result += "<td>Damage Taken</td>\n"
-    current_result += "<td>"+total_hash_map[:damage_taken].round(2).to_s+"</td>\n"
+    current_result += "<td>"+total_hash_map[:damage_taken].round(0).to_s+"</td>\n"
     current_result += "</tr>\n"
     current_result += "<tr>\n"
     current_result += "<td>Experience</td>\n"
-    current_result += "<td>"+total_hash_map[:experience_gained].round(2).to_s+"</td>\n"
+    current_result += "<td>"+total_hash_map[:experience_gained].round(0).to_s+"</td>\n"
     current_result += "</tr>\n"
     current_result += "</table>\n"
   end
@@ -484,7 +484,7 @@ class Ticker::BattleHandler
     end
     result = result + "</tr>\n"
 
-    result = result + "<tr><td>Remaining</td>\n"
+    result = result + "<tr><td>Survivors</td>\n"
     rules.unit_types.each do |t|
       result = result + "<td>"+combined_faction_result[:unit_types][t[:db_field]][:remaining].to_s+"</td>\n";
     end
