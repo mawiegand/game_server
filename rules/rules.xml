@@ -75,6 +75,9 @@
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
     </Languages>
+    <Battle>
+      <Calculation roundTime="30" retreatProbability="0.6" />
+    </Battle>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />

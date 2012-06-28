@@ -54,6 +54,10 @@ class Ticker::BattleHandler
 
         #TODO CLEANUP
 
+        #CALL: take-over-handler
+        #        - decides, whether a takeover should happen (settlemenet involved & lost , winners still have a survivor)
+        #        - decides, WHO should obtain the settlement (initiator; attacked first, otherwise the strongest winner)
+        #        CALL: settlement.new_owner_transaction(character) with character of new owner
 
       else
         battle.create_event_for_next_round
@@ -81,9 +85,39 @@ class Ticker::BattleHandler
 
   ## HANDLE RETREAT ##########################################################
 
-  def handle_retreat_try(participant, participant_results)
+  def handle_retreat_try(battle, participant, participant_results)
     runloop.say "handeling retreat try"
+    #mark that there was a try
+    participant_results.retreat_succeeded = false
 
+    #check if there is position that the army can retreat to
+    retreat_targets = []
+
+    if battle.location.fortress?
+      #get neighbors
+      neighbor_nodes = battle.region.node.neighbor_nodes
+      #check the fortresses of the neighbor nodes
+      neighbor_nodes.each do |n|
+        location = n.region.fortress_location
+        if location.can_be_retreated_to(participant.army.owner)
+          retreat_targets.push location
+        end
+      end
+    else
+      fortress_location = battle.region.fortress_location
+      if fortress_location.can_be_retreated_to?(participant.army.owner)
+        retreat_targets.push fortress_location
+      end
+    end
+
+    #shuffle the possible location
+    retreat_targets.shuffle!
+
+    #now do a random experiment for every location
+    retreat_targets.each do |target|
+      
+    end
+    return false
   end
   
   ## EXTRACTING RESULTS FROM BATTLE STRUCTS ##################################
@@ -111,7 +145,7 @@ class Ticker::BattleHandler
         raise InternalServerError.new('Server could not create a new result for a battle faction in persistant storage.')
       end
       
-      extract_results_from_awe_faction(awe_faction, faction, faction_results)
+      extract_results_from_awe_faction(battle, awe_faction, faction, faction_results)
 
       #update the factions itself
       faction.total_casualties = 0 if (faction.total_casualties.nil?)
@@ -133,7 +167,7 @@ class Ticker::BattleHandler
     battle
   end
 
-  def extract_results_from_awe_faction(awe_faction, faction, faction_results)
+  def extract_results_from_awe_faction(battle, awe_faction, faction, faction_results)
     current_participant_index = -1
     (0..(awe_faction.numArmies-1)).each do | a |
       awe_army = awe_faction.getArmy(a)
@@ -156,8 +190,12 @@ class Ticker::BattleHandler
       )
       extract_results_from_awe_participant(awe_army, participant, participant_results)
 
+      #handle the possible retreat
       if participant.army.battle_retreat
-        handle_retreat_try(participant, participant_results)
+        participant_results.retreat_tried = true
+        handle_retreat_try(battle, participant, participant_results)
+      else
+        participant_results.retreat_tried = false
       end
 
       if !participant_results.save
