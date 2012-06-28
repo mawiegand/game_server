@@ -259,7 +259,11 @@ class Ticker::BattleHandler
           current_result += "<tr>\n"
           current_result += "<td>"+participant_result.army.name+"</td>\n" #army.name
           current_result += "<td>"+participant_result.army.owner.name+"</td>\n" #character.name
-          current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
+          if participant_result.army.alliance.nil?
+            current_result += "<td></td>\n" #character.alliance_tag
+          else
+            current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
+          end
           rules.unit_types.each do |t|
             current_result += "<td>"+participant_result[t[:db_field]].to_s
             #if round.round_num > 0
@@ -332,7 +336,11 @@ class Ticker::BattleHandler
 	      current_result += "<tr>\n"
 	      current_result += "<td>"+participant_result.army.name+"</td>\n" #army.name
 	      current_result += "<td>"+participant_result.army.owner.name+"</td>\n" #character.name
-	      current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
+        if participant_result.army.alliance.nil?
+          current_result += "<td></td>\n" #character.alliance_tag
+        else
+	       current_result += "<td>"+participant_result.army.alliance.tag+"</td>\n" #character.alliance_tag
+        end
 	      rules.unit_types.each do |t|
 	        current_result += "<td>"+participant_result[t[:db_field]].to_s
 	        current_result += "</td>\n"
@@ -549,7 +557,7 @@ class Ticker::BattleHandler
 
   def generate_character_message_str(character)
     result = character.name
-    if (!character.alliance.nil?) 
+    unless character.alliance.nil?
       result = result + " | " + character.alliance.tag
     end
     result
