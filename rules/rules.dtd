@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
-<!ELEMENT General (Game, Version, Languages)>
+<!ELEMENT General (Game, Version, Languages, Battle)>
+
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
   branch CDATA #REQUIRED
@@ -17,6 +18,15 @@
 <!ELEMENT Languages (Language*)>
 <!ELEMENT Language (#PCDATA)>
 <!ATTLIST Language locale ID #REQUIRED>
+
+<!--Battle-->
+<!ELEMENT Battle (Calculation)>
+<!ELEMENT Calculation EMPTY>
+<!ATTLIST Calculation 
+  roundTime CDATA "30"
+  retreatProbability CDATA "0.6"
+>
+
 
 <!--Types-->
 <!ELEMENT ResourceTypes (Resource*)>
