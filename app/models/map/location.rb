@@ -23,7 +23,6 @@ class Map::Location < ActiveRecord::Base
     return nil
   end
   
-  
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
   def set_owner_and_alliance(new_owner_id, new_alliance_id)
@@ -36,8 +35,9 @@ class Map::Location < ActiveRecord::Base
       self.alliance_tag = self.alliance.tag if !self.alliance.nil?   
     end
   end
-  
 
+  def fortress?
+    (!slot.nil?() && slot == 0)
+  end
   
-    
 end
