@@ -42,24 +42,29 @@ class Ranking::CharacterRanking < ActiveRecord::Base
         old_alliance = alliance_change[0].nil? ? nil : Ranking::AllianceRanking.find_by_alliance_id(alliance_change[0])
         new_alliance = alliance_change[1].nil? ? nil : Ranking::AllianceRanking.find_by_alliance_id(alliance_change[1])
         
-        old_value = new_value = self.overall_score
-        
-        score_change = self.changes[:overall_score] 
-        if !score_change.nil?
-          new_value = (score_change[1] || 0)
-          old_value = (score_change[0] || 0)
-        end  
-          
-        logger.debug "new: #{ new_value }, old: #{ old_value }, old_alliance: #{ old_alliance.inspect }, new_ally: #{ new_alliance.inspect }."
-          
-        old_alliance.overall_score = (old_alliance.overall_score || 0) - old_value   unless old_alliance.nil?
-        new_alliance.overall_score = (new_alliance.overall_score || 0) + new_value   unless new_alliance.nil? 
+        fields_to_propagate = [
+          :resource_score,
+          :overall_score,
+        ] 
+      
+        fields_to_propagate.each do |field|
+          old_value = new_value = self[field]
 
-        old_alliance.save   unless old_alliance.nil?
-        new_alliance.save   unless new_alliance.nil?
+          change = self.changes[field]
+          if !change.nil?
+            new_value = (change[1] || 0)
+            old_value = (change[0] || 0)
+          end
+          old_alliance[field] = (old_alliance[field] || 0) - old_value   unless old_alliance.nil?
+          new_alliance[field] = (new_alliance[field] || 0) + new_value   unless new_alliance.nil? 
+
+        end
+        
+        old_alliance.save unless old_alliance.nil?
+        new_alliance.save unless new_alliance.nil?
+
       end
       true      
     end
-  
   
 end
