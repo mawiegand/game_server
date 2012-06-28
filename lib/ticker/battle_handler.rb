@@ -148,10 +148,10 @@ class Ticker::BattleHandler
       participant_results[(unit_type[:db_field].to_s+'_damage_taken').to_sym] = awe_unit.damageTaken
       participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = awe_unit.damageInflicted
 
-      # update survivors on army
-      participant.army.reduce_units(participant_results.get_unit_reduce_hash)
-
     end
+
+    # update survivors on army
+    participant.army.reduce_units(participant_results.get_unit_reduce_hash)
   end
   
   ## FILLING THE BATTLE STRUCTS ##############################################
