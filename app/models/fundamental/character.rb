@@ -96,6 +96,10 @@ class Fundamental::Character < ActiveRecord::Base
   def is_neutral?
     return self.alliance.nil?    
   end
+
+  def is_ally_of?(other)
+    return !self.alliance.nil? && !other.alliance.nil? && (self.alliance.id == opponent.alliance.id)
+  end
   
   def lives_in_region?(region)
     return !self.locations.where("region_id = ?", region.id).empty?

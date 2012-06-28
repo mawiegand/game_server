@@ -40,4 +40,8 @@ class Map::Location < ActiveRecord::Base
     (!slot.nil?() && slot == 0)
   end
   
+  def can_be_retreated_to?(character)
+    !owner.nil? && (owner == character || owner.is_ally_of?(character))
+  end
+
 end

@@ -94,9 +94,20 @@ class Ticker::BattleHandler
     retreat_targets = []
 
     if battle.location.fortress?
-
+      #get neighbors
+      neighbor_nodes = battle.region.node.neighbor_nodes
+      #check the fortresses of the neighbor nodes
+      neighbor_nodes.each do |n|
+        location = n.region.fortress_location
+        if location.can_be_retreated_to(participant.army.owner)
+          retreat_targets.push location
+        end
+      end
     else
-
+      fortress_location = battle.region.fortress_location
+      if fortress_location.can_be_retreated_to?(participant.army.owner)
+        retreat_targets.push fortress_location
+      end
     end
 
     #shuffle the possible location
@@ -104,8 +115,9 @@ class Ticker::BattleHandler
 
     #now do a random experiment for every location
     retreat_targets.each do |target|
-
+      
     end
+    return false
   end
   
   ## EXTRACTING RESULTS FROM BATTLE STRUCTS ##################################
