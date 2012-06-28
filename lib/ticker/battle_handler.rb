@@ -54,6 +54,10 @@ class Ticker::BattleHandler
 
         #TODO CLEANUP
 
+        #CALL: take-over-handler
+        #        - decides, whether a takeover should happen (settlemenet involved & lost , winners still have a survivor)
+        #        - decides, WHO should obtain the settlement (initiator; attacked first, otherwise the strongest winner)
+        #        CALL: settlement.new_owner_transaction(character) with character of new owner
 
       else
         battle.create_event_for_next_round
