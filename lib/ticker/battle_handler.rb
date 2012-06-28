@@ -56,13 +56,7 @@ class Ticker::BattleHandler
 
 
       else
-
-        ## handle retreats
-        puts "todo"
-
-        # TODO generate new event
-
-
+        battle.create_event_for_next_round
       end
       
       #  LET ARMIES RETREAT AND CLEANUP PARTICIPANT AND ARMY
