@@ -1,10 +1,18 @@
 class Shop::BonusOffersController < ApplicationController
   layout 'shop'
   
+  before_filter :authenticate
+  
   # GET /shop/bonus_offers
   # GET /shop/bonus_offers.json
   def index
     @shop_bonus_offers = Shop::BonusOffer.all
+    
+    logger.debug current_character.inspect
+    
+    @shop_bonus_offers.each do |offer|
+      offer[:resource_effect] = offer.effect_for_character(current_character) 
+    end
 
     respond_to do |format|
       format.html # index.html.erb
