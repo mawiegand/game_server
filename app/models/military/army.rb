@@ -234,7 +234,6 @@ class Military::Army < ActiveRecord::Base
   def reduce_units(units)
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       unless units[unit_type[:db_field]].nil?
-        puts "reduce = "+units[unit_type[:db_field]].to_i.to_s
         self.details[unit_type[:db_field]] -= units[unit_type[:db_field]].to_i
       end
     end
