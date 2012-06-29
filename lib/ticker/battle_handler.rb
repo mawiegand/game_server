@@ -55,25 +55,60 @@ class Ticker::BattleHandler
         generate_messages_for_battle(awe_battle, battle)
 
         ## get winner of the battle
-        winner_faction = nil
+        winner_faction = battle.winner_faction
+        winner_faction.update_leader
+        winner_leader = nil
+        if !winner_faction.nil?
+          winner_leader = winner_faction.leader
+        end
+
+        #if there is a winner
+        if !winner_faction.nil?
+
+          raise InternalServerError.new('A faction won a battle but did not have a leader') if winner_leader.nil?
+
+          #CALL: take-over-handler
+          #        - decides, whether a takeover should happen (settlemenet involved & lost , winners still have a survivor)
+          #        - decides, WHO should obtain the settlement (initiator; attacked first, otherwise the strongest winner)
+          #        CALL: settlement.new_owner_transaction(character) with character of new owner
+
+          #check if there was a battle over a settlement
+          target_settlement = battle.targeted_settlement
+          
+          if !target_settlement.nil?
+            #check if the battle location is owned by a participant of the winner faction
+            takeover = true
+            winner_faction.participants.each do |participant|
+              if participant.army.owner_id == battle.location.owner_id
+                takeover = false
+              end
+            end
+
+            #if not do the takeover
+            if takeover
+              if !battle.location.settlement.nil?
+                #do the takeover
+                #target_settlement.new_owner_transaction(winner_leader)
+              end
+            end
+          end
+
+        end
+
+        ## cleanup of the destroyed armies
+        cleanup_armies(battle)
+        ## cleanup of the battle object
+        cleanup_battle(battle)
+        
+      else
+        #update the leaders
         battle.factions.each do |faction|
-          if faction.has_units_fighting?
-            raise InternalServerError.new('There were more than one factions that still had units fighting even though the fight should be over') unless winner_faction.nil?
-            winner_faction = faction
+          if !faction.update_leader
+            runloop.say "Failed to update the leader", Logger::ERROR
           end
         end
 
-        #TODO CLEANUP
-        cleanup_armies(battle)
-        runloop.say("WARNING for debug purposes the battle objects are currently not cleaned up", Logger::WARN)
-        #cleanup_battle(battle)
-
-        #CALL: take-over-handler
-        #        - decides, whether a takeover should happen (settlemenet involved & lost , winners still have a survivor)
-        #        - decides, WHO should obtain the settlement (initiator; attacked first, otherwise the strongest winner)
-        #        CALL: settlement.new_owner_transaction(character) with character of new owner
-        
-      else
+        #schedule next round
         battle.schedule_next_round
         battle.save
         battle.create_event_for_next_round
@@ -100,23 +135,50 @@ class Ticker::BattleHandler
     end
   end
 
+
+
   #deletes armies that no longer exists (or marks them as removed)
   def cleanup_armies(battle)
-
+    battle.armies.each do |army|
+      if (army.empty? && !army.garrison)
         if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
-          
-          
-          runloop.say "Flaged destroyed armies as 'removed'"
+          army.removed = true
+          if !army.save
+            raise InternalServerError.new('Failed to flag an army as removed')
+          end
         else
-
-
-          runloop.say "Deleted destroyed armies from the database"
+          army.destroy
         end
+      else
+        #remove battle id
+        army.battle_id = 0
+        army.mode = 0
+        if !army.save
+          raise InternalServerError.new('Failed to set the battle id in the army to 0')
+        end
+      end
+    end
+
+    if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
+      runloop.say "Flaged destroyed armies as 'removed'"
+    else
+      runloop.say "Deleted destroyed armies from the database"
+    end
+
   end
 
   #destorys the battle and all Military::Battle* subobject
   def cleanup_battle(battle)
-
+    if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
+      battle.removed = true
+      if !battle.save
+        raise InternalServerError.new('Failed to flag an battle as removed')
+      end
+      runloop.say "Flaged destroyed armies as 'removed'"
+    else
+      battle.destroy
+      runloop.say "Deleted finished battle from the database"
+    end
   end
-  
+
 end

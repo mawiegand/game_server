@@ -1,27 +1,56 @@
 class Military::Army < ActiveRecord::Base
   
-  belongs_to :location, :class_name => "Map::Location", :foreign_key => "location_id"
-  belongs_to :region, :class_name => "Map::Region", :foreign_key => "region_id"
+  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id"
+  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id"
 
-  belongs_to :home, :class_name => "Settlement::Settlement", :foreign_key => "home_settlement_id", :counter_cache => :armies_count, :inverse_of => :armies
-
+  belongs_to :home,               :class_name => "Settlement::Settlement",           :foreign_key => "home_settlement_id", :counter_cache => :armies_count, :inverse_of => :armies
   
-  belongs_to :target_location, :class_name => "Map::Location", :foreign_key => "target_location_id"
-  belongs_to :target_region, :class_name => "Map::Region", :foreign_key => "target_region_id"
+  belongs_to :target_location,    :class_name => "Map::Location",                    :foreign_key => "target_location_id"
+  belongs_to :target_region,      :class_name => "Map::Region",                      :foreign_key => "target_region_id"
   
-  belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :armies
-  belongs_to :owner, :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
+  belongs_to :alliance,           :class_name => "Fundamental::Alliance",            :foreign_key => "alliance_id",  :inverse_of => :armies
+  belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id"  
   
-  has_one    :movement_command, :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id", :dependent => :destroy
-  has_one    :details, :class_name => "Military::ArmyDetail", :foreign_key => "army_id", :dependent => :destroy
+  has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",      :dependent => :destroy
+  has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",      :dependent => :destroy
   
-  belongs_to :battle, :class_name => "Military::Battle", :foreign_key => "battle_id", :inverse_of => :armies
-  has_one    :battle_participant, :class_name => "Military::BattleParticipant", :foreign_key => "army_id"
+  belongs_to :battle,             :class_name => "Military::Battle",                 :foreign_key => "battle_id",    :inverse_of => :armies
+  has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id"
   
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   after_find :update_ap_if_necessary
   after_save :set_parent_change_timestamps
+  
+  
+  def self.create_garrison_at(settlement)
+    logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
+    
+    army = settlement.build_garrison_army({
+      location_id:  settlement.location_id,
+      region_id:    settlement.region_id,  
+      name:         'Garrison',
+      owner_id:     settlement.owner_id,
+      owner_name:   settlement.owner.name,
+      alliance_id:  settlement.alliance_id,
+      alliance_tag: settlement.alliance_tag,
+      home_settlement_name: settlement.name,
+      ap_max:       4,
+      ap_present:   0,
+      ap_seconds_per_point: 3600*6,
+      mode:         0,
+      kills:        0,
+      victories:    0,
+      stance:       0,
+      size_max:     1200,
+      exp:          0,
+      rank:         0,
+      garrison:     true,
+      stance:       0,
+    })
+    army.save ? army : null;
+  end
+
   
   def self.regeneration_duration
     GAME_SERVER_CONFIG['ap_regeneration_duration'] * GAME_SERVER_CONFIG['base_time_factor']

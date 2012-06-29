@@ -5,6 +5,8 @@ require 'ticker/construction_queue_check_handler'
 require 'ticker/training_active_job_handler'
 require 'ticker/training_queue_check_handler'
 require 'ticker/resource_effect_handler'
+require 'exception/http_exceptions'
+
 
 module Ticker
 

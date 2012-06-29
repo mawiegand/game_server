@@ -15,6 +15,9 @@ class Messaging::Message < ActiveRecord::Base
   # constants for the message.type_id
   USER_MESSAGE_TYPE_ID = 0
   BATTLE_REPORT_TYPE_ID = 1
+  BATTLE_STARTED_TYPE_ID = 2
+  ARMY_LOST_TYPE_ID = 3
+  ARMY_RETREATED_TYPE_ID = 4
 
   # creates inbox and outbox entries for the message
   def deliver_message
@@ -47,6 +50,13 @@ class Messaging::Message < ActiveRecord::Base
     end    
     
     return true # need to return true, because otherwise the filter chain would break
+  end
+
+  ## specialiced messages ####################################
+
+  #creates a message that an Army
+  def self.create_army_retreat_message(army)
+    #message = "Your army "+army.
   end
   
 end

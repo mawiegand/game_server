@@ -9,6 +9,32 @@ class Ticker::BattleHandler
 
   ## HANDLE RETREAT ##########################################################
 
+  def move_to_retreat_location(participant)
+    ##NOTE THIS SHOULD BE REPLACED BY ARMY FILTERS, OR A METHOD
+    participant.army.location_id = participant.retreated_to_location_id  
+    participant.army.region_id = participant.retreated_to_region_id  
+    participant.army.target_location = nil
+    participant.army.target_region = nil
+    participant.army.target_reached_at = nil
+    participant.army.mode = 0
+
+    if !action.army.save
+      runloop.say "Army #{participant.army_id} could not be moved to new location. Save did fail.", Logger::ERROR
+      return false
+    end
+    
+    #update the regions & location
+    participant.army.region.armies_changed_at = DateTime.now
+    participant.army.region.save
+    participant.army.location.armies_changed_at = DateTime.now
+    participant.army.location.save
+
+    #check if there was an retreat into an battle that is already happening
+    started_battles = participant.army.check_for_battle_at(target_location)
+
+    return true
+  end
+
   def handle_retreat_try(battle, participant, participant_results)
     runloop.say "handeling retreat try"
     #mark that there was a try
@@ -50,9 +76,15 @@ class Ticker::BattleHandler
     		participant.retreated = true;
     		participant.retreated_to_region_id = target.region.id
     		participant.retreated_to_location_id = target.id
-    		if !participant.save
-        		raise InternalServerError.new('Server could not save a successfull retreat of a battle participant in persistant storage.')
-      		end
+
+        #move the army to the new target
+        if move_to_retreat_location(participant)
+          #and save the participant if it all went well
+    		  if !participant.save
+        	 raise InternalServerError.new('Server could not save a successfull retreat of a battle participant in persistant storage.')
+          end
+        end
+        
     		return true
     	end
     end
@@ -127,20 +159,19 @@ class Ticker::BattleHandler
         :kills => awe_army.numKills,
         :experience_gained => awe_army.sumNewExp,
       )
+      participant_results.retreat_tried = false
       extract_results_from_awe_participant(awe_army, participant, participant_results)
+
+      if !participant_results.save
+        raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
+      end
 
       #handle the possible retreat
       if participant.army.battle_retreat
         participant_results.retreat_tried = true
         handle_retreat_try(battle, participant, participant_results)
-      else
-        participant_results.retreat_tried = false
       end
 
-      if !participant_results.save
-        raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
-      end
-      
     end
     
     faction_results
