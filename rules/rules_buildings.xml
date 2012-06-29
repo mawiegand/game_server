@@ -18,13 +18,20 @@
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />     
   <xi:include href="buildings/rules_building_siege_tower.xml" />     
 
-  <xi:include href="buildings/rules_building_quarry.xml" />  
-  <xi:include href="buildings/rules_building_logger.xml" />  
+  <xi:include href="buildings/rules_building_chief_cottage.xml" /> 
+  <xi:include href="buildings/rules_building_gatherer.xml" />
+  <xi:include href="buildings/rules_building_cottage.xml" />	
+  <xi:include href="buildings/rules_building_baracks.xml" /> 
+  <xi:include href="buildings/rules_building_campfire.xml" />  
+  <xi:include href="buildings/rules_building_logger.xml" /> 
+  <xi:include href="buildings/rules_building_quarry.xml" />   
   <xi:include href="buildings/rules_building_furrier.xml" />  
-  <xi:include href="buildings/rules_building_gatherer.xml" />  
-  <xi:include href="buildings/rules_building_embassy.xml" />  
+  <xi:include href="buildings/rules_building_firing_range.xml" />  
+  <xi:include href="buildings/rules_building_stud.xml" />    
+  <xi:include href="buildings/rules_building_workshop.xml" />  
+ 
    
-  <xi:include href="buildings/rules_building_palace.xml" />    
+   
   
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

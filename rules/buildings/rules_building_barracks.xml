@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_infantry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Truppenunterkunft</Name>
-  <Name lang="en_US">Vertical Barracks</Name>
+<Building id="building_barracks" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Ausbildungsgelände</Name>
+  <Name lang="en_US">Barracks</Name>
   <Description lang="de_DE">
-    <p>Unterkunft für Fußtruppen.</p>
+    <p>Ausbildungsgelände für Fußtruppen.</p>
   </Description>
   <Description lang="en_US">
     <p>Hosts troops.</p>
   </Description>
-    <FlavourText lang="en_US">
+      <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
     <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
-  <Requirement id="building_fortress_fortification" min_level="1" />  
+  <Requirement id="building_fortress_fortification" min_level="2" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>   
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>  
+  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
   <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />

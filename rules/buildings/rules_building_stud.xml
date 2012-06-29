@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_cavalry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Reitmeisterrei</Name>
-  <Name lang="en_US">Cavalry Command</Name>
+<Building id="building_stud" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Stall</Name>
+  <Name lang="en_US">Stud</Name>
   <Description lang="de_DE">
-    <p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>
+    <p>Ausbildungsgelände für berittene Einheiten.</p>
   </Description>
   <Description lang="en_US">
-    <p>Trains Cavalry Units.</p>
+    <p>Hosts troops.</p>
   </Description>
-    <FlavourText lang="en_US">
+      <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
     <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
-  <Requirement id="building_fortress_fortification" min_level="3" />  
+  <Requirement id="building_fortress_fortification" min_level="8" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
-  <ProductionTime shortenable="true">2*(LEVEL+1)+11</ProductionTime>             
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
+  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />
     <SpeedupQueue queue="queue_cavalry" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
