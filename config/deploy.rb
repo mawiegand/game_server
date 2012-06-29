@@ -42,4 +42,14 @@ namespace :deploy do
   task :stop do
     run "cd #{current_path}; bundle exec thin -C config/thin_server.yml stop"
   end
+
+  desc "Start Ticker"
+  task :start_ticker do
+    run "cd #{current_path}; script/ticker start"
+  end
+
+  desc "Stop Thin"
+  task :stop_ticker do
+    run "cd #{current_path}; script/ticker stop"
+  end
 end
