@@ -1,7 +1,7 @@
 class Military::Army < ActiveRecord::Base
   
-  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id"
-  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id"
+  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id",  :touch => true
+  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id",    :touch => true
 
   belongs_to :home,               :class_name => "Settlement::Settlement",           :foreign_key => "home_settlement_id", :counter_cache => :armies_count, :inverse_of => :armies
   
@@ -22,7 +22,6 @@ class Military::Army < ActiveRecord::Base
   before_save :update_mode  
     
   after_find :update_ap_if_necessary
-  after_save :set_parent_change_timestamps
   
   MODE_IDLE = 0
   MODE_MOVING = 1
@@ -320,21 +319,12 @@ class Military::Army < ActiveRecord::Base
   
   private
   
-    def set_parent_change_timestamps
-      self.region.armies_changed_at = self.updated_at
-      self.region.save
-      
-      self.location.armies_changed_at = self.updated_at
-      self.location.save
-      
-      return true   # must return true as returning false breaks the callback chain
-    end
-    
     def update_mode
       battle_id_change = self.changes[:battle_id]
       if !battle_id_change.nil?
         self.mode = battle_id_change[1] > 0 ? MODE_FIGHTING : MODE_IDLE
       end
+      true
     end
   
 end
