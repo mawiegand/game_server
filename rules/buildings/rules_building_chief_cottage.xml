@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_chief_cottage" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
+  <Name lang="de_DE">Häuptlingshütte</Name>
+  <Name lang="en_US">Chief_cottage</Name>
+  <Description lang="de_DE">
+    <p>Hauptgebäude.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Main building.</p>
+  </Description>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText> 
+  <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
+  <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost> 
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
+  <Production id="resource_wood">1</Production>        
+  <Abilities> <!-- just for grouping -->
+    <CommandPoints>2+(MAX(LEVEL-10,0)*1+(MAX(LEVEL-19,0)*1</CommandPoints>
+    <UnlockQueue  queue="queue_buildings" />
+  </Abilities>
+</Building>
+  

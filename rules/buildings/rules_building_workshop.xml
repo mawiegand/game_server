@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Tüftler</Name>
-  <Name lang="en_US">Inventor</Name>
+<Building id="building_workshop" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Werkstatt</Name>
+  <Name lang="en_US">workshop</Name>
   <Description lang="de_DE">
-    <p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>
+    <p>Ausbildungsgelände für Belagerungseinheiten.</p>
   </Description>
   <Description lang="en_US">
-    <p>Builds war machines.</p>
+    <p>Hosts troops.</p>
   </Description>
-  <FlavourText lang="en_US">
+      <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
     <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
-  <Requirement id="building_fortress_fortification" min_level="4" />  
+  <Requirement id="building_fortress_fortification" min_level="9" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
-  <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
+  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_siege" />
     <SpeedupQueue queue="queue_siege" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
