@@ -141,7 +141,7 @@ class Settlement::Settlement < ActiveRecord::Base
       
       GameRules::Rules.the_rules().resource_types.each do |resource_type|
         base = resource_type[:symbolic_id].to_s
-
+        
       end      
     end
     true
@@ -269,8 +269,6 @@ class Settlement::Settlement < ActiveRecord::Base
     #  UPDATING RESOURCE PRODUCTION 
     #
     ############################################################################    
-    
-    def update_resource_production_bonus
     
     def update_resource_production_bonus(base)
       sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"] +self[base+"_production_bonus_global_effects"]
