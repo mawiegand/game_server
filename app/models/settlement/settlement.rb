@@ -1,5 +1,5 @@
 class Settlement::Settlement < ActiveRecord::Base
-
+  
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
@@ -27,10 +27,21 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
   after_save  :propagate_score_changes                # does nothing on owner change
-  after_save  :propagate_owner_changes                # corrects resource production and ranking scores on owner change
+  after_save  :propagate_unlock_changes               # does nothing on owner change  
+  after_save  :propagate_owner_changes                # corrects resource production, ranking scores, and unlock_counts on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
 
+
+  def empire_unlock_fields 
+    [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
+      { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },
+    ]
+  end
+  
+  def alliance_unlock_fields 
+    []
+  end  
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -357,6 +368,26 @@ class Settlement::Settlement < ActiveRecord::Base
       true 
     end
     
+    
+    def propagate_unlock_changes
+      return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
+      propagate_unlock_changes_to_model(self.owner, empire_unlock_fields)       unless self.owner_id.nil?    || self.owner_id == 0
+      propagate_unlock_changes_to_model(self.alliance, alliance_unlock_fields)  unless self.alliance_id.nil? || self.alliance_id == 0
+      true
+    end
+    
+    def propagate_unlock_changes_to_model(model, fields)
+      changes = fields.select { |entry| !self.changes[entry[:attrl]].nil? }
+      if changes.length > 0
+        changes.each do |entry| 
+          change = self.changes[entry[:attrl]]
+          logger.debug(change)
+          model.increment(entry[:attrc], (change[1] || 0) - (change[0] || 0))
+        end
+        model.save
+      end
+      true
+    end
     
     
     ##########################################################################

@@ -164,8 +164,25 @@ class Settlement::Slot < ActiveRecord::Base
           propagate_speedup_queue(rule, old_level, new_level)
         end
       end
+      if !building_type[:abilities][:unlock_diplomacy].blank?
+        propagate_unlock(:settlement_unlock_diplomacy_count, building_type[:abilities][:unlock_diplomacy], old_level, new_level)
+      end
+      if !building_type[:abilities][:unlock_alliance_creation].blank?
+        propagate_unlock(:settlement_unlock_alliance_creation_count, building_type[:abilities][:unlock_alliance_creation], old_level, new_level)
+      end      
     end
   end
+
+  def propagate_unlock(field, at_level, old_level, new_level)
+    if old_level < new_level && new_level == at_level
+      self.settlement[field] = self.settlement[field] + 1
+      self.settlement.save # save immediately, will destroy queue as a side effect
+    elsif old_level > new_level && old_level == at_level
+      self.settlement[field] = self.settlement[field] - 1
+      self.settlement.save # save immediately, will destroy queue as a side effect
+    end
+  end
+
   
   # propagates unlock to the correct domain increasing or decreasing the
   # unlock counter as necessary
