@@ -1,5 +1,5 @@
 class Settlement::Settlement < ActiveRecord::Base
-
+  
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
@@ -27,9 +27,21 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
   after_save  :propagate_score_changes                # does nothing on owner change
-  after_save  :propagate_owner_changes                # corrects resource production and ranking scores on owner change
+  after_save  :propagate_unlock_changes               # does nothing on owner change  
+  after_save  :propagate_owner_changes                # corrects resource production, ranking scores, and unlock_counts on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
+
+
+  def empire_unlock_fields 
+    [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
+      { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },
+    ]
+  end
+  
+  def alliance_unlock_fields 
+    []
+  end  
 
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -97,6 +109,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def new_owner_transaction(character)
     # settlement BLOCK
+    logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.character_id } to #{ character.nil ? "nil" : character.id }."
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -104,15 +117,32 @@ class Settlement::Settlement < ActiveRecord::Base
     self.alliance_id  = character.alliance_id
     self.alliance_tag = character.alliance_tag
     Military::Army.create_garrison_at(self)
-    self.save                             # triggers before_save and after_save handlers that do all the work
+    self.save                         # triggers before_save and after_save handlers that do all the work
     
     # remove and add points from settlement to ranking
     # recalculate all effects, boni and productions for both players...
     # settlement UNBLOCK
   end
   
-  
-  
+  ############################################################################
+  #
+  #  BATTLE
+  #
+  ############################################################################   
+    
+  def can_be_taken_over
+    #TODO define in the rules
+    #get the base
+    base_type = nil
+    GameRules::Rules.the_rules.settlement_types.each do |t|
+      if t[:symbolic_id] == :settlement_home_base
+        base_type = t
+      end
+    end
+    raise InternalServerError.new('base_type not found in the rules') if base_type.nil?
+    (self.type_id != base_type[:id])
+  end
+
   ############################################################################
   #
   #  RESOURCES AND RESOURCE PRODUCTION 
@@ -296,7 +326,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     ############################################################################
     #
-    #  SPREADING LOCAL CHANGES TO RELATED MODELS 
+    #  SPREADING LOCAL CHANGES TO RELATED MODELS (AFTER SAVE)
     #
     #########################################################################
     
@@ -313,7 +343,6 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
   
-  
     # propagates local changes to the region, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_region
@@ -325,7 +354,6 @@ class Settlement::Settlement < ActiveRecord::Base
       end
       return true
     end
-    
     
     def propagate_changes_to_resource_pool
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
@@ -359,10 +387,30 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     
+    def propagate_unlock_changes
+      return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
+      propagate_unlock_changes_to_model(self.owner, empire_unlock_fields)       unless self.owner_id.nil?    || self.owner_id == 0
+      propagate_unlock_changes_to_model(self.alliance, alliance_unlock_fields)  unless self.alliance_id.nil? || self.alliance_id == 0
+      true
+    end
+    
+    def propagate_unlock_changes_to_model(model, fields)
+      changes = fields.select { |entry| !self.changes[entry[:attrl]].nil? }
+      if changes.length > 0
+        changes.each do |entry| 
+          change = self.changes[entry[:attrl]]
+          logger.debug(change)
+          model.increment(entry[:attrc], (change[1] || 0) - (change[0] || 0))
+        end
+        model.save
+      end
+      true
+    end
+    
     
     ##########################################################################
     #
-    #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS 
+    #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS  (AFTER_SAVE)
     #
     ##########################################################################
     

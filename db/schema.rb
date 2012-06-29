@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629133601) do
+ActiveRecord::Schema.define(:version => 20120629195133) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -631,6 +631,8 @@ ActiveRecord::Schema.define(:version => 20120629133601) do
     t.decimal  "resource_stone_production_bonus_global_effects", :default => 0.0
     t.decimal  "resource_fur_production_bonus_global_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_global_effects",  :default => 0.0
+    t.integer  "settlement_unlock_diplomacy_count",              :default => 0
+    t.integer  "settlement_unlock_alliance_creation_count",      :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|
