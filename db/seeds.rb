@@ -35,7 +35,7 @@ alliance_data=[
 character_data=[ {}, 
              { id: 1, name: 'Egbert', identifier: 'eOmKvNkXSRLmbTDQ' },
              { id: 2, name: 'Paffi', identifier: 'xlHdEAfmlXdnEpEO' },
-             { id: 3, name: 'David' },
+             { id: 3, name: 'Julian' },
              { id: 4, name: 'Enzio' },
              { id: 5, name: 'Kurt Kugel' },
              { id: 6, name: 'Bonzo' },
