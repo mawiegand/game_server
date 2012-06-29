@@ -21,7 +21,7 @@
   <xi:include href="buildings/rules_building_chief_cottage.xml" /> 
   <xi:include href="buildings/rules_building_gatherer.xml" />
   <xi:include href="buildings/rules_building_cottage.xml" />	
-  <xi:include href="buildings/rules_building_baracks.xml" /> 
+  <xi:include href="buildings/rules_building_barracks.xml" /> 
   <xi:include href="buildings/rules_building_campfire.xml" />  
   <xi:include href="buildings/rules_building_logger.xml" /> 
   <xi:include href="buildings/rules_building_quarry.xml" />   
