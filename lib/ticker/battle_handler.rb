@@ -82,8 +82,8 @@ class Ticker::BattleHandler
       #reenable garbage collection if it was enabled before
       GC.enable unless gcstate
 
-      runloop.say "WARNING event is currently not beeing destroyed for debug purposes"
-      #event.destroy
+      #runloop.say "WARNING event is currently not beeing destroyed for debug purposes"
+      event.destroy
       runloop.say "Battle handler completed."
 
     end

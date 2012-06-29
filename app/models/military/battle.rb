@@ -99,7 +99,8 @@ class Military::Battle < ActiveRecord::Base
 
   #advanced the next_round_at field
   def schedule_next_round
-    self.next_round_at.advance(:seconds => the_rules.battle[:calculation][:roundTime] * GAME_SERVER_CONFIG['base_time_factor'])
+    rules = GameRules::Rules.the_rules
+    self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
   end
   
   def create_event_for_next_round
@@ -136,9 +137,10 @@ class Military::Battle < ActiveRecord::Base
   def battle_done?
     active_factions = 0
     factions.each do |f|
+      logger.debug("f.has_units_fighting? = "+f.has_units_fighting?.to_s)
       active_factions += 1 if f.has_units_fighting?
     end
-    (active_factions > 1)
+    return !(active_factions > 1)
   end
 
 end
