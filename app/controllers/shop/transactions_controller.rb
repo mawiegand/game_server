@@ -74,15 +74,6 @@ class Shop::TransactionsController < ApplicationController
     
     provider_response = post_virtual_bank_transaction(virtual_bank_transaction)
     
-    logger.debug '------------------------------------'
-    logger.debug provider_response.inspect
-    logger.debug '------------------------------------'
-    # vbt_id merken für callback!
-    
-    logger.debug provider_response['state']
-    logger.debug Shop::Transaction::STATE_COMMITTED
-    logger.debug '------------------------------------'
-    
     # lokale transaction aktualisieren
     if provider_response.nil?  # error
       @shop_transaction.state = Shop::Transaction::STATE_ERROR

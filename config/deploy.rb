@@ -45,11 +45,11 @@ namespace :deploy do
 
   desc "Start Ticker"
   task :start_ticker do
-    run "cd #{current_path}; script/ticker start"
+    run "cd #{current_path}; RAILS_ENV=production script/ticker start"
   end
 
-  desc "Stop Thin"
+  desc "Stop Ticker"
   task :stop_ticker do
-    run "cd #{current_path}; script/ticker stop"
+    run "cd #{current_path}; RAILS_ENV=production script/ticker stop"
   end
 end
