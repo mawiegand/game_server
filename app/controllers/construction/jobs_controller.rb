@@ -100,10 +100,7 @@ class Construction::JobsController < ApplicationController
   def update
     @construction_job = Construction::Job.find(params[:id])
     
-    #TODO Kröten abziehen
-    
-    if @construction_job.active_job
-      logger.debug '--------- b' 
+    if @construction_job.active_job && current_character.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
       queue = @construction_job.queue
       @construction_job.finish
       @construction_job.destroy
