@@ -19,6 +19,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id"
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id"
 
+  has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
   before_save :sync_alliance_tag
   after_save  :propagate_alliance_membership_changes
