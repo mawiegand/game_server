@@ -23,6 +23,36 @@ class Military::Army < ActiveRecord::Base
   after_find :update_ap_if_necessary
   after_save :set_parent_change_timestamps
   
+  
+  def self.create_garrison_at(settlement)
+    logger.warning "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison.nil?
+    
+    army = settlement.garriso_army.build({
+      location_id:  settlement.location_id,
+      region_id:    settlement.region_id,  
+      name:         'Garrison',
+      owner_id:     settlement.owner_id,
+      owner_name:   settlement.owner.name,
+      alliance_id:  settlement.alliance_id,
+      alliance_tag: settlement.alliance_tag,
+      home_settlement_name: settlement.name,
+      ap_max:       4,
+      ap_present:   0,
+      ap_seconds_per_point: 3600*6,
+      mode:         0,
+      kills:        0,
+      victories:    0,
+      stance:       0,
+      size_max:     1200,
+      exp:          0,
+      rank:         0,
+      garrison:     true,
+      stance:       0,
+    })
+    army.save ? army : null;
+  end
+
+  
   def self.regeneration_duration
     GAME_SERVER_CONFIG['ap_regeneration_duration'] * GAME_SERVER_CONFIG['base_time_factor']
   end

@@ -30,6 +30,7 @@ class Settlement::Slot < ActiveRecord::Base
     propagate_abilities(building_id_to_build, 0, 1)
     self.save    
   end
+
   
   # upgrades the building in this slot by one level. Also calls
   # all necessary handlers to update unlocks, speedups and effects
@@ -50,6 +51,10 @@ class Settlement::Slot < ActiveRecord::Base
     
     # TODO: propagation of depending values needs to be implemented
   end
+  
+  # removes all effects, productions and unlocks off this building from the game,
+  # essentially 
+  def switch_off_building
   
   # downgrades the building in this slot by one level. If the level
   # would reach zero, calls the destroy-building method instead.
