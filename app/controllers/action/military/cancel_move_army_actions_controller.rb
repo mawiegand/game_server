@@ -29,8 +29,8 @@ class Action::Military::CancelMoveArmyActionsController < ApplicationController
     
     army.target_location_id = nil
     army.target_region_id = nil
-    if army.mode === 1  # 1: moving?
-      army.mode = 0
+    if army.mode === Military::Army::MODE_MOVING  # 1: moving?
+      army.mode = Military::Army::MODE_IDLE
     end
     army.target_reached_at = nil  
 

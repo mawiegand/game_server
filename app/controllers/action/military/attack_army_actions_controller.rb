@@ -17,7 +17,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
 
     raise ForbiddenError.new('not enough action points for attack') unless attacker.ap_present > 0
 
-    raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode == 0 || attacker.battle_id.nil?
+    raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode === Military::Army::MODE_IDLE || attacker.battle_id.nil?
 
     Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
 

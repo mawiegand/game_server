@@ -302,7 +302,7 @@ while !locations.empty?
       army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
-      army.mode = 0
+      army.mode = Military::Army::MODE_IDLE
       army.kills = 0
       army.victories = 0
       
@@ -343,7 +343,7 @@ while !locations.empty?
       army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
-      army.mode = 0
+      army.mode = Military::Army::MODE_IDLE
       army.kills = 0
       army.victories = 0
 
