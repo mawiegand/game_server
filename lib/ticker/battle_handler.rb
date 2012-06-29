@@ -88,7 +88,7 @@ class Ticker::BattleHandler
             if takeover
               if !battle.location.settlement.nil?
                 #do the takeover
-                #target_settlement.new_owner_transaction(winner_leader)
+                target_settlement.new_owner_transaction(winner_leader)
               end
             end
           end
