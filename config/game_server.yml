@@ -5,7 +5,7 @@ defaults: &defaults
   
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
 
-  military_only_flag_destroyed_armies: false #if true the field removed will be set true instead of deleting them from the database
+  military_only_flag_destroyed_armies: false #if true the field removed for destroyed armies will be set true instead of deleting them from the database after a battle
   
   payment_provider_base_url: 'https://wackadoo.de/payment_provider'
   

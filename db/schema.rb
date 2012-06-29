@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628165632) do
+ActiveRecord::Schema.define(:version => 20120629114354) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -508,6 +508,7 @@ ActiveRecord::Schema.define(:version => 20120628165632) do
     t.integer  "battle_rounds_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "removed",               :default => false, :null => false
   end
 
   create_table "ranking_alliance_rankings", :force => true do |t|
