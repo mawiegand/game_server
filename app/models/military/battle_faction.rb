@@ -34,6 +34,7 @@ class Military::BattleFaction < ActiveRecord::Base
 
   def has_units_fighting?
     participants.each do |p|
+      logger.debug("p.id="+p.id.to_s+", p.retreated="+p.retreated.to_s+", p.has_units?="+p.has_units?.to_s)
       return true if (!p.retreated && p.has_units?)
     end
     false

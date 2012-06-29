@@ -5,7 +5,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   before_save :update_resources_on_production_rate_changes
 
   after_save  :propagate_global_effect_changes
-
+  
+  RESOURCE_ID_CASH = 3
   
   # updates resource amounts BUT does NOT save to database itself.
   def update_resource_amount

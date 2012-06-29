@@ -1,6 +1,6 @@
 class Military::Battle < ActiveRecord::Base
   
-  has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id"
+  has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle  
   has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle
@@ -65,9 +65,11 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def self.create_battle_between(attacker, defender)
+    rules = GameRules::Rules.the_rules
+
     battle = Military::Battle.create(
       :started_at => DateTime.now,
-      :next_round_at => DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
+      :next_round_at => DateTime.now.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor']), #DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
       :initiator_id => attacker.owner_id,
       :opponent_id => defender.owner_id,
       :location_id => attacker.location_id,
@@ -93,6 +95,12 @@ class Military::Battle < ActiveRecord::Base
     
     #add defenders of garrison, if necessary
     battle
+  end
+
+  #advanced the next_round_at field
+  def schedule_next_round
+    rules = GameRules::Rules.the_rules
+    self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
   end
   
   def create_event_for_next_round
@@ -129,9 +137,10 @@ class Military::Battle < ActiveRecord::Base
   def battle_done?
     active_factions = 0
     factions.each do |f|
+      logger.debug("f.has_units_fighting? = "+f.has_units_fighting?.to_s)
       active_factions += 1 if f.has_units_fighting?
     end
-    (active_factions > 1)
+    return !(active_factions > 1)
   end
 
 end
