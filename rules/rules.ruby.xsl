@@ -79,11 +79,12 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
+  attr_accessor :version, :battle, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
   
   def attributes 
     { 
       'version'        => version,
+      'battle'         => battle,
       'unit_categories'=> unit_categories,
       'building_categories'=> building_categories,
       'unit_types'     => unit_types,
@@ -120,7 +121,12 @@ class GameRules::Rules
                       :minor => <xsl:value-of select="//General/Version/@minor" />, 
                       :build => <xsl:value-of select="//General/Version/@build" />, 
         },
-
+        :battle => {
+          :calculation => {
+            :round_time => <xsl:value-of select="//General/Battle/Calculation/@roundTime" />,
+            :retreat_probability => <xsl:value-of select="//General/Battle/Calculation/@retreatProbability" />,
+            },
+        },
   <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />

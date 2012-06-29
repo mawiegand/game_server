@@ -65,9 +65,11 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def self.create_battle_between(attacker, defender)
+    rules = GameRules::Rules.the_rules
+
     battle = Military::Battle.create(
       :started_at => DateTime.now,
-      :next_round_at => DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
+      :next_round_at => DateTime.now.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor']), #DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
       :initiator_id => attacker.owner_id,
       :opponent_id => defender.owner_id,
       :location_id => attacker.location_id,
@@ -93,6 +95,11 @@ class Military::Battle < ActiveRecord::Base
     
     #add defenders of garrison, if necessary
     battle
+  end
+
+  #advanced the next_round_at field
+  def schedule_next_round
+    self.next_round_at.advance(:seconds => the_rules.battle[:calculation][:roundTime] * GAME_SERVER_CONFIG['base_time_factor'])
   end
   
   def create_event_for_next_round
