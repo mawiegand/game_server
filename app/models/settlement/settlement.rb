@@ -22,12 +22,15 @@ class Settlement::Settlement < ActiveRecord::Base
   after_initialize :init
   
   before_save :manage_queues_as_needed
-  before_save :update_resource_production
+  before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
+  before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
 
-  after_save  :propagate_changes_to_resource_pool  
+  after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
+  after_save  :propagate_score_changes                # does nothing on owner change
+  after_save  :propagate_owner_changes                # corrects resource production and ranking scores on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
-  after_save  :propagate_score_changes
+
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -36,11 +39,12 @@ class Settlement::Settlement < ActiveRecord::Base
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
       :type_id     => type_id,
-      :level       => 1,                           # start with level 1
+      :level       => 0,                           # new: start with level 0
       :founded_at  => DateTime.now,
       :founder_id  => owner.id,
       :owner_id    => owner.id,
       :alliance_id => owner.alliance_id,
+      :alliance_tag=> owner.alliance_tag,
       :owns_region => type_id == 1,  # fortress?
     })
     location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
@@ -88,7 +92,23 @@ class Settlement::Settlement < ActiveRecord::Base
   ############################################################################   
 
   def owned_by_npc?
-    return self.owner.nil? # || self.owner.npc?
+    return self.owner.nil? || self.owner.npc?
+  end
+  
+  def new_owner_transaction(character)
+    # settlement BLOCK
+    self.garrison_army.destroy        unless self.garrison_army.nil?
+    self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
+
+    self.owner        = character
+    self.alliance_id  = character.alliance_id
+    self.alliance_tag = character.alliance_tag
+    Military::Army.create_garrison_at(self)
+    self.save                             # triggers before_save and after_save handlers that do all the work
+    
+    # remove and add points from settlement to ranking
+    # recalculate all effects, boni and productions for both players...
+    # settlement UNBLOCK
   end
   
   
@@ -98,6 +118,7 @@ class Settlement::Settlement < ActiveRecord::Base
   #  RESOURCES AND RESOURCE PRODUCTION 
   #
   ############################################################################   
+  
   
   # recalculate the production rate for all resource types on basis of the 
   # present base production and the production boni from buildings, 
@@ -110,6 +131,22 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     true
   end  
+
+  def update_resource_bonus_on_owner_change
+    owner_change = self.changes[:owner_id]
+    if !owner_change.blank?
+      logger.info ('Running resource bonus owner-change handler on settlement ID#{self.id}.');
+      pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_character_id(owner_change[1])  # the pool of the new owner or nil
+      
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        obtain_global_resource_production_bonus(base, pool)
+      end      
+    end
+    true
+  end
+    
+
   
   ############################################################################
   #
@@ -232,14 +269,26 @@ class Settlement::Settlement < ActiveRecord::Base
     #
     ############################################################################    
     
+    # fetches the global resource boni for one resource (base) comming from the
+    # alliance, sciences and global effects from the pool and sets the 
+    # settlement accordingly
+    def obtain_global_resource_production_bonus(base, pool)
+      self[base+"_production_bonus_alliance"]       = pool ? pool[base+"_production_bonus_alliance"] : 0;
+      self[base+"_production_bonus_sciences"]       = pool ? pool[base+"_production_bonus_sciences"] : 0;
+      self[base+"_production_bonus_global_effects"] = pool ? pool[base+"_production_bonus_effects"]  : 0;
+    end   
+    
+    # accumulates the individual boni and stores the results in the 
+    # _production_bonus fields
     def update_resource_production_bonus(base)
-      sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]
+      sum = (self[base+"_production_bonus_buildings"] || 0) + (self[base+"_production_bonus_sciences"] || 0) + (self[base+"_production_bonus_alliance"] || 0) + (self[base+"_production_bonus_effects"] || 0)  + (self[base+"_production_bonus_global_effects"] || 0) 
       self[base+"_production_bonus"] = sum
       true
     end
-        
+       
+    # recaclucates and sets the present production rate according to the present
+    # base production and the boni according to rate = base * (1+bonus) .    
     def update_resource_production_rate(base)
-      sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"]       
       self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
       true
     end
@@ -279,9 +328,8 @@ class Settlement::Settlement < ActiveRecord::Base
     
     
     def propagate_changes_to_resource_pool
-      if self.owner_id_changed?
-        self.propagate_changes_to_resource_pool_on_changed_possession
-      elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
+      return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
+      if (!self.owner_id.nil? && self.owner_id > 0)            # only spread, if there's a resource pool
         changed = false
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
@@ -297,6 +345,36 @@ class Settlement::Settlement < ActiveRecord::Base
       
       true
     end
+    
+    def propagate_score_changes
+      return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
+      if (!self.owner_id.nil? && self.owner_id > 0)            # only spread, if there's a resource pool
+        score_change = self.changes[:score] 
+        if !score_change.nil? && self.owner
+          self.owner.score = (self.owner.score || 0) + (score_change[1] || 0) - (score_change[0] || 0) 
+          self.owner.save
+        end
+      end
+      true 
+    end
+    
+    
+    
+    ##########################################################################
+    #
+    #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS 
+    #
+    ##########################################################################
+    
+    def propagate_owner_changes    
+      owner_change = self.changes[:owner_id]
+      if owner_change
+        propagate_changes_to_resource_pool_on_changed_possession
+        propagate_score_on_changed_possession
+      end
+      true
+    end
+    
     
     # this case (owner changed) is a little bit more tricky; bascially,
     # we need to remove resource produciton from the old owner's pool 
@@ -318,7 +396,7 @@ class Settlement::Settlement < ActiveRecord::Base
           old_value = self[attribute]
           new_value = self[attribute]
           if !self.changes[attribute].nil?
-            prod_change = self.changes[attribute]
+            change = self.changes[attribute]
             new_value = (change[1] || 0)
             old_value = (change[0] || 0)
           end
@@ -333,18 +411,7 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
-    def propagate_score_changes
-      if self.owner_id_changed?
-        self.propagate_score_on_changed_possession
-      elsif (!self.owner_id.nil? && self.owner_id > 0)         # only spread, if there's a resource pool
-        score_change = self.changes[:score] 
-        if !score_change.nil? && self.owner
-          self.owner.score = (self.owner.score || 0) + (score_change[1] || 0) - (score_change[0] || 0) 
-          self.owner.save
-        end
-      end
-      true 
-    end
+
     
     def propagate_score_on_changed_possession
       owner_change = self.changes[:owner_id]
