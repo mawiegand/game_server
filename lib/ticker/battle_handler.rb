@@ -121,8 +121,6 @@ class Ticker::BattleHandler
       # YES: CREATE EVENT FOR NEXT ROUND
       # NO: CLEANUP PARTICIPANTS, FACTIONS AND BATTLE; RESET ARMIES
       
-      runloop.say awe_battle.inspect
-      
       runloop.say "Battle round completed, cleaning up and destroying event."      
 
       #reenable garbage collection if it was enabled before
@@ -174,7 +172,7 @@ class Ticker::BattleHandler
       if !battle.save
         raise InternalServerError.new('Failed to flag an battle as removed')
       end
-      runloop.say "Flaged destroyed armies as 'removed'"
+      runloop.say "Flaged destroyed battle as 'removed'"
     else
       battle.destroy
       runloop.say "Deleted finished battle from the database"
