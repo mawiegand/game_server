@@ -19,6 +19,21 @@
     <Name lang="de_DE">Infanterieausbildung</Name>
     <ProductionCategory category="unit_category_infantry" />
   </Queue>
+  <Queue id="queue_artillery" category="queue_category_training" base_threads="1" base_slots="4">
+    <Name>Training of Artillery</Name>
+    <Name lang="de_DE">Ausbildung von Fernkämpfern</Name>
+    <ProductionCategory category="unit_category_artillery" />
+  </Queue>
+  <Queue id="queue_cavalry" category="queue_category_training" base_threads="1" base_slots="4">
+    <Name>Training of Cavalry</Name>
+    <Name lang="de_DE">Ausbildung von berittenen Einheiten</Name>
+    <ProductionCategory category="unit_category_cavalry" />
+  </Queue>
+    <Queue id="queue_siege" category="queue_category_training" base_threads="1" base_slots="4">
+    <Name>Training of Siege</Name>
+    <Name lang="de_DE">Bau von Belagerungsgeräten</Name>
+    <ProductionCategory category="unit_category_siege" />
+  </Queue>
   <Queue id="queue_research" category="queue_category_research" domain="character" base_threads="1" base_slots="4">
     <Name>Forschung</Name>
     <Name lang="de_DE">Research</Name>

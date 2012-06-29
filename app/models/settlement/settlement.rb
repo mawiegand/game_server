@@ -99,6 +99,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def new_owner_transaction(character)
     # settlement BLOCK
+    logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.character_id } to #{ character.nil ? "nil" : character.id }."
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -106,7 +107,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.alliance_id  = character.alliance_id
     self.alliance_tag = character.alliance_tag
     Military::Army.create_garrison_at(self)
-    self.save                             # triggers before_save and after_save handlers that do all the work
+    self.save                         # triggers before_save and after_save handlers that do all the work
     
     # remove and add points from settlement to ranking
     # recalculate all effects, boni and productions for both players...
@@ -315,7 +316,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     ############################################################################
     #
-    #  SPREADING LOCAL CHANGES TO RELATED MODELS 
+    #  SPREADING LOCAL CHANGES TO RELATED MODELS (AFTER SAVE)
     #
     #########################################################################
     
@@ -332,7 +333,6 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
   
-  
     # propagates local changes to the region, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_region
@@ -344,7 +344,6 @@ class Settlement::Settlement < ActiveRecord::Base
       end
       return true
     end
-    
     
     def propagate_changes_to_resource_pool
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
@@ -381,7 +380,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     ##########################################################################
     #
-    #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS 
+    #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS  (AFTER_SAVE)
     #
     ##########################################################################
     
