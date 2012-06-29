@@ -7,7 +7,7 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
   belongs_to :target_location, :class_name => "Map::Location", :foreign_key => "target_location_id"
   belongs_to :target_region, :class_name => "Map::Region", :foreign_key => "target_region_id"
   
-  has_one    :event, :class_name => "Event::Event", :foreign_key => "local_event_id"
+  has_one    :event, :class_name => "Event::Event", :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'action_military_move_army_action'"
 
   
   def valid_action?(role = :character)
