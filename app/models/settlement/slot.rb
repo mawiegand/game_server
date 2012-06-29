@@ -47,14 +47,10 @@ class Settlement::Slot < ActiveRecord::Base
     propagate_resource_production_bonus(self.building_id, self.level-1, self.level)
     propagate_abilities(self.building_id, self.level-1, self.level)
     self.save
-
-    
-    # TODO: propagation of depending values needs to be implemented
+    # TODO: propagation of other depending values needs to be implemented
   end
   
-  # removes all effects, productions and unlocks off this building from the game,
-  # essentially 
-  def switch_off_building
+  
   
   # downgrades the building in this slot by one level. If the level
   # would reach zero, calls the destroy-building method instead.

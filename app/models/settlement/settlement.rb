@@ -22,12 +22,12 @@ class Settlement::Settlement < ActiveRecord::Base
   after_initialize :init
   
   before_save :manage_queues_as_needed
-  before_save :update_resource_bonus_on_owner_change
-  before_save :update_resource_production
+  before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
+  before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
 
-  after_save  :propagate_changes_to_resource_pool  
-  after_save  :propagate_score_changes
-  after_save  :propagate_owner_changes
+  after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
+  after_save  :propagate_score_changes                # does nothing on owner change
+  after_save  :propagate_owner_changes                # corrects resource production and ranking scores on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
 
@@ -97,16 +97,14 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def new_owner_transaction(character)
     # settlement BLOCK
-    settlement.garrison_army.destroy
-    settlement.armies.destroy_all               # should run through callbacks
+    self.garrison_army.destroy        unless self.garrison_army.nil?
+    self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
-
-
-    settlement.owner        = character
-    settlement.alliance_id  = character.alliance_id
-    settlement.alliance_tag = character.alliance_tag
-    Military::Army.create_garrison_at
-    
+    self.owner        = character
+    self.alliance_id  = character.alliance_id
+    self.alliance_tag = character.alliance_tag
+    Military::Army.create_garrison_at(self)
+    self.save                             # triggers before_save and after_save handlers that do all the work
     
     # remove and add points from settlement to ranking
     # recalculate all effects, boni and productions for both players...
@@ -138,7 +136,7 @@ class Settlement::Settlement < ActiveRecord::Base
     owner_change = self.changes[:owner_id]
     if !owner_change.blank?
       logger.info ('Running resource bonus owner-change handler on settlement ID#{self.id}.');
-      pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_owner_id(owner_change[1])  # the pool of the new owner or nil
+      pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_character_id(owner_change[1])  # the pool of the new owner or nil
       
       GameRules::Rules.the_rules().resource_types.each do |resource_type|
         base = resource_type[:symbolic_id].to_s
@@ -275,15 +273,15 @@ class Settlement::Settlement < ActiveRecord::Base
     # alliance, sciences and global effects from the pool and sets the 
     # settlement accordingly
     def obtain_global_resource_production_bonus(base, pool)
-      self[base+"_production_bonus_alliance"]      = pool ? pool[base+"_production_bonus_alliance"] : 0;
-      self[base+"_production_bonus_sciences"]       = pool ? pool[base+"_production_bonus_sciences"]  : 0;
-      self[base+"_production_bonus_global_effects"] = pool ? pool[base+"_production_bonus_effects"]   : 0;
+      self[base+"_production_bonus_alliance"]       = pool ? pool[base+"_production_bonus_alliance"] : 0;
+      self[base+"_production_bonus_sciences"]       = pool ? pool[base+"_production_bonus_sciences"] : 0;
+      self[base+"_production_bonus_global_effects"] = pool ? pool[base+"_production_bonus_effects"]  : 0;
     end   
     
     # accumulates the individual boni and stores the results in the 
     # _production_bonus fields
     def update_resource_production_bonus(base)
-      sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"] +self[base+"_production_bonus_global_effects"]
+      sum = (self[base+"_production_bonus_buildings"] || 0) + (self[base+"_production_bonus_sciences"] || 0) + (self[base+"_production_bonus_alliance"] || 0) + (self[base+"_production_bonus_effects"] || 0)  + (self[base+"_production_bonus_global_effects"] || 0) 
       self[base+"_production_bonus"] = sum
       true
     end
@@ -398,7 +396,7 @@ class Settlement::Settlement < ActiveRecord::Base
           old_value = self[attribute]
           new_value = self[attribute]
           if !self.changes[attribute].nil?
-            prod_change = self.changes[attribute]
+            change = self.changes[attribute]
             new_value = (change[1] || 0)
             old_value = (change[0] || 0)
           end

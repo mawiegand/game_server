@@ -1,3 +1,4 @@
+require 'exception/http_exceptions'
 
 
 # Representation of a resource pool. Most attributes here are set indirectly
@@ -78,7 +79,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     logger.debug '---> in add_effect'
     logger.debug '---> ' + effect.inspect
     
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_global_effects'
+    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
     amount = effect[:bonus]
     
     raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
@@ -95,7 +96,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     logger.debug '---> in remove_effect'
     logger.debug '---> ' + effect.inspect
     
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_global_effects'
+    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
     amount = effect[:bonus]
     
     raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
@@ -159,11 +160,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
               attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
             }
           ]
-          to_check = to_check.select { |bonus| !self.changes[bonus[attribute]].nil? } # filter those, that have changed
+          to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
 
           self.owner.settlements.each do |settlement|
             to_check.each do |bonus|
-              settlement.increment(bonus[attributeSettlement], self.changes[bonus[attribute]][1] - self.changes[bonus[attribute]][0])               
+              settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
             end
             settlement.save
           end
