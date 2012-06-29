@@ -8,7 +8,7 @@ class Military::Battle < ActiveRecord::Base
   has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
-  has_many   :faction_results,     :class_name => "Military::BattleFactionResult", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :faction_results,     :class_name => "Military::BattleFactionResult",     :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
 
   belongs_to :initiator,    :class_name => "Fundamental::Character",  :foreign_key => "initiator_id"
   belongs_to :opponent,     :class_name => "Fundamental::Character",  :foreign_key => "opponent_id"
