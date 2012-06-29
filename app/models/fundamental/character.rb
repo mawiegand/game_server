@@ -99,7 +99,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def is_ally_of?(other)
-    return !self.alliance.nil? && !other.alliance.nil? && (self.alliance.id == opponent.alliance.id)
+    return !self.alliance.nil? && !other.alliance.nil? && (self.alliance.id == other.alliance.id)
   end
   
   def lives_in_region?(region)

@@ -43,6 +43,7 @@ class Settlement::Settlement < ActiveRecord::Base
     []
   end  
 
+
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
     
@@ -123,8 +124,25 @@ class Settlement::Settlement < ActiveRecord::Base
     # settlement UNBLOCK
   end
   
-  
-  
+  ############################################################################
+  #
+  #  BATTLE
+  #
+  ############################################################################   
+    
+  def can_be_taken_over
+    #TODO define in the rules
+    #get the base
+    base_type = nil
+    GameRules::Rules.the_rules.settlement_types.each do |t|
+      if t[:symbolic_id] == :settlement_home_base
+        base_type = t
+      end
+    end
+    raise InternalServerError.new('base_type not found in the rules') if base_type.nil?
+    (self.type_id != base_type[:id])
+  end
+
   ############################################################################
   #
   #  RESOURCES AND RESOURCE PRODUCTION 

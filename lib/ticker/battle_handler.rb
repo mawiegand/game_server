@@ -19,6 +19,7 @@ class Ticker::BattleHandler
   end
   
   def process_event(event)
+    rules = GameRules::Rules.the_rules
     battle = Military::Battle.find(event.local_event_id)
     if battle.nil?
       #runloop.say "Could not find battle for id #{ event.local_event_id }.", Logger::ERROR
@@ -75,7 +76,7 @@ class Ticker::BattleHandler
           #check if there was a battle over a settlement
           target_settlement = battle.targeted_settlement
           
-          if !target_settlement.nil?
+          if !target_settlement.nil? && target_settlement.can_be_taken_over
             #check if the battle location is owned by a participant of the winner faction
             takeover = true
             winner_faction.participants.each do |participant|
@@ -121,8 +122,6 @@ class Ticker::BattleHandler
       # YES: CREATE EVENT FOR NEXT ROUND
       # NO: CLEANUP PARTICIPANTS, FACTIONS AND BATTLE; RESET ARMIES
       
-      runloop.say awe_battle.inspect
-      
       runloop.say "Battle round completed, cleaning up and destroying event."      
 
       #reenable garbage collection if it was enabled before
@@ -152,7 +151,7 @@ class Ticker::BattleHandler
       else
         #remove battle id
         army.battle_id = 0
-        army.mode = 0
+        #army.mode = 0
         if !army.save
           raise InternalServerError.new('Failed to set the battle id in the army to 0')
         end
@@ -174,7 +173,7 @@ class Ticker::BattleHandler
       if !battle.save
         raise InternalServerError.new('Failed to flag an battle as removed')
       end
-      runloop.say "Flaged destroyed armies as 'removed'"
+      runloop.say "Flaged destroyed battle as 'removed'"
     else
       battle.destroy
       runloop.say "Deleted finished battle from the database"
