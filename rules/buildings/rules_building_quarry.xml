@@ -10,10 +10,16 @@
   <Description lang="en_US">
     <p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>
   </Description>
-  <Requirement id="science_simple_tools" min_level="1" />
-  <Requirement id="building_palace" min_level="1" />  
+  <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText> 
+  <Requirement id="building_palace" min_level="5" />  
   <Cost id="resource_stone" round="true">LEVEL*30</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*100+10</Cost>    
+  <Cost id="resource_wood" round="true">LEVEL*100+10</Cost>
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost>   
   <Production id="resource_stone">LEVEL*5*POW(1.1, LEVEL)+1</Production>        
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->

@@ -10,7 +10,13 @@
   <Description lang="en_US">
     <p>Collects resources for the daily needs.</p>
   </Description>
-  <Requirement id="building_palace" min_level="1" />  
+      <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText> 
+  <Requirement id="building_campfire" min_level="1" />  
   <Cost id="resource_stone" round="true">LEVEL*10+5</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10+5</Cost>    
   <Production id="resource_stone">LEVEL</Production>        

@@ -19,9 +19,14 @@ class Military::Army < ActiveRecord::Base
   
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
+  before_save :update_mode  
+    
   after_find :update_ap_if_necessary
   after_save :set_parent_change_timestamps
   
+  MODE_IDLE = 0
+  MODE_MOVING = 1
+  MODE_FIGHTING = 2
   
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
@@ -38,7 +43,7 @@ class Military::Army < ActiveRecord::Base
       ap_max:       4,
       ap_present:   0,
       ap_seconds_per_point: 3600*6,
-      mode:         0,
+      mode:         MODE_IDLE,
       kills:        0,
       victories:    0,
       stance:       0,
@@ -112,11 +117,10 @@ class Military::Army < ActiveRecord::Base
   end
   
   def moving?
-    !self.target_location_id.blank? || self.mode === 1 # 1 : moving?!
+    !self.target_location_id.blank? || self.mode === Military::Army::MODE_MOVING # 1 : moving?!
   end
   
   def fighting?
-    # self.mode === 2 # 2: fighting?
     !self.battle_id.nil? && self.battle_id > 0
   end
   
@@ -282,7 +286,7 @@ class Military::Army < ActiveRecord::Base
       ap_max: 4,
       ap_present: 4,
       ap_seconds_per_point: 3600,
-      mode: 0,
+      mode: Military::Army::MODE_IDLE,
       stance: 0, 
       size_max: 100,
       exp: 0,
@@ -324,6 +328,13 @@ class Military::Army < ActiveRecord::Base
       self.location.save
       
       return true   # must return true as returning false breaks the callback chain
+    end
+    
+    def update_mode
+      battle_id_change = self.changes[:battle_id]
+      if !battle_id_change.nil?
+        self.mode = battle_id_change[1] > 0 ? MODE_FIGHTING : MODE_IDLE
+      end
     end
   
 end

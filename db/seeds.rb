@@ -35,7 +35,7 @@ alliance_data=[
 character_data=[ {}, 
              { id: 1, name: 'Egbert', identifier: 'eOmKvNkXSRLmbTDQ' },
              { id: 2, name: 'Paffi', identifier: 'xlHdEAfmlXdnEpEO' },
-             { id: 3, name: 'David' },
+             { id: 3, name: 'Julian' },
              { id: 4, name: 'Enzio' },
              { id: 5, name: 'Kurt Kugel' },
              { id: 6, name: 'Bonzo' },
@@ -302,7 +302,7 @@ while !locations.empty?
       army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
-      army.mode = 0
+      army.mode = Military::Army::MODE_IDLE
       army.kills = 0
       army.victories = 0
       
@@ -343,7 +343,7 @@ while !locations.empty?
       army.ap_present = rand(army.ap_max+1)
       army.ap_seconds_per_point = 3600*6
 
-      army.mode = 0
+      army.mode = Military::Army::MODE_IDLE
       army.kills = 0
       army.victories = 0
 

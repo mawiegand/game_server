@@ -6,7 +6,15 @@ class Ticker::BattleHandler
   def runloop 
     return @runloop 
   end
+
+  ## fight started message ###############################################
   
+  ## army destroyed message ##############################################
+
+  ## retreat message #####################################################
+
+  ## battle message ######################################################
+
   def generate_messages_for_battle(awe_battle, battle)
 
     stats_body = generate_message_stats_body(battle)

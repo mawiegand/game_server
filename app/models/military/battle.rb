@@ -2,13 +2,13 @@ class Military::Battle < ActiveRecord::Base
   
   has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
-  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle  
-  has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle
-  has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle 
-  has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle
+  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
+  has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
 
-  has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle  
-  has_many   :faction_results,     :class_name => "Military::BattleFactionResult", :foreign_key => "battle_id",     :inverse_of => :battle
+  has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
+  has_many   :faction_results,     :class_name => "Military::BattleFactionResult", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
 
   belongs_to :initiator,    :class_name => "Fundamental::Character",  :foreign_key => "initiator_id"
   belongs_to :opponent,     :class_name => "Fundamental::Character",  :foreign_key => "opponent_id"
@@ -141,6 +141,28 @@ class Military::Battle < ActiveRecord::Base
       active_factions += 1 if f.has_units_fighting?
     end
     return !(active_factions > 1)
+  end
+
+  #@pre battle_done? == true
+  def winner_faction
+    result = nil
+    self.factions.each do |faction|
+      if faction.has_units_fighting?
+        raise InternalServerError.new('There were more than one factions that still had units fighting even though the fight should be over') unless result.nil?
+        result = faction
+      end
+    end
+    result
+  end
+
+  #returns the a settlement if there was an battle over one
+  def targeted_settlement
+    participants.each do |participant|
+      if participant.army.garrison
+        return participant.army.home
+      end
+    end
+    nil
   end
 
 end

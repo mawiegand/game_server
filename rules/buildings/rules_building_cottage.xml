@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_cottage" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Kleine Hütte</Name>
+  <Name lang="en_US">cottage</Name>
+  <Description lang="de_DE">
+    <p>Gebäude für eure Untertanen.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Small cottage.</p>
+  </Description>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText>
+    <FlavourText lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </FlavourText> 
+    <Requirement id="building_campfire" min_level="1" /> 
+  <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
+  <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost> 
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <ProductionTime shortenable="true">120*MAX(LEVEL-3,0)+10</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.05</SpeedupQueue>
+  </Abilities>
+</Building>

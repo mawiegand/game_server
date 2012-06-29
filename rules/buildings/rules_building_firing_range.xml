@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Ballistisches Erprobungszentrum</Name>
-  <Name lang="en_US">Ballistic R+D</Name>
+<Building id="building_firing_range" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Schießstand</Name>
+  <Name lang="en_US">Firing range</Name>
   <Description lang="de_DE">
-    <p>Schulungszentrum für alle Distanzkämpfer.</p>
+    <p>Ausbildungsgelände für Fernkämpfer.</p>
   </Description>
   <Description lang="en_US">
-    <p>Trains artillery.</p>
+    <p>Hosts troops.</p>
   </Description>
-  <FlavourText lang="en_US">
+      <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
     <FlavourText lang="en_US">
     <p> lustiger Flavour Text hier </p>
   </FlavourText>
-  <Requirement id="building_fortress_fortification" min_level="2" />  
+  <Requirement id="building_fortress_fortification" min_level="7" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
-  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>   
+  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
+  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />
     <SpeedupQueue queue="queue_artillery" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
-  </Abilities>  
+  </Abilities>
 </Building>
