@@ -9,7 +9,14 @@ class Ticker::BattleHandler
 
   ## HANDLE RETREAT ##########################################################
 
-  def move_to_retreat_location(participant)
+  def move_to_retreat_location(participant, location)
+    runloop.say "retreating to move to location {participant.retreated_to_location_id} region {participant.retreated_to_region_id}"
+
+    #found a location to retreat to
+    participant.retreated = true;
+    participant.retreated_to_region_id = location.region.id
+    participant.retreated_to_location_id = location.id
+
     ##NOTE THIS SHOULD BE REPLACED BY ARMY FILTERS, OR A METHOD
     participant.army.location_id = participant.retreated_to_location_id  
     participant.army.region_id = participant.retreated_to_region_id  
@@ -18,7 +25,7 @@ class Ticker::BattleHandler
     participant.army.target_reached_at = nil
     participant.army.mode = 0
 
-    if !action.army.save
+    if !participant.army.save
       runloop.say "Army #{participant.army_id} could not be moved to new location. Save did fail.", Logger::ERROR
       return false
     end
@@ -30,7 +37,7 @@ class Ticker::BattleHandler
     participant.army.location.save
 
     #check if there was an retreat into an battle that is already happening
-    started_battles = participant.army.check_for_battle_at(target_location)
+    started_battles = participant.army.check_for_battle_at(location)
 
     return true
   end
@@ -49,7 +56,7 @@ class Ticker::BattleHandler
       #check the fortresses of the neighbor nodes
       neighbor_nodes.each do |n|
         location = n.region.fortress_location
-        if location.can_be_retreated_to(participant.army.owner)
+        if location.can_be_retreated_to?(participant.army.owner)
           retreat_locations.push location
         end
       end
@@ -71,14 +78,12 @@ class Ticker::BattleHandler
 
     retreat_locations.each do |target|
     	if random.rand < retreat_probability
-    		#found a location to retreat to
-    		participant_results.retreat_succeeded = true
-    		participant.retreated = true;
-    		participant.retreated_to_region_id = target.region.id
-    		participant.retreated_to_location_id = target.id
+    		#
+        participant_results.retreat_succeeded = true
 
         #move the army to the new target
-        if move_to_retreat_location(participant)
+        runloop.say "trying to move to location {target.id}"
+        if move_to_retreat_location(participant, target)
           #and save the participant if it all went well
     		  if !participant.save
         	 raise InternalServerError.new('Server could not save a successfull retreat of a battle participant in persistant storage.')
@@ -88,6 +93,7 @@ class Ticker::BattleHandler
     		return true
     	end
     end
+    runloop.say "retreat failed"
     return false
   end
   
