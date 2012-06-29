@@ -146,7 +146,7 @@ class Military::Battle < ActiveRecord::Base
   #@pre battle_done? == true
   def winner_faction
     result = nil
-    battle.factions.each do |faction|
+    self.factions.each do |faction|
       if faction.has_units_fighting?
         raise InternalServerError.new('There were more than one factions that still had units fighting even though the fight should be over') unless result.nil?
         result = faction
