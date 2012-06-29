@@ -109,7 +109,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def new_owner_transaction(character)
     # settlement BLOCK
-    logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.character_id } to #{ character.nil ? "nil" : character.id }."
+    logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -416,12 +416,57 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_owner_changes    
       owner_change = self.changes[:owner_id]
-      if owner_change
+      if !owner_change.nil?
         propagate_changes_to_resource_pool_on_changed_possession
         propagate_score_on_changed_possession
+        propagate_unlock_changes_on_changed_possession
       end
       true
     end
+             
+    def propagate_unlock_changes_on_changed_possession
+      owner_change = self.changes[:owner_id]
+      if !owner_change.blank?
+        # propagate fields to character
+        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+        propagate_unlock_changes_on_changed_possession_to_model old_owner, new_owner, empire_unlock_fields
+        
+        # propagate fields to alliance
+        alliance_change = self.changes[:alliance_id]
+        if !alliance_change.blank?
+          old_ally = alliance_change[0].nil? ? nil : Fundamental::Alliance.find_by_id(alliance_change[0])
+          new_ally = alliance_change[1].nil? ? nil : Fundamental::Alliance.find_by_id(alliance_change[1])
+          propagate_unlock_changes_on_changed_possession_to_model old_ally, new_ally, alliance_unlock_fields
+        else                      # use the standard method
+          propagate_unlock_changes_to_model(self.alliance, alliance_unlock_fields)  unless self.alliance_id.nil? || self.alliance_id == 0
+        end
+      end
+    end
+        
+        
+        
+    def propagate_unlock_changes_on_changed_possession_to_model(old_model, new_model, fields)
+
+      fields.each do |entry| 
+        old_value = self[entry[:attrl]]
+        new_value = self[entry[:attrl]]
+        
+        if !self.changes[entry[:attrl]].nil?
+          change = self.changes[entry[:attrl]]
+          new_value = (change[1] || 0)
+          old_value = (change[0] || 0)
+        end
+        
+        old_model.decrement(entry[:attrc], old_value)   unless old_model.nil?
+        new_model.increment(entry[:attrc], new_value)   unless new_model.nil? 
+      end
+
+      old_model.save   unless old_model.nil?
+      new_model.save   unless new_model.nil?
+    end          
+
+
     
     
     # this case (owner changed) is a little bit more tricky; bascially,
