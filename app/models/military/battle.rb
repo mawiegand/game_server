@@ -1,6 +1,6 @@
 class Military::Battle < ActiveRecord::Base
   
-  has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id"
+  has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle  
   has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle
