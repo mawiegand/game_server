@@ -508,6 +508,7 @@ ActiveRecord::Schema.define(:version => 20120629133601) do
     t.integer  "battle_rounds_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "removed",               :default => false, :null => false
   end
 
   create_table "ranking_alliance_rankings", :force => true do |t|

@@ -54,13 +54,24 @@ class Ticker::BattleHandler
         ## generate message for participants
         generate_messages_for_battle(awe_battle, battle)
 
+        ## get winner of the battle
+        winner_faction = nil
+        battle.factions.each do |faction|
+          if faction.has_units_fighting?
+            raise InternalServerError.new('There were more than one factions that still had units fighting even though the fight should be over') unless winner_faction.nil?
+            winner_faction = faction
+          end
+        end
+
         #TODO CLEANUP
+        cleanup_armies(battle)
+        runloop.say("WARNING for debug purposes the battle objects are currently not cleaned up", Logger::WARN)
+        #cleanup_battle(battle)
 
         #CALL: take-over-handler
         #        - decides, whether a takeover should happen (settlemenet involved & lost , winners still have a survivor)
         #        - decides, WHO should obtain the settlement (initiator; attacked first, otherwise the strongest winner)
         #        CALL: settlement.new_owner_transaction(character) with character of new owner
-
         
       else
         battle.schedule_next_round
@@ -89,6 +100,23 @@ class Ticker::BattleHandler
     end
   end
 
+  #deletes armies that no longer exists (or marks them as removed)
+  def cleanup_armies(battle)
 
+        if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
+          
+          
+          runloop.say "Flaged destroyed armies as 'removed'"
+        else
+
+
+          runloop.say "Deleted destroyed armies from the database"
+        end
+  end
+
+  #destorys the battle and all Military::Battle* subobject
+  def cleanup_battle(battle)
+
+  end
   
 end
