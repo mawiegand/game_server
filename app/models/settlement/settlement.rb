@@ -137,11 +137,12 @@ class Settlement::Settlement < ActiveRecord::Base
   def update_resource_bonus_on_owner_change
     owner_change = self.changes[:owner_id]
     if !owner_change.blank?
+      logger.info ('Running resource bonus owner-change handler on settlement ID#{self.id}.');
       pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_owner_id(owner_change[1])  # the pool of the new owner or nil
       
       GameRules::Rules.the_rules().resource_types.each do |resource_type|
         base = resource_type[:symbolic_id].to_s
-        
+        obtain_global_resource_production_bonus(base, pool)
       end      
     end
     true
@@ -270,12 +271,25 @@ class Settlement::Settlement < ActiveRecord::Base
     #
     ############################################################################    
     
+    # fetches the global resource boni for one resource (base) comming from the
+    # alliance, sciences and global effects from the pool and sets the 
+    # settlement accordingly
+    def obtain_global_resource_production_bonus(base, pool)
+      self[base+"_production_bonus_alliance"]      = pool ? pool[base+"_production_bonus_alliance"] : 0;
+      self[base+"_production_bonus_sciences"]       = pool ? pool[base+"_production_bonus_sciences"]  : 0;
+      self[base+"_production_bonus_global_effects"] = pool ? pool[base+"_production_bonus_effects"]   : 0;
+    end   
+    
+    # accumulates the individual boni and stores the results in the 
+    # _production_bonus fields
     def update_resource_production_bonus(base)
       sum = self[base+"_production_bonus_buildings"] + self[base+"_production_bonus_sciences"] + self[base+"_production_bonus_alliance"] + self[base+"_production_bonus_effects"] +self[base+"_production_bonus_global_effects"]
       self[base+"_production_bonus"] = sum
       true
     end
-        
+       
+    # recaclucates and sets the present production rate according to the present
+    # base production and the boni according to rate = base * (1+bonus) .    
     def update_resource_production_rate(base)
       self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
       true

@@ -1,10 +1,20 @@
+
+
+# Representation of a resource pool. Most attributes here are set indirectly
+# in response to changes in other models (e.g. building a resource producer,
+# finding a treasure with resources). Some things can be done on the resource
+# pool directly:
+#   - spending resources by deducing the amount up to zero
+#   - earning resources by adding it to the amount
+#   - changing the global production_boni (alliance, science, effects),
+#     changes will be spread to local models
 class Fundamental::ResourcePool < ActiveRecord::Base
   
   belongs_to  :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
   before_save :update_resources_on_production_rate_changes
 
-  after_save  :propagate_global_effect_changes
+  after_save  :propagate_bonus_changes
   
   RESOURCE_ID_CASH = 3
   
@@ -121,35 +131,41 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       true
     end
     
+    
     ##########################################################################
     #
     #  SPREADING LOCAL CHANGES TO RELATED MODELS 
     #
     ##########################################################################
     
-    # propagate changes to global effects down to settlements. during this
+    # propagate changes to global effects down to settlements. During this
     # process, changes at settlements will propagate back to this model
-    # (this is quite dangerous...)
-    #
-    # Presently, the method will save each settlement several times; namely one
-    # time for each changed resource-effect. This is ok, as long as we only
-    # change one effect at a time (persently that's given).
-    def propagate_global_effect_changes
+    # setting the rates to new values (this is quite dangerous...)
+    def propagate_bonus_changes
 
       if (!self.owner.nil? && self.character_id > 0)         # only spread, if there's a resource pool
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
-          attribute = resource_type[:symbolic_id].to_s()+'_global_effects'
-          attributeSettlement = resource_type[:symbolic_id].to_s()+'_production_bonus_effects'
-          
-          if !self.changes[attribute].nil?
-            change = self.changes[attribute]
-            delta = change[1] - change[0]   # new - old value
-            
-            self.owner.settlements.each do |settlement|
-              settlement[attributeSettlement] = settlement[attributeSettlement] + delta
-              settlement.save
+          to_check = [{
+              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
+              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
+            },
+            {
+              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+            },
+            {
+              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+            }
+          ]
+          to_check = to_check.select { |bonus| !self.changes[bonus[attribute]].nil? } # filter those, that have changed
+
+          self.owner.settlements.each do |settlement|
+            to_check.each do |bonus|
+              settlement.increment(bonus[attributeSettlement], self.changes[bonus[attribute]][1] - self.changes[bonus[attribute]][0])               
             end
+            settlement.save
           end
         end
       end
