@@ -24,7 +24,7 @@
   <Production id="resource_wood">1*LEVEL*LEVEL</Production>        
   <Production id="resource_fur">POW(MAX(0,LEVEL-1),2)</Production>         
   <Production id="resource_toad">MAX(LEVEL-10,0)*0.5-MAX(LEVEL-11,0)*0.5+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
-  <ProductionTime shortenable="true">10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10</ProductionTime>             
+  <ProductionTime shortenable="true">MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>
 </Building>

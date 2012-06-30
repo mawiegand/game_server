@@ -1471,7 +1471,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => '10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
+          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
           :production  => [
             
               {
@@ -1551,13 +1551,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => 'FLOOR(POW(LEVEL,3.5))',
+            0 => 'FLOOR(POW(LEVEL,3))',
+            0 => 'FLOOR(POW(LEVEL,2))',
             
           },
 
-          :production_time => '120*MAX(LEVEL-3,0)+10',
+          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
           :production  => [
             
           ],
@@ -1570,7 +1570,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.05",
+                :speedup_formula   => "CEIL(POW(LEVEL/100,2))",
               },
 
             ],
