@@ -11,13 +11,13 @@
   <Description lang="en_US">
     <p>Embassy</p>
   </Description>
-      <FlavourText lang="en_US">
+  <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-    <FlavourText lang="en_US">
-    <p> lustiger Flavour Text hier </p>
-  </FlavourText> 
-  <Requirement id="building_palace" min_level="3" />  
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Am stimmungsvollen Feuer werden Gäste empfangen, Allianzen geschmiedet und Feinde gegrillt.</p>
+  </Flavour> 
+  <Requirement id="building_chief_cottage" min_level="3" />  
   <Cost id="resource_stone" round="true">LEVEL*200+200</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*100+100</Cost>  
   <Cost id="resource_furs" round="true">LEVEL*10</Cost>   

@@ -3,22 +3,23 @@
 
 <Building id="building_chief_cottage" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
   <Name lang="de_DE">Häuptlingshütte</Name>
-  <Name lang="en_US">Chief_cottage</Name>
+  <Name lang="en_US">Chief's Cottage</Name>
   <Description lang="de_DE">
     <p>Hauptgebäude.</p>
   </Description>
   <Description lang="en_US">
     <p>Main building.</p>
   </Description>
-    <FlavourText lang="en_US">
+  <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-    <FlavourText lang="en_US">
+  </Flavour>
+    <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText> 
+  </Flavour> 
   <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
   <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost> 
   <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <Requirement id="building_chief_cottage" max_level="0" />  
   <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
   <Production id="resource_wood">1</Production>        
   <Abilities> <!-- just for grouping -->

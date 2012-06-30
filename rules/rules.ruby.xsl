@@ -216,6 +216,9 @@ end
           :name        => {
             <xsl:apply-templates select="Name" />              
           },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />              
+          },
           :description => {
             <xsl:apply-templates select="Description" />              
           },
@@ -333,6 +336,9 @@ end
           :name        => {
             <xsl:apply-templates select="Name" />              
           },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />              
+          },
           :description => {
             <xsl:apply-templates select="Description" />              
           },
@@ -430,6 +436,9 @@ end
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
+	        :conquerable => <xsl:value-of select="@conquerable"/>,
+	        :destroyable => <xsl:value-of select="@destroyable"/>,
+
 
 <xsl:if test="count(BuildingSlot)">
           :building_slots => {

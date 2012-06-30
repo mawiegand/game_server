@@ -367,6 +367,9 @@ class GameRules::Rules
             :de_DE => "Kieselsteinwerfer",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
@@ -419,6 +422,9 @@ class GameRules::Rules
   
             :de_DE => "Bratspießträger",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -474,6 +480,9 @@ class GameRules::Rules
             :de_DE => "Straußenreiter",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
@@ -527,6 +536,9 @@ class GameRules::Rules
   
             :de_DE => "Baum-Brutalos",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -582,6 +594,9 @@ class GameRules::Rules
             :de_DE => "Säbelzahnreiter",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
@@ -635,6 +650,9 @@ class GameRules::Rules
   
             :de_DE => "Hörnchen-Jäger",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -690,6 +708,9 @@ class GameRules::Rules
             :de_DE => "Keulenkrieger",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Alternative T1, besser gegen Inf, anfälliger.</p>",
@@ -744,6 +765,9 @@ class GameRules::Rules
             :de_DE => "Katapult",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p>",
@@ -797,6 +821,9 @@ class GameRules::Rules
   
             :de_DE => "Rammbock",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -958,6 +985,17 @@ class GameRules::Rules
             :en_US => "Fortifications",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
@@ -1027,6 +1065,17 @@ class GameRules::Rules
             :de_DE => "Truppenunterkunft",
   
             :en_US => "Vertical Barracks",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1105,6 +1154,17 @@ class GameRules::Rules
             :en_US => "Ballistic R+D",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Schulungszentrum für alle Distanzkämpfer.</p>",
@@ -1179,6 +1239,17 @@ class GameRules::Rules
             :de_DE => "Reitmeisterrei",
   
             :en_US => "Cavalry Command",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1257,6 +1328,17 @@ class GameRules::Rules
             :en_US => "Inventor",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>",
@@ -1330,7 +1412,18 @@ class GameRules::Rules
             
             :de_DE => "Häuptlingshütte",
   
-            :en_US => "Chief_cottage",
+            :en_US => "Chief's Cottage",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1345,6 +1438,21 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+          ],          
 
           :costs      => {
             1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
@@ -1393,6 +1501,17 @@ class GameRules::Rules
             :de_DE => "Jäger und Sammler",
   
             :en_US => "Hunter-Gatherer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1473,6 +1592,17 @@ class GameRules::Rules
             :en_US => "cottage",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Gebäude für eure Untertanen.</p>",
@@ -1530,13 +1660,24 @@ class GameRules::Rules
         {               #   Ausbildungsgelände
           :id          => 8, 
           :symbolic_id => :building_barracks,
-					:category    => 3,
+					:category    => 4,
           :db_field    => :building_barracks,
           :name        => {
             
             :de_DE => "Ausbildungsgelände",
   
             :en_US => "Barracks",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1615,6 +1756,17 @@ class GameRules::Rules
             :en_US => "campfire",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p>Am stimmungsvollen Feuer werden Gäste empfangen, Allianzen geschmiedet und Feinde gegrillt.</p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>An der Feuerstelle trifft sich allabendlich der Stamm mit seinen freiwilligen und unfreiwilligen Gästen. Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
@@ -1631,9 +1783,9 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
               :min_level => 3,
 
@@ -1672,6 +1824,17 @@ class GameRules::Rules
             :de_DE => "Holzfäller",
   
             :en_US => "Logger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1735,6 +1898,17 @@ class GameRules::Rules
             :en_US => "Quarry",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
@@ -1796,6 +1970,17 @@ class GameRules::Rules
             :en_US => "Furrier",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
@@ -1848,13 +2033,24 @@ class GameRules::Rules
         {               #   Schießstand
           :id          => 13, 
           :symbolic_id => :building_firing_range,
-					:category    => 3,
+					:category    => 4,
           :db_field    => :building_firing_range,
           :name        => {
             
             :de_DE => "Schießstand",
   
             :en_US => "Firing range",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1924,13 +2120,24 @@ class GameRules::Rules
         {               #   Stall
           :id          => 14, 
           :symbolic_id => :building_stud,
-					:category    => 3,
+					:category    => 4,
           :db_field    => :building_stud,
           :name        => {
             
             :de_DE => "Stall",
   
             :en_US => "Stud",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -2000,13 +2207,24 @@ class GameRules::Rules
         {               #   Werkstatt
           :id          => 15, 
           :symbolic_id => :building_workshop,
-					:category    => 3,
+					:category    => 4,
           :db_field    => :building_workshop,
           :name        => {
             
             :de_DE => "Werkstatt",
   
             :en_US => "workshop",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -2097,6 +2315,11 @@ class GameRules::Rules
                 
           },
 
+	        :conquerable => false,
+	        :destroyable => false,
+
+
+
 
 
         },              #   END OF Unbesiedelt
@@ -2117,6 +2340,11 @@ class GameRules::Rules
             :en_US => "English Description.",
                 
           },
+
+	        :conquerable => true,
+	        :destroyable => false,
+
+
 
           :building_slots => {
             0 => {
@@ -2175,6 +2403,11 @@ class GameRules::Rules
                 
           },
 
+	        :conquerable => false,
+	        :destroyable => false,
+
+
+
           :building_slots => {
             0 => {
               :max_level => 10,
@@ -2189,7 +2422,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 0,
+              :building  => 5,
               
               :level  => 1,
               
@@ -2615,6 +2848,11 @@ class GameRules::Rules
             :en_US => "English Description.",
                 
           },
+
+	        :conquerable => true,
+	        :destroyable => true,
+
+
 
           :building_slots => {
             0 => {
