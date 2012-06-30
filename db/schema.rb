@@ -483,7 +483,7 @@ ActiveRecord::Schema.define(:version => 20120630000857) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0
+    t.integer  "total_experience_gained",  :default => 0, :null => false
   end
 
   create_table "military_battle_rounds", :force => true do |t|
