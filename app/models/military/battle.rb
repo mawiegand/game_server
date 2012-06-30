@@ -4,7 +4,8 @@ class Military::Battle < ActiveRecord::Base
 
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
   has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
-  has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy,
+             :order => 'round_num ASC'
   has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
