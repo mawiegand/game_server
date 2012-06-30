@@ -13,7 +13,11 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     
     raise BadRequestError.new('not owner of location') unless location.owner == current_character
     
-    # TODO Werte auf > 0 testen
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if !@action[unit_type[:db_field]].nil? && @action[unit_type[:db_field]].to_i < 0
+        raise BadRequestError.new('negative unit quantity')
+      end
+    end
     
     raise BadRequestError.new('not enough units in army') unless garrison_army.contains?(@action)
     garrison_army.reduce_units(@action)
