@@ -1570,7 +1570,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "CEIL(POW(LEVEL/100,2))",
+                :speedup_formula   => "POW(LEVEL/100.0,2)",
               },
 
             ],
