@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
-<!ELEMENT General (Game, Version, Languages, Battle)>
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -27,6 +27,13 @@
   retreatProbability CDATA "0.6"
 >
 
+
+<!--CharacterCreation-->
+<!ELEMENT CharacterCreation (StartResource*)>
+<!ELEMENT StartResource (#PCDATA)>
+<!ATTLIST StartResource 
+  id IDREF #REQUIRED
+>
 
 <!--Types-->
 <!ELEMENT ResourceTypes (Resource*)>
@@ -110,7 +117,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, Abilities)>
+<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -122,7 +129,7 @@
 >
 
 <!--Science-->
-<!ELEMENT Science (Name+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, Requirement*)>
+<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, Requirement*)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Units-->
@@ -130,7 +137,7 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
+<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -219,6 +226,8 @@
 <!ATTLIST Description lang IDREF "en_US">
 <!ELEMENT Name (#PCDATA)>
 <!ATTLIST Name lang IDREF "en_US">
+<!ELEMENT Flavour (#PCDATA)>
+<!ATTLIST Flavour lang IDREF "en_US">
 <!ELEMENT p (#PCDATA)>
 <!ELEMENT Position (#PCDATA)>
 <!ELEMENT Velocity (#PCDATA)>

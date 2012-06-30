@@ -5,10 +5,10 @@ class Military::Battle < ActiveRecord::Base
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
   has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
   has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
-  has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
-  has_many   :faction_results,     :class_name => "Military::BattleFactionResult", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
+  has_many   :faction_results,     :class_name => "Military::BattleFactionResult",     :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
 
   belongs_to :initiator,    :class_name => "Fundamental::Character",  :foreign_key => "initiator_id"
   belongs_to :opponent,     :class_name => "Fundamental::Character",  :foreign_key => "opponent_id"
@@ -100,7 +100,7 @@ class Military::Battle < ActiveRecord::Base
   #advanced the next_round_at field
   def schedule_next_round
     rules = GameRules::Rules.the_rules
-    self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
+    self.next_round_at = self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
   end
   
   def create_event_for_next_round

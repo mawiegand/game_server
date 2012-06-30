@@ -10,12 +10,12 @@
   <Description lang="en_US">
     <p>Builds war machines.</p>
   </Description>
-  <FlavourText lang="en_US">
+  <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-    <FlavourText lang="en_US">
+  </Flavour>
+    <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
+  </Flavour>
   <Requirement id="building_fortress_fortification" min_level="4" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    

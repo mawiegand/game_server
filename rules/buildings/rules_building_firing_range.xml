@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_firing_range" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+<Building id="building_firing_range" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
   <Name lang="de_DE">Schießstand</Name>
   <Name lang="en_US">Firing range</Name>
   <Description lang="de_DE">
@@ -10,13 +10,12 @@
   <Description lang="en_US">
     <p>Hosts troops.</p>
   </Description>
-      <FlavourText lang="en_US">
+  <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-    <FlavourText lang="en_US">
+  </Flavour>
+    <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-  <Requirement id="building_fortress_fortification" min_level="7" />  
+  </Flavour>  <Requirement id="building_fortress_fortification" min_level="7" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
   <Cost id="resource_furs" round="true">LEVEL*10</Cost>

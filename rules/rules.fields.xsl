@@ -3,7 +3,7 @@
 <!-- This stylesheet specifies the XSL Transformations to generate a list of
      database columns needed for the present rules document. Mainly extracts
      the identifiers (id) of all entities and prefixes them with the entity
-     category (building, unit, etc.). The output is a newline-seperated list 
+     category (building, unit, etc.). The output is a newline-separated list 
      of the database column names (lower-cased, of the form 'category_id').
      
      Author: Sascha Lange <sascha@5dlab.com>.
@@ -18,7 +18,11 @@
   <xsl:template match="Rules">  
     <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory|//Queue" />
 settlement_unlock_garrison_count
+
+settlement_unlock_diplomacy_count
 character_unlock_diplomacy_count
+
+settlement_unlock_alliance_creation_count
 character_unlock_alliance_creation_count
   </xsl:template>
 

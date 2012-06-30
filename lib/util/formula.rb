@@ -7,13 +7,13 @@ module Util
     
     def initialize(formula)
       functions = {
-        'MIN' => 'min',
-        'MAX' => 'max',
-        'ROUND' => 'Float.round',
-        'CEIL' => 'Float.ceil',
-        'FLOOR' => 'Float.floor',
-        'POW' => 'power',
-        'SIGN' => 'sign',
+        'MIN'   => 'min',
+        'MAX'   => 'max',
+        'ROUND' => 'round',
+        'CEIL'  => 'ceil',
+        'FLOOR' => 'floor',
+        'POW'   => 'power',
+        'SIGN'  => 'sign',
       }
       
       
@@ -28,8 +28,8 @@ module Util
     end
 
     # Evaluates a parsed formular with a given level
-    def apply(level = 0.0)
-      eval(@formula)
+    def apply(level = nil)
+      level == nil || level == 0 ? 0 : eval(@formula)
     end
     
     
@@ -40,6 +40,18 @@ module Util
     end
       
     protected
+    
+    def floor(n) 
+      n.floor
+    end
+    
+    def ceil(n)
+      n.ceil
+    end
+    
+    def round(n)
+      n.round
+    end
 
     def power(base, exp)
       (base) ** (exp)

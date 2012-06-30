@@ -44,41 +44,50 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
-  def self.create_new_character(identifier, name)
+  def self.create_new_character(identifier, name, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
       frog_amount: 0,       # temporary hack
       name: name,
+      npc:  npc,
     });
     
     if !character.save
       raise InternalServerError.new('Could not create new character.') 
     end
-    
-    location = Map::Location.find_empty
-    if !location || !character.claim_location(location)
-      character.destroy
-      raise InternalServerError.new('Could not claim an empty location.')
-    end
-    
-    character.create_resource_pool
-    character.create_ranking({
-      character_name: name,
-    });
 
-    Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
+    character.create_resource_pool
+    character.resource_pool.fill_with_start_resources_transaction
+    
+    raise InternalServerError.new('Could not save the base of the character.')  if !character.save
+
+    if !npc
+      character.create_ranking({
+        character_name: name,
+      });
+
+      location = Map::Location.find_empty
+      if !location || !character.claim_location(location)
+        character.destroy
+        raise InternalServerError.new('Could not claim an empty location.')
+      end
+
+      Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
         
-    character.base_location_id = location.id
-    character.base_region_id = location.region_id
-    character.base_node_id = location.region.node_id
+      character.base_location_id = location.id
+      character.base_region_id = location.region_id
+      character.base_node_id = location.region.node_id
+    end
     
     if !character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
     
-    character.create_inbox
-    character.create_outbox
-    character.create_archive
+    if !npc
+      character.create_inbox
+      character.create_outbox
+      character.create_archive
+    end
     
     return character 
   end
@@ -99,7 +108,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def is_ally_of?(other)
-    return !self.alliance.nil? && !other.alliance.nil? && (self.alliance.id == opponent.alliance.id)
+    return !self.alliance.nil? && !other.alliance.nil? && (self.alliance.id == other.alliance.id)
   end
   
   def lives_in_region?(region)
@@ -166,7 +175,7 @@ class Fundamental::Character < ActiveRecord::Base
       redundancies.each do |entry| 
         if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
           entry[:model].where(entry[:field] => self.id).each do |item|
-            item.alliance_id = alliance_change[1]           unless alliance_change.nil?
+            item.alliance_id  = alliance_change[1]          unless alliance_change.nil?
             item.alliance_tag = alliance_tag_change[1]      unless alliance_tag_change.nil?
             item.save
           end

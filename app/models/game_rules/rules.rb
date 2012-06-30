@@ -32,12 +32,13 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
+  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
   
   def attributes 
     { 
       'version'        => version,
       'battle'         => battle,
+      'character_creation' => character_creation,
       'unit_categories'=> unit_categories,
       'building_categories'=> building_categories,
       'unit_types'     => unit_types,
@@ -79,6 +80,15 @@ class GameRules::Rules
             :round_time => 30,
             :retreat_probability => 0.6,
             },
+        },
+        :character_creation => {
+          :start_resources => {
+            0 => 100,
+1 => 100,
+2 => 50,
+3 => 5,
+
+          },
         },
   
 # ## RESOURCE TYPES ##########################################################
@@ -367,6 +377,9 @@ class GameRules::Rules
             :de_DE => "Kieselsteinwerfer",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
@@ -419,6 +432,9 @@ class GameRules::Rules
   
             :de_DE => "Bratspießträger",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -474,6 +490,9 @@ class GameRules::Rules
             :de_DE => "Straußenreiter",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
@@ -527,6 +546,9 @@ class GameRules::Rules
   
             :de_DE => "Baum-Brutalos",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -582,6 +604,9 @@ class GameRules::Rules
             :de_DE => "Säbelzahnreiter",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
@@ -635,6 +660,9 @@ class GameRules::Rules
   
             :de_DE => "Hörnchen-Jäger",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -690,6 +718,9 @@ class GameRules::Rules
             :de_DE => "Keulenkrieger",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Alternative T1, besser gegen Inf, anfälliger.</p>",
@@ -744,6 +775,9 @@ class GameRules::Rules
             :de_DE => "Katapult",
                 
           },
+          :flavour     => {
+                          
+          },
           :description => {
             
             :de_DE => "<p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p>",
@@ -797,6 +831,9 @@ class GameRules::Rules
   
             :de_DE => "Rammbock",
                 
+          },
+          :flavour     => {
+                          
           },
           :description => {
             
@@ -958,6 +995,17 @@ class GameRules::Rules
             :en_US => "Fortifications",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
@@ -973,6 +1021,7 @@ class GameRules::Rules
 
           :costs      => {
             1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
             0 => 'LEVEL*10',
             
           },
@@ -1028,6 +1077,17 @@ class GameRules::Rules
             :en_US => "Vertical Barracks",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Unterkunft für Fußtruppen.</p>",
@@ -1056,6 +1116,7 @@ class GameRules::Rules
 
           :costs      => {
             1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
             0 => 'LEVEL*10',
             
           },
@@ -1103,6 +1164,17 @@ class GameRules::Rules
             :en_US => "Ballistic R+D",
                 
           },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
           :description => {
             
             :de_DE => "<p>Schulungszentrum für alle Distanzkämpfer.</p>",
@@ -1119,20 +1191,11 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'science_ballistics',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 2,
 
             },
 
@@ -1141,6 +1204,7 @@ class GameRules::Rules
           :costs      => {
             1 => 'LEVEL*100',
             0 => 'LEVEL*10',
+            0 => 'LEVEL*10',
             
           },
 
@@ -1148,6 +1212,31 @@ class GameRules::Rules
           :production  => [
             
           ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :level             => 1,
+              },
+
+            ],
+    
+          },
 
         },              #   END OF Ballistisches Erprobungszentrum
         {               #   Reitmeisterrei
@@ -1160,6 +1249,17 @@ class GameRules::Rules
             :de_DE => "Reitmeisterrei",
   
             :en_US => "Cavalry Command",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1178,20 +1278,11 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'science_riding',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 3,
 
             },
 
@@ -1199,6 +1290,7 @@ class GameRules::Rules
 
           :costs      => {
             1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
             0 => 'LEVEL*10',
             
           },
@@ -1209,6 +1301,27 @@ class GameRules::Rules
           ],
 
           :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :level             => 1,
+              },
+
+            ],
     
           },
 
@@ -1223,6 +1336,17 @@ class GameRules::Rules
             :de_DE => "Tüftler",
   
             :en_US => "Inventor",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1241,20 +1365,11 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'science_mechanics',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 4,
 
             },
 
@@ -1262,6 +1377,7 @@ class GameRules::Rules
 
           :costs      => {
             1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
             0 => 'LEVEL*10',
             
           },
@@ -1272,219 +1388,121 @@ class GameRules::Rules
           ],
 
           :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 5,
+                :queue_type_id_sym => :queue_siege,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 5,
+                :queue_type_id_sym => :queue_siege,
+                :level             => 1,
+              },
+
+            ],
     
           },
 
         },              #   END OF Tüftler
-        {               #   Steinbruch
+        {               #   Häuptlingshütte
           :id          => 5, 
-          :symbolic_id => :building_quarry,
-					:category    => 4,
-          :db_field    => :building_quarry,
+          :symbolic_id => :building_chief_cottage,
+					:category    => 3,
+          :db_field    => :building_chief_cottage,
           :name        => {
             
-            :de_DE => "Steinbruch",
+            :de_DE => "Häuptlingshütte",
   
-            :en_US => "Quarry",
+            :en_US => "Chief's Cottage",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
+            :de_DE => "<p>Hauptgebäude.</p>",
   
-            :en_US => "<p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>",
+            :en_US => "<p>Main building.</p>",
                 
           },
           :hidden      => 0,
 
           :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
+          :demolishable=> false,
+          :destructable=> false,
 
           :requirements=> [
             
             {
-              :symbolic_id => 'science_simple_tools',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_palace',
-              :id => 10,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'LEVEL*30',
-            0 => 'LEVEL*100+10',
+            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            0 => 'LEVEL*10',
             
           },
 
-          :production_time => '20*(LEVEL*LEVEL)+10',
-          :production  => [
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_stone,
-                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
-              },
-            
-          ],
-
-          :abilities   => {
-    
-          },
-
-        },              #   END OF Steinbruch
-        {               #   Holzfäller
-          :id          => 6, 
-          :symbolic_id => :building_logger,
-					:category    => 4,
-          :db_field    => :building_logger,
-          :name        => {
-            
-            :de_DE => "Holzfäller",
-  
-            :en_US => "Logger",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>",
-  
-            :en_US => "<p>Cuts trees, produces logs.</p>",
-                
-          },
-          :hidden      => 0,
-
-          :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'science_simple_tools',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_palace',
-              :id => 10,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-          :costs      => {
-            1 => 'LEVEL*100+10',
-            0 => 'LEVEL*30',
-            
-          },
-
-          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production_time => '120*MAX(LEVEL-3,0)+10',
           :production  => [
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
+                :formula            => "1",
               },
             
           ],
 
           :abilities   => {
-    
-          },
 
-        },              #   END OF Holzfäller
-        {               #   Kürschner
-          :id          => 7, 
-          :symbolic_id => :building_furrier,
-					:category    => 4,
-          :db_field    => :building_furrier,
-          :name        => {
-            
-            :de_DE => "Kürschner",
-  
-            :en_US => "Furrier",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
-  
-            :en_US => "<p>Provides Leather.</p>",
-                
-          },
-          :hidden      => 0,
+            :unlock_queue => [
 
-          :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'science_simple_tools',
-              :id => 0,
-              :type => '',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_palace',
-              :id => 10,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-          :costs      => {
-            1 => 'LEVEL*100+100',
-            0 => 'LEVEL*100+100',
-            
-          },
-
-          :production_time => '20*(LEVEL*LEVEL)+10',
-          :production  => [
-            
               {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "LEVEL*POW(1.1, LEVEL)+1",
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :level             => 1,
               },
-            
-          ],
 
-          :abilities   => {
+            ],
+
+            :command_points => {
+              :formula   => "2+(MAX(LEVEL-10,0)*1+(MAX(LEVEL-19,0)*1",
+            },
     
           },
 
-        },              #   END OF Kürschner
+        },              #   END OF Häuptlingshütte
         {               #   Jäger und Sammler
-          :id          => 8, 
+          :id          => 6, 
           :symbolic_id => :building_gatherer,
 					:category    => 4,
           :db_field    => :building_gatherer,
@@ -1493,6 +1511,17 @@ class GameRules::Rules
             :de_DE => "Jäger und Sammler",
   
             :en_US => "Hunter-Gatherer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
@@ -1511,8 +1540,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 10,
+              :symbolic_id => 'building_campfire',
+              :id => 9,
               :type => 'building',
 
               :min_level => 1,
@@ -1561,21 +1590,196 @@ class GameRules::Rules
           },
 
         },              #   END OF Jäger und Sammler
-        {               #   Feuerstelle
-          :id          => 9, 
-          :symbolic_id => :building_embassy,
+        {               #   Kleine Hütte
+          :id          => 7, 
+          :symbolic_id => :building_cottage,
 					:category    => 4,
-          :db_field    => :building_embassy,
+          :db_field    => :building_cottage,
           :name        => {
             
-            :de_DE => "Feuerstelle",
+            :de_DE => "Kleine Hütte",
   
-            :en_US => "Fire Pit",
+            :en_US => "cottage",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Feuerstelle übernimmt in der Steinzeit die Rolle einer Botschaft.</p><p>An der Feuerstelle trifft sich allabendlich der Stamm mit seinen freiwilligen und unfreiwilligen Gästen. Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
+            :de_DE => "<p>Gebäude für eure Untertanen.</p>",
+  
+            :en_US => "<p>Small cottage.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 9,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '120*MAX(LEVEL-3,0)+10',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.05",
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Kleine Hütte
+        {               #   Ausbildungsgelände
+          :id          => 8, 
+          :symbolic_id => :building_barracks,
+					:category    => 4,
+          :db_field    => :building_barracks,
+          :name        => {
+            
+            :de_DE => "Ausbildungsgelände",
+  
+            :en_US => "Barracks",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ausbildungsgelände für Fußtruppen.</p>",
+  
+            :en_US => "<p>Hosts troops.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 2,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)+10',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :level             => 1,
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Ausbildungsgelände
+        {               #   Lagerfeuer
+          :id          => 9, 
+          :symbolic_id => :building_campfire,
+					:category    => 4,
+          :db_field    => :building_campfire,
+          :name        => {
+            
+            :de_DE => "Lagerfeuer",
+  
+            :en_US => "campfire",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p>Am stimmungsvollen Feuer werden Gäste empfangen, Allianzen geschmiedet und Feinde gegrillt.</p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>An der Feuerstelle trifft sich allabendlich der Stamm mit seinen freiwilligen und unfreiwilligen Gästen. Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
   
             :en_US => "<p>Embassy</p>",
                 
@@ -1589,11 +1793,11 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 10,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 3,
 
             },
 
@@ -1602,6 +1806,7 @@ class GameRules::Rules
           :costs      => {
             1 => 'LEVEL*200+200',
             0 => 'LEVEL*100+100',
+            0 => 'LEVEL*10',
             
           },
 
@@ -1618,61 +1823,281 @@ class GameRules::Rules
     
           },
 
-        },              #   END OF Feuerstelle
-        {               #   Stammeslager
+        },              #   END OF Lagerfeuer
+        {               #   Holzfäller
           :id          => 10, 
-          :symbolic_id => :building_palace,
-					:category    => 3,
-          :db_field    => :building_palace,
+          :symbolic_id => :building_logger,
+					:category    => 4,
+          :db_field    => :building_logger,
           :name        => {
             
-            :de_DE => "Stammeslager",
+            :de_DE => "Holzfäller",
   
-            :en_US => "Clan camp",
+            :en_US => "Logger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Hauptgebäude.</p>",
+            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>",
   
-            :en_US => "<p>Main building.</p>",
+            :en_US => "<p>Cuts trees, produces logs.</p>",
                 
           },
           :hidden      => 0,
 
           :buyable     => true,
-          :demolishable=> false,
-          :destructable=> false,
+          :demolishable=> true,
+          :destructable=> true,
 
           :requirements=> [
             
             {
               :symbolic_id => 'building_palace',
-              :id => 10,
-              :type => 'building',
+              :id => 0,
+              :type => '',
 
-              :min_level => 0,
-
-              :max_level => 0,
+              :min_level => 4,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
+            1 => 'LEVEL*100+10',
+            0 => 'LEVEL*30',
+            0 => 'LEVEL*10',
             
           },
 
-          :production_time => '120*MAX(LEVEL-3,0)+10',
+          :production_time => '20*(LEVEL*LEVEL)+10',
           :production  => [
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "10",
+                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
               },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Holzfäller
+        {               #   Steinbruch
+          :id          => 11, 
+          :symbolic_id => :building_quarry,
+					:category    => 4,
+          :db_field    => :building_quarry,
+          :name        => {
+            
+            :de_DE => "Steinbruch",
+  
+            :en_US => "Quarry",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
+  
+            :en_US => "<p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_palace',
+              :id => 0,
+              :type => '',
+
+              :min_level => 5,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*30',
+            0 => 'LEVEL*100+10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
+              },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Steinbruch
+        {               #   Kürschner
+          :id          => 12, 
+          :symbolic_id => :building_furrier,
+					:category    => 4,
+          :db_field    => :building_furrier,
+          :name        => {
+            
+            :de_DE => "Kürschner",
+  
+            :en_US => "Furrier",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
+  
+            :en_US => "<p>Provides Leather.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_palace',
+              :id => 0,
+              :type => '',
+
+              :min_level => 6,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100+100',
+            0 => 'LEVEL*100+100',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "LEVEL*POW(1.1, LEVEL)+1",
+              },
+            
+          ],
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Kürschner
+        {               #   Schießstand
+          :id          => 13, 
+          :symbolic_id => :building_firing_range,
+					:category    => 4,
+          :db_field    => :building_firing_range,
+          :name        => {
+            
+            :de_DE => "Schießstand",
+  
+            :en_US => "Firing range",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ausbildungsgelände für Fernkämpfer.</p>",
+  
+            :en_US => "<p>Hosts troops.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)+10',
+          :production  => [
             
           ],
 
@@ -1681,10 +2106,10 @@ class GameRules::Rules
             :speedup_queue => [
 
               {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.05",
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
               },
 
             ],
@@ -1692,20 +2117,190 @@ class GameRules::Rules
             :unlock_queue => [
 
               {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
                 :level             => 1,
               },
 
             ],
-
-            :command_points => {
-              :formula   => "2",
-            },
     
           },
 
-        },              #   END OF Stammeslager
+        },              #   END OF Schießstand
+        {               #   Stall
+          :id          => 14, 
+          :symbolic_id => :building_stud,
+					:category    => 4,
+          :db_field    => :building_stud,
+          :name        => {
+            
+            :de_DE => "Stall",
+  
+            :en_US => "Stud",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ausbildungsgelände für berittene Einheiten.</p>",
+  
+            :en_US => "<p>Hosts troops.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 8,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)+10',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :level             => 1,
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Stall
+        {               #   Werkstatt
+          :id          => 15, 
+          :symbolic_id => :building_workshop,
+					:category    => 4,
+          :db_field    => :building_workshop,
+          :name        => {
+            
+            :de_DE => "Werkstatt",
+  
+            :en_US => "workshop",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+  
+            :de_DE => "
+    <p> lustiger Flavour Text hier </p>
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ausbildungsgelände für Belagerungseinheiten.</p>",
+  
+            :en_US => "<p>Hosts troops.</p>",
+                
+          },
+          :hidden      => 0,
+
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 9,
+
+            },
+
+          ],          
+
+          :costs      => {
+            1 => 'LEVEL*100',
+            0 => 'LEVEL*10',
+            0 => 'LEVEL*10',
+            
+          },
+
+          :production_time => '2*(LEVEL+1)+10',
+          :production  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 5,
+                :queue_type_id_sym => :queue_siege,
+                :domain            => :settlement,
+                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 5,
+                :queue_type_id_sym => :queue_siege,
+                :level             => 1,
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Werkstatt
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -1730,6 +2325,11 @@ class GameRules::Rules
                 
           },
 
+	        :conquerable => false,
+	        :destroyable => false,
+
+
+
 
 
         },              #   END OF Unbesiedelt
@@ -1750,6 +2350,11 @@ class GameRules::Rules
             :en_US => "English Description.",
                 
           },
+
+	        :conquerable => true,
+	        :destroyable => false,
+
+
 
           :building_slots => {
             0 => {
@@ -1808,6 +2413,11 @@ class GameRules::Rules
                 
           },
 
+	        :conquerable => false,
+	        :destroyable => false,
+
+
+
           :building_slots => {
             0 => {
               :max_level => 10,
@@ -1822,7 +2432,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 10,
+              :building  => 5,
               
               :level  => 1,
               
@@ -2249,6 +2859,11 @@ class GameRules::Rules
                 
           },
 
+	        :conquerable => true,
+	        :destroyable => true,
+
+
+
           :building_slots => {
             0 => {
               :max_level => 20,
@@ -2379,8 +2994,71 @@ class GameRules::Rules
             
           ],
         },              #   END OF queue_infantry
-        {               #   queue_research
+        {               #   queue_artillery
           :id          => 3, 
+          :symbolic_id => :queue_artillery,
+          :unlock_field=> :settlement_queue_artillery_unlock_count,
+          :category_id => 1,
+					:category    => :queue_category_training,
+          :domain      => :settlement,
+          :base_threads=> 1,
+          :base_slots  => 4,
+          :name        => {
+            
+            :en_US => "Training of Artillery",
+  
+            :de_DE => "Ausbildung von Fernkämpfern",
+                
+          },
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_artillery
+        {               #   queue_cavalry
+          :id          => 4, 
+          :symbolic_id => :queue_cavalry,
+          :unlock_field=> :settlement_queue_cavalry_unlock_count,
+          :category_id => 1,
+					:category    => :queue_category_training,
+          :domain      => :settlement,
+          :base_threads=> 1,
+          :base_slots  => 4,
+          :name        => {
+            
+            :en_US => "Training of Cavalry",
+  
+            :de_DE => "Ausbildung von berittenen Einheiten",
+                
+          },
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_cavalry
+        {               #   queue_siege
+          :id          => 5, 
+          :symbolic_id => :queue_siege,
+          :unlock_field=> :settlement_queue_siege_unlock_count,
+          :category_id => 1,
+					:category    => :queue_category_training,
+          :domain      => :settlement,
+          :base_threads=> 1,
+          :base_slots  => 4,
+          :name        => {
+            
+            :en_US => "Training of Siege",
+  
+            :de_DE => "Bau von Belagerungsgeräten",
+                
+          },
+          :produces    => [
+            0,
+            
+          ],
+        },              #   END OF queue_siege
+        {               #   queue_research
+          :id          => 6, 
           :symbolic_id => :queue_research,
           :unlock_field=> :character_queue_research_unlock_count,
           :category_id => 2,
@@ -2401,7 +3079,7 @@ class GameRules::Rules
           ],
         },              #   END OF queue_research
         {               #   queue_alliance_research
-          :id          => 4, 
+          :id          => 7, 
           :symbolic_id => :queue_alliance_research,
           :unlock_field=> :alliance_queue_alliance_research_unlock_count,
           :category_id => 2,

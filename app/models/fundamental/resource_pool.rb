@@ -106,6 +106,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save    
   end
   
+  def fill_with_start_resources_transaction
+    start_resources = GameRules::Rules.the_rules().character_creation[:start_resources]
+    self.add_resources_transaction(start_resources)  unless start_resources.nil?
+  end
+  
   protected
   
     def update_resource_in_ranking(totalProductionRate)
@@ -144,7 +149,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     # setting the rates to new values (this is quite dangerous...)
     def propagate_bonus_changes
 
-      if (!self.owner.nil? && self.character_id > 0)         # only spread, if there's a resource pool
+      if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
           to_check = [{
@@ -162,11 +167,13 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           ]
           to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
 
-          self.owner.settlements.each do |settlement|
-            to_check.each do |bonus|
-              settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+          if !to_check.nil? && to_check.length > 0
+            self.owner.settlements.each do |settlement|
+              to_check.each do |bonus|
+                settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+              end
+              settlement.save
             end
-            settlement.save
           end
         end
       end

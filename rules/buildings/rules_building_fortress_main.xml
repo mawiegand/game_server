@@ -10,13 +10,12 @@
   <Description lang="en_US">
     <p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>
   </Description>
-        <FlavourText lang="en_US">
+  <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-    <FlavourText lang="en_US">
+  </Flavour>
+    <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
-  </FlavourText>
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
+  </Flavour>  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
   <Cost id="resource_furs" round="true">LEVEL*10</Cost>
   <ProductionTime shortenable="false">2*(LEVEL+1)+10</ProductionTime>     

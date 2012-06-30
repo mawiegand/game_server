@@ -78,6 +78,12 @@
     <Battle>
       <Calculation roundTime="30" retreatProbability="0.6" />
     </Battle>
+    <CharacterCreation>
+      <StartResource id="resource_wood">100</StartResource>
+      <StartResource id="resource_stone">100</StartResource>
+      <StartResource id="resource_fur">50</StartResource>
+      <StartResource id="resource_cash">5</StartResource>
+    </CharacterCreation>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
