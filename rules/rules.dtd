@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
-<!ELEMENT General (Game, Version, Languages, Battle)>
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -27,6 +27,13 @@
   retreatProbability CDATA "0.6"
 >
 
+
+<!--CharacterCreation-->
+<!ELEMENT CharacterCreation (StartResource*)>
+<!ELEMENT StartResource (#PCDATA)>
+<!ATTLIST StartResource 
+  id IDREF #REQUIRED
+>
 
 <!--Types-->
 <!ELEMENT ResourceTypes (Resource*)>

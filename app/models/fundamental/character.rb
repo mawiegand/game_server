@@ -57,6 +57,9 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     character.create_resource_pool
+    character.resource_pool.fill_with_start_resources_transaction
+    
+    raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
     if !npc
       character.create_ranking({

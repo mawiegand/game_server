@@ -106,6 +106,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save    
   end
   
+  def fill_with_start_resources_transaction
+    start_resources = GameRules::Rules.the_rules().character_creation[:start_resources]
+    self.add_resources_transaction(start_resources)  unless start_resources.nil?
+  end
+  
   protected
   
     def update_resource_in_ranking(totalProductionRate)

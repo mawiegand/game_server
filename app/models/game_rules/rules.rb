@@ -32,12 +32,13 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
+  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
   
   def attributes 
     { 
       'version'        => version,
       'battle'         => battle,
+      'character_creation' => character_creation,
       'unit_categories'=> unit_categories,
       'building_categories'=> building_categories,
       'unit_types'     => unit_types,
@@ -79,6 +80,15 @@ class GameRules::Rules
             :round_time => 30,
             :retreat_probability => 0.6,
             },
+        },
+        :character_creation => {
+          :start_resources => {
+            0 => 100,
+1 => 100,
+2 => 50,
+3 => 5,
+
+          },
         },
   
 # ## RESOURCE TYPES ##########################################################
