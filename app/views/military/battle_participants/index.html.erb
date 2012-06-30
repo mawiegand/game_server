@@ -6,9 +6,9 @@
     <th>Battle</th>
     <th>Faction</th>
     <th>Joined at</th>
-    <th>Retreat</th>
-    <th>Retreat to region</th>
-    <th>Retreat to location</th>
+    <th>Retreated</th>
+    <th>Retreated to region</th>
+    <th>Retreated to location</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,9 +20,9 @@
     <td><%= military_battle_participant.battle_id %></td>
     <td><%= military_battle_participant.faction_id %></td>
     <td><%= military_battle_participant.joined_at %></td>
-    <td><%= military_battle_participant.retreat %></td>
-    <td><%= military_battle_participant.retreat_to_region_id %></td>
-    <td><%= military_battle_participant.retreat_to_location_id %></td>
+    <td><%= military_battle_participant.retreated %></td>
+    <td><%= military_battle_participant.retreated_to_region_id %></td>
+    <td><%= military_battle_participant.retreated_to_location_id %></td>
     <td><%= link_to 'Show', military_battle_participant %></td>
     <td><%= link_to 'Edit', edit_military_battle_participant_path(military_battle_participant) %></td>
     <td><%= link_to 'Destroy', military_battle_participant, confirm: 'Are you sure?', method: :delete %></td>

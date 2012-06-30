@@ -243,7 +243,7 @@ class Military::Army < ActiveRecord::Base
   # checks if the given army contains the quantity of units stated as key/value pairs in 'units'. 
   def contains?(units)
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
-      if units[unit_type[:db_field]].to_i > self.details[unit_type[:db_field]]
+      if units[unit_type[:db_field]].to_i > (self.details[unit_type[:db_field]] || 0)
         return false
       end
     end
@@ -253,7 +253,7 @@ class Military::Army < ActiveRecord::Base
   # checks if the given army contains at least one unit.
   def empty?
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
-      if self.details[unit_type[:db_field]] > 0
+      if !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
         return false
       end
     end
