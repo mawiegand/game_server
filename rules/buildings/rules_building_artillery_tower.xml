@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Ballistisches Erprobungszentrum</Name>
-  <Name lang="en_US">Ballistic R+D</Name>
+  <Name lang="de_DE">Turm der Ballistik</Name>
+  <Name lang="en_US">Ballistic Tower</Name>
   <Description lang="de_DE">
     <p>Schulungszentrum für alle Distanzkämpfer.</p>
   </Description>
@@ -14,12 +14,12 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Hier fliegt alles was man werfen oder abschießen kann! Kopf runter! Die Ausblidung der Fernkämpfer ist in vollem Gang.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="2" />  
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <Cost id="resource_stone" round="true">300+300*LEVEL*LEVEL</Cost>  
+  <Cost id="resource_wood" round="true">200+200*LEVEL*LEVEL</Cost>    
+    <Cost id="resource_furs" round="true">100+100*LEVEL*LEVEL</Cost> 
   <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>   
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />

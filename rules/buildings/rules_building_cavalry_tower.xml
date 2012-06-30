@@ -2,11 +2,12 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_cavalry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Reitmeisterrei</Name>
-  <Name lang="en_US">Cavalry Command</Name>
+  <Name lang="de_DE">Turm der Reitmeisterrei</Name>
+  <Name lang="en_US">Cavalry Tower</Name>
   <Description lang="de_DE">
-    <p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>
-  </Description>
+    <p>Der Turm der Reitmeisterei dient zur Ausbildung aller berittenen Einheiten. Dabei wird der Wert vor allem auf den Umgang mit den Tieren wie auch die Reittechnik gelegt.</p>
+    <p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzweitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Die Tierpfleger entsorgen die blutige Kleidung ohne großes Aufhebens.</p>
+ </Description>
   <Description lang="en_US">
     <p>Trains Cavalry Units.</p>
   </Description>
@@ -14,11 +15,12 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
-  </Flavour>  <Requirement id="building_fortress_fortification" min_level="3" />  
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+    <p>Ermöglicht und beschleunigt die Ausbildung von berittenen Einheiten. Vorsicht vor Dung und penetrantem Geruch!</p>
+  </Flavour>  
+  <Requirement id="building_fortress_fortification" min_level="3" />  
+  <Cost id="resource_stone" round="true">150+150*LEVEL*LEVEL</Cost>  
+  <Cost id="resource_wood" round="true">200+200*LEVEL*LEVEL</Cost>    
+    <Cost id="resource_furs" round="true">75+75*LEVEL*LEVEL</Cost> 
   <ProductionTime shortenable="true">2*(LEVEL+1)+11</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />

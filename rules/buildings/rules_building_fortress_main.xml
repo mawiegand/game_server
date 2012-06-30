@@ -5,7 +5,8 @@
   <Name lang="de_DE">Festungsanlagen</Name>
   <Name lang="en_US">Fortifications</Name>
   <Description lang="de_DE">
-    <p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>
+    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
+	<p>Die Festung beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit. Mit fortschreitendem Ausbau wird auch die maximale Größe der Garnisson erhöht.</p>
   </Description>
   <Description lang="en_US">
     <p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>
@@ -14,13 +15,15 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
-  </Flavour>  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
+    <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen. </p>
+  </Flavour>  
+    <Cost id="resource_wood" round="true">200*LEVEL*LEVEL</Cost>
+  <Cost id="resource_stone" round="true">300*LEVEL*LEVEL</Cost>  
+   <Cost id="resource_furs" round="true">100*LEVEL*LEVEL</Cost>
   <ProductionTime shortenable="false">2*(LEVEL+1)+10</ProductionTime>     
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
+	   <GarrisonSizeBonus>LEVEL*50+MAX(LEVEL-9,0)*200</GarrisonSizeBonus>
     <CommandPoints>1+(MAX(LEVEL-4,0)*1-MAX(LEVEL-5,0)*1)+(MAX(LEVEL-9,0)*1-MAX(LEVEL-10,0)*1)</CommandPoints><!-- one for level 1, +1 for level 5, +1 for level 10-->
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>

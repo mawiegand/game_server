@@ -2,10 +2,12 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
-  <Name lang="de_DE">Tüftler</Name>
-  <Name lang="en_US">Inventor</Name>
+  <Name lang="de_DE">Turm der Tüftler</Name>
+  <Name lang="en_US">Inventor Tower</Name>
   <Description lang="de_DE">
-    <p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>
+    <p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hämmerschläge oder leisem Geflüster unterbrochen wird.</p>
+	<p>An den Wänden hängen Skizzen, Pläne und unvollendete Entwürfe. Die Tüftler sehen sich als Elite, da sie als einzige ihr Gehirn für ihre Arbeit einsetzen.</p>
+	<p>Die anderen Krieger halten die Tütfler natürlich für Idioten, die nur in ihrem Turm eingesperrt werden, damit sie nicht im Weg rumstehen.</p>
   </Description>
   <Description lang="en_US">
     <p>Builds war machines.</p>
@@ -14,12 +16,12 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschinene werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="4" />  
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-    <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <Cost id="resource_stone" round="true">250+250*LEVEL*LEVEL</Cost>  
+  <Cost id="resource_wood" round="true">250+200*LEVEL*LEVEL</Cost>    
+    <Cost id="resource_furs" round="true">150+150*LEVEL*LEVEL</Cost> 
   <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_siege" />

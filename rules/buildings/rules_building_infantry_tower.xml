@@ -5,7 +5,8 @@
   <Name lang="de_DE">Truppenunterkunft</Name>
   <Name lang="en_US">Vertical Barracks</Name>
   <Description lang="de_DE">
-    <p>Unterkunft für Fußtruppen.</p>
+    <p>Im Turm der Infanterie werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p>
+  <p>Wer den Befehlen nicht gehorcht, oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p> 
   </Description>
   <Description lang="en_US">
     <p>Hosts troops.</p>
@@ -14,12 +15,12 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+   <p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="1" />  
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>   
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>  
+  <Cost id="resource_stone" round="true">100+250*LEVEL*LEVEL</Cost>  
+  <Cost id="resource_wood" round="true">150+200*LEVEL*LEVEL</Cost>    
+    <Cost id="resource_furs" round="true">50+50*LEVEL*LEVEL</Cost>  
   <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />
