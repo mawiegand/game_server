@@ -16,7 +16,7 @@
     <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
   </Flavour>
-  <Requirement id="building_fortress_fortification" min_level="9" />  
+  <Requirement id="building_chief_cottage" min_level="9" />  
   <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
   <Cost id="resource_furs" round="true">LEVEL*10</Cost>

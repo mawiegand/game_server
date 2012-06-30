@@ -14,13 +14,13 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>
   </Flavour>
-  <Requirement id="building_palace" min_level="6" />  
-  <Cost id="resource_stone" round="true">LEVEL*100+100</Cost>  
+  <Requirement id="building_chief_cottage" min_level="6" />  
   <Cost id="resource_wood" round="true">LEVEL*100+100</Cost>
+  <Cost id="resource_stone" round="true">LEVEL*100+100</Cost>  
   <Cost id="resource_furs" round="true">LEVEL*10</Cost>   
-  <Production id="resource_fur">LEVEL*POW(1.1, LEVEL)+1</Production>        
+  <Production id="resource_fur">3*LEVEL*LEVEL</Production>         
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>

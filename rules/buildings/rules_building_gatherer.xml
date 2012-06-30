@@ -14,14 +14,14 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Ein Jäger und Sammler sammelt für Dich Holz und Steine, und ab und an ist auch ein kleines Tier zu langsam für seine schwerfälligen Füße.</p>
   </Flavour>
-  <Requirement id="building_campfire" min_level="1" />  
-  <Cost id="resource_stone" round="true">LEVEL*10+5</Cost>  
+  <Requirement id="building_chief_cottage" min_level="1" />  
+  <Cost id="resource_stone" round="true">LEVEL*10</Cost>  
   <Cost id="resource_wood" round="true">LEVEL*10+5</Cost>    
-  <Production id="resource_stone">LEVEL</Production>        
-  <Production id="resource_wood">LEVEL</Production>        
-  <Production id="resource_fur">LEVEL/4</Production>        
+  <Production id="resource_stone">1*LEVEL*LEVEL</Production>        
+  <Production id="resource_wood">1*LEVEL*LEVEL</Production>        
+  <Production id="resource_fur">MAX(0,LEVEL-1)*LEVEL*LEVEL</Production>         
   <Production id="resource_toad">MAX(LEVEL-10,0)*1-MAX(LEVEL-11,0)*1+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->

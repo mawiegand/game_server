@@ -14,13 +14,13 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>
   </Flavour>
-  <Requirement id="building_palace" min_level="4" />  
-  <Cost id="resource_stone" round="true">LEVEL*100+10</Cost>  
+  <Requirement id="building_chief_cottage" min_level="4" />  
   <Cost id="resource_wood" round="true">LEVEL*30</Cost> 
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>  
-  <Production id="resource_wood">LEVEL*5*POW(1.1, LEVEL)+1</Production>        
+  <Cost id="resource_stone" round="true">LEVEL*100+10</Cost>  
+  <Cost id="resource_furs" round="true">MAX(0,LEVEL-2)*10</Cost>  
+  <Production id="resource_wood">4*LEVEL*LEVEL</Production>      
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>

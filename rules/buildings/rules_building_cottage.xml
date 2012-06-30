@@ -16,7 +16,7 @@
     <Flavour lang="de_DE">
     <p> lustiger Flavour Text hier </p>
   </Flavour>
-  <Requirement id="building_campfire" min_level="1" /> 
+  <Requirement id="building_chief_cottage" min_level="1" /> 
   <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
   <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost> 
   <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
