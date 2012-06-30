@@ -21,7 +21,7 @@
 <xsl:output method="text" encoding="UTF-8"/>
 
 <!-- text elements -->
-<xsl:strip-space elements="Name Description p"/>
+<xsl:strip-space elements="Name Description Flavour p"/>
 
 <!-- replace-string -->
 <xsl:template name="replace-string">

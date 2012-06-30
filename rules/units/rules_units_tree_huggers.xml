@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Rules SYSTEM "rules.dtd">
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
 
  <Unit id="tree_huggers" category="infantry">
       <Name>Tree Huggers</Name>
