@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+ <Unit id="tree_huggers" category="infantry">
+      <Name>Tree Huggers</Name>
+      <Name lang="de_DE">Baum-Brutalos</Name>
+      <Description lang="de_DE">
+        <p>Baum-Brutalos sind Tier2-Einheiten</p> 
+      </Description>
+      <Description lang="en_US">
+        <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
+      </Description>
+      <Cost id="resource_stone" round="true">2</Cost>  
+      <Cost id="resource_wood" round="true">10</Cost>    
+      <Cost id="resource_fur" round="true">4</Cost>    
+      <ProductionTime shortenable="true">300</ProductionTime>  
+	  <Requirement id="building_barracks" min_level="11" /> 
+      <Velocity>0.95</Velocity>
+      <ActionPoints>4</ActionPoints>
+      <Initiative>14</Initiative>
+      <Attack>20</Attack>
+      <CriticalDamage chance="0.02">9</CriticalDamage>
+      <Armor>4</Armor>
+      <Overrunnable>true</Overrunnable>
+      <Hitpoints>140</Hitpoints>
+      <Effectiveness category="infantry">0.8</Effectiveness>
+      <Effectiveness category="cavalry">1</Effectiveness>
+      <Effectiveness category="artillery">0.8</Effectiveness>
+      <Effectiveness category="siege">1</Effectiveness> 
+    </Unit>
