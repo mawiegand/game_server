@@ -52,7 +52,13 @@ class Military::Army < ActiveRecord::Base
       garrison:     true,
       stance:       0,
     })
-    army.save ? army : null;
+    
+    if army.save 
+      details = army.create_details
+      return true 
+    else
+      return false
+    end 
   end
 
   

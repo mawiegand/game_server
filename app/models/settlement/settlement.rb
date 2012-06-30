@@ -59,6 +59,7 @@ class Settlement::Settlement < ActiveRecord::Base
       :alliance_tag=> owner.alliance_tag,
       :owns_region => type_id == 1,  # fortress?
     })
+    Military::Army.create_garrison_at(location.settlement)
     location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
   end
   
