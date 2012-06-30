@@ -132,7 +132,8 @@ def create_fortress(location)
     if (unit_type[:id] < 3)
       details[unit_type[:db_field]] = rand(10)
     end
-  end  
+  end
+  details.save  
 end
 
 while !nodes.empty?
