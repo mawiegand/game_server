@@ -1466,8 +1466,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'POW(LEVEL,4)',
-            0 => 'POW(MAX(LEVEL,1),4)',
+            1 => 'POW(LEVEL,4)-1+(MIN(LEVEL-1,1))',
+            0 => 'POW(LEVEL,4)',
             
           },
 

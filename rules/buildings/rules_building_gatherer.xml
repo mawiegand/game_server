@@ -18,8 +18,8 @@
     <p>Sammelt für Dich Holz und Steine, und ab Stufe 11 findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="1" />  
-  <Cost id="resource_stone" round="true">POW(LEVEL,4)</Cost>  
-  <Cost id="resource_wood" round="true">POW(MAX(LEVEL,1),4)</Cost>    
+  <Cost id="resource_stone" round="true">POW(LEVEL,4)-1+(MIN(LEVEL-1,1))</Cost>  
+  <Cost id="resource_wood" round="true">POW(LEVEL,4)</Cost>    
   <Production id="resource_stone">1*LEVEL*LEVEL</Production>        
   <Production id="resource_wood">1*LEVEL*LEVEL</Production>        
   <Production id="resource_fur">POW(MAX(0,LEVEL-1),2)</Production>         
