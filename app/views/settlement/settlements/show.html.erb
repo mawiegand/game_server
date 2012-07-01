@@ -90,6 +90,17 @@
   <%= @settlement_settlement.besieged %>
 </p>
 
+<h2>Ability Unlocking</h2>
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'settlement_unlock' %>
+<p>
+  <b><%= attribute %>:</b>
+  <%= @settlement_settlement[attribute] %>
+</p>
+<%end
+end %>
+
+
 <h2>Production Queue Unlocking</h2>
 <% Settlement::Settlement.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>

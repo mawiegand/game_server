@@ -34,12 +34,18 @@ class Training::Job < ActiveRecord::Base
     settlement = queue.settlement
     owner = settlement.owner
     
+    logger.debug "TRAINING JOB QUEUEABLE?"
+    
     # get requirements from rules
     rules = GameRules::Rules.the_rules
     requirements = rules.unit_types[self.unit_id][:requirements]
     
+    logger.debug "REQ #{requirements}"
+    
     # test if requirements are met
     return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement)
+    
+    logger.debug "UNLOCK COUNT #{settlement.settlement_unlock_garrison_count}"
     
     # test if garrison army is unlocked
     return false unless settlement.settlement_unlock_garrison_count > 0

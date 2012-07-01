@@ -301,7 +301,7 @@ end
         {               #   <xsl:value-of select="Name"/>
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
-          :db_field    => :unitcategory_<xsl:value-of select="@id"/>,
+          :db_field    => :<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
           },

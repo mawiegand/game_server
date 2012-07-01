@@ -211,7 +211,7 @@ class GameRules::Rules
         {               #   Infantry
           :id          => 0, 
           :symbolic_id => :unitcategory_infantry,
-          :db_field    => :unitcategory_unitcategory_infantry,
+          :db_field    => :unitcategory_infantry,
           :name        => {
             
             :en_US => "Infantry",
@@ -246,7 +246,7 @@ class GameRules::Rules
         {               #   cavalry
           :id          => 1, 
           :symbolic_id => :unitcategory_cavalry,
-          :db_field    => :unitcategory_unitcategory_cavalry,
+          :db_field    => :unitcategory_cavalry,
           :name        => {
             
             :en_US => "cavalry",
@@ -291,7 +291,7 @@ class GameRules::Rules
         {               #   Ranged Troops
           :id          => 2, 
           :symbolic_id => :unitcategory_artillery,
-          :db_field    => :unitcategory_unitcategory_artillery,
+          :db_field    => :unitcategory_artillery,
           :name        => {
             
             :en_US => "Ranged Troops",
@@ -326,7 +326,7 @@ class GameRules::Rules
         {               #   Siege Weapons
           :id          => 3, 
           :symbolic_id => :unitcategory_siege,
-          :db_field    => :unitcategory_unitcategory_siege,
+          :db_field    => :unitcategory_siege,
           :name        => {
             
             :en_US => "Siege Weapons",
