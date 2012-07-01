@@ -9,7 +9,8 @@
     <p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzweitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Die Tierpfleger entsorgen die blutige Kleidung ohne großes Aufhebens.</p>
  </Description>
   <Description lang="en_US">
-    <p>Trains Cavalry Units.</p>
+    <p>Training center for all mounted units. Horse-back riding is not vanilla, so, 101-riding courses, how to put spur on horses and domesticating them; all this is done here.</p> 
+	<p>Access is only granted to equestrians and zookeepers.</p>
   </Description>
   <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>

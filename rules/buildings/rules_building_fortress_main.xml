@@ -9,10 +9,10 @@
 	<p>Die Festung beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit. Mit fortschreitendem Ausbau wird auch die maximale Größe der Garnisson erhöht.</p>
   </Description>
   <Description lang="en_US">
-    <p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>
+    <p>Some debris, tied tree trunks, a provisional gate, small parade-ground, main building and some walls; rudimentary stronghold finished. Improving the fortification results in a higher maximum size of the garrison, speeding-up all other construction sites and increases the defensive abilities.</p> 
   </Description>
-  <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+    <Flavour lang="en_US">
+    <p>The fortification is controlling the region. Therefore armed forces are deployed to collect empathically the taxes and in case of attacks to protect the fortress. Prepare for battle!</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen. </p>

@@ -3,12 +3,13 @@
 
 <Building id="building_cottage" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
   <Name lang="de_DE">Kleine Hütte</Name>
-  <Name lang="en_US">cottage</Name>
+  <Name lang="en_US">Small Hut</Name>
   <Description lang="de_DE">
-    <p>Gebäude für eure Untertanen.</p>
+    <p>Die kleine Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>
   </Description>
   <Description lang="en_US">
-    <p>Small cottage.</p>
+    <p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p> 
+	<p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>
   </Description>
   <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>

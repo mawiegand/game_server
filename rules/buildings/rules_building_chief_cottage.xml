@@ -3,12 +3,14 @@
 
 <Building id="building_chief_cottage" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
   <Name lang="de_DE">Häuptlingshütte</Name>
-  <Name lang="en_US">Chief's Cottage</Name>
+  <Name lang="en_US">Chieftain‘s Hall</Name>
   <Description lang="de_DE">
-    <p>Hauptgebäude.</p>
+    <p>Die allererste Hütte in der Siedlung eghört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p>
+  <p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p> 
   </Description>
   <Description lang="en_US">
-    <p>Main building.</p>
+    <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
+	<p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>
   </Description>
   <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
