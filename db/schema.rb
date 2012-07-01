@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630000857) do
+ActiveRecord::Schema.define(:version => 20120701111528) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -162,7 +162,6 @@ ActiveRecord::Schema.define(:version => 20120630000857) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "base_node_id"
-    t.integer  "frog_amount",                              :default => 0
     t.datetime "premium_expiration"
     t.integer  "character_queue_research_unlock_count",    :default => 0
     t.integer  "character_unlock_diplomacy_count",         :default => 0
