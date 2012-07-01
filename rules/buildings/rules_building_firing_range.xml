@@ -5,10 +5,12 @@
   <Name lang="de_DE">Schießstand</Name>
   <Name lang="en_US">Firing range</Name>
   <Description lang="de_DE">
-    <p>Ausbildungsgelände für Fernkämpfer.</p>
+    <p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p>
+	<p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>
   </Description>
   <Description lang="en_US">
-    <p>Hosts troops.</p>
+    <p>Training area for ranged units. Stones and javelins fill the air with a whiring buzz.</p> 
+	<p>If some-one lacks courage to fight face-to-face, the firing range is the place to make a career in the army. Accidents that go pear-shaped are possible!</p>
   </Description>
   <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>

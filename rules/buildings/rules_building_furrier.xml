@@ -3,15 +3,15 @@
 
 <Building id="building_furrier" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
   <Name lang="de_DE">Kürschner</Name>
-  <Name lang="en_US">Furrier</Name>
+  <Name lang="en_US">Peltmonger</Name>
   <Description lang="de_DE">
     <p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>
   </Description>
   <Description lang="en_US">
-    <p>Provides Leather.</p>
+    <p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p> 
   </Description>
   <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+	<p>The peltmonger is literally flaying all day long!</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>

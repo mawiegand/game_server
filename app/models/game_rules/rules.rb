@@ -365,349 +365,8 @@ class GameRules::Rules
 
       :unit_types => [  # ALL UNIT TYPES
 
-        {               #   Stone Hurler
-          :id          => 0, 
-          :symbolic_id => :thrower,
-					:category    => 2,
-          :db_field    => :unit_thrower,
-          :name        => {
-            
-            :en_US => "Stone Hurler",
-  
-            :de_DE => "Kieselsteinwerfer",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
-  
-            :en_US => "<p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :infantry => 1,
-  
-            :cavalry => 0.3,
-  
-            :artillery => 0.75,
-  
-            :siege => 0.75,
-                
-          },
-          :attack      => 18,
-          :armor       => 2,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '500',
-
-          :costs      => {
-            1 => '12',
-            2 => '2',
-            
-          },
-
-
-        },              #   END OF Stone Hurler
-        {               #   Skewer
-          :id          => 1, 
-          :symbolic_id => :skewer,
-					:category    => 0,
-          :db_field    => :unit_skewer,
-          :name        => {
-            
-            :en_US => "Skewer",
-  
-            :de_DE => "Bratspießträger",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p>",
-  
-            :en_US => "<p>Skewer Crew training 101: stick'em with the pointy end!</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 15,
-          :effectiveness => {
-            
-            :infantry => 0.6,
-  
-            :cavalry => 1,
-  
-            :artillery => 1,
-  
-            :siege => 1,
-                
-          },
-          :attack      => 14,
-          :armor       => 14,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 6,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Skewer
-        {               #   Ostrich Riders
-          :id          => 2, 
-          :symbolic_id => :light_cavalry,
-					:category    => 1,
-          :db_field    => :unit_light_cavalry,
-          :name        => {
-            
-            :en_US => "Ostrich Riders",
-  
-            :de_DE => "Straußenreiter",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
-  
-            :en_US => "<p>Ostrich riders are very quick, but only lightly armored.</p>",
-                
-          },
-
-          :velocity    => 1.5,
-          :action_points => 5,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :infantry => 0.3,
-  
-            :cavalry => 0.75,
-  
-            :artillery => 1,
-  
-            :siege => 0.4,
-                
-          },
-          :attack      => 16,
-          :armor       => 3,
-          :hitpoints   => 95,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Ostrich Riders
-        {               #   Tree Huggers
-          :id          => 3, 
-          :symbolic_id => :tree_huggers,
-					:category    => 0,
-          :db_field    => :unit_tree_huggers,
-          :name        => {
-            
-            :en_US => "Tree Huggers",
-  
-            :de_DE => "Baum-Brutalos",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Baum-Brutalos sind Tier2-Einheiten</p>",
-  
-            :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>",
-                
-          },
-
-          :velocity    => 0.95,
-          :action_points => 4,
-          :initiative  => 14,
-          :effectiveness => {
-            
-            :infantry => 0.8,
-  
-            :cavalry => 1,
-  
-            :artillery => 0.8,
-  
-            :siege => 1,
-                
-          },
-          :attack      => 20,
-          :armor       => 4,
-          :hitpoints   => 140,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 9,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Tree Huggers
-        {               #   Sabretooth-Riders
-          :id          => 4, 
-          :symbolic_id => :sabre_riders,
-					:category    => 1,
-          :db_field    => :unit_sabre_riders,
-          :name        => {
-            
-            :en_US => "Sabretooth-Riders",
-  
-            :de_DE => "Säbelzahnreiter",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
-  
-            :en_US => "<p>It's not so much the riders themselves that are feared...</p>",
-                
-          },
-
-          :velocity    => 1.4,
-          :action_points => 4,
-          :initiative  => 28,
-          :effectiveness => {
-            
-            :infantry => 0.4,
-  
-            :cavalry => 0.6,
-  
-            :artillery => 1,
-  
-            :siege => 0.4,
-                
-          },
-          :attack      => 21,
-          :armor       => 15,
-          :hitpoints   => 140,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 14,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Sabretooth-Riders
-        {               #   Squirrel-Hunters
-          :id          => 5, 
-          :symbolic_id => :squirrel_hunters,
-					:category    => 2,
-          :db_field    => :unit_squirrel_hunters,
-          :name        => {
-            
-            :en_US => "Squirrel-Hunters",
-  
-            :de_DE => "Hörnchen-Jäger",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>T2 Sniper-Einheit, braucht noch guten Namen.</p>",
-  
-            :en_US => "<p>Used to shooting at small furry animals, these guys are great at aiming.</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 7,
-          :effectiveness => {
-            
-            :infantry => 1,
-  
-            :cavalry => 0.4,
-  
-            :artillery => 0.7,
-  
-            :siege => 0.4,
-                
-          },
-          :attack      => 19,
-          :armor       => 0,
-          :hitpoints   => 100,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 19,
-          :critical_hit_chance => 0.2,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Squirrel-Hunters
         {               #   Club Warrior
-          :id          => 6, 
+          :id          => 0, 
           :symbolic_id => :clubbers,
 					:category    => 0,
           :db_field    => :unit_clubbers,
@@ -763,6 +422,347 @@ class GameRules::Rules
 
 
         },              #   END OF Club Warrior
+        {               #   Tree Huggers
+          :id          => 1, 
+          :symbolic_id => :tree_huggers,
+					:category    => 0,
+          :db_field    => :unit_tree_huggers,
+          :name        => {
+            
+            :en_US => "Tree Huggers",
+  
+            :de_DE => "Baum-Brutalos",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Baum-Brutalos sind Tier2-Einheiten</p>",
+  
+            :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>",
+                
+          },
+
+          :velocity    => 0.95,
+          :action_points => 4,
+          :initiative  => 14,
+          :effectiveness => {
+            
+            :infantry => 0.8,
+  
+            :cavalry => 1,
+  
+            :artillery => 0.8,
+  
+            :siege => 1,
+                
+          },
+          :attack      => 20,
+          :armor       => 4,
+          :hitpoints   => 140,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 9,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
+
+        },              #   END OF Tree Huggers
+        {               #   Stone Hurler
+          :id          => 2, 
+          :symbolic_id => :thrower,
+					:category    => 2,
+          :db_field    => :unit_thrower,
+          :name        => {
+            
+            :en_US => "Stone Hurler",
+  
+            :de_DE => "Kieselsteinwerfer",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :infantry => 1,
+  
+            :cavalry => 0.3,
+  
+            :artillery => 0.75,
+  
+            :siege => 0.75,
+                
+          },
+          :attack      => 18,
+          :armor       => 2,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '500',
+
+          :costs      => {
+            1 => '12',
+            2 => '2',
+            
+          },
+
+
+        },              #   END OF Stone Hurler
+        {               #   Skewer
+          :id          => 3, 
+          :symbolic_id => :skewer,
+					:category    => 2,
+          :db_field    => :unit_skewer,
+          :name        => {
+            
+            :en_US => "Skewer",
+  
+            :de_DE => "Bratspießträger",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p>",
+  
+            :en_US => "<p>Skewer Crew training 101: stick'em with the pointy end!</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 15,
+          :effectiveness => {
+            
+            :infantry => 0.9,
+  
+            :cavalry => 1.2,
+  
+            :artillery => 0.6,
+  
+            :siege => 0.6,
+                
+          },
+          :attack      => 16,
+          :armor       => 3,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 11,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
+
+        },              #   END OF Skewer
+        {               #   Ostrich Riders
+          :id          => 4, 
+          :symbolic_id => :light_cavalry,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry,
+          :name        => {
+            
+            :en_US => "Ostrich Riders",
+  
+            :de_DE => "Straußenreiter",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
+  
+            :en_US => "<p>Ostrich riders are very quick, but only lightly armored.</p>",
+                
+          },
+
+          :velocity    => 1.5,
+          :action_points => 5,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :infantry => 0.3,
+  
+            :cavalry => 0.75,
+  
+            :artillery => 1,
+  
+            :siege => 0.4,
+                
+          },
+          :attack      => 16,
+          :armor       => 3,
+          :hitpoints   => 95,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
+
+        },              #   END OF Ostrich Riders
+        {               #   Sabretooth-Riders
+          :id          => 5, 
+          :symbolic_id => :sabre_riders,
+					:category    => 1,
+          :db_field    => :unit_sabre_riders,
+          :name        => {
+            
+            :en_US => "Sabretooth-Riders",
+  
+            :de_DE => "Säbelzahnreiter",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
+  
+            :en_US => "<p>It's not so much the riders themselves that are feared...</p>",
+                
+          },
+
+          :velocity    => 1.4,
+          :action_points => 4,
+          :initiative  => 28,
+          :effectiveness => {
+            
+            :infantry => 0.4,
+  
+            :cavalry => 0.6,
+  
+            :artillery => 1,
+  
+            :siege => 0.4,
+                
+          },
+          :attack      => 21,
+          :armor       => 15,
+          :hitpoints   => 140,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 14,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
+
+        },              #   END OF Sabretooth-Riders
+        {               #   Battering Ram
+          :id          => 6, 
+          :symbolic_id => :ram,
+					:category    => 3,
+          :db_field    => :unit_ram,
+          :name        => {
+            
+            :en_US => "Battering Ram",
+  
+            :de_DE => "Rammbock",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p>",
+  
+            :en_US => "<p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>",
+                
+          },
+
+          :velocity    => 0.9,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :infantry => 0.2,
+  
+            :cavalry => 0.1,
+  
+            :artillery => 0.2,
+  
+            :siege => 1,
+                
+          },
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '300',
+
+          :costs      => {
+            1 => '2',
+            0 => '10',
+            2 => '4',
+            
+          },
+
+
+        },              #   END OF Battering Ram
         {               #   Catapult
           :id          => 7, 
           :symbolic_id => :catapult,
@@ -820,63 +820,6 @@ class GameRules::Rules
 
 
         },              #   END OF Catapult
-        {               #   Battering Ram
-          :id          => 8, 
-          :symbolic_id => :ram,
-					:category    => 3,
-          :db_field    => :unit_ram,
-          :name        => {
-            
-            :en_US => "Battering Ram",
-  
-            :de_DE => "Rammbock",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p>",
-  
-            :en_US => "<p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>",
-                
-          },
-
-          :velocity    => 0.9,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :infantry => 0.2,
-  
-            :cavalry => 0.1,
-  
-            :artillery => 0.2,
-  
-            :siege => 1,
-                
-          },
-          :attack      => 15,
-          :armor       => 0,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 2,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Battering Ram
       ],                # END OF UNIT TYPES
 
   
@@ -997,20 +940,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>The fortification is controlling the region. Therefore armed forces are deployed to collect empathically the taxes and in case of attacks to protect the fortress. Prepare for battle!</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Hauptgebäude, Befestigungs- und Verteidigungsanlagen der Festung. Beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit der Festung.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festung beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit. Mit fortschreitendem Ausbau wird auch die maximale Größe der Garnisson erhöht.</p>",
   
-            :en_US => "<p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>",
+            :en_US => "<p>Some debris, tied tree trunks, a provisional gate, small parade-ground, main building and some walls; rudimentary stronghold finished. Improving the fortification results in a higher maximum size of the garrison, speeding-up all other construction sites and increases the defensive abilities.</p>",
                 
           },
           :hidden      => 0,
@@ -1020,9 +959,9 @@ class GameRules::Rules
           :destructable=> false,
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            0 => '200*LEVEL*LEVEL',
+            1 => '300*LEVEL*LEVEL',
+            0 => '100*LEVEL*LEVEL',
             
           },
 
@@ -1079,20 +1018,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Unterkunft für Fußtruppen.</p>",
+            :de_DE => "<p>Im Turm der Infanterie werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p><p>Wer den Befehlen nicht gehorcht, oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training center for close combat warriors. Without the infantry every army becomes useless - and this is the place where the backbone of every stone-aged and postmodern army composition gets finishing. Reckless. Ruthless. Relentless.</p>",
                 
           },
           :hidden      => 0,
@@ -1115,9 +1050,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '100+250*LEVEL*LEVEL',
+            0 => '150+200*LEVEL*LEVEL',
+            0 => '50+50*LEVEL*LEVEL',
             
           },
 
@@ -1152,27 +1087,23 @@ class GameRules::Rules
           },
 
         },              #   END OF Truppenunterkunft
-        {               #   Ballistisches Erprobungszentrum
+        {               #   Turm der Ballistik
           :id          => 2, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
           :name        => {
             
-            :de_DE => "Ballistisches Erprobungszentrum",
+            :de_DE => "Turm der Ballistik",
   
-            :en_US => "Ballistic R+D",
+            :en_US => "Ballistic Tower",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>Everything which can be shoot flies around here. So, watch yourself and duck in time! Training of long-range combat fighter is in progress.</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Hier fliegt alles was man werfen oder abschießen kann! Kopf runter! Die Ausblidung der Fernkämpfer ist in vollem Gang.</p>",
                 
           },
           :description => {
@@ -1202,9 +1133,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '300+300*LEVEL*LEVEL',
+            0 => '200+200*LEVEL*LEVEL',
+            0 => '100+100*LEVEL*LEVEL',
             
           },
 
@@ -1238,35 +1169,31 @@ class GameRules::Rules
     
           },
 
-        },              #   END OF Ballistisches Erprobungszentrum
-        {               #   Reitmeisterrei
+        },              #   END OF Turm der Ballistik
+        {               #   Turm der Reitmeisterrei
           :id          => 3, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
           :name        => {
             
-            :de_DE => "Reitmeisterrei",
+            :de_DE => "Turm der Reitmeisterrei",
   
-            :en_US => "Cavalry Command",
+            :en_US => "Cavalry Tower",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Ermöglicht und beschleunigt die Ausbildung von berittenen Einheiten. Vorsicht vor Dung und penetrantem Geruch!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Reitmeisterrei werden alle berittenen Einheiten geschult.</p>",
+            :de_DE => "<p>Der Turm der Reitmeisterei dient zur Ausbildung aller berittenen Einheiten. Dabei wird der Wert vor allem auf den Umgang mit den Tieren wie auch die Reittechnik gelegt.</p><p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzweitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Die Tierpfleger entsorgen die blutige Kleidung ohne großes Aufhebens.</p>",
   
-            :en_US => "<p>Trains Cavalry Units.</p>",
+            :en_US => "<p>Training center for all mounted units. Horse-back riding is not vanilla, so, 101-riding courses, how to put spur on horses and domesticating them; all this is done here.</p><p>Access is only granted to equestrians and zookeepers.</p>",
                 
           },
           :hidden      => 0,
@@ -1289,9 +1216,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '150+150*LEVEL*LEVEL',
+            0 => '200+200*LEVEL*LEVEL',
+            0 => '75+75*LEVEL*LEVEL',
             
           },
 
@@ -1325,35 +1252,31 @@ class GameRules::Rules
     
           },
 
-        },              #   END OF Reitmeisterrei
-        {               #   Tüftler
+        },              #   END OF Turm der Reitmeisterrei
+        {               #   Turm der Tüftler
           :id          => 4, 
           :symbolic_id => :building_siege_tower,
 					:category    => 1,
           :db_field    => :building_siege_tower,
           :name        => {
             
-            :de_DE => "Tüftler",
+            :de_DE => "Turm der Tüftler",
   
-            :en_US => "Inventor",
+            :en_US => "Inventor Tower",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschinene werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Tüftler baut hammerharte Kriegsmaschinen.</p>",
+            :de_DE => "<p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hämmerschläge oder leisem Geflüster unterbrochen wird.</p><p>An den Wänden hängen Skizzen, Pläne und unvollendete Entwürfe. Die Tüftler sehen sich als Elite, da sie als einzige ihr Gehirn für ihre Arbeit einsetzen.</p><p>Die anderen Krieger halten die Tütfler natürlich für Idioten, die nur in ihrem Turm eingesperrt werden, damit sie nicht im Weg rumstehen.</p>",
   
-            :en_US => "<p>Builds war machines.</p>",
+            :en_US => "<p>Training center for war machine engineers. Thinking of themselves as the pinnacle of all men at arms, the war machine engineers dedicate their life to invent mechanical constructions independent of muscles and man power. This place is a mess with countless blueprints for all sorts of siege-weapons.</p>",
                 
           },
           :hidden      => 0,
@@ -1376,9 +1299,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '250+250*LEVEL*LEVEL',
+            0 => '250+200*LEVEL*LEVEL',
+            0 => '150+150*LEVEL*LEVEL',
             
           },
 
@@ -1412,7 +1335,7 @@ class GameRules::Rules
     
           },
 
-        },              #   END OF Tüftler
+        },              #   END OF Turm der Tüftler
         {               #   Häuptlingshütte
           :id          => 5, 
           :symbolic_id => :building_chief_cottage,
@@ -1422,25 +1345,21 @@ class GameRules::Rules
             
             :de_DE => "Häuptlingshütte",
   
-            :en_US => "Chief's Cottage",
+            :en_US => "Chieftain‘s Hall",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Hauptgebäude.</p>",
+            :de_DE => "<p>Die allererste Hütte in der Siedlung eghört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p><p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p>",
   
-            :en_US => "<p>Main building.</p>",
+            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
           },
           :hidden      => 0,
@@ -1515,20 +1434,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>Collecs resources for the daily needs.</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Sammelt für Dich Holz und Steine, und ab Stufe 11 findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Sammelt und jagt alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
+            :de_DE => "<p>Primitivster aller Steinzeiteinwohner. Ihr könnt frohe sein, ihn in eine Hütte bekommen zu haben. Manchmal bleibt er sogar für ein paar Stunden da.</p><p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
   
-            :en_US => "<p>Collects resources for the daily needs.</p>",
+            :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easy slayn animals.</p>",
                 
           },
           :hidden      => 0,
@@ -1540,8 +1455,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_campfire',
-              :id => 9,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 1,
@@ -1551,36 +1466,36 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*10+5',
-            0 => 'LEVEL*10+5',
+            1 => 'POW(LEVEL,4)-1+(MIN(LEVEL-1,1))',
+            0 => 'POW(LEVEL,4)',
             
           },
 
-          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
           :production  => [
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_stone,
-                :formula            => "LEVEL",
+                :formula            => "1*LEVEL*LEVEL",
               },
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "LEVEL",
+                :formula            => "1*LEVEL*LEVEL",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "LEVEL/4",
+                :formula            => "POW(MAX(0,LEVEL-1),2)",
               },
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_toad,
-                :formula            => "MAX(LEVEL-10,0)*1-MAX(LEVEL-11,0)*1+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1",
+                :formula            => "MAX(LEVEL-10,0)*0.5-MAX(LEVEL-11,0)*0.5+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1",
               },
             
           ],
@@ -1599,25 +1514,21 @@ class GameRules::Rules
             
             :de_DE => "Kleine Hütte",
   
-            :en_US => "cottage",
+            :en_US => "Small Hut",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gebäude für eure Untertanen.</p>",
+            :de_DE => "<p>Die kleine Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
   
-            :en_US => "<p>Small cottage.</p>",
+            :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
                 
           },
           :hidden      => 0,
@@ -1629,8 +1540,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_campfire',
-              :id => 9,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 1,
@@ -1640,13 +1551,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => 'FLOOR(POW(LEVEL,3.5))',
+            0 => 'FLOOR(POW(LEVEL,3))',
+            0 => 'FLOOR(POW(LEVEL,2))',
             
           },
 
-          :production_time => '120*MAX(LEVEL-3,0)+10',
+          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
           :production  => [
             
           ],
@@ -1659,7 +1570,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.05",
+                :speedup_formula   => "POW(LEVEL,2)*0.01",
               },
 
             ],
@@ -1681,20 +1592,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
             
             :de_DE => "<p>Ausbildungsgelände für Fußtruppen.</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training facility for all kinds of groud untis and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken to be one of the punching dummies or you won´t leave the barracks alive! Training of beserker is in progress.</p>",
                 
           },
           :hidden      => 0,
@@ -1706,8 +1613,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 0,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 2,
@@ -1768,20 +1675,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>Diplomatic bla-bla or alliance conferences can be held in the embassies. And a good conversation is not a monologue!</p>",
   
-            :de_DE => "
-    <p>Am stimmungsvollen Feuer werden Gäste empfangen, Allianzen geschmiedet und Feinde gegrillt.</p>
-  ",
+            :de_DE => "<p>Ort für Diplomatischer Austausch oder Allianzbesprechungen. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>An der Feuerstelle trifft sich allabendlich der Stamm mit seinen freiwilligen und unfreiwilligen Gästen. Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
+            :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>Die freiwilligen und unfreiwilligen Gästen werden wahlweise ans Feuer gebeten oder am Marterfall aufgestellt.</p><p>Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
   
-            :en_US => "<p>Embassy</p>",
+            :en_US => "<p>Assembly area for the locals and also the district of foreign embassies. Random guests are normally invited to sit by the fire while hostile messengers get hammered at the stake.</p><p>The place to be in every settlement for networking and discussing the really important matters, like whether a stranger gets eaten alive or tickled to ecstasy.</p>",
                 
           },
           :hidden      => 0,
@@ -1833,25 +1736,21 @@ class GameRules::Rules
             
             :de_DE => "Holzfäller",
   
-            :en_US => "Logger",
+            :en_US => "Lumberjack",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
                 
           },
           :description => {
             
             :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>",
   
-            :en_US => "<p>Cuts trees, produces logs.</p>",
+            :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
                 
           },
           :hidden      => 0,
@@ -1863,9 +1762,9 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
               :min_level => 4,
 
@@ -1874,9 +1773,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100+10',
             0 => 'LEVEL*30',
-            0 => 'LEVEL*10',
+            1 => 'LEVEL*100+10',
+            0 => 'MAX(0,LEVEL-2)*10',
             
           },
 
@@ -1886,7 +1785,7 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
+                :formula            => "4*LEVEL*LEVEL",
               },
             
           ],
@@ -1905,25 +1804,21 @@ class GameRules::Rules
             
             :de_DE => "Steinbruch",
   
-            :en_US => "Quarry",
+            :en_US => "Quarry man",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>Stones, even more stones!</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Steine, nichts als Steine!</p>",
                 
           },
           :description => {
             
             :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
   
-            :en_US => "<p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>",
+            :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
                 
           },
           :hidden      => 0,
@@ -1935,9 +1830,9 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
               :min_level => 5,
 
@@ -1946,9 +1841,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*30',
             0 => 'LEVEL*100+10',
-            0 => 'LEVEL*10',
+            1 => 'LEVEL*30',
+            0 => 'MAX(0,LEVEL-2)*10',
             
           },
 
@@ -1958,7 +1853,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_stone,
-                :formula            => "LEVEL*5*POW(1.1, LEVEL)+1",
+                :formula            => "4*LEVEL*LEVEL",
               },
             
           ],
@@ -1977,25 +1872,21 @@ class GameRules::Rules
             
             :de_DE => "Kürschner",
   
-            :en_US => "Furrier",
+            :en_US => "Peltmonger",
                 
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>",
                 
           },
           :description => {
             
             :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
   
-            :en_US => "<p>Provides Leather.</p>",
+            :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
                 
           },
           :hidden      => 0,
@@ -2007,9 +1898,9 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_palace',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
               :min_level => 6,
 
@@ -2018,8 +1909,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100+100',
             0 => 'LEVEL*100+100',
+            1 => 'LEVEL*100+100',
             0 => 'LEVEL*10',
             
           },
@@ -2030,7 +1921,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "LEVEL*POW(1.1, LEVEL)+1",
+                :formula            => "3*LEVEL*LEVEL",
               },
             
           ],
@@ -2054,20 +1945,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ausbildungsgelände für Fernkämpfer.</p>",
+            :de_DE => "<p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p><p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training area for ranged units. Stones and javelins fill the air with a whiring buzz.</p><p>If some-one lacks courage to fight face-to-face, the firing range is the place to make a career in the army. Accidents that go pear-shaped are possible!</p>",
                 
           },
           :hidden      => 0,
@@ -2079,8 +1966,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 0,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 7,
@@ -2141,13 +2028,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
@@ -2166,8 +2049,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 0,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 8,
@@ -2228,13 +2111,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "
-    <p> lustiger Flavour Text hier </p>
-  ",
+            :de_DE => "<p> lustiger Flavour Text hier </p>",
                 
           },
           :description => {
@@ -2253,8 +2132,8 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 0,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 9,

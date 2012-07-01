@@ -359,12 +359,6 @@ const struct GameObject *science_type[] = {
   UnitType* unit = 0;  // holds partially constructed unit types
 
 <xsl:for-each select="Unit">
-<xsl:call-template name="requirements">
-<xsl:with-param name="name" select="concat('unit_req_', position()-1)"/>
-</xsl:call-template>
-</xsl:for-each>
-
-<xsl:for-each select="Unit">
   /* <xsl:value-of select="Name"/> */
   unit = new UnitType(<xsl:value-of select="position()-1"/>, 
                       "<xsl:value-of select="@id"/>");
@@ -392,11 +386,6 @@ const struct GameObject *science_type[] = {
   unit->overrunnable = <xsl:value-of select="Overrunnable"/>;
   unit->criticalHitDamage = <xsl:value-of select="CriticalDamage"/>;
   unit->criticalHitChance = <xsl:value-of select="CriticalDamage/@chance"/>;
-
-
-	<xsl:call-template name="get_requirements">
-	<xsl:with-param name="name" select="concat('unit_req_', position()-1)"/>
-	</xsl:call-template>
 	
 <xsl:if test="Invisible">
   unit->invisible = <xsl:value-of select="Invisible"/>;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Rules SYSTEM "rules.dtd">
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-  <UnitTypes>
     <Unit id="thrower" category="artillery">
       <Name>Stone Hurler</Name>
       <Name lang="de_DE">Kieselsteinwerfer</Name>

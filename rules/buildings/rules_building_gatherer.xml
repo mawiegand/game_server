@@ -5,25 +5,26 @@
   <Name lang="de_DE">Jäger und Sammler</Name>
   <Name lang="en_US">Hunter-Gatherer</Name>
   <Description lang="de_DE">
-    <p>Sammelt und jagt alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>
+    <p>Primitivster aller Steinzeiteinwohner. Ihr könnt frohe sein, ihn in eine Hütte bekommen zu haben. Manchmal bleibt er sogar für ein paar Stunden da.</p>
+    <p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>
   </Description>
   <Description lang="en_US">
-    <p>Collects resources for the daily needs.</p>
+    <p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easy slayn animals.</p>
   </Description>
   <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+    <p>Collecs resources for the daily needs.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Jäger und Sammler sammelt für Dich Holz und Steine, und ab und an ist auch ein kleines Tier zu langsam für seine schwerfälligen Füße.</p>
+    <p>Sammelt für Dich Holz und Steine, und ab Stufe 11 findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="1" />  
-  <Cost id="resource_stone" round="true">LEVEL*10</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10+5</Cost>    
+  <Cost id="resource_stone" round="true">POW(LEVEL,4)-1+(MIN(LEVEL-1,1))</Cost>  
+  <Cost id="resource_wood" round="true">POW(LEVEL,4)</Cost>    
   <Production id="resource_stone">1*LEVEL*LEVEL</Production>        
   <Production id="resource_wood">1*LEVEL*LEVEL</Production>        
-  <Production id="resource_fur">MAX(0,LEVEL-1)*LEVEL*LEVEL</Production>         
-  <Production id="resource_toad">MAX(LEVEL-10,0)*1-MAX(LEVEL-11,0)*1+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
-  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Production id="resource_fur">POW(MAX(0,LEVEL-1),2)</Production>         
+  <Production id="resource_toad">MAX(LEVEL-10,0)*0.5-MAX(LEVEL-11,0)*0.5+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
+  <ProductionTime shortenable="true">MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>
 </Building>
