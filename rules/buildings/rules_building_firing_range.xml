@@ -19,9 +19,9 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>  
   <Requirement id="building_chief_cottage" min_level="7" />  
-  <Cost id="resource_stone" round="true">LEVEL*100</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*10</Cost>    
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>
+  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  
+  <Cost id="resource_wood" round="true">3*FLOOR(POW(LEVEL,3.5))</Cost>    
+  <Cost id="resource_furs" round="true">2*FLOOR(POW(LEVEL,3))</Cost>
   <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />

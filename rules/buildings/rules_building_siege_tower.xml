@@ -19,9 +19,9 @@
     <p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschinene werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="4" />  
-  <Cost id="resource_stone" round="true">250+250*LEVEL*LEVEL</Cost>  
-  <Cost id="resource_wood" round="true">250+200*LEVEL*LEVEL</Cost>    
-    <Cost id="resource_furs" round="true">150+150*LEVEL*LEVEL</Cost> 
+  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  
+  <Cost id="resource_wood" round="true">3*FLOOR(POW(LEVEL,3))</Cost>    
+  <Cost id="resource_furs" round="true">4*FLOOR(POW(LEVEL,3.5))</Cost>
   <ProductionTime shortenable="true">2*(LEVEL+1)*0+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_siege" />

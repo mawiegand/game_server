@@ -19,9 +19,9 @@
     <p>Ermöglicht und beschleunigt die Ausbildung von berittenen Einheiten. Vorsicht vor Dung und penetrantem Geruch!</p>
   </Flavour>  
   <Requirement id="building_fortress_fortification" min_level="3" />  
-  <Cost id="resource_stone" round="true">150+150*LEVEL*LEVEL</Cost>  
-  <Cost id="resource_wood" round="true">200+200*LEVEL*LEVEL</Cost>    
-    <Cost id="resource_furs" round="true">75+75*LEVEL*LEVEL</Cost> 
+  <Cost id="resource_stone" round="true">4*FLOOR(POW(LEVEL,3))</Cost>  
+  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,3))</Cost>    
+  <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,4))</Cost>
   <ProductionTime shortenable="true">2*(LEVEL+1)+11</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />

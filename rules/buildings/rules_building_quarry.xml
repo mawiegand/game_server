@@ -17,9 +17,9 @@
     <p>Steine, nichts als Steine!</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="5" />  
-  <Cost id="resource_wood" round="true">LEVEL*100+10</Cost>
-  <Cost id="resource_stone" round="true">LEVEL*30</Cost>  
-  <Cost id="resource_furs" round="true">MAX(0,LEVEL-2)*10</Cost>   
+  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  
+  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,3.5))</Cost>    
+  <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,1.5))</Cost>  
   <Production id="resource_stone">4*LEVEL*LEVEL</Production>         
   <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->

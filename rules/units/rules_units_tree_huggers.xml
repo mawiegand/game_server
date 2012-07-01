@@ -3,7 +3,7 @@
 
  <Unit id="tree_huggers" category="infantry">
       <Name>Tree Huggers</Name>
-      <Name lang="de_DE">Baum-Brutalos</Name>
+      <Name lang="de_DE">Baum-Brutalo</Name>
       <Description lang="de_DE">
         <p>Baum-Brutalos sind Tier2-Einheiten</p> 
       </Description>

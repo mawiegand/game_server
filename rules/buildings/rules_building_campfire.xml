@@ -20,9 +20,9 @@
     <p>Ort für Diplomatischer Austausch oder Allianzbesprechungen. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet.</p>
    </Flavour> 
   <Requirement id="building_chief_cottage" min_level="3" />  
-  <Cost id="resource_stone" round="true">LEVEL*200+200</Cost>  
-  <Cost id="resource_wood" round="true">LEVEL*100+100</Cost>  
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost>   
+  <Cost id="resource_stone" round="true">2*FLOOR(POW(LEVEL,3))</Cost>  
+  <Cost id="resource_wood" round="true">5*FLOOR(POW(LEVEL,4.5))</Cost>  
+  <Cost id="resource_furs" round="true">MAX(0,LEVEL-2)*FLOOR(POW(LEVEL,3))</Cost>   
   <ProductionTime shortenable="true">600*LEVEL+30</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockDiplomacy level="1" foundAllianceLevel="5" />

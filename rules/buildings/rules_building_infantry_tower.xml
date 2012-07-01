@@ -18,9 +18,9 @@
    <p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="1" />  
-  <Cost id="resource_stone" round="true">100+250*LEVEL*LEVEL</Cost>  
-  <Cost id="resource_wood" round="true">150+200*LEVEL*LEVEL</Cost>    
-    <Cost id="resource_furs" round="true">50+50*LEVEL*LEVEL</Cost>  
+  <Cost id="resource_stone" round="true">3*FLOOR(POW(LEVEL,3.5))</Cost>  
+  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,2.5))</Cost>    
+  <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,2))</Cost>
   <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />

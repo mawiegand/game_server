@@ -16,16 +16,17 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>An der Hütte des Häuptlings erkennt man die Größen der Siedlung und der Truppen. Auch wenn das immer anders dargestellt wird, die Größe der Männlichkeit des Häuptlings ist hier nicht abzulesen.</p>
   </Flavour> 
-  <Cost id="resource_stone" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost>  
-  <Cost id="resource_wood" round="true">MAX(LEVEL-3,0)*1000+LEVEL*10</Cost> 
-  <Cost id="resource_furs" round="true">LEVEL*10</Cost> 
+  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,4))</Cost>  
+  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,3.5))</Cost> 
+  <Cost id="resource_furs" round="true">MAX(0,LEVEL-3)*FLOOR(POW(LEVEL,3.5))</Cost> 
   <Requirement id="building_chief_cottage" max_level="0" />  
   <ProductionTime shortenable="false">120*MAX(LEVEL-3,0)+10</ProductionTime>     
   <Production id="resource_wood">1</Production>        
   <Abilities> <!-- just for grouping -->
-    <CommandPoints>2+(MAX(LEVEL-10,0)*1+(MAX(LEVEL-19,0)*1</CommandPoints>
+    <CommandPoints>2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1</CommandPoints>
+	<GarrisonSizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</GarrisonSizeBonus>
     <UnlockQueue  queue="queue_buildings" />
   </Abilities>
 </Building>
