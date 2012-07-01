@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Auf dem Schießstand findet sich alles wieder, was zu schwach für den Nahkampf und zu schwer oder zu dumm zum Reiten von Tieren ist. Tatsächlich ist Fernkämpfer ein beliebtes Karriereziel, kein direkter Kampf, keine stinkenden Tiere...</p>
   </Flavour>  
   <Requirement id="building_chief_cottage" min_level="7" />  
   <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  

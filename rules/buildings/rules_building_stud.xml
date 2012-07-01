@@ -5,7 +5,9 @@
   <Name lang="de_DE">Stall</Name>
   <Name lang="en_US">Stable</Name>
   <Description lang="de_DE">
-    <p>Ausbildungsgelände für berittene Einheiten.</p>
+    <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p>
+  <p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihre wichtigen Position.</p>
+  <p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>
   </Description>
   <Description lang="en_US">
     <p>Hosts troops.</p>
@@ -14,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Pferdemädchen und süße Tierchen sucht man hier vergebens. Die meisten Mädchen kämpfen lieber mit großen Keulen und die süßen Tieren dienen den hier auszubildenden Raubtieren als Nahrung.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="8" />  
   <Cost id="resource_stone" round="true">2*FLOOR(POW(LEVEL,3))</Cost>  

@@ -15,7 +15,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>Mit jeder Hütte steigt auch die Anzahl eure Untertanen, die ein Dach über dem Kopf derart zu schätzen wissen, dass sie mit Freude die niederen Arbeiten des Gebäudebaus übernehmen.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="1" /> 
   <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,3.5))</Cost>  

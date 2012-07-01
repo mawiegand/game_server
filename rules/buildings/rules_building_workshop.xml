@@ -5,7 +5,9 @@
   <Name lang="de_DE">Werkstatt</Name>
   <Name lang="en_US">workshop</Name>
   <Description lang="de_DE">
-    <p>Ausbildungsgelände für Belagerungseinheiten.</p>
+    <p>Die Werksatt wird von den meisten Bewohnern gemieden. Zum einen haben die Tütfler komische Verhaltensweisen und einen seltsamen Sinn für Humor, zum anderen ist hier die Gefahr bereits beim Eintritt in eine neuartige Falle oder ein unachtsam abgestelltes Testobjekt zu tappen sehr hoch.</p>
+  <p>Die Tüftler selbst sind gerne unter sich, lachen über Dinge wie den Großen Knall und basteln Tag ein Tag aus an ihren Geräten. Alle Mondumläufe stellen sie auf dem Platz vor dem Lagerfeuer ihre neusten Ideen vor.</p>
+  <p>Die Tüftler sind an diesem Tagen sehr angespannt, da hier über ihre weitere Karriere entschieden wird. Keine Entscheidung über Leben und Tod, aber bei einem Fehlschlag dürfen die Tüftler nicht weiterarbeiten. Und werden meist hingerichtet, aber das ist für den Tüftler das kleinere Übel</p>
   </Description>
   <Description lang="en_US">
     <p>Hosts troops.</p>
@@ -14,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p> lustiger Flavour Text hier </p>
+    <p>In der Werkstatt werden Belagerungsgeräte hergestellt, zumindest wenn man den Häuptling fragt. Die Tüftler selbst stellen nach ihrer Meinung wahre Wunder her.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="9" />  
   <Cost id="resource_stone" round="true">4*FLOOR(POW(LEVEL,3.5))</Cost>  
