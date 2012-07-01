@@ -47,7 +47,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
     
-    location.create_settlement({
+    settlement = location.create_settlement({
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
       :type_id     => type_id,
@@ -59,8 +59,8 @@ class Settlement::Settlement < ActiveRecord::Base
       :alliance_tag=> owner.alliance_tag,
       :owns_region => type_id == 1,  # fortress?
     })
-    Military::Army.create_garrison_at(location.settlement)
-    location.settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
+    Military::Army.create_garrison_at(settlement)
+    settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
   end
   
   # creates building slotes for the present settlements according to the given
