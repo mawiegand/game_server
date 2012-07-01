@@ -150,6 +150,9 @@ GameServer::Application.routes.draw do
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
         end
+        namespace :construction do
+          resources :finish_job_actions    
+        end
       end
       
       namespace :shop do

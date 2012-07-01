@@ -99,17 +99,15 @@ class Construction::JobsController < ApplicationController
   # PUT /construction/jobs/1.json
   def update
     @construction_job = Construction::Job.find(params[:id])
-    
-    if @construction_job.active_job && current_character.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
-      queue = @construction_job.queue
-      @construction_job.finish
-      @construction_job.destroy
-      queue.check_for_new_jobs
-    end
 
     respond_to do |format|
-      format.html { redirect_to construction_jobs_url }
-      format.json { head :ok }
+      if @construction_job.update_attributes(params[:construction_job])
+        format.html { redirect_to @construction_job, notice: 'Job was successfully updated.' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @construction_job.errors, status: :unprocessable_entity }
+      end
     end
   end
 
