@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-	  <Unit id="ram" category="siege">
+	  <Unit id="ram" category="unitcategory_siege">
       <Name>Battering Ram</Name>
       <Name lang="de_DE">Rammbock</Name>
       <Description lang="de_DE">

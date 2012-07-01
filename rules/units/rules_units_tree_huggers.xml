@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
- <Unit id="tree_huggers" category="infantry">
+ <Unit id="tree_huggers" category="unitcategory_infantry">
       <Name>Tree Huggers</Name>
       <Name lang="de_DE">Baum-Brutalo</Name>
       <Description lang="de_DE">

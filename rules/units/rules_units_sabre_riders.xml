@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="sabre_riders" category="cavalry">
+<Unit id="sabre_riders" category="unitcategory_cavalry">
       <Name>Sabretooth-Riders</Name>
       <Name lang="de_DE">Säbelzahnreiter</Name>
       <Description lang="de_DE">

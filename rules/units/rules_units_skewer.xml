@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="skewer" category="artillery">
+    <Unit id="skewer" category="unitcategory_artillery">
       <Name>Skewer</Name>
       <Name lang="de_DE">Bratspießträger</Name>
       <Description lang="de_DE">

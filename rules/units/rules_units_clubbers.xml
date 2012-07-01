@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="clubbers" category="infantry">
+<Unit id="clubbers" category="unitcategory_infantry">
       <Name>Club Warrior</Name>
       <Name lang="de_DE">Keulenkrieger</Name>
       <Description lang="de_DE">

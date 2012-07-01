@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
   <UnitCategories>
-    <UnitCategory id="infantry">
+    <UnitCategory id="unitcategory_infantry">
       <Name>Infantry</Name>
       <Name lang="de_DE">Fußtruppen</Name>
       <Description>
@@ -21,7 +21,7 @@
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
-    <UnitCategory id="cavalry">
+    <UnitCategory id="unitcategory_cavalry">
       <Name>cavalry</Name>
       <Name lang="de_DE">Reiter</Name>
       <Description>
@@ -46,7 +46,7 @@
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
-    <UnitCategory id="artillery">
+    <UnitCategory id="unitcategory_artillery">
       <Name>Ranged Troops</Name>
       <Name lang="de_DE">Fernkämpfer</Name>
       <Description>
@@ -64,7 +64,7 @@
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
-    <UnitCategory id="siege">
+    <UnitCategory id="unitcategory_siege">
       <Name>Siege Weapons</Name>
       <Name lang="de_DE">Belagerungsgeräte</Name>
       <Description>

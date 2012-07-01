@@ -28,13 +28,13 @@ character_unlock_alliance_creation_count
 
 
   <!-- standard template for database relevant entities -->
-  <xsl:template match="Science|Unit|UnitCategory"> 
+  <xsl:template match="Science|Unit"> 
     <xsl:value-of select="translate(local-name(), $uppercase, $smallcase)"/>_<xsl:value-of select="@id"/>  
     <xsl:call-template name="Newline" />
   </xsl:template>
   
   <!-- new standard template for database relevant entities (does not prepend building_, science_, etc.) -->
-  <xsl:template match="Building|Resource"> 
+  <xsl:template match="Building|Resource|UnitCategory"> 
     <xsl:value-of select="@id"/>  
     <xsl:call-template name="Newline" />
   </xsl:template>

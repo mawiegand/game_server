@@ -210,8 +210,8 @@ class GameRules::Rules
 
         {               #   Infantry
           :id          => 0, 
-          :symbolic_id => :infantry,
-          :db_field    => :unitcategory_infantry,
+          :symbolic_id => :unitcategory_infantry,
+          :db_field    => :unitcategory_unitcategory_infantry,
           :name        => {
             
             :en_US => "Infantry",
@@ -234,9 +234,9 @@ class GameRules::Rules
               
               [
                 0,
-                1,
-                2,
-                3,
+                0,
+                0,
+                0,
                 
               ],
        
@@ -245,8 +245,8 @@ class GameRules::Rules
         },              #   END OF Infantry
         {               #   cavalry
           :id          => 1, 
-          :symbolic_id => :cavalry,
-          :db_field    => :unitcategory_cavalry,
+          :symbolic_id => :unitcategory_cavalry,
+          :db_field    => :unitcategory_unitcategory_cavalry,
           :name        => {
             
             :en_US => "cavalry",
@@ -270,18 +270,18 @@ class GameRules::Rules
             :results => [
               
               [
-                1,
-                2,
                 0,
-                3,
+                0,
+                0,
+                0,
                 
               ],
 
               [
-                1,
                 0,
-                2,
-                3,
+                0,
+                0,
+                0,
                 
               ],
        
@@ -290,8 +290,8 @@ class GameRules::Rules
         },              #   END OF cavalry
         {               #   Ranged Troops
           :id          => 2, 
-          :symbolic_id => :artillery,
-          :db_field    => :unitcategory_artillery,
+          :symbolic_id => :unitcategory_artillery,
+          :db_field    => :unitcategory_unitcategory_artillery,
           :name        => {
             
             :en_US => "Ranged Troops",
@@ -314,9 +314,9 @@ class GameRules::Rules
               
               [
                 0,
-                2,
-                1,
-                3,
+                0,
+                0,
+                0,
                 
               ],
        
@@ -325,8 +325,8 @@ class GameRules::Rules
         },              #   END OF Ranged Troops
         {               #   Siege Weapons
           :id          => 3, 
-          :symbolic_id => :siege,
-          :db_field    => :unitcategory_siege,
+          :symbolic_id => :unitcategory_siege,
+          :db_field    => :unitcategory_unitcategory_siege,
           :name        => {
             
             :en_US => "Siege Weapons",
@@ -348,10 +348,10 @@ class GameRules::Rules
             :results => [
               
               [
-                3,
-                2,
                 0,
-                1,
+                0,
+                0,
+                0,
                 
               ],
        
@@ -2894,7 +2894,7 @@ class GameRules::Rules
                 
           },
           :produces    => [
-            0,
+            2,
             
           ],
         },              #   END OF queue_artillery
@@ -2915,7 +2915,7 @@ class GameRules::Rules
                 
           },
           :produces    => [
-            0,
+            1,
             
           ],
         },              #   END OF queue_cavalry
@@ -2936,7 +2936,7 @@ class GameRules::Rules
                 
           },
           :produces    => [
-            0,
+            3,
             
           ],
         },              #   END OF queue_siege

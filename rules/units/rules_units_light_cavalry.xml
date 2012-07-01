@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="light_cavalry" category="cavalry">
+    <Unit id="light_cavalry" category="unitcategory_cavalry">
       <Name>Ostrich Riders</Name>
       <Name lang="de_DE">Straußenreiter</Name>
       <Description lang="de_DE">
