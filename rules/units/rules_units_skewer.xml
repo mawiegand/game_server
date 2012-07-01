@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="skewer" category="infantry">
+    <Unit id="skewer" category="artillery">
       <Name>Skewer</Name>
       <Name lang="de_DE">Bratspießträger</Name>
       <Description lang="de_DE">
@@ -18,13 +18,13 @@
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>15</Initiative>
-      <Attack>14</Attack>
-      <CriticalDamage chance="0.01" >6</CriticalDamage>
-      <Armor>14</Armor>
+      <Attack>16</Attack>
+      <CriticalDamage chance="0.01" >11</CriticalDamage>
+      <Armor>3</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
-      <Effectiveness category="infantry">0.6</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
-      <Effectiveness category="cavalry">1</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
-      <Effectiveness category="siege">1</Effectiveness>     
+      <Effectiveness category="infantry">0.9</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
+      <Effectiveness category="cavalry">1.2</Effectiveness>
+      <Effectiveness category="artillery">0.6</Effectiveness>
+      <Effectiveness category="siege">0.6</Effectiveness>     
     </Unit>
