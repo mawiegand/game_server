@@ -51,11 +51,17 @@ class Training::Job < ActiveRecord::Base
     return false unless settlement.settlement_unlock_garrison_count > 0
     
     # test if army category is unlocked
-    # TODO testen!
-    category = rules.unit_categories[rules.unit_types[self.unit_id][:category]][:symbolic_id]
-    logger.debug 'settlement_queue_' + category = '_unlock_count'
-    logger.debug settlement['settlement_queue_' + category = '_unlock_count'].inspect
-    return false unless settlement['settlement_queue_' + category = '_unlock_count'] > 0
+    # TODO testen!   WHY? If the queue is there, it's unlocked, right?! Test, whether the unit's category is within the building-options (list of categories) 
+    # category = rules.unit_categories[rules.unit_types[self.unit_id][:category]][:symbolic_id]
+    # logger.debug 'settlement_queue_' + category.to_s + '_unlock_count'
+    # logger.debug settlement['settlement_queue_' + category.to_s + '_unlock_count'].inspect
+    # return false unless settlement['settlement_queue_' + category.to_s + '_unlock_count'] > 0
+    unit_category = rules.unit_categories[rules.unit_types[self.unit_id][:category]][:id]
+    queue_type = rules.queue_types[self.queue.type_id]
+    
+    produceable = false
+    queue_type[:produces].each { |id| produceable ||= unit_category == id }
+    raise BadRequestError.new('Can not produce this type of unit in the given queue.') unless produceable
 
     # test if queue is already full   
     return false if self.queue && self.queue.max_length <= self.queue.jobs_count

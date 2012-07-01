@@ -65,7 +65,7 @@ class Construction::Job < ActiveRecord::Base
     return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level != 0)
     
     # test if building ability is unlocked in settlement
-    return false unless settlement.settlement_queue_buildings_unlock_count > 0  
+    return false unless settlement.settlement_queue_buildings_unlock_count > 0    # THIS IS AN ERROR: there are queues of other types (e.g. fortification)! either the client should post to the queue or you must search the correct (queue_type that is unlocked and able to build the building category of the building) queue here
     
     
     # TODO test if job can be added to queue
