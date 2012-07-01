@@ -80,8 +80,9 @@ class Training::Job < ActiveRecord::Base
   
   # creates the units for tha active job. if there are more units to be build in this job, 
   # active job will be updated and a new event is created
-  def create_units
+  def add_finished_units
     # units bauen
+        
     active_job = self.active_job
     queue = self.queue
     

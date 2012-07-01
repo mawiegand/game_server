@@ -40,14 +40,18 @@ class Ticker::TrainingActiveJobHandler
         return
       end 
       
-      unless event.character == settlement.owner
+      unless event.character == settlement.owner ## TODO: Takeover? -> this may happen!
         runloop.say "Job creator is not settlement owner in job '#{ job.id }'.", Logger::ERROR
         job.destroy
         return
       end 
       
+      runloop.say "Now create units for job #{ job.inspect }"
+      
       # update active job and create new event, if more unit are to build
-      job.create_units
+      job.add_finished_units
+      
+      runloop.say "Check for new jobs"
       
       queue.check_for_new_jobs if job.nil?
       

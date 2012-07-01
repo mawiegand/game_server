@@ -260,10 +260,9 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def add_units_to_garrison(unit_id, quantity)
     # create garrison army if it not exists
-    army = self.location.garrison_army
-
+    army = self.garrison_army
     unit_types = GameRules::Rules.the_rules().unit_types
-    army.details[unit_types[unit_id][:db_field]] += quantity
+    army.details.increment(unit_types[unit_id][:db_field], quantity)
     army.details.save
   end
 
