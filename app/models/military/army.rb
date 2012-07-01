@@ -334,7 +334,7 @@ class Military::Army < ActiveRecord::Base
     def update_mode
       battle_id_change = self.changes[:battle_id]
       if !battle_id_change.nil?
-        self.mode = battle_id_change[1] > 0 ? MODE_FIGHTING : MODE_IDLE
+        self.mode = battle_id_change[1].nil? ? MODE_IDLE : MODE_FIGHTING
       end
       true
     end
