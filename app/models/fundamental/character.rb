@@ -47,7 +47,6 @@ class Fundamental::Character < ActiveRecord::Base
   def self.create_new_character(identifier, name, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
-      frog_amount: 0,       # temporary hack
       name: name,
       npc:  npc,
     });

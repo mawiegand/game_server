@@ -431,7 +431,7 @@ class GameRules::Rules
             
             :en_US => "Tree Huggers",
   
-            :de_DE => "Baum-Brutalos",
+            :de_DE => "Baum-Brutalo",
                 
           },
           :flavour     => {
@@ -959,9 +959,9 @@ class GameRules::Rules
           :destructable=> false,
 
           :costs      => {
-            0 => '200*LEVEL*LEVEL',
-            1 => '300*LEVEL*LEVEL',
-            0 => '100*LEVEL*LEVEL',
+            1 => '5*FLOOR(POW(LEVEL,3.5))',
+            0 => '3*FLOOR(POW(LEVEL,3))',
+            0 => '2*FLOOR(POW(LEVEL,2))',
             
           },
 
@@ -1050,9 +1050,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '100+250*LEVEL*LEVEL',
-            0 => '150+200*LEVEL*LEVEL',
-            0 => '50+50*LEVEL*LEVEL',
+            1 => '3*FLOOR(POW(LEVEL,3.5))',
+            0 => '2*FLOOR(POW(LEVEL,2.5))',
+            0 => 'FLOOR(POW(LEVEL,2))',
             
           },
 
@@ -1108,7 +1108,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Schulungszentrum für alle Distanzkämpfer.</p>",
+            :de_DE => "<p>Von Außen betrachtet ist der Turm der Ballistik eine Augenweide. Von Innen betrachtet ist der Turm ein Trümmerfeld. Kleine Kieselsteine liegen auf dem ganzen Boden verteilt, Bratspieße, Speere und Pfeile haben sich in sämtliche Stützpfeiler gebort und an den Wänden spuren hinterlassen.</p><p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildende haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steinen oder Splittern halbwegs überstehen.</p><p>Verglichen mit der Ordnung einer Artillerie-Kampfreihe auf dem Schlachtfeld ist das herrschende Chaos überraschend. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt, nur leider wissen die Wenigsten auf welches Kommando sie eigentlich gerade achten sollen.</p>",
   
             :en_US => "<p>Trains artillery.</p>",
                 
@@ -1133,9 +1133,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '300+300*LEVEL*LEVEL',
-            0 => '200+200*LEVEL*LEVEL',
-            0 => '100+100*LEVEL*LEVEL',
+            1 => '5*FLOOR(POW(LEVEL,3))',
+            0 => '3*FLOOR(POW(LEVEL,3))',
+            0 => '2*FLOOR(POW(LEVEL,3))',
             
           },
 
@@ -1216,9 +1216,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '150+150*LEVEL*LEVEL',
-            0 => '200+200*LEVEL*LEVEL',
-            0 => '75+75*LEVEL*LEVEL',
+            1 => '4*FLOOR(POW(LEVEL,3))',
+            0 => '2*FLOOR(POW(LEVEL,3))',
+            0 => 'FLOOR(POW(LEVEL,4))',
             
           },
 
@@ -1299,9 +1299,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '250+250*LEVEL*LEVEL',
-            0 => '250+200*LEVEL*LEVEL',
-            0 => '150+150*LEVEL*LEVEL',
+            1 => 'FLOOR(POW(LEVEL,2.5))',
+            0 => '3*FLOOR(POW(LEVEL,3))',
+            0 => '4*FLOOR(POW(LEVEL,3.5))',
             
           },
 
@@ -1352,7 +1352,7 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>An der Hütte des Häuptlings erkennt man die Größen der Siedlung und der Truppen. Auch wenn das immer anders dargestellt wird, die Größe der Männlichkeit des Häuptlings ist hier nicht abzulesen.</p>",
                 
           },
           :description => {
@@ -1384,9 +1384,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'MAX(LEVEL-3,0)*1000+LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => 'FLOOR(POW(LEVEL,4))',
+            0 => '2*FLOOR(POW(LEVEL,3.5))',
+            0 => 'MAX(0,LEVEL-3)*FLOOR(POW(LEVEL,3.5))',
             
           },
 
@@ -1413,8 +1413,12 @@ class GameRules::Rules
 
             ],
 
+            :unlock_garrison => {
+              :level             => 3,            
+            },
+
             :command_points => {
-              :formula   => "2+(MAX(LEVEL-10,0)*1+(MAX(LEVEL-19,0)*1",
+              :formula   => "2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1",
             },
     
           },
@@ -1521,7 +1525,7 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>Mit jeder Hütte steigt auch die Anzahl eure Untertanen, die ein Dach über dem Kopf derart zu schätzen wissen, dass sie mit Freude die niederen Arbeiten des Gebäudebaus übernehmen.</p>",
                 
           },
           :description => {
@@ -1594,12 +1598,12 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ausbildungsgelände für Fußtruppen.</p>",
+            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>",
   
             :en_US => "<p>Training facility for all kinds of groud untis and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken to be one of the punching dummies or you won´t leave the barracks alive! Training of beserker is in progress.</p>",
                 
@@ -1624,9 +1628,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '2*FLOOR(POW(LEVEL,2.5))',
+            0 => '4*FLOOR(POW(LEVEL,3))',
+            0 => 'FLOOR(POW(LEVEL,2))',
             
           },
 
@@ -1707,9 +1711,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*200+200',
-            0 => 'LEVEL*100+100',
-            0 => 'LEVEL*10',
+            1 => '2*FLOOR(POW(LEVEL,3))',
+            0 => '5*FLOOR(POW(LEVEL,4.5))',
+            0 => 'MAX(0,LEVEL-2)*FLOOR(POW(LEVEL,3))',
             
           },
 
@@ -1773,9 +1777,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LEVEL*30',
-            1 => 'LEVEL*100+10',
-            0 => 'MAX(0,LEVEL-2)*10',
+            1 => '2*FLOOR(POW(LEVEL,3))',
+            0 => 'FLOOR(POW(LEVEL,2.5))',
+            0 => 'FLOOR(POW(LEVEL,1.5))',
             
           },
 
@@ -1841,9 +1845,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LEVEL*100+10',
-            1 => 'LEVEL*30',
-            0 => 'MAX(0,LEVEL-2)*10',
+            1 => 'FLOOR(POW(LEVEL,2.5))',
+            0 => '2*FLOOR(POW(LEVEL,3.5))',
+            0 => 'FLOOR(POW(LEVEL,1.5))',
             
           },
 
@@ -1909,9 +1913,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LEVEL*100+100',
-            1 => 'LEVEL*100+100',
-            0 => 'LEVEL*10',
+            0 => '3*POW(LEVEL,4)',
+            1 => '2*POW(LEVEL,3)',
+            0 => '2*POW(LEVEL,4)',
             
           },
 
@@ -1947,7 +1951,7 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>Auf dem Schießstand findet sich alles wieder, was zu schwach für den Nahkampf und zu schwer oder zu dumm zum Reiten von Tieren ist. Tatsächlich ist Fernkämpfer ein beliebtes Karriereziel, kein direkter Kampf, keine stinkenden Tiere...</p>",
                 
           },
           :description => {
@@ -1977,9 +1981,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => 'FLOOR(POW(LEVEL,2.5))',
+            0 => '3*FLOOR(POW(LEVEL,3.5))',
+            0 => '2*FLOOR(POW(LEVEL,3))',
             
           },
 
@@ -2023,19 +2027,19 @@ class GameRules::Rules
             
             :de_DE => "Stall",
   
-            :en_US => "Stud",
+            :en_US => "Stable",
                 
           },
           :flavour     => {
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>Pferdemädchen und süße Tierchen sucht man hier vergebens. Die meisten Mädchen kämpfen lieber mit großen Keulen und die süßen Tieren dienen den hier auszubildenden Raubtieren als Nahrung.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ausbildungsgelände für berittene Einheiten.</p>",
+            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihre wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>",
   
             :en_US => "<p>Hosts troops.</p>",
                 
@@ -2060,9 +2064,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '2*FLOOR(POW(LEVEL,3))',
+            0 => '2*FLOOR(POW(LEVEL,3))',
+            0 => '3*FLOOR(POW(LEVEL,3.5))',
             
           },
 
@@ -2113,12 +2117,12 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>In der Werkstatt werden Belagerungsgeräte hergestellt, zumindest wenn man den Häuptling fragt. Die Tüftler selbst stellen nach ihrer Meinung wahre Wunder her.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ausbildungsgelände für Belagerungseinheiten.</p>",
+            :de_DE => "<p>Die Werksatt wird von den meisten Bewohnern gemieden. Zum einen haben die Tütfler komische Verhaltensweisen und einen seltsamen Sinn für Humor, zum anderen ist hier die Gefahr bereits beim Eintritt in eine neuartige Falle oder ein unachtsam abgestelltes Testobjekt zu tappen sehr hoch.</p><p>Die Tüftler selbst sind gerne unter sich, lachen über Dinge wie den Großen Knall und basteln Tag ein Tag aus an ihren Geräten. Alle Mondumläufe stellen sie auf dem Platz vor dem Lagerfeuer ihre neusten Ideen vor.</p><p>Die Tüftler sind an diesem Tagen sehr angespannt, da hier über ihre weitere Karriere entschieden wird. Keine Entscheidung über Leben und Tod, aber bei einem Fehlschlag dürfen die Tüftler nicht weiterarbeiten. Und werden meist hingerichtet, aber das ist für den Tüftler das kleinere Übel</p>",
   
             :en_US => "<p>Hosts troops.</p>",
                 
@@ -2143,9 +2147,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'LEVEL*100',
-            0 => 'LEVEL*10',
-            0 => 'LEVEL*10',
+            1 => '4*FLOOR(POW(LEVEL,3.5))',
+            0 => '3*FLOOR(POW(LEVEL,3))',
+            0 => '2*FLOOR(POW(LEVEL,2.5))',
             
           },
 

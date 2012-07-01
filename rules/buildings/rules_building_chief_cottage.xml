@@ -26,8 +26,9 @@
   <Production id="resource_wood">1</Production>        
   <Abilities> <!-- just for grouping -->
     <CommandPoints>2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1</CommandPoints>
-	<GarrisonSizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</GarrisonSizeBonus>
+    <GarrisonSizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</GarrisonSizeBonus>
     <UnlockQueue  queue="queue_buildings" />
+    <UnlockGarrison level="3" />
   </Abilities>
 </Building>
   
