@@ -23,6 +23,6 @@
   <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,2))</Cost> 
   <ProductionTime shortenable="true">MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10</ProductionTime>             
   <Abilities> <!-- just for grouping -->
-    <SpeedupQueue queue="queue_buildings" domain="settlement">POW(LEVEL/100.0,2)</SpeedupQueue>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">POW(LEVEL,2)*0.01</SpeedupQueue>
   </Abilities>
 </Building>

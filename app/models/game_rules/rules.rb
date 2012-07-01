@@ -538,7 +538,7 @@ class GameRules::Rules
         {               #   Skewer
           :id          => 3, 
           :symbolic_id => :skewer,
-					:category    => 0,
+					:category    => 2,
           :db_field    => :unit_skewer,
           :name        => {
             
@@ -563,22 +563,22 @@ class GameRules::Rules
           :initiative  => 15,
           :effectiveness => {
             
-            :infantry => 0.6,
+            :infantry => 0.9,
   
-            :cavalry => 1,
+            :cavalry => 1.2,
   
-            :artillery => 1,
+            :artillery => 0.6,
   
-            :siege => 1,
+            :siege => 0.6,
                 
           },
-          :attack      => 14,
-          :armor       => 14,
+          :attack      => 16,
+          :armor       => 3,
           :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 6,
+          :critical_hit_damage => 11,
           :critical_hit_chance => 0.01,
 
           :production_time => '300',
@@ -940,7 +940,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>The fortification is controlling the region. Therefore armed forces are deployed to collect empathically the taxes and in case of attacks to protect the fortress. Prepare for battle!</p>",
   
             :de_DE => "<p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen. </p>",
                 
@@ -949,7 +949,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festung beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit. Mit fortschreitendem Ausbau wird auch die maximale Größe der Garnisson erhöht.</p>",
   
-            :en_US => "<p>Main Building and Fortifications of the fortress. Speeds-up all other constructions and increases the defense abilities.</p>",
+            :en_US => "<p>Some debris, tied tree trunks, a provisional gate, small parade-ground, main building and some walls; rudimentary stronghold finished. Improving the fortification results in a higher maximum size of the garrison, speeding-up all other construction sites and increases the defensive abilities.</p>",
                 
           },
           :hidden      => 0,
@@ -1018,7 +1018,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>",
   
             :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
                 
@@ -1027,7 +1027,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Im Turm der Infanterie werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p><p>Wer den Befehlen nicht gehorcht, oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training center for close combat warriors. Without the infantry every army becomes useless - and this is the place where the backbone of every stone-aged and postmodern army composition gets finishing. Reckless. Ruthless. Relentless.</p>",
                 
           },
           :hidden      => 0,
@@ -1101,7 +1101,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>Everything which can be shoot flies around here. So, watch yourself and duck in time! Training of long-range combat fighter is in progress.</p>",
   
             :de_DE => "<p>Hier fliegt alles was man werfen oder abschießen kann! Kopf runter! Die Ausblidung der Fernkämpfer ist in vollem Gang.</p>",
                 
@@ -1193,7 +1193,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Der Turm der Reitmeisterei dient zur Ausbildung aller berittenen Einheiten. Dabei wird der Wert vor allem auf den Umgang mit den Tieren wie auch die Reittechnik gelegt.</p><p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzweitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Die Tierpfleger entsorgen die blutige Kleidung ohne großes Aufhebens.</p>",
   
-            :en_US => "<p>Trains Cavalry Units.</p>",
+            :en_US => "<p>Training center for all mounted units. Horse-back riding is not vanilla, so, 101-riding courses, how to put spur on horses and domesticating them; all this is done here.</p><p>Access is only granted to equestrians and zookeepers.</p>",
                 
           },
           :hidden      => 0,
@@ -1276,7 +1276,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hämmerschläge oder leisem Geflüster unterbrochen wird.</p><p>An den Wänden hängen Skizzen, Pläne und unvollendete Entwürfe. Die Tüftler sehen sich als Elite, da sie als einzige ihr Gehirn für ihre Arbeit einsetzen.</p><p>Die anderen Krieger halten die Tütfler natürlich für Idioten, die nur in ihrem Turm eingesperrt werden, damit sie nicht im Weg rumstehen.</p>",
   
-            :en_US => "<p>Builds war machines.</p>",
+            :en_US => "<p>Training center for war machine engineers. Thinking of themselves as the pinnacle of all men at arms, the war machine engineers dedicate their life to invent mechanical constructions independent of muscles and man power. This place is a mess with countless blueprints for all sorts of siege-weapons.</p>",
                 
           },
           :hidden      => 0,
@@ -1345,7 +1345,7 @@ class GameRules::Rules
             
             :de_DE => "Häuptlingshütte",
   
-            :en_US => "Chief's Cottage",
+            :en_US => "Chieftain‘s Hall",
                 
           },
           :flavour     => {
@@ -1357,9 +1357,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Hauptgebäude.</p>",
+            :de_DE => "<p>Die allererste Hütte in der Siedlung eghört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p><p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p>",
   
-            :en_US => "<p>Main building.</p>",
+            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
           },
           :hidden      => 0,
@@ -1443,7 +1443,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Primitivster aller Steinzeiteinwohner. Ihr könnt frohe sein, ihn in eine Hütte bekommen zu haben. Manchmal bleibt er sogar für ein paar Stunden da.</p><p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
   
-            :en_US => "<p>Collects resources for the daily needs.</p>",
+            :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easy slayn animals.</p>",
                 
           },
           :hidden      => 0,
@@ -1514,7 +1514,7 @@ class GameRules::Rules
             
             :de_DE => "Kleine Hütte",
   
-            :en_US => "cottage",
+            :en_US => "Small Hut",
                 
           },
           :flavour     => {
@@ -1526,9 +1526,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Gebäude für eure Untertanen.</p>",
+            :de_DE => "<p>Die kleine Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
   
-            :en_US => "<p>Small cottage.</p>",
+            :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
                 
           },
           :hidden      => 0,
@@ -1570,7 +1570,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(LEVEL/100.0,2)",
+                :speedup_formula   => "POW(LEVEL,2)*0.01",
               },
 
             ],
@@ -1601,7 +1601,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Ausbildungsgelände für Fußtruppen.</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training facility for all kinds of groud untis and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken to be one of the punching dummies or you won´t leave the barracks alive! Training of beserker is in progress.</p>",
                 
           },
           :hidden      => 0,
@@ -1675,7 +1675,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>Diplomatic bla-bla or alliance conferences can be held in the embassies. And a good conversation is not a monologue!</p>",
   
             :de_DE => "<p>Ort für Diplomatischer Austausch oder Allianzbesprechungen. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet.</p>",
                 
@@ -1684,7 +1684,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>Die freiwilligen und unfreiwilligen Gästen werden wahlweise ans Feuer gebeten oder am Marterfall aufgestellt.</p><p>Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
   
-            :en_US => "<p>Embassy</p>",
+            :en_US => "<p>Assembly area for the locals and also the district of foreign embassies. Random guests are normally invited to sit by the fire while hostile messengers get hammered at the stake.</p><p>The place to be in every settlement for networking and discussing the really important matters, like whether a stranger gets eaten alive or tickled to ecstasy.</p>",
                 
           },
           :hidden      => 0,
@@ -1736,7 +1736,7 @@ class GameRules::Rules
             
             :de_DE => "Holzfäller",
   
-            :en_US => "Logger",
+            :en_US => "Lumberjack",
                 
           },
           :flavour     => {
@@ -1750,7 +1750,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p>",
   
-            :en_US => "<p>Cuts trees, produces logs.</p>",
+            :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
                 
           },
           :hidden      => 0,
@@ -1804,21 +1804,21 @@ class GameRules::Rules
             
             :de_DE => "Steinbruch",
   
-            :en_US => "Quarry",
+            :en_US => "Quarry man",
                 
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>Stones, even more stones!</p>",
   
-            :de_DE => "<p> lustiger Flavour Text hier </p>",
+            :de_DE => "<p>Steine, nichts als Steine!</p>",
                 
           },
           :description => {
             
             :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>",
   
-            :en_US => "<p>Advanced technology building (ok, advanced in the stone age) that somehow produces stones. Larger buildings produce more stones per hour. Unbelievable, isn't it?</p>",
+            :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
                 
           },
           :hidden      => 0,
@@ -1872,12 +1872,12 @@ class GameRules::Rules
             
             :de_DE => "Kürschner",
   
-            :en_US => "Furrier",
+            :en_US => "Peltmonger",
                 
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
   
             :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>",
                 
@@ -1886,7 +1886,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p>",
   
-            :en_US => "<p>Provides Leather.</p>",
+            :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
                 
           },
           :hidden      => 0,
@@ -1952,9 +1952,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ausbildungsgelände für Fernkämpfer.</p>",
+            :de_DE => "<p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p><p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>",
   
-            :en_US => "<p>Hosts troops.</p>",
+            :en_US => "<p>Training area for ranged units. Stones and javelins fill the air with a whiring buzz.</p><p>If some-one lacks courage to fight face-to-face, the firing range is the place to make a career in the army. Accidents that go pear-shaped are possible!</p>",
                 
           },
           :hidden      => 0,
