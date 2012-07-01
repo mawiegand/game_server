@@ -9,3 +9,5 @@ de:
       map_subtrees: Baum
       map_locations: Orte
       map_regions: Regionen
+    military:
+      new_army: Neue Armee

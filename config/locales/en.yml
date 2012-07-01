@@ -52,6 +52,7 @@ en:
       military:
         category: Military
         armies: Armies
+        new_army: New Army
         army_details: A.Details
         battles: Battles
         rounds: Rounds
@@ -75,6 +76,8 @@ en:
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
         transactions: Transactions
+    military:
+      new_army: New Army    
         
   sessions:
         

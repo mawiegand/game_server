@@ -282,10 +282,15 @@ class Military::Army < ActiveRecord::Base
   def self.create_with_action(create_action)
     
     location = Map::Location.find(create_action[:location_id])
-    raise BadRequestError.new('No location for army creation!') if location.nil? 
+    raise BadRequestError.new('No location for army creation!') if location.nil?
     
+    army_name = create_action[:army_name]
+    if army_name.nil? || army_name.empty? || army_name === '' || army_name === 'null'
+      army_name = I18n.translate('application.military.new_army')
+    end
+
     army = Military::Army.new({
-      name: 'New Army',
+      name: army_name,
       home_settlement_id: location.settlement.id,
       home_settlement_name: location.settlement.name,
       ap_max: 4,
