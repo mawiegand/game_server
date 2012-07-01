@@ -993,9 +993,7 @@ class GameRules::Rules
 
             ],
 
-            :unlock_garrison => {
-              :level             => 1,            
-            },
+            :unlock_garrison => 1,            
 
             :command_points => {
               :formula   => "1+(MAX(LEVEL-4,0)*1-MAX(LEVEL-5,0)*1)+(MAX(LEVEL-9,0)*1-MAX(LEVEL-10,0)*1)",
@@ -1413,9 +1411,7 @@ class GameRules::Rules
 
             ],
 
-            :unlock_garrison => {
-              :level             => 3,            
-            },
+            :unlock_garrison => 3,            
 
             :command_points => {
               :formula   => "2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1",

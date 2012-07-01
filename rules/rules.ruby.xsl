@@ -545,9 +545,7 @@ end
 </xsl:template>
 
 <xsl:template match="UnlockGarrison">
-            :unlock_garrison => {
-              :level             => <xsl:value-of select="@level" />,            
-            },
+            :unlock_garrison => <xsl:value-of select="@level" />,            
 </xsl:template>
 
 <xsl:template match="UnlockDiplomacy">

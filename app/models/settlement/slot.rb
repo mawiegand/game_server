@@ -164,6 +164,9 @@ class Settlement::Slot < ActiveRecord::Base
           propagate_speedup_queue(rule, old_level, new_level)
         end
       end
+      if !building_type[:abilities][:unlock_garrison].blank?
+        propagate_unlock(:settlement_unlock_garrison_count, building_type[:abilities][:unlock_garrison], old_level, new_level)
+      end
       if !building_type[:abilities][:unlock_diplomacy].blank?
         propagate_unlock(:settlement_unlock_diplomacy_count, building_type[:abilities][:unlock_diplomacy], old_level, new_level)
       end
