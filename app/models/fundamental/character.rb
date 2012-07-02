@@ -91,6 +91,27 @@ class Fundamental::Character < ActiveRecord::Base
     return character 
   end
   
+  def change_name_transaction(name)
+    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name(name).nil?
+    
+    freeChange = (self.name_change_count || 0) < 1 
+    
+    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+      raise ForbiddenError.new "character does not have enough resources to pay for the name change."
+    end
+    
+    self.name = name
+    self.increment(:name_change_count)
+
+    raise InternalServerError.new 'Could not save new name.' unless self.save 
+    
+    if (self.name_change_count || 0) > 0 
+        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    end
+    
+    return self
+  end
+  
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
     # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
