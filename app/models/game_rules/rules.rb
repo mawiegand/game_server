@@ -382,9 +382,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Alternative T1, besser gegen Inf, anfälliger.</p>",
+            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glücklcihes Leben.</p><p>Zudem ist dieses meist sehr kurz.</p>",
   
-            :en_US => "<p>Decription goes here.</p>",
+            :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
                 
           },
 
@@ -439,9 +439,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Baum-Brutalos sind Tier2-Einheiten</p>",
+            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>",
   
-            :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>",
+            :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p><p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>",
                 
           },
 
@@ -479,14 +479,14 @@ class GameRules::Rules
 
 
         },              #   END OF Tree Huggers
-        {               #   Stone Hurler
+        {               #   Pebble Thrower
           :id          => 2, 
           :symbolic_id => :thrower,
 					:category    => 2,
           :db_field    => :unit_thrower,
           :name        => {
             
-            :en_US => "Stone Hurler",
+            :en_US => "Pebble Thrower",
   
             :de_DE => "Kieselsteinwerfer",
                 
@@ -498,7 +498,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
   
-            :en_US => "<p>Small Stones, big Stones, a Stone Hurler likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
           },
 
@@ -534,15 +534,15 @@ class GameRules::Rules
           },
 
 
-        },              #   END OF Stone Hurler
-        {               #   Skewer
+        },              #   END OF Pebble Thrower
+        {               #   Spit Bearer
           :id          => 3, 
           :symbolic_id => :skewer,
 					:category    => 2,
           :db_field    => :unit_skewer,
           :name        => {
             
-            :en_US => "Skewer",
+            :en_US => "Spit Bearer",
   
             :de_DE => "Bratspießträger",
                 
@@ -552,9 +552,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p>",
+            :de_DE => "<p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p><p>Richtig angewendet tropfen fettige Flüssigkeiten vom Spieß, genau genommen das Blut seiner Feinde</p>",
   
-            :en_US => "<p>Skewer Crew training 101: stick'em with the pointy end!</p>",
+            :en_US => "<p>Skewer Crew training 101: stick'em with the pointy end!</p><p>Greasy liquids are dripping from the spits, correctly used it is the enemies‘ blood.</p>",
                 
           },
 
@@ -591,7 +591,7 @@ class GameRules::Rules
           },
 
 
-        },              #   END OF Skewer
+        },              #   END OF Spit Bearer
         {               #   Ostrich Riders
           :id          => 4, 
           :symbolic_id => :light_cavalry,
@@ -609,9 +609,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
+            :de_DE => "<p>Strauße sind nicht nur lecker sondern auch gute und schnelle Kämpfer. Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
   
-            :en_US => "<p>Ostrich riders are very quick, but only lightly armored.</p>",
+            :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
           },
 
@@ -725,7 +725,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p>",
   
-            :en_US => "<p>It is a little known fact that the term battering ram originates from an actual and quite large pre-historic animal.</p>",
+            :en_US => "<p>The battering ram is the lockpick of choice to open doors, gates and cracking down fortifications.</p>",
                 
           },
 
@@ -782,7 +782,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p>",
   
-            :en_US => "<p>Decription goes here.</p>",
+            :en_US => "<p>The catapults take the cake in every intense battle because of their devastating damage.</p>",
                 
           },
 
@@ -1411,7 +1411,7 @@ class GameRules::Rules
 
             ],
 
-            :unlock_garrison => 3,            
+            :unlock_garrison => 2,            
 
             :command_points => {
               :formula   => "2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1",
