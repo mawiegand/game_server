@@ -83,6 +83,16 @@
     <%= f.label :besieged %><br />
     <%= f.check_box :besieged %>
   </div>
+  
+<% Settlement::Settlement.new.attributes.each do |attribute, value| 
+  if attribute.start_with? 'settlement_unlock' %>
+    <div class="field">
+      <%= f.label attribute %><br />
+      <%= f.number_field attribute %>
+    </div>
+<%end
+end %>  
+  
 <% Settlement::Settlement.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>
     <div class="field">
