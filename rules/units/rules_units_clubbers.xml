@@ -5,10 +5,11 @@
       <Name>Club Warrior</Name>
       <Name lang="de_DE">Keulenkrieger</Name>
       <Description lang="de_DE">
-        <p>Alternative T1, besser gegen Inf, anfälliger.</p> 
+        <p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glücklcihes Leben.</p>
+		<p>Zudem ist dieses meist sehr kurz.</p>		
       </Description>
       <Description lang="en_US">
-        <p>Decription goes here.</p>
+        <p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>
       </Description>
       <Cost id="resource_stone" round="true">40</Cost>  
       <Cost id="resource_wood" round="true">20</Cost>    

@@ -2,13 +2,15 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="skewer" category="unitcategory_artillery">
-      <Name>Skewer</Name>
+      <Name>Spit Bearer</Name>
       <Name lang="de_DE">Bratspießträger</Name>
       <Description lang="de_DE">
         <p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p> 
+		<p>Richtig angewendet tropfen fettige Flüssigkeiten vom Spieß, genau genommen das Blut seiner Feinde</p>
       </Description>
       <Description lang="en_US">
-        <p>Skewer Crew training 101: stick'em with the pointy end!</p>
+        <p>Skewer Crew training 101: stick'em with the pointy end!</p> 
+		<p>Greasy liquids are dripping from the spits, correctly used it is the enemies‘ blood.</p>
       </Description>
       <Cost id="resource_stone" round="true">2</Cost>  
       <Cost id="resource_wood" round="true">10</Cost>    

@@ -7,7 +7,7 @@
         <p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p> 
       </Description>
       <Description lang="en_US">
-        <p>Decription goes here.</p>
+        <p>The catapults take the cake in every intense battle because of their devastating damage.</p>
       </Description>
       <Cost id="resource_stone" round="true">2</Cost>  
       <Cost id="resource_wood" round="true">10</Cost>    
