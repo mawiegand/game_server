@@ -5,10 +5,12 @@
       <Name>Tree Huggers</Name>
       <Name lang="de_DE">Baum-Brutalo</Name>
       <Description lang="de_DE">
-        <p>Baum-Brutalos sind Tier2-Einheiten</p> 
+        <p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p> 
+		<p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>
       </Description>
       <Description lang="en_US">
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
+		<p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>
       </Description>
       <Cost id="resource_stone" round="true">2</Cost>  
       <Cost id="resource_wood" round="true">10</Cost>    
