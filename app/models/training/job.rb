@@ -13,17 +13,15 @@ class Training::Job < ActiveRecord::Base
   
   def training_time
     rules = GameRules::Rules.the_rules
-    formula = Util::Formula.parse_from_formula(rules.unit_types[self.unit_id][:production_time])
-    formula.apply()
+    rules.unit_types[self.unit_id][:production_time].to_i
   end
   
   def costs
     unitType = GameRules::Rules.the_rules.unit_types[self.unit_id]
     return {} if unitType[:costs].nil?
     costs = {}
-    unitType[:costs].each do |resource_id, formula|
-      f = Util::Formula.parse_from_formula(formula)
-      costs[resource_id] = (self.quantity - self.quantity_finished) * f.apply()
+    unitType[:costs].each do |resource_id, quantity_per_unit|
+      costs[resource_id] = (self.quantity - self.quantity_finished) * quantity_per_unit.to_i
     end
     return costs
   end
