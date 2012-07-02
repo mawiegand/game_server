@@ -76,9 +76,6 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this adds the speedup value to the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def add_effect_transaction(effect)
-    logger.debug '---> in add_effect'
-    logger.debug '---> ' + effect.inspect
-    
     attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
     amount = effect[:bonus]
     
@@ -93,9 +90,6 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this subtracts the speedup value from the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def remove_effect_transaction(effect)
-    logger.debug '---> in remove_effect'
-    logger.debug '---> ' + effect.inspect
-    
     attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
     amount = effect[:bonus]
     

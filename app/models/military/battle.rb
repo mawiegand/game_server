@@ -76,10 +76,6 @@ class Military::Battle < ActiveRecord::Base
       :location_id => attacker.location_id,
       :region_id => attacker.region_id
     )
-    attacker.battle = battle
-    defender.battle = battle
-    attacker.save
-    defender.save
     
     faction0 = battle.factions.create(
       :faction_num => 0,
@@ -118,10 +114,6 @@ class Military::Battle < ActiveRecord::Base
   end
 
   def other_factions(id)
-    puts "HERE"
-    puts     self.factions.where("id != ?", id).inspect
-    puts self.factions.inspect
-    
     self.factions.where("id != ?", id)
   end
   
@@ -130,6 +122,8 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def add_army(army, faction)
+    army.battle = self
+    army.save
     faction.participants.create(:battle_id => faction.battle_id, :army_id => army.id,
                                 :joined_at => DateTime.now, :retreated => false)
     faction.update_from_participants
