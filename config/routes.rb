@@ -149,6 +149,7 @@ GameServer::Application.routes.draw do
           resources :join_alliance_actions    
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
+          resources :change_character_name_actions    
         end
         namespace :construction do
           resources :finish_job_actions    

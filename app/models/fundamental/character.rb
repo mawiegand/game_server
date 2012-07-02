@@ -23,6 +23,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   before_save :sync_alliance_tag
   after_save  :propagate_alliance_membership_changes
+  after_save  :propagate_name_changes
   after_save  :propagate_score_changes
   
 
@@ -89,6 +90,27 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     return character 
+  end
+  
+  def change_name_transaction(name)
+    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name(name).nil?
+    
+    freeChange = (self.name_change_count || 0) < 1 
+    
+    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+      raise ForbiddenError.new "character does not have enough resources to pay for the name change."
+    end
+    
+    self.name = name
+    self.increment(:name_change_count)
+
+    raise InternalServerError.new 'Could not save new name.' unless self.save 
+    
+    if (self.name_change_count || 0) > 0 
+        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    end
+    
+    return self
   end
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
@@ -176,6 +198,41 @@ class Fundamental::Character < ActiveRecord::Base
           entry[:model].where(entry[:field] => self.id).each do |item|
             item.alliance_id  = alliance_change[1]          unless alliance_change.nil?
             item.alliance_tag = alliance_tag_change[1]      unless alliance_tag_change.nil?
+            item.save
+          end
+        else
+          where_clause = ["#{ entry[:field].to_s } = ?", self.id]
+          entry[:model].update_all(set_clause, where_clause) 
+        end
+      end
+    end
+    true
+  end
+  
+  # Function for propagating change of character name to redundant fields.
+  # This uses update_all direct querries because the Rails way of looping
+  # through models (selecting, instantiating, saving) would potentially take
+  # too long (there might be several hundreds of settlements, locations and
+  # armies involved).
+  def propagate_name_changes
+    name_change     = self.changes[:name]
+    
+    redundancies = [
+      { :model => Map::Location,             :field => :owner_id },
+      { :model => Map::Region,               :field => :owner_id },
+      { :model => Military::Army,            :field => :owner_id },      
+      { :model => Ranking::CharacterRanking, :field => :character_id, :handlers_needed => true, :name_field => :character_name },
+    ]
+    
+    if !name_change.blank? 
+      
+      redundancies.each do |entry| 
+        set_clause = { }
+        set_clause[entry[:name_field] || :owner_name]  = name_change[1]    
+
+        if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
+          entry[:model].where(entry[:field] => self.id).each do |item|
+            item[entry[:name_field] || :owner_name]  = name_change[1]         
             item.save
           end
         else
