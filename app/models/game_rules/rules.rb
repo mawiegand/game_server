@@ -83,9 +83,9 @@ class GameRules::Rules
         },
         :character_creation => {
           :start_resources => {
-            0 => 100,
-1 => 100,
-2 => 50,
+            0 => 500,
+1 => 500,
+2 => 250,
 3 => 5,
 
           },
@@ -2100,7 +2100,7 @@ class GameRules::Rules
         {               #   Werkstatt
           :id          => 15, 
           :symbolic_id => :building_workshop,
-					:category    => 4,
+					:category    => 3,
           :db_field    => :building_workshop,
           :name        => {
             
