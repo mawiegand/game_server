@@ -8,13 +8,13 @@ defaults: &defaults
   military_only_flag_destroyed_armies: false #if true the field removed for destroyed armies will be set true instead of deleting them from the database after a battle
   military_only_flag_destroyed_battles: true #if true the field removed for finished battles will be set true instead of deleting them from the database after the battle is done
   
-  payment_provider_base_url: 'https://wackadoo.de/payment_provider'
+  payment_provider_base_url: 'https://wack-a-doo.de/payment_provider'
   
   scope: 'wackadoo'
 
   default_character_name: 'WackyUser'
   
-  identity_provider_base_url: 'https://wackadoo.de/identity_provider'
+  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
       
 development:
   <<: *defaults
