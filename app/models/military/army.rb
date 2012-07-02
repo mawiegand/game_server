@@ -264,7 +264,7 @@ class Military::Army < ActiveRecord::Base
   # adds the units of given army by the units stated as key/value pairs in 'units' 
   def add_units(units)
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
-      self.details[unit_type[:db_field]] += units[unit_type[:db_field]].to_i
+      self.details.increment([unit_type[:db_field]], units[unit_type[:db_field]].to_i)
     end
     self.details.save
   end
@@ -273,7 +273,7 @@ class Military::Army < ActiveRecord::Base
   def reduce_units(units)
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       unless units[unit_type[:db_field]].nil?
-        self.details[unit_type[:db_field]] -= units[unit_type[:db_field]].to_i
+        self.details.decrement([unit_type[:db_field]], units[unit_type[:db_field]].to_i)
       end
     end
     self.details.save
