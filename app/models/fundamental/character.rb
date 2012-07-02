@@ -118,9 +118,9 @@ class Fundamental::Character < ActiveRecord::Base
     if location.right_of_way == 0          # all
       return true
     elsif location.right_of_way == 1       # no_enemies
-      return !self.is_enemy_of?(location.owner)
+      return self.lives_in_region?(location.region) || !self.is_enemy_of?(location.owner)
     elsif location.right_of_way == 2       # no_neutrals
-      return !self.is_enemy_of?(location.owner) && !self.is_neutral?  
+      return self.lives_in_region?(location.region) || !self.is_enemy_of?(location.owner) && !self.is_neutral?  
     elsif location.right_of_way == 3       # no_residents
       return !self.is_enemy_of?(location.owner) && !self.is_neutral? && self.lives_in_region?(location.region)
     else                                   # forgotten anyone?
