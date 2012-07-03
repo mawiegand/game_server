@@ -16,6 +16,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
     raise ForbiddenError.new('tried to attack own army') unless attacker.owner_id != defender.owner_id
 
     raise ForbiddenError.new('not enough action points for attack') unless attacker.ap_present > 0
+    attacker.ap_present -= 1
 
     raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode === Military::Army::MODE_IDLE || attacker.battle_id.nil?
 
