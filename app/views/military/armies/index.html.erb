@@ -37,6 +37,7 @@ end %>
     <th>Target reached at</th>
     <th>Battle retreat</th>
     <th>Battle</th>
+    <th>Removed</th>
     <th></th>
     <th></th>
     <th></th>
@@ -75,6 +76,7 @@ end %>
     <td><%= military_army.target_reached_at %></td>
     <td><%= military_army.battle_retreat %></td>
     <td><%= military_army.battle_id %></td>
+    <td><%= military_army.removed %></td>
     <td><%= link_to 'Show', military_army %></td>
     <td><%= link_to 'Edit', edit_military_army_path(military_army) %></td>
     <td><%= link_to 'Destroy', military_army, confirm: 'Are you sure?', method: :delete %></td>
