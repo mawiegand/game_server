@@ -149,11 +149,11 @@ class Ticker::BattleHandler
           army.destroy
         end
       else
-        #remove battle id
-        army.battle_id = 0
+        #remove battle id  !!! battle_id must be set to nil for removing army from battle
+        army.battle = nil
         #army.mode = 0
         if !army.save
-          raise InternalServerError.new('Failed to set the battle id in the army to 0')
+          raise InternalServerError.new('Failed to set the battle id in the army to null')
         end
       end
     end
