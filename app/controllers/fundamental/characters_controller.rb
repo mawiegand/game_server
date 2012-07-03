@@ -3,6 +3,9 @@ require 'httparty'
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
   
+  before_filter :authenticate, :except => [:show, :self]   # presently, show must be excluded to be able to fetch self on startup (because safari looses auth-header on redirect from self to show)
+  before_filter :deny_api,     :except => [:show, :index, :self]
+  
   include Fundamental::CharactersHelper
   
   def index
@@ -21,6 +24,7 @@ class Fundamental::CharactersController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
+          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff?) 
           if @fundamental_characters.nil?
             @fundamental_characters =  Fundamental::Character.paginate(:page => params[:page], :per_page => 50)    
             @paginate = true   
@@ -70,6 +74,8 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters/1.json
   def show
     @fundamental_character = Fundamental::Character.find(params[:id])
+
+    # TODO: respect rules and sanitize attributes
 
     respond_to do |format|
       format.html # show.html.erb
