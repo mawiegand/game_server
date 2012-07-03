@@ -27,6 +27,15 @@ class Military::Battle < ActiveRecord::Base
     
     battle = nil
     
+    #remove a runnung movement command from bot attacker and defender
+    if attacker.moving?
+      attacker.delete_movement
+    end
+    
+    if defender.moving?
+      defender.delete_movement
+    end
+    
     if (!attacker.battle_id.nil? && attacker.battle_id > 0)      # A) add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))

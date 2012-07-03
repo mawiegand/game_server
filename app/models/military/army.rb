@@ -329,6 +329,18 @@ class Military::Army < ActiveRecord::Base
     army.save
   end
   
+  def moving?
+    return !self.movement_command.nil?
+  end
+
+  def delete_movement
+    self.movement_command.destroy
+    self.target_location = nil
+    self.target_region = nil
+    self.target_reached_at = nil
+    self.save
+  end
+  
   private
   
     def update_mode
