@@ -25,6 +25,7 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     stop
     start
+    restart_ticker
   end
 
   desc "Reset DB"
@@ -51,11 +52,11 @@ namespace :deploy do
 
   desc "Start Ticker"
   task :start_ticker do
-    run "cd #{current_path}; RAILS_ENV=production bundle exec script/ticker start"
+    run "cd #{current_path}; bundle exec RAILS_ENV=production script/ticker start"
   end
 
   desc "Stop Ticker"
   task :stop_ticker do
-    run "cd #{current_path}; RAILS_ENV=production bundle exec script/ticker stop"
+    run "cd #{current_path}; bundle exec RAILS_ENV=production script/ticker stop"
   end
 end
