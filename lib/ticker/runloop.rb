@@ -74,6 +74,13 @@ module Ticker
         rescue ::Exception
         end
       end
+          
+      # reconnect to databse
+      Ticker::Runloop.logger.add Logger::INFO, "#{Time.now.strftime('%FT%T%z')}: Connection after fork: #{ActiveRecord::Base.connection.inspect}" if Ticker::Runloop.logger
+      ActiveRecord::Base.connection.reconnect!     
+      Ticker::Runloop.logger.add Logger::INFO, "#{Time.now.strftime('%FT%T%z')}: Connection after reconnect: #{ActiveRecord::Base.connection.inspect}" if Ticker::Runloop.logger
+
+      Ticker::Runloop.logger.add Logger::WARN, "#{Time.now.strftime('%FT%T%z')}: RECONNECT TO DATABASE FAILED." if Ticker::Runloop.logger && !ActiveRecord::Base.connected?
     end
     
     def initialize(options={})
