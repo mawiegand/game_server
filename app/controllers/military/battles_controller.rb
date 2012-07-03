@@ -19,7 +19,7 @@ class Military::BattlesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @military_battle.to_json(:include => [:rounds, :factions, :participants, :armies, :participant_results, :faction_results]) }
+      format.json { render :json => @military_battle.to_json(:include => [:rounds, :factions, :participants, :armies]) }
     end
   end
 
