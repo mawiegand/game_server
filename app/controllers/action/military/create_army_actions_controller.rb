@@ -10,8 +10,10 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     
     location = Map::Location.find(@action[:location_id])
     garrison_army = location.garrison_army
-    
+
+    raise BadRequestError.new('no garrison at location') if garrison_army.nil?    
     raise BadRequestError.new('not owner of location') unless location.owner == current_character
+    raise BadRequestError.new('not owner of garrison') unless garrison_army.owner == current_character
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       if !@action[unit_type[:db_field]].nil? && @action[unit_type[:db_field]].to_i < 0
