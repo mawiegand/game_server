@@ -43,13 +43,19 @@ namespace :deploy do
     run "cd #{current_path}; bundle exec thin -C config/thin_server.yml stop"
   end
 
+  desc "Restart Ticker"
+  task :restart_ticker do
+    stop_ticker
+    start_ticker
+  end
+
   desc "Start Ticker"
   task :start_ticker do
-    run "cd #{current_path}; RAILS_ENV=production script/ticker start"
+    run "cd #{current_path}; RAILS_ENV=production bundle exec script/ticker start"
   end
 
   desc "Stop Ticker"
   task :stop_ticker do
-    run "cd #{current_path}; RAILS_ENV=production script/ticker stop"
+    run "cd #{current_path}; RAILS_ENV=production bundle exec script/ticker stop"
   end
 end
