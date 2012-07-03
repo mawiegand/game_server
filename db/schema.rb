@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702111834) do
+ActiveRecord::Schema.define(:version => 20120703121324) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -309,7 +309,7 @@ ActiveRecord::Schema.define(:version => 20120702111834) do
     t.integer  "sender_id"
     t.integer  "type_id"
     t.string   "subject"
-    t.string   "body"
+    t.text     "body"
     t.datetime "send_at"
     t.boolean  "reported"
     t.integer  "reporter_id"
