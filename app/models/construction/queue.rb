@@ -16,10 +16,12 @@ class Construction::Queue < ActiveRecord::Base
     
     # if there are less active jobs than the number of threads to handle a job 
     active_jobs = self.jobs.select{ |job| job.active? }
+
     # logger.debug '--> active_jobs ' + active_jobs.inspect
     if active_jobs.count < self.threads
       # if there are inactive jobs
       queued_jobs = self.jobs.select{ |job| !job.active? }
+
       # logger.debug '--> queued_jobs ' + queued_jobs.inspect
       if !queued_jobs.empty?
         # create active job 
@@ -91,7 +93,7 @@ class Construction::Queue < ActiveRecord::Base
     
     def create_queue_check_event
       # check if there are already current check events for this queue
-      if Event::Event.where(event_type: :construction_queue_check, local_event_id: self.id).empty?
+      if Event::Event.where(event_type: :construction_queue_check, local_event_id: self.id, locked_at: nil).empty?
         #create entry for event table
         event = Event::Event.new(
             character_id: self.settlement.owner_id,   # get current character id

@@ -97,7 +97,7 @@ class Training::Queue < ActiveRecord::Base
   
     def create_queue_check_event
       # check if there are already current check events for this queue
-      unless Event::Event.where(event_type: :training_queue_check, local_event_id: self.id).empty?
+      if Event::Event.where(event_type: :training_queue_check, local_event_id: self.id, locked_at: nil).empty?
         #create entry for event table
         new_event = Event::Event.new(
             character_id: self.settlement.owner_id,   # get current character id
