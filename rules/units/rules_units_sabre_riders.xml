@@ -23,8 +23,8 @@
       <Armor>15</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>140</Hitpoints>
-      <Effectiveness category="infantry">0.4</Effectiveness>
-      <Effectiveness category="cavalry">0.6</Effectiveness>
-      <Effectiveness category="artillery">1</Effectiveness>
-      <Effectiveness category="siege">0.4</Effectiveness>     
+      <Effectiveness category="unitcategory_infantry">0.4</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">0.6</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">1</Effectiveness>
+      <Effectiveness category="unitcategory_siege">0.4</Effectiveness>     
     </Unit>

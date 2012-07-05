@@ -234,9 +234,9 @@ class GameRules::Rules
               
               [
                 0,
-                0,
-                0,
-                0,
+                1,
+                2,
+                3,
                 
               ],
        
@@ -270,18 +270,18 @@ class GameRules::Rules
             :results => [
               
               [
+                1,
+                2,
                 0,
-                0,
-                0,
-                0,
+                3,
                 
               ],
 
               [
+                1,
                 0,
-                0,
-                0,
-                0,
+                2,
+                3,
                 
               ],
        
@@ -314,9 +314,9 @@ class GameRules::Rules
               
               [
                 0,
-                0,
-                0,
-                0,
+                2,
+                1,
+                3,
                 
               ],
        
@@ -348,10 +348,10 @@ class GameRules::Rules
             :results => [
               
               [
+                3,
+                2,
                 0,
-                0,
-                0,
-                0,
+                1,
                 
               ],
        
@@ -393,13 +393,13 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :infantry => 0.9,
+            :unitcategory_infantry => 0.9,
   
-            :cavalry => 0.9,
+            :unitcategory_cavalry => 0.9,
   
-            :artillery => 0.7,
+            :unitcategory_artillery => 0.7,
   
-            :siege => 0.8,
+            :unitcategory_siege => 0.8,
                 
           },
           :attack      => 15,
@@ -450,13 +450,13 @@ class GameRules::Rules
           :initiative  => 14,
           :effectiveness => {
             
-            :infantry => 0.8,
+            :unitcategory_infantry => 0.8,
   
-            :cavalry => 1,
+            :unitcategory_cavalry => 1,
   
-            :artillery => 0.8,
+            :unitcategory_artillery => 0.8,
   
-            :siege => 1,
+            :unitcategory_siege => 1,
                 
           },
           :attack      => 20,
@@ -507,13 +507,13 @@ class GameRules::Rules
           :initiative  => 8,
           :effectiveness => {
             
-            :infantry => 1,
+            :unitcategory_infantry => 1,
   
-            :cavalry => 0.3,
+            :unitcategory_cavalry => 0.3,
   
-            :artillery => 0.75,
+            :unitcategory_artillery => 0.75,
   
-            :siege => 0.75,
+            :unitcategory_siege => 0.75,
                 
           },
           :attack      => 18,
@@ -563,13 +563,13 @@ class GameRules::Rules
           :initiative  => 15,
           :effectiveness => {
             
-            :infantry => 0.9,
+            :unitcategory_infantry => 0.9,
   
-            :cavalry => 1.2,
+            :unitcategory_cavalry => 1.2,
   
-            :artillery => 0.6,
+            :unitcategory_artillery => 0.6,
   
-            :siege => 0.6,
+            :unitcategory_siege => 0.6,
                 
           },
           :attack      => 16,
@@ -620,13 +620,13 @@ class GameRules::Rules
           :initiative  => 26,
           :effectiveness => {
             
-            :infantry => 0.3,
+            :unitcategory_infantry => 0.3,
   
-            :cavalry => 0.75,
+            :unitcategory_cavalry => 0.75,
   
-            :artillery => 1,
+            :unitcategory_artillery => 1,
   
-            :siege => 0.4,
+            :unitcategory_siege => 0.4,
                 
           },
           :attack      => 16,
@@ -677,13 +677,13 @@ class GameRules::Rules
           :initiative  => 28,
           :effectiveness => {
             
-            :infantry => 0.4,
+            :unitcategory_infantry => 0.4,
   
-            :cavalry => 0.6,
+            :unitcategory_cavalry => 0.6,
   
-            :artillery => 1,
+            :unitcategory_artillery => 1,
   
-            :siege => 0.4,
+            :unitcategory_siege => 0.4,
                 
           },
           :attack      => 21,
@@ -734,13 +734,13 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :infantry => 0.2,
+            :unitcategory_infantry => 0.2,
   
-            :cavalry => 0.1,
+            :unitcategory_cavalry => 0.1,
   
-            :artillery => 0.2,
+            :unitcategory_artillery => 0.2,
   
-            :siege => 1,
+            :unitcategory_siege => 1,
                 
           },
           :attack      => 15,
@@ -791,13 +791,13 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :infantry => 0.2,
+            :unitcategory_infantry => 0.2,
   
-            :cavalry => 0.1,
+            :unitcategory_cavalry => 0.1,
   
-            :artillery => 0.2,
+            :unitcategory_artillery => 0.2,
   
-            :siege => 1,
+            :unitcategory_siege => 1,
                 
           },
           :attack      => 15,

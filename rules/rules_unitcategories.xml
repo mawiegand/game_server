@@ -14,10 +14,10 @@
       <Ability id="prevent-flanking" />
 			<TargetPriorities testType="no_test">
 				<TargetList>
-					<Target id="infantry" />
-					<Target id="cavalry" />
-					<Target id="artillery" />
-					<Target id="siege" />
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_siege" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -33,16 +33,16 @@
       <Ability id="flanking" />
 			<TargetPriorities testType="line_size_test" testCategory="infantry">
 				<TargetList>
-					<Target id="cavalry" />
-					<Target id="artillery" />
-					<Target id="infantry" />
-					<Target id="siege" />
+					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_siege" />
 				</TargetList>
 				<TargetList>
-					<Target id="cavalry" />
-					<Target id="infantry" />
-					<Target id="artillery" />
-					<Target id="siege" />
+					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_siege" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -57,10 +57,10 @@
       </Description>
 			<TargetPriorities testType="no_test">
 				<TargetList>
-					<Target id="infantry" />
-					<Target id="artillery" />
-					<Target id="cavalry" />
-					<Target id="siege" />
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_siege" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -76,10 +76,10 @@
       <!--here we need a test: are there legal target buildings in the enemy faction? special abilities are on a per unit basis -->
 			<TargetPriorities testType="no_test">
 				<TargetList>
-					<Target id="siege" />
-					<Target id="artillery" />
-					<Target id="infantry" />
-					<Target id="cavalry" />
+					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_cavalry" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>

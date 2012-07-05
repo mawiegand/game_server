@@ -134,7 +134,7 @@ class Ticker::BattleHandler
     rules = GameRules::Rules.the_rules
     rules.unit_categories.each {
       |c|
-      if (c[:symbolic_id].to_s == 'unitcategory_' + category_symbol.to_s)
+      if (c[:symbolic_id].to_s == category_symbol.to_s)
         return c[:id]
       end
     } 
