@@ -257,6 +257,11 @@ end
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>
+<xsl:if test="Requirement">
+          :requirements=> [
+            <xsl:apply-templates select="Requirement" />
+          ],          
+</xsl:if>
 <xsl:if test="count(Encumbrance)">
           :encumbrance => {
 <xsl:for-each select="Encumbrance">

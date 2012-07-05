@@ -420,6 +420,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
 
         },              #   END OF Club Warrior
         {               #   Tree Huggers
@@ -477,6 +490,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Tree Huggers
         {               #   Pebble Thrower
@@ -532,6 +558,19 @@ class GameRules::Rules
             2 => '2',
             
           },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
 
 
         },              #   END OF Pebble Thrower
@@ -590,6 +629,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Spit Bearer
         {               #   Ostrich Riders
@@ -646,6 +698,19 @@ class GameRules::Rules
             2 => '4',
             
           },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
 
 
         },              #   END OF Ostrich Riders
@@ -704,6 +769,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Sabretooth-Riders
         {               #   Battering Ram
@@ -761,6 +839,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_workshop',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
 
         },              #   END OF Battering Ram
         {               #   Catapult
@@ -817,6 +908,19 @@ class GameRules::Rules
             2 => '4',
             
           },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_workshop',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
 
 
         },              #   END OF Catapult
