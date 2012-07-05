@@ -17,7 +17,7 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
     raise BadRequestError.new('could not get army\'s current region') if self.starting_region_id != army.region_id
     
         # check movement possible? (starting and target location neighbours?)
-    
+        
     if (role != :owner && role != :admin  && role != staff) || self.army.moving? || self.army.fighting?
       return false
     end

@@ -123,7 +123,7 @@ class Military::Army < ActiveRecord::Base
   end
   
   def moving?
-    !self.target_location_id.blank? || self.mode === Military::Army::MODE_MOVING # 1 : moving?!
+    self.mode === MODE_MOVING # 1 : moving?!
   end
   
   def fighting?
@@ -254,7 +254,7 @@ class Military::Army < ActiveRecord::Base
   # checks if the given army contains at least one unit.
   def empty?
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
-      if !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+      if !self.details[unit_type[:db_field]].nil? && (self.details[unit_type[:db_field]] || 0) > 0
         return false
       end
     end
@@ -329,15 +329,12 @@ class Military::Army < ActiveRecord::Base
     army.save
   end
   
-  def moving?
-    return !self.movement_command.nil?
-  end
-
   def delete_movement
     self.movement_command.destroy
     self.target_location = nil
     self.target_region = nil
     self.target_reached_at = nil
+    self.mode = MODE_IDLE
     self.save
   end
   
