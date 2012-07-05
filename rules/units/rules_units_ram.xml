@@ -24,8 +24,8 @@
       <!--needs special ability: destroy wall level -->
       <Overrunnable>true</Overrunnable>
       <Hitpoints>90</Hitpoints>
-      <Effectiveness category="infantry">0.2</Effectiveness>
-      <Effectiveness category="cavalry">0.1</Effectiveness>
-      <Effectiveness category="artillery">0.2</Effectiveness>
-      <Effectiveness category="siege">1</Effectiveness>     
+      <Effectiveness category="unitcategory_infantry">0.2</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">0.1</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">0.2</Effectiveness>
+      <Effectiveness category="unitcategory_siege">1</Effectiveness>     
     </Unit>
