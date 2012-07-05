@@ -1,21 +1,21 @@
 class Military::Battle < ActiveRecord::Base
   
-  has_one    :event,        :class_name => "Event::Event",            :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
+  has_one    :event,        :class_name => "Event::Event",                :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
-  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
-  has_many   :factions,     :class_name => "Military::BattleFaction", :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy
-  has_many   :rounds,       :class_name => "Military::BattleRound",   :foreign_key => "battle_id",     :inverse_of => :battle, :dependent => :destroy,
+  has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy
+  has_many   :factions,     :class_name => "Military::BattleFaction",     :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy
+  has_many   :rounds,       :class_name => "Military::BattleRound",       :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy,
              :order => 'round_num ASC'
-  has_many   :armies,       :class_name => "Military::Army",          :foreign_key => "battle_id",     :inverse_of => :battle
+  has_many   :armies,       :class_name => "Military::Army",              :foreign_key => "battle_id",      :inverse_of => :battle
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
   has_many   :faction_results,     :class_name => "Military::BattleFactionResult",     :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
 
-  belongs_to :initiator,    :class_name => "Fundamental::Character",  :foreign_key => "initiator_id"
-  belongs_to :opponent,     :class_name => "Fundamental::Character",  :foreign_key => "opponent_id"
+  belongs_to :initiator,    :class_name => "Fundamental::Character",      :foreign_key => "initiator_id"
+  belongs_to :opponent,     :class_name => "Fundamental::Character",      :foreign_key => "opponent_id"
   
-  belongs_to :region,       :class_name => "Map::Region",             :foreign_key => "region_id",     :inverse_of => :battles
-  belongs_to :location,     :class_name => "Map::Location",           :foreign_key => "location_id",   :inverse_of => :battles
+  belongs_to :region,       :class_name => "Map::Region",                 :foreign_key => "region_id",      :inverse_of => :battles
+  belongs_to :location,     :class_name => "Map::Location",               :foreign_key => "location_id",    :inverse_of => :battles
   
   
   # starts a fight between two armies. if one of the armies is already 
