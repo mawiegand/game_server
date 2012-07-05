@@ -45,7 +45,7 @@ class Construction::Queue < ActiveRecord::Base
       end
     end
     
-    # don't let the position numbers get to large
+    # don't let the position numbers get too large
     self.reset_job_positions
   end
   
@@ -104,11 +104,14 @@ class Construction::Queue < ActiveRecord::Base
         if !event.save  # this is the final step; this makes sure, something is actually executed
           raise ArgumentError.new('could not create event for construction queue check')
         end
+        return true
+      else
+        return false
       end
     end
     
     def reset_job_positions
-      if !self.jobs.empty? && self.jobs.last.position > 1000
+      if !self.jobs.empty? && self.jobs.first.position > 1000
         ActiveRecord::Base.transaction do
           self.jobs.each do |job|
             job.position -= 1000

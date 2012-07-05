@@ -22,7 +22,9 @@ class Ticker::ResourceEffectHandler
     end
     
     # event will be automatically destroyed by deleting the corresponding effect model
-    event.character.resource_pool.remove_effect_transaction(effect)
+    if event.character.resource_pool.remove_effect_transaction(effect)
+      effect.destroy
+    end
     
     runloop.say "Resource effect handler completed."
   end
