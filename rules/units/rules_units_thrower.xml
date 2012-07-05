@@ -19,7 +19,6 @@
       <Cost id="resource_stone" round="true">12</Cost>  
       <Cost id="resource_fur" round="true">2</Cost>    
       <ProductionTime shortenable="true">500</ProductionTime>  
-	  <Requirement id="building_firing_range" min_level="1" />
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>

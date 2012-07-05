@@ -22,7 +22,6 @@
   <Cost id="resource_wood" round="true">20</Cost>    
   <Cost id="resource_fur" round="true">12</Cost>    
   <ProductionTime shortenable="true">1200</ProductionTime>  
-  <Requirement id="building_barracks" min_level="1" /> 
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>
