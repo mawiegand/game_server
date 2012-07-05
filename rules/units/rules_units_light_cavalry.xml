@@ -4,6 +4,12 @@
     <Unit id="light_cavalry" category="unitcategory_cavalry">
       <Name>Ostrich Riders</Name>
       <Name lang="de_DE">Straußenreiter</Name>
+  <Flavour lang="en_US">
+    <p>Kills opposing units.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Kämpft gegen andere Einheiten.</p>
+  </Flavour>
       <Description lang="de_DE">
         <p>Strauße sind nicht nur lecker sondern auch gute und schnelle Kämpfer. Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p> 
       </Description>

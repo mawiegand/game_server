@@ -378,7 +378,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -448,7 +452,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -518,7 +526,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -657,7 +669,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
