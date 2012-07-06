@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+#
+# Helper script that runs all consistency checks and repairs inconsistencies
+# on the fly.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+puts
+puts "This script checks incrementally updated database fields "
+puts "like e.g. the resource_X_production_rate for incosistencies "
+puts "that is, differences between the value the field should have "
+puts "due to the existing infrastructure and effects and the value "
+puts "presently stored in the database. The script also repairs "
+puts "detected inconsistencies on the fly."
+puts 
+puts "You can find details on the detected and repaired "
+puts "inconsistencies in the environment specific log-file."
+puts 
+puts "This script should usually be started aferter a larger "
+puts "change of the game rules during a running game."
+puts
+
+
+# ############################################################################
+#
+#   SETTLEMENTS
+#
+# ############################################################################
+
+print "CHECKING Settlements "
+
+step = Settlement::Settlement.count / 10
+count = 0
+
+Settlement::Settlement.find(:all).each do |settlement|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+	settlement.check_consistency
+	count += 1 
+end
+puts " done."
+
+
+puts
+

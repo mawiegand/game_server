@@ -179,9 +179,9 @@ class Settlement::Settlement < ActiveRecord::Base
     true
   end
   
-  def conditional_resource_production_recalc
+  def check_consistency_sometimes
     return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['settlement_recalc_probability']       # do the check only seldomly (determined by random event)  
-    resource_production_recalc
+    consistency_check
   end
   
   # unfortunately, this cannot be an after_commit handler, because at that point
@@ -191,7 +191,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # slot. unfortunately, changes therefore cannot be detected in this method; the
   # recalculation is triggered independently of whether or not resource attributes
   # have been changed.
-  def resource_production_recalc
+  def check_consistency
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in settlement #{self.id}: #{self.name} of character #{self.owner_id}.")
 
     productions = recalc_resource_production_base
@@ -199,6 +199,9 @@ class Settlement::Settlement < ActiveRecord::Base
     
     boni = recalc_local_resource_production_boni
     check_and_apply_local_resource_production_boni(boni)
+    
+    unlocks = recalc_queue_unlocks
+    check_and_apply_queue_unlocks(unlocks)
 
     if self.changed?
       logger.info(">>> SAVING AFTER DETECTING ERRORS.")
@@ -336,6 +339,30 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
     
+    def recalc_queue_unlocks
+      queue_types = GameRules::Rules.the_rules().queue_types
+      unlocks     = Array.new(queue_types.count, 0)
+
+      self.slots.each do |slot|
+        slot.queue_unlocks(unlocks)
+      end
+      unlocks
+    end
+    
+    def check_and_apply_queue_unlocks(unlocks)
+      GameRules::Rules.the_rules().queue_types.each do |queue|
+        if queue[:domain] == :settlement
+          present = self[queue[:unlock_field]]
+          recalc  = unlocks[queue[:id]]
+        
+          if (present != recalc)
+            logger.warn(">>> QUEUE UNLOCK RECALC DIFFERS for #{queue[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+            self[queue[:unlock_field]] = recalc
+          end
+        end
+      end  
+    end
+    
     ############################################################################
     #
     #  UPDATING RESOURCE PRODUCTION 
@@ -384,7 +411,7 @@ class Settlement::Settlement < ActiveRecord::Base
         recalc  = productions[resource_type[:id]]
         
         if (present != recalc)
-          logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name]}. Old: #{present} Corrected: #{recalc}.")
+          logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_base_production'] = recalc
         end
       end    
@@ -408,7 +435,7 @@ class Settlement::Settlement < ActiveRecord::Base
         recalc  = boni[resource_type[:id]]
         
         if (present != recalc)
-          logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name]}. Old: #{present} Corrected: #{recalc}.")
+          logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_bonus_buildings'] = recalc
         end
       end    
