@@ -196,6 +196,9 @@ class Settlement::Settlement < ActiveRecord::Base
 
     productions = recalc_resource_production_base
     check_and_apply_productions(productions)
+    
+    boni = recalc_local_resource_production_boni
+    check_and_apply_local_resource_production_boni(boni)
 
     if self.changed?
       logger.info(">>> SAVING AFTER DETECTING ERRORS.")
@@ -206,6 +209,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     true      
   end
+
   
   def resource_production_changed?
     changed = false
@@ -380,8 +384,32 @@ class Settlement::Settlement < ActiveRecord::Base
         recalc  = productions[resource_type[:id]]
         
         if (present != recalc)
-          logger.warn(">>> RECALC DIFFERS for #{resource_type[:name]}. Old: #{present} Corrected: #{recalc}.")
+          logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_base_production'] = recalc
+        end
+      end    
+    end
+    
+    
+    
+    def recalc_local_resource_production_boni
+      resource_types = GameRules::Rules.the_rules().resource_types
+      boni           = Array.new(resource_types.count, 0)
+      self.slots.each do |slot|
+        slot.production_bonus(boni)
+      end
+      return boni
+    end
+    
+    def check_and_apply_local_resource_production_boni(boni)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_production_bonus_buildings']
+        recalc  = boni[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_production_bonus_buildings'] = recalc
         end
       end    
     end

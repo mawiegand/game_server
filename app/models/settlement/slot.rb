@@ -15,22 +15,27 @@ class Settlement::Slot < ActiveRecord::Base
   
   def resource_production(result=nil)
     result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
-    
     return    if building_id.nil? || building_id == 0
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
     
-    building_type[:production].each do |product|
-      resource_type = GameRules::Rules.the_rules().resource_types[product[:id]]
-    
-      formula = Util::Formula.parse_from_formula(product[:formula])
-      amount  = formula.apply(self.level)   
-      
-      result[resource_type[:id]] += amount
-    end   
+    eval_resource_dependent_formulas(building_type[:production], self.level, result)
   end
 
+  def production_bonus(result=nil)
+    result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+    return    if building_id.nil? || building_id == 0
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    eval_resource_dependent_formulas(building_type[:production_bonus], self.level, result)
+  end
+  
+  def queue_speedup(result=nil)
+    
+  end
 
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
@@ -281,6 +286,23 @@ class Settlement::Slot < ActiveRecord::Base
     def trigger_recalc_resource_production
       self.settlement.conditional_resource_production_recalc    unless self.settlement.nil?
       true
+    end
+    
+    def eval_resource_dependent_formulas(formulas, level=nil, result=nil)
+      result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+      level  ||= self.level
+      
+      return     if formulas.nil?
+        
+      formulas.each do |entry|
+        resource_type = GameRules::Rules.the_rules().resource_types[entry[:id]]
+    
+        formula = Util::Formula.parse_from_formula(entry[:formula])
+        amount  = formula.apply(level)   
+
+        result[entry[:id]] += amount
+      end
+      result
     end
   
 end
