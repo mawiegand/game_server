@@ -15,7 +15,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   def resource_production(result=nil)
     result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
-    return    if building_id.nil? || building_id == 0
+    return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
@@ -25,7 +25,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def production_bonus(result=nil)
     result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
-    return    if building_id.nil? || building_id == 0
+    return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
@@ -35,7 +35,7 @@ class Settlement::Slot < ActiveRecord::Base
   
   def queue_unlocks(unlocks=nil)
     unlocks ||= Array.new(GameRules::Rules.the_rules().queue_types.count, 0)
-    return    if building_id.nil? || building_id == 0
+    return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
