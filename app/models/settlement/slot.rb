@@ -6,10 +6,29 @@ class Settlement::Slot < ActiveRecord::Base
   
   has_many   :jobs,        :class_name => "Construction::Job",       :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
 
-  after_save :propagate_level_changes
+  after_save   :propagate_level_changes
+  after_commit :trigger_recalc_resource_production
 
   def empty?
     return self.level == 0 || self.level.nil?
+  end
+  
+  def resource_production(result=nil)
+    result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+    
+    return    if building_id.nil? || building_id == 0
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    building_type[:production].each do |product|
+      resource_type = GameRules::Rules.the_rules().resource_types[product[:id]]
+    
+      formula = Util::Formula.parse_from_formula(product[:formula])
+      amount  = formula.apply(self.level)   
+      
+      result[resource_type[:id]] += amount
+    end   
   end
 
 
@@ -257,6 +276,11 @@ class Settlement::Slot < ActiveRecord::Base
         self.settlement.save
       end
       true 
+    end
+    
+    def trigger_recalc_resource_production
+      self.settlement.conditional_resource_production_recalc    unless self.settlement.nil?
+      true
     end
   
 end
