@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true">  
+<Building id="building_siege_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishabe="true">  
   <Name lang="de_DE">Turm der Tüftler</Name>
   <Name lang="en_US">Inventor Tower</Name>
   <Description lang="de_DE">

@@ -80,10 +80,17 @@ class Settlement::Slot < ActiveRecord::Base
   # responsible for updating the slot and propagating all effects
   # that are related to this change.
   def destroy_building
-    if level == 0 && building_id.nil?
+    if self.level == 0 && self.building_id.nil?
       return false
     else
-      # TODO:   needs to be implemented
+      old_building_id = self.building_id
+      old_level = self.level
+      self.level = 0
+      self.building_id = nil
+      propagate_resource_production(old_building_id, old_level, 0)
+      propagate_resource_production_bonus(old_building_id, old_level, 0)
+      propagate_abilities(old_building_id, old_level, 0)
+      self.save
     end
   end
 
