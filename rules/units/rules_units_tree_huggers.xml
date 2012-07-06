@@ -4,6 +4,12 @@
  <Unit id="tree_huggers" category="unitcategory_infantry">
       <Name>Tree Huggers</Name>
       <Name lang="de_DE">Baum-Brutalo</Name>
+  <Flavour lang="en_US">
+    <p>Kills opposing units.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Kämpft gegen andere Einheiten.</p>
+  </Flavour>
       <Description lang="de_DE">
         <p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p> 
 		<p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>

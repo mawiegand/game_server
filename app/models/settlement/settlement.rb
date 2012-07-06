@@ -33,6 +33,8 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save  :propagate_information_to_location
 
 
+
+
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
       { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },
@@ -176,6 +178,50 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     true
   end
+  
+  def check_consistency_sometimes
+    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['settlement_recalc_probability']       # do the check only seldomly (determined by random event)  
+    consistency_check
+  end
+  
+  # unfortunately, this cannot be an after_commit handler, because at that point
+  # the slot, that triggered the transaction on the settlement has not ended its
+  # own transaction, thus, is not visible when selecting it from the database.
+  # therefore the recalculation is triggered from an after commit handler from the
+  # slot. unfortunately, changes therefore cannot be detected in this method; the
+  # recalculation is triggered independently of whether or not resource attributes
+  # have been changed.
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in settlement #{self.id}: #{self.name} of character #{self.owner_id}.")
+
+    productions = recalc_resource_production_base
+    check_and_apply_productions(productions)
+    
+    boni = recalc_local_resource_production_boni
+    check_and_apply_local_resource_production_boni(boni)
+    
+    unlocks = recalc_queue_unlocks
+    check_and_apply_queue_unlocks(unlocks)
+
+    if self.changed?
+      logger.info(">>> SAVING AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> EVERYTHING OK.")
+    end
+    
+    true      
+  end
+
+  
+  def resource_production_changed?
+    changed = false
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base = resource_type[:symbolic_id].to_s
+      changed ||= !self.changes[base+'_production_rate'].nil?
+    end
+    return changed
+  end
     
 
   
@@ -293,6 +339,30 @@ class Settlement::Settlement < ActiveRecord::Base
       return true
     end
     
+    def recalc_queue_unlocks
+      queue_types = GameRules::Rules.the_rules().queue_types
+      unlocks     = Array.new(queue_types.count, 0)
+
+      self.slots.each do |slot|
+        slot.queue_unlocks(unlocks)
+      end
+      unlocks
+    end
+    
+    def check_and_apply_queue_unlocks(unlocks)
+      GameRules::Rules.the_rules().queue_types.each do |queue|
+        if queue[:domain] == :settlement
+          present = self[queue[:unlock_field]]
+          recalc  = unlocks[queue[:id]]
+        
+          if (present != recalc)
+            logger.warn(">>> QUEUE UNLOCK RECALC DIFFERS for #{queue[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+            self[queue[:unlock_field]] = recalc
+          end
+        end
+      end  
+    end
+    
     ############################################################################
     #
     #  UPDATING RESOURCE PRODUCTION 
@@ -323,6 +393,53 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
+
+    
+    def recalc_resource_production_base
+      resource_types = GameRules::Rules.the_rules().resource_types
+      productions    = Array.new(resource_types.count, 0)
+      self.slots.each do |slot|
+        slot.resource_production(productions)
+      end
+      return productions
+    end
+    
+    def check_and_apply_productions(productions)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_base_production']
+        recalc  = productions[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_base_production'] = recalc
+        end
+      end    
+    end
+    
+    
+    
+    def recalc_local_resource_production_boni
+      resource_types = GameRules::Rules.the_rules().resource_types
+      boni           = Array.new(resource_types.count, 0)
+      self.slots.each do |slot|
+        slot.production_bonus(boni)
+      end
+      return boni
+    end
+    
+    def check_and_apply_local_resource_production_boni(boni)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_production_bonus_buildings']
+        recalc  = boni[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_production_bonus_buildings'] = recalc
+        end
+      end    
+    end
     
     ############################################################################
     #

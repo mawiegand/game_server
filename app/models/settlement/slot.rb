@@ -6,12 +6,49 @@ class Settlement::Slot < ActiveRecord::Base
   
   has_many   :jobs,        :class_name => "Construction::Job",       :foreign_key => "slot_id",        :inverse_of => :slot,   :order => 'position ASC'
 
-  after_save :propagate_level_changes
+  after_save   :propagate_level_changes
+  after_commit :trigger_consistency_check
 
   def empty?
     return self.level == 0 || self.level.nil?
   end
+  
+  def resource_production(result=nil)
+    result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+    return    if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    eval_resource_dependent_formulas(building_type[:production], self.level, result)
+  end
 
+  def production_bonus(result=nil)
+    result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+    return    if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    eval_resource_dependent_formulas(building_type[:production_bonus], self.level, result)
+  end
+  
+  def queue_unlocks(unlocks=nil)
+    unlocks ||= Array.new(GameRules::Rules.the_rules().queue_types.count, 0)
+    return    if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    return    if building_type[:abilities].nil? || building_type[:abilities][:unlock_queue].nil?
+    
+    building_type[:abilities][:unlock_queue].each do |queue|
+      unlocks[queue[:queue_type_id]] += self.level >= queue[:level] ? 1 : 0
+    end
+    
+    unlocks
+  end  
+  
 
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
@@ -264,6 +301,28 @@ class Settlement::Slot < ActiveRecord::Base
         self.settlement.save
       end
       true 
+    end
+    
+    def trigger_consistency_check
+      self.settlement.check_consistency_sometimes    unless self.settlement.nil?
+      true
+    end
+    
+    def eval_resource_dependent_formulas(formulas, level=nil, result=nil)
+      result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+      level  ||= self.level
+      
+      return     if formulas.nil?
+        
+      formulas.each do |entry|
+        resource_type = GameRules::Rules.the_rules().resource_types[entry[:id]]
+    
+        formula = Util::Formula.parse_from_formula(entry[:formula])
+        amount  = formula.apply(level)   
+
+        result[entry[:id]] += amount
+      end
+      result
     end
   
 end

@@ -4,6 +4,12 @@
     <Unit id="thrower" category="unitcategory_artillery">
       <Name>Pebble Thrower</Name>
       <Name lang="de_DE">Kieselsteinwerfer</Name>
+  <Flavour lang="en_US">
+    <p>Kills opposing units.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Kämpft gegen andere Einheiten.</p>
+  </Flavour>
       <Description lang="de_DE">
         <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p> 
       </Description>
@@ -13,7 +19,6 @@
       <Cost id="resource_stone" round="true">12</Cost>  
       <Cost id="resource_fur" round="true">2</Cost>    
       <ProductionTime shortenable="true">500</ProductionTime>  
-	  <Requirement id="building_firing_range" min_level="1" />
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>

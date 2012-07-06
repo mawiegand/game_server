@@ -378,7 +378,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -435,7 +439,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -477,6 +485,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Tree Huggers
         {               #   Pebble Thrower
@@ -492,7 +513,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -590,6 +615,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Spit Bearer
         {               #   Ostrich Riders
@@ -605,7 +643,11 @@ class GameRules::Rules
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
           },
           :description => {
             
@@ -703,6 +745,19 @@ class GameRules::Rules
             2 => '4',
             
           },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
 
 
         },              #   END OF Sabretooth-Riders
@@ -817,6 +872,19 @@ class GameRules::Rules
             2 => '4',
             
           },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_workshop',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
 
 
         },              #   END OF Catapult
