@@ -13,7 +13,7 @@ end %>
     <th>Location</th>
     <th>Region</th>
     <th>Owner</th>
-    <th>Owner name</th>
+    <th>NPC</th>
     <th>Alliance</th>
     <th>Alliance tag</th>
     <th>Ap max</th>
@@ -52,8 +52,8 @@ end %>
     <td><%= military_army.home_settlement_name %></td>
     <td><%= military_army.location_id %></td>
     <td><%= military_army.region_id %></td>
-    <td><%= military_army.owner_id %></td>
-    <td><%= military_army.owner_name %></td>
+    <td><%= military_army.owner_name %> (<%= military_army.owner_id %>)</td>
+    <td><%= military_army.npc %></td>
     <td><%= military_army.alliance_id %></td>
     <td><%= military_army.alliance_tag %></td>
     <td><%= military_army.ap_max %></td>

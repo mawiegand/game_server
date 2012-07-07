@@ -36,6 +36,7 @@ class Military::Army < ActiveRecord::Base
       name:         'Garrison',
       owner_id:     settlement.owner_id,
       owner_name:   settlement.owner.name,
+      npc:          settlement.owner.npc,
       alliance_id:  settlement.alliance_id,
       alliance_tag: settlement.alliance_tag,
       home_settlement_name: settlement.name,
