@@ -13,6 +13,8 @@ class Settlement::Slot < ActiveRecord::Base
     return self.level == 0 || self.level.nil?
   end
   
+  # calculates the base production produced by this slot for all
+  # resource types. returns an array.
   def resource_production(result=nil)
     result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
     return    if building_id.nil?
@@ -23,6 +25,8 @@ class Settlement::Slot < ActiveRecord::Base
     eval_resource_dependent_formulas(building_type[:production], self.level, result)
   end
 
+  # calculates and returns an array of the production boni granted
+  # by this slot
   def production_bonus(result=nil)
     result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
     return    if building_id.nil?
@@ -33,6 +37,8 @@ class Settlement::Slot < ActiveRecord::Base
     eval_resource_dependent_formulas(building_type[:production_bonus], self.level, result)
   end
   
+  # returns the number of unlocks this slot provides for the different queue
+  # types.
   def queue_unlocks(unlocks=nil)
     unlocks ||= Array.new(GameRules::Rules.the_rules().queue_types.count, 0)
     return    if building_id.nil?
@@ -62,9 +68,7 @@ class Settlement::Slot < ActiveRecord::Base
     raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.empty?
     self.building_id = building_id_to_build
     self.level = 1
-    propagate_resource_production(building_id_to_build, 0, 1)
-    propagate_resource_production_bonus(building_id_to_build, 0, 1)
-    propagate_abilities(building_id_to_build, 0, 1)
+    propagate_change(building_id_to_build, 0, 1)
     self.save    
   end
 
@@ -80,9 +84,7 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
-    propagate_resource_production(self.building_id, self.level-1, self.level)
-    propagate_resource_production_bonus(self.building_id, self.level-1, self.level)
-    propagate_abilities(self.building_id, self.level-1, self.level)
+    propagate_change(self.building_id, self.level-1, self.level)
     self.save
     # TODO: propagation of other depending values needs to be implemented
   end
@@ -104,7 +106,9 @@ class Settlement::Slot < ActiveRecord::Base
     elsif level == 1
       return destroy_building
     else
-      # TODO: needs to be implemented
+      self.level -= 1
+      propagate_change(self.building_id, self.level+1, self.level)
+      self.save
     end
   end
   
@@ -124,13 +128,17 @@ class Settlement::Slot < ActiveRecord::Base
       old_level = self.level
       self.level = 0
       self.building_id = nil
-      propagate_resource_production(old_building_id, old_level, 0)
-      propagate_resource_production_bonus(old_building_id, old_level, 0)
-      propagate_abilities(old_building_id, old_level, 0)
+      propagate_change(old_building_id, old_level, 0)
       self.save
     end
   end
-
+  
+  def propagate_change(building_id, old_level, new_level)
+    propagate_resource_production       building_id, old_level, new_level
+    propagate_resource_production_bonus building_id, old_level, new_level
+    propagate_abilities                 building_id, old_level, new_level
+  end
+    
   ############################################################################
   #
   #  RESOURCE PRODUCTION CHANGES
