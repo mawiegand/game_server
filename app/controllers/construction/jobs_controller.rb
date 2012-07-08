@@ -114,21 +114,23 @@ class Construction::JobsController < ApplicationController
   # DELETE /construction/jobs/1
   # DELETE /construction/jobs/1.json
   def destroy
-    @construction_job = Construction::Job.find(params[:id])
+    Construction::Job.transaction do
+      @construction_job = Construction::Job.lock.find(params[:id])
     
-    # test if there are jobs depending on this one, if not, remove job
+      # test if there are jobs depending on this one, if not, remove job
     
-    queue = @construction_job.queue
+      queue = @construction_job.queue
     
-    # call cancel at slot to remove the building id if there is no building in slot
-    if @construction_job.last_in_slot
-      @construction_job.slot.job_cancelled(@construction_job)
-      @construction_job.refund_for_job if @construction_job.active?
-      @construction_job.destroy      
-      queue.reload
-      queue.check_for_new_jobs
-    else
-      raise ForbiddenError.new('Could only remove last job of slot')        
+      # call cancel at slot to remove the building id if there is no building in slot
+      if @construction_job.last_in_slot
+        @construction_job.slot.job_cancelled(@construction_job)
+        @construction_job.refund_for_job if @construction_job.active?
+        @construction_job.destroy
+        queue.reload
+        queue.check_for_new_jobs
+      else
+        raise ForbiddenError.new('Could only remove last job of slot')        
+      end
     end
 
     respond_to do |format|
