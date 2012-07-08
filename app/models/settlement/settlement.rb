@@ -181,7 +181,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def check_consistency_sometimes
     return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['settlement_recalc_probability']       # do the check only seldomly (determined by random event)  
-    consistency_check
+    check_consistency
   end
   
   # unfortunately, this cannot be an after_commit handler, because at that point
