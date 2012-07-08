@@ -1561,8 +1561,8 @@ class GameRules::Rules
               },
             
               {
-                :id                 => 0,
-                :symbolic_id        => :resource_toad,
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
                 :formula            => "MAX(LEVEL-10,0)*0.5-MAX(LEVEL-11,0)*0.5+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1",
               },
             
