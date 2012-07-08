@@ -62,13 +62,20 @@ class Fundamental::CharactersController < ApplicationController
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
       
-      character.increment!(:login_count)
+      character.last_login_at = DateTime.now
+      character.increment(:login_count)
+      character.save
        
       redirect_to fundamental_character_path(character.id)
       
     elsif !current_character
       raise NotFoundError.new("Could not find user's character.")
     else
+      
+      current_character.last_login_at = DateTime.now
+      current_character.increment(:login_count)
+      current_character.save      
+      
       redirect_to fundamental_character_path(current_character_id)
     end
   end

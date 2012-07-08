@@ -5,6 +5,7 @@
     <th>Identifier</th>
     <th>Premium account</th>
     <th>Name</th>
+    <th>Login</th>
     <th>Lvel</th>
     <th>Exp</th>
     <th>Att</th>
@@ -34,6 +35,12 @@
     <td><%= fundamental_character.identifier %></td>
     <td><%= fundamental_character.premium_account %></td>
     <td><%= fundamental_character.name %></td>
+    <td><% if !fundamental_character.last_login_at.nil? %>
+          <%= time_ago_in_words(fundamental_character.last_login_at) %> ago (#<%= fundamental_character.login_count %>)
+        <%else%>
+          never
+        <%end%>
+    </td>
     <td><%= fundamental_character.lvel %></td>
     <td><%= fundamental_character.exp %></td>
     <td><%= fundamental_character.att %></td>
