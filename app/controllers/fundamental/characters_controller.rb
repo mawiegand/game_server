@@ -60,7 +60,10 @@ class Fundamental::CharactersController < ApplicationController
       character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'        
               
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name)
-      raise InternalServerError.new('Could not create Character for new User.') if character.blank?      
+      raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
+      
+      character.increment!(:login_count)
+       
       redirect_to fundamental_character_path(character.id)
       
     elsif !current_character

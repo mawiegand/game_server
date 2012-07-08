@@ -25,6 +25,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   
   before_save :prevent_empty_password
   
+  after_save  :propagate_to_ranking
+  
   
   
   
@@ -55,12 +57,14 @@ class Fundamental::Alliance < ActiveRecord::Base
   def add_character(character)
     character.alliance_tag = self.tag
     character.alliance_id = self.id
+    self.increment!(:members_count)
     character.save
   end
   
   def remove_character(character)
     character.alliance_tag = nil
     character.alliance_id = nil
+    self.decrement!(:members_count)
     character.save
     
     if self.leader_id == character.id
@@ -82,5 +86,12 @@ class Fundamental::Alliance < ActiveRecord::Base
       chars = ('a'..'z').to_a + ('A'..'Z').to_a
       (0..(len-1)).collect { chars[Kernel.rand(chars.length)] }.join
     end 
+    
+    def propagate_to_ranking 
+      if !self.changes[:members_count].blank? && !self.ranking.nil?
+        self.ranking.num_members = self.members_count
+        self.ranking.save
+      end
+    end
   
 end

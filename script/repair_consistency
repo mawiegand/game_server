@@ -26,13 +26,46 @@ puts
 
 # ############################################################################
 #
+#   ALLIANCES
+#
+# ############################################################################
+
+
+print "CHECKING Alliances "
+
+step = Fundamental::Alliance.count / 10  
+step = step > 0 ? step : 1
+
+count = 0
+
+Fundamental::Alliance.find(:all).each do |alliance|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+  Fundamental::Alliance.reset_counters(alliance.id, :members)
+  if (!alliance.ranking.nil?)
+    alliance.reload
+    alliance.ranking.num_members = alliance.members_count
+    alliance.ranking.save
+  end
+	count += 1 
+end
+puts " done."
+
+
+
+
+# ############################################################################
+#
 #   SETTLEMENTS
 #
 # ############################################################################
 
 print "CHECKING Settlements "
 
-step = Settlement::Settlement.count / 10
+step = Settlement::Settlement.count / 10 
+step = step > 0 ? step : 1
 count = 0
 
 Settlement::Settlement.find(:all).each do |settlement|

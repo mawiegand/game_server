@@ -2,7 +2,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
 
-  belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members 
+  belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members, :counter_cache => :members_count
   
   has_one  :resource_pool,     :class_name => "Fundamental::ResourcePool",  :foreign_key => "character_id", :inverse_of => :owner
   has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character
@@ -192,7 +192,7 @@ class Fundamental::Character < ActiveRecord::Base
       set_clause = { }
       set_clause[:alliance_id]  = alliance_change[1]        unless alliance_change.nil?
       set_clause[:alliance_tag] = alliance_tag_change[1]    unless alliance_tag_change.nil?
-      
+            
       redundancies.each do |entry| 
         if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
           entry[:model].where(entry[:field] => self.id).each do |item|
