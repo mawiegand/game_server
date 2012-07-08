@@ -3,28 +3,15 @@
 <table>
   <tr>
     <th>Identifier</th>
-    <th>Premium account</th>
+    <th>Premium</th>
     <th>Name</th>
     <th>Login</th>
     <th>Lvel</th>
-    <th>Exp</th>
-    <th>Att</th>
-    <th>Def</th>
-    <th>Wins</th>
-    <th>Losses</th>
-    <th>Health max</th>
-    <th>Health present</th>
-    <th>Health updated at</th>
+    <th>Skill</th>
+    <th>Fights</th>
+    <th>Health</th>
     <th>Locked</th>
-    <th>Locked by</th>
-    <th>Locked at</th>
-    <th>Skill points</th>
-    <th>Alliance</th>
-    <th>Alliance tag</th>
-    <th>Base location</th>
-    <th>Premium End</th>
-    <th>Base region</th>
-    <th>Base node</th>
+    <th>Base</th>
     <th></th>
     <th></th>
     <th></th>
@@ -34,32 +21,22 @@
   <tr>
     <td><%= fundamental_character.identifier %></td>
     <td><%= fundamental_character.premium_account %></td>
-    <td><%= fundamental_character.name %></td>
+    <td><%= fundamental_character.name %> 
+        <%if !fundamental_character.alliance_tag.blank? %>
+          | <%= fundamental_character.alliance_tag %>
+        <%end%></td>
     <td><% if !fundamental_character.last_login_at.nil? %>
           <%= time_ago_in_words(fundamental_character.last_login_at) %> ago (#<%= fundamental_character.login_count %>)
         <%else%>
           never
-        <%end%>
-    </td>
-    <td><%= fundamental_character.lvel %></td>
-    <td><%= fundamental_character.exp %></td>
-    <td><%= fundamental_character.att %></td>
-    <td><%= fundamental_character.def %></td>
-    <td><%= fundamental_character.wins %></td>
-    <td><%= fundamental_character.losses %></td>
-    <td><%= fundamental_character.health_max %></td>
-    <td><%= fundamental_character.health_present %></td>
-    <td><%= fundamental_character.health_updated_at %></td>
-    <td><%= fundamental_character.locked %></td>
-    <td><%= fundamental_character.locked_by %></td>
-    <td><%= fundamental_character.locked_at %></td>
+        <%end%></td>
+    <td><%= fundamental_character.lvel %> (<%= fundamental_character.exp %>)</td>
     <td><%= fundamental_character.skill_points %></td>
-    <td><%= fundamental_character.alliance_id %></td>
-    <td><%= fundamental_character.alliance_tag %></td>
+    <td><%= fundamental_character.wins %>W / 
+        <%= fundamental_character.losses %>L</td>
+    <td><%= fundamental_character.health_present %> / <%= fundamental_character.health_max %></td>
+    <td><%= fundamental_character.locked %> <%= fundamental_character.locked_by %></td>
     <td><%= fundamental_character.base_location_id %></td>
-    <td><%= fundamental_character.premium_expiration %></td>
-    <td><%= fundamental_character.base_region_id %></td>
-    <td><%= fundamental_character.base_node_id %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
     <td><%= link_to 'Destroy', fundamental_character, confirm: 'Are you sure?', method: :delete %></td>
