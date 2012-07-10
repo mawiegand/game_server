@@ -76,8 +76,10 @@ class Construction::JobsController < ApplicationController
     
     Construction::Job.transaction do
       if params[:sleep]
-        sleep 10
+        sleep 5
       end
+      
+      logger.debug 'POST start'
       
       @construction_job = Construction::Job.new(@job)
       raise ForbiddenError.new('not owner of settlement') unless @construction_job.slot.settlement.owner == current_character
@@ -85,6 +87,12 @@ class Construction::JobsController < ApplicationController
       queue = @construction_job.queue
       @construction_job.position = queue.max_position + 1
       @construction_job.save
+
+      logger.debug 'POST stop'
+
+      if params[:sleep]
+        sleep 5
+      end
     end
     
     queue.reload
