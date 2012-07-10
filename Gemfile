@@ -9,11 +9,11 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'thin'
 gem 'httparty'
+gem 'rb-readline'	
 
 group :production do
   gem 'pg'
 	gem 'awe_native_extensions', '>= 0.0.10', :git => "git@github.com:wackadoo/awe_native_extensions.git"
-  gem 'rb-readline'	
 end
 
 group :ticker_development do
