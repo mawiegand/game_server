@@ -73,6 +73,7 @@ class Construction::JobsController < ApplicationController
     
     if @job[:sleep]
       sleep 10
+      @job[:sleep] = nil
     end
     
     @construction_job = Construction::Job.new(@job)
