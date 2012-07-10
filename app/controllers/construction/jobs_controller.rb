@@ -71,7 +71,7 @@ class Construction::JobsController < ApplicationController
   def create
     @job = params[:construction_job]
     
-    if @job.sleep
+    if @job[:sleep]
       sleep 10
     end
     
