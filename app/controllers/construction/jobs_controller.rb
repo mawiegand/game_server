@@ -71,6 +71,9 @@ class Construction::JobsController < ApplicationController
   def create
     @job = params[:construction_job]
     
+    @construction_job = nil
+    queue = nil
+    
     Construction::Job.transaction do
       if params[:sleep]
         sleep 10
