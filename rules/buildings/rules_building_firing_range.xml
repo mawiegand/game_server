@@ -19,12 +19,12 @@
     <p>Auf dem Schießstand findet sich alles wieder, was zu schwach für den Nahkampf und zu schwer oder zu dumm zum Reiten von Tieren ist. Tatsächlich ist Fernkämpfer ein beliebtes Karriereziel, kein direkter Kampf, keine stinkenden Tiere...</p>
   </Flavour>  
   <Requirement id="building_chief_cottage" min_level="7" />  
-  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  
-  <Cost id="resource_wood" round="true">3*FLOOR(POW(LEVEL,3.5))</Cost>    
-  <Cost id="resource_furs" round="true">2*FLOOR(POW(LEVEL,3))</Cost>
-  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)</Cost>    
+  <Cost id="resource_furs" round="true">0</Cost>
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />
-    <SpeedupQueue queue="queue_artillery" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
   </Abilities>
 </Building>

@@ -18,13 +18,13 @@
     <Flavour lang="de_DE">
     <p>Pferdemädchen und süße Tierchen sucht man hier vergebens. Die meisten Mädchen kämpfen lieber mit großen Keulen und die süßen Tieren dienen den hier auszubildenden Raubtieren als Nahrung.</p>
   </Flavour>
-  <Requirement id="building_chief_cottage" min_level="8" />  
-  <Cost id="resource_stone" round="true">2*FLOOR(POW(LEVEL,3))</Cost>  
-  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,3))</Cost>    
-  <Cost id="resource_furs" round="true">3*FLOOR(POW(LEVEL,3.5))</Cost>
-  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
+  <Requirement id="building_chief_cottage" min_level="9" />  
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)</Cost>    
+  <Cost id="resource_furs" round="true">FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)</Cost>
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
   </Abilities>
 </Building>
