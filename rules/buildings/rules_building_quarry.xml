@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_quarry" group="resource" category="building_category_small_building" buyable="true" destructable="true" demolishabe="true">  
+<Building id="building_quarry" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
   <Name lang="de_DE">Steinbruch</Name>
   <Name lang="en_US">Quarry man</Name>
   <Description lang="de_DE">
@@ -17,11 +17,11 @@
     <p>Steine, nichts als Steine!</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="5" />  
-  <Cost id="resource_stone" round="true">FLOOR(POW(LEVEL,2.5))</Cost>  
-  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,3.5))</Cost>    
-  <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,1.5))</Cost>  
-  <Production id="resource_stone">4*LEVEL*LEVEL</Production>         
-  <ProductionTime shortenable="true">20*(LEVEL*LEVEL)+10</ProductionTime>             
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)</Cost>    
+  <Cost id="resource_furs" round="true">0</Cost>  
+  <Production id="resource_stone">FLOOR(7.5*POW(LEVEL,1.33)+0.5)</Production>         
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>
 </Building>
