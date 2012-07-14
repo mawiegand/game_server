@@ -9,8 +9,8 @@
 	<p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>
   </Description>
   <Description lang="en_US">
-    <p>Training facility for all kinds of groud untis and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p> 
-	<p>Don´t get mistaken to be one of the punching dummies or you won´t leave the barracks alive! Training of beserker is in progress.</p>
+    <p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p> 
+	<p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>
   </Description>
   <Flavour lang="en_US">
     <p> lustiger Flavour Text hier </p>
@@ -18,13 +18,13 @@
     <Flavour lang="de_DE">
     <p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>
   </Flavour>
-  <Requirement id="building_chief_cottage" min_level="2" />  
-  <Cost id="resource_stone" round="true">2*FLOOR(POW(LEVEL,2.5))</Cost>  
-  <Cost id="resource_wood"  round="true">4*FLOOR(POW(LEVEL,3))</Cost>    
-  <Cost id="resource_furs"  round="true">FLOOR(POW(LEVEL,2))</Cost>
-  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
+  <Requirement id="building_chief_cottage" min_level="3" />  
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)</Cost>  
+  <Cost id="resource_wood"  round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)</Cost>    
+  <Cost id="resource_furs"  round="true">0</Cost>
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />
-    <SpeedupQueue queue="queue_infantry" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
   </Abilities>
 </Building>

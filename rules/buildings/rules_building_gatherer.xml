@@ -9,7 +9,7 @@
     <p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>
   </Description>
   <Description lang="en_US">
-    <p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easy slayn animals.</p>
+    <p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easily slain animals.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Collecs resources for the daily needs.</p>
@@ -18,13 +18,14 @@
     <p>Sammelt für Dich Holz und Steine, und ab Stufe 11 findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="1" />  
-  <Cost id="resource_stone" round="true">POW(LEVEL,4)-1+(MIN(LEVEL-1,1))</Cost>  
-  <Cost id="resource_wood" round="true">POW(LEVEL,4)</Cost>    
-  <Production id="resource_stone">1*LEVEL*LEVEL</Production>        
-  <Production id="resource_wood">1*LEVEL*LEVEL</Production>        
-  <Production id="resource_fur">POW(MAX(0,LEVEL-1),2)</Production>         
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/13+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL,2)-MIN(Level,1))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/13+0.5)</Cost>    
+  <Cost id="resource_fur" round="true">FLOOR(((MIN(LEVEL,2)-MIN(Level,1))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/72+0.5)</Cost>    
+  <Production id="resource_stone">FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)</Production>        
+  <Production id="resource_wood">FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)</Production>        
+  <Production id="resource_fur">FLOOR(7.5/8*POW(LEVEL,1.33)+0.5)</Production>         
   <Production id="resource_cash">MAX(LEVEL-10,0)*0.5-MAX(LEVEL-11,0)*0.5+MAX(LEVEL-19,0)*1-MAX(LEVEL-20,0)*1</Production>        
-  <ProductionTime shortenable="true">MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10</ProductionTime>             
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))/1.5+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>
 </Building>

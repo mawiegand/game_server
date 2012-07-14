@@ -15,15 +15,15 @@
 	<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>
   </Flavour>
     <Flavour lang="de_DE">
-   <p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
+   <p>Hier ist kein Platzer für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="1" />  
-  <Cost id="resource_stone" round="true">3*FLOOR(POW(LEVEL,3.5))</Cost>  
-  <Cost id="resource_wood" round="true">2*FLOOR(POW(LEVEL,2.5))</Cost>    
-  <Cost id="resource_furs" round="true">FLOOR(POW(LEVEL,2))</Cost>
-  <ProductionTime shortenable="true">2*(LEVEL+1)+10</ProductionTime>             
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)</Cost>    
+  <Cost id="resource_furs" round="true">FLOOR((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*0.5*(10*POW(LEVEL,-0.7))+0.5)</Cost>
+  <ProductionTime shortenable="true">FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />
-    <SpeedupQueue queue="queue_infantry" domain="settlement">POW(MAX(LEVEL-1,0),2.0)*0.10</SpeedupQueue>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100</SpeedupQueue>
   </Abilities>
 </Building>

@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'thin'
 gem 'httparty'
+gem 'rb-readline'	
 
 group :production do
   gem 'pg'
