@@ -1,0 +1,12 @@
+<td><%= @fundamental_announcement.id %></td>
+<td><%= @fundamental_announcement.locale %></td>
+<td><%= @fundamental_announcement.heading %></td>
+<td><%= @fundamental_announcement.expires %></td>
+<td><%= @fundamental_announcement.user_id %></td>
+<td>
+  <%if @fundamental_announcement.original_id.nil? %>
+    <%= link_to 'Translate', new_fundamental_announcement_path(original_id: @fundamental_announcement.id)  %>
+  <%end%></td>
+<td><%= link_to 'Show', @fundamental_announcement %></td>
+<td><%= link_to 'Edit', edit_fundamental_announcement_path(@fundamental_announcement) %></td>
+<td><%= link_to 'Destroy', @fundamental_announcement, confirm: 'Are you sure?', method: :delete %></td>

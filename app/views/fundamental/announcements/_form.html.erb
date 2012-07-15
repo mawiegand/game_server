@@ -11,14 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :num %><br />
-    <%= f.number_field :num %>
-  </div>
-  <div class="field">
-    <%= f.label :locale %><br />
-    <%= f.text_field :locale %>
-  </div>
+  <%if @original.nil? %>
+    <div class="field">
+      Default Locale: <%= @fundamental_announcement[:locale] %>
+      <%= f.hidden_field :locale %>
+    </div>
+  <%else%>
+    Original Announcement:<br>
+    <br><%= @original[:heading] %></b><br/>
+    <%= @original[:body] %>
+  
+    <div class="field">
+      <%= f.hidden_field :original_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :locale %><br />
+      <%= f.select(:locale, options_for_select([["de", "de"] ])) %>
+    </div>
+  <%end%>
+  
   <div class="field">
     <%= f.label :heading %><br />
     <%= f.text_field :heading %>
@@ -26,14 +38,6 @@
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :expires %><br />
-    <%= f.datetime_select :expires %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

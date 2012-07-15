@@ -27,6 +27,7 @@ en:
         alliances: Alliances
         guilds: Guilds
         alliance_shouts: Ally-Shouts
+        announcements: Announcements
       messaging:
         category: Messaging
         inboxes: Inboxes

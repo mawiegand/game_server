@@ -1,8 +1,15 @@
 class Fundamental::AnnouncementsController < ApplicationController
+  
+  layout 'fundamental'
+  
+  before_filter :deny_api
+  before_filter :authenticate_backend
+
+  
   # GET /fundamental/announcements
   # GET /fundamental/announcements.json
   def index
-    @fundamental_announcements = Fundamental::Announcement.all
+    @fundamental_announcements = Fundamental::Announcement.where(original_id: nil).order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +31,15 @@ class Fundamental::AnnouncementsController < ApplicationController
   # GET /fundamental/announcements/new
   # GET /fundamental/announcements/new.json
   def new
-    @fundamental_announcement = Fundamental::Announcement.new
+    if (params[:original_id])
+      @original = Fundamental::Announcement.find_by_id(params[:original_id])
+      raise NotFoundError.new "Original not found." if @original.nil?
+      @fundamental_announcement = @original.translations.build
+    else
+      @fundamental_announcement = Fundamental::Announcement.new({
+        :locale => I18n.default_locale
+      })
+    end
 
     respond_to do |format|
       format.html # new.html.erb

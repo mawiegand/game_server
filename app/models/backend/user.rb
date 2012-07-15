@@ -32,18 +32,21 @@ require 'base64'
 #  staff              :boolean(255)
 #
 class Backend::User < ActiveRecord::Base
+
+  has_many   :announcements,   :class_name => "Fundamental::Announcement",     :foreign_key => "user_id", :inverse_of => :author
+  
   attr_accessor :password
   
-  attr_accessible :login, :firstname, :surname, :password, :password_confirmation, :as => :owner
-  attr_accessible *accessible_attributes(:owner), :email, :as => :creator # fields accesible during creation
-  attr_accessible :login, :firstname, :surname, :deleted, :staff, :as => :staff
-  attr_accessible *accessible_attributes(:staff), :email, :admin, :password, :password_confirmation, :as => :admin
+  attr_accessible :login, :firstname, :surname, :password, :password_confirmation,                        :as => :owner
+  attr_accessible *accessible_attributes(:owner), :email,                                                 :as => :creator # fields accesible during creation
+  attr_accessible :login, :firstname, :surname, :deleted, :staff,                                         :as => :staff
+  attr_accessible *accessible_attributes(:staff), :email, :admin, :password, :password_confirmation,      :as => :admin
     
-  attr_readable :login, :id, :admin, :staff,               :as => :default 
-  attr_readable *readable_attributes(:default), :created_at,  :as => :user
+  attr_readable :login, :id, :admin, :staff,                                                              :as => :default 
+  attr_readable *readable_attributes(:default), :created_at,                                              :as => :user
   attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted,         :as => :owner
   attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted, :salt,  :as => :staff
-  attr_readable *readable_attributes(:staff),   :as => :admin
+  attr_readable *readable_attributes(:staff),                                                             :as => :admin
   
   @email_regex      = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   @login_regex   = /^[^\d\s]+[^\s]*$/i
