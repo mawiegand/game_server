@@ -280,6 +280,50 @@ class Military::Army < ActiveRecord::Base
     self.details.save
   end
   
+  def self.create_npc(location, size)
+    raise BadRequestError.new('No location for army creation!') if location.nil?
+    npc = Fundamental::Character.find_by_id(1)
+    
+    army_name = 'Neanderthal'
+
+    army = Military::Army.new({
+      name: army_name,
+      ap_max: 4,
+      ap_present: 4,
+      ap_seconds_per_point: 3600,
+      mode: Military::Army::MODE_IDLE,
+      stance: 0, 
+      size_max: 2000,
+      exp: 0,
+      rank: 0,
+      ap_next: DateTime.now.advance(:minutes => 1),
+      garrison: false,
+      kills: 0,
+      victories: 0,
+      npc: true,
+    })
+    
+    army.location = location
+    army.region = location.region
+    army.owner = npc
+    army.owner_name = npc.name
+    army.alliance = npc.alliance
+    army.alliance_tag = npc.alliance_tag
+    
+    details = army.build_details()
+    
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      if unit_type[:symbolic_id] == :neanderthal
+        details[unit_type[:db_field]] = size.to_i
+      else
+        details[unit_type[:db_field]] = 0
+      end
+    end
+
+    #logger.debug "ARMY #{ army.inspect } : #{ army.details.inspect }"
+    army.save    
+  end
+  
   # creates a new army. create_action must contain the home location id and the units of the new army.
   def self.create_with_action(create_action)
     

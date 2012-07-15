@@ -888,6 +888,80 @@ class GameRules::Rules
 
 
         },              #   END OF Catapult
+        {               #   Neanderthal
+          :id          => 8, 
+          :symbolic_id => :neanderthal,
+					:category    => 0,
+          :db_field    => :unit_neanderthal,
+          :name        => {
+            
+            :en_US => "Neanderthal",
+  
+            :de_DE => "Neandertaler",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Don't talk, fight.</p>",
+  
+            :de_DE => "<p>Reden nicht, handeln. Äh, schlagen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wilder Vormenschenstamm.</p>",
+  
+            :en_US => "<p>Fierce Fighters.</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.0,
+  
+            :unitcategory_cavalry => 0.8,
+  
+            :unitcategory_artillery => 1.0,
+  
+            :unitcategory_siege => 1.0,
+                
+          },
+          :attack      => 15,
+          :armor       => 0,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1200',
+
+          :costs      => {
+            1 => '40',
+            0 => '20',
+            2 => '12',
+            
+          },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 100,
+
+            },
+
+          ],          
+
+
+        },              #   END OF Neanderthal
       ],                # END OF UNIT TYPES
 
   
@@ -1027,13 +1101,13 @@ class GameRules::Rules
           :destructable=> false,
 
           :costs      => {
-            1 => '5*FLOOR(POW(LEVEL,3.5))',
-            0 => '3*FLOOR(POW(LEVEL,3))',
-            0 => '2*FLOOR(POW(LEVEL,2))',
+            1 => 'FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR(((MIN(Level+1,4)-MIN(LEVL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-Min(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1046,7 +1120,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "0",
               },
 
             ],
@@ -1064,7 +1138,7 @@ class GameRules::Rules
             :unlock_garrison => 1,            
 
             :command_points => {
-              :formula   => "1+(MAX(LEVEL-4,0)*1-MAX(LEVEL-5,0)*1)+(MAX(LEVEL-9,0)*1-MAX(LEVEL-10,0)*1)",
+              :formula   => "1",
             },
     
           },
@@ -1086,7 +1160,7 @@ class GameRules::Rules
             
             :en_US => "<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>",
   
-            :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausbauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
+            :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
                 
           },
           :description => {
@@ -1116,13 +1190,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '3*FLOOR(POW(LEVEL,3.5))',
-            0 => '2*FLOOR(POW(LEVEL,2.5))',
-            0 => 'FLOOR(POW(LEVEL,2))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1135,7 +1209,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
               },
 
             ],
@@ -1199,13 +1273,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '5*FLOOR(POW(LEVEL,3))',
-            0 => '3*FLOOR(POW(LEVEL,3))',
-            0 => '2*FLOOR(POW(LEVEL,3))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1218,7 +1292,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
               },
 
             ],
@@ -1282,13 +1356,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => '4*FLOOR(POW(LEVEL,3))',
-            0 => '2*FLOOR(POW(LEVEL,3))',
-            0 => 'FLOOR(POW(LEVEL,4))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)+11',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1301,7 +1375,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
               },
 
             ],
@@ -1358,20 +1432,20 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 10,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'FLOOR(POW(LEVEL,2.5))',
-            0 => '3*FLOOR(POW(LEVEL,3))',
-            0 => '4*FLOOR(POW(LEVEL,3.5))',
+            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+            0 => 'FFLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)*0+10',
+          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
           :production  => [
             
           ],
@@ -1384,7 +1458,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -1450,19 +1524,19 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(POW(LEVEL,4))',
-            0 => '2*FLOOR(POW(LEVEL,3.5))',
-            0 => 'MAX(0,LEVEL-3)*FLOOR(POW(LEVEL,3.5))',
+            1 => 'FLOOR(30*POW(LEVEL,2.95)+0.5)',
+            0 => 'FLOOR(30*POW(LEVEL,2.95)+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))/2+0.5)',
             
           },
 
-          :production_time => '120*MAX(LEVEL-3,0)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))+0.5)',
           :production  => [
             
               {
-                :id                 => 0,
-                :symbolic_id        => :resource_wood,
-                :formula            => "1",
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "2",
               },
             
           ],
@@ -1482,7 +1556,7 @@ class GameRules::Rules
             :unlock_garrison => 2,            
 
             :command_points => {
-              :formula   => "2+(MAX(LEVEL-10,0)-(MAX(LEVEL-11,0)*1+(MAX(LEVEL-19,0)*1-(MAX(LEVEL-20,0)*1",
+              :formula   => "2",
             },
     
           },
@@ -1511,7 +1585,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Primitivster aller Steinzeiteinwohner. Ihr könnt frohe sein, ihn in eine Hütte bekommen zu haben. Manchmal bleibt er sogar für ein paar Stunden da.</p><p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
   
-            :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easy slayn animals.</p>",
+            :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easily slain animals.</p>",
                 
           },
           :hidden      => 0,
@@ -1534,30 +1608,31 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'POW(LEVEL,4)-1+(MIN(LEVEL-1,1))',
-            0 => 'POW(LEVEL,4)',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/13+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,2)-MIN(Level,1))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/13+0.5)',
+            2 => 'FLOOR(((MIN(LEVEL,2)-MIN(Level,1))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/72+0.5)',
             
           },
 
-          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))/1.5+0.5)',
           :production  => [
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1*LEVEL*LEVEL",
+                :formula            => "FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)",
               },
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1*LEVEL*LEVEL",
+                :formula            => "FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "POW(MAX(0,LEVEL-1),2)",
+                :formula            => "FLOOR(7.5/8*POW(LEVEL,1.33)+0.5)",
               },
             
               {
@@ -1612,20 +1687,20 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 2,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'FLOOR(POW(LEVEL,3.5))',
-            0 => 'FLOOR(POW(LEVEL,3))',
-            0 => 'FLOOR(POW(LEVEL,2))',
+            1 => 'FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))',
+            0 => 'FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
             
           },
 
-          :production_time => 'MIN(LEVEL-1,1)*10*(LEVEL*MAX(LEVEL-2,1)*MAX(LEVEL-3,1)*MAX(LEVEL-4,1))+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
           :production  => [
             
           ],
@@ -1638,7 +1713,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(LEVEL,2)*0.01",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -1669,7 +1744,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>",
   
-            :en_US => "<p>Training facility for all kinds of groud untis and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken to be one of the punching dummies or you won´t leave the barracks alive! Training of beserker is in progress.</p>",
+            :en_US => "<p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
                 
           },
           :hidden      => 0,
@@ -1685,20 +1760,20 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 3,
 
             },
 
           ],          
 
           :costs      => {
-            1 => '2*FLOOR(POW(LEVEL,2.5))',
-            0 => '4*FLOOR(POW(LEVEL,3))',
-            0 => 'FLOOR(POW(LEVEL,2))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)',
+            0 => '0',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)',
           :production  => [
             
           ],
@@ -1711,7 +1786,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -1768,20 +1843,31 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 4,
+
+            },
+
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 9,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
           ],          
 
           :costs      => {
-            1 => '2*FLOOR(POW(LEVEL,3))',
-            0 => '5*FLOOR(POW(LEVEL,4.5))',
-            0 => 'MAX(0,LEVEL-2)*FLOOR(POW(LEVEL,3))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
             
           },
 
-          :production_time => '600*LEVEL+30',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
           :production  => [
             
           ],
@@ -1834,26 +1920,26 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 5,
 
             },
 
           ],          
 
           :costs      => {
-            1 => '2*FLOOR(POW(LEVEL,3))',
-            0 => 'FLOOR(POW(LEVEL,2.5))',
-            0 => 'FLOOR(POW(LEVEL,1.5))',
+            1 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))/2+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))+0.5)',
+            0 => '0',
             
           },
 
-          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
           :production  => [
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_wood,
-                :formula            => "4*LEVEL*LEVEL",
+                :formula            => "FLOOR(7.5*POW(LEVEL,1.33)+0.5)",
               },
             
           ],
@@ -1909,19 +1995,19 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(POW(LEVEL,2.5))',
-            0 => '2*FLOOR(POW(LEVEL,3.5))',
-            0 => 'FLOOR(POW(LEVEL,1.5))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
+            0 => '0',
             
           },
 
-          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
           :production  => [
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_stone,
-                :formula            => "4*LEVEL*LEVEL",
+                :formula            => "FLOOR(7.5*POW(LEVEL,1.33)+0.5)",
               },
             
           ],
@@ -1970,26 +2056,26 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 8,
 
             },
 
           ],          
 
           :costs      => {
-            0 => '3*POW(LEVEL,4)',
-            1 => '2*POW(LEVEL,3)',
-            0 => '2*POW(LEVEL,4)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
             
           },
 
-          :production_time => '20*(LEVEL*LEVEL)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)',
           :production  => [
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "3*LEVEL*LEVEL",
+                :formula            => "FLOOR(7.5/2*POW(LEVEL,1.33)+0.5)",
               },
             
           ],
@@ -2045,13 +2131,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(POW(LEVEL,2.5))',
-            0 => '3*FLOOR(POW(LEVEL,3.5))',
-            0 => '2*FLOOR(POW(LEVEL,3))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)',
+            0 => '0',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)',
           :production  => [
             
           ],
@@ -2064,7 +2150,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -2121,20 +2207,20 @@ class GameRules::Rules
               :id => 5,
               :type => 'building',
 
-              :min_level => 8,
+              :min_level => 9,
 
             },
 
           ],          
 
           :costs      => {
-            1 => '2*FLOOR(POW(LEVEL,3))',
-            0 => '2*FLOOR(POW(LEVEL,3))',
-            0 => '3*FLOOR(POW(LEVEL,3.5))',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)',
           :production  => [
             
           ],
@@ -2147,7 +2233,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -2200,24 +2286,24 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
+              :symbolic_id => 'building_bronce',
+              :id => 0,
+              :type => '',
 
-              :min_level => 9,
+              :min_level => 2,
 
             },
 
           ],          
 
           :costs      => {
-            1 => '4*FLOOR(POW(LEVEL,3.5))',
-            0 => '3*FLOOR(POW(LEVEL,3))',
-            0 => '2*FLOOR(POW(LEVEL,2.5))',
+            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            0 => '0',
             
           },
 
-          :production_time => '2*(LEVEL+1)+10',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)*(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
           :production  => [
             
           ],
@@ -2230,7 +2316,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "POW(MAX(LEVEL-1,0),2.0)*0.10",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],

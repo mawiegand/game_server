@@ -21,7 +21,9 @@
   <xi:include href="units/rules_units_sabre_riders.xml" />  
   
   <xi:include href="units/rules_units_ram.xml" />    
-  <xi:include href="units/rules_units_catapult.xml" />  
+  <xi:include href="units/rules_units_catapult.xml" />
+    
+  <xi:include href="units/rules_units_neandertaler.xml" />  <!-- npc unit -->
    
   <!-- ADD NEW units DIRECTLY ABOVE THIS LINE -->
 </UnitTypes>

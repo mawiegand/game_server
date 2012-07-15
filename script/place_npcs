@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+#
+# Script for placing npc armies
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+Rails.logger.info "Start creating NPC armies..."
+
+num_armies        = Military::Army.where(npc: false, garrison: false).count
+avg_size_armies   = Military::Army.where(npc: false, garrison: false).average(:size_present)  || 1.0
+max_size_armies   = Military::Army.where(npc: false, garrison: false).maximum(:size_present)  || 1
+
+num_npcs          = Military::Army.where(npc: true,  garrison: false).count
+avg_size_npcs     = Military::Army.where(npc: true,  garrison: false).average(:size_present)  || 0.0
+
+Rails.logger.info "#{num_armies} armies, with an average size of #{avg_size_armies || "0"}."
+Rails.logger.info "#{num_npcs} npc armies, with an average size of #{avg_size_npcs || "0"}."
+
+
+total_size = num_npcs * avg_size_npcs  
+while (num_npcs < num_armies)
+  size = avg_size_armies
+  
+  if (avg_size_npcs < avg_size_armies)
+    size = Random.rand(avg_size_armies.floor..max_size_armies.ceil)
+  else
+    size = Random.rand(1..avg_size_armies.ceil)    
+  end
+  
+  location = Map::Location.find_empty
+  raise InternalServerError.new('Could not claim an empty location.') if location.nil?
+  
+  Military::Army.create_npc(location, size)
+  
+  Rails.logger.info "Creating a npc army with #{size} units."
+  total_size += size
+  num_npcs += 1
+  avg_size_npcs = total_size / num_npcs
+    
+end
+  
