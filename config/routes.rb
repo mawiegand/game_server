@@ -1,5 +1,7 @@
 GameServer::Application.routes.draw do
   
+  namespace :fundamental do resources :announcements end
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       

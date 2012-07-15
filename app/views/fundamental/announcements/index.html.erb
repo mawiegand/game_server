@@ -1,0 +1,33 @@
+<h1>Listing fundamental_announcements</h1>
+
+<table>
+  <tr>
+    <th>Num</th>
+    <th>Locale</th>
+    <th>Heading</th>
+    <th>Body</th>
+    <th>Expires</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_announcements.each do |fundamental_announcement| %>
+  <tr>
+    <td><%= fundamental_announcement.num %></td>
+    <td><%= fundamental_announcement.locale %></td>
+    <td><%= fundamental_announcement.heading %></td>
+    <td><%= fundamental_announcement.body %></td>
+    <td><%= fundamental_announcement.expires %></td>
+    <td><%= fundamental_announcement.user_id %></td>
+    <td><%= link_to 'Show', fundamental_announcement %></td>
+    <td><%= link_to 'Edit', edit_fundamental_announcement_path(fundamental_announcement) %></td>
+    <td><%= link_to 'Destroy', fundamental_announcement, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Announcement', new_fundamental_announcement_path %>

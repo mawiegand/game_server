@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Num:</b>
+  <%= @fundamental_announcement.num %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @fundamental_announcement.locale %>
+</p>
+
+<p>
+  <b>Heading:</b>
+  <%= @fundamental_announcement.heading %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @fundamental_announcement.body %>
+</p>
+
+<p>
+  <b>Expires:</b>
+  <%= @fundamental_announcement.expires %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @fundamental_announcement.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_announcement_path(@fundamental_announcement) %> |
+<%= link_to 'Back', fundamental_announcements_path %>

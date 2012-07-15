@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  num: 1
+  locale: MyString
+  heading: MyString
+  body: MyText
+  expires: 2012-07-15 21:49:42
+  user_id: 1
+
+two:
+  num: 1
+  locale: MyString
+  heading: MyString
+  body: MyText
+  expires: 2012-07-15 21:49:42
+  user_id: 1
