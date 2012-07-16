@@ -500,70 +500,10 @@ class GameRules::Rules
 
 
         },              #   END OF Tree Huggers
-        {               #   Pebble Thrower
-          :id          => 2, 
-          :symbolic_id => :thrower,
-					:category    => 2,
-          :db_field    => :unit_thrower,
-          :name        => {
-            
-            :en_US => "Pebble Thrower",
-  
-            :de_DE => "Kieselsteinwerfer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Kills opposing units.</p>",
-  
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
-  
-            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 0.3,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.75,
-                
-          },
-          :attack      => 18,
-          :armor       => 2,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '500',
-
-          :costs      => {
-            1 => '12',
-            2 => '2',
-            
-          },
-
-
-        },              #   END OF Pebble Thrower
         {               #   Spit Bearer
-          :id          => 3, 
+          :id          => 2, 
           :symbolic_id => :skewer,
-					:category    => 2,
+					:category    => 0,
           :db_field    => :unit_skewer,
           :name        => {
             
@@ -622,7 +562,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 21,
 
             },
 
@@ -630,8 +570,142 @@ class GameRules::Rules
 
 
         },              #   END OF Spit Bearer
-        {               #   Ostrich Riders
+        {               #   Pebble Thrower
+          :id          => 3, 
+          :symbolic_id => :thrower,
+					:category    => 2,
+          :db_field    => :unit_thrower,
+          :name        => {
+            
+            :en_US => "Pebble Thrower",
+  
+            :de_DE => "Kieselsteinwerfer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 0.3,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.75,
+                
+          },
+          :attack      => 18,
+          :armor       => 2,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '500',
+
+          :costs      => {
+            1 => '12',
+            2 => '2',
+            
+          },
+
+
+        },              #   END OF Pebble Thrower
+        {               #   Slingshot Warrior
           :id          => 4, 
+          :symbolic_id => :slingshot_warrior,
+					:category    => 2,
+          :db_field    => :unit_slingshot_warrior,
+          :name        => {
+            
+            :en_US => "Slingshot Warrior",
+  
+            :de_DE => "Steinschleuderer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.1,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.5,
+                
+          },
+          :attack      => 18,
+          :armor       => 2,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '500',
+
+          :costs      => {
+            1 => '16',
+            0 => '4',
+            2 => '12',
+            
+          },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
+
+        },              #   END OF Slingshot Warrior
+        {               #   Ostrich Riders
+          :id          => 5, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
@@ -692,7 +766,7 @@ class GameRules::Rules
 
         },              #   END OF Ostrich Riders
         {               #   Sabretooth-Riders
-          :id          => 5, 
+          :id          => 6, 
           :symbolic_id => :sabre_riders,
 					:category    => 1,
           :db_field    => :unit_sabre_riders,
@@ -762,7 +836,7 @@ class GameRules::Rules
 
         },              #   END OF Sabretooth-Riders
         {               #   Battering Ram
-          :id          => 6, 
+          :id          => 7, 
           :symbolic_id => :ram,
 					:category    => 3,
           :db_field    => :unit_ram,
@@ -819,7 +893,7 @@ class GameRules::Rules
 
         },              #   END OF Battering Ram
         {               #   Catapult
-          :id          => 7, 
+          :id          => 8, 
           :symbolic_id => :catapult,
 					:category    => 3,
           :db_field    => :unit_catapult,
@@ -889,7 +963,7 @@ class GameRules::Rules
 
         },              #   END OF Catapult
         {               #   Neanderthal
-          :id          => 8, 
+          :id          => 9, 
           :symbolic_id => :neanderthal,
 					:category    => 0,
           :db_field    => :unit_neanderthal,
@@ -1895,7 +1969,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>Wood! Even more wood!</p>",
   
             :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
                 
@@ -1929,7 +2003,6 @@ class GameRules::Rules
           :costs      => {
             1 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))/2+0.5)',
             0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))+0.5)',
-            0 => '0',
             
           },
 
@@ -1997,7 +2070,6 @@ class GameRules::Rules
           :costs      => {
             1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
             0 => 'FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)',
-            0 => '0',
             
           },
 
