@@ -46,6 +46,7 @@ GameServer::Application.routes.draw do
           resources :characters
         end
         
+        match '/announcements/recent', :to => 'announcements#recent'
         resources :announcements
       end
       

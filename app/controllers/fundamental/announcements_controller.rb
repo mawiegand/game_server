@@ -2,8 +2,8 @@ class Fundamental::AnnouncementsController < ApplicationController
   
   layout 'fundamental'
   
-  before_filter :deny_api
-  before_filter :authenticate_backend
+  before_filter :deny_api,             :except => [ :recent ]
+  before_filter :authenticate_backend, :except => [ :recent ]
 
   
   # GET /fundamental/announcements
@@ -15,6 +15,11 @@ class Fundamental::AnnouncementsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @fundamental_announcements }
     end
+  end
+
+  def recent
+    @announcement = Fundamental::Announcement.where(:locale => I18n.locale).order("created_at DESC").first
+    render json: @announcement
   end
 
   # GET /fundamental/announcements/1
