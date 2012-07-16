@@ -1,0 +1,18 @@
+<% @costs.each do |id,formula| %>
+  <%= id %> => <%= formula %><br>
+  <% 
+    values = ""
+    begin
+      (0..10).each do |level|
+        value = Util::Formula.parse_from_formula(formula).apply(level)
+        values = "#{values} <b>#{level}:</b> #{value},"
+      end %>
+      <%= values.html_safe %>
+
+    <%rescue Exception => exc %>
+      <%= ('<span class="formula-error">ERROR:</span> ' +  exc.to_s).html_safe %>
+      @num_errors = (@num_errors || 0) + 1
+    <%end
+  %>
+  <br/>
+<%end%>

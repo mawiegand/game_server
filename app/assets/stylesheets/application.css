@@ -284,3 +284,11 @@ div.player-ranking-pane td, div.player-ranking-pane th {
 div.player-ranking-pane td.number, div.player-ranking-pane th.number {
   text-align: right;
 }
+
+.formula-error {
+  color: #F00;
+  font-weight: bold;
+}
+
+
+
