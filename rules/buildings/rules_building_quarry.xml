@@ -14,8 +14,8 @@
     <p>Stones, even more stones!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Steine, nichts als Steine!</p>
-  </Flavour>
+    <p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>
+ </Flavour>
   <Requirement id="building_chief_cottage" min_level="5" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL,3)-MIN(Level,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/2+0.5)</Cost>    

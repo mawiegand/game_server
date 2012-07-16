@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Pferdemädchen und süße Tierchen sucht man hier vergebens. Die meisten Mädchen kämpfen lieber mit großen Keulen und die süßen Tieren dienen den hier auszubildenden Raubtieren als Nahrung.</p>
+    <p>Stinkende Tiere und brüllende Ausbilder. Genau das bietet ein Stall bei der Ausbildung von Kavallerieeinheiten. Der Traum aller Pferdemädchen!</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="9" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*3+0.5)</Cost>  

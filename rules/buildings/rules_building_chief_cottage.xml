@@ -16,8 +16,8 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>An der Hütte des Häuptlings erkennt man die Größen der Siedlung und der Truppen. Auch wenn das immer anders dargestellt wird, die Größe der Männlichkeit des Häuptlings ist hier nicht abzulesen.</p>
-  </Flavour> 
+    <p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto mehr Gebäude können gebaut werden.</p>  
+	</Flavour> 
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)+0.5)</Cost> 
   <Cost id="resource_furs" round="true">FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))/2+0.5)</Cost> 
