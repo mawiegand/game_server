@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_altar" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="false">  
+  <Name lang="de_DE">Altar</Name>
+  <Name lang="en_US">Altar</Name>
+  <Description lang="de_DE">
+    <p>Am Altar wird zu den Göttern gebetet und Opfer dargebracht. Legenden erzählen von großen Kriegen, in dem von Halbgöttern geführte Stämme miteinander um die Vorherrschaft des Tals kämpfen.</p>
+    <p>Der nächste Krieg soll in naher Zukunft beginnen und so versuchen alle Stämme einen Halbgott auf sich aufmerksam zu machen.</p>
+   </Description>
+  <Description lang="en_US">
+    <p>At the altar the tribe prays and makes ritual sacrifices. Legend tells of great wars, in which half-gods lead tribes against each other battling for dominance over the valley.</p>
+    <p>The next war is coming and every tribe is competing to get the attention of the gods.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Ritual sacrifices are made on the altar to appease the gods. Because no one wants to be struck down by an angry god.</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Der Altar besänftigt die Götter bei regelmäßigen Opfergaben,denn niemand will von einem zornigen Gott zerissen werden.</p>
+   </Flavour> 
+  <Requirement id="building_chief_cottage" min_level="6" />
+  <Requirement id="building_altar" max_level="0" />
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*2+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)</Cost>  
+  <Cost id="resource_furs" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)</Cost>   
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5+0.5)</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <UnlockDiplomacy level="1" foundAllianceLevel="5" />
+  </Abilities>
+</Building>
+
