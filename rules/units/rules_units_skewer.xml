@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="skewer" category="unitcategory_artillery">
+    <Unit id="skewer" category="unitcategory_infantry">
       <Name>Spit Bearer</Name>
       <Name lang="de_DE">Bratspießträger</Name>
       <Description lang="de_DE">
@@ -16,7 +16,7 @@
       <Cost id="resource_wood" round="true">10</Cost>    
       <Cost id="resource_fur" round="true">4</Cost>    
       <ProductionTime shortenable="true">300</ProductionTime>   
-	  <Requirement id="building_firing_range" min_level="11" />	  
+	  <Requirement id="building_firing_range" min_level="21" />	  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>15</Initiative>
