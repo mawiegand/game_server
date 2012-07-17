@@ -3,7 +3,7 @@
 
 <Building id="building_firing_range" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
   <Name lang="de_DE">Schießstand</Name>
-  <Name lang="en_US">Firing range</Name>
+  <Name lang="en_US">Firing Range</Name>
   <Description lang="de_DE">
     <p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p>
 	<p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>

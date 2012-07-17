@@ -1717,7 +1717,7 @@ class GameRules::Rules
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1/24",
+                :formula            => "(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48",
               },
             
           ],
@@ -1893,7 +1893,7 @@ class GameRules::Rules
             
             :de_DE => "Lagerfeuer",
   
-            :en_US => "campfire",
+            :en_US => "Campfire",
                 
           },
           :flavour     => {
@@ -2039,7 +2039,7 @@ class GameRules::Rules
             
             :de_DE => "Steinbruch",
   
-            :en_US => "Quarry man",
+            :en_US => "Quarry",
                 
           },
           :flavour     => {
@@ -2176,7 +2176,7 @@ class GameRules::Rules
             
             :de_DE => "Schießstand",
   
-            :en_US => "Firing range",
+            :en_US => "Firing Range",
                 
           },
           :flavour     => {
@@ -2343,7 +2343,7 @@ class GameRules::Rules
             
             :de_DE => "Werkstatt",
   
-            :en_US => "workshop",
+            :en_US => "Workshop",
                 
           },
           :flavour     => {
@@ -2386,7 +2386,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)*(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
           :production  => [
             
           ],
