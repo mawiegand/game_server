@@ -21,7 +21,7 @@
   <Requirement id="building_fortress_fortification" min_level="21" />  
   <Cost id="resource_stone" round="true">FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)</Cost>    
-  <Cost id="resource_fur" round="true">FFLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)</Cost>
+  <Cost id="resource_fur" round="true">FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)</Cost>
   <Cost id="resource_cash" round="true">MAX(LEVEL-9,0)</Cost> 
   <ProductionTime shortenable="true">FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->

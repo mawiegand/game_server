@@ -20,7 +20,7 @@
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>    
   <Cost id="resource_fur" round="true">FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))*0.5*(10*POW(LEVEL,-0.7))+0.5)</Cost>
-  <ProductionTime shortenable="false">FLOOR(((MIN(Level+1,4)-MIN(LEVL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-Min(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>     
+  <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-Min(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>     
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
 	   <GarrisonSizeBonus>LEVEL*50+MAX(LEVEL-9,0)*200</GarrisonSizeBonus>
