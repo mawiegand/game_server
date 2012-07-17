@@ -81,13 +81,13 @@ if (@only.length == 0 || @only.include?(:version)) && !@rules.version.nil? %>
         <tr>
           <td><b><%= key %></b></td>
           <td>
-            <%if key    == :costs                            && false
+            <%if key    == :costs                            
               @costs = value %>
               <%= render 'costs' %>
-            <%elsif key == :production_time                  && false
+            <%elsif key == :production_time                  
               @production_time = value %>
               <%= render 'time' %>
-            <%elsif key == :production                       && false
+            <%elsif key == :production                       
               @production = value %>
               <%= render 'productions' %>
             <%else%>
