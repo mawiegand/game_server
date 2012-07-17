@@ -11,7 +11,7 @@
 
     <%rescue Exception => exc %>
       <%= ('<span class="formula-error">ERROR:</span> ' +  exc.to_s).html_safe %>
-      @num_errors = (@num_errors || 0) + 1
+      <% @num_errors = (@num_errors || 0) + 1 %>
     <%end
   %>
   <br/>
