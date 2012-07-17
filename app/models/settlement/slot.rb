@@ -58,7 +58,7 @@ class Settlement::Slot < ActiveRecord::Base
   # adds the speed factors this slot provides for the different queue
   # types.
   def queue_speedups(speedups=nil)
-    speedups ||= Array.new(GameRules::Rules.the_rules().queue_types.count, 0)
+    speedups ||= Array.new(GameRules::Rules.the_rules().queue_types.count, 0.0)
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
@@ -67,7 +67,8 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_type[:abilities].nil? || building_type[:abilities][:speedup_queue].nil?
     
     building_type[:abilities][:speedup_queue].each do |entry| # TODO: handle different domains!
-      speedups[entry[:queue_type_id]] += Util::Formula.parse_from_formula(entry[:speedup_formula]).apply(self.level)
+      speedup = Util::Formula.parse_from_formula(entry[:speedup_formula]).apply(self.level)
+      speedups[entry[:queue_type_id]] += speedup
     end
     
     speedups
