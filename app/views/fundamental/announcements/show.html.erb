@@ -1,30 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id:</b>
-  <%= @fundamental_announcement.id %>
-</p>
-
-
-<p>
-  <b>Original Id:</b>
-  <%= @fundamental_announcement.original_id %>
-</p>
-
-<p>
+  <b>Id:</b> <%= @fundamental_announcement.id %> |
+  <b>Original Id:</b> <%= @fundamental_announcement.original_id.blank? ? '-' : @fundamental_announcement.original_id %> |
   <b>Locale:</b>
   <%= @fundamental_announcement.locale %>
 </p>
 
-<p>
-  <b>Heading:</b>
+<h1>
   <%= @fundamental_announcement.heading %>
-</p>
+</h1>
 
-<p>
-  <b>Body:</b>
-  <%= @fundamental_announcement.body %>
-</p>
+<%= @fundamental_announcement.body.html_safe %>
 
 <p>
   <b>Expires:</b>
