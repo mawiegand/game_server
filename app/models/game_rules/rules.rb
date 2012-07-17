@@ -1194,7 +1194,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "0",
+                :speedup_formula   => "2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
               },
 
             ],
@@ -2369,24 +2369,24 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_bronce',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
-              :min_level => 2,
+              :min_level => 21,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
-            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
           :production  => [
             
           ],

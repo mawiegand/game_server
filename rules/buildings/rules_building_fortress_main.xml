@@ -26,6 +26,6 @@
 	   <GarrisonSizeBonus>LEVEL*50+MAX(LEVEL-9,0)*200</GarrisonSizeBonus>
     <CommandPoints>1</CommandPoints><!-- one for level 1, +1 for level 5, +1 for level 10-->
     <UnlockQueue  queue="queue_buildings" />
-    <SpeedupQueue queue="queue_buildings" domain="settlement">0</SpeedupQueue>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
   </Abilities>
 </Building>
