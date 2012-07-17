@@ -1181,7 +1181,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1271,7 +1271,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1355,7 +1355,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
           :production  => [
             
           ],
@@ -1608,7 +1608,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL,4.3)+250*LEVEL))+0.5)',
           :production  => [
             
               {
