@@ -1194,7 +1194,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1284,7 +1284,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1368,7 +1368,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1452,7 +1452,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1516,14 +1516,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
-            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
-            2 => 'FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
+            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
+            2 => 'FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
             3 => 'MAX(LEVEL-9,0)',
             
           },
 
-          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
           :production  => [
             
           ],
@@ -1536,7 +1536,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1793,7 +1793,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1866,7 +1866,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -2232,7 +2232,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -2316,7 +2316,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -2386,7 +2386,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100.0))+0.5)',
           :production  => [
             
           ],
@@ -2399,7 +2399,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
