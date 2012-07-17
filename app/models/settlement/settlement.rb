@@ -369,7 +369,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def recalc_queue_speedups
       queue_types = GameRules::Rules.the_rules().queue_types
-      speedups    = Array.new(queue_types.count, 0)
+      speedups    = Array.new(queue_types.count, 0.0)
 
       self.slots.each do |slot|
         slot.queue_speedups(speedups)
@@ -388,14 +388,15 @@ class Settlement::Settlement < ActiveRecord::Base
             queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
           else
             logger.warn "UNKNOWN QUEUE TYPE in recalculation of queue speedups."
+            return 
           end
           
-          present = queue[:speed]
+          present = queue.speedup_buildings
           recalc  = speedups[queue_type[:id]]
         
           if (present != recalc)
             logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
-            queue[:speed] = recalc
+            queue.speedup_buildings = recalc
             queue.save
           end
         end
