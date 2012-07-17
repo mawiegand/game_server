@@ -379,6 +379,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def check_and_apply_queue_speedups(speedups)
       GameRules::Rules.the_rules().queue_types.each do |queue_type|
+        logger.debug(queue_type.inspect)
         if queue_type[:domain] == :settlement && !self[queue_type[:unlock_field]].nil? && self[queue_type[:unlock_field]] >= 1   # queue is available
           queue = nil
           
@@ -392,7 +393,7 @@ class Settlement::Settlement < ActiveRecord::Base
           end
           
           present = queue.speedup_buildings
-          recalc  = speedups[queue_type[:id]]
+          recalc  = speedups[queue_type[:id]]        
         
           if (present != recalc)
             logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
