@@ -1,4 +1,7 @@
-<% if (@only.length == 0 || @only.include?(:version)) && !@rules.version.nil? %>
+<% 
+@num_errors = 0
+
+if (@only.length == 0 || @only.include?(:version)) && !@rules.version.nil? %>
   <h1>Game Rules @<%= "#{@rules.version[:major]}.#{@rules.version[:minor]}.#{@rules.version[:build]}"%></h1>
   <hr />
 <% end %>
@@ -78,9 +81,15 @@
         <tr>
           <td><b><%= key %></b></td>
           <td>
-            <%if key == :costs && false
+            <%if key    == :costs                            && false
               @costs = value %>
               <%= render 'costs' %>
+            <%elsif key == :production_time                  && false
+              @production_time = value %>
+              <%= render 'time' %>
+            <%elsif key == :production                       && false
+              @production = value %>
+              <%= render 'productions' %>
             <%else%>
               <%= value %>
             <%end%>
@@ -146,3 +155,7 @@
   <hr />
 
 <% end %>
+
+<%if @num_errors > 0 %>
+ <h1 class="formula-error">You have <%= @num_errors %> errors in your formulas.</h1>
+<%end%>
