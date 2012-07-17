@@ -13,10 +13,9 @@
 
   <xi:include href="units/rules_units_clubbers.xml" /> 
   <xi:include href="units/rules_units_tree_huggers.xml" />
-    <xi:include href="units/rules_units_skewer.xml" />
   
   <xi:include href="units/rules_units_thrower.xml" />	
-  <xi:include href="units/rules_units_slingshot_warrior.xml" />
+  <xi:include href="units/rules_units_skewer.xml" />
  
   <xi:include href="units/rules_units_light_cavalry.xml" />  
   <xi:include href="units/rules_units_sabre_riders.xml" />  
@@ -25,6 +24,8 @@
   <xi:include href="units/rules_units_catapult.xml" />
     
   <xi:include href="units/rules_units_neandertaler.xml" />  <!-- npc unit -->
+   
+  <xi:include href="units/rules_units_slingshot_warrior.xml" />
    
   <!-- ADD NEW units DIRECTLY ABOVE THIS LINE -->
 </UnitTypes>
