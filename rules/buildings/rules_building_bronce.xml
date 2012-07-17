@@ -20,7 +20,8 @@
   <Requirement id="building_bronce" max_level="0" />
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)*1.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)*1.5+0.5)</Cost>  
-  <Cost id="resource_fur" round="true">FLOOR(30*POW(LEVEL,2.95)*1.5+0.5)</Cost>   
+  <Cost id="resource_fur" round="true">FLOOR(30*POW(LEVEL,2.95)*1.5+0.5)</Cost>  
+  <Cost id="resource_cash" round="true">MAX(LEVEL-8,0)</Cost>  
   <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(6*POW(LEVEL,4.3)+250*LEVEL))*1.5+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <CommandPoints>MIN(LEVEL,5)-MIN(LEVEL,4)</CommandPoints>
