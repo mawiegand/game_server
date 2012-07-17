@@ -1,3 +1,5 @@
+require 'util/formula.rb'
+
 # Controller to display and download (clients) the present game rules. The 
 # are automatically generated form the human-readable rules.xml file.
 # It's possible to download the rules as a whole or to ask the controller

@@ -3,7 +3,7 @@
   values = ""
   begin
     (0..10).each do |level|
-      value = Util::Formula.parse_from_formula(@production_time).apply(level)
+      value = ::Util::Formula.parse_from_formula(@production_time).apply(level)
       values = "#{values} <b>#{level}:</b> #{value},"
     end %>
     <%= values.html_safe %>
