@@ -208,10 +208,10 @@ class Settlement::Settlement < ActiveRecord::Base
 
 
     if self.changed?
-      logger.info(">>> SAVING AFTER DETECTING ERRORS.")
+      logger.info(">>> SAVING SETTLEMENT AFTER DETECTING ERRORS.")
       self.save
     else
-      logger.info(">>> EVERYTHING OK.")
+      logger.info(">>> SETTLEMENT OK.")
     end
     
     true      
@@ -398,6 +398,7 @@ class Settlement::Settlement < ActiveRecord::Base
           if (present != recalc)
             logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
             queue.speedup_buildings = recalc
+            logger.info(">>> SAVING QUEUE AFTER DETECTING ERRORS.")
             queue.save
           end
         end
