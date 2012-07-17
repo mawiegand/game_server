@@ -142,7 +142,7 @@ class Ticker::BattleHandler
           #kills
           total_results[:kills] += participant_result.kills
         end
-      else participant_result.length > 1
+      else # participant_result.length > 1
         runloop.say("found more than one military_participant_result for army_id="+participant.army_id.to_s+" and round_id= "+round.id.to_s)#, Logger::WARN)
       end
     end
@@ -173,7 +173,7 @@ class Ticker::BattleHandler
     result += "<tr>\n"
     result += "<td>Survivors</td>\n";
     rules.unit_types.each do |t|
-      result += "<td>"+(unit_types_results[t[:db_field]][:start] - unit_types_results[t[:db_field]][:casualties]).to_s+"</td>\n"
+      result += "<td>"+((unit_types_results[t[:db_field]][:start] || 0) - (unit_types_results[t[:db_field]][:casualties] || 0)).to_s+"</td>\n"
     end
     result += "</tr>\n";
     #damage_inflicted
@@ -405,7 +405,7 @@ class Ticker::BattleHandler
     result = "This conflict was initiated by an attack of "+generate_character_message_str(initiator)+" on "+generate_character_message_str(opponent)+" on "+battle.started_at.to_s+"<br>\n<br>\n"
     
     result = result+"Participants on side of "+generate_character_message_str(initiator)+" (faction A):<br>\n"
-    initiator_faction = battle.factions.where("leader_id = ?", initiator.id).limit(1)[0]
+    initiator_faction = battle.factions.where("faction_num = 0").first
     initiator_faction.participants.all.each do |p|
       owner = p.army.owner
       result = result + generate_character_message_str(owner) + "<br>\n"
@@ -413,7 +413,7 @@ class Ticker::BattleHandler
     result = result + "<br>\n"
     
     result = result+"Participants on side of "+generate_character_message_str(opponent)+" (faction B):<br>\n"
-    opponent_faction = battle.factions.where("leader_id = ?", opponent.id).limit(1)[0]
+    opponent_faction = battle.factions.where("faction_num = 1").first
     opponent_faction.participants.each do |p|
       owner = p.army.owner
       result = result + generate_character_message_str(owner) +"<br>\n"
@@ -528,11 +528,11 @@ class Ticker::BattleHandler
     end
 
     # write in the initial units
-    faction_result_round_zero = faction.faction_results.where("round_id = ?", first_round.id).limit(1)[0]
+    faction_result_round_zero = faction.faction_results.where("round_id = ?", first_round.id).first
     faction_result_round_zero.participant_results.each do |p|
       rules.unit_types.each do |t|
-        unit_types_results[t[:db_field]][:start] = unit_types_results[t[:db_field]][:start] + p[t[:db_field]]
-        unit_types_results[t[:db_field]][:remaining] = unit_types_results[t[:db_field]][:remaining] + p[t[:db_field]]
+        unit_types_results[t[:db_field]][:start] = unit_types_results[t[:db_field]][:start] + (p[t[:db_field]] || 0)
+        unit_types_results[t[:db_field]][:remaining] = unit_types_results[t[:db_field]][:remaining] + (p[t[:db_field]] || 0)
       end
     end
 
