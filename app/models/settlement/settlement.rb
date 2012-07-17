@@ -203,6 +203,10 @@ class Settlement::Settlement < ActiveRecord::Base
     unlocks = recalc_queue_unlocks
     check_and_apply_queue_unlocks(unlocks)
 
+    speedups = recalc_queue_speedups
+    check_and_apply_queue_speedups(speedups)
+
+
     if self.changed?
       logger.info(">>> SAVING AFTER DETECTING ERRORS.")
       self.save
@@ -358,6 +362,41 @@ class Settlement::Settlement < ActiveRecord::Base
           if (present != recalc)
             logger.warn(">>> QUEUE UNLOCK RECALC DIFFERS for #{queue[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
             self[queue[:unlock_field]] = recalc
+          end
+        end
+      end  
+    end
+    
+    def recalc_queue_speedups
+      queue_types = GameRules::Rules.the_rules().queue_types
+      speedups    = Array.new(queue_types.count, 0)
+
+      self.slots.each do |slot|
+        slot.queue_speedups(speedups)
+      end
+      speedups
+    end
+    
+    def check_and_apply_queue_speedups(speedups)
+      GameRules::Rules.the_rules().queue_types.each do |queue_type|
+        if queue_type[:domain] == :settlement && !self[queue_type[:unlock_field]].nil? && self[queue_type[:unlock_field]] >= 1   # queue is available
+          queue = nil
+          
+          if (queue_type[:category] == :queue_category_construction)
+            queue = Construction::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+          elsif (queue_type[:category] == :queue_category_training)
+            queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+          else
+            logger.warn "UNKNOWN QUEUE TYPE in recalculation of queue speedups."
+          end
+          
+          present = queue[:speed]
+          recalc  = speedups[queue_type[:id]]
+        
+          if (present != recalc)
+            logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+            queue[:speed] = recalc
+            queue.save
           end
         end
       end  
