@@ -3,7 +3,7 @@
 
 <Building id="building_firing_range" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
   <Name lang="de_DE">Schießstand</Name>
-  <Name lang="en_US">Firing range</Name>
+  <Name lang="en_US">Firing Range</Name>
   <Description lang="de_DE">
     <p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p>
 	<p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>
@@ -25,6 +25,6 @@
   <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />
-    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
   </Abilities>
 </Building>

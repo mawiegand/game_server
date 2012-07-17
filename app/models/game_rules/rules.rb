@@ -500,8 +500,68 @@ class GameRules::Rules
 
 
         },              #   END OF Tree Huggers
-        {               #   Spit Bearer
+        {               #   Pebble Thrower
           :id          => 2, 
+          :symbolic_id => :thrower,
+					:category    => 2,
+          :db_field    => :unit_thrower,
+          :name        => {
+            
+            :en_US => "Pebble Thrower",
+  
+            :de_DE => "Kieselsteinwerfer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 0.3,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.75,
+                
+          },
+          :attack      => 18,
+          :armor       => 2,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '500',
+
+          :costs      => {
+            1 => '12',
+            2 => '2',
+            
+          },
+
+
+        },              #   END OF Pebble Thrower
+        {               #   Spit Bearer
+          :id          => 3, 
           :symbolic_id => :skewer,
 					:category    => 0,
           :db_field    => :unit_skewer,
@@ -570,142 +630,8 @@ class GameRules::Rules
 
 
         },              #   END OF Spit Bearer
-        {               #   Pebble Thrower
-          :id          => 3, 
-          :symbolic_id => :thrower,
-					:category    => 2,
-          :db_field    => :unit_thrower,
-          :name        => {
-            
-            :en_US => "Pebble Thrower",
-  
-            :de_DE => "Kieselsteinwerfer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Kills opposing units.</p>",
-  
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
-  
-            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 0.3,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.75,
-                
-          },
-          :attack      => 18,
-          :armor       => 2,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '500',
-
-          :costs      => {
-            1 => '12',
-            2 => '2',
-            
-          },
-
-
-        },              #   END OF Pebble Thrower
-        {               #   Slingshot Warrior
-          :id          => 4, 
-          :symbolic_id => :slingshot_warrior,
-					:category    => 2,
-          :db_field    => :unit_slingshot_warrior,
-          :name        => {
-            
-            :en_US => "Slingshot Warrior",
-  
-            :de_DE => "Steinschleuderer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Kills opposing units.</p>",
-  
-            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
-  
-            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.1,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.5,
-                
-          },
-          :attack      => 18,
-          :armor       => 2,
-          :hitpoints   => 50,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '500',
-
-          :costs      => {
-            1 => '16',
-            0 => '4',
-            2 => '12',
-            
-          },
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-          ],          
-
-
-        },              #   END OF Slingshot Warrior
         {               #   Ostrich Riders
-          :id          => 5, 
+          :id          => 4, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
@@ -766,7 +692,7 @@ class GameRules::Rules
 
         },              #   END OF Ostrich Riders
         {               #   Sabretooth-Riders
-          :id          => 6, 
+          :id          => 5, 
           :symbolic_id => :sabre_riders,
 					:category    => 1,
           :db_field    => :unit_sabre_riders,
@@ -836,7 +762,7 @@ class GameRules::Rules
 
         },              #   END OF Sabretooth-Riders
         {               #   Battering Ram
-          :id          => 7, 
+          :id          => 6, 
           :symbolic_id => :ram,
 					:category    => 3,
           :db_field    => :unit_ram,
@@ -893,7 +819,7 @@ class GameRules::Rules
 
         },              #   END OF Battering Ram
         {               #   Catapult
-          :id          => 8, 
+          :id          => 7, 
           :symbolic_id => :catapult,
 					:category    => 3,
           :db_field    => :unit_catapult,
@@ -963,7 +889,7 @@ class GameRules::Rules
 
         },              #   END OF Catapult
         {               #   Neanderthal
-          :id          => 9, 
+          :id          => 8, 
           :symbolic_id => :neanderthal,
 					:category    => 0,
           :db_field    => :unit_neanderthal,
@@ -1036,6 +962,80 @@ class GameRules::Rules
 
 
         },              #   END OF Neanderthal
+        {               #   Slingshot Warrior
+          :id          => 9, 
+          :symbolic_id => :slingshot_warrior,
+					:category    => 2,
+          :db_field    => :unit_slingshot_warrior,
+          :name        => {
+            
+            :en_US => "Slingshot Warrior",
+  
+            :de_DE => "Steinschleuderer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.1,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.5,
+                
+          },
+          :attack      => 18,
+          :armor       => 2,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 10,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '500',
+
+          :costs      => {
+            1 => '16',
+            0 => '4',
+            2 => '12',
+            
+          },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
+
+        },              #   END OF Slingshot Warrior
       ],                # END OF UNIT TYPES
 
   
@@ -1194,7 +1194,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "0",
+                :speedup_formula   => "2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1284,7 +1284,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1368,7 +1368,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1452,7 +1452,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
               },
 
             ],
@@ -1516,14 +1516,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
-            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
-            2 => 'FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
+            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
+            2 => 'FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
             3 => 'MAX(LEVEL-9,0)',
             
           },
 
-          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100))+0.5)',
+          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
           :production  => [
             
           ],
@@ -1536,7 +1536,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1717,7 +1717,7 @@ class GameRules::Rules
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1/24",
+                :formula            => "(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48",
               },
             
           ],
@@ -1793,7 +1793,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1866,7 +1866,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -1893,7 +1893,7 @@ class GameRules::Rules
             
             :de_DE => "Lagerfeuer",
   
-            :en_US => "campfire",
+            :en_US => "Campfire",
                 
           },
           :flavour     => {
@@ -2039,7 +2039,7 @@ class GameRules::Rules
             
             :de_DE => "Steinbruch",
   
-            :en_US => "Quarry man",
+            :en_US => "Quarry",
                 
           },
           :flavour     => {
@@ -2176,7 +2176,7 @@ class GameRules::Rules
             
             :de_DE => "Schießstand",
   
-            :en_US => "Firing range",
+            :en_US => "Firing Range",
                 
           },
           :flavour     => {
@@ -2232,7 +2232,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -2316,7 +2316,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
@@ -2343,7 +2343,7 @@ class GameRules::Rules
             
             :de_DE => "Werkstatt",
   
-            :en_US => "workshop",
+            :en_US => "Workshop",
                 
           },
           :flavour     => {
@@ -2369,24 +2369,24 @@ class GameRules::Rules
           :requirements=> [
             
             {
-              :symbolic_id => 'building_bronce',
-              :id => 0,
-              :type => '',
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
 
-              :min_level => 2,
+              :min_level => 21,
 
             },
 
           ],          
 
           :costs      => {
-            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
-            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)*(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100.0))+0.5)',
           :production  => [
             
           ],
@@ -2399,7 +2399,7 @@ class GameRules::Rules
                 :queue_type_id     => 5,
                 :queue_type_id_sym => :queue_siege,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],

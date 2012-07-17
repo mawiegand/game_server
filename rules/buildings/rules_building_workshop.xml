@@ -3,7 +3,7 @@
 
 <Building id="building_workshop" group="military" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
   <Name lang="de_DE">Werkstatt</Name>
-  <Name lang="en_US">workshop</Name>
+  <Name lang="en_US">Workshop</Name>
   <Description lang="de_DE">
     <p>Die Werksatt wird von den meisten Bewohnern gemieden. Zum einen haben die Tütfler komische Verhaltensweisen und einen seltsamen Sinn für Humor, zum anderen ist hier die Gefahr bereits beim Eintritt in eine neuartige Falle oder ein unachtsam abgestelltes Testobjekt zu tappen sehr hoch.</p>
   <p>Die Tüftler selbst sind gerne unter sich, lachen über Dinge wie den Großen Knall und basteln Tag ein Tag aus an ihren Geräten. Alle Mondumläufe stellen sie auf dem Platz vor dem Lagerfeuer ihre neusten Ideen vor.</p>
@@ -18,13 +18,13 @@
     <Flavour lang="de_DE">
     <p>In der Werkstatt werden Belagerungsgeräte hergestellt, zumindest wenn man den Häuptling fragt. Die Tüftler selbst stellen nach ihrer Meinung wahre Wunder her.</p>
   </Flavour>
-  <Requirement id="building_bronce" min_level="2" />  
-  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*10*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)</Cost>
+  <Requirement id="building_chief_cottage" min_level="21" />  
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)</Cost>
   <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
-  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*10*19.5*POW(10,3.6)*(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)</ProductionTime>             
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100.0))+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_siege" />
-    <SpeedupQueue queue="queue_siege" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100</SpeedupQueue>
+    <SpeedupQueue queue="queue_siege" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
   </Abilities>
 </Building>

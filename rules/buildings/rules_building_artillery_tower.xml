@@ -26,6 +26,6 @@
   <ProductionTime shortenable="true">FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,5)-MIN(LEVEL,4))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>   
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />
-    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0</SpeedupQueue>
   </Abilities>  
 </Building>
