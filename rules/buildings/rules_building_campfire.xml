@@ -3,7 +3,7 @@
 
 <Building id="building_campfire" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true">  
   <Name lang="de_DE">Lagerfeuer</Name>
-  <Name lang="en_US">campfire</Name>
+  <Name lang="en_US">Campfire</Name>
   <Description lang="de_DE">
     <p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p>
     <p>Die freiwilligen und unfreiwilligen Gästen werden wahlweise ans Feuer gebeten oder am Marterfall aufgestellt.</p> 

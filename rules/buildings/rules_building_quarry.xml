@@ -3,7 +3,7 @@
 
 <Building id="building_quarry" group="resource" category="building_category_small_building" buyable="true" destructable="true">  
   <Name lang="de_DE">Steinbruch</Name>
-  <Name lang="en_US">Quarry man</Name>
+  <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
     <p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>
   </Description>
