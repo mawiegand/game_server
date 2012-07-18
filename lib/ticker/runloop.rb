@@ -119,13 +119,17 @@ module Ticker
         else 
           handler = handlers[next_event.event_type]
           if handler 
-            handler.process_event next_event
+            begin
+              handler.process_event next_event
+            rescue SyntaxError, NameError => error
+              say "CATCHED FATAL ERROR in event handler: ", Logger::ERROR
+            rescue StandardError => error
+              say "CATCHED ERROR in event handler: ", Logger::ERROR
+            end
           else
             say "No handler registered for this event type.", Logger::ERROR
           end
         end
-        
-        say "Ending another loop.", Logger::DEBUG
       end
     end
 
@@ -149,14 +153,22 @@ module Ticker
     #    next_event = Event::Event.where("execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
         
         if next_event
+          if (@idle_counter || 0) > 0
+            say "was idle for #{@idle_counter} cycles"
+          end
+          @idle_counter = 0          
+          
           say "Process event  #{next_event.id} of type #{next_event.event_type} (#{next_event.local_event_id})  that should be executed at #{next_event.execute_at}.", Logger::INFO
           next_event.locked_at = DateTime.now
           next_event.locked_by = 'ticker'
           next_event.save
-          
+                    
           return next_event
         else
-          say "idle", Logger::INFO
+          @idle_counter = (@idle_counter || 0) + 1
+          if @idle_counter.modulo(10) == 0
+            say "idle for #{@idle_counter} cycles", Logger::INFO
+          end
           return nil
         end
       end
