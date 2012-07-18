@@ -89,7 +89,7 @@ class Ticker::BattleHandler
         awe_unit = Battle::Unit.new
         raise InternalServerError.new('could not create an instance of Battle::Unit (awe_native_extension).') if awe_unit.nil?
         
-        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit, participant.army.battle_retreat )
+        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit, participant)
         awe_army.addUnit(awe_unit)
 
       end
@@ -102,29 +102,33 @@ class Ticker::BattleHandler
   # rules) and the awe object to be filled.
   #
   # TODO: here we need the owner as the army as well and must calculate all modified values (perhaps should be calculated inside Military::Army)
-  def fill_awe_unit(number, unit_type, awe_unit, retreat)
+  def fill_awe_unit(number, unit_type, awe_unit, participant)
+    
+    rank = (participant.army.rank || 0) 
+    
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
 	  #puts unit_type
     #awe_unit.unitCategoryId = 0 #  unit_type.id # must become a number!
     awe_unit.unitCategoryId = unit_type[:category]
     #if a army is retreating it does not deal any damage
-    if retreat
+    if participant.army.battle_retreat
       awe_unit.baseDamage = 0
       awe_unit.criticalDamage = 0
     else
       awe_unit.baseDamage = unit_type[:attack]
       awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     end
-    awe_unit.criticalProbability = unit_type[:critical_hit_chance]
+    awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (rank+1)    # critical hit chance is multiplied with the rank
     awe_unit.hitpoints = unit_type[:hitpoints]
     awe_unit.initiative = unit_type[:initiative]
     awe_unit.armor = unit_type[:armor]
+    
     #effectiveness
     unit_type[:effectiveness].each {
       |s,e|
       cat_id = get_unit_category_id(s)
-      awe_unit.setEffectivenessFor(cat_id, e)
+      awe_unit.setEffectivenessFor(cat_id, e + rank * 0.05)                  # each rank adds 5 percent to the effectiveness of the army (against all categories)
     }
         
     awe_unit
