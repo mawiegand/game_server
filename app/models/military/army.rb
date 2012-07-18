@@ -432,19 +432,11 @@ class Military::Army < ActiveRecord::Base
     end
     
     def update_experience_ranking
-      
-      logger.debug "in update experience ranking"
-      
       return true    if self.npc?
       return true    if self.owner.blank?
       return true    if self.owner.ranking.blank?  # true e.g. for npc, or on a bug ;-)
     
-            logger.debug "check experience ranking"
-
-    
       if !self.changes[:exp].blank? && self.owner.ranking.max_experience < self.exp
-            logger.debug "update experience ranking"
-
         self.owner.ranking.update_max_experience_from_army(self)
         self.owner.ranking.save
       else     # in case this army is the best army, propagate changes to name and rank.
@@ -459,9 +451,12 @@ class Military::Army < ActiveRecord::Base
       true
     end
     
+    # before destroy handler that removes this army from the experience ranking
+    # in case it was the best army the player had.
     def remove_from_experience_ranking
       if !self.npc? && self.ranking # best army?
         self.ranking.recalc_max_experience(self.id)  # recalc and ignore this army
+        self.ranking.save
       end
     end
 
