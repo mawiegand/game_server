@@ -20,6 +20,7 @@ class Military::Army < ActiveRecord::Base
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   before_save :update_mode  
+  before_save :update_rank
     
   after_find :update_ap_if_necessary
   
@@ -401,6 +402,21 @@ class Military::Army < ActiveRecord::Base
       battle_id_change = self.changes[:battle_id]
       if !battle_id_change.nil?
         self.mode = battle_id_change[1].nil? ? MODE_IDLE : MODE_FIGHTING
+      end
+      true
+    end
+    
+    def update_rank
+      if self.exp.blank? 
+        return true
+      elsif self.exp > 10000
+        self.rank = 3
+      elsif self.exp > 1000
+        self.rank = 2
+      elsif self.exp > 100
+        self.rank = 1
+      else
+        self.rank = 0
       end
       true
     end
