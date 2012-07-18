@@ -207,7 +207,12 @@ class Ticker::BattleHandler
     end
 
     # update survivors on army
+    experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash)
+    participant_results.experience_gained = experience
     participant.army.reduce_units(participant_results.get_unit_reduce_hash)
+    participant.army.exp += experience
+    participant.army.kills = participant.kills
+    participant.army.save
   end
 
 end

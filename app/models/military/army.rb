@@ -272,12 +272,24 @@ class Military::Army < ActiveRecord::Base
   
   # reduces the units of given army by the units stated as key/value pairs in 'units' 
   def reduce_units(units)
+#   Military::ArmyDetails.transaction do
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       unless units[unit_type[:db_field]].nil?
         self.details.decrement(unit_type[:db_field], units[unit_type[:db_field]].to_i)
       end
     end
     self.details.save
+#   end
+  end
+  
+  def self.experience_value_of(units)
+    value = 0
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      unless units[unit_type[:db_field]].nil?
+        value += units[unit_type[:db_field]].to_i * 10
+      end
+    end
+    value
   end
   
   def self.create_npc(location, size)

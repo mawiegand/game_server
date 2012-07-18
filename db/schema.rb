@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120715202039) do
+ActiveRecord::Schema.define(:version => 20120718152808) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -409,6 +409,7 @@ ActiveRecord::Schema.define(:version => 20120715202039) do
     t.integer  "unit_catapult"
     t.integer  "unit_ram"
     t.integer  "unit_neanderthal"
+    t.integer  "unit_slingshot_warrior"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
@@ -492,6 +493,10 @@ ActiveRecord::Schema.define(:version => 20120715202039) do
     t.integer  "unit_neanderthal_casualties"
     t.decimal  "unit_neanderthal_damage_taken"
     t.decimal  "unit_neanderthal_damage_inflicted"
+    t.integer  "unit_slingshot_warrior"
+    t.integer  "unit_slingshot_warrior_casualties"
+    t.decimal  "unit_slingshot_warrior_damage_taken"
+    t.decimal  "unit_slingshot_warrior_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|
@@ -504,7 +509,7 @@ ActiveRecord::Schema.define(:version => 20120715202039) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0
+    t.integer  "total_experience_gained",  :default => 0, :null => false
   end
 
   create_table "military_battle_rounds", :force => true do |t|
