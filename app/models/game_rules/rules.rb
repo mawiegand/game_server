@@ -1602,13 +1602,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(30*POW(LEVEL,2.95)+0.5)',
-            0 => 'FLOOR(30*POW(LEVEL,2.95)+0.5)',
-            2 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))/2+0.5)',
+            1 => 'FLOOR(30*POW(LEVEL-1,2.95)*0.5+0.5)',
+            0 => 'FLOOR(30*POW(LEVEL-1,2.95)*0.5+0.5)',
+            2 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL-1,2.95))*0.5*0.5+0.5)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL,4.3)+250*LEVEL))+0.5)',
+          :production_time => '(MAX(LEVEL+1,1)-MAX(LEVEL,2))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL-1,3)-1760*POW(LEVEL-1,2)+3286.7*(LEVEL-1)-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL-1,4.3)+250*(LEVEL-1)))+0.5)',
           :production  => [
             
               {
