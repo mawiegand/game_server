@@ -8,19 +8,23 @@ class Military::Army < ActiveRecord::Base
   belongs_to :target_location,    :class_name => "Map::Location",                    :foreign_key => "target_location_id"
   belongs_to :target_region,      :class_name => "Map::Region",                      :foreign_key => "target_region_id"
   
-  belongs_to :alliance,           :class_name => "Fundamental::Alliance",            :foreign_key => "alliance_id",  :inverse_of => :armies
-  belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id"  
+  belongs_to :alliance,           :class_name => "Fundamental::Alliance",            :foreign_key => "alliance_id",            :inverse_of => :armies
+  belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id",               :inverse_of => :armies
   
-  has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",      :dependent => :destroy
-  has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",      :dependent => :destroy, :inverse_of => :army
+  has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",                :dependent => :destroy
+  has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",                :dependent => :destroy, :inverse_of => :army
   
-  belongs_to :battle,             :class_name => "Military::Battle",                 :foreign_key => "battle_id",    :inverse_of => :armies
+  belongs_to :battle,             :class_name => "Military::Battle",                 :foreign_key => "battle_id",              :inverse_of => :armies
+  
   has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id"
+  has_one    :ranking,            :class_name => "Ranking::CharacterRanking",        :foreign_key => "max_experience_army_id", :inverse_of => :most_experienced_army
+
   
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   before_save :update_mode  
   before_save :update_rank
+  after_save  :update_experience_ranking
     
   after_find :update_ap_if_necessary
   
@@ -397,7 +401,8 @@ class Military::Army < ActiveRecord::Base
   end
   
   private
-  
+    # before safe handler setting the correct mode in case the battle id has
+    # changed.
     def update_mode
       battle_id_change = self.changes[:battle_id]
       if !battle_id_change.nil?
@@ -406,6 +411,9 @@ class Military::Army < ActiveRecord::Base
       true
     end
     
+    # update the rank on changed experience. Dirty-handler makes sure
+    # the rank attribute is only updated in the database in case
+    # it actually changed.
     def update_rank
       if self.exp.blank? 
         return true
@@ -420,5 +428,35 @@ class Military::Army < ActiveRecord::Base
       end
       true
     end
+    
+    def update_experience_ranking
+      
+      logger.debug "in update experience ranking"
+      
+      return true    if self.npc?
+      return true    if self.owner.blank?
+      return true    if self.owner.ranking.blank?  # true e.g. for npc, or on a bug ;-)
+    
+            logger.debug "check experience ranking"
+
+    
+      if !self.changes[:exp].blank? && self.owner.ranking.max_experience < self.exp
+            logger.debug "update experience ranking"
+
+        self.owner.ranking.update_max_experience_from_army(self)
+        self.owner.ranking.save
+      else     # in case this army is the best army, propagate changes to name and rank.
+        name_change     = self.changes[:name]
+        rank_change     = self.changes[:rank]
+        if (!name_change.blank? || !rank_change.blank?) && self.ranking
+          self.ranking.update_max_experience_from_army(self)
+          self.ranking.save
+        end
+      end
+
+      true
+    end
+
+    
   
 end

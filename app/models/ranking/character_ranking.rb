@@ -1,9 +1,18 @@
 class Ranking::CharacterRanking < ActiveRecord::Base
   
-  belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :ranking
-  belongs_to :alliance,  :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"
+  belongs_to :character,              :class_name => "Fundamental::Character", :foreign_key => "character_id",           :inverse_of => :ranking
+  belongs_to :alliance,               :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"
+  belongs_to :most_experienced_army,  :class_name => "Military::Army",         :foreign_key => "max_experience_army_id", :inverse_of => :ranking
   
   after_save :propagate_change_to_alliance
+  
+  
+  def update_max_experience_from_army(army)
+    self.max_experience           = army.exp
+    self.max_experience_army_id   = army.id
+    self.max_experience_army_name = army.name
+    self.max_experience_army_rank = army.rank
+  end
     
   protected
   
