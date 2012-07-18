@@ -42,10 +42,14 @@ class Ticker::BattleHandler
       raise InternalServerError.new('Could not create an instance of Battle::BattleCalculator (awe_native_extension).') if awe_battle_calculator.nil?
 
       ## calculate one battle round
+      runloop.say "calculating this round"
       awe_battle_calculator.callculateOneTick(awe_battle)  # execute round
       
-      ## extract and store results in database & handle retreat
+      ## extract and store results in database & handle retreat      
+      runloop.say "started extracting results from awe_battle object"
       extract_results_from_awe_battle(awe_battle, battle)
+
+      runloop.say "finished extracting results from awe_battle object"
 
       ## check if the battle is over
       if battle.battle_done?

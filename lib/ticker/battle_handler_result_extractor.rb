@@ -193,7 +193,7 @@ class Ticker::BattleHandler
       participant_results[(unit_type[:db_field].to_s+'_damage_taken').to_sym] = 0
       participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = 0
     end
-
+    
     #insert the real data
     (0..(awe_army.numUnits-1)).each do | u |
       awe_unit = awe_army.getUnit(u)
@@ -210,8 +210,7 @@ class Ticker::BattleHandler
     experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash)
     participant_results.experience_gained = experience
     participant.army.reduce_units(participant_results.get_unit_reduce_hash)
-    participant.army.exp += experience
-    participant.army.kills = participant.kills
+    participant.army.exp   += experience
     participant.army.save
   end
 

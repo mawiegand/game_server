@@ -12,7 +12,7 @@ class Military::Army < ActiveRecord::Base
   belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id"  
   
   has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",      :dependent => :destroy
-  has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",      :dependent => :destroy
+  has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",      :dependent => :destroy, :inverse_of => :army
   
   belongs_to :battle,             :class_name => "Military::Battle",                 :foreign_key => "battle_id",    :inverse_of => :armies
   has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id"

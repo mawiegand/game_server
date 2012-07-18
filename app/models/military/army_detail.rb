@@ -1,6 +1,6 @@
 class Military::ArmyDetail < ActiveRecord::Base
 
-  belongs_to :army, :class_name => "Military::Army", :foreign_key => "army_id", :touch => true
+  belongs_to :army, :class_name => "Military::Army", :foreign_key => "army_id", :touch => true, :inverse_of => :details
 
   after_save :update_army
 
