@@ -7,11 +7,27 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   after_save :propagate_change_to_alliance
   
   
+  def reset_max_experience
+    self.max_experience           = 0
+    self.max_experience_army_id   = nil
+    self.max_experience_army_name = nil
+    self.max_experience_army_rank = nil
+  end
+  
   def update_max_experience_from_army(army)
     self.max_experience           = army.exp
     self.max_experience_army_id   = army.id
     self.max_experience_army_name = army.name
     self.max_experience_army_rank = army.rank
+  end
+  
+  def recalc_max_experience(ignore_army_id = -1)
+    armies = self.character.armies.where(["id != ?", ignore_army_id]).order("exp DESC").limit(1)
+    if !armies.blank? && armies.length == 1
+      self.update_max_experience_from_army(armies[0])
+    else 
+      self.reset_max_experience
+    end
   end
     
   protected

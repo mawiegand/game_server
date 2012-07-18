@@ -22,9 +22,11 @@ class Military::Army < ActiveRecord::Base
   
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
-  before_save :update_mode  
-  before_save :update_rank
-  after_save  :update_experience_ranking
+  before_save    :update_mode  
+  before_save    :update_rank
+  after_save     :update_experience_ranking
+  before_destroy :remove_from_experience_ranking 
+
     
   after_find :update_ap_if_necessary
   
@@ -455,6 +457,12 @@ class Military::Army < ActiveRecord::Base
       end
 
       true
+    end
+    
+    def remove_from_experience_ranking
+      if !self.npc? && self.ranking # best army?
+        self.ranking.recalc_max_experience(self.id)  # recalc and ignore this army
+      end
     end
 
     
