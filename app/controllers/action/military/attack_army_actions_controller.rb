@@ -15,7 +15,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
 
     raise ForbiddenError.new('tried to attack own army') unless attacker.owner_id != defender.owner_id
 
-    raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode === Military::Army::MODE_IDLE || attacker.battle_id.nil?
+    raise ForbiddenError.new('attacker is already moving or battling') unless attacker.mode === Military::Army::MODE_IDLE && attacker.battle_id.nil?
 
     attacker.consume_ap                                          # raises an BadAccessError if no aps are available
     Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
