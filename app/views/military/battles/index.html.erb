@@ -13,6 +13,7 @@
     <th>Decisiveness</th>
     <th>Factions count</th>
     <th>Rounds count</th>
+    <th>Message</th>
     <th></th>
     <th></th>
     <th></th>
@@ -31,6 +32,7 @@
     <td><%= military_battle.decisiveness %></td>
     <td><%= military_battle.battle_factions_count %></td>
     <td><%= military_battle.battle_rounds_count %></td>
+    <td><%= military_battle.message_id %></td>
     <td><%= link_to 'Show', military_battle %></td>
     <td><%= link_to 'Edit', edit_military_battle_path(military_battle) %></td>
     <td><%= link_to 'Destroy', military_battle, confirm: 'Are you sure?', method: :delete %></td>

@@ -16,6 +16,8 @@ class Military::Battle < ActiveRecord::Base
   belongs_to :region,       :class_name => "Map::Region",                 :foreign_key => "region_id",      :inverse_of => :battles
   belongs_to :location,     :class_name => "Map::Location",               :foreign_key => "location_id",    :inverse_of => :battles
   
+  belongs_to :message,      :class_name => "Messaging::Message",          :foreign_key => "message_id"
+  
   
   after_save :destroy_dependent_models_on_remove
   
