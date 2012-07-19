@@ -4,7 +4,7 @@ class Military::BattlesController < ApplicationController
   # GET /military/battles
   # GET /military/battles.json
   def index
-    @military_battles = Military::Battle.all
+    @military_battles = Military::Battle.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

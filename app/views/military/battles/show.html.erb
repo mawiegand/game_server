@@ -62,24 +62,34 @@
 <tr>
   <td>
     <% @military_battle.factions.first.participants.each do | participant | %>
-      <%= link_to participant.army.owner.name, participant.army.owner %> |
-      <%= if (participant.army.owner.alliance) 
-            link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
-          else 
-            ""
-          end %> with
-      <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%><br/>
+      <% if participant.army.nil? %>
+        Army is gone.
+      <%else%>
+        <%= link_to participant.army.owner.name, participant.army.owner %> |
+        <%= if (participant.army.owner.alliance) 
+              link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+            else 
+              ""
+            end %> with
+        <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%>
+      <%end%>
+      <br/>
     <% end %>    
   </td>
   <td>
     <% @military_battle.factions.last.participants.each do | participant | %>
-      <%= link_to participant.army.owner.name, participant.army.owner %> |
-      <%= if (participant.army.owner.alliance) 
-            link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
-          else 
-            ""
-          end %> with
-      <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%><br/>
+      <% if participant.army.nil? %>
+        Army is gone.
+      <%else%>
+        <%= link_to participant.army.owner.name, participant.army.owner %> |
+        <%= if (participant.army.owner.alliance) 
+              link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+            else 
+              ""
+            end %> with
+        <%= link_to participant.army.name, participant.army %> <%= "(#{ participant.army.size_present } men, #{ participant.army.strength } strength) "%>
+      <%end%>  
+      <br/>
     <% end %>
   </td>
 </tr>
@@ -115,12 +125,16 @@
         <% round.faction_results[0].participant_results.each do | participant | %>
           <tr>
             <td>
-              <%= participant.army.name %> (<%= link_to participant.army.owner.name, participant.army.owner %> |
-              <%= if (participant.army.owner.alliance) 
-                    link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
-                  else 
-                    ""
-              end %>)
+              <% if participant.army.nil? %>
+                Army is gone.
+              <%else%>
+                <%= participant.army.name %> (<%= link_to participant.army.owner.name, participant.army.owner %> |
+                <%= if (participant.army.owner.alliance) 
+                      link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+                    else 
+                      ""
+                end %>)
+              <%end%>
             </td>
             <% GameRules::Rules.the_rules.unit_types.each do |unit_type|  %>
               <td><%= if !participant[unit_type[:db_field]].blank?
@@ -189,12 +203,16 @@
         <% round.faction_results[1].participant_results.each do | participant | %>
           <tr>
             <td>
-              <%= participant.army.name %> (<%= link_to participant.army.owner.name, participant.army.owner %> |
-              <%= if (participant.army.owner.alliance) 
-                    link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
-                  else 
-                    ""
-              end %>)
+              <% if participant.army.nil? %>
+                Army is gone.
+              <%else%>
+                <%= participant.army.name %> (<%= link_to participant.army.owner.name, participant.army.owner %> |
+                <%= if (participant.army.owner.alliance) 
+                      link_to participant.army.owner.alliance_tag, participant.army.owner.alliance 
+                    else 
+                      ""
+                end %>)
+              <%end%>
             </td>
             <% GameRules::Rules.the_rules.unit_types.each do |unit_type|  %>
               <td><%= if !participant[unit_type[:db_field]].blank?

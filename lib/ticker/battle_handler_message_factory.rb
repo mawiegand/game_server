@@ -56,6 +56,8 @@ class Ticker::BattleHandler
       message.flag = 0
 
       message.save
+      
+      battle.message = message if battle.message.nil?
     end
   end
 
