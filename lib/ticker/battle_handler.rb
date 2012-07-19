@@ -105,6 +105,8 @@ class Ticker::BattleHandler
         ## cleanup of the battle object
         cleanup_battle(battle)
         
+        # TODO: now run handler that checks for the start of another automatic battle due to stances. IMPORTANT: run this AFTER cleanup battle, otherwise the army will still be participant of the old battle.
+        
       else
         #update the leaders
         battle.factions.each do |faction|
