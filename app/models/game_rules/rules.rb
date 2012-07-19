@@ -1608,7 +1608,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => '(MAX(LEVEL+1,1)-MAX(LEVEL,2))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL-1,3)-1760*POW(LEVEL-1,2)+3286.7*(LEVEL-1)-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL-1,4.3)+250*(LEVEL-1)))+0.5)',
+          :production_time => '(MAX(LEVEL+1,1)-MAX(LEVEL,2))*FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(293.33*POW(LEVEL-1,3)-1760*POW(LEVEL-1,2)+3286.7*(LEVEL-1)-1760)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(6*POW(MAX(LEVEL-2,0),4.3)+250*(LEVEL-1)))+0.5)',
           :production  => [
             
               {
