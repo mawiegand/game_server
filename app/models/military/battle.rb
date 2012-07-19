@@ -17,6 +17,8 @@ class Military::Battle < ActiveRecord::Base
   belongs_to :region,       :class_name => "Map::Region",                 :foreign_key => "region_id",      :inverse_of => :battles
   belongs_to :location,     :class_name => "Map::Location",               :foreign_key => "location_id",    :inverse_of => :battles
   
+  belongs_to :message,      :class_name => "Messaging::Message",          :foreign_key => "message_id"
+  
   
   # starts a fight between two armies. if one of the armies is already 
   # involved in an ongoing battle, the other is added to the opposing
