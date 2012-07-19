@@ -4,8 +4,7 @@ class Military::Battle < ActiveRecord::Base
 
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy
   has_many   :factions,     :class_name => "Military::BattleFaction",     :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy, :order => 'id ASC'
-  has_many   :rounds,       :class_name => "Military::BattleRound",       :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy,
-             :order => 'round_num ASC'
+  has_many   :rounds,       :class_name => "Military::BattleRound",       :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy, :order => 'round_num ASC'
   has_many   :armies,       :class_name => "Military::Army",              :foreign_key => "battle_id",      :inverse_of => :battle
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_id", :inverse_of => :battle, :dependent => :destroy
@@ -19,6 +18,8 @@ class Military::Battle < ActiveRecord::Base
   
   belongs_to :message,      :class_name => "Messaging::Message",          :foreign_key => "message_id"
   
+  
+  after_save :destroy_dependent_models_on_remove
   
   # starts a fight between two armies. if one of the armies is already 
   # involved in an ongoing battle, the other is added to the opposing
@@ -172,5 +173,25 @@ class Military::Battle < ActiveRecord::Base
     end
     nil
   end
+  
+  def destroy_dependent_models
+    self.participants.destroy_all
+    self.factions.destroy_all
+    self.rounds.destroy_all
+    
+    self.participant_results.destroy_all
+    self.faction_results.destroy_all        
+  end
+  
+  protected
+    
+    def destroy_dependent_models_on_remove
+      if !self.changes[:removed].blank? && self.changes[:removed][1] == true
+        logger.debug "Battle #{self.id} was removed. Now starting to destroy dependent models."
+        self.destroy_dependent_models
+        logger.debug "Finished destroying dependent models."
+      end
+      true
+    end
 
 end
