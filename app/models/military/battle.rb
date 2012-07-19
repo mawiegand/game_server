@@ -3,7 +3,7 @@ class Military::Battle < ActiveRecord::Base
   has_one    :event,        :class_name => "Event::Event",                :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
   has_many   :participants, :class_name => "Military::BattleParticipant", :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy
-  has_many   :factions,     :class_name => "Military::BattleFaction",     :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy
+  has_many   :factions,     :class_name => "Military::BattleFaction",     :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy, :order => 'id ASC'
   has_many   :rounds,       :class_name => "Military::BattleRound",       :foreign_key => "battle_id",      :inverse_of => :battle, :dependent => :destroy,
              :order => 'round_num ASC'
   has_many   :armies,       :class_name => "Military::Army",              :foreign_key => "battle_id",      :inverse_of => :battle
@@ -28,6 +28,7 @@ class Military::Battle < ActiveRecord::Base
     battle = nil
     
     #remove a runnung movement command from bot attacker and defender
+    # TODO: this allows spam-attacks on armies. Halt movement, but don't cancel it
     if attacker.moving?
       attacker.delete_movement
     end
@@ -131,6 +132,7 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def add_army(army, faction)
+    logger.debug "Adding army #{army.id}: #{army} to faction #{faction.id}: #{faction}."
     army.battle = self
     army.save
     faction.participants.create(:battle_id => faction.battle_id, :army_id => army.id,
