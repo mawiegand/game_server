@@ -57,14 +57,12 @@ class Fundamental::Alliance < ActiveRecord::Base
   def add_character(character)
     character.alliance_tag = self.tag
     character.alliance_id = self.id
-    self.increment!(:members_count)
     character.save
   end
   
   def remove_character(character)
     character.alliance_tag = nil
     character.alliance_id = nil
-    self.decrement!(:members_count)
     character.save
     
     if self.leader_id == character.id
