@@ -28,11 +28,11 @@ class Map::Location < ActiveRecord::Base
   def set_owner_and_alliance(new_owner_id, new_alliance_id)
     if (new_owner_id != self.owner_id)
       self.owner_id = new_owner_id
-      self.owner_name = self.owner.name     if !self.owner.nil?
+      self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
     if (new_alliance_id != self.alliance_id)
       self.alliance_id = new_alliance_id
-      self.alliance_tag = self.alliance.tag if !self.alliance.nil?   
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
     end
   end
 
