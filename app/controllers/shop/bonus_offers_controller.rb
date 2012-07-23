@@ -8,15 +8,15 @@ class Shop::BonusOffersController < ApplicationController
   def index
     @shop_bonus_offers = Shop::BonusOffer.all
     
-    logger.debug current_character.inspect
-    
-    @shop_bonus_offers.each do |offer|
-      offer[:resource_effect] = offer.effect_for_character(current_character) 
-    end
-
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @shop_bonus_offers }
+      format.json do
+        @shop_bonus_offers.each do |offer|
+          offer[:resource_effect] = offer.effect_for_character(current_character) 
+        end
+    
+        render json: @shop_bonus_offers
+      end
     end
   end
 
