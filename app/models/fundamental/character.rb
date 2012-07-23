@@ -2,7 +2,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
 
-  belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members, :counter_cache => :members_count
+  belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members
   
   has_one  :resource_pool,     :class_name => "Fundamental::ResourcePool",  :foreign_key => "character_id", :inverse_of => :owner
   has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character

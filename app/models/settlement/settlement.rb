@@ -119,6 +119,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.owner        = character
     self.alliance_id  = character.alliance_id
     self.alliance_tag = character.alliance_tag
+    
     Military::Army.create_garrison_at(self)
     self.save                         # triggers before_save and after_save handlers that do all the work
     

@@ -75,8 +75,8 @@ class Messaging::MessagesController < ApplicationController
       if !params[:message].has_key?(:sender_id) && !current_character.nil?
         @messaging_message[:sender_id] = current_character.id
       end
-      @messaging_message[:subject] = params[:message][:subject]
-      @messaging_message[:body] = params[:message][:body]
+      @messaging_message[:subject] = params[:message][:subject] || "-"
+      @messaging_message[:body] = format_body(params[:message][:body] || "")
     end 
           
     raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
@@ -123,4 +123,10 @@ class Messaging::MessagesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  protected
+    
+    def format_body(str)
+      str.gsub(/\n/, '<br/>')
+    end
 end
