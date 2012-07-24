@@ -45,7 +45,7 @@ module IdentityProvider
       end
       
       def add_auth_token(query)
-        @auth_token = FiveD::AccessToken.generate_access_token(@attributes['game_identifier'], @attributes['scopes']) if @auth_token.nil?
+        @auth_token = FiveD::AccessToken.generate_access_token(@attributes[:game_identifier], @attributes[:scopes]) if @auth_token.nil?
         query[:auth_token] = @auth_token.token
       end
   end
