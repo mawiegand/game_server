@@ -10,14 +10,7 @@ module IdentityProvider
     end
 
     def fetch_identity(identifier)
-      puts @attributes.inspect
-      response = get('/identities/' + identifier + '.json')
-      # if !response.nil? && response['identifier'] 
-        # return response
-      # else 
-        # logger.warning 'Could not fetch identity of identifier #{identifier} from identity provider.'
-        # return {}
-      # end
+      get('/identities/' + identifier + '.json')
     end
   
     def fetch_identity_properties(identifier)
@@ -38,17 +31,17 @@ module IdentityProvider
       
       def post(path, body = {})
         add_auth_token(query)
-        HTTParty.post(@attributes[:identity_provider_base_url] + path, :body => body).parsed_response
+        HTTParty.post(@attributes[:identity_provider_base_url] + path, :body => body)
       end
   
       def put(path, body = {})
         add_auth_token(query)
-        HTTParty.put(@attributes[:identity_provider_base_url] + path, :body => body).parsed_response
+        HTTParty.put(@attributes[:identity_provider_base_url] + path, :body => body)
       end
   
       def get(path, query = {})
         add_auth_token(query)
-        HTTParty.get(@attributes[:identity_provider_base_url] + path, :query => query).parsed_response
+        HTTParty.get(@attributes[:identity_provider_base_url] + path, :query => query)
       end
       
       def add_auth_token(query)
