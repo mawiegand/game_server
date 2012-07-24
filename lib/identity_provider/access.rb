@@ -41,7 +41,7 @@ module IdentityProvider
   
       def get(path, query = {})
         add_auth_token(query)
-        HTTParty.get(@attributes[:identity_provider_base_url] + path, :query => query)
+        HTTParty.get(@attributes[:identity_provider_base_url] + path, :body => query)
       end
       
       def add_auth_token(query)
