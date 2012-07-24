@@ -100,9 +100,14 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save    
   end
   
-  def fill_with_start_resources_transaction
+  def fill_with_start_resources_transaction(start_resource_modificator)
     start_resources = GameRules::Rules.the_rules().character_creation[:start_resources]
-    self.add_resources_transaction(start_resources)  unless start_resources.nil?
+    unless start_resources.nil?
+      start_resource_modificator ||= 1.0
+      modified_start_resources = {}
+      start_resources.each {|key, value| modified_start_resources[key] = value *= start_resource_modificator}
+      self.add_resources_transaction(modified_start_resources)
+    end
   end
   
   protected

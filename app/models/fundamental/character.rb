@@ -45,7 +45,7 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
-  def self.create_new_character(identifier, name, npc=false)
+  def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
@@ -57,7 +57,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     character.create_resource_pool
-    character.resource_pool.fill_with_start_resources_transaction
+    character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 

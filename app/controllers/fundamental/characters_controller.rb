@@ -57,26 +57,31 @@ class Fundamental::CharactersController < ApplicationController
         !request_access_token.identifier.blank? &&
         request_authorization && request_authorization[:grant_type] == :bearer
 
-      logger.debug '---> neuer User ' + {
-        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-        game_identifier: GAME_SERVER_CONFIG['game_identifier'],
-        scopes: ['5dentity'],
-      }.inspect
-      
       identity_provider_access = IdentityProvider::Access.new({
         identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-        game_identifier: GAME_SERVER_CONFIG['game_identifier'],
-        scopes: ['5dentity'],
-      });
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
+      })
       
-      identity = identity_provider_access.fetch_identity(request_access_token.identifier)
-      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player' 
+      response = identity_provider_access.fetch_identity(request_access_token.identifier)
+      identity = {}
+      if response.code == 200
+        identity = response.parsed_response
+      end
       
-      logger.debug '---> ' + identity.inspect
-      
-      # start_resource_modificator    
+      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'    
               
-      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name)
+      response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
+      properties = {}
+      if response.code == 200
+        properties = response.parsed_response
+        unless properties.empty?
+          start_resource_modificator_property = properties.select { |property| !property['data']['start_resource_modificator'].nil? }
+          start_resource_modificator = start_resource_modificator_property[0]['data']['start_resource_modificator'] unless start_resource_modificator_property.nil?
+        end
+      end
+      
+      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
       
       character.last_login_at = DateTime.now
