@@ -1,4 +1,5 @@
 require 'httparty'
+require 'identity_provider/access'
 
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
@@ -52,12 +53,28 @@ class Fundamental::CharactersController < ApplicationController
   def self
     
     if !current_character && request_access_token &&  request_access_token.valid? &&
-       request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
-       !request_access_token.identifier.blank? &&
-       request_authorization && request_authorization[:grant_type] == :bearer
+        request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
+        !request_access_token.identifier.blank? &&
+        request_authorization && request_authorization[:grant_type] == :bearer
+
+      logger.debug '---> neuer User ' + {
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier: GAME_SERVER_CONFIG['game_identifier'],
+        scopes: ['5dentity'],
+      }.inspect
       
-      identity = fetch_identity(request_access_token.identifier)
-      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'        
+      identity_provider_access = IdentityProvider::Access.new({
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier: GAME_SERVER_CONFIG['game_identifier'],
+        scopes: ['5dentity'],
+      });
+      
+      identity = identity_provider_access.fetch_identity(request_access_token.identifier)
+      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player' 
+      
+      logger.debug '---> ' + identity.inspect
+      
+      # start_resource_modificator    
               
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     

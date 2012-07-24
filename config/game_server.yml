@@ -10,6 +10,7 @@ defaults: &defaults
   
   payment_provider_base_url: 'https://wack-a-doo.de/payment_provider'
   
+  game_identifier: 'WACKADOO'
   scope: 'wackadoo'
 
   default_character_name: 'WackyUser'
