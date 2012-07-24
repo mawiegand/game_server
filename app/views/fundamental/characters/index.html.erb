@@ -40,6 +40,7 @@
     <td><%= fundamental_character.locked %> <%= fundamental_character.locked_by %></td>
     <td><%= fundamental_character.base_location_id %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
+    <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
     <td><%= link_to 'Destroy', fundamental_character, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

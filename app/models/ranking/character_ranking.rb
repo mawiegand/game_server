@@ -5,7 +5,16 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   belongs_to :most_experienced_army,  :class_name => "Military::Army",         :foreign_key => "max_experience_army_id", :inverse_of => :ranking
   
   after_save :propagate_change_to_alliance
-  
+    
+  def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
+    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC")
+    rank = 1
+    rankings.each do |entry| 
+      entry[rank_field] = rank
+      entry.save
+      rank += 1
+    end
+  end
   
   def reset_max_experience
     self.max_experience           = 0

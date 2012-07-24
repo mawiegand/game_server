@@ -10,16 +10,16 @@
 
 
 <% if @not_found %>
-  There are no properties for this character on the server.
+  This character does <b>not</b> have any persistent properties on the identity provider.
 <% elsif @error_code %>
   The identity provider responded with the following error code: <%= @error_code %> and message: <%= @error %>
 <% else %>
-  <%= @properties %>
+  <%= @properties.inspect %>
 <%end%>
   
   
 <br/><br/>
 <p><b>Note</b><p>
 <p>This page displays the 'persistent character properties'. These are properties that
-   persistent over several rounds (that is, the character has these properties in all
+   persist over several rounds (that is, the character has these properties in all
    games of this particular type). These properties are stored within the identity provider together with the identity.</p>

@@ -18,9 +18,9 @@ class Fundamental::PersistentCharacterPropertiesController < ApplicationControll
     )
     response = ip_access.fetch_identity_properties(@fundamental_character.identifier)
     
-    if response.code    === Net::HTTPOK
-      @properties = response.parsed_response.nil? ? nil : response.parsed_response.nil?
-    elsif response.code === Net::HTTPNotFound
+    if response.code    == 200
+      @properties = response.parsed_response.nil? ? nil : response.parsed_response
+    elsif response.code == 404
       @not_found = true
     else
       @error_code = response.code
