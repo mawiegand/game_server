@@ -65,7 +65,7 @@ class Shop::TransactionsController < ApplicationController
     
     # transaction zum payment provider schicken
     virtual_bank_transaction = {
-      customer_identifier: current_character.identifier,
+      customer_identifier: current_character.identifier, # TODO: send access_token instead (to prove, that user has logged in to game server)
       credit_amount_booked: offer.price,
       booking_type: Shop::Transaction::TYPE_DEBIT,
     }

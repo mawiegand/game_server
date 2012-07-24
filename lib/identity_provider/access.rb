@@ -17,12 +17,12 @@ module IdentityProvider
       get('/identities/' + identifier + '/character_properties.json')
     end
     
-    def create_identity_property(identity_id, data_object)
+    def create_identity_property(identifier, data_object)
       post('/identities/' + identifier + '/character_properties.json',
           {:resource_character_property => {:data => data_object, :identity_id => identifier}})
     end
     
-    def change_identity_property(identity_id, data_object)
+    def change_identity_property(identifier, data_object)
       put('/identities/' + identifier + '/character_properties.json',
           {:resource_character_property => {:data => data_object, :identity_id => identifier}})
     end

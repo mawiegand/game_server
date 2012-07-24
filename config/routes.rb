@@ -25,6 +25,8 @@ GameServer::Application.routes.draw do
 
       namespace :fundamental do 
         
+        resources :persistent_character_properties
+        
         match '/characters/self', :to => 'characters#self'
         
         resources :characters do

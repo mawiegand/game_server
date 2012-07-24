@@ -71,9 +71,7 @@ class Military::ArmiesController < ApplicationController
           end 
         end
         format.json do
-          if @asked_for_index 
-            raise ForbiddenError.new('Access Forbidden')        
-          end  
+          raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
           @military_armies = [] if @military_armies.nil?  # necessary? or ok to send 'null' ?
           if params.has_key?(:short)
             render json: @military_armies, :only => @@short_fields
