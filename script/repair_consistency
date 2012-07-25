@@ -43,13 +43,7 @@ Fundamental::Alliance.find(:all).each do |alliance|
 	  print "." 
 	  sleep (1)
 	end
-  Fundamental::Alliance.reset_counters(alliance.id, :members)
-  if (!alliance.ranking.nil?)
-    alliance.reload
-    alliance.ranking.num_members = alliance.members_count
-    alliance.ranking.save
-  end
-	count += 1 
+  alliance.members_count = alliance.members.count
 end
 puts " done."
 

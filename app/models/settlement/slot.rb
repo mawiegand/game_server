@@ -73,6 +73,18 @@ class Settlement::Slot < ActiveRecord::Base
     
     speedups
   end  
+  
+  # returns the number of command points the building on this slot provides
+  def command_points
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:abilities][:command_points].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:command_points]).apply(self.level)
+  end
 
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
@@ -234,6 +246,9 @@ class Settlement::Slot < ActiveRecord::Base
           propagate_speedup_queue(rule, old_level, new_level)
         end
       end
+      if !building_type[:abilities][:command_points].blank?
+        propagate_evaluatable_settlement_ability(:command_points, building_type[:abilities][:command_points], old_level, new_level)
+      end
       if !building_type[:abilities][:unlock_garrison].blank?
         propagate_unlock(:settlement_unlock_garrison_count, building_type[:abilities][:unlock_garrison], old_level, new_level)
       end
@@ -243,6 +258,16 @@ class Settlement::Slot < ActiveRecord::Base
       if !building_type[:abilities][:unlock_alliance_creation].blank?
         propagate_unlock(:settlement_unlock_alliance_creation_count, building_type[:abilities][:unlock_alliance_creation], old_level, new_level)
       end      
+    end
+  end
+  
+  def propagate_evaluatable_settlement_ability(field, formula_string, old_level, new_level)
+    formula = Util::Formula.parse_from_formula(formula_string)
+    delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
+    
+    if delta > 0.0 || delta < 0.0
+      self.settlement[field] += delta
+      self.settlement.save
     end
   end
 

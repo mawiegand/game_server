@@ -214,6 +214,8 @@ class Settlement::Settlement < ActiveRecord::Base
     speedups = recalc_queue_speedups
     check_and_apply_queue_speedups(speedups)
 
+    n_command_points = recalc_command_points
+    check_and_apply_command_points(n_command_points)
 
     if self.changed?
       logger.info(">>> SAVING SETTLEMENT AFTER DETECTING ERRORS.")
@@ -328,6 +330,27 @@ class Settlement::Settlement < ActiveRecord::Base
   
     ############################################################################
     #
+    #  UPDATING ABILITIES  
+    #
+    ############################################################################     
+    
+    def recalc_command_points
+      cp = 0
+      self.slots.each do |slot|
+        cp += slot.command_points
+      end
+      cp    
+    end
+    
+    def check_and_apply_command_points(cp)
+      if (self.command_points != cp) 
+        logger.warn(">>> COMMAND POINTS RECALC DIFFERS. Old: #{self.command_points} Corrected: #{cp}.")
+        self.command_points = cp
+      end
+    end
+  
+    ############################################################################
+    #
     #  UPDATING PRODUCTION QUEUES 
     #
     ############################################################################     
@@ -350,6 +373,9 @@ class Settlement::Settlement < ActiveRecord::Base
       end
       return true
     end
+    
+
+    
     
     def recalc_queue_unlocks
       queue_types = GameRules::Rules.the_rules().queue_types
