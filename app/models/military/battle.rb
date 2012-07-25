@@ -71,11 +71,12 @@ class Military::Battle < ActiveRecord::Base
 
     attacker.kills += killed_units               # add kills
     attacker.save
-    # create message
 
-    # defender:
+    # create message for winner and loser
+    Messaging::Message.generate_overrun_winner_message(attacker, defender)
+    Messaging::Message.generate_overrun_loser_message(attacker, defender) 
+
     Military::Army.destroy(defender.id)
-    # create message
   end
   
   def self.create_battle_between(attacker, defender)
@@ -193,5 +194,4 @@ class Military::Battle < ActiveRecord::Base
       end
       true
     end
-
 end

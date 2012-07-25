@@ -113,6 +113,9 @@ class Settlement::Settlement < ActiveRecord::Base
   def new_owner_transaction(character)
     # settlement BLOCK
     logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
+    
+    old_owner = self.garrison_army.npc ? nil : self.garrison_army.owner
+    
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -122,6 +125,10 @@ class Settlement::Settlement < ActiveRecord::Base
     
     Military::Army.create_garrison_at(self)
     self.save                         # triggers before_save and after_save handlers that do all the work
+    
+    #message for old and new owner
+    Messaging::Message.generate_lost_fortress_message(self, old_owner, character) unless old_owner.nil?
+    Messaging::Message.generate_gained_fortress_message(self, old_owner, character) unless self.garrison_army.npc
     
     # remove and add points from settlement to ranking
     # recalculate all effects, boni and productions for both players...
