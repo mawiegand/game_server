@@ -402,6 +402,10 @@ class Military::Army < ActiveRecord::Base
     self.save
   end
   
+  def owner_name_and_ally_tag
+    self.alliance_tag.nil? ? self.owner_name : self.owner_name + '|' + self.alliance_tag
+  end
+  
   private
     # before safe handler setting the correct mode in case the battle id has
     # changed.
