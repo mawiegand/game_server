@@ -20,12 +20,30 @@
 <% elsif @error_code %>
   The identity provider responded with the following error code: <%= @error_code %> and message: <%= @error %>
 <% else %>
-  <%= @properties.inspect %>
+
+  <p><b>Stored Property Object for identity <%= @properties['identity_id']%> on Identity Provider:</b></p>
+  <p><b>Created:</b>     <%= @properties['created_at']%><br/>
+     <b>Updated:</b>     <%= @properties['updated_at']%></p>
+
+  <%if !@properties['data'].blank? %>
+    <p>
+      <% @properties.data.each do |key,value| %>
+        <b><%=key%>:</b> <%=value%></b><br/>
+      <% end %>
+    </p>
+  <%else%>
+    <p><b>No character attributes set.</b></p>
+  <%end%>
+  
+  <%= link_to 'Edit', edit_fundamental_persistent_character_property_path(@fundamental_character.id) %> |
+
 <%end%>
+<%= link_to 'Character', @fundamental_character %> |
+<%= link_to 'Character List', fundamental_characters_path %>
   
   
-<br/><br/>
+<br/><br/><br/>
 <p><b>Note</b><p>
 <p>This page displays the 'persistent character properties'. These are properties that
    persist over several rounds (that is, the character has these properties in all
-   games of this particular type). These properties are stored within the identity provider together with the identity.</p>
+   games of this particular type). These properties are stored within the identity provider together with the identity. Use the button to create or modify the attributes.</p>

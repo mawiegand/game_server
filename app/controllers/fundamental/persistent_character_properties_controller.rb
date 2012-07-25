@@ -19,7 +19,7 @@ class Fundamental::PersistentCharacterPropertiesController < ApplicationControll
     response = ip_access.fetch_identity_properties(@fundamental_character.identifier)
     
     if response.code    == 200
-      @properties = response.parsed_response.nil? ? nil : response.parsed_response
+      @properties = response.parsed_response.nil? ? nil : response.parsed_response[0]
     elsif response.code == 404
       @not_found = true
     else
