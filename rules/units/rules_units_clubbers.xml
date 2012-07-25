@@ -18,20 +18,20 @@
   <Flavour lang="de_DE">
     <p>Kämpft gegen andere Einheiten.</p>
   </Flavour>
-  <Cost id="resource_stone" round="true">40</Cost>  
-  <Cost id="resource_wood" round="true">20</Cost>    
-  <Cost id="resource_fur" round="true">12</Cost>    
+  <Cost id="resource_stone" round="true">30</Cost>  
+  <Cost id="resource_wood" round="true">60</Cost>    
+  <Cost id="resource_fur" round="true">45</Cost>    
   <ProductionTime shortenable="true">1200</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>
-  <Attack>15</Attack>
+  <Attack>16</Attack>
   <CriticalDamage chance="0.01">2</CriticalDamage>
-  <Armor>0</Armor>
+  <Armor>12</Armor>
   <Overrunnable>true</Overrunnable>
   <Hitpoints>90</Hitpoints>
-  <Effectiveness category="unitcategory_infantry">0.9</Effectiveness>
-  <Effectiveness category="unitcategory_cavalry">0.9</Effectiveness>
-  <Effectiveness category="unitcategory_artillery">0.7</Effectiveness>
+  <Effectiveness category="unitcategory_infantry">1</Effectiveness>
+  <Effectiveness category="unitcategory_cavalry">1.2</Effectiveness>
+  <Effectiveness category="unitcategory_artillery">0.92</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
 </Unit>

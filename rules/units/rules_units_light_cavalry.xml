@@ -16,20 +16,20 @@
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
-      <Cost id="resource_stone" round="true">2</Cost>  
-      <Cost id="resource_wood" round="true">10</Cost>    
-      <Cost id="resource_fur" round="true">4</Cost>    
-      <ProductionTime shortenable="true">300</ProductionTime>  
+      <Cost id="resource_stone" round="true">140</Cost>  
+      <Cost id="resource_wood" round="true">70</Cost>    
+      <Cost id="resource_fur" round="true">100</Cost>    
+      <ProductionTime shortenable="true">5400</ProductionTime>  
   	  <Velocity>1.5</Velocity>
-      <ActionPoints>5</ActionPoints>
+      <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>
-      <Attack>16</Attack>
-      <CriticalDamage chance="0.01">10</CriticalDamage>
-      <Armor>3</Armor>
+      <Attack>19</Attack>
+      <CriticalDamage chance="0.02">6</CriticalDamage>
+      <Armor>14</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>95</Hitpoints>
-      <Effectiveness category="unitcategory_infantry">0.3</Effectiveness>
-      <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
-      <Effectiveness category="unitcategory_artillery">1</Effectiveness>
-      <Effectiveness category="unitcategory_siege">0.4</Effectiveness>   
+      <Hitpoints>90</Hitpoints>
+      <Effectiveness category="unitcategory_infantry">0.92</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">1</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">1.2</Effectiveness>
+      <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
     </Unit>

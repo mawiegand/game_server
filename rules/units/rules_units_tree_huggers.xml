@@ -18,21 +18,21 @@
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
 		<p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>
       </Description>
-      <Cost id="resource_stone" round="true">2</Cost>  
-      <Cost id="resource_wood" round="true">10</Cost>    
-      <Cost id="resource_fur" round="true">4</Cost>    
-      <ProductionTime shortenable="true">300</ProductionTime>  
+      <Cost id="resource_stone" round="true">60</Cost>  
+      <Cost id="resource_wood" round="true">120</Cost>    
+      <Cost id="resource_fur" round="true">90</Cost>    
+      <ProductionTime shortenable="true">2700</ProductionTime>  
 	  <Requirement id="building_barracks" min_level="11" /> 
-      <Velocity>0.95</Velocity>
+      <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
-      <Initiative>14</Initiative>
-      <Attack>20</Attack>
-      <CriticalDamage chance="0.02">9</CriticalDamage>
-      <Armor>4</Armor>
+      <Initiative>16</Initiative>
+      <Attack>18</Attack>
+      <CriticalDamage chance="0.02">2</CriticalDamage>
+      <Armor>14</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>140</Hitpoints>
-      <Effectiveness category="unitcategory_infantry">0.8</Effectiveness>
-      <Effectiveness category="unitcategory_cavalry">1</Effectiveness>
-      <Effectiveness category="unitcategory_artillery">0.8</Effectiveness>
-      <Effectiveness category="unitcategory_siege">1</Effectiveness> 
+      <Hitpoints>100</Hitpoints>
+      <Effectiveness category="unitcategory_infantry">1</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">1.2</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">0.92</Effectiveness>
+      <Effectiveness category="unitcategory_siege">0.8</Effectiveness> 
     </Unit>
