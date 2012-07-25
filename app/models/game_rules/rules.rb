@@ -397,17 +397,17 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.9,
+            :unitcategory_infantry => 1,
   
-            :unitcategory_cavalry => 0.9,
+            :unitcategory_cavalry => 1.2,
   
-            :unitcategory_artillery => 0.7,
+            :unitcategory_artillery => 0.92,
   
             :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 15,
-          :armor       => 0,
+          :attack      => 16,
+          :armor       => 12,
           :hitpoints   => 90,
 
           :overrunnable => true,
@@ -418,9 +418,9 @@ class GameRules::Rules
           :production_time => '1200',
 
           :costs      => {
-            1 => '40',
-            0 => '20',
-            2 => '12',
+            1 => '30',
+            0 => '60',
+            2 => '45',
             
           },
 
@@ -453,35 +453,35 @@ class GameRules::Rules
                 
           },
 
-          :velocity    => 0.95,
+          :velocity    => 1,
           :action_points => 4,
-          :initiative  => 14,
+          :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.8,
+            :unitcategory_infantry => 1,
   
-            :unitcategory_cavalry => 1,
+            :unitcategory_cavalry => 1.2,
   
-            :unitcategory_artillery => 0.8,
+            :unitcategory_artillery => 0.92,
   
-            :unitcategory_siege => 1,
+            :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 20,
-          :armor       => 4,
-          :hitpoints   => 140,
+          :attack      => 18,
+          :armor       => 14,
+          :hitpoints   => 100,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 9,
+          :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
-          :production_time => '300',
+          :production_time => '2700',
 
           :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
+            1 => '60',
+            0 => '120',
+            2 => '90',
             
           },
 
@@ -532,29 +532,30 @@ class GameRules::Rules
           :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 1,
+            :unitcategory_infantry => 1.2,
   
-            :unitcategory_cavalry => 0.3,
+            :unitcategory_cavalry => 0.92,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 0.75,
+            :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 18,
-          :armor       => 2,
+          :attack      => 17,
+          :armor       => 12,
           :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
+          :critical_hit_damage => 5,
+          :critical_hit_chance => 0.02,
 
-          :production_time => '500',
+          :production_time => '3600',
 
           :costs      => {
-            1 => '12',
-            2 => '2',
+            1 => '90',
+            0 => '45',
+            2 => '67',
             
           },
 
@@ -658,34 +659,34 @@ class GameRules::Rules
           },
 
           :velocity    => 1.5,
-          :action_points => 5,
+          :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.3,
+            :unitcategory_infantry => 0.92,
   
-            :unitcategory_cavalry => 0.75,
+            :unitcategory_cavalry => 1,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 1.2,
   
-            :unitcategory_siege => 0.4,
+            :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 16,
-          :armor       => 3,
-          :hitpoints   => 95,
+          :attack      => 19,
+          :armor       => 14,
+          :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
+          :critical_hit_damage => 6,
+          :critical_hit_chance => 0.02,
 
-          :production_time => '300',
+          :production_time => '5400',
 
           :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
+            1 => '140',
+            0 => '70',
+            2 => '100',
             
           },
 
@@ -994,30 +995,30 @@ class GameRules::Rules
           :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 1,
+            :unitcategory_infantry => 1.2,
   
-            :unitcategory_cavalry => 1.1,
+            :unitcategory_cavalry => 0.92,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 0.5,
+            :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 18,
-          :armor       => 2,
-          :hitpoints   => 50,
+          :attack      => 19,
+          :armor       => 13,
+          :hitpoints   => 100,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 10,
-          :critical_hit_chance => 0.01,
+          :critical_hit_damage => 8,
+          :critical_hit_chance => 0.03,
 
-          :production_time => '500',
+          :production_time => '8100',
 
           :costs      => {
-            1 => '16',
-            0 => '4',
-            2 => '12',
+            1 => '135',
+            0 => '90',
+            2 => '180',
             
           },
 
@@ -1036,6 +1037,76 @@ class GameRules::Rules
 
 
         },              #   END OF Slingshot Warrior
+        {               #   Babysaurus
+          :id          => 10, 
+          :symbolic_id => :babysaurus,
+					:category    => 1,
+          :db_field    => :unit_babysaurus,
+          :name        => {
+            
+            :en_US => "Babysaurus",
+  
+            :de_DE => "Babysaurus",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Babysaurier haben noch keine spitzen Zähne, man kann zwar besser auf ihnen reiten, aber der Reiter muss dafür selbst die Keule schwingen.</p>",
+  
+            :en_US => "<p>Babysaurus's teeth are not sharp. They are easy to ride but their rider has to kill his enemies himself.</p>",
+                
+          },
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.92,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.2,
+  
+            :unitcategory_siege => 0.8,
+                
+          },
+          :attack      => 17,
+          :armor       => 13,
+          :hitpoints   => 80,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 4,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '2400',
+
+          :costs      => {
+            1 => '50',
+            0 => '70',
+            2 => '35',
+            
+          },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+
+        },              #   END OF Babysaurus
       ],                # END OF UNIT TYPES
 
   
@@ -1260,7 +1331,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 2,
 
             },
 
@@ -1347,7 +1418,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 6,
 
             },
 
@@ -1434,7 +1505,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 4,
 
             },
 
@@ -1652,7 +1723,7 @@ class GameRules::Rules
             :unlock_garrison => 2,            
 
             :command_points => {
-              :formula   => "2",
+              :formula   => "2+1*(MIN(LEVEL,15)-MIN(LEVEL,14))",
             },
     
           },
@@ -1796,7 +1867,7 @@ class GameRules::Rules
           :costs      => {
             1 => 'FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))',
             0 => 'FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))',
-            2 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))*1.5)',
+            2 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))*1.2)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -1817,7 +1888,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0",
               },
 
             ],
@@ -2056,6 +2127,12 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_wood,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
           ],          
 
           :abilities   => {
@@ -2126,6 +2203,12 @@ class GameRules::Rules
             
           ],
           :production_bonus  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_stone,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
             
           ],          
 
@@ -2198,6 +2281,12 @@ class GameRules::Rules
             
           ],
           :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
             
           ],          
 
