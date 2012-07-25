@@ -71,7 +71,7 @@ class Ticker::BattleHandler
   end
 
   def generate_message_subject(battle)
-      return "The battle of "+battle.region.name.to_s;
+    return "The battle at " + battle.location.settlement.name.to_s;
   end
 
   def generate_participant_body(battle, participant)

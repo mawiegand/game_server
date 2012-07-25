@@ -150,6 +150,10 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end  
   
+  def name_and_ally_tag
+    self.alliance_tag.nil? ? self.name : self.name + '|' + self.alliance_tag
+  end
+  
   # ##########################################################################
   #
   #   Alliance related stuff
