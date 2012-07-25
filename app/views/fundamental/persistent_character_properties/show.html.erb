@@ -27,7 +27,7 @@
 
   <%if !@properties['data'].blank? %>
     <p>
-      <% @properties.data.each do |key,value| %>
+      <% @properties['data'].each do |key,value| %>
         <b><%=key%>:</b> <%=value%></b><br/>
       <% end %>
     </p>
