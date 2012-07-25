@@ -38,6 +38,8 @@ class Fundamental::PersistentCharacterPropertiesController < ApplicationControll
     
     raise BadRequestError.new 'identity id was missing'   if params[:identity_id].blank?
     properties = params.has_key?(:properties) ? params[:properties] : nil
+    character = Fundamental::Character.find_by_identifier(params[:identity_id])
+    raise BadRequestError.new 'character with identifier #{params[:identity_id]} not found.' if character.nil?
     
     ip_access = IdentityProvider::Access.new(
       identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
@@ -45,12 +47,13 @@ class Fundamental::PersistentCharacterPropertiesController < ApplicationControll
       scopes: ['5dentity'],
     )
     response = ip_access.create_character_property(params[:identity_id], properties)
+    
 
     respond_to do |format|
       if response.code == 200 || response.code == 201
-        format.html { redirect_to fundamental_persistent_character_property_path(params[:identity_id]), notice: 'Character Property was successfully created.' }
+        format.html { redirect_to fundamental_persistent_character_property_path(character.id), notice: 'Character Property was successfully created.' }
       else
-        format.html { redirect_to fundamental_persistent_character_property_path(params[:identity_id]), notice: 'Character Property could not be created.' }
+        format.html { redirect_to fundamental_persistent_character_property_path(character.id), notice: 'Character Property could not be created.' }
       end
     end
   end

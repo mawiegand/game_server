@@ -13,7 +13,7 @@
   This character does <b>not</b> have any persistent properties on the identity provider.
   
   <%= form_tag fundamental_persistent_character_properties_path do %>
-    <%= hidden_field_tag(:identity_id, @fundamental_character.id) %>
+    <%= hidden_field_tag(:identity_id, @fundamental_character.identifier) %>
     <%= submit_tag 'Create Empty Property Object'%>
   <% end %>
   
