@@ -22,7 +22,7 @@ NUM_SPARSE_LEVELS = 2
 # ############################################################################
 
 @npcs = [
-  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', true),
+  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
 ]
 
 # ############################################################################
