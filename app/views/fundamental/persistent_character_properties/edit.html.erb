@@ -1,0 +1,15 @@
+<h1>Editing Properties of Character <%= @fundamental_character.id %> | <%= @fundamental_character.name %></h1>
+
+<p><b>Stored Property Object for identity <%= @properties['identity_id']%> on Identity Provider:</b></p>
+<p><b>Created:</b>     <%= @properties['created_at']%><br/>
+   <b>Updated:</b>     <%= @properties['updated_at']%></p>
+
+<%= render 'form' %>
+<hr>
+
+<p><b>Note</b></p>
+<p>Add a new attribute using the fields below Add new attribute.</p>
+<p>Delete an attribute by deleting the corresponding value and submitting the empty field.</p>
+<p><b>Remember to submit!</p>
+
+<%= link_to 'Back', fundamental_persistent_character_property_path(@fundamental_character.id) %> 
