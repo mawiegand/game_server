@@ -11,6 +11,12 @@
 
 <% if @not_found %>
   This character does <b>not</b> have any persistent properties on the identity provider.
+  
+  <%= form_tag fundamental_persistent_character_properties_path do %>
+    <%= hidden_field_tag(:identity_id, @fundamental_character.id) %>
+    <%= submit_tag 'Create Empty Property Object'%>
+  <% end %>
+  
 <% elsif @error_code %>
   The identity provider responded with the following error code: <%= @error_code %> and message: <%= @error %>
 <% else %>

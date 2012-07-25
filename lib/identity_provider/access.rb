@@ -17,14 +17,12 @@ module IdentityProvider
       get('/identities/'  + identifier + '/character_properties')
     end
     
-    def create_identity_property(identifier, data_object)
-      post('/identities/' + identifier + '/character_properties',
-           {:resource_character_property => {:data => data_object}})
+    def create_character_property(identifier, data_object)
+      post('/identities/' + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
     end
     
     def change_identity_property(identifier, data_object)
-      put ('/identities/'  + identifier + '/character_properties',
-           {:resource_character_property => {:data => data_object}})
+      put('/identities/'  + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
     end
     
     def post_result(character, round_number, round_name, won = false)
@@ -56,6 +54,7 @@ module IdentityProvider
     protected
       
       def post(path, body = {})
+        Rails.logger.debug "POST BODY #{ body }."
         add_auth_token(body)
         HTTParty.post(@attributes[:identity_provider_base_url] + path, 
                       :body => body,  :headers => { 'Accept' => 'application/json'})
