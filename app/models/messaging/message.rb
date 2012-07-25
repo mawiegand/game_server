@@ -18,6 +18,10 @@ class Messaging::Message < ActiveRecord::Base
   BATTLE_STARTED_TYPE_ID = 2
   ARMY_LOST_TYPE_ID = 3
   ARMY_RETREATED_TYPE_ID = 4
+  OVERRUN_WINNER_REPORT_TYPE_ID = 5
+  OVERRUN_LOSER_REPORT_TYPE_ID = 6
+  FORTESS_WON_REPORT_TYPE_ID = 7
+  FORTESS_LOST_REPORT_TYPE_ID = 8
 
   # creates inbox and outbox entries for the message
   def deliver_message
@@ -64,7 +68,7 @@ class Messaging::Message < ActiveRecord::Base
     
     message = Messaging::Message.new({
       recipient: winner.owner,
-      type_id:   Messaging::Message::BATTLE_REPORT_TYPE_ID,
+      type_id:   OVERRUN_WINNER_REPORT_TYPE_ID,
       send_at:   DateTime.now,
       reported:  false,
       flag:      0,
@@ -101,7 +105,7 @@ class Messaging::Message < ActiveRecord::Base
   def self.generate_overrun_loser_message(winner, loser)
     message = Messaging::Message.new({
       recipient: loser.owner,
-      type_id:   Messaging::Message::BATTLE_REPORT_TYPE_ID,
+      type_id:   OVERRUN_LOSER_REPORT_TYPE_ID,
       send_at:   DateTime.now,
       reported:  false,
       flag:      0,
@@ -138,7 +142,7 @@ class Messaging::Message < ActiveRecord::Base
   def self.generate_gained_fortress_message(settlement, old_owner, new_owner)
     message = Messaging::Message.new({
       recipient: new_owner,
-      type_id:   Messaging::Message::BATTLE_REPORT_TYPE_ID,
+      type_id:   FORTESS_WON_REPORT_TYPE_ID,
       send_at:   DateTime.now,
       reported:  false,
       flag:      0,
@@ -163,7 +167,7 @@ class Messaging::Message < ActiveRecord::Base
     message = Messaging::Message.new({
       recipient: old_owner,
       # message.sender_id = nil
-      type_id:   Messaging::Message::BATTLE_REPORT_TYPE_ID,
+      type_id:   FORTESS_LOST_REPORT_TYPE_ID,
       send_at:   DateTime.now,
       reported:  false,
       flag:      0,
