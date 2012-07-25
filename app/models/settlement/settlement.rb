@@ -134,6 +134,16 @@ class Settlement::Settlement < ActiveRecord::Base
     # recalculate all effects, boni and productions for both players...
     # settlement UNBLOCK
   end
+
+  ############################################################################
+  #
+  #  ARMIES
+  #
+  ############################################################################   
+    
+  def command_points_available?
+    !self.command_points.nil? && self.command_points > self.armies_count
+  end
   
   ############################################################################
   #
@@ -141,7 +151,7 @@ class Settlement::Settlement < ActiveRecord::Base
   #
   ############################################################################   
     
-  def can_be_taken_over
+  def can_be_taken_over?
     #TODO define in the rules
     #get the base
     base_type = nil

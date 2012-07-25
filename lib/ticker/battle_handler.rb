@@ -80,7 +80,7 @@ class Ticker::BattleHandler
           #check if there was a battle over a settlement
           target_settlement = battle.targeted_settlement
           
-          if !target_settlement.nil? && target_settlement.can_be_taken_over
+          if !target_settlement.nil? && target_settlement.can_be_taken_over?
             #check if the battle location is owned by a participant of the winner faction
             takeover = true
             winner_faction.participants.each do |participant|
