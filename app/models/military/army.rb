@@ -403,7 +403,7 @@ class Military::Army < ActiveRecord::Base
   end
   
   def owner_name_and_ally_tag
-    self.alliance_tag.nil? ? self.owner_name : self.owner_name + '|' + self.alliance_tag
+    self.alliance_tag.nil? ? self.owner_name : self.owner_name + ' | ' + self.alliance_tag
   end
   
   private
