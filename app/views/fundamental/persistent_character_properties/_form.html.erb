@@ -1,0 +1,21 @@
+<%= form_tag fundamental_persistent_character_property_path(@fundamental_character.id),  :method => "put" do %>
+ 
+  <%if !@properties['data'].blank? %>
+    <% @properties['data'].each do |key, value| %>
+      <div class="field">
+        <b><%= label_tag key %>:</b> <%= text_field_tag "data[#{key}]", value %>
+      </div>    
+    <% end %>
+  <% end %>
+    
+  <div class="field">
+    <b><%= label_tag 'Add New Attribute:' %></b><br/>
+    <%= text_field_tag :new_attribute_name,  nil, {:placeholder => 'name'} %>
+    <%= text_field_tag :new_attribute_value, nil, {:placeholder => 'value'} %> 
+  </div>   
+  
+  <%= submit_tag 'Submit'%>
+<% end %>
+
+
+
