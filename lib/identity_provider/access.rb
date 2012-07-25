@@ -10,21 +10,21 @@ module IdentityProvider
     end
 
     def fetch_identity(identifier)
-      get('/identities/' + identifier + '.json')
+      get('/identities/' + identifier)
     end
   
     def fetch_identity_properties(identifier)
-      get('/identities/' + identifier + '/character_properties.json')
+      get('/identities/'  + identifier + '/character_properties')
     end
     
     def create_identity_property(identifier, data_object)
-      post('/identities/' + identifier + '/character_properties.json',
-          {:resource_character_property => {:data => data_object, :identity_id => identifier}})
+      post('/identities/' + identifier + '/character_properties',
+           {:resource_character_property => {:data => data_object}})
     end
     
     def change_identity_property(identifier, data_object)
-      put('/identities/' + identifier + '/character_properties.json',
-          {:resource_character_property => {:data => data_object, :identity_id => identifier}})
+      put ('/identities/'  + identifier + '/character_properties',
+           {:resource_character_property => {:data => data_object}})
     end
     
     def post_result(character, round_number, round_name, won = false)
@@ -41,24 +41,36 @@ module IdentityProvider
         resource_result[:alliance_name] = character.alliance.name
         resource_result[:alliance_rank] = character.alliance.ranking.overall_rank
       end
-      post('/identities/' + character.identifier + '/results.json', {:resource_result => resource_result})
+      post('/identities/' + character.identifier + '/results', {:resource_result => resource_result})
+    end
+
+    def post_history_event(identifier, data_object, description = "an awe history event")
+      return                            if identifier.nil?
+      resource_history = {
+        data:                  data_object,
+        localized_description: description,
+      }
+      post('/identities/' + identifier + '/histories', {:resource_history => resource_history})
     end
 
     protected
       
       def post(path, body = {})
         add_auth_token(body)
-        HTTParty.post(@attributes[:identity_provider_base_url] + path, :body => body)
+        HTTParty.post(@attributes[:identity_provider_base_url] + path, 
+                      :body => body,  :headers => { 'Accept' => 'application/json'})
       end
   
       def put(path, body = {})
         add_auth_token(body)
-        HTTParty.put(@attributes[:identity_provider_base_url] + path, :body => body)
+        HTTParty.put(@attributes[:identity_provider_base_url] + path, 
+                     :body => body,   :headers => { 'Accept' => 'application/json'})
       end
   
       def get(path, query = {})
         add_auth_token(query)
-        HTTParty.get(@attributes[:identity_provider_base_url] + path, :query => query)
+        HTTParty.get(@attributes[:identity_provider_base_url] + path, 
+                     :query => query, :headers => { 'Accept' => 'application/json'})
       end
       
       def add_auth_token(query)
