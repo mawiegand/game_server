@@ -1185,6 +1185,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1275,6 +1278,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1359,6 +1365,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1443,6 +1452,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1527,6 +1539,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1618,6 +1633,9 @@ class GameRules::Rules
               },
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1721,6 +1739,9 @@ class GameRules::Rules
               },
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
     
@@ -1784,6 +1805,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1857,6 +1881,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -1952,6 +1979,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -2024,6 +2054,9 @@ class GameRules::Rules
               },
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
     
@@ -2092,6 +2125,9 @@ class GameRules::Rules
               },
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
     
@@ -2161,6 +2197,9 @@ class GameRules::Rules
               },
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
     
@@ -2223,6 +2262,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -2307,6 +2349,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 
@@ -2390,6 +2435,9 @@ class GameRules::Rules
           :production  => [
             
           ],
+          :production_bonus  => [
+            
+          ],          
 
           :abilities   => {
 

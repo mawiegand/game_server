@@ -380,6 +380,15 @@ end
               },
             </xsl:for-each>
           ],
+          :production_bonus  => [
+            <xsl:for-each select="ProductionBonus">
+              {
+                :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+                :symbolic_id        => :<xsl:value-of select="@id"/>,
+                :formula            => "<xsl:apply-templates/>",
+              },
+            </xsl:for-each>
+          ],          
 <xsl:apply-templates select="Abilities" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>

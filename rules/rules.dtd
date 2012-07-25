@@ -117,7 +117,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, Abilities)>
+<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, ProductionBonus*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -189,6 +189,11 @@
 
 <!ELEMENT Production (#PCDATA)>
 <!ATTLIST Production
+	id IDREF #REQUIRED
+>
+
+<!ELEMENT ProductionBonus (#PCDATA)>
+<!ATTLIST ProductionBonus
 	id IDREF #REQUIRED
 >
 
