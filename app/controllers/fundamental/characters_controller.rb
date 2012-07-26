@@ -70,14 +70,19 @@ class Fundamental::CharactersController < ApplicationController
       end
       
       character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'    
-              
+
+      # set character properties to default values
+      start_resource_modificator = 1.0            
+      
+      # fetch persistent character properties from identity provider  
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
       properties = {}
+      
       if response.code == 200
         properties = response.parsed_response
         unless properties.empty?
-          start_resource_modificator_property = properties.select { |property| !property['data']['start_resource_modificator'].nil? }
-          start_resource_modificator = start_resource_modificator_property[0]['data']['start_resource_modificator'] unless start_resource_modificator_property.nil?
+          character_property = properties[0]
+          start_resource_modificator = character_property['data'].blank? || character_property['data']['start_resource_modificator'].blank? ? 1.0 : character_property['data']['start_resource_modificator']
         end
       end
       
