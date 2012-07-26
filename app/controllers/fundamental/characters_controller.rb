@@ -82,7 +82,10 @@ class Fundamental::CharactersController < ApplicationController
         properties = response.parsed_response
         unless properties.empty?
           character_property = properties[0]
-          start_resource_modificator = character_property['data'].blank? || character_property['data']['start_resource_modificator'].blank? ? 1.0 : character_property['data']['start_resource_modificator']
+          if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
+            property_value = character_property['data']['start_resource_modificator'].to_f
+            start_resource_modificator = property_value if property_value > 0
+          end
         end
       end
       
