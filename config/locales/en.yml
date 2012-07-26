@@ -82,20 +82,20 @@ en:
     messaging:
       welcome_message:
         subject: Welcome to Wack-a-Doo
-        body: "<h2>Willkommen in der halböffentlichen geschlossenen Erprobungsrunde</h2>\n
-          <p>Mit dieser Runde wollen wir unser Spielsystem und unsere Server testen, und sind sehr gespannt auf Deine Interpretation von Wack-a-Doo.</p>\n
-          <p>Zur besseren Orientierung empfehlen wir Dir die Erklärungen zur Benutzeroberfläche anzuschauen:</p>\n
+        body: "<h2>Welcome to the half-offical testround of Wack-a-Doo</h2>\n
+          <p>With this round we will testing our gamesystem and our servers, and we are looking forward to see your interprtation of Wack-a-Doo.</p>\n
+          <p>For a better orientation we made some screenshots of our user interface:</p>\n
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>\n
-          <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>\n
-          <p>Wack-a-Doo befindet sich gerade in der Entwicklungsphase. In dieser Erprobungsrunde werden wir natürlich auftretende Fehler beheben, wollen aber laufend Neuerungen oder Verbesserungen vornehmen. Jede Änderung werden wir entsprechend ankündigen.</p>\n
-          <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>\n
+          <p>We explain the main displays and buttons.</p>\n
+          <p>Wack-a-Doo is actual under construction. In this testround we will fix the bugs, but also try to implement some new features and development. Every modification will be announced.</p>\n
+          <p>We will bei pleased to get feedback, and we beg you to inform us if you find errors or bugs. We got some space in the forum of Uga Agga:</p>\n
           <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>\n
-          <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>\n
-          <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in unserem Wiki zusammengefasst:
+          <p>Please report every bug, so we can fix them quickly. Feedback, new ideas or constructive opinions will be welcome too.</p>\n
+          <p>Some explanations and shematas of our gamesystematics can be found in our wiki:</p>\n
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>\n
-          <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>\n
-          <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
-          <p>Das Wack-a-Doo Team</p>\n"
+          <p>Our wiki is similar to the game under construction. You are invited to help us to fill our wiki with important infomations and to bring the wiki to a consistent state. At this time you can write in the wiki without registration.</p>\n
+          <p>We wish you a pleasent time in Wack-a-Doo.</p>\n
+          <p>The Wack-a-Doo Team</p>\n"      
         
   sessions:
         
