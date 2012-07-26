@@ -489,7 +489,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_barracks',
-              :id => 8,
+              :id => 7,
               :type => 'building',
 
               :min_level => 11,
@@ -561,58 +561,62 @@ class GameRules::Rules
 
 
         },              #   END OF Pebble Thrower
-        {               #   Spit Bearer
+        {               #   Slingshot Warrior
           :id          => 3, 
-          :symbolic_id => :skewer,
-					:category    => 0,
-          :db_field    => :unit_skewer,
+          :symbolic_id => :slingshot_warrior,
+					:category    => 2,
+          :db_field    => :unit_slingshot_warrior,
           :name        => {
             
-            :en_US => "Spit Bearer",
+            :en_US => "Slingshot Warrior",
   
-            :de_DE => "Bratspießträger",
+            :de_DE => "Steinschleuderer",
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
+                
           },
           :description => {
             
-            :de_DE => "<p>Der Umgang mit der Waffe ist schnell gelernt: Das spitze Ende muss nach vorn!</p><p>Richtig angewendet tropfen fettige Flüssigkeiten vom Spieß, genau genommen das Blut seiner Feinde</p>",
+            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
   
-            :en_US => "<p>Skewer Crew training 101: stick'em with the pointy end!</p><p>Greasy liquids are dripping from the spits, correctly used it is the enemies‘ blood.</p>",
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
           },
 
           :velocity    => 1,
           :action_points => 4,
-          :initiative  => 15,
+          :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.9,
+            :unitcategory_infantry => 1.2,
   
-            :unitcategory_cavalry => 1.2,
+            :unitcategory_cavalry => 0.92,
   
-            :unitcategory_artillery => 0.6,
+            :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 0.6,
+            :unitcategory_siege => 0.8,
                 
           },
-          :attack      => 16,
-          :armor       => 3,
-          :hitpoints   => 90,
+          :attack      => 19,
+          :armor       => 13,
+          :hitpoints   => 100,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 11,
-          :critical_hit_chance => 0.01,
+          :critical_hit_damage => 8,
+          :critical_hit_chance => 0.03,
 
-          :production_time => '300',
+          :production_time => '8100',
 
           :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
+            1 => '135',
+            0 => '90',
+            2 => '180',
             
           },
 
@@ -620,19 +624,89 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_firing_range',
-              :id => 13,
+              :id => 12,
               :type => 'building',
 
-              :min_level => 21,
+              :min_level => 11,
 
             },
 
           ],          
 
 
-        },              #   END OF Spit Bearer
-        {               #   Ostrich Riders
+        },              #   END OF Slingshot Warrior
+        {               #   Babysaurus
           :id          => 4, 
+          :symbolic_id => :babysaurus,
+					:category    => 1,
+          :db_field    => :unit_babysaurus,
+          :name        => {
+            
+            :en_US => "Babysaurus",
+  
+            :de_DE => "Babysaurus",
+                
+          },
+          :flavour     => {
+                          
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Babysaurier haben noch keine spitzen Zähne, man kann zwar besser auf ihnen reiten, aber der Reiter muss dafür selbst die Keule schwingen.</p>",
+  
+            :en_US => "<p>Babysaurus's teeth are not sharp. They are easy to ride but their rider has to kill his enemies himself.</p>",
+                
+          },
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.92,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.2,
+  
+            :unitcategory_siege => 0.8,
+                
+          },
+          :attack      => 17,
+          :armor       => 13,
+          :hitpoints   => 80,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 4,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '2400',
+
+          :costs      => {
+            1 => '50',
+            0 => '70',
+            2 => '35',
+            
+          },
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+
+        },              #   END OF Babysaurus
+        {               #   Ostrich Riders
+          :id          => 5, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
@@ -692,76 +766,6 @@ class GameRules::Rules
 
 
         },              #   END OF Ostrich Riders
-        {               #   Sabretooth-Riders
-          :id          => 5, 
-          :symbolic_id => :sabre_riders,
-					:category    => 1,
-          :db_field    => :unit_sabre_riders,
-          :name        => {
-            
-            :en_US => "Sabretooth-Riders",
-  
-            :de_DE => "Säbelzahnreiter",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Viele fürchten die Reittiere mehr als die eigentlichen Reiter...</p>",
-  
-            :en_US => "<p>It's not so much the riders themselves that are feared...</p>",
-                
-          },
-
-          :velocity    => 1.4,
-          :action_points => 4,
-          :initiative  => 28,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.4,
-  
-            :unitcategory_cavalry => 0.6,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.4,
-                
-          },
-          :attack      => 21,
-          :armor       => 15,
-          :hitpoints   => 140,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 14,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '300',
-
-          :costs      => {
-            1 => '2',
-            0 => '10',
-            2 => '4',
-            
-          },
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_stud',
-              :id => 14,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-          ],          
-
-
-        },              #   END OF Sabretooth-Riders
         {               #   Battering Ram
           :id          => 6, 
           :symbolic_id => :ram,
@@ -878,8 +882,8 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_workshop',
-              :id => 15,
-              :type => 'building',
+              :id => 0,
+              :type => '',
 
               :min_level => 11,
 
@@ -952,7 +956,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_stud',
-              :id => 14,
+              :id => 13,
               :type => 'building',
 
               :min_level => 100,
@@ -963,150 +967,6 @@ class GameRules::Rules
 
 
         },              #   END OF Neanderthal
-        {               #   Slingshot Warrior
-          :id          => 9, 
-          :symbolic_id => :slingshot_warrior,
-					:category    => 2,
-          :db_field    => :unit_slingshot_warrior,
-          :name        => {
-            
-            :en_US => "Slingshot Warrior",
-  
-            :de_DE => "Steinschleuderer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Kills opposing units.</p>",
-  
-            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
-  
-            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
-                
-          },
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1.2,
-  
-            :unitcategory_cavalry => 0.92,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.8,
-                
-          },
-          :attack      => 19,
-          :armor       => 13,
-          :hitpoints   => 100,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 8,
-          :critical_hit_chance => 0.03,
-
-          :production_time => '8100',
-
-          :costs      => {
-            1 => '135',
-            0 => '90',
-            2 => '180',
-            
-          },
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-          ],          
-
-
-        },              #   END OF Slingshot Warrior
-        {               #   Babysaurus
-          :id          => 10, 
-          :symbolic_id => :babysaurus,
-					:category    => 1,
-          :db_field    => :unit_babysaurus,
-          :name        => {
-            
-            :en_US => "Babysaurus",
-  
-            :de_DE => "Babysaurus",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Babysaurier haben noch keine spitzen Zähne, man kann zwar besser auf ihnen reiten, aber der Reiter muss dafür selbst die Keule schwingen.</p>",
-  
-            :en_US => "<p>Babysaurus's teeth are not sharp. They are easy to ride but their rider has to kill his enemies himself.</p>",
-                
-          },
-
-          :velocity    => 1.5,
-          :action_points => 4,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.92,
-  
-            :unitcategory_cavalry => 1,
-  
-            :unitcategory_artillery => 1.2,
-  
-            :unitcategory_siege => 0.8,
-                
-          },
-          :attack      => 17,
-          :armor       => 13,
-          :hitpoints   => 80,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 4,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '2400',
-
-          :costs      => {
-            1 => '50',
-            0 => '70',
-            2 => '35',
-            
-          },
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_stud',
-              :id => 14,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-
-        },              #   END OF Babysaurus
       ],                # END OF UNIT TYPES
 
   
@@ -1551,95 +1411,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Turm der Reitmeisterrei
-        {               #   Turm der Tüftler
-          :id          => 4, 
-          :symbolic_id => :building_siege_tower,
-					:category    => 1,
-          :db_field    => :building_siege_tower,
-          :name        => {
-            
-            :de_DE => "Turm der Tüftler",
-  
-            :en_US => "Inventor Tower",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p> lustiger Flavour Text hier </p>",
-  
-            :de_DE => "<p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschinene werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hämmerschläge oder leisem Geflüster unterbrochen wird.</p><p>An den Wänden hängen Skizzen, Pläne und unvollendete Entwürfe. Die Tüftler sehen sich als Elite, da sie als einzige ihr Gehirn für ihre Arbeit einsetzen.</p><p>Die anderen Krieger halten die Tütfler natürlich für Idioten, die nur in ihrem Turm eingesperrt werden, damit sie nicht im Weg rumstehen.</p>",
-  
-            :en_US => "<p>Training center for war machine engineers. Thinking of themselves as the pinnacle of all men at arms, the war machine engineers dedicate their life to invent mechanical constructions independent of muscles and man power. This place is a mess with countless blueprints for all sorts of siege-weapons.</p>",
-                
-          },
-          :hidden      => 0,
-
-          :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 21,
-
-            },
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR((132*POW(10,2)-543*10+520)*1.5*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
-            0 => 'FLOOR((132*POW(10,2)-543*10+520)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
-            2 => 'FLOOR((132*POW(10,2)-543*10+520)*0.75*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
-            3 => 'MAX(LEVEL-9,0)',
-            
-          },
-
-          :production_time => 'FLOOR(19.5*POW(10,3.6)*3*2*(1+(0.94*POW(LEVEL,1.425)/100.0))+0.5)',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],          
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 5,
-                :queue_type_id_sym => :queue_siege,
-                :domain            => :settlement,
-                :speedup_formula   => "0.5*0.5*FLOOR(1+0.94*POW(LEVEL,1.425)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 5,
-                :queue_type_id_sym => :queue_siege,
-                :level             => 1,
-              },
-
-            ],
-    
-          },
-
-        },              #   END OF Turm der Tüftler
         {               #   Häuptlingshütte
-          :id          => 5, 
+          :id          => 4, 
           :symbolic_id => :building_chief_cottage,
 					:category    => 3,
           :db_field    => :building_chief_cottage,
@@ -1654,7 +1427,7 @@ class GameRules::Rules
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto mehr Gebäude können gebaut werden.</p>",
+            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto mehr Gebäude können gebaut werden.</p><p>Der Häuptling kann eine Armee befehligen. Alle vier Level der Häuptlingshütte bekommt er einen weiteren Kommandopunkt hinzu.</p>",
                 
           },
           :description => {
@@ -1674,7 +1447,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 0,
@@ -1720,13 +1493,13 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "2+1*(MIN(LEVEL,15)-MIN(LEVEL,14))",
+            :command_points => "1+1*FLOOR(LEVEL/4)",
     
           },
 
         },              #   END OF Häuptlingshütte
         {               #   Jäger und Sammler
-          :id          => 6, 
+          :id          => 5, 
           :symbolic_id => :building_gatherer,
 					:category    => 4,
           :db_field    => :building_gatherer,
@@ -1761,7 +1534,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 1,
@@ -1816,7 +1589,7 @@ class GameRules::Rules
 
         },              #   END OF Jäger und Sammler
         {               #   Kleine Hütte
-          :id          => 7, 
+          :id          => 6, 
           :symbolic_id => :building_cottage,
 					:category    => 4,
           :db_field    => :building_cottage,
@@ -1851,7 +1624,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 2,
@@ -1893,7 +1666,7 @@ class GameRules::Rules
 
         },              #   END OF Kleine Hütte
         {               #   Ausbildungsgelände
-          :id          => 8, 
+          :id          => 7, 
           :symbolic_id => :building_barracks,
 					:category    => 4,
           :db_field    => :building_barracks,
@@ -1928,7 +1701,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 3,
@@ -1979,7 +1752,7 @@ class GameRules::Rules
 
         },              #   END OF Ausbildungsgelände
         {               #   Lagerfeuer
-          :id          => 9, 
+          :id          => 8, 
           :symbolic_id => :building_campfire,
 					:category    => 4,
           :db_field    => :building_campfire,
@@ -2014,7 +1787,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 4,
@@ -2023,7 +1796,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_campfire',
-              :id => 9,
+              :id => 8,
               :type => 'building',
 
               :min_level => 0,
@@ -2060,7 +1833,7 @@ class GameRules::Rules
 
         },              #   END OF Lagerfeuer
         {               #   Holzfäller
-          :id          => 10, 
+          :id          => 9, 
           :symbolic_id => :building_logger,
 					:category    => 4,
           :db_field    => :building_logger,
@@ -2095,7 +1868,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 5,
@@ -2137,7 +1910,7 @@ class GameRules::Rules
 
         },              #   END OF Holzfäller
         {               #   Steinbruch
-          :id          => 11, 
+          :id          => 10, 
           :symbolic_id => :building_quarry,
 					:category    => 4,
           :db_field    => :building_quarry,
@@ -2172,7 +1945,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 5,
@@ -2214,7 +1987,7 @@ class GameRules::Rules
 
         },              #   END OF Steinbruch
         {               #   Kürschner
-          :id          => 12, 
+          :id          => 11, 
           :symbolic_id => :building_furrier,
 					:category    => 4,
           :db_field    => :building_furrier,
@@ -2249,7 +2022,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 8,
@@ -2292,7 +2065,7 @@ class GameRules::Rules
 
         },              #   END OF Kürschner
         {               #   Schießstand
-          :id          => 13, 
+          :id          => 12, 
           :symbolic_id => :building_firing_range,
 					:category    => 4,
           :db_field    => :building_firing_range,
@@ -2327,7 +2100,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 7,
@@ -2378,7 +2151,7 @@ class GameRules::Rules
 
         },              #   END OF Schießstand
         {               #   Stall
-          :id          => 14, 
+          :id          => 13, 
           :symbolic_id => :building_stud,
 					:category    => 4,
           :db_field    => :building_stud,
@@ -2413,7 +2186,7 @@ class GameRules::Rules
             
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 5,
+              :id => 4,
               :type => 'building',
 
               :min_level => 9,
@@ -2464,92 +2237,6 @@ class GameRules::Rules
           },
 
         },              #   END OF Stall
-        {               #   Werkstatt
-          :id          => 15, 
-          :symbolic_id => :building_workshop,
-					:category    => 3,
-          :db_field    => :building_workshop,
-          :name        => {
-            
-            :de_DE => "Werkstatt",
-  
-            :en_US => "Workshop",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p> lustiger Flavour Text hier </p>",
-  
-            :de_DE => "<p>In der Werkstatt werden Belagerungsgeräte hergestellt, zumindest wenn man den Häuptling fragt. Die Tüftler selbst stellen nach ihrer Meinung wahre Wunder her.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Werksatt wird von den meisten Bewohnern gemieden. Zum einen haben die Tütfler komische Verhaltensweisen und einen seltsamen Sinn für Humor, zum anderen ist hier die Gefahr bereits beim Eintritt in eine neuartige Falle oder ein unachtsam abgestelltes Testobjekt zu tappen sehr hoch.</p><p>Die Tüftler selbst sind gerne unter sich, lachen über Dinge wie den Großen Knall und basteln Tag ein Tag aus an ihren Geräten. Alle Mondumläufe stellen sie auf dem Platz vor dem Lagerfeuer ihre neusten Ideen vor.</p><p>Die Tüftler sind an diesem Tagen sehr angespannt, da hier über ihre weitere Karriere entschieden wird. Keine Entscheidung über Leben und Tod, aber bei einem Fehlschlag dürfen die Tüftler nicht weiterarbeiten. Und werden meist hingerichtet, aber das ist für den Tüftler das kleinere Übel</p>",
-  
-            :en_US => "<p>Hosts troops.</p>",
-                
-          },
-          :hidden      => 0,
-
-          :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
-
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 21,
-
-            },
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*1.5*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
-            0 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,10))*(132*POW(10,2)-543*10+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100))+0.5)',
-            3 => '2*MAX(LEVEL-19,0)',
-            
-          },
-
-          :production_time => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(10,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(1+(0.94*POW(MAX(LEVEL,10),1.425)/100.0))+0.5)',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],          
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 5,
-                :queue_type_id_sym => :queue_siege,
-                :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 5,
-                :queue_type_id_sym => :queue_siege,
-                :level             => 1,
-              },
-
-            ],
-    
-          },
-
-        },              #   END OF Werkstatt
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -2681,7 +2368,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 5,
+              :building  => 4,
               
               :level  => 1,
               
