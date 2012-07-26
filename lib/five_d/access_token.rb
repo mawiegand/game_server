@@ -21,7 +21,7 @@ require 'five_d'
   class FiveD::AccessToken
     
     @@shared_secret = 'ARandomStringWithGoodEntropy'
-    @@expiration    = 3600000                 # expiration in seconds
+    @@expiration    = 3600 * 8                  # expiration in seconds
     
     # generates a new access token for the given identifier and scope
     #
