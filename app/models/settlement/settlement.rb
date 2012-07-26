@@ -142,7 +142,7 @@ class Settlement::Settlement < ActiveRecord::Base
   ############################################################################   
     
   def command_points_available?
-    !self.command_points.nil? && self.command_points > self.armies_count
+    !self.command_points.nil? && self.command_points > (self.armies_count-1)  # don't count garrison army 
   end
   
   ############################################################################
