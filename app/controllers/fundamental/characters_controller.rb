@@ -78,16 +78,24 @@ class Fundamental::CharactersController < ApplicationController
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
       properties = {}
       
+      logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+      
       if response.code == 200
         properties = response.parsed_response
+        logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
         unless properties.empty?
           character_property = properties[0]
           if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
             property_value = character_property['data']['start_resource_modificator'].to_f
+            logger.info "START PROPERTY_VALUE #{ property_value }."
             start_resource_modificator = property_value if property_value > 0
+            logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
           end
         end
       end
+
+      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
       
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     

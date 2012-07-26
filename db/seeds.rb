@@ -13,7 +13,7 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   = 2
-NUM_SPARSE_LEVELS = 3
+NUM_SPARSE_LEVELS = 2
 
 # ############################################################################
 # 
@@ -114,7 +114,7 @@ end
 for i in (NUM_FULL_LEVELS..(NUM_FULL_LEVELS+NUM_SPARSE_LEVELS))
   nodes = Map::Node.find_all_by_level i
   puts "INFO: working on level #{i}."
-  split_all_nodes(nodes, i-NUM_FULL_LEVELS+2, 1)     # i-3 (when starting with level 5)
+  split_all_nodes(nodes, i-NUM_FULL_LEVELS+4, 1)     # i-3 (when starting with level 5)
 end
 
 # create regions and locations
