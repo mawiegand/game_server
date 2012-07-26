@@ -22,6 +22,7 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     end
     
     raise BadRequestError.new('not enough units in army') unless garrison_army.contains?(@action)
+    raise BadRequestError.new('not enough command points') unless location.settlement.command_points_available?
     garrison_army.reduce_units(@action)
     Military::Army.create_with_action(@action)
 

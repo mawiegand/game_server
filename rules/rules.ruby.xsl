@@ -570,9 +570,7 @@ end
 </xsl:template>
 
 <xsl:template match="CommandPoints">
-            :command_points => {
-              :formula   => "<xsl:apply-templates />",
-            },
+            :command_points => "<xsl:apply-templates />",
 </xsl:template>
 
 

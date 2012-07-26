@@ -83,9 +83,9 @@ class GameRules::Rules
         },
         :character_creation => {
           :start_resources => {
-            0 => 500,
-1 => 500,
-2 => 250,
+            0 => 2000,
+1 => 2000,
+2 => 1500,
 3 => 5,
 
           },
@@ -1285,9 +1285,7 @@ class GameRules::Rules
 
             :unlock_garrison => 1,            
 
-            :command_points => {
-              :formula   => "1",
-            },
+            :command_points => "1",
     
           },
 
@@ -1722,9 +1720,7 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => {
-              :formula   => "2+1*(MIN(LEVEL,15)-MIN(LEVEL,14))",
-            },
+            :command_points => "2+1*(MIN(LEVEL,15)-MIN(LEVEL,14))",
     
           },
 
@@ -2079,7 +2075,7 @@ class GameRules::Rules
             
             :en_US => "<p>Wood! Even more wood!</p>",
   
-            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
+            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p><p>Ab Level 11 bietet der Holfäller einen lokalen Holzbonus. Auf Level 11-19 beträgt dieser 1% je Level: 1-9%, bei Level 20 ist der Holzbonus 15%.</p>",
                 
           },
           :description => {
@@ -2156,7 +2152,7 @@ class GameRules::Rules
             
             :en_US => "<p>Stones, even more stones!</p>",
   
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>",
+            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p><p>Ab Level 11 bietet der Steinbruch einen lokalen Steinbonus. Auf Level 11-19 beträgt dieser 1% je Level: 1-9%, bei Level 20 ist der Steinbonus 15%.</p>",
                 
           },
           :description => {
@@ -2233,7 +2229,7 @@ class GameRules::Rules
             
             :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
   
-            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren, dazu immer mal ein leckeres Tier auf dem Feuer.</p>",
+            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren, dazu immer mal ein leckeres Tier auf dem Feuer.</p><p>Ab Level 11 bietet der Kürschner einen lokalen Fellonus. Auf Level 11-19 beträgt dieser 1% je Level: 1-9%, bei Level 20 ist der Fellbonus 15%.</p>",
                 
           },
           :description => {

@@ -21,8 +21,8 @@ module IdentityProvider
       post('/identities/' + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
     end
     
-    def change_identity_property(identifier, data_object)
-      put('/identities/'  + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
+    def change_character_property(identifier, data_object)
+      put('/resource/character_properties/' + identifier, {:resource_character_property => {:data => data_object}})
     end
     
     def post_result(character, round_number, round_name, won = false)
