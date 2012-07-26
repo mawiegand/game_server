@@ -266,7 +266,7 @@ class Settlement::Slot < ActiveRecord::Base
     delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
     
     if delta > 0.0 || delta < 0.0
-      self.settlement[field] += delta
+      self.settlement[field] = (self.settlement[field] || 0) + delta
       self.settlement.save
     end
   end
