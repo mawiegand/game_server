@@ -18,6 +18,8 @@ defaults: &defaults
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
   
   settlement_recalc_probability: 0.2
+  
+  cookie_name: 'gs_remember_token'  
       
 development:
   <<: *defaults

@@ -226,7 +226,7 @@ module Auth
     # and sets the current_backend_user. The backend_user to sign-in
     # must have been authenticated (e.g. checked credentials) before hand.
     def sign_in_to_backend(backend_user)
-      cookies.permanent.signed[:gs_remember_token] = [backend_user.id, backend_user.salt]
+      cookies.permanent.signed[GAME_SERVER_CONFIG['cookie_name']] = [backend_user.id, backend_user.salt]
       self.current_backend_user = backend_user
     end
   
@@ -250,7 +250,7 @@ module Auth
     # Signs the present user out by destroying the cookie and unsetting
     # the current_identity .
     def sign_out_with_backend
-      cookies.delete(:gs_remember_token)
+      cookies.delete(GAME_SERVER_CONFIG['cookie_name'])
       self.current_backend_user = nil
     end
   
@@ -288,7 +288,7 @@ module Auth
     # Returns either the remember_token that has been set in the cookie
     # or a nil - array.
     def remember_token
-      cookies.signed[:gs_remember_token] || [nil, nil]
+      cookies.signed[GAME_SERVER_CONFIG['cookie_name']] || [nil, nil]
     end
   
   
