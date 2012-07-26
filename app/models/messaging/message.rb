@@ -22,6 +22,7 @@ class Messaging::Message < ActiveRecord::Base
   OVERRUN_LOSER_REPORT_TYPE_ID = 6
   FORTESS_WON_REPORT_TYPE_ID = 7
   FORTESS_LOST_REPORT_TYPE_ID = 8
+  WELCOME_MESSAGE_TYPE_ID = 9
 
   # creates inbox and outbox entries for the message
   def deliver_message
@@ -61,6 +62,18 @@ class Messaging::Message < ActiveRecord::Base
   #creates a message that an Army
   def self.create_army_retreat_message(army)
     #message = "Your army "+army.
+  end
+  
+  def self.create_welcome_message(character)
+    message = Messaging::Message.create({
+      recipient: character,
+      type_id:   WELCOME_MESSAGE_TYPE_ID,
+      subject:   I18n.translate('application.messaging.welcome_message.subject'),
+      body:      I18n.translate('application.messaging.welcome_message.body'),
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
   end
   
   def self.generate_overrun_winner_message(winner, loser)
