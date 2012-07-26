@@ -1,9 +1,9 @@
 class Military::Army < ActiveRecord::Base
   
-  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id",  :touch => true
-  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id",    :touch => true
+  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id",            :touch => true
+  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id",              :touch => true
 
-  belongs_to :home,               :class_name => "Settlement::Settlement",           :foreign_key => "home_settlement_id", :counter_cache => :armies_count, :inverse_of => :armies
+  belongs_to :home,               :class_name => "Settlement::Settlement",           :foreign_key => "home_settlement_id",     :inverse_of => :armies, :counter_cache => :armies_count
   
   belongs_to :target_location,    :class_name => "Map::Location",                    :foreign_key => "target_location_id"
   belongs_to :target_region,      :class_name => "Map::Region",                      :foreign_key => "target_region_id"
@@ -26,6 +26,11 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_rank
   after_save     :update_experience_ranking
   before_destroy :remove_from_experience_ranking 
+
+  
+  after_create   :touch_home_settlement
+  after_create   :touch_map
+  after_destroy  :touch_home_settlement
 
     
   after_find :update_ap_if_necessary
@@ -464,6 +469,19 @@ class Military::Army < ActiveRecord::Base
       end
     end
 
-    
+    def touch_home_settlement
+      if !self.home.nil?
+        self.home.touch
+      end
+    end
+
+    def touch_map
+      if !self.region.nil?
+        self.region.touch
+      end
+      if !self.location.nil?
+        self.location.touch
+      end
+    end    
   
 end

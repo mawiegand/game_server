@@ -87,6 +87,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_inbox
       character.create_outbox
       character.create_archive
+      
+      Messaging::Message.create_welcome_message(character)
     end
     
     return character 
