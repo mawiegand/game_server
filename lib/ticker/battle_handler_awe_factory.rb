@@ -40,6 +40,9 @@ class Ticker::BattleHandler
   end
   
   def fill_awe_battle(battle, awe_battle)
+    #set random seed
+    awe_battle.seed = Random.new.rand(0...(2**30 - 1))
+
     # fill unit categories
     rules = GameRules::Rules.the_rules
     rules.unit_categories.each do | category |
