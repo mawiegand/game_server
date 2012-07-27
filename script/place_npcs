@@ -50,7 +50,7 @@ while (num_npcs < num_armies)
   avg_size_npcs = total_size / num_npcs
 end
 
-Rails.logger.info "NPC PLACEMENT: Placed #{count_npc_placed} npc armies, smallest with #{ min_npc_placed } units, largest with #{ max_npc_placed }."
+Rails.logger.info "NPC PLACEMENT: Placed #{count_npc_placed || "0" } npc armies, smallest with #{ min_npc_placed || "0" } units, largest with #{ max_npc_placed || "0" }."
 
 if count_npc_placed > 0
   Rails.logger.info "NPC PLACEMENT: Compile and email report."
