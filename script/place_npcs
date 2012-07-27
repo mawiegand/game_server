@@ -40,8 +40,8 @@ while (num_npcs < num_armies)
   
   Military::Army.create_npc(location, size)
   
-  max_npc_placed = Math.max(max_npc_placed ||       0, size)
-  min_npc_placed = Math.min(min_npc_placed || 9999999, size)
+  max_npc_placed = [(max_npc_placed || 0),       size].max
+  min_npc_placed = [(min_npc_placed || 9999999), size].min
   count_npc_placed += 1
   
   Rails.logger.info "NPC PLACEMENT: Creating a npc army with #{size} units."
