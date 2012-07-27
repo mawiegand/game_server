@@ -76,10 +76,9 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # Saves the resource with an atomic operation and updates
   # the timestamp of the resource pool  
   def add_resource_atomically(resource_id, amount)
-    if amount > 0
+    if !amount.nil? && amount != 0
       db_resource_name = GameRules::Rules.the_rules().resource_types[resource_id][:symbolic_id].to_s() + '_amount'
-      sql = ActiveRecord::Base.send(:sanitize_sql_array, ["update fundamental_resource_pools set #{db_resource_name} = #{db_resource_name} + ?, updated_at = datetime('now') where character_id = ?", amount, owner.id])
-      connection.update(sql)
+      Fundamental::ResourcePool.update_all(["#{db_resource_name} = coalesce(#{db_resource_name}, 0) + ?, updated_at = ?", amount, Time.now], ["character_id = ? and #{db_resource_name} > 0", owner.id])
     else
       false
     end
