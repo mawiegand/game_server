@@ -79,9 +79,9 @@
       <Calculation roundTime="30" retreatProbability="0.6" />
     </Battle>
     <CharacterCreation>
-      <StartResource id="resource_wood">2000</StartResource>
-      <StartResource id="resource_stone">2000</StartResource>
-      <StartResource id="resource_fur">1500</StartResource>
+      <StartResource id="resource_wood">600</StartResource>
+      <StartResource id="resource_stone">600</StartResource>
+      <StartResource id="resource_fur">800</StartResource>
       <StartResource id="resource_cash">5</StartResource>
     </CharacterCreation>
   </General>
