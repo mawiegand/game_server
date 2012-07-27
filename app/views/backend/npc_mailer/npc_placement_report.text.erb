@@ -6,8 +6,8 @@ It placed a total of <%= @report[:num_npcs_placed] %> npc armies.
 Min army: <%= @report[:min_size] %> units
 Max army: <%= @report[:max_size] %> units
 
-Now we have a total of <%= @report[:num_npcs] %> in this wonderful game with an 
-average size of <%= @report[:average_size] %> units.
+Now we have a total of <%= @report[:num_npcs] %> npc armies in this wonderful world
+with an average size of <%= number_with_precision(@report[:average_size], :precision => 1) %> units.
 
 Whack On!
 

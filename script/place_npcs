@@ -8,7 +8,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'envi
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
 @report = {
-  :started => Time.now
+  :started_at => Time.now
 }
 
 num_armies        = Military::Army.where(npc: false, garrison: false).count
