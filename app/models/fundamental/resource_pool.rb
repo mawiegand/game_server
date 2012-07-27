@@ -72,6 +72,19 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save
   end
 
+  # Adds the given resource to the resource pool.
+  # Saves the resource with an atomic operation and updates
+  # the timestamp of the resource pool  
+  def add_resource_atomically(resource_id, amount)
+    if amount > 0
+      db_resource_name = GameRules::Rules.the_rules().resource_types[resource_id][:symbolic_id].to_s() + '_amount'
+      sql = ActiveRecord::Base.send(:sanitize_sql_array, ["update fundamental_resource_pools set #{db_resource_name} = #{db_resource_name} + ?, updated_at = datetime('now') where character_id = ?", amount, owner.id])
+      connection.update(sql)
+    else
+      false
+    end
+  end
+
   # adds the given effect to the resource pool.
   # this adds the speedup value to the appropriate global effects
   # value and updates the production rates through an after_save handler.   
