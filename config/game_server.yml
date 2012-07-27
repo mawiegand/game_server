@@ -20,6 +20,8 @@ defaults: &defaults
   settlement_recalc_probability: 0.2
   
   cookie_name: 'gs_remember_token'  
+  
+  status_email_recipient: 'sascha@5dlab.com'
       
 development:
   <<: *defaults

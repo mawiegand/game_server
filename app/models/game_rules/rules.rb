@@ -1780,8 +1780,8 @@ class GameRules::Rules
           :hidden      => 0,
 
           :buyable     => true,
-          :demolishable=> true,
-          :destructable=> true,
+          :demolishable=> false,
+          :destructable=> false,
 
           :requirements=> [
             
