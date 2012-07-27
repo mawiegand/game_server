@@ -1,5 +1,9 @@
 <h1>Listing shop_transactions</h1>
 
+<%= if (@paginate) 
+  will_paginate @shop_transactions 
+end %>
+
 <table>
   <tr>
     <th>Character</th>
@@ -20,13 +24,54 @@
     <td><%= shop_transaction.credit_amount_before %></td>
     <td><%= shop_transaction.credit_amount_after %></td>
     <td><%= shop_transaction.offer %></td>
-    <td><%= shop_transaction.state %></td>
+    <td><%= Shop::Transaction::STATES[shop_transaction.state] %></td>
     <td><%= link_to 'Show', shop_transaction %></td>
     <td><%= link_to 'Edit', edit_shop_transaction_path(shop_transaction) %></td>
     <td><%= link_to 'Destroy', shop_transaction, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate) 
+  will_paginate @shop_transactions 
+end %>
+
+<h4>Transaktionsstatus:</h4>
+<table>
+<tr>
+  <th>Status</th>
+  <th>Bedeutung</th>
+</tr>
+<tr>
+  <td>created</td>
+  <td>Transaktion gestartet</td>
+</tr>
+<tr>
+  <td>rejected</td>
+  <td>Transaktion vom Payment Provider abgelehnt (zu wenig Credits)</td>
+</tr>
+<tr>
+  <td>confirmed</td>
+  <td>Transaktion vom Payment Provider angenommen, Credits wurden abgebucht</td>
+</tr>
+<tr>
+  <td>booked</td>
+  <td>Transaktion im Resource Pool gebucht, Shop Offer wurde aufgebucht</td>
+</tr>
+<tr>
+  <td>closed</td>
+  <td>Transaktion erfolgreich abgeschlossen</td>
+</tr>
+<tr>
+  <td>error_no_connection</td>
+  <td>Keine Verbindung zum Payment Provider, es wurde nichts gebucht</td>
+</tr>
+<tr>
+  <td>error_not_booked</td>
+  <td>Credits wurden im Payment Provider abgebucht, Shop Offer konnte nicht gebucht werden</td>
+</tr>
+</table>
+</p>
 
 <br />
 
