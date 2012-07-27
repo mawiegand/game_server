@@ -6,6 +6,7 @@ end %>
 
 <table>
   <tr>
+    <th>Created</th>
     <th>Character</th>
     <th>Credit amount booked</th>
     <th>Credit amount before</th>
@@ -19,6 +20,7 @@ end %>
 
 <% @shop_transactions.each do |shop_transaction| %>
   <tr>
+    <td><%= shop_transaction.created_at %></td>
     <td><%= shop_transaction.character_id %></td>
     <td><%= shop_transaction.credit_amount_booked %></td>
     <td><%= shop_transaction.credit_amount_before %></td>

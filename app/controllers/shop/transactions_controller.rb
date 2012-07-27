@@ -73,9 +73,13 @@ class Shop::TransactionsController < ApplicationController
     
     logger.debug virtual_bank_transaction.inspect
     
-    credit_amount_before = get_customer_account['amount']
+    @shop_transaction.credit_amount_before = get_customer_account['amount']
+    @shop_transaction.save
+    
     provider_response = post_virtual_bank_transaction(virtual_bank_transaction)
-    credit_amount_after = get_customer_account['amount']
+
+    @shop_transaction.credit_amount_after = get_customer_account['amount']
+    @shop_transaction.save
     
     # lokale transaction aktualisieren
     if provider_response.nil?  # error
@@ -85,9 +89,7 @@ class Shop::TransactionsController < ApplicationController
     elsif provider_response['state'] == Shop::Transaction::STATE_COMMITTED  # payment successful
       ActiveRecord::Base.transaction do
         @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
-        @shop_transaction.credit_amount_before = credit_amount_before
         @shop_transaction.credit_amount_booked = offer.price
-        @shop_transaction.credit_amount_after = credit_amount_after
         @shop_transaction.save
     
         if offer.credit_to(current_character)
@@ -108,8 +110,7 @@ class Shop::TransactionsController < ApplicationController
     else  # payment rejected 
       @shop_transaction.state = Shop::Transaction::STATE_REJECTED
       @shop_transaction.save
-    end
-    
+    end    
     
     respond_to do |format|
       if @shop_transaction.save
