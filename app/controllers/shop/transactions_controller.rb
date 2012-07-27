@@ -73,7 +73,9 @@ class Shop::TransactionsController < ApplicationController
     
     logger.debug virtual_bank_transaction.inspect
     
+    credit_amount_before = get_customer_account['amount']
     provider_response = post_virtual_bank_transaction(virtual_bank_transaction)
+    credit_amount_after = get_customer_account['amount']
     
     # lokale transaction aktualisieren
     if provider_response.nil?  # error
@@ -83,16 +85,16 @@ class Shop::TransactionsController < ApplicationController
     elsif provider_response['state'] == Shop::Transaction::STATE_COMMITTED  # payment successful
       ActiveRecord::Base.transaction do
         @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
+        @shop_transaction.credit_amount_before = credit_amount_before
         @shop_transaction.credit_amount_booked = offer.price
+        @shop_transaction.credit_amount_after = credit_amount_after
         @shop_transaction.save
     
         if offer.credit_to(current_character)
           @shop_transaction.state = Shop::Transaction::STATE_BOOKED
-          @shop_transaction.credit_amount_booked = offer.price
           @shop_transaction.save
         else
           @shop_transaction.state = Shop::Transaction::STATE_ERROR_NOT_BOOKED
-          @shop_transaction.credit_amount_booked = offer.price
           @shop_transaction.save     
           raise BadRequestError.new("Could not book toad amount") 
         end
