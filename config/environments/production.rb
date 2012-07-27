@@ -48,8 +48,21 @@ GameServer::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = false
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.5dlab.com",
+    :port           => 587,
+    :domain         => "5dlab.com",
+    :authentication => :plain,
+    :user_name      => "no-reply@5dlab.com",
+    :password       => "+N4$3.bQ",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+  }
+  
   # Enable threaded mode
   # config.threadsafe!
 

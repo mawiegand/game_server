@@ -21,7 +21,7 @@ defaults: &defaults
   
   cookie_name: 'gs_remember_token'  
   
-  status_email_recipient: 'sascha@5dlab.com'
+  status_email_recipient: 'info@5dlab.com'
       
 development:
   <<: *defaults
