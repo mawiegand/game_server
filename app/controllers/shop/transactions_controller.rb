@@ -8,11 +8,12 @@ class Shop::TransactionsController < ApplicationController
   # GET /shop/transactions
   # GET /shop/transactions.json
   def index
-    @shop_transactions = Shop::Transaction.all
-
+    @shop_transactions = Shop::Transaction.paginate(:order => 'id desc', :page => params[:page], :per_page => 20)    
+    @paginate = true 
+    
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @shop_transactions }
+      format.json {}
     end
   end
 
@@ -76,7 +77,7 @@ class Shop::TransactionsController < ApplicationController
     
     # lokale transaction aktualisieren
     if provider_response.nil?  # error
-      @shop_transaction.state = Shop::Transaction::STATE_ERROR
+      @shop_transaction.state = Shop::Transaction::STATE_ERROR_NO_CONNECTION
       @shop_transaction.save
       raise BadRequestError.new("Could not connect to Payment Provider") 
     elsif provider_response['state'] == Shop::Transaction::STATE_COMMITTED  # payment successful
@@ -84,9 +85,17 @@ class Shop::TransactionsController < ApplicationController
         @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
         @shop_transaction.credit_amount_booked = offer.price
         @shop_transaction.save
-
-        # TODO Fehlerbehandlung
-        offer.credit_to(current_character)
+    
+        if offer.credit_to(current_character)
+          @shop_transaction.state = Shop::Transaction::STATE_BOOKED
+          @shop_transaction.credit_amount_booked = offer.price
+          @shop_transaction.save
+        else
+          @shop_transaction.state = Shop::Transaction::STATE_ERROR_NOT_BOOKED
+          @shop_transaction.credit_amount_booked = offer.price
+          @shop_transaction.save     
+          raise BadRequestError.new("Could not book toad amount") 
+        end
       end
 
       # TODO callback an payment provider
