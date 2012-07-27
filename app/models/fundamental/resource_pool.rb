@@ -78,7 +78,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   def add_resource_atomically(resource_id, amount)
     if !amount.nil? && amount != 0
       db_resource_name = GameRules::Rules.the_rules().resource_types[resource_id][:symbolic_id].to_s() + '_amount'
-      Fundamental::ResourcePool.update_all(["#{db_resource_name} = coalesce(#{db_resource_name}, 0) + ?, updated_at = ?", amount, Time.now], ["character_id = ? and #{db_resource_name} > 0", owner.id])
+      Fundamental::ResourcePool.update_all(["#{db_resource_name} = coalesce(#{db_resource_name}, 0) + ?, updated_at = ?", amount, Time.now], ["character_id = ? and coalesce(#{db_resource_name}, 0) + ? >= 0", owner.id, amount])
     else
       false
     end
