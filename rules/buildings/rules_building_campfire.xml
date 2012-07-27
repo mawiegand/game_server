@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_campfire" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true">  
+<Building id="building_campfire" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="false" demolishable="false">  
   <Name lang="de_DE">Lagerfeuer</Name>
   <Name lang="en_US">Campfire</Name>
   <Description lang="de_DE">
