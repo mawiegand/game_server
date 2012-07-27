@@ -53,7 +53,9 @@ class Ticker::TrainingActiveJobHandler
       
       runloop.say "Check for new jobs"
       
-      queue.check_for_new_jobs if job.nil?
+      # job will be destroyed in all units of the job are trained. Therefore check if 
+      # the current job is either nil or frozen before checking for a new job
+      queue.check_for_new_jobs if job.nil? || job.frozen?
       
       # event.destroy unless event.nil?
       runloop.say "Training active job handler completed."
