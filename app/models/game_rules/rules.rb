@@ -392,6 +392,8 @@ class GameRules::Rules
                 
           },
 
+          :trainable   => true,
+
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 16,
@@ -452,6 +454,8 @@ class GameRules::Rules
             :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p><p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>",
                 
           },
+
+          :trainable   => true,
 
           :velocity    => 1,
           :action_points => 4,
@@ -527,6 +531,8 @@ class GameRules::Rules
                 
           },
 
+          :trainable   => true,
+
           :velocity    => 1,
           :action_points => 4,
           :initiative  => 8,
@@ -587,6 +593,8 @@ class GameRules::Rules
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
           },
+
+          :trainable   => true,
 
           :velocity    => 1,
           :action_points => 4,
@@ -657,6 +665,8 @@ class GameRules::Rules
             :en_US => "<p>Babysaurus's teeth are not sharp. They are easy to ride but their rider has to kill his enemies himself.</p>",
                 
           },
+
+          :trainable   => true,
 
           :velocity    => 1.5,
           :action_points => 4,
@@ -732,6 +742,8 @@ class GameRules::Rules
                 
           },
 
+          :trainable   => true,
+
           :velocity    => 1.5,
           :action_points => 4,
           :initiative  => 26,
@@ -789,6 +801,8 @@ class GameRules::Rules
                 
           },
 
+          :trainable   => true,
+
           :velocity    => 0.9,
           :action_points => 4,
           :initiative  => 16,
@@ -845,6 +859,8 @@ class GameRules::Rules
             :en_US => "<p>The catapults take the cake in every intense battle because of their devastating damage.</p>",
                 
           },
+
+          :trainable   => true,
 
           :velocity    => 0.7,
           :action_points => 4,
@@ -919,6 +935,8 @@ class GameRules::Rules
             :en_US => "<p>Fierce Fighters.</p>",
                 
           },
+
+          :trainable   => false,
 
           :velocity    => 1,
           :action_points => 4,

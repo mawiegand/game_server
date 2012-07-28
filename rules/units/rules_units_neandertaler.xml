@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="neanderthal" category="unitcategory_infantry">
+<Unit id="neanderthal" category="unitcategory_infantry" trainable="false">
   <Name>Neanderthal</Name>
   <Name lang="de_DE">Neandertaler</Name>
   <Description lang="de_DE">

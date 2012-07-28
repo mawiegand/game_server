@@ -141,6 +141,7 @@
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
+	trainable (false | true) "true"
 >
 
 <!ELEMENT TargetPriorities (TargetList, TargetList)>

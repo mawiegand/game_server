@@ -231,6 +231,7 @@ end
 <xsl:if test="@hidden">
           :hidden      => <xsl:value-of select="@hidden"/>,
 </xsl:if>
+          :trainable   => <xsl:value-of select="@trainable"/>,
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
