@@ -38,7 +38,9 @@ class Training::Job < ActiveRecord::Base
     rules = GameRules::Rules.the_rules
     requirements = rules.unit_types[self.unit_id][:requirements]
     
-    logger.debug "REQ #{requirements}"
+    return false  if !rules.unit_types[self.unit_id][:trainable]
+    
+    logger.debug "REQ #{requirements}, TRAINABLE #{ rules.unit_types[self.unit_id][:trainable] }."
     
     # test if requirements are met
     return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement)
