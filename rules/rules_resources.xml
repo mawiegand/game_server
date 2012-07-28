@@ -2,18 +2,6 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <ResourceTypes>
-  <Resource id="resource_wood">  
-    <Name lang="de_DE">Holz</Name>
-    <Name lang="en_US">Wood</Name>
-    <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
-    <Flavour lang="en_US">Hard as wood.</Flavour>
-    <Description lang="de_DE">
-      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohtoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffe.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>Basic resource for constructing buildings and siege machines.</p>
-    </Description>
-  </Resource>
   <Resource id="resource_stone">  
     <Name lang="de_DE">Stein</Name>
     <Name lang="en_US">Stone</Name>
@@ -24,6 +12,18 @@
     </Description>
     <Description lang="en_US">
       <p>Basic resource for constructing buildings and weapons.</p>
+    </Description>
+  </Resource>
+  <Resource id="resource_wood">  
+    <Name lang="de_DE">Holz</Name>
+    <Name lang="en_US">Wood</Name>
+    <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
+    <Flavour lang="en_US">Hard as wood.</Flavour>
+    <Description lang="de_DE">
+      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohtoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffe.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Basic resource for constructing buildings and siege machines.</p>
     </Description>
   </Resource>
   <Resource id="resource_fur">  
