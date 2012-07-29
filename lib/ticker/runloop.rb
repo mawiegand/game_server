@@ -122,9 +122,9 @@ module Ticker
             begin
               handler.process_event next_event
             rescue SyntaxError, NameError => error
-              say "CATCHED FATAL ERROR in event handler: ", Logger::ERROR
+              say "CATCHED FATAL ERROR in event handler: #{handler}", Logger::ERROR
             rescue StandardError => error
-              say "CATCHED ERROR in event handler: ", Logger::ERROR
+              say "CATCHED ERROR in event handler: #{handler}", Logger::ERROR
             end
           else
             say "No handler registered for this event type.", Logger::ERROR

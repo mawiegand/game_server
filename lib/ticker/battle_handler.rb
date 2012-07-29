@@ -59,6 +59,8 @@ class Ticker::BattleHandler
         ## generate message for participants
         generate_messages_for_battle(awe_battle, battle)
 
+        runloop.say "Determine winner and check takeover"
+
         ## get winner of the battle
         winner_faction = battle.winner_faction
         winner_faction.update_leader
@@ -84,21 +86,34 @@ class Ticker::BattleHandler
             #check if the battle location is owned by a participant of the winner faction
             takeover = true
             winner_faction.participants.each do |participant|
-              if participant.army.owner_id == battle.location.owner_id
+              if participant.army.owner_id == battle.location.owner_id   
                 takeover = false
               end
             end
 
-            #if not do the takeover
+            #if  do the takeover
             if takeover
               if !battle.location.settlement.nil?
+                runloop.say "Execute takeover of settlement ID #{ battle.location.settlement.id }."
+                
                 #do the takeover
+                old_owner = target_settlement.owner
                 target_settlement.new_owner_transaction(winner_leader)
+                
+                runloop.say "Send takeover messages."
+
+                #message for old and new owner
+                Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, winner_leader) unless old_owner.nil? || old_owner.npc?
+                Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, winner_leader) unless winner_leader.nil? || winner_leader.npc?
+    
+                runloop.say "Takeover finished."
               end
             end
           end
 
         end
+
+        runloop.say "Cleanup armies and battle"
 
         ## cleanup of the destroyed armies
         cleanup_armies(battle)

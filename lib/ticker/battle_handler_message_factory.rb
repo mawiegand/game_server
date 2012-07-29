@@ -39,25 +39,27 @@ class Ticker::BattleHandler
 
     #generate the messages for the characters
     characters.each do |k,v|
-      message = Messaging::Message.new
-
       character = v[0].army.owner
+      if !character.npc?                    # no messages for npcs!
+        message = Messaging::Message.new
 
-      message.recipient_id = character.id
-      message.sender_id = nil
-      message.type_id = Messaging::Message::BATTLE_REPORT_TYPE_ID
-      message.subject = generate_message_subject(battle)
-      message.body = "<h1>"+generate_message_subject(battle)+"</h1>"
-      message.body = message.body + stats_body 
-      message.body = message.body + generate_message_body_for_character(battle, character, v, stats_body, details_body)
-      message.body = message.body + details_body
-      message.send_at = DateTime.now
-      message.reported = false
-      message.flag = 0
 
-      message.save
+        message.recipient_id = character.id
+        message.sender_id = nil
+        message.type_id = Messaging::Message::BATTLE_REPORT_TYPE_ID
+        message.subject = generate_message_subject(battle)
+        message.body = "<h1>"+generate_message_subject(battle)+"</h1>"
+        message.body = message.body + stats_body 
+        message.body = message.body + generate_message_body_for_character(battle, character, v, stats_body, details_body)
+        message.body = message.body + details_body
+        message.send_at = DateTime.now
+        message.reported = false
+        message.flag = 0
+
+        message.save
       
-      battle.message = message if battle.message.nil?
+        battle.message = message if battle.message.nil?
+      end
     end
   end
 
