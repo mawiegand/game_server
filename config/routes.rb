@@ -17,6 +17,7 @@ GameServer::Application.routes.draw do
 
       namespace :backend do 
         resources :users 
+        resource  :dashboard, :controller => 'dashboard', :only => [:show, :create]
       end
 
       namespace :effect do 

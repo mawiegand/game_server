@@ -4,6 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require_tree ./backend 
 */
 
 
@@ -213,6 +214,14 @@ table.factions-overview {
   text-align: left;
 }
 
+
+.red {
+  color: #F00;
+}
+
+.orange {
+  color: #FA0;
+}
 
 .round-info {
   width: 320px;

@@ -9,6 +9,7 @@ en:
       signin: Sign In
       backend:
         category: Backend
+        dashboard: Dashboard
         users: Users
       rules:
         category: Rules

@@ -10,6 +10,8 @@ gem 'capistrano'
 gem 'thin'
 gem 'httparty'
 gem 'rb-readline'	
+gem 'gravatar_image_tag'
+
 
 group :production do
   gem 'pg'

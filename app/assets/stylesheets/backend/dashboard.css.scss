@@ -1,0 +1,55 @@
+// Place all the styles related to the Backend/Dashbboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+
+.dashboard .profile {
+  float: right;
+
+  padding: 1px 20px  20px;  
+
+  border-radius: 20px;
+  border: #777 12px solid;
+  
+  min-width: 440px;
+  min-height: 145px;
+}
+
+.dashboard .profile-info {
+  margin-left:140px;
+}
+
+.dashboard .profile-info p {
+  margin-top: -20px;
+}
+
+
+
+.gravatar-float {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-width: 1px;
+  broder-color: #333;
+  border-style: solid;
+  padding: 2px;
+  background-color: #FFF;
+}
+
+div.profile .gravatar-float {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+  margin-top: 18px;
+}
+
+.profile h1 {
+  font-size: 36px;
+  padding-top: 0px;
+  margin-top: 14px;
+}

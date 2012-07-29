@@ -179,6 +179,19 @@ class Backend::User < ActiveRecord::Base
     return address_role
   end
   
+  def gravatar_hash
+    return Digest::MD5.hexdigest(email.strip.downcase)
+  end
+  
+  def gravatar_url(options = {})
+    options = { 
+      :size => 100, 
+      :default => :identicon,
+    }.merge(options).delete_if { |key, value| value.nil? }  # merge 'over' default values
+    
+    GravatarImageTag::gravatar_url( email.strip.downcase, options )
+  end  
+  
   # Returns a string addressing the user according to his role
   # (user, admin, staff)
   def address_role 
