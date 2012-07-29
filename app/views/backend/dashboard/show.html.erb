@@ -17,7 +17,7 @@
     <%= @user_stats[:signins_last_day] %> /
     <%= @user_stats[:signins_last_week]%> (last 1h / 8h / 24h / week) <br/>
   <% if @last_character %>
-    <p><b>Latest Sign In</b>: signed in <b><%= time_ago_in_words @last_character.created_at %></b> ago<br/>
+    <p><b>Latest Sign In</b>: signed in <b><%= time_ago_in_words @last_character.last_login_at %></b> ago<br/>
        <%= link_to @last_character.name, @last_character %> (<%= @last_character.identifier %>)</p>
   <% end %>
   
