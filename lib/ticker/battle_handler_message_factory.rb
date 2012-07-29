@@ -77,7 +77,8 @@ class Ticker::BattleHandler
   end
 
   def generate_participant_body(battle, participant)
-    result = participant.army.name.to_s + " ";
+    result = ""
+    result = participant.army.name.to_s + " " unless participant.army.name.nil?
     result = result + "of " + participant.army.home_settlement_name + " " unless participant.army.home_settlement_name.nil?
     if (participant.army.has_units?)
       if (participant.retreated)
@@ -270,7 +271,7 @@ class Ticker::BattleHandler
         faction_result.participant_results.each do |participant_result|
           current_result += "<tr>\n"
           current_result += "<td>"+participant_result.army.name+"</td>\n" #army.name
-          current_result += "<td>"+participant_result.army.owner.name+"</td>\n" #character.name
+          current_result += "<td>"+(participant_result.army.owner.blank? ? "" : participant_result.army.owner.name)+"</td>\n" #character.name
           if participant_result.army.alliance.nil?
             current_result += "<td></td>\n" #character.alliance_tag
           else
@@ -347,7 +348,7 @@ class Ticker::BattleHandler
 	    faction_result.participant_results.each do |participant_result|
 	      current_result += "<tr>\n"
 	      current_result += "<td>"+participant_result.army.name+"</td>\n" #army.name
-	      current_result += "<td>"+participant_result.army.owner.name+"</td>\n" #character.name
+	      current_result += "<td>"+(participant_result.army.owner.blank? ? "" : participant_result.army.owner.name)+"</td>\n" #character.name
         if participant_result.army.alliance.nil?
           current_result += "<td></td>\n" #character.alliance_tag
         else
