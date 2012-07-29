@@ -20,7 +20,7 @@ class Backend::DashboardController < ApplicationController
       signins_last_week:        Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 1.weeks]).count,      
     }
     
-    @last_character = Fundamental::Character.unscoped.order('last_login_at DESC').first
+    @last_character = Fundamental::Character.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
 
   end
   
