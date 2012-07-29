@@ -22,7 +22,7 @@ class Auth::SessionsController < ApplicationController
       render 'new'
     else 
       sign_in_to_backend(user)
-      redirect_to game_rules_rules_url
+      redirect_to backend_dashboard_path
     end    
 
   end
