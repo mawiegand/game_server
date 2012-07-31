@@ -1575,19 +1575,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(7.5/4*POW(LEVEL,1.33)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)",
               },
             
               {
@@ -1908,7 +1908,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))+0.5)",
               },
             
           ],
@@ -1985,7 +1985,7 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))+0.5)",
               },
             
           ],
@@ -2052,7 +2052,7 @@ class GameRules::Rules
           :costs      => {
             1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.8+0.5)',
             0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.8+0.5)',
-            2 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5+0.5)',
+            2 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.75+0.5)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -2063,7 +2063,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(7.5*0.5*POW(LEVEL,1.33)+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.5+0.5)",
               },
             
           ],
