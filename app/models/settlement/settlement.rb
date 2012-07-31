@@ -427,17 +427,20 @@ class Settlement::Settlement < ActiveRecord::Base
             queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
           else
             logger.warn "UNKNOWN QUEUE TYPE in recalculation of queue speedups."
-            return 
           end
           
-          present = queue.speedup_buildings
-          recalc  = speedups[queue_type[:id]]        
+          if queue.nil?
+            logger.error "HAVE NOT FOUND A QUEUE for queue type #{ queue_type[:symbolic_id] } in settlement #{ self.id } with unlock count #{ self[queue_type[:unlock_field]] }."
+          else            
+            present = queue.speedup_buildings
+            recalc  = speedups[queue_type[:id]]        
         
-          if (present != recalc)
-            logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
-            queue.speedup_buildings = recalc
-            logger.info(">>> SAVING QUEUE AFTER DETECTING ERRORS.")
-            queue.save
+            if (present != recalc)
+              logger.warn(">>> QUEUE SPEEDUP RECALC DIFFERS for #{queue_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+              queue.speedup_buildings = recalc
+              logger.info(">>> SAVING QUEUE AFTER DETECTING ERRORS.")
+              queue.save
+            end
           end
         end
       end  
