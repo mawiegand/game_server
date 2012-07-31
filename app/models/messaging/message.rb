@@ -93,12 +93,12 @@ class Messaging::Message < ActiveRecord::Base
   end
     
   def add_overrun_winner_message_subject(winner, loser)
-    self.subject = "Overrun army at " + winner.location.settlement.name.to_s 
+    self.subject = "Overrun army at " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) 
   end
   
   def add_overrun_winner_message_body(winner, loser)
-    text  = "<h2>Your army has overrun another army at " + winner.location.settlement.name.to_s + "</h2>\n"
-    text += "<p>Your army <b>" + winner.name.to_s + "</b> positioned at location <b>" + loser.location.settlement.name.to_s 
+    text  = "<h2>Your army has overrun another army at " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + "</h2>\n"
+    text += "<p>Your army <b>" + winner.name.to_s + "</b> positioned at <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
     text += "</b> has overrun the army <b>" + loser.name.to_s + "</b> of <b>" + loser.owner_name_and_ally_tag + "</b>.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
@@ -130,12 +130,12 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def add_overrun_loser_message_subject(winner, loser)
-    self.subject = "Overrun army at " + winner.location.settlement.name.to_s 
+    self.subject = "Overrun army at " +  (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
   end
   
   def add_overrun_loser_message_body(winner, loser)
-    text  = "<h2>Your army has been overrun at " + winner.location.settlement.name.to_s + "</h2>\n"
-    text += "<p>Your army <b>" + loser.name.to_s + "</b> positioned at location <b>" + loser.location.settlement.name.to_s 
+    text  = "<h2>Your army has been overrun at " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
+    text += "<p>Your army <b>" + loser.name.to_s + "</b> positioned at location <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
     text += "</b> has been overrun by the army <b>" + winner.name.to_s + "</b> of <b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
