@@ -1587,7 +1587,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.125+0.5)",
               },
             
               {
