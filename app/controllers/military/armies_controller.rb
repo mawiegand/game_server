@@ -157,13 +157,12 @@ class Military::ArmiesController < ApplicationController
 
     role = determine_access_role(@military_army.owner_id, @military_army.alliance_id)    
     
-    attributes_to_update = nil
+    attributes_to_update = {}
     if role === :staff || role === :admin
       attributes_to_update = params[:military_army]
     elsif role === :owner
-      attributes_to_update = {
-        name: params[:military_army][:name]
-      }
+      attributes_to_update[:name] = params[:military_army][:name] unless params[:military_army][:name].blank?
+      attributes_to_update[:stance] = params[:military_army][:stance] unless params[:military_army][:stance].blank?
     end
 
     raise ForbiddenError.new 'tried to update army properties that are forbidden to change for the role.' if attributes_to_update.nil?
