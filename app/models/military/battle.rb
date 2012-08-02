@@ -43,19 +43,37 @@ class Military::Battle < ActiveRecord::Base
     if attacker.fighting?                                        # A) add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
+      battle.add_voluntary_defenders(attacker, defender)
     elsif defender.fighting?                                     # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.battle_participant.faction_id))
+      battle.add_fortress_defenders(attacker, defender)
     elsif attacker.able_to_overrun?(defender)                    # C) 
       self.overrun(attacker, defender)
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
     else                                                         # E) create new battle (not involved, yet)
       battle = Military::Battle.create_battle_between(attacker, defender)
+      battle.add_fortress_defenders(attacker, defender)
       battle.create_event_for_next_round
     end
     
     return battle
+  end
+  
+  # add armies with stance 'defending fortress' to defenders of battle
+  def add_fortress_defenders(attacker, defender)
+    if defender.garrison && defender.location.fortress?                             
+      defender.location.armies.each do |other_army|
+        if (other_army != attacker &&                                          # don't add attacker
+            other_army != defender &&                                          # or defender, they are already involved
+            !other_army.fighting? &&                                           # only add non fighting armies
+            other_army.owner != attacker.owner &&                              # don't let armies of character defend his own attack
+            other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance            
+          self.add_army(other_army, defender.battle_participant.faction)
+        end
+      end
+    end
   end
   
   def self.overrun(attacker, defender)

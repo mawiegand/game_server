@@ -39,6 +39,9 @@ class Military::Army < ActiveRecord::Base
   MODE_MOVING = 1
   MODE_FIGHTING = 2
   
+  STANCE_DEFENDING_NONE = 0
+  STANCE_DEFENDING_FORTRESS = 1
+  
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
     
