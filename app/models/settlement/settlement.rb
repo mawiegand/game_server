@@ -13,7 +13,7 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :training_queues, :class_name => "Training::Queue", :foreign_key => "settlement_id",      :inverse_of => :settlement
   
   
-  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
+  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :score, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
   attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
