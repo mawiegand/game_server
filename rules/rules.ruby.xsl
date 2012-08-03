@@ -192,6 +192,7 @@ end
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :stealable   => <xsl:value-of select="@stealable"/>,
+          :stealable   => <xsl:value-of select="@taxable"/>,
           :rating_value=> <xsl:value-of select="@ratingValue"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
@@ -358,6 +359,14 @@ end
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
+<xsl:choose>
+  <xsl:when test="Population">
+	        :population  => "<xsl:value-of select="Population"/>",
+  </xsl:when>
+  <xsl:otherwise>
+	        :population  => "LEVEL",
+  </xsl:otherwise>
+</xsl:choose>
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,

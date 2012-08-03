@@ -53,6 +53,7 @@
   id ID #REQUIRED hidden (0 | 1) "0"
 	ratingValue CDATA "1"
 	stealable (true | false) "true"
+	taxable (true | false) "true"
 >
 
 <!--Settlements-->
@@ -117,7 +118,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, ProductionBonus*, Abilities)>
+<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, ProductionBonus*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED

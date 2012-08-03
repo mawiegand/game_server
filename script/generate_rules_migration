@@ -38,6 +38,7 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_base_production',            :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_tax_rate',        :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_bonus',           :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_buildings', :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_sciences',  :type => ':decimal', :options => { :default => 0.0 } }, 

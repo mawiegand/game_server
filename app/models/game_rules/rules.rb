@@ -99,6 +99,7 @@ class GameRules::Rules
           :id          => 0, 
           :symbolic_id => :resource_stone,
           :stealable   => true,
+          :stealable   => true,
           :rating_value=> 1,
           :name        => {
             
@@ -125,6 +126,7 @@ class GameRules::Rules
         {               #   resource_wood
           :id          => 1, 
           :symbolic_id => :resource_wood,
+          :stealable   => true,
           :stealable   => true,
           :rating_value=> 1,
           :name        => {
@@ -153,7 +155,8 @@ class GameRules::Rules
           :id          => 2, 
           :symbolic_id => :resource_fur,
           :stealable   => true,
-          :rating_value=> 1,
+          :stealable   => true,
+          :rating_value=> 2.0,
           :name        => {
             
             :de_DE => "Fell",
@@ -179,6 +182,7 @@ class GameRules::Rules
         {               #   resource_cash
           :id          => 3, 
           :symbolic_id => :resource_cash,
+          :stealable   => false,
           :stealable   => false,
           :rating_value=> 0,
           :name        => {
@@ -1119,6 +1123,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
@@ -1196,6 +1202,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1283,6 +1291,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1370,6 +1380,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1457,6 +1469,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
@@ -1544,6 +1558,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1634,6 +1650,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1711,6 +1729,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1797,6 +1817,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
@@ -1878,6 +1900,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -1955,6 +1979,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -2032,6 +2058,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -2110,6 +2138,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
@@ -2196,6 +2226,8 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
+	        :population  => "LEVEL",
+  
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,

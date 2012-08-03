@@ -25,14 +25,13 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
 
+  after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
   after_save  :propagate_score_changes                # does nothing on owner change
   after_save  :propagate_unlock_changes               # does nothing on owner change  
   after_save  :propagate_owner_changes                # corrects resource production, ranking scores, and unlock_counts on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
-
-
 
 
   def empire_unlock_fields 
@@ -49,17 +48,29 @@ class Settlement::Settlement < ActiveRecord::Base
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
     
+    tax_rate = nil
+    # determine local tax-rate
+    if type_id == 1  # fortress?
+      tax_rate = 0.20
+    else
+      if !location.region.fortress.nil?
+        tax_rate = location.region.fortress.tax_rate || 0.0
+      end
+    end
+    
     settlement = location.create_settlement({
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
       :type_id     => type_id,
-      :level       => 0,                           # new: start with level 0
+      :level       => 0,                          # new: start with level 0
       :founded_at  => DateTime.now,
       :founder_id  => owner.id,
       :owner_id    => owner.id,
       :alliance_id => owner.alliance_id,
       :alliance_tag=> owner.alliance_tag,
-      :owns_region => type_id == 1,  # fortress?
+      :owns_region => type_id == 1,               # fortress?
+      :tax_rate    => tax_rate,
+      :taxable     => type_id != 1,               # everything but fortresses are taxable
     })
     Military::Army.create_garrison_at(settlement)
     settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
@@ -220,6 +231,10 @@ class Settlement::Settlement < ActiveRecord::Base
 
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+    
+    new_score, new_levels = recalc_score_and_levels
+    check_and_apply_score(new_score)
+    check_and_apply_levels(new_levels)
 
     if self.changed?
       logger.info(">>> SAVING SETTLEMENT AFTER DETECTING ERRORS.")
@@ -352,6 +367,31 @@ class Settlement::Settlement < ActiveRecord::Base
         self.command_points = cp
       end
     end
+    
+    def recalc_score_and_levels
+      sc  = 0
+      lvls = 0
+      self.slots.each do |slot|
+        sc   += slot.population
+        lvls += slot.level   unless slot.building_id.blank?
+      end
+      return sc, lvls
+    end
+    
+    
+    def check_and_apply_score(sc)
+      if (self.score != sc) 
+        logger.warn(">>> SCORE RECALC DIFFERS. Old: #{self.score} Corrected: #{sc}.")
+        self.score = sc
+      end
+    end    
+  
+    def check_and_apply_levels(lvl)
+      if (self.level != lvl) 
+        logger.warn(">>> LEVEL RECALC DIFFERS. Old: #{self.level} Corrected: #{lvl}.")
+        self.level = lvl
+      end
+    end  
   
     ############################################################################
     #
@@ -530,6 +570,17 @@ class Settlement::Settlement < ActiveRecord::Base
     #
     #########################################################################
     
+    # this method is for propagating tax rate changes at the fortress to the
+    # taxed settlements in the same region
+    def propagate_taxrate
+      if self.owns_region? && self.tax_rate_changed?
+        self.region.settlements.each do |settlement|
+          if settlement != self
+            settlement.tax_rate = self.tax_rate
+          end
+        end
+      end
+    end
     
     # propagates local changes to the location, where some fields are mirrored
     # for performance reasons.

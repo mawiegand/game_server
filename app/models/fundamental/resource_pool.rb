@@ -133,16 +133,16 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     # updates the resource amounts if the rate changes with this write
     def update_resources_on_production_rate_changes
       if self.changed?
-        changed = false
-        totalProductionRate = 0;
+        changed = false 
+        weightedProductionRate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
-          totalProductionRate += self[attribute]
+          weightedProductionRate += self[attribute] * (resource_type[:rating_value] || 0) 
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
         end
-        update_resource_in_ranking(totalProductionRate) if changed
+        update_resource_in_ranking(weightedProductionRate) if changed
         update_resource_amount if changed  
       end    
       true

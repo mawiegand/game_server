@@ -85,6 +85,18 @@ class Settlement::Slot < ActiveRecord::Base
 
     Util::Formula.parse_from_formula(building_type[:abilities][:command_points]).apply(self.level)
   end
+  
+  # returns the population at the building
+  def population
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:population].blank?
+
+    Util::Formula.parse_from_formula(building_type[:population]).apply(self.level)
+  end
 
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
@@ -344,10 +356,28 @@ class Settlement::Slot < ActiveRecord::Base
   
   protected
   
+    def population_change(old_level, new_level)
+      building_id = self.building_id
+      if building_id.nil? && self.building_id_changed?
+        building_id = building_id_change[0]   # old value
+      end
+      if building_id.nil?   # best, we can do!
+        logger.error "Could not determine population change on slot #{ self.id}. Level changed from #{old_level} to #{new_level}."
+        return (new_level || 0) - (old_level || 0)
+      else  
+        building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+        return (new_level || 0) - (old_level || 0)       if building_type.nil?
+
+        formula = Util::Formula.parse_from_formula(building_type[:population])
+        return formula.difference(old_level, new_level)    || 0    # delta will be added, might be negative (that's abolutely ok)
+      end
+    end
+  
     def propagate_level_changes
       level_change = self.changes[:level] 
       if !level_change.nil? 
-        self.settlement.score = (self.settlement.score || 0) + (level_change[1] || 0) - (level_change[0] || 0)   # this will be replaced with a scoring-function
+        population_change     = population_change(level_change[0] || 0,  level_change[1] || 0)
+        self.settlement.score = (self.settlement.score || 0) + population_change                                 # this will be replaced with a scoring-function
         self.settlement.level = (self.settlement.level || 0) + (level_change[1] || 0) - (level_change[0] || 0)   # counts level
         self.settlement.save
       end
