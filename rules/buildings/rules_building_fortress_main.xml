@@ -23,7 +23,8 @@
   <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>     
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
-	   <GarrisonSizeBonus>LEVEL*50+MAX(LEVEL-9,0)*200</GarrisonSizeBonus>
+    <GarrisonSizeBonus>1000</GarrisonSizeBonus>
+    <ArmySizeBonus>1000</ArmySizeBonus>
     <CommandPoints>1</CommandPoints><!-- one for level 1, +1 for level 5, +1 for level 10-->
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>

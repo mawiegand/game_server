@@ -27,8 +27,8 @@
   <Production id="resource_stone">2</Production>        
   <Abilities> <!-- just for grouping -->
     <CommandPoints>1+1*FLOOR(LEVEL/4)</CommandPoints>
-    <GarrisonSizeBonus>4*(LEVEL*50+MAX(0,LEVEL-10)*100)</GarrisonSizeBonus>
-    <ArmySizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</ArmySizeBonus>
+    <GarrisonSizeBonus>1000</GarrisonSizeBonus>
+    <ArmySizeBonus>1000</ArmySizeBonus>
     <UnlockQueue  queue="queue_buildings" />
     <UnlockGarrison level="2" />
   </Abilities>

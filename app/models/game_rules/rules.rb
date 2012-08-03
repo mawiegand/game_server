@@ -1171,7 +1171,9 @@ class GameRules::Rules
 
             :command_points => "1",
 
-            :garrison_size_bonus => "LEVEL*50+MAX(LEVEL-9,0)*200",
+            :garrison_size_bonus => "1000",
+
+            :army_size_bonus => "1000",
     
           },
 
@@ -1529,9 +1531,9 @@ class GameRules::Rules
 
             :command_points => "1+1*FLOOR(LEVEL/4)",
 
-            :garrison_size_bonus => "4*(LEVEL*50+MAX(0,LEVEL-10)*100)",
+            :garrison_size_bonus => "1000",
 
-            :army_size_bonus => "LEVEL*50+MAX(0,LEVEL-10)*100",
+            :army_size_bonus => "1000",
     
           },
 
