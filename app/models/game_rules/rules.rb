@@ -99,7 +99,7 @@ class GameRules::Rules
           :id          => 0, 
           :symbolic_id => :resource_stone,
           :stealable   => true,
-          :stealable   => true,
+          :taxable     => true,
           :rating_value=> 1,
           :name        => {
             
@@ -127,7 +127,7 @@ class GameRules::Rules
           :id          => 1, 
           :symbolic_id => :resource_wood,
           :stealable   => true,
-          :stealable   => true,
+          :taxable     => true,
           :rating_value=> 1,
           :name        => {
             
@@ -155,7 +155,7 @@ class GameRules::Rules
           :id          => 2, 
           :symbolic_id => :resource_fur,
           :stealable   => true,
-          :stealable   => true,
+          :taxable     => true,
           :rating_value=> 2.0,
           :name        => {
             
@@ -183,7 +183,7 @@ class GameRules::Rules
           :id          => 3, 
           :symbolic_id => :resource_cash,
           :stealable   => false,
-          :stealable   => false,
+          :taxable     => false,
           :rating_value=> 0,
           :name        => {
             

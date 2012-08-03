@@ -65,7 +65,7 @@ end %>
 <% settlement_settlement.attributes.each do |attribute, value| 
   if attribute.start_with?('resource_') && attribute.end_with?('_capacity') %>
     <td><%= prefix = attribute[0..(attribute.rindex('_'))]
-     "#{settlement_settlement[prefix+'production_rate']} = #{settlement_settlement[prefix+'base_production']} *  #{settlement_settlement[prefix+'production_bonus']*100+100}% (#{settlement_settlement[prefix+'production_bonus_buildings']},#{settlement_settlement[prefix+'production_bonus_sciences']},#{settlement_settlement[prefix+'production_bonus_alliance']},#{settlement_settlement[prefix+'production_bonus_effects']},#{settlement_settlement[prefix+'production_bonus_global_effects']})"
+     "#{settlement_settlement[prefix+'production_rate']} = #{settlement_settlement[prefix+'base_production']} *  #{settlement_settlement[prefix+'production_bonus']*100+100}% (#{settlement_settlement[prefix+'production_bonus_buildings']},#{settlement_settlement[prefix+'production_bonus_sciences']},#{settlement_settlement[prefix+'production_bonus_alliance']},#{settlement_settlement[prefix+'production_bonus_effects']},#{settlement_settlement[prefix+'production_bonus_global_effects']}) + #{settlement_settlement[prefix+'production_tax_rate']} (tax)"
      %></td>
 <%end
 end %>

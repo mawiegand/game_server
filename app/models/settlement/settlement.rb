@@ -13,7 +13,7 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :training_queues, :class_name => "Training::Queue", :foreign_key => "settlement_id",      :inverse_of => :settlement
   
   
-  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :score, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
+  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
   attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
@@ -105,7 +105,7 @@ class Settlement::Settlement < ActiveRecord::Base
     level             ||= 1
     defense_bonus     = 0     if defense_bonus.nil?
     morale            = 1.0   if morale.nil?
-    tax_rate          = 0.1   if tax_rate.nil? && owns_region
+    tax_rate          = 0.2   if tax_rate.nil? && owns_region
     taxable           = !owns_region
     command_points    = 0     if command_points.nil?
     besieged          = false if besieged.nil?
@@ -187,7 +187,7 @@ class Settlement::Settlement < ActiveRecord::Base
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s
       update_resource_production_bonus(base)
-      update_resource_production_rate(base)
+      update_resource_production_rate(base, (resource_type[:taxable] || false) && !self.owns_region? )
     end
     true
   end  
@@ -551,8 +551,14 @@ class Settlement::Settlement < ActiveRecord::Base
        
     # recaclucates and sets the present production rate according to the present
     # base production and the boni according to rate = base * (1+bonus) .    
-    def update_resource_production_rate(base)
-      self[base+"_production_rate"] = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
+    # the option tax_it controls whether or not the local tax_rate should be deducted
+    # of the production.
+    def update_resource_production_rate(base, tax_it)
+      total_before_tax = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
+      if (tax_it)
+        self[base+"_production_tax_rate"] = -(self.tax_rate || 0.0) * total_before_tax
+      end
+      self[base+"_production_rate"] = total_before_tax + self[base+"_production_tax_rate"]
       true
     end
     

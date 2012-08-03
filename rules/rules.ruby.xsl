@@ -192,7 +192,7 @@ end
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :stealable   => <xsl:value-of select="@stealable"/>,
-          :stealable   => <xsl:value-of select="@taxable"/>,
+          :taxable     => <xsl:value-of select="@taxable"/>,
           :rating_value=> <xsl:value-of select="@ratingValue"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
