@@ -677,6 +677,8 @@ ActiveRecord::Schema.define(:version => 20120803141019) do
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
   end
 
   create_table "settlement_slots", :force => true do |t|

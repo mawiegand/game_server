@@ -98,6 +98,30 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:population]).apply(self.level)
   end
 
+  # returns the army size bonus the building on this slot provides
+  def army_size_bonus
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:abilities][:army_size_bonus].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:army_size_bonus]).apply(self.level)
+  end
+
+  # returns the garrison size bonus the building on this slot provides
+  def garrison_size_bonus
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:abilities][:garrison_size_bonus].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:garrison_size_bonus]).apply(self.level)
+  end
+
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
   # (= does not check the rules). calls all necesary handlers to
@@ -260,6 +284,12 @@ class Settlement::Slot < ActiveRecord::Base
       end
       if !building_type[:abilities][:command_points].blank?
         propagate_evaluatable_settlement_ability(:command_points, building_type[:abilities][:command_points], old_level, new_level)
+      end
+      if !building_type[:abilities][:army_size_bonus].blank?
+        propagate_evaluatable_settlement_ability(:army_size_max, building_type[:abilities][:army_size_bonus], old_level, new_level)
+      end
+      if !building_type[:abilities][:garrison_size_bonus].blank?
+        propagate_evaluatable_settlement_ability(:garrison_size_max, building_type[:abilities][:garrison_size_bonus], old_level, new_level)
       end
       if !building_type[:abilities][:unlock_garrison].blank?
         propagate_unlock(:settlement_unlock_garrison_count, building_type[:abilities][:unlock_garrison], old_level, new_level)

@@ -5,7 +5,7 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hall</Name>
   <Description lang="de_DE">
-    <p>Die allererste Hütte in der Siedlung eghört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p>
+    <p>Die allererste Hütte in der Siedlung gehört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p>
   <p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p> 
   </Description>
   <Description lang="en_US">
@@ -27,7 +27,8 @@
   <Production id="resource_stone">2</Production>        
   <Abilities> <!-- just for grouping -->
     <CommandPoints>1+1*FLOOR(LEVEL/4)</CommandPoints>
-    <GarrisonSizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</GarrisonSizeBonus>
+    <GarrisonSizeBonus>4*(LEVEL*50+MAX(0,LEVEL-10)*100)</GarrisonSizeBonus>
+    <ArmySizeBonus>LEVEL*50+MAX(0,LEVEL-10)*100</ArmySizeBonus>
     <UnlockQueue  queue="queue_buildings" />
     <UnlockGarrison level="2" />
   </Abilities>
