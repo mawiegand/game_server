@@ -1164,6 +1164,8 @@ class GameRules::Rules
             :unlock_garrison => 1,            
 
             :command_points => "1",
+
+            :garrison_size_bonus => "LEVEL*50+MAX(LEVEL-9,0)*200",
     
           },
 
@@ -1450,7 +1452,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die allererste Hütte in der Siedlung eghört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p><p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p>",
+            :de_DE => "<p>Die allererste Hütte in der Siedlung gehört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p><p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p>",
   
             :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
@@ -1512,6 +1514,10 @@ class GameRules::Rules
             :unlock_garrison => 2,            
 
             :command_points => "1+1*FLOOR(LEVEL/4)",
+
+            :garrison_size_bonus => "4*(LEVEL*50+MAX(0,LEVEL-10)*100)",
+
+            :army_size_bonus => "LEVEL*50+MAX(0,LEVEL-10)*100",
     
           },
 

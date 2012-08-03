@@ -24,6 +24,7 @@ class Military::Army < ActiveRecord::Base
     
   before_save    :update_mode  
   before_save    :update_rank
+  before_save    :update_units
   after_save     :update_experience_ranking
   before_destroy :remove_from_experience_ranking 
 
@@ -461,6 +462,13 @@ class Military::Army < ActiveRecord::Base
       end
 
       true
+    end
+    
+    # reduces units evenly when army_size_max is reduced
+    def update_units
+      if self.size_present > self.size_max
+        logger.debug '-----> reduce units'
+      end
     end
     
     # before destroy handler that removes this army from the experience ranking

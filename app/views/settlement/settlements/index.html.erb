@@ -20,6 +20,8 @@ end %>
     <th>Command points</th>
     <th>Armies count</th>
     <th>Garrison</th>
+    <th>Armies Size Max</th>
+    <th>Garrison Size Max</th>
     <th>Besieged</th>
 <% Settlement::Settlement.new.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>
@@ -52,6 +54,8 @@ end %>
     <td><%= settlement_settlement.command_points %></td>
     <td><%= settlement_settlement.armies_count %></td>
     <td><%= settlement_settlement.garrison_id %></td>
+    <td><%= settlement_settlement.army_size_max %></td>
+    <td><%= settlement_settlement.garrison_size_max %></td>
     <td><%= settlement_settlement.besieged %></td>
 <% settlement_settlement.attributes.each do |attribute, value| 
   if attribute.start_with? 'settlement_queue' %>

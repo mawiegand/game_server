@@ -536,6 +536,8 @@ end
 </xsl:if>
 <xsl:apply-templates select="UnlockGarrison" />    
 <xsl:apply-templates select="CommandPoints" />    
+<xsl:apply-templates select="GarrisonSizeBonus" />    
+<xsl:apply-templates select="ArmySizeBonus" />    
 <xsl:apply-templates select="UnlockDiplomacy" />    
           },
 </xsl:template>
@@ -572,6 +574,14 @@ end
 
 <xsl:template match="CommandPoints">
             :command_points => "<xsl:apply-templates />",
+</xsl:template>
+
+<xsl:template match="GarrisonSizeBonus">
+            :garrison_size_bonus => "<xsl:apply-templates />",
+</xsl:template>
+
+<xsl:template match="ArmySizeBonus">
+            :army_size_bonus => "<xsl:apply-templates />",
 </xsl:template>
 
 

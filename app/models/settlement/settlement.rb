@@ -15,7 +15,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :armies_count, :resource_, :as => :owner
+  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
@@ -31,9 +31,8 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save  :propagate_owner_changes                # corrects resource production, ranking scores, and unlock_counts on owner change
   after_save  :propagate_information_to_region
   after_save  :propagate_information_to_location
-
-
-
+  after_save  :propagate_information_to_armies
+  after_save  :propagate_information_to_garrison
 
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
@@ -89,14 +88,16 @@ class Settlement::Settlement < ActiveRecord::Base
   
   # set default values in an after_initialize handler. 
   def init
-    level         ||= 1
-    defense_bonus = 0     if defense_bonus.nil?
-    morale        = 1.0   if morale.nil?
-    tax_rate      = 0.1   if tax_rate.nil? && owns_region
-    taxable       = !owns_region
-    command_points= 0     if command_points.nil?
-    besieged      = false if besieged.nil?
-    points        = 0     if points.nil?
+    level             ||= 1
+    defense_bonus     = 0     if defense_bonus.nil?
+    morale            = 1.0   if morale.nil?
+    tax_rate          = 0.1   if tax_rate.nil? && owns_region
+    taxable           = !owns_region
+    command_points    = 0     if command_points.nil?
+    besieged          = false if besieged.nil?
+    points            = 0     if points.nil?
+    garrison_size_max = 0     if garrison_size_max.nil?
+    army_size_max     = 0     if army_size_max.nil?
   end
   
 
@@ -180,7 +181,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def update_resource_bonus_on_owner_change
     owner_change = self.changes[:owner_id]
     if !owner_change.blank?
-      logger.info ('Running resource bonus owner-change handler on settlement ID#{self.id}.');
+      logger.info 'Running resource bonus owner-change handler on settlement ID#{self.id}.'
       pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_character_id(owner_change[1])  # the pool of the new owner or nil
       
       GameRules::Rules.the_rules().resource_types.each do |resource_type|
@@ -220,6 +221,12 @@ class Settlement::Settlement < ActiveRecord::Base
 
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+
+    n_garrison_size_max = recalc_garrison_size_max
+    check_and_apply_garrison_size_max(n_garrison_size_max)
+
+    n_army_size_max = recalc_army_size_max
+    check_and_apply_army_size_max(n_army_size_max)
 
     if self.changed?
       logger.info(">>> SAVING SETTLEMENT AFTER DETECTING ERRORS.")
@@ -350,6 +357,36 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.command_points != cp) 
         logger.warn(">>> COMMAND POINTS RECALC DIFFERS. Old: #{self.command_points} Corrected: #{cp}.")
         self.command_points = cp
+      end
+    end
+  
+    def recalc_army_size_max
+      army_size = 0
+      self.slots.each do |slot|
+        army_size += slot.army_size_bonus
+      end
+      army_size    
+    end
+    
+    def check_and_apply_army_size_max(as)
+      if self.army_size_max != as 
+        logger.warn(">>> ARMY SIZE MAX RECALC DIFFERS. Old: #{self.army_size_max} Corrected: #{as}.")
+        self.army_size_max = as
+      end
+    end
+  
+    def recalc_garrison_size_max
+      garrison_size = 0
+      self.slots.each do |slot|
+        garrison_size += slot.garrison_size_bonus
+      end
+      garrison_size    
+    end
+    
+    def check_and_apply_garrison_size_max(gs)
+      if (self.garrison_size_max != gs) 
+        logger.warn(">>> GARRISON SIZE MAX RECALC DIFFERS. Old: #{self.garrison_size_max} Corrected: #{gs}.")
+        self.garrison_size_max = gs
       end
     end
   
@@ -607,6 +644,20 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
+    def propagate_information_to_armies
+      # :armies
+      self.armies.each do |army|
+        if !army.garrison
+          army.size_max = self.army_size_max
+          army.save
+        end
+      end
+    end
+    
+    def propagate_information_to_garrison
+      self.garrison_army.size_max = self.garrison_size_max
+      self.garrison_army.save
+    end
     
     ##########################################################################
     #
