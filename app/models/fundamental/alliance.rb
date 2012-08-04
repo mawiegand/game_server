@@ -5,8 +5,10 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :locations, :class_name => "Map::Location",              :foreign_key => "alliance_id"
   has_many   :regions,   :class_name => "Map::Region",                :foreign_key => "alliance_id"
   has_many   :shouts,    :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id", :order => "created_at DESC"
+  has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
   
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
+  
 
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 

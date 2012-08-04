@@ -4,10 +4,11 @@ class Ranking::AllianceRankingsController < ApplicationController
   # GET /ranking/alliance_rankings
   # GET /ranking/alliance_rankings.json
   def index
-    sort = "overall_score"
-    sort = "overall_score" if params[:sort]  == 'overall'
+    sort = "num_fortress"
+    sort = "num_fortress"   if params[:sort] == 'fortress'
+    sort = "overall_score"  if params[:sort] == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
-    sort = "num_members" if params[:sort]    == 'members'
+    sort = "num_members"    if params[:sort] == 'members'
 
     @ranking_alliance_rankings = Ranking::AllianceRanking.find(:all, :order => "#{sort} DESC")
     @title = "Alliance Ranking"

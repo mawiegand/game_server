@@ -266,9 +266,9 @@ class Fundamental::Character < ActiveRecord::Base
   def propagate_fortress_count_changes
     fortress_count_change = self.changes[:fortress_count]
     if !fortress_count_change.nil?
-      if !self.alliance.nil? && !self.alliance.ranking.nil?
-        self.alliance.ranking.num_fortress = (self.alliance.ranking.num_fortress || 0) + (fortress_count_change[1] || 0) - (fortress_count_change[0] || 0)
-        self.alliance.ranking.save
+      if !self.ranking.nil?
+        self.ranking.num_fortress = (self.ranking.num_fortress || 0) + (fortress_count_change[1] || 0) - (fortress_count_change[0] || 0)
+        self.ranking.save
       end
     end
     true

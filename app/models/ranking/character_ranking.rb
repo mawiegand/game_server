@@ -49,6 +49,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
         fields_to_propagate = [
           :resource_score,
           :overall_score,
+          :num_fortress,
         ] 
       
         set_clause = ""
@@ -79,6 +80,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
         fields_to_propagate = [
           :resource_score,
           :overall_score,
+          :num_fortress,
         ] 
       
         fields_to_propagate.each do |field|

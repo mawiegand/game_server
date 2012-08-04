@@ -819,7 +819,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
 
-    
+    # propagates score changes to old and new owner (Fundamtal::Character) and adapts the
+    # fortress_count counter appropriately
     def propagate_score_on_changed_possession
       owner_change = self.changes[:owner_id]
       if !owner_change.blank?
@@ -836,6 +837,9 @@ class Settlement::Settlement < ActiveRecord::Base
           
         old_owner.score = (old_owner.score || 0) - old_value   unless old_owner.nil?
         new_owner.score = (new_owner.score || 0) + new_value   unless new_owner.nil? 
+        
+        old_owner.fortress_count = (old_owner.fortress_count || 0) - 1   unless old_owner.nil? || self.type_id != 1
+        new_owner.fortress_count = (new_owner.fortress_count || 0) + 1   unless new_owner.nil? || self.type_id != 1
 
         old_owner.save   unless old_owner.nil?
         new_owner.save   unless new_owner.nil?
