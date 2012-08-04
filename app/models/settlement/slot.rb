@@ -395,7 +395,7 @@ class Settlement::Slot < ActiveRecord::Base
         logger.error "Could not determine population change on slot #{ self.id}. Level changed from #{old_level} to #{new_level}."
         return (new_level || 0) - (old_level || 0)
       else  
-        building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+        building_type = GameRules::Rules.the_rules().building_types[building_id]
         return (new_level || 0) - (old_level || 0)       if building_type.nil?
 
         formula = Util::Formula.parse_from_formula(building_type[:population])
