@@ -18,6 +18,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id"
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id"
+  has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", 1]
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
@@ -25,6 +26,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
+  after_save  :propagate_fortress_count_changes
   
 
   @identifier_regex = /[a-z]{16}/i 
@@ -261,4 +263,18 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
 
+  def propagate_fortress_count_changes
+    fortress_count_change = self.changes[:fortress_count]
+    if !fortress_count_change.nil?
+      if !self.alliance.nil? && !self.alliance.ranking.nil?
+        self.alliance.ranking.num_fortress = (self.alliance.ranking.num_fortress || 0) + (fortress_count_change[1] || 0) - (fortress_count_change[0] || 0)
+        self.alliance.ranking.save
+      end
+    end
+    true
+  end
+  
+  
 end
+
+
