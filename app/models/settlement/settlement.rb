@@ -705,18 +705,21 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     def propagate_information_to_armies
-      # :armies
-      self.armies.each do |army|
-        if !army.garrison
-          army.size_max = self.army_size_max
-          army.save
+      if self.army_size_max_changed?
+        self.armies.each do |army|
+          if !army.garrison
+            army.size_max = self.army_size_max
+            army.save
+          end
         end
       end
     end
     
     def propagate_information_to_garrison
-      self.garrison_army.size_max = self.garrison_size_max
-      self.garrison_army.save
+      if self.garrison_size_max_changed? && !self.garrison_army.nil?
+        self.garrison_army.size_max = self.garrison_size_max
+        self.garrison_army.save
+      end
     end
     
     ##########################################################################

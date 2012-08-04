@@ -466,9 +466,9 @@ class Military::Army < ActiveRecord::Base
     
     # reduces units evenly when army_size_max is reduced
     def update_units
-#      if self.size_present > self.size_max    # ATTENTION: EITHER USE A DEFAULT VALUE AND NULL => FALSE OR DO A CORRECT CHECK HERE!!!!
-#        logger.debug '-----> reduce units'
-#      end
+      if !self.size_present.blank? && !self.size_max.blank? && self.size_present > self.size_max
+        logger.debug '-----> reduce units'
+      end
     end
     
     # before destroy handler that removes this army from the experience ranking
