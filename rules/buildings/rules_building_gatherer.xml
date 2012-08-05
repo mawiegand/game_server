@@ -25,7 +25,7 @@
   <Production id="resource_stone">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)</Production>        
   <Production id="resource_wood">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.25+0.5)</Production>        
   <Production id="resource_fur">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+(MIN(LEVEL,11)-MIN(LEVEL,10))*7.5*POW(LEVEL,1.33))*0.125+0.5)</Production>         
-  <Production id="resource_cash">(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48</Production>        
+  <Production id="resource_cash">(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48.0+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48.0</Production>        
   <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))/1.5+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
   </Abilities>

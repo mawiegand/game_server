@@ -1617,7 +1617,7 @@ class GameRules::Rules
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48",
+                :formula            => "(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48.0+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48.0",
               },
             
           ],
