@@ -1167,6 +1167,8 @@ class GameRules::Rules
 
             ],
 
+            :defense_bonus => "0.2*LEVEL",
+
             :unlock_garrison => 1,            
 
             :command_points => "1",
@@ -1526,6 +1528,8 @@ class GameRules::Rules
               },
 
             ],
+
+            :defense_bonus => "0.1*LEVEL",
 
             :unlock_garrison => 2,            
 
