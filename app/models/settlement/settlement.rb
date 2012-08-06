@@ -265,6 +265,8 @@ class Settlement::Settlement < ActiveRecord::Base
       logger.info(">>> SETTLEMENT OK.")
     end
     
+    check_and_repair_queues
+    
     true      
   end
 
@@ -353,7 +355,7 @@ class Settlement::Settlement < ActiveRecord::Base
       logger.error "Could not speed up queue of unkown type #{queue_type[:category]}."
     end
     
-    raise InternalServerError.new('Could not find queue of type #{queue_type_id}') if queue.nil?
+    raise InternalServerError.new("Could not find queue of type #{queue_type[:id]}, #{queue_type[:category]}") if queue.nil?
     queue.add_speedup(origin_type, delta)
     queue.save
     true
@@ -450,6 +452,34 @@ class Settlement::Settlement < ActiveRecord::Base
     #  UPDATING PRODUCTION QUEUES 
     #
     ############################################################################     
+    
+    def check_and_repair_queues
+      queue_types = GameRules::Rules.the_rules().queue_types
+      
+      queue_types.each do |queue_type|                   # must test it against every queue
+        if queue_type[:domain] == :settlement
+          unlocks = self[queue_type[:unlock_field]]     
+          
+          queue = nil 
+          if (queue_type[:category] == :queue_category_construction)
+            queue = Construction::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+          elsif (queue_type[:category] == :queue_category_training)
+            queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+          else
+            logger.warn "UNKNOWN QUEUE TYPE in recalculation of queues."
+          end     
+          
+          if queue.nil? && unlocks >= 1       # need to create a queue
+            create_queue(queue_type)
+            logger.warn(">>> MISSING QUEUE CRETATED. Settlement id #{ self.id }, queue type id #{ queue_type[:id] }.")
+          elsif !queue.nil? && unlocks <= 0   # need to destroy a queue
+            destroy_queue(queue_type)
+            logger.warn(">>> ORPHANE QUEUE DESTROYED. Settlement id #{ self.id }, queue type id #{ queue_type[:id] }.")
+          end
+        end
+      end
+      return true
+    end
   
     def manage_queues_as_needed
       if self.changed?
@@ -458,10 +488,16 @@ class Settlement::Settlement < ActiveRecord::Base
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
-              if change[0] == 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
+              if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
                 create_queue(queue)
-              elsif change[0] >= 1 && change[1] == 0    # updaetd from >=1 to 0 -> lock!
+              elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
                 destroy_queue(queue)
+              elsif change[1] >= 1
+                existing_queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue[:id])
+                if !existing_queue.nil?
+                  logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
+                  create_queue(queue)
+                end
               end
             end
           end
