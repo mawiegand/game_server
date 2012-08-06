@@ -7,7 +7,7 @@ class Map::Region < ActiveRecord::Base
   has_many :locations,         :class_name => "Location",               :foreign_key => "region_id",   :inverse_of => :region, :order => :slot,        :dependent => :destroy
   has_one  :fortress_location, :class_name => "Location",               :foreign_key => "region_id",   :inverse_of => :region, :conditions => 'slot = 0'
   has_one  :fortress,          :class_name => "Settlement::Settlement", :foreign_key => "region_id",   :inverse_of => :region, :conditions => ['owns_region = ?', true]
-  has_many :settlements,       :class_name => "Settlement::Settlement", :foreign_key => 'location_id', :inverse_of => :region
+  has_many :settlements,       :class_name => "Settlement::Settlement", :foreign_key => 'region_id',   :inverse_of => :region
   has_many :armies,            :class_name => "Military::Army",         :foreign_key => "region_id"
   
   has_many :battles,           :class_name => "Military::Battle", :inverse_of => :region

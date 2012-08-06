@@ -15,7 +15,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_rate, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
+  attr_readable *readable_attributes(:ally),    :tax_rate, :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
@@ -26,6 +26,7 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
+  after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
   after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
   after_save  :propagate_score_changes                # does nothing on owner change
   after_save  :propagate_unlock_changes               # does nothing on owner change  
@@ -45,6 +46,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def alliance_unlock_fields 
     []
   end  
+
 
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -102,7 +104,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   # set default values in an after_initialize handler. 
   def init
-    level             ||= 1
+    level           ||= 1
     defense_bonus     = 0     if defense_bonus.nil?
     morale            = 1.0   if morale.nil?
     tax_rate          = 0.2   if tax_rate.nil? && owns_region
@@ -114,6 +116,9 @@ class Settlement::Settlement < ActiveRecord::Base
     army_size_max     = 0     if army_size_max.nil?
   end
   
+  def tax_rate_change_possible?
+    self.tax_changed_at.blank? || self.tax_changed_at + 1.minutes < Time.now
+  end  
 
   ############################################################################
   #
@@ -226,6 +231,13 @@ class Settlement::Settlement < ActiveRecord::Base
     
     boni = recalc_local_resource_production_boni
     check_and_apply_local_resource_production_boni(boni)
+    
+    if (self.owns_region?)
+      propagate_taxrate(true)
+      tax_income = recalc_tax_income
+      check_and_apply_tax_income(tax_income)
+      self.save if self.changed?
+    end
     
     unlocks = recalc_queue_unlocks
     check_and_apply_queue_unlocks(unlocks)
@@ -563,6 +575,35 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
 
+
+    def recalc_tax_income
+      resource_types = GameRules::Rules.the_rules().resource_types
+      incomes    = Array.new(resource_types.count, 0)
+      return incomes unless self.owns_region?
+      
+      self.region.settlements.each do |settlement|
+        if (settlement != self)
+          GameRules::Rules.the_rules().resource_types.each do |resource_type|
+            field = resource_type[:symbolic_id].to_s+'_production_tax_rate'
+            incomes[resource_type[:id]] += -settlement[field]  # spendings on settlements are income at fortress
+          end
+        end
+      end
+      return incomes
+    end
+    
+    def check_and_apply_tax_income(incomes)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        field = resource_type[:symbolic_id].to_s+'_production_tax_rate'
+        present = self[field]
+        recalc  = incomes[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> TAX INCOME RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[field] = recalc
+        end
+      end    
+    end
     
     def recalc_resource_production_base
       resource_types = GameRules::Rules.the_rules().resource_types
@@ -618,11 +659,15 @@ class Settlement::Settlement < ActiveRecord::Base
     
     # this method is for propagating tax rate changes at the fortress to the
     # taxed settlements in the same region
-    def propagate_taxrate
+    def propagate_taxrate(reportChange = false)
       if self.owns_region? && self.tax_rate_changed?
         self.region.settlements.each do |settlement|
           if settlement != self
+            if (reportChange && settlement.tax_rate != self.tax_rate)
+              logger.warn(">>> LOCAL TAX RATE DIFFERS for settlement #{settlement.id}. Old: #{settlement.tax_rate} Corrected: #{self.tax_rate}.")
+            end            
             settlement.tax_rate = self.tax_rate
+            settlement.save
           end
         end
       end
@@ -650,6 +695,21 @@ class Settlement::Settlement < ActiveRecord::Base
         self.region.save
       end
       return true
+    end
+    
+    def propagate_tax_changes_to_fortress
+      return true    if self.owns_region?
+      changed = false
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        attribute = resource_type[:symbolic_id].to_s()+'_production_tax_rate'
+        if !self.changes[attribute].nil?
+          changed = true
+          change = self.changes[attribute]
+          delta = change[1] - change[0]   # new - old value
+          self.region.fortress[attribute] = (self.region.fortress[attribute] || 0.0) + (-delta)   # the fortress gains what is deducted here
+        end
+      end
+      self.region.fortress.save if changed  # only save character and resource pool, if there hase been a change!
     end
     
     def propagate_changes_to_resource_pool
