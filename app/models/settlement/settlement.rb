@@ -117,7 +117,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def tax_rate_change_possible?
-    self.tax_changed_at.blank? || self.tax_changed_at + 1.minutes < Time.now
+    self.tax_changed_at.blank? || self.tax_changed_at + 1.hours < Time.now
   end  
 
   ############################################################################
