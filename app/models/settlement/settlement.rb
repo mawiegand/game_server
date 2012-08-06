@@ -355,9 +355,9 @@ class Settlement::Settlement < ActiveRecord::Base
       logger.error "Could not speed up queue of unkown type #{queue_type[:category]}."
     end
     
-    if (queue.nil?)
+    if queue.nil?
       if self[queue_type[:unlock_field]] >= 1
-        logger.warn "Could not find queue of type #{queue_type[:id]}, #{queue_type[:category]} for settlement #{ self.id } to apply speedup although queue unlocked: #{self[queue_type[:unlock_field]]}.")
+        logger.warn "Could not find queue of type #{queue_type[:id]}, #{queue_type[:category]} for settlement #{ self.id } to apply speedup although queue unlocked: #{self[queue_type[:unlock_field]]}."
       end
     else 
       queue.add_speedup(origin_type, delta)
