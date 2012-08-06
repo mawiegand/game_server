@@ -344,7 +344,7 @@ class Settlement::Slot < ActiveRecord::Base
     delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
     queue_type = GameRules::Rules.the_rules().queue_types[rule[:queue_type_id]]
     
-    if rule[:domain] == :settlement
+    if rule[:domain]    == :settlement
       self.settlement.propagate_speedup_to_queue(:building, queue_type, delta)
     elsif rule[:domain] == :character 
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
