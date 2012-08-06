@@ -18,10 +18,10 @@
   <Flavour lang="de_DE">
     <p>Kämpft gegen andere Einheiten.</p>
   </Flavour>
-  <Cost id="resource_stone" round="true">30</Cost>  
-  <Cost id="resource_wood" round="true">60</Cost>    
-  <Cost id="resource_fur" round="true">45</Cost>    
-  <ProductionTime shortenable="true">1200</ProductionTime>  
+  <Cost id="resource_stone" round="true">20</Cost>  
+  <Cost id="resource_wood" round="true">40</Cost>    
+  <Cost id="resource_fur" round="true">30</Cost>    
+  <ProductionTime shortenable="true">600</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>
