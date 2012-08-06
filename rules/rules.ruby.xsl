@@ -543,6 +543,7 @@ end
 <xsl:apply-templates select="UnlockQueue" />
             ],
 </xsl:if>
+<xsl:apply-templates select="DefenseBonus" />    
 <xsl:apply-templates select="UnlockGarrison" />    
 <xsl:apply-templates select="CommandPoints" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
@@ -579,6 +580,10 @@ end
 <xsl:if test="@foundAllianceLevel">
             :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
 </xsl:if>
+</xsl:template>
+
+<xsl:template match="DefenseBonus">
+            :defense_bonus => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="CommandPoints">

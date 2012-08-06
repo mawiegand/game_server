@@ -78,7 +78,7 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus* )>
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus? )>
 
 <!ELEMENT UnlockGarrison EMPTY>
 <!ATTLIST UnlockGarrison 
@@ -106,6 +106,8 @@
 <!ELEMENT CommandPoints (#PCDATA)>
 
 <!ELEMENT GarrisonSizeBonus (#PCDATA)>
+
+<!ELEMENT DefenseBonus (#PCDATA)>
 
 <!ELEMENT ArmySizeBonus (#PCDATA)>
 
