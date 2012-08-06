@@ -14,6 +14,8 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     raise BadRequestError.new('no garrison at location') if garrison_army.nil?    
     raise BadRequestError.new('not owner of location') unless location.owner == current_character
     raise BadRequestError.new('not owner of garrison') unless garrison_army.owner == current_character
+    raise ForbiddenError.new('garrison is not idle')   unless garrison_army.mode == Military::Army::MODE_IDLE
+    raise ForbiddenError.new('garrison is fighting')   unless garrison_army.battle_id.nil?
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       if !@action[unit_type[:db_field]].nil? && @action[unit_type[:db_field]].to_i < 0

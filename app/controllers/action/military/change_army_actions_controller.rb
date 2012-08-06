@@ -20,6 +20,15 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
     raise BadRequestError.new('army at settlement not found') if visible_army.nil?
     raise BadRequestError.new('not owner of visible army') unless visible_army.owner == current_character
     
+    raise ForbiddenError.new('garrison is not idle')   unless garrison_army.mode == Military::Army::MODE_IDLE
+    raise ForbiddenError.new('garrison is fighting')   unless garrison_army.battle_id.nil?
+
+    raise ForbiddenError.new('army is not idle')   unless visible_army.mode == Military::Army::MODE_IDLE
+    raise ForbiddenError.new('army is fighting')   unless visible_army.battle_id.nil?
+    
+    raise ForbiddenError.new('army is not at location of garrison')   unless visible_army.location_id == garrison_army.location_id
+
+    
     units_to_add = {}
     units_to_reduce = {}
     
