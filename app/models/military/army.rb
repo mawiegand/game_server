@@ -56,7 +56,7 @@ class Military::Army < ActiveRecord::Base
       alliance_id:  settlement.alliance_id,
       alliance_tag: settlement.alliance_tag,
       home_settlement_name: settlement.name,
-      home_settlement_id: settlement.id,
+      home_settlement_id:   settlement.id,
       ap_max:       4,
       ap_present:   0,
       ap_seconds_per_point: 3600*6,

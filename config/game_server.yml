@@ -1,7 +1,7 @@
 defaults: &defaults
   base_time_factor: 60                    # duration of a minute in seconds; can be used to speed-up all operations
   movement_duration: 15                   # base-time of a movement in minutes 
-  ap_regeneration_duration: 360           # time needed to regenerate a single action point in minutes
+  ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
   
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
 
