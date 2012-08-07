@@ -31,7 +31,7 @@
     <ArmySizeBonus>1000</ArmySizeBonus>
     <UnlockQueue  queue="queue_buildings" />
     <UnlockGarrison level="2" />
-    <DefenseBonus>0.2*LEVEL</DefenseBonus>
+    <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
 </Building>
   
