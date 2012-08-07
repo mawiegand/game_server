@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:wackadoo/awe_native_extensions.git
-  revision: 4b9459ce9ab9e0b164179dfa702a04e5430f9e30
+  revision: 0a63c2e7e42fff67cd819b7fe14ac640f57309ab
   specs:
-    awe_native_extensions (0.0.14)
+    awe_native_extensions (0.0.15)
 
 GEM
   remote: http://rubygems.org/
@@ -151,7 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awe_native_extensions (>= 0.0.14)!
+  awe_native_extensions (>= 0.0.15)!
   capistrano
   coffee-rails (~> 3.1.1)
   gravatar_image_tag
