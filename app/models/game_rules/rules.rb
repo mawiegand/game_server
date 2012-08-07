@@ -780,6 +780,19 @@ class GameRules::Rules
             
           },
 
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_stud',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+          ],          
+
 
         },              #   END OF Ostrich Riders
         {               #   Battering Ram
