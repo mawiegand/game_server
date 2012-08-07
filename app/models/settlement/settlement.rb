@@ -248,6 +248,9 @@ class Settlement::Settlement < ActiveRecord::Base
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
     
+    n_defense_bonus = recalc_defense_bonus
+    check_and_apply_defense_bonus(n_defense_bonus)    
+    
     new_score, new_levels = recalc_score_and_levels
     check_and_apply_score(new_score)
     check_and_apply_levels(new_levels)
@@ -381,6 +384,21 @@ class Settlement::Settlement < ActiveRecord::Base
     #  UPDATING ABILITIES  
     #
     ############################################################################     
+
+    def recalc_defense_bonus
+      df = 0
+      self.slots.each do |slot|
+        df += slot.defense_bonus
+      end
+      df    
+    end
+    
+    def check_and_apply_defense_bonus(bonus)
+      if (self.defense_bonus != bonus) 
+        logger.warn(">>> DEFENSE BONUS RECALC DIFFERS. Old: #{self.defense_bonus} Corrected: #{bonus}.")
+        self.defense_bonus = bonus
+      end
+    end
     
     def recalc_command_points
       cp = 0

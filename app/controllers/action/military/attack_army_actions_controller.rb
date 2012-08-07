@@ -13,11 +13,11 @@ class Action::Military::AttackArmyActionsController < ApplicationController
 
     raise ForbiddenError.new('tried to attack with foreign army')          unless attacker.owner_id == current_character_id 
 
-    raise ForbiddenError.new('tried to attack own army')                   unless attacker.owner_id != defender.owner_id
+    raise ForbiddenError.new('tried to attack own army')                   if attacker.owner_id == defender.owner_id
 
-    raise ForbiddenError.new('attacker is already moving or fighting')     if attacker.fighting?
+    raise ForbiddenError.new('attacker is already moving or fighting')     if attacker.fighting? && !attacker.garrison?  # garrison may attack another army! (presently, because there's no wegerecht)
 
-    attacker.consume_ap                                          # raises a BadAccessError if no aps are available
+    attacker.consume_ap         unless attacker.garrison?                                    # raises a BadAccessError if no aps are available
     Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
     
     respond_to do |format|
