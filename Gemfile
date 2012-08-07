@@ -15,12 +15,12 @@ gem 'gravatar_image_tag'
 
 group :production do
   gem 'pg'
-	gem 'awe_native_extensions', '>= 0.0.14', :git => "git@github.com:wackadoo/awe_native_extensions.git"
+	gem 'awe_native_extensions', '>= 0.0.15', :git => "git@github.com:wackadoo/awe_native_extensions.git"
 end
 
 group :ticker_development do
   gem 'pg'
-	gem 'awe_native_extensions', '>= 0.0.14', :git => "git@github.com:wackadoo/awe_native_extensions.git"
+	gem 'awe_native_extensions', '>= 0.0.15', :git => "git@github.com:wackadoo/awe_native_extensions.git"
 end
 
 group :development do

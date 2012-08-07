@@ -552,8 +552,8 @@ class GameRules::Rules
                 
           },
           :attack      => 17,
-          :armor       => 12,
-          :hitpoints   => 90,
+          :armor       => 2,
+          :hitpoints   => 60,
 
           :overrunnable => true,
 
@@ -1167,7 +1167,7 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.2*LEVEL",
+            :defense_bonus => "0.5*LEVEL",
 
             :unlock_garrison => 1,            
 
@@ -1529,7 +1529,7 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.1*LEVEL",
+            :defense_bonus => "0.2*LEVEL",
 
             :unlock_garrison => 2,            
 

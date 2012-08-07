@@ -70,12 +70,21 @@ class Ticker::BattleHandler
   end
   
   def fill_awe_faction(faction, awe_faction)
+    settlement = nil
     faction.participants.each do |participant|
+      if participant.army.garrison?                   # if a garrison army is participating on the side of the defenders
+        settlement = participant.army.home
+      end
+    end
+    
+    def_modifier  = 1.0 
+    def_modifier += settlement.defense_bonus    unless settlement.nil?
 
+    faction.participants.each do |participant|
       awe_army = Battle::Army.new(participant.army.id)
       raise InternalServerError.new('could not create an instance of Battle::Army (awe_native_extension).') if awe_army.nil?
       unless participant.retreated
-        fill_awe_army(participant, awe_army)
+        fill_awe_army(participant, awe_army, def_modifier)
         awe_faction.addArmy(awe_army)
       end
     end
@@ -84,7 +93,7 @@ class Ticker::BattleHandler
   end
   
   
-  def fill_awe_army(participant, awe_army)
+  def fill_awe_army(participant, awe_army, def_modifier=1.0)
     rules = GameRules::Rules.the_rules
     
     rules.unit_types.each do | unit_type |
@@ -92,7 +101,7 @@ class Ticker::BattleHandler
         awe_unit = Battle::Unit.new
         raise InternalServerError.new('could not create an instance of Battle::Unit (awe_native_extension).') if awe_unit.nil?
         
-        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit, participant)
+        fill_awe_unit(participant.army.details[unit_type[:db_field]], unit_type, awe_unit, participant, def_modifier)
         awe_army.addUnit(awe_unit)
 
       end
@@ -105,7 +114,7 @@ class Ticker::BattleHandler
   # rules) and the awe object to be filled.
   #
   # TODO: here we need the owner as the army as well and must calculate all modified values (perhaps should be calculated inside Military::Army)
-  def fill_awe_unit(number, unit_type, awe_unit, participant)
+  def fill_awe_unit(number, unit_type, awe_unit, participant, def_modifier=1.0)
     
     rank = (participant.army.rank || 0) 
     
@@ -122,10 +131,10 @@ class Ticker::BattleHandler
       awe_unit.baseDamage = unit_type[:attack]
       awe_unit.criticalDamage = unit_type[:critical_hit_damage]
     end
-    awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (rank+1)    # critical hit chance is multiplied with the rank
+    awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (rank+1)     # critical hit chance is multiplied with the rank
     awe_unit.hitpoints = unit_type[:hitpoints]
     awe_unit.initiative = unit_type[:initiative]
-    awe_unit.armor = unit_type[:armor]
+    awe_unit.armor = unit_type[:armor] * def_modifier                        # armor * def-modifier (range 1.0 to 5.0)
     
     #effectiveness
     unit_type[:effectiveness].each {
