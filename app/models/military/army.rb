@@ -147,6 +147,30 @@ class Military::Army < ActiveRecord::Base
     !self.battle_id.nil? && self.battle_id > 0
   end
   
+  def critical_damage_bonus
+    logger.debug "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
+    puts "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
+    ((self.rank || 0) / 4).floor * 1   # 1 additonal crit damage per rank
+  end
+
+  def critical_hit_chance_modifier    
+    logger.debug "ARMY RANK MODIFICATON: crit hit modifier: #{ (self.rank || 0) * 0.5 }."
+    puts "ARMY RANK MODIFICATON: crit hit modifier: #{ (self.rank || 0) * 0.5 }."
+    (self.rank || 0) * 0.5
+  end
+    
+  def attack_modifier
+    logger.debug "ARMY RANK MODIFICATON: att modifier: #{ (self.rank || 0) * 0.05 }."
+    puts "ARMY RANK MODIFICATON: att modifier: #{ (self.rank || 0) * 0.05 }."
+    (self.rank || 0) * 0.05     
+  end     
+
+  def hitpoints_modifier
+    logger.debug "ARMY RANK MODIFICATON: hitpoints modifier: #{ (self.rank || 0) * 0.02 }."
+    puts "ARMY RANK MODIFICATON: hitpoints modifier: #{ (self.rank || 0) * 0.02 }."
+    (self.rank || 0) * 0.02     
+  end 
+  
   def relation_to(other_army)
     if other_army.nil?
       return Fundamental::Relation::RELATION_TYPE_UNKNOWN
@@ -425,22 +449,25 @@ class Military::Army < ActiveRecord::Base
       end
       true
     end
+
+    def self.rank_progression 
+      return @rank_progression    if !@rank_progression.blank?
+      @rank_progression = [ 0, 30, 60 ]   # thresholds for rank 0 1 2   
+      (3..19).each { |rank| @rank_progression[rank] = @rank_progression[rank-1] + @rank_progression[rank-2] }
+      logger.debug "Calculated rank progression: #{@rank_progression.inspect}."
+      @rank_progression
+    end
     
     # update the rank on changed experience. Dirty-handler makes sure
     # the rank attribute is only updated in the database in case
     # it actually changed.
     def update_rank
-      if self.exp.blank? 
-        return true
-      elsif self.exp > 10000
-        self.rank = 3
-      elsif self.exp > 1000
-        self.rank = 2
-      elsif self.exp > 100
-        self.rank = 1
-      else
-        self.rank = 0
+      return true      if self.exp.blank? 
+      
+      while  (self.rank || 0) +1 < 20 && Military::Army.rank_progression[(self.rank || 0) +1] < (self.exp || 0) do
+        self.rank = (self.rank || 0) + 1
       end
+
       true
     end
     

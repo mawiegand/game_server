@@ -116,7 +116,7 @@ class Ticker::BattleHandler
   # TODO: here we need the owner as the army as well and must calculate all modified values (perhaps should be calculated inside Military::Army)
   def fill_awe_unit(number, unit_type, awe_unit, participant, def_modifier=1.0)
     
-    rank = (participant.army.rank || 0) 
+    army = participant.army 
     
     awe_unit.numUnitsAtStart = number
     awe_unit.unitTypeId = unit_type[:id]
@@ -128,20 +128,19 @@ class Ticker::BattleHandler
       awe_unit.baseDamage = 0
       awe_unit.criticalDamage = 0
     else
-      awe_unit.baseDamage = unit_type[:attack]
-      awe_unit.criticalDamage = unit_type[:critical_hit_damage]
+      awe_unit.baseDamage = unit_type[:attack]                     
+      awe_unit.criticalDamage = unit_type[:critical_hit_damage]    + army.critical_damage_bonus
     end
-    awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (rank+1)     # critical hit chance is multiplied with the rank
-    awe_unit.hitpoints = unit_type[:hitpoints]
+    awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (1.0+army.critical_hit_chance_modifier)     # critical hit chance is multiplied with the rank
+    awe_unit.hitpoints = unit_type[:hitpoints]                     * (1.0+army.hitpoints_modifier)
     awe_unit.initiative = unit_type[:initiative]
     awe_unit.armor = unit_type[:armor] * def_modifier                        # armor * def-modifier (range 1.0 to 5.0)
     
     #effectiveness
-    unit_type[:effectiveness].each {
-      |s,e|
+    unit_type[:effectiveness].each do |s,e|
       cat_id = get_unit_category_id(s)
-      awe_unit.setEffectivenessFor(cat_id, e + rank * 0.05)                  # each rank adds 5 percent to the effectiveness of the army (against all categories)
-    }
+      awe_unit.setEffectivenessFor(cat_id, e                       + army.attack_modifier)               
+    end
         
     awe_unit
   end
