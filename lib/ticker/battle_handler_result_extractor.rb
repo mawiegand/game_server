@@ -30,12 +30,6 @@ class Ticker::BattleHandler
       return false
     end
     
-    #update the regions & location
-    participant.army.region.armies_changed_at = DateTime.now
-    participant.army.region.save
-    participant.army.location.armies_changed_at = DateTime.now
-    participant.army.location.save
-
     #check if there was an retreat into an battle that is already happening
     started_battles = participant.army.check_for_battle_at(location)
 

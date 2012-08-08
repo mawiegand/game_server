@@ -43,10 +43,6 @@ class Ticker::MovementHandler
         return
       end
       runloop.say "Movement completed, cleaning up and destroying event."      
-      action.region.armies_changed_at = DateTime.now
-      action.region.save
-      action.location.armies_changed_at = DateTime.now
-      action.location.save
       started_battles = action.army.check_for_battle_at(target_location)
       runloop.say "Started #{started_battles} battles automatically."      
       action.destroy
