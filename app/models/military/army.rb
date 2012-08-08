@@ -202,7 +202,7 @@ class Military::Army < ActiveRecord::Base
     end
     
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      if !unit_type[:overrunnable] && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+      if !unit_type[:overrunnable] && !defender.details[unit_type[:db_field]].nil? && defender.details[unit_type[:db_field]] > 0
         return false
       end
     end
