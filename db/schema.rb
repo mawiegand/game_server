@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806101544) do
+ActiveRecord::Schema.define(:version => 20120808092335) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -242,6 +242,7 @@ ActiveRecord::Schema.define(:version => 20120806101544) do
     t.datetime "updated_at"
     t.datetime "armies_changed_at"
     t.integer  "right_of_way"
+    t.integer  "settlement_score",   :default => 0, :null => false
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -281,6 +282,7 @@ ActiveRecord::Schema.define(:version => 20120806101544) do
     t.datetime "armies_changed_at"
     t.integer  "fortress_id"
     t.integer  "settlement_type_id"
+    t.integer  "settlement_score",   :default => 0, :null => false
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"

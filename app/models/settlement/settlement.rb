@@ -13,8 +13,8 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :training_queues, :class_name => "Training::Queue", :foreign_key => "settlement_id",      :inverse_of => :settlement
   
   
-  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
-  attr_readable *readable_attributes(:default), :defense_bonus, :morale,                               :as => :ally 
+  attr_readable :id, :type_id, :region_id, :location_id, :node_id, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
+  attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
   attr_readable *readable_attributes(:ally),    :tax_rate, :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
@@ -735,8 +735,9 @@ class Settlement::Settlement < ActiveRecord::Base
     # propagates local changes to the location, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_location
-      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && !self.location.nil?
+      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.score_changed? || self.type_id_changed?) && !self.location.nil?
         self.location.set_owner_and_alliance(owner_id, alliance_id)
+        self.location.settlement_score   = self.score   if (self.location.settlement_score   != self.score)
         self.location.settlement_level   = self.level   if (self.location.settlement_level   != self.level)
         self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
         self.location.save
@@ -749,6 +750,7 @@ class Settlement::Settlement < ActiveRecord::Base
     def propagate_information_to_region
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
         self.region.set_owner_and_alliance(owner_id, alliance_id)
+        self.region.settlement_score   = self.score     if (self.region.settlement_score   != self.score)
         self.region.settlement_level   = self.level     if (self.region.settlement_level   != self.level)
         self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
         self.region.save
