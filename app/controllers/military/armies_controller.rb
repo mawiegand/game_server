@@ -10,8 +10,7 @@ class Military::ArmiesController < ApplicationController
       :alliance_id, :alliance_tag, :ap_present, :ap_max, :mode, :stance, :size_present, :size_max, 
       :strength, :battle_id, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at]
   )
-
-  @@aggregate_fields = [:id, :garrison, :owner_id, :alliance_id, :stance, :strength, :updated_at]
+  @@aggregate_fields = [:id, :garrison, :owner_id, :alliance_id, :npc, :stance, :strength, :updated_at]
  
   # Returns a list of armies in a region or at a location. There are three 
   # modes to request the list for JSON:

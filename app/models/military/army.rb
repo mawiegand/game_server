@@ -1,7 +1,7 @@
 class Military::Army < ActiveRecord::Base
   
-  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id",            :touch => true
-  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id",              :touch => true
+  belongs_to :location,           :class_name => "Map::Location",                    :foreign_key => "location_id",            :inverse_of => :armies
+  belongs_to :region,             :class_name => "Map::Region",                      :foreign_key => "region_id",              :inverse_of => :armies
 
   belongs_to :home,               :class_name => "Settlement::Settlement",           :foreign_key => "home_settlement_id",     :inverse_of => :armies, :counter_cache => :armies_count
   
@@ -26,11 +26,11 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_rank
   before_save    :update_units
   after_save     :update_experience_ranking
+  after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
 
-  
+  after_create   :touch_map  
   after_create   :touch_home_settlement
-  after_create   :touch_map
   after_destroy  :touch_home_settlement
 
     
@@ -494,5 +494,38 @@ class Military::Army < ActiveRecord::Base
         self.location.touch
       end
     end    
+    
+    # updates the armies_changed_at  timestamp in regions and locations. That
+    # timestamp is used in case the client fetches armies for a location and 
+    # region in order to determine whether to send data or a not_modified reply.
+    def propagate_change_to_map
+      return true       if self.garrison?    # don't update change timestamp for armies inside settlements (would trigger to much client updates due to unit training.)
+      
+      change_timestamp = Time.now
+      
+      logger.debug "Set armies changed timestamp at present region and location."
+      if !self.region.nil?
+        self.region.armies_changed_at   = change_timestamp
+        self.region.save
+      end
+      if !self.location.nil?
+        self.location.armies_changed_at = change_timestamp
+        self.location.save
+      end
+      if self.region_id_changed? && !self.region_id_change[0].blank?
+        logger.debug "Set armies changed timestamp at old region."
+        old_region = Map::Region.find_by_id(self.region_id_change[0])
+        old_region.armies_changed_at = change_timestamp    unless old_region.nil?
+        old_region.save
+      end      
+      if self.location_id_changed? && !self.location_id_change[0].blank?
+        logger.debug "Set armies changed timestamp at old location."
+        old_location = Map::Location.find_by_id(self.location_id_change[0])
+        old_location.armies_changed_at = change_timestamp    unless old_location.nil?
+        old_location.save
+      end
+      
+      true
+    end
   
 end
