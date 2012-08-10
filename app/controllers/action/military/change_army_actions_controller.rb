@@ -31,7 +31,7 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
     
     units_to_add = {}
     units_to_reduce = {}
-    
+        
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       quantity = @action[unit_type[:db_field]].to_i      
       if quantity > 0
@@ -40,7 +40,7 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
         units_to_reduce[unit_type[:db_field]] = -quantity
       end
     end
-  
+      
     raise BadRequestError.new('not enough units in garrison army') unless garrison_army.contains?(units_to_add)
     raise BadRequestError.new('not enough units in visible army') unless visible_army.contains?(units_to_reduce)
     

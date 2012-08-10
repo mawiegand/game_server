@@ -25,6 +25,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_mode  
   before_save    :update_rank
   before_save    :update_units
+  before_save    :check_size
   after_save     :update_experience_ranking
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
@@ -64,7 +65,7 @@ class Military::Army < ActiveRecord::Base
       kills:        0,
       victories:    0,
       stance:       0,
-      size_max:     1200,
+      size_max:     settlement.garrison_size_max || 1000,   # 1000 is default size
       exp:          0,
       rank:         0,
       garrison:     true,
@@ -396,7 +397,7 @@ class Military::Army < ActiveRecord::Base
       ap_seconds_per_point:  Military::Army.regeneration_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
-      size_max: 100,
+      size_max: location.settlement.arm_size_max || 1000,  # 1000 is default size
       exp: 0,
       rank: 0,
       ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
@@ -553,6 +554,10 @@ class Military::Army < ActiveRecord::Base
       end
       
       true
+    end
+    
+    def check_size
+      return self.size_present <= self.size_max
     end
   
 end

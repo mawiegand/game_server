@@ -17,11 +17,14 @@ class Action::Military::CreateArmyActionsController < ApplicationController
     raise ForbiddenError.new('garrison is not idle')   unless garrison_army.mode == Military::Army::MODE_IDLE
     raise ForbiddenError.new('garrison is fighting')   unless garrison_army.battle_id.nil?
     
+    army_size = 0
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       if !@action[unit_type[:db_field]].nil? && @action[unit_type[:db_field]].to_i < 0
         raise BadRequestError.new('negative unit quantity')
       end
+      army_size += @action[unit_type[:db_field]] || 0
     end
+    raise ForbiddenError.new('army would be larger than the aloud size') if location.settlement.army_size_max
     
     raise BadRequestError.new('not enough units in army') unless garrison_army.contains?(@action)
     raise BadRequestError.new('not enough command points') unless location.settlement.command_points_available?
