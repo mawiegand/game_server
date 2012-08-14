@@ -397,7 +397,7 @@ class Military::Army < ActiveRecord::Base
       ap_seconds_per_point:  Military::Army.regeneration_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
-      size_max: location.settlement.arm_size_max || 1000,  # 1000 is default size
+      size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
       exp: 0,
       rank: 0,
       ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
@@ -423,6 +423,9 @@ class Military::Army < ActiveRecord::Base
         details[unit_type[:db_field]] = 0
       end
     end
+    
+    # update from details before save to be sure that size_present is set
+    army.update_from_details
     
     army.save
   end
