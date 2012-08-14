@@ -704,19 +704,6 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_stud',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
 
         },              #   END OF Babysaurus
         {               #   Ostrich Riders
@@ -1209,7 +1196,7 @@ class GameRules::Rules
             
             :en_US => "<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>",
   
-            :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
+            :de_DE => "<p>Hier ist kein Platz für für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
                 
           },
           :description => {
