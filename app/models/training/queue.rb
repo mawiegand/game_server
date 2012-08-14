@@ -80,6 +80,22 @@ class Training::Queue < ActiveRecord::Base
     jobs.sort_by(&:position)
   end
 
+  def create_queue_check_event
+    # check if there are already current check events for this queue
+    if Event::Event.where(event_type: :training_queue_check, local_event_id: self.id, locked_at: nil).empty?
+      #create entry for event table
+      new_event = Event::Event.new(
+          character_id: self.settlement.owner_id,   # get current character id
+          execute_at: DateTime.now.advance(:minutes => 2),
+          event_type: :training_queue_check,
+          local_event_id: self.id,                  # queue id as local event id
+      )
+      if !new_event.save  # this is the final step; this makes sure, something is actually executed
+        raise ArgumentError.new('could not create event for training queue check')
+      end
+    end
+  end
+
   protected
   
     def create_event_for_job(active_job)
@@ -92,22 +108,6 @@ class Training::Queue < ActiveRecord::Base
       )
       if !active_job.save  # this is the final step; this makes sure, something is actually executed
         raise ArgumentError.new('could not create event for active training job')
-      end
-    end
-  
-    def create_queue_check_event
-      # check if there are already current check events for this queue
-      if Event::Event.where(event_type: :training_queue_check, local_event_id: self.id, locked_at: nil).empty?
-        #create entry for event table
-        new_event = Event::Event.new(
-            character_id: self.settlement.owner_id,   # get current character id
-            execute_at: DateTime.now.advance(:minutes => 2),
-            event_type: :training_queue_check,
-            local_event_id: self.id,                  # queue id as local event id
-        )
-        if !new_event.save  # this is the final step; this makes sure, something is actually executed
-          raise ArgumentError.new('could not create event for training queue check')
-        end
       end
     end
   

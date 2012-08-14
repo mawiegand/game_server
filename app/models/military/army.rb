@@ -298,7 +298,7 @@ class Military::Army < ActiveRecord::Base
     self.size_max >= self.size_present + units_sum
   end
   
-  def max_size?
+  def full?
     self.size_max <= self.size_present
   end
   
