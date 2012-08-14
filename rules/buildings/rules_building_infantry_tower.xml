@@ -15,7 +15,7 @@
 	<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>
   </Flavour>
     <Flavour lang="de_DE">
-   <p>Hier ist kein Platz für für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
+   <p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>
   </Flavour>
   <Requirement id="building_fortress_fortification" min_level="2" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
