@@ -292,6 +292,11 @@ class Military::Army < ActiveRecord::Base
     end
     true
   end
+  
+  # checks if the given army has the max size to receive the quantity of units stated in 'units_sum'. 
+  def can_receive?(units_sum)
+    self.size_max >= self.size_present + units_sum
+  end  
 
   # checks if the given army contains at least one unit.
   def empty?

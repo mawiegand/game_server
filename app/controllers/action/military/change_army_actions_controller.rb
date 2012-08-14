@@ -31,6 +31,8 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
     
     units_to_add = {}
     units_to_reduce = {}
+    
+    unit_sum_to_add = 0
         
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       quantity = @action[unit_type[:db_field]].to_i      
@@ -39,14 +41,19 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
       elsif quantity < 0
         units_to_reduce[unit_type[:db_field]] = -quantity
       end
+      unit_sum_to_add += quantity
     end
-      
-    raise BadRequestError.new('not enough units in garrison army') unless garrison_army.contains?(units_to_add)
-    raise BadRequestError.new('not enough units in visible army') unless visible_army.contains?(units_to_reduce)
     
-    # werte von g army abziehen
-    garrison_army.reduce_units(@action)
-    visible_army.add_units(@action)
+    raise BadRequestError.new('not enough units in visible army') unless visible_army.contains?(units_to_reduce)
+    raise BadRequestError.new('not enough units in garrison army') unless garrison_army.contains?(units_to_add)
+    
+    raise BadRequestError.new('not enough space in visible army') unless visible_army.can_receive?(unit_sum_to_add)    
+    raise BadRequestError.new('not enough space in garrison army') unless garrison_army.can_receive?(-unit_sum_to_add)
+    
+    Military::Army.transaction do
+      garrison_army.reduce_units(@action)
+      visible_army.add_units(@action)
+    end
     
     visible_army.destroy if visible_army.empty?
 
