@@ -26,23 +26,25 @@
 
 
 <!-- Quest -->
-<!ELEMENT Quest (Description+, Flavour*, Requirement?, Reward*, RewardTest*, Message?)>
+<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Reward*, RewardTest*, Message?)>
 <!ATTLIST Quest id ID #REQUIRED>
 
 <!ELEMENT Requirement EMPTY>
-<!ATTLIST Requirement quest_id IDREF #REQUIRED>
+<!ATTLIST Requirement
+  quest IDREF #REQUIRED
+>
 
 <!ELEMENT Reward (#PCDATA)>
 <!ATTLIST Reward
-  type    CDATA #REQUIRED
-  type_id CDATA #REQUIRED
+  category CDATA #REQUIRED
+  type_id  CDATA #REQUIRED
 >
 
 <!ELEMENT RewardTest (#PCDATA)>
 <!ATTLIST RewardTest
-  type    CDATA #REQUIRED
-  type_id CDATA #REQUIRED
-  test    CDATA #REQUIRED
+  category CDATA #REQUIRED
+  type_id  CDATA #REQUIRED
+  test     CDATA #REQUIRED
 >
 
 <!ELEMENT Message (Subject, Body)>

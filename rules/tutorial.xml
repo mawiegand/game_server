@@ -13,16 +13,17 @@
   
   
   <Quest id="gatherer_level_1_build">
+    <Name>Startquest</Name>
     <Description lang="de_DE">
       <p>Beschreibung des 1. Quests auf deutsch.</p>
     </Description>
     <Description lang="en_US">
       <p>Beschreibung des Quests auf englisch.</p>
     </Description>
-    <Reward type="resource" type_id="resource_stone">20</Reward>  
-    <Reward type="resource" type_id="resource_wood">20</Reward>    
-    <Reward type="resource" type_id="resource_fur">20</Reward>
-    <RewardTest type="building" type_id="building_gatherer" test="level">>=1</RewardTest>
+    <Reward category="resource" type_id="resource_stone">20</Reward>  
+    <Reward category="resource" type_id="resource_wood">20</Reward>    
+    <Reward category="resource" type_id="resource_fur">20</Reward>
+    <RewardTest category="building" type_id="building_gatherer" test="level">>=1</RewardTest>
   </Quest>
   <Quest id="gatherer_level_2_build">
     <Description lang="de_DE">
@@ -31,11 +32,11 @@
     <Description lang="en_US">
       <p>Beschreibung des Quests auf englisch.</p>
     </Description>
-    <Requirement quest_id="gatherer_level_1_build" />
-    <Reward type="resource" type_id="resource_stone">40</Reward>  
-    <Reward type="resource" type_id="resource_wood">40</Reward>    
-    <Reward type="resource" type_id="resource_fur">40</Reward>
-    <RewardTest type="building" type_id="building_gatherer" test="level">>=2</RewardTest>
+    <Requirement quest="gatherer_level_1_build" />
+    <Reward category="resource" type_id="resource_stone">40</Reward>  
+    <Reward category="resource" type_id="resource_wood">40</Reward>    
+    <Reward category="resource" type_id="resource_fur">40</Reward>
+    <RewardTest category="building" type_id="building_gatherer" test="level">>=2</RewardTest>
   </Quest>
   <Quest id="gatherer_level_3_build">
     <Description lang="de_DE">
@@ -44,10 +45,10 @@
     <Description lang="en_US">
       <p>Beschreibung des Quests auf englisch.</p>
     </Description>
-    <Requirement quest_id="gatherer_level_2_build" />
-    <Reward type="resource" type_id="resource_stone">60</Reward>  
-    <Reward type="resource" type_id="resource_wood">60</Reward>    
-    <Reward type="resource" type_id="resource_fur">60</Reward>
-    <RewardTest type="building" type_id="building_gatherer" test="level">>=3</RewardTest>
+    <Requirement quest="gatherer_level_2_build" />
+    <Reward category="resource" type_id="resource_stone">60</Reward>  
+    <Reward category="resource" type_id="resource_wood">60</Reward>    
+    <Reward category="resource" type_id="resource_fur">60</Reward>
+    <RewardTest category="building" type_id="building_gatherer" test="level">>=3</RewardTest>
   </Quest>
 </Tutorial>
