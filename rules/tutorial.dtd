@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Tutorial (General, Quest*)>
+
+
+<!-- General -->
+<!ELEMENT General (Game, Version, Languages)>
+
+<!ELEMENT Game (#PCDATA)>
+<!ATTLIST Game 
+  branch CDATA #REQUIRED
+  tag    CDATA #IMPLIED
+>
+
+<!ELEMENT Version EMPTY>
+<!ATTLIST Version 
+  major  CDATA #REQUIRED
+  minor  CDATA #REQUIRED
+  build  CDATA #REQUIRED
+>
+
+<!--Languages-->
+<!ELEMENT Languages (Language*)>
+<!ELEMENT Language (#PCDATA)>
+<!ATTLIST Language locale ID #REQUIRED>
+
+
+<!-- Quest -->
+<!ELEMENT Quest (Description+, Flavour*, Requirement?, Reward*, RewardTest*, Message?)>
+<!ATTLIST Quest id ID #REQUIRED>
+
+<!ELEMENT Requirement EMPTY>
+<!ATTLIST Requirement quest_id IDREF #REQUIRED>
+
+<!ELEMENT Reward (#PCDATA)>
+<!ATTLIST Reward
+  type    CDATA #REQUIRED
+  type_id CDATA #REQUIRED
+>
+
+<!ELEMENT RewardTest (#PCDATA)>
+<!ATTLIST RewardTest
+  type    CDATA #REQUIRED
+  type_id CDATA #REQUIRED
+  test    CDATA #REQUIRED
+>
+
+<!ELEMENT Message (Subject, Body)>
+<!ELEMENT Subject (#PCDATA)>
+<!ELEMENT Body (p*)>
+
+
+<!--Common Leafs-->
+<!ELEMENT Description (p*)>
+<!ATTLIST Description lang IDREF "en_US">
+<!ELEMENT p (#PCDATA)>
+
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name lang IDREF "en_US">
+
+<!ELEMENT Flavour (#PCDATA)>
+<!ATTLIST Flavour lang IDREF "en_US">
+
+
+<!--entities-->
+<!ENTITY apst "&amp;#39;">
+<!ENTITY auml "&amp;auml;">
+<!ENTITY ouml "&amp;ouml;">
+<!ENTITY uuml "&amp;uuml;">
+<!ENTITY Auml "&amp;Auml;">
+<!ENTITY Ouml "&amp;Ouml;">
+<!ENTITY Uuml "&amp;Uuml;">
+<!ENTITY szlig "&amp;szlig;">
