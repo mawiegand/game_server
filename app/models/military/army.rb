@@ -25,7 +25,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_mode  
   before_save    :update_rank
   before_save    :update_units
-  before_save    :check_size
+
   after_save     :update_experience_ranking
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
@@ -296,7 +296,12 @@ class Military::Army < ActiveRecord::Base
   # checks if the given army has the max size to receive the quantity of units stated in 'units_sum'. 
   def can_receive?(units_sum)
     self.size_max >= self.size_present + units_sum
-  end  
+  end
+  
+  def max_size?
+    self.size_max <= self.size_present
+  end
+  
 
   # checks if the given army contains at least one unit.
   def empty?
@@ -563,9 +568,4 @@ class Military::Army < ActiveRecord::Base
       
       true
     end
-    
-    def check_size
-      return self.size_present <= self.size_max
-    end
-  
 end
