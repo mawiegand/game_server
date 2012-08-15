@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Tutorial (General, Quests)>
+
+
+<!-- General -->
+<!ELEMENT General (Game, Version, Languages)>
+
+<!ELEMENT Game (#PCDATA)>
+<!ATTLIST Game 
+  branch CDATA #REQUIRED
+  tag    CDATA #IMPLIED
+>
+
+<!ELEMENT Version EMPTY>
+<!ATTLIST Version 
+  major  CDATA #REQUIRED
+  minor  CDATA #REQUIRED
+  build  CDATA #REQUIRED
+>
+
+<!--Languages-->
+<!ELEMENT Languages (Language*)>
+<!ELEMENT Language (#PCDATA)>
+<!ATTLIST Language locale ID #REQUIRED>
+
+
+<!-- Quests -->
+<!ELEMENT Quests (Quest*)>
+
+<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Reward*, RewardTests, Message?)>
+<!ATTLIST Quest id ID #REQUIRED>
+
+<!ELEMENT Requirement EMPTY>
+<!ATTLIST Requirement
+  quest IDREF #REQUIRED
+>
+
+<!ELEMENT Reward (#PCDATA)>
+<!ATTLIST Reward
+  category CDATA #REQUIRED
+  type     CDATA #REQUIRED
+>
+
+<!ELEMENT RewardTests (BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, CustomTest*)>
+
+<!ELEMENT BuildingTest (#PCDATA)>
+<!ATTLIST BuildingTest
+  building  CDATA #REQUIRED
+  min_level CDATA #IMPLIED
+  min_count CDATA #IMPLIED
+>
+
+<!ELEMENT ConstructionQueueTest (#PCDATA)>
+<!ATTLIST ConstructionQueueTest
+  building  CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT TrainingQueueTest (#PCDATA)>
+<!ATTLIST TrainingQueueTest
+  unit      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT SettlementTest (#PCDATA)>
+<!ATTLIST SettlementTest
+  type      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT ArmyTest (#PCDATA)>
+<!ATTLIST ArmyTest
+  type      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT CustomTest (#PCDATA)>
+
+<!ELEMENT Message (Subject, Body)>
+<!ELEMENT Subject (#PCDATA)>
+<!ELEMENT Body (p*)>
+
+
+<!--Common Leafs-->
+<!ELEMENT Description (p*)>
+<!ATTLIST Description lang IDREF "en_US">
+<!ELEMENT p (#PCDATA)>
+
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name lang IDREF "en_US">
+
+<!ELEMENT Flavour (#PCDATA)>
+<!ATTLIST Flavour lang IDREF "en_US">
+
+
+<!--entities-->
+<!ENTITY apst "&amp;#39;">
+<!ENTITY auml "&amp;auml;">
+<!ENTITY ouml "&amp;ouml;">
+<!ENTITY uuml "&amp;uuml;">
+<!ENTITY Auml "&amp;Auml;">
+<!ENTITY Ouml "&amp;Ouml;">
+<!ENTITY Uuml "&amp;Uuml;">
+<!ENTITY szlig "&amp;szlig;">

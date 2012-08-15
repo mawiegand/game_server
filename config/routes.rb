@@ -1,10 +1,8 @@
 GameServer::Application.routes.draw do
-  
-
+ 
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
-
       namespace :game_rules do
         resource :rules, :only => [ :show ]
       end
@@ -32,8 +30,9 @@ GameServer::Application.routes.draw do
         
         resources :characters do
           resources :alliance_shouts
-          resource  :account,         :module => "shop",      :only => [ :show ]
-          resource  :resource_pool,                          :only => [ :show ] 
+          resource  :account,         :module => "shop",       :only => [ :show ]
+          resource  :resource_pool,                            :only => [ :show ] 
+          resource  :state,           :module => "tutorial",   :only => [ :show ] 
           resources :settlements,     :module => 'settlement'   
         end
         
@@ -190,6 +189,12 @@ GameServer::Application.routes.draw do
         resources :jobs
       end
       
+      namespace :tutorial do
+        resource :tutorial 
+        resources :states 
+        resources :quests
+      end
+
       resource :action, :only => [ :show ]
       
       resources :sessions, :module => :auth,    :only => [:new, :create, :destroy] # staff login to backend

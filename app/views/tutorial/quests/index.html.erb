@@ -1,0 +1,31 @@
+<h1>Listing tutorial_quests</h1>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>Quest</th>
+    <th>Status</th>
+    <th>Started at</th>
+    <th>Finished at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tutorial_quests.each do |tutorial_quest| %>
+  <tr>
+    <td><%= tutorial_quest.state_id %></td>
+    <td><%= tutorial_quest.quest_id %></td>
+    <td><%= tutorial_quest.status %></td>
+    <td><%= tutorial_quest.started_at %></td>
+    <td><%= tutorial_quest.finished_at %></td>
+    <td><%= link_to 'Show', tutorial_quest %></td>
+    <td><%= link_to 'Edit', edit_tutorial_quest_path(tutorial_quest) %></td>
+    <td><%= link_to 'Destroy', tutorial_quest, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quest', new_tutorial_quest_path %>

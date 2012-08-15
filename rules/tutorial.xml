@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tutorial SYSTEM "tutorial.dtd">
+<Tutorial>
+
+  <General>
+    <Game branch="development" tag="alpha">Wack-A-Doo</Game>
+    <Version major="0" minor="0" build="1" />
+    <Languages>
+      <Language locale="en_US">English (US)</Language>
+      <Language locale="de_DE">Deutsch</Language>
+    </Languages>
+  </General>
+  
+  <Quests>
+    <Quest id="quest_gatherer_level_1_build">
+      <Name>Startquest</Name>
+      <Description lang="de_DE">
+        <p>Beschreibung des 1. Quests auf deutsch.</p>
+      </Description>
+      <Description lang="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Reward category="resource" type="resource_stone">20</Reward>  
+      <Reward category="resource" type="resource_wood">20</Reward>    
+      <Reward category="resource" type="resource_fur">20</Reward>
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="1" />
+      </RewardTests>
+    </Quest>
+    <Quest id="quest_gatherer_level_2_build">
+      <Name>Zweite Quest</Name>
+      <Description lang="de_DE">
+        <p>Beschreibung des 2. Quests auf deutsch.</p>
+      </Description>
+      <Description lang="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Requirement quest="quest_gatherer_level_1_build" />
+      <Reward category="resource" type="resource_stone">40</Reward>  
+      <Reward category="resource" type="resource_wood">40</Reward>    
+      <Reward category="resource" type="resource_fur">40</Reward>
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="2" />
+      </RewardTests>
+    </Quest>
+    <Quest id="quest_gatherer_level_3_build">
+      <Name>Dritte Quest</Name>
+      <Description lang="de_DE">
+        <p>Beschreibung des 3. Quests auf deutsch.</p>
+      </Description>
+      <Description lang="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Requirement quest="quest_gatherer_level_2_build" />
+      <Reward category="resource" type="resource_stone">60</Reward>  
+      <Reward category="resource" type="resource_wood">60</Reward>    
+      <Reward category="resource" type="resource_fur">60</Reward>
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="3" min_count="2" />
+        <SettlementTest type="outpost" min_count="1" />
+        <ArmyTest type="garrison" min_count="1000" />
+        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+        <TrainingQueueTest unit="unit_thrower" min_count="2" />
+        <CustomTest>Muss noch überlegt werden...</CustomTest>
+      </RewardTests>
+    </Quest>
+  </Quests>
+</Tutorial>
