@@ -32,7 +32,7 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
-          resource  :state,           :module => "tutorial",   :only => [ :show ] 
+          resource  :tutorial_state,  :module => "tutorial",  :controller => "state",  :only => [ :show ] 
           resources :settlements,     :module => 'settlement'   
         end
         
