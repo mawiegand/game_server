@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808092335) do
+ActiveRecord::Schema.define(:version => 20120815205436) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -33,6 +33,31 @@ ActiveRecord::Schema.define(:version => 20120808092335) do
     t.datetime "target_reached_at"
     t.integer  "event_id"
     t.integer  "next_action_id"
+  end
+
+  create_table "backend_stats", :force => true do |t|
+    t.integer  "new_users"
+    t.integer  "dau"
+    t.integer  "wau"
+    t.integer  "mau"
+    t.integer  "active_users"
+    t.decimal  "churn_today"
+    t.decimal  "churn_week"
+    t.decimal  "churn_month"
+    t.integer  "dac"
+    t.integer  "wac"
+    t.integer  "mac"
+    t.integer  "du"
+    t.integer  "wu"
+    t.integer  "mu"
+    t.integer  "dc"
+    t.integer  "wc"
+    t.integer  "mc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dnu"
+    t.integer  "wnu"
+    t.integer  "mnu"
   end
 
   create_table "backend_users", :force => true do |t|

@@ -1,0 +1,98 @@
+
+<h1>Graphs</h1>
+
+<div class="chart" id="users"></div>
+<div class="chart" id="newUsers"></div>
+
+<div class="clear"></div>
+
+<script>
+  var users = new Dygraph(
+
+    document.getElementById("users"),
+
+    "Date, Daily, Weekly, Monthly \n"+
+<% @backend_stats.each do |backend_stat| %>
+    "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.du %>, <%= backend_stat.wu %>, <%= backend_stat.mu %>\n"+
+<%end%>
+    "",
+    {
+      legend: 'always',
+      title: 'Unique Users in Period'
+    }
+  );
+  
+  
+  var newNewUsers = new Dygraph(
+
+    document.getElementById("newUsers"),
+
+    "Date, Daily, Weekly, Monthly \n"+
+<% @backend_stats.each do |backend_stat| %>
+    "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.dnu %>, <%= backend_stat.wnu %>, <%= backend_stat.mnu %>\n"+
+<%end%>
+    "",
+    {
+      legend: 'always',
+      title: 'New Users in Period'
+    }
+  );  
+</script>
+
+
+<h1>Statistics</h1>
+
+<table>
+  <tr>
+    <th>Dau</th>
+    <th>Wau</th>
+    <th>Mau</th>
+    <th>Active users</th>
+    <th>Churn today</th>
+    <th>Churn week</th>
+    <th>Churn month</th>
+    <th>Dac</th>
+    <th>Wac</th>
+    <th>Mac</th>
+    <th>Users</th>
+    <th>New Users</th>
+    <th>Dc</th>
+    <th>Wc</th>
+    <th>Mc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @backend_stats.each do |backend_stat| %>
+  <tr>
+    <td><%= backend_stat.dau %></td>
+    <td><%= backend_stat.wau %></td>
+    <td><%= backend_stat.mau %></td>
+    <td><%= backend_stat.active_users %></td>
+    <td><%= backend_stat.churn_today %></td>
+    <td><%= backend_stat.churn_week %></td>
+    <td><%= backend_stat.churn_month %></td>
+    <td><%= backend_stat.dac %></td>
+    <td><%= backend_stat.wac %></td>
+    <td><%= backend_stat.mac %></td>
+    <td><%= backend_stat.du %>/<%= backend_stat.wu %>/<%= backend_stat.mu %></td>
+    <td><%= backend_stat.dnu %>/<%= backend_stat.wnu %>/<%= backend_stat.mnu %></td>
+    <td><%= backend_stat.dc %></td>
+    <td><%= backend_stat.wc %></td>
+    <td><%= backend_stat.mc %></td>
+    <td><%= link_to 'Show', backend_stat %></td>
+    <td><%= link_to 'Edit', edit_backend_stat_path(backend_stat) %></td>
+    <td><%= link_to 'Destroy', backend_stat, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stat', new_backend_stat_path %>
+
+
+<ul>
+  <li>Most stats are displayed for the last <b>day</b> / <b>week</b> / <b>month</b>.  
+</ul>

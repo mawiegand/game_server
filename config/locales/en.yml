@@ -11,6 +11,7 @@ en:
         category: Backend
         dashboard: Dashboard
         users: Users
+        stats: Stats
       rules:
         category: Rules
         all: All

@@ -1,0 +1,85 @@
+<%= form_for(@backend_stat) do |f| %>
+  <% if @backend_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@backend_stat.errors.count, "error") %> prohibited this backend_stat from being saved:</h2>
+
+      <ul>
+      <% @backend_stat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :new_users %><br />
+    <%= f.number_field :new_users %>
+  </div>
+  <div class="field">
+    <%= f.label :dau %><br />
+    <%= f.number_field :dau %>
+  </div>
+  <div class="field">
+    <%= f.label :wau %><br />
+    <%= f.number_field :wau %>
+  </div>
+  <div class="field">
+    <%= f.label :mau %><br />
+    <%= f.number_field :mau %>
+  </div>
+  <div class="field">
+    <%= f.label :active_users %><br />
+    <%= f.number_field :active_users %>
+  </div>
+  <div class="field">
+    <%= f.label :churn_today %><br />
+    <%= f.text_field :churn_today %>
+  </div>
+  <div class="field">
+    <%= f.label :churn_week %><br />
+    <%= f.text_field :churn_week %>
+  </div>
+  <div class="field">
+    <%= f.label :churn_month %><br />
+    <%= f.text_field :churn_month %>
+  </div>
+  <div class="field">
+    <%= f.label :dac %><br />
+    <%= f.number_field :dac %>
+  </div>
+  <div class="field">
+    <%= f.label :wac %><br />
+    <%= f.number_field :wac %>
+  </div>
+  <div class="field">
+    <%= f.label :mac %><br />
+    <%= f.number_field :mac %>
+  </div>
+  <div class="field">
+    <%= f.label :du %><br />
+    <%= f.number_field :du %>
+  </div>
+  <div class="field">
+    <%= f.label :wu %><br />
+    <%= f.number_field :wu %>
+  </div>
+  <div class="field">
+    <%= f.label :mu %><br />
+    <%= f.number_field :mu %>
+  </div>
+  <div class="field">
+    <%= f.label :dc %><br />
+    <%= f.number_field :dc %>
+  </div>
+  <div class="field">
+    <%= f.label :wc %><br />
+    <%= f.number_field :wc %>
+  </div>
+  <div class="field">
+    <%= f.label :mc %><br />
+    <%= f.number_field :mc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

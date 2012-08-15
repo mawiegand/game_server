@@ -1,6 +1,7 @@
 GameServer::Application.routes.draw do
   
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -16,8 +17,9 @@ GameServer::Application.routes.draw do
 
 
       namespace :backend do 
-        resources :users 
         resource  :dashboard, :controller => 'dashboard', :only => [:show, :create]
+        resources :users 
+        resources :stats 
       end
 
       namespace :effect do 
