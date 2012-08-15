@@ -46,7 +46,7 @@
 </xsl:template>
 
 <!-- Rules -->
-<xsl:template match="Template"># encoding: utf-8  
+<xsl:template match="Tutorial"># encoding: utf-8  
 
 require 'active_model'
 
@@ -75,7 +75,7 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types
+  attr_accessor :version, :quests
   
   def attributes 
     { 
@@ -149,7 +149,7 @@ end
 # ## QUESTS ##########################################################
   
       :quests => [  # ALL QUESTS
-<xsl:for-each select="QUEST">
+<xsl:for-each select="Quest">
         {               #   <xsl:value-of select="@id"/>
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
@@ -163,9 +163,8 @@ end
             <xsl:apply-templates select="Description" />              
           },          
 <xsl:if test="Requirement">
-          :requirements =>
+          :requirement =>
             <xsl:apply-templates select="Requirement" />
-          ,          
 </xsl:if>
 <xsl:if test="Reward">
           :rewards => [
@@ -188,23 +187,15 @@ end
 
 <xsl:template match="Reward">
             {
-              :symbolic_id => '<xsl:value-of select="@id" />',
-              :id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)" />,
-              :type => '<xsl:value-of select="translate(local-name(id(@id)), $uppercase, $smallcase)"/>',
-<xsl:if test="@min_level">
-              :min_level => <xsl:value-of select="@min_level" />,
-</xsl:if>
-<xsl:if test="@max_level">
-              :max_level => <xsl:value-of select="@max_level" />,
-</xsl:if>
+              :category => '<xsl:value-of select="@category" />',
+              :type => '<xsl:value-of select="@type" />',
             },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 <xsl:template match="RewardTest">
             {
-              :symbolic_id => '<xsl:value-of select="@id" />',
-              :id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)" />,
-              :type => '<xsl:value-of select="translate(local-name(id(@id)), $uppercase, $smallcase)"/>',
+              :category => '<xsl:value-of select="@category" />',
+              :type => '<xsl:value-of select="@type" />',
 <xsl:if test="@min_level">
               :min_level => <xsl:value-of select="@min_level" />,
 </xsl:if>
@@ -213,289 +204,6 @@ end
 </xsl:if>
             },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
-
-
-
-
-<xsl:template match="BuildingTypes">
-# ## BUILDING TYPES ##########################################################
-  
-      :building_types => [  # ALL BUILDING TYPES
-<xsl:for-each select="Building">
-        {               #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-					:category    => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
-          :db_field    => :<xsl:value-of select="@id"/>,
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-          :flavour     => {
-            <xsl:apply-templates select="Flavour" />              
-          },
-          :description => {
-            <xsl:apply-templates select="Description" />              
-          },
-          :hidden      => <xsl:value-of select="@hidden"/>,
-<xsl:if test="Position">
-	        :position    => <xsl:value-of select="Position"/>,
-</xsl:if>
-<xsl:choose>
-  <xsl:when test="Population">
-	        :population  => "<xsl:value-of select="Population"/>",
-  </xsl:when>
-  <xsl:otherwise>
-	        :population  => "LEVEL",
-  </xsl:otherwise>
-</xsl:choose>
-          :buyable     => <xsl:value-of select="@buyable"/>,
-          :demolishable=> <xsl:value-of select="@demolishable"/>,
-          :destructable=> <xsl:value-of select="@destructable"/>,
-<xsl:if test="Requirement">
-          :requirements=> [
-            <xsl:apply-templates select="Requirement" />
-          ],          
-</xsl:if>
-<xsl:if test="Cost">
-          :costs      => {
-            <xsl:apply-templates select="Cost" />
-          },
-</xsl:if>
-          :production_time => '<xsl:value-of select="ProductionTime"/>',
-          :production  => [
-            <xsl:for-each select="Production">
-              {
-                :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-                :symbolic_id        => :<xsl:value-of select="@id"/>,
-                :formula            => "<xsl:apply-templates/>",
-              },
-            </xsl:for-each>
-          ],
-          :production_bonus  => [
-            <xsl:for-each select="ProductionBonus">
-              {
-                :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-                :symbolic_id        => :<xsl:value-of select="@id"/>,
-                :formula            => "<xsl:apply-templates/>",
-              },
-            </xsl:for-each>
-          ],          
-<xsl:apply-templates select="Abilities" />
-        },              #   END OF <xsl:value-of select="Name"/>
-</xsl:for-each>
-      ],                # END OF BUILDING TYPES
-</xsl:template>
-
-
-<xsl:template match="Requirement">
-            {
-              :symbolic_id => '<xsl:value-of select="@id" />',
-              :id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)" />,
-              :type => '<xsl:value-of select="translate(local-name(id(@id)), $uppercase, $smallcase)"/>',
-<xsl:if test="@min_level">
-              :min_level => <xsl:value-of select="@min_level" />,
-</xsl:if>
-<xsl:if test="@max_level">
-              :max_level => <xsl:value-of select="@max_level" />,
-</xsl:if>
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
-
-
-<xsl:template match="Cost">
-            <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
-            </xsl:template> <!-- indentation needed for proper layout in output. -->
-
-
-<xsl:template match="BuildingCategories">
-  
-      :building_categories => [  # ALL BUILDING CATEGORIES
-<xsl:for-each select="BuildingCategory">
-        {               #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-          :description => {
-            <xsl:apply-templates select="Description" />              
-          },
-<xsl:if test="Position">
-	        :position    => <xsl:value-of select="Position"/>,
-</xsl:if>
-        },              #   END OF <xsl:value-of select="Name"/>
-</xsl:for-each>
-      ],                # END OF BUILDING CATEGORIES
-</xsl:template>
-
-
-
-<xsl:template match="SettlementTypes">
-# ## SETTLEMENT TYPES ########################################################
-  
-      :settlement_types => [  # ALL SETTLEMENT TYPES
-<xsl:for-each select="Settlement">
-        {               #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-          :description => {
-            <xsl:apply-templates select="Description" />              
-          },
-<xsl:if test="Position">
-	        :position    => <xsl:value-of select="Position"/>,
-</xsl:if>
-	        :conquerable => <xsl:value-of select="@conquerable"/>,
-	        :destroyable => <xsl:value-of select="@destroyable"/>,
-
-
-<xsl:if test="count(BuildingSlot)">
-          :building_slots => {
-            <xsl:for-each select="BuildingSlot">
-            <xsl:value-of select="@number"/> => {
-              :max_level => <xsl:value-of select="@max-level"/>,
-              <xsl:if test="@building">
-              :building  => <xsl:value-of select="count(id(@building)/preceding-sibling::*)"/>,
-              </xsl:if>
-              <xsl:if test="@level">
-              :level  => <xsl:value-of select="@level"/>,
-              </xsl:if>
-              :options   => [
-              <xsl:for-each select="BuildingOption">
-                <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
-              </xsl:for-each>
-              ],
-            },
-            </xsl:for-each>
-          },
-</xsl:if>
-
-
-        },              #   END OF <xsl:value-of select="Name"/>
-</xsl:for-each>
-      ],                # END OF SETTLEMENT TYPES
-</xsl:template>
-
-
-
-
-
-<xsl:template match="QueueTypes">
-# ## QUEUE TYPES #############################################################
-  
-      :queue_types => [  # ALL QUEUE TYPES
-<xsl:for-each select="Queue">
-        {               #   <xsl:value-of select="@id"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-          :unlock_field=> :<xsl:value-of select="@domain"/>_<xsl:value-of select="@id"/>_unlock_count,
-          :category_id => <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
-					:category    => :<xsl:value-of select="@category"/>,
-          :domain      => :<xsl:value-of select="@domain"/>,
-          :base_threads=> <xsl:value-of select="@base_threads"/>,
-          :base_slots  => <xsl:value-of select="@base_slots"/>,
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-          :produces    => [
-            <xsl:for-each select="ProductionCategory">
-              <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
-            </xsl:for-each>
-          ],
-        },              #   END OF <xsl:value-of select="@id"/>
-</xsl:for-each>
-      ],                # END OF QUEUE TYPES
-</xsl:template>
-
-
-
-
-<xsl:template match="Abilities">
-          :abilities   => {
-<xsl:if test="count(SpeedupQueue)">
-            :speedup_queue => [
-<xsl:apply-templates select="SpeedupQueue" />
-            ],
-</xsl:if>
-<xsl:if test="count(UnlockQueue)">
-            :unlock_queue => [
-<xsl:apply-templates select="UnlockQueue" />
-            ],
-</xsl:if>
-<xsl:apply-templates select="DefenseBonus" />    
-<xsl:apply-templates select="UnlockGarrison" />    
-<xsl:apply-templates select="CommandPoints" />    
-<xsl:apply-templates select="GarrisonSizeBonus" />    
-<xsl:apply-templates select="ArmySizeBonus" />    
-<xsl:apply-templates select="UnlockDiplomacy" />    
-          },
-</xsl:template>
-
-
-<xsl:template match="SpeedupQueue">
-              {
-                :queue_type_id     => <xsl:value-of select="count(id(@queue)/preceding-sibling::*)" />,
-                :queue_type_id_sym => :<xsl:value-of select="@queue" />,
-                :domain            => :<xsl:value-of select="@domain" />,
-                :speedup_formula   => "<xsl:apply-templates />",
-              },
-</xsl:template>
-
-
-<xsl:template match="UnlockQueue">
-              {
-                :queue_type_id     => <xsl:value-of select="count(id(@queue)/preceding-sibling::*)" />,
-                :queue_type_id_sym => :<xsl:value-of select="@queue" />,
-                :level             => <xsl:value-of select="@level" />,
-              },
-</xsl:template>
-
-<xsl:template match="UnlockGarrison">
-            :unlock_garrison => <xsl:value-of select="@level" />,            
-</xsl:template>
-
-<xsl:template match="UnlockDiplomacy">
-            :unlock_diplomacy     => <xsl:value-of select="@level" />,
-<xsl:if test="@foundAllianceLevel">
-            :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
-</xsl:if>
-</xsl:template>
-
-<xsl:template match="DefenseBonus">
-            :defense_bonus => "<xsl:apply-templates />",
-</xsl:template>
-
-<xsl:template match="CommandPoints">
-            :command_points => "<xsl:apply-templates />",
-</xsl:template>
-
-<xsl:template match="GarrisonSizeBonus">
-            :garrison_size_bonus => "<xsl:apply-templates />",
-</xsl:template>
-
-<xsl:template match="ArmySizeBonus">
-            :army_size_bonus => "<xsl:apply-templates />",
-</xsl:template>
-
-
-<xsl:template match="QueueCategories">
-  
-      :queue_categories => [  # ALL QUEUE CATEGORIES
-<xsl:for-each select="QueueCategory">
-        {               #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-        },              #   END OF <xsl:value-of select="Name"/>
-</xsl:for-each>
-      ],                # END OF BUILDING CATEGORIES
-</xsl:template>
-
-
-<xsl:template match="StartResource">
-            <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/> => <xsl:apply-templates />,
-</xsl:template>
 
 </xsl:stylesheet>
 

@@ -37,14 +37,15 @@
 <!ELEMENT Reward (#PCDATA)>
 <!ATTLIST Reward
   category CDATA #REQUIRED
-  type_id  CDATA #REQUIRED
+  type     CDATA #REQUIRED
 >
 
 <!ELEMENT RewardTest (#PCDATA)>
 <!ATTLIST RewardTest
-  category CDATA #REQUIRED
-  type_id  CDATA #REQUIRED
-  test     CDATA #REQUIRED
+  category  CDATA #REQUIRED
+  type      CDATA #REQUIRED
+  min_level CDATA #IMPLIED
+  max_level CDATA #IMPLIED
 >
 
 <!ELEMENT Message (Subject, Body)>
