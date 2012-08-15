@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!ELEMENT Tutorial (General, Quest*)>
+<!ELEMENT Tutorial (General, Quests)>
 
 
 <!-- General -->
@@ -25,8 +25,10 @@
 <!ATTLIST Language locale ID #REQUIRED>
 
 
-<!-- Quest -->
-<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Reward*, RewardTest*, Message?)>
+<!-- Quests -->
+<!ELEMENT Quests (Quest*)>
+
+<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Reward*, RewardTests, Message?)>
 <!ATTLIST Quest id ID #REQUIRED>
 
 <!ELEMENT Requirement EMPTY>
@@ -40,13 +42,40 @@
   type     CDATA #REQUIRED
 >
 
-<!ELEMENT RewardTest (#PCDATA)>
-<!ATTLIST RewardTest
-  category  CDATA #REQUIRED
-  type      CDATA #REQUIRED
+<!ELEMENT RewardTests (BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, CustomTest*)>
+
+<!ELEMENT BuildingTest (#PCDATA)>
+<!ATTLIST BuildingTest
+  building  CDATA #REQUIRED
   min_level CDATA #IMPLIED
-  max_level CDATA #IMPLIED
+  min_count CDATA #IMPLIED
 >
+
+<!ELEMENT ConstructionQueueTest (#PCDATA)>
+<!ATTLIST ConstructionQueueTest
+  building  CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT TrainingQueueTest (#PCDATA)>
+<!ATTLIST TrainingQueueTest
+  unit      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT SettlementTest (#PCDATA)>
+<!ATTLIST SettlementTest
+  type      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT ArmyTest (#PCDATA)>
+<!ATTLIST ArmyTest
+  type      CDATA #REQUIRED
+  min_count CDATA #REQUIRED
+>
+
+<!ELEMENT CustomTest (#PCDATA)>
 
 <!ELEMENT Message (Subject, Body)>
 <!ELEMENT Subject (#PCDATA)>

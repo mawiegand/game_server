@@ -66,9 +66,9 @@ class Tutorial::Tutorial
   
       :quests => [  # ALL QUESTS
 
-        {               #   gatherer_level_1_build
+        {               #   quest_gatherer_level_1_build
           :id          => 0, 
-          :symbolic_id => :gatherer_level_1_build,
+          :symbolic_id => :quest_gatherer_level_1_build,
           :name        => {
             
             :en_US => "Startquest",
@@ -90,35 +90,37 @@ class Tutorial::Tutorial
             {
               :category => 'resource',
               :type => 'resource_stone',
+              :amount => 20,
             },
 
             {
               :category => 'resource',
               :type => 'resource_wood',
+              :amount => 20,
             },
 
             {
               :category => 'resource',
               :type => 'resource_fur',
+              :amount => 20,
             },
 
           ],          
 
           :reward_tests => [
             
-            {
-              :category => 'building',
-              :type => 'building_gatherer',
+            :building_test => {
+              :building => 'building_gatherer',
 
               :min_level => 1,
 
             },
 
           ],          
-        },              #   END OF gatherer_level_1_build
-        {               #   gatherer_level_2_build
+        },              #   END OF quest_gatherer_level_1_build
+        {               #   quest_gatherer_level_2_build
           :id          => 1, 
-          :symbolic_id => :gatherer_level_2_build,
+          :symbolic_id => :quest_gatherer_level_2_build,
           :name        => {
             
             :en_US => "Zweite Quest",
@@ -138,7 +140,7 @@ class Tutorial::Tutorial
           :requirement =>
             
             {
-              :quest => 'gatherer_level_1_build',
+              :quest => 'quest_gatherer_level_1_build',
             },
 
           :rewards => [
@@ -146,35 +148,37 @@ class Tutorial::Tutorial
             {
               :category => 'resource',
               :type => 'resource_stone',
+              :amount => 40,
             },
 
             {
               :category => 'resource',
               :type => 'resource_wood',
+              :amount => 40,
             },
 
             {
               :category => 'resource',
               :type => 'resource_fur',
+              :amount => 40,
             },
 
           ],          
 
           :reward_tests => [
             
-            {
-              :category => 'building',
-              :type => 'building_gatherer',
+            :building_test => {
+              :building => 'building_gatherer',
 
               :min_level => 2,
 
             },
 
           ],          
-        },              #   END OF gatherer_level_2_build
-        {               #   gatherer_level_3_build
+        },              #   END OF quest_gatherer_level_2_build
+        {               #   quest_gatherer_level_3_build
           :id          => 2, 
-          :symbolic_id => :gatherer_level_3_build,
+          :symbolic_id => :quest_gatherer_level_3_build,
           :name        => {
             
             :en_US => "Dritte Quest",
@@ -194,7 +198,7 @@ class Tutorial::Tutorial
           :requirement =>
             
             {
-              :quest => 'gatherer_level_2_build',
+              :quest => 'quest_gatherer_level_2_build',
             },
 
           :rewards => [
@@ -202,32 +206,60 @@ class Tutorial::Tutorial
             {
               :category => 'resource',
               :type => 'resource_stone',
+              :amount => 60,
             },
 
             {
               :category => 'resource',
               :type => 'resource_wood',
+              :amount => 60,
             },
 
             {
               :category => 'resource',
               :type => 'resource_fur',
+              :amount => 60,
             },
 
           ],          
 
           :reward_tests => [
             
-            {
-              :category => 'building',
-              :type => 'building_gatherer',
+            :building_test => {
+              :building => 'building_gatherer',
 
               :min_level => 3,
 
+              :min_count => 2,
+
+            },
+
+            :settlement_test => {
+              :type => 'outpost',
+              :min_count => 1,
+            },
+
+            :army_test => {
+              :type => 'garrison',
+              :min_count => 1000,
+            },
+
+            :construction_queue_test => {
+              :building => 'building_gatherer',
+              :min_count => 1,
+            },
+
+            :training_queue_test => {
+              :unit => 'unit_thrower',
+              :min_count => 2,
+            },
+
+            :custom_test => {
+              :test => 'Muss noch überlegt werden...',
             },
 
           ],          
-        },              #   END OF gatherer_level_3_build
+        },              #   END OF quest_gatherer_level_3_build
       ],                # END OF QUESTS
 
     )

@@ -12,7 +12,7 @@
   </General>
   
   <Quests>
-    <Quest id="gatherer_level_1_build">
+    <Quest id="quest_gatherer_level_1_build">
       <Name>Startquest</Name>
       <Description lang="de_DE">
         <p>Beschreibung des 1. Quests auf deutsch.</p>
@@ -23,9 +23,11 @@
       <Reward category="resource" type="resource_stone">20</Reward>  
       <Reward category="resource" type="resource_wood">20</Reward>    
       <Reward category="resource" type="resource_fur">20</Reward>
-      <RewardTest category="building" type="building_gatherer" min_level="1" />
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="1" />
+      </RewardTests>
     </Quest>
-    <Quest id="gatherer_level_2_build">
+    <Quest id="quest_gatherer_level_2_build">
       <Name>Zweite Quest</Name>
       <Description lang="de_DE">
         <p>Beschreibung des 2. Quests auf deutsch.</p>
@@ -33,13 +35,15 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="gatherer_level_1_build" />
+      <Requirement quest="quest_gatherer_level_1_build" />
       <Reward category="resource" type="resource_stone">40</Reward>  
       <Reward category="resource" type="resource_wood">40</Reward>    
       <Reward category="resource" type="resource_fur">40</Reward>
-      <RewardTest category="building" type="building_gatherer" min_level="2" />
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="2" />
+      </RewardTests>
     </Quest>
-    <Quest id="gatherer_level_3_build">
+    <Quest id="quest_gatherer_level_3_build">
       <Name>Dritte Quest</Name>
       <Description lang="de_DE">
         <p>Beschreibung des 3. Quests auf deutsch.</p>
@@ -47,11 +51,18 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="gatherer_level_2_build" />
+      <Requirement quest="quest_gatherer_level_2_build" />
       <Reward category="resource" type="resource_stone">60</Reward>  
       <Reward category="resource" type="resource_wood">60</Reward>    
       <Reward category="resource" type="resource_fur">60</Reward>
-      <RewardTest category="building" type="building_gatherer" min_level="3" />
+      <RewardTests>
+        <BuildingTest building="building_gatherer" min_level="3" min_count="2" />
+        <SettlementTest type="outpost" min_count="1" />
+        <ArmyTest type="garrison" min_count="1000" />
+        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+        <TrainingQueueTest unit="unit_thrower" min_count="2" />
+        <CustomTest>Muss noch überlegt werden...</CustomTest>
+      </RewardTests>
     </Quest>
   </Quests>
 </Tutorial>
