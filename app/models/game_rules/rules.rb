@@ -2231,7 +2231,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihre wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>",
+            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihrer wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>",
   
             :en_US => "<p>Hosts troops.</p>",
                 
