@@ -134,7 +134,8 @@ class Settlement::Settlement < ActiveRecord::Base
     # settlement BLOCK
     logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
     
-    old_owner = self.garrison_army.npc ? nil : self.garrison_army.owner
+    # unused. throws error, if self.garrison_army is nil
+    # old_owner = self.garrison_army.npc ? nil : self.garrison_army.owner
     
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
