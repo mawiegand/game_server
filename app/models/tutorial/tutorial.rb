@@ -120,7 +120,9 @@ class Tutorial::Tutorial
           :id          => 1, 
           :symbolic_id => :gatherer_level_2_build,
           :name        => {
-                          
+            
+            :en_US => "Zweite Quest",
+                
           },
           :flavour     => {
                           
@@ -174,7 +176,9 @@ class Tutorial::Tutorial
           :id          => 2, 
           :symbolic_id => :gatherer_level_3_build,
           :name        => {
-                          
+            
+            :en_US => "Dritte Quest",
+                
           },
           :flavour     => {
                           

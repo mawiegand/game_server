@@ -53,6 +53,8 @@
       <%= yield :training_links %>
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_transactions_path %></li>
       <%= yield :shop_links %>
+      <li><%= link_to I18n.translate("application.layout.tutorial.category"), tutorial_tutorial_path %></li>
+      <%= yield :tutorial_links %>
     </ul>
   <% end %>
   </nav>  

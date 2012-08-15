@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>State:</b>
+  <%= @tutorial_quest.state_id %>
+</p>
+
+<p>
+  <b>Quest:</b>
+  <%= @tutorial_quest.quest_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @tutorial_quest.status %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @tutorial_quest.started_at %>
+</p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @tutorial_quest.finished_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutorial_quest_path(@tutorial_quest) %> |
+<%= link_to 'Back', tutorial_quests_path %>

@@ -26,6 +26,7 @@
       <RewardTest category="building" type="building_gatherer" min_level="1" />
     </Quest>
     <Quest id="gatherer_level_2_build">
+      <Name>Zweite Quest</Name>
       <Description lang="de_DE">
         <p>Beschreibung des 2. Quests auf deutsch.</p>
       </Description>
@@ -39,6 +40,7 @@
       <RewardTest category="building" type="building_gatherer" min_level="2" />
     </Quest>
     <Quest id="gatherer_level_3_build">
+      <Name>Dritte Quest</Name>
       <Description lang="de_DE">
         <p>Beschreibung des 3. Quests auf deutsch.</p>
       </Description>
