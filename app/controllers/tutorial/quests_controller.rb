@@ -1,4 +1,6 @@
 class Tutorial::QuestsController < ApplicationController
+  layout 'tutorial'
+
   # GET /tutorial/quests
   # GET /tutorial/quests.json
   def index

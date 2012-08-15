@@ -1,4 +1,6 @@
 class Tutorial::StatesController < ApplicationController
+  layout 'tutorial'
+
   # GET /tutorial/states
   # GET /tutorial/states.json
   def index
