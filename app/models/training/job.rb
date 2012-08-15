@@ -80,28 +80,43 @@ class Training::Job < ActiveRecord::Base
   
   # creates the units for tha active job. if there are more units to be build in this job, 
   # active job will be updated and a new event is created
+  # if there is not enough space in the garrison army, only those units which fit into the garrison
+  # army will be created and the overpaid resources will be refunded
   def add_finished_units
-    # units bauen
-        
     active_job = self.active_job
     queue = self.queue
     
-    queue.settlement.add_units_to_garrison(self.unit_id, active_job.quantity_active)
-    quantity_remaining = self.quantity - self.quantity_finished - active_job.quantity_active
+    units_to_add = active_job.quantity_active
+    added_units = queue.settlement.add_units_to_garrison(self.unit_id, units_to_add)
+        
+    quantity_remaining = self.quantity - self.quantity_finished - added_units
     quantity_next = [queue.threads, quantity_remaining].min
     
     if quantity_remaining > 0
-      # job aktualisieren
-      self.quantity_finished += active_job.quantity_active
-      # active_job aktualisieren
-      active_job.quantity_active = quantity_next
-      new_start = active_job.finished_active_at
-      active_job.started_active_at = new_start
-      active_job.finished_active_at = new_start + (self.training_time / queue.speed)
-      active_job.event.destroy
-      self.save
-      
-      active_job.create_ticker_event      
+      # if the garrison army is full, stop active job
+      if queue.settlement.garrison_army.full?
+        # destroy active job
+        active_job.destroy
+        # job aktualisieren
+        self.quantity_finished += added_units
+        # refund resources for units not created yet
+        self.refund_for_job
+        self.save
+        # queue check event erzeugen
+        queue.create_queue_check_event
+      else
+        # job aktualisieren
+        self.quantity_finished += active_job.quantity_active
+        # active_job aktualisieren
+        active_job.quantity_active = quantity_next
+        new_start = active_job.finished_active_at
+        active_job.started_active_at = new_start
+        active_job.finished_active_at = new_start + (self.training_time / queue.speed)
+        active_job.event.destroy
+        self.save
+        
+        active_job.create_ticker_event
+      end      
     else
       # job wegräumen
       self.destroy

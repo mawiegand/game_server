@@ -25,7 +25,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_mode  
   before_save    :update_rank
   before_save    :update_units
-  before_save    :check_size
+
   after_save     :update_experience_ranking
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
@@ -292,6 +292,16 @@ class Military::Army < ActiveRecord::Base
     end
     true
   end
+  
+  # checks if the given army has the max size to receive the quantity of units stated in 'units_sum'. 
+  def can_receive?(units_sum)
+    self.size_max >= self.size_present + units_sum
+  end
+  
+  def full?
+    self.size_max <= self.size_present
+  end
+  
 
   # checks if the given army contains at least one unit.
   def empty?
@@ -397,7 +407,7 @@ class Military::Army < ActiveRecord::Base
       ap_seconds_per_point:  Military::Army.regeneration_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
-      size_max: location.settlement.arm_size_max || 1000,  # 1000 is default size
+      size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
       exp: 0,
       rank: 0,
       ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
@@ -423,6 +433,9 @@ class Military::Army < ActiveRecord::Base
         details[unit_type[:db_field]] = 0
       end
     end
+    
+    # update from details before save to be sure that size_present is set
+    army.update_from_details
     
     army.save
   end
@@ -555,9 +568,4 @@ class Military::Army < ActiveRecord::Base
       
       true
     end
-    
-    def check_size
-      return self.size_present <= self.size_max
-    end
-  
 end

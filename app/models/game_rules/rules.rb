@@ -704,19 +704,6 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
-            {
-              :symbolic_id => 'building_stud',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
 
         },              #   END OF Babysaurus
         {               #   Ostrich Riders
@@ -1209,7 +1196,7 @@ class GameRules::Rules
             
             :en_US => "<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>",
   
-            :de_DE => "<p>Hier ist kein Platzer für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
+            :de_DE => "<p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
                 
           },
           :description => {
@@ -2244,7 +2231,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihre wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>",
+            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihrer wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>",
   
             :en_US => "<p>Hosts troops.</p>",
                 
