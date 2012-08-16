@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+#
+# Helper that creates a new stats entry.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+print "Creating stats entry... "
+Backend::Stat.create
+puts "done."
