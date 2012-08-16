@@ -5,19 +5,66 @@
   <p> Nothing to chart. </p>
 <% else %>
 
+
+  <div class="chart" id="totals"></div>
+  <div class="chart" id="active"></div>
+
   <div class="chart" id="users"></div>
   <div class="chart" id="newUsers"></div>
 
   <div class="clear"></div>
 
   <script>
+    var totals = new Dygraph(
+
+      document.getElementById("totals"),
+
+      "Date, Users, Customers \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.total_users %>, <%= backend_stat.total_customers %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Totals (All time)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+    var active = new Dygraph(
+
+      document.getElementById("active"),
+
+      "Date, Users, Customers \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.active_users %>, <%= backend_stat.active_customers %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Active',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+
     var users = new Dygraph(
 
       document.getElementById("users"),
 
-      "Date, Daily, Weekly, Monthly \n"+
+      "Date, Monthly, Weekly, Daily \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.du %>, <%= backend_stat.wu %>, <%= backend_stat.mu %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mu %>, <%= backend_stat.wu %>, <%= backend_stat.du %>\n"+
   <%end%>
       "",
       {
@@ -37,9 +84,9 @@
 
       document.getElementById("newUsers"),
 
-      "Date, Daily, Weekly, Monthly \n"+
+      "Date, Monthly, Weekly, Daily \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.dnu %>, <%= backend_stat.wnu %>, <%= backend_stat.mnu %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mnu %>, <%= backend_stat.wnu %>, <%= backend_stat.dnu %>\n"+
   <%end%>
       "",
       {
@@ -57,7 +104,7 @@
 
 <% end %>
 
-<h1>Statistics</h1>
+<h1>Data</h1>
 
 <table>
   <tr>
