@@ -1,10 +1,10 @@
 
-<h1>User Charts</h1>
 
 <% if @backend_stats.nil? %>
   <p> Nothing to chart. </p>
 <% else %>
 
+  <h1>User Charts</h1>
 
   <div class="chart" id="totals"></div>
   <div class="chart" id="active"></div>
@@ -12,6 +12,12 @@
   <div class="chart" id="users"></div>
   <div class="chart" id="newUsers"></div>
   <div class="chart" id="lostUsers"></div>
+
+  <div class="clear"></div>
+
+  <h1>Game Economy Charts</h1>
+
+  <div class="chart" id="resources"></div>
 
   <div class="clear"></div>
 
