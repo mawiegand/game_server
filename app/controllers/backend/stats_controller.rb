@@ -1,4 +1,9 @@
 class Backend::StatsController < ApplicationController
+  layout 'backend'
+  
+  before_filter :deny_api
+  before_filter :authenticate_backend  
+  
   # GET /backend/stats
   # GET /backend/stats.json
   def index
