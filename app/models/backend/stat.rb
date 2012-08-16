@@ -33,6 +33,29 @@ class Backend::Stat < ActiveRecord::Base
   end  
   
   
+  def self.num_lost_users_last_day
+    Fundamental::Character.where(['npc != ? AND last_login_at > ? AND last_login_at < ?',
+                                  true, 
+                                  Time.now - Backend::Stat.activity_period - 1.days,        # logged in 1 day before activity period
+                                  Time.now - Backend::Stat.activity_period]).count          # did not log in during activity period
+  end
+
+  def self.num_lost_users_last_week
+    Fundamental::Character.where(['npc != ? AND last_login_at > ? AND last_login_at < ?',
+                                  true, 
+                                  Time.now - Backend::Stat.activity_period - 1.weeks,       # logged in 1 week before activity period
+                                  Time.now - Backend::Stat.activity_period]).count          # did not log in during activity period
+  end
+  
+  def self.num_lost_users_last_month
+    Fundamental::Character.where(['npc != ? AND last_login_at > ? AND last_login_at < ?',
+                                  true, 
+                                  Time.now - Backend::Stat.activity_period - 1.months,      # logged in 1 month before activity period
+                                  Time.now - Backend::Stat.activity_period]).count          # did not log in during activity period
+  end
+
+  
+  
   
   def self.num_active_users
     Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - Backend::Stat.activity_period]).count

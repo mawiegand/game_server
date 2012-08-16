@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816140921) do
+ActiveRecord::Schema.define(:version => 20120816170727) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -61,6 +61,9 @@ ActiveRecord::Schema.define(:version => 20120816140921) do
     t.integer  "total_users"
     t.integer  "total_customers"
     t.integer  "active_customers"
+    t.integer  "dlu"
+    t.integer  "wlu"
+    t.integer  "mlu"
   end
 
   create_table "backend_users", :force => true do |t|
