@@ -745,7 +745,7 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.score_changed? || self.type_id_changed?) && !self.location.nil?
         self.location.set_owner_and_alliance(owner_id, alliance_id)
         
-        # hotfix for issue #123 ->  (self.score || 0)
+        # hotfix for issue #362 ->  (self.score || 0)
         self.location.settlement_score   = (self.score || 0)  if (self.location.settlement_score   != self.score)
         self.location.settlement_level   = (self.level || 0)  if (self.location.settlement_level   != self.level)
         self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
@@ -760,7 +760,7 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
         self.region.set_owner_and_alliance(owner_id, alliance_id)
 
-        # hotfix for issue #123 ->  (self.score || 0)
+        # hotfix for issue #362 ->  (self.score || 0)
         self.region.settlement_score   = (self.score || 0)    if (self.region.settlement_score   != self.score)
         self.region.settlement_level   = (self.level || 0)    if (self.region.settlement_level   != self.level)
         self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
