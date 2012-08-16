@@ -15,11 +15,18 @@ class Tutorial::StatesController < ApplicationController
   # GET /tutorial/states/1
   # GET /tutorial/states/1.json
   def show
-    @tutorial_state = Tutorial::State.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tutorial_state }
+    if params.has_key?(:character_id)  
+      @tutorial_state = Tutorial::State.find_by_character_id(params[:character_id])
+    else
+      @tutorial_state = Tutorial::State.find(params[:id])
+    end
+    last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @tutorial_state.to_json(:include => :quests) }
+      end
     end
   end
 
