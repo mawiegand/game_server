@@ -7,7 +7,7 @@ class Backend::StatsController < ApplicationController
   # GET /backend/stats
   # GET /backend/stats.json
   def index
-    @backend_stats = Backend::Stat.all
+    @backend_stats = Backend::Stat.order('created_at ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,17 +26,6 @@ class Backend::StatsController < ApplicationController
     end
   end
 
-  # GET /backend/stats/new
-  # GET /backend/stats/new.json
-  def new
-    @backend_stat = Backend::Stat.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @backend_stat }
-    end
-  end
-
   # GET /backend/stats/1/edit
   def edit
     @backend_stat = Backend::Stat.find(params[:id])
@@ -49,10 +38,10 @@ class Backend::StatsController < ApplicationController
 
     respond_to do |format|
       if @backend_stat.save
-        format.html { redirect_to @backend_stat, notice: 'Stat was successfully created.' }
+        format.html { redirect_to backend_stats_path, notice: 'Stat was successfully created.' }
         format.json { render json: @backend_stat, status: :created, location: @backend_stat }
       else
-        format.html { render action: "new" }
+        format.html {  redirect_to backend_stats_path, notice: 'Stat could not be created.' }
         format.json { render json: @backend_stat.errors, status: :unprocessable_entity }
       end
     end

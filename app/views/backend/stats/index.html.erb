@@ -44,6 +44,7 @@
 
 <table>
   <tr>
+    <th>Date</th>
     <th>Dau</th>
     <th>Wau</th>
     <th>Mau</th>
@@ -66,6 +67,7 @@
 
 <% @backend_stats.each do |backend_stat| %>
   <tr>
+    <td><%= backend_stat.created_at %></td>
     <td><%= backend_stat.dau %></td>
     <td><%= backend_stat.wau %></td>
     <td><%= backend_stat.mau %></td>
@@ -90,9 +92,13 @@
 
 <br />
 
-<%= link_to 'New Stat', new_backend_stat_path %>
+<%= form_for(Backend::Stat.new) do |f| %>
+  <%= f.submit 'New Stats'%>
+<% end %>
+
 
 
 <ul>
-  <li>Most stats are displayed for the last <b>day</b> / <b>week</b> / <b>month</b>.  
+  <li>Most stats are displayed for the last <b>day</b> / <b>week</b> / <b>month</b>.   </li>
+  <li>Press "new stats" to create a new statistics entry right now with present values.</li>
 </ul>
