@@ -201,7 +201,7 @@ class Settlement::Settlement < ActiveRecord::Base
   def update_resource_bonus_on_owner_change
     owner_change = self.changes[:owner_id]
     if !owner_change.blank?
-      logger.info 'Running resource bonus owner-change handler on settlement ID#{self.id}.'
+      logger.info "Running resource bonus owner-change handler on settlement ID#{self.id}."
       pool = owner_change[1].blank? ? nil : Fundamental::ResourcePool.find_by_character_id(owner_change[1])  # the pool of the new owner or nil
       
       GameRules::Rules.the_rules().resource_types.each do |resource_type|
@@ -744,8 +744,10 @@ class Settlement::Settlement < ActiveRecord::Base
     def propagate_information_to_location
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.score_changed? || self.type_id_changed?) && !self.location.nil?
         self.location.set_owner_and_alliance(owner_id, alliance_id)
-        self.location.settlement_score   = self.score   if (self.location.settlement_score   != self.score)
-        self.location.settlement_level   = self.level   if (self.location.settlement_level   != self.level)
+        
+        # hotfix for issue #123 ->  (self.score || 0)
+        self.location.settlement_score   = (self.score || 0)  if (self.location.settlement_score   != self.score)
+        self.location.settlement_level   = (self.level || 0)  if (self.location.settlement_level   != self.level)
         self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
         self.location.save
       end
@@ -757,8 +759,10 @@ class Settlement::Settlement < ActiveRecord::Base
     def propagate_information_to_region
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
         self.region.set_owner_and_alliance(owner_id, alliance_id)
-        self.region.settlement_score   = self.score     if (self.region.settlement_score   != self.score)
-        self.region.settlement_level   = self.level     if (self.region.settlement_level   != self.level)
+
+        # hotfix for issue #123 ->  (self.score || 0)
+        self.region.settlement_score   = (self.score || 0)    if (self.region.settlement_score   != self.score)
+        self.region.settlement_level   = (self.level || 0)    if (self.region.settlement_level   != self.level)
         self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
         self.region.save
       end
