@@ -35,6 +35,31 @@ ActiveRecord::Schema.define(:version => 20120816010223) do
     t.integer  "next_action_id"
   end
 
+  create_table "backend_stats", :force => true do |t|
+    t.integer  "new_users"
+    t.integer  "dau"
+    t.integer  "wau"
+    t.integer  "mau"
+    t.integer  "active_users"
+    t.decimal  "churn_today"
+    t.decimal  "churn_week"
+    t.decimal  "churn_month"
+    t.integer  "dac"
+    t.integer  "wac"
+    t.integer  "mac"
+    t.integer  "du"
+    t.integer  "wu"
+    t.integer  "mu"
+    t.integer  "dc"
+    t.integer  "wc"
+    t.integer  "mc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dnu"
+    t.integer  "wnu"
+    t.integer  "mnu"
+  end
+
   create_table "backend_users", :force => true do |t|
     t.string   "email"
     t.string   "salt"
@@ -676,12 +701,12 @@ ActiveRecord::Schema.define(:version => 20120816010223) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
   end
 

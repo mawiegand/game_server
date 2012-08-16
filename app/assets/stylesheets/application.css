@@ -95,6 +95,15 @@ section.content {
   float: right;
 }
 
+.charts {
+  position: relative;
+  clear: both;
+}
+
+.chart {
+  float: left;
+}
+
 nav.site-navigation {
   width: 100%;
   padding: 0px;

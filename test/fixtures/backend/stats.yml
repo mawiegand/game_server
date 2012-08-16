@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  new_users: 1
+  dau: 1
+  wau: 1
+  mau: 1
+  active_users: 1
+  churn_today: 9.99
+  churn_week: 9.99
+  churn_month: 9.99
+  dac: 1
+  wac: 1
+  mac: 1
+  du: 1
+  wu: 1
+  mu: 1
+  dc: 1
+  wc: 1
+  mc: 1
+
+two:
+  new_users: 1
+  dau: 1
+  wau: 1
+  mau: 1
+  active_users: 1
+  churn_today: 9.99
+  churn_week: 9.99
+  churn_month: 9.99
+  dac: 1
+  wac: 1
+  mac: 1
+  du: 1
+  wu: 1
+  mu: 1
+  dc: 1
+  wc: 1
+  mc: 1
