@@ -42,14 +42,14 @@
 <% @backend_stats.each do |backend_stat| %>
         "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
   <%rules.resource_types.each do |resource_type|  %>
-        ", <%= backend_stat[resource_type[:symbolic_id].to_s + '_amount_sum'] %>" +
+        ", <%= (backend_stat[resource_type[:symbolic_id].to_s + '_amount_sum'] || 0.0) / 1000.0 %>" +
   <%end%>         
         "\n" +
 <%end%>         
         "",
         {
           legend: 'always',
-          title: 'Total Resource Amount',
+          title: 'Total Resource Amount (thousands)',
           fillGraph: true,
           highlightSeriesOpts: {
             strokeWidth: 3,
@@ -71,14 +71,14 @@
 <% @backend_stats.each do |backend_stat| %>
         "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
   <%rules.resource_types.each do |resource_type|  %>
-        ", <%= backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_sum'] %>" +
+        ", <%= (backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_sum'] || 0.0) / 1000.0  %>" +
   <%end%>         
         "\n" +
 <%end%>         
         "",
         {
           legend: 'always',
-          title: 'Total Resource Production',
+          title: 'Total Resource Production (thousands)',
           fillGraph: true,
           highlightSeriesOpts: {
             strokeWidth: 3,
