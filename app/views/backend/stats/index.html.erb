@@ -62,10 +62,11 @@
 <table>
   <tr>
     <th>Date</th>
+    <th>Users (Tot/Act)</th>
+    <th>Customers (Tot/Act)</th>
     <th>Dau</th>
     <th>Wau</th>
     <th>Mau</th>
-    <th>Active users</th>
     <th>Churn today</th>
     <th>Churn week</th>
     <th>Churn month</th>
@@ -85,10 +86,11 @@
 <% @backend_stats.each do |backend_stat| %>
   <tr>
     <td><%= backend_stat.created_at %></td>
+    <td><%= backend_stat.total_users %>/<%= backend_stat.active_users %></td>
+    <td><%= backend_stat.total_customers %>/<%= backend_stat.active_customers %></td>
     <td><%= backend_stat.dau %></td>
     <td><%= backend_stat.wau %></td>
     <td><%= backend_stat.mau %></td>
-    <td><%= backend_stat.active_users %></td>
     <td><%= backend_stat.churn_today %></td>
     <td><%= backend_stat.churn_week %></td>
     <td><%= backend_stat.churn_month %></td>

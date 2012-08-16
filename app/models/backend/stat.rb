@@ -39,8 +39,16 @@ class Backend::Stat < ActiveRecord::Base
   end
   
   def self.num_paying_active_users
-    Fundamental::Character.join(:shop_transactions).where(['npc != ? AND last_login_at > ? AND state_id = ?', true, Time.now - Backend::Stat.activity_period], Shop::Transaction.STATE_CLOSED).count
+    Fundamental::Character.joins(:shop_transactions).where(['npc != ? AND last_login_at > ? AND state = ?', true, Time.now - Backend::Stat.activity_period, Shop::Transaction::STATE_CLOSED]).count
   end
+  
+  def self.num_users
+    Fundamental::Character.where(['npc != ?', true]).count
+  end
+  
+  def self.num_paying_users
+    Fundamental::Character.joins(:shop_transactions).where(['npc != ? AND state = ?', true, Shop::Transaction::STATE_CLOSED]).count
+  end  
   
   
   def recalc_all_stats
@@ -54,6 +62,10 @@ class Backend::Stat < ActiveRecord::Base
     
     self.active_users     = Backend::Stat.num_active_users
     self.active_customers = Backend::Stat.num_paying_active_users
+
+    self.total_users     = Backend::Stat.num_users
+    self.total_customers = Backend::Stat.num_paying_users
+
     
   end
   
