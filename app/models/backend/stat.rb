@@ -36,6 +36,11 @@ class Backend::Stat < ActiveRecord::Base
     Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - Backend::Stat.activity_period]).count
   end
   
+  def self.num_paying_active_users
+    Fundamental::Character.join(:shop_transactions).where(['npc != ? AND last_login_at > ?', true, Time.now - Backend::Stat.activity_period]).count
+  end
+  
+  
   def recalc_all_stats
     self.dnu          = Backend::Stat.num_new_users_last_day
     self.wnu          = Backend::Stat.num_new_users_last_week

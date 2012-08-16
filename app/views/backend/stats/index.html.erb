@@ -1,44 +1,61 @@
 
-<h1>Graphs</h1>
+<h1>Charts</h1>
 
-<div class="chart" id="users"></div>
-<div class="chart" id="newUsers"></div>
+<% if @backend_stats.nil? %>
+  <p> Nothing to chart. </p>
+<% else %>
 
-<div class="clear"></div>
+  <div class="chart" id="users"></div>
+  <div class="chart" id="newUsers"></div>
 
-<script>
-  var users = new Dygraph(
+  <div class="clear"></div>
 
-    document.getElementById("users"),
+  <script>
+    var users = new Dygraph(
 
-    "Date, Daily, Weekly, Monthly \n"+
-<% @backend_stats.each do |backend_stat| %>
-    "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.du %>, <%= backend_stat.wu %>, <%= backend_stat.mu %>\n"+
-<%end%>
-    "",
-    {
-      legend: 'always',
-      title: 'Unique Users in Period'
-    }
-  );
+      document.getElementById("users"),
+
+      "Date, Daily, Weekly, Monthly \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.du %>, <%= backend_stat.wu %>, <%= backend_stat.mu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Unique Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
   
   
-  var newNewUsers = new Dygraph(
+    var newNewUsers = new Dygraph(
 
-    document.getElementById("newUsers"),
+      document.getElementById("newUsers"),
 
-    "Date, Daily, Weekly, Monthly \n"+
-<% @backend_stats.each do |backend_stat| %>
-    "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.dnu %>, <%= backend_stat.wnu %>, <%= backend_stat.mnu %>\n"+
-<%end%>
-    "",
-    {
-      legend: 'always',
-      title: 'New Users in Period'
-    }
-  );  
-</script>
+      "Date, Daily, Weekly, Monthly \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.dnu %>, <%= backend_stat.wnu %>, <%= backend_stat.mnu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'New Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );  
+  </script>
 
+<% end %>
 
 <h1>Statistics</h1>
 
