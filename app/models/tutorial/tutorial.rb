@@ -57,10 +57,11 @@ class Tutorial::Tutorial
   def self.the_tutorial
     @the_tutorial ||= Tutorial::Tutorial.new(
   
-        :version => { :major => 0, 
-                      :minor => 0, 
-                      :build => 1, 
-        },
+      :version => {
+        :major => 0, 
+        :minor => 0, 
+        :build => 1, 
+      },
   
 # ## QUESTS ##########################################################
   
@@ -87,22 +88,19 @@ class Tutorial::Tutorial
 
           :rewards => [
             
-            {
-              :category => 'resource',
-              :type => 'resource_stone',
-              :amount => 20,
+            :resource_reward => {
+              :resource => 'resource_stone',
+              :amount => 10,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_wood',
-              :amount => 20,
+            :resource_reward => {
+              :resource => 'resource_wood',
+              :amount => 10,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_fur',
-              :amount => 20,
+            :resource_reward => {
+              :resource => 'resource_fur',
+              :amount => 10,
             },
 
           ],          
@@ -117,6 +115,7 @@ class Tutorial::Tutorial
             },
 
           ],          
+
         },              #   END OF quest_gatherer_level_1_build
         {               #   quest_gatherer_level_2_build
           :id          => 1, 
@@ -145,22 +144,19 @@ class Tutorial::Tutorial
 
           :rewards => [
             
-            {
-              :category => 'resource',
-              :type => 'resource_stone',
-              :amount => 40,
+            :resource_reward => {
+              :resource => 'resource_stone',
+              :amount => 20,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_wood',
-              :amount => 40,
+            :resource_reward => {
+              :resource => 'resource_wood',
+              :amount => 20,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_fur',
-              :amount => 40,
+            :resource_reward => {
+              :resource => 'resource_fur',
+              :amount => 20,
             },
 
           ],          
@@ -175,6 +171,7 @@ class Tutorial::Tutorial
             },
 
           ],          
+
         },              #   END OF quest_gatherer_level_2_build
         {               #   quest_gatherer_level_3_build
           :id          => 2, 
@@ -203,23 +200,24 @@ class Tutorial::Tutorial
 
           :rewards => [
             
-            {
-              :category => 'resource',
-              :type => 'resource_stone',
-              :amount => 60,
+            :resource_reward => {
+              :resource => 'resource_stone',
+              :amount => 40,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_wood',
-              :amount => 60,
+            :resource_reward => {
+              :resource => 'resource_wood',
+              :amount => 40,
             },
 
-            {
-              :category => 'resource',
-              :type => 'resource_fur',
-              :amount => 60,
+            :resource_reward => {
+              :resource => 'resource_fur',
+              :amount => 40,
             },
+
+            :construction_reward => {},
+
+            :training_reward => {},
 
           ],          
 
@@ -259,6 +257,21 @@ class Tutorial::Tutorial
             },
 
           ],          
+
+          :message => {
+            
+            :en_US => {
+              :subject => 'Subject',
+              :body => 'Message with content',
+            },
+
+            :de_DE => {
+              :subject => 'Betreff',
+              :body => 'Nachricht mit Inhalt',
+            },
+
+          },          
+
         },              #   END OF quest_gatherer_level_3_build
       ],                # END OF QUESTS
 

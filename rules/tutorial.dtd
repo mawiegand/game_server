@@ -28,7 +28,7 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Reward*, RewardTests, Message?)>
+<!ELEMENT Quest (Name?, Description+, Flavour*, Requirement?, Rewards?, RewardTests?, Message*)>
 <!ATTLIST Quest id ID #REQUIRED>
 
 <!ELEMENT Requirement EMPTY>
@@ -36,11 +36,17 @@
   quest IDREF #REQUIRED
 >
 
-<!ELEMENT Reward (#PCDATA)>
-<!ATTLIST Reward
-  category CDATA #REQUIRED
-  type     CDATA #REQUIRED
+<!ELEMENT Rewards (ResourceReward*, ConstructionReward*, TrainingReward*)>
+
+<!ELEMENT ResourceReward (#PCDATA)>
+<!ATTLIST ResourceReward
+  resource CDATA #REQUIRED
 >
+
+<!ELEMENT ConstructionReward (#PCDATA)>
+
+<!ELEMENT TrainingReward (#PCDATA)>
+
 
 <!ELEMENT RewardTests (BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, CustomTest*)>
 
@@ -78,6 +84,7 @@
 <!ELEMENT CustomTest (#PCDATA)>
 
 <!ELEMENT Message (Subject, Body)>
+<!ATTLIST Message lang IDREF "en_US">
 <!ELEMENT Subject (#PCDATA)>
 <!ELEMENT Body (p*)>
 

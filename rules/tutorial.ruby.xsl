@@ -167,14 +167,21 @@ end
           :requirement =>
             <xsl:apply-templates select="Requirement" />
 </xsl:if>
-<xsl:if test="Reward">
+<xsl:if test="Rewards">
           :rewards => [
-            <xsl:apply-templates select="Reward" />
+            <xsl:apply-templates select="Rewards" />
           ],          
 </xsl:if>
+<xsl:if test="RewardTests">
           :reward_tests => [
             <xsl:apply-templates select="RewardTests" />
           ],          
+</xsl:if>
+<xsl:if test="Message">
+          :message => {
+            <xsl:apply-templates select="Message" />
+          },          
+</xsl:if>
         },              #   END OF <xsl:value-of select="@id"/>
 </xsl:for-each>
       ],                # END OF QUESTS
@@ -186,13 +193,34 @@ end
             },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
 
-<xsl:template match="Reward">
-            {
-              :category => '<xsl:value-of select="@category" />',
-              :type => '<xsl:value-of select="@type" />',
+
+<xsl:template match="Rewards">
+<xsl:if test="ResourceReward">
+<xsl:apply-templates select="ResourceReward" />
+</xsl:if>
+<xsl:if test="ConstructionReward">
+<xsl:apply-templates select="ConstructionReward" />
+</xsl:if>
+<xsl:if test="TrainingReward">
+<xsl:apply-templates select="TrainingReward" />
+</xsl:if>
+</xsl:template>
+
+<xsl:template match="ResourceReward">
+            :resource_reward => {
+              :resource => '<xsl:value-of select="@resource" />',
               :amount => <xsl:value-of select="." />,
             },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
+
+<xsl:template match="ConstructionReward">
+            :construction_reward => {},
+</xsl:template> <!-- indentation needed for proper layout in output. -->
+
+<xsl:template match="TrainingReward">
+            :training_reward => {},
+</xsl:template> <!-- indentation needed for proper layout in output. -->
+
 
 <xsl:template match="RewardTests">
 <xsl:if test="BuildingTest">
@@ -259,6 +287,14 @@ end
 <xsl:template match="CustomTest">
             :custom_test => {
               :test => '<xsl:value-of select="." />',
+            },
+</xsl:template> <!-- indentation needed for proper layout in output. -->
+
+
+<xsl:template match="Message">
+            :<xsl:value-of select="@lang"/> => {
+              :subject => '<xsl:value-of select="Subject" />',
+              :body => '<xsl:value-of select="Body" />',
             },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
 

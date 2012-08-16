@@ -20,9 +20,11 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Reward category="resource" type="resource_stone">20</Reward>  
-      <Reward category="resource" type="resource_wood">20</Reward>    
-      <Reward category="resource" type="resource_fur">20</Reward>
+      <Rewards>
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
+        <ResourceReward resource="resource_wood">10</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+      </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="1" />
       </RewardTests>
@@ -36,9 +38,11 @@
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_gatherer_level_1_build" />
-      <Reward category="resource" type="resource_stone">40</Reward>  
-      <Reward category="resource" type="resource_wood">40</Reward>    
-      <Reward category="resource" type="resource_fur">40</Reward>
+      <Rewards>
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">20</ResourceReward>    
+        <ResourceReward resource="resource_fur">20</ResourceReward>
+      </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
@@ -52,9 +56,13 @@
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_gatherer_level_2_build" />
-      <Reward category="resource" type="resource_stone">60</Reward>  
-      <Reward category="resource" type="resource_wood">60</Reward>    
-      <Reward category="resource" type="resource_fur">60</Reward>
+      <Rewards>
+        <ResourceReward resource="resource_stone">40</ResourceReward>  
+        <ResourceReward resource="resource_wood">40</ResourceReward>    
+        <ResourceReward resource="resource_fur">40</ResourceReward>
+        <ConstructionReward />
+        <TrainingReward />
+      </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="3" min_count="2" />
         <SettlementTest type="outpost" min_count="1" />
@@ -63,6 +71,14 @@
         <TrainingQueueTest unit="unit_thrower" min_count="2" />
         <CustomTest>Muss noch überlegt werden...</CustomTest>
       </RewardTests>
+      <Message>
+        <Subject>Subject</Subject>
+        <Body>Message with content</Body>
+      </Message>
+      <Message lang="de_DE">
+        <Subject>Betreff</Subject>
+        <Body>Nachricht mit Inhalt</Body>
+      </Message>
     </Quest>
   </Quests>
 </Tutorial>
