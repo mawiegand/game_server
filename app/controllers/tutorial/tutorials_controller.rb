@@ -9,16 +9,11 @@ class Tutorial::TutorialsController < ApplicationController
   layout 'tutorial'
   
   def show
-    @only = []
-
-    @only.push(:version) if params.key? :version
-    @only.push(:quests) if params.key? :quests
-
     @tutorial = Tutorial::Tutorial.the_tutorial
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @rules.to_json( @only.length > 0 ? {:only => @only } : {} )}
+      format.json { render :json => @tutorial.to_json}
     end    
   end
 end

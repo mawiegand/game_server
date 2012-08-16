@@ -1,22 +1,15 @@
-<% 
-@num_errors = 0
+<h1>Tutorial @<%= "#{@tutorial.version[:major]}.#{@tutorial.version[:minor]}.#{@tutorial.version[:build]}"%></h1>
+<hr />
 
-if (@only.length == 0 || @only.include?(:version)) && !@tutorial.version.nil? %>
-  <h1>Tutorial @<%= "#{@tutorial.version[:major]}.#{@tutorial.version[:minor]}.#{@tutorial.version[:build]}"%></h1>
-  <hr />
-<% end %>
-
-<% if (@only.length == 0 || @only.include?(:quests)) && !@tutorial.quests.nil? %>
-  <h1>Quests</h1>
-  <% @tutorial.quests.each do |quest| %>
-    <h2><%= quest[:name][:en_US] %></h2>
-    <table>
-      <% quest.each do |key, value| %>
-      <tr>
-        <td><b><%= key %></b></td>
-        <td><%= value %></td>
-      </tr>
-      <% end %>
-    </table>
-  <% end %>
+<h1>Quests</h1>
+<% @tutorial.quests.each do |quest| %>
+  <h2><%= quest[:name][:en_US] %></h2>
+  <table>
+    <% quest.each do |key, value| %>
+    <tr>
+      <td><b><%= key %></b></td>
+      <td><%= value %></td>
+    </tr>
+    <% end %>
+  </table>
 <% end %>
