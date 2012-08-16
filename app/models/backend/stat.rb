@@ -83,6 +83,10 @@ class Backend::Stat < ActiveRecord::Base
     self.wu           = Backend::Stat.num_users_last_week
     self.mu           = Backend::Stat.num_users_last_month
     
+    self.dlu          = Backend::Stat.num_lost_users_last_day
+    self.wlu          = Backend::Stat.num_lost_users_last_week
+    self.mlu          = Backend::Stat.num_lost_users_last_month    
+    
     self.active_users     = Backend::Stat.num_active_users
     self.active_customers = Backend::Stat.num_paying_active_users
 

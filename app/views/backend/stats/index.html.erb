@@ -1,5 +1,5 @@
 
-<h1>Charts</h1>
+<h1>User Charts</h1>
 
 <% if @backend_stats.nil? %>
   <p> Nothing to chart. </p>
@@ -11,6 +11,7 @@
 
   <div class="chart" id="users"></div>
   <div class="chart" id="newUsers"></div>
+  <div class="chart" id="lostUsers"></div>
 
   <div class="clear"></div>
 
@@ -100,6 +101,27 @@
         },
       }
     );  
+    
+    var lostUsers = new Dygraph(
+
+      document.getElementById("lostUsers"),
+
+      "Date, Monthly, Weekly, Daily \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mlu %>, <%= backend_stat.wlu %>, <%= backend_stat.dlu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Lost Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );  
   </script>
 
 <% end %>
@@ -122,6 +144,7 @@
     <th>Mac</th>
     <th>Users</th>
     <th>New Users</th>
+    <th>Lost Users</th>
     <th>Dc</th>
     <th>Wc</th>
     <th>Mc</th>
@@ -146,6 +169,7 @@
     <td><%= backend_stat.mac %></td>
     <td><%= backend_stat.du %>/<%= backend_stat.wu %>/<%= backend_stat.mu %></td>
     <td><%= backend_stat.dnu %>/<%= backend_stat.wnu %>/<%= backend_stat.mnu %></td>
+    <td><%= backend_stat.dlu %>/<%= backend_stat.wlu %>/<%= backend_stat.mlu %></td>
     <td><%= backend_stat.dc %></td>
     <td><%= backend_stat.wc %></td>
     <td><%= backend_stat.mc %></td>
