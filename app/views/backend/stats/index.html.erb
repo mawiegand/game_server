@@ -17,6 +17,10 @@
 
   <h1>Game Economy Charts</h1>
 
+  <div class="chart" id="resourceAmountTotals"></div>
+  <div class="chart" id="resourceProductionTotals"></div>
+
+
 <%rules = GameRules::Rules.the_rules
   rules.resource_types.each do |resource_type|  %>
   <div class="chart" id="<%= resource_type[:symbolic_id] %>"></div>
@@ -25,6 +29,64 @@
   <div class="clear"></div>
 
   <script>
+  
+      var resourceAmountTotals = new Dygraph(
+
+        document.getElementById("resourceAmountTotals"),
+
+        "Date" +
+<%rules.resource_types.each do |resource_type|  %>
+        ", <%= resource_type[:name][:en_US] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%rules.resource_types.each do |resource_type|  %>
+        ", <%= backend_stat[resource_type[:symbolic_id].to_s + '_amount_sum'] %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Total Resource Amount',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+      
+      var resourceProductionTotals = new Dygraph(
+
+        document.getElementById("resourceProductionTotals"),
+
+        "Date" +
+<%rules.resource_types.each do |resource_type|  %>
+        ", <%= resource_type[:name][:en_US] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%rules.resource_types.each do |resource_type|  %>
+        ", <%= backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_sum'] %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Total Resource Production',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
 
     <%rules = GameRules::Rules.the_rules
       rules.resource_types.each do |resource_type| %>
