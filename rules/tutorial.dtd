@@ -86,7 +86,7 @@
 <!ELEMENT Message (Subject, Body)>
 <!ATTLIST Message lang IDREF "en_US">
 <!ELEMENT Subject (#PCDATA)>
-<!ELEMENT Body (p*)>
+<!ELEMENT Body (#PCDATA)>
 
 
 <!--Common Leafs-->
