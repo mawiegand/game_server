@@ -4,3 +4,4 @@ all:
 	xsltproc --xinclude rules.cpp.xsl rules.xml  > rules.cpp
 	xsltproc --xinclude rules.h.xsl rules.xml    > rules.h
 	g++ rules_test.cpp  rules.cpp -o rules_test -Wall
+	xsltproc --xinclude tutorial.ruby.xsl tutorial.xml > ../app/models/tutorial/tutorial.rb

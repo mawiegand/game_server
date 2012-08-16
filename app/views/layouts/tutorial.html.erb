@@ -1,0 +1,13 @@
+<% content_for :tutorial_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.tutorial.tutorial"), tutorial_tutorial_path %></li>
+    <li><%= link_to I18n.translate("application.layout.tutorial.states"), tutorial_states_path %></li>
+    <li><%= link_to I18n.translate("application.layout.tutorial.quests"), tutorial_quests_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:tutorial_content) ? yield(:tutorial_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

@@ -79,6 +79,11 @@ en:
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
         transactions: Transactions
+      tutorial:
+        category: Tutorial
+        tutorial: Tutorial
+        states: States
+        quests: Quests
     military:
       new_army: New Army    
     messaging:

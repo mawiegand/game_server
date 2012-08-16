@@ -1,0 +1,37 @@
+<%= form_for(@tutorial_quest) do |f| %>
+  <% if @tutorial_quest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial_quest.errors.count, "error") %> prohibited this tutorial_quest from being saved:</h2>
+
+      <ul>
+      <% @tutorial_quest.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :state_id %><br />
+    <%= f.number_field :state_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quest_id %><br />
+    <%= f.number_field :quest_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :started_at %><br />
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :finished_at %><br />
+    <%= f.datetime_select :finished_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Tutorial @<%= "#{@tutorial.version[:major]}.#{@tutorial.version[:minor]}.#{@tutorial.version[:build]}"%></h1>
+<hr />
+
+<h1>Quests</h1>
+<% @tutorial.quests.each do |quest| %>
+  <h2><%= quest[:name][:en_US] %></h2>
+  <table>
+    <% quest.each do |key, value| %>
+    <tr>
+      <td><b><%= key %></b></td>
+      <td><%= value %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
