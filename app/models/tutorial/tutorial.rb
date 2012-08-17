@@ -67,9 +67,9 @@ class Tutorial::Tutorial
   
       :quests => [  # ALL QUESTS
 
-        {               #   quest_queue_1gathererlvl1
+        {               #   quest_gatherer_level_1_build
           :id          => 0, 
-          :symbolic_id => :quest_queue_1gathererlvl1,
+          :symbolic_id => :quest_gatherer_level_1_build,
           :name        => {
             
             :en_US => "Startquest",
@@ -88,23 +88,40 @@ class Tutorial::Tutorial
 
           :rewards => [
             
-            :construction_reward => {},
+            :resource_reward => {
+              :resource => 'resource_stone',
+              :amount => 10,
+            },
+
+            :resource_reward => {
+              :resource => 'resource_wood',
+              :amount => 10,
+            },
+
+            :resource_reward => {
+              :resource => 'resource_fur',
+              :amount => 10,
+            },
 
           ],          
 
           :reward_tests => [
             
-            :construction_queue_test => {
+            :building_test => {
               :building => 'building_gatherer',
+
+              :min_level => 2,
+
               :min_count => 1,
+
             },
 
           ],          
 
-        },              #   END OF quest_queue_1gathererlvl1
-        {               #   quest_build_1gathererlvl1
+        },              #   END OF quest_gatherer_level_1_build
+        {               #   quest_gatherer_level_2_build
           :id          => 1, 
-          :symbolic_id => :quest_build_1gathererlvl1,
+          :symbolic_id => :quest_gatherer_level_2_build,
           :name        => {
             
             :en_US => "Zweite Quest",
@@ -124,7 +141,7 @@ class Tutorial::Tutorial
           :requirement =>
             
             {
-              :quest => 'quest_queue_1gathererlvl1',
+              :quest => 'quest_gatherer_level_1_build',
             },
 
           :rewards => [
@@ -142,224 +159,6 @@ class Tutorial::Tutorial
             :resource_reward => {
               :resource => 'resource_fur',
               :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_gatherer',
-
-              :min_count => 2,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1gathererlvl1
-        {               #   quest_change_settlementname
-          :id          => 2, 
-          :symbolic_id => :quest_change_settlementname,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1gathererlvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' Dorfname geändert ',
-            },
-
-          ],          
-
-        },              #   END OF quest_change_settlementname
-        {               #   quest_rank
-          :id          => 3, 
-          :symbolic_id => :quest_rank,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_change_settlementname',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 25,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 25,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 15,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' Rang eingegeben ',
-            },
-
-          ],          
-
-        },              #   END OF quest_rank
-        {               #   quest_build_2gathererlvl1
-          :id          => 4, 
-          :symbolic_id => :quest_build_2gathererlvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_rank',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 40,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_gatherer',
-
-              :min_count => 4,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_2gathererlvl1
-        {               #   quest_build_1gathererlvl2
-          :id          => 5, 
-          :symbolic_id => :quest_build_1gathererlvl2,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_2gathererlvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 100,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 100,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 50,
             },
 
           ],          
@@ -371,14 +170,16 @@ class Tutorial::Tutorial
 
               :min_level => 2,
 
+              :min_count => 2,
+
             },
 
           ],          
 
-        },              #   END OF quest_build_1gathererlvl2
-        {               #   quest_message
-          :id          => 6, 
-          :symbolic_id => :quest_message,
+        },              #   END OF quest_gatherer_level_2_build
+        {               #   quest_gatherer_level_3_build
+          :id          => 2, 
+          :symbolic_id => :quest_gatherer_level_3_build,
           :name        => {
             
             :en_US => "Dritte Quest",
@@ -398,22 +199,65 @@ class Tutorial::Tutorial
           :requirement =>
             
             {
-              :quest => 'quest_build_2gathererlvl1',
+              :quest => 'quest_gatherer_level_2_build',
             },
 
           :rewards => [
             
             :resource_reward => {
-              :resource => 'resource_cash',
-              :amount => 5,
+              :resource => 'resource_stone',
+              :amount => 40,
             },
+
+            :resource_reward => {
+              :resource => 'resource_wood',
+              :amount => 40,
+            },
+
+            :resource_reward => {
+              :resource => 'resource_fur',
+              :amount => 40,
+            },
+
+            :construction_reward => {},
+
+            :training_reward => {},
 
           ],          
 
           :reward_tests => [
             
+            :building_test => {
+              :building => 'building_gatherer',
+
+              :min_level => 3,
+
+              :min_count => 2,
+
+            },
+
+            :settlement_test => {
+              :type => 'outpost',
+              :min_count => 1,
+            },
+
+            :army_test => {
+              :type => 'garrison',
+              :min_count => 1000,
+            },
+
+            :construction_queue_test => {
+              :building => 'building_gatherer',
+              :min_count => 1,
+            },
+
+            :training_queue_test => {
+              :unit => 'unit_thrower',
+              :min_count => 2,
+            },
+
             :custom_test => {
-              :test => 'send Message, Message opened',
+              :test => 'Muss noch überlegt werden...',
             },
 
           ],          
@@ -432,1148 +276,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_message
-        {               #   quest_build_chieftainslvl2
-          :id          => 7, 
-          :symbolic_id => :quest_build_chieftainslvl2,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1gathererlvl2',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_chief_cottage',
-
-              :min_level => 2,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_chieftainslvl2
-        {               #   quest_settlementowner
-          :id          => 8, 
-          :symbolic_id => :quest_settlementowner,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_message',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => 'fortress owner in Region',
-            },
-
-          ],          
-
-        },              #   END OF quest_settlementowner
-        {               #   quest_settlementbutton
-          :id          => 9, 
-          :symbolic_id => :quest_settlementbutton,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_settlementowner',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-          ],          
-
-        },              #   END OF quest_settlementbutton
-        {               #   quest_profile
-          :id          => 10, 
-          :symbolic_id => :quest_profile,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_settlementbutton',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-          ],          
-
-        },              #   END OF quest_profile
-        {               #   quest_encyclopedia
-          :id          => 11, 
-          :symbolic_id => :quest_encyclopedia,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_profile',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 20,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' Textbox Holzkosten Kaserne ',
-            },
-
-          ],          
-
-        },              #   END OF quest_encyclopedia
-        {               #   quest_build_1cottagelvl1
-          :id          => 12, 
-          :symbolic_id => :quest_build_1cottagelvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chieftainslvl2',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_cottage',
-
-              :min_level => 1,
-
-              :min_count => 1,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1cottagelvl1
-        {               #   quest_build_chiefcottagelvl3
-          :id          => 13, 
-          :symbolic_id => :quest_build_chiefcottagelvl3,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1cottagelvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_chief_cottage',
-
-              :min_level => 3,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_chiefcottagelvl3
-        {               #   quest_build_1barrackslvl1
-          :id          => 14, 
-          :symbolic_id => :quest_build_1barrackslvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl3',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_barracks',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1barrackslvl1
-        {               #   quest_recruit_1clubbers
-          :id          => 15, 
-          :symbolic_id => :quest_recruit_1clubbers,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1barrackslvl1',
-            },
-
-          :rewards => [
-            
-            :training_reward => {},
-
-          ],          
-
-          :reward_tests => [
-            
-            :training_queue_test => {
-              :unit => 'clubbers',
-              :min_count => 1,
-            },
-
-          ],          
-
-        },              #   END OF quest_recruit_1clubbers
-        {               #   quest_build_1walllvl1
-          :id          => 16, 
-          :symbolic_id => :quest_build_1walllvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_recruit_1clubbers',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-          ],          
-
-        },              #   END OF quest_build_1walllvl1
-        {               #   quest_army_create
-          :id          => 17, 
-          :symbolic_id => :quest_army_create,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_recruit_1clubbers',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :army_test => {
-              :type => 'visible',
-              :min_count => 1,
-            },
-
-          ],          
-
-        },              #   END OF quest_army_create
-        {               #   quest_army_move
-          :id          => 18, 
-          :symbolic_id => :quest_army_move,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_army_create',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' armeebewegung ',
-            },
-
-          ],          
-
-        },              #   END OF quest_army_move
-        {               #   quest_build_chiefcottagelvl4
-          :id          => 19, 
-          :symbolic_id => :quest_build_chiefcottagelvl4,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1walllvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_chief_cottage',
-
-              :min_level => 4,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_chiefcottagelvl4
-        {               #   quest_build_1campfirelvl1
-          :id          => 20, 
-          :symbolic_id => :quest_build_1campfirelvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_campfire',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1campfirelvl1
-        {               #   quest_alliance
-          :id          => 21, 
-          :symbolic_id => :quest_alliance,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1campfirelvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' Allianz check ',
-            },
-
-          ],          
-
-        },              #   END OF quest_alliance
-        {               #   quest_build_chiefcottagelvl5
-          :id          => 22, 
-          :symbolic_id => :quest_build_chiefcottagelvl5,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_chief_cottage',
-
-              :min_level => 5,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_chiefcottagelvl5
-        {               #   quest_recruitfriends
-          :id          => 23, 
-          :symbolic_id => :quest_recruitfriends,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :custom_test => {
-              :test => ' Textbox: Reward Freunde werben ',
-            },
-
-          ],          
-
-        },              #   END OF quest_recruitfriends
-        {               #   quest_build_1marketlvl1
-          :id          => 24, 
-          :symbolic_id => :quest_build_1marketlvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_market',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1marketlvl1
-        {               #   quest_build_1quarrylvl1_1loggerlvl1
-          :id          => 25, 
-          :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_quarry',
-
-              :min_level => 1,
-
-            },
-
-            :building_test => {
-              :building => 'building_logger',
-
-              :min_level => 1,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
-        {               #   quest_build_5quarrylvl5_5loggerlvl5
-          :id          => 26, 
-          :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_quarry',
-
-              :min_level => 5,
-
-              :min_count => 5,
-
-            },
-
-            :building_test => {
-              :building => 'building_logger',
-
-              :min_level => 5,
-
-              :min_count => 5,
-
-            },
-
-          ],          
-
-        },              #   END OF quest_build_5quarrylvl5_5loggerlvl5
-        {               #   quest_outpost
-          :id          => 27, 
-          :symbolic_id => :quest_outpost,
-          :name        => {
-            
-            :en_US => "Dritte Quest",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
-
-          :rewards => [
-            
-            :resource_reward => {
-              :resource => 'resource_stone',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_wood',
-              :amount => 15,
-            },
-
-            :resource_reward => {
-              :resource => 'resource_fur',
-              :amount => 30,
-            },
-
-          ],          
-
-          :reward_tests => [
-            
-            :settlement_test => {
-              :type => 'settlement_outpost',
-              :min_count => 1,
-            },
-
-          ],          
-
-        },              #   END OF quest_outpost
+        },              #   END OF quest_gatherer_level_3_build
       ],                # END OF QUESTS
 
     )

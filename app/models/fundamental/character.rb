@@ -7,7 +7,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :resource_pool,     :class_name => "Fundamental::ResourcePool",  :foreign_key => "character_id", :inverse_of => :owner
   has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character
   has_one  :home_location,     :class_name => "Map::Location",              :foreign_key => "owner_id",     :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
-  has_one  :tutorial_state,    :class_name => "Tutorial::State",            :foreign_key => "character_id", :inverse_of => :character
+  has_one  :tutorial_state,    :class_name => "Tutorial::State",            :foreign_key => "character_id", :inverse_of => :owner
   
   has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :outbox,            :class_name => "Messaging::Outbox",          :foreign_key => "owner_id",     :inverse_of => :owner
@@ -92,6 +92,9 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_archive
       
       Messaging::Message.create_welcome_message(character)
+      
+      character.create_tutorial_state
+      character.tutorial_state.create_start_quest      
     end
     
     return character 
