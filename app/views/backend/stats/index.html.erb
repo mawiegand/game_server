@@ -1,23 +1,192 @@
 
-<h1>Charts</h1>
 
 <% if @backend_stats.nil? %>
   <p> Nothing to chart. </p>
 <% else %>
 
+  <h1>User Charts</h1>
+
+  <div class="chart" id="totals"></div>
+  <div class="chart" id="active"></div>
+
   <div class="chart" id="users"></div>
   <div class="chart" id="newUsers"></div>
+  <div class="chart" id="lostUsers"></div>
 
   <div class="clear"></div>
 
+  <h1>Game Economy Charts</h1>
+
+  <div class="chart" id="resourceAmountTotals"></div>
+  <div class="chart" id="resourceProductionTotals"></div>
+
+
+<%rules = GameRules::Rules.the_rules
+  rules.resource_types.each do |resource_type|  %>
+  <div class="chart" id="<%= resource_type[:symbolic_id] %>"></div>
+  <div class="chart" id="<%= resource_type[:symbolic_id] %>_production"></div>
+<%end%>   
+  <div class="clear"></div>
+
   <script>
+  
+      var resourceAmountTotals = new Dygraph(
+
+        document.getElementById("resourceAmountTotals"),
+
+        "Date" +
+<%rules.resource_types.each do |resource_type|  %>
+        ", <%= resource_type[:name][:en_US] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%rules.resource_types.each do |resource_type|  %>
+        ", <%= (backend_stat[resource_type[:symbolic_id].to_s + '_amount_sum'] || 0.0) / 1000.0 %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Total Resource Amount (thousands)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+      
+      var resourceProductionTotals = new Dygraph(
+
+        document.getElementById("resourceProductionTotals"),
+
+        "Date" +
+<%rules.resource_types.each do |resource_type|  %>
+        ", <%= resource_type[:name][:en_US] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%rules.resource_types.each do |resource_type|  %>
+        ", <%= (backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_sum'] || 0.0) / 1000.0  %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Total Resource Production (thousands)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+    <%rules = GameRules::Rules.the_rules
+      rules.resource_types.each do |resource_type| %>
+  
+      var <%= resource_type[:symbolic_id].to_s + "_amount" %> = new Dygraph(
+
+        document.getElementById("<%= resource_type[:symbolic_id] %>"),
+
+        "Date, Average, Max \n"+
+    <% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>, <%= ((backend_stat[resource_type[:symbolic_id].to_s + '_amount_sum'] || 0.0) / (backend_stat.active_users || 1)) %>, <%= backend_stat[resource_type[:symbolic_id].to_s + '_amount_max'] %>\n"+
+    <%end%>
+        "",
+        {
+          legend: 'always',
+          title: '<%= resource_type[:name][:en_US] %> Amount',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );  
+  
+      var <%= resource_type[:symbolic_id].to_s + "_production" %> = new Dygraph(
+
+        document.getElementById("<%= resource_type[:symbolic_id] %>_production"),
+
+        "Date, Average, Max \n"+
+    <% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>, <%= ((backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_sum'] || 0.0) / (backend_stat.active_users || 1)) %>, <%= backend_stat[resource_type[:symbolic_id].to_s + '_production_rate_max'] %>\n"+
+    <%end%>
+        "",
+        {
+          legend: 'always',
+          title: '<%= resource_type[:name][:en_US] %> Production',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );   
+  
+  
+    <%end%>     
+  
+  
+    var totals = new Dygraph(
+
+      document.getElementById("totals"),
+
+      "Date, Users, Customers \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.total_users %>, <%= backend_stat.total_customers %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Totals (All time)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+    var active = new Dygraph(
+
+      document.getElementById("active"),
+
+      "Date, Users, Customers \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.active_users %>, <%= backend_stat.active_customers %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Active',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+
     var users = new Dygraph(
 
       document.getElementById("users"),
 
-      "Date, Daily, Weekly, Monthly \n"+
+      "Date, Monthly, Weekly, Daily \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.du %>, <%= backend_stat.wu %>, <%= backend_stat.mu %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mu %>, <%= backend_stat.wu %>, <%= backend_stat.du %>\n"+
   <%end%>
       "",
       {
@@ -37,9 +206,9 @@
 
       document.getElementById("newUsers"),
 
-      "Date, Daily, Weekly, Monthly \n"+
+      "Date, Monthly, Weekly, Daily \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.dnu %>, <%= backend_stat.wnu %>, <%= backend_stat.mnu %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mnu %>, <%= backend_stat.wnu %>, <%= backend_stat.dnu %>\n"+
   <%end%>
       "",
       {
@@ -53,19 +222,41 @@
         },
       }
     );  
+    
+    var lostUsers = new Dygraph(
+
+      document.getElementById("lostUsers"),
+
+      "Date, Monthly, Weekly, Daily \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mlu %>, <%= backend_stat.wlu %>, <%= backend_stat.dlu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Lost Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );  
   </script>
 
 <% end %>
 
-<h1>Statistics</h1>
+<h1>Data</h1>
 
 <table>
   <tr>
     <th>Date</th>
+    <th>Users (Tot/Act)</th>
+    <th>Customers (Tot/Act)</th>
     <th>Dau</th>
     <th>Wau</th>
     <th>Mau</th>
-    <th>Active users</th>
     <th>Churn today</th>
     <th>Churn week</th>
     <th>Churn month</th>
@@ -74,6 +265,7 @@
     <th>Mac</th>
     <th>Users</th>
     <th>New Users</th>
+    <th>Lost Users</th>
     <th>Dc</th>
     <th>Wc</th>
     <th>Mc</th>
@@ -85,10 +277,11 @@
 <% @backend_stats.each do |backend_stat| %>
   <tr>
     <td><%= backend_stat.created_at %></td>
+    <td><%= backend_stat.total_users %>/<%= backend_stat.active_users %></td>
+    <td><%= backend_stat.total_customers %>/<%= backend_stat.active_customers %></td>
     <td><%= backend_stat.dau %></td>
     <td><%= backend_stat.wau %></td>
     <td><%= backend_stat.mau %></td>
-    <td><%= backend_stat.active_users %></td>
     <td><%= backend_stat.churn_today %></td>
     <td><%= backend_stat.churn_week %></td>
     <td><%= backend_stat.churn_month %></td>
@@ -97,6 +290,7 @@
     <td><%= backend_stat.mac %></td>
     <td><%= backend_stat.du %>/<%= backend_stat.wu %>/<%= backend_stat.mu %></td>
     <td><%= backend_stat.dnu %>/<%= backend_stat.wnu %>/<%= backend_stat.mnu %></td>
+    <td><%= backend_stat.dlu %>/<%= backend_stat.wlu %>/<%= backend_stat.mlu %></td>
     <td><%= backend_stat.dc %></td>
     <td><%= backend_stat.wc %></td>
     <td><%= backend_stat.mc %></td>

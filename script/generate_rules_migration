@@ -52,6 +52,13 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_effects',   :type => ':decimal', :options => { :default => 0.0 } }, 
   ],
+
+  Backend::Stat              => [ { :prefix => 'resource_',        :postfix => '_amount_sum',                 :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_amount_max',                 :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_rate_sum',        :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_rate_max',        :type => ':decimal', :options => { :default => 0.0 } }, 
+  ],
+
   
   Fundamental::Character     => [ { :prefix => 'character_queue',  :postfix => '',                                                 :options => { :default => 0   } },
                                   { :prefix => 'character_unlock', :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks 

@@ -31,7 +31,8 @@
           | <%= fundamental_character.alliance_tag %>
         <%end%></td>
     <td><% if !fundamental_character.last_login_at.nil? %>
-          <%= time_ago_in_words(fundamental_character.last_login_at) %> ago (#<%= fundamental_character.login_count %>)
+          
+          <span class="<%= fundamental_character.last_login_at > Time.now - Backend::Stat.activity_period ? 'green' : (fundamental_character.last_login_at > Time.now -  (2*Backend::Stat.activity_period) ? 'red' : 'black') %>"><%= time_ago_in_words(fundamental_character.last_login_at) %></span> ago (#<%= fundamental_character.login_count %>)
         <%else%>
           never
         <%end%></td>
