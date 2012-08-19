@@ -122,6 +122,22 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     end
   end
   
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in resource pool #{self.id} of character #{self.character_id}.")
+
+    productions = recalc_resource_productions
+    check_and_apply_productions(productions)
+    
+    if self.changed?
+      logger.info(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> RESOURCE POOL OK.")
+    end
+
+    true      
+  end
+  
   protected
   
     def update_resource_in_ranking(totalProductionRate)
@@ -147,6 +163,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       end    
       true
     end
+    
+
     
     
     ##########################################################################
@@ -190,6 +208,36 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       end
       
       true
+    end
+    
+    def check_consistency_sometimes
+      return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['resource_pool_recalc_probability']       # do the check only seldomly (determined by random event)  
+      check_consistency
+    end
+      
+    def recalc_resource_productions
+      resource_types = GameRules::Rules.the_rules().resource_types
+      productions    = Array.new(resource_types.count, 0.0)
+      self.owner.settlements.each do |settlement|
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+          field = resource_type[:symbolic_id].to_s + '_production_rate'
+          productions[resource_type[:id]] += settlement[field] || 0.0
+        end
+      end
+      return productions
+    end
+    
+    def check_and_apply_productions(productions)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_production_rate']
+        recalc  = productions[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> PRODUCTION RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_production_rate'] = recalc
+        end
+      end    
     end
     
 end
