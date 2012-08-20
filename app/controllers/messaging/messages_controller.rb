@@ -66,7 +66,7 @@ class Messaging::MessagesController < ApplicationController
       
       if params[:message].has_key? :recipient_name
         recipient = Fundamental::Character.find_by_name(params[:message][:recipient_name])
-        raise BadRequestError.new('Unknown Recipient.')   if recipient.nil?
+        raise NotFoundError.new('Unknown Recipient.')   if recipient.nil?
         @messaging_message[:recipient_id] = recipient.id
       else 
         @messaging_message[:recipient_id] = params[:message][:recipient_id]
