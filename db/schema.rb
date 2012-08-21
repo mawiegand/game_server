@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820192706) do
+ActiveRecord::Schema.define(:version => 20120821142211) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -367,6 +367,7 @@ ActiveRecord::Schema.define(:version => 20120820192706) do
     t.integer  "messages_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "unread_messages_count"
   end
 
   create_table "messaging_messages", :force => true do |t|
@@ -724,12 +725,12 @@ ActiveRecord::Schema.define(:version => 20120820192706) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
   end
 
