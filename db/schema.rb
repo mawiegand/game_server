@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816195139) do
+ActiveRecord::Schema.define(:version => 20120820132406) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -834,6 +834,7 @@ ActiveRecord::Schema.define(:version => 20120816195139) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status",      :default => 0
+    t.datetime "closed_at"
   end
 
   create_table "tutorial_states", :force => true do |t|
