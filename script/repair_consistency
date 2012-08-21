@@ -100,6 +100,17 @@ Fundamental::ResourcePool.find(:all).each do |pool|
 end
 puts " done."
 
+# ############################################################################
+#
+#   MESSAGES
+#
+# ############################################################################
+
+print "CHECKING Unread Messages "
+Messaging::Inbox.all.each { |i| i.unread_messages_count = i.unread_entries.count; i.save }
+puts " done."
+
+
 
 puts
 
