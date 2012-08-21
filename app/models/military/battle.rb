@@ -30,7 +30,7 @@ class Military::Battle < ActiveRecord::Base
     
     battle = nil
     
-    #remove a runnung movement command from bot attacker and defender
+    #remove a runnung movement command from both attacker and defender
     # TODO: this allows spam-attacks on armies. Halt movement, but don't cancel it
     if attacker.moving?
       attacker.delete_movement
@@ -69,7 +69,8 @@ class Military::Battle < ActiveRecord::Base
             other_army != defender &&                                          # or defender, they are already involved
             !other_army.fighting? &&                                           # only add non fighting armies
             other_army.owner != attacker.owner &&                              # don't let armies of character defend his own attack
-            other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance            
+            other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance
+          other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
           self.add_army(other_army, defender.battle_participant.faction)
         end
       end
@@ -80,6 +81,7 @@ class Military::Battle < ActiveRecord::Base
             !other_army.fighting? &&                                           # only add non fighting armies
             other_army.owner != defender.owner &&                              # don't let armies of character defend his own attack
             other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance            
+          other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
           self.add_army(other_army, attacker.battle_participant.faction)
         end
       end
