@@ -1,6 +1,8 @@
 class Fundamental::AllianceShoutsController < ApplicationController
   layout 'fundamental'
-
+  
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:create, :index]  
 
   def index
 
