@@ -15,7 +15,7 @@
     <Quest id="quest_queue_1gathererlvl1">
       <Name>Baue einen Sammler</Name>
       <Description lang="de_DE">
-        <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf "build".</p>
+        <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf build.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
