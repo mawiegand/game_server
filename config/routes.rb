@@ -164,6 +164,9 @@ GameServer::Application.routes.draw do
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ]    
         end
+        namespace :tutorial do
+          resources :check_quest_actions,     :only => [ :create ]    
+        end
       end
       
       namespace :shop do

@@ -78,5 +78,28 @@ end
 puts " done."
 
 
+# ############################################################################
+#
+#   RESOURCE POOLS
+#
+# ############################################################################
+
+print "CHECKING Resource Pools "
+
+step = Fundamental::ResourcePool.count / 10 
+step = step > 0 ? step : 1
+count = 0
+
+Fundamental::ResourcePool.find(:all).each do |pool|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+	pool.check_consistency
+	count += 1 
+end
+puts " done."
+
+
 puts
 
