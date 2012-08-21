@@ -13,9 +13,9 @@
   
   <Quests>
     <Quest id="quest_queue_1gathererlvl1">
-      <Name>Startquest</Name>
+      <Name>Baue einen Sammler</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 1. Quests auf deutsch.</p>
+        <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf "build".</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -28,9 +28,9 @@
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1gathererlvl1">
-      <Name>Zweite Quest</Name>
+      <Name>Zweiter Sammler</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 2. Quests auf deutsch.</p>
+        <p>Gut gemacht. Baue jetzt einen weiteren Sammler.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -46,81 +46,81 @@
       </RewardTests>
     </Quest>
     <Quest id="quest_change_settlementname">
-      <Name>Dritte Quest</Name>
+      <Name>Siedlungsname</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Ändere den Namen deiner Siedlung.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
+        <ResourceReward resource="resource_wood">10</ResourceReward>    
+        <ResourceReward resource="resource_fur">5</ResourceReward>
       </Rewards>
       <RewardTests>
         <CustomTest> Dorfname geändert </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_rank">
-      <Name>Dritte Quest</Name>
+      <Name>Rang</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Suche deinen Rang im Ranking.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_change_settlementname" />
       <Rewards>
-        <ResourceReward resource="resource_stone">25</ResourceReward>  
-        <ResourceReward resource="resource_wood">25</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ResourceReward resource="resource_stone">5</ResourceReward>  
+        <ResourceReward resource="resource_wood">15</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
         <CustomTest> Rang eingegeben </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_2gathererlvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Noch mehr Sammler</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue zwei weitere Sammler.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_rank" />
       <Rewards>
-        <ResourceReward resource="resource_stone">40</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
+        <ResourceReward resource="resource_wood">20</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="4" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1gathererlvl2">
-      <Name>Dritte Quest</Name>
+      <Name>Ausbau eines Sammlers</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Bau einen Sammler auf Level 2 aus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>  
-        <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ResourceReward resource="resource_stone">15</ResourceReward>  
+        <ResourceReward resource="resource_wood">15</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
     </Quest>
     <Quest id="quest_message">
-      <Name>Dritte Quest</Name>
+      <Name>Nachrichten</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Lies die Nachricht.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -142,62 +142,62 @@
       </Message>
     </Quest>
     <Quest id="quest_build_chieftainslvl2">
-      <Name>Dritte Quest</Name>
+      <Name>Häuptlingshütte Level 2</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue deine Häuptlingshütte auf Level 2 aus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">80</ResourceReward>  
+        <ResourceReward resource="resource_wood">80</ResourceReward>    
+        <ResourceReward resource="resource_fur">40</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="2" />
       </RewardTests>
     </Quest>
     <Quest id="quest_settlementowner">
-      <Name>Dritte Quest</Name>
+      <Name>Festungen</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Trage den Besitzer der Festung in deiner Region ein.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_message" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_fur">5</ResourceReward>
       </Rewards>
       <RewardTests>
         <CustomTest>fortress owner in Region</CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_settlementbutton">
-      <Name>Dritte Quest</Name>
+      <Name>Karte</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">10</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
       </RewardTests>
     </Quest>
     <Quest id="quest_profile">
-      <Name>Dritte Quest</Name>
+      <Name>Profil</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Ändere deinen Profiltext.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -205,34 +205,34 @@
       <Requirement quest="quest_settlementbutton" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_wood">20</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
       </RewardTests>
     </Quest>
     <Quest id="quest_encyclopedia">
-      <Name>Dritte Quest</Name>
+      <Name>Enzyklopädie</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Suche die Holzkosten einer Kaserne Level 2 heraus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_profile" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">5</ResourceReward>  
+        <ResourceReward resource="resource_wood">5</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-	<CustomTest> Textbox Holzkosten Kaserne </CustomTest>
+	<CustomTest> Textbox Holzkosten Kaserne l2 </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1cottagelvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Hütten</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue eine Hütte.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -241,52 +241,52 @@
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward>
+        <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_chiefcottagelvl3">
-      <Name>Dritte Quest</Name>
+      <Name>Häuptlingshütte Level 3</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue deine Häuptlingshütte auf Level 3 aus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward>
+        <ResourceReward resource="resource_stone">150</ResourceReward>  
+        <ResourceReward resource="resource_wood">150</ResourceReward>    
+        <ResourceReward resource="resource_fur">75</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="3" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1barrackslvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Kaserne</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue eine Kaserne.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward>
+        <ResourceReward resource="resource_stone">60</ResourceReward>  
+        <ResourceReward resource="resource_wood">40</ResourceReward>    
+        <ResourceReward resource="resource_fur">80</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_recruit_1clubbers">
-      <Name>Dritte Quest</Name>
+      <Name>Einheiten</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue einen Keulenkrieger.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -300,45 +300,45 @@
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1walllvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Verteidigungsanlagen</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue einen Wall.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_fur">15</ResourceReward> 
       </Rewards>
       <RewardTests>
         <!-- <BuildingTest building="building_wall" min_level="1" /> -->
       </RewardTests>
     </Quest>
     <Quest id="quest_army_create">
-      <Name>Dritte Quest</Name>
+      <Name>Armee</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Stelle eine Armee auf.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
+        <ResourceReward resource="resource_wood">30</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward> 
       </Rewards>
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_army_move">
-      <Name>Dritte Quest</Name>
+      <Name>Armeebewegung</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Bewege deine Armee zur Festung.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -346,134 +346,134 @@
       <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_wood">25</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward> 
       </Rewards>
       <RewardTests>
         <CustomTest> armeebewegung </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_chiefcottagelvl4">
-      <Name>Dritte Quest</Name>
+      <Name>Häuptlingshütte Level 4</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue deine Häuptlingshütte auf Level 4 aus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1walllvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">200</ResourceReward>  
+        <ResourceReward resource="resource_wood">200</ResourceReward>    
+        <ResourceReward resource="resource_fur">100</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="4" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1campfirelvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Lagerfeuer</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue ein Lagerfeuer.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">40</ResourceReward>  
+        <ResourceReward resource="resource_wood">40</ResourceReward>    
+        <ResourceReward resource="resource_fur">5</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_alliance">
-      <Name>Dritte Quest</Name>
+      <Name>Allianzen</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Trete einer Allianz bei oder Gründe deine eigene.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">100</ResourceReward>  
+        <ResourceReward resource="resource_wood">105</ResourceReward>    
+        <ResourceReward resource="resource_fur">45</ResourceReward> 
       </Rewards>
       <RewardTests>
         <CustomTest> Allianz check </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_chiefcottagelvl5">
-      <Name>Dritte Quest</Name>
+      <Name>Häuptlingshütte Level 5</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue deine Häuptlingshütte auf Level 5 aus.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">250</ResourceReward>  
+        <ResourceReward resource="resource_wood">250</ResourceReward>    
+        <ResourceReward resource="resource_fur">125</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="5" />
       </RewardTests>
     </Quest>
     <Quest id="quest_recruitfriends">
-      <Name>Dritte Quest</Name>
+      <Name>Freunde</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Trage die Belohnung ein, die es maximal für rekrutierte Freunde gibt.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_fur">10</ResourceReward> 
       </Rewards>
       <RewardTests>
         <CustomTest> Textbox: Reward Freunde werben </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1marketlvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Lager</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue ein Lager.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+        <ResourceReward resource="resource_wood">45</ResourceReward>    
+        <ResourceReward resource="resource_fur">20</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_market" min_level="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1quarrylvl1_1loggerlvl1">
-      <Name>Dritte Quest</Name>
+      <Name>Baumfäller und Steinbruch</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue einen Holzfäller und einen Steinbruch.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">50</ResourceReward>  
+        <ResourceReward resource="resource_wood">50</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_quarry" min_level="1" />
@@ -481,18 +481,18 @@
       </RewardTests>
     </Quest>
     <Quest id="quest_build_5quarrylvl5_5loggerlvl5">
-      <Name>Dritte Quest</Name>
+      <Name>Noch mehr Holzfäller und Steinbrüche</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Baue je 5 Holzfäller und Steinbrüche auf Level 5.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">300</ResourceReward>  
+        <ResourceReward resource="resource_wood">300</ResourceReward>    
+        <ResourceReward resource="resource_fur">60</ResourceReward> 
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_quarry" min_level="5" min_count="5" />
@@ -500,18 +500,18 @@
       </RewardTests>
     </Quest>
     <Quest id="quest_outpost">
-      <Name>Dritte Quest</Name>
+      <Name>Dorf</Name>
       <Description lang="de_DE">
-        <p>Beschreibung des 3. Quests auf deutsch.</p>
+        <p>Gründe ein Dorf.</p>
       </Description>
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">15</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward> 
+        <ResourceReward resource="resource_stone">500</ResourceReward>  
+        <ResourceReward resource="resource_wood">500</ResourceReward>    
+        <ResourceReward resource="resource_fur">250</ResourceReward> 
       </Rewards>
       <RewardTests>
         <SettlementTest type="settlement_outpost" min_count="1" />

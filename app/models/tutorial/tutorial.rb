@@ -72,7 +72,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_queue_1gathererlvl1,
           :name        => {
             
-            :en_US => "Startquest",
+            :en_US => "Baue einen Sammler",
                 
           },
           :flavour     => {
@@ -80,7 +80,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 1. Quests auf deutsch.</p>",
+            :de_DE => "<p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf "build".</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -107,7 +107,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1gathererlvl1,
           :name        => {
             
-            :en_US => "Zweite Quest",
+            :en_US => "Zweiter Sammler",
                 
           },
           :flavour     => {
@@ -115,7 +115,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 2. Quests auf deutsch.</p>",
+            :de_DE => "<p>Gut gemacht. Baue jetzt einen weiteren Sammler.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -163,7 +163,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_change_settlementname,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Siedlungsname",
                 
           },
           :flavour     => {
@@ -171,7 +171,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Ändere den Namen deiner Siedlung.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -187,17 +187,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 10,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 10,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 5,
             },
 
           ],          
@@ -216,7 +216,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_rank,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Rang",
                 
           },
           :flavour     => {
@@ -224,7 +224,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Suche deinen Rang im Ranking.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -240,17 +240,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 25,
+              :amount => 5,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 25,
+              :amount => 15,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 15,
+              :amount => 10,
             },
 
           ],          
@@ -269,7 +269,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_2gathererlvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Noch mehr Sammler",
                 
           },
           :flavour     => {
@@ -277,7 +277,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue zwei weitere Sammler.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -293,17 +293,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 40,
+              :amount => 10,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 20,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 15,
             },
 
           ],          
@@ -325,7 +325,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1gathererlvl2,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Ausbau eines Sammlers",
                 
           },
           :flavour     => {
@@ -333,7 +333,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Bau einen Sammler auf Level 2 aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -349,17 +349,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 100,
+              :amount => 15,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 100,
+              :amount => 15,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 50,
+              :amount => 10,
             },
 
           ],          
@@ -381,7 +381,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_message,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Nachrichten",
                 
           },
           :flavour     => {
@@ -389,7 +389,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Lies die Nachricht.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -438,7 +438,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_chieftainslvl2,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Häuptlingshütte Level 2",
                 
           },
           :flavour     => {
@@ -446,7 +446,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 2 aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -462,17 +462,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 80,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 80,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 40,
             },
 
           ],          
@@ -494,7 +494,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_settlementowner,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Festungen",
                 
           },
           :flavour     => {
@@ -502,7 +502,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Trage den Besitzer der Festung in deiner Region ein.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -518,7 +518,7 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 10,
             },
 
             :resource_reward => {
@@ -528,7 +528,7 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 5,
             },
 
           ],          
@@ -547,7 +547,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_settlementbutton,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Karte",
                 
           },
           :flavour     => {
@@ -555,7 +555,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -571,17 +571,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 20,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 10,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 10,
             },
 
           ],          
@@ -596,7 +596,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_profile,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Profil",
                 
           },
           :flavour     => {
@@ -604,7 +604,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Ändere deinen Profiltext.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -625,12 +625,12 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 20,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 10,
             },
 
           ],          
@@ -645,7 +645,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_encyclopedia,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Enzyklopädie",
                 
           },
           :flavour     => {
@@ -653,7 +653,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Suche die Holzkosten einer Kaserne Level 2 heraus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -669,17 +669,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 5,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 5,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 20,
+              :amount => 10,
             },
 
           ],          
@@ -687,7 +687,7 @@ class Tutorial::Tutorial
           :reward_tests => [
             
             :custom_test => {
-              :test => ' Textbox Holzkosten Kaserne ',
+              :test => ' Textbox Holzkosten Kaserne l2 ',
             },
 
           ],          
@@ -698,7 +698,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1cottagelvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Hütten",
                 
           },
           :flavour     => {
@@ -706,7 +706,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue eine Hütte.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -732,7 +732,7 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 10,
             },
 
           ],          
@@ -756,7 +756,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_chiefcottagelvl3,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Häuptlingshütte Level 3",
                 
           },
           :flavour     => {
@@ -764,7 +764,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 3 aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -780,17 +780,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 150,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 150,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 75,
             },
 
           ],          
@@ -812,7 +812,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1barrackslvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Kaserne",
                 
           },
           :flavour     => {
@@ -820,7 +820,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue eine Kaserne.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -836,17 +836,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 60,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 40,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 80,
             },
 
           ],          
@@ -868,7 +868,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_recruit_1clubbers,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Einheiten",
                 
           },
           :flavour     => {
@@ -876,7 +876,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue einen Keulenkrieger.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -909,7 +909,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1walllvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Verteidigungsanlagen",
                 
           },
           :flavour     => {
@@ -917,7 +917,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue einen Wall.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -933,7 +933,7 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 35,
             },
 
             :resource_reward => {
@@ -943,7 +943,7 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 15,
             },
 
           ],          
@@ -958,7 +958,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_army_create,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Armee",
                 
           },
           :flavour     => {
@@ -966,7 +966,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Stelle eine Armee auf.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -982,17 +982,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 10,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 30,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 15,
             },
 
           ],          
@@ -1012,7 +1012,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_army_move,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Armeebewegung",
                 
           },
           :flavour     => {
@@ -1020,7 +1020,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Bewege deine Armee zur Festung.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1041,12 +1041,12 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 25,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 10,
             },
 
           ],          
@@ -1065,7 +1065,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_chiefcottagelvl4,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Häuptlingshütte Level 4",
                 
           },
           :flavour     => {
@@ -1073,7 +1073,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 4 aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1089,17 +1089,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 200,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 200,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 100,
             },
 
           ],          
@@ -1121,7 +1121,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1campfirelvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Lagerfeuer",
                 
           },
           :flavour     => {
@@ -1129,7 +1129,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue ein Lagerfeuer.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1145,17 +1145,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 40,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 40,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 5,
             },
 
           ],          
@@ -1177,7 +1177,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_alliance,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Allianzen",
                 
           },
           :flavour     => {
@@ -1185,7 +1185,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Trete einer Allianz bei oder Gründe deine eigene.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1201,17 +1201,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 100,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 105,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 45,
             },
 
           ],          
@@ -1230,7 +1230,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_chiefcottagelvl5,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Häuptlingshütte Level 5",
                 
           },
           :flavour     => {
@@ -1238,7 +1238,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 5 aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1254,17 +1254,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 250,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 250,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 125,
             },
 
           ],          
@@ -1286,7 +1286,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_recruitfriends,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Freunde",
                 
           },
           :flavour     => {
@@ -1294,7 +1294,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Trage die Belohnung ein, die es maximal für rekrutierte Freunde gibt.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1310,7 +1310,7 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 20,
             },
 
             :resource_reward => {
@@ -1320,7 +1320,7 @@ class Tutorial::Tutorial
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 10,
             },
 
           ],          
@@ -1339,7 +1339,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1marketlvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Markt",
                 
           },
           :flavour     => {
@@ -1347,7 +1347,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue einen Markt.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1363,17 +1363,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 35,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 45,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 20,
             },
 
           ],          
@@ -1395,7 +1395,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Baumfäller und Steinbruch",
                 
           },
           :flavour     => {
@@ -1403,7 +1403,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue einen Holzfäller und einen Steinbruch.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1419,17 +1419,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 50,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 50,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 10,
             },
 
           ],          
@@ -1458,7 +1458,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Noch mehr Holzfäller und Steinbrüche",
                 
           },
           :flavour     => {
@@ -1466,7 +1466,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Baue je 5 Holzfäller und Steinbrüche auf Level 5.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1482,17 +1482,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 300,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 300,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 60,
             },
 
           ],          
@@ -1525,7 +1525,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_outpost,
           :name        => {
             
-            :en_US => "Dritte Quest",
+            :en_US => "Dorf",
                 
           },
           :flavour     => {
@@ -1533,7 +1533,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des 3. Quests auf deutsch.</p>",
+            :de_DE => "<p>Gründe ein Dorf.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1549,17 +1549,17 @@ class Tutorial::Tutorial
             
             :resource_reward => {
               :resource => 'resource_stone',
-              :amount => 15,
+              :amount => 500,
             },
 
             :resource_reward => {
               :resource => 'resource_wood',
-              :amount => 15,
+              :amount => 500,
             },
 
             :resource_reward => {
               :resource => 'resource_fur',
-              :amount => 30,
+              :amount => 250,
             },
 
           ],          
