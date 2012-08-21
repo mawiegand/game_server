@@ -17,6 +17,13 @@ module ApplicationHelper
       yield
     end
   end
+  
+  def if_modified_since_time
+    return @if_modified_since_time    unless @if_modified_since_time.blank?
+    
+    if_modified_since       = request.env['HTTP_IF_MODIFIED_SINCE']    
+    @if_modified_since_time = if_modified_since.blank? ? nil : Time.httpdate(if_modified_since)  
+  end
 
   
   # creates the gravatar image tag with the side-wide default values.

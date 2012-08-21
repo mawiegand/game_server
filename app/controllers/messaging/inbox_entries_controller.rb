@@ -18,6 +18,10 @@ class Messaging::InboxEntriesController < ApplicationController
       role = determine_access_role(@inbox.owner_id, nil)   # no privileged alliance access
       raise ForbiddenError.new('Access to inbox denied.') unless role == :owner || admin? || staff?
       @messaging_inbox_entries = @inbox.entries || []
+      if !if_modified_since_time.nil?
+        @messaging_inbox_entries = @messaging_inbox_entries.find_all { |entry| entry.updated_at > if_modified_since_time } 
+      end
+      @messaging_inbox_entries.each { |entry| last_modified = entry.updated_at   if last_modified.nil? || entry.updated_at > last_modified } 
     else
       @asked_for_index = true
       raise ForbiddenError.new('Access to index of inbox entries forbidden') unless admin? || staff?
