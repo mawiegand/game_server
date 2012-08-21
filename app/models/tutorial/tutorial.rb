@@ -1339,7 +1339,7 @@ class Tutorial::Tutorial
           :symbolic_id => :quest_build_1marketlvl1,
           :name        => {
             
-            :en_US => "Markt",
+            :en_US => "Lager",
                 
           },
           :flavour     => {
@@ -1347,7 +1347,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Baue einen Markt.</p>",
+            :de_DE => "<p>Baue ein Lager.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
