@@ -80,7 +80,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf "build".</p>",
+            :de_DE => "<p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf build.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
