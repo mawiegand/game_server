@@ -1,12 +1,18 @@
 <h1>Listing tutorial_quests</h1>
 
+<%= if (@paginate) 
+  will_paginate @tutorial_quests 
+end %>
+
 <table>
   <tr>
     <th>State</th>
     <th>Quest</th>
     <th>Status</th>
-    <th>Started at</th>
+    <th>Created at</th>
+    <th>Displayed at</th>
     <th>Finished at</th>
+    <th>Closed at</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,14 +22,44 @@
   <tr>
     <td><%= tutorial_quest.state_id %></td>
     <td><%= tutorial_quest.quest_id %></td>
-    <td><%= tutorial_quest.status %></td>
-    <td><%= tutorial_quest.started_at %></td>
+    <td><%= Tutorial::Quest::STATES[tutorial_quest.status] %></td>
+    <td><%= tutorial_quest.created_at %></td>
+    <td><%= tutorial_quest.displayed_at %></td>
     <td><%= tutorial_quest.finished_at %></td>
+    <td><%= tutorial_quest.closed_at %></td>
     <td><%= link_to 'Show', tutorial_quest %></td>
     <td><%= link_to 'Edit', edit_tutorial_quest_path(tutorial_quest) %></td>
     <td><%= link_to 'Destroy', tutorial_quest, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</table>
+
+<%= if (@paginate) 
+  will_paginate @tutorial_quests 
+end %>
+
+<h3>Queststatus:</h3>
+<table>
+<tr>
+  <th>Status</th>
+  <th>Bedeutung</th>
+</tr>
+<tr>
+  <td>new</td>
+  <td>Die Quest ist neu und wurde noch nicht angezeigt</td>
+</tr>
+<tr>
+  <td>displayed</td>
+  <td>Die Quest ist neu, wurde aber bereits angezeigt</td>
+</tr>
+<tr>
+  <td>finished</td>
+  <td>Die Quest ist vom Spieler erfüllt worden, es gab aber noch keine Rewards</td>
+</tr>
+<tr>
+  <td>closed</td>
+  <td>Der Spieler hat sich die Rewards der Quest (Resourcen) gutschreiben lassen</td>
+</tr>
 </table>
 
 <br />

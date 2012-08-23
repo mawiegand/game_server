@@ -1,13 +1,19 @@
 class Tutorial::StatesController < ApplicationController
   layout 'tutorial'
 
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show]  
+
   # GET /tutorial/states
   # GET /tutorial/states.json
   def index
     @tutorial_states = Tutorial::State.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html do
+        @tutorial_states = Tutorial::State.paginate(:page => params[:page], :per_page => 50)    
+        @paginate = true   
+      end
       format.json { render json: @tutorial_states }
     end
   end
@@ -20,12 +26,16 @@ class Tutorial::StatesController < ApplicationController
     else
       @tutorial_state = Tutorial::State.find(params[:id])
     end
+    raise ForbiddenError.new('Access Forbidden') unless @tutorial_state.owner == current_character  
     last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @tutorial_state.to_json(:include => :quests) }
+        format.html
+        format.json { 
+          logger.debug '----> ' +  @tutorial_state.to_json(:include => :quests).to_s
+          render json: @tutorial_state.to_json(:include => :quests)
+        }
       end
     end
   end

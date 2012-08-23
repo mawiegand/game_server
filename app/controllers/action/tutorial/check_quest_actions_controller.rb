@@ -17,13 +17,19 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
     quest_id = @action[:quest_id].to_i
     raise BadRequestError.new('quest_id not valid') unless quest_id >= 0
     
-    quest = tutorial_state.quest_with_id(quest_id)
+    quest_state = tutorial_state.quest_state_with_quest_id(quest_id)
+    raise BadRequestError.new('quest state not found') if quest_state.nil?
 
-    logger.debug '---> quest ' + quest.inspect
-    quest.check_for_rewards
+    logger.debug '---> quest ' + quest_state.inspect
+    
+    if quest_state.check_for_rewards
+      quest_state.open_dependent_quest_states
+    else
+      raise BadRequestError.new('check quest rewards failed')
+    end
 
     respond_to do |format|
-      format.html { redirect_to action_path, notice: 'Change army action was successfully executed.' }
+      format.html { redirect_to action_path, notice: 'Check quest action was successfully executed.' }
       format.json { render json: {}, status: :created }
     end
   end

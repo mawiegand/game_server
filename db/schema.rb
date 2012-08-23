@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821142211) do
+ActiveRecord::Schema.define(:version => 20120823111544) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -725,12 +725,12 @@ ActiveRecord::Schema.define(:version => 20120821142211) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
   end
 
@@ -831,11 +831,11 @@ ActiveRecord::Schema.define(:version => 20120821142211) do
   create_table "tutorial_quests", :force => true do |t|
     t.integer  "state_id"
     t.integer  "quest_id"
-    t.datetime "started_at"
+    t.datetime "displayed_at"
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",      :default => 0
+    t.integer  "status",       :default => 0
     t.datetime "closed_at"
   end
 

@@ -12,17 +12,27 @@
 
 <p>
   <b>Status:</b>
-  <%= @tutorial_quest.status %>
+  <%= Tutorial::Quest::STATES[@tutorial_quest.status] %>
 </p>
 
 <p>
-  <b>Started at:</b>
-  <%= @tutorial_quest.started_at %>
+  <b>Created at:</b>
+  <%= @tutorial_quest.created_at %>
+</p>
+
+<p>
+  <b>Displayed at:</b>
+  <%= @tutorial_quest.displayed_at %>
 </p>
 
 <p>
   <b>Finished at:</b>
   <%= @tutorial_quest.finished_at %>
+</p>
+
+<p>
+  <b>Closed at:</b>
+  <%= @tutorial_quest.closed_at %>
 </p>
 
 

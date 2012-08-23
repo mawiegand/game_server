@@ -24,12 +24,16 @@
     <%= f.number_field :status %>
   </div>
   <div class="field">
-    <%= f.label :started_at %><br />
-    <%= f.datetime_select :started_at %>
+    <%= f.label :displayed_at %><br />
+    <%= f.datetime_select :displayed_at %>
   </div>
   <div class="field">
     <%= f.label :finished_at %><br />
     <%= f.datetime_select :finished_at %>
+  </div>
+  <div class="field">
+    <%= f.label :closed_at %><br />
+    <%= f.datetime_select :closed_at %>
   </div>
   <div class="actions">
     <%= f.submit %>
