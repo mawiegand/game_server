@@ -5,3 +5,9 @@ all:
 	xsltproc --xinclude rules.h.xsl rules.xml    > rules.h
 	g++ rules_test.cpp  rules.cpp -o rules_test -Wall
 	xsltproc --xinclude tutorial.ruby.xsl tutorial.xml > ../app/models/tutorial/tutorial.rb
+
+rules_check:
+	xmllint --xinclude --postvalid --noout rules.xml 
+	
+tutorial_check:
+	xmllint --xinclude --postvalid --noout tutorial.xml 

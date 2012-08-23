@@ -169,6 +169,7 @@ GameServer::Application.routes.draw do
         end
         namespace :tutorial do
           resources :check_quest_actions,     :only => [ :create ]    
+          resources :redeem_rewards_actions,     :only => [ :create ]    
         end
       end
       

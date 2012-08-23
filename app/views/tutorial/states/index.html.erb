@@ -1,5 +1,9 @@
 <h1>Listing tutorial_states</h1>
 
+<%= if (@paginate) 
+  will_paginate @tutorial_states 
+end %>
+
 <table>
   <tr>
     <th>Character</th>
@@ -17,6 +21,10 @@
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate) 
+  will_paginate @tutorial_states 
+end %>
 
 <br />
 

@@ -832,11 +832,11 @@ ActiveRecord::Schema.define(:version => 20120823134616) do
   create_table "tutorial_quests", :force => true do |t|
     t.integer  "state_id"
     t.integer  "quest_id"
-    t.datetime "started_at"
+    t.datetime "displayed_at"
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",      :default => 0
+    t.integer  "status",       :default => 0
     t.datetime "closed_at"
   end
 

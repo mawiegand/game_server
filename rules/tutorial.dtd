@@ -53,32 +53,32 @@
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
   building  CDATA #REQUIRED
-  min_level CDATA #IMPLIED
-  min_count CDATA #IMPLIED
+  min_level CDATA "1"
+  min_count CDATA "1"
 >
 
 <!ELEMENT ConstructionQueueTest (#PCDATA)>
 <!ATTLIST ConstructionQueueTest
   building  CDATA #REQUIRED
-  min_count CDATA #REQUIRED
+  min_count CDATA "1"
 >
 
 <!ELEMENT TrainingQueueTest (#PCDATA)>
 <!ATTLIST TrainingQueueTest
   unit      CDATA #REQUIRED
-  min_count CDATA #REQUIRED
+  min_count CDATA "1"
 >
 
 <!ELEMENT SettlementTest (#PCDATA)>
 <!ATTLIST SettlementTest
   type      CDATA #REQUIRED
-  min_count CDATA #REQUIRED
+  min_count CDATA "1"
 >
 
 <!ELEMENT ArmyTest (#PCDATA)>
 <!ATTLIST ArmyTest
   type      CDATA #REQUIRED
-  min_count CDATA #REQUIRED
+  min_count CDATA "1"
 >
 
 <!ELEMENT CustomTest (#PCDATA)>

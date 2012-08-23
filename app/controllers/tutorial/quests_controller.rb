@@ -1,14 +1,17 @@
 class Tutorial::QuestsController < ApplicationController
   layout 'tutorial'
+  
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:update]    
 
   # GET /tutorial/quests
   # GET /tutorial/quests.json
   def index
-    @tutorial_quests = Tutorial::Quest.all
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tutorial_quests }
+      format.html do
+        @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)    
+        @paginate = true   
+      end
     end
   end
 
@@ -59,6 +62,10 @@ class Tutorial::QuestsController < ApplicationController
   # PUT /tutorial/quests/1.json
   def update
     @tutorial_quest = Tutorial::Quest.find(params[:id])
+    
+    if params[:tutorial_quest].has_key?(:status) && params[:tutorial_quest][:status] == Tutorial::Quest::STATE_DISPLAYED
+      params[:tutorial_quest][:displayed_at] = Time.now
+    end
 
     respond_to do |format|
       if @tutorial_quest.update_attributes(params[:tutorial_quest])

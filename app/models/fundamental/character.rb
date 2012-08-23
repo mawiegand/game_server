@@ -94,7 +94,7 @@ class Fundamental::Character < ActiveRecord::Base
       Messaging::Message.create_welcome_message(character)
       
       character.create_tutorial_state
-      character.tutorial_state.create_start_quest      
+      character.tutorial_state.create_start_quest_state      
     end
     
     return character 
