@@ -92,6 +92,14 @@
       <SpeedupCost resource="resource_cash" amount="12" hours="48" />
       <SpeedupCost resource="resource_cash" amount="20" hours="96" />
     </ConstructionSpeedup>
+    <TrainingSpeedup>
+      <SpeedupCost resource="resource_cash" amount="2"  hours="12"  />
+      <SpeedupCost resource="resource_cash" amount="3"  hours="24"  />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="48"  />
+      <SpeedupCost resource="resource_cash" amount="5"  hours="96"  />
+      <SpeedupCost resource="resource_cash" amount="6"  hours="192" />
+      <SpeedupCost resource="resource_cash" amount="10" hours="480" />
+    </TrainingSpeedup>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />

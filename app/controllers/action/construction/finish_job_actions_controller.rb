@@ -3,6 +3,7 @@ class Action::Construction::FinishJobActionsController < ApplicationController
 
   before_filter :authenticate
 
+  # TODO:   THIS DOES NOT CHECK THE OWNERSHIP OF THE JOB!!!
   def create
     logger.debug params.inspect
     Construction::Job.transaction do

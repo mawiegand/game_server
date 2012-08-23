@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup
+  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
   
   def attributes 
     { 
@@ -40,6 +40,7 @@ class GameRules::Rules
       'battle'               => battle,
       'character_creation'   => character_creation,
       'construction_speedup' => construction_speedup,
+      'training_speedup'     => training_speedup,
       'unit_categories'      => unit_categories,
       'building_categories'  => building_categories,
       'unit_types'           => unit_types,
@@ -133,6 +134,48 @@ class GameRules::Rules
         },              #   END OF 96 hours
 
       ],                # END OF CONSTRUCTION SPEEDUP
+
+# ## TRAINING SPEEDUP ##########################################################
+  
+      :training_speedup => [  # ALL TRAINING SPEEDUPS
+
+        {               #   less than 12 hours
+          :resource_id => 3, 
+          :amount      => 2,
+          :hours     => 12,
+        },              #   END OF 12 hours
+
+        {               #   less than 24 hours
+          :resource_id => 3, 
+          :amount      => 3,
+          :hours     => 24,
+        },              #   END OF 24 hours
+
+        {               #   less than 48 hours
+          :resource_id => 3, 
+          :amount      => 4,
+          :hours     => 48,
+        },              #   END OF 48 hours
+
+        {               #   less than 96 hours
+          :resource_id => 3, 
+          :amount      => 5,
+          :hours     => 96,
+        },              #   END OF 96 hours
+
+        {               #   less than 192 hours
+          :resource_id => 3, 
+          :amount      => 6,
+          :hours     => 192,
+        },              #   END OF 192 hours
+
+        {               #   less than 480 hours
+          :resource_id => 3, 
+          :amount      => 10,
+          :hours     => 480,
+        },              #   END OF 480 hours
+
+      ],                # END OF TRAINING SPEEDUP
 
 # ## RESOURCE TYPES ##########################################################
   

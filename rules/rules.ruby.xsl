@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup
+  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
   
   def attributes 
     { 
@@ -87,6 +87,7 @@ class GameRules::Rules
       'battle'               => battle,
       'character_creation'   => character_creation,
       'construction_speedup' => construction_speedup,
+      'training_speedup'     => training_speedup,
       'unit_categories'      => unit_categories,
       'building_categories'  => building_categories,
       'unit_types'           => unit_types,
@@ -135,6 +136,7 @@ class GameRules::Rules
           },
         },
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
+  <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
@@ -183,6 +185,20 @@ end
 	
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
 
+
+<xsl:template match="TrainingSpeedup">
+# ## TRAINING SPEEDUP ##########################################################
+  
+      :training_speedup => [  # ALL TRAINING SPEEDUPS
+<xsl:for-each select="SpeedupCost">
+        {               #   less than <xsl:value-of select="@hours"/> hours
+          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>, 
+          :amount      => <xsl:value-of select="@amount"/>,
+          :hours     => <xsl:value-of select="@hours"/>,
+        },              #   END OF <xsl:value-of select="@hours"/> hours
+</xsl:for-each>
+      ],                # END OF TRAINING SPEEDUP
+</xsl:template>
 
 
 <xsl:template match="ConstructionSpeedup">
