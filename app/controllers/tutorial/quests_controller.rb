@@ -63,12 +63,13 @@ class Tutorial::QuestsController < ApplicationController
   def update
     @tutorial_quest = Tutorial::Quest.find(params[:id])
     
-    if params[:tutorial_quest].has_key?(:status) && params[:tutorial_quest][:status] == Tutorial::Quest::STATE_DISPLAYED
-      params[:tutorial_quest][:displayed_at] = Time.now
+    attributes = params[:tutorial_quest]
+    if attributes.has_key?(:status) && attributes[:status] == Tutorial::Quest::STATE_DISPLAYED.to_s
+      attributes[:displayed_at] = Time.now
     end
 
     respond_to do |format|
-      if @tutorial_quest.update_attributes(params[:tutorial_quest])
+      if @tutorial_quest.update_attributes(attributes)
         format.html { redirect_to @tutorial_quest, notice: 'Quest was successfully updated.' }
         format.json { render json: {}, status: :ok }
       else
