@@ -13,7 +13,7 @@ class Training::Job < ActiveRecord::Base
   
   def training_time
     rules = GameRules::Rules.the_rules
-    rules.unit_types[self.unit_id][:production_time].to_i
+    rules.unit_types[self.unit_id][:production_time].to_i / (self.hurried? ? 2 : 1)
   end
   
   def costs
@@ -78,6 +78,30 @@ class Training::Job < ActiveRecord::Base
     self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs)
   end
   
+  def speedup
+    self.hurried = true  # this job is hurried
+
+    if self.active_job.nil?
+      logger.warn "Hurried a training event that is not the active event. Presently, this is against the game rules."
+    else
+      # 1. remove old event
+      self.active_job.event.destroy   
+      
+      # 2. recalc production times
+      start = self.active_job.started_active_at
+      quantity_remaining = self.quantity - self.quantity_finished
+      self.active_job.finished_active_at = start + (self.training_time / queue.speed)
+      self.active_job.finished_total_at  = start + ((1.0 * quantity_remaining / queue.threads).ceil * self.training_time / queue.speed)
+
+      # 3. create a new event for the new production times
+      self.active_job.create_ticker_event
+    end
+    
+    self.save            # should also save active_job...
+  end
+    
+    
+  
   # creates the units for tha active job. if there are more units to be build in this job, 
   # active job will be updated and a new event is created
   # if there is not enough space in the garrison army, only those units which fit into the garrison
@@ -112,6 +136,8 @@ class Training::Job < ActiveRecord::Base
         new_start = active_job.finished_active_at
         active_job.started_active_at = new_start
         active_job.finished_active_at = new_start + (self.training_time / queue.speed)
+        active_job.finished_total_at  = new_start + ((1.0 * quantity_remaining / queue.threads).ceil * self.training_time / queue.speed)
+
         active_job.event.destroy
         self.save
         
