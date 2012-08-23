@@ -3,6 +3,15 @@
 
 de:
   
+  datetime:
+    distance_in_words:
+      x_days: 
+        one:   '1 Tag'
+        other: '%{count} Tage'
+      x_minutes: 
+        one:   '1 Minute'
+        other: '%{count} Minuten'
+  
   application:
     layout:
       map_nodes: Knoten
