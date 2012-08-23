@@ -70,7 +70,7 @@ class Tutorial::QuestsController < ApplicationController
     respond_to do |format|
       if @tutorial_quest.update_attributes(params[:tutorial_quest])
         format.html { redirect_to @tutorial_quest, notice: 'Quest was successfully updated.' }
-        format.json { head :ok }
+        format.json { render json: {}, status: :ok }
       else
         format.html { render action: "edit" }
         format.json { render json: @tutorial_quest.errors, status: :unprocessable_entity }
