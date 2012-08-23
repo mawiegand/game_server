@@ -16,7 +16,7 @@ class Action::Training::SpeedupJobActionsController < ApplicationController
       entry = nil
       
       speedup_costs.each do |item|
-        entry = item    if entry.nil? && @speedup_costs.active_job.finished_at < Time.now + item[:hours].hours
+        entry = item    if entry.nil? && @training_job.active_job.finished_total_at < Time.now + item[:hours].hours
       end
 
       raise BadRequestError.new('job cannot be speedup; it takes to long.')  if entry.nil?

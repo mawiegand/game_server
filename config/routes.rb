@@ -161,6 +161,9 @@ GameServer::Application.routes.draw do
         namespace :construction do
           resources :finish_job_actions    
         end
+        namespace :training do
+          resources :speedup_job_actions    
+        end
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ]    
         end

@@ -84,12 +84,16 @@ class Training::Job < ActiveRecord::Base
     if self.active_job.nil?
       logger.warn "Hurried a training event that is not the active event. Presently, this is against the game rules."
     else
-      self.active_job.event.destroy 
+      # 1. remove old event
+      self.active_job.event.destroy   
       
+      # 2. recalc production times
       start = self.active_job.started_active_at
-      active_job.finished_active_at = start + (self.training_time / queue.speed)
-      active_job.finished_total_at  = start + ((1.0 * quantity_remaining / self.threads).ceil * self.training_time / self.speed)
+      quantity_remaining = self.quantity - self.quantity_finished
+      self.active_job.finished_active_at = start + (self.training_time / queue.speed)
+      self.active_job.finished_total_at  = start + ((1.0 * quantity_remaining / queue.threads).ceil * self.training_time / queue.speed)
 
+      # 3. create a new event for the new production times
       self.active_job.create_ticker_event
     end
     
@@ -132,7 +136,7 @@ class Training::Job < ActiveRecord::Base
         new_start = active_job.finished_active_at
         active_job.started_active_at = new_start
         active_job.finished_active_at = new_start + (self.training_time / queue.speed)
-        active_job.finished_total_at  = new_start + ((1.0 * quantity_remaining / self.threads).ceil * self.training_time / self.speed)
+        active_job.finished_total_at  = new_start + ((1.0 * quantity_remaining / queue.threads).ceil * self.training_time / queue.speed)
 
         active_job.event.destroy
         self.save
