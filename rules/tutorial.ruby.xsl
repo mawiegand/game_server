@@ -94,11 +94,6 @@ class Tutorial::Tutorial
     end
   end
   
-  def persisted?
-    false
-  end
-  
-
   # returns the rules-singleton containing all the present rules. Should not
   # be modified by the program. Uses conditional assignment to construct the
   # rules object on first access.
@@ -168,9 +163,9 @@ end
             <xsl:apply-templates select="Requirement" />
 </xsl:if>
 <xsl:if test="Rewards">
-          :rewards => [
+          :rewards => {
             <xsl:apply-templates select="Rewards" />
-          ],          
+          },          
 </xsl:if>
 <xsl:if test="RewardTests">
           :reward_tests => [
@@ -196,21 +191,27 @@ end
 
 <xsl:template match="Rewards">
 <xsl:if test="ResourceReward">
+            :resource_rewards => [
 <xsl:apply-templates select="ResourceReward" />
+            ],
 </xsl:if>
 <xsl:if test="ConstructionReward">
+            :construction_rewards => [
 <xsl:apply-templates select="ConstructionReward" />
+            ],
 </xsl:if>
 <xsl:if test="TrainingReward">
+            :training_rewards => [
 <xsl:apply-templates select="TrainingReward" />
+            ],
 </xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">
-            :resource_reward => {
-              :resource => '<xsl:value-of select="@resource" />',
-              :amount => <xsl:value-of select="." />,
-            },
+              {
+                :resource => '<xsl:value-of select="@resource" />',
+                :amount => <xsl:value-of select="." />,
+              },
 </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 <xsl:template match="ConstructionReward">
