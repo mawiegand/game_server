@@ -1,0 +1,21 @@
+<%= form_for(@fundamental_setting) do |f| %>
+  <% if @fundamental_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_setting.errors.count, "error") %> prohibited this fundamental_setting from being saved:</h2>
+
+      <ul>
+      <% @fundamental_setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email_messages %><br />
+    <%= f.check_box :email_messages %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823134616) do
+ActiveRecord::Schema.define(:version => 20120823194131) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -271,6 +271,13 @@ ActiveRecord::Schema.define(:version => 20120823134616) do
     t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
     t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
+  end
+
+  create_table "fundamental_settings", :force => true do |t|
+    t.boolean  "email_messages", :default => true, :null => false
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "map_locations", :force => true do |t|
