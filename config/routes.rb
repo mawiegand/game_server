@@ -1,5 +1,6 @@
 GameServer::Application.routes.draw do
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -35,6 +36,7 @@ GameServer::Application.routes.draw do
           resource  :resource_pool,                            :only => [ :show ] 
           resource  :tutorial_state,  :module => "tutorial",  :controller => "states",  :only => [ :show ] 
           resources :settlements,     :module => 'settlement'   
+          resources :settings
         end
         
         resources :resource_pools 
@@ -51,6 +53,8 @@ GameServer::Application.routes.draw do
         
         match '/announcements/recent', :to => 'announcements#recent'
         resources :announcements
+        
+        resources :settings
       end
       
       namespace :messaging do 

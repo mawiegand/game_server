@@ -1,0 +1,2 @@
+module Fundamental::SettingsHelper
+end
