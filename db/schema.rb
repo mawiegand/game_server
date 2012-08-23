@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821142211) do
+ActiveRecord::Schema.define(:version => 20120823134616) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -811,6 +811,7 @@ ActiveRecord::Schema.define(:version => 20120821142211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity_finished"
+    t.boolean  "hurried",           :default => false, :null => false
   end
 
   create_table "training_queues", :force => true do |t|

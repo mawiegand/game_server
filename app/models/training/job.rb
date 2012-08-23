@@ -112,6 +112,8 @@ class Training::Job < ActiveRecord::Base
         new_start = active_job.finished_active_at
         active_job.started_active_at = new_start
         active_job.finished_active_at = new_start + (self.training_time / queue.speed)
+        active_job.finished_total_at  = new_start + ((1.0 * quantity_remaining / self.threads).ceil * self.training_time / self.speed)
+
         active_job.event.destroy
         self.save
         
