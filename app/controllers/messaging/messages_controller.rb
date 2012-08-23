@@ -76,7 +76,7 @@ class Messaging::MessagesController < ApplicationController
         @messaging_message[:sender_id] = current_character.id
       end
       @messaging_message[:subject] = params[:message][:subject] || "-"
-      @messaging_message[:body] = format_body(params[:message][:body] || "")
+      @messaging_message[:body] = format_body(CGI::escapeHTML(params[:message][:body] || "")) # we have to escape html here, because the body field is displayed "raw" in the client. reason: we want to allow battle reports to be formatted with html    
     end 
           
     raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
