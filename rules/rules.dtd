@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation)>
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -193,6 +193,15 @@
 <!ATTLIST Cost id IDREF #REQUIRED>
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
+
+<!ELEMENT ConstructionSpeedup (SpeedupCost+)>
+<!ELEMENT SpeedupCost EMPTY>
+<!ATTLIST SpeedupCost 
+	resource IDREF #REQUIRED
+	amount   CDATA #REQUIRED
+	hours    CDATA #REQUIRED 
+>
+
 
 <!ELEMENT Production (#PCDATA)>
 <!ATTLIST Production

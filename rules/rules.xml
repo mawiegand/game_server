@@ -84,6 +84,14 @@
       <StartResource id="resource_fur">800</StartResource>
       <StartResource id="resource_cash">5</StartResource>
     </CharacterCreation>
+    <ConstructionSpeedup>
+      <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="4" />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="10" />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="24" />
+      <SpeedupCost resource="resource_cash" amount="12" hours="48" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="96" />
+    </ConstructionSpeedup>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
