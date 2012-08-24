@@ -21,7 +21,9 @@
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Rewards>
-        <ConstructionReward />  
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">20</ResourceReward>    
+        <ResourceReward resource="resource_fur">20</ResourceReward>
       </Rewards>
       <RewardTests>
         <ConstructionQueueTest building="building_gatherer" min_count="1" />
@@ -60,7 +62,7 @@
         <ResourceReward resource="resource_fur">5</ResourceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest> Dorfname geändert </CustomTest>
+        <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_rank">
@@ -78,7 +80,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest> Rang eingegeben </CustomTest>
+        <TextboxTest id="test_army_rank"> Rang eingegeben </TextboxTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_2gathererlvl1">
@@ -130,7 +132,7 @@
         <ResourceReward resource="resource_cash">5</ResourceReward>  
       </Rewards>
       <RewardTests>
-        <CustomTest>send Message, Message opened</CustomTest>
+        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
       </RewardTests>
       <Message>
         <Subject>Subject</Subject>
@@ -174,7 +176,7 @@
         <ResourceReward resource="resource_fur">5</ResourceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest>fortress owner in Region</CustomTest>
+        <TextboxTest id="test_fortress_owner">fortress owner in Region</TextboxTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_settlementbutton">
@@ -192,6 +194,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
+        <CustomTest id="test_settlement_buttom">settlement button pressed</CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_profile">
@@ -209,6 +212,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
+        <CustomTest id="test_change_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_encyclopedia">
@@ -226,7 +230,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-	<CustomTest> Textbox Holzkosten Kaserne l2 </CustomTest>
+	      <CustomTest id="test_costs"> Textbox Holzkosten Kaserne l2 </CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1cottagelvl1">
@@ -293,7 +297,8 @@
       </Description>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <TrainingReward /> 
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+	<!-- unit reward -->
       </Rewards>
       <RewardTests>
         <TrainingQueueTest unit="clubbers" min_count="1" />
@@ -350,7 +355,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <CustomTest> armeebewegung </CustomTest>
+        <MovementTest />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_chiefcottagelvl4">
@@ -404,7 +409,7 @@
         <ResourceReward resource="resource_fur">45</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <CustomTest> Allianz check </CustomTest>
+        <AllianceTest />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_chiefcottagelvl5">
@@ -440,7 +445,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <CustomTest> Textbox: Reward Freunde werben </CustomTest>
+        <TextboxTest id="test_recruit_friends_reward"> Reward Freunde werben </TextboxTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1marketlvl1">
