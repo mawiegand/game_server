@@ -134,6 +134,8 @@ module Auth
       raise BearerAuthInsufficientScope.new('Requested resource is not in authorized scope.') unless request_access_token.in_scope?(GAME_SERVER_CONFIG['scope'])
   
       character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
+      character.update_last_request_at   unless character.nil?
+      character
     end
   
     def request_access_token

@@ -41,12 +41,30 @@ class Fundamental::Character < ActiveRecord::Base
     return identity
   end
   
+  def self.find_by_name_case_insensitive(name)
+    Fundamental::Character.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
+  end
+  
   def self.valid_identifier?(identifier)
     identifier.index(@identifier_regex) != nil
   end
   
   def self.valid_id?(id)
     id.index(/^[1-9]\d*$/) != nil
+  end
+  
+  def update_last_request_at
+    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
+      self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
+    end
+  end  
+  
+  def online?
+    !self.last_request_at.nil? && self.last_request_at + 2.minutes > Time.now
+  end
+  
+  def offline?
+    !self.online?
   end
   
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
@@ -102,7 +120,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
-    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name(name).nil?
+    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
     freeChange = (self.name_change_count || 0) < 1 
     
