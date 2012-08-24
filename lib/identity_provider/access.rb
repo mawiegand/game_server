@@ -31,7 +31,7 @@ module IdentityProvider
         recipient_character_name: recipient.name,
         sender_id:                sender.identifier,
         sender_character_name:    sender.name,
-        subject:                  "Du hast soeben eine Nachricht von #{recipient.name} in Wack-a-Doo erhalten.",
+        subject:                  "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten.",
         body:                     "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen.",
       }
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
