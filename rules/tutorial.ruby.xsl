@@ -249,10 +249,15 @@ end
 <xsl:apply-templates select="TrainingQueueTest" />
             ],
 </xsl:if>
+<xsl:if test="TextboxTest">
+            :textbox_test => {
+              :id => '<xsl:value-of select="TextboxTest/@id" />',
+            },
+</xsl:if>
 <xsl:if test="CustomTest">
-            :custom_tests => [
-<xsl:apply-templates select="CustomTest" />
-            ],
+            :custom_test => {
+              :id => '<xsl:value-of select="CustomTest/@id" />',
+            },
 </xsl:if>
 </xsl:template>
 
@@ -294,12 +299,6 @@ end
               {
                 :unit => '<xsl:value-of select="@unit" />',
                 :min_count => <xsl:value-of select="@min_count" />,
-              },
-</xsl:template>
-
-<xsl:template match="CustomTest">
-              {
-                :test => '<xsl:value-of select="." />',
               },
 </xsl:template>
 
