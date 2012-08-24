@@ -2,6 +2,8 @@ class Construction::JobsController < ApplicationController
   layout 'construction'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index, :create, :destroy]
+
 
   # GET /construction/queues/:queue_id/jobs
   # GET /construction/queues/:queue_id/jobs.json

@@ -2,7 +2,7 @@ class Training::JobsController < ApplicationController
   layout 'training'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api, :except => [:show, :index, :create, :destroy]
 
 
   # GET /training/jobs

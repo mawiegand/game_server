@@ -1,5 +1,8 @@
 class Action::Military::CancelMoveArmyActionsController < ApplicationController
   layout 'action'
+  
+  before_filter :authenticate
+
 
   # GET /action/military/move_army_actions/new
   # GET /action/military/move_army_actions/new.json
