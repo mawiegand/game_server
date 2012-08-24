@@ -48,7 +48,7 @@
 <!ELEMENT TrainingReward (#PCDATA)>
 
 
-<!ELEMENT RewardTests (BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, CustomTest*)>
+<!ELEMENT RewardTests ((BuildingTest*, SettlementTest?, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
@@ -75,13 +75,25 @@
   min_count CDATA "1"
 >
 
+<!ELEMENT MovementTest (#PCDATA)>
+
+<!ELEMENT AllianceTest (#PCDATA)>
+
 <!ELEMENT ArmyTest (#PCDATA)>
 <!ATTLIST ArmyTest
   type      CDATA #REQUIRED
   min_count CDATA "1"
 >
 
+<!ELEMENT TextboxTest (#PCDATA)>
+<!ATTLIST TextboxTest
+  id        CDATA #REQUIRED
+>
+
 <!ELEMENT CustomTest (#PCDATA)>
+<!ATTLIST CustomTest
+  id        CDATA #REQUIRED
+>
 
 <!ELEMENT Message (Subject, Body)>
 <!ATTLIST Message lang IDREF "en_US">
