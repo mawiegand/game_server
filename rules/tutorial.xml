@@ -21,7 +21,9 @@
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Rewards>
-        <ConstructionReward />  
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">20</ResourceReward>    
+        <ResourceReward resource="resource_fur">20</ResourceReward>
       </Rewards>
       <RewardTests>
         <ConstructionQueueTest building="building_gatherer" min_count="1" />
@@ -293,7 +295,8 @@
       </Description>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <TrainingReward /> 
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+	<!-- unit reward -->
       </Rewards>
       <RewardTests>
         <TrainingQueueTest unit="clubbers" min_count="1" />
