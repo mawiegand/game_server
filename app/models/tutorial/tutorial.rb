@@ -104,18 +104,31 @@ class Tutorial::Tutorial
 
           },          
 
-          :reward_tests => [
+          :reward_tests => {
             
-            :building_test => {
-              :building => 'building_gatherer',
+            :building_tests => [
 
-              :min_level => 2,
+              {
+                :building => 'building_gatherer',
 
-              :min_count => 1,
+                :min_level => 2,
 
-            },
+                :min_count => 1,
 
-          ],          
+              },
+
+            ],
+
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 2,
+              },
+
+            ],
+
+          },          
 
         },              #   END OF quest_gatherer_level_1_build
         {               #   quest_gatherer_level_2_build
@@ -166,18 +179,22 @@ class Tutorial::Tutorial
 
           },          
 
-          :reward_tests => [
+          :reward_tests => {
             
-            :building_test => {
-              :building => 'building_gatherer',
+            :building_tests => [
 
-              :min_level => 2,
+              {
+                :building => 'building_gatherer',
 
-              :min_count => 2,
+                :min_level => 2,
 
-            },
+                :min_count => 2,
 
-          ],          
+              },
+
+            ],
+
+          },          
 
         },              #   END OF quest_gatherer_level_2_build
         {               #   quest_gatherer_level_3_build
@@ -226,56 +243,76 @@ class Tutorial::Tutorial
 
             ],
 
-            :construction_rewards => [
+            :construction_reward => {
 
-            :construction_reward => {},
+            },
+
+            :training_reward => {
+
+            },
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 3,
+
+                :min_count => 2,
+
+              },
 
             ],
 
-            :training_rewards => [
+            :settlement_tests => [
 
-            :training_reward => {},
+              {
+                :type => 'outpost',
+                :min_count => 1,
+              },
+
+            ],
+
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 1000,
+              },
+
+            ],
+
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_gatherer',
+                :min_count => 1,
+              },
+
+            ],
+
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_thrower',
+                :min_count => 2,
+              },
+
+            ],
+
+            :custom_tests => [
+
+              {
+                :test => 'Muss noch überlegt werden...',
+              },
 
             ],
 
           },          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_gatherer',
-
-              :min_level => 3,
-
-              :min_count => 2,
-
-            },
-
-            :settlement_test => {
-              :type => 'outpost',
-              :min_count => 1,
-            },
-
-            :army_test => {
-              :type => 'garrison',
-              :min_count => 1000,
-            },
-
-            :construction_queue_test => {
-              :building => 'building_gatherer',
-              :min_count => 1,
-            },
-
-            :training_queue_test => {
-              :unit => 'unit_thrower',
-              :min_count => 2,
-            },
-
-            :custom_test => {
-              :test => 'Muss noch überlegt werden...',
-            },
-
-          ],          
 
           :message => {
             
@@ -338,56 +375,76 @@ class Tutorial::Tutorial
 
             ],
 
-            :construction_rewards => [
+            :construction_reward => {
 
-            :construction_reward => {},
+            },
+
+            :training_reward => {
+
+            },
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 3,
+
+                :min_count => 2,
+
+              },
 
             ],
 
-            :training_rewards => [
+            :settlement_tests => [
 
-            :training_reward => {},
+              {
+                :type => 'outpost',
+                :min_count => 1,
+              },
+
+            ],
+
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 1000,
+              },
+
+            ],
+
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_gatherer',
+                :min_count => 1,
+              },
+
+            ],
+
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_thrower',
+                :min_count => 2,
+              },
+
+            ],
+
+            :custom_tests => [
+
+              {
+                :test => 'Muss noch überlegt werden...',
+              },
 
             ],
 
           },          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_gatherer',
-
-              :min_level => 3,
-
-              :min_count => 2,
-
-            },
-
-            :settlement_test => {
-              :type => 'outpost',
-              :min_count => 1,
-            },
-
-            :army_test => {
-              :type => 'garrison',
-              :min_count => 1000,
-            },
-
-            :construction_queue_test => {
-              :building => 'building_gatherer',
-              :min_count => 1,
-            },
-
-            :training_queue_test => {
-              :unit => 'unit_thrower',
-              :min_count => 2,
-            },
-
-            :custom_test => {
-              :test => 'Muss noch überlegt werden...',
-            },
-
-          ],          
 
           :message => {
             
@@ -450,56 +507,76 @@ class Tutorial::Tutorial
 
             ],
 
-            :construction_rewards => [
+            :construction_reward => {
 
-            :construction_reward => {},
+            },
+
+            :training_reward => {
+
+            },
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 3,
+
+                :min_count => 2,
+
+              },
 
             ],
 
-            :training_rewards => [
+            :settlement_tests => [
 
-            :training_reward => {},
+              {
+                :type => 'outpost',
+                :min_count => 1,
+              },
+
+            ],
+
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 1000,
+              },
+
+            ],
+
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_gatherer',
+                :min_count => 1,
+              },
+
+            ],
+
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_thrower',
+                :min_count => 2,
+              },
+
+            ],
+
+            :custom_tests => [
+
+              {
+                :test => 'Muss noch überlegt werden...',
+              },
 
             ],
 
           },          
-
-          :reward_tests => [
-            
-            :building_test => {
-              :building => 'building_gatherer',
-
-              :min_level => 3,
-
-              :min_count => 1,
-
-            },
-
-            :settlement_test => {
-              :type => 'outpost',
-              :min_count => 1,
-            },
-
-            :army_test => {
-              :type => 'garrison',
-              :min_count => 1000,
-            },
-
-            :construction_queue_test => {
-              :building => 'building_gatherer',
-              :min_count => 1,
-            },
-
-            :training_queue_test => {
-              :unit => 'unit_thrower',
-              :min_count => 2,
-            },
-
-            :custom_test => {
-              :test => 'Muss noch überlegt werden...',
-            },
-
-          ],          
 
           :message => {
             

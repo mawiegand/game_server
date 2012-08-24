@@ -733,12 +733,12 @@ ActiveRecord::Schema.define(:version => 20120823201254) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
   end
 
