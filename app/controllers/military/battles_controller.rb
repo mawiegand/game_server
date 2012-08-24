@@ -1,6 +1,9 @@
 class Military::BattlesController < ApplicationController
   layout 'military'
 
+  before_filter :authenticate
+
+
   # GET /military/battles
   # GET /military/battles.json
   def index

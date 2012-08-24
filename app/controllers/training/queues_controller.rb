@@ -2,6 +2,8 @@ class Training::QueuesController < ApplicationController
   layout 'training'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
 
   # GET /settlement/settlements/:settlement_id/training_queues
   # GET /settlement/settlements/:settlement_id/training_queues.json

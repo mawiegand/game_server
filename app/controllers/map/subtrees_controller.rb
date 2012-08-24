@@ -3,6 +3,9 @@ require 'json'
 class Map::SubtreesController < ApplicationController
   layout 'map'
  
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
   
   # Shows whole subtrees below a given node. Does not need any authentication; the map 
   # structure is public and therefore world-readable.

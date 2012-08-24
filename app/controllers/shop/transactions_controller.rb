@@ -4,6 +4,7 @@ class Shop::TransactionsController < ApplicationController
   include Shop::ShopHelper
 
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index, :create]
   
   # GET /shop/transactions
   # GET /shop/transactions.json

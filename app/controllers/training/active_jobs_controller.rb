@@ -1,5 +1,9 @@
 class Training::ActiveJobsController < ApplicationController
   layout 'training'
+
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
   
   # GET /training/active_jobs
   # GET /training/active_jobs.json

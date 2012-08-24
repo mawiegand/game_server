@@ -1,6 +1,9 @@
 class Effect::ResourceEffectsController < ApplicationController
   layout 'effect'
   
+  before_filter :authenticate
+
+  
   # GET /effect/resource_effects
   # GET /effect/resource_effects.json
   def index

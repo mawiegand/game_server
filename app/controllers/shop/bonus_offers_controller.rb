@@ -2,6 +2,8 @@ class Shop::BonusOffersController < ApplicationController
   layout 'shop'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
   
   # GET /shop/bonus_offers
   # GET /shop/bonus_offers.json

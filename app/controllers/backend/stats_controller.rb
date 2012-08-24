@@ -3,6 +3,8 @@ class Backend::StatsController < ApplicationController
   
   before_filter :deny_api
   before_filter :authenticate_backend  
+  before_filter :authorize_staff
+
   
   # GET /backend/stats
   # GET /backend/stats.json

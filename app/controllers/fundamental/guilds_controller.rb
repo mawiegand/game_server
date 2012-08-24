@@ -1,6 +1,9 @@
 class Fundamental::GuildsController < ApplicationController
   layout 'fundamental'
   
+  before_filter :authenticate
+
+  
   # GET /fundamental/guilds
   # GET /fundamental/guilds.json
   def index

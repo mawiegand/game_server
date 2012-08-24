@@ -1,6 +1,8 @@
 class Messaging::ArchiveEntriesController < ApplicationController
   layout 'messaging'
 
+  before_filter :authenticate
+  
   
   # GET /messaging/archive_entries
   # GET /messaging/archive_entries.json

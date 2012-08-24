@@ -1,6 +1,9 @@
 class Messaging::ArchivesController < ApplicationController
   layout 'messaging'
 
+  before_filter :authenticate
+
+
   # GET /messaging/archives
   # GET /messaging/archives.json
   def index

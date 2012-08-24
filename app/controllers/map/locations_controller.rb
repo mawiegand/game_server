@@ -1,6 +1,8 @@
 class Map::LocationsController < ApplicationController
   layout 'map'
 
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
 
   # GET /map/locations
   # GET /map/locations.json

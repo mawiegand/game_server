@@ -8,6 +8,8 @@ require 'util/formula.rb'
 class Tutorial::TutorialsController < ApplicationController
   layout 'tutorial'
   
+  before_filter :authenticate
+  
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
     

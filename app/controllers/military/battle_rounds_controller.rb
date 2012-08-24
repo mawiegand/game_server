@@ -1,5 +1,7 @@
 class Military::BattleRoundsController < ApplicationController
   layout 'military'
+  
+  before_filter :authenticate
 
   # GET /military/battle_rounds
   # GET /military/battle_rounds.json

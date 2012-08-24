@@ -2,6 +2,8 @@ class Shop::ResourceOffersController < ApplicationController
   layout 'shop'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+  
   
   # GET /shop/resource_offers
   # GET /shop/resource_offers.json

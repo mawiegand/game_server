@@ -1,6 +1,9 @@
 class Map::RegionsController < ApplicationController
   layout 'map'
   
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
   
   # GET /map/regions
   def index

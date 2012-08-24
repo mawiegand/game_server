@@ -1,5 +1,8 @@
 class Construction::ActiveJobsController < ApplicationController
   layout 'construction'
+  
+  before_filter :authenticate
+
 
   # GET /construction/active_jobs
   # GET /construction/active_jobs.json

@@ -1,6 +1,8 @@
 class ActionsController < ApplicationController
   layout 'action'
   
+  before_filter :authenticate  
+  
   def show
     
     create_army_action_parameters = 'action_military_create_army_action[location_id]'

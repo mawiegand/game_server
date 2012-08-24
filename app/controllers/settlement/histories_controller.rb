@@ -1,6 +1,9 @@
 class Settlement::HistoriesController < ApplicationController
   layout 'settlement'
 
+  before_filter :authenticate
+
+
   # GET /settlement/histories
   # GET /settlement/histories.json
   def index

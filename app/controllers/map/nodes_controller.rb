@@ -1,6 +1,10 @@
 class Map::NodesController < ApplicationController
   layout 'map'
   
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+  
+  
   # TODO: define what's accessible by the API and what's accessible by the website (admin area)
   # TODO: define accessibility and readability of attributes (per role)
   # TODO: a few methods should need authentication (e.g. update (API) and all admin functions)

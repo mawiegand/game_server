@@ -2,6 +2,8 @@ class Settlement::SlotsController < ApplicationController
   layout 'settlement'
 
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
 
   # Returns a list of slots for a settlement
   #

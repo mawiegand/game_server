@@ -1,6 +1,9 @@
 class Event::EventsController < ApplicationController
   layout 'event'  
   
+  before_filter :authenticate
+  
+  
   # GET /events/events
   # GET /events/events.json
   def index

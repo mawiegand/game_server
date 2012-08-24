@@ -2,6 +2,8 @@ class Military::ArmyDetailsController < ApplicationController
   layout 'military'
 
   before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
 
   # GET /military/army_details
   # GET /military/army_details.json
