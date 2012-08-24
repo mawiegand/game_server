@@ -1,3 +1,8 @@
+require 'httparty'
+require 'net/http'
+require 'identity_provider/access'
+
+
 class Messaging::MessagesController < ApplicationController
   layout 'messaging'
 
