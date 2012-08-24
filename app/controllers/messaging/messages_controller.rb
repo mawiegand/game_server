@@ -1,3 +1,8 @@
+require 'httparty'
+require 'net/http'
+require 'identity_provider/access'
+
+
 class Messaging::MessagesController < ApplicationController
   layout 'messaging'
 
@@ -65,9 +70,9 @@ class Messaging::MessagesController < ApplicationController
       @messaging_message = Messaging::Message.new
       
       if params[:message].has_key? :recipient_name
-        recipient = Fundamental::Character.find_by_name(params[:message][:recipient_name])
-        raise NotFoundError.new('Unknown Recipient.')   if recipient.nil?
-        @messaging_message[:recipient_id] = recipient.id
+        @recipient = Fundamental::Character.find_by_name_case_insensitive(params[:message][:recipient_name])
+        raise NotFoundError.new('Unknown Recipient.')   if @recipient.nil?
+        @messaging_message[:recipient_id] = @recipient.id
       else 
         @messaging_message[:recipient_id] = params[:message][:recipient_id]
       end
@@ -82,9 +87,21 @@ class Messaging::MessagesController < ApplicationController
     raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
     role = determine_access_role(@messaging_message.sender_id,    nil)    
     raise ForbiddenError.new("Tried to forge a message from another sender.") unless role == :owner || admin? || staff?
+    
 
     if !@messaging_message.save 
       raise BadRequestError.new('could not save and deliver message')  if event.save
+    end
+
+    @recipient ||= @messaging_mesage.recipient
+
+    if !@recipient.nil? && @recipient.offline?
+      ip_access = IdentityProvider::Access.new(
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes: ['5dentity'],
+      )
+      ip_access.deliver_message_notification(@recipient, @messaging_message.sender, @messaging_message)      
     end
         
     respond_to do |format|

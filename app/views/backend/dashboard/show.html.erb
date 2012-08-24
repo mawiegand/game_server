@@ -16,6 +16,8 @@
     <%= @user_stats[:signins_last_eight_hours]  %> /
     <%= @user_stats[:signins_last_day] %> /
     <%= @user_stats[:signins_last_week]%> (last 1h / 8h / 24h / week) <br/>
+  <b>Users Online:</b> <%= @user_stats[:presently_online] %> / <%= @user_stats[:online_last_hour] %> (right now / during last hour) </br>
+    
   <% if @last_character %>
     <p><b>Latest Sign In</b>: signed in <b><%= time_ago_in_words @last_character.last_login_at %></b> ago<br/>
        <%= link_to @last_character.name, @last_character %> (<%= @last_character.identifier %>)</p>

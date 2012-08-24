@@ -168,9 +168,9 @@ end
           },          
 </xsl:if>
 <xsl:if test="RewardTests">
-          :reward_tests => [
+          :reward_tests => {
             <xsl:apply-templates select="RewardTests" />
-          ],          
+          },          
 </xsl:if>
 <xsl:if test="Message">
           :message => {
@@ -186,7 +186,7 @@ end
             {
               :quest => '<xsl:value-of select="@quest" />',
             },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+</xsl:template>
 
 
 <xsl:template match="Rewards">
@@ -196,14 +196,14 @@ end
             ],
 </xsl:if>
 <xsl:if test="ConstructionReward">
-            :construction_rewards => [
-<xsl:apply-templates select="ConstructionReward" />
-            ],
+            :construction_reward => {
+<!-- xsl:apply-templates select="ConstructionReward" / -->
+            },
 </xsl:if>
 <xsl:if test="TrainingReward">
-            :training_rewards => [
-<xsl:apply-templates select="TrainingReward" />
-            ],
+            :training_reward => {
+<!-- xsl:apply-templates select="TrainingReward" / -->
+            },
 </xsl:if>
 </xsl:template>
 
@@ -212,84 +212,96 @@ end
                 :resource => '<xsl:value-of select="@resource" />',
                 :amount => <xsl:value-of select="." />,
               },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+</xsl:template>
 
 <xsl:template match="ConstructionReward">
-            :construction_reward => {},
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {},
+</xsl:template>
 
 <xsl:template match="TrainingReward">
-            :training_reward => {},
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {},
+</xsl:template>
 
 
 <xsl:template match="RewardTests">
 <xsl:if test="BuildingTest">
+            :building_tests => [
 <xsl:apply-templates select="BuildingTest" />
+            ],
 </xsl:if>
 <xsl:if test="SettlementTest">
+            :settlement_tests => [
 <xsl:apply-templates select="SettlementTest" />
+            ],
 </xsl:if>
 <xsl:if test="ArmyTest">
+            :army_tests => [
 <xsl:apply-templates select="ArmyTest" />
+            ],
 </xsl:if>
 <xsl:if test="ConstructionQueueTest">
+            :construction_queue_tests => [
 <xsl:apply-templates select="ConstructionQueueTest" />
+            ],
 </xsl:if>
 <xsl:if test="TrainingQueueTest">
+            :training_queue_tests => [
 <xsl:apply-templates select="TrainingQueueTest" />
+            ],
 </xsl:if>
 <xsl:if test="CustomTest">
+            :custom_tests => [
 <xsl:apply-templates select="CustomTest" />
+            ],
 </xsl:if>
 </xsl:template>
 
 
 <xsl:template match="BuildingTest">
-            :building_test => {
-              :building => '<xsl:value-of select="@building" />',
+              {
+                :building => '<xsl:value-of select="@building" />',
 <xsl:if test="@min_level">
-              :min_level => <xsl:value-of select="@min_level" />,
+                :min_level => <xsl:value-of select="@min_level" />,
 </xsl:if>
 <xsl:if test="@min_count">
-              :min_count => <xsl:value-of select="@min_count" />,
+                :min_count => <xsl:value-of select="@min_count" />,
 </xsl:if>
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              },
+</xsl:template>
 
 <xsl:template match="SettlementTest">
-            :settlement_test => {
-              :type => '<xsl:value-of select="@type" />',
-              :min_count => <xsl:value-of select="@min_count" />,
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {
+                :type => '<xsl:value-of select="@type" />',
+                :min_count => <xsl:value-of select="@min_count" />,
+              },
+</xsl:template>
 
 <xsl:template match="ArmyTest">
-            :army_test => {
-              :type => '<xsl:value-of select="@type" />',
-              :min_count => <xsl:value-of select="@min_count" />,
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {
+                :type => '<xsl:value-of select="@type" />',
+                :min_count => <xsl:value-of select="@min_count" />,
+              },
+</xsl:template>
 
 <xsl:template match="ConstructionQueueTest">
-            :construction_queue_test => {
-              :building => '<xsl:value-of select="@building" />',
-              :min_count => <xsl:value-of select="@min_count" />,
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {
+                :building => '<xsl:value-of select="@building" />',
+                :min_count => <xsl:value-of select="@min_count" />,
+              },
+</xsl:template>
 
 <xsl:template match="TrainingQueueTest">
-            :training_queue_test => {
-              :unit => '<xsl:value-of select="@unit" />',
-              :min_count => <xsl:value-of select="@min_count" />,
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {
+                :unit => '<xsl:value-of select="@unit" />',
+                :min_count => <xsl:value-of select="@min_count" />,
+              },
+</xsl:template>
 
 <xsl:template match="CustomTest">
-            :custom_test => {
-              :test => '<xsl:value-of select="." />',
-            },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+              {
+                :test => '<xsl:value-of select="." />',
+              },
+</xsl:template>
 
 
 <xsl:template match="Message">
@@ -297,7 +309,7 @@ end
               :subject => '<xsl:value-of select="Subject" />',
               :body => '<xsl:value-of select="Body" />',
             },
-</xsl:template> <!-- indentation needed for proper layout in output. -->
+</xsl:template>
 
 
 </xsl:stylesheet>

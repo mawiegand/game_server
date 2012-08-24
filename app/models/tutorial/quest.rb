@@ -25,22 +25,29 @@ class Tutorial::Quest < ActiveRecord::Base
     logger.debug "---------------> reward_tests" + reward_tests.inspect
     
     unless reward_tests.nil?
-      reward_tests.each do |reward_test|
-        if !reward_test[:building_test].nil?
-          logger.debug "---------------> building test " + reward_test[:building_test].inspect
-          unless check_buildings(reward_test[:building_test])
-            return false
+      unless reward_tests[:building_tests].nil?
+        reward_tests[:building_tests].each do |building_test|
+          unless building_test.nil?
+            logger.debug "---------------> building test " + building_test.inspect
+            unless check_buildings(building_test)
+              return false
+            end
           end
-        elsif reward_test[:army_test]
-          logger.debug "---------------> army test " + reward_test[:army_test].inspect
-          unless check_armies(reward_test[:army_test])
-            return false
-          end
-        else
-          logger.debug 'unknown reward test'
-          #add other tests here
-        end  
+        end
       end
+      unless reward_tests[:army_tests].nil?
+        reward_tests[:army_tests].each do |army_test|
+          unless army_test.nil?
+            logger.debug "---------------> army test " + army_test.inspect
+            unless check_armies(army_test)
+              return false
+            end
+          end
+        end
+      end
+      #add other tests here
+    else
+      logger.debug 'no reward tests found'
     end
     # quest auf beendet setzen
     self.status = STATE_FINISHED
@@ -116,8 +123,19 @@ class Tutorial::Quest < ActiveRecord::Base
   end
 
   def check_armies(army_test)
-    logger.debug '-----> army_test' + army_test.inspect
-    true
+    # check for min count and min level
+    return false if army_test[:min_count].nil? || army_test[:type].nil?
+    
+    logger.debug "check_armies: check if min #{army_test[:min_count]} units of army type '#{army_test[:type]}' exists"
+ 
+    unit_count = 0
+    self.tutorial_state.owner.armies.each do |army|
+      if army.garrison? && army_test[:type].to_s == 'garrison' || !army.garrison? && army_test[:type].to_s == 'visible'
+        unit_count += (army.size_present || 0)
+      end 
+    end
+    
+    return unit_count >= army_test[:min_count]
   end
 
   def check_construction_queues

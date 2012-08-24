@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823134616) do
+ActiveRecord::Schema.define(:version => 20120823201254) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -232,6 +232,7 @@ ActiveRecord::Schema.define(:version => 20120823134616) do
     t.integer  "login_count",                              :default => 0,     :null => false
     t.datetime "last_login_at"
     t.integer  "fortress_count",                           :default => 0,     :null => false
+    t.datetime "last_request_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -271,6 +272,13 @@ ActiveRecord::Schema.define(:version => 20120823134616) do
     t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
     t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
+  end
+
+  create_table "fundamental_settings", :force => true do |t|
+    t.boolean  "email_messages", :default => true, :null => false
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "map_locations", :force => true do |t|
@@ -725,12 +733,12 @@ ActiveRecord::Schema.define(:version => 20120823134616) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
   end
 
