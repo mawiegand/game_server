@@ -12,8 +12,8 @@ class Tutorial::Quest < ActiveRecord::Base
   STATE_CLOSED = 3
   STATES[STATE_CLOSED] = :closed
   
-  def check_for_rewards
-    logger.debug "check quest nr #{self.quest_id}"
+  def check_for_rewards(answer_text)
+    logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
     
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
@@ -44,6 +44,17 @@ class Tutorial::Quest < ActiveRecord::Base
             end
           end
         end
+      end
+      unless reward_tests[:textbox_test].nil?
+        textbox_test = reward_tests[:textbox_test]
+        logger.debug "---------------> textbox test " + textbox_test.inspect
+        unless check_textbox(textbox_test, answer_text)
+          return false
+        end
+      end
+      unless reward_tests[:custom_test].nil?
+        custom_test = reward_tests[:custom_test]
+        logger.debug "---------------> custom test " + custom_test.inspect
       end
       #add other tests here
     else
@@ -118,8 +129,16 @@ class Tutorial::Quest < ActiveRecord::Base
     false
   end
 
-  def check_settlements
+  def check_textbox(textbox_test, answer_text)
     
+    test_id = textbox_test[:id]
+    return false if test_id.nil?
+    
+    if test_id == 'test_game_name'
+      return answer_text == 'wackadoo'
+    end
+      
+    false
   end
 
   def check_armies(army_test)
