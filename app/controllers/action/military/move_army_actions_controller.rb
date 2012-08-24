@@ -1,5 +1,8 @@
 class Action::Military::MoveArmyActionsController < ApplicationController
   layout 'action'
+
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index, :create]
   
   
   # GET /action/military/move_army_actions
