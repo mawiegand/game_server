@@ -48,6 +48,8 @@ class Action::Military::MoveArmyActionsController < ApplicationController
   def create
     @action_military_move_army_action = Action::Military::MoveArmyAction.new(params[:action_military_move_army_action])
     army = @action_military_move_army_action.army
+    raise BadRequestError.new('army not found') if army.blank?
+    
     @action_military_move_army_action.starting_location_id = army.location_id
     @action_military_move_army_action.starting_region_id = army.region_id
     @action_military_move_army_action.sender_ip = request.remote_ip  #@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
@@ -57,11 +59,8 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     raise BadRequestError.new('target location does not exist') if target_location.nil?
     @action_military_move_army_action.target_region_id = target_location.region_id
     
-    # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
-    raise BadRequestError.new('army not found') if army.blank?
-    
+    # check whether this movement is possible and allowed (neighbouring positions, owned by current character)
     role = army.owned_by?(current_character_id) ? :owner : :character # TODO: staff / admin
-        
     raise BadRequestError.new('Invalid action.') unless @action_military_move_army_action.valid_action?(role)
         
     @action_military_move_army_action.army.consume_ap(1)  # consume one action point
@@ -69,7 +68,7 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     @action_military_move_army_action.army.target_region_id = @action_military_move_army_action.target_region_id
     @action_military_move_army_action.army.mode = Military::Army::MODE_MOVING # 1: moving?
     @action_military_move_army_action.army.target_reached_at = DateTime.now.advance(:seconds => GAME_SERVER_CONFIG['movement_duration'] * GAME_SERVER_CONFIG['base_time_factor']) # for first tests, should be 15 minutes in future
-    
+
     if !@action_military_move_army_action.army.save  # save army first; better have no movement action than a movement action without the army being properly set (could result in second movement action)
       raise BadRequestError.new('could not modify army properly')
     end
