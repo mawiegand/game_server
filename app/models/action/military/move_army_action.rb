@@ -11,7 +11,7 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
 
   
   def valid_action?(role = :character)
-    # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
+    # check whether this movement is possible and allowed (neighbouring positions, owned by current character)
     raise BadRequestError.new('army not found') if self.army.blank?
     raise BadRequestError.new('could not get army\'s current location') if self.starting_location_id != army.location_id
     raise BadRequestError.new('could not get army\'s current region') if self.starting_region_id != army.region_id

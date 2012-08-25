@@ -49,6 +49,7 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     @action_military_move_army_action = Action::Military::MoveArmyAction.new(params[:action_military_move_army_action])
     army = @action_military_move_army_action.army
     raise BadRequestError.new('army not found') if army.blank?
+    raise BadRequestError.new('not owner of army') unless army.owner == current_character
     
     @action_military_move_army_action.starting_location_id = army.location_id
     @action_military_move_army_action.starting_region_id = army.region_id
