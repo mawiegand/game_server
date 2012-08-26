@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826202814) do
+ActiveRecord::Schema.define(:version => 20120826232454) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -740,8 +740,8 @@ ActiveRecord::Schema.define(:version => 20120826202814) do
     t.integer  "army_size_max"
     t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
-    t.integer  "settlement_unlock_p2p_trade",                    :default => 0
     t.integer  "trading_carts",                                  :default => 0,            :null => false
+    t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|

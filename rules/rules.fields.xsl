@@ -25,7 +25,7 @@ character_unlock_diplomacy_count
 settlement_unlock_alliance_creation_count
 character_unlock_alliance_creation_count
 
-settlement_unlock_p2p_trade
+settlement_unlock_p2p_trade_count
   </xsl:template>
 
 
