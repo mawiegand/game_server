@@ -33,9 +33,9 @@
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
-  <Capacity id="resource_stone">1000*LEVEL</Capacity>
-  <Capacity id="resource_wood">1000*LEVEL</Capacity>
-  <Capacity id="resource_fur">500*LEVEL</Capacity>
-  <Capacity id="resource_cash">1000*LEVEL</Capacity> 
+  <Capacity id="resource_stone">1000</Capacity>
+  <Capacity id="resource_wood">1000</Capacity>
+  <Capacity id="resource_fur">500</Capacity>
+  <Capacity id="resource_cash">1000</Capacity> 
 </Building>
   
