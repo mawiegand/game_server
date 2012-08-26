@@ -433,6 +433,17 @@ end
               },
             </xsl:for-each>
           ],          
+<xsl:if test="Capacity">
+          :capacity  => [
+            <xsl:for-each select="Capacity">
+              {
+                :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+                :symbolic_id        => :<xsl:value-of select="@id"/>,
+                :formula            => "<xsl:apply-templates/>",
+              },
+            </xsl:for-each>
+          ],
+</xsl:if>
 <xsl:apply-templates select="Abilities" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
@@ -580,6 +591,8 @@ end
 <xsl:apply-templates select="DefenseBonus" />    
 <xsl:apply-templates select="UnlockGarrison" />    
 <xsl:apply-templates select="CommandPoints" />    
+<xsl:apply-templates select="TradingCarts" />    
+<xsl:apply-templates select="UnlockP2PTrade" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
 <xsl:apply-templates select="ArmySizeBonus" />    
 <xsl:apply-templates select="UnlockDiplomacy" />    
@@ -609,6 +622,10 @@ end
             :unlock_garrison => <xsl:value-of select="@level" />,            
 </xsl:template>
 
+<xsl:template match="UnlockP2PTrade">
+            :unlock_p2p_trade => <xsl:value-of select="@level" />,            
+</xsl:template>
+
 <xsl:template match="UnlockDiplomacy">
             :unlock_diplomacy     => <xsl:value-of select="@level" />,
 <xsl:if test="@foundAllianceLevel">
@@ -622,6 +639,10 @@ end
 
 <xsl:template match="CommandPoints">
             :command_points => "<xsl:apply-templates />",
+</xsl:template>
+
+<xsl:template match="TradingCarts">
+            :trading_carts => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="GarrisonSizeBonus">
