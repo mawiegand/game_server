@@ -232,6 +232,9 @@ class Settlement::Settlement < ActiveRecord::Base
     
     boni = recalc_local_resource_production_boni
     check_and_apply_local_resource_production_boni(boni)
+
+    capacity = recalc_resource_capacity
+    check_and_apply_capacity(capacity)    
     
     if (self.owns_region?)
       propagate_taxrate(true)
@@ -693,6 +696,29 @@ class Settlement::Settlement < ActiveRecord::Base
       end    
     end
     
+    
+    
+    def recalc_resource_capacity
+      resource_types = GameRules::Rules.the_rules().resource_types
+      capacities    = Array.new(resource_types.count, 0)
+      self.slots.each do |slot|
+        slot.resource_capacity(capacities)
+      end
+      return capacities
+    end
+    
+    def check_and_apply_capacity(capacities)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_capacity']
+        recalc  = capacities[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_capacity'] = recalc
+        end
+      end    
+    end    
     
     
     def recalc_local_resource_production_boni
