@@ -11,14 +11,15 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
 
   
   def valid_action?(role = :character)
-    # check whether this movement is possible and allowed (neighbouring positions, starts at present position, owned by current character)
+    # check whether this movement is possible and allowed (neighbouring positions, owned by current character)
     raise BadRequestError.new('army not found') if self.army.blank?
     raise BadRequestError.new('could not get army\'s current location') if self.starting_location_id != army.location_id
     raise BadRequestError.new('could not get army\'s current region') if self.starting_region_id != army.region_id
     
-        # check movement possible? (starting and target location neighbours?)
-        
-    if (role != :owner && role != :admin  && role != staff) || self.army.moving? || self.army.fighting?
+    # check movement possible? (starting and target location neighbours?)
+    raise BadRequestError.new('invalid target location') unless self.valid_target?
+    
+    if (role != :owner && role != :admin  && role != :staff) || self.army.moving? || self.army.fighting?
       return false
     end
     
@@ -28,5 +29,23 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
     
     return true        
   end
+  
+  # check if target location is neighboring location
+  def valid_target?
+    if self.location.fortress?
+      # movement from fortress to a settlement in same region
+      return true if self.region == self.target_region && !self.target_location.fortress?
+      
+      # movement from fortress to neighboring fortress
+      self.region.node.neighbor_nodes.each do |neighbor_node|
+        return true if neighbor_node.region.fortress_location == self.target_location
+      end
+      
+      return false
+    else
+      # movement from settlement to fortress of settlement region
+      return self.region.fortress_location == self.target_location
+    end
+  end 
   
 end
