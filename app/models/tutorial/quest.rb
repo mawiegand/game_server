@@ -311,8 +311,40 @@ class Tutorial::Quest < ActiveRecord::Base
     test_id = textbox_test[:id]
     return false if test_id.nil?
     
-    if test_id == 'test_game_name'
-      return answer_text == 'wackadoo'
+    if test_id == 'test_army_rank'
+      ranking = Ranking::CharacterRanking.find(:all, :order => "overall_score DESC")
+      character_ranking = self.tutorial_state.owner.ranking
+      return answer_text == (ranking.index(character_ranking) + 1).to_s
+    end
+    
+    if test_id == 'test_fortress_owner'
+      fortress_owner = self.tutorial_state.owner.home_location.region.owner
+      return answer_text == fortress_owner.name
+    end
+    
+    if test_id == 'test_costs'
+      building_type = nil
+      GameRules::Rules.the_rules().building_types.each do |type|
+        if type[:symbolic_id].to_s == 'building_barracks'
+          building_type = type
+          break
+        end
+      end
+      return false if building_type.nil?
+      
+      resource_type = nil
+      GameRules::Rules.the_rules().resource_types.each do |type|
+        if type[:symbolic_id].to_s == 'resource_wood'
+          resource_type = type
+          break
+        end
+      end
+      return false if resource_type.nil?
+      
+      formula = Util::Formula.parse_from_formula(building_type[:costs][resource_type[:id]])
+      amount = formula.apply(2)
+      
+      return amount.to_s == answer_text
     end
       
     false
