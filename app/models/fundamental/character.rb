@@ -20,7 +20,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id"
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id"
-  has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", 1]
+  has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
+  has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
@@ -41,30 +42,12 @@ class Fundamental::Character < ActiveRecord::Base
     return identity
   end
   
-  def self.find_by_name_case_insensitive(name)
-    Fundamental::Character.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
-  end
-  
   def self.valid_identifier?(identifier)
     identifier.index(@identifier_regex) != nil
   end
   
   def self.valid_id?(id)
     id.index(/^[1-9]\d*$/) != nil
-  end
-  
-  def update_last_request_at
-    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
-      self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
-    end
-  end  
-  
-  def online?
-    !self.last_request_at.nil? && self.last_request_at + 2.minutes > Time.now
-  end
-  
-  def offline?
-    !self.online?
   end
   
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
@@ -120,7 +103,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
-    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
+    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name(name).nil?
     
     freeChange = (self.name_change_count || 0) < 1 
     
