@@ -80,7 +80,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-        <TextboxTest id="test_army_rank"> Rang eingegeben </TextboxTest>
+        <TextboxTest id="test_army_rank" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_2gathererlvl1">
@@ -179,7 +179,7 @@
         <TextboxTest id="test_fortress_owner">fortress owner in Region</TextboxTest>
       </RewardTests>
     </Quest>
-    <Quest id="quest_settlementbutton">
+    <Quest id="quest_settlement_button">
       <Name>Karte</Name>
       <Description lang="de_DE">
         <p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren.</p>
@@ -194,7 +194,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_settlement_buttom">settlement button pressed</CustomTest>
+        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_profile">
@@ -205,7 +205,7 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="quest_settlementbutton" />
+      <Requirement quest="quest_settlement_button" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
