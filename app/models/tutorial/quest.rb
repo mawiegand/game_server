@@ -25,6 +25,7 @@ class Tutorial::Quest < ActiveRecord::Base
     logger.debug "---------------> reward_tests" + reward_tests.inspect
     
     unless reward_tests.nil?
+      
       unless reward_tests[:building_tests].nil?
         reward_tests[:building_tests].each do |building_test|
           unless building_test.nil?
@@ -35,6 +36,17 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+      
+      unless reward_tests[:settlement_test].nil?
+        settlement_test = reward_tests[:settlement_test]
+        unless settlement_test.nil?
+          logger.debug "---------------> settlement test "
+          unless check_settlements(settlement_test)
+            return false
+          end
+        end
+      end
+
       unless reward_tests[:army_tests].nil?
         reward_tests[:army_tests].each do |army_test|
           unless army_test.nil?
@@ -45,6 +57,49 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+      
+      unless reward_tests[:construction_queue_tests].nil?
+        reward_tests[:construction_queue_tests].each do |construction_queue_test|
+          unless construction_queue_test.nil?
+            logger.debug "---------------> construction queue test " + construction_queue_test.inspect
+            unless check_construction_queues(construction_queue_test)
+              return false
+            end
+          end
+        end
+      end
+      
+      unless reward_tests[:training_queue_tests].nil?
+        reward_tests[:training_queue_tests].each do |training_queue_test|
+          unless training_queue_test.nil?
+            logger.debug "---------------> training queue test " + training_queue_test.inspect
+            unless check_training_queues(training_queue_test)
+              return false
+            end
+          end
+        end
+      end
+      
+      unless reward_tests[:movement_test].nil?
+        movement_test = reward_tests[:movement_test]
+        unless movement_test.nil?
+          logger.debug "---------------> movement test "
+          unless check_movements
+            return false
+          end
+        end
+      end
+      
+      unless reward_tests[:alliance_test].nil?
+        alliance_test = reward_tests[:alliance_test]
+        unless alliance_test.nil?
+          logger.debug "---------------> alliance test "
+          unless check_alliance
+            return false
+          end
+        end
+      end
+      
       unless reward_tests[:textbox_test].nil?
         textbox_test = reward_tests[:textbox_test]
         logger.debug "---------------> textbox test " + textbox_test.inspect
@@ -52,11 +107,12 @@ class Tutorial::Quest < ActiveRecord::Base
           return false
         end
       end
+      
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
         logger.debug "---------------> custom test " + custom_test.inspect
       end
-      #add other tests here
+
     else
       logger.debug 'no reward tests found'
     end
@@ -128,17 +184,15 @@ class Tutorial::Quest < ActiveRecord::Base
     # building check failed, if method reaches this point
     false
   end
-
-  def check_textbox(textbox_test, answer_text)
+  
+  def check_settlements(settlement_test)
+    # check for min count
+    return false if settlement_test[:min_count].nil?
     
-    test_id = textbox_test[:id]
-    return false if test_id.nil?
-    
-    if test_id == 'test_game_name'
-      return answer_text == 'wackadoo'
-    end
-      
-    false
+    logger.debug "check_settlements: check if min #{settlement_test[:min_count]} settlements of type 'outpost' exists"
+ 
+    settlements = self.tutorial_state.owner.settlements
+    return !settlements.nil? && settlements.count > settlement_test[:min_count]  # don't check equality => don't count home base
   end
 
   def check_armies(army_test)
@@ -157,16 +211,111 @@ class Tutorial::Quest < ActiveRecord::Base
     return unit_count >= army_test[:min_count]
   end
 
-  def check_construction_queues
+  def check_construction_queues(queue_test)
+    # check for min count
+    return false if queue_test[:min_count].nil?
     
+    #check for building type
+    building_type = nil
+    GameRules::Rules.the_rules().building_types.each do |type|
+      logger.debug "check_construction_queues: #{type[:symbolic_id]} #{queue_test[:building]}" 
+      if type[:symbolic_id].to_s == queue_test[:building].to_s
+        building_type = type
+        break
+      end
+    end
+    return false if building_type.nil?
+    
+    logger.debug "check_construction_queues: check if min #{queue_test[:min_count]} buildings of type '#{queue_test[:building]}' are queued"
+
+    # count jobs that meet the requirements of queue_test.
+    # return true, if there are enough jobs.    
+    check_count = 0
+    self.tutorial_state.owner.settlements.each do |settlement|
+      unless settlement.queues.nil?
+        settlement.queues.each do |queue|
+          unless queue.jobs.nil?
+            queue.jobs.each do |job|
+              if building_type[:id] === job.building_id && (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
+                check_count += 1
+                if check_count >= queue_test[:min_count]
+                  return true
+                end
+              end 
+            end
+          end
+        end
+      end
+    end
+    
+    # queue check failed, if method reaches this point
+    false
   end
 
-  def check_training_queues
+  def check_training_queues(queue_test)
+    # check for min count
+    return false if queue_test[:min_count].nil?
     
+    #check for building type
+    unit_type = nil
+    GameRules::Rules.the_rules().unit_types.each do |type|
+      logger.debug "check_training_queues #{type[:db_field]} #{queue_test[:unit]}" 
+      if type[:db_field].to_s == queue_test[:unit].to_s
+        unit_type = type
+        break
+      end
+    end
+    return false if unit_type.nil?
+    
+    logger.debug "check_training_queues check if min #{queue_test[:min_count]} units of type '#{queue_test[:unit]}' are queued"
+
+    # count jobs that meet the requirements of queue_test.
+    # return true, if there are enough jobs.    
+    check_count = 0
+    self.tutorial_state.owner.settlements.each do |settlement|
+      unless settlement.training_queues.nil?
+        settlement.training_queues.each do |queue|
+          unless queue.jobs.nil?
+            queue.jobs.each do |job|
+              if unit_type[:id] === job.unit_id
+                check_count += 1
+                if check_count >= queue_test[:min_count]
+                  return true
+                end
+              end 
+            end
+          end
+        end
+      end
+    end
+    
+    # queue check failed, if method reaches this point
+    false
   end
 
-  def check_custom
+  def check_movements
+    armies = self.tutorial_state.owner.armies    
+    if armies.nil?
+      return false
+    else
+      return armies.where(mode: Military::Army::MODE_MOVING).count > 0
+    end
+  end
+
+  def check_alliance    
+    !self.tutorial_state.owner.alliance.nil?
+  end
+
+  def check_textbox(textbox_test, answer_text)
     
+    test_id = textbox_test[:id]
+    return false if test_id.nil?
+    
+    if test_id == 'test_game_name'
+      return answer_text == 'wackadoo'
+    end
+      
+    false
   end
   
   def redeem_rewards
@@ -176,54 +325,86 @@ class Tutorial::Quest < ActiveRecord::Base
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
     raise BadRequestError.new('quest not fount in tutorial') if quest.nil?
-    logger.debug "---------------> quests" + quest.inspect
+    logger.debug "---------------> quests " + quest.inspect
     
     rewards = quest[:rewards]
-    logger.debug "---------------> rewards" + rewards.inspect
+    logger.debug "---------------> rewards " + rewards.inspect
     
     resource_rewards = rewards[:resource_rewards]
-    logger.debug "---------------> rewards" + rewards.inspect
-    
-    unless resource_rewards.nil?
-      resources = {}
-      resource_rewards.each do |resource_reward|
-        logger.debug "---------------> resource reward " + resource_reward.inspect
-        add_resource(resources, resource_reward)
-      end
+    logger.debug "---------------> resource_rewards " + resource_rewards.inspect
 
-      logger.debug "---------------> resources to reward " + resources.inspect
-      self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)
+    unit_rewards = rewards[:unit_rewards]
+    logger.debug "---------------> unit_rewards " + unit_rewards.inspect
+
+
+    # calc resources
+    resources = {}
+    resource_rewards.each do |resource_reward|
+      logger.debug "---------------> resource reward " + resource_reward.inspect
+
+      raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
+      
+      amount = resource_reward[:amount]
+      raise BadRequestError.new('no amount given') if amount.nil?
+      raise BadRequestError.new('amount is negative') if amount < 0
+      
+      resource_symbolic_id = resource_reward[:resource]
+      raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
+      
+      resource_type = nil
+      GameRules::Rules.the_rules().resource_types.each do |type|
+        logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
+        if type[:symbolic_id].to_s == resource_symbolic_id.to_s
+          resource_type = type
+          break
+        end
+      end
+      raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
+      
+      resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
     end
+    logger.debug "---------------> resources to reward " + resources.inspect
+    
+    
+    # calc units
+    garrison_army = self.tutorial_state.owner.home_location.garrison_army
+    raise BadRequestError.new("home location of character #{self.tutorial_state.owner.id} has no garrison army") if garrison_army.nil?
+    
+    units = {}
+    total_unit_amount = 0
+    unit_rewards.each do |unit_reward|
+      logger.debug "---------------> unit reward " + unit_reward.inspect
+
+      raise BadRequestError.new('no unit_reward given') if unit_reward.nil?
+      
+      amount = unit_reward[:amount]
+      raise BadRequestError.new('no amount given') if amount.nil?
+      raise BadRequestError.new('amount is negative') if amount < 0
+      
+      unit_db_field = unit_reward[:unit]
+      raise BadRequestError.new('no unit id given') if unit_db_field.nil?
+      
+      units[unit_db_field] = amount
+      total_unit_amount += amount
+    end
+    logger.debug "---------------> units to reward " + units.inspect
+
+
+    # check if resources and units can be rewarded
+    # raise ConflictError.new("too many resources") unless self.tutorial_state.owner.resource_pool.can_receive?(total_resource_amount)
+    raise ConflictError.new("too many units") unless garrison_army.can_receive?(total_unit_amount)
+
+    # reward resources and units
+    self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
+    garrison_army.add_units(units)
+
 
     # close quest
     self.status = STATE_CLOSED
     self.closed_at = Time.now
     self.save
   end
-
-  def add_resource(resources, resource_reward)
-    raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
-    
-    amount = resource_reward[:amount]
-    raise BadRequestError.new('no amount given') if amount.nil?
-    raise BadRequestError.new('amount is negative') if amount < 0
-    
-    resource_symbolic_id = resource_reward[:resource]
-    raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
-    
-    resource_type = nil
-    GameRules::Rules.the_rules().resource_types.each do |type|
-      logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
-      if type[:symbolic_id].to_s == resource_symbolic_id.to_s
-        resource_type = type
-        break
-      end
-    end
-    raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
-    
-    resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
-  end
-
+  
   def required_by_quest_with_id(next_quest_id)
     quests = Tutorial::Tutorial.the_tutorial.quests
     this_quest = quests[self.quest_id]
