@@ -195,32 +195,27 @@ end
 <xsl:apply-templates select="ResourceReward" />
             ],
 </xsl:if>
-<xsl:if test="ConstructionReward">
-            :construction_reward => {
-<!-- xsl:apply-templates select="ConstructionReward" / -->
-            },
-</xsl:if>
-<xsl:if test="TrainingReward">
-            :training_reward => {
-<!-- xsl:apply-templates select="TrainingReward" / -->
-            },
+<xsl:if test="UnitReward">
+            :unit_rewards => [
+<xsl:apply-templates select="UnitReward" />
+            ],
 </xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">
               {
-                :resource => '<xsl:value-of select="@resource" />',
+                :resource => :<xsl:value-of select="@resource" />,
                 :amount => <xsl:value-of select="." />,
               },
 </xsl:template>
 
-<xsl:template match="ConstructionReward">
-              {},
+<xsl:template match="UnitReward">
+              {
+                :unit => :<xsl:value-of select="@unit" />,
+                :amount => <xsl:value-of select="." />,
+              },
 </xsl:template>
 
-<xsl:template match="TrainingReward">
-              {},
-</xsl:template>
 
 
 <xsl:template match="RewardTests">
@@ -248,6 +243,12 @@ end
             :training_queue_tests => [
 <xsl:apply-templates select="TrainingQueueTest" />
             ],
+</xsl:if>
+<xsl:if test="AllianceTest">
+            :alliance_test => {},
+</xsl:if>
+<xsl:if test="MovementTest">
+            :movement_test => {},
 </xsl:if>
 <xsl:if test="TextboxTest">
             :textbox_test => {

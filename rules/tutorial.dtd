@@ -49,12 +49,24 @@
 >
 
 
-<!ELEMENT RewardTests ((BuildingTest*, SettlementTest?, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
   building  CDATA #REQUIRED
   min_level CDATA "1"
+  min_count CDATA "1"
+>
+
+<!ELEMENT SettlementTest (#PCDATA)>
+<!ATTLIST SettlementTest
+  type      CDATA #REQUIRED
+  min_count CDATA "1"
+>
+
+<!ELEMENT ArmyTest (#PCDATA)>
+<!ATTLIST ArmyTest
+  type      CDATA #REQUIRED
   min_count CDATA "1"
 >
 
@@ -70,21 +82,9 @@
   min_count CDATA "1"
 >
 
-<!ELEMENT SettlementTest (#PCDATA)>
-<!ATTLIST SettlementTest
-  type      CDATA #REQUIRED
-  min_count CDATA "1"
->
-
 <!ELEMENT MovementTest (#PCDATA)>
 
 <!ELEMENT AllianceTest (#PCDATA)>
-
-<!ELEMENT ArmyTest (#PCDATA)>
-<!ATTLIST ArmyTest
-  type      CDATA #REQUIRED
-  min_count CDATA "1"
->
 
 <!ELEMENT TextboxTest (#PCDATA)>
 <!ATTLIST TextboxTest
