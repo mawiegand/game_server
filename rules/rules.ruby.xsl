@@ -648,7 +648,7 @@ end
 
 <xsl:template match="StartResource">
             <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/> => <xsl:apply-templates />,
-</xsl:template>
+            </xsl:template>
 
 </xsl:stylesheet>
 
