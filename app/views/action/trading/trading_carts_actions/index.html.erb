@@ -1,0 +1,45 @@
+<h1>Listing action_trading_trading_carts_actions</h1>
+
+<table>
+  <tr>
+    <th>Sender</th>
+    <th>Recipient</th>
+    <th>Starting region</th>
+    <th>Target region</th>
+    <th>Returning</th>
+    <th>Target reached at</th>
+    <th>Returned at</th>
+    <th>Num carts</th>
+    <th>Event</th>
+    <th>Sender ip</th>
+    <th>Starting settlement</th>
+    <th>Target settlement</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @action_trading_trading_carts_actions.each do |action_trading_trading_carts_action| %>
+  <tr>
+    <td><%= action_trading_trading_carts_action.sender_id %></td>
+    <td><%= action_trading_trading_carts_action.recipient_id %></td>
+    <td><%= action_trading_trading_carts_action.starting_region_id %></td>
+    <td><%= action_trading_trading_carts_action.target_region_id %></td>
+    <td><%= action_trading_trading_carts_action.returning %></td>
+    <td><%= action_trading_trading_carts_action.target_reached_at %></td>
+    <td><%= action_trading_trading_carts_action.returned_at %></td>
+    <td><%= action_trading_trading_carts_action.num_carts %></td>
+    <td><%= action_trading_trading_carts_action.event_id %></td>
+    <td><%= action_trading_trading_carts_action.sender_ip %></td>
+    <td><%= action_trading_trading_carts_action.starting_settlement_id %></td>
+    <td><%= action_trading_trading_carts_action.target_settlement_id %></td>
+    <td><%= link_to 'Show', action_trading_trading_carts_action %></td>
+    <td><%= link_to 'Edit', edit_action_trading_trading_carts_action_path(action_trading_trading_carts_action) %></td>
+    <td><%= link_to 'Destroy', action_trading_trading_carts_action, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trading carts action', new_action_trading_trading_carts_action_path %>

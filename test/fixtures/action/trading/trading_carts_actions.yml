@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sender_id: 1
+  recipient_id: 1
+  starting_region_id: 1
+  target_region_id: 1
+  returning: false
+  target_reached_at: 2012-08-27 13:43:53
+  returned_at: 2012-08-27 13:43:53
+  num_carts: 1
+  event_id: 1
+  sender_ip: MyString
+  starting_settlement_id: 1
+  target_settlement_id: 1
+
+two:
+  sender_id: 1
+  recipient_id: 1
+  starting_region_id: 1
+  target_region_id: 1
+  returning: false
+  target_reached_at: 2012-08-27 13:43:53
+  returned_at: 2012-08-27 13:43:53
+  num_carts: 1
+  event_id: 1
+  sender_ip: MyString
+  starting_settlement_id: 1
+  target_settlement_id: 1

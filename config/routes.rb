@@ -1,6 +1,8 @@
 GameServer::Application.routes.draw do
 
 
+  namespace :action do  namespace :trading do resources :trading_carts_actions end end
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       

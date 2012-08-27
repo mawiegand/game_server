@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826232454) do
+ActiveRecord::Schema.define(:version => 20120827114353) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(:version => 20120826232454) do
     t.datetime "target_reached_at"
     t.integer  "event_id"
     t.integer  "next_action_id"
+  end
+
+  create_table "action_trading_trading_carts_actions", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.integer  "starting_region_id"
+    t.integer  "target_region_id"
+    t.boolean  "returning"
+    t.datetime "target_reached_at"
+    t.datetime "returned_at"
+    t.integer  "num_carts"
+    t.integer  "event_id"
+    t.string   "sender_ip"
+    t.integer  "starting_settlement_id"
+    t.integer  "target_settlement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "backend_stats", :force => true do |t|
