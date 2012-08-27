@@ -36,6 +36,11 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
+  
+  TYPE_NONE = 0
+  TYPE_FORTESS = 1
+  TYPE_HOME_BASE = 2
+  TYPE_OUTPOST = 3
 
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
