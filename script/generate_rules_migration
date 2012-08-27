@@ -33,6 +33,7 @@ hash_of_models = {
                                             { :prefix => 'unit_',  :postfix => '_damage_taken',               :type => ':decimal' },
                                             { :prefix => 'unit_',  :postfix => '_damage_inflicted',           :type => ':decimal' },
   ],
+  Action::Trading::TradingCartsAction=> [ { :prefix => 'resource_',:postfix => '_amount',                     :type => ':integer' } ],
   Settlement::Settlement     => [ { :prefix => 'settlement_queue', :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
                                   { :prefix => 'settlement_unlock',:postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 

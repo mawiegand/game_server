@@ -186,6 +186,7 @@ class GameRules::Rules
           :symbolic_id => :resource_stone,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 1,
           :name        => {
             
@@ -214,6 +215,7 @@ class GameRules::Rules
           :symbolic_id => :resource_wood,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 1,
           :name        => {
             
@@ -242,6 +244,7 @@ class GameRules::Rules
           :symbolic_id => :resource_fur,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 2.0,
           :name        => {
             
@@ -270,6 +273,7 @@ class GameRules::Rules
           :symbolic_id => :resource_cash,
           :stealable   => false,
           :taxable     => false,
+          :tradable    => false,
           :rating_value=> 0,
           :name        => {
             
@@ -1608,25 +1612,25 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1000*LEVEL",
+                :formula            => "1000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1000*LEVEL",
+                :formula            => "1000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "500*LEVEL",
+                :formula            => "500",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1000*LEVEL",
+                :formula            => "1000",
               },
             
           ],

@@ -227,6 +227,7 @@ end
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :stealable   => <xsl:value-of select="@stealable"/>,
           :taxable     => <xsl:value-of select="@taxable"/>,
+          :tradable    => <xsl:value-of select="@tradable"/>,
           :rating_value=> <xsl:value-of select="@ratingValue"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              

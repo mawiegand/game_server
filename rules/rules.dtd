@@ -54,6 +54,7 @@
 	ratingValue CDATA "1"
 	stealable (true | false) "true"
 	taxable (true | false) "true"
+	tradable (true | false) "true"
 >
 
 <!--Settlements-->

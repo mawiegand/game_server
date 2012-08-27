@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827114353) do
+ActiveRecord::Schema.define(:version => 20120827135319) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(:version => 20120827114353) do
     t.integer  "target_settlement_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "resource_stone_amount"
+    t.integer  "resource_wood_amount"
+    t.integer  "resource_fur_amount"
+    t.integer  "resource_cash_amount"
   end
 
   create_table "backend_stats", :force => true do |t|
