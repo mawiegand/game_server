@@ -159,8 +159,9 @@ end
             <xsl:apply-templates select="Description" />              
           },          
 <xsl:if test="Requirement">
-          :requirement =>
+          :requirement => {
             <xsl:apply-templates select="Requirement" />
+          },
 </xsl:if>
 <xsl:if test="Rewards">
           :rewards => {
@@ -183,9 +184,7 @@ end
 </xsl:template>
 
 <xsl:template match="Requirement">
-            {
-              :quest => '<xsl:value-of select="@quest" />',
-            },
+            :quest => '<xsl:value-of select="@quest" />',
 </xsl:template>
 
 
