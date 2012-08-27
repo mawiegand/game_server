@@ -251,6 +251,10 @@ class Settlement::Settlement < ActiveRecord::Base
 
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+
+    n_trading_carts = recalc_trading_carts
+    check_and_apply_trading_carts(n_trading_carts)
+
     
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
@@ -424,6 +428,21 @@ class Settlement::Settlement < ActiveRecord::Base
         self.command_points = cp
       end
     end
+    
+    def recalc_trading_carts
+      tc = 0
+      self.slots.each do |slot|
+        tc += slot.trading_carts
+      end
+      tc    
+    end
+    
+    def check_and_apply_trading_carts(tc)
+      if (self.trading_carts != tc) 
+        logger.warn(">>> TRADING CARTS RECALC DIFFERS. Old: #{self.trading_carts} Corrected: #{tc}.")
+        self.trading_carts = tc
+      end
+    end    
     
     def recalc_score_and_levels
       sc  = 0
