@@ -18,7 +18,6 @@ class Tutorial::State < ActiveRecord::Base
     self.quests.create({
       quest_id: 0,
       status: Tutorial::Quest::STATE_NEW,
-      started_at: Time.now,
     })
   end
 
