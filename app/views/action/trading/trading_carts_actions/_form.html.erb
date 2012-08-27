@@ -1,0 +1,65 @@
+<%= form_for(@action_trading_trading_carts_action) do |f| %>
+  <% if @action_trading_trading_carts_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@action_trading_trading_carts_action.errors.count, "error") %> prohibited this action_trading_trading_carts_action from being saved:</h2>
+
+      <ul>
+      <% @action_trading_trading_carts_action.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sender_id %><br />
+    <%= f.number_field :sender_id %>
+  </div>
+  <div class="field">
+    <%= f.label :recipient_id %><br />
+    <%= f.number_field :recipient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :starting_region_id %><br />
+    <%= f.number_field :starting_region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_region_id %><br />
+    <%= f.number_field :target_region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :returning %><br />
+    <%= f.check_box :returning %>
+  </div>
+  <div class="field">
+    <%= f.label :target_reached_at %><br />
+    <%= f.datetime_select :target_reached_at %>
+  </div>
+  <div class="field">
+    <%= f.label :returned_at %><br />
+    <%= f.datetime_select :returned_at %>
+  </div>
+  <div class="field">
+    <%= f.label :num_carts %><br />
+    <%= f.number_field :num_carts %>
+  </div>
+  <div class="field">
+    <%= f.label :event_id %><br />
+    <%= f.number_field :event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sender_ip %><br />
+    <%= f.text_field :sender_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :starting_settlement_id %><br />
+    <%= f.number_field :starting_settlement_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_settlement_id %><br />
+    <%= f.number_field :target_settlement_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

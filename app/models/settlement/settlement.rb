@@ -237,6 +237,9 @@ class Settlement::Settlement < ActiveRecord::Base
     
     boni = recalc_local_resource_production_boni
     check_and_apply_local_resource_production_boni(boni)
+
+    capacity = recalc_resource_capacity
+    check_and_apply_capacity(capacity)    
     
     if (self.owns_region?)
       propagate_taxrate(true)
@@ -253,6 +256,10 @@ class Settlement::Settlement < ActiveRecord::Base
 
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+
+    n_trading_carts = recalc_trading_carts
+    check_and_apply_trading_carts(n_trading_carts)
+
     
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
@@ -426,6 +433,21 @@ class Settlement::Settlement < ActiveRecord::Base
         self.command_points = cp
       end
     end
+    
+    def recalc_trading_carts
+      tc = 0
+      self.slots.each do |slot|
+        tc += slot.trading_carts
+      end
+      tc    
+    end
+    
+    def check_and_apply_trading_carts(tc)
+      if (self.trading_carts != tc) 
+        logger.warn(">>> TRADING CARTS RECALC DIFFERS. Old: #{self.trading_carts} Corrected: #{tc}.")
+        self.trading_carts = tc
+      end
+    end    
     
     def recalc_score_and_levels
       sc  = 0
@@ -698,6 +720,29 @@ class Settlement::Settlement < ActiveRecord::Base
       end    
     end
     
+    
+    
+    def recalc_resource_capacity
+      resource_types = GameRules::Rules.the_rules().resource_types
+      capacities    = Array.new(resource_types.count, 0)
+      self.slots.each do |slot|
+        slot.resource_capacity(capacities)
+      end
+      return capacities
+    end
+    
+    def check_and_apply_capacity(capacities)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_capacity']
+        recalc  = capacities[resource_type[:id]]
+        
+        if (present != recalc)
+          logger.warn(">>> CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_capacity'] = recalc
+        end
+      end    
+    end    
     
     
     def recalc_local_resource_production_boni

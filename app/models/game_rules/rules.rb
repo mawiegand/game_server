@@ -186,6 +186,7 @@ class GameRules::Rules
           :symbolic_id => :resource_stone,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 1,
           :name        => {
             
@@ -214,6 +215,7 @@ class GameRules::Rules
           :symbolic_id => :resource_wood,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 1,
           :name        => {
             
@@ -242,6 +244,7 @@ class GameRules::Rules
           :symbolic_id => :resource_fur,
           :stealable   => true,
           :taxable     => true,
+          :tradable    => true,
           :rating_value=> 2.0,
           :name        => {
             
@@ -270,6 +273,7 @@ class GameRules::Rules
           :symbolic_id => :resource_cash,
           :stealable   => false,
           :taxable     => false,
+          :tradable    => false,
           :rating_value=> 0,
           :name        => {
             
@@ -1603,6 +1607,34 @@ class GameRules::Rules
             
           ],          
 
+          :capacity  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "1000",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "1000",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "500",
+              },
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "1000",
+              },
+            
+          ],
+
           :abilities   => {
 
             :unlock_queue => [
@@ -2385,6 +2417,106 @@ class GameRules::Rules
           },
 
         },              #   END OF Stall
+        {               #   Rohstofflager
+          :id          => 14, 
+          :symbolic_id => :building_storage,
+					:category    => 4,
+          :db_field    => :building_storage,
+          :name        => {
+            
+            :de_DE => "Rohstofflager",
+  
+            :en_US => "Storage",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Stores your resources.</p>",
+  
+            :de_DE => "<p>Steincontainer, Saurierkräne, Holzkarren; alles da!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen.</p>",
+  
+            :en_US => "<p>Storage space.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirements=> [
+            
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))+0.5)',
+            2 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))/2+0.5)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :capacity  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "1000*LEVEL",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "1000*LEVEL",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "500*LEVEL",
+              },
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "1000*LEVEL",
+              },
+            
+          ],
+
+          :abilities   => {
+
+            :trading_carts => "5*LEVEL*LEVEL",
+
+            :unlock_p2p_trade => 1,            
+    
+          },
+
+        },              #   END OF Rohstofflager
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################

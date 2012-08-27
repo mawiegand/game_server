@@ -54,6 +54,7 @@
 	ratingValue CDATA "1"
 	stealable (true | false) "true"
 	taxable (true | false) "true"
+	tradable (true | false) "true"
 >
 
 <!--Settlements-->
@@ -78,7 +79,12 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus? )>
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade? )>
+
+<!ELEMENT UnlockP2PTrade EMPTY>
+<!ATTLIST UnlockP2PTrade 
+  level	CDATA "1"
+>
 
 <!ELEMENT UnlockGarrison EMPTY>
 <!ATTLIST UnlockGarrison 
@@ -103,6 +109,8 @@
   foundAllianceLevel CDATA "5"
 >
 
+<!ELEMENT TradingCarts (#PCDATA)>
+
 <!ELEMENT CommandPoints (#PCDATA)>
 
 <!ELEMENT GarrisonSizeBonus (#PCDATA)>
@@ -123,7 +131,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, Requirement*, Limit?, Upkeep*, Production*, ProductionBonus*, Abilities)>
+<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, Requirement*, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -206,6 +214,11 @@
 
 <!ELEMENT Production (#PCDATA)>
 <!ATTLIST Production
+	id IDREF #REQUIRED
+>
+
+<!ELEMENT Capacity (#PCDATA)>
+<!ATTLIST Capacity
 	id IDREF #REQUIRED
 >
 

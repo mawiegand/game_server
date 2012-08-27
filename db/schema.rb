@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823201254) do
+ActiveRecord::Schema.define(:version => 20120827135319) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -33,6 +33,27 @@ ActiveRecord::Schema.define(:version => 20120823201254) do
     t.datetime "target_reached_at"
     t.integer  "event_id"
     t.integer  "next_action_id"
+  end
+
+  create_table "action_trading_trading_carts_actions", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.integer  "starting_region_id"
+    t.integer  "target_region_id"
+    t.boolean  "returning"
+    t.datetime "target_reached_at"
+    t.datetime "returned_at"
+    t.integer  "num_carts"
+    t.integer  "event_id"
+    t.string   "sender_ip"
+    t.integer  "starting_settlement_id"
+    t.integer  "target_settlement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "resource_stone_amount"
+    t.integer  "resource_wood_amount"
+    t.integer  "resource_fur_amount"
+    t.integer  "resource_cash_amount"
   end
 
   create_table "backend_stats", :force => true do |t|
@@ -733,13 +754,15 @@ ActiveRecord::Schema.define(:version => 20120823201254) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
+    t.integer  "trading_carts",                                  :default => 0,            :null => false
+    t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|

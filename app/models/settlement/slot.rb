@@ -12,6 +12,18 @@ class Settlement::Slot < ActiveRecord::Base
   def empty?
     return self.level == 0 || self.level.nil?
   end
+
+  # calculates the storage capacity provided by this slot for all
+  # resource types. returns an array.
+  def resource_capacity(result=nil)
+    result ||= Array.new(GameRules::Rules.the_rules().resource_types.count, 0)
+    return    if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[self.building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    
+    eval_resource_dependent_formulas(building_type[:capacity], self.level, result)
+  end
   
   # calculates the base production produced by this slot for all
   # resource types. returns an array.
@@ -74,6 +86,18 @@ class Settlement::Slot < ActiveRecord::Base
     speedups
   end  
   
+  def trading_carts
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:abilities][:trading_carts].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:trading_carts]).apply(self.level)
+  end
+  
+    
   # returns the number of command points the building on this slot provides
   def command_points
     return 0   if building_id.nil?
@@ -214,6 +238,7 @@ class Settlement::Slot < ActiveRecord::Base
   def propagate_change(building_id, old_level, new_level)
     propagate_resource_production       building_id, old_level, new_level
     propagate_resource_production_bonus building_id, old_level, new_level
+    propagate_resource_capacity         building_id, old_level, new_level
     propagate_abilities                 building_id, old_level, new_level
   end
     
@@ -272,6 +297,33 @@ class Settlement::Slot < ActiveRecord::Base
     self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
   end
   
+  ############################################################################
+  #
+  #  RESOURCE CAPACITY CHANGES
+  #
+  ############################################################################
+
+  def propagate_resource_capacity(building_id, old_level, new_level)
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    if building_type[:capacity]
+      building_type[:capacity].each do |capacity|
+        update_resource_capacity_for(capacity, old_level, new_level)
+      end
+      self.settlement.save               # if something has changed on settlement, save it  
+    end
+  end
+  
+  def update_resource_capacity_for(capacity, old_level, new_level)
+    resource_type = GameRules::Rules.the_rules().resource_types[capacity[:id]]
+    attribute = resource_type[:symbolic_id].to_s()+'_capacity'
+    
+    formula = Util::Formula.parse_from_formula(capacity[:formula])
+    delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
+
+    self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
+  end
+  
     
   ############################################################################
   #
@@ -300,11 +352,17 @@ class Settlement::Slot < ActiveRecord::Base
       if !building_type[:abilities][:command_points].blank?
         propagate_evaluatable_settlement_ability(:command_points, building_type[:abilities][:command_points], old_level, new_level)
       end
+      if !building_type[:abilities][:trading_carts].blank?
+        propagate_evaluatable_settlement_ability(:trading_carts, building_type[:abilities][:trading_carts], old_level, new_level)
+      end
       if !building_type[:abilities][:army_size_bonus].blank?
         propagate_evaluatable_settlement_ability(:army_size_max, building_type[:abilities][:army_size_bonus], old_level, new_level)
       end
       if !building_type[:abilities][:garrison_size_bonus].blank?
         propagate_evaluatable_settlement_ability(:garrison_size_max, building_type[:abilities][:garrison_size_bonus], old_level, new_level)
+      end
+      if !building_type[:abilities][:unlock_p2p_trade].blank?
+        propagate_unlock(:settlement_unlock_p2p_trade_count, building_type[:abilities][:unlock_p2p_trade], old_level, new_level)
       end
       if !building_type[:abilities][:unlock_garrison].blank?
         propagate_unlock(:settlement_unlock_garrison_count, building_type[:abilities][:unlock_garrison], old_level, new_level)

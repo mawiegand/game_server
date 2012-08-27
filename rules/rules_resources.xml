@@ -38,7 +38,7 @@
       <p>Basic resource to be worn by warriors and also utilized in buildings..</p>
     </Description>
   </Resource>
-  <Resource id="resource_cash" stealable="false" ratingValue="0" taxable="false"> <!-- used for monetarization, cannot be stolen, is not considered in ranking -->  
+  <Resource id="resource_cash" stealable="false" ratingValue="0" taxable="false" tradable="false"> <!-- used for monetarization, cannot be stolen, is not considered in ranking -->  
     <Name lang="de_DE">Kröte</Name>
     <Name lang="en_US">Toad</Name>
     <Flavour lang="de_DE">Jeder mag Kröten! Die Steinzeitwährung.</Flavour>
