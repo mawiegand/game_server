@@ -86,17 +86,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 20,
               },
 
@@ -148,17 +148,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 20,
               },
 
@@ -214,17 +214,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 5,
               },
 
@@ -263,7 +263,7 @@ class Tutorial::Tutorial
           :requirement =>
             
             {
-              :quest => 'quest_change_settlementname',
+              :quest => 'quest_build_1gathererlvl1',
             },
 
           :rewards => {
@@ -271,17 +271,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 5,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -328,17 +328,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 15,
               },
 
@@ -394,17 +394,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -460,7 +460,7 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_cash',
+                :resource => :resource_cash,
                 :amount => 5,
               },
 
@@ -521,17 +521,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 80,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 80,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 40,
               },
 
@@ -587,17 +587,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 5,
               },
 
@@ -644,17 +644,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -701,17 +701,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -758,17 +758,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 5,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 5,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -815,17 +815,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -881,17 +881,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 150,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 150,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 75,
               },
 
@@ -947,17 +947,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 60,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 40,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 80,
               },
 
@@ -1013,7 +1013,7 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 35,
               },
 
@@ -1065,17 +1065,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 35,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 15,
               },
 
@@ -1118,17 +1118,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 10,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 30,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 15,
               },
 
@@ -1180,17 +1180,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 25,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -1200,6 +1200,8 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :movement_test => {},
+
           },          
 
         },              #   END OF quest_army_move
@@ -1233,17 +1235,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 200,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 200,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 100,
               },
 
@@ -1299,17 +1301,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 40,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 40,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 5,
               },
 
@@ -1365,17 +1367,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 100,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 105,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 45,
               },
 
@@ -1385,6 +1387,8 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :alliance_test => {},
+
           },          
 
         },              #   END OF quest_alliance
@@ -1418,17 +1422,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 250,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 250,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 125,
               },
 
@@ -1484,17 +1488,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 20,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 15,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -1541,17 +1545,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 35,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 45,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 20,
               },
 
@@ -1607,17 +1611,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 50,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 50,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 10,
               },
 
@@ -1682,17 +1686,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 300,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 300,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 60,
               },
 
@@ -1757,17 +1761,17 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => 'resource_stone',
+                :resource => :resource_stone,
                 :amount => 500,
               },
 
               {
-                :resource => 'resource_wood',
+                :resource => :resource_wood,
                 :amount => 500,
               },
 
               {
-                :resource => 'resource_fur',
+                :resource => :resource_fur,
                 :amount => 250,
               },
 

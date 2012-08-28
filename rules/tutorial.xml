@@ -73,7 +73,7 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="quest_change_settlementname" />
+      <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
