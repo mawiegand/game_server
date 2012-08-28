@@ -23,6 +23,7 @@ class Messaging::Message < ActiveRecord::Base
   FORTESS_WON_REPORT_TYPE_ID = 7
   FORTESS_LOST_REPORT_TYPE_ID = 8
   WELCOME_MESSAGE_TYPE_ID = 9
+  TUTORIAL_MESSAGE_TYPE_ID = 10
 
   # creates inbox and outbox entries for the message
   def deliver_message
@@ -200,5 +201,17 @@ class Messaging::Message < ActiveRecord::Base
     text += "<p>Your garrison army at region <b>" + settlement.region.name.to_s + "</b> has lost the battle for fortress <b>" + settlement.name.to_s + "</b>. " 
     text += "The new owner of the fortress is <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
     self.body = text
+  end
+  
+  def self.create_tutorial_message(character, subject, boby)
+    message = Messaging::Message.create({
+      recipient: character,
+      type_id:   TUTORIAL_MESSAGE_TYPE_ID,
+      subject:   subject,
+      body:      boby,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
   end
 end

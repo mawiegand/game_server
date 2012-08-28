@@ -12,6 +12,10 @@ class Tutorial::Quest < ActiveRecord::Base
   STATE_CLOSED = 3
   STATES[STATE_CLOSED] = :closed
   
+  def quest
+    Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
+  end
+  
   def check_for_rewards(answer_text)
     logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
     
@@ -140,7 +144,7 @@ class Tutorial::Quest < ActiveRecord::Base
         self.tutorial_state.quests.create({
           status: STATE_NEW,
           quest_id: quest[:id],
-        }) 
+        })
       end
     end
   end
@@ -345,6 +349,10 @@ class Tutorial::Quest < ActiveRecord::Base
       amount = formula.apply(2)
       
       return amount.to_s == answer_text
+    end
+    
+    if test_id == 'test_recruit_friends_reward'
+      return true
     end
       
     false

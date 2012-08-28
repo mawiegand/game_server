@@ -66,6 +66,12 @@ class Tutorial::QuestsController < ApplicationController
     attributes = params[:tutorial_quest]
     if attributes.has_key?(:status) && attributes[:status] == Tutorial::Quest::STATE_DISPLAYED.to_s
       attributes[:displayed_at] = Time.now
+
+      # Send Mail if required
+      quest_message = @tutorial_quest.quest[:message]
+      unless quest_message.nil?
+        Messaging::Message.create_tutorial_message(current_character, quest_message[:de_DE][:subject], quest_message[:de_DE][:body]) # TODO I18n
+      end
     end
 
     respond_to do |format|
