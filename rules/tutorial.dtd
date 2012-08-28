@@ -28,7 +28,7 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Description*, Flavour*, Task*, Requirement?, Rewards?, RewardTests?, Message*)>
+<!ELEMENT Quest (Name*, Description*, Flavour*, Task*, RewardText*, Requirement?, Rewards?, RewardTests?, Message*)>
 <!ATTLIST Quest id ID #REQUIRED>
 
 <!ELEMENT Requirement EMPTY>
@@ -103,9 +103,13 @@
 
 
 <!--Common Leafs-->
+<!ELEMENT p (#PCDATA)>
+
 <!ELEMENT Description (p*)>
 <!ATTLIST Description lang IDREF "en_US">
-<!ELEMENT p (#PCDATA)>
+
+<!ELEMENT RewardText (p*)>
+<!ATTLIST RewardText lang IDREF "en_US">
 
 <!ELEMENT Name (#PCDATA)>
 <!ATTLIST Name lang IDREF "en_US">
