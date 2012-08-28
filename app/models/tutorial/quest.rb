@@ -379,31 +379,33 @@ class Tutorial::Quest < ActiveRecord::Base
 
     # calc resources
     resources = {}
-    resource_rewards.each do |resource_reward|
-      logger.debug "---------------> resource reward " + resource_reward.inspect
-
-      raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
-      
-      amount = resource_reward[:amount]
-      raise BadRequestError.new('no amount given') if amount.nil?
-      raise BadRequestError.new('amount is negative') if amount < 0
-      
-      resource_symbolic_id = resource_reward[:resource]
-      raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
-      
-      resource_type = nil
-      GameRules::Rules.the_rules().resource_types.each do |type|
-        logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
-        if type[:symbolic_id].to_s == resource_symbolic_id.to_s
-          resource_type = type
-          break
+    unless resource_rewards.nil?
+      resource_rewards.each do |resource_reward|
+        logger.debug "---------------> resource reward " + resource_reward.inspect
+  
+        raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
+        
+        amount = resource_reward[:amount]
+        raise BadRequestError.new('no amount given') if amount.nil?
+        raise BadRequestError.new('amount is negative') if amount < 0
+        
+        resource_symbolic_id = resource_reward[:resource]
+        raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
+        
+        resource_type = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
+          if type[:symbolic_id].to_s == resource_symbolic_id.to_s
+            resource_type = type
+            break
+          end
         end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
+        
+        resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
       end
-      raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
-      
-      resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
+      logger.debug "---------------> resources to reward " + resources.inspect
     end
-    logger.debug "---------------> resources to reward " + resources.inspect
     
     
     # calc units
@@ -412,23 +414,24 @@ class Tutorial::Quest < ActiveRecord::Base
     
     units = {}
     total_unit_amount = 0
-    unit_rewards.each do |unit_reward|
-      logger.debug "---------------> unit reward " + unit_reward.inspect
-
-      raise BadRequestError.new('no unit_reward given') if unit_reward.nil?
-      
-      amount = unit_reward[:amount]
-      raise BadRequestError.new('no amount given') if amount.nil?
-      raise BadRequestError.new('amount is negative') if amount < 0
-      
-      unit_db_field = unit_reward[:unit]
-      raise BadRequestError.new('no unit id given') if unit_db_field.nil?
-      
-      units[unit_db_field] = amount
-      total_unit_amount += amount
+    unless unit_rewards.nil?
+      unit_rewards.each do |unit_reward|
+        logger.debug "---------------> unit reward " + unit_reward.inspect
+  
+        raise BadRequestError.new('no unit_reward given') if unit_reward.nil?
+        
+        amount = unit_reward[:amount]
+        raise BadRequestError.new('no amount given') if amount.nil?
+        raise BadRequestError.new('amount is negative') if amount < 0
+        
+        unit_db_field = unit_reward[:unit]
+        raise BadRequestError.new('no unit id given') if unit_db_field.nil?
+        
+        units[unit_db_field] = amount
+        total_unit_amount += amount
+      end
+      logger.debug "---------------> units to reward " + units.inspect
     end
-    logger.debug "---------------> units to reward " + units.inspect
-
 
     # check if resources and units can be rewarded
     # raise ConflictError.new("too many resources") unless self.tutorial_state.owner.resource_pool.can_receive?(total_resource_amount)
