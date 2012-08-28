@@ -297,8 +297,7 @@
       </Description>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>  
-	<!-- unit reward -->
+        <UnitReward unit="unit_clubbers">3</UnitReward>  
       </Rewards>
       <RewardTests>
         <UnitTest unit="unit_clubbers" min_count="1" />

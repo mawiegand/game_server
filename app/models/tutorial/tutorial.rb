@@ -957,11 +957,11 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
+            :unit_rewards => [
 
               {
-                :resource => :resource_stone,
-                :amount => 35,
+                :unit => :unit_clubbers,
+                :amount => 3,
               },
 
             ],
