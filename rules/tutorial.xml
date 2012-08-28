@@ -26,7 +26,7 @@
         <ResourceReward resource="resource_fur">20</ResourceReward>
       </Rewards>
       <RewardTests>
-        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+        <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1gathererlvl1">
@@ -47,7 +47,7 @@
         <BuildingTest building="building_gatherer" min_count="2" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_change_settlementname">
+    <!-- Quest id="quest_change_settlementname">
       <Name>Siedlungsname</Name>
       <Description lang="de_DE">
         <p>Ändere den Namen deiner Siedlung.</p>
@@ -64,7 +64,7 @@
       <RewardTests>
         <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
       </RewardTests>
-    </Quest>
+    </Quest -->
     <Quest id="quest_rank">
       <Name>Rang</Name>
       <Description lang="de_DE">
@@ -230,7 +230,7 @@
         <ResourceReward resource="resource_fur">10</ResourceReward>
       </Rewards>
       <RewardTests>
-	      <CustomTest id="test_costs"> Textbox Holzkosten Kaserne l2 </CustomTest>
+	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1cottagelvl1">
@@ -301,10 +301,10 @@
 	<!-- unit reward -->
       </Rewards>
       <RewardTests>
-        <TrainingQueueTest unit="clubbers" min_count="1" />
+        <UnitTest unit="unit_clubbers" min_count="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1walllvl1">
+    <!-- Quest id="quest_build_1walllvl1">
       <Name>Verteidigungsanlagen</Name>
       <Description lang="de_DE">
         <p>Baue einen Wall.</p>
@@ -319,9 +319,9 @@
         <ResourceReward resource="resource_fur">15</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <!-- <BuildingTest building="building_wall" min_level="1" /> -->
+        <!- <BuildingTest building="building_wall" min_level="1" /> ->
       </RewardTests>
-    </Quest>
+    </Quest -->
     <Quest id="quest_army_create">
       <Name>Armee</Name>
       <Description lang="de_DE">
@@ -366,7 +366,7 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="quest_build_1walllvl1" />
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -463,7 +463,7 @@
         <ResourceReward resource="resource_fur">20</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_market" min_level="1" />
+        <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
     </Quest>
     <Quest id="quest_build_1quarrylvl1_1loggerlvl1">

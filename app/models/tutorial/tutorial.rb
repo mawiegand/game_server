@@ -106,11 +106,15 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :construction_queue_tests => [
+            :building_tests => [
 
               {
                 :building => 'building_gatherer',
+
+                :min_level => 1,
+
                 :min_count => 1,
+
               },
 
             ],
@@ -137,11 +141,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_queue_1gathererlvl1',
-            },
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
 
           :rewards => {
             
@@ -184,65 +188,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1gathererlvl1
-        {               #   quest_change_settlementname
-          :id          => 2, 
-          :symbolic_id => :quest_change_settlementname,
-          :name        => {
-            
-            :en_US => "Siedlungsname",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Ändere den Namen deiner Siedlung.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_build_1gathererlvl1',
-            },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 10,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 10,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 5,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :custom_test => {
-              :id => 'test_change_settlement_name',
-            },
-
-          },          
-
-        },              #   END OF quest_change_settlementname
         {               #   quest_rank
-          :id          => 3, 
+          :id          => 2, 
           :symbolic_id => :quest_rank,
           :name        => {
             
@@ -260,11 +207,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1gathererlvl1',
-            },
+            :quest => 'quest_build_1gathererlvl1',
+
+          },
 
           :rewards => {
             
@@ -299,7 +246,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_rank
         {               #   quest_build_2gathererlvl1
-          :id          => 4, 
+          :id          => 3, 
           :symbolic_id => :quest_build_2gathererlvl1,
           :name        => {
             
@@ -317,11 +264,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_rank',
-            },
+            :quest => 'quest_rank',
+
+          },
 
           :rewards => {
             
@@ -365,7 +312,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2gathererlvl1
         {               #   quest_build_1gathererlvl2
-          :id          => 5, 
+          :id          => 4, 
           :symbolic_id => :quest_build_1gathererlvl2,
           :name        => {
             
@@ -383,11 +330,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_2gathererlvl1',
-            },
+            :quest => 'quest_build_2gathererlvl1',
+
+          },
 
           :rewards => {
             
@@ -431,7 +378,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl2
         {               #   quest_message
-          :id          => 6, 
+          :id          => 5, 
           :symbolic_id => :quest_message,
           :name        => {
             
@@ -449,11 +396,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_2gathererlvl1',
-            },
+            :quest => 'quest_build_2gathererlvl1',
+
+          },
 
           :rewards => {
             
@@ -492,7 +439,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_message
         {               #   quest_build_chieftainslvl2
-          :id          => 7, 
+          :id          => 6, 
           :symbolic_id => :quest_build_chieftainslvl2,
           :name        => {
             
@@ -510,11 +457,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1gathererlvl2',
-            },
+            :quest => 'quest_build_1gathererlvl2',
+
+          },
 
           :rewards => {
             
@@ -558,7 +505,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chieftainslvl2
         {               #   quest_settlementowner
-          :id          => 8, 
+          :id          => 7, 
           :symbolic_id => :quest_settlementowner,
           :name        => {
             
@@ -576,11 +523,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_message',
-            },
+            :quest => 'quest_message',
+
+          },
 
           :rewards => {
             
@@ -614,9 +561,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_settlementowner
-        {               #   quest_settlementbutton
-          :id          => 9, 
-          :symbolic_id => :quest_settlementbutton,
+        {               #   quest_settlement_button
+          :id          => 8, 
+          :symbolic_id => :quest_settlement_button,
           :name        => {
             
             :en_US => "Karte",
@@ -633,11 +580,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_settlementowner',
-            },
+            :quest => 'quest_settlementowner',
+
+          },
 
           :rewards => {
             
@@ -665,14 +612,14 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_settlement_buttom',
+              :id => 'test_settlement_button',
             },
 
           },          
 
-        },              #   END OF quest_settlementbutton
+        },              #   END OF quest_settlement_button
         {               #   quest_profile
-          :id          => 10, 
+          :id          => 9, 
           :symbolic_id => :quest_profile,
           :name        => {
             
@@ -690,11 +637,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_settlementbutton',
-            },
+            :quest => 'quest_settlement_button',
+
+          },
 
           :rewards => {
             
@@ -729,7 +676,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_encyclopedia
-          :id          => 11, 
+          :id          => 10, 
           :symbolic_id => :quest_encyclopedia,
           :name        => {
             
@@ -747,11 +694,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_profile',
-            },
+            :quest => 'quest_profile',
+
+          },
 
           :rewards => {
             
@@ -778,7 +725,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :custom_test => {
+            :textbox_test => {
               :id => 'test_costs',
             },
 
@@ -786,7 +733,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_encyclopedia
         {               #   quest_build_1cottagelvl1
-          :id          => 12, 
+          :id          => 11, 
           :symbolic_id => :quest_build_1cottagelvl1,
           :name        => {
             
@@ -804,11 +751,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chieftainslvl2',
-            },
+            :quest => 'quest_build_chieftainslvl2',
+
+          },
 
           :rewards => {
             
@@ -852,7 +799,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1cottagelvl1
         {               #   quest_build_chiefcottagelvl3
-          :id          => 13, 
+          :id          => 12, 
           :symbolic_id => :quest_build_chiefcottagelvl3,
           :name        => {
             
@@ -870,11 +817,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1cottagelvl1',
-            },
+            :quest => 'quest_build_1cottagelvl1',
+
+          },
 
           :rewards => {
             
@@ -918,7 +865,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_1barrackslvl1
-          :id          => 14, 
+          :id          => 13, 
           :symbolic_id => :quest_build_1barrackslvl1,
           :name        => {
             
@@ -936,11 +883,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl3',
-            },
+            :quest => 'quest_build_chiefcottagelvl3',
+
+          },
 
           :rewards => {
             
@@ -984,7 +931,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
-          :id          => 15, 
+          :id          => 14, 
           :symbolic_id => :quest_recruit_1clubbers,
           :name        => {
             
@@ -1002,11 +949,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1barrackslvl1',
-            },
+            :quest => 'quest_build_1barrackslvl1',
+
+          },
 
           :rewards => {
             
@@ -1023,73 +970,11 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :training_queue_tests => [
-
-              {
-                :unit => 'clubbers',
-                :min_count => 1,
-              },
-
-            ],
-
           },          
 
         },              #   END OF quest_recruit_1clubbers
-        {               #   quest_build_1walllvl1
-          :id          => 16, 
-          :symbolic_id => :quest_build_1walllvl1,
-          :name        => {
-            
-            :en_US => "Verteidigungsanlagen",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Baue einen Wall.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-
-          :requirement =>
-            
-            {
-              :quest => 'quest_recruit_1clubbers',
-            },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 35,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 15,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 15,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF quest_build_1walllvl1
         {               #   quest_army_create
-          :id          => 17, 
+          :id          => 15, 
           :symbolic_id => :quest_army_create,
           :name        => {
             
@@ -1107,11 +992,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_recruit_1clubbers',
-            },
+            :quest => 'quest_recruit_1clubbers',
+
+          },
 
           :rewards => {
             
@@ -1151,7 +1036,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_create
         {               #   quest_army_move
-          :id          => 18, 
+          :id          => 16, 
           :symbolic_id => :quest_army_move,
           :name        => {
             
@@ -1169,11 +1054,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_army_create',
-            },
+            :quest => 'quest_army_create',
+
+          },
 
           :rewards => {
             
@@ -1206,7 +1091,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_move
         {               #   quest_build_chiefcottagelvl4
-          :id          => 19, 
+          :id          => 17, 
           :symbolic_id => :quest_build_chiefcottagelvl4,
           :name        => {
             
@@ -1224,11 +1109,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1walllvl1',
-            },
+            :quest => 'quest_army_move',
+
+          },
 
           :rewards => {
             
@@ -1272,7 +1157,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_build_1campfirelvl1
-          :id          => 20, 
+          :id          => 18, 
           :symbolic_id => :quest_build_1campfirelvl1,
           :name        => {
             
@@ -1290,11 +1175,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
@@ -1338,7 +1223,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
-          :id          => 21, 
+          :id          => 19, 
           :symbolic_id => :quest_alliance,
           :name        => {
             
@@ -1356,11 +1241,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1campfirelvl1',
-            },
+            :quest => 'quest_build_1campfirelvl1',
+
+          },
 
           :rewards => {
             
@@ -1393,7 +1278,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_build_chiefcottagelvl5
-          :id          => 22, 
+          :id          => 20, 
           :symbolic_id => :quest_build_chiefcottagelvl5,
           :name        => {
             
@@ -1411,11 +1296,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
@@ -1459,7 +1344,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_recruitfriends
-          :id          => 23, 
+          :id          => 21, 
           :symbolic_id => :quest_recruitfriends,
           :name        => {
             
@@ -1477,11 +1362,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
@@ -1516,7 +1401,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruitfriends
         {               #   quest_build_1marketlvl1
-          :id          => 24, 
+          :id          => 22, 
           :symbolic_id => :quest_build_1marketlvl1,
           :name        => {
             
@@ -1534,11 +1419,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
@@ -1568,7 +1453,7 @@ class Tutorial::Tutorial
             :building_tests => [
 
               {
-                :building => 'building_market',
+                :building => 'building_storage',
 
                 :min_level => 1,
 
@@ -1582,7 +1467,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1marketlvl1
         {               #   quest_build_1quarrylvl1_1loggerlvl1
-          :id          => 25, 
+          :id          => 23, 
           :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
           :name        => {
             
@@ -1600,11 +1485,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
@@ -1657,7 +1542,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_5quarrylvl5_5loggerlvl5
-          :id          => 26, 
+          :id          => 24, 
           :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
           :name        => {
             
@@ -1675,11 +1560,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-            },
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+
+          },
 
           :rewards => {
             
@@ -1732,7 +1617,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_5quarrylvl5_5loggerlvl5
         {               #   quest_outpost
-          :id          => 27, 
+          :id          => 25, 
           :symbolic_id => :quest_outpost,
           :name        => {
             
@@ -1750,11 +1635,11 @@ class Tutorial::Tutorial
                 
           },          
 
-          :requirement =>
+          :requirement => {
             
-            {
-              :quest => 'quest_build_chiefcottagelvl4',
-            },
+            :quest => 'quest_build_chiefcottagelvl4',
+
+          },
 
           :rewards => {
             
