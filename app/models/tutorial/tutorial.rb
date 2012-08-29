@@ -970,6 +970,15 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 1,
+              },
+
+            ],
+
           },          
 
         },              #   END OF quest_recruit_1clubbers

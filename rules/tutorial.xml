@@ -300,7 +300,7 @@
         <UnitReward unit="unit_clubbers">3</UnitReward>  
       </Rewards>
       <RewardTests>
-        <UnitTest unit="unit_clubbers" min_count="1" />
+        <ArmyTest type="garrison" min_count="1" />
       </RewardTests>
     </Quest>
     <!-- Quest id="quest_build_1walllvl1">
