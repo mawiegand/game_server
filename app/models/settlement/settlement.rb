@@ -255,13 +255,14 @@ class Settlement::Settlement < ActiveRecord::Base
 
     speedups = recalc_queue_speedups
     check_and_apply_queue_speedups(speedups)
-
+    
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
 
     n_trading_carts = recalc_trading_carts
     check_and_apply_trading_carts(n_trading_carts)
 
+    check_and_repair_used_trading_carts
     
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
@@ -450,6 +451,14 @@ class Settlement::Settlement < ActiveRecord::Base
         self.trading_carts = tc
       end
     end    
+    
+    def check_and_repair_used_trading_carts
+      sum = self.outgoing_trading_carts.sum(:num_carts) || 0
+      if (self.trading_carts_used != sum) 
+        logger.warn(">>> USED TRADING CARTS RECALC DIFFERS. Old: #{self.trading_carts_used} Corrected: #{sum}.")
+        self.trading_carts_used = sum
+      end
+    end      
     
     def recalc_score_and_levels
       sc  = 0
