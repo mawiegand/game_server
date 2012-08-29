@@ -1,8 +1,8 @@
 class Action::Trading::TradingCartsActionsController < ApplicationController
   
-#  before_filter :authenticate                                             # always need the user to authenticate
-#  before_filter :authorize_staff, :except => [:show, :create, :destroy]   # all other actions may only be accessed by staff users
-#  before_filter :deny_api,        :except => [:show, :create, :destroy]   # the api may only be used for those three actions
+  before_filter :authenticate                                             # always need the user to authenticate
+  before_filter :authorize_staff, :except => [:show, :create, :destroy]   # all other actions may only be accessed by staff users
+  before_filter :deny_api,        :except => [:show, :create, :destroy]   # the api may only be used for those three actions
   
   # Provides a listing of all trading cart actions in the system. 
   # May only be accessed by staff users using the backend; the API is
