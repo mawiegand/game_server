@@ -957,11 +957,11 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
+            :unit_rewards => [
 
               {
-                :resource => :resource_stone,
-                :amount => 35,
+                :unit => :unit_clubbers,
+                :amount => 3,
               },
 
             ],
@@ -970,6 +970,15 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_tests => [
+
+              {
+                :type => 'garrison',
+                :min_count => 1,
+              },
+
+            ],
+
           },          
 
         },              #   END OF quest_recruit_1clubbers
