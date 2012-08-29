@@ -1,13 +1,22 @@
 class Action::Trading::TradingCartsActionsController < ApplicationController
+  
+  before_filter :authenticate                                             # always need the user to authenticate
+  before_filter :authorize_staff, :except => [:show, :create, :destroy]   # all other actions may only be accessed by staff users
+  before_filter :deny_api,        :except => [:show, :create, :destroy]   # the api may only be used for those three actions
+  
+  # Provides a listing of all trading cart actions in the system. 
+  # May only be accessed by staff users using the backend; the API is
+  # completely locked out.
+  #
   # GET /action/trading/trading_carts_actions
-  # GET /action/trading/trading_carts_actions.json
   def index
-    @action_trading_trading_carts_actions = Action::Trading::TradingCartsAction.all
+    raise ForbiddenError.new('Access to index of trading cart actions forbidden') unless admin? || staff?
+    @action_trading_trading_carts_actions = Action::Trading::TradingCartsAction.paginate(:page => params[:page], :per_page => 50)    
+    @paginate = true   
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @action_trading_trading_carts_actions }
-    end
+      format.html
+    end 
   end
 
   # GET /action/trading/trading_carts_actions/1

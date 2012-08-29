@@ -83,6 +83,9 @@ GameServer::Application.routes.draw do
         resources :settlements do 
           resources :slots 
           resources :histories
+          resources :incoming_trading_carts,  :only => [ :index ]
+          resources :outgoing_trading_carts,  :only => [ :index ]
+
           # resources :queues, :module => 'construction'
         end
         resources :slots 
@@ -91,7 +94,7 @@ GameServer::Application.routes.draw do
 
       resources :queues, :path => "/settlement/settlements/:settlement_id/construction_queues", :module => 'construction'            
       resources :queues, :path => "/settlement/settlements/:settlement_id/training_queues", :module => 'training'            
-      
+
       resources :settlements, :path => "/map/locations/:location_id/settlements", :module => 'settlement'            
 
 

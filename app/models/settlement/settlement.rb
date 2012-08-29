@@ -12,6 +12,8 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :training_queues, :class_name => "Training::Queue", :foreign_key => "settlement_id",      :inverse_of => :settlement
   
+  has_many   :outgoing_trading_carts, :class_name => "Action::Trading::TradingCartsAction", :foreign_key => "starting_settlement_id",      :inverse_of => :starting_settlement
+  has_many   :incoming_trading_carts, :class_name => "Action::Trading::TradingCartsAction", :foreign_key => "target_settlement_id",        :inverse_of => :target_settlement  
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :as => :default 
   attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
