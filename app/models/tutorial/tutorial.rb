@@ -1496,7 +1496,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 

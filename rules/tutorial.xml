@@ -473,7 +473,7 @@
       <Description lang="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
