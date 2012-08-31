@@ -1,8 +1,4 @@
-<h1>Listing All Ongoing Trading Cart Actions</h1>
-
-<%= if (@paginate) 
-  will_paginate @action_trading_trading_carts_actions 
-end %>
+<h1>Incoming Trading Carts at Settlement <%= link_to @settlement.id, @settlement %></h1>
 
 <table>
   <tr>
@@ -46,8 +42,3 @@ end %>
 
 <br />
 
-<%= if (@paginate) 
-  will_paginate @action_trading_trading_carts_actions 
-end %>
-
-<%= link_to 'New Trading carts action', new_action_trading_trading_carts_action_path %>
