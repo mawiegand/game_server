@@ -18,6 +18,7 @@ class Action::Tutorial::RedeemRewardsActionsController < ApplicationController
 
     # check if quest is already finished by user
     raise BadRequestError.new('quest is not finished yet') if quest_state.status < Tutorial::Quest::STATE_FINISHED
+    raise BadRequestError.new('rewards already rewarded') if quest_state.status > Tutorial::Quest::STATE_FINISHED
 
     logger.debug '---> quest_state ' + quest_state.inspect
     quest_state.redeem_rewards
