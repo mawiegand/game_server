@@ -70,7 +70,7 @@ class Tutorial::QuestsController < ApplicationController
       # Send Mail if required
       quest_message = @tutorial_quest.quest[:message]
       unless quest_message.nil?
-        Messaging::Message.create_tutorial_message(current_character, quest_message[:de_DE][:subject], quest_message[:de_DE][:body]) # TODO I18n
+        Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body]) # TODO I18n
       end
     end
 
