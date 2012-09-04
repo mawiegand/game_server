@@ -124,17 +124,21 @@ end
 
 </xsl:template>
 
-<!-- Name, Flavour (One-Liner, Short Flavour Text), Description -->
+<!-- Name, Task, Flavour (One-Liner, Short Flavour Text), Description -->
 <xsl:template match="Name">
-            :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
+  
+<xsl:template match="Task">
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
   
 <xsl:template match="Flavour">
-            :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 <xsl:template match="Description">
-            :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
@@ -151,6 +155,9 @@ end
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
+          },
+          :task        => {
+            <xsl:apply-templates select="Task" />              
           },
           :flavour     => {
             <xsl:apply-templates select="Flavour" />              
@@ -304,7 +311,7 @@ end
 
 
 <xsl:template match="Message">
-            :<xsl:value-of select="@locale"/> => {
+            :<xsl:value-of select="@lang"/> => {
               :subject => '<xsl:value-of select="Subject" />',
               :body => '<xsl:value-of select="Body" />',
             },

@@ -4,7 +4,7 @@
 
 
 <!-- General -->
-<!ELEMENT General (Game, Version, Languages)>
+<!ELEMENT General (Game, Version, Languages, Locales)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -22,18 +22,23 @@
 <!--Languages-->
 <!ELEMENT Languages (Language*)>
 <!ELEMENT Language (#PCDATA)>
-<!ATTLIST Language locale ID #REQUIRED>
+<!ATTLIST Language
+  lang ID #REQUIRED
+>
 
 <!--Locales-->
 <!ELEMENT Locales (Locale*)>
 <!ELEMENT Locale (#PCDATA)>
-<!ATTLIST Locale locale ID #REQUIRED>
+<!ATTLIST Locale
+  locale ID #REQUIRED
+  lang IDREF "en"
+>
 
 
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Description*, Flavour*, Task*, RewardText*, Requirement?, Rewards?, RewardTests?, Message*)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavour*, RewardText*, Requirement?, Rewards?, RewardTests?, Message*)>
 <!ATTLIST Quest id ID #REQUIRED>
 
 <!ELEMENT Requirement EMPTY>
@@ -102,7 +107,7 @@
 >
 
 <!ELEMENT Message (Subject, Body)>
-<!ATTLIST Message locale IDREF "en">
+<!ATTLIST Message lang IDREF "en">
 <!ELEMENT Subject (#PCDATA)>
 <!ELEMENT Body (#PCDATA)>
 
@@ -111,19 +116,19 @@
 <!ELEMENT p (#PCDATA)>
 
 <!ELEMENT Description (p*)>
-<!ATTLIST Description lang IDREF "en_US">
+<!ATTLIST Description locale IDREF "en_US">
 
 <!ELEMENT RewardText (p*)>
-<!ATTLIST RewardText lang IDREF "en_US">
+<!ATTLIST RewardText locale IDREF "en_US">
 
 <!ELEMENT Name (#PCDATA)>
-<!ATTLIST Name lang IDREF "en_US">
+<!ATTLIST Name locale IDREF "en_US">
 
 <!ELEMENT Task (#PCDATA)>
-<!ATTLIST Task lang IDREF "en_US">
+<!ATTLIST Task locale IDREF "en_US">
 
 <!ELEMENT Flavour (#PCDATA)>
-<!ATTLIST Flavour lang IDREF "en_US">
+<!ATTLIST Flavour locale IDREF "en_US">
 
 
 <!--entities-->

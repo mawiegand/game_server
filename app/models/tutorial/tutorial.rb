@@ -68,10 +68,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Baue einen Sammler",
+  
+            :de_DE => "Build one Gatherer",
+                
+          },
+          :task        => {
+            
+            :en_US => "Baue einen Sammler",
+  
+            :de_DE => "Build one Gatherer",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -128,10 +141,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Zweiter Sammler",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -194,10 +220,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Rang",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -251,10 +290,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Noch mehr Sammler",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -317,10 +369,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Ausbau eines Sammlers",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -383,10 +448,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Nachrichten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -425,12 +503,12 @@ class Tutorial::Tutorial
 
           :message => {
             
-            :en_US => {
+            :en => {
               :subject => 'Subject',
               :body => 'Message with content',
             },
 
-            :de_DE => {
+            :de => {
               :subject => 'Betreff',
               :body => 'Nachricht mit Inhalt',
             },
@@ -444,10 +522,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Häuptlingshütte Level 2",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -510,10 +601,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Festungen",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -567,10 +671,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Karte",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -624,10 +741,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Profil",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -681,10 +811,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Enzyklopädie",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -738,10 +881,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Hütten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -804,10 +960,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Häuptlingshütte Level 3",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -870,10 +1039,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Kaserne",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -936,10 +1118,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Einheiten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -988,10 +1183,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Armee",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1050,10 +1258,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Armeebewegung",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1105,10 +1326,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Häuptlingshütte Level 4",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1171,10 +1405,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Lagerfeuer",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1237,10 +1484,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Allianzen",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1292,10 +1552,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Häuptlingshütte Level 5",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1358,10 +1631,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Freunde",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1415,10 +1701,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Lager",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1481,10 +1780,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Baumfäller und Steinbruch",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1556,10 +1868,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Noch mehr Holzfäller und Steinbrüche",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1631,10 +1956,23 @@ class Tutorial::Tutorial
           :name        => {
             
             :en_US => "Dorf",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
