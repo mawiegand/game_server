@@ -24,6 +24,11 @@
 <!ELEMENT Language (#PCDATA)>
 <!ATTLIST Language locale ID #REQUIRED>
 
+<!--Locales-->
+<!ELEMENT Locales (Locale*)>
+<!ELEMENT Locale (#PCDATA)>
+<!ATTLIST Locale locale ID #REQUIRED>
+
 
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
@@ -97,7 +102,7 @@
 >
 
 <!ELEMENT Message (Subject, Body)>
-<!ATTLIST Message lang IDREF "en_US">
+<!ATTLIST Message locale IDREF "en">
 <!ELEMENT Subject (#PCDATA)>
 <!ELEMENT Body (#PCDATA)>
 
