@@ -304,7 +304,7 @@ end
 
 
 <xsl:template match="Message">
-            :<xsl:value-of select="@lang"/> => {
+            :<xsl:value-of select="@locale"/> => {
               :subject => '<xsl:value-of select="Subject" />',
               :body => '<xsl:value-of select="Body" />',
             },
