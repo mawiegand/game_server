@@ -141,6 +141,10 @@ end
             :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
+<xsl:template match="RewardText">
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
+
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
 
 
@@ -166,6 +170,9 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },          
+          :reward_text => {
+            <xsl:apply-templates select="RewardText" />              
+          },
 <xsl:if test="Requirement">
           :requirement => {
             <xsl:apply-templates select="Requirement" />
