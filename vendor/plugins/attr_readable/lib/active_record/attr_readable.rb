@@ -127,10 +127,29 @@ module ActiveRecord
         # Private method that actually does the sanitization. Is called by all the 
         # other sanitization methods.  
         def sanitized_hash_from_keys_and_whitelist(keys, hash, whitelist) # :nodoc:
+          prefixes   = []
+          attributes = []
+          whitelist.each do |attr|            # split whitelist into fully qulified attributes and prefixes
+            if attr.end_with? '_' 
+              prefixes.push attr
+            else 
+              attributes.push attr
+            end
+          end
+  
           result = {}
-          keys.each { |attr| result[attr.to_sym] = hash[attr] if whitelist.include? attr.to_s }
+          keys.each do |attr| 
+            if attributes.include? attr.to_s  # corresponding attribute
+              result[attr.to_sym] = hash[attr]
+            else
+              prefixes.each do |prefix|
+                result[attr.to_sym] = hash[attr]  if attr.to_s.start_with? prefix
+              end
+            end 
+          end
           return result
         end
+         
   
         # Private method managing the access to the attributes hash of hashes. 
         # Automatically constructs a new hash, if there hasn't been any.

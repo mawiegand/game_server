@@ -10,6 +10,7 @@
     <th>Premium</th>
     <th>Name</th>
     <th>Login</th>
+    <th>Activity</th>
     <th>Lvel</th>
     <th>Skill</th>
     <th>Fights</th>
@@ -35,7 +36,14 @@
           <span class="<%= fundamental_character.last_login_at > Time.now - Backend::Stat.activity_period ? 'green' : (fundamental_character.last_login_at > Time.now -  (2*Backend::Stat.activity_period) ? 'red' : 'black') %>"><%= time_ago_in_words(fundamental_character.last_login_at) %></span> ago (#<%= fundamental_character.login_count %>)
         <%else%>
           never
-        <%end%></td>
+        <%end%>
+    </td>
+    <td><% if !fundamental_character.last_request_at.nil? %>          
+          <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
+        <%else%>
+          never
+        <%end%>
+    </td>
     <td><%= fundamental_character.lvel %> (<%= fundamental_character.exp %>)</td>
     <td><%= fundamental_character.skill_points %></td>
     <td><%= fundamental_character.wins %>W / 
