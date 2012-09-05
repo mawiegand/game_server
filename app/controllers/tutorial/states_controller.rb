@@ -26,14 +26,13 @@ class Tutorial::StatesController < ApplicationController
     else
       @tutorial_state = Tutorial::State.find(params[:id])
     end
-    raise ForbiddenError.new('Access Forbidden') unless @tutorial_state.owner == current_character  
+    raise ForbiddenError.new('Access Forbidden') if !@tutorial_state.nil? && @tutorial_state.owner != current_character  
     last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html
         format.json { 
-          logger.debug '----> ' +  @tutorial_state.to_json(:include => :quests).to_s
           render json: @tutorial_state.to_json(:include => :quests)
         }
       end

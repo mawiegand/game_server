@@ -410,15 +410,17 @@ class Tutorial::Quest < ActiveRecord::Base
     # raise ConflictError.new("too many resources") unless self.tutorial_state.owner.resource_pool.can_receive?(total_resource_amount)
     raise ConflictError.new("too many units") unless garrison_army.can_receive?(total_unit_amount)
 
-    # reward resources and units
-    self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
-    garrison_army.add_units(units)
-
-
-    # close quest
-    self.status = STATE_CLOSED
-    self.closed_at = Time.now
-    self.save
+    Tutorial::Quest.transaction do
+      # close quest
+      self.lock!
+      self.status = STATE_CLOSED
+      self.closed_at = Time.now
+      self.save
+  
+      # reward resources and units
+      self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
+      garrison_army.add_units(units)
+    end
   end
   
   def required_by_quest_with_id(next_quest_id)

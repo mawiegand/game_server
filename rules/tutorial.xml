@@ -6,20 +6,35 @@
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
     <Version major="0" minor="0" build="1" />
     <Languages>
-      <Language locale="en_US">English (US)</Language>
-      <Language locale="de_DE">Deutsch</Language>
+      <Language lang="en">English</Language>
+      <Language lang="de">Deutsch</Language>
     </Languages>
+    <Locales>
+      <Locale locale="en_US" lang="en">English (US)</Locale>
+      <Locale locale="de_DE" lang="de">Deutsch (DE)</Locale>
+    </Locales>
+    <Advisors>
+      <Advisor id="warrior"></Advisor>
+      <Advisor id="chief"></Advisor>
+      <Advisor id="girl"></Advisor>
+      <Advisor id="shaman"></Advisor>
+    </Advisors>
   </General>
   
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1">
+    <Quest id="quest_queue_1gathererlvl1" advisor="warrior">
       <Name>Baue einen Sammler</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE">Build one Gatherer</Name>
+      <Task>Baue einen Sammler</Task>
+      <Task locale="de_DE">Build one Gatherer</Task>
+      <Description locale="de_DE">
         <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf build.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -31,12 +46,17 @@
     </Quest>
     <Quest id="quest_build_1gathererlvl1">
       <Name>Zweiter Sammler</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Gut gemacht. Baue jetzt einen weiteren Sammler.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -49,12 +69,17 @@
     </Quest>
     <!-- Quest id="quest_change_settlementname">
       <Name>Siedlungsname</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Ändere den Namen deiner Siedlung.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -67,12 +92,17 @@
     </Quest -->
     <Quest id="quest_rank">
       <Name>Rang</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Suche deinen Rang im Ranking.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -85,12 +115,17 @@
     </Quest>
     <Quest id="quest_build_2gathererlvl1">
       <Name>Noch mehr Sammler</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue zwei weitere Sammler.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_rank" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -103,12 +138,17 @@
     </Quest>
     <Quest id="quest_build_1gathererlvl2">
       <Name>Ausbau eines Sammlers</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Bau einen Sammler auf Level 2 aus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -121,12 +161,17 @@
     </Quest>
     <Quest id="quest_message">
       <Name>Nachrichten</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Lies die Nachricht.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_cash">5</ResourceReward>  
@@ -138,19 +183,24 @@
         <Subject>Subject</Subject>
         <Body>Message with content</Body>
       </Message>
-      <Message lang="de_DE">
+      <Message lang="de">
         <Subject>Betreff</Subject>
         <Body>Nachricht mit Inhalt</Body>
       </Message>
     </Quest>
     <Quest id="quest_build_chieftainslvl2">
       <Name>Häuptlingshütte Level 2</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue deine Häuptlingshütte auf Level 2 aus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
@@ -163,12 +213,17 @@
     </Quest>
     <Quest id="quest_settlementowner">
       <Name>Festungen</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Trage den Besitzer der Festung in deiner Region ein.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_message" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -181,12 +236,17 @@
     </Quest>
     <Quest id="quest_settlement_button">
       <Name>Karte</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -199,12 +259,17 @@
     </Quest>
     <Quest id="quest_profile">
       <Name>Profil</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Ändere deinen Profiltext.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_settlement_button" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -217,12 +282,17 @@
     </Quest>
     <Quest id="quest_encyclopedia">
       <Name>Enzyklopädie</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Suche die Holzkosten einer Kaserne Level 2 heraus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -235,12 +305,17 @@
     </Quest>
     <Quest id="quest_build_1cottagelvl1">
       <Name>Hütten</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue eine Hütte.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -253,12 +328,17 @@
     </Quest>
     <Quest id="quest_build_chiefcottagelvl3">
       <Name>Häuptlingshütte Level 3</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue deine Häuptlingshütte auf Level 3 aus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
@@ -271,12 +351,17 @@
     </Quest>
     <Quest id="quest_build_1barrackslvl1">
       <Name>Kaserne</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue eine Kaserne.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
@@ -289,12 +374,17 @@
     </Quest>
     <Quest id="quest_recruit_1clubbers">
       <Name>Einheiten</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue einen Keulenkrieger.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">3</UnitReward>  
@@ -305,12 +395,17 @@
     </Quest>
     <!-- Quest id="quest_build_1walllvl1">
       <Name>Verteidigungsanlagen</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue einen Wall.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -323,12 +418,17 @@
     </Quest -->
     <Quest id="quest_army_create">
       <Name>Armee</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Stelle eine Armee auf.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -341,12 +441,17 @@
     </Quest>
     <Quest id="quest_army_move">
       <Name>Armeebewegung</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Bewege deine Armee zur Festung.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -359,12 +464,17 @@
     </Quest>
     <Quest id="quest_build_chiefcottagelvl4">
       <Name>Häuptlingshütte Level 4</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue deine Häuptlingshütte auf Level 4 aus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
@@ -377,12 +487,17 @@
     </Quest>
     <Quest id="quest_build_1campfirelvl1">
       <Name>Lagerfeuer</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue ein Lagerfeuer.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
@@ -395,12 +510,17 @@
     </Quest>
     <Quest id="quest_alliance">
       <Name>Allianzen</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Trete einer Allianz bei oder Gründe deine eigene.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
@@ -413,12 +533,17 @@
     </Quest>
     <Quest id="quest_build_chiefcottagelvl5">
       <Name>Häuptlingshütte Level 5</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue deine Häuptlingshütte auf Level 5 aus.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
@@ -431,12 +556,17 @@
     </Quest>
     <Quest id="quest_recruitfriends">
       <Name>Freunde</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Trage die Belohnung ein, die es maximal für rekrutierte Freunde gibt.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -449,12 +579,17 @@
     </Quest>
     <Quest id="quest_build_1marketlvl1">
       <Name>Lager</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue ein Lager.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -467,13 +602,18 @@
     </Quest>
     <Quest id="quest_build_1quarrylvl1_1loggerlvl1">
       <Name>Baumfäller und Steinbruch</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue einen Holzfäller und einen Steinbruch.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -486,12 +626,17 @@
     </Quest>
     <Quest id="quest_build_5quarrylvl5_5loggerlvl5">
       <Name>Noch mehr Holzfäller und Steinbrüche</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Baue je 5 Holzfäller und Steinbrüche auf Level 5.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>  
@@ -505,12 +650,17 @@
     </Quest>
     <Quest id="quest_outpost">
       <Name>Dorf</Name>
-      <Description lang="de_DE">
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
         <p>Gründe ein Dorf.</p>
       </Description>
-      <Description lang="en_US">
+      <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
+      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  

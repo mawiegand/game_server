@@ -65,13 +65,27 @@ class Tutorial::Tutorial
         {               #   quest_queue_1gathererlvl1
           :id          => 0, 
           :symbolic_id => :quest_queue_1gathererlvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Baue einen Sammler",
+  
+            :de_DE => "Build one Gatherer",
+                
+          },
+          :task        => {
+            
+            :en_US => "Baue einen Sammler",
+  
+            :de_DE => "Build one Gatherer",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -125,13 +139,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1gathererlvl1
           :id          => 1, 
           :symbolic_id => :quest_build_1gathererlvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Zweiter Sammler",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -191,13 +219,27 @@ class Tutorial::Tutorial
         {               #   quest_rank
           :id          => 2, 
           :symbolic_id => :quest_rank,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Rang",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -248,13 +290,27 @@ class Tutorial::Tutorial
         {               #   quest_build_2gathererlvl1
           :id          => 3, 
           :symbolic_id => :quest_build_2gathererlvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Noch mehr Sammler",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -314,13 +370,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1gathererlvl2
           :id          => 4, 
           :symbolic_id => :quest_build_1gathererlvl2,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Ausbau eines Sammlers",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -380,13 +450,27 @@ class Tutorial::Tutorial
         {               #   quest_message
           :id          => 5, 
           :symbolic_id => :quest_message,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Nachrichten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -425,12 +509,12 @@ class Tutorial::Tutorial
 
           :message => {
             
-            :en_US => {
+            :en => {
               :subject => 'Subject',
               :body => 'Message with content',
             },
 
-            :de_DE => {
+            :de => {
               :subject => 'Betreff',
               :body => 'Nachricht mit Inhalt',
             },
@@ -441,13 +525,27 @@ class Tutorial::Tutorial
         {               #   quest_build_chieftainslvl2
           :id          => 6, 
           :symbolic_id => :quest_build_chieftainslvl2,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Häuptlingshütte Level 2",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -507,13 +605,27 @@ class Tutorial::Tutorial
         {               #   quest_settlementowner
           :id          => 7, 
           :symbolic_id => :quest_settlementowner,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Festungen",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -564,13 +676,27 @@ class Tutorial::Tutorial
         {               #   quest_settlement_button
           :id          => 8, 
           :symbolic_id => :quest_settlement_button,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Karte",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -621,13 +747,27 @@ class Tutorial::Tutorial
         {               #   quest_profile
           :id          => 9, 
           :symbolic_id => :quest_profile,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Profil",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -678,13 +818,27 @@ class Tutorial::Tutorial
         {               #   quest_encyclopedia
           :id          => 10, 
           :symbolic_id => :quest_encyclopedia,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Enzyklopädie",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -735,13 +889,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1cottagelvl1
           :id          => 11, 
           :symbolic_id => :quest_build_1cottagelvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Hütten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -801,13 +969,27 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl3
           :id          => 12, 
           :symbolic_id => :quest_build_chiefcottagelvl3,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Häuptlingshütte Level 3",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -867,13 +1049,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1barrackslvl1
           :id          => 13, 
           :symbolic_id => :quest_build_1barrackslvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Kaserne",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -933,13 +1129,27 @@ class Tutorial::Tutorial
         {               #   quest_recruit_1clubbers
           :id          => 14, 
           :symbolic_id => :quest_recruit_1clubbers,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Einheiten",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -985,13 +1195,27 @@ class Tutorial::Tutorial
         {               #   quest_army_create
           :id          => 15, 
           :symbolic_id => :quest_army_create,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Armee",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1047,13 +1271,27 @@ class Tutorial::Tutorial
         {               #   quest_army_move
           :id          => 16, 
           :symbolic_id => :quest_army_move,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Armeebewegung",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1102,13 +1340,27 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl4
           :id          => 17, 
           :symbolic_id => :quest_build_chiefcottagelvl4,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Häuptlingshütte Level 4",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1168,13 +1420,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1campfirelvl1
           :id          => 18, 
           :symbolic_id => :quest_build_1campfirelvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Lagerfeuer",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1234,13 +1500,27 @@ class Tutorial::Tutorial
         {               #   quest_alliance
           :id          => 19, 
           :symbolic_id => :quest_alliance,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Allianzen",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1289,13 +1569,27 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl5
           :id          => 20, 
           :symbolic_id => :quest_build_chiefcottagelvl5,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Häuptlingshütte Level 5",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1355,13 +1649,27 @@ class Tutorial::Tutorial
         {               #   quest_recruitfriends
           :id          => 21, 
           :symbolic_id => :quest_recruitfriends,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Freunde",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1412,13 +1720,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1marketlvl1
           :id          => 22, 
           :symbolic_id => :quest_build_1marketlvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Lager",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1478,13 +1800,27 @@ class Tutorial::Tutorial
         {               #   quest_build_1quarrylvl1_1loggerlvl1
           :id          => 23, 
           :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Baumfäller und Steinbruch",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1496,7 +1832,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -1553,13 +1889,27 @@ class Tutorial::Tutorial
         {               #   quest_build_5quarrylvl5_5loggerlvl5
           :id          => 24, 
           :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Noch mehr Holzfäller und Steinbrüche",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             
@@ -1628,13 +1978,27 @@ class Tutorial::Tutorial
         {               #   quest_outpost
           :id          => 25, 
           :symbolic_id => :quest_outpost,
+          :advisor     => :warrior,
           :name        => {
             
             :en_US => "Dorf",
+  
+            :de_DE => "",
+                
+          },
+          :task        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
                 
           },
           :flavour     => {
-                          
+            
+            :de_DE => "Flavortext deutsch",
+  
+            :en_US => "flavor text english",
+                
           },
           :description => {
             

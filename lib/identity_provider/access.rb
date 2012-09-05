@@ -25,18 +25,6 @@ module IdentityProvider
       put('/resource/character_properties/' + identifier, {:resource_character_property => {:data => data_object}})
     end
     
-    def deliver_message_notification(recipient, sender, message)
-      notification = {
-        recipient_id:             recipient.identifier,
-        recipient_character_name: recipient.name,
-        sender_id:                sender.identifier,
-        sender_character_name:    sender.name,
-        subject:                  "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten.",
-        body:                     "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen.",
-      }
-      post("/identities/#{recipient.identifier}/messages", { :message => notification })
-    end
-    
     def post_result(character, round_number, round_name, won = false)
       return                            if character.ranking.nil?
       resource_result = {
