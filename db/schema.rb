@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829120448) do
+ActiveRecord::Schema.define(:version => 20120905215618) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -397,6 +397,18 @@ ActiveRecord::Schema.define(:version => 20120829120448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "unread_messages_count"
+  end
+
+  create_table "messaging_jabber_commands", :force => true do |t|
+    t.integer  "character_id"
+    t.string   "command"
+    t.string   "room"
+    t.string   "data"
+    t.datetime "blocked_at"
+    t.string   "blocked_by"
+    t.boolean  "processed",    :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "messaging_messages", :force => true do |t|

@@ -1,0 +1,2 @@
+module Messaging::JabberCommandsHelper
+end

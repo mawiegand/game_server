@@ -44,6 +44,11 @@ class Fundamental::Alliance < ActiveRecord::Base
     
     raise InternalServerError.new('could not create alliance') unless alliance.save
     alliance.create_ranking({ alliance_tag: tag })
+    
+    cmd = Messaging::JabberCommand.open_room(tag) 
+    cmd.character_id = leader.id
+    cmd.save
+    
     alliance.add_character(leader)
     return alliance
   end
@@ -61,6 +66,10 @@ class Fundamental::Alliance < ActiveRecord::Base
     character.alliance_id = self.id
     self.increment!(:members_count)
     character.save
+    
+    cmd = Messaging::JabberCommand.grant_access(character, self.tag) 
+    cmd.character_id = character.id
+    cmd.save
   end
   
   def remove_character(character)
@@ -73,6 +82,10 @@ class Fundamental::Alliance < ActiveRecord::Base
       determine_new_leader
       self.save
     end
+    
+    cmd = Messaging::JabberCommand.revoke_access(character, self.tag) 
+    cmd.character_id = character.id
+    cmd.save
   end
   
   private

@@ -1,0 +1,45 @@
+<%= form_for(@messaging_jabber_command) do |f| %>
+  <% if @messaging_jabber_command.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@messaging_jabber_command.errors.count, "error") %> prohibited this messaging_jabber_command from being saved:</h2>
+
+      <ul>
+      <% @messaging_jabber_command.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :command %><br />
+    <%= f.text_field :command %>
+  </div>
+  <div class="field">
+    <%= f.label :room %><br />
+    <%= f.text_field :room %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.text_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :blocked_at %><br />
+    <%= f.datetime_select :blocked_at %>
+  </div>
+  <div class="field">
+    <%= f.label :blocked_by %><br />
+    <%= f.text_field :blocked_by %>
+  </div>
+  <div class="field">
+    <%= f.label :processed %><br />
+    <%= f.check_box :processed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

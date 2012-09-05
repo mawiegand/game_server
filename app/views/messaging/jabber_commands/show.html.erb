@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @messaging_jabber_command.character_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @messaging_jabber_command.command %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @messaging_jabber_command.room %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @messaging_jabber_command.data %>
+</p>
+
+<p>
+  <b>Blocked at:</b>
+  <%= @messaging_jabber_command.blocked_at %>
+</p>
+
+<p>
+  <b>Blocked by:</b>
+  <%= @messaging_jabber_command.blocked_by %>
+</p>
+
+<p>
+  <b>Processed:</b>
+  <%= @messaging_jabber_command.processed %>
+</p>
+
+
+<%= link_to 'Edit', edit_messaging_jabber_command_path(@messaging_jabber_command) %> |
+<%= link_to 'Back', messaging_jabber_commands_path %>

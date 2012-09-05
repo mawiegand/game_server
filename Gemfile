@@ -12,6 +12,8 @@ gem 'httparty'
 gem 'rb-readline'	
 gem 'gravatar_image_tag'
 
+gem 'xmpp4r'
+
 
 group :production do
   gem 'pg'

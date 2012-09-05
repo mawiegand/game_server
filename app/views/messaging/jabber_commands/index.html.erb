@@ -1,0 +1,35 @@
+<h1>Listing messaging_jabber_commands</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Type</th>
+    <th>Room</th>
+    <th>Data</th>
+    <th>Blocked at</th>
+    <th>Blocked by</th>
+    <th>Processed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messaging_jabber_commands.each do |messaging_jabber_command| %>
+  <tr>
+    <td><%= messaging_jabber_command.character_id %></td>
+    <td><%= messaging_jabber_command.command %></td>
+    <td><%= messaging_jabber_command.room %></td>
+    <td><%= messaging_jabber_command.data %></td>
+    <td><%= messaging_jabber_command.blocked_at %></td>
+    <td><%= messaging_jabber_command.blocked_by %></td>
+    <td><%= messaging_jabber_command.processed %></td>
+    <td><%= link_to 'Show', messaging_jabber_command %></td>
+    <td><%= link_to 'Edit', edit_messaging_jabber_command_path(messaging_jabber_command) %></td>
+    <td><%= link_to 'Destroy', messaging_jabber_command, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jabber command', new_messaging_jabber_command_path %>
