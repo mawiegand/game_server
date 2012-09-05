@@ -68,16 +68,16 @@ class Tutorial::Tutorial
           :advisor     => :warrior,
           :name        => {
             
-            :en_US => "Baue einen Sammler",
+            :en_US => "Gatherer",
   
-            :de_DE => "Build one Gatherer",
+            :de_DE => "Sammler",
                 
           },
           :task        => {
             
-            :en_US => "Baue einen Sammler",
+            :en_US => "Build one Gatherer",
   
-            :de_DE => "Build one Gatherer",
+            :de_DE => "Baue einen Sammler",
                 
           },
           :flavour     => {
@@ -94,6 +94,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :rewards => {
             
@@ -168,6 +175,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -248,6 +262,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -319,6 +340,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -399,6 +427,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -479,6 +514,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -554,6 +596,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -634,6 +683,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -705,6 +761,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -776,6 +839,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -847,6 +917,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -918,6 +995,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -998,6 +1082,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1078,6 +1169,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1158,6 +1256,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1224,6 +1329,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1300,6 +1412,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1369,6 +1488,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1449,6 +1575,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1529,6 +1662,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1598,6 +1738,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1678,6 +1825,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1749,6 +1903,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1829,6 +1990,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1918,6 +2086,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -2007,6 +2182,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
