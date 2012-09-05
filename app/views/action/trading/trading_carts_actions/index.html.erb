@@ -1,4 +1,8 @@
-<h1>Listing action_trading_trading_carts_actions</h1>
+<h1>Listing All Ongoing Trading Cart Actions</h1>
+
+<%= if (@paginate) 
+  will_paginate @action_trading_trading_carts_actions 
+end %>
 
 <table>
   <tr>
@@ -41,5 +45,9 @@
 </table>
 
 <br />
+
+<%= if (@paginate) 
+  will_paginate @action_trading_trading_carts_actions 
+end %>
 
 <%= link_to 'New Trading carts action', new_action_trading_trading_carts_action_path %>
