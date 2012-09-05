@@ -21,6 +21,12 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
     end
   end
   
+  def return 
+    return false if self.returning
+#   self.returned_at       = self.reached_target_at + (self.reached_target_at - self.created_at)
+    self.returning         = true
+  end
+  
   def cancel_transaction
     return false    if self.returning
     
@@ -59,6 +65,13 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
     @resources     
   end
   
+  def reset_resources
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      field_name = resource_type[:symbolic_id].to_s() + '_amount'
+      self[field_name] = 0   unless self[field_name].blank? 
+    end     
+  end
+  
   def total_resources
     total = 0
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
@@ -67,16 +80,22 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
     total
   end
   
+  def empty?
+    return total_resources <= 0
+  end
+  
   def load_resources
     self.starting_settlement.owner.resource_pool.remove_resources_transaction(self.resources)
   end
   
   def unload_resources_at_target
     self.target_settlement.owner.resource_pool.add_resources_transaction(self.resources)
+    reset_resources
   end
   
   def unload_resources_at_origin
     self.starting_settlement.owner.resource_pool.add_resources_transaction(self.resources)
+    reset_resources
   end  
   
   def carts_needed
