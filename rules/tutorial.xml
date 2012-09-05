@@ -23,10 +23,10 @@
   
   <Quests>
     <Quest id="quest_queue_1gathererlvl1" advisor="warrior">
-      <Name>Sammler</Name>
-      <Name locale="de_DE">Build one Gatherer</Name>
-      <Task>Baue einen Sammler</Task>
-      <Task locale="de_DE">Build one Gatherer</Task>
+      <Name>Gatherer</Name>
+      <Name locale="de_DE">Sammler</Name>
+      <Task>Build one Gatherer</Task>
+      <Task locale="de_DE">Baue einen Sammler</Task>
       <Description locale="de_DE">
         <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf build.</p>
       </Description>
@@ -35,8 +35,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -59,8 +59,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -84,8 +84,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -109,8 +109,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -134,8 +134,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_rank" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -159,8 +159,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -184,8 +184,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_cash">5</ResourceReward>  
@@ -215,8 +215,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
@@ -240,8 +240,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_message" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -265,8 +265,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -290,8 +290,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_settlement_button" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -315,8 +315,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -340,8 +340,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -365,8 +365,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
@@ -390,8 +390,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
@@ -415,8 +415,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">3</UnitReward>  
@@ -436,8 +436,8 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_recruit_1clubbers" />
@@ -463,8 +463,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -488,8 +488,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -513,8 +513,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
@@ -538,8 +538,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
@@ -563,8 +563,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
@@ -588,8 +588,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
@@ -613,8 +613,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -638,8 +638,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -663,8 +663,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
@@ -689,8 +689,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>  
@@ -715,8 +715,8 @@
       </Description>
       <Flavour locale="de_DE">Flavortext deutsch</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <RewardText>Gut gemacht!</RewardText>
-      <RewardText locale="de_DE">Good gemaked! ;-)</RewardText>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
