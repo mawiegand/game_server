@@ -4,7 +4,7 @@
 
 
 <!-- General -->
-<!ELEMENT General (Game, Version, Languages, Locales)>
+<!ELEMENT General (Game, Version, Languages, Locales, Advisors)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -34,12 +34,21 @@
   lang IDREF "en"
 >
 
+<!ELEMENT Advisors (Advisor*)>
+
+<!ELEMENT Advisor (#PCDATA)>
+<!ATTLIST Advisor
+  id  ID #REQUIRED
+>
 
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
 <!ELEMENT Quest (Name*, Task*, Description*, Flavour*, RewardText*, Requirement?, Rewards?, RewardTests?, Message*)>
-<!ATTLIST Quest id ID #REQUIRED>
+<!ATTLIST Quest
+  id ID #REQUIRED
+  advisor IDREF "warrior"
+>
 
 <!ELEMENT Requirement EMPTY>
 <!ATTLIST Requirement

@@ -153,6 +153,7 @@ end
         {               #   <xsl:value-of select="@id"/>
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
+          :advisor     => :<xsl:value-of select="@advisor"/>,
           :name        => {
             <xsl:apply-templates select="Name" />              
           },

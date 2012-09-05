@@ -13,10 +13,16 @@
       <Locale locale="en_US" lang="en">English (US)</Locale>
       <Locale locale="de_DE" lang="de">Deutsch (DE)</Locale>
     </Locales>
+    <Advisors>
+      <Advisor id="warrior"></Advisor>
+      <Advisor id="chief"></Advisor>
+      <Advisor id="girl"></Advisor>
+      <Advisor id="shaman"></Advisor>
+    </Advisors>
   </General>
   
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1">
+    <Quest id="quest_queue_1gathererlvl1" advisor="warrior">
       <Name>Baue einen Sammler</Name>
       <Name locale="de_DE">Build one Gatherer</Name>
       <Task>Baue einen Sammler</Task>
