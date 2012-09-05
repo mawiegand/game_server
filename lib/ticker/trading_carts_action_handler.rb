@@ -14,7 +14,7 @@ class Ticker::TradingCartsActionHandler
     "trading_carts_action"
   end
   
-  def return_carts
+  def return_carts(action)
     runloop.say "Returning carts and recreating events."
     action.return
     action.save!
@@ -58,7 +58,7 @@ class Ticker::TradingCartsActionHandler
           action.unload_resources_at_target
         end
         
-        return_carts     # also recreates the events appropriately   
+        return_carts(action)     # also recreates the events appropriately   
       end
 
       runloop.say "Reached end of transaction."      
