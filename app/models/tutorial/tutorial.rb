@@ -66,21 +66,22 @@ class Tutorial::Tutorial
           :id          => 0, 
           :symbolic_id => :quest_queue_1gathererlvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => " the first building",
   
             :de_DE => "Das erste Gebäude",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "Build one Gatherer",
   
             :de_DE => "Baue einen Sammler",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. ",
   
@@ -94,6 +95,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Hey das sieht ja schon viel besser aus, findest du nicht? ",
@@ -147,21 +151,22 @@ class Tutorial::Tutorial
           :id          => 1, 
           :symbolic_id => :quest_build_1gathererlvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => " Ein zweiter Sammler",
   
             :de_DE => "",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue einen weiteren Sammler.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?",
   
@@ -175,6 +180,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Cool jetzt sind sie schon zu zweit.",
@@ -234,21 +242,22 @@ class Tutorial::Tutorial
           :id          => 2, 
           :symbolic_id => :quest_build_2gathererlvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "",
   
             :de_DE => "Noch mehr Sammler",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue zwei weitere Sammler.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Hey wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst?",
   
@@ -262,6 +271,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Schön, deine Siedlung sieht mit jeder Minute besser aus.",
@@ -321,21 +333,22 @@ class Tutorial::Tutorial
           :id          => 3, 
           :symbolic_id => :quest_build_1gathererlvl2,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "",
   
             :de_DE => " Ausbau ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "Baue einen Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. ",
   
@@ -349,6 +362,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Wie nett von dir. Der Sammler freut sich wie verrückt.",
@@ -408,21 +424,22 @@ class Tutorial::Tutorial
           :id          => 4, 
           :symbolic_id => :quest_build_chieftainslvl2,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Häuptlingshütte Level 2",
   
             :de_DE => "Ausbau der Häuptlingshütte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue deine Häuptlingshütte auf Level 2 aus.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. ",
   
@@ -436,6 +453,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.",
@@ -495,21 +515,22 @@ class Tutorial::Tutorial
           :id          => 5, 
           :symbolic_id => :quest_profile,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Profile",
   
             :de_DE => " Profil ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Ändere deinen Namen.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. ",
   
@@ -523,6 +544,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Danke. Ich denke wir werden viel Spass miteinander haben.",
@@ -573,21 +597,22 @@ class Tutorial::Tutorial
           :id          => 6, 
           :symbolic_id => :quest_settlement_button1,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Karte",
   
             :de_DE => "Auf die Karte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Begib dich auf die Karte.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!",
   
@@ -601,6 +626,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. ",
@@ -651,21 +679,22 @@ class Tutorial::Tutorial
           :id          => 7, 
           :symbolic_id => :quest_rank,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Rang",
   
             :de_DE => "Rang",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Suche deinen derzeitigen Rang heraus.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.",
   
@@ -679,6 +708,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. ",
@@ -729,21 +761,22 @@ class Tutorial::Tutorial
           :id          => 8, 
           :symbolic_id => :quest_settlementowner,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Festungen",
   
             :de_DE => "Festungsbesitzer",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Trage den Besitzer der Festung in deiner Region ein.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. ",
   
@@ -757,6 +790,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Aha, dem sollten wir eine Lektion erteilen. ",
@@ -807,21 +843,22 @@ class Tutorial::Tutorial
           :id          => 9, 
           :symbolic_id => :quest_message,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Nachrichten",
   
             :de_DE => "Nachrichten",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Lies die Nachricht.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Um die Nachricht zu lesen, klicke auf den Messages-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.",
   
@@ -835,6 +872,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.",
@@ -889,21 +929,22 @@ class Tutorial::Tutorial
           :id          => 10, 
           :symbolic_id => :quest_settlement_button2,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Karte",
   
             :de_DE => "Zurück in die Siedlung",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Begib dich zurück in deine Siedlung.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.",
   
@@ -917,6 +958,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Na? Ging doch ganz einfach oder? ",
@@ -967,21 +1011,22 @@ class Tutorial::Tutorial
           :id          => 11, 
           :symbolic_id => :quest_encyclopedia,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Enzyklopädie",
   
             :de_DE => " Enzyklopädie ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Trage die Holzkosten eines Ausbildungsgeländes auf Level 2 ein.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? ",
   
@@ -995,6 +1040,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Du hast es gefunden? Super, ich geh gleich zu Chef. ",
@@ -1045,21 +1093,22 @@ class Tutorial::Tutorial
           :id          => 12, 
           :symbolic_id => :quest_build_1cottagelvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Hütten",
   
             :de_DE => "Die kleine Hütte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue eine kleine Hütte.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. ",
   
@@ -1073,6 +1122,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
@@ -1132,21 +1184,22 @@ class Tutorial::Tutorial
           :id          => 13, 
           :symbolic_id => :quest_build_chiefcottagelvl3,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Chief Cottage l3",
   
             :de_DE => "Eine noch größere Häuptlingshütte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue deine Häuptlingshütte auf Level 3 aus.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.",
   
@@ -1160,6 +1213,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
@@ -1219,21 +1275,22 @@ class Tutorial::Tutorial
           :id          => 14, 
           :symbolic_id => :quest_build_1barrackslvl1,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Kaserne",
   
             :de_DE => "",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue ein Ausbildungsgelände.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.",
   
@@ -1247,6 +1304,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. ",
@@ -1306,21 +1366,22 @@ class Tutorial::Tutorial
           :id          => 15, 
           :symbolic_id => :quest_recruit_1clubbers,
           :advisor     => :warrior,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Einheiten",
   
             :de_DE => "Deine erste Einheit",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue einen Keulenkrieger.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
   
@@ -1334,6 +1395,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. ",
@@ -1379,21 +1443,22 @@ class Tutorial::Tutorial
           :id          => 16, 
           :symbolic_id => :quest_army_create,
           :advisor     => :warrior,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Armee",
   
             :de_DE => "Deine erste Armee",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Stelle eine Armee auf.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.",
   
@@ -1407,6 +1472,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. ",
@@ -1462,21 +1530,22 @@ class Tutorial::Tutorial
           :id          => 17, 
           :symbolic_id => :quest_army_move,
           :advisor     => :warrior,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Armeebewegung",
   
             :de_DE => "Armeebewegung",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Bewege deine Armee zur Festung",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. ",
   
@@ -1490,6 +1559,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe. ",
@@ -1538,21 +1610,22 @@ class Tutorial::Tutorial
           :id          => 18, 
           :symbolic_id => :quest_build_chiefcottagelvl4,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Häuptlingshütte Level 4",
   
             :de_DE => " Und wieder die Häuptlingshütte ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => " Baue deine Häuptlingshütte auf Level 4 aus. ",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.",
   
@@ -1566,6 +1639,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Ist es nicht toll wie deine Siedlung wächst? ",
@@ -1625,21 +1701,22 @@ class Tutorial::Tutorial
           :id          => 19, 
           :symbolic_id => :quest_build_1campfirelvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Lagerfeuer",
   
             :de_DE => "Lagerfeuer",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => " Baue ein Lagerfeuer.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? ",
   
@@ -1653,6 +1730,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Ach wie das Feuer knistert. Wie schön.",
@@ -1712,21 +1792,22 @@ class Tutorial::Tutorial
           :id          => 20, 
           :symbolic_id => :quest_alliance,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Allianzen",
   
             :de_DE => "",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => " Tritt einer Allianz bei oder gründe deine eigene. ",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
   
@@ -1740,6 +1821,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet. ",
@@ -1788,21 +1872,22 @@ class Tutorial::Tutorial
           :id          => 21, 
           :symbolic_id => :quest_build_1storagelvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Lager",
   
             :de_DE => " Lager ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue ein Lager.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. ",
   
@@ -1816,6 +1901,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen. ",
@@ -1875,21 +1963,22 @@ class Tutorial::Tutorial
           :id          => 22, 
           :symbolic_id => :quest_build_chiefcottagelvl5,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Häuptlingshütte Level 5",
   
             :de_DE => "Häuptlingshütte die Vierte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Baue deine Häuptlingshütte auf Level 5 aus.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.",
   
@@ -1903,6 +1992,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Toll wie weit du schon gekommen bist. ",
@@ -1962,21 +2054,22 @@ class Tutorial::Tutorial
           :id          => 23, 
           :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Baumfäller und Steinbruch",
   
             :de_DE => " Steinbrüche und Holzfäller ",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => " Baue einen Steinbruch und einen Holzfäller ",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.",
   
@@ -1990,6 +2083,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " So viel Stein und Holz, wie toll. ",
@@ -2058,21 +2154,22 @@ class Tutorial::Tutorial
           :id          => 24, 
           :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Noch mehr Holzfäller und Steinbrüche",
   
             :de_DE => "",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "5 Steinbruch und 5 Holzfäller auf Level 5 ausbauen",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Flavortext deutsch",
   
@@ -2086,6 +2183,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.",
@@ -2154,21 +2254,22 @@ class Tutorial::Tutorial
           :id          => 25, 
           :symbolic_id => :quest_build_1campfirelvl10,
           :advisor     => :girl,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Lagerfeuer",
   
             :de_DE => "Lagerfeuer Level 10",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => " Baue dein Lagerfeuer auf Level 10 aus.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?",
   
@@ -2182,6 +2283,9 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => "Gut gemacht!",
@@ -2241,21 +2345,22 @@ class Tutorial::Tutorial
           :id          => 26, 
           :symbolic_id => :quest_outpost,
           :advisor     => :chef,
-          :name        => {
+          
+          :name => {
             
             :en_US => "Dorf",
   
             :de_DE => "Lagerstätte",
                 
           },
-          :task        => {
+          :task => {
             
             :en_US => "",
   
             :de_DE => "Gründe eine Lagerstätte.",
                 
           },
-          :flavour     => {
+          :flavour => {
             
             :de_DE => " Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.
 Aufgabentext: Gründe eine Lagerstätte. ",
@@ -2270,6 +2375,9 @@ Aufgabentext: Gründe eine Lagerstätte. ",
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_flavour => {
+                          
+          },
           :reward_text => {
             
             :de_DE => " Gut. Jetzt kannst du Verwalter trainieren.",

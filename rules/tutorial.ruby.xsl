@@ -133,7 +133,7 @@ end
             :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
   
-<xsl:template match="Flavour">
+<xsl:template match="Flavor">
             :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
@@ -158,18 +158,22 @@ end
           :id          => <xsl:value-of select="position()-1"/>, 
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :advisor     => :<xsl:value-of select="@advisor"/>,
-          :name        => {
+          
+          :name => {
             <xsl:apply-templates select="Name" />              
           },
-          :task        => {
+          :task => {
             <xsl:apply-templates select="Task" />              
           },
-          :flavour     => {
-            <xsl:apply-templates select="Flavour" />              
+          :flavour => {
+            <xsl:apply-templates select="Flavor" />              
           },
           :description => {
             <xsl:apply-templates select="Description" />              
           },          
+          :reward_flavour => {
+            <xsl:apply-templates select="RewardFlavor" />              
+          },
           :reward_text => {
             <xsl:apply-templates select="RewardText" />              
           },

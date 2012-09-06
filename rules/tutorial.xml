@@ -33,10 +33,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Hey das sieht ja schon viel besser aus, findest du nicht? </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -58,10 +60,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Cool jetzt sind sie schon zu zweit.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -84,10 +88,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Wie soll eigentlich die Siedlung heißen? Bitte denk dir einen schönen Namen aus. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Wie soll eigentlich die Siedlung heißen? Bitte denk dir einen schönen Namen aus. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Hach, was ein schöner Name. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -110,10 +116,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Hey wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst?</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Hey wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst?</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -136,10 +144,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Wie nett von dir. Der Sammler freut sich wie verrückt.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -162,10 +172,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
      <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
@@ -188,10 +200,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Danke. Ich denke wir werden viel Spass miteinander haben.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -216,10 +230,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_profile" />
      <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -242,10 +258,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -268,10 +286,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Aha, dem sollten wir eine Lektion erteilen. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_rank" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -294,10 +314,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Um die Nachricht zu lesen, klicke auf den Messages-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Um die Nachricht zu lesen, klicke auf den Messages-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
         <ResourceReward resource="resource_cash">5</ResourceReward>  
@@ -326,10 +348,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Na? Ging doch ganz einfach oder? </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_message" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -352,10 +376,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Du hast es gefunden? Super, ich geh gleich zu Chef. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlement_button2" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
@@ -378,10 +404,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -404,10 +432,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
@@ -430,10 +460,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
@@ -456,10 +488,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">3</UnitReward>  
@@ -482,8 +516,10 @@
       </Description>
       <RewardText locale="de_DE">Gut gemacht!</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Flavortext deutsch</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -506,10 +542,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
@@ -532,10 +570,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
@@ -558,10 +598,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Ist es nicht toll wie deine Siedlung wächst? </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
@@ -584,10 +626,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Ach wie das Feuer knistert. Wie schön.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
@@ -610,10 +654,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
@@ -637,10 +683,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Wenn deine Freunde dich unterstützen würden, wäre das doch toll oder? Und du bekommst sogar noch mehr, als nur ihre Unterstützung wenn du sie dazu animierst.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Wenn deine Freunde dich unterstützen würden, wäre das doch toll oder? Und du bekommst sogar noch mehr, als nur ihre Unterstützung wenn du sie dazu animierst.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Genau. Das ist doch ganzschön viel oder?/RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -664,10 +712,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -691,11 +741,13 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Mit dem Lager kannst du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Mit dem Lager kannst du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <Requirement quest="quest_build_1storagelvl1" />
       <RewardText locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
@@ -719,10 +771,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Toll wie weit du schon gekommen bist. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
@@ -745,10 +799,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> So viel Stein und Holz, wie toll. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
@@ -772,10 +828,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Flavortext deutsch</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>  
@@ -799,10 +857,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Gut gemacht!</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
@@ -827,10 +887,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.Aufgabentext: Gründe eine Lagerstätte. </Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.Aufgabentext: Gründe eine Lagerstätte. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Gut. Jetzt kannst du Verwalter trainieren.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl10" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
@@ -854,10 +916,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE"> Du musst dich entscheiden, wen du als den Anführer deines Stammes einsetzen willst.</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
+      <Flavor locale="de_DE"> Du musst dich entscheiden, wen du als den Anführer deines Stammes einsetzen willst.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Kommt auf Wahl an</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
       Requirement time = 120h
       <Rewards>
         join Faction

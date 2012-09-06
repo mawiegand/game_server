@@ -44,7 +44,7 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Task*, Description*, Flavour*, RewardText*, Requirement?, Rewards?, RewardTests?, Message*)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*)>
 <!ATTLIST Quest
   id ID #REQUIRED
   advisor IDREF "warrior"
@@ -130,14 +130,17 @@
 <!ELEMENT RewardText (#PCDATA | p)*>
 <!ATTLIST RewardText locale IDREF "en_US">
 
+<!ELEMENT RewardFlavor (#PCDATA | p)*>
+<!ATTLIST RewardFlavor locale IDREF "en_US">
+
 <!ELEMENT Name (#PCDATA)>
 <!ATTLIST Name locale IDREF "en_US">
 
 <!ELEMENT Task (#PCDATA)>
 <!ATTLIST Task locale IDREF "en_US">
 
-<!ELEMENT Flavour (#PCDATA)>
-<!ATTLIST Flavour locale IDREF "en_US">
+<!ELEMENT Flavor (#PCDATA)>
+<!ATTLIST Flavor locale IDREF "en_US">
 
 
 <!--entities-->
