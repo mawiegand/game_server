@@ -22,7 +22,7 @@
   </General>
   
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl">
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" >
       <Name> the first building</Name>
       <Name locale="de_DE">Das erste Gebäude</Name>
      <Task>Build one Gatherer</Task>

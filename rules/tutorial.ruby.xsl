@@ -141,6 +141,10 @@ end
             :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
+<xsl:template match="RewardFlavor">
+            :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
+
 <xsl:template match="RewardText">
             :<xsl:value-of select="@locale"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
@@ -155,9 +159,10 @@ end
       :quests => [  # ALL QUESTS
 <xsl:for-each select="Quest">
         {               #   <xsl:value-of select="@id"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :symbolic_id => :<xsl:value-of select="@id"/>,
-          :advisor     => :<xsl:value-of select="@advisor"/>,
+          :id                => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id       => :<xsl:value-of select="@id"/>,
+          :advisor           => :<xsl:value-of select="@advisor"/>,
+          :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              

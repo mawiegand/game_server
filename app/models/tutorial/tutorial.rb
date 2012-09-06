@@ -63,9 +63,10 @@ class Tutorial::Tutorial
       :quests => [  # ALL QUESTS
 
         {               #   quest_queue_1gathererlvl1
-          :id          => 0, 
-          :symbolic_id => :quest_queue_1gathererlvl1,
-          :advisor     => :girl,
+          :id                => 0, 
+          :symbolic_id       => :quest_queue_1gathererlvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -96,7 +97,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -148,9 +153,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_queue_1gathererlvl1
         {               #   quest_build_1gathererlvl1
-          :id          => 1, 
-          :symbolic_id => :quest_build_1gathererlvl1,
-          :advisor     => :girl,
+          :id                => 1, 
+          :symbolic_id       => :quest_build_1gathererlvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -181,7 +187,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -239,9 +249,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl1
         {               #   quest_build_2gathererlvl1
-          :id          => 2, 
-          :symbolic_id => :quest_build_2gathererlvl1,
-          :advisor     => :girl,
+          :id                => 2, 
+          :symbolic_id       => :quest_build_2gathererlvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -272,7 +283,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -330,9 +345,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2gathererlvl1
         {               #   quest_build_1gathererlvl2
-          :id          => 3, 
-          :symbolic_id => :quest_build_1gathererlvl2,
-          :advisor     => :girl,
+          :id                => 3, 
+          :symbolic_id       => :quest_build_1gathererlvl2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -363,7 +379,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -421,9 +441,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl2
         {               #   quest_build_chieftainslvl2
-          :id          => 4, 
-          :symbolic_id => :quest_build_chieftainslvl2,
-          :advisor     => :chef,
+          :id                => 4, 
+          :symbolic_id       => :quest_build_chieftainslvl2,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -454,7 +475,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -512,9 +537,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chieftainslvl2
         {               #   quest_profile
-          :id          => 5, 
-          :symbolic_id => :quest_profile,
-          :advisor     => :girl,
+          :id                => 5, 
+          :symbolic_id       => :quest_profile,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -545,7 +571,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -594,9 +624,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_settlement_button1
-          :id          => 6, 
-          :symbolic_id => :quest_settlement_button1,
-          :advisor     => :chef,
+          :id                => 6, 
+          :symbolic_id       => :quest_settlement_button1,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -627,7 +658,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -676,9 +711,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button1
         {               #   quest_rank
-          :id          => 7, 
-          :symbolic_id => :quest_rank,
-          :advisor     => :chef,
+          :id                => 7, 
+          :symbolic_id       => :quest_rank,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -709,7 +745,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -758,9 +798,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_rank
         {               #   quest_settlementowner
-          :id          => 8, 
-          :symbolic_id => :quest_settlementowner,
-          :advisor     => :chef,
+          :id                => 8, 
+          :symbolic_id       => :quest_settlementowner,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -791,7 +832,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -840,9 +885,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlementowner
         {               #   quest_message
-          :id          => 9, 
-          :symbolic_id => :quest_message,
-          :advisor     => :girl,
+          :id                => 9, 
+          :symbolic_id       => :quest_message,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -873,7 +919,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -926,9 +976,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_message
         {               #   quest_settlement_button2
-          :id          => 10, 
-          :symbolic_id => :quest_settlement_button2,
-          :advisor     => :girl,
+          :id                => 10, 
+          :symbolic_id       => :quest_settlement_button2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -959,7 +1010,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1008,9 +1063,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button2
         {               #   quest_encyclopedia
-          :id          => 11, 
-          :symbolic_id => :quest_encyclopedia,
-          :advisor     => :girl,
+          :id                => 11, 
+          :symbolic_id       => :quest_encyclopedia,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1041,7 +1097,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1090,9 +1150,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_encyclopedia
         {               #   quest_build_1cottagelvl1
-          :id          => 12, 
-          :symbolic_id => :quest_build_1cottagelvl1,
-          :advisor     => :girl,
+          :id                => 12, 
+          :symbolic_id       => :quest_build_1cottagelvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1123,7 +1184,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1181,9 +1246,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1cottagelvl1
         {               #   quest_build_chiefcottagelvl3
-          :id          => 13, 
-          :symbolic_id => :quest_build_chiefcottagelvl3,
-          :advisor     => :girl,
+          :id                => 13, 
+          :symbolic_id       => :quest_build_chiefcottagelvl3,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1214,7 +1280,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1272,9 +1342,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_1barrackslvl1
-          :id          => 14, 
-          :symbolic_id => :quest_build_1barrackslvl1,
-          :advisor     => :chef,
+          :id                => 14, 
+          :symbolic_id       => :quest_build_1barrackslvl1,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1305,7 +1376,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1363,9 +1438,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
-          :id          => 15, 
-          :symbolic_id => :quest_recruit_1clubbers,
-          :advisor     => :warrior,
+          :id                => 15, 
+          :symbolic_id       => :quest_recruit_1clubbers,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1396,7 +1472,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1440,9 +1520,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_army_create
-          :id          => 16, 
-          :symbolic_id => :quest_army_create,
-          :advisor     => :warrior,
+          :id                => 16, 
+          :symbolic_id       => :quest_army_create,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1473,7 +1554,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1527,9 +1612,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_create
         {               #   quest_army_move
-          :id          => 17, 
-          :symbolic_id => :quest_army_move,
-          :advisor     => :warrior,
+          :id                => 17, 
+          :symbolic_id       => :quest_army_move,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1560,7 +1646,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1607,9 +1697,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_move
         {               #   quest_build_chiefcottagelvl4
-          :id          => 18, 
-          :symbolic_id => :quest_build_chiefcottagelvl4,
-          :advisor     => :girl,
+          :id                => 18, 
+          :symbolic_id       => :quest_build_chiefcottagelvl4,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1640,7 +1731,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1698,9 +1793,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_build_1campfirelvl1
-          :id          => 19, 
-          :symbolic_id => :quest_build_1campfirelvl1,
-          :advisor     => :girl,
+          :id                => 19, 
+          :symbolic_id       => :quest_build_1campfirelvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1731,7 +1827,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1789,9 +1889,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
-          :id          => 20, 
-          :symbolic_id => :quest_alliance,
-          :advisor     => :girl,
+          :id                => 20, 
+          :symbolic_id       => :quest_alliance,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1822,7 +1923,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1869,9 +1974,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
-          :id          => 21, 
-          :symbolic_id => :quest_build_1storagelvl1,
-          :advisor     => :girl,
+          :id                => 21, 
+          :symbolic_id       => :quest_build_1storagelvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1902,7 +2008,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -1960,9 +2070,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_build_chiefcottagelvl5
-          :id          => 22, 
-          :symbolic_id => :quest_build_chiefcottagelvl5,
-          :advisor     => :girl,
+          :id                => 22, 
+          :symbolic_id       => :quest_build_chiefcottagelvl5,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -1993,7 +2104,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -2051,9 +2166,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl1_1loggerlvl1
-          :id          => 23, 
-          :symbolic_id => :quest_build_1quarrylvl1_1loggerlvl1,
-          :advisor     => :girl,
+          :id                => 23, 
+          :symbolic_id       => :quest_build_1quarrylvl1_1loggerlvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -2084,7 +2200,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -2151,9 +2271,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_5quarrylvl5_5loggerlvl5
-          :id          => 24, 
-          :symbolic_id => :quest_build_5quarrylvl5_5loggerlvl5,
-          :advisor     => :girl,
+          :id                => 24, 
+          :symbolic_id       => :quest_build_5quarrylvl5_5loggerlvl5,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -2184,7 +2305,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -2251,9 +2376,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_5quarrylvl5_5loggerlvl5
         {               #   quest_build_1campfirelvl10
-          :id          => 25, 
-          :symbolic_id => :quest_build_1campfirelvl10,
-          :advisor     => :girl,
+          :id                => 25, 
+          :symbolic_id       => :quest_build_1campfirelvl10,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -2284,7 +2410,11 @@ class Tutorial::Tutorial
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
@@ -2342,9 +2472,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl10
         {               #   quest_outpost
-          :id          => 26, 
-          :symbolic_id => :quest_outpost,
-          :advisor     => :chef,
+          :id                => 26, 
+          :symbolic_id       => :quest_outpost,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -2376,7 +2507,11 @@ Aufgabentext: Gründe eine Lagerstätte. ",
                 
           },          
           :reward_flavour => {
-                          
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
           },
           :reward_text => {
             
