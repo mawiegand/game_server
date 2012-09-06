@@ -22,18 +22,18 @@
   </General>
   
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="warrior">
-      <Name>Baue einen Sammler</Name>
-      <Name locale="de_DE">Build one Gatherer</Name>
-      <Task>Baue einen Sammler</Task>
-      <Task locale="de_DE">Build one Gatherer</Task>
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl">
+      <Name> the first building</Name>
+      <Name locale="de_DE">Das erste Gebäude</Name>
+      <Task>Build one Gatherer</Task>
+      <Task locale="de_DE">Baue einen Sammler</Task>
       <Description locale="de_DE">
-        <p>Dazu klickst du auf einen Bauplatz, wählst den Sammler aus dem Baumenü und klickst auf build.</p>
+        <p> Um einen Sammler zu bauen, klicke auf einen Bauplatz, wähle den Sammler aus und klicke auf Build. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
@@ -44,18 +44,19 @@
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1gathererlvl1">
-      <Name>Zweiter Sammler</Name>
+
+    <Quest id="quest_build_1gathererlvl1" advisor="girl">
+      <Name> Ein zweiter Sammler</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue einen weiteren Sammler.</Task>
       <Description locale="de_DE">
-        <p>Gut gemacht. Baue jetzt einen weiteren Sammler.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
@@ -67,18 +68,19 @@
         <BuildingTest building="building_gatherer" min_count="2" />
       </RewardTests>
     </Quest>
-    <!-- Quest id="quest_change_settlementname">
-      <Name>Siedlungsname</Name>
-      <Name locale="de_DE"></Name>
+
+    <!-- Quest id="quest_change_settlementname" advisor="girl">
+      <Name></Name>
+      <Name locale="de_DE">Siedlungsname</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Ändere den Namen deiner Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Ändere den Namen deiner Siedlung.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Wie soll eigentlich die Siedlung heißen? Bitte denk dir einen schönen Namen aus. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
@@ -90,43 +92,21 @@
         <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
       </RewardTests>
     </Quest -->
-    <Quest id="quest_rank">
-      <Name>Rang</Name>
-      <Name locale="de_DE"></Name>
+
+    <Quest id="quest_build_2gathererlvl1" advisor="girl">
+      <Name></Name>
+      <Name locale="de_DE">Noch mehr Sammler</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue zwei weitere Sammler.</Task>
       <Description locale="de_DE">
-        <p>Suche deinen Rang im Ranking.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Hey wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst?</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">5</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
-      </Rewards>
-      <RewardTests>
-        <TextboxTest id="test_army_rank" />
-      </RewardTests>
-    </Quest>
-    <Quest id="quest_build_2gathererlvl1">
-      <Name>Noch mehr Sammler</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Baue zwei weitere Sammler.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_rank" />
       <Rewards>
         <ResourceReward resource="resource_stone">10</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -136,18 +116,19 @@
         <BuildingTest building="building_gatherer" min_count="4" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1gathererlvl2">
-      <Name>Ausbau eines Sammlers</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
+
+    <Quest id="quest_build_1gathererlvl2" advisor="girl">
+      <Name></Name>
+      <Name locale="de_DE"> Ausbau </Name>
+      <Task>Baue einen Sammler auf Level 2 aus.</Task>
       <Task locale="de_DE"></Task>
       <Description locale="de_DE">
-        <p>Bau einen Sammler auf Level 2 aus.</p>
+        <p> Wähle dazu einen Sammler aus und klicke auf upgrade. Gebäude auf kleinen Bauplätzen können maximal auf Level 10 ausgebaut werden. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
@@ -159,47 +140,19 @@
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_message">
-      <Name>Nachrichten</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Lies die Nachricht.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_build_2gathererlvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_cash">5</ResourceReward>  
-      </Rewards>
-      <RewardTests>
-        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
-      </RewardTests>
-      <Message>
-        <Subject>Subject</Subject>
-        <Body>Message with content</Body>
-      </Message>
-      <Message lang="de">
-        <Subject>Betreff</Subject>
-        <Body>Nachricht mit Inhalt</Body>
-      </Message>
-    </Quest>
-    <Quest id="quest_build_chieftainslvl2">
+
+    <Quest id="quest_build_chieftainslvl2" advisor="chief">
       <Name>Häuptlingshütte Level 2</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
       <Description locale="de_DE">
-        <p>Baue deine Häuptlingshütte auf Level 2 aus.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
@@ -211,66 +164,21 @@
         <BuildingTest building="building_chief_cottage" min_level="2" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_settlementowner">
-      <Name>Festungen</Name>
-      <Name locale="de_DE"></Name>
+
+    <Quest id="quest_profile" advisor="girl">
+      <Name>Profile</Name>
+      <Name locale="de_DE"> Profil </Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Ändere deinen Namen.</Task>
       <Description locale="de_DE">
-        <p>Trage den Besitzer der Festung in deiner Region ein.</p>
+        <p> Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Wähle dann choose Name. Die erste Namensänderung ist umsonst. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_message" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">10</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">5</ResourceReward>
-      </Rewards>
-      <RewardTests>
-        <TextboxTest id="test_fortress_owner">fortress owner in Region</TextboxTest>
-      </RewardTests>
-    </Quest>
-    <Quest id="quest_settlement_button">
-      <Name>Karte</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_settlementowner" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">20</ResourceReward>  
-        <ResourceReward resource="resource_wood">10</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
-      </Rewards>
-      <RewardTests>
-        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
-      </RewardTests>
-    </Quest>
-    <Quest id="quest_profile">
-      <Name>Profil</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Ändere deinen Profiltext.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_settlement_button" />
+      <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">15</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -280,20 +188,149 @@
         <CustomTest id="test_change_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
-    <Quest id="quest_encyclopedia">
-      <Name>Enzyklopädie</Name>
-      <Name locale="de_DE"></Name>
+
+    <Quest id="quest_settlement_button1" advisor="chief">
+      <Name>Karte</Name>
+      <Name locale="de_DE">Auf die Karte</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Begib dich auf die Karte.</Task>
       <Description locale="de_DE">
-        <p>Suche die Holzkosten einer Kaserne Level 2 heraus.</p>
+        <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
+	<p>Der Knopf wechselt auf die Karte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p>
+	<p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_profile" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">10</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+      </Rewards>
+      <RewardTests>
+        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_rank" advisor="chief">
+      <Name>Rang</Name>
+      <Name locale="de_DE">Rang</Name>
+      <Task></Task>
+      <Task locale="de_DE">Suche deinen derzeitigen Rang heraus.</Task>
+      <Description locale="de_DE">
+        <p>Klicke dazu auf den Ranking Knopf, oben links. Suche dann deinen Namen und schreibe deinen Rang in das Textfeld.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE">Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_settlement_button1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">5</ResourceReward>  
+        <ResourceReward resource="resource_wood">15</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+      </Rewards>
+      <RewardTests>
+        <TextboxTest id="test_army_rank" />
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_settlementowner" advisor="chief">
+      <Name>Festungen</Name>
+      <Name locale="de_DE">Festungsbesitzer</Name>
+      <Task></Task>
+      <Task locale="de_DE">Trage den Besitzer der Festung in deiner Region ein.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_rank" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">10</ResourceReward>  
+        <ResourceReward resource="resource_wood">15</ResourceReward>    
+        <ResourceReward resource="resource_fur">5</ResourceReward>
+      </Rewards>
+      <RewardTests>
+        <TextboxTest id="test_fortress_owner">fortress owner in Region</TextboxTest>
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_message" advisor="girl">
+      <Name>Nachrichten</Name>
+      <Name locale="de_DE">Nachrichten</Name>
+      <Task></Task>
+      <Task locale="de_DE">Lies die Nachricht.</Task>
+      <Description locale="de_DE">
+        <p>Um mit anderen Halbgöttern zu kommunizieren, kannst du ihnen Nachrichten schicken. Ich hab dir eine geschickt, lies sie doch bitte.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE">Um die Nachricht zu lesen, klicke auf den Messages-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_settlementowner" />
+      <Rewards>
+        <ResourceReward resource="resource_cash">5</ResourceReward>  
+      </Rewards>
+      <RewardTests>
+        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
+      </RewardTests>
+      <Message>
+        <Subject>Subject</Subject>
+        <Body>Message with content</Body>
+      </Message>
+      <Message lang="de">
+        <Subject>Nachricht vom Questgeber</Subject>
+        <Body> Hey, wieso liest du das überhaupt? Komm zurück dann gibt es eine Belohnung.</Body>
+      </Message>
+    </Quest>
+
+    <Quest id="quest_settlement_button2" advisor="girl">
+      <Name>Karte</Name>
+      <Name locale="de_DE">Zurück in die Siedlung</Name>
+      <Task></Task>
+      <Task locale="de_DE">Begib dich zurück in deine Siedlung.</Task>
+      <Description locale="de_DE">
+        <p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungbutton um die Karte auf deiner Siedlung zu zentrieren. Zurück in deine Siedlung kommst du, indem du die Siedlung anwählst und auf Enter drückst.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_message" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">20</ResourceReward>  
+        <ResourceReward resource="resource_wood">10</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+      </Rewards>
+      <RewardTests>
+        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_encyclopedia" advisor="girl">
+      <Name>Enzyklopädie</Name>
+      <Name locale="de_DE"> Enzyklopädie </Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
+        <p> Trage die Holzkosten eines Ausbildungsgeländes auf Level 2 ein.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE"> Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? </Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_settlement_button2" />
       <Rewards>
         <ResourceReward resource="resource_stone">5</ResourceReward>  
         <ResourceReward resource="resource_wood">5</ResourceReward>    
@@ -303,18 +340,19 @@
 	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1cottagelvl1">
+
+    <Quest id="quest_build_1cottagelvl1" advisor="girl">
       <Name>Hütten</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Die kleine Hütte</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue eine kleine Hütte.</Task>
       <Description locale="de_DE">
-        <p>Baue eine Hütte.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
@@ -326,18 +364,19 @@
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_chiefcottagelvl3">
-      <Name>Häuptlingshütte Level 3</Name>
-      <Name locale="de_DE"></Name>
+
+    <Quest id="quest_build_chiefcottagelvl3" advisor="girl">
+      <Name>Chief Cottage l3</Name>
+      <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Baue deine Häuptlingshütte auf Level 3 aus.</p>
+        <p> Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
@@ -349,18 +388,19 @@
         <BuildingTest building="building_chief_cottage" min_level="3" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1barrackslvl1">
+
+    <Quest id="quest_build_1barrackslvl1" advisor="chief">
       <Name>Kaserne</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
       <Description locale="de_DE">
-        <p>Baue eine Kaserne.</p>
+        <p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauslot bauen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
@@ -372,18 +412,19 @@
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_recruit_1clubbers">
+
+    <Quest id="quest_recruit_1clubbers" advisor="warrior">
       <Name>Einheiten</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Deine erste Einheit</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue einen Keulenkrieger.</Task>
       <Description locale="de_DE">
-        <p>Baue einen Keulenkrieger.</p>
+        <p>Wähle dazu das Ausbildungsgelände aus, wähle dort den Club Warrior in der Rekrutierungsliste aus und klicke Train Club Warrior.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
@@ -393,41 +434,19 @@
         <ArmyTest type="garrison" min_count="1" />
       </RewardTests>
     </Quest>
-    <!-- Quest id="quest_build_1walllvl1">
-      <Name>Verteidigungsanlagen</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Baue einen Wall.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_recruit_1clubbers" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>  
-        <ResourceReward resource="resource_wood">15</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward> 
-      </Rewards>
-      <RewardTests>
-        <!- <BuildingTest building="building_wall" min_level="1" /> ->
-      </RewardTests>
-    </Quest -->
-    <Quest id="quest_army_create">
+
+    <Quest id="quest_army_create" advisor="warrior">
       <Name>Armee</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Deine erste Armee</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Stelle eine Armee auf.</p>
+        <p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle dort “New Army”. Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
@@ -439,18 +458,19 @@
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_army_move">
+
+    <Quest id="quest_army_move" advisor="warrior">
       <Name>Armeebewegung</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Armeebewegung</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Bewege deine Armee zur Festung</Task>
       <Description locale="de_DE">
-        <p>Bewege deine Armee zur Festung.</p>
+        <p>Wähle deine Armee aus, drücke auf Move und dann auf das Ziel.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_army_create" />
       <Rewards>
@@ -462,18 +482,19 @@
         <MovementTest />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_chiefcottagelvl4">
+
+    <Quest id="quest_build_chiefcottagelvl4" advisor="girl">
       <Name>Häuptlingshütte Level 4</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE"> Und wieder die Häuptlingshütte </Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Baue deine Häuptlingshütte auf Level 4 aus. </Task>
       <Description locale="de_DE">
-        <p>Baue deine Häuptlingshütte auf Level 4 aus.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_army_move" />
       <Rewards>
@@ -485,18 +506,19 @@
         <BuildingTest building="building_chief_cottage" min_level="4" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1campfirelvl1">
+
+    <Quest id="quest_build_1campfirelvl1" advisor="girl">
       <Name>Lagerfeuer</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Lagerfeuer</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Baue ein Lagerfeuer.</Task>
       <Description locale="de_DE">
-        <p>Baue ein Lagerfeuer.</p>
+        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird es für die Rekrutierung von Verwalter und die Gründung von Lagerstätten gebraucht.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -508,18 +530,19 @@
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_alliance">
+
+    <Quest id="quest_alliance" advisor="girl">
       <Name>Allianzen</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Tritt einer Allianz bei oder gründe deine eigene. </Task>
       <Description locale="de_DE">
-        <p>Trete einer Allianz bei oder Gründe deine eigene.</p>
+        <p>Um einer Allianz beizutreten, wähle das Lagerfeuer aus und trage den Namen der Allianz und das Passwort ein. Um eine Allianz zu erstellen, gib einfach den Allianznamen und Allianzkürzel ein und klicke auf erstellen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
@@ -531,43 +554,22 @@
         <AllianceTest />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_chiefcottagelvl5">
-      <Name>Häuptlingshütte Level 5</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Baue deine Häuptlingshütte auf Level 5 aus.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
-      <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">250</ResourceReward>  
-        <ResourceReward resource="resource_wood">250</ResourceReward>    
-        <ResourceReward resource="resource_fur">125</ResourceReward> 
-      </Rewards>
-      <RewardTests>
-        <BuildingTest building="building_chief_cottage" min_level="5" />
-      </RewardTests>
-    </Quest>
-    <Quest id="quest_recruitfriends">
+
+<!-- NOT IN
+    <Quest id="quest_recruitfriends" advisor="girl">
       <Name>Freunde</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE">Freunde</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Trage ein, was die maximale Belohnung für das Werben von Freunden ist. </Task>
       <Description locale="de_DE">
-        <p>Trage die Belohnung ein, die es maximal für rekrutierte Freunde gibt.</p>
+        <p>Wo kann man sehen was man bekommt.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Wenn deine Freunde dich unterstützen würden, wäre das doch toll oder? Und du bekommst sogar noch mehr, als nur ihre Unterstützung wenn du sie dazu animierst.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">15</ResourceReward>    
@@ -577,18 +579,20 @@
         <TextboxTest id="test_recruit_friends_reward"> Reward Freunde werben </TextboxTest>
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1marketlvl1">
+-->
+
+   <Quest id="quest_build_1storagelvl1" advisor="girl">
       <Name>Lager</Name>
-      <Name locale="de_DE"></Name>
+      <Name locale="de_DE"> Lager </Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue ein Lager.</Task>
       <Description locale="de_DE">
-        <p>Baue ein Lager.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -600,18 +604,69 @@
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_1quarrylvl1_1loggerlvl1">
-      <Name>Baumfäller und Steinbruch</Name>
-      <Name locale="de_DE"></Name>
+
+<!-- TEST MISSING
+   <Quest id="quest_trade" advisor="girl">
+      <Name>Lager</Name>
+      <Name locale="de_DE"> Waren verschicken </Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Verschicke mindestens 100 Rohstoffe an einen anderen Spieler.</Task>
       <Description locale="de_DE">
-        <p>Baue einen Holzfäller und einen Steinbruch.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE"> Mit dem Lager kannst du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_build_1storagelvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+        <ResourceReward resource="resource_wood">45</ResourceReward>    
+        <ResourceReward resource="resource_fur">20</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <CustomTest>Handelstest</CustomTest>
+      </RewardTests>
+    </Quest>
+-->
+
+    <Quest id="quest_build_chiefcottagelvl5" advisor="girl">
+      <Name>Häuptlingshütte Level 5</Name>
+      <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
+      <Task></Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 5 aus.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE">Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">250</ResourceReward>  
+        <ResourceReward resource="resource_wood">250</ResourceReward>    
+        <ResourceReward resource="resource_fur">125</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_chief_cottage" min_level="5" />
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_build_1quarrylvl1_1loggerlvl1" advisor="girl">
+      <Name>Baumfäller und Steinbruch</Name>
+      <Name locale="de_DE"> Steinbrüche und Holzfäller </Name>
+      <Task></Task>
+      <Task locale="de_DE"> Baue einen Steinbruch und einen Holzfäller </Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
@@ -624,13 +679,14 @@
         <BuildingTest building="building_logger" min_level="1" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_build_5quarrylvl5_5loggerlvl5">
+
+    <Quest id="quest_build_5quarrylvl5_5loggerlvl5" advisor="girl">
       <Name>Noch mehr Holzfäller und Steinbrüche</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">5 Steinbruch und 5 Holzfäller auf Level 5 ausbauen</Task>
       <Description locale="de_DE">
-        <p>Baue je 5 Holzfäller und Steinbrüche auf Level 5.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -648,20 +704,47 @@
         <BuildingTest building="building_logger" min_level="5" min_count="5" />
       </RewardTests>
     </Quest>
-    <Quest id="quest_outpost">
-      <Name>Dorf</Name>
-      <Name locale="de_DE"></Name>
+
+    <Quest id="quest_build_1campfirelvl10" advisor="girl">
+      <Name>Lagerfeuer</Name>
+      <Name locale="de_DE">Lagerfeuer Level 10</Name>
       <Task></Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Baue dein Lagerfeuer auf Level 10 aus.</Task>
       <Description locale="de_DE">
-        <p>Gründe ein Dorf.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavour locale="de_DE">Flavortext deutsch</Flavour>
+      <Flavour locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_build_1campfirelvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">100</ResourceReward>  
+        <ResourceReward resource="resource_wood">100</ResourceReward>    
+        <ResourceReward resource="resource_fur">100</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_campfire" min_level="10" />
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_outpost" advisor="chief">
+      <Name>Dorf</Name>
+      <Name locale="de_DE">Lagerstätte</Name>
+      <Task></Task>
+      <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
+      <Description locale="de_DE">
+        <p>Um eine Lagerstätte zu gründen, musst du einen Verwalter am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
+	<p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell</p>
+	<p>Du kannst nur weitere Siedlungen gründen, wenn du im Rang aufsteigst.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE"> Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.Aufgabentext: Gründe eine Lagerstätte. </Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_build_1campfirelvl10" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -671,6 +754,30 @@
         <SettlementTest type="settlement_outpost" min_count="1" />
       </RewardTests>
     </Quest>
+
+<!-- NOT IN
+    <Quest id="quest_faction">
+      <Name>Chief</Name>
+      <Name locale="de_DE">Anführer</Name>
+      <Task></Task>
+      <Task locale="de_DE">Wähle einen Anführer aus.</Task>
+      <Description locale="de_DE">
+        <p> Entscheide dich für einen Anführer. Jeder Anführer hat eine spezielle Einheit und andere Boni. </p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavour locale="de_DE"> Du musst dich entscheiden, wen du als den Anführer deines Stammes einsetzen willst.</Flavour>
+      <Flavour locale="en_US">flavor text english</Flavour>
+      <Requirement quest="quest_build_1campfirelvl10" />
+      <Rewards>
+        join Faction
+      </Rewards>
+      <RewardTests>
+        Three Buttons, if one is pressed assign correct faction
+      </RewardTests>
+    </Quest>
+-->
 
   </Quests>
 </Tutorial>
