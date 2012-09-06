@@ -30,9 +30,13 @@ class Action::Trading::TradingCartsActionsController < ApplicationController
       raise ForbiddenError.new('Access to trade forbidden.') unless @action_trading_trading_carts_action.sender_id == current_character.id || (@action_trading_trading_carts_action.recipient_id == current_character.id && !@action_trading_trading_carts_action.returning)
     end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @action_trading_trading_carts_action }
+    last_modified = @action_trading_trading_carts_action.updated_at
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @action_trading_trading_carts_action }
+      end
     end
   end
 
@@ -106,6 +110,7 @@ class Action::Trading::TradingCartsActionsController < ApplicationController
         raise ActiveRecord::Rollback  unless @action_trading_trading_carts_action.load_resources
         @action_trading_trading_carts_action.starting_settlement.save!    # throws rollback, if failed
         @action_trading_trading_carts_action.save!                        # throws rollback, if failed
+        @action_trading_trading_carts_action.create_event
         @success = true
       end
     end
@@ -141,7 +146,7 @@ class Action::Trading::TradingCartsActionsController < ApplicationController
     
     if backend_request?
       raise ForbiddenError.new('Only staff is authorized to delete trades in backend.')   unless staff?
-      @action_trading_trading_carts_action.destroy   # will automatically release the carts
+      @action_trading_trading_carts_action.destroy   # will automatically release the carts and destroy the event
     else
       role = determine_access_role(@action_trading_trading_carts_action.sender_id, nil)    
       raise ForbiddenError.new("Tried to stop a trade from another character.") unless role == :owner || admin? || staff?

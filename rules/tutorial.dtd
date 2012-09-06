@@ -127,7 +127,7 @@
 <!ELEMENT Description (p*)>
 <!ATTLIST Description locale IDREF "en_US">
 
-<!ELEMENT RewardText (p*)>
+<!ELEMENT RewardText (#PCDATA | p)*>
 <!ATTLIST RewardText locale IDREF "en_US">
 
 <!ELEMENT Name (#PCDATA)>

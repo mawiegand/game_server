@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  type: 
+  room: MyString
+  data: MyString
+  blocked_at: 2012-09-05 23:56:18
+  blocked_by: MyString
+  processed: false
+
+two:
+  character_id: 1
+  type: 
+  room: MyString
+  data: MyString
+  blocked_at: 2012-09-05 23:56:18
+  blocked_by: MyString
+  processed: false

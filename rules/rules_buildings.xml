@@ -28,10 +28,9 @@
   <xi:include href="buildings/rules_building_firing_range.xml" />  
   <xi:include href="buildings/rules_building_stud.xml" />     
    
-
-   
+  <xi:include href="buildings/rules_building_storage.xml" />  
   
+  
+       
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
-  <xi:include href="buildings/rules_building_storage.xml" />     
-
 </BuildingTypes>

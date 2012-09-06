@@ -114,7 +114,11 @@ class Fundamental::Character < ActiveRecord::Base
       Messaging::Message.create_welcome_message(character)
       
       character.create_tutorial_state
-      character.tutorial_state.create_start_quest_state      
+      character.tutorial_state.create_start_quest_state     
+      
+      cmd = Messaging::JabberCommand.grant_access(character, 'global') 
+      cmd.character_id = character.id
+      cmd.save
     end
     
     return character 

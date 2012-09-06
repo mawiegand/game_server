@@ -2,6 +2,7 @@ GameServer::Application.routes.draw do
 
 
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -35,8 +36,6 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
-          resource  :tutorial_state,  :module => "tutorial",  :controller => "states",  :only => [ :show ] 
-          resources :settlements,     :module => 'settlement'   
           resources :settings
         end
         
@@ -57,6 +56,9 @@ GameServer::Application.routes.draw do
         
         resources :settings
       end
+      resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
+
       
       namespace :messaging do 
         resources :archives do
@@ -72,6 +74,7 @@ GameServer::Application.routes.draw do
         resources :outbox_entries
         resources :archive_entries
         resources :messages
+        resources :jabber_commands
       end
       resources :inboxes,  :path => "/fundamental/characters/:character_id/inboxes",  :module => 'messaging', :only => [:index]            
       resources :outboxes, :path => "/fundamental/characters/:character_id/outboxes", :module => 'messaging', :only => [:index]            

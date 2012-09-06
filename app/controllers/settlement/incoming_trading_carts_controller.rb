@@ -12,14 +12,13 @@ class Settlement::IncomingTradingCartsController < ApplicationController
     @settlement = Settlement::Settlement.find(params[:settlement_id])
     raise NotFoundError.new('Settlement not found.') if @settlement.nil?
     role = determine_access_role(@settlement.owner_id, nil)   # no privileged alliance access
-    raise ForbiddenError.new('Access to ongoing trading cart movements in given settlement denied.') unless role == :owner || admin? || staff?
-    @action_trading_trading_carts_actions = @settlement.incoming_trading_carts || []
+    raise ForbiddenError.new('Access to incoming trading cart movements in given settlement denied.') unless role == :owner || admin? || staff?
+    @action_trading_trading_carts_actions = @settlement.incoming_trading_carts.where(['"action_trading_trading_carts_actions"."returning" IS NULL OR "action_trading_trading_carts_actions"."returning" = ?', false]) || []
     @action_trading_trading_carts_actions.each { |entry| last_modified = entry.updated_at   if last_modified.nil? || entry.updated_at > last_modified } 
 
     render_not_modified_or(last_modified) do
       respond_to do |format|
-        format.html do
-        end
+        format.html 
         format.json do
           render json: @action_trading_trading_carts_actions
         end

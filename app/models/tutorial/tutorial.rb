@@ -94,6 +94,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Hey das sieht ja schon viel besser aus, findest du nicht? ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :rewards => {
             
@@ -168,6 +175,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Cool jetzt sind sie schon zu zweit.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -248,6 +262,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Schön, deine Siedlung sieht mit jeder Minute besser aus.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -328,6 +349,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Wie nett von dir. Der Sammler freut sich wie verrückt.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -408,6 +436,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -488,11 +523,16 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Danke. Ich denke wir werden viel Spass miteinander haben.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
-            :quest => 'quest_build_chieftainslvl2',
-
             :quest => 'quest_build_chieftainslvl2',
 
           },
@@ -561,6 +601,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -632,6 +679,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -703,6 +757,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Aha, dem sollten wir eine Lektion erteilen. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -774,6 +835,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -849,6 +917,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Na? Ging doch ganz einfach oder? ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -920,6 +995,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Du hast es gefunden? Super, ich geh gleich zu Chef. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -991,6 +1073,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1071,6 +1160,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1151,6 +1247,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1231,6 +1334,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1297,6 +1407,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1373,6 +1490,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1442,6 +1566,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Ist es nicht toll wie deine Siedlung wächst? ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1522,6 +1653,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Ach wie das Feuer knistert. Wie schön.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1602,6 +1740,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1671,6 +1816,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1751,6 +1903,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Toll wie weit du schon gekommen bist. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1831,6 +1990,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " So viel Stein und Holz, wie toll. ",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -1920,6 +2086,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -2009,6 +2182,13 @@ class Tutorial::Tutorial
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => "Gut gemacht!",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             
@@ -2090,6 +2270,13 @@ Aufgabentext: Gründe eine Lagerstätte. ",
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
+          :reward_text => {
+            
+            :de_DE => " Gut. Jetzt kannst du Verwalter trainieren.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
 
           :requirement => {
             

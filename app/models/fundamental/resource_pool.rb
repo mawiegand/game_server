@@ -63,7 +63,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # Adds the given resources to the resource pool.
   # Will save resources, presently is neither a 
   # transaction nor an atomar operation. That'll change!
-  # this will NOT update the produced resources  
+  # this will NOT update the produced resources 
   def add_resources_transaction(resources)
     return if resources.empty? 
     resources.each do |key, value|
@@ -71,10 +71,30 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     end     
     self.save
   end
+  
+  # Adds the given resources to the resource pool.
+  # Will save resources using an atomar operation.
+  # this will NOT update the produced resources  
+  def modify_resources_atomically(resources)
+    return true if resources.empty? 
+    set_clause   = "updated_at = ?"
+    where_clause = "id = ?"
+    values       = []
+    resources.each do |key, value|
+      name = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s() + '_amount'
+      set_clause   += ", #{name} = coalesce(#{name}, 0) + ?"
+      where_clause += " AND coalesce(#{name}, 0) + ? >= 0"
+      values.push(value)
+    end     
+    rows = Fundamental::ResourcePool.update_all([set_clause, Time.now, *values ], [where_clause, self.id, *values])
+    rows == 1
+  end
 
   # Adds the given resource to the resource pool.
   # Saves the resource with an atomic operation and updates
-  # the timestamp of the resource pool  
+  # the timestamp of the resource pool 
+  # if you still want to work with the pool afterwards, you need to
+  # reload it manually. 
   def add_resource_atomically(resource_id, amount)
     if !amount.nil? && amount != 0
       db_resource_name = GameRules::Rules.the_rules().resource_types[resource_id][:symbolic_id].to_s() + '_amount'

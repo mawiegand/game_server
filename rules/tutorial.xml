@@ -25,7 +25,7 @@
     <Quest id="quest_queue_1gathererlvl1" advisor="girl">
       <Name> the first building</Name>
       <Name locale="de_DE">Das erste Gebäude</Name>
-      <Task>Build one Gatherer</Task>
+     <Task>Build one Gatherer</Task>
       <Task locale="de_DE">Baue einen Sammler</Task>
       <Description locale="de_DE">
         <p> Um einen Sammler zu bauen, klicke auf einen Bauplatz, wähle den Sammler aus und klicke auf Build. </p>
@@ -190,7 +190,6 @@
       </Description>
       <Flavour locale="de_DE">Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavour>
       <Flavour locale="en_US">flavor text english</Flavour>
-      <Requirement quest="quest_build_chieftainslvl2" />
       <RewardText locale="de_DE"> Danke. Ich denke wir werden viel Spass miteinander haben.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_build_chieftainslvl2" />
@@ -222,7 +221,7 @@
       <RewardText locale="de_DE"> Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <Requirement quest="quest_profile" />
-      <Rewards>
+     <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">10</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
@@ -680,7 +679,7 @@
       </RewardTests>
     </Quest>
 
-<!-- TEST MISSING
+<!-- TEST NOT IN
    <Quest id="quest_trade" advisor="girl">
       <Name>Lager</Name>
       <Name locale="de_DE"> Waren verschicken </Name>
