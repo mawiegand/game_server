@@ -493,6 +493,8 @@ class Tutorial::Tutorial
             
             :quest => 'quest_build_chieftainslvl2',
 
+            :quest => 'quest_build_chieftainslvl2',
+
           },
 
           :rewards => {
@@ -901,7 +903,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "",
+            :de_DE => "Trage die Holzkosten eines Ausbildungsgeländes auf Level 2 ein.",
                 
           },
           :flavour     => {
@@ -913,7 +915,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Trage die Holzkosten eines Ausbildungsgeländes auf Level 2 ein.</p>",
+            :de_DE => "<p> Klicke dazu auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf barracks. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
