@@ -38,9 +38,6 @@ GameServer::Application.routes.draw do
           resource  :resource_pool,                            :only => [ :show ] 
           resources :settings
         end
-        resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
-        resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
-
         
         resources :resource_pools 
         
@@ -59,6 +56,9 @@ GameServer::Application.routes.draw do
         
         resources :settings
       end
+      resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
+
       
       namespace :messaging do 
         resources :archives do
