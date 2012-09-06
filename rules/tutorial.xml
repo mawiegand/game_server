@@ -15,7 +15,7 @@
     </Locales>
     <Advisors>
       <Advisor id="warrior"></Advisor>
-      <Advisor id="chief"></Advisor>
+      <Advisor id="chef"></Advisor>
       <Advisor id="girl"></Advisor>
       <Advisor id="shaman"></Advisor>
     </Advisors>
@@ -151,7 +151,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_build_chieftainslvl2" advisor="chief">
+    <Quest id="quest_build_chieftainslvl2" advisor="chef">
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
@@ -203,7 +203,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_settlement_button1" advisor="chief">
+    <Quest id="quest_settlement_button1" advisor="chef">
       <Name>Karte</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task></Task>
@@ -231,7 +231,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_rank" advisor="chief">
+    <Quest id="quest_rank" advisor="chef">
       <Name>Rang</Name>
       <Name locale="de_DE">Rang</Name>
       <Task></Task>
@@ -257,7 +257,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_settlementowner" advisor="chief">
+    <Quest id="quest_settlementowner" advisor="chef">
       <Name>Festungen</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
       <Task></Task>
@@ -419,7 +419,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_build_1barrackslvl1" advisor="chief">
+    <Quest id="quest_build_1barrackslvl1" advisor="chef">
       <Name>Kaserne</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
@@ -814,7 +814,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_outpost" advisor="chief">
+    <Quest id="quest_outpost" advisor="chef">
       <Name>Dorf</Name>
       <Name locale="de_DE">Lagerstätte</Name>
       <Task></Task>

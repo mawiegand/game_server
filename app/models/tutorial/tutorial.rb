@@ -407,7 +407,7 @@ class Tutorial::Tutorial
         {               #   quest_build_chieftainslvl2
           :id          => 4, 
           :symbolic_id => :quest_build_chieftainslvl2,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Häuptlingshütte Level 2",
@@ -572,7 +572,7 @@ class Tutorial::Tutorial
         {               #   quest_settlement_button1
           :id          => 6, 
           :symbolic_id => :quest_settlement_button1,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Karte",
@@ -650,7 +650,7 @@ class Tutorial::Tutorial
         {               #   quest_rank
           :id          => 7, 
           :symbolic_id => :quest_rank,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Rang",
@@ -728,7 +728,7 @@ class Tutorial::Tutorial
         {               #   quest_settlementowner
           :id          => 8, 
           :symbolic_id => :quest_settlementowner,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Festungen",
@@ -1218,7 +1218,7 @@ class Tutorial::Tutorial
         {               #   quest_build_1barrackslvl1
           :id          => 14, 
           :symbolic_id => :quest_build_1barrackslvl1,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Kaserne",
@@ -2240,7 +2240,7 @@ class Tutorial::Tutorial
         {               #   quest_outpost
           :id          => 26, 
           :symbolic_id => :quest_outpost,
-          :advisor     => :chief,
+          :advisor     => :chef,
           :name        => {
             
             :en_US => "Dorf",
