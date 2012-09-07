@@ -7,6 +7,15 @@ class Training::Queue < ActiveRecord::Base
   
   before_save :update_speed
   
+  def working?
+    aj = find_active_jobs
+    !aj.nil? && aj.count > 0
+  end
+  
+  def find_active_jobs
+    self.jobs.select{ |job| job.active? }
+  end  
+  
   # checks if there are unused threads in this queue and if there
   # is a new job to execute in this thread. In this case a new active job
   # is created, if there are enough resources to pay the job. Otherwise, an
@@ -15,7 +24,7 @@ class Training::Queue < ActiveRecord::Base
   def check_for_new_jobs
     
     # if there are less active jobs than the number of threads to handle a job 
-    active_jobs = self.jobs.select{ |job| job.active? }
+    active_jobs = find_active_jobs
     # logger.debug '--> active_jobs ' + active_jobs.inspect
     if active_jobs.count < 1
       # if there are inactive jobs
