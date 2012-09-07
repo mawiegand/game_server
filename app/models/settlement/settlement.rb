@@ -336,7 +336,7 @@ class Settlement::Settlement < ActiveRecord::Base
     queues.each do |queue|
       if queue[:type_id] == queue_type[:id]
         queue.destroy
-        return    # return immediately, just one queue of this tpye
+        return    # return immediately, just one queue of this tpye (if system works correctly!!!)
       end
     end
   end
@@ -521,22 +521,40 @@ class Settlement::Settlement < ActiveRecord::Base
     #
     ############################################################################     
     
+    def find_existing_queue(queue_type)
+      if (queue_type[:category] == :queue_category_construction)
+        return Construction::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+      elsif (queue_type[:category] == :queue_category_training)
+        return Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
+      else
+        logger.warn "UNKNOWN QUEUE TYPE in Settlement::Settlement::find_existing_queue"
+      end
+      nil
+    end     
+
+    def delete_multiple_queues(queues, n)
+      logger.warn(">>> DETECTED MULTIPLE IDENTICAL QUEUES. Should delete #{n}. Settlement id #{ self.id }.")
+      queues.each do |queue|
+        if n > 0 && !queue.working?
+          logger.warn(">>> DELETE INACTIVE QUEUE id #{ queue.id }.")
+          queue.destroy
+          n = n-1
+        end
+      end
+      if n > 0
+        logger.warn(">>> COULD NOT DELETE ENOUGH QUEUES. To many were still active.")
+      end
+    end
+
+    
     def check_and_repair_queues
       queue_types = GameRules::Rules.the_rules().queue_types
       
       queue_types.each do |queue_type|                   # must test it against every queue
         if queue_type[:domain] == :settlement
           unlocks = self[queue_type[:unlock_field]]     
-          
-          queue = nil 
-          if (queue_type[:category] == :queue_category_construction)
-            queue = Construction::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
-          elsif (queue_type[:category] == :queue_category_training)
-            queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue_type[:id])
-          else
-            logger.warn "UNKNOWN QUEUE TYPE in recalculation of queues."
-          end     
-          
+
+          queue = find_existing_queue(queue_type)
           if queue.nil? && unlocks >= 1       # need to create a queue
             create_queue(queue_type)
             logger.warn(">>> MISSING QUEUE CRETATED. Settlement id #{ self.id }, queue type id #{ queue_type[:id] }.")
@@ -544,6 +562,24 @@ class Settlement::Settlement < ActiveRecord::Base
             destroy_queue(queue_type)
             logger.warn(">>> ORPHANE QUEUE DESTROYED. Settlement id #{ self.id }, queue type id #{ queue_type[:id] }.")
           end
+          
+          # now check, whether there are to many (multiple) queues of the same type (not allowed!!!)
+          should_have = unlocks >= 1 ? 1 : 0
+          if (queue_type[:category] == :queue_category_construction)
+            number = self.queues.where(type_id: queue_type[:id]).count
+         #   logger.warn(">>> con sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
+            if number > should_have
+              delete_multiple_queues(self.queues.where(type_id: queue_type[:id]), number-should_have)
+            end
+          elsif (queue_type[:category] == :queue_category_training)
+            number = self.training_queues.where(type_id: queue_type[:id]).count
+        #    logger.warn(">>> train sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
+            if number > should_have
+              delete_multiple_queues(self.training_queues.where(type_id: queue_type[:id]), number-should_have)
+            end
+          else
+            logger.warn "UNKNOWN QUEUE TYPE in Settlement::Settlement::find_existing_queue"
+          end          
         end
       end
       return true
@@ -560,9 +596,9 @@ class Settlement::Settlement < ActiveRecord::Base
                 create_queue(queue)
               elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
                 destroy_queue(queue)
-              elsif change[1] >= 1
-                existing_queue = Training::Queue.find_by_settlement_id_and_type_id(self.id, queue[:id])
-                if !existing_queue.nil?
+              elsif change[1] >= 1                
+                existing_queue = find_existing_queue(queue_type)
+                if existing_queue.nil?
                   logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
                   create_queue(queue)
                 end
