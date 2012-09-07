@@ -473,8 +473,8 @@
     </Quest>
 
     <Quest id="quest_build_1barrackslvl1" advisor="chef">
-      <Name>Kaserne</Name>
-      <Name locale="de_DE"></Name>
+      <Name>Barracks</Name>
+      <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task></Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
       <Description locale="de_DE">
@@ -522,7 +522,7 @@
         <UnitReward unit="unit_clubbers">3</UnitReward>  
       </Rewards>
       <RewardTests>
-        <TrainingQueueTest unit="clubbers" min_count="1" />
+        <TrainingQueueTest unit="unit_clubbers" min_count="1" />
       </RewardTests>
     </Quest>
 

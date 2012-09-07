@@ -1418,9 +1418,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Kaserne",
+            :en_US => "Barracks",
   
-            :de_DE => "",
+            :de_DE => "Ausbildungsgelände",
                 
           },
           :task => {
@@ -1579,7 +1579,7 @@ class Tutorial::Tutorial
             :training_queue_tests => [
 
               {
-                :unit => 'clubbers',
+                :unit => 'unit_clubbers',
                 :min_count => 1,
               },
 
