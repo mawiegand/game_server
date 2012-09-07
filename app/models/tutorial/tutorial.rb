@@ -205,11 +205,15 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :construction_queue_tests => [
+            :building_tests => [
 
               {
                 :building => 'building_gatherer',
+
+                :min_level => 1,
+
                 :min_count => 1,
+
               },
 
             ],
