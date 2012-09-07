@@ -597,7 +597,7 @@ class Settlement::Settlement < ActiveRecord::Base
               elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
                 destroy_queue(queue)
               elsif change[1] >= 1                
-                existing_queue = find_existing_queue(queue_type)
+                existing_queue = find_existing_queue(queue)
                 if existing_queue.nil?
                   logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
                   create_queue(queue)
