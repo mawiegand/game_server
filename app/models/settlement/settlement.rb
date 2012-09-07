@@ -597,7 +597,7 @@ class Settlement::Settlement < ActiveRecord::Base
               elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
                 destroy_queue(queue)
               elsif change[1] >= 1                
-                existing_queue = find_existing_queue(queue_type)
+                existing_queue = find_existing_queue(queue)
                 if existing_queue.nil?
                   logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
                   create_queue(queue)
@@ -738,7 +738,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[field]
         recalc  = incomes[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> TAX INCOME RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[field] = recalc
         end
@@ -760,7 +760,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_base_production']
         recalc  = productions[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_base_production'] = recalc
         end
@@ -784,7 +784,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_capacity']
         recalc  = capacities[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_capacity'] = recalc
         end
@@ -807,7 +807,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_production_bonus_buildings']
         recalc  = boni[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_bonus_buildings'] = recalc
         end
