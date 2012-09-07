@@ -26,31 +26,54 @@
       <Name> the first building</Name>
       <Name locale="de_DE">Das erste Gebäude</Name>
      <Task>Build one Gatherer</Task>
-      <Task locale="de_DE">Baue einen Sammler</Task>
+      <Task locale="de_DE"> Gib einen Jäger und Sammler Stufe 1 in Auftrag. </Task>
       <Description locale="de_DE">
-        <p> Um einen Sammler zu bauen, klicke auf einen Bauplatz, wähle den Sammler aus und klicke auf Build. </p>
+        <p> Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. </Flavor>
+      <Flavor locale="de_DE"> Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt dir einen Teil der Rohstoffe ab, die er findet. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Hey das sieht ja schon viel besser aus, findest du nicht? </RewardText>
+      <RewardText locale="de_DE"> Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird, Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn du nicht im Spiel bist. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE"> Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
+      <RewardTests>
+        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+      </RewardTests>
+    </Quest>
+
+    <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" >
+      <Name> the first building</Name>
+      <Name locale="de_DE">Ein fertiges Gebäude</Name>
+     <Task>Build one Gatherer</Task>
+      <Task locale="de_DE"> Warte bis der Jäger und Sammler Stufe 1 fertiggestellt wurde.</Task>
+      <Description locale="de_DE">
+        <p> Bauaufträge brauchen Zeit. Sie bauen allerdings auch weiter, wenn du nicht im Spiel bist.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"> Mehr als warten können wir grad nicht machen. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"> Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.</RewardText>
+      <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
+      <RewardFlavor locale="de_DE"> Hey das sieht doch schon viel besser aus, findest du nicht?  Der nette Sammler will dir sogar ein paar Rohstoffe schenken.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
         <ResourceReward resource="resource_fur">20</ResourceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="1" />
+        <ConstructionQueueTest building="building_gatherer" min_count="1" />
       </RewardTests>
     </Quest>
 
     <Quest id="quest_build_1gathererlvl1" advisor="girl">
-      <Name> Ein zweiter Sammler</Name>
+      <Name> Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
       <Task locale="de_DE">Baue einen weiteren Sammler.</Task>
@@ -60,13 +83,13 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?</Flavor>
+      <Flavor locale="de_DE">Wie wäre es mit einem zweiten Jäger und Sammler? Kannst du den für mich bauen?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Cool jetzt sind sie schon zu zweit.</RewardText>
+      <RewardText locale="de_DE"> Du solltest versuchen deine Rohstoffproduktion auszubauen. 10 Jäger und Sammler wären zum Beispiel ein guter Start. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Cool jetzt sind sie schon zu zweit.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_queue_1gathererlvl1" />
+      <Requirement quest="quest_end_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">20</ResourceReward>  
         <ResourceReward resource="resource_wood">20</ResourceReward>    
@@ -107,20 +130,20 @@
 
     <Quest id="quest_build_2gathererlvl1" advisor="girl">
       <Name></Name>
-      <Name locale="de_DE">Noch mehr Sammler</Name>
+      <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue zwei weitere Sammler.</Task>
+      <Task locale="de_DE">Baue zwei weitere Jäger und Sammler Stufe 1.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p> Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Es wird allerdings nur das erste gebaut, das andere geht in die Bauschleife und wird angefangen, sobald das erste fertiggestellt wurde. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Hey wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardText>
+      <RewardText locale="de_DE"> Du solltest darauf achten, dass du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
@@ -136,19 +159,19 @@
     <Quest id="quest_build_1gathererlvl2" advisor="girl">
       <Name></Name>
       <Name locale="de_DE"> Ausbau </Name>
-      <Task>Baue einen Sammler auf Level 2 aus.</Task>
+      <Task>Baue einen Jäger und Sammler auf Level 2 aus.</Task>
       <Task locale="de_DE"></Task>
       <Description locale="de_DE">
-        <p> Wähle dazu einen Sammler aus und klicke auf upgrade. Gebäude auf kleinen Bauplätzen können maximal auf Level 10 ausgebaut werden. </p>
+        <p> Wähle dazu einen Jäger und Sammler aus, das Gebäude, das du bei einem klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand des Gebäudes, darunter die nächste Ausbaustufe. Klicke auf Upgrade um den Ausbau zu beginnen. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE"> Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Wie nett von dir. Der Sammler freut sich wie verrückt.</RewardText>
+      <RewardText locale="de_DE">Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal auf Stufe 10 ausgebaut werden.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE"> Wie nett von dir. Der Sammler freut sich wie verrückt.  und hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
@@ -165,18 +188,18 @@
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Stufe 2 aus.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p> Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE"> Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.</RewardText>
+      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
      <Rewards>
@@ -202,9 +225,9 @@
       </Description>
       <Flavor locale="de_DE">Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Danke. Ich denke wir werden viel Spass miteinander haben.</RewardText>
+      <RewardText locale="de_DE"> </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
@@ -221,10 +244,10 @@
       <Name>Karte</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task></Task>
-      <Task locale="de_DE">Begib dich auf die Karte.</Task>
+      <Task locale="de_DE">Begib dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
         <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-	<p>Der Knopf wechselt auf die Karte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p>
+	<p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p>
 	<p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>
       </Description>
       <Description locale="en_US">
@@ -232,9 +255,9 @@
       </Description>
       <Flavor locale="de_DE"> Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. </RewardText>
+      <RewardText locale="de_DE"> Auf der Weltkarte kannst du andere Spieler um dich herum sehen. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_profile" />
      <Rewards>
@@ -260,9 +283,9 @@
       </Description>
       <Flavor locale="de_DE">Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. </RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE"> Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
@@ -288,9 +311,9 @@
       </Description>
       <Flavor locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Aha, dem sollten wir eine Lektion erteilen. </RewardText>
+      <RewardText locale="de_DE">Festungen ziehen Steuern aus der Region, die sie beherrschen ein. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Aha, dem sollten wir eine Lektion erteilen. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_rank" />
       <Rewards>
@@ -316,9 +339,9 @@
       </Description>
       <Flavor locale="de_DE">Um die Nachricht zu lesen, klicke auf den Messages-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.</RewardText>
+      <RewardText locale="de_DE">Du kannst zwar Nachrichten empfangen, aber noch keine schreiben.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
@@ -350,9 +373,9 @@
       </Description>
       <Flavor locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Na? Ging doch ganz einfach oder? </RewardText>
+      <RewardText locale="de_DE">Du kannst in alle deine Siedlungen und Festungen, indem du sie auswählst und enter drückst. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach oder? </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_message" />
       <Rewards>
@@ -378,9 +401,9 @@
       </Description>
       <Flavor locale="de_DE"> Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Du hast es gefunden? Super, ich geh gleich zu Chef. </RewardText>
+      <RewardText locale="de_DE"> In der Enzyklopädie stehen die Kosten und Bauzeiten aller Einheiten und Gebäude und andere nützliche Informationen.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Du hast es gefunden? Super, ich geh gleich zu Chef.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlement_button2" />
       <Rewards>
@@ -399,16 +422,16 @@
       <Task></Task>
       <Task locale="de_DE">Baue eine kleine Hütte.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p> Kleine Hütten verkürzen die Bauzeit von Gebäuden. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE"> Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardText>
+      <RewardText locale="de_DE"> Wenn dir die Bauafträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chieftainslvl2" />
       <Rewards>
@@ -427,16 +450,16 @@
       <Task></Task>
       <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p> Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</p>
+        <p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardText>
+      <RewardText locale="de_DE">Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
@@ -462,9 +485,9 @@
       </Description>
       <Flavor locale="de_DE"> Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. </RewardText>
+      <RewardText locale="de_DE"> Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE"> Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
@@ -483,23 +506,23 @@
       <Task></Task>
       <Task locale="de_DE">Baue einen Keulenkrieger.</Task>
       <Description locale="de_DE">
-        <p>Wähle dazu das Ausbildungsgelände aus, wähle dort den Club Warrior in der Rekrutierungsliste aus und klicke Train Club Warrior.</p>
+        <p> Wähle dazu das Ausbildungsgelände aus, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke Train Keulenkrieger. Die trainierten Einheiten landen in der Garnison der Siedlung. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. </RewardText>
+      <RewardText locale="de_DE"> Nachdem du Einheiten in Auftrag gegeben hast, kannst du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn du wissen willst, wie weit der Auftrag ist, klickst du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst du die gewünschte Zahl anstatt der 1 ein und klickst dann auf Train. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">3</UnitReward>  
       </Rewards>
       <RewardTests>
-        <ArmyTest type="garrison" min_count="1" />
+        <TrainingQueueTest unit="clubbers" min_count="1" />
       </RewardTests>
     </Quest>
 
@@ -537,16 +560,19 @@
       <Task></Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle dort “New Army”. Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. </p>
+        <p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p>
+	<p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typens in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p>
+	<p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typens in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p>
+	<p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. </RewardText>
+      <RewardText locale="de_DE"> Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
@@ -565,16 +591,16 @@
       <Task></Task>
       <Task locale="de_DE">Bewege deine Armee zur Festung</Task>
       <Description locale="de_DE">
-        <p>Wähle deine Armee aus, drücke auf Move und dann auf das Ziel.</p>
+        <p> Wähle deine Armee aus, drücke auf Move und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. </Flavor>
+      <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. Aber natürlich sollte ein Angriff nicht überstürzt sein. Erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe. </RewardText>
+      <RewardText locale="de_DE"> Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
@@ -600,9 +626,9 @@
       </Description>
       <Flavor locale="de_DE">Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Ist es nicht toll wie deine Siedlung wächst? </RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Ist es nicht toll wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_move" />
       <Rewards>
@@ -628,9 +654,9 @@
       </Description>
       <Flavor locale="de_DE"> Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Ach wie das Feuer knistert. Wie schön.</RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Ach wie das Feuer knistert. Wie schön.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -649,16 +675,16 @@
       <Task></Task>
       <Task locale="de_DE"> Tritt einer Allianz bei oder gründe deine eigene. </Task>
       <Description locale="de_DE">
-        <p>Um einer Allianz beizutreten, wähle das Lagerfeuer aus und trage den Namen der Allianz und das Passwort ein. Um eine Allianz zu erstellen, gib einfach den Allianznamen und Allianzkürzel ein und klicke auf erstellen.</p>
+        <p> Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet. </RewardText>
+      <RewardText locale="de_DE"> Nur Allianzen können das Spielziel erreichen und die Welt erobern. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
@@ -702,21 +728,21 @@
 -->
 
    <Quest id="quest_build_1storagelvl1" advisor="girl">
-      <Name>Lager</Name>
-      <Name locale="de_DE"> Lager </Name>
+      <Name>Rohstofflager</Name>
+      <Name locale="de_DE"> Rohstofflager </Name>
       <Task></Task>
-      <Task locale="de_DE">Baue ein Lager.</Task>
+      <Task locale="de_DE">Baue ein Rohstofflager.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. </Flavor>
+      <Flavor locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Rohstofflager, damit wir mehr Platz haben. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen. </RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -731,7 +757,7 @@
 
 <!-- TEST NOT IN
    <Quest id="quest_trade" advisor="girl">
-      <Name>Lager</Name>
+      <Name>Trade</Name>
       <Name locale="de_DE"> Waren verschicken </Name>
       <Task></Task>
       <Task locale="de_DE"> Verschicke mindestens 100 Rohstoffe an einen anderen Spieler.</Task>
@@ -741,12 +767,12 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Mit dem Lager kannst du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
+      <Flavor locale="de_DE"> Mit dem Rohstofflager kannst du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <Requirement quest="quest_build_1storagelvl1" />
-      <RewardText locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
@@ -773,9 +799,9 @@
       </Description>
       <Flavor locale="de_DE">Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Toll wie weit du schon gekommen bist. </RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Toll wie weit du schon gekommen bist.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -801,9 +827,9 @@
       </Description>
       <Flavor locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> So viel Stein und Holz, wie toll. </RewardText>
+      <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">So viel Stein und Holz, wie toll.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
@@ -828,7 +854,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Flavortext deutsch</Flavor>
+      <Flavor locale="de_DE"> Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und die dann ausbauen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
@@ -859,9 +885,9 @@
       </Description>
       <Flavor locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="de_DE">Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE"> Gut. Jetzt kannst du Verwalter trainieren. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
@@ -889,7 +915,7 @@
       </Description>
       <Flavor locale="de_DE"> Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.Aufgabentext: Gründe eine Lagerstätte. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Gut. Jetzt kannst du Verwalter trainieren.</RewardText>
+      <RewardText locale="de_DE"> Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
       <RewardFlavor locale="de_DE"></RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -911,7 +937,7 @@
       <Task></Task>
       <Task locale="de_DE">Wähle einen Anführer aus.</Task>
       <Description locale="de_DE">
-        <p> Entscheide dich für einen Anführer. Jeder Anführer hat eine spezielle Einheit und andere Boni. </p>
+        <p> Entscheide dich für einen Anführer. Jeder Anführer hat eine spezielle Einheit und andere Boni. Liste mit Boni unter Auswahlbuttons</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -920,7 +946,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Kommt auf Wahl an</RewardText>
       <RewardText locale="en_US">Good gemaked! ;-)</RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="de_DE">Kommt auf Wahl an</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       Requirement time = 120h
       <Rewards>

@@ -79,36 +79,105 @@ class Tutorial::Tutorial
             
             :en_US => "Build one Gatherer",
   
-            :de_DE => "Baue einen Sammler",
+            :de_DE => " Gib einen Jäger und Sammler Stufe 1 in Auftrag. ",
                 
           },
           :flavour => {
             
-            :de_DE => " Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Sammler bauen würdest, sähe das bestimmt viel besser aus. ",
+            :de_DE => " Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt dir einen Teil der Rohstoffe ab, die er findet. ",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Um einen Sammler zu bauen, klicke auf einen Bauplatz, wähle den Sammler aus und klicke auf Build. </p>",
+            :de_DE => "<p> Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => " Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Hey das sieht ja schon viel besser aus, findest du nicht? ",
+            :de_DE => " Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird, Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn du nicht im Spiel bist. ",
   
             :en_US => "Good gemaked! ;-)",
                 
+          },
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_gatherer',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_1gathererlvl1
+        {               #   quest_end_1gathererlvl1
+          :id                => 1, 
+          :symbolic_id       => :quest_end_1gathererlvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => " the first building",
+  
+            :de_DE => "Ein fertiges Gebäude",
+                
+          },
+          :task => {
+            
+            :en_US => "Build one Gatherer",
+  
+            :de_DE => " Warte bis der Jäger und Sammler Stufe 1 fertiggestellt wurde.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => " Mehr als warten können wir grad nicht machen. ",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Bauaufträge brauchen Zeit. Sie bauen allerdings auch weiter, wenn du nicht im Spiel bist.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => " Hey das sieht doch schon viel besser aus, findest du nicht?  Der nette Sammler will dir sogar ein paar Rohstoffe schenken.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => " Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.",
+  
+            :en_US => "Good gemaked! ;-)",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
           },
 
           :rewards => {
@@ -136,31 +205,27 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
+            :construction_queue_tests => [
 
               {
                 :building => 'building_gatherer',
-
-                :min_level => 1,
-
                 :min_count => 1,
-
               },
 
             ],
 
           },          
 
-        },              #   END OF quest_queue_1gathererlvl1
+        },              #   END OF quest_end_1gathererlvl1
         {               #   quest_build_1gathererlvl1
-          :id                => 1, 
+          :id                => 2, 
           :symbolic_id       => :quest_build_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
           :name => {
             
-            :en_US => " Ein zweiter Sammler",
+            :en_US => " Ein zweiter Jäger und Sammler",
   
             :de_DE => "",
                 
@@ -174,7 +239,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Wie wäre es mit einem zweiten Sammler? Kannst du den für mich bauen?",
+            :de_DE => "Wie wäre es mit einem zweiten Jäger und Sammler? Kannst du den für mich bauen?",
   
             :en_US => "flavor text english",
                 
@@ -188,14 +253,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Cool jetzt sind sie schon zu zweit.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Cool jetzt sind sie schon zu zweit.",
+            :de_DE => " Du solltest versuchen deine Rohstoffproduktion auszubauen. 10 Jäger und Sammler wären zum Beispiel ein guter Start. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -203,7 +268,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_end_1gathererlvl1',
 
           },
 
@@ -249,7 +314,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl1
         {               #   quest_build_2gathererlvl1
-          :id                => 2, 
+          :id                => 3, 
           :symbolic_id       => :quest_build_2gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -258,14 +323,14 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Noch mehr Sammler",
+            :de_DE => "Noch mehr Jäger und Sammler",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Baue zwei weitere Sammler.",
+            :de_DE => "Baue zwei weitere Jäger und Sammler Stufe 1.",
                 
           },
           :flavour => {
@@ -277,21 +342,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p> Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Es wird allerdings nur das erste gebaut, das andere geht in die Bauschleife und wird angefangen, sobald das erste fertiggestellt wurde. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Schön, deine Siedlung sieht mit jeder Minute besser aus.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Schön, deine Siedlung sieht mit jeder Minute besser aus.",
+            :de_DE => " Du solltest darauf achten, dass du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -345,7 +410,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2gathererlvl1
         {               #   quest_build_1gathererlvl2
-          :id                => 3, 
+          :id                => 4, 
           :symbolic_id       => :quest_build_1gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -359,7 +424,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue einen Sammler auf Level 2 aus.",
+            :en_US => "Baue einen Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
@@ -373,21 +438,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Wähle dazu einen Sammler aus und klicke auf upgrade. Gebäude auf kleinen Bauplätzen können maximal auf Level 10 ausgebaut werden. </p>",
+            :de_DE => "<p> Wähle dazu einen Jäger und Sammler aus, das Gebäude, das du bei einem klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand des Gebäudes, darunter die nächste Ausbaustufe. Klicke auf Upgrade um den Ausbau zu beginnen. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => " Wie nett von dir. Der Sammler freut sich wie verrückt.  und hat mir ein paar Rohstoffe für dich mitgegeben.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Wie nett von dir. Der Sammler freut sich wie verrückt.",
+            :de_DE => "Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal auf Stufe 10 ausgebaut werden.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -441,7 +506,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl2
         {               #   quest_build_chieftainslvl2
-          :id                => 4, 
+          :id                => 5, 
           :symbolic_id       => :quest_build_chieftainslvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -457,7 +522,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Baue deine Häuptlingshütte auf Level 2 aus.",
+            :de_DE => "Baue deine Häuptlingshütte auf Stufe 2 aus.",
                 
           },
           :flavour => {
@@ -469,21 +534,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p> Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.",
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -537,7 +602,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chieftainslvl2
         {               #   quest_profile
-          :id                => 5, 
+          :id                => 6, 
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -572,14 +637,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Danke. Ich denke wir werden viel Spass miteinander haben.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Danke. Ich denke wir werden viel Spass miteinander haben.",
+            :de_DE => " ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -624,7 +689,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_settlement_button1
-          :id                => 6, 
+          :id                => 7, 
           :symbolic_id       => :quest_settlement_button1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -640,7 +705,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Begib dich auf die Karte.",
+            :de_DE => "Begib dich auf die Weltkarte.",
                 
           },
           :flavour => {
@@ -652,21 +717,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Karte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>",
+            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. ",
+            :de_DE => " Auf der Weltkarte kannst du andere Spieler um dich herum sehen. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -711,7 +776,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button1
         {               #   quest_rank
-          :id                => 7, 
+          :id                => 8, 
           :symbolic_id       => :quest_rank,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -746,14 +811,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => " Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. Hier sind ein paar Rohstoffe, verschwende sie nicht.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. ",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -798,7 +863,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_rank
         {               #   quest_settlementowner
-          :id                => 8, 
+          :id                => 9, 
           :symbolic_id       => :quest_settlementowner,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -833,14 +898,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Aha, dem sollten wir eine Lektion erteilen. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Aha, dem sollten wir eine Lektion erteilen. ",
+            :de_DE => "Festungen ziehen Steuern aus der Region, die sie beherrschen ein. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -885,7 +950,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlementowner
         {               #   quest_message
-          :id                => 9, 
+          :id                => 10, 
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -920,14 +985,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.",
+            :de_DE => "Du kannst zwar Nachrichten empfangen, aber noch keine schreiben.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -976,7 +1041,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_message
         {               #   quest_settlement_button2
-          :id                => 10, 
+          :id                => 11, 
           :symbolic_id       => :quest_settlement_button2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1011,14 +1076,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Na? Ging doch ganz einfach oder? ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Na? Ging doch ganz einfach oder? ",
+            :de_DE => "Du kannst in alle deine Siedlungen und Festungen, indem du sie auswählst und enter drückst. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1063,7 +1128,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button2
         {               #   quest_encyclopedia
-          :id                => 11, 
+          :id                => 12, 
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1098,14 +1163,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Du hast es gefunden? Super, ich geh gleich zu Chef.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Du hast es gefunden? Super, ich geh gleich zu Chef. ",
+            :de_DE => " In der Enzyklopädie stehen die Kosten und Bauzeiten aller Einheiten und Gebäude und andere nützliche Informationen.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1150,7 +1215,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_encyclopedia
         {               #   quest_build_1cottagelvl1
-          :id                => 12, 
+          :id                => 13, 
           :symbolic_id       => :quest_build_1cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1178,21 +1243,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p> Kleine Hütten verkürzen die Bauzeit von Gebäuden. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
+            :de_DE => " Wenn dir die Bauafträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1246,7 +1311,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1cottagelvl1
         {               #   quest_build_chiefcottagelvl3
-          :id                => 13, 
+          :id                => 14, 
           :symbolic_id       => :quest_build_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1274,21 +1339,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</p>",
+            :de_DE => "<p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
+            :de_DE => "Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1342,7 +1407,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_1barrackslvl1
-          :id                => 14, 
+          :id                => 15, 
           :symbolic_id       => :quest_build_1barrackslvl1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -1377,14 +1442,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. ",
+            :de_DE => " Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1438,7 +1503,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
-          :id                => 15, 
+          :id                => 16, 
           :symbolic_id       => :quest_recruit_1clubbers,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -1466,21 +1531,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle dazu das Ausbildungsgelände aus, wähle dort den Club Warrior in der Rekrutierungsliste aus und klicke Train Club Warrior.</p>",
+            :de_DE => "<p> Wähle dazu das Ausbildungsgelände aus, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke Train Keulenkrieger. Die trainierten Einheiten landen in der Garnison der Siedlung. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. ",
+            :de_DE => " Nachdem du Einheiten in Auftrag gegeben hast, kannst du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn du wissen willst, wie weit der Auftrag ist, klickst du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst du die gewünschte Zahl anstatt der 1 ein und klickst dann auf Train. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1507,10 +1572,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :army_tests => [
+            :training_queue_tests => [
 
               {
-                :type => 'garrison',
+                :unit => 'clubbers',
                 :min_count => 1,
               },
 
@@ -1520,7 +1585,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_army_create
-          :id                => 16, 
+          :id                => 17, 
           :symbolic_id       => :quest_army_create,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -1548,21 +1613,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle dort “New Army”. Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. </p>",
+            :de_DE => "<p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p><p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typens in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p><p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typens in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p><p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. ",
+            :de_DE => " Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1612,7 +1677,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_create
         {               #   quest_army_move
-          :id                => 17, 
+          :id                => 18, 
           :symbolic_id       => :quest_army_move,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -1633,28 +1698,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. ",
+            :de_DE => " Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. Aber natürlich sollte ein Angriff nicht überstürzt sein. Erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. ",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wähle deine Armee aus, drücke auf Move und dann auf das Ziel.</p>",
+            :de_DE => "<p> Wähle deine Armee aus, drücke auf Move und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe. ",
+            :de_DE => " Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1697,7 +1762,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_move
         {               #   quest_build_chiefcottagelvl4
-          :id                => 18, 
+          :id                => 19, 
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1732,14 +1797,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Ist es nicht toll wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können dir etwas von seinem Rohstoffberg abzugeben.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Ist es nicht toll wie deine Siedlung wächst? ",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1793,7 +1858,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_build_1campfirelvl1
-          :id                => 19, 
+          :id                => 20, 
           :symbolic_id       => :quest_build_1campfirelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1828,14 +1893,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Ach wie das Feuer knistert. Wie schön.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Ach wie das Feuer knistert. Wie schön.",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1889,7 +1954,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
-          :id                => 20, 
+          :id                => 21, 
           :symbolic_id       => :quest_alliance,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1917,21 +1982,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um einer Allianz beizutreten, wähle das Lagerfeuer aus und trage den Namen der Allianz und das Passwort ein. Um eine Allianz zu erstellen, gib einfach den Allianznamen und Allianzkürzel ein und klicke auf erstellen.</p>",
+            :de_DE => "<p> Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet. ",
+            :de_DE => " Nur Allianzen können das Spielziel erreichen und die Welt erobern. ",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -1974,49 +2039,49 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
-          :id                => 21, 
+          :id                => 22, 
           :symbolic_id       => :quest_build_1storagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
           :name => {
             
-            :en_US => "Lager",
+            :en_US => "Rohstofflager",
   
-            :de_DE => " Lager ",
+            :de_DE => " Rohstofflager ",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Baue ein Lager.",
+            :de_DE => "Baue ein Rohstofflager.",
                 
           },
           :flavour => {
             
-            :de_DE => " Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Lager, damit wir mehr Platz haben. ",
+            :de_DE => " Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Rohstofflager, damit wir mehr Platz haben. ",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen. ",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -2070,7 +2135,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_build_chiefcottagelvl5
-          :id                => 22, 
+          :id                => 23, 
           :symbolic_id       => :quest_build_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2105,14 +2170,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Toll wie weit du schon gekommen bist.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Toll wie weit du schon gekommen bist. ",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -2166,7 +2231,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl1_1loggerlvl1
-          :id                => 23, 
+          :id                => 24, 
           :symbolic_id       => :quest_build_1quarrylvl1_1loggerlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2201,14 +2266,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "So viel Stein und Holz, wie toll.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " So viel Stein und Holz, wie toll. ",
+            :de_DE => "",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -2271,7 +2336,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_5quarrylvl5_5loggerlvl5
-          :id                => 24, 
+          :id                => 25, 
           :symbolic_id       => :quest_build_5quarrylvl5_5loggerlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2292,7 +2357,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Flavortext deutsch",
+            :de_DE => " Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und die dann ausbauen. ",
   
             :en_US => "flavor text english",
                 
@@ -2376,7 +2441,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_5quarrylvl5_5loggerlvl5
         {               #   quest_build_1campfirelvl10
-          :id                => 25, 
+          :id                => 26, 
           :symbolic_id       => :quest_build_1campfirelvl10,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2411,14 +2476,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => " Gut. Jetzt kannst du Verwalter trainieren. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Gut gemacht!",
+            :de_DE => "Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
   
             :en_US => "Good gemaked! ;-)",
                 
@@ -2472,7 +2537,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl10
         {               #   quest_outpost
-          :id                => 26, 
+          :id                => 27, 
           :symbolic_id       => :quest_outpost,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -2515,7 +2580,7 @@ Aufgabentext: Gründe eine Lagerstätte. ",
           },
           :reward_text => {
             
-            :de_DE => " Gut. Jetzt kannst du Verwalter trainieren.",
+            :de_DE => " Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
   
             :en_US => "Good gemaked! ;-)",
                 
