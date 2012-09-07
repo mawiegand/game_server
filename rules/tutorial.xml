@@ -68,7 +68,7 @@
         <ResourceReward resource="resource_fur">20</ResourceReward>
       </Rewards>
       <RewardTests>
-        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+        <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
     </Quest>
 
