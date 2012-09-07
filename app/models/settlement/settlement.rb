@@ -738,7 +738,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[field]
         recalc  = incomes[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> TAX INCOME RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[field] = recalc
         end
@@ -760,7 +760,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_base_production']
         recalc  = productions[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> BASE RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_base_production'] = recalc
         end
@@ -784,7 +784,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_capacity']
         recalc  = capacities[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_capacity'] = recalc
         end
@@ -807,7 +807,7 @@ class Settlement::Settlement < ActiveRecord::Base
         present = self[base+'_production_bonus_buildings']
         recalc  = boni[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> BUILDING BONUS RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_bonus_buildings'] = recalc
         end
