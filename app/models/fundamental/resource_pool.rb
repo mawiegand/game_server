@@ -253,7 +253,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
         present = self[base+'_production_rate']
         recalc  = productions[resource_type[:id]]
         
-        if (present != recalc)
+        if (present - recalc).abs > 0.000001
           logger.warn(">>> PRODUCTION RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_rate'] = recalc
         end
