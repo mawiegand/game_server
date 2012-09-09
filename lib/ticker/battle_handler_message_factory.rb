@@ -270,7 +270,7 @@ class Ticker::BattleHandler
         #for all participant_results
         faction_result.participant_results.each do |participant_result|
           current_result += "<tr>\n"
-          current_result += "<td>"+(participant_result.army.name || "Unnamed Army")+"</td>\n" #army.name
+          current_result += "<td>"+(participant_result.army.blank? ? "Unnamed Army": participant_result.army.name)+"</td>\n" #army.name
           current_result += "<td>"+(participant_result.army.owner.blank? ? "" : participant_result.army.owner.name)+"</td>\n" #character.name
           if participant_result.army.alliance.nil?
             current_result += "<td></td>\n" #character.alliance_tag
@@ -347,7 +347,7 @@ class Ticker::BattleHandler
 	    #for all participant_results
 	    faction_result.participant_results.each do |participant_result|
 	      current_result += "<tr>\n"
-	      current_result += "<td>"+(participant_result.army.name || "Unnamed Army")+"</td>\n" #army.name
+	      current_result += "<td>"+(participant_result.army.blank? ? "Unnamed Army" : participant_result.army.name)+"</td>\n" #army.name
 	      current_result += "<td>"+(participant_result.army.owner.blank? ? "" : participant_result.army.owner.name)+"</td>\n" #character.name
         if participant_result.army.alliance.nil?
           current_result += "<td></td>\n" #character.alliance_tag
