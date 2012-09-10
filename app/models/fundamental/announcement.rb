@@ -7,4 +7,8 @@ class Fundamental::Announcement < ActiveRecord::Base
 
   validates  :original_id,    :uniqueness => {:scope => :locale, :allow_blank => true}
 
+  def author_name
+    author.nil?  ?   'team' : author.name
+  end
+
 end

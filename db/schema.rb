@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905215618) do
+ActiveRecord::Schema.define(:version => 20120910130610) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -217,6 +217,7 @@ ActiveRecord::Schema.define(:version => 20120905215618) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",      :default => true, :null => false
   end
 
   create_table "fundamental_characters", :force => true do |t|

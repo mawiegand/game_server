@@ -13,7 +13,7 @@ class Fundamental::AnnouncementsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @fundamental_announcements }
+      format.json { render json: @fundamental_announcements, methods: [ :author_name ]}
     end
   end
 
@@ -29,7 +29,7 @@ class Fundamental::AnnouncementsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @fundamental_announcement }
+      format.json { render json: @fundamental_announcement, methods: [ :author_name ] }
     end
   end
 
