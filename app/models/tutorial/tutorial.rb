@@ -91,7 +91,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler.</p>",
+            :de_DE => "<p> Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler. Du kannst jederzeit alle laufenden Quests sehen, indem du oben rechts auf den Quests Knopf drückst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -107,7 +107,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird, Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn du nicht im Spiel bist. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -170,7 +170,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -186,17 +186,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 20,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 20,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 20,
+                :amount => 10,
               },
 
             ],
@@ -266,7 +266,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Du solltest versuchen deine Rohstoffproduktion auszubauen. 10 Jäger und Sammler wären zum Beispiel ein guter Start. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -282,17 +282,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 20,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 20,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -362,7 +362,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Du solltest darauf achten, dass du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -378,17 +378,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 20,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 15,
+                :amount => 10,
               },
 
             ],
@@ -458,7 +458,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal auf Stufe 10 ausgebaut werden.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -474,17 +474,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 15,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 15,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 15,
               },
 
             ],
@@ -554,7 +554,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -570,17 +570,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 40,
+                :amount => 50,
               },
 
             ],
@@ -650,13 +650,13 @@ class Tutorial::Tutorial
             
             :de_DE => " ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_chieftainslvl2',
+            :quest => 'quest_build_chiefcottagelvl3',
 
           },
 
@@ -666,17 +666,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 15,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 20,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 15,
               },
 
             ],
@@ -737,7 +737,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Auf der Weltkarte kannst du andere Spieler um dich herum sehen. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -753,17 +753,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 20,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10,
+                :amount => 30,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -824,7 +824,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => "",
                 
           },
 
@@ -840,17 +840,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 15,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 15,
               },
 
             ],
@@ -911,7 +911,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Festungen ziehen Steuern aus der Region, die sie beherrschen ein. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -927,17 +927,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 15,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5,
+                :amount => 15,
               },
 
             ],
@@ -998,7 +998,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du kannst zwar Nachrichten empfangen, aber noch keine schreiben.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1089,7 +1089,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du kannst in alle deine Siedlungen und Festungen, indem du sie auswählst und enter drückst. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1105,17 +1105,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 20,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 20,
               },
 
             ],
@@ -1160,7 +1160,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Klicke dazu auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf barracks. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
+            :de_DE => "<p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf barracks. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1176,7 +1176,7 @@ class Tutorial::Tutorial
             
             :de_DE => " In der Enzyklopädie stehen die Kosten und Bauzeiten aller Einheiten und Gebäude und andere nützliche Informationen.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1192,17 +1192,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -1263,7 +1263,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Wenn dir die Bauafträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1279,17 +1279,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 15,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 15,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -1359,7 +1359,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1375,17 +1375,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 220,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 220,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 110,
               },
 
             ],
@@ -1455,7 +1455,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1471,17 +1471,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 60,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 40,
+                :amount => 70,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 80,
+                :amount => 90,
               },
 
             ],
@@ -1551,7 +1551,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Nachdem du Einheiten in Auftrag gegeben hast, kannst du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn du wissen willst, wie weit der Auftrag ist, klickst du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst du die gewünschte Zahl anstatt der 1 ein und klickst dann auf Train. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1633,7 +1633,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1649,17 +1649,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10,
+                :amount => 65,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 15,
+                :amount => 25,
               },
 
             ],
@@ -1709,7 +1709,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Wähle deine Armee aus, drücke auf Move und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. </p>",
+            :de_DE => "<p> Wenn du bereit bist, wähle deine Armee aus, drücke auf Move und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1725,7 +1725,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1741,17 +1741,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 15,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 25,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 100,
               },
 
             ],
@@ -1810,7 +1810,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1826,17 +1826,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 125,
               },
 
             ],
@@ -1906,7 +1906,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -1922,17 +1922,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 40,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 40,
+                :amount => 65,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5,
+                :amount => 10,
               },
 
             ],
@@ -2002,7 +2002,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Nur Allianzen können das Spielziel erreichen und die Welt erobern. ",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2087,7 +2087,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2103,17 +2103,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 35,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 45,
+                :amount => 65,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 20,
+                :amount => 25,
               },
 
             ],
@@ -2183,7 +2183,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2279,7 +2279,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2384,7 +2384,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2489,7 +2489,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
@@ -2577,16 +2577,16 @@ Aufgabentext: Gründe eine Lagerstätte. ",
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
+            :de_DE => ".",
   
-            :en_US => "Good gemaked! ;-)",
+            :en_US => " ",
                 
           },
 
