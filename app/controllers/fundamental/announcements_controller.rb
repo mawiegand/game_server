@@ -2,7 +2,7 @@ class Fundamental::AnnouncementsController < ApplicationController
   
   layout 'fundamental'
   
-  before_filter :deny_api,             :except => [ :index, :shon, :recent ]
+  before_filter :deny_api,             :except => [ :index, :show, :recent ]
   before_filter :authenticate_backend, :except => [ :index, :show, :recent ]
 
   
