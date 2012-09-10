@@ -133,11 +133,23 @@ class GameRules::Rules
           :hours     => 96,
         },              #   END OF 96 hours
 
+        {               #   less than 9999 hours
+          :resource_id => 3, 
+          :amount      => 30,
+          :hours     => 9999,
+        },              #   END OF 9999 hours
+
       ],                # END OF CONSTRUCTION SPEEDUP
 
 # ## TRAINING SPEEDUP ##########################################################
   
       :training_speedup => [  # ALL TRAINING SPEEDUPS
+
+        {               #   less than 6 hours
+          :resource_id => 3, 
+          :amount      => 1,
+          :hours     => 6,
+        },              #   END OF 6 hours
 
         {               #   less than 12 hours
           :resource_id => 3, 
@@ -174,6 +186,12 @@ class GameRules::Rules
           :amount      => 10,
           :hours     => 480,
         },              #   END OF 480 hours
+
+        {               #   less than 9999 hours
+          :resource_id => 3, 
+          :amount      => 15,
+          :hours     => 9999,
+        },              #   END OF 9999 hours
 
       ],                # END OF TRAINING SPEEDUP
 

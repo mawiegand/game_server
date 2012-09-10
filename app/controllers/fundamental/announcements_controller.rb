@@ -2,8 +2,8 @@ class Fundamental::AnnouncementsController < ApplicationController
   
   layout 'fundamental'
   
-  before_filter :deny_api,             :except => [ :recent ]
-  before_filter :authenticate_backend, :except => [ :recent ]
+  before_filter :deny_api,             :except => [ :index, :shon, :recent ]
+  before_filter :authenticate_backend, :except => [ :index, :show, :recent ]
 
   
   # GET /fundamental/announcements
