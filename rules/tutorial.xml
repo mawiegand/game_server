@@ -630,7 +630,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_army_move" />
+      <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
         <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -682,7 +682,7 @@
       </Description>
       <Flavor locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Nur Allianzen können das Spielziel erreichen und die Welt erobern. </RewardText>
+      <RewardText locale="de_DE"> Du kannst das Allianzprofil einsehen, indem du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst. </RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -733,14 +733,14 @@
       <Task></Task>
       <Task locale="de_DE">Baue ein Rohstofflager.</Task>
       <Description locale="de_DE">
-        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion.</p>
+        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben sie dir mit anderen Spielern zu handeln.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE"> Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Rohstofflager, damit wir mehr Platz haben. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Jeder Handelskarren kann 10 Ressourcen befördern.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
