@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910130610) do
+ActiveRecord::Schema.define(:version => 20120910231459) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -101,6 +101,12 @@ ActiveRecord::Schema.define(:version => 20120910130610) do
     t.decimal  "resource_cash_amount_max",           :default => 0.0
     t.decimal  "resource_cash_production_rate_sum",  :default => 0.0
     t.decimal  "resource_cash_production_rate_max",  :default => 0.0
+    t.integer  "month_num_registered",               :default => 0,   :null => false
+    t.integer  "month_num_logged_in_once",           :default => 0,   :null => false
+    t.integer  "month_num_logged_in_two_days",       :default => 0,   :null => false
+    t.integer  "month_num_active",                   :default => 0,   :null => false
+    t.integer  "month_num_long_term_active",         :default => 0,   :null => false
+    t.integer  "month_num_paying",                   :default => 0,   :null => false
   end
 
   create_table "backend_users", :force => true do |t|
@@ -255,6 +261,7 @@ ActiveRecord::Schema.define(:version => 20120910130610) do
     t.datetime "last_login_at"
     t.integer  "fortress_count",                           :default => 0,     :null => false
     t.datetime "last_request_at"
+    t.string   "max_conversion_state"
   end
 
   create_table "fundamental_guilds", :force => true do |t|

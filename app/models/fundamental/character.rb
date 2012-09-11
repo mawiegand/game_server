@@ -54,6 +54,13 @@ class Fundamental::Character < ActiveRecord::Base
     id.index(/^[1-9]\d*$/) != nil
   end
   
+  def self.update_all_conversions
+    Fundamental::Character.find(:all).each do |character|
+      character.update_conversion_state
+      character.save
+    end
+  end
+  
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
@@ -184,6 +191,51 @@ class Fundamental::Character < ActiveRecord::Base
   
   def name_and_ally_tag
     self.alliance_tag.nil? ? self.name : self.name + ' | ' + self.alliance_tag
+  end
+  
+  def paying_user?
+    self.shop_transactions.where(['state = ?', Shop::Transaction::STATE_CLOSED]).count > 0
+  end
+  
+  def long_term?
+    active? && self.score > 200 && self.login_count > 40 && self.last_login_at-20.days > self.created_at 
+  end
+  
+  def active?
+    !self.score.nil? && !self.login_count.nil? && self.score > 50 && self.login_count > 10 && self.last_login_at-5.days > self.created_at 
+  end
+  
+  def logged_in_two_days?
+    login_count >= 2 && self.last_login_at-1.days > self.created_at 
+  end
+  
+  def logged_in_once?
+    login_count >= 1 
+  end  
+  
+  def update_conversion_state
+    return   if self.max_conversion_state == "paying"   # nothing to do, this is the highest state
+    if paying_user?
+      self.max_conversion_state = "paying"
+      return 
+    end 
+    return   if self.max_conversion_state == "long_term_active"
+    if long_term?
+      self.max_conversion_state = "long_term_active"
+      return 
+    end 
+    return   if self.max_conversion_state == "active"
+    if active?
+      self.max_conversion_state = "active"
+      return 
+    end 
+    return   if self.max_conversion_state == "logged_in_two_days"
+    if logged_in_two_days?
+      self.max_conversion_state = "logged_in_two_days"
+      return 
+    end 
+    return   if self.max_conversion_state == "logged_in_once"
+    self.max_conversion_state = "logged_in_once"
   end
   
   # ##########################################################################

@@ -38,6 +38,7 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
       
       # movement from fortress to neighboring fortress
       self.region.node.neighbor_nodes.each do |neighbor_node|
+        logger.debug  "NEIGHBOR NODE: #{neighbor_node.inspect}, #{neighbor_node.region}"
         return true if neighbor_node.region.fortress_location == self.target_location
       end
       

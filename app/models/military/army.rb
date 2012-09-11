@@ -92,6 +92,7 @@ class Military::Army < ActiveRecord::Base
     (ap_present < ap_max && (ap_next.nil? || ap_next > Time.now))  ||  (!ap_next.nil? && Time.now > ap_next)     #GAME_SERVER_CONFIG['ap_regeneration_time'])
   end  
   
+  
   def update_ap
     # AP = MIN [ AP_MAX, (INTERVAL(now - ap_last) * REGENERATION_TIME) ]
     if ap_present >= ap_max && !ap_next.nil?
@@ -453,7 +454,39 @@ class Military::Army < ActiveRecord::Base
     self.alliance_tag.nil? ? self.owner_name : self.owner_name + ' | ' + self.alliance_tag
   end
   
+  def hidden_garrison_fields
+    ApplicationController.expand_fields(self, [ 'unitcategory_', :size_present, :strength ] )
+  end
+  
+  
+  # Only serialize the visible fields according to the user's role, if specified as an option.
+  # The rules are as follows:
+  # If nothing is specified, the details are included. If only is specified, but does not include
+  # the details, details are not included. If except is specified and details are included there,
+  # details are not included.
+  #
+  # For garrisons, the hidden_garrison_fields are removed, if the present role is not at least :owner.
+  def as_json(options={})
+    if ((!options[:role].nil? && options[:role] == :owner) || !self.garrison?)
+      if (options[:except].nil? || !options[:except].include?(:details)) && (options[:only].nil? || options[:only].include?(:details))
+        options[:include] = { :details => {} }
+      end
+      super(options)      
+    else
+      if self.garrison? && self.battle_id.nil?
+        if options[:only].nil?
+          options[:except] = (options[:except] || []).concat hidden_garrison_fields
+        else
+          to_remove = hidden_garrison_fields
+          options[:only] = options[:only].reject { |item| to_remove.include? item }   
+        end   
+      end
+      super(options)
+    end
+  end
+  
   private
+  
     # before safe handler setting the correct mode in case the battle id has
     # changed.
     def update_mode

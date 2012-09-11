@@ -6,6 +6,23 @@ class Backend::Stat < ActiveRecord::Base
     1.weeks
   end
   
+  def self.update_all_character_conversions
+    Fundamental::Character.update_all_conversions
+    Backend::Stat.find(:all).each do |stat|
+      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = 0
+      characters = Fundamental::Character.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
+      characters.each do |character|
+        stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
+        stat.month_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
+        stat.month_num_logged_in_two_days += 1   if character.max_conversion_state == "logged_in_two_days"
+        stat.month_num_active             += 1   if character.max_conversion_state == "active"
+        stat.month_num_long_term_active   += 1   if character.max_conversion_state == "long_term_active"
+        stat.month_num_paying             += 1   if character.max_conversion_state == "paying"
+      end
+      stat.save
+    end
+  end
+  
 
   def self.num_new_users_last_day
     Fundamental::Character.where(['npc != ? AND created_at > ?', true, Time.now - 1.days]).count
@@ -87,6 +104,42 @@ class Backend::Stat < ActiveRecord::Base
     
     r = Fundamental::ResourcePool.joins(:owner).where(['npc != ? AND last_login_at > ?', true, Time.now - Backend::Stat.activity_period]).select(select_string).first    
   end
+  
+  # month_num_registered
+  # month_num_logged_in_once
+  # month_num_logged_in_two_days
+  # month_num_active
+  # month_num_long_term_active
+  # month_num_paying
+  
+  def month_num_paying_acc
+    month_num_paying
+  end
+  
+  def month_num_long_term_active_acc
+    month_num_paying_acc + month_num_long_term_active
+  end
+  
+  def month_num_active_acc
+    month_num_long_term_active_acc + month_num_active
+  end
+  
+  def month_num_logged_in_two_days_acc
+    month_num_active_acc + month_num_logged_in_two_days
+  end
+  
+  def month_num_logged_in_once_acc
+    month_num_logged_in_two_days_acc + month_num_logged_in_once
+  end  
+  
+  def month_num_registered_acc
+    month_num_logged_in_once_acc + month_num_registered
+  end
+
+  def month_characters_total
+    @month_characters_total ||= month_num_registered + month_num_logged_in_once + month_num_logged_in_two_days + month_num_active + month_num_long_term_active + month_num_paying
+  end
+
   
   
   def recalc_all_stats

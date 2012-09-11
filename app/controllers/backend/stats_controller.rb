@@ -40,6 +40,7 @@ class Backend::StatsController < ApplicationController
 
     respond_to do |format|
       if @backend_stat.save
+        Backend::Stat.update_all_character_conversions
         format.html { redirect_to backend_stats_path, notice: 'Stat was successfully created.' }
         format.json { render json: @backend_stat, status: :created, location: @backend_stat }
       else
