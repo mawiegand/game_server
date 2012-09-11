@@ -72,7 +72,7 @@ class Ticker::BattleHandler
   def fill_awe_faction(faction, awe_faction)
     settlement = nil
     faction.participants.each do |participant|
-      if participant.army.garrison?                   # if a garrison army is participating on the side of the defenders
+      if !participant.disbanded? && participant.army.garrison? # if a garrison army is participating on the side of the defenders
         settlement = participant.army.home
       end
     end
@@ -81,9 +81,9 @@ class Ticker::BattleHandler
     def_modifier += settlement.defense_bonus    unless settlement.nil?
 
     faction.participants.each do |participant|
-      awe_army = Battle::Army.new(participant.army.id)
-      raise InternalServerError.new('could not create an instance of Battle::Army (awe_native_extension).') if awe_army.nil?
-      unless participant.retreated
+      unless participant.retreated || participant.disbanded?
+        awe_army = Battle::Army.new(participant.army.id)
+        raise InternalServerError.new('could not create an instance of Battle::Army (awe_native_extension).') if awe_army.nil?
         fill_awe_army(participant, awe_army, def_modifier)
         awe_faction.addArmy(awe_army)
       end

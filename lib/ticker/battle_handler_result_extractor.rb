@@ -144,11 +144,11 @@ class Ticker::BattleHandler
       awe_army = awe_faction.getArmy(a)
       #get the participant
       participant = nil
-      begin
+      begin  # TODO : improve this code (e.g. by including id in awe_battle); this is far to error prone!
         current_participant_index += 1
         raise InternalServerError('Could not match the awe army to a military_battle_participant') if current_participant_index >= faction.participants.length
         participant = faction.participants[current_participant_index]
-      end while participant.retreated
+      end while participant.retreated || participant.disbanded?      # skip disbanded and retreated armies that do not participate in the battle
       #extract
       participant[:total_experience_gained] = participant[:total_experience_gained] + awe_army.sumNewExp
       participant_results = faction_results.participant_results.build(

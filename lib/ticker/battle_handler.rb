@@ -29,27 +29,29 @@ class Ticker::BattleHandler
 
       #runloop.say "Process battle round #{ battle.battle_rounds_count || 0} for battle #{ battle.id } at loc #{ battle.location_id} in reg #{ battle.region_id }."
     
-      ## create and fill the AWE battle
-      awe_battle = Battle::Battle.new
-      raise InternalServerError.new('Could not create an instance of Battle::Battle (awe_native_extension).') if awe_battle.nil?
+      if !battle.battle_done?
+        ## create and fill the AWE battle
+        awe_battle = Battle::Battle.new
+        raise InternalServerError.new('Could not create an instance of Battle::Battle (awe_native_extension).') if awe_battle.nil?
       
-      runloop.say "started filling awe_battle object"
-      fill_awe_battle(battle, awe_battle)
-      raise InternalServerError.new('BattleHandler failed to instantiate the battle from the persistent storage.') unless awe_battle.isValid 
+        runloop.say "started filling awe_battle object"
+        fill_awe_battle(battle, awe_battle)
+        raise InternalServerError.new('BattleHandler failed to instantiate the battle from the persistent storage.') unless awe_battle.isValid 
 
-      ## create the battle calculator object
-      awe_battle_calculator = Battle::BattleCalculator.new
-      raise InternalServerError.new('Could not create an instance of Battle::BattleCalculator (awe_native_extension).') if awe_battle_calculator.nil?
+        ## create the battle calculator object
+        awe_battle_calculator = Battle::BattleCalculator.new
+        raise InternalServerError.new('Could not create an instance of Battle::BattleCalculator (awe_native_extension).') if awe_battle_calculator.nil?
 
-      ## calculate one battle round
-      runloop.say "calculating this round"
-      awe_battle_calculator.callculateOneTick(awe_battle)  # execute round
+        ## calculate one battle round
+        runloop.say "calculating this round"
+        awe_battle_calculator.callculateOneTick(awe_battle)  # execute round
       
-      ## extract and store results in database & handle retreat      
-      runloop.say "started extracting results from awe_battle object"
-      extract_results_from_awe_battle(awe_battle, battle)
+        ## extract and store results in database & handle retreat      
+        runloop.say "started extracting results from awe_battle object"
+        extract_results_from_awe_battle(awe_battle, battle)
 
-      runloop.say "finished extracting results from awe_battle object"
+        runloop.say "finished extracting results from awe_battle object"      
+      end
 
       ## check if the battle is over
       if battle.battle_done?
