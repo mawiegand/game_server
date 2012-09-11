@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Owner</th>
+    <th>Last Update</th>
     <th>Messages count</th>
     <th></th>
     <th></th>
@@ -12,6 +13,7 @@
 <% @messaging_inboxes.each do |messaging_inbox| %>
   <tr>
     <td><%= messaging_inbox.owner_id %></td>
+    <td><%= messaging_inbox.updated_at %></td>
     <td><%= messaging_inbox.messages_count %></td>
     <td><%= link_to 'Show', messaging_inbox %></td>
     <td><%= link_to 'Edit', edit_messaging_inbox_path(messaging_inbox) %></td>

@@ -72,15 +72,14 @@ class Military::ArmiesController < ApplicationController
           end 
         end
         format.json do
-        #  raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
-        @military_armies =  Military::Army.find(:all)
+          raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
           @military_armies = [] if @military_armies.nil?  # necessary? or ok to send 'null' ?
           if params.has_key?(:short)
-            render json: @military_armies.map { |army| army.as_json(:only => @@short_fields,     :role => determine_access_role(army.owner_id, army.alliance_id)) }
+            render json: @military_armies.select { |army| !army.removed? }.map { |army| army.as_json(:only => @@short_fields,     :role => determine_access_role(army.owner_id, army.alliance_id)) }
           elsif params.has_key?(:aggregate)
-            render json: @military_armies.map { |army| army.as_json(:only => @@aggregate_fields, :role => determine_access_role(army.owner_id, army.alliance_id)) }           
+            render json: @military_armies.select { |army| !army.removed? }.map { |army| army.as_json(:only => @@aggregate_fields, :role => determine_access_role(army.owner_id, army.alliance_id)) }         
           else
-            render json: @military_armies.map { |army| army.as_json(:role => determine_access_role(army.owner_id, army.alliance_id)) }
+            render json: @military_armies.select { |army| !army.removed? }.map { |army| army.as_json(:role => determine_access_role(army.owner_id, army.alliance_id)) }
           end
         end
       end
@@ -99,7 +98,7 @@ class Military::ArmiesController < ApplicationController
   # GET /military/armies/1.json
   def show
     @military_army = Military::Army.find(params[:id])
-    raise NotFoundError.new('Page Not Found') if @military_army.nil?
+    raise NotFoundError.new('Page Not Found') if @military_army.nil? || (@military_army.removed? && !staff?)
 
     last_modified = nil 
     last_modified =  @military_army.updated_at
