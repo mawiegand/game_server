@@ -278,12 +278,12 @@ class Map::Node < ActiveRecord::Base
     if (tms[:y] > 0)
       add_neighbors({ x: tms[:x], y: tms[:y]-1, zoom:tms[:zoom] }, level, 0, result); 
     end
-    if (tms[:y] <  4**(level-1)-1 ) 
-      logger.debug "NEIGHBORS ADD ONE DOWN: #{ tms[:y]+1 } <= #{ 4**(level-1)-1}."
+    if (tms[:y] <  2**level-1 ) 
+      logger.debug "NEIGHBORS ADD ONE DOWN: #{ tms[:y]+1 } <= #{ 2**level-1}."
       add_neighbors({ x: tms[:x], y: tms[:y]+1, zoom:tms[:zoom] }, level, 2, result); 
     end
-    if (tms[:x] <  4**(level-1)-1 )
-      logger.debug "NEIGHBORS ADD ONE RIGHT: #{ tms[:x]+1 } <= #{ 4**(level-1)-1}."
+    if (tms[:x] <  2**level-1 )
+      logger.debug "NEIGHBORS ADD ONE RIGHT: #{ tms[:x]+1 } <= #{ 2**level-1}."
       add_neighbors({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, level, 1, result);
     end
     result
