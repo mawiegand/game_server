@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
       started = Time.now
       yield
       elapsed = Time.now - started
-      logger.debug("IF MODIFIED SINCE: #{ request.env['HTTP_IF_MODIFIED_SINCE'] }.")
+      logger.debug("IF MODIFIED SINCE IN REQUEST HEADER: #{ request.env['HTTP_IF_MODIFIED_SINCE'] }.")
       logger.debug("Executing #{controller_name}::#{action_name} took #{elapsed*1000}ms in real-time.")
     end
   
