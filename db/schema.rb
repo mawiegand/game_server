@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(:version => 20120910231459) do
     t.decimal  "resource_cash_amount_max",           :default => 0.0
     t.decimal  "resource_cash_production_rate_sum",  :default => 0.0
     t.decimal  "resource_cash_production_rate_max",  :default => 0.0
-    t.integer  "month_num_registered"
-    t.integer  "month_num_logged_in_once"
-    t.integer  "month_num_logged_in_two_days"
-    t.integer  "month_num_active"
-    t.integer  "month_num_long_term_active"
-    t.integer  "month_num_paying"
+    t.integer  "month_num_registered",               :default => 0,   :null => false
+    t.integer  "month_num_logged_in_once",           :default => 0,   :null => false
+    t.integer  "month_num_logged_in_two_days",       :default => 0,   :null => false
+    t.integer  "month_num_active",                   :default => 0,   :null => false
+    t.integer  "month_num_long_term_active",         :default => 0,   :null => false
+    t.integer  "month_num_paying",                   :default => 0,   :null => false
   end
 
   create_table "backend_users", :force => true do |t|
