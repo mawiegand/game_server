@@ -10,7 +10,8 @@ module ApplicationHelper
     if_modified_since = request.env['HTTP_IF_MODIFIED_SINCE']
     
     logger.debug("RESOURCE LAST MODIFIED: #{ last_modified }. IF MODIFIED: #{ if_modified_since }.")
-    logger.debug("MODIFIED COMPARISION: #{ last_modified <= Time.httpdate(if_modified_since) } = #{last_modified} <= #{ Time.httpdate(if_modified_since) }.")   if last_modified && if_modified_since
+    logger.debug("NOT MODIFIED COMPARISION: #{ last_modified <= Time.httpdate(if_modified_since) } = #{last_modified} <= #{ Time.httpdate(if_modified_since) }.")   if last_modified && if_modified_since
+    logger.debug("NOT MODIFIED COMPARISION TIME: #{ last_modified <= Time.httpdate(if_modified_since) } = #{last_modified.to_i} <= #{ Time.httpdate(if_modified_since).to_i }.")   if last_modified && if_modified_since
 
     
     if if_modified_since && last_modified && last_modified <= Time.httpdate(if_modified_since)  
