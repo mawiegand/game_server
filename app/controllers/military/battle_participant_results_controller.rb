@@ -2,7 +2,8 @@ class Military::BattleParticipantResultsController < ApplicationController
   layout 'military'
 
   before_filter :authenticate
-
+  before_filter :deny_api
+  before_filter :authorize_staff
 
   # GET /military/battle_participant_results
   # GET /military/battle_participant_results.json

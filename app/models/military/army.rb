@@ -16,7 +16,7 @@ class Military::Army < ActiveRecord::Base
   
   belongs_to :battle,             :class_name => "Military::Battle",                 :foreign_key => "battle_id",              :inverse_of => :armies
   
-  has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id"
+  has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id",                :inverse_of => :army
   has_one    :ranking,            :class_name => "Ranking::CharacterRanking",        :foreign_key => "max_experience_army_id", :inverse_of => :most_experienced_army
 
   
@@ -29,6 +29,7 @@ class Military::Army < ActiveRecord::Base
   after_save     :update_experience_ranking
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
+  before_destroy :disband_from_battle
 
   after_create   :touch_map  
   after_create   :touch_home_settlement
@@ -568,6 +569,15 @@ class Military::Army < ActiveRecord::Base
         self.location.touch
       end
     end    
+    
+    def disband_from_battle
+      participant = self.battle_participant
+      return if participant.nil?
+      participant.disbanded = true
+      participant.save
+      true
+    end
+      
     
     # updates the armies_changed_at  timestamp in regions and locations. That
     # timestamp is used in case the client fetches armies for a location and 
