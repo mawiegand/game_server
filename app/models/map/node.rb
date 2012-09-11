@@ -209,7 +209,7 @@ class Map::Node < ActiveRecord::Base
     def add_neighbors(tms, level, orientation, result)
       path = Mapping::GlobalMercator.tms_to_quad_tree_tile_code(tms[:x], tms[:y], level);
       #get the node
-      logger.debug "NEIGHBORS CHECK NODE: #{ tmps.inspect } with #{ path }."
+      logger.debug "NEIGHBORS CHECK NODE: #{ tms.inspect } with #{ path }."
       node = Map::Node.find_by_path(path)
       if (!node.nil?)
         if node.leaf
