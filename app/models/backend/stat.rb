@@ -112,6 +112,29 @@ class Backend::Stat < ActiveRecord::Base
   # month_num_long_term_active
   # month_num_paying
   
+  def month_num_paying_acc
+    month_num_paying
+  end
+  
+  def month_num_long_term_active_acc
+    month_num_paying_acc + month_num_long_term_active
+  end
+  
+  def month_num_active_acc
+    month_num_long_term_active_acc + month_num_active
+  end
+  
+  def month_num_logged_in_two_days_acc
+    month_num_active_acc + month_num_logged_in_two_days
+  end
+  
+  def month_num_logged_in_once_acc
+    month_num_logged_in_two_days_acc + month_num_logged_in_once
+  end  
+  
+  def month_num_registered_acc
+    month_num_logged_in_once_acc + month_num_registered
+  end
 
   def month_characters_total
     @month_characters_total ||= month_num_registered + month_num_logged_in_once + month_num_logged_in_two_days + month_num_active + month_num_long_term_active + month_num_paying

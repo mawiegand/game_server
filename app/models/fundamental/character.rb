@@ -219,9 +219,9 @@ class Fundamental::Character < ActiveRecord::Base
       self.max_conversion_state = "paying"
       return 
     end 
-    return   if self.max_conversion_state == "long_term"
+    return   if self.max_conversion_state == "long_term_active"
     if long_term?
-      self.max_conversion_state = "long_term"
+      self.max_conversion_state = "long_term_active"
       return 
     end 
     return   if self.max_conversion_state == "active"
