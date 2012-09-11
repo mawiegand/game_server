@@ -100,7 +100,6 @@ class Military::ArmiesController < ApplicationController
     @military_army = Military::Army.find(params[:id])
     raise NotFoundError.new('Page Not Found') if @military_army.nil? || (@military_army.removed? && !staff?)
 
-    last_modified = nil 
     last_modified =  @military_army.updated_at
 
     render_not_modified_or(last_modified) do
