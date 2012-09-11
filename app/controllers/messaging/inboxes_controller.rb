@@ -42,8 +42,6 @@ class Messaging::InboxesController < ApplicationController
   # GET /messaging/inboxes/1
   # GET /messaging/inboxes/1.json
   def show
-    logger.debug "IF MODIFIED SINCE: #{ request.env['HTTP_IF_MODIFIED_SINCE'] }."
-    
     @messaging_inbox = Messaging::Inbox.find(params[:id])
     raise NotFoundError.new('Inbox Not Found') if @messaging_inbox.nil?
 
