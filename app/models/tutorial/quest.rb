@@ -421,6 +421,16 @@ class Tutorial::Quest < ActiveRecord::Base
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
     end
+    
+    # check queues for waiting jobs, that can start with rewarded resources
+    self.tutorial_state.owner.settlements.each do |settlement|
+      settlement.queues.each do |queue|
+        queue.check_for_new_jobs
+      end
+      settlement.training_queues.each do |queue|
+        queue.check_for_new_jobs
+      end
+    end 
   end
   
   def required_by_quest_with_id(next_quest_id)
