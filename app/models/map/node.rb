@@ -209,6 +209,7 @@ class Map::Node < ActiveRecord::Base
     def add_neighbors(tms, level, orientation, result)
       path = Mapping::GlobalMercator.tms_to_quad_tree_tile_code(tms[:x], tms[:y], level);
       #get the node
+      logger.debug "NEIGHBORS CHECK NODE: #{ tmps.inspect } with #{ path }."
       node = Map::Node.find_by_path(path)
       if (!node.nil?)
         if node.leaf
@@ -270,6 +271,7 @@ class Map::Node < ActiveRecord::Base
     end
 
     tms = Mapping::GlobalMercator.quad_tree_to_tms_tile_code(path)
+    logger.debug "NEIGHBORS OF: #{ tms.inspect }"
     if (tms[:x] > 0)
       add_neighbors({ x: tms[:x]-1, y: tms[:y], zoom:tms[:zoom] }, level, 3, result);
     end
@@ -277,9 +279,11 @@ class Map::Node < ActiveRecord::Base
       add_neighbors({ x: tms[:x], y: tms[:y]-1, zoom:tms[:zoom] }, level, 0, result); 
     end
     if (tms[:y] < ((4**level)-1) ) 
+      logger.debug "NEIGHBORS ADD ONE DOWN: #{ tms[:y]+1 } <= #{ 4**level-1}."
       add_neighbors({ x: tms[:x], y: tms[:y]+1, zoom:tms[:zoom] }, level, 2, result); 
     end
     if (tms[:x] < ((4**level)-1) )
+      logger.debug "NEIGHBORS ADD ONE RIGHT: #{ tms[:x]+1 } <= #{ 4**level-1}."
       add_neighbors({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, level, 1, result);
     end
     result
