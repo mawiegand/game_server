@@ -14,7 +14,7 @@ module ApplicationHelper
     logger.debug("NOT MODIFIED COMPARISION TIME: #{ last_modified.to_i <= Time.httpdate(if_modified_since).to_i } = #{last_modified.to_i} <= #{ Time.httpdate(if_modified_since).to_i }.")   if last_modified && if_modified_since
 
     
-    if if_modified_since && last_modified && last_modified <= Time.httpdate(if_modified_since)  
+    if if_modified_since && last_modified && last_modified.utc.to_time <= Time.httpdate(if_modified_since)  
       # has not changed
       render :nothing => true, :status => '304 Not Modified'
     else
