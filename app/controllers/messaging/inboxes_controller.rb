@@ -42,12 +42,15 @@ class Messaging::InboxesController < ApplicationController
   # GET /messaging/inboxes/1
   # GET /messaging/inboxes/1.json
   def show
+    logger.debug "IF MODIFIED SINCE: #{ request.env['HTTP_IF_MODIFIED_SINCE'] }."
+    
     @messaging_inbox = Messaging::Inbox.find(params[:id])
     raise NotFoundError.new('Inbox Not Found') if @messaging_inbox.nil?
 
-    last_modified = @messaging_inbox.updated_at
-
     role = determine_access_role(@messaging_inbox.owner_id, nil)  # no alliance access granted
+    raise ForbiddenError.new('Not allowed to access inbox of other player.')  unless role == :owner || staff?
+    
+    last_modified = @messaging_inbox.updated_at
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
