@@ -12,7 +12,6 @@ module ApplicationHelper
     logger.debug("RESOURCE LAST MODIFIED: #{ last_modified }. IF MODIFIED: #{ if_modified_since }.")
     logger.debug("NOT MODIFIED COMPARISION: #{ last_modified <= Time.httpdate(if_modified_since) } = #{last_modified} <= #{ Time.httpdate(if_modified_since) }.")   if last_modified && if_modified_since
     logger.debug("NOT MODIFIED COMPARISION TIME: #{ last_modified.to_i <= Time.httpdate(if_modified_since).to_i } = #{last_modified.to_i} <= #{ Time.httpdate(if_modified_since).to_i }.")   if last_modified && if_modified_since
-    logger.debug("NOT MODIFIED INSPECT: #{ last_modified.sec_fraction } / #{ Time.httpdate(if_modified_since) }.")   if last_modified && if_modified_since
 
     
     if if_modified_since && last_modified && last_modified <= Time.httpdate(if_modified_since)  
