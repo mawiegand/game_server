@@ -198,11 +198,11 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def long_term?
-    self.score > 200 && login_count > 40 && self.last_login_at-20.days > self.created_at 
+    active? && self.score > 200 && self.login_count > 40 && self.last_login_at-20.days > self.created_at 
   end
   
   def active?
-    self.score > 50 && login_count > 10 && self.last_login_at-5.days > self.created_at 
+    !self.score.nil? && !self.login_count.nil? && self.score > 50 && self.login_count > 10 && self.last_login_at-5.days > self.created_at 
   end
   
   def logged_in_two_days?
