@@ -1816,7 +1816,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_move',
+            :quest => 'quest_build_1barrackslvl1',
 
           },
 
@@ -2000,7 +2000,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Nur Allianzen können das Spielziel erreichen und die Welt erobern. ",
+            :de_DE => " Du kannst das Allianzprofil einsehen, indem du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst. ",
   
             :en_US => " ",
                 
@@ -2071,7 +2071,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion.</p>",
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben sie dir mit anderen Spielern zu handeln.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2085,7 +2085,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Jeder Handelskarren kann 10 Ressourcen befördern.",
   
             :en_US => " ",
                 
