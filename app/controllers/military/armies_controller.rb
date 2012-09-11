@@ -72,8 +72,7 @@ class Military::ArmiesController < ApplicationController
           end 
         end
         format.json do
-        #  raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
-        @military_armies =  Military::Army.find(:all)
+          raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
           @military_armies = [] if @military_armies.nil?  # necessary? or ok to send 'null' ?
           if params.has_key?(:short)
             render json: @military_armies.map { |army| army.as_json(:only => @@short_fields,     :role => determine_access_role(army.owner_id, army.alliance_id)) }
