@@ -135,7 +135,7 @@ class Tutorial::Tutorial
             
             :en_US => " the first building",
   
-            :de_DE => "Ein fertiges Gebäude",
+            :de_DE => "Auf den Bauauftrag warten.",
                 
           },
           :task => {
@@ -808,7 +808,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Ranking Knopf, oben links. Suche dann deinen Namen und schreibe deinen Rang in das Textfeld.</p>",
+            :de_DE => "<p>Klicke dazu auf den Ranking Knopf, oben links. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1038,7 +1038,7 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => ' Hey, wieso liest du das überhaupt? Komm zurück dann gibt es eine Belohnung.',
+              :body => ' Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.',
             },
 
           },          
@@ -1702,7 +1702,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. Aber natürlich sollte ein Angriff nicht überstürzt sein. Erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. ",
+            :de_DE => " Eine Armee kann mehr als nur rumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. ",
   
             :en_US => "flavor text english",
                 
@@ -1716,7 +1716,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe.",
+            :de_DE => "Hm? Die Armee ist unterwegs? Sicher das du genug Truppen hast? Na okay ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.",
   
             :en_US => "",
                 

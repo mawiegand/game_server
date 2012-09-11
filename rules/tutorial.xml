@@ -46,7 +46,7 @@
 
     <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" >
       <Name> the first building</Name>
-      <Name locale="de_DE">Ein fertiges Gebäude</Name>
+      <Name locale="de_DE">Auf den Bauauftrag warten.</Name>
      <Task>Build one Gatherer</Task>
       <Task locale="de_DE"> Warte bis der Jäger und Sammler Stufe 1 fertiggestellt wurde.</Task>
       <Description locale="de_DE">
@@ -276,7 +276,7 @@
       <Task></Task>
       <Task locale="de_DE">Suche deinen derzeitigen Rang heraus.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Ranking Knopf, oben links. Suche dann deinen Namen und schreibe deinen Rang in das Textfeld.</p>
+        <p>Klicke dazu auf den Ranking Knopf, oben links. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -356,7 +356,7 @@
       </Message>
       <Message lang="de">
         <Subject>Nachricht vom Questgeber</Subject>
-        <Body> Hey, wieso liest du das überhaupt? Komm zurück dann gibt es eine Belohnung.</Body>
+        <Body> Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.</Body>
       </Message>
     </Quest>
 
@@ -596,11 +596,11 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Bewegen sollten die sich, sonst verlernen sie noch zu kämpfen. Aber natürlich sollte ein Angriff nicht überstürzt sein. Erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. </Flavor>
+      <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. </RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Na okay, hier hast du deine Rohstoffe.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher das du genug Truppen hast? Na okay ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
@@ -958,5 +958,29 @@
     </Quest>
 -->
 
-  </Quests>
+<!-- NOT IN
+    <Quest id="quest_title">
+      <Name>Title</Name>
+      <Name locale="de_DE">Titel</Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
+        <p> </p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"></Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Jetzt kannst du eine weitere Lagerstätte gründen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">titelaufstieg Flavor</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      Requirement time = 120h
+      <Rewards>
+        reward next title
+      </Rewards>
+    </Quest>
+-->
+</Quests>
 </Tutorial>
