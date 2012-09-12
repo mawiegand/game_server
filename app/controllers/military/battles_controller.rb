@@ -2,6 +2,8 @@ class Military::BattlesController < ApplicationController
   layout 'military'
 
   before_filter :authenticate
+  before_filter :deny_api,        :except => [ :show ]
+  before_filter :authorize_staff, :except => [ :show ]
 
 
   # GET /military/battles
@@ -18,11 +20,11 @@ class Military::BattlesController < ApplicationController
   # GET /military/battles/1
   # GET /military/battles/1.json
   def show
-    @military_battle = Military::Battle.find(params[:id])
+    @military_battle = Military::Battle.find(params[:id])   # really everybody can see every battle
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @military_battle.to_json(:include => [:rounds, :factions, :participants, :armies]) }
+      format.json { render :json => @military_battle.to_json(:include => [:rounds, :factions, :participants]) }
     end
   end
 

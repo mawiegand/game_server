@@ -2,6 +2,9 @@ class Military::BattleRoundsController < ApplicationController
   layout 'military'
   
   before_filter :authenticate
+  before_filter :deny_api,        :except => [ :show ]
+  before_filter :authorize_staff, :except => [ :show ]
+
 
   # GET /military/battle_rounds
   # GET /military/battle_rounds.json
