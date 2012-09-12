@@ -5,7 +5,7 @@ class Military::BattleParticipant < ActiveRecord::Base
   belongs_to :army,    :class_name => "Military::Army",          :foreign_key => "army_id",    :inverse_of => :battle_participant
 
   def has_units?
-  	!self.disbanded? && !army.empty?
+  	!self.disbanded? && !army.empty?   # protectd access to army -> in case disbanded is true, there's no army. thus, no units. -> return false
   end
 
 end

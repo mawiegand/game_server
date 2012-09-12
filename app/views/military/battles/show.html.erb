@@ -52,7 +52,9 @@
   
   </div>
   
-<% unless @military_battle.message %>
+  
+  
+<% if @military_battle.ended_at.nil? %>
   
   <div class="panel">
   <table class="factions-overview">
@@ -272,6 +274,8 @@
     
   </div>  
 
+<% elsif @military_battle.message.nil? %>
+  <p><b>Battle ended at <%= @military_battle.ended_at %> but report is missing!</b></p>
 <% else %>
   <div class="panel">
     <h2>Battle Message</h2>

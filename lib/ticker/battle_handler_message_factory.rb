@@ -12,14 +12,8 @@ class Ticker::BattleHandler
   ## army destroyed message ##############################################
 
   ## retreat message #####################################################
-
-  ## battle message ######################################################
-
-  def generate_messages_for_battle(awe_battle, battle)
-
-    stats_body = generate_message_stats_body(battle)
-    details_body = generate_message_details_body(battle)
-
+  
+  def participants_from_awe_battle(awe_battle)
     #search for all characters
     characters = Hash.new 
 
@@ -36,6 +30,34 @@ class Ticker::BattleHandler
         characters[owner.id] << participant
       end
     end
+    characters
+  end
+  
+  def participants_from_battle(battle)
+    #search for all characters
+    characters = Hash.new 
+
+    battle.factions.each do | faction |
+      faction.participants.each do | participant |
+        if !participant.disbanded? && !participant.army.nil?
+          owner = participant.army.owner
+          characters[owner.id] = Array.new if (!characters.has_key?(owner.id))
+          characters[owner.id] << participant   # store all participating armies for each participating character id
+        end
+      end
+    end
+    characters
+  end  
+
+  ## battle message ######################################################
+  
+  def generate_messages_for_battle(awe_battle, battle)
+
+    stats_body = generate_message_stats_body(battle)
+    details_body = generate_message_details_body(battle)
+
+    #search for all characters
+    characters = awe_battle.nil? ?  participants_from_battle(battle) : participants_from_awe_battle(awe_battle) 
 
     #generate the messages for the characters
     characters.each do |k,v|
@@ -53,14 +75,24 @@ class Ticker::BattleHandler
         message.body = message.body + generate_message_body_for_character(battle, character, v, stats_body, details_body)
         message.body = message.body + details_body
         message.send_at = DateTime.now
-        message.reported = false
-        message.flag = 0
+       # message.reported = false
+      #  message.flag = 0
 
         message.save
       
         battle.message = message if battle.message.nil?
       end
     end
+    
+    if battle.message.nil? # e.g. no remaining characters in fight. this really may happen! (retreats, disbanded and dissolved troops)
+      message = Messaging::Message.create({
+        type_id:  Messaging::Message::BATTLE_REPORT_TYPE_ID,
+        subject:  generate_message_subject(battle),
+        body:     "<h1>"+generate_message_subject(battle)+"</h1>" + stats_body + details_body,
+        send_at:  DateTime.now,
+      })                   # will be delivered to noone, used to display a report in the back-end
+      battle.message = message    
+    end    
   end
 
   def generate_message_body_for_character(battle, character, participants, stats_body, details_body)
@@ -412,7 +444,7 @@ class Ticker::BattleHandler
     result = result+"Participants on side of "+generate_character_message_str(initiator)+" (faction A):<br>\n"
     initiator_faction = battle.factions.where("faction_num = 0").first
     initiator_faction.participants.all.each do |p|
-      owner = p.army.owner
+      owner = p.disbanded? ? nil : p.army.owner
       result = result + generate_character_message_str(owner) + "<br>\n"
     end
     result = result + "<br>\n"
@@ -420,26 +452,30 @@ class Ticker::BattleHandler
     result = result+"Participants on side of "+generate_character_message_str(opponent)+" (faction B):<br>\n"
     opponent_faction = battle.factions.where("faction_num = 1").first
     opponent_faction.participants.each do |p|
-      owner = p.army.owner
+      owner = p.disbanded? ? nil : p.army.owner
       result = result + generate_character_message_str(owner) +"<br>\n"
     end
     result = result + "<br>\n"
 
     rules = GameRules::Rules.the_rules
     rounds = battle.rounds.order("round_num ASC")
+    
+    if rounds.length < 1    # may happen in case the home base(s) of all armies of one side are lost before the first round
+      result = result + '<p><b>There was no fighting as one faction completely dissolved before the battle could start.</b></p>'
+    else 
+      result = result + "<h2>Faction A</h2>\n"
+      initiator_combined_faction_result = generate_combined_faction_results(initiator_faction, rounds[0])
+      #initiator_faction_results = initiator_faction.faction_results
+      result = result + generate_faction_units_table(initiator_combined_faction_result)
 
-    result = result + "<h2>Faction A</h2>\n"
-    initiator_combined_faction_result = generate_combined_faction_results(initiator_faction, rounds[0])
-    #initiator_faction_results = initiator_faction.faction_results
-    result = result + generate_faction_units_table(initiator_combined_faction_result)
+      result = result + "<h2>Faction B</h2>\n"
+      #opponent_faction_results = opponent_faction.faction_results
+      opponent_combined_faction_result = generate_combined_faction_results(opponent_faction, rounds[0])
+      result = result + generate_faction_units_table(opponent_combined_faction_result)
 
-    result = result + "<h2>Faction B</h2>\n"
-    #opponent_faction_results = opponent_faction.faction_results
-    opponent_combined_faction_result = generate_combined_faction_results(opponent_faction, rounds[0])
-    result = result + generate_faction_units_table(opponent_combined_faction_result)
-
-    #stats
-    result = result + generate_stats_table(initiator_combined_faction_result, opponent_combined_faction_result)
+      #stats
+      result = result + generate_stats_table(initiator_combined_faction_result, opponent_combined_faction_result)
+    end
 
     result
   end
@@ -568,7 +604,13 @@ class Ticker::BattleHandler
     type[:name][:en_US]
   end
 
+  def generate_dissolved_army_message_str
+    #TODO : localize!
+    '<span class="red-color" title="An army is dissolved immediately in case its home settlement is lost to another player or destroyed.">Dissolved Force<span>'    
+  end
+
   def generate_character_message_str(character)
+    return generate_dissolved_army_message_str if character.nil?
     result = character.name
     unless character.alliance.nil?
       result = result + " | " + character.alliance.tag

@@ -198,7 +198,7 @@ class Military::Battle < ActiveRecord::Base
   #returns the a settlement if there was an battle over one
   def targeted_settlement
     participants.each do |participant|
-      if participant.army.garrison
+      if !participant.disbanded? && !participant.army.nil? && participant.army.garrison
         return participant.army.home
       end
     end

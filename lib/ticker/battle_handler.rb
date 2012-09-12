@@ -56,6 +56,11 @@ class Ticker::BattleHandler
       ## check if the battle is over
       if battle.battle_done?
 
+        runloop.say "Mark battle as done."
+
+        battle.ended_at = Time.now
+        battle.save
+
         runloop.say "Battle done, starting to send out messages"
 
         ## generate message for participants
@@ -65,14 +70,13 @@ class Ticker::BattleHandler
 
         ## get winner of the battle
         winner_faction = battle.winner_faction
-        winner_faction.update_leader
-        winner_leader = nil
-        if !winner_faction.nil?
-          winner_leader = winner_faction.leader
-        end
 
         #if there is a winner
         if !winner_faction.nil?
+
+          winner_leader = nil
+          winner_faction.update_leader
+          winner_leader = winner_faction.leader
 
           raise InternalServerError.new('A faction won a battle but did not have a leader') if winner_leader.nil?
 
@@ -114,7 +118,7 @@ class Ticker::BattleHandler
           end
 
         end
-
+        
         runloop.say "Cleanup armies and battle"
 
         ## cleanup of the destroyed armies
