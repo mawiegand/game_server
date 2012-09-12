@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_cottageT2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Hütte</Name>
+  <Name lang="en_US">Hut</Name>
+  <Description lang="de_DE">
+    <p>Die Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p> 
+	<p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p> lustiger Flavour Text hier </p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>In den Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>  
+	</Flavour>
+	<Population>LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)</Population>
+  <Requirement id="building_chief_cottage" min_level="12" /> 
+  <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5+0.5)</Cost> 
+  <Cost id="resource_fur" round="true">FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))*0.5)</Cost> 
+  <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)</ProductionTime>             
+  <Abilities> <!-- just for grouping -->
+    <SpeedupQueue queue="queue_buildings" domain="settlement">FLOOR((1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0*(1.88*POW(LEVEL,1.425)+0.5)/100.0)</SpeedupQueue>
+  </Abilities>
+</Building>
