@@ -1,6 +1,6 @@
 class Settlement::Settlement < ActiveRecord::Base
   
-  belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
+  belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id" ,          :inverse_of => :settlements
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
