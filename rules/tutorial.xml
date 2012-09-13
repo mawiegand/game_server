@@ -345,7 +345,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
-        <ResourceReward resource="resource_cash">5</ResourceReward>  
+        <ResourceReward resource="resource_cash">15</ResourceReward>  
       </Rewards>
       <RewardTests>
         <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
