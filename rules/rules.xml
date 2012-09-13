@@ -103,6 +103,8 @@
       <SpeedupCost resource="resource_cash" amount="10" hours="480" />
       <SpeedupCost resource="resource_cash" amount="15" hours="9999" />
     </TrainingSpeedup>
+    <ConvertCostFactor>0.3</ConvertCostFactor>
+    <ConvertTimeFactor>0.3</ConvertTimeFactor>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
