@@ -147,6 +147,10 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
     productions = recalc_resource_productions
     check_and_apply_productions(productions)
+
+    capacities = recalc_resource_capacities
+    check_and_apply_capacities(capacities)
+
     
     if self.changed?
       logger.info(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
@@ -256,6 +260,31 @@ class Fundamental::ResourcePool < ActiveRecord::Base
         if (present - recalc).abs > 0.000001
           logger.warn(">>> PRODUCTION RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_rate'] = recalc
+        end
+      end    
+    end
+    
+    def recalc_resource_capacities
+      resource_types = GameRules::Rules.the_rules().resource_types
+      capacities     = Array.new(resource_types.count, 0.0)
+      self.owner.settlements.each do |settlement|
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+          field = resource_type[:symbolic_id].to_s + '_capacity'
+          capacities[resource_type[:id]] += settlement[field] || 0.0
+        end
+      end
+      return capacities
+    end
+    
+    def check_and_apply_capacities(capacities)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_capacity']
+        recalc  = capacities[resource_type[:id]]
+        
+        if (present - recalc).abs > 0.000001
+          logger.warn(">>> RESOURCE CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_capacity'] = recalc
         end
       end    
     end

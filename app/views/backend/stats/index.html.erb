@@ -8,6 +8,7 @@
   <h1>User Charts</h1>
 
   <div class="chart" id="conversions"></div>
+  <div class="chart" id="conversions_daily"></div>
 
   <div class="chart" id="totals"></div>
   <div class="chart" id="active"></div>
@@ -181,6 +182,27 @@
         },
       }
     );
+    
+    var conversions = new Dygraph(
+
+      document.getElementById("conversions_daily"),
+
+      "Date, logged-in once, 2nd day login, active, long term, paying \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_num_logged_in_once_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_logged_in_two_days_acc / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.day_num_active_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_long_term_active_acc   / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_paying_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Conversions (daily)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
 
     var active = new Dygraph(
 
@@ -278,7 +300,8 @@
     <th>Date</th>
     <th>Users (Tot/Act)</th>
     <th>Customers (Tot/Act)</th>
-    <th>Conversions</th>
+    <th>Conversions (monthly)</th>
+    <th>Conversions (daily)</th>
     <th>Dau</th>
     <th>Wau</th>
     <th>Mau</th>
@@ -302,23 +325,31 @@
 <% @backend_stats.each do |backend_stat| %>
   <tr>
     <td><%= backend_stat.created_at %></td>
+    
     <td><%= backend_stat.total_users %>/<%= backend_stat.active_users %></td>
+    
     <td><%= backend_stat.total_customers %>/<%= backend_stat.active_customers %></td>
+    
     <td><%= backend_stat.month_num_registered %> / <%= backend_stat.month_num_logged_in_once %> /
         <%= backend_stat.month_num_logged_in_two_days %> / <%= backend_stat.month_num_active %> /
-        /<%= backend_stat.month_num_long_term_active %> / /<%= backend_stat.month_num_paying %></td>
+        <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %></td>
+        
+    <td><%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> /
+        <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
+        <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %></td>
+        
     <td><%= backend_stat.dau %></td>
     <td><%= backend_stat.wau %></td>
     <td><%= backend_stat.mau %></td>
     <td><%= backend_stat.churn_today %></td>
-    <td><%= backend_stat.churn_week %></td>
+    <td><%= backend_stat.churn_week  %></td>
     <td><%= backend_stat.churn_month %></td>
     <td><%= backend_stat.dac %></td>
     <td><%= backend_stat.wac %></td>
     <td><%= backend_stat.mac %></td>
-    <td><%= backend_stat.du %>/<%= backend_stat.wu %>/<%= backend_stat.mu %></td>
-    <td><%= backend_stat.dnu %>/<%= backend_stat.wnu %>/<%= backend_stat.mnu %></td>
-    <td><%= backend_stat.dlu %>/<%= backend_stat.wlu %>/<%= backend_stat.mlu %></td>
+    <td><%= backend_stat.du %>  / <%= backend_stat.wu %> /<%= backend_stat.mu %> </td>
+    <td><%= backend_stat.dnu %> / <%= backend_stat.wnu %>/<%= backend_stat.mnu %></td>
+    <td><%= backend_stat.dlu %> / <%= backend_stat.wlu %>/<%= backend_stat.mlu %></td>
     <td><%= backend_stat.dc %></td>
     <td><%= backend_stat.wc %></td>
     <td><%= backend_stat.mc %></td>
