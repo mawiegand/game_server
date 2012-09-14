@@ -18,9 +18,65 @@
     <%= @user_stats[:signins_last_week]%> (last 1h / 8h / 24h / week) <br/>
   <b>Users Online:</b> <%= @user_stats[:presently_online] %> / <%= @user_stats[:online_last_hour] %> (right now / during last hour) </br>
      
-  <% if @last_character %>
-    <p><b>Latest Sign In</b>: signed in <b><%= time_ago_in_words @last_character.last_login_at %></b> ago<br/>
-       <%= link_to @last_character.name, @last_character %> (<%= @last_character.identifier %>)</p>
+  <p>
+    <% if @last_character %>
+      <b>Latest Sign In</b>: 
+      <%= link_to @last_character.name, @last_character %> (<%= @last_character.identifier %>),
+      <b><%= time_ago_in_words @last_character.last_login_at %></b> ago<br/>
+    <% end %>
+
+    <% if @last_character_signup %>
+      <b>Latest Sign Up</b>: 
+      <%= link_to @last_character_signup.name, @last_character %> (<%= @last_character_signup.identifier %>),
+      <b><%= time_ago_in_words @last_character_signup.created_at %></b> ago<br/>
+    <% end %>
+  </p>
+
+  
+  <% if @backend_stats %>
+    <% backend_stat = @backend_stats.last %>
+    <p><b>Yesterday's Cohort:</b> <%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> /
+          <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
+          <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %> (Reg / 1Log / 2nd / Act / LT / Pay)<br/>
+      <b>Month's Cohort:</b> <%= backend_stat.month_num_registered %> / <%= backend_stat.month_num_logged_in_once %> /
+         <%= backend_stat.month_num_logged_in_two_days %> / <%= backend_stat.month_num_active %> /
+         <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %> (Reg / 1Log / 2nd / Act / LT / Pay)</p>
+
+  <% end %>
+
+  
+  
+  <% if @backend_stats %>
+    <br/>
+    <hr/>
+    <div class="chart" style="float: none;" id="conversions_daily"></div>
+    <p >This graph displays the conversion rates in our retail funnel of "daily cohorts". This means,
+       all users that created their character during the same day (24 hours before the generation of the stats entry)
+       are grouped together (build one cohort). The x-axis of the graph denominates these cohorts: e.g. the
+       numbers for the 2012/9/9 refer to those users, that joined on that particular day.</p>
+  
+    <script>
+    var conversions = new Dygraph(
+
+      document.getElementById("conversions_daily"),
+
+      "Date, logged-in once, 2nd day login, active, long term, paying \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_num_logged_in_once_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_logged_in_two_days_acc / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.day_num_active_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_long_term_active_acc   / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_paying_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Cohort Analysis of Conversions (daily)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+    </script>
   <% end %>
   
   

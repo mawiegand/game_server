@@ -22,8 +22,11 @@ class Backend::DashboardController < ApplicationController
       presently_online:         Fundamental::Character.where(['npc != ? AND last_request_at > ?', true, Time.now - 2.minutes]).count, 
       online_last_hour:         Fundamental::Character.where(['npc != ? AND last_request_at > ?', true, Time.now - 1.hours]).count, 
     }
+
+    @backend_stats = Backend::Stat.order('created_at ASC')
     
     @last_character = Fundamental::Character.unscoped.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
+    @last_character_signup = Fundamental::Character.unscoped.where('created_at IS NOT NULL').order('created_at DESC').first
 
   end
   

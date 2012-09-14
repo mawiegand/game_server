@@ -19,7 +19,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id"
-  has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id"
+  has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
 
@@ -197,20 +197,24 @@ class Fundamental::Character < ActiveRecord::Base
     self.shop_transactions.where(['state = ?', Shop::Transaction::STATE_CLOSED]).count > 0
   end
   
+  # more than 20 days in the game (character creation to last login), >200 points, 40 logins
   def long_term?
     active? && self.score > 200 && self.login_count > 40 && self.last_login_at-20.days > self.created_at 
   end
   
+  # more than 48h hours in the game (character creation to last login), >50 points, 10 logins
   def active?
-    !self.score.nil? && !self.login_count.nil? && self.score > 50 && self.login_count > 10 && self.last_login_at-5.days > self.created_at 
+    !self.score.nil? && !self.login_count.nil? && self.score > 50 && self.login_count > 10 && self.last_login_at-2.days > self.created_at 
   end
-  
+
+  # logged-in on two consecutive days (fist login is identical to character creation) 
   def logged_in_two_days?
     login_count >= 2 && self.last_login_at-1.days > self.created_at 
   end
   
+  # logged-in at least once
   def logged_in_once?
-    login_count >= 1 
+    login_count >= 1
   end  
   
   def update_conversion_state

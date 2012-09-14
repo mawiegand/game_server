@@ -1,6 +1,6 @@
 class Settlement::Settlement < ActiveRecord::Base
   
-  belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id"  
+  belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id" ,          :inverse_of => :settlements
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
   belongs_to :alliance, :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"  
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
@@ -881,18 +881,24 @@ class Settlement::Settlement < ActiveRecord::Base
       self.region.fortress.save if changed  # only save character and resource pool, if there hase been a change!
     end
     
+    def propagate_change_of_attribute_to_resource_pool(attribute)
+      if !self.changes[attribute].nil?
+        change = self.changes[attribute]
+        delta = change[1] - change[0]   # new - old value
+        self.owner.resource_pool[attribute] = self.owner.resource_pool[attribute] + delta
+        return true
+      else
+        return false
+      end
+    end
+    
     def propagate_changes_to_resource_pool
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
       if (!self.owner_id.nil? && self.owner_id > 0)            # only spread, if there's a resource pool
         changed = false
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
-          if !self.changes[attribute].nil?
-            changed = true
-            change = self.changes[attribute]
-            delta = change[1] - change[0]   # new - old value
-            self.owner.resource_pool[attribute] = self.owner.resource_pool[attribute] + delta
-          end
+          changed = propagate_change_of_attribute_to_resource_pool(resource_type[:symbolic_id].to_s()+'_production_rate') || changed # important: changed at the end, need to execute the function
+          changed = propagate_change_of_attribute_to_resource_pool(resource_type[:symbolic_id].to_s()+'_capacity')        || changed # important: changed at the end, need to execute the function
         end
         self.owner.resource_pool.save if changed  # only save character and resource pool, if there hase been a change!
       end
@@ -1012,6 +1018,18 @@ class Settlement::Settlement < ActiveRecord::Base
 
     
     
+    def propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, attribute)
+      old_value = self[attribute]
+      new_value = self[attribute]
+      if !self.changes[attribute].nil?
+        change = self.changes[attribute]
+        new_value = (change[1] || 0)
+        old_value = (change[0] || 0)
+      end
+      old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) - old_value   unless old_owner.nil?
+      new_owner.resource_pool[attribute] = (new_owner.resource_pool[attribute] || 0.0) + new_value   unless new_owner.nil? 
+    end
+    
     # this case (owner changed) is a little bit more tricky; bascially,
     # we need to remove resource produciton from the old owner's pool 
     # and add it to the new owner's pool. But unfortunately, at the
@@ -1028,17 +1046,8 @@ class Settlement::Settlement < ActiveRecord::Base
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          attribute = resource_type[:symbolic_id].to_s() + '_production_rate'
-          old_value = self[attribute]
-          new_value = self[attribute]
-          if !self.changes[attribute].nil?
-            change = self.changes[attribute]
-            new_value = (change[1] || 0)
-            old_value = (change[0] || 0)
-          end
-          
-          old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) - old_value   unless old_owner.nil?
-          new_owner.resource_pool[attribute] = (new_owner.resource_pool[attribute] || 0.0) + new_value   unless new_owner.nil? 
+          propagate_change_of_attribute_to_resource_pool_on_changed_possession(resource_type[:symbolic_id].to_s() + '_production_rate')
+          propagate_change_of_attribute_to_resource_pool_on_changed_possession(resource_type[:symbolic_id].to_s() + '_capacity')
         end
 
         old_owner.resource_pool.save   unless old_owner.nil?

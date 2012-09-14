@@ -36,12 +36,14 @@ class Ticker::TradingCartsActionHandler
       
       if action.returning?
         runloop.say "Process returning trading carts #{ action.id } of settlement #{ action.starting_settlement_id }. Returned."        
+        return_message = Messaging::Message.generate_trade_return_message(action)             
         if action.empty?
           runloop.say "No resources to unload."
         else
-          runloop.say "Unloading resources at origin."        
+          runloop.say "Unloading resources at origin."     
           action.unload_resources_at_origin
         end
+        return_message.save            
         runloop.say "Destroy the action and release trading carts."        
         action.destroy   # also deletes event and releases trading carts   
       else 
@@ -55,7 +57,11 @@ class Ticker::TradingCartsActionHandler
           runloop.say "No resources to unload."
         else
           runloop.say "Unloading resources at target."
+          recipient_message = Messaging::Message.generate_trade_recipient_message(action)          
+          sender_message = Messaging::Message.generate_trade_sender_message(action)          
           action.unload_resources_at_target
+          recipient_message.save
+          sender_message.save
         end
         
         return_carts(action)     # also recreates the events appropriately   

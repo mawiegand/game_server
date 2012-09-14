@@ -19,6 +19,17 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_num_long_term_active   += 1   if character.max_conversion_state == "long_term_active"
         stat.month_num_paying             += 1   if character.max_conversion_state == "paying"
       end
+
+      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = 0
+      characters = Fundamental::Character.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
+      characters.each do |character|
+        stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
+        stat.day_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
+        stat.day_num_logged_in_two_days += 1   if character.max_conversion_state == "logged_in_two_days"
+        stat.day_num_active             += 1   if character.max_conversion_state == "active"
+        stat.day_num_long_term_active   += 1   if character.max_conversion_state == "long_term_active"
+        stat.day_num_paying             += 1   if character.max_conversion_state == "paying"
+      end      
       stat.save
     end
   end
@@ -138,6 +149,36 @@ class Backend::Stat < ActiveRecord::Base
 
   def month_characters_total
     @month_characters_total ||= month_num_registered + month_num_logged_in_once + month_num_logged_in_two_days + month_num_active + month_num_long_term_active + month_num_paying
+  end
+  
+  
+  
+  def day_num_paying_acc
+    day_num_paying
+  end
+  
+  def day_num_long_term_active_acc
+    day_num_paying_acc + day_num_long_term_active
+  end
+  
+  def day_num_active_acc
+    day_num_long_term_active_acc + day_num_active
+  end
+  
+  def day_num_logged_in_two_days_acc
+    day_num_active_acc + day_num_logged_in_two_days
+  end
+  
+  def day_num_logged_in_once_acc
+    day_num_logged_in_two_days_acc + day_num_logged_in_once
+  end  
+  
+  def day_num_registered_acc
+    day_num_logged_in_once_acc + day_num_registered
+  end
+
+  def day_characters_total
+    @day_characters_total ||= day_num_registered + day_num_logged_in_once + day_num_logged_in_two_days + day_num_active + day_num_long_term_active + day_num_paying
   end
 
   
