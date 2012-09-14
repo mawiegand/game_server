@@ -1,14 +1,6 @@
 #!/usr/bin/php
 <?php
 
-/**
- * This is the default authentication handler that performs authentication for the API
- * requests based on a shared secret in server-2-server communication.
- * 
- * @author Christopher
- * @version 1
- * @since 12/Jan/2011 (externalized from SupAPIFactory) 
- */
 class SupDefaultAuthHandler {
 
   protected $_key;
@@ -19,11 +11,6 @@ class SupDefaultAuthHandler {
   protected $_hash;
   protected $_allowedActions;
   
-  /**
-   * @param string $key - the api identification ID (typo3, vbulletin, mobile, ...)
-   * @param string $secret - the secret key used for hash generation
-   * @return SupAbstractAuthHandler
-   */
   public function SupDefaultAuthHandler($data) {
     $this->_key = $data['key'];
     $this->_secret = $data['secret'];
@@ -33,18 +20,12 @@ class SupDefaultAuthHandler {
     $this->_hash = $data['hash'];
     $this->_allowedActions = $data['allowedActions'];
   }
+
+  protected $_callbackUrl = 'https://uni.patrickfox.de/game_server/fundamental/characters/self';
+  protected $_tokenExpiration = 28800;  // 8 hours
   
-  /**
-   * Performs the basic shared secret based authentication of the API request.
-   * (non-PHPdoc)
-   * @see SupAPIHandler::executeAction()
-   */
   public function executeAction() {
 
-    // move vars to class constants
-    $url = 'https://uni.patrickfox.de/game_server/fundamental/characters/self'; // npc
-    $expiration = 3600 * 8;
-    
     $token = json_decode(base64_decode($this->_hash), true);
 
     if (json_last_error() != JSON_ERROR_NONE) {
@@ -56,13 +37,13 @@ class SupDefaultAuthHandler {
     date_default_timezone_set('UTC');
     echo('Timestamp: '.$token['token']['timestamp'].' '.(time() - strtotime($token['token']['timestamp']))."\n");
     
-    if (time() - strtotime($token['token']['timestamp']) > $expiration) {
+    if (time() - strtotime($token['token']['timestamp']) > $this->_tokenExpiration) {
       // token too old
       return false;
     }
     
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_URL, $this->_callbackUrl);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);    # required for https urls
@@ -87,7 +68,7 @@ class SupDefaultAuthHandler {
       return false;
     }
 
-    if ($content['identifier'] != $token['token']['timestamp']) {
+    if ($content['identifier'] != $token['token']['identifier']) {
       // identifiers from token and from game server callback don't match 
       return false;
     }
@@ -106,7 +87,7 @@ class SupDefaultAuthHandler {
   }
 }
 
-$testToken = 'eyJ0b2tlbiI6eyJpZGVudGlmaWVyIjoibVFSYUFrQVhDWlBCSkxmciIsInNjb3BlIjpbIjVkZW50aXR5Iiwid2Fja2Fkb28iLCJwYXltZW50Il0sInRpbWVzdGFtcCI6IjIwMTItMDktMTJUMTg6NDU6NTErMDI6MDAifSwic2lnbmF0dXJlIjoiMzhiMDYwMGJkOGFlNjEzNDg2MmEwYzUxY2JmYmQ3ZjYxYzM1YjljNCJ9';
+$testToken = 'eyJ0b2tlbiI6eyJpZGVudGlmaWVyIjoiUkFEcE5jWUhMQXRXVUVhRSIsInNjb3BlIjpbIjVkZW50aXR5Iiwid2Fja2Fkb28iLCJwYXltZW50Il0sInRpbWVzdGFtcCI6IjIwMTItMDktMTRUMTI6MjQ6NDgrMDI6MDAifSwic2lnbmF0dXJlIjoiZjRjY2I4Y2ZiYTgwMzNkZDcwYjQ4ZGM3MTAyOTYyM2M2MTQzNjIzZiJ9';
 
 $data = array(
   'hash' => $testToken,
