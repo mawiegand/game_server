@@ -1,12 +1,14 @@
+require 'credit_shop/five_d_payment_provider'
+
 class Shop::AccountsController < ApplicationController
-  
-  include Shop::ShopHelper
   
   before_filter :authenticate
   
   def show
+    credit_shop = CreditShop::FiveDPaymentProvider.new(request)
+    
     # get user account from payment provider
-    @shop_account = {credit_amount: get_customer_account['amount']}
+    @shop_account = {credit_amount: credit_shop.get_customer_account['amount']}
 
     respond_to do |format|
       format.html # show.html.erb

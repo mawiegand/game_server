@@ -1,7 +1,7 @@
+require 'credit_shop/five_d_payment_provider'
+
 class Shop::TransactionsController < ApplicationController
   layout 'shop'
-
-  include Shop::ShopHelper
 
   before_filter :authenticate
   before_filter :deny_api, :except => [:show, :index, :create]
@@ -74,19 +74,21 @@ class Shop::TransactionsController < ApplicationController
     
     logger.debug virtual_bank_transaction.inspect
     
-    @shop_transaction.credit_amount_before = get_customer_account['amount']
+    credit_shop = CreditShop::FiveDPaymentProvider.new(request)
+    
+    @shop_transaction.credit_amount_before = credit_shop.get_customer_account['amount']
     @shop_transaction.save
     
-    provider_response = post_virtual_bank_transaction(virtual_bank_transaction)
+    provider_response = credit_shop.post_virtual_bank_transaction(virtual_bank_transaction)
 
-    @shop_transaction.credit_amount_after = get_customer_account['amount']
+    @shop_transaction.credit_amount_after = credit_shop.get_customer_account['amount']
     @shop_transaction.save
     
     # lokale transaction aktualisieren
     if provider_response.nil?  # error
       @shop_transaction.state = Shop::Transaction::STATE_ERROR_NO_CONNECTION
       @shop_transaction.save
-      raise BadRequestError.new("Could not connect to Payment Provider") 
+      raise BadRequestError.new("Could not connect to Shop") 
     elsif provider_response['state'] == Shop::Transaction::STATE_COMMITTED  # payment successful
       ActiveRecord::Base.transaction do
         @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
