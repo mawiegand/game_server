@@ -979,14 +979,14 @@ class Settlement::Settlement < ActiveRecord::Base
         # propagate fields to character
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
-        propagate_unlock_changes_on_changed_possession_to_model old_owner, new_owner, empire_unlock_fields
+        propagate_unlock_changes_on_changed_possession_to_model(old_owner, new_owner, empire_unlock_fields)
         
         # propagate fields to alliance
         alliance_change = self.changes[:alliance_id]
         if !alliance_change.blank?
           old_ally = alliance_change[0].nil? ? nil : Fundamental::Alliance.find_by_id(alliance_change[0])
           new_ally = alliance_change[1].nil? ? nil : Fundamental::Alliance.find_by_id(alliance_change[1])
-          propagate_unlock_changes_on_changed_possession_to_model old_ally, new_ally, alliance_unlock_fields
+          propagate_unlock_changes_on_changed_possession_to_model(old_ally, new_ally, alliance_unlock_fields)
         else                      # use the standard method
           propagate_unlock_changes_to_model(self.alliance, alliance_unlock_fields)  unless self.alliance_id.nil? || self.alliance_id == 0
         end
@@ -1046,8 +1046,8 @@ class Settlement::Settlement < ActiveRecord::Base
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          propagate_change_of_attribute_to_resource_pool_on_changed_possession(resource_type[:symbolic_id].to_s() + '_production_rate')
-          propagate_change_of_attribute_to_resource_pool_on_changed_possession(resource_type[:symbolic_id].to_s() + '_capacity')
+          propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, resource_type[:symbolic_id].to_s() + '_production_rate')
+          propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, resource_type[:symbolic_id].to_s() + '_capacity')
         end
 
         old_owner.resource_pool.save   unless old_owner.nil?
