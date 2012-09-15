@@ -1,11 +1,11 @@
-require 'credit_shop/five_d_payment_provider'
+require 'credit_shop'
 
 class Shop::AccountsController < ApplicationController
   
   before_filter :authenticate
   
   def show
-    credit_shop = CreditShop::FiveDPaymentProvider.new(request)
+    credit_shop = CreditShop.credit_shop(request)
     
     # get user account from payment provider
     @shop_account = {credit_amount: credit_shop.get_customer_account['amount']}

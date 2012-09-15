@@ -74,7 +74,7 @@ class Shop::TransactionsController < ApplicationController
     
     logger.debug virtual_bank_transaction.inspect
     
-    credit_shop = CreditShop::FiveDPaymentProvider.new(request)
+    credit_shop = CreditShop.credit_shop(request)
     
     @shop_transaction.credit_amount_before = credit_shop.get_customer_account['amount']
     @shop_transaction.save
