@@ -21,18 +21,36 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   # updates resource amounts BUT does NOT save to database itself.
   def update_resource_amount
-    now = Time.now
-    lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
-    
-    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
-
+    self.update_resource_amount_atomically
+    self.reload
+  end    
+  
+  def update_resource_amount_atomically
+    set_clauses = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      self[base+'_amount'] = self[base+'_amount'] + self[base+'_production_rate'] * hours
+      set_clauses << "#{base + '_amount'} = #{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')}"
+    end  
+    set_clauses << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    set_clauses << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    Fundamental::ResourcePool.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
+  end
+  
+  def self.now_sql_fragment
+    Rails.env.development? ? 'datetime("now")' : 'NOW()'
+  end
+  
+  def self.elapsed_time_sql_fragment
+    if Rails.env.development?
+      return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::ResourcePool.now_sql_fragment }) - strftime('%s', COALESCE(productionUpdatedAt,  #{ Fundamental::ResourcePool.now_sql_fragment })))"
+    else
+      return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", #{ Fundamental::ResourcePool.now_sql_fragment })))'      
     end
-
-    self.productionUpdatedAt = now 
-  end    
+  end
+  
+  def self.produced_resource_amount_sql_fragment(resource_field)
+    "(#{ Fundamental::ResourcePool.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
+  end
   
   
   # returns true, iff the resource pool holds at least
@@ -150,6 +168,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       self.add_resources_transaction(modified_start_resources)
     end
   end
+  
   
   def check_consistency
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in resource pool #{self.id} of character #{self.character_id}.")
