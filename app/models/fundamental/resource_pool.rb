@@ -29,7 +29,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     set_clauses = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      set_clauses << "#{base + '_amount'} = #{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')}"
+      set_clauses << "#{base + '_amount'} = MIN (#{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')}, #{base+'_capacity'})"
     end  
     set_clauses << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
