@@ -394,7 +394,7 @@
       <Task></Task>
       <Task locale="de_DE">Trage die Holzkosten eines Ausbildungsgeländes auf Level 2 ein.</Task>
       <Description locale="de_DE">
-        <p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf barracks. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>
+        <p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf Ausbildungsgelände. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
