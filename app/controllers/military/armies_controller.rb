@@ -2,8 +2,8 @@ class Military::ArmiesController < ApplicationController
   layout 'military'
 
   before_filter :authenticate
-  before_filter :deny_api,        :except => [:show, :index]
-  before_filter :authorize_staff, :except => [:show, :index]
+  before_filter :deny_api,        :except => [:show, :index, :update]
+  before_filter :authorize_staff, :except => [:show, :index, :update]
 
   @@short_fields = ApplicationController.expand_fields(
     Military::Army.new,
