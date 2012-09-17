@@ -184,10 +184,9 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
     capacities = recalc_resource_capacities
     check_and_apply_capacities(capacities)
-
     
     if self.changed?
-      logger.info(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
+      logger.warn(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
       self.save
     else
       logger.info(">>> RESOURCE POOL OK.")
@@ -208,6 +207,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     def update_resources_on_production_rate_changes
       if self.changed?
         changed = false 
+        amount_changed = false
         weightedProductionRate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
@@ -215,9 +215,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
+          amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
         end
+        Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
         update_resource_in_ranking(weightedProductionRate) if changed
-        update_resource_amount if changed  
+        update_resource_amount_atomically                  if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
       end    
       true
     end
