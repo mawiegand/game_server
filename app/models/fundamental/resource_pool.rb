@@ -97,21 +97,40 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.save
   end
   
+  def self.modify_resource_sql_set_fragment(resource_symbol)
+    "#{ resource_symbol + '_amount' } = \
+      LEAST(COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+            #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') } + ?, \
+            CAST(#{ resource_symbol + '_capacity'} AS double precision))"
+  end
+
+  def self.modify_resource_sql_where_fragment(resource_symbol)
+    "(LEAST(COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+            #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+            CAST(#{ resource_symbol + '_capacity'} AS double precision)) - ? >= 0.0)"
+  end
+  
   # Adds the given resources to the resource pool.
   # Will save resources using an atomar operation.
   # this will NOT update the produced resources  
   def modify_resources_atomically(resources)
     return true if resources.empty? 
-    set_clause   = "updated_at = ?"
-    where_clause = "id = ?"
-    values       = []
+    set_clauses   = []
+    where_clauses = []
+    values        = []
     resources.each do |key, value|
-      name = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s() + '_amount'
-      set_clause   += ", #{name} = coalesce(#{name}, 0) + ?"
-      where_clause += " AND coalesce(#{name}, 0) + ? >= 0"
+      base     = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
+      
+      set_clause   += Fundamental::ResourcePool.modify_resource_sql_set_fragment(base)
+      where_clause += Fundamental::ResourcePool.modify_resource_sql_where_fragment(base)
+
       values.push(value)
     end     
-    rows = Fundamental::ResourcePool.update_all([set_clause, Time.now, *values ], [where_clause, self.id, *values])
+    set_clauses  << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    set_clauses  << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    where_clause << "(id = ?)"
+    
+    rows = Fundamental::ResourcePool.update_all([set_clause.join(', '), *values ], [where_clause.join(' AND '), self.id, *values])
     rows == 1
   end
 
