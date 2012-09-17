@@ -54,7 +54,7 @@ class Shop::TransactionsController < ApplicationController
     if offer_type === 'resource'
       offer = Shop::ResourceOffer.find(params[:shop_transaction][:offer_id])
     elsif offer_type === 'bonus'
-      raise BadRequestError.new('bonus offers temporarely disabled due to a bug')  # temporarely disabled
+      # raise BadRequestError.new('bonus offers temporarely disabled due to a bug')  # temporarely disabled
       offer = Shop::BonusOffer.find(params[:shop_transaction][:offer_id])
     else
       raise BadRequestError.new('invalid offer type')
