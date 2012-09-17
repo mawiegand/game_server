@@ -1014,7 +1014,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 5,
+                :amount => 15,
               },
 
             ],
@@ -1160,7 +1160,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf barracks. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
+            :de_DE => "<p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf Ausbildungsgelände. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
