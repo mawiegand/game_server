@@ -4,7 +4,8 @@ class Shop::TransactionsController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index, :create]
+  before_filter :deny_api,        :except => [:show, :index, :create]
+  before_filter :authorize_staff, :except => [:show, :index, :create]
   
   # GET /shop/transactions
   # GET /shop/transactions.json

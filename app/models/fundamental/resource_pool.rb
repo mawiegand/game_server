@@ -11,11 +11,11 @@ require 'exception/http_exceptions'
 #     changes will be spread to local models
 class Fundamental::ResourcePool < ActiveRecord::Base
   
-  belongs_to  :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
+  belongs_to   :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
-  before_save :update_resources_on_production_rate_changes
+  before_save  :update_resources_on_production_rate_changes
 
-  after_save  :propagate_bonus_changes
+ # after_commit :propagate_bonus_changes   # don't use an after save handler. need to 
   
   RESOURCE_ID_CASH = 3
   
@@ -33,6 +33,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
     self.productionUpdatedAt = now 
   end    
+  
   
   # returns true, iff the resource pool holds at least
   # resources resources (not considering the resources
@@ -108,28 +109,36 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this adds the speedup value to the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def add_effect_transaction(effect)
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
-    amount = effect[:bonus]
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
     
-    raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
-    raise BadRequestError.new("no amount for effect given") if amount.nil?
+      raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
     
-    self[attribute] += amount
-    self.save
+      self[attribute] += amount
+      propagate_bonus_changes
+      self.save!
+    end
   end
   
   # removes the given effect from the resource pool.
   # this subtracts the speedup value from the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def remove_effect_transaction(effect)
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
-    amount = effect[:bonus]
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
     
-    raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
-    raise BadRequestError.new("no amount for effect given") if amount.nil?
+      raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
     
-    self[attribute] -= amount
-    self.save    
+      self[attribute] -= amount
+      propagate_bonus_changes
+      self.save!
+    end    
   end
   
   def fill_with_start_resources_transaction(start_resource_modificator)
@@ -201,38 +210,43 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     # process, changes at settlements will propagate back to this model
     # setting the rates to new values (this is quite dangerous...)
     def propagate_bonus_changes
+      
+      ActiveRecord::Base.transaction(:requires_new => true) do
 
-      if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
-        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
+          GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
-          to_check = [{
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
-            },
-            {
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-            },
-            {
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-            }
-          ]
-          to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
+            to_check = [{
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
+              },
+              {
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+              },
+              {
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+              }
+            ]
+            to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
 
-          if !to_check.nil? && to_check.length > 0
-            self.owner.settlements.each do |settlement|
-              to_check.each do |bonus|
-                settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+            if !to_check.nil? && to_check.length > 0
+              self.owner.settlements.each do |settlement|
+                settlement.lock!
+                to_check.each do |bonus|
+                  settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+                end
+                settlement.save!
               end
-              settlement.save
             end
           end
         end
       end
       
       true
-    end
+    end 
+    
     
     def check_consistency_sometimes
       return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['resource_pool_recalc_probability']       # do the check only seldomly (determined by random event)  
