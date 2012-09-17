@@ -19,10 +19,16 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   RESOURCE_ID_CASH = 3
   
-  # updates resource amounts BUT does NOT save to database itself.
   def update_resource_amount
-    self.update_resource_amount_atomically
-    self.reload
+    now = Time.now
+    lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
+
+    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base = resource_type[:symbolic_id].to_s()
+      self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, base+'_capacity'].min
+    end
+    self.productionUpdatedAt = now  
   end    
   
   def update_resource_amount_atomically
