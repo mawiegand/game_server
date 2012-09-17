@@ -1,4 +1,4 @@
-require 'credit_shop/five_d_payment_provider'
+require 'credit_shop'
 
 class Shop::TransactionsController < ApplicationController
   layout 'shop'
@@ -54,7 +54,6 @@ class Shop::TransactionsController < ApplicationController
     if offer_type === 'resource'
       offer = Shop::ResourceOffer.find(params[:shop_transaction][:offer_id])
     elsif offer_type === 'bonus'
-      # raise BadRequestError.new('bonus offers temporarely disabled due to a bug')  # temporarely disabled
       offer = Shop::BonusOffer.find(params[:shop_transaction][:offer_id])
     else
       raise BadRequestError.new('invalid offer type')
@@ -74,36 +73,41 @@ class Shop::TransactionsController < ApplicationController
       booking_type: Shop::Transaction::TYPE_DEBIT,
     }
     
-    logger.debug virtual_bank_transaction.inspect
-    
     credit_shop = CreditShop.credit_shop(request)
-    
-    @shop_transaction.credit_amount_before = credit_shop.get_customer_account['amount']
+    account_response = credit_shop.get_customer_account
+    raise BadRequestError.new("Could not connect to Shop to get account balance") unless (account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
+    credit_amount = account_response[:amount]
+     
+    @shop_transaction.credit_amount_before = credit_amount
     @shop_transaction.save
     
-    provider_response = credit_shop.post_virtual_bank_transaction(virtual_bank_transaction)
+    if (true || credit_amount >= offer.price)
+      logger.debug '---> genug Kohle da, es wird gebucht'
+      transaction_response = credit_shop.post_virtual_bank_transaction(virtual_bank_transaction)
+      raise BadRequestError.new("Shop could not complete Transaction") unless (transaction_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
+      logger.debug '---> ' + transaction_response.inspect
+    else
+      logger.debug '---> keine Kohle da!'
+    end
 
-    @shop_transaction.credit_amount_after = credit_shop.get_customer_account['amount']
+    account_response = credit_shop.get_customer_account
+    @shop_transaction.credit_amount_after =  account_response[:amount] unless (account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
     @shop_transaction.save
     
     # lokale transaction aktualisieren
-    if provider_response.nil?  # error
-      @shop_transaction.state = Shop::Transaction::STATE_ERROR_NO_CONNECTION
+    if transaction_response[:response_code] === Shop::Transaction::API_RESPONSE_OK
+      @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
+      @shop_transaction.credit_amount_booked = offer.price
       @shop_transaction.save
-      raise BadRequestError.new("Could not connect to Shop") 
-    elsif provider_response['state'] == Shop::Transaction::STATE_COMMITTED  # payment successful
+
       ActiveRecord::Base.transaction do
-        @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
-        @shop_transaction.credit_amount_booked = offer.price
-        @shop_transaction.save
-    
         if offer.credit_to(current_character)
           @shop_transaction.state = Shop::Transaction::STATE_BOOKED
           @shop_transaction.save
         else
           @shop_transaction.state = Shop::Transaction::STATE_ERROR_NOT_BOOKED
           @shop_transaction.save     
-          raise BadRequestError.new("Could not book toad amount") 
+          raise BadRequestError.new("Could not book shop offer") 
         end
       end
 

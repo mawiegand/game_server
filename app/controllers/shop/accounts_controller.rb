@@ -6,9 +6,12 @@ class Shop::AccountsController < ApplicationController
   
   def show
     credit_shop = CreditShop.credit_shop(request)
+    account_response = credit_shop.get_customer_account
+    logger.debug '---> account_response: ' + account_response.inspect
+    raise BadRequestError.new("Could not connect to Shop") unless (account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
+    @shop_account = {credit_amount: account_response[:response_data][:amount]}
     
-    # get user account from payment provider
-    @shop_account = {credit_amount: credit_shop.get_customer_account['amount']}
+    logger.debug '---> @shop_account' + @shop_account.inspect
 
     respond_to do |format|
       format.html # show.html.erb
