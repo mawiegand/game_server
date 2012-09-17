@@ -11,28 +11,47 @@ require 'exception/http_exceptions'
 #     changes will be spread to local models
 class Fundamental::ResourcePool < ActiveRecord::Base
   
-  belongs_to  :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
+  belongs_to   :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
-  before_save :update_resources_on_production_rate_changes
+  before_save  :update_resources_on_production_rate_changes
 
-  after_save  :propagate_bonus_changes
+ # after_commit :propagate_bonus_changes   # don't use an after save handler. need to 
   
   RESOURCE_ID_CASH = 3
   
   # updates resource amounts BUT does NOT save to database itself.
   def update_resource_amount
-    now = Time.now
-    lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
-    
-    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
-
+    self.update_resource_amount_atomically
+    self.reload
+  end    
+  
+  def update_resource_amount_atomically
+    set_clauses = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      self[base+'_amount'] = self[base+'_amount'] + self[base+'_production_rate'] * hours
+      set_clauses << "#{base + '_amount'} = #{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')}"
+    end  
+    set_clauses << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    set_clauses << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    Fundamental::ResourcePool.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
+  end
+  
+  def self.now_sql_fragment
+    Rails.env.development? ? 'datetime("now")' : 'NOW()'
+  end
+  
+  def self.elapsed_time_sql_fragment
+    if Rails.env.development?
+      return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::ResourcePool.now_sql_fragment }) - strftime('%s', COALESCE(productionUpdatedAt,  #{ Fundamental::ResourcePool.now_sql_fragment })))"
+    else
+      return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", ' + Fundamental::ResourcePool.now_sql_fragment + ')))'      
     end
-
-    self.productionUpdatedAt = now 
-  end    
+  end
+  
+  def self.produced_resource_amount_sql_fragment(resource_field)
+    "(#{ Fundamental::ResourcePool.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
+  end
+  
   
   # returns true, iff the resource pool holds at least
   # resources resources (not considering the resources
@@ -108,28 +127,36 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this adds the speedup value to the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def add_effect_transaction(effect)
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
-    amount = effect[:bonus]
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
     
-    raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
-    raise BadRequestError.new("no amount for effect given") if amount.nil?
+      raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
     
-    self[attribute] += amount
-    self.save
+      self[attribute] += amount
+      propagate_bonus_changes
+      self.save!
+    end
   end
   
   # removes the given effect from the resource pool.
   # this subtracts the speedup value from the appropriate global effects
   # value and updates the production rates through an after_save handler.   
   def remove_effect_transaction(effect)
-    attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
-    amount = effect[:bonus]
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules().resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
     
-    raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
-    raise BadRequestError.new("no amount for effect given") if amount.nil?
+      raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
     
-    self[attribute] -= amount
-    self.save    
+      self[attribute] -= amount
+      propagate_bonus_changes
+      self.save!
+    end    
   end
   
   def fill_with_start_resources_transaction(start_resource_modificator)
@@ -142,11 +169,16 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     end
   end
   
+  
   def check_consistency
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in resource pool #{self.id} of character #{self.character_id}.")
 
     productions = recalc_resource_productions
     check_and_apply_productions(productions)
+
+    capacities = recalc_resource_capacities
+    check_and_apply_capacities(capacities)
+
     
     if self.changed?
       logger.info(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
@@ -197,38 +229,43 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     # process, changes at settlements will propagate back to this model
     # setting the rates to new values (this is quite dangerous...)
     def propagate_bonus_changes
+      
+      ActiveRecord::Base.transaction(:requires_new => true) do
 
-      if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
-        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
+          GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
-          to_check = [{
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
-            },
-            {
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-            },
-            {
-              attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-              attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-            }
-          ]
-          to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
+            to_check = [{
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
+              },
+              {
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+              },
+              {
+                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+              }
+            ]
+            to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
 
-          if !to_check.nil? && to_check.length > 0
-            self.owner.settlements.each do |settlement|
-              to_check.each do |bonus|
-                settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+            if !to_check.nil? && to_check.length > 0
+              self.owner.settlements.each do |settlement|
+                settlement.lock!
+                to_check.each do |bonus|
+                  settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+                end
+                settlement.save!
               end
-              settlement.save
             end
           end
         end
       end
       
       true
-    end
+    end 
+    
     
     def check_consistency_sometimes
       return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['resource_pool_recalc_probability']       # do the check only seldomly (determined by random event)  
@@ -256,6 +293,31 @@ class Fundamental::ResourcePool < ActiveRecord::Base
         if (present - recalc).abs > 0.000001
           logger.warn(">>> PRODUCTION RATE RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
           self[base+'_production_rate'] = recalc
+        end
+      end    
+    end
+    
+    def recalc_resource_capacities
+      resource_types = GameRules::Rules.the_rules().resource_types
+      capacities     = Array.new(resource_types.count, 0.0)
+      self.owner.settlements.each do |settlement|
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+          field = resource_type[:symbolic_id].to_s + '_capacity'
+          capacities[resource_type[:id]] += settlement[field] || 0.0
+        end
+      end
+      return capacities
+    end
+    
+    def check_and_apply_capacities(capacities)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base+'_capacity']
+        recalc  = capacities[resource_type[:id]]
+        
+        if (present - recalc).abs > 0.000001
+          logger.warn(">>> RESOURCE CAPACITY RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_capacity'] = recalc
         end
       end    
     end

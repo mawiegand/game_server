@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911164741) do
+ActiveRecord::Schema.define(:version => 20120914122741) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -107,6 +107,12 @@ ActiveRecord::Schema.define(:version => 20120911164741) do
     t.integer  "month_num_active",                   :default => 0,   :null => false
     t.integer  "month_num_long_term_active",         :default => 0,   :null => false
     t.integer  "month_num_paying",                   :default => 0,   :null => false
+    t.integer  "day_num_registered",                 :default => 0,   :null => false
+    t.integer  "day_num_logged_in_once",             :default => 0,   :null => false
+    t.integer  "day_num_logged_in_two_days",         :default => 0,   :null => false
+    t.integer  "day_num_active",                     :default => 0,   :null => false
+    t.integer  "day_num_long_term_active",           :default => 0,   :null => false
+    t.integer  "day_num_paying",                     :default => 0,   :null => false
   end
 
   create_table "backend_users", :force => true do |t|

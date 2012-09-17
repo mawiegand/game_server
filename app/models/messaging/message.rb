@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # A message is send from a sender to a receiver. Messages with multiple 
 # will be stores in as many copies in the system (To Be Reconsidered later)
 class Messaging::Message < ActiveRecord::Base
@@ -13,17 +15,18 @@ class Messaging::Message < ActiveRecord::Base
   after_create :deliver_message
 
   # constants for the message.type_id
-  USER_MESSAGE_TYPE_ID = 0
-  BATTLE_REPORT_TYPE_ID = 1
-  BATTLE_STARTED_TYPE_ID = 2
-  ARMY_LOST_TYPE_ID = 3
-  ARMY_RETREATED_TYPE_ID = 4
+  USER_MESSAGE_TYPE_ID          = 0
+  BATTLE_REPORT_TYPE_ID         = 1
+  BATTLE_STARTED_TYPE_ID        = 2
+  ARMY_LOST_TYPE_ID             = 3
+  ARMY_RETREATED_TYPE_ID        = 4
   OVERRUN_WINNER_REPORT_TYPE_ID = 5
-  OVERRUN_LOSER_REPORT_TYPE_ID = 6
-  FORTESS_WON_REPORT_TYPE_ID = 7
-  FORTESS_LOST_REPORT_TYPE_ID = 8
-  WELCOME_MESSAGE_TYPE_ID = 9
-  TUTORIAL_MESSAGE_TYPE_ID = 10
+  OVERRUN_LOSER_REPORT_TYPE_ID  = 6
+  FORTESS_WON_REPORT_TYPE_ID    = 7
+  FORTESS_LOST_REPORT_TYPE_ID   = 8
+  WELCOME_MESSAGE_TYPE_ID       = 9
+  TUTORIAL_MESSAGE_TYPE_ID      = 10
+  TRADE_MESSAGE_TYPE_ID         = 11
 
   # creates inbox and outbox entries for the message
   def deliver_message
@@ -92,6 +95,74 @@ class Messaging::Message < ActiveRecord::Base
     message.add_overrun_winner_message_body(winner, loser)
     message.save
   end
+  
+  def self.generate_trade_recipient_message(action)
+    return if action.nil?
+    message = Messaging::Message.new({
+      recipient_id: action.recipient_id,
+      type_id:   TRADE_MESSAGE_TYPE_ID,
+      send_at:   DateTime.now,
+    })
+
+    text = "<h2>Lieferung aus #{action.starting_settlement.name}.</h2>"
+    text += "<p>#{action.num_carts} Handelskarren aus #{ action.starting_settlement.name } (#{action.starting_settlement.owner.name}) #{ (action.num_carts == 1 ? 'ist' : 'sind') } soeben angekommen. Es wurde folgendes ausgeladen:</p>"
+    text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
+    message.subject = "Lieferung aus #{action.starting_settlement.name}."
+    message.body = text
+    
+    message
+  end
+
+  def self.generate_trade_sender_message(action)
+    return if action.nil?
+    message = Messaging::Message.new({
+      recipient_id: action.sender_id,
+      type_id:   TRADE_MESSAGE_TYPE_ID,
+      send_at:   DateTime.now,
+    })
+
+    text = "<h2>Ankunft von #{action.num_carts == 1 ? "einem" : action.num_carts} Handelskarren in #{action.target_settlement.name}.</h2>"
+    text += "<p>Deine Handelskarren sind soeben an ihrem Ziel #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>"
+    text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
+    message.subject = "Ankunft von #{action.num_carts} Handelskarren"
+    message.body = text
+    
+    message
+  end
+  
+  def self.generate_trade_return_message(action)
+    return if action.nil?
+    message = Messaging::Message.new({
+      recipient_id: action.sender_id,
+      type_id:   TRADE_MESSAGE_TYPE_ID,
+      send_at:   DateTime.now,
+    })
+
+    text = "<h2>Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : " beladenen ") + " Handelskarren nach #{action.starting_settlement.name}.</h2>"
+    if action.empty?
+      text += "<p>Deine Handelskarren sind leer von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen.</p>"
+    else 
+      text += "<p>Deine Handelskarren sind von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>"
+      text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
+    end
+    message.subject = "Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : "beladenen") + " Handelskarren"
+    message.body = text
+    
+    message
+  end
+
+  def self.resource_amounts_to_html(amounts, include_all=true, spacer="<br/>")
+    text = ""
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      field_name = resource_type[:symbolic_id].to_s() + '_amount'
+      if !amounts[field_name].blank? && (include_all || amounts[field_name] != 0)
+        text += "<span class=\"resource-icon #{ resource_type[:symbolic_id].to_s }\"  title=\"#{ resource_type[:name][:de_DE] }\">&nbsp;</span> #{ amounts[field_name] || 0 }#{spacer}"
+      end
+    end   
+    text     
+  end
+
+
     
   def add_overrun_winner_message_subject(winner, loser)
     self.subject = "Overrun army at " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) 
