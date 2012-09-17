@@ -44,7 +44,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     if Rails.env.development?
       return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::ResourcePool.now_sql_fragment }) - strftime('%s', COALESCE(productionUpdatedAt,  #{ Fundamental::ResourcePool.now_sql_fragment })))"
     else
-      return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", #{ Fundamental::ResourcePool.now_sql_fragment })))'      
+      return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", ' + Fundamental::ResourcePool.now_sql_fragment + ')))'      
     end
   end
   
