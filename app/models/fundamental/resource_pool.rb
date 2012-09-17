@@ -26,7 +26,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, (base+'_capacity').to_f].min
+      self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
     end
     self.productionUpdatedAt = now  
   end    
