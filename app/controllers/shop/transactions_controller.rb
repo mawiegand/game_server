@@ -71,6 +71,7 @@ class Shop::TransactionsController < ApplicationController
       customer_identifier: current_character.identifier, # TODO: send access_token instead (to prove, that user has logged in to game server)
       credit_amount_booked: offer.price,
       booking_type: Shop::Transaction::TYPE_DEBIT,
+      transaction_id: @shop_transaction.id,
     }
     
     credit_shop = CreditShop.credit_shop(request)

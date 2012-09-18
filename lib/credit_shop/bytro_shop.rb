@@ -63,8 +63,8 @@ module CreditShop
         method:  'bytro',
         offerID: '54',
         scaleFactor: (-virtual_bank_transaction[:credit_amount_booked]).to_s,
-        tstamp: Time.now.to_i.to_s, # TODO Problem of concurrent Transactions. Bytro Shop recognizes two Transactions with same userID, offerID and tsamp 
-                                    #      as the same transaction. It doesn't book any credits, but returns ok. 
+        tstamp: Time.now.to_i.to_s,
+        comment: Base64.encode64(virtual_bank_transaction[:transaction_id].to_s).gsub(/[\n\r ]/,'')  # Hack!
       }
       
       query = {
