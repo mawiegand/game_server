@@ -38,6 +38,44 @@ if (@only.length == 0 || @only.include?(:version)) && !@rules.version.nil? %>
   <hr />
 <% end %>
 
+<% if (@only.length == 0 || @only.include?(:character_ranks)) && !@rules.resource_types.nil? %>
+  <h1>Character Ranks</h1>
+  
+  <h2>Mundane Ranks</h2>
+  
+  <p><b>Skillpoints per Rank:</b> <%= @rules.character_ranks[:skill_points_per_mundane_rank] %></p> 
+  
+  <% @rules.character_ranks[:mundane].each do |rank| %>
+    <h3><%= rank[:name][:en_US] %></h3>
+    <table>
+      <% rank.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  
+  <h2>Sacred Ranks</h2>
+
+  <p><b>Skillpoints per Rank:</b> <%= @rules.character_ranks[:skill_points_per_sacred_rank] %></p> 
+  
+  
+  <% @rules.character_ranks[:sacred].each do |rank| %>
+    <h3><%= rank[:name][:en_US] %></h3>
+    <table>
+      <% rank.each do |key, value| %>
+        <tr>
+          <td><b><%= key %></b></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  <hr />
+<% end %>
+
 
 <% if (@only.length == 0 || @only.include?(:queue_types)) && !@rules.queue_types.nil? %>
   <h1>Queue Types</h1>
