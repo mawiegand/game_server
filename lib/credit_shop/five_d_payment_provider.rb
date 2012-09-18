@@ -54,10 +54,7 @@ module CreditShop
       # http-post query to path on payment provider an return the parsed response  
       def payment_post(path, query = {})
         add_auth_token(query)
-        
-        # TODO change and test ':query' to ':body', otherwise all params will be transmitted vie the get query string
-        
-        HTTParty.post(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :query => query, :headers => header)
+        HTTParty.post(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :body => query, :headers => header)
       end
   
       # http-get query to path on payment provider an return the parsed response      
