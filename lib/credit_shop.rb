@@ -4,8 +4,8 @@ require 'credit_shop/bytro_shop'
 module CreditShop
   
   def self.credit_shop(request)
-    # CreditShop::FiveDPaymentProvider.new(request)
-    CreditShop::BytroShop.new
+    CreditShop::FiveDPaymentProvider.new(request)
+    # CreditShop::BytroShop.new(request)
   end
   
 end

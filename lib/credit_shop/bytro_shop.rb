@@ -5,15 +5,16 @@ module CreditShop
   
   class BytroShop 
   
+    include Auth::SessionsHelper
+    
     URL_BASE = 'http://217.86.148.136/cl-5dshop/index.php'
     SHARED_SECRET = 'jfwjhgflhg254tp9824ghqlkgjh25pg8hgljkgh5896ogihdgjh24uihg9p8zgagjh2p895ghfsjgh312g09hjdfghj'
     KEY = 'wackadoo'
-    TIMESTAMP = '1234567890'
     
     # get account of current user
     def get_customer_account
       data = {
-        userID: '63',
+        userID: request_access_token.identifier,
       }
       
       query = {
@@ -25,6 +26,8 @@ module CreditShop
       
       query = add_hash(query)
       
+      Rails.logger.debug '----------------------------------------------------------'
+      Rails.logger.debug '----> ' + request_access_token.identifier
       Rails.logger.debug '----------------------------------------------------------'
       Rails.logger.debug data.inspect
       Rails.logger.debug data.to_param
@@ -50,16 +53,18 @@ module CreditShop
       end
       
       # if any error occured  
-      {response_code: Shop::Transaction::API_STATUS_ERROR}
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
     # post virtual_bank_transaction to bytro shop for charging containing credit amount 
     def post_virtual_bank_transaction(virtual_bank_transaction)
       data = {
-        userID:  '63',
+        userID: request_access_token.identifier,
         method:  'bytro',
         offerID: '54',
-        scaleFactor: '-3.0',
+        scaleFactor: (-virtual_bank_transaction[:credit_amount_booked]).to_s,
+        tstamp: Time.now.to_i.to_s, # TODO Problem of concurrent Transactions. Bytro Shop recognizes two Transactions with same userID, offerID and tsamp 
+                                    #      as the same transaction. It doesn't book any credits, but returns ok. 
       }
       
       query = {
@@ -92,19 +97,25 @@ module CreditShop
               amount: api_response['result']['amount'],
             }
           }
+        elsif (api_response['resultCode'] === -1)
+          return {response_code: Shop::Transaction::API_RESPONSE_USER_NOT_FOUND}
         end
       end
       
       # if any error occured  
-      # {response_code: Shop::Transaction::API_STATUS_ERROR}
-      {
-        response_code: Shop::Transaction::API_RESPONSE_OK,
-        response_data: {
-          amount: 11,
-        }
-      }
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
+    # request object needed for SessionHelper
+    def initialize(request_object)
+      @request = request_object
+    end
+    
+    # request object needed for SessionHelper
+    def request
+      @request
+    end
+
     protected
     
       def encoded_data(data)
@@ -117,13 +128,11 @@ module CreditShop
         Rails.logger.debug '2 ' + base64_encoded_data
         b64 = base64_encoded_data.gsub(/[\n\r ]/,'')
         Rails.logger.debug '3 ' + b64
-        out = CGI.escape(b64)
-        Rails.logger.debug '4 ' + out
-        out
+        b64
       end
       
       def add_hash(query)
-        hash_base = query[:key] + query[:action] + query[:data] + SHARED_SECRET
+        hash_base = query[:key] + query[:action] + CGI.escape(query[:data]) + SHARED_SECRET
         Rails.logger.debug '5 ' + hash_base.inspect
         query[:hash] = Digest::SHA1.hexdigest(hash_base)
         query

@@ -16,12 +16,37 @@ module CreditShop
 
     # get account of current user from payment provider
     def get_customer_account
-      payment_get('/virtual_bank/accounts/self.json')
+      http_response = payment_get('/virtual_bank/accounts/self.json')
+      
+      if (http_response.code === 200)
+        return {
+          response_code: Shop::Transaction::API_RESPONSE_OK,
+          response_data: {
+            amount: http_response.parsed_response['amount'],
+          }
+        }
+      else
+        return {response_code: Shop::Transaction::API_RESPONSE_ERROR}
+      end
     end
     
     # post virtual_bank_transaction to payment provider for charging containing credit amount 
     def post_virtual_bank_transaction(virtual_bank_transaction)
-      payment_post('/virtual_bank/transactions.json', {:virtual_bank_transaction => virtual_bank_transaction})
+      http_response = payment_post('/virtual_bank/transactions.json', {:virtual_bank_transaction => virtual_bank_transaction})
+
+      if (http_response.code === 201)
+        api_response = http_response.parsed_response
+        if (api_response['state'] === Shop::Transaction::STATE_COMMITTED)
+          return {
+            response_code: Shop::Transaction::API_RESPONSE_OK,
+            response_data: {
+              amount: api_response['credit_amount_after'],
+            }
+          }
+        end
+      end
+      
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
     protected
@@ -32,13 +57,13 @@ module CreditShop
         
         # TODO change and test ':query' to ':body', otherwise all params will be transmitted vie the get query string
         
-        HTTParty.post(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :query => query, :headers => header).parsed_response
+        HTTParty.post(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :query => query, :headers => header)
       end
   
       # http-get query to path on payment provider an return the parsed response      
       def payment_get(path, query = {})
         add_auth_token(query)
-        HTTParty.get(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :query => query, :headers => header).parsed_response
+        HTTParty.get(GAME_SERVER_CONFIG['payment_provider_base_url'] + path, :query => query, :headers => header)
       end
       
       # return auth header for request to payment provider

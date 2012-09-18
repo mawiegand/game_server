@@ -7,8 +7,8 @@ class Shop::AccountsController < ApplicationController
   def show
     credit_shop = CreditShop.credit_shop(request)
     account_response = credit_shop.get_customer_account
-    logger.debug '---> account_response: ' + account_response.inspect
-    raise BadRequestError.new("Could not connect to Shop") unless (account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
+    raise BadRequestError.new("Could not connect to Shop") if (account_response[:response_code] === Shop::Transaction::API_RESPONSE_ERROR)
+    raise NotFoundError.new("User not found in Shop") if (account_response[:response_code] === Shop::Transaction::API_RESPONSE_USER_NOT_FOUND)
     @shop_account = {credit_amount: account_response[:response_data][:amount]}
     
     logger.debug '---> @shop_account' + @shop_account.inspect

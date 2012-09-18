@@ -27,4 +27,5 @@ class Shop::Transaction < ActiveRecord::Base
   
   API_RESPONSE_OK = 0
   API_RESPONSE_ERROR = 1
+  API_RESPONSE_USER_NOT_FOUND = 2
 end
