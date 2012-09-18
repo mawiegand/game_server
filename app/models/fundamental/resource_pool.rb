@@ -19,21 +19,31 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   RESOURCE_ID_CASH = 3
   
-  # updates resource amounts BUT does NOT save to database itself.
   def update_resource_amount
-    self.update_resource_amount_atomically
-    self.reload
+    now = Time.now
+    lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
+
+    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base = resource_type[:symbolic_id].to_s()
+      self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
+    end
+    self.productionUpdatedAt = now  
   end    
   
   def update_resource_amount_atomically
     set_clauses = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      set_clauses << "#{base + '_amount'} = #{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')}"
+      set_clauses << "#{base + '_amount'} = #{ Fundamental::ResourcePool.least_sql_fragment }(#{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')},  CAST(#{base+'_capacity'} AS double precision))"
     end  
     set_clauses << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     Fundamental::ResourcePool.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
+  end
+  
+  def self.least_sql_fragment
+    Rails.env.development? ? 'MIN' : 'LEAST'
   end
   
   def self.now_sql_fragment
@@ -58,9 +68,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # produced sinc the last update).
   def have_at_least_resources(resources) 
     sufficient = true
+    now = Time.now
+    lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
+    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
+
     resources.each do |key, value|
-      logger.debug "EVAL: #{value} , #{self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount']}"
-      sufficient = false if self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] < value
+      base = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
+      logger.debug "EVAL: #{value} , #{self[base+'_amount']}"
+      present_amount = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
+      sufficient = false if present_amount < value
     end
     return sufficient
   end
@@ -70,13 +86,13 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # transaction nor an atomar operation. That'll change!
   # this will NOT update the produced resources  
   def remove_resources_transaction(resources)
-    return true if resources.empty? 
-    update_resource_amount if !have_at_least_resources(resources) # not enough? -> update production     
+    return true            if resources.empty? 
     return false           if !have_at_least_resources(resources) # still not enough? -> return false
+    mresources = {}
     resources.each do |key, value|
-      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()+'_amount'] -= value
-    end     
-    self.save
+      mresources[key] = -value
+    end
+    self.modify_resources_atomically(mresources)
   end
   
   # Adds the given resources to the resource pool.
@@ -84,11 +100,23 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # transaction nor an atomar operation. That'll change!
   # this will NOT update the produced resources 
   def add_resources_transaction(resources)
-    return if resources.empty? 
-    resources.each do |key, value|
-      self[GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s() + '_amount'] += value
-    end     
-    self.save
+    return true if resources.empty? 
+    self.modify_resources_atomically(resources)
+  end
+  
+  def self.modify_resource_sql_set_fragment(resource_symbol)
+    "#{ resource_symbol + '_amount' } = \
+      #{ Fundamental::ResourcePool.least_sql_fragment }(\
+        COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+        #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') } + ?, \
+        CAST(#{ resource_symbol + '_capacity'} AS double precision))"
+  end
+
+  def self.modify_resource_sql_where_fragment(resource_symbol)
+    "(#{ Fundamental::ResourcePool.least_sql_fragment }(\
+        COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+        #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+        CAST(#{ resource_symbol + '_capacity'} AS double precision)) + ? >= 0.0)"
   end
   
   # Adds the given resources to the resource pool.
@@ -96,16 +124,22 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # this will NOT update the produced resources  
   def modify_resources_atomically(resources)
     return true if resources.empty? 
-    set_clause   = "updated_at = ?"
-    where_clause = "id = ?"
-    values       = []
+    set_clauses   = []
+    where_clauses = []
+    values        = []
     resources.each do |key, value|
-      name = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s() + '_amount'
-      set_clause   += ", #{name} = coalesce(#{name}, 0) + ?"
-      where_clause += " AND coalesce(#{name}, 0) + ? >= 0"
+      base     = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
+      
+      set_clauses   << Fundamental::ResourcePool.modify_resource_sql_set_fragment(base)
+      where_clauses << Fundamental::ResourcePool.modify_resource_sql_where_fragment(base)
+
       values.push(value)
     end     
-    rows = Fundamental::ResourcePool.update_all([set_clause, Time.now, *values ], [where_clause, self.id, *values])
+    set_clauses   << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    set_clauses   << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
+    where_clauses << "(id = ?)"
+    
+    rows = Fundamental::ResourcePool.update_all([set_clauses.join(', '), *values ], [where_clauses.join(' AND '), *values, self.id])
     rows == 1
   end
 
@@ -116,8 +150,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   # reload it manually. 
   def add_resource_atomically(resource_id, amount)
     if !amount.nil? && amount != 0
-      db_resource_name = GameRules::Rules.the_rules().resource_types[resource_id][:symbolic_id].to_s() + '_amount'
-      Fundamental::ResourcePool.update_all(["#{db_resource_name} = coalesce(#{db_resource_name}, 0) + ?, updated_at = ?", amount, Time.now], ["character_id = ? and coalesce(#{db_resource_name}, 0) + ? >= 0", owner.id, amount])
+      self.modify_resources_atomically({resource_id => amount})
     else
       false
     end
@@ -178,10 +211,9 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
     capacities = recalc_resource_capacities
     check_and_apply_capacities(capacities)
-
     
     if self.changed?
-      logger.info(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
+      logger.warn(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
       self.save
     else
       logger.info(">>> RESOURCE POOL OK.")
@@ -202,6 +234,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     def update_resources_on_production_rate_changes
       if self.changed?
         changed = false 
+        amount_changed = false
         weightedProductionRate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
@@ -209,9 +242,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
+          amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
         end
+        Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
         update_resource_in_ranking(weightedProductionRate) if changed
-        update_resource_amount if changed  
+        update_resource_amount_atomically                  if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
       end    
       true
     end
