@@ -36,14 +36,14 @@ class Training::Job < ActiveRecord::Base
     
     # get requirements from rules
     rules = GameRules::Rules.the_rules
-    requirements = rules.unit_types[self.unit_id][:requirements]
+    requirementGroups = rules.unit_types[self.unit_id][:requirementGroups]
     
     return false  if !rules.unit_types[self.unit_id][:trainable]
     
-    logger.debug "REQ #{requirements}, TRAINABLE #{ rules.unit_types[self.unit_id][:trainable] }."
+    logger.debug "REQ #{requirementGroups}, TRAINABLE #{ rules.unit_types[self.unit_id][:trainable] }."
     
     # test if requirements are met
-    return false if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement)
+    return false if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, owner, settlement)
     
     logger.debug "UNLOCK COUNT #{settlement.settlement_unlock_garrison_count}"
     

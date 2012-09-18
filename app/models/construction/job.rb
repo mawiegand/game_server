@@ -56,12 +56,12 @@ class Construction::Job < ActiveRecord::Base
     
     # get requirements from rules
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
-    requirements = building_type[:requirements]
+    requirementGroups = building_type[:requirementGroups]
     
     unless self.job_type == TYPE_DESTROY
       # test if requirements are met
-      logger.debug requirements.inspect
-      raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement, slot)
+      logger.debug requirementGroups.inspect
+      raise ForbiddenError.new('Requirements not met.')  if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, owner, settlement, slot)
     else
       # test if building types match
       raise ForbiddenError.new('Wrong building type.') unless slot.building_id == self.building_id

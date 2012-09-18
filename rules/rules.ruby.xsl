@@ -295,8 +295,19 @@ end
           },
 </xsl:if>
 <xsl:if test="Requirement">
-          :requirements=> [
-            <xsl:apply-templates select="Requirement" />
+          :requirementGroups=> [
+            [
+              <xsl:apply-templates select="Requirement" />
+            ]
+          ],          
+</xsl:if>
+<xsl:if test="RequirementGroup">
+          :requirementGroups=> [
+<xsl:for-each select="RequirementGroup">
+            [
+              <xsl:apply-templates select="Requirement" />
+            ],
+</xsl:for-each>
           ],          
 </xsl:if>
 <xsl:if test="count(Encumbrance)">
@@ -406,8 +417,19 @@ end
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
 <xsl:if test="Requirement">
-          :requirements=> [
-            <xsl:apply-templates select="Requirement" />
+          :requirementGroups=> [
+            [
+              <xsl:apply-templates select="Requirement" />
+            ]
+          ],          
+</xsl:if>
+<xsl:if test="RequirementGroup">
+          :requirementGroups=> [
+<xsl:for-each select="RequirementGroup">
+            [
+              <xsl:apply-templates select="Requirement" />
+            ],
+</xsl:for-each>
           ],          
 </xsl:if>
 <xsl:if test="Cost">

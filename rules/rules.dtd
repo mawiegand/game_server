@@ -131,7 +131,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, Requirement*, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
+<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, (Requirement* | RequirementGroup*)?, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -143,7 +143,7 @@
 >
 
 <!--Science-->
-<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, Requirement*)>
+<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement* | RequirementGroup*)?)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Units-->
@@ -151,7 +151,7 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*)>
+<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -236,6 +236,9 @@
 <!--Requirement-->
 <!ELEMENT Requirement EMPTY>
 <!ATTLIST Requirement id IDREF #REQUIRED min_level CDATA "0" max_level CDATA #IMPLIED>
+
+<!--RequirementGroup-->
+<!ELEMENT RequirementGroup (Requirement*)>
 
 <!--Encumbrance-->
 <!ELEMENT Encumbrance EMPTY>

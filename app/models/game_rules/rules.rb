@@ -601,8 +601,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_barracks',
               :id => 7,
@@ -612,6 +613,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -740,8 +742,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_firing_range',
               :id => 12,
@@ -751,6 +754,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -875,8 +879,23 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
             {
               :symbolic_id => 'building_stud',
               :id => 13,
@@ -885,6 +904,17 @@ class GameRules::Rules
               :min_level => 11,
 
             },
+
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
 
           ],          
 
@@ -1006,8 +1036,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_workshop',
               :id => 0,
@@ -1017,6 +1048,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -1082,8 +1114,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_stud',
               :id => 13,
@@ -1093,6 +1126,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -1322,8 +1356,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1333,6 +1368,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1411,8 +1447,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1422,6 +1459,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1500,8 +1538,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1511,6 +1550,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1589,8 +1629,9 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1602,6 +1643,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1712,8 +1754,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1723,6 +1766,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1804,8 +1848,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1815,6 +1860,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1883,8 +1929,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1894,6 +1941,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1971,8 +2019,9 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1993,6 +2042,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2054,8 +2104,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2065,6 +2116,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2133,8 +2185,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2144,6 +2197,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2212,8 +2266,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2223,6 +2278,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2292,8 +2348,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2303,6 +2360,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2380,8 +2438,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2391,6 +2450,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2469,8 +2529,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2480,6 +2541,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
