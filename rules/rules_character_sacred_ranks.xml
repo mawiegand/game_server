@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<SacredRanks skillPointsPerRank="5">
+  <SacredRank>
+    <Name lang="de_DE">Unerkannt</Name>
+    <Name lang="en_US">Unrecognized</Name>
+  </SacredRank>
+  <SacredRank>
+    <Name lang="de_DE">Weitgehend ignoriert</Name>
+    <Name lang="en_US">Almost always ignored</Name>
+    <Cost     id="resource_favor" round="true">1000</Cost> 
+    <ItemCost id="item_mud_medal" round="true">2</ItemCost> 
+  </SacredRank>
+</SacredRanks>

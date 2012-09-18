@@ -61,8 +61,8 @@
           
      Authors: David Canela <david@5dlab.com>,
               Sascha Lange <sascha@5dlab.com>,
-              Patrick Fox <patrick@5dlab.com>,
-              Hajo Runne <hajo@5dlab.com>
+              Patrick Fox  <patrick@5dlab.com>,
+              Hajo Runne   <hajo@5dlab.com>
      
      All rights reserved, (c) 5D Lab GmbH, 2012. 
      
@@ -114,4 +114,6 @@
   <xi:include href="rules_buildingcategories.xml" />
   <xi:include href="rules_queuecategories.xml" />
   <xi:include href="rules_queues.xml" />
+  <xi:include href="rules_character_mundane_ranks.xml" />
+  <xi:include href="rules_character_sacred_ranks.xml" />
 </Rules>
