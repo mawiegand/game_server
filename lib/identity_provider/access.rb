@@ -26,13 +26,22 @@ module IdentityProvider
     end
     
     def deliver_message_notification(recipient, sender, message)
+      
+      subject = "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten."
+      body    = "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen."
+
+      if recipient.premium_account?
+        subject = "Du hast soeben eine Nachricht von #{sender.name}  in Wack-a-Doo erhalten."
+        body    = "Betreff: #{message.subject}\n\n   #{CGI::escapeHTML(message.body)} Log Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
+      end
+      
       notification = {
         recipient_id:             recipient.identifier,
         recipient_character_name: recipient.name,
         sender_id:                sender.identifier,
         sender_character_name:    sender.name,
-        subject:                  "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten.",
-        body:                     "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen.",
+        subject:                  subject,
+        body:                     body,
       }
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
     end
