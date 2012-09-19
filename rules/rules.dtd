@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?)>
+<!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?, MundaneRanks?, SacredRanks?)>
 <!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup)>
 
 <!ELEMENT Game (#PCDATA)>
@@ -141,6 +141,27 @@
 	destructable (false | true) "true"
   hidden (0 | 1) "0"
 >
+
+<!--CharacterRanks-->
+<!ELEMENT MundaneRanks (MundaneRank*)>
+<!ATTLIST MundaneRanks
+  skillPointsPerRank CDATA "1"
+>
+
+<!ELEMENT MundaneRank (Name+)>
+<!ATTLIST MundaneRank 
+  exp CDATA #REQUIRED
+  settlementPoints CDATA "0"
+  minimumSacredRank CDATA "0"
+>
+
+<!ELEMENT SacredRanks (SacredRank*)>
+<!ATTLIST SacredRanks
+  skillPointsPerRank CDATA "1"
+>
+
+<!ELEMENT SacredRank (Name+, Cost*, ItemCost*)>
+
 
 <!--Science-->
 <!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement* | RequirementGroup*)?)>

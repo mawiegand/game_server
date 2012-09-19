@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
+  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
   
   def attributes 
     { 
@@ -49,6 +49,7 @@ class GameRules::Rules
       'science_types'        => science_types,  
       'settlement_types'     => settlement_types,  
       'queue_types'          => queue_types,  
+      'character_ranks'      => character_ranks,  
     }
   end
   
@@ -93,7 +94,7 @@ class GameRules::Rules
           },
         },
   
-# ## CONSTRUCTION SPEEDUP ##########################################################
+# ## CONSTRUCTION SPEEDUP ####################################################
   
       :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 
@@ -3532,6 +3533,70 @@ class GameRules::Rules
         },              #   END OF queue_alliance_research
       ],                # END OF QUEUE TYPES
 
+        :character_ranks => {
+          
+# ## MUNDANE CHARACTER RANKS #################################################
+      :skill_points_per_mundane_rank => 5,
+  
+      :mundane => [  # ALL MUNDANE CHARACTER RANKS
+
+        {              #  0
+          :id          => 0, 
+          :exp         => 0,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Grünling",
+  
+            :en_US => "Newbie",
+                
+          },
+        },             #   END OF 
+        {              #  1
+          :id          => 1, 
+          :exp         => 100000000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Kläglicher Anführer",
+  
+            :en_US => "Feeble Leader",
+                
+          },
+        },             #   END OF 
+      ],             # END OF MUNDANE CHARACTER RANKS
+
+# ## SACRED CHARACTER RANKS ##################################################
+      :skill_points_per_sacred_rank => 5,
+  
+      :sacred => [   # ALL SACRED CHARACTER RANKS
+
+        {              #  0
+          :id          => 0, 
+          :name        => {
+            
+            :de_DE => "Unerkannt",
+  
+            :en_US => "Unrecognized",
+                
+          },
+        },             #   END OF 
+        {              #  1
+          :id          => 1, 
+          :name        => {
+            
+            :de_DE => "Weitgehend ignoriert",
+  
+            :en_US => "Almost always ignored",
+                
+          },
+        },             #   END OF 
+      ],             # END OF SACRED CHARACTER RANKS
+
+        },
+  
     )
   end
 end
