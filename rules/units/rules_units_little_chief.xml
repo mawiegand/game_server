@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Unit id="little_chief" category="unitcategory_special">
+  <Name>Little Chief</Name>
+  <Name lang="de_DE">Kleiner Häuptling</Name>
+  
+  <Description lang="de_DE">
+    <p>Kleine Häuptlinge haben ihr eigenes Lager, dass sie für den Häuptling führen.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Little Chiefs are in charge of expansions.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Kills opposing units.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>
+  </Flavour>
+  <Cost id="resource_stone" round="true">3000</Cost>  
+  <Cost id="resource_wood" round="true">3000</Cost>    
+  <Cost id="resource_fur" round="true">1500</Cost>    
+  <ProductionTime shortenable="true">7200</ProductionTime>
+  <Requitement id="building_campfire" min_level="10" />  
+  <Velocity>1</Velocity>
+  <ActionPoints>4</ActionPoints>
+  <Initiative>10</Initiative>
+  <Attack>1</Attack>
+  <CriticalDamage chance="0.01">0</CriticalDamage>
+  <Armor>1</Armor>
+  <Overrunnable>true</Overrunnable>
+  <Hitpoints>100</Hitpoints>
+  <Effectiveness category="unitcategory_infantry">0.1</Effectiveness>
+  <Effectiveness category="unitcategory_cavalry">0.1</Effectiveness>
+  <Effectiveness category="unitcategory_artillery">0.1</Effectiveness>
+  <Effectiveness category="unitcategory_siege">0.1</Effectiveness>
+  <!-- add ability to found settlement here not in category -->    
+</Unit>

@@ -34,6 +34,11 @@
     <Name lang="de_DE">Bau von Belagerungsgeräten</Name>
     <ProductionCategory category="unitcategory_siege" />
   </Queue>
+    <Queue id="queue_special" category="queue_category_training" base_threads="1" base_slots="4">
+    <Name>Training of Special Units</Name>
+    <Name lang="de_DE">Bau von Spezialeinheiten</Name>
+    <ProductionCategory category="unitcategory_special" />
+  </Queue>
   <Queue id="queue_research" category="queue_category_research" domain="character" base_threads="1" base_slots="4">
     <Name>Forschung</Name>
     <Name lang="de_DE">Research</Name>

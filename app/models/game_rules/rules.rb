@@ -349,6 +349,7 @@ class GameRules::Rules
                 1,
                 2,
                 3,
+                4,
                 
               ],
        
@@ -386,6 +387,7 @@ class GameRules::Rules
                 2,
                 0,
                 3,
+                4,
                 
               ],
 
@@ -394,6 +396,7 @@ class GameRules::Rules
                 0,
                 2,
                 3,
+                4,
                 
               ],
        
@@ -429,6 +432,7 @@ class GameRules::Rules
                 2,
                 1,
                 3,
+                4,
                 
               ],
        
@@ -464,12 +468,49 @@ class GameRules::Rules
                 2,
                 0,
                 1,
+                4,
                 
               ],
        
             ],
           },
         },              #   END OF Siege Weapons
+        {               #   Special Units
+          :id          => 4, 
+          :symbolic_id => :unitcategory_special,
+          :db_field    => :unitcategory_special,
+          :name        => {
+            
+            :en_US => "Special Units",
+  
+            :de_DE => "Spezialeinheiten",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>English description here.</p>",
+  
+            :de_DE => "<p>Spezialeinheiten werden zum Beispiel für die Siedlungsgründung benötigt.</p>",
+                
+          },
+
+          :target_priorities => {
+            :test_type => :no_test,
+
+            :results => [
+              
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                
+              ],
+       
+            ],
+          },
+        },              #   END OF Special Units
       ],                # END OF UNIT CATEGORIES
 
   
@@ -1131,6 +1172,69 @@ class GameRules::Rules
 
 
         },              #   END OF Neanderthal
+        {               #   Little Chief
+          :id          => 9, 
+          :symbolic_id => :little_chief,
+					:category    => 4,
+          :db_field    => :unit_little_chief,
+          :name        => {
+            
+            :en_US => "Little Chief",
+  
+            :de_DE => "Kleiner Häuptling",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Kleine Häuptlinge haben ihr eigenes Lager, dass sie für den Häuptling führen.</p>",
+  
+            :en_US => "<p>Little Chiefs are in charge of expansions.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 10,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.1,
+  
+            :unitcategory_cavalry => 0.1,
+  
+            :unitcategory_artillery => 0.1,
+  
+            :unitcategory_siege => 0.1,
+                
+          },
+          :attack      => 1,
+          :armor       => 1,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 0,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '7200',
+
+          :costs      => {
+            0 => '3000',
+            1 => '3000',
+            2 => '1500',
+            
+          },
+
+
+        },              #   END OF Little Chief
       ],                # END OF UNIT TYPES
 
   
@@ -2062,6 +2166,16 @@ class GameRules::Rules
           ],          
 
           :abilities   => {
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 6,
+                :queue_type_id_sym => :queue_special,
+                :level             => 1,
+              },
+
+            ],
 
             :unlock_diplomacy     => 1,
 
@@ -3353,8 +3467,29 @@ class GameRules::Rules
             
           ],
         },              #   END OF queue_siege
-        {               #   queue_research
+        {               #   queue_special
           :id          => 6, 
+          :symbolic_id => :queue_special,
+          :unlock_field=> :settlement_queue_special_unlock_count,
+          :category_id => 1,
+					:category    => :queue_category_training,
+          :domain      => :settlement,
+          :base_threads=> 1,
+          :base_slots  => 4,
+          :name        => {
+            
+            :en_US => "Training of Special Units",
+  
+            :de_DE => "Bau von Spezialeinheiten",
+                
+          },
+          :produces    => [
+            4,
+            
+          ],
+        },              #   END OF queue_special
+        {               #   queue_research
+          :id          => 7, 
           :symbolic_id => :queue_research,
           :unlock_field=> :character_queue_research_unlock_count,
           :category_id => 2,
@@ -3375,7 +3510,7 @@ class GameRules::Rules
           ],
         },              #   END OF queue_research
         {               #   queue_alliance_research
-          :id          => 7, 
+          :id          => 8, 
           :symbolic_id => :queue_alliance_research,
           :unlock_field=> :alliance_queue_alliance_research_unlock_count,
           :category_id => 2,
