@@ -1189,7 +1189,7 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>",
+            :de_DE => "<p>Noch keine Funktion. Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>",
                 
           },
           :description => {
@@ -1777,19 +1777,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "900000",
+                :formula            => "800000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "900000",
+                :formula            => "800000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "900000",
+                :formula            => "800000",
               },
             
               {

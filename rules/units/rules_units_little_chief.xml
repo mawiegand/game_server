@@ -15,7 +15,7 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>
+    <p>Noch keine Funktion. Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">3000</Cost>  
   <Cost id="resource_wood" round="true">3000</Cost>    
