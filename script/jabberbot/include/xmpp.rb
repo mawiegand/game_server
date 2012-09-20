@@ -1,9 +1,11 @@
+#encoding: utf-8
+
 class Xmpp
   #
   def self.init
     file = File.open(APP_CONFIG['loggerPath'], File::WRONLY | File::APPEND | File::CREAT)
     file.sync = true
-    @logger = Logger.new(file)
+    @logger = Rails.logger || Logger.new(file)
     @logger.level = Logger::DEBUG
   end
 
@@ -30,22 +32,6 @@ class Xmpp
   end
 
   #
-  def self.deleteAction(id)
-    del = @dbh.prepare("DELETE FROM jabber WHERE id = ?")
-    del.execute(id)
-    del.finish
-    @dbh.commit
-  end
-
-  #
-  def self.blockAction(id)
-    del = @dbh.prepare("UPDATE jabber SET blocked = 1 WHERE id = ?")
-    del.execute(id)
-    del.finish
-    @dbh.commit
-  end
-
-  #
   def self.message(text)
     message = Jabber::Message::new(APP_CONFIG['jabber']['adminJid'], "#{text}")
     message.set_type(:chat)
@@ -66,7 +52,7 @@ class Xmpp
           'muc#roomconfig_roomdesc'                => "Raum des Stammes #{name}", # Raum Beschreibung
           'muc#roomconfig_persistentroom'          => 1,    # Raum persistent machen
           'muc#roomconfig_publicroom'              => 0,    # Raum öffentlich suchbar machen
-          'muc#roomconfig_passwordprotectedroom'   => 0,    # Raum mit Passwort schützen
+          'muc#roomconfig_passwordprotectedroom'   => 0,    # Raum mit Passwort schuetzen
           'muc#roomconfig_roomsecret'              => '',   # Passwort
           'muc#roomconfig_maxusers'                => 200,  # Maximale Anzahl von Teilnehmern
           'muc#roomconfig_whois'                   => "moderators", # Echte Jabber-IDs anzeigen für
@@ -82,16 +68,13 @@ class Xmpp
         )
         muc.exit
 
-        self.deleteAction id
-        @logger.info "Raum #{name} hinzugefügt"
+        @logger.info "Raum #{name} hinzugefuegt"
       else
-        self.blockAction id
-        @logger.error "Der Raum #{name} konnte nicht hinzugefügt werden"
+        @logger.error "Der Raum #{name} konnte nicht hinzugefuegt werden"
       end
     rescue Exception => e
-      self.blockAction id
 
-      @logger.error "Der Raum #{name} konnte nicht hinzugefügt werden"
+      @logger.error "Der Raum #{name} konnte nicht hinzugefuegt werden"
       @logger.error "Error message: #{e.message}"
       @logger.error "Error backtrace: #{e.backtrace.inspect}"
     end
@@ -105,7 +88,7 @@ class Xmpp
       muc.join(room_jid)
 
       if muc.owner?
-        muc.say('Hi an alle. Dieser Raum wird nun aus folgendem Grund gelöscht:  #{data}')
+        muc.say('Hi an alle. Dieser Raum wird nun aus folgendem Grund geloescht:  #{data}')
 
         #
         # TODO: Script zum löschen des Raumes
@@ -124,17 +107,12 @@ class Xmpp
 
         muc.exit
 
-        self.deleteAction id
-        @logger.info "Raum #{name} gelöscht"
+        @logger.info "Raum #{name} geloescht"
       else
-        self.blockAction id
-
-        @logger.error "Fehlerhafte Berechtigung beim löschen des Raumes #{name}"
+        @logger.error "Fehlerhafte Berechtigung beim loeschen des Raumes #{name}"
       end
     rescue Exception => e
-      self.blockAction id
-
-      @logger.error "Der Raum #{name} konnte nicht gelöscht werden"
+      @logger.error "Der Raum #{name} konnte nicht geloescht werden"
       @logger.error "Error message: #{e.message}"
       @logger.error "Error backtrace: #{e.backtrace.inspect}"
     end
@@ -157,17 +135,12 @@ class Xmpp
 
         muc.exit
 
-        self.deleteAction id
-        @logger.info "Userrechte für #{data} bei Raum #{name} hinzugefügt"
+        @logger.info "Userrechte fuer #{data} bei Raum #{name} hinzugefuegt"
       else
-        self.blockAction id
-
-        @logger.info "Fehlerhafte Berechtigung beim Rechte hinzufügen von #{data} im Raume #{name}"
+        @logger.info "Fehlerhafte Berechtigung beim Rechte hinzufuegen von #{data} im Raume #{name}"
       end
     rescue Exception => e
-      self.blockAction id
-
-      @logger.error "Die Berechtigungen von #{data} konnten beim Raum #{name} nicht hinzugefügt werden!"
+      @logger.error "Die Berechtigungen von #{data} konnten beim Raum #{name} nicht hinzugefuegt werden!"
       @logger.error "Error message: #{e.message}"
       @logger.error "Error backtrace: #{e.backtrace.inspect}"
     end
@@ -190,16 +163,11 @@ class Xmpp
 
         muc.exit
 
-        self.deleteAction id
-        @logger.info "Userrechte für #{data} bei Raum #{name} entfernt"
+        @logger.info "Userrechte fuer #{data} bei Raum #{name} entfernt"
       else
-        self.blockAction id
-
         @logger.info "Fehlerhafte Berechtigung beim Rechte entfernen von #{data} im Raume #{name}"
       end
     rescue Exception => e
-      self.blockAction id
-
       @logger.error "Die Berechtigungen von #{data} konnten beim Raum #{name} nicht entfernt werden!"
       @logger.error "Error message: #{e.message}"
       @logger.error "Error backtrace: #{e.backtrace.inspect}"
