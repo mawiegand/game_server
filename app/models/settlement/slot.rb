@@ -158,6 +158,16 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:abilities][:garrison_size_bonus]).apply(self.level)
   end
 
+  def max_level
+    return 0   if building_id.nil?
+    settlement_type = GameRules::Rules.the_rules().settlement_types[self.settlement.type_id]
+    logger.debug '---> settlement_type' + settlement_type.inspect
+    logger.debug '---> slots ' + settlement_type[:building_slots].inspect
+    logger.debug '---> slot ' + settlement_type[:building_slots][self.slot_num].inspect
+    logger.debug '---> max level ' + settlement_type[:building_slots][self.slot_num][:max_level].inspect
+    settlement_type[:building_slots][self.slot_num][:max_level]
+  end
+
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
   # (= does not check the rules). calls all necesary handlers to

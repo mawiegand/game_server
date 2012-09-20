@@ -12,6 +12,7 @@ class Construction::Job < ActiveRecord::Base
   TYPE_UPGRADE = 'upgrade'
   TYPE_DOWNGRADE = 'downgrade'
   TYPE_DESTROY = 'destroy'
+  TYPE_CONVERT = 'convert'
   
   def active?
     !self.active_job.nil?
@@ -48,28 +49,49 @@ class Construction::Job < ActiveRecord::Base
     self == self.queue.sorted_jobs_for_slot(self.slot).last
   end
   
+  def create_queueable?
+    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, settlement.owner, slot.settlement, self.slot)
+    self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty?
+    # TODO test if building can be build in slot according to the slots building categories
+  end
+  
+  def upgrade_queueable?
+    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, settlement.owner, slot.settlement, self.slot)
+    self.level_after == slot.last_level + 1 &&
+    self.level_after <= slot.max_level &&
+    !slot.level.nil? && slot.level != 0 &&
+    self.building_id == slot.building_id
+  end
+  
+  # destroy job is only queueable, if there are no other jobs in queue
+  def destroy_queueable?
+    building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+    raise ForbiddenError.new('Building type is not demolishable.') unless building_type[:demolishable] && building_type[:demolishable] == true
+    raise ForbiddenError.new('Queue must be empty for detroying.') unless (self.queue.jobs_count || 0) == 0
+    self.building_id == slot.building_id && !slot.last_level.nil? && slot.last_level != 0
+  end
+  
+  def convert_queueable?
+    # conversion option testen
+    building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+    conversion_option = building_type.conversion_option
+    raise ForbiddenError.new('Building is not convertible.') if conversion_option.nil?
+    logger.debug '---> conversion_option ' + conversion_option.inspect
+    converted_building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+
+    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, settlement.owner, slot.settlement, self.slot)
+    
+    # level testen
+  end
+  
+      # return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
+
+  
   # checks if a job can be queueable due to requirements like e.g. building levels
   def queueable?
     slot = self.slot
     settlement = slot.settlement
-    owner = settlement.owner
     
-    # get requirements from rules
-    building_type = GameRules::Rules.the_rules.building_types[self.building_id]
-    requirements = building_type[:requirements]
-    
-    unless self.job_type == TYPE_DESTROY
-      # test if requirements are met
-      logger.debug requirements.inspect
-      raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, owner, settlement, slot)
-    else
-      # test if building types match
-      raise ForbiddenError.new('Wrong building type.') unless slot.building_id == self.building_id
-      raise ForbiddenError.new('Building type is not demolishable.') unless building_type[:demolishable] && building_type[:demolishable] == true
-    end
-
-    #TODO testen ob destroy job schon vorhanden ist
-
     # test if queue is already full   
     raise ForbiddenError.new('Queue is already full.') if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
     
@@ -77,22 +99,24 @@ class Construction::Job < ActiveRecord::Base
     raise ForbiddenError.new('Not allowed to mix destruction with construction jobs.')  if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && slot.jobs.first.job_type != TYPE_CREATE
     
     # test correct level
-    return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0) || !slot.jobs.empty?)
-    return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1) # TODO when max_level available: || self.level_after > (slot.max_level || 10000))
-    # return false if self.job_type == TYPE_DOWNGRADE && (self.level_after != slot.last_level - 1 || self.level_after < 0)   # not yet implemented
-    return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level == 0)
+    # return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0) || !slot.jobs.empty?)
+    # return false if self.job_type == TYPE_UPGRADE   && (self.level_after != slot.last_level + 1 || self.level_after > slot.max_level)
+    # return false if self.job_type == TYPE_DESTROY   && (slot.last_level.nil?  || slot.last_level == 0)
+    
+    # test correct level
+    case self.job_type
+      when TYPE_CREATE
+        return false unless create_queueable?
+      when TYPE_UPGRADE
+        return false unless upgrade_queueable?
+      when TYPE_DESTROY
+        return false unless destroy_queueable?
+      when TYPE_CONVERT
+        return false unless convert_queueable?
+    end    
     
     # test if building ability is unlocked in settlement
     return false unless settlement.settlement_queue_buildings_unlock_count > 0    # THIS IS AN ERROR: there are queues of other types (e.g. fortification)! either the client should post to the queue or you must search the correct (queue_type that is unlocked and able to build the building category of the building) queue here
-    
-    # TODO test if building_id valid
-    
-    # TODO test if building can be build in slot according to the slots building categories
-    
-    # TODO forgot anything to test? 
-    
-    # test correct building id
-    return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
     
     true
   end

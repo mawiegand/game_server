@@ -26,7 +26,7 @@ class Training::Queue < ActiveRecord::Base
     # if there are less active jobs than the number of threads to handle a job 
     active_jobs = find_active_jobs
     # logger.debug '--> active_jobs ' + active_jobs.inspect
-    if active_jobs.count < 1
+    if active_jobs.count < 1   # TODO should be 'self.threads', if more than one thread become available for users
       # if there are inactive jobs
       queued_jobs = self.jobs.select{ |job| !job.active? }
       # logger.debug '--> queued_jobs ' + queued_jobs.inspect
