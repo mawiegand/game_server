@@ -78,7 +78,6 @@ class Construction::Job < ActiveRecord::Base
     logger.debug '---> destroy_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     raise ForbiddenError.new('Building type is not demolishable.') unless building_type[:demolishable] && building_type[:demolishable] == true
-    raise ForbiddenError.new('Queue must be empty for detroying.') unless (self.queue.jobs_count || 0) == 0
     self.building_id == slot.building_id && !slot.last_level.nil? && slot.last_level != 0
   end
   
