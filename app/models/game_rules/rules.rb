@@ -2004,11 +2004,6 @@ class GameRules::Rules
     
           },
 
-          :conversion_option => {
-            :building              => :building_cottage_2,
-            :target_level_formula  => "MAX(LEVEL,10)-9", 
-          },
-
         },              #   END OF Kleine Hütte
         {               #   Ausbildungsgelände
           :id          => 7, 
