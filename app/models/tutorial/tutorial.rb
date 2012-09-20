@@ -509,9 +509,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1gathererlvl2
-        {               #   quest_build_chieftainslvl2
+        {               #   quest_build_chiefcottagelvl2
           :id                => 5, 
-          :symbolic_id       => :quest_build_chieftainslvl2,
+          :symbolic_id       => :quest_build_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
           
@@ -604,7 +604,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_chieftainslvl2
+        },              #   END OF quest_build_chiefcottagelvl2
         {               #   quest_profile
           :id                => 6, 
           :symbolic_id       => :quest_profile,
@@ -656,7 +656,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
@@ -888,7 +888,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. ",
+            :de_DE => " Die Festungen die du siehst, beherrschen die Regionen. Ich glaub es einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. ",
   
             :en_US => "flavor text english",
                 
@@ -1066,7 +1066,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.",
+            :de_DE => "Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's dir. Dann kannst du es versuchen.",
   
             :en_US => "flavor text english",
                 
@@ -1095,7 +1095,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_message',
+            :quest => 'quest_settlementowner',
 
           },
 
@@ -1261,7 +1261,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Wenn dir die Bauafträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. ",
+            :de_DE => " Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. ",
   
             :en_US => " ",
                 
@@ -1269,7 +1269,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chieftainslvl2',
+            :quest => 'quest_settlement_button2',
 
           },
 
@@ -1439,14 +1439,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauslot bauen.</p>",
+            :de_DE => "<p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauplatz bauen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. ",
+            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibt's nicht also verschwinde. ",
   
             :en_US => "",
                 
@@ -1617,14 +1617,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p><p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typens in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p><p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typens in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p><p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
+            :de_DE => "<p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p><p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typs in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p><p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p><p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. ",
+            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trotzdem hier deine Belohnung. ",
   
             :en_US => "",
                 
@@ -1723,7 +1723,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. ",
+            :de_DE => " Unter deiner Armee siehst du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. ",
   
             :en_US => " ",
                 
@@ -1883,7 +1883,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? ",
+            :de_DE => " Hey wie wär's mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön so etwas zu haben oder? ",
   
             :en_US => "flavor text english",
                 
@@ -2256,7 +2256,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.",
+            :de_DE => "Hast du gesehen, dass du jetzt spezielle Rohstoffgebäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.",
   
             :en_US => "flavor text english",
                 
@@ -2577,7 +2577,7 @@ Aufgabentext: Gründe eine Lagerstätte. ",
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
+            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
   
             :en_US => "",
                 

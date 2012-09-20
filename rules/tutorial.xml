@@ -184,7 +184,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_build_chieftainslvl2" advisor="chef">
+    <Quest id="quest_build_chiefcottagelvl2" advisor="chef">
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
@@ -229,7 +229,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl3" />
+      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -309,7 +309,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaubs einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavor>
+      <Flavor locale="de_DE"> Die Festungen die du siehst, beherrschen die Regionen. Ich glaub es einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Festungen ziehen Steuern aus der Region, die sie beherrschen ein. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -371,13 +371,13 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklärs dir. Dann kannst du es versuchen.</Flavor>
+      <Flavor locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's dir. Dann kannst du es versuchen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Du kannst in alle deine Siedlungen und Festungen, indem du sie auswählst und enter drückst. </RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach oder? </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_message" />
+      <Requirement quest="quest_settlementowner" />
       <Rewards>
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -429,11 +429,11 @@
       </Description>
       <Flavor locale="de_DE"> Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Wenn dir die Bauafträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. </RewardText>
+      <RewardText locale="de_DE"> Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. </RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chieftainslvl2" />
+      <Requirement quest="quest_settlement_button2" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -478,7 +478,7 @@
       <Task></Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
       <Description locale="de_DE">
-        <p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauslot bauen.</p>
+        <p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauplatz bauen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -487,7 +487,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie. </RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"> Fertig? Na endlich. Da deine Belohnung, mehr gibts nicht also verschwinde. </RewardFlavor>
+      <RewardFlavor locale="de_DE"> Fertig? Na endlich. Da deine Belohnung, mehr gibt's nicht also verschwinde. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
@@ -561,8 +561,8 @@
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
         <p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p>
-	<p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typens in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p>
-	<p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typens in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p>
+	<p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typs in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p>
+	<p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p>
 	<p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>
       </Description>
       <Description locale="en_US">
@@ -572,7 +572,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit. </RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trozdem hier deine Belohnung. </RewardFlavor>
+      <RewardFlavor locale="de_DE">Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trotzdem hier deine Belohnung. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
@@ -598,7 +598,7 @@
       </Description>
       <Flavor locale="de_DE"> Eine Armee kann mehr als nur rumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Unter deiner Armee siehst du die verfügbaren Aktionspuntke. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. </RewardText>
+      <RewardText locale="de_DE"> Unter deiner Armee siehst du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. </RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher das du genug Truppen hast? Na okay ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -652,7 +652,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Hey wie wärs mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön sowas zu haben oder? </Flavor>
+      <Flavor locale="de_DE"> Hey wie wär's mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön so etwas zu haben oder? </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -711,7 +711,7 @@
       </Description>
       <Flavor locale="de_DE">Wenn deine Freunde dich unterstützen würden, wäre das doch toll oder? Und du bekommst sogar noch mehr, als nur ihre Unterstützung wenn du sie dazu animierst.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Genau. Das ist doch ganzschön viel oder?/RewardText>
+      <RewardText locale="de_DE"> Genau. Das ist doch ganz schön viel oder?/RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"></RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -825,7 +825,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgeäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavor>
+      <Flavor locale="de_DE">Hast du gesehen, dass du jetzt spezielle Rohstoffgebäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -917,7 +917,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Du hast eine Lagerstäte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
+      <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl10" />
       <Rewards>
