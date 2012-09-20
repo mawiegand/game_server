@@ -393,9 +393,13 @@ class Settlement::Settlement < ActiveRecord::Base
     army = self.garrison_army
     unit_types = GameRules::Rules.the_rules().unit_types
     q = [army.size_max - army.size_present, quantity].min
-    army.details.increment(unit_types[unit_id][:db_field], q)
-    army.details.save
-    logger.debug "Added #{quantity} units to garrison army"
+    if (q > 0)
+      army.details.increment(unit_types[unit_id][:db_field], q)
+      army.details.save
+      logger.debug "Added #{quantity} units to garrison army"
+    else
+      logger.debug "Could not add units to garrison army, army is full"
+    end
     q
   end
 
