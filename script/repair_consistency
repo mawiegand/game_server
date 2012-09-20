@@ -138,6 +138,7 @@ Settlement::Settlement.find(:all).each do |settlement|
 	  settlement.region.save
   end  
 
+  count += 1
 end
 puts " done."
 
