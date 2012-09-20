@@ -34,7 +34,7 @@ class Training::Queue < ActiveRecord::Base
         # create active job 
         next_job = queued_jobs.first
         # test if job can be payed
-        if next_job.pay_for_job
+        if !self.settlement.garrison_army.full? && next_job.pay_for_job
           active_job = next_job.build_active_job
           active_job.queue = self
           
