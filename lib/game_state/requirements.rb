@@ -1,16 +1,27 @@
 module GameState
   
   class Requirements
+
+    # tests an array of grouped requirements. the requirements are met, if
+    # all requirements of at least one group are all met (groups follow an
+    # OR-logic, requirements inside a group are combined using AND).
+    def self.meet_one_requirement_group?(requirementGroups, character, settlement, exclude_slot=nil)
+      requirementGroups.each do | requirementGroup |
+        return true   if self.meet_requirements?(requirementGroup, character, settlement, exclude_slot)
+      end
+      false
+    end
     
+    # tests a group (array) of requirements and returns true in case all are met.
     def self.meet_requirements?(requirements, character, settlement, exclude_slot=nil)
+      met = true
       requirements.each do | requirement |
         case requirement[:type]
         when 'building'
-          return self.meet_building_requirement?(requirement, settlement, exclude_slot)
-        # when 'science'
-          # # current_character.meet_building_requirement(requirement)
+          met = met && self.meet_building_requirement?(requirement, settlement, exclude_slot)  # does not execute the test, if another requirement already did fail
         end
       end
+      met
     end
     
     def self.meet_building_requirement?(requirement, settlement, exclude_slot)

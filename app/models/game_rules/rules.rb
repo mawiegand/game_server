@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
   
   def attributes 
     { 
@@ -50,6 +50,7 @@ class GameRules::Rules
       'science_types'        => science_types,  
       'settlement_types'     => settlement_types,  
       'queue_types'          => queue_types,  
+      'character_ranks'      => character_ranks,  
     }
   end
   
@@ -98,7 +99,7 @@ class GameRules::Rules
           :time_factor => 0.3,
         },
   
-# ## CONSTRUCTION SPEEDUP ##########################################################
+# ## CONSTRUCTION SPEEDUP ####################################################
   
       :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 
@@ -354,6 +355,7 @@ class GameRules::Rules
                 1,
                 2,
                 3,
+                4,
                 
               ],
        
@@ -391,6 +393,7 @@ class GameRules::Rules
                 2,
                 0,
                 3,
+                4,
                 
               ],
 
@@ -399,6 +402,7 @@ class GameRules::Rules
                 0,
                 2,
                 3,
+                4,
                 
               ],
        
@@ -434,6 +438,7 @@ class GameRules::Rules
                 2,
                 1,
                 3,
+                4,
                 
               ],
        
@@ -469,12 +474,49 @@ class GameRules::Rules
                 2,
                 0,
                 1,
+                4,
                 
               ],
        
             ],
           },
         },              #   END OF Siege Weapons
+        {               #   Special Units
+          :id          => 4, 
+          :symbolic_id => :unitcategory_special,
+          :db_field    => :unitcategory_special,
+          :name        => {
+            
+            :en_US => "Special Units",
+  
+            :de_DE => "Spezialeinheiten",
+                
+          },
+          :description => {
+            
+            :en_US => "<p>English description here.</p>",
+  
+            :de_DE => "<p>Spezialeinheiten werden zum Beispiel für die Siedlungsgründung benötigt.</p>",
+                
+          },
+
+          :target_priorities => {
+            :test_type => :no_test,
+
+            :results => [
+              
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                
+              ],
+       
+            ],
+          },
+        },              #   END OF Special Units
       ],                # END OF UNIT CATEGORIES
 
   
@@ -606,8 +648,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_barracks',
               :id => 7,
@@ -617,6 +660,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -745,8 +789,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_firing_range',
               :id => 12,
@@ -756,6 +801,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -880,8 +926,23 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
             {
               :symbolic_id => 'building_stud',
               :id => 13,
@@ -890,6 +951,17 @@ class GameRules::Rules
               :min_level => 11,
 
             },
+
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
 
           ],          
 
@@ -1011,8 +1083,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_workshop',
               :id => 0,
@@ -1022,6 +1095,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
@@ -1087,8 +1161,9 @@ class GameRules::Rules
             
           },
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_stud',
               :id => 13,
@@ -1098,10 +1173,74 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
 
         },              #   END OF Neanderthal
+        {               #   Little Chief
+          :id          => 9, 
+          :symbolic_id => :little_chief,
+					:category    => 4,
+          :db_field    => :unit_little_chief,
+          :name        => {
+            
+            :en_US => "Little Chief",
+  
+            :de_DE => "Kleiner Häuptling",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Noch keine Funktion. Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Kleine Häuptlinge haben ihr eigenes Lager, dass sie für den Häuptling führen.</p>",
+  
+            :en_US => "<p>Little Chiefs are in charge of expansions.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 10,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.1,
+  
+            :unitcategory_cavalry => 0.1,
+  
+            :unitcategory_artillery => 0.1,
+  
+            :unitcategory_siege => 0.1,
+                
+          },
+          :attack      => 1,
+          :armor       => 1,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 0,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '7200',
+
+          :costs      => {
+            0 => '3000',
+            1 => '3000',
+            2 => '1500',
+            
+          },
+
+
+        },              #   END OF Little Chief
       ],                # END OF UNIT TYPES
 
   
@@ -1327,8 +1466,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1338,6 +1478,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1416,8 +1557,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1427,6 +1569,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1505,8 +1648,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_fortress_fortification',
               :id => 0,
@@ -1516,6 +1660,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1594,8 +1739,9 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1607,6 +1753,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1635,19 +1782,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1000000",
+                :formula            => "700000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1000000",
+                :formula            => "700000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "1000000",
+                :formula            => "700000",
               },
             
               {
@@ -1717,8 +1864,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1728,6 +1876,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1809,8 +1958,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1820,6 +1970,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1893,8 +2044,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -1904,6 +2056,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -1981,8 +2134,9 @@ class GameRules::Rules
           :demolishable=> false,
           :destructable=> false,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2003,6 +2157,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2022,6 +2177,16 @@ class GameRules::Rules
           ],          
 
           :abilities   => {
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 6,
+                :queue_type_id_sym => :queue_special,
+                :level             => 1,
+              },
+
+            ],
 
             :unlock_diplomacy     => 1,
 
@@ -2064,8 +2229,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2075,6 +2241,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2143,8 +2310,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2154,6 +2322,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2222,8 +2391,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2233,6 +2403,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2302,8 +2473,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2313,6 +2485,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2390,8 +2563,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2401,6 +2575,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2479,8 +2654,9 @@ class GameRules::Rules
           :demolishable=> true,
           :destructable=> true,
 
-          :requirements=> [
-            
+          :requirementGroups=> [
+            [
+              
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 4,
@@ -2490,6 +2666,7 @@ class GameRules::Rules
 
             },
 
+            ]
           ],          
 
           :costs      => {
@@ -2513,25 +2690,25 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1000*LEVEL",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1000*LEVEL",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "500*LEVEL",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1000*LEVEL",
+                :formula            => "10000",
               },
             
           ],
@@ -3301,8 +3478,29 @@ class GameRules::Rules
             
           ],
         },              #   END OF queue_siege
-        {               #   queue_research
+        {               #   queue_special
           :id          => 6, 
+          :symbolic_id => :queue_special,
+          :unlock_field=> :settlement_queue_special_unlock_count,
+          :category_id => 1,
+					:category    => :queue_category_training,
+          :domain      => :settlement,
+          :base_threads=> 1,
+          :base_slots  => 4,
+          :name        => {
+            
+            :en_US => "Training of Special Units",
+  
+            :de_DE => "Bau von Spezialeinheiten",
+                
+          },
+          :produces    => [
+            4,
+            
+          ],
+        },              #   END OF queue_special
+        {               #   queue_research
+          :id          => 7, 
           :symbolic_id => :queue_research,
           :unlock_field=> :character_queue_research_unlock_count,
           :category_id => 2,
@@ -3323,7 +3521,7 @@ class GameRules::Rules
           ],
         },              #   END OF queue_research
         {               #   queue_alliance_research
-          :id          => 7, 
+          :id          => 8, 
           :symbolic_id => :queue_alliance_research,
           :unlock_field=> :alliance_queue_alliance_research_unlock_count,
           :category_id => 2,
@@ -3345,6 +3543,70 @@ class GameRules::Rules
         },              #   END OF queue_alliance_research
       ],                # END OF QUEUE TYPES
 
+        :character_ranks => {
+          
+# ## MUNDANE CHARACTER RANKS #################################################
+      :skill_points_per_mundane_rank => 5,
+  
+      :mundane => [  # ALL MUNDANE CHARACTER RANKS
+
+        {              #  0
+          :id          => 0, 
+          :exp         => 0,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Grünling",
+  
+            :en_US => "Newbie",
+                
+          },
+        },             #   END OF 
+        {              #  1
+          :id          => 1, 
+          :exp         => 100000000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Kläglicher Anführer",
+  
+            :en_US => "Feeble Leader",
+                
+          },
+        },             #   END OF 
+      ],             # END OF MUNDANE CHARACTER RANKS
+
+# ## SACRED CHARACTER RANKS ##################################################
+      :skill_points_per_sacred_rank => 5,
+  
+      :sacred => [   # ALL SACRED CHARACTER RANKS
+
+        {              #  0
+          :id          => 0, 
+          :name        => {
+            
+            :de_DE => "Unerkannt",
+  
+            :en_US => "Unrecognized",
+                
+          },
+        },             #   END OF 
+        {              #  1
+          :id          => 1, 
+          :name        => {
+            
+            :de_DE => "Weitgehend ignoriert",
+  
+            :en_US => "Almost always ignored",
+                
+          },
+        },             #   END OF 
+      ],             # END OF SACRED CHARACTER RANKS
+
+        },
+  
     )
   end
 end

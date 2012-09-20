@@ -117,4 +117,6 @@
   <xi:include href="rules_buildingcategories.xml" />
   <xi:include href="rules_queuecategories.xml" />
   <xi:include href="rules_queues.xml" />
+  <xi:include href="rules_character_mundane_ranks.xml" />
+  <xi:include href="rules_character_sacred_ranks.xml" />
 </Rules>

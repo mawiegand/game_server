@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<MundaneRanks skillPointsPerRank="5">
+  <MundaneRank exp="0" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Grünling</Name>
+    <Name lang="en_US">Newbie</Name>
+  </MundaneRank>
+  <MundaneRank exp="100000000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Kläglicher Anführer</Name>
+    <Name lang="en_US">Feeble Leader</Name>
+  </MundaneRank>
+</MundaneRanks>

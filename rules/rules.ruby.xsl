@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
   
   def attributes 
     { 
@@ -97,6 +97,7 @@ class GameRules::Rules
       'science_types'        => science_types,  
       'settlement_types'     => settlement_types,  
       'queue_types'          => queue_types,  
+      'character_ranks'      => character_ranks,  
     }
   end
   
@@ -149,6 +150,10 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
   <xsl:apply-templates select="QueueTypes" />
+        :character_ranks => {
+          <xsl:apply-templates select="MundaneRanks" />
+          <xsl:apply-templates select="SacredRanks" />
+        },
   <!--
   <xsl:apply-templates select="QueueCategories" />
   -->
@@ -207,7 +212,7 @@ end
 
 
 <xsl:template match="ConstructionSpeedup">
-# ## CONSTRUCTION SPEEDUP ##########################################################
+# ## CONSTRUCTION SPEEDUP ####################################################
   
       :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 <xsl:for-each select="SpeedupCost">
@@ -218,6 +223,42 @@ end
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF CONSTRUCTION SPEEDUP
+</xsl:template>
+
+<xsl:template match="MundaneRanks">
+# ## MUNDANE CHARACTER RANKS #################################################
+      :skill_points_per_mundane_rank => <xsl:value-of select="@skillPointsPerRank"/>,
+  
+      :mundane => [  # ALL MUNDANE CHARACTER RANKS
+<xsl:for-each select="MundaneRank">
+        {              #  <xsl:value-of select="position()-1"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :exp         => <xsl:value-of select="@exp"/>,
+          :settlement_points   => <xsl:value-of select="@settlementPoints"/>,
+          :minimum_sacred_rank => <xsl:value-of select="@minimumSacredRank"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+        },             #   END OF <xsl:value-of select="@id"/>
+</xsl:for-each>
+      ],             # END OF MUNDANE CHARACTER RANKS
+</xsl:template>
+
+
+<xsl:template match="SacredRanks">
+# ## SACRED CHARACTER RANKS ##################################################
+      :skill_points_per_sacred_rank => <xsl:value-of select="@skillPointsPerRank"/>,
+  
+      :sacred => [   # ALL SACRED CHARACTER RANKS
+<xsl:for-each select="SacredRank">
+        {              #  <xsl:value-of select="position()-1"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+        },             #   END OF <xsl:value-of select="@id"/>
+</xsl:for-each>
+      ],             # END OF SACRED CHARACTER RANKS
 </xsl:template>
 
 
@@ -301,8 +342,19 @@ end
           },
 </xsl:if>
 <xsl:if test="Requirement">
-          :requirements=> [
-            <xsl:apply-templates select="Requirement" />
+          :requirementGroups=> [
+            [
+              <xsl:apply-templates select="Requirement" />
+            ]
+          ],          
+</xsl:if>
+<xsl:if test="RequirementGroup">
+          :requirementGroups=> [
+<xsl:for-each select="RequirementGroup">
+            [
+              <xsl:apply-templates select="Requirement" />
+            ],
+</xsl:for-each>
           ],          
 </xsl:if>
 <xsl:if test="count(Encumbrance)">
@@ -412,8 +464,19 @@ end
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
 <xsl:if test="Requirement">
-          :requirements=> [
-            <xsl:apply-templates select="Requirement" />
+          :requirementGroups=> [
+            [
+              <xsl:apply-templates select="Requirement" />
+            ]
+          ],          
+</xsl:if>
+<xsl:if test="RequirementGroup">
+          :requirementGroups=> [
+<xsl:for-each select="RequirementGroup">
+            [
+              <xsl:apply-templates select="Requirement" />
+            ],
+</xsl:for-each>
           ],          
 </xsl:if>
 <xsl:if test="Cost">

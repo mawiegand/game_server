@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914122741) do
+ActiveRecord::Schema.define(:version => 20120918155535) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -268,6 +268,10 @@ ActiveRecord::Schema.define(:version => 20120914122741) do
     t.integer  "fortress_count",                           :default => 0,     :null => false
     t.datetime "last_request_at"
     t.string   "max_conversion_state"
+    t.integer  "mundane_rank",                             :default => 1,     :null => false
+    t.integer  "sacred_rank",                              :default => 1,     :null => false
+    t.integer  "settlement_points_total",                  :default => 1,     :null => false
+    t.integer  "settlement_points_used",                   :default => 0,     :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|

@@ -18,6 +18,7 @@
 					<Target id="unitcategory_cavalry" />
 					<Target id="unitcategory_artillery" />
 					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_special" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -37,12 +38,14 @@
 					<Target id="unitcategory_artillery" />
 					<Target id="unitcategory_infantry" />
 					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_special" />
 				</TargetList>
 				<TargetList>
 					<Target id="unitcategory_cavalry" />
 					<Target id="unitcategory_infantry" />
 					<Target id="unitcategory_artillery" />
 					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_special" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -61,6 +64,7 @@
 					<Target id="unitcategory_artillery" />
 					<Target id="unitcategory_cavalry" />
 					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_special" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
@@ -80,6 +84,26 @@
 					<Target id="unitcategory_artillery" />
 					<Target id="unitcategory_infantry" />
 					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_special" />
+				</TargetList>
+			</TargetPriorities>
+    </UnitCategory>
+    <UnitCategory id="unitcategory_special">
+      <Name>Special Units</Name>
+      <Name lang="de_DE">Spezialeinheiten</Name>
+      <Description>
+        <p>English description here.</p>
+      </Description>
+      <Description lang="de_DE">
+        <p>Spezialeinheiten werden zum Beispiel für die Siedlungsgründung benötigt.</p>
+      </Description>
+			<TargetPriorities testType="no_test">
+				<TargetList>
+					<Target id="unitcategory_infantry" />
+					<Target id="unitcategory_cavalry" />
+					<Target id="unitcategory_artillery" />
+					<Target id="unitcategory_siege" />
+					<Target id="unitcategory_special" />
 				</TargetList>
 			</TargetPriorities>
     </UnitCategory>
