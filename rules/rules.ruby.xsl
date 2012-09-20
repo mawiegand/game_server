@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
   
   def attributes 
     { 
@@ -88,6 +88,7 @@ class GameRules::Rules
       'character_creation'   => character_creation,
       'construction_speedup' => construction_speedup,
       'training_speedup'     => training_speedup,
+      'building_conversion'  => building_conversion,
       'unit_categories'      => unit_categories,
       'building_categories'  => building_categories,
       'unit_types'           => unit_types,
@@ -134,6 +135,10 @@ class GameRules::Rules
           :start_resources => {
             <xsl:apply-templates select="//General/CharacterCreation/StartResource" />
           },
+        },
+        :building_conversion => {
+          :cost_factor => <xsl:apply-templates select="//General/BuildingConversion/CostFactor" />,
+          :time_factor => <xsl:apply-templates select="//General/BuildingConversion/TimeFactor" />,
         },
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
@@ -214,6 +219,7 @@ end
 </xsl:for-each>
       ],                # END OF CONSTRUCTION SPEEDUP
 </xsl:template>
+
 
 
 
@@ -446,6 +452,12 @@ end
           ],
 </xsl:if>
 <xsl:apply-templates select="Abilities" />
+<xsl:if test="ConversionOption">
+          :conversion_option => {
+            :building              => :<xsl:value-of select="ConversionOption/@building"/>,
+            :target_level_formula  => "<xsl:value-of select="ConversionOption/@level"/>", 
+          },
+</xsl:if>
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF BUILDING TYPES

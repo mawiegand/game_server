@@ -62,7 +62,8 @@
      Authors: David Canela <david@5dlab.com>,
               Sascha Lange <sascha@5dlab.com>,
               Patrick Fox <patrick@5dlab.com>,
-              Hajo Runne <hajo@5dlab.com>
+              Hajo Runne <hajo@5dlab.com>,
+              Max Buck <max@5dlab.com>
      
      All rights reserved, (c) 5D Lab GmbH, 2012. 
      
@@ -103,8 +104,10 @@
       <SpeedupCost resource="resource_cash" amount="10" hours="480" />
       <SpeedupCost resource="resource_cash" amount="15" hours="9999" />
     </TrainingSpeedup>
-    <ConvertCostFactor>0.3</ConvertCostFactor>
-    <ConvertTimeFactor>0.3</ConvertTimeFactor>
+    <BuildingConversion>
+      <CostFactor>0.3</CostFactor>
+      <TimeFactor>0.3</TimeFactor>
+    </BuildingConversion>  
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />

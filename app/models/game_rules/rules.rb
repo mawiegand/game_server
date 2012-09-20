@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup
   
   def attributes 
     { 
@@ -41,6 +41,7 @@ class GameRules::Rules
       'character_creation'   => character_creation,
       'construction_speedup' => construction_speedup,
       'training_speedup'     => training_speedup,
+      'building_conversion'  => building_conversion,
       'unit_categories'      => unit_categories,
       'building_categories'  => building_categories,
       'unit_types'           => unit_types,
@@ -91,6 +92,10 @@ class GameRules::Rules
             3 => 0,
             
           },
+        },
+        :building_conversion => {
+          :cost_factor => 0.3,
+          :time_factor => 0.3,
         },
   
 # ## CONSTRUCTION SPEEDUP ##########################################################
@@ -1846,6 +1851,11 @@ class GameRules::Rules
 
             ],
     
+          },
+
+          :conversion_option => {
+            :building              => :building_cottage_2,
+            :target_level_formula  => "MAX(LEVEL,10)-9", 
           },
 
         },              #   END OF Kleine Hütte

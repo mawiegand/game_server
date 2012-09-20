@@ -30,6 +30,8 @@
    
   <xi:include href="buildings/rules_building_storage.xml" />  
   
+  <!-- tier 2 buildings -->
+  <!-- xi:include href="buildings/rules_building_cottage_2.xml" / -->  
   
        
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
