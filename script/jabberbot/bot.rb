@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 #coding: utf-8
 
+
 #
-# Copyright (c) 2012 David Unger
+# Copyright (c) 2012 David Unger, Sascha Lange
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -27,7 +28,7 @@
 #       - Vor dem erstellen eines Raumes alle User kicken
 #
 
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require File.expand_path(File.join(File.dirname(__FILE__), '../..', 'config', 'environment'))
 
 
 #require 'yaml'
@@ -45,53 +46,41 @@ APP_CONFIG = YAML.load(raw_config)
 # Init Xmpp
 Xmpp.init
 
-# connect to the MySQL server
-begin
-  @dbh = DBI.connect("DBI:Mysql:#{APP_CONFIG['mysql']['database']}:#{APP_CONFIG['mysql']['host']}", APP_CONFIG['mysql']['username'], APP_CONFIG['mysql']['password'])
-  # get server version string and display it
-  row = @dbh.select_one("SELECT VERSION()")
-  puts "Server version: " + row[0]
-rescue DBI::DatabaseError => e
-  @dbh.disconnect if @dbh
-
-  @logger.info "Fehler beim Verbinden zur Datenbank"
-  @logger.error "Error code: #{e.err}"
-  @logger.error "Error message: #{e.errstr}"
-  exit
-end
+@logger = Rails.logger
 
 begin
   loop do
     puts "loooop"
     # Auslesen der nächsten Aktionen aus der Datenbank
-    sth = @dbh.prepare("SELECT id, type, room, data FROM jabber WHERE blocked = 0")
-    sth.execute()
-
-    rows = sth.fetch_all
-
-    if rows.size > 0
+    
+    commands = Messaging::JabberCommand.where(['processed = ? AND blocked_at IS NULL AND command="muc_create"', false]).order(:created_at)
+    if commands.count == 0
+      commands = Messaging::JabberCommand.where(['processed = ? AND blocked_at IS NULL', false]).order(:created_at)
+    end
+    
+    commands.each { |command| puts command.inspect }
+    
+    if commands.count > 0
       # Verbindung zum Jabber Server herstellen
       Xmpp.connect
 
-      rows.each do |row|
-        case row[1]
+      commands.each do |command|
+        case command.command
           when "muc_create"
-            Xmpp.muc_create row[0], row[2], row[3]
+            Xmpp.muc_create  command.room, command.data
           when "muc_delete"
-            Xmpp.muc_delete row[0], row[2], row[3]
+            Xmpp.muc_delete  command.room, command.data
           when "auth_add"
-            Xmpp.auth_add row[0], row[2], row[3]
+            Xmpp.auth_add    command.room, command.data
           when "auth_delete"
-            Xmpp.auth_delete row[0], row[2], row[3]
+            Xmpp.auth_delete command.room, command.data
           else
-            @logger.error "Unbekannter Befehl "+row[1]
+            @logger.error "Unbekannter Befehl #{command.command}."
         end
       end
-    end
-    sth.finish
 
-    # Da wir nicht wissen wann das nächste mal was passiert erstmal die Jabber Session schließen.
-    Xmpp.close
+      Xmpp.close
+    end
 
     # Bis zur nächsten Prüfung warten
     sleep APP_CONFIG['sleep']

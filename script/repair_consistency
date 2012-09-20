@@ -102,6 +102,47 @@ puts " done."
 
 # ############################################################################
 #
+#   OWNER NAMES
+#
+# ############################################################################
+
+
+print "CHECKING Owner Names "
+
+step = Settlement::Settlement.count / 10  
+step = step > 0 ? step : 1
+
+count = 0
+
+Settlement::Settlement.find(:all).each do |settlement|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+	
+	if settlement.owner_id != settlement.location.owner_id
+	  Rails.logger.warn(">>> ERROR: OWNER DIFFERS for location id #{settlement.location.id}. S: #{settlement.owner_id} L: #{settlement.location.onwer_id}.")
+	  settlement.location.set_owner_and_alliance(settlement.owner_id, settlement.alliance_id)
+	  settlement.location.save
+  end
+
+  onwership_ok = true
+	if (settlement.owns_region? && settlement.location.slot != 0) || (!settlement.owns_region? && settlement.location.slot == 0)
+	  Rails.logger.error(">>> FATAL ERROR: region ownership broken for settlement id #{settlement.id} and region id #{settlement.region.id}. owns region: #{settlement.owns_region?}.")
+    ownership_ok = false
+	end
+
+	if onwership_ok && settlement.owns_region? && settlement.owner_id != settlement.region.owner_id
+	  Rails.logger.warn(">>> ERROR: OWNER DIFFERS for region id #{settlement.region.id}. S: #{settlement.owner_id} R: #{settlement.region.owner_id}.")
+	  settlement.region.set_owner_and_alliance(settlement.owner_id, settlement.alliance_id)
+	  settlement.region.save
+  end  
+
+end
+puts " done."
+
+# ############################################################################
+#
 #   MESSAGES
 #
 # ############################################################################
