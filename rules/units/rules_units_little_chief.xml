@@ -21,7 +21,7 @@
   <Cost id="resource_wood" round="true">3000</Cost>    
   <Cost id="resource_fur" round="true">1500</Cost>    
   <ProductionTime shortenable="true">7200</ProductionTime>
-  <Requitement id="building_campfire" min_level="10" />  
+  <Requirement id="building_campfire" min_level="10" />  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>10</Initiative>
