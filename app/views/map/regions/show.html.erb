@@ -22,7 +22,7 @@
 <% @map_region.locations.each do |location| %>
 <br/>
 <b>Location:<b> 
-  <%= link_to "##{location.id}", settlement_settlement_path(location)%> slot <%= location.slot %>
+  <%= link_to "##{location.id}", map_location_path(location)%> slot <%= location.slot %>
   <% if location.settlement %>
     ( has a settlement owned by 
       <%= link_to location.settlement.owner.name, fundamental_character_path(location.settlement.owner) %>

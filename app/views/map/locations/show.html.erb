@@ -2,7 +2,7 @@
 
 <p>
   <b>Region:</b>
-  <%= @map_location.region_id %>
+  <%= link_to "##{@map_location.region_id}", map_location_path(@map_location.region_id) %>
 </p>
 
 <p>
@@ -11,13 +11,20 @@
 </p>
 
 <p>
-  <b>Settlement Type:</b>
-  <%= @map_location.settlement_type_id %>
-</p>
-
-<p>
-  <b>Settlement Level:</b>
-  <%= @map_location.settlement_level %>
+  <b>Settlement:</b> 
+  <% if !@map_location.settlement.nil? %>
+    Settlement <%= link_to "##{@map_location.settlement.id}", @map_location.settlement %>
+    of Type <%= @map_location.settlement_type_id %>
+    with level <%= @map_location.settlement_level %>
+    ( owned by
+      <%= link_to @map_location.settlement.owner.name, fundamental_character_path(@map_location.settlement.owner) %>
+      <% if @map_location.settlement.alliance_id %> 
+        | <%= link_to @map_location.settlement.alliance.tag, fundamental_alliance_path(@map_location.settlement.alliance_id) %>
+      <%end%>
+    )
+  <% else %>
+    none
+  <% end %>
 </p>
 
 <p>
