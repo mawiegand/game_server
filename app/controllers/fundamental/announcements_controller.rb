@@ -16,7 +16,7 @@ class Fundamental::AnnouncementsController < ApplicationController
 
     last_modified = nil
     @fundamental_announcements.each do |announcement|
-      last_modified = announcement.updated_at if last_modified.bil? || last_modified < announcement.updated_at
+      last_modified = announcement.updated_at if last_modified.nil? || last_modified < announcement.updated_at
     end
     
     render_not_modified_or(last_modified) do
