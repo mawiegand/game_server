@@ -952,15 +952,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 3,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
             ],
 
           ],          
