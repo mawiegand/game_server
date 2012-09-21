@@ -2,7 +2,8 @@ class Map::NodesController < ApplicationController
   layout 'map'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api,        :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
   
   
   # TODO: define what's accessible by the API and what's accessible by the website (admin area)
@@ -46,7 +47,7 @@ class Map::NodesController < ApplicationController
         
     render_not_modified_or(last_modified) do
       respond_to do |format|
-        format.html # show.html.erb
+        format.html  # show.html.erb
         format.json do 
           options = { :except => @map_node.attributes.delete_if { |k,v| !v.blank? }.keys }
           render :json => @map_node.to_json(options) 

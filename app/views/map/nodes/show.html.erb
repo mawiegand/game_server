@@ -1,3 +1,14 @@
+<% if @map_node.leaf? %>
+<p><b>Region:</b> <%= link_to "##{@map_node.region.id}", map_region_path(@map_node.region)%> 
+  ( owned by 
+    <%= link_to @map_node.region.owner_name, fundamental_character_path(@map_node.region.owner_id) %>
+    <% if @map_node.region.alliance_id %> 
+      | <%= link_to @map_node.region.alliance_tag, fundamental_alliance_path(@map_node.region.alliance_id) %>
+    <%end%>
+  )
+<% end %>
+</p>
+
 <p id="notice"><%= notice %></p>
 
 <p>

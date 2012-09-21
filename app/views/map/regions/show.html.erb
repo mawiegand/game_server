@@ -1,3 +1,40 @@
+<p><b>Fortress:<b> <%= link_to "Settlement ##{@map_region.fortress.id}", settlement_settlement_path(@map_region.fortress)%>
+  ( owned by 
+    <%= link_to @map_region.fortress.owner.name, fundamental_character_path(@map_region.fortress.owner) %>
+    <% if @map_region.fortress.alliance_id %> 
+      | <%= link_to @map_region.fortress.alliance.tag, fundamental_alliance_path(@map_region.fortress.alliance_id) %>
+    <%end%>
+  )
+
+<% @map_region.settlements.each do |settlement| %>
+<br/>
+<b>Settlement:<b> 
+  <%= link_to "##{settlement.id}", settlement_settlement_path(settlement)%>
+  ( owned by 
+    <%= link_to settlement.owner.name, fundamental_character_path(settlement.owner) %>
+    <% if settlement.alliance_id %> 
+      | <%= link_to settlement.alliance.tag, fundamental_alliance_path(settlement.alliance_id) %>
+    <%end%>
+  )
+<% end %>
+</p>
+
+<% @map_region.locations.each do |location| %>
+<br/>
+<b>Location:<b> 
+  <%= link_to "##{location.id}", settlement_settlement_path(location)%> slot <%= location.slot %>
+  <% if location.settlement %>
+    ( has a settlement owned by 
+      <%= link_to location.settlement.owner.name, fundamental_character_path(location.settlement.owner) %>
+      <% if location.settlement.alliance_id %> 
+        | <%= link_to location.settlement.alliance.tag, fundamental_alliance_path(location.settlement.alliance_id) %>
+      <%end%>
+    )
+  <% end %>
+<% end %>
+</p>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -27,7 +64,7 @@
 
 <p>
   <b>Owner name:</b>
-  <%= @map_region.owner_name %>
+  <%= link_to @map_region.owner_name, @map_region.owner %>
 </p>
 
 <p>
@@ -37,7 +74,7 @@
 
 <p>
   <b>Alliance tag:</b>
-  <%= @map_region.alliance_tag %>
+  <%= link_to @map_region.alliance_tag, @map_region.alliance %>
 </p>
 
 <p>
@@ -54,6 +91,8 @@
   <b>Terrain:</b>
   <%= @map_region.terrain_id %>
 </p>
+
+
 
 
 <%= link_to 'Edit', edit_map_region_path(@map_region) %> |
