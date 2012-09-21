@@ -37,6 +37,5 @@
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="11" />  
-        <Requirement id="building_cavalry_tower" min_level="11" />  
       </RequirementGroup> 
     </Unit>
