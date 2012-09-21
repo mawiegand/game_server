@@ -592,10 +592,17 @@ class Settlement::Settlement < ActiveRecord::Base
     def manage_queues_as_needed
       if self.changed?
         queue_types = GameRules::Rules.the_rules().queue_types
+        
+        puts '-------------> ' + changes.inspect
       
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
+              
+              if change[0].nil?
+                puts 'change is nil, ' +  change[1].to_s
+              else
+              
               if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
                 create_queue(queue)
               elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
@@ -607,6 +614,9 @@ class Settlement::Settlement < ActiveRecord::Base
                   create_queue(queue)
                 end
               end
+              
+              end
+              
             end
           end
         end

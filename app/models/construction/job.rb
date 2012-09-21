@@ -53,7 +53,6 @@ class Construction::Job < ActiveRecord::Base
     logger.debug '---> create_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     requirementGroups = building_type[:requirementGroups]
-    logger.debug '---> requirementGroups ' + requirementGroups.inspect
     raise ForbiddenError.new('Requirements not met.')  if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, slot.settlement.owner, slot.settlement, slot)
 
     self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty?
@@ -64,12 +63,11 @@ class Construction::Job < ActiveRecord::Base
     logger.debug '---> upgrade_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     requirementGroups = building_type[:requirementGroups]
-    logger.debug '---> requirementGroups ' + requirementGroups.inspect
     raise ForbiddenError.new('Requirements not met.')  if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, slot.settlement.owner, slot.settlement, slot)
 
     self.level_after == slot.last_level + 1 &&
     self.level_after <= slot.max_level &&
-    !slot.level.nil? && slot.level != 0 &&
+    !slot.last_level.nil? && slot.last_level != 0 &&
     self.building_id == slot.building_id
   end
   
@@ -78,7 +76,6 @@ class Construction::Job < ActiveRecord::Base
     logger.debug '---> destroy_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     raise ForbiddenError.new('Building type is not demolishable.') unless building_type[:demolishable] && building_type[:demolishable] == true
-    raise ForbiddenError.new('Queue must be empty for detroying.') unless (self.queue.jobs_count || 0) == 0
     self.building_id == slot.building_id && !slot.last_level.nil? && slot.last_level != 0
   end
   
@@ -99,9 +96,6 @@ class Construction::Job < ActiveRecord::Base
     # level testen
   end
   
-      # return false if !slot.level.nil? && slot.level != 0 && self.building_id != slot.building_id
-
-  
   # checks if a job can be queueable due to requirements like e.g. building levels
   def queueable?
     slot = self.slot
@@ -111,7 +105,9 @@ class Construction::Job < ActiveRecord::Base
     raise ForbiddenError.new('Queue is already full.') if self.queue && self.queue.max_length <= (self.queue.jobs_count || 0)
     
     # test same job type if queue has already jobs
-    raise ForbiddenError.new('Not allowed to mix destruction with construction jobs.')  if !slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && slot.jobs.first.job_type != TYPE_CREATE
+    if (!slot.jobs.empty? && slot.jobs.first.job_type != self.job_type && (slot.jobs.first.job_type != TYPE_CREATE || self.job_type != TYPE_UPGRADE))
+      raise ForbiddenError.new('Not allowed to mix destruction or conversion job with construction jobs.')  
+    end
     
     # test correct level
     # return false if self.job_type == TYPE_CREATE    && (self.level_after != 1 || (!slot.level.nil? && slot.level != 0) || !slot.jobs.empty?)

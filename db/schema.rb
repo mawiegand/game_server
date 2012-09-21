@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918155535) do
+ActiveRecord::Schema.define(:version => 20120920235724) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -498,6 +498,7 @@ ActiveRecord::Schema.define(:version => 20120918155535) do
     t.decimal  "unitcategory_siege_strength"
     t.boolean  "removed",                         :default => false, :null => false
     t.boolean  "npc",                             :default => false, :null => false
+    t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -522,6 +523,7 @@ ActiveRecord::Schema.define(:version => 20120918155535) do
     t.integer  "unit_neanderthal"
     t.integer  "unit_slingshot_warrior"
     t.integer  "unit_babysaurus"
+    t.integer  "unit_little_chief"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
@@ -552,6 +554,7 @@ ActiveRecord::Schema.define(:version => 20120918155535) do
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
     t.decimal  "unitcategory_siege_strength"
+    t.decimal  "unitcategory_special_strength",   :default => 0.0, :null => false
   end
 
   create_table "military_battle_participant_results", :force => true do |t|
@@ -613,6 +616,10 @@ ActiveRecord::Schema.define(:version => 20120918155535) do
     t.integer  "unit_babysaurus_casualties"
     t.decimal  "unit_babysaurus_damage_taken"
     t.decimal  "unit_babysaurus_damage_inflicted"
+    t.integer  "unit_little_chief"
+    t.integer  "unit_little_chief_casualties"
+    t.decimal  "unit_little_chief_damage_taken"
+    t.decimal  "unit_little_chief_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|
@@ -795,6 +802,7 @@ ActiveRecord::Schema.define(:version => 20120918155535) do
     t.integer  "trading_carts",                                  :default => 0,            :null => false
     t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
     t.integer  "trading_carts_used",                             :default => 0,            :null => false
+    t.integer  "settlement_queue_special_unlock_count",          :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|

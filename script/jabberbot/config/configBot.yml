@@ -1,17 +1,12 @@
-mysql:
-  host:     localhost
-  database: jabber
-  username: jabber
-  password: 12345
 
 jabber:
-  debug:    false
+  debug:    true
   host:     jabber.wack-a-doo.de
   muc:      conference.jabber.wack-a-doo.de
   botJid:   service@jabber.wack-a-doo.de
-  password: 12345
-  name:     Service
+  password: P5Dda5eZmvCLFTw2
+  name:     service
   adminJid: shadow-dragon@jabber.wack-a-doo.de
 
-loggerPath:  ./log/bot.log
+loggerPath:  ./bot.log
 sleep:      5

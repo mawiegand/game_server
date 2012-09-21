@@ -7,7 +7,7 @@ class Event::EventsController < ApplicationController
   # GET /events/events
   # GET /events/events.json
   def index
-    @event_events = Event::Event.all
+    @event_events = Event::Event.find(:all, :order => "execute_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
