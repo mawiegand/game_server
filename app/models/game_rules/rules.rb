@@ -1230,6 +1230,21 @@ class GameRules::Rules
             
           },
 
+          :requirementGroups=> [
+            [
+              
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ]
+          ],          
+
 
         },              #   END OF Little Chief
       ],                # END OF UNIT TYPES
