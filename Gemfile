@@ -15,7 +15,8 @@ gem 'gravatar_image_tag'
 gem 'xmpp4r'
 
 
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov',      :require => false, :group => :test
+gem 'simplecov-rcov', :require => false, :group => :test
 
 group :production do
   gem 'pg'
