@@ -10,8 +10,8 @@ class Fundamental::AnnouncementsController < ApplicationController
   # GET /fundamental/announcements
   # GET /fundamental/announcements.json
   def index    
-    conditions = api_request? ? {locale: params[:locale] || I18n.locale} : {original_id: nil}
-    if api_request? && params.has_key?(:locale) && params[:locale] == "all"
+    conditions = api_request? ? {locale: params[:language] || I18n.locale} : {original_id: nil}
+    if api_request? && params.has_key?(:language) && params[:language] == "all"
       @fundamental_announcements = Fundamental::Announcement.order("created_at DESC")
     else 
       @fundamental_announcements = Fundamental::Announcement.where(conditions).order("created_at DESC")
