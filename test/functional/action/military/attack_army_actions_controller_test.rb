@@ -6,10 +6,6 @@ class Action::Military::AttackArmyActionsControllerTest < ActionController::Test
     @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
-  test "shoud fail" do
-    assert false
-  end
-    
 
 
 end
