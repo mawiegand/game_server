@@ -1,5 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+owner:
+  id: 1
+  alliance_id: 1
+  name: Owner
+
+ally:
+  id: 2
+  alliance_id: 1
+  name: Ally
+
+other_with_alliance:
+  id: 3
+  alliance_id: 2
+  name: InOtherAlliance
+  
+other_without_alliance:
+  id: 4
+  name: InNoAlliance
+
 one:
   identifier: MyString
   premium_account: false

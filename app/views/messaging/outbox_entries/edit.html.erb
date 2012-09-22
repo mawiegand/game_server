@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @messaging_outbox_entry %> |
+<%= link_to 'Show', :controller => "outbox_entries", :id => @messaging_outbox_entry, :action => :show %> |
 <%= link_to 'Back', messaging_outbox_entries_path %>

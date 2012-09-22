@@ -23,3 +23,15 @@ admin_no_staff:
   admin: true
   staff: false
   login: admin_no_staff
+  
+one:
+  email: test1@5dlab.com
+  admin: false
+  staff: false
+  login: test1
+  
+two:
+  email: test2@5dlab.com
+  admin: true
+  staff: true
+  login: test2

@@ -25,9 +25,10 @@ class Tutorial::StatesController < ApplicationController
     if params.has_key?(:character_id)  
       @tutorial_state = Tutorial::State.find_by_character_id(params[:character_id])
     else
-      @tutorial_state = Tutorial::State.find(params[:id])
+      @tutorial_state = Tutorial::State.find_by_id(params[:id])
     end
-    raise ForbiddenError.new('Access Forbidden') if !@tutorial_state.nil? && @tutorial_state.owner != current_character  
+    raise NotFoundError.new('Not Found.')        if @tutorial_state.nil?   
+    raise ForbiddenError.new('Access Forbidden') if @tutorial_state.owner != current_character && !staff?  
     last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at
     
     render_not_modified_or(last_modified) do

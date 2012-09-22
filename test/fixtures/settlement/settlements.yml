@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   type_id: 1
   region_id: 1
   location_id: 1
@@ -21,6 +22,28 @@ one:
   besieged: false
 
 two:
+  id: 2
+  type_id: 1
+  region_id: 1
+  location_id: 1
+  node_id: 1
+  owner_id: 1
+  alliance_id: 1
+  level: 1
+  founded_at: 2012-05-18 18:26:44
+  founder_id: 2012-05-18 18:26:44
+  defense_bonus: 9.99
+  morale: 9.99
+  tax_rate: 9.99
+  owns_region: false
+  taxable: false
+  command_points: 1
+  armies_count: 1
+  garrison_id: 1
+  besieged: false
+
+
+new:
   type_id: 1
   region_id: 1
   location_id: 1

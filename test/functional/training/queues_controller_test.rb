@@ -3,6 +3,7 @@ require 'test_helper'
 class Training::QueuesControllerTest < ActionController::TestCase
   setup do
     @training_queue = training_queues(:one)
+    @controller.current_backend_user = backend_users(:staff)
   end
 
   test "should get index" do
