@@ -15,6 +15,8 @@ gem 'gravatar_image_tag'
 gem 'xmpp4r'
 
 
+gem 'simplecov', :require => false, :group => :test
+
 group :production do
   gem 'pg'
 	gem 'awe_native_extensions', '>= 0.0.15', :git => "git@github.com:wackadoo/awe_native_extensions.git"
