@@ -20,7 +20,6 @@ one:
   alliance_id: 1
   alliance_tag: MyString
   base_location_id: 1
-  region_location_id: 1
 
 two:
   identifier: MyString
@@ -42,4 +41,3 @@ two:
   alliance_id: 1
   alliance_tag: MyString
   base_location_id: 1
-  region_location_id: 1

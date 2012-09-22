@@ -2,7 +2,8 @@ class Tutorial::StatesController < ApplicationController
   layout 'tutorial'
 
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show]  
+  before_filter :deny_api,        :except => [:show]  
+  before_filter :authorize_staff, :except => [:show]  
 
   # GET /tutorial/states
   # GET /tutorial/states.json

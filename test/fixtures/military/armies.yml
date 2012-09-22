@@ -9,10 +9,6 @@ one:
   owner_name: MyString
   alliance_id: 1
   alliance_tag: MyString
-  ap_max: 1
-  ap_present: 1
-  ap_seconds_per_point: 1
-  ap_last: 2012-03-26 17:20:35
   mode: 1
   stance: 1
   size_max: 1
@@ -35,10 +31,6 @@ two:
   owner_name: MyString
   alliance_id: 1
   alliance_tag: MyString
-  ap_max: 1
-  ap_present: 1
-  ap_seconds_per_point: 1
-  ap_last: 2012-03-26 17:20:35
   mode: 1
   stance: 1
   size_max: 1

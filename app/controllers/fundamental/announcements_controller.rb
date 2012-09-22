@@ -10,6 +10,8 @@ class Fundamental::AnnouncementsController < ApplicationController
   # GET /fundamental/announcements
   # GET /fundamental/announcements.json
   def index    
+#   authorize_staff unless api_request?
+    
     conditions = api_request? ? {locale: params[:language] || I18n.locale} : {original_id: nil}
     if api_request? && params.has_key?(:language) && params[:language] == "all"
       @fundamental_announcements = Fundamental::Announcement.order("created_at DESC")
@@ -43,6 +45,8 @@ class Fundamental::AnnouncementsController < ApplicationController
   # GET /fundamental/announcements/1
   # GET /fundamental/announcements/1.json
   def show
+#   authorize_staff unless api_request?
+
     @fundamental_announcement = Fundamental::Announcement.find(params[:id])
     
     last_modified = @fundamental_announcement.updated_at

@@ -1,21 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  email: MyString
-  salt: MyString
-  string: 
+user:
+  email: sascha@5dlab.com
   admin: false
-  staff: MyString
-  firstname: MyString
-  surname: MyString
-  login: MyString
+  staff: false
+  login: user
 
-two:
-  email: MyString
-  salt: MyString
-  string: 
+admin:
+  email: info@5dlab.com
+  admin: true
+  staff: true
+  login: admin
+  
+staff:
+  email: staff@5dlab.com
   admin: false
-  staff: MyString
-  firstname: MyString
-  surname: MyString
-  login: MyString
+  staff: true
+  login: staff
+  
+admin_no_staff:
+  email: patrick@5dlab.com
+  admin: true
+  staff: false
+  login: admin_no_staff
