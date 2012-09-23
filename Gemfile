@@ -59,9 +59,11 @@ gem 'httparty'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'ci_reporter'
+
+
 group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
-  gem 'ci_reporter'
   gem 'test-unit', '~> 2.0.0'
 end
