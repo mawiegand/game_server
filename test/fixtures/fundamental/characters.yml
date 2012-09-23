@@ -4,6 +4,7 @@ owner:
   id: 1
   alliance_id: 1
   name: Owner
+  mundane_rank: 0
 
 ally:
   id: 2
@@ -39,6 +40,7 @@ one:
   alliance_id: 1
   alliance_tag: MyString
   base_location_id: 1
+  mundane_rank: 0
 
 two:
   identifier: MyString
@@ -60,3 +62,5 @@ two:
   alliance_id: 1
   alliance_tag: MyString
   base_location_id: 1
+  mundane_rank: 1
+

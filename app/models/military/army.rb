@@ -525,7 +525,7 @@ class Military::Army < ActiveRecord::Base
       return true    if self.owner.blank?
       return true    if self.owner.ranking.blank?  # true e.g. for npc, or on a bug ;-)
     
-      if !self.changes[:exp].blank? && self.owner.ranking.max_experience < self.exp
+      if !self.changes[:exp].blank? && self.owner.ranking.max_experience < (self.exp || 0)
         self.owner.ranking.update_max_experience_from_army(self)
         self.owner.ranking.save
       else     # in case this army is the best army, propagate changes to name and rank.
@@ -544,7 +544,7 @@ class Military::Army < ActiveRecord::Base
       return true    if self.owner.blank?
     
       if !self.changes[:exp].blank?
-        delta = self.exp_change[1]-self.exp_change[0]
+        delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
         self.owner.increment(:exp, delta)
         self.owner.save
       end

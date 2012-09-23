@@ -26,6 +26,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
   before_save :sync_alliance_tag
+  before_save :update_mundane_rank
+  
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
@@ -157,6 +159,8 @@ class Fundamental::Character < ActiveRecord::Base
     # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
     return true
   end
+    
+    
     
   
   def is_enemy_of?(opponent)
@@ -357,6 +361,39 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  
+  # returns true in case the character fulfills all the prerequisites of
+  # the next higher rank
+  def fulfills_mundane_rank?(rank)  
+    ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
+    return false    if ranks.nil? || ranks.empty? || rank >= ranks.count
+    new_rank = ranks[rank]
+    
+    (self.exp || 0) >= new_rank[:exp] && (self.sacred_rank || 0) >= new_rank[:minimum_sacred_rank]
+  end
+    
+  # advance the rank of the character to the highest 
+  # rank fulfilled by the character 
+  def update_mundane_rank
+    while self.advance_to_next_mundane_rank_if_possible do
+    end
+    true
+  end  
+  
+  def advance_to_next_mundane_rank_if_possible
+    return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
+    self.advance_to_next_mundane_rank
+    return true
+  end
+  
+  protected
+  
+    def advance_to_next_mundane_rank
+      skill_points_per_rank = GameRules::Rules.the_rules.character_ranks[:skill_points_per_mundane_rank]    
+      self.mundane_rank = (self.mundane_rank || 0) + 1
+      self.skill_points = (self.skill_points || 0) + skill_points_per_rank
+    end
   
   
 end
