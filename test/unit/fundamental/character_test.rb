@@ -21,8 +21,27 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert character.name_change_count.nil? || character.name_change_count == 0
     
     character.change_name_transaction('name2')
+    character.reload
     assert_equal character.name, 'name2'
     assert character.name_change_count == 1
+  end
+  
+  test "can change character gender once" do
+    character = Fundamental::Character.new({
+      name: "name1",
+      gender: nil,
+    })
+    assert character.save
+    assert character.gender_change_count.nil? || character.gender_change_count == 0
+    assert !character.female?
+    assert character.male?
+    
+    character.change_gender_transaction('female')
+    character.reload
+    assert character.female?
+    assert !character.male?
+
+    assert_equal 1, character.gender_change_count
   end
 
   test "enforces unique character names" do

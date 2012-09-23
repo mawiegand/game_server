@@ -79,6 +79,14 @@ class Fundamental::Character < ActiveRecord::Base
     !self.online?
   end  
   
+  def female?
+    return !self.gender.blank? && self.gender == "female"
+  end
+  
+  def male?
+    !female?   # presently, due to community structure, male is the default in case nothing is set
+  end
+  
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
@@ -145,16 +153,36 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     self.name = name
+    self.increment(:name_change_count)  
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > 0 
+    if (self.name_change_count || 0) > 1 # test for 1, count was already incremented!
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
-    self.increment(:name_change_count)  
   
     return self
   end
+  
+  def change_gender_transaction(newGender)
+    
+    freeChange = (self.gender_change_count || 0) < 1 
+    
+    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+      raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
+    end
+    
+    self.gender = newGender == "female" ? "female" : "male"
+    self.increment(:gender_change_count)  
+
+    raise InternalServerError.new 'Could not save new gender.' unless self.save 
+    
+    if (self.gender_change_count || 0) > 1  #  test for 1, count was already incremented! 
+        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    end
+  
+    return self
+  end  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
