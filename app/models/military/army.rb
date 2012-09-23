@@ -27,6 +27,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_units
 
   after_save     :update_experience_ranking
+  after_save     :update_experience_character
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
   before_destroy :disband_from_battle
@@ -538,6 +539,18 @@ class Military::Army < ActiveRecord::Base
 
       true
     end
+    
+    def update_experience_character
+      return true    if self.owner.blank?
+    
+      if !self.changes[:exp].blank?
+        delta = self.exp_change[1]-self.exp_change[0]
+        self.owner.increment(:exp, delta)
+        self.owner.save
+      end
+
+      true
+    end    
     
     # reduces units evenly when army_size_max is reduced
     def update_units
