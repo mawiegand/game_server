@@ -33,6 +33,8 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_score_changes
   after_save  :propagate_fortress_count_changes
   
+  after_commit :check_consistency_sometimes
+
 
   @identifier_regex = /[a-z]{16}/i 
   
@@ -362,6 +364,54 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
   
+  ############################################################################
+  #
+  #  C O N S I S T E N C Y   C H E C K S
+  #
+  ############################################################################  
+
+  def check_consistency_sometimes
+    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)  
+    check_consistency
+  end  
+
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of CHARACTER #{self.id}.")
+
+    settlement_points = recalc_settlement_points_total
+    check_and_apply_settlement_points_total(settlement_points)
+    
+    if self.changed?
+      logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> CHARACTER OK.")
+    end
+
+    true      
+  end  
+  
+  ############################################################################
+  #
+  #  C H A R A C T E R   R A N K S  and  S E T T L E M E N T   P O I N T S 
+  #
+  ############################################################################  
+  
+  def recalc_settlement_points_total
+    sp = 0
+    ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
+    (0..(self.mundane_rank || 0)).each do |i|
+      sp += ranks[i][:settlement_points] || 0
+    end
+    return sp
+  end
+
+  def check_and_apply_settlement_points_total(points)
+    if (self.settlement_points_total || 0) !=  points
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
+      self.settlement_points_total = points
+    end    
+  end  
   
   # returns true in case the character fulfills all the prerequisites of
   # the next higher rank
@@ -390,9 +440,13 @@ class Fundamental::Character < ActiveRecord::Base
   protected
   
     def advance_to_next_mundane_rank
-      skill_points_per_rank = GameRules::Rules.the_rules.character_ranks[:skill_points_per_mundane_rank]    
-      self.mundane_rank = (self.mundane_rank || 0) + 1
-      self.skill_points = (self.skill_points || 0) + skill_points_per_rank
+      character_ranks              = GameRules::Rules.the_rules.character_ranks
+      new_rank                     = (self.mundane_rank || 0) + 1
+      skill_points_per_rank        = character_ranks[:skill_points_per_mundane_rank] || 0
+      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0    
+      self.mundane_rank            = new_rank
+      self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
+      self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points
     end
   
   
