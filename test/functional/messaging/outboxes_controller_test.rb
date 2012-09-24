@@ -3,6 +3,8 @@ require 'test_helper'
 class Messaging::OutboxesControllerTest < ActionController::TestCase
   setup do
     @messaging_outbox = messaging_outboxes(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

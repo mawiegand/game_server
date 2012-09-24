@@ -18,14 +18,12 @@
     <td><%= messaging_outbox_entry.owner_id %></td>
     <td><%= messaging_outbox_entry.message_id %></td>
     <td><%= messaging_outbox_entry.recipient_id %></td>
-    <td><%= messaging_outbox_entry.subject %></td>
-    <td><%= link_to 'Show', messaging_outbox_entry %></td>
-    <td><%= link_to 'Edit', edit_messaging_outbox_entry_path(messaging_outbox_entry) %></td>
-    <td><%= link_to 'Destroy', messaging_outbox_entry, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', :controller => "outbox_entries", :id => messaging_outbox_entry, :action => :show %></td>
+    <td><%= link_to 'Edit', :controller => "outbox_entries", :id => messaging_outbox_entry, :action => :edit %></td>
   </tr>
+
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Outbox entry', new_messaging_outbox_entry_path %>

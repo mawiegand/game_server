@@ -19,6 +19,7 @@ defaults: &defaults
   
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
+  character_recalc_probability:     0.2
   
   cookie_name: 'gs_remember_token'  
   
@@ -32,11 +33,17 @@ development:
 
   payment_provider_base_url: 'https://localhost/payment_provider'
 
-  settlement_recalc_probability: 1.0
+  settlement_recalc_probability:    0.5
+  character_recalc_probability:     0.5
+  resource_pool_recalc_probability: 0.1
 
 
 test:
   <<: *defaults
+
+  settlement_recalc_probability:    0
+  character_recalc_probability:     0
+  resource_pool_recalc_probability: 0
 
 production:
   <<: *defaults

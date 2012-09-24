@@ -15,6 +15,9 @@ gem 'gravatar_image_tag'
 gem 'xmpp4r'
 
 
+gem 'simplecov',      :require => false, :group => :test
+gem 'simplecov-rcov', :require => false, :group => :test
+
 group :production do
   gem 'pg'
 	gem 'awe_native_extensions', '>= 0.0.15', :git => "git@github.com:wackadoo/awe_native_extensions.git"
@@ -56,7 +59,11 @@ gem 'httparty'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'ci_reporter'
+
+
 group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
+  gem 'test-unit', '~> 2.0.0'
 end

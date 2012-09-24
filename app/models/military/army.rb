@@ -27,6 +27,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_units
 
   after_save     :update_experience_ranking
+  after_save     :update_experience_character
   after_save     :propagate_change_to_map
   before_destroy :remove_from_experience_ranking 
   before_destroy :disband_from_battle
@@ -524,7 +525,7 @@ class Military::Army < ActiveRecord::Base
       return true    if self.owner.blank?
       return true    if self.owner.ranking.blank?  # true e.g. for npc, or on a bug ;-)
     
-      if !self.changes[:exp].blank? && self.owner.ranking.max_experience < self.exp
+      if !self.changes[:exp].blank? && self.owner.ranking.max_experience < (self.exp || 0)
         self.owner.ranking.update_max_experience_from_army(self)
         self.owner.ranking.save
       else     # in case this army is the best army, propagate changes to name and rank.
@@ -538,6 +539,18 @@ class Military::Army < ActiveRecord::Base
 
       true
     end
+    
+    def update_experience_character
+      return true    if self.owner.blank?
+    
+      if !self.changes[:exp].blank?
+        delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
+        self.owner.increment(:exp, delta)
+        self.owner.save
+      end
+
+      true
+    end    
     
     # reduces units evenly when army_size_max is reduced
     def update_units

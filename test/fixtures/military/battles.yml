@@ -10,8 +10,6 @@ one:
   region_id: 1
   importance_rating: 1
   decisiveness: 1
-  factions_count: 1
-  rounds_count: 1
 
 two:
   started_at: 2012-04-30 14:54:52
@@ -23,5 +21,3 @@ two:
   region_id: 1
   importance_rating: 1
   decisiveness: 1
-  factions_count: 1
-  rounds_count: 1

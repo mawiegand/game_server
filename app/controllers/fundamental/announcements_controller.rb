@@ -4,32 +4,58 @@ class Fundamental::AnnouncementsController < ApplicationController
   
   before_filter :deny_api,             :except => [ :index, :show, :recent ]
   before_filter :authenticate_backend, :except => [ :index, :show, :recent ]
+  before_filter :authorize_staff,      :except => [ :index, :show, :recent ]
 
   
   # GET /fundamental/announcements
   # GET /fundamental/announcements.json
-  def index
-    @fundamental_announcements = Fundamental::Announcement.where(original_id: nil).order("created_at DESC")
+  def index    
+#   authorize_staff unless api_request?
+    
+    conditions = api_request? ? {locale: params[:language] || I18n.locale} : {original_id: nil}
+    if api_request? && params.has_key?(:language) && params[:language] == "all"
+      @fundamental_announcements = Fundamental::Announcement.order("created_at DESC")
+    else 
+      @fundamental_announcements = Fundamental::Announcement.where(conditions).order("created_at DESC")
+    end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_announcements, methods: [ :author_name ]}
+    last_modified = nil
+    @fundamental_announcements.each do |announcement|
+      last_modified = announcement.updated_at if last_modified.nil? || last_modified < announcement.updated_at
+    end
+    
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @fundamental_announcements, methods: [ :author_name ]}
+      end
     end
   end
 
   def recent
     @announcement = Fundamental::Announcement.where(:locale => I18n.locale).order("created_at DESC").first
-    render json: @announcement
+    
+    last_modified = @announcement.updated_at
+    
+    render_not_modified_or(last_modified) do
+      render json: @announcement
+    end
   end
 
   # GET /fundamental/announcements/1
   # GET /fundamental/announcements/1.json
   def show
-    @fundamental_announcement = Fundamental::Announcement.find(params[:id])
+#   authorize_staff unless api_request?
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @fundamental_announcement, methods: [ :author_name ] }
+    @fundamental_announcement = Fundamental::Announcement.find(params[:id])
+    
+    last_modified = @fundamental_announcement.updated_at
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @fundamental_announcement, methods: [ :author_name ] }
+      end
     end
   end
 

@@ -3,6 +3,8 @@ require 'test_helper'
 class Action::Trading::TradingCartsActionsControllerTest < ActionController::TestCase
   setup do
     @action_trading_trading_carts_action = action_trading_trading_carts_actions(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

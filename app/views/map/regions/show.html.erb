@@ -1,3 +1,4 @@
+<% if !@map_region.fortress.nil? %>
 <p><b>Fortress:<b> <%= link_to "Settlement ##{@map_region.fortress.id}", settlement_settlement_path(@map_region.fortress)%>
   ( owned by 
     <%= link_to @map_region.fortress.owner.name, fundamental_character_path(@map_region.fortress.owner) %>
@@ -5,6 +6,7 @@
       | <%= link_to @map_region.fortress.alliance.tag, fundamental_alliance_path(@map_region.fortress.alliance_id) %>
     <%end%>
   )
+<% end %>
 
 <% @map_region.settlements.each do |settlement| %>
 <br/>

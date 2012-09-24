@@ -2,7 +2,8 @@ class Messaging::OutboxesController < ApplicationController
   layout 'messaging'
 
   before_filter :authenticate
-  before_filter :deny_api,      :except => [:index, :show]
+  before_filter :deny_api,        :except => [:index, :show]
+  before_filter :authorize_staff, :except => [:index, :show]
 
 
   # GET /messaging/outboxes
@@ -43,18 +44,18 @@ class Messaging::OutboxesController < ApplicationController
   # GET /messaging/outboxes/1
   # GET /messaging/outboxes/1.json
   def show
-    @messaging_outboxes = Messaging::Outbox.find(params[:id])
-    raise NotFoundError.new('Outbox Not Found') if @messaging_outboxes.nil?
+    @messaging_outbox = Messaging::Outbox.find(params[:id])
+    raise NotFoundError.new('Outbox Not Found') if @messaging_outbox.nil?
 
-    last_modified = @messaging_outboxes.updated_at
+    last_modified = @messaging_outbox.updated_at
 
-    role = determine_access_role(@messaging_outboxes.owner_id, nil)  # no alliance access granted
+    role = determine_access_role(@messaging_outbox.owner_id, nil)  # no alliance access granted
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html # show.html.erb
         format.json do
-          render json: @messaging_outboxes, :only => Messaging::Outbox.readable_attributes(role)
+          render json: @messaging_outbox, :only => Messaging::Outbox.readable_attributes(role)
         end
       end
     end     

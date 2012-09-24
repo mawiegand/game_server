@@ -3,17 +3,11 @@
 one:
   settlement_id: 1
   slot_num: 1
-  type: 
-  max_level: 1
   building_id: 1
   level: 1
-  construction_id: 1
 
 two:
   settlement_id: 1
   slot_num: 1
-  type: 
-  max_level: 1
   building_id: 1
   level: 1
-  construction_id: 1
