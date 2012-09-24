@@ -3,6 +3,7 @@ require 'test_helper'
 class Training::ActiveJobsControllerTest < ActionController::TestCase
   setup do
     @training_active_job = training_active_jobs(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do

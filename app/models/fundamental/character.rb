@@ -26,11 +26,15 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
   before_save :sync_alliance_tag
+  before_save :update_mundane_rank
+  
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
   after_save  :propagate_fortress_count_changes
   
+  after_commit :check_consistency_sometimes
+
 
   @identifier_regex = /[a-z]{16}/i 
   
@@ -74,6 +78,14 @@ class Fundamental::Character < ActiveRecord::Base
   def offline?
     !self.online?
   end  
+  
+  def female?
+    return !self.gender.blank? && self.gender == "female"
+  end
+  
+  def male?
+    !female?   # presently, due to community structure, male is the default in case nothing is set
+  end
   
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
@@ -141,22 +153,44 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     self.name = name
-    self.increment(:name_change_count)
+    self.increment(:name_change_count)  
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > 0 
+    if (self.name_change_count || 0) > 1 # test for 1, count was already incremented!
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
-    
+  
     return self
   end
+  
+  def change_gender_transaction(newGender)
+    
+    freeChange = (self.gender_change_count || 0) < 1 
+    
+    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+      raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
+    end
+    
+    self.gender = newGender == "female" ? "female" : "male"
+    self.increment(:gender_change_count)  
+
+    raise InternalServerError.new 'Could not save new gender.' unless self.save 
+    
+    if (self.gender_change_count || 0) > 1  #  test for 1, count was already incremented! 
+        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    end
+  
+    return self
+  end  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
     # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
     return true
   end
+    
+    
     
   
   def is_enemy_of?(opponent)
@@ -357,6 +391,91 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  ############################################################################
+  #
+  #  C O N S I S T E N C Y   C H E C K S
+  #
+  ############################################################################  
+
+  def check_consistency_sometimes
+    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)  
+    check_consistency
+  end  
+
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of CHARACTER #{self.id}.")
+
+    settlement_points = recalc_settlement_points_total
+    check_and_apply_settlement_points_total(settlement_points)
+    
+    if self.changed?
+      logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> CHARACTER OK.")
+    end
+
+    true      
+  end  
+  
+  ############################################################################
+  #
+  #  C H A R A C T E R   R A N K S  and  S E T T L E M E N T   P O I N T S 
+  #
+  ############################################################################  
+  
+  def recalc_settlement_points_total
+    sp = 0
+    ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
+    (0..(self.mundane_rank || 0)).each do |i|
+      sp += ranks[i][:settlement_points] || 0
+    end
+    return sp
+  end
+
+  def check_and_apply_settlement_points_total(points)
+    if (self.settlement_points_total || 0) !=  points
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
+      self.settlement_points_total = points
+    end    
+  end  
+  
+  # returns true in case the character fulfills all the prerequisites of
+  # the next higher rank
+  def fulfills_mundane_rank?(rank)  
+    ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
+    return false    if ranks.nil? || ranks.empty? || rank >= ranks.count
+    new_rank = ranks[rank]
+    
+    (self.exp || 0) >= new_rank[:exp] && (self.sacred_rank || 0) >= new_rank[:minimum_sacred_rank]
+  end
+    
+  # advance the rank of the character to the highest 
+  # rank fulfilled by the character 
+  def update_mundane_rank
+    while self.advance_to_next_mundane_rank_if_possible do
+    end
+    true
+  end  
+  
+  def advance_to_next_mundane_rank_if_possible
+    return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
+    self.advance_to_next_mundane_rank
+    return true
+  end
+  
+  protected
+  
+    def advance_to_next_mundane_rank
+      character_ranks              = GameRules::Rules.the_rules.character_ranks
+      new_rank                     = (self.mundane_rank || 0) + 1
+      skill_points_per_rank        = character_ranks[:skill_points_per_mundane_rank] || 0
+      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0    
+      self.mundane_rank            = new_rank
+      self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
+      self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points
+    end
   
   
 end

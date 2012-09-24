@@ -3,6 +3,8 @@ require 'test_helper'
 class Fundamental::ResourcePoolsControllerTest < ActionController::TestCase
   setup do
     @fundamental_resource_pool = fundamental_resource_pools(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

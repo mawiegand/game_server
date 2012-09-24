@@ -3,6 +3,8 @@ require 'test_helper'
 class Map::RegionsControllerTest < ActionController::TestCase
   setup do
     @map_region = map_regions(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

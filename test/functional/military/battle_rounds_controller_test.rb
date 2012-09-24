@@ -3,6 +3,8 @@ require 'test_helper'
 class Military::BattleRoundsControllerTest < ActionController::TestCase
   setup do
     @military_battle_round = military_battle_rounds(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

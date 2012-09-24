@@ -1,14 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  inbox_id: 1
   owner_id: 1
   message_id: 1
   sender_id: 1
   subject: MyString
 
 two:
-  inbox_id: 1
   owner_id: 1
   message_id: 1
   sender_id: 1

@@ -3,6 +3,8 @@ require 'test_helper'
 class Messaging::JabberCommandsControllerTest < ActionController::TestCase
   setup do
     @messaging_jabber_command = messaging_jabber_commands(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+
   end
 
   test "should get index" do

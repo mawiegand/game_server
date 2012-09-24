@@ -15,7 +15,7 @@
     <p>Collecs resources for the daily needs.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Sammelt für Dich Holz und Steine, und ab Stufe 11 findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>
+    <p>Sammelt für Dich Holz und Steine, und wenn sein Gelände weit genug ausgebaut wird, findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>
   </Flavour>
   <Requirement id="building_chief_cottage" min_level="1" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))/13+0.5)</Cost>  

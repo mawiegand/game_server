@@ -3,6 +3,7 @@ require 'test_helper'
 class Tutorial::QuestsControllerTest < ActionController::TestCase
   setup do
     @tutorial_quest = tutorial_quests(:one)
+    @controller.current_backend_user = backend_users(:staff)
   end
 
   test "should get index" do

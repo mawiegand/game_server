@@ -2,7 +2,6 @@
 
 one:
   character_id: 1
-  type: 
   room: MyString
   data: MyString
   blocked_at: 2012-09-05 23:56:18
@@ -11,7 +10,6 @@ one:
 
 two:
   character_id: 1
-  type: 
   room: MyString
   data: MyString
   blocked_at: 2012-09-05 23:56:18
