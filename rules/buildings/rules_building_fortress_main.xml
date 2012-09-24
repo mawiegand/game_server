@@ -6,7 +6,8 @@
   <Name lang="en_US">Fortifications</Name>
   <Description lang="de_DE">
     <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
-	<p>Die Festung beschleunigt alle anderen Gebäudeausbauten und erhöht die Wehrhaftigkeit. Mit fortschreitendem Ausbau wird auch die maximale Größe der Garnisson erhöht.</p>
+    <p>In der Sicherheit der Festung bauen die Arbeiter schneller und Krieger werden schneller ausgebildet.</p>
+    <p>Je größer die Festung wird, desto besser sind auch die Verteidigungsanlagen und Unterkünfte.</p>
   </Description>
   <Description lang="en_US">
     <p>Some debris, tied tree trunks, a provisional gate, small parade-ground, main building and some walls; rudimentary stronghold finished. Improving the fortification results in a higher maximum size of the garrison, speeding-up all other construction sites and increases the defensive abilities.</p> 
@@ -15,7 +16,7 @@
     <p>The fortification is controlling the region. Therefore armed forces are deployed to collect empathically the taxes and in case of attacks to protect the fortress. Prepare for battle!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen. </p>
+    <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen.</p>
   </Flavour>  
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>    

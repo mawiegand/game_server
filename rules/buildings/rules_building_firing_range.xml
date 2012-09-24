@@ -6,7 +6,7 @@
   <Name lang="en_US">Firing Range</Name>
   <Description lang="de_DE">
     <p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p>
-	<p>Zu schwächlich zum Führen einer Keule? Ein Kampf im Angesicht deines Gegners ist nicht dein Ding? Schließ dich der Artillerie an!</p>
+	<p> Je größer das Gelände, desto weniger Unfälle verzögern die Ausbildung. </p>
   </Description>
   <Description lang="en_US">
     <p>Training area for ranged units. Stones and javelins fill the air with a whiring buzz.</p> 
@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Berufsziel Fernkämpfer? Kein Lust auf Prügeleien oder stinkende Tiere? Die schießwütigen Fernkämpfer finden sich hier wieder. Der sicherste Platz ist immer HINTER dem Schützen!</p>
+    <p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf dein Ding.</p>
   </Flavour>  
   <Requirement id="building_chief_cottage" min_level="7" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*1.5+0.5)</Cost>  
