@@ -6,6 +6,7 @@
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
     <p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>
+    <p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>
   </Description>
   <Description lang="en_US">
     <p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>
@@ -15,7 +16,6 @@
   </Flavour>
     <Flavour lang="de_DE">
     <p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>
-        <p>Ab Level 11 bietet der Steinbruch einen lokalen Steinbonus. Auf Level 11-19 beträgt dieser 1% je Level: 1-9%, bei Level 20 ist der Steinbonus 15%.</p>
  </Flavour>
   <Requirement id="building_chief_cottage" min_level="5" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))/2+0.5)</Cost>  

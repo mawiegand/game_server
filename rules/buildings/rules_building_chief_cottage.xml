@@ -5,8 +5,9 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hall</Name>
   <Description lang="de_DE">
-    <p>Die allererste Hütte in der Siedlung gehört natürlich dem Häuptling. Zu Beginn nicht mehr als ein undichtes Dach über dem Kopf wird die Hütte bald zu einer repräsentativen Halle.</p>
-  <p>Zeichen der Triumpfe, Banner und ausgestelltes Beutegut zieren die Halle. Gerüchte sprechen auch von ausschweifenden Orgien.</p> 
+    <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
+  <p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p>
+  <p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p> 
   </Description>
   <Description lang="en_US">
     <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
@@ -16,8 +17,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto mehr Gebäude können gebaut werden.</p>
-    <p>Der Häuptling kann eine Armee befehligen. Alle vier Level der Häuptlingshütte bekommt er einen weiteren Kommandopunkt hinzu.</p>  
+    <p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>  
 	</Flavour> 
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL-1,2.95)*0.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL-1,2.95)*0.5+0.5)</Cost> 
@@ -33,9 +33,9 @@
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
-  <Capacity id="resource_stone">700000</Capacity>
-  <Capacity id="resource_wood">700000</Capacity>
-  <Capacity id="resource_fur">700000</Capacity>
+  <Capacity id="resource_stone">600000</Capacity>
+  <Capacity id="resource_wood">600000</Capacity>
+  <Capacity id="resource_fur">600000</Capacity>
   <Capacity id="resource_cash">1000</Capacity> 
 </Building>
   

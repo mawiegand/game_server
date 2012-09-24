@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ermöglicht und beschleunigt die Ausbildung von berittenen Einheiten. Vorsicht vor Dung und penetrantem Geruch!</p>
+    <p>Hier sind Unmengen an Tieren und verschwitzten Männern untergebracht. Vorsicht vor Dung und penetrantem Geruch!</p>
   </Flavour>  
   <Requirement id="building_fortress_fortification" min_level="6" />  
   <Cost id="resource_stone" round="true">FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
