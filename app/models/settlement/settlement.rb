@@ -85,6 +85,8 @@ class Settlement::Settlement < ActiveRecord::Base
     })
     Military::Army.create_garrison_at(settlement)
     settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
+
+    settlement
   end
   
   # creates building slotes for the present settlements according to the given
@@ -978,14 +980,32 @@ class Settlement::Settlement < ActiveRecord::Base
     ##########################################################################
     
     def propagate_owner_changes    
-      owner_change = self.changes[:owner_id]
-      if !owner_change.nil?
+      if self.owner_id_changed?
+        update_settlement_points_on_changed_possesion
         propagate_changes_to_resource_pool_on_changed_possession
         propagate_score_on_changed_possession
         propagate_unlock_changes_on_changed_possession
       end
       true
     end
+  
+    def update_settlement_points_of_character_transaction(character)
+      return       if character.nil?
+      character.update_settlement_points_used
+      character.save
+    end
+      
+    
+    def update_settlement_points_on_changed_possesion
+      owner_change = self.changes[:owner_id]
+      
+      old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+      new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+
+      update_settlement_points_of_character_transaction(old_owner)
+      update_settlement_points_of_character_transaction(new_owner)
+    end
+    
              
     def propagate_unlock_changes_on_changed_possession
       owner_change = self.changes[:owner_id]
@@ -1006,7 +1026,6 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
     end
-        
         
         
     def propagate_unlock_changes_on_changed_possession_to_model(old_model, new_model, fields)
