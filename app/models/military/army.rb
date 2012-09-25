@@ -151,6 +151,47 @@ class Military::Army < ActiveRecord::Base
     !self.battle_id.nil? && self.battle_id > 0
   end
   
+  def can_found_outpost?
+    return false    if self.details.nil?
+    
+    founder = nil
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      founder = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    !founder.nil?
+  end
+  
+  def found_outpost!
+    return   if owner.nil? || location.nil?    
+    character.update_settlement_points_used
+    return   unless character.can_found_outpost?
+    return   unless location.can_found_outpost_here?
+    return   unless can_found_outpost?
+    
+    settlement = Settlement::Settlement.create_settlement_at_location(location, 3, owner)    
+    raise InternalServerError.new('Could not found outpost.') if settlement.nil?
+
+    consume_one_settlement_founder!
+    
+    settlement
+  end
+  
+  def consume_one_settlement_founder!
+    raise InternalServerError.new("no army details")   if self.details.nil?
+      
+    consume_type = nil
+  
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      consume_type = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    raise InternalServerError.new("no settlement founder in army")   if consume_type.nil?
+    
+    self.details.decrement(unit_type[:db_field], 1)
+    self.save!
+  end
+  
   def critical_damage_bonus
     logger.debug "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
     puts "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."

@@ -1245,6 +1245,11 @@ class GameRules::Rules
             ]
           ],          
 
+          :can_create => [
+3,
+
+          ],
+
 
         },              #   END OF Little Chief
       ],                # END OF UNIT TYPES

@@ -89,6 +89,10 @@ class Fundamental::Character < ActiveRecord::Base
     !female?   # presently, due to community structure, male is the default in case nothing is set
   end
   
+  def can_found_outpost?
+    (settlement_points_used || 0) < (settlement_points_total || 0)
+  end
+  
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
