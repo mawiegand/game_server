@@ -16,6 +16,7 @@
   </Flavour>
     <Flavour lang="de_DE">
     <p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>
+  </Flavour>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="5" />
   </RequirementGroup>

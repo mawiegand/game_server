@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_stud" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2>  
+<Building id="building_stud" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2">  
   <Name lang="de_DE">Stall</Name>
   <Name lang="en_US">Stable</Name>
   <Description lang="de_DE">
