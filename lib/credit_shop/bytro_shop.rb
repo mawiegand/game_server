@@ -7,7 +7,7 @@ module CreditShop
   
     include Auth::SessionsHelper
     
-    URL_BASE = 'http://217.86.148.136/cl-5dshop/index.php'
+    URL_BASE = 'https://secure.bytro.com/index.php'
     SHARED_SECRET = 'jfwjhgflhg254tp9824ghqlkgjh25pg8hgljkgh5896ogihdgjh24uihg9p8zgagjh2p895ghfsjgh312g09hjdfghj'
     KEY = 'wackadoo'
     

@@ -565,6 +565,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.92,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 16,
@@ -628,6 +630,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.92,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 18,
@@ -706,6 +710,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 17,
@@ -769,6 +775,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 19,
@@ -843,6 +851,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1.2,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 17,
@@ -906,6 +916,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1.2,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 19,
@@ -995,6 +1007,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.2,
   
             :unitcategory_siege => 1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1054,6 +1068,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.2,
   
             :unitcategory_siege => 1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1132,6 +1148,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1.0,
   
             :unitcategory_siege => 1.0,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1210,6 +1228,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.1,
   
             :unitcategory_siege => 0.1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 1,

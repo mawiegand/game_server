@@ -245,6 +245,48 @@ class Settlement::Slot < ActiveRecord::Base
     end
   end
   
+  # completely destroys the building in this slot, thus setting
+  # the building id to null and the level to zero. Calls all
+  # necessary handlers to remove effects, unlocks and speedups
+  # connected with this building.
+  #
+  # This method does NOT handle resource-costs etc., it's just 
+  # responsible for updating the slot and propagating all effects
+  # that are related to this change.
+  def convert_building
+    if self.level == 0 && self.building_id.nil?
+      return false
+    else
+      # old building sichern
+      old_building_id = self.building_id
+      old_level = self.level
+      
+      # new building id heraussuchen
+      old_building_type = GameRules::Rules.the_rules.building_type_with_id(old_building_id)
+      conversion_option = old_building_type[:conversion_option]
+      raise InternalServerError.new("Could not find conversion option for building id #{old_building_type[:id]} in rules") if conversion_option.nil?
+      
+      # new building id setzen
+      new_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])
+      
+      new_building_id = new_building_type[:id]
+      self.building_id = new_building_id
+      
+      # level berechnen
+      level_formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])
+      new_level = level_formula.apply(old_level)
+      
+      # level setzen
+      self.level = new_level
+      
+      # änderungen propagieren 
+      propagate_change(old_building_id, old_level, 0)
+      propagate_change(new_building_id, 0, new_level)
+      
+      self.save
+    end
+  end
+  
   def propagate_change(building_id, old_level, new_level)
     propagate_resource_production       building_id, old_level, new_level
     propagate_resource_production_bonus building_id, old_level, new_level
