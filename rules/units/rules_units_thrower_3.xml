@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="thrower" category="unitcategory_artillery">
-      <Name>Pebble Thrower</Name>
-      <Name lang="de_DE">Kieselsteinwerfer</Name>
+    <Unit id="thrower3" category="unitcategory_artillery">
+      <Name>Pebble Thrower3</Name>
+      <Name lang="de_DE">Steinschleuderer</Name>
   <Flavour lang="en_US">
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Diese Fernkämpfer könnten eine Zielscheibe nicht aus 10 Meter Entfernung treffen, aber zum Glück sind Infanterieabteilungen meist viel größer als Zielscheiben. </p>
+    <p>Je größer der Stein, desto mehr tut es weh. Das meinen zumindest die Steinschleuderer und versuchen mit immer größeren Steinen nach ihren Gegnern zu werfen.</p>
   </Flavour>
       <Description lang="de_DE">
-        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>
-	<p> Die größte Furcht eines Kieselsteinwerfers ist eine anstürmende Horde Straußenreiter, denn diese überrennen einfach alles was ihnen in den Weg kommt.</p>
+        <p> Große Steine tuen tatsächlich mehr weh, auch wenn die Steinschleuderer die gleichen Schwächen, wie ihre kieselsteinwerfenden Kollegen haben. </p> 
       </Description>
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
@@ -24,14 +23,14 @@
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>
-      <Attack>8</Attack>
-      <CriticalDamage chance="0.05">5</CriticalDamage>
+      <Attack>10</Attack>
+      <CriticalDamage chance="0.05">7</CriticalDamage>
       <Armor>3</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>50</Hitpoints>
       <Effectiveness category="unitcategory_infantry">1.5</Effectiveness>
       <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
       <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
-      <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
-      <Effectiveness category="unitcategory_special">1</Effectiveness>   
+      <Effectiveness category="unitcategory_siege">0.8</Effectiveness>  
+      <Effectiveness category="unitcategory_special">1</Effectiveness>   
     </Unit>

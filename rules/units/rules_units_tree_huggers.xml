@@ -8,11 +8,12 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Kämpft gegen andere Einheiten.</p>
+    <p>Wozu den Baum zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann.</p>
   </Flavour>
       <Description lang="de_DE">
         <p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p> 
-		<p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>
+	<p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>
+	<p> Kein Feind kann einen Baum-Brutalo erreichen, wenn er erst einmal in Fahrt gekommen ist. Da bleibt nur wegrennen und hoffen, dass ihm irgendwann die Puste ausgeht, oder er von Steinen und Speeren gespickt zu Boden geht.</p>
       </Description>
       <Description lang="en_US">
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
@@ -26,13 +27,14 @@
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>16</Initiative>
-      <Attack>18</Attack>
+      <Attack>7</Attack>
       <CriticalDamage chance="0.02">2</CriticalDamage>
-      <Armor>14</Armor>
+      <Armor>9</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>100</Hitpoints>
-      <Effectiveness category="unitcategory_infantry">1</Effectiveness>
-      <Effectiveness category="unitcategory_cavalry">1.2</Effectiveness>
-      <Effectiveness category="unitcategory_artillery">0.92</Effectiveness>
+      <Hitpoints>135</Hitpoints>
+      <Effectiveness category="unitcategory_infantry">0.75</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">1.5</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">1</Effectiveness>
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness> 
+      <Effectiveness category="unitcategory_special">1</Effectiveness>   
     </Unit>

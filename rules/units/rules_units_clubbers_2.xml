@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="clubbers" category="unitcategory_infantry">
-  <Name>Club Warrior</Name>
-  <Name lang="de_DE">Keulenkrieger</Name>
+<Unit id="clubbers2" category="unitcategory_infantry">
+  <Name>Thick-skinned Clubber</Name>
+  <Name lang="de_DE">Dickhäutiger Keulenkrieger</Name>
   
   <Description lang="de_DE">
-    <p>Keulenkrieger sind der Grundbestanteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindlichen Fernkämpfer.</p>		
+    <p> Die dicke Haut beschützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Straußen überrannt wird.</p>		
   </Description>
   <Description lang="en_US">
     <p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>
@@ -15,7 +15,7 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz. </p>
+    <p> Nach ein paar Schlachten hat sich bei den Keulenkriegern eine dicke Haut gebildet, wodurch sie noch länger aufeinander einhauen können. </p>
   </Flavour>
   <Cost id="resource_stone" round="true">20</Cost>  
   <Cost id="resource_wood" round="true">40</Cost>    
@@ -26,9 +26,9 @@
   <Initiative>16</Initiative>
   <Attack>6</Attack>
   <CriticalDamage chance="0.01">1</CriticalDamage>
-  <Armor>5</Armor>
+  <Armor>6</Armor>
   <Overrunnable>true</Overrunnable>
-  <Hitpoints>90</Hitpoints>
+  <Hitpoints>100</Hitpoints>
   <Effectiveness category="unitcategory_infantry">0.75</Effectiveness>
   <Effectiveness category="unitcategory_cavalry">1.5</Effectiveness>
   <Effectiveness category="unitcategory_artillery">1</Effectiveness>

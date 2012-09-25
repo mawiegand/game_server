@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="thrower" category="unitcategory_artillery">
-      <Name>Pebble Thrower</Name>
-      <Name lang="de_DE">Kieselsteinwerfer</Name>
+    <Unit id="thrower2" category="unitcategory_artillery">
+      <Name>Pebble Thrower2</Name>
+      <Name lang="de_DE"> Zielsicherer Kieselsteinwerfer</Name>
   <Flavour lang="en_US">
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Diese Fernkämpfer könnten eine Zielscheibe nicht aus 10 Meter Entfernung treffen, aber zum Glück sind Infanterieabteilungen meist viel größer als Zielscheiben. </p>
+    <p> Einen Stein auf 50 Meter Entfernung genau auf ein Ziel zu werfen ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg. </p>
   </Flavour>
       <Description lang="de_DE">
-        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>
-	<p> Die größte Furcht eines Kieselsteinwerfers ist eine anstürmende Horde Straußenreiter, denn diese überrennen einfach alles was ihnen in den Weg kommt.</p>
+        <p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meistens ist eh genug Infanterie da, sodass zielen unnötig wird, aber es führt doch zu ein oder zwei kritischen Treffern.</p> 
+	<p> Ein bewegliches Ziel zu treffen, wie zum Beispiel einen Straußenreiter, ist eine große Leistung und derjenige, dem es gelingt, wird von seinen Kollegen sehr geschätzt... wenn er es überlebt.</p>
       </Description>
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
@@ -24,8 +24,8 @@
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>
-      <Attack>8</Attack>
-      <CriticalDamage chance="0.05">5</CriticalDamage>
+      <Attack>9</Attack>
+      <CriticalDamage chance="0.05">6</CriticalDamage>
       <Armor>3</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>50</Hitpoints>

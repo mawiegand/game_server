@@ -540,12 +540,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+            :de_DE => "<p> Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glücklcihes Leben.</p><p>Zudem ist dieses meist sehr kurz.</p>",
+            :de_DE => "<p>Keulenkrieger sind der Grundbestanteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindlichen Fernkämpfer.</p>",
   
             :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
                 
@@ -558,22 +558,24 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 1,
+            :unitcategory_infantry => 0.75,
   
-            :unitcategory_cavalry => 1.2,
+            :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 0.92,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 16,
-          :armor       => 12,
+          :attack      => 6,
+          :armor       => 5,
           :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 2,
+          :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
           :production_time => '600',
@@ -587,8 +589,138 @@ class GameRules::Rules
 
 
         },              #   END OF Club Warrior
-        {               #   Tree Huggers
+        {               #   Thick-skinned Clubber
           :id          => 1, 
+          :symbolic_id => :clubbers2,
+					:category    => 0,
+          :db_field    => :unit_clubbers2,
+          :name        => {
+            
+            :en_US => "Thick-skinned Clubber",
+  
+            :de_DE => "Dickhäutiger Keulenkrieger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Nach ein paar Schlachten hat sich bei den Keulenkriegern eine dicke Haut gebildet, wodurch sie noch länger aufeinander einhauen können. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Die dicke Haut beschützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Straußen überrannt wird.</p>",
+  
+            :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 6,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '600',
+
+          :costs      => {
+            0 => '20',
+            1 => '40',
+            2 => '30',
+            
+          },
+
+
+        },              #   END OF Thick-skinned Clubber
+        {               #   Drunk Clubber
+          :id          => 2, 
+          :symbolic_id => :clubbers3,
+					:category    => 0,
+          :db_field    => :unit_clubbers3,
+          :name        => {
+            
+            :en_US => "Drunk Clubber",
+  
+            :de_DE => "Betrunkener Keulenkrieger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Das viele Bier, das sie vor den Schlachten trinken, verschafft ihnen ein noch stärkeres Durchhaltevermögen. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf, gibt es doch nichts besseres als ein paar Krüge vor und nach der Schlacht. Allein schon der Gestank schreckt Straußen und andere Reittiere ab, aber Steine und Speere finden weiterhin ein einfaches Ziel, nur ab und zu geht ein Schuß ins leere, wenn der Keulenkrieger über das Schlachtfeld wankt.</p>",
+  
+            :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 7,
+          :hitpoints   => 110,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '600',
+
+          :costs      => {
+            0 => '20',
+            1 => '40',
+            2 => '30',
+            
+          },
+
+
+        },              #   END OF Drunk Clubber
+        {               #   Tree Huggers
+          :id          => 3, 
           :symbolic_id => :tree_huggers,
 					:category    => 0,
           :db_field    => :unit_tree_huggers,
@@ -603,12 +735,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+            :de_DE => "<p>Wozu den Baum zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p>",
+            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p><p> Kein Feind kann einen Baum-Brutalo erreichen, wenn er erst einmal in Fahrt gekommen ist. Da bleibt nur wegrennen und hoffen, dass ihm irgendwann die Puste ausgeht, oder er von Steinen und Speeren gespickt zu Boden geht.</p>",
   
             :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p><p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>",
                 
@@ -621,18 +753,20 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 1,
+            :unitcategory_infantry => 0.75,
   
-            :unitcategory_cavalry => 1.2,
+            :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 0.92,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 18,
-          :armor       => 14,
-          :hitpoints   => 100,
+          :attack      => 7,
+          :armor       => 9,
+          :hitpoints   => 135,
 
           :overrunnable => true,
 
@@ -666,7 +800,7 @@ class GameRules::Rules
 
         },              #   END OF Tree Huggers
         {               #   Pebble Thrower
-          :id          => 2, 
+          :id          => 4, 
           :symbolic_id => :thrower,
 					:category    => 2,
           :db_field    => :unit_thrower,
@@ -681,12 +815,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+            :de_DE => "<p> Diese Fernkämpfer könnten eine Zielscheibe nicht aus 10 Meter Entfernung treffen, aber zum Glück sind Infanterieabteilungen meist viel größer als Zielscheiben. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>",
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p><p> Die größte Furcht eines Kieselsteinwerfers ist eine anstürmende Horde Straußenreiter, denn diese überrennen einfach alles was ihnen in den Weg kommt.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -699,23 +833,25 @@ class GameRules::Rules
           :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 1.2,
+            :unitcategory_infantry => 1.5,
   
-            :unitcategory_cavalry => 0.92,
+            :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 17,
-          :armor       => 2,
-          :hitpoints   => 60,
+          :attack      => 8,
+          :armor       => 3,
+          :hitpoints   => 50,
 
           :overrunnable => true,
 
           :critical_hit_damage => 5,
-          :critical_hit_chance => 0.02,
+          :critical_hit_chance => 0.05,
 
           :production_time => '900',
 
@@ -728,28 +864,28 @@ class GameRules::Rules
 
 
         },              #   END OF Pebble Thrower
-        {               #   Slingshot Warrior
-          :id          => 3, 
-          :symbolic_id => :slingshot_warrior,
+        {               #   Pebble Thrower2
+          :id          => 5, 
+          :symbolic_id => :thrower2,
 					:category    => 2,
-          :db_field    => :unit_slingshot_warrior,
+          :db_field    => :unit_thrower2,
           :name        => {
             
-            :en_US => "Slingshot Warrior",
+            :en_US => "Pebble Thrower2",
   
-            :de_DE => "Steinschleuderer",
+            :de_DE => " Zielsicherer Kieselsteinwerfer",
                 
           },
           :flavour     => {
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Je hübscher die Schleuder, desto tödlicher auch der Steinschleuderer. Ursache hierfür ist weniger die Schleuder als die natürliche Selektion unter den Steinschleuderern. Wer hat die schönste Schleuder? Die Überlebenden!</p>",
+            :de_DE => "<p> Einen Stein auf 50 Meter Entfernung genau auf ein Ziel zu werfen ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Steinschleuderer trägt eine große Lederschleuder. Mit Hilfe dieser Schleuder schleudert der Steinschleuderer dem Gegner Steine entgegen.</p><p>Ausschlaggebend für die Zielsicherheit ist dabei zum einen die Technik. Zwei bis drei Schwünge und dann am Scheitelpunkt mit einem Ruck den Stein schleudern. Zum anderen - und dies behaupten vor allem die Anfänger- ist die Art der Schleuder wichtig. Hochwertigere Ledersorten mit einer einwandfreien Verarbeitung und schönen Verzierungen treffen besser.</p><p>Viele Tests konnten dies nicht belegen, dennoch sind die hochwertig verzierten Schleudern eine begehrte Beute. Sowohl beim Gegner als auch bei den eigenen Steinschleuderern.</p>",
+            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meistens ist eh genug Infanterie da, sodass zielen unnötig wird, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p> Ein bewegliches Ziel zu treffen, wie zum Beispiel einen Straußenreiter, ist eine große Leistung und derjenige, dem es gelingt, wird von seinen Kollegen sehr geschätzt... wenn er es überlebt.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -762,111 +898,169 @@ class GameRules::Rules
           :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 1.2,
+            :unitcategory_infantry => 1.5,
   
-            :unitcategory_cavalry => 0.92,
+            :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 19,
-          :armor       => 13,
-          :hitpoints   => 100,
+          :attack      => 9,
+          :armor       => 3,
+          :hitpoints   => 50,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 8,
-          :critical_hit_chance => 0.03,
+          :critical_hit_damage => 6,
+          :critical_hit_chance => 0.05,
 
-          :production_time => '1080',
+          :production_time => '900',
 
           :costs      => {
-            0 => '135',
-            1 => '90',
-            2 => '180',
+            0 => '90',
+            1 => '45',
+            2 => '67',
             
           },
 
-          :requirementGroups=> [
-            [
-              
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 12,
-              :type => 'building',
 
-              :min_level => 11,
-
-            },
-
-            ]
-          ],          
-
-
-        },              #   END OF Slingshot Warrior
-        {               #   Babysaurus
-          :id          => 4, 
-          :symbolic_id => :babysaurus,
-					:category    => 1,
-          :db_field    => :unit_babysaurus,
+        },              #   END OF Pebble Thrower2
+        {               #   Pebble Thrower3
+          :id          => 6, 
+          :symbolic_id => :thrower3,
+					:category    => 2,
+          :db_field    => :unit_thrower3,
           :name        => {
             
-            :en_US => "Babysaurus",
+            :en_US => "Pebble Thrower3",
   
-            :de_DE => "Babysaurus",
+            :de_DE => "Steinschleuderer",
                 
           },
           :flavour     => {
-                          
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p>Je größer der Stein, desto mehr tut es weh. Das meinen zumindest die Steinschleuderer und versuchen mit immer größeren Steinen nach ihren Gegnern zu werfen.</p>",
+                
           },
           :description => {
             
-            :de_DE => "<p>Die Babysaurier haben noch keine spitzen Zähne, man kann zwar besser auf ihnen reiten, aber der Reiter muss dafür selbst die Keule schwingen.</p>",
+            :de_DE => "<p> Große Steine tuen tatsächlich mehr weh, auch wenn die Steinschleuderer die gleichen Schwächen, wie ihre kieselsteinwerfenden Kollegen haben. </p>",
   
-            :en_US => "<p>Babysaurus's teeth are not sharp. They are easy to ride but their rider has to kill his enemies himself.</p>",
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
           },
 
           :trainable   => true,
 
-          :velocity    => 1.5,
+          :velocity    => 1,
           :action_points => 4,
-          :initiative  => 26,
+          :initiative  => 8,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.92,
+            :unitcategory_infantry => 1.5,
   
-            :unitcategory_cavalry => 1,
+            :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 1.2,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 17,
-          :armor       => 13,
-          :hitpoints   => 80,
+          :attack      => 10,
+          :armor       => 3,
+          :hitpoints   => 50,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 4,
-          :critical_hit_chance => 0.01,
+          :critical_hit_damage => 7,
+          :critical_hit_chance => 0.05,
 
           :production_time => '900',
 
           :costs      => {
-            0 => '50',
-            1 => '70',
-            2 => '35',
+            0 => '90',
+            1 => '45',
+            2 => '67',
             
           },
 
 
-        },              #   END OF Babysaurus
+        },              #   END OF Pebble Thrower3
+        {               #   Pebble Thrower4
+          :id          => 7, 
+          :symbolic_id => :thrower4,
+					:category    => 2,
+          :db_field    => :unit_thrower4,
+          :name        => {
+            
+            :en_US => "Pebble Thrower4",
+  
+            :de_DE => " Speerschleuderer ",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Wieso jemand einen Stock an einen Stein gebunden hat, ist unverständlich, sind Steine doch schon hervorragende Wurfgeschosse. Aber der Effekt ist großartig, größere Reichweite, zielgenauer und einfacher einzusammeln, was will man mehr. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Theoretisch ist ein Speer auch im Nahkampf, vor allem gegen Reiter, effektiv, aber die Speerschleuderer kommen erst gar nicht darauf ihn so einzusetzen, sie versuchen weiterhin alle ihre Speere zu werfen auch wenn es kaum von Speeren getötete Reiter gibt. Den ein oder anderen mit Speeren gespickten Straußen gibt es allerdings doch, denn ein guter Speertreffer fügt wirklich tiefe Wunden zu. </p>",
+  
+            :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.5,
+  
+            :unitcategory_cavalry => 0.75,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 12,
+          :armor       => 3,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 8,
+          :critical_hit_chance => 0.1,
+
+          :production_time => '900',
+
+          :costs      => {
+            0 => '90',
+            1 => '45',
+            2 => '67',
+            
+          },
+
+
+        },              #   END OF Pebble Thrower4
         {               #   Ostrich Riders
-          :id          => 5, 
+          :id          => 8, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
@@ -874,19 +1068,19 @@ class GameRules::Rules
             
             :en_US => "Ostrich Riders",
   
-            :de_DE => "Straußenreiter",
+            :de_DE => "Zweihändiger Straußenreiter",
                 
           },
           :flavour     => {
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Kämpft gegen andere Einheiten.</p>",
+            :de_DE => "<p> Zweihändige Straußenreiter werden so genannt, weil sie beide Hände brauchen, um sich an ihrem Straußen festzuklammern. Sie sind trotzdem effektiv, denn Strauße haben zwar keine großen Klauen oder Fangzähne, aber ihr Schnabel ist ziemlich spitz. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Strauße sind nicht nur lecker sondern auch gute und schnelle Kämpfer. Die Straußenreiter sind äußerst schnell, dafür aber nur schwach gepanzert.</p>",
+            :de_DE => "<p> Strauße sind nicht nur lecker sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug um an der Infanterie vorbeizukommen und bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn das meist wenig Unterschied macht. </p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -899,22 +1093,24 @@ class GameRules::Rules
           :initiative  => 26,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.92,
+            :unitcategory_infantry => 0.75,
   
             :unitcategory_cavalry => 1,
   
-            :unitcategory_artillery => 1.2,
+            :unitcategory_artillery => 1.5,
   
             :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
                 
           },
-          :attack      => 19,
-          :armor       => 14,
+          :attack      => 6,
+          :armor       => 5,
           :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 6,
+          :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
           :production_time => '1080',
@@ -958,8 +1154,293 @@ class GameRules::Rules
 
 
         },              #   END OF Ostrich Riders
+        {               #   Ostrich Riders2
+          :id          => 9, 
+          :symbolic_id => :light_cavalry2,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry2,
+          :name        => {
+            
+            :en_US => "Ostrich Riders2",
+  
+            :de_DE => "Einhändiger Straußenreiter",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Mit etwas Übung schafft der erfahrene Reiter auch sich mit einer Hand festzuhalten, und so die andere für sinnvollere Tätigkeiten freizuhaben. Wie zum Beispiel seinen Feinden den Schädel einzuhauen. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Mit einer Keule in der freien Hand sind einhändige Straußenreiter natürlich effektiver im Angriff. Vor allem die Fernkämpfer fliehen meist beim Anblick einer Horde Straußenreiter. Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen. </p>",
+  
+            :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 7,
+          :armor       => 5,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '1080',
+
+          :costs      => {
+            0 => '140',
+            1 => '70',
+            2 => '100',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Ostrich Riders2
+        {               #   Ostrich Riders3
+          :id          => 10, 
+          :symbolic_id => :light_cavalry3,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry3,
+          :name        => {
+            
+            :en_US => "Ostrich Riders3",
+  
+            :de_DE => " Freihändiger Straußenreiter ",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Besonders talentierte Reiter brüsten sich damit, freihändig reiten zu können. Wozu sie die zusätzliche Hand brauchen, da sie die Keule nur mit einer führen, können sie allerdings auch nicht sagen. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Sie reiten durch die Gegnerreihen und führen präzise Schläge aus, die besonders Feinde mit schwachem Durchhaltevermögen, wie Kieselsteinwerfer, einfach umhauen. Da sie durch Keulenkriegerlinien nicht hindurchreiten können, vermeiden sie diese. Denn ein stehender Strauß ist ein toter Strauß. </p>",
+  
+            :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 8,
+          :armor       => 5,
+          :hitpoints   => 110,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '1080',
+
+          :costs      => {
+            0 => '140',
+            1 => '70',
+            2 => '100',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Ostrich Riders3
+        {               #   Ostrich Riders4
+          :id          => 11, 
+          :symbolic_id => :light_cavalry4,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry4,
+          :name        => {
+            
+            :en_US => "Ostrich Riders4",
+  
+            :de_DE => "Dinoreiter",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Kills opposing units.</p>",
+  
+            :de_DE => "<p> Der Traum eines jeden Reiters, der riesige Dino nimmt ihm die ganze Arbeit ab. Aber nach der Schlacht bleibt man besser im Sattel, bis der Dino sich beruhigt hat. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p> Der riesige Dino trampelt seine Feinde um, fegt sie mit dem Schwanz weg und ist so stark gepanzert, dass ihm Geschosse nichts anhaben können. Keulenkrieger mag der Dino gar nicht, hauen die fiesen Kerle ihm doch immer auf die Zehen, seine empfindsamste Stelle. </p>",
+  
+            :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 10,
+          :armor       => 6,
+          :hitpoints   => 125,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '1080',
+
+          :costs      => {
+            0 => '140',
+            1 => '70',
+            2 => '100',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Ostrich Riders4
         {               #   Battering Ram
-          :id          => 6, 
+          :id          => 12, 
           :symbolic_id => :ram,
 					:category    => 3,
           :db_field    => :unit_ram,
@@ -995,6 +1476,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.2,
   
             :unitcategory_siege => 1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1018,7 +1501,7 @@ class GameRules::Rules
 
         },              #   END OF Battering Ram
         {               #   Catapult
-          :id          => 7, 
+          :id          => 13, 
           :symbolic_id => :catapult,
 					:category    => 3,
           :db_field    => :unit_catapult,
@@ -1054,6 +1537,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.2,
   
             :unitcategory_siege => 1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1092,7 +1577,7 @@ class GameRules::Rules
 
         },              #   END OF Catapult
         {               #   Neanderthal
-          :id          => 8, 
+          :id          => 14, 
           :symbolic_id => :neanderthal,
 					:category    => 0,
           :db_field    => :unit_neanderthal,
@@ -1132,6 +1617,8 @@ class GameRules::Rules
             :unitcategory_artillery => 1.0,
   
             :unitcategory_siege => 1.0,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 15,
@@ -1170,7 +1657,7 @@ class GameRules::Rules
 
         },              #   END OF Neanderthal
         {               #   Little Chief
-          :id          => 9, 
+          :id          => 15, 
           :symbolic_id => :little_chief,
 					:category    => 4,
           :db_field    => :unit_little_chief,
@@ -1210,6 +1697,8 @@ class GameRules::Rules
             :unitcategory_artillery => 0.1,
   
             :unitcategory_siege => 0.1,
+  
+            :unitcategory_special => 1,
                 
           },
           :attack      => 1,

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="light_cavalry" category="unitcategory_cavalry">
-      <Name>Ostrich Riders</Name>
-      <Name lang="de_DE">Zweihändiger Straußenreiter</Name>
+    <Unit id="light_cavalry4" category="unitcategory_cavalry">
+      <Name>Ostrich Riders4</Name>
+      <Name lang="de_DE">Dinoreiter</Name>
   <Flavour lang="en_US">
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Zweihändige Straußenreiter werden so genannt, weil sie beide Hände brauchen, um sich an ihrem Straußen festzuklammern. Sie sind trotzdem effektiv, denn Strauße haben zwar keine großen Klauen oder Fangzähne, aber ihr Schnabel ist ziemlich spitz. </p>
+    <p> Der Traum eines jeden Reiters, der riesige Dino nimmt ihm die ganze Arbeit ab. Aber nach der Schlacht bleibt man besser im Sattel, bis der Dino sich beruhigt hat. </p>
   </Flavour>
       <Description lang="de_DE">
-        <p> Strauße sind nicht nur lecker sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug um an der Infanterie vorbeizukommen und bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn das meist wenig Unterschied macht. </p> 
+        <p> Der riesige Dino trampelt seine Feinde um, fegt sie mit dem Schwanz weg und ist so stark gepanzert, dass ihm Geschosse nichts anhaben können. Keulenkrieger mag der Dino gar nicht, hauen die fiesen Kerle ihm doch immer auf die Zehen, seine empfindsamste Stelle. </p> 
       </Description>
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
@@ -23,11 +23,11 @@
   	  <Velocity>1.5</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>
-      <Attack>6</Attack>
+      <Attack>10</Attack>
       <CriticalDamage chance="0.02">1</CriticalDamage>
-      <Armor>5</Armor>
+      <Armor>6</Armor>
       <Overrunnable>true</Overrunnable>
-      <Hitpoints>90</Hitpoints>
+      <Hitpoints>125</Hitpoints>
       <Effectiveness category="unitcategory_infantry">0.75</Effectiveness>
       <Effectiveness category="unitcategory_cavalry">1</Effectiveness>
       <Effectiveness category="unitcategory_artillery">1.5</Effectiveness>

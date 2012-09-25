@@ -12,13 +12,19 @@
        Afterwards you need to do a rake db:reset! -->  
 
   <xi:include href="units/rules_units_clubbers.xml" /> 
+  <xi:include href="units/rules_units_clubbers_2.xml" /> 
+  <xi:include href="units/rules_units_clubbers_3.xml" /> 
   <xi:include href="units/rules_units_tree_huggers.xml" />
   
-  <xi:include href="units/rules_units_thrower.xml" />	
-  <xi:include href="units/rules_units_slingshot_warrior.xml" />
+  <xi:include href="units/rules_units_thrower.xml" />
+  <xi:include href="units/rules_units_thrower_2.xml" />	
+  <xi:include href="units/rules_units_thrower_3.xml" />	
+  <xi:include href="units/rules_units_thrower_4.xml" />	
  
-  <xi:include href="units/rules_units_babysaurus.xml" />
   <xi:include href="units/rules_units_light_cavalry.xml" />  
+  <xi:include href="units/rules_units_light_cavalry_2.xml" />  
+  <xi:include href="units/rules_units_light_cavalry_3.xml" />  
+  <xi:include href="units/rules_units_light_cavalry_4.xml" />  
   
   <xi:include href="units/rules_units_ram.xml" />    
   <xi:include href="units/rules_units_catapult.xml" />
