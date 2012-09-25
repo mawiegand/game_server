@@ -34,6 +34,7 @@
   <Effectiveness category="unitcategory_cavalry">0.1</Effectiveness>
   <Effectiveness category="unitcategory_artillery">0.1</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.1</Effectiveness>
+  <Effectiveness category="unitcategory_special">1</Effectiveness>                  
   <CanCreate id="settlement_outpost" />
   <!-- add ability to found settlement here not in category -->    
 </Unit>

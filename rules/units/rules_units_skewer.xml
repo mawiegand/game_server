@@ -28,5 +28,6 @@
       <Effectiveness category="unitcategory_infantry">0.9</Effectiveness><!-- due to the long weapon reduced effectivity against infantry but full effectivity against cavalry. a standard infantry (short weapon) would have effectivity 1 against infantry and reduced effictivity against cavalry, right?! -->
       <Effectiveness category="unitcategory_cavalry">1.2</Effectiveness>
       <Effectiveness category="unitcategory_artillery">0.6</Effectiveness>
-      <Effectiveness category="unitcategory_siege">0.6</Effectiveness>     
+      <Effectiveness category="unitcategory_siege">0.6</Effectiveness>
+      <Effectiveness category="unitcategory_special">1</Effectiveness>                       
     </Unit>
