@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   region_id: 1
   slot: 1
   count_markers: 1
@@ -11,6 +12,7 @@ one:
   visible: false
 
 two:
+  id: 2
   region_id: 1
   slot: 1
   count_markers: 1

@@ -4,7 +4,7 @@ class Settlement::SettlementTest < ActiveSupport::TestCase
 
   test "can create home base" do
     character = fundamental_characters(:owner)
-    location  = map_locations(:one)
+    location  = map_locations(:two)
     region    = map_regions(:one)
     node      = map_nodes(:one)
 

@@ -62,7 +62,7 @@ class Military::ArmyTest < ActiveSupport::TestCase
   
   test "army can found outpost" do
     character = fundamental_characters(:owner)
-    location  = map_locations(:one)
+    location  = map_locations(:two)
     region    = map_regions(:one)
     node      = map_nodes(:one)
     army      = military_armies(:one)

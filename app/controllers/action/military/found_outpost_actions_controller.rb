@@ -16,6 +16,8 @@ class Action::Military::FoundOutpostActionsController < ApplicationController
   # POST /action/military/found_outpost_actions.json
   def create
     
+    puts "HERE"
+    
     raise BadRequestError.new('missing parameters')   unless params.has_key? :found_outpost_action
     
     settlement = nil

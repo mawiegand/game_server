@@ -203,7 +203,7 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
   
   test "increment settlement points on home settlement creation" do
     character = fundamental_characters(:owner)
-    location  = map_locations(:one)
+    location  = map_locations(:two)
     region    = map_regions(:one)
     node      = map_nodes(:one)
 
@@ -222,7 +222,7 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
   test "update settlement points correctly on settlement ownership change" do
     character = fundamental_characters(:owner)
     new_owner = fundamental_characters(:ally)
-    location  = map_locations(:one)
+    location  = map_locations(:two)
     region    = map_regions(:one)
     node      = map_nodes(:one)
 
