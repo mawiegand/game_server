@@ -365,6 +365,13 @@ end
 </xsl:for-each>
           },
 </xsl:if>
+<xsl:if test="count(CanCreate)">
+          :can_create => [
+<xsl:for-each select="CanCreate">
+            <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+</xsl:for-each>
+          ],
+</xsl:if>
 
 <xsl:if test="AntiSpyChance">
   unit->antiSpyChance = <xsl:value-of select="AntiSpyChance"/>;

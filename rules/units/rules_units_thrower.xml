@@ -32,5 +32,5 @@
       <Effectiveness category="unitcategory_cavalry">0.92</Effectiveness>
       <Effectiveness category="unitcategory_artillery">1</Effectiveness>
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
-	  
+      <Effectiveness category="unitcategory_special">1</Effectiveness>                  
     </Unit>

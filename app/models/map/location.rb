@@ -43,5 +43,9 @@ class Map::Location < ActiveRecord::Base
   def can_be_retreated_to?(character)
     !owner.nil? && (owner == character || owner.is_ally_of?(character))
   end
+  
+  def can_found_outpost_here?
+    !fortress? && settlement.nil?
+  end
 
 end

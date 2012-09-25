@@ -43,15 +43,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   end
   
   def self.least_sql_fragment
-    Rails.env.development? ? 'MIN' : 'LEAST'
+    Rails.env.development? || Rails.env.test? ? 'MIN' : 'LEAST'
   end
   
   def self.now_sql_fragment
-    Rails.env.development? ? 'datetime("now")' : 'NOW()'
+    Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'
   end
   
   def self.elapsed_time_sql_fragment
-    if Rails.env.development?
+    if Rails.env.development? || Rails.env.test?
       return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::ResourcePool.now_sql_fragment }) - strftime('%s', COALESCE(productionUpdatedAt,  #{ Fundamental::ResourcePool.now_sql_fragment })))"
     else
       return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", ' + Fundamental::ResourcePool.now_sql_fragment + ')))'      

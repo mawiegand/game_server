@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Garrison Army:</b>
+  <% if @settlement_settlement.garrison_id.nil? %>
+    none
+  <% else %> 
+    <%= link_to "##{ @settlement_settlement.garrison_id }", military_army_path( @settlement_settlement.garrison_id ) %> 
+  <% end %>
+<p>
+  
+  <b>Garrison:</b>
+  <%= @settlement_settlement.garrison_id %>
+</p>
+<p>
   <b>Type:</b>
   <%= @settlement_settlement.type_id %>
 </p>
@@ -80,10 +92,7 @@
   <%= @settlement_settlement.armies_count %>
 </p>
 
-<p>
-  <b>Garrison:</b>
-  <%= @settlement_settlement.garrison_id %>
-</p>
+
 
 <p>
   <b>Besieged:</b>

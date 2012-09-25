@@ -71,6 +71,8 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end  
   
+
+  
   def online?
     !self.last_request_at.nil? && self.last_request_at + 2.minutes > Time.now
   end
@@ -85,6 +87,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   def male?
     !female?   # presently, due to community structure, male is the default in case nothing is set
+  end
+  
+  def can_found_outpost?
+    (settlement_points_used || 0) < (settlement_points_total || 0)
   end
   
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
@@ -408,6 +414,10 @@ class Fundamental::Character < ActiveRecord::Base
 
     settlement_points = recalc_settlement_points_total
     check_and_apply_settlement_points_total(settlement_points)
+
+    settlement_points_used = recalc_settlement_points_used
+    check_and_apply_settlement_points_used(settlement_points_used)
+
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -425,6 +435,21 @@ class Fundamental::Character < ActiveRecord::Base
   #
   ############################################################################  
   
+  def recalc_settlement_points_used
+    self.settlements.count
+  end
+  
+  def update_settlement_points_used
+    self.settlement_points_used = recalc_settlement_points_used
+  end  
+  
+  def check_and_apply_settlement_points_used(points)
+    if (self.settlement_points_used || 0) !=  points
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC FOR USED POINTS DIFFERS for character #{self.id}. Old: #{self.settlement_points_used} Corrected: #{points}.")
+      self.settlement_points_used = points
+    end    
+  end  
+  
   def recalc_settlement_points_total
     sp = 0
     ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
@@ -436,7 +461,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def check_and_apply_settlement_points_total(points)
     if (self.settlement_points_total || 0) !=  points
-      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC FOR TOTAL POINTS DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
       self.settlement_points_total = points
     end    
   end  
