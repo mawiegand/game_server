@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_barracks" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
-  <Name lang="de_DE">Ausbildungsgelände</Name>
-  <Name lang="en_US">Barracks</Name>
+<Building id="building_field_camp" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
+  <Name lang="de_DE">Feldlager</Name>
+  <Name lang="en_US">Field Camp</Name>
   <Description lang="de_DE">
     <p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p>
 	<p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>
@@ -19,16 +19,13 @@
     <p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>
   </Flavour>
   <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="3" />
-  </RequirementGroup>
-  <RequirementGroup>
-    <Requirement id="building_haunt" min_level="5" />
-  </RequirementGroup>  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3+0.5)</Cost>  
+    <Requirement id="building_haunt" min_level="4" />
+  </RequirementGroup>  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>  
   <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>
+  <Cost id="resource_fur"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75+0.5)</Cost>
     <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
   <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*3+0.5)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
-    <UnlockQueue  queue="queue_infantry" />
-    <SpeedupQueue queue="queue_infantry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-  </Abilities>
+    <GarrisonSizeBonus>300+40*LEVEL</GarrisonSizeBonus>
+    <ArmySizeBonus>300+20*LEVEL</ArmySizeBonus>  </Abilities>
 </Building>
