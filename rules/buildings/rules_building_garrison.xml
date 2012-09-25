@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_chief_cottage" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
-  <Name lang="de_DE">Häuptlingshütte</Name>
-  <Name lang="en_US">Chieftain‘s Hall</Name>
+<Building id="building_garrison" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" tier="2">  
+  <Name lang="de_DE">Garnison</Name>
+  <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
     <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
   <p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p>
@@ -19,23 +19,11 @@
     <Flavour lang="de_DE">
     <p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>  
 	</Flavour> 
-  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2+0.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2+0.5)</Cost> 
-  <Cost id="resource_fur" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1+0.5)</Cost> 
-  <Requirement id="building_chief_cottage" max_level="0" />  
+  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost> 
   <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*4+0.5)</ProductionTime>     
-  <Production id="resource_stone">2</Production>        
   <Abilities> <!-- just for grouping -->
-    <CommandPoints>1+MAX(LEVEL+1,3)-MAX(LEVEL,3)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)</CommandPoints>
-    <GarrisonSizeBonus>1000</GarrisonSizeBonus>
-    <ArmySizeBonus>1000</ArmySizeBonus>
-    <UnlockQueue  queue="queue_buildings" />
-    <UnlockGarrison level="2" />
-    <DefenseBonus>0.5*LEVEL</DefenseBonus>
-  </Abilities>
-  <Capacity id="resource_stone">500000</Capacity>
-  <Capacity id="resource_wood">500000</Capacity>
-  <Capacity id="resource_fur">500000</Capacity>
-  <Capacity id="resource_cash">1000</Capacity> 
+    <GarrisonSizeBonus>10*LEVEL</GarrisonSizeBonus>
+    <ArmySizeBonus>5*LEVEL</ArmySizeBonus>
+  </Abilities> 
 </Building>
-  
