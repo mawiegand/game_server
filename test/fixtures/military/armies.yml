@@ -6,6 +6,7 @@ one:
   home_settlement_id: 1
   home_settlement_name: MyString
   location_id: 1
+  region_id: 1
   owner_id: 1
   owner_name: MyString
   alliance_id: 1

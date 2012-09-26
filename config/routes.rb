@@ -161,7 +161,8 @@ GameServer::Application.routes.draw do
           resources :change_army_actions         
           resources :cancel_move_army_actions   
           resources :attack_army_actions       
-          resources :retreat_army_actions       
+          resources :retreat_army_actions      
+          resources :found_outpost_actions, :only => [ :create ] 
         end 
         namespace :fundamental do
           resources :join_alliance_actions    
