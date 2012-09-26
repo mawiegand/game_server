@@ -16,6 +16,14 @@ class Map::Region < ActiveRecord::Base
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save
   end
+  
+  def non_fortress_locations_owned_by(character)
+    self.locations.owned_by(character).excluding_fortress_slots
+  end
+  
+  def settleable_by?(character)
+    return non_fortress_locations_owned_by(character).count == 0
+  end
 
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.

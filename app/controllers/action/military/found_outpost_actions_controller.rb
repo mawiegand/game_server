@@ -40,6 +40,8 @@ class Action::Military::FoundOutpostActionsController < ApplicationController
 
       raise ForbiddenError.new('its not possible to found an outpost at that location') unless location.can_found_outpost_here?
 
+      raise ForbiddenError.new('the character cannot found another settlement in that region') unless location.region.settleable_by?(current_character)
+
       settlement = army.found_outpost!
 
     end
