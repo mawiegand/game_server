@@ -25,20 +25,7 @@ module CreditShop
       }
       
       query = add_hash(query)
-      
-      Rails.logger.debug '----------------------------------------------------------'
-      Rails.logger.debug '----> ' + request_access_token.identifier
-      Rails.logger.debug '----------------------------------------------------------'
-      Rails.logger.debug data.inspect
-      Rails.logger.debug data.to_param
-      Rails.logger.debug encoded_data(data)
-      Rails.logger.debug URL_BASE.inspect
-      Rails.logger.debug query.inspect
-      Rails.logger.debug query.to_param.inspect
       http_response = HTTParty.post(URL_BASE, :query => query)
-      Rails.logger.debug http_response.inspect
-      Rails.logger.debug http_response.parsed_response.inspect
-      Rails.logger.debug '----------------------------------------------------------'
       
       if (http_response.code === 200)
         api_response = JSON.parse(http_response.parsed_response)
@@ -75,18 +62,7 @@ module CreditShop
       }
       
       query = add_hash(query)
-      
-      Rails.logger.debug '----------------------------------------------------------'
-      Rails.logger.debug URL_BASE.inspect
-      Rails.logger.debug data.inspect
-      Rails.logger.debug data.to_param
-      Rails.logger.debug encoded_data(data)
-      Rails.logger.debug query.inspect
-      Rails.logger.debug query.to_param
       http_response = HTTParty.post(URL_BASE, :query => query)
-      Rails.logger.debug http_response.inspect
-      Rails.logger.debug http_response.parsed_response.inspect
-      Rails.logger.debug '----------------------------------------------------------'
       
       if (http_response.code === 200)
         api_response = JSON.parse(http_response.parsed_response)
@@ -99,6 +75,34 @@ module CreditShop
           }
         elsif (api_response['resultCode'] === -1)
           return {response_code: Shop::Transaction::API_RESPONSE_USER_NOT_FOUND}
+        end
+      end
+      
+      # if any error occured  
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
+    end
+    
+    # get account of current user
+    def get_money_transactions
+      query = {
+        eID:    'api',
+        key:    KEY,
+        action: 'getTransactions',
+        data: '',
+      }
+      
+      query = add_hash(query)
+      http_response = HTTParty.post(URL_BASE, :query => query)
+      
+      if (http_response.code === 200)
+        api_response = JSON.parse(http_response.parsed_response)
+        if (api_response['resultCode'] === 0)
+          return {
+            response_code: Shop::Transaction::API_RESPONSE_OK,
+            response_data: {
+              transactions: api_response['result'],
+            }
+          }
         end
       end
       
@@ -123,17 +127,12 @@ module CreditShop
         data.each do |k, v|
           url_encoded_data[k] = CGI.escape(v)
         end
-        Rails.logger.debug '1 ' + url_encoded_data.to_param
         base64_encoded_data = Base64.encode64(url_encoded_data.to_param)
-        Rails.logger.debug '2 ' + base64_encoded_data
-        b64 = base64_encoded_data.gsub(/[\n\r ]/,'')
-        Rails.logger.debug '3 ' + b64
-        b64
+        base64_encoded_data.gsub(/[\n\r ]/,'')
       end
       
       def add_hash(query)
         hash_base = query[:key] + query[:action] + CGI.escape(query[:data]) + SHARED_SECRET
-        Rails.logger.debug '5 ' + hash_base.inspect
         query[:hash] = Digest::SHA1.hexdigest(hash_base)
         query
       end
