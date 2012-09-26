@@ -13,6 +13,7 @@ one:
   terrain_id: 1
 
 two:
+  id: 2
   node_id: 1
   name: MyString
   owner_id: 1
