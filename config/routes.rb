@@ -1,8 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -161,7 +158,8 @@ GameServer::Application.routes.draw do
           resources :change_army_actions         
           resources :cancel_move_army_actions   
           resources :attack_army_actions       
-          resources :retreat_army_actions       
+          resources :retreat_army_actions      
+          resources :found_outpost_actions, :only => [ :create ] 
         end 
         namespace :fundamental do
           resources :join_alliance_actions    
@@ -193,6 +191,7 @@ GameServer::Application.routes.draw do
         resources :resource_offers
         resources :bonus_offers
         resources :transactions
+        resources :money_transactions
         resource :account, :only => [ :show ]
       end
       

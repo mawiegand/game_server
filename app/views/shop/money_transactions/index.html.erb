@@ -1,0 +1,51 @@
+<h1>Listing shop_money_transactions</h1>
+
+<table>
+  <tr>
+    <th>Bytro UpdateTstamp</th>
+    <th>Bytro UserID</th>
+    <th>Bytro InvoiceID</th>
+    <th>Provider</th>
+    <th>Country</th>
+    <th>Currency</th>
+    <th>Gross</th>
+    <th>VAT</th>
+    <th>Tax</th>
+    <th>Net</th>
+    <th>Fee</th>
+    <th>EBP</th>
+    <th>Earnings</th>
+    <th>Transaction State</th>
+    <th>Payer Firstname</th>
+    <th>Payer Lastname</th>
+    <th>Payer Mail</th>
+    <th>Payer Country</th>
+  </tr>
+
+<% @money_transactions.each do |money_transaction| %>
+  <tr>
+    <td><%= money_transaction['updateTstamp'] %></td>
+    <td><%= money_transaction['userID'] %></td>
+    <td><%= money_transaction['invoiceID'] %></td>
+    <td><%= money_transaction['method'] %></td>
+    <td><%= money_transaction['country'] %></td>
+    <td><%= money_transaction['grossCurrency'] %></td>
+    <td><%= money_transaction['gross'].to_f.round(3) %></td>
+    <td><%= money_transaction['vat'].to_f.round(3) %></td>
+    <td><%= money_transaction['tax'].to_f.round(3) %></td>
+    <td><%= money_transaction['net'].to_f.round(3) %></td>
+    <td><%= money_transaction['fee'].to_f.round(3) %></td>
+    <td><%= money_transaction['ebp'].to_f.round(3) %></td>
+    <td><%= money_transaction['earnings'].to_f.round(3) %></td>
+    <td><%= money_transaction['transactionState'] %></td>
+    <td><%= money_transaction['payerFirstName'] %></td>
+    <td><%= money_transaction['payerLastName'] %></td>
+    <td><%= money_transaction['payerMail'] %></td>
+    <td><%= money_transaction['payerCountry'] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transaction', new_shop_transaction_path %>

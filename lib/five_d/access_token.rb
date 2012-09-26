@@ -82,8 +82,9 @@ require 'five_d'
     # Has some small tolerance of at least one seconds.
     #
     #  access_token.in_future? # => true, if the timestamp is in the future
+    #FIXME check <=> comparison on returning the correct return value
     def in_future?
-      return (@token[:timestamp] <=> Time.now) > 1   # 1 second tolerance
+      return (@token[:timestamp] <=> Time.now) > 1   # 1 second tolerance  
     end
     
     # returns true in case the given access token could not be parsed 

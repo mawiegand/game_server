@@ -76,6 +76,7 @@ class GameRules::Rules
   include ActiveModel::Serializers::JSON
   include ActiveModel::Serializers::Xml
   include ActiveModel::Conversion
+  include GameRules::RulesHelper
   extend ActiveModel::Naming
   self.include_root_in_json = false
 

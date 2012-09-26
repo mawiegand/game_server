@@ -32,12 +32,14 @@ en:
         guilds: Guilds
         alliance_shouts: Ally-Shouts
         announcements: Announcements
+        settings: Settings
       messaging:
         category: Messaging
         inboxes: Inboxes
         outboxes: Outboxes
         archives: Archives
         reported: Abuse
+        jabbercommands: Jabber Commands
       map:
         category: Map
         nodes: Nodes
@@ -81,6 +83,7 @@ en:
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
         transactions: Transactions
+        money_transactions: Money Transactions
       tutorial:
         category: Tutorial
         tutorial: Tutorial

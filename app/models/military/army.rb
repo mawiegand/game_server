@@ -164,8 +164,8 @@ class Military::Army < ActiveRecord::Base
   
   def found_outpost!
     return   if owner.nil? || location.nil?    
-    character.update_settlement_points_used
-    return   unless character.can_found_outpost?
+    owner.update_settlement_points_used
+    return   unless owner.can_found_outpost?
     return   unless location.can_found_outpost_here?
     return   unless can_found_outpost?
     
@@ -188,7 +188,7 @@ class Military::Army < ActiveRecord::Base
     
     raise InternalServerError.new("no settlement founder in army")   if consume_type.nil?
     
-    self.details.decrement(unit_type[:db_field], 1)
+    self.details.decrement(consume_type[:db_field], 1)
     self.save!
   end
   
@@ -653,14 +653,18 @@ class Military::Army < ActiveRecord::Base
       if self.region_id_changed? && !self.region_id_change[0].blank?
         logger.debug "Set armies changed timestamp at old region."
         old_region = Map::Region.find_by_id(self.region_id_change[0])
-        old_region.armies_changed_at = change_timestamp    unless old_region.nil?
-        old_region.save
+        unless old_region.nil?
+          old_region.armies_changed_at = change_timestamp    
+          old_region.save
+        end
       end      
       if self.location_id_changed? && !self.location_id_change[0].blank?
         logger.debug "Set armies changed timestamp at old location."
         old_location = Map::Location.find_by_id(self.location_id_change[0])
-        old_location.armies_changed_at = change_timestamp    unless old_location.nil?
-        old_location.save
+        unless old_location.nil?
+          old_location.armies_changed_at = change_timestamp    
+          old_location.save
+        end
       end
       
       true
