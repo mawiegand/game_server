@@ -29,6 +29,7 @@ class GameRules::Rules
   include ActiveModel::Serializers::JSON
   include ActiveModel::Serializers::Xml
   include ActiveModel::Conversion
+  include GameRules::RulesHelper
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
@@ -1814,19 +1815,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "500000",
+                :formula            => "400000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "500000",
+                :formula            => "400000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "500000",
+                :formula            => "400000",
               },
             
               {

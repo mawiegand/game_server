@@ -1,8 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -194,6 +191,7 @@ GameServer::Application.routes.draw do
         resources :resource_offers
         resources :bonus_offers
         resources :transactions
+        resources :money_transactions
         resource :account, :only => [ :show ]
       end
       
