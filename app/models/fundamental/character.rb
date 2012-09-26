@@ -1,3 +1,5 @@
+require 'identity_provider/access'
+
 class Fundamental::Character < ActiveRecord::Base
 
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
@@ -188,6 +190,18 @@ class Fundamental::Character < ActiveRecord::Base
     end
   
     return self
+  end  
+  
+  def change_password_transaction(password)
+
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.change_character_passwort(self.identifier, password)
+    raise ConflictError.new('Could not change password.') unless response.code == 200
   end  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
