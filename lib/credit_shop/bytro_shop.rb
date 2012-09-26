@@ -36,6 +36,13 @@ module CreditShop
               amount: api_response['result']['amount'],
             }
           }
+        elsif (api_response['resultCode'] === -1)
+          return {
+            response_code: Shop::Transaction::API_RESPONSE_OK,
+            response_data: {
+              amount: 0,
+            }
+          }
         end
       end
       
