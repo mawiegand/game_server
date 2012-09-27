@@ -22,6 +22,16 @@
       <p>Towers that extend the military abilities of fortresses.</p>
     </Description>
   </BuildingCategory>
+  <BuildingCategory id="building_category_fortress_special">
+    <Name>Advanced Fortress Buildings</Name>
+    <Name lang="de_DE">Spezielle Festungsgebäude</Name>
+    <Description lang="de_DE">
+      <p>Spezialgebäude von Festungen.</p> 
+    </Description>
+    <Description lang="en_US">
+      <p>Towers that extend the military abilities of fortresses.</p>
+    </Description>
+  </BuildingCategory>
   <BuildingCategory id="building_category_wall">
     <Name>Defensive Barricade </Name>
     <Name lang="de_DE">Verteidigungswall</Name>
@@ -39,7 +49,7 @@
       <p>Wichtige Gebäude, die eine große Grundfläche benötigen.</p> 
     </Description>
     <Description lang="en_US">
-      <p>Advanced buildings that must be build on a large lot.</p>
+      <p>Advanced buildings that must be built on a large building slot.</p>
     </Description>
   </BuildingCategory>
   <BuildingCategory id="building_category_small_building">
@@ -49,7 +59,17 @@
       <p>Grundlegende Gebäude, die überall, auf großen und kleinen Bauplätzen, gebaut werden können.</p> 
     </Description>
     <Description lang="en_US">
-      <p>Fundamental buildings of any settlement that can be build on large as well as small lots.</p>
+      <p>Fundamental buildings of any settlement that can be built on large as well as small building slots.</p>
+    </Description>
+  </BuildingCategory>
+  <BuildingCategory id="building_category_special_building">
+    <Name>Special Buildings</Name>
+    <Name lang="de_DE">Spezialgebäude</Name>
+    <Description lang="de_DE">
+      <p>Spezielle Gebäude die nur auf kleinen Bauplätzen gebaut werden können.</p> 
+    </Description>
+    <Description lang="en_US">
+      <p>Special buildings that can only be built on small building slots.</p>
     </Description>
   </BuildingCategory>
 </BuildingCategories>
