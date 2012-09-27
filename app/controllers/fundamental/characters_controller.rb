@@ -55,7 +55,8 @@ class Fundamental::CharactersController < ApplicationController
     if !current_character && request_access_token &&  request_access_token.valid? &&
         request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
         !request_access_token.identifier.blank? &&
-        request_authorization && request_authorization[:grant_type] == :bearer
+        request_authorization && request_authorization[:grant_type] == :bearer &&
+        params.has_key?(:create_if_new)  
 
       identity_provider_access = IdentityProvider::Access.new({
         identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],

@@ -25,6 +25,10 @@ module IdentityProvider
       put('/resource/character_properties/' + identifier, {:resource_character_property => {:data => data_object}})
     end
     
+    def change_character_passwort(identifier, password)
+      put('/identities/' + identifier, {:identity => {:password => password, :password_confirmation => password}})
+    end
+    
     def deliver_message_notification(recipient, sender, message)
       
       subject = "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten."
