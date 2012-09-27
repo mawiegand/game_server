@@ -3315,6 +3315,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :building_slots => {
             0 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              2,
+              
+              ],
+            },
+            1 => {
               :max_level => 20,
               
               :building  => 4,
@@ -3327,23 +3337,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               ],
             },
-            1 => {
+            2 => {
               :max_level => 20,
               
               :level  => 0,
               
               :options   => [
               3,
-              4,
-              
-              ],
-            },
-            2 => {
-              :max_level => 10,
-              
-              :level  => 0,
-              
-              :options   => [
               4,
               
               ],
