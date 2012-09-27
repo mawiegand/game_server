@@ -134,7 +134,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       set_clauses   << Fundamental::ResourcePool.modify_resource_sql_set_fragment(base)
       where_clauses << Fundamental::ResourcePool.modify_resource_sql_where_fragment(base)
 
-      values.push(resources[resource_type[:id]])
+      values.push(resources[resource_type[:id]] || 0)
     end     
     set_clauses   << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses   << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
