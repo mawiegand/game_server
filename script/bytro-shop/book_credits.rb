@@ -34,12 +34,18 @@ def add_hash(query)
   query
 end
 
-
+###############################################################################
+#
 # identifier and booking amount
 # if amount is positive, amount of user will increase
 
-identifier = 'gNbPshCDNdkdfuCr'
-amount = -15
+identifier = 'mQRaAkAXCZPBJLfr'
+amount = 1
+
+###############################################################################
+
+
+
 
 puts "book amount of #{amount} credits to account of user with identity #{identifier}"
 
