@@ -34,4 +34,11 @@
   <Effectiveness category="unitcategory_artillery">1</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
+  <RequirementGroup>
+    <Requirement id="building_infantry_tower" min_level="10" />
+    <Requirement id="building_fortress_main" min_level="10" />
+  </RequirementGroup>
+  <RequirementGroup>
+    <Requirement id="building_barracks" min_level="15" />
+  </RequirementGroup>
 </Unit>
