@@ -3693,7 +3693,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Anführer Erprobungshalber",
+            :de_DE => "Anführer erprobungshalber",
   
             :en_US => "Junior Leader",
                 
