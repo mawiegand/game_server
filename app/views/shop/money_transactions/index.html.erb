@@ -4,6 +4,7 @@
   <tr>
     <th>Bytro UpdateTstamp</th>
     <th>Bytro UserID</th>
+    <th>Identifier</th>
     <th>Bytro InvoiceID</th>
     <th>Bytro offerID</th>
     <th>Provider</th>
@@ -27,6 +28,7 @@
   <tr>
     <td><%= money_transaction['updateTstamp'] %></td>
     <td><%= money_transaction['userID'] %></td>
+    <td><%= link_to money_transaction['partnerUserID'], "/identity_provider/identities/#{money_transaction['partnerUserID']}" %></td>
     <td><%= money_transaction['invoiceID'] %></td>
     <td><%= money_transaction['offerID'] %></td>
     <td><%= money_transaction['method'] %></td>
