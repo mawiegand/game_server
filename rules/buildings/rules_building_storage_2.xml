@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_storage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2">  
-  <Name lang="de_DE">Rohstofflager</Name>
+  <Name lang="de_DE">Rohstofflager mit Kupferkarren</Name>
   <Name lang="en_US">Storage</Name>
   <Description lang="de_DE">
     <p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>
@@ -14,7 +14,7 @@
     <p>Stores your resources.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steincontainer, Saurierkräne, Holzkarren; alles was man zum Lagern und versenden von Rohstoffen braucht.</p>
+    <p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>
   </Flavour>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="2" />

@@ -5,7 +5,7 @@
   <Name lang="de_DE">Kupferschmelzer</Name>
   <Name lang="en_US">Copper Smelter</Name>
   <Description lang="de_DE">
-    <p>Description here</p>
+    <p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und auch den ein oder anderen Fortschritt bei Werkzeugen oder anderen Sachen.</p>
    </Description>
   <Description lang="en_US">
     <p>Description here</p>
@@ -14,7 +14,7 @@
     <p>Flavour here</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Bronze ist härter als Stein und hier wird sie gemacht.</p>
+    <p>Kupfer glitzert zwar auch schon im Rohzustand, aber erst nach dem Schmelzen kann es zu Schmuck verarbeitet werden. Ab und zu stellt man auch hilfreiche Werkzeuge damit her.</p>
    </Flavour> 
   <Requirement id="building_chief_cottage" min_level="10" />  
   <Requirement id="building_copper_smelter" max_level="0" />

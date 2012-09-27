@@ -1336,21 +1336,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
+            :de_DE => "<p></p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
+            :de_DE => "Toll. Wenn du willst kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
   
             :en_US => "",
                 
@@ -1890,7 +1890,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird es für die Rekrutierung von Verwalter und die Gründung von Lagerstätten gebraucht.</p>",
+            :de_DE => "<p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird es für die Rekrutierung von kleinen Häuptlingen und die Gründung von Lagerstätten gebraucht.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2466,7 +2466,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?",
+            :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen kleinen Häuptling und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?",
   
             :en_US => "flavor text english",
                 
@@ -2480,14 +2480,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Gut. Jetzt kannst du Verwalter trainieren. ",
+            :de_DE => " Gut. Jetzt kannst du kleine Häuptlinge trainieren. ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
+            :de_DE => "Kleine Häuptlinge sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
   
             :en_US => " ",
                 
@@ -2570,7 +2570,7 @@ Aufgabentext: Gründe eine Lagerstätte. ",
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Verwalter am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell</p><p>Du kannst nur weitere Siedlungen gründen, wenn du im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell</p><p>Du kannst nur weitere Siedlungen gründen, wenn du im Rang aufsteigst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 

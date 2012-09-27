@@ -450,16 +450,16 @@
       <Task></Task>
       <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavor>
+      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Toll. Wenn du willst kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1cottagelvl1" />
       <Rewards>
@@ -647,7 +647,7 @@
       <Task></Task>
       <Task locale="de_DE"> Baue ein Lagerfeuer.</Task>
       <Description locale="de_DE">
-        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird es für die Rekrutierung von Verwalter und die Gründung von Lagerstätten gebraucht.</p>
+        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird es für die Rekrutierung von kleinen Häuptlingen und die Gründung von Lagerstätten gebraucht.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -883,11 +883,11 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavor>
+      <Flavor locale="de_DE">Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen kleinen Häuptling und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.</RewardText>
+      <RewardText locale="de_DE">Kleine Häuptlinge sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"> Gut. Jetzt kannst du Verwalter trainieren. </RewardFlavor>
+      <RewardFlavor locale="de_DE"> Gut. Jetzt kannst du kleine Häuptlinge trainieren. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
@@ -906,7 +906,7 @@
       <Task></Task>
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
-        <p>Um eine Lagerstätte zu gründen, musst du einen Verwalter am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
+        <p>Um eine Lagerstätte zu gründen, musst du einen kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
 	<p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell</p>
 	<p>Du kannst nur weitere Siedlungen gründen, wenn du im Rang aufsteigst.</p>
       </Description>

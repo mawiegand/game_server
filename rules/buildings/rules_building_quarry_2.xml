@@ -2,10 +2,10 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_quarry_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2">  
-  <Name lang="de_DE">Steinbruch</Name>
+  <Name lang="de_DE">Altehrwürdiger Steinbruch</Name>
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
-    <p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p>
+    <p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben.</p>
     <p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>
   </Description>
   <Description lang="en_US">
@@ -15,7 +15,7 @@
     <p>Stones, even more stones!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>
+    <p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Aus irgendeinem Grund sind sie trotzdem schneller beim Abbau geworden.</p>
  </Flavour>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="4" />
