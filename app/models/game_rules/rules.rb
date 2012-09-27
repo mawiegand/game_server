@@ -2483,9 +2483,9 @@ class GameRules::Rules
         },              #   END OF Turm der Reitmeisterrei
         {               #   Garnison
           :id          => 4, 
-          :symbolic_id => :building_garrison,
+          :symbolic_id => :building_fortress_garrison,
 					:category    => 2,
-          :db_field    => :building_garrison,
+          :db_field    => :building_fortress_garrison,
           :name        => {
             
             :de_DE => "Garnison",
