@@ -652,6 +652,45 @@ class GameRules::Rules
             
           },
 
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 1,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
 
         },              #   END OF Thick-skinned Clubber
         {               #   Drunk Clubber
@@ -716,6 +755,45 @@ class GameRules::Rules
             2 => '30',
             
           },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 1,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            ],
+
+          ],          
 
 
         },              #   END OF Drunk Clubber
@@ -783,18 +861,51 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 1,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 15,
+
+            },
+
+            ],
+
             [
               
             {
               :symbolic_id => 'building_barracks',
-              :id => 7,
+              :id => 8,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 20,
 
             },
 
-            ]
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -927,6 +1038,45 @@ class GameRules::Rules
             
           },
 
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
 
         },              #   END OF Pebble Thrower2
         {               #   Pebble Thrower3
@@ -991,6 +1141,45 @@ class GameRules::Rules
             2 => '67',
             
           },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            ],
+
+          ],          
 
 
         },              #   END OF Pebble Thrower3
@@ -1057,6 +1246,54 @@ class GameRules::Rules
             
           },
 
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 15,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 20,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
 
         },              #   END OF Pebble Thrower4
         {               #   Ostrich Riders
@@ -1121,36 +1358,6 @@ class GameRules::Rules
             2 => '100',
             
           },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 3,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-            ],
-
-          ],          
 
 
         },              #   END OF Ostrich Riders
@@ -1226,7 +1433,16 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 5,
 
             },
 
@@ -1236,10 +1452,10 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 13,
+              :id => 14,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 10,
 
             },
 
@@ -1325,16 +1541,25 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 10,
+
+            },
+
             ],
 
             [
               
             {
               :symbolic_id => 'building_stud',
-              :id => 13,
+              :id => 14,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 15,
 
             },
 
@@ -1416,7 +1641,16 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_main',
+              :id => 0,
+              :type => '',
+
+              :min_level => 15,
 
             },
 
@@ -1426,10 +1660,19 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 13,
+              :id => 14,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 20,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 1,
 
             },
 
@@ -1644,7 +1887,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 13,
+              :id => 14,
               :type => 'building',
 
               :min_level => 100,
@@ -1724,7 +1967,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_campfire',
-              :id => 8,
+              :id => 9,
               :type => 'building',
 
               :min_level => 10,
@@ -1779,8 +2022,27 @@ class GameRules::Rules
           },
 
         },              #   END OF Towers
-        {               #   Defensive Barricade 
+        {               #   Advanced Fortress Buildings
           :id          => 2, 
+          :symbolic_id => :building_category_fortress_special,
+          :name        => {
+            
+            :en_US => "Advanced Fortress Buildings",
+  
+            :de_DE => "Spezielle Festungsgebäude",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Spezialgebäude von Festungen.</p>",
+  
+            :en_US => "<p>Towers that extend the military abilities of fortresses.</p>",
+                
+          },
+
+        },              #   END OF Advanced Fortress Buildings
+        {               #   Defensive Barricade 
+          :id          => 3, 
           :symbolic_id => :building_category_wall,
           :name        => {
             
@@ -1799,7 +2061,7 @@ class GameRules::Rules
 
         },              #   END OF Defensive Barricade 
         {               #   Large Buildings
-          :id          => 3, 
+          :id          => 4, 
           :symbolic_id => :building_category_large_building,
           :name        => {
             
@@ -1812,13 +2074,13 @@ class GameRules::Rules
             
             :de_DE => "<p>Wichtige Gebäude, die eine große Grundfläche benötigen.</p>",
   
-            :en_US => "<p>Advanced buildings that must be build on a large lot.</p>",
+            :en_US => "<p>Advanced buildings that must be built on a large building slot.</p>",
                 
           },
 
         },              #   END OF Large Buildings
         {               #   Standard Buildings
-          :id          => 4, 
+          :id          => 5, 
           :symbolic_id => :building_category_small_building,
           :name        => {
             
@@ -1831,11 +2093,30 @@ class GameRules::Rules
             
             :de_DE => "<p>Grundlegende Gebäude, die überall, auf großen und kleinen Bauplätzen, gebaut werden können.</p>",
   
-            :en_US => "<p>Fundamental buildings of any settlement that can be build on large as well as small lots.</p>",
+            :en_US => "<p>Fundamental buildings of any settlement that can be built on large as well as small building slots.</p>",
                 
           },
 
         },              #   END OF Standard Buildings
+        {               #   Special Buildings
+          :id          => 6, 
+          :symbolic_id => :building_category_special_building,
+          :name        => {
+            
+            :en_US => "Special Buildings",
+  
+            :de_DE => "Spezialgebäude",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Spezielle Gebäude die nur auf kleinen Bauplätzen gebaut werden können.</p>",
+  
+            :en_US => "<p>Special buildings that can only be built on small building slots.</p>",
+                
+          },
+
+        },              #   END OF Special Buildings
       ],                # END OF BUILDING CATEGORIES
 
 # ## BUILDING TYPES ##########################################################
@@ -1977,14 +2258,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
-            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
-            2 => 'FLOOR((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
-            3 => 'MAX(LEVEL-9,0)',
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1.5+0.5)',
+            2 => '(MIN(LEVEL,3)-MIN(LEVEL,3))*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*0.25+0.5)',
+            3 => 'MAX(LEVEL-14,0)',
             
           },
 
-          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
           :production  => [
             
           ],
@@ -2068,14 +2349,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
-            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
-            2 => 'FLOOR((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
-            3 => 'MAX(LEVEL-9,0)',
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
+            2 => '(MIN(LEVEL,3)-MIN(LEVEL,3))*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*0.25+0.5)',
+            3 => 'MAX(LEVEL-14,0)',
             
           },
 
-          :production_time => 'FLOOR((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*19.5*POW(LEVEL,3.6)*3*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
           :production  => [
             
           ],
@@ -2159,14 +2440,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*3*(10*POW(LEVEL,-0.7))+0.5)',
-            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(132*POW(LEVEL,2)-543*LEVEL+520))*1.5*(10*POW(LEVEL,-0.7))+0.5)',
-            2 => 'FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL)))*0.5*(10*POW(LEVEL,-0.7))+0.5)',
-            3 => 'MAX(LEVEL-9,0)',
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1.5+0.5)',
+            2 => '(MIN(LEVEL,3)-MIN(LEVEL,3))*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*0.25+0.5)',
+            3 => 'MAX(LEVEL-14,0)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))*3*(10*POW(LEVEL,-0.7))+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*3+0.5)',
           :production  => [
             
           ],
@@ -2200,10 +2481,69 @@ class GameRules::Rules
           },
 
         },              #   END OF Turm der Reitmeisterrei
-        {               #   Häuptlingshütte
+        {               #   Garnison
           :id          => 4, 
+          :symbolic_id => :building_garrison,
+					:category    => 2,
+          :db_field    => :building_garrison,
+          :name        => {
+            
+            :de_DE => "Garnison",
+  
+            :en_US => "Garrison",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
+Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+  
+            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*2+0.5)',
+            3 => 'MAX(LEVEL-14,0)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*2+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :garrison_size_bonus => "20*LEVEL",
+
+            :army_size_bonus => "10*LEVEL",
+    
+          },
+
+        },              #   END OF Garnison
+        {               #   Häuptlingshütte
+          :id          => 5, 
           :symbolic_id => :building_chief_cottage,
-					:category    => 3,
+					:category    => 4,
           :db_field    => :building_chief_cottage,
           :name        => {
             
@@ -2240,7 +2580,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 0,
@@ -2327,9 +2667,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Häuptlingshütte
         {               #   Jäger und Sammler
-          :id          => 5, 
+          :id          => 6, 
           :symbolic_id => :building_gatherer,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_gatherer,
           :name        => {
             
@@ -2365,7 +2705,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 1,
@@ -2421,9 +2761,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Jäger und Sammler
         {               #   Kleine Hütte
-          :id          => 6, 
+          :id          => 7, 
           :symbolic_id => :building_cottage,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_cottage,
           :name        => {
             
@@ -2460,7 +2800,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 2,
@@ -2522,9 +2862,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Kleine Hütte
         {               #   Ausbildungsgelände
-          :id          => 7, 
+          :id          => 8, 
           :symbolic_id => :building_barracks,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_barracks,
           :name        => {
             
@@ -2561,7 +2901,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 3,
@@ -2627,9 +2967,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Ausbildungsgelände
         {               #   Lagerfeuer
-          :id          => 8, 
+          :id          => 9, 
           :symbolic_id => :building_campfire,
-					:category    => 4,
+					:category    => 6,
           :db_field    => :building_campfire,
           :name        => {
             
@@ -2665,7 +3005,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 4,
@@ -2674,7 +3014,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             {
               :symbolic_id => 'building_campfire',
-              :id => 8,
+              :id => 9,
               :type => 'building',
 
               :min_level => 0,
@@ -2721,9 +3061,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Lagerfeuer
         {               #   Holzfäller
-          :id          => 9, 
+          :id          => 10, 
           :symbolic_id => :building_logger,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_logger,
           :name        => {
             
@@ -2760,7 +3100,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 5,
@@ -2822,9 +3162,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Holzfäller
         {               #   Steinbruch
-          :id          => 10, 
+          :id          => 11, 
           :symbolic_id => :building_quarry,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_quarry,
           :name        => {
             
@@ -2861,7 +3201,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 5,
@@ -2923,9 +3263,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Steinbruch
         {               #   Kürschner
-          :id          => 11, 
+          :id          => 12, 
           :symbolic_id => :building_furrier,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_furrier,
           :name        => {
             
@@ -2962,7 +3302,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 8,
@@ -3025,9 +3365,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Kürschner
         {               #   Schießstand
-          :id          => 12, 
+          :id          => 13, 
           :symbolic_id => :building_firing_range,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_firing_range,
           :name        => {
             
@@ -3064,8 +3404,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 0,
-              :type => '',
+              :id => 18,
+              :type => 'building',
 
               :min_level => 3,
 
@@ -3130,9 +3470,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Schießstand
         {               #   Stall
-          :id          => 13, 
+          :id          => 14, 
           :symbolic_id => :building_stud,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_stud,
           :name        => {
             
@@ -3169,8 +3509,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 0,
-              :type => '',
+              :id => 18,
+              :type => 'building',
 
               :min_level => 6,
 
@@ -3235,9 +3575,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Stall
         {               #   Rohstofflager
-          :id          => 14, 
+          :id          => 15, 
           :symbolic_id => :building_storage,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_storage,
           :name        => {
             
@@ -3274,7 +3614,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             {
               :symbolic_id => 'building_chief_cottage',
-              :id => 4,
+              :id => 5,
               :type => 'building',
 
               :min_level => 4,
@@ -3355,6 +3695,829 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Rohstofflager
+        {               #   Hütte
+          :id          => 16, 
+          :symbolic_id => :building_cottage_2,
+					:category    => 5,
+          :db_field    => :building_cottage_2,
+          :name        => {
+            
+            :de_DE => "Hütte",
+  
+            :en_US => "Hut",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>In den Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
+  
+            :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 12,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.75)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.5)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.125)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*1)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "FLOOR((1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0*(1.88*POW(LEVEL,1.425)+0.5)/100.0)",
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Hütte
+        {               #   Kommandozentrale
+          :id          => 17, 
+          :symbolic_id => :building_command_post,
+					:category    => 4,
+          :db_field    => :building_command_post,
+          :name        => {
+            
+            :de_DE => "Kommandozentrale",
+  
+            :en_US => "Command Post",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
+Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+  
+            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+          :requirementGroups=> [
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_command_post',
+              :id => 17,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ]
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*4+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+              },
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+              },
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+              },
+
+            ],
+
+            :command_points => "1+FLOOR(LEVEL/10.0)",
+    
+          },
+
+        },              #   END OF Kommandozentrale
+        {               #   Kupferschmelzer
+          :id          => 18, 
+          :symbolic_id => :building_copper_smelter,
+					:category    => 6,
+          :db_field    => :building_copper_smelter,
+          :name        => {
+            
+            :de_DE => "Kupferschmelzer",
+  
+            :en_US => "Copper Smelter",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Flavour here</p>",
+  
+            :de_DE => "<p>Bronze ist härter als Stein und hier wird sie gemacht.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Description here</p>",
+  
+            :en_US => "<p>Description here</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+          :requirementGroups=> [
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ]
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*2)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*2)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)',
+            3 => 'MAX(LEVEL-8,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*4)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Kupferschmelzer
+        {               #   Feldlager
+          :id          => 19, 
+          :symbolic_id => :building_field_camp,
+					:category    => 5,
+          :db_field    => :building_field_camp,
+          :name        => {
+            
+            :de_DE => "Feldlager",
+  
+            :en_US => "Field Camp",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>",
+  
+            :en_US => "<p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75+0.5)',
+            3 => '2*MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :garrison_size_bonus => "300+40*LEVEL",
+
+            :army_size_bonus => "300+20*LEVEL",
+    
+          },
+
+        },              #   END OF Feldlager
+        {               #   Kürschner
+          :id          => 20, 
+          :symbolic_id => :building_furrier_2,
+					:category    => 5,
+          :db_field    => :building_furrier_2,
+          :name        => {
+            
+            :de_DE => "Kürschner",
+  
+            :en_US => "Peltmonger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
+  
+            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>",
+  
+            :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 16,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.5)',
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.5)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.25)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*1)',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Kürschner
+        {               #   Holzfäller
+          :id          => 21, 
+          :symbolic_id => :building_logger_2,
+					:category    => 5,
+          :db_field    => :building_logger_2,
+          :name        => {
+            
+            :de_DE => "Holzfäller",
+  
+            :en_US => "Lumberjack",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Wood! Even more wood!</p>",
+  
+            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>",
+  
+            :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 14,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*1)',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Holzfäller
+        {               #   Steinbruch
+          :id          => 22, 
+          :symbolic_id => :building_quarry_2,
+					:category    => 5,
+          :db_field    => :building_quarry_2,
+          :name        => {
+            
+            :de_DE => "Steinbruch",
+  
+            :en_US => "Quarry",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Stones, even more stones!</p>",
+  
+            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>",
+  
+            :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 13,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.5)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*1)',
+          :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Steinbruch
+        {               #   Garnison
+          :id          => 23, 
+          :symbolic_id => :building_garrison,
+					:category    => 4,
+          :db_field    => :building_garrison,
+          :name        => {
+            
+            :de_DE => "Garnison",
+  
+            :en_US => "Garrison",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
+Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+  
+            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*4+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :garrison_size_bonus => "10*LEVEL",
+
+            :army_size_bonus => "5*LEVEL",
+    
+          },
+
+        },              #   END OF Garnison
+        {               #   Rohstofflager
+          :id          => 24, 
+          :symbolic_id => :building_storage_2,
+					:category    => 5,
+          :db_field    => :building_storage_2,
+          :name        => {
+            
+            :de_DE => "Rohstofflager",
+  
+            :en_US => "Storage",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Stores your resources.</p>",
+  
+            :de_DE => "<p>Steincontainer, Saurierkräne, Holzkarren; alles was man zum Lagern und versenden von Rohstoffen braucht.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>",
+  
+            :en_US => "<p>Storage space.</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 2,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 0,
+              :type => '',
+
+              :min_level => 17,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*0.5)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR((1233*POW(2.71828,0.275*MIN(LEVEL,10))*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-0.96)+(0.06*(MAX(LEVEL-10,0))+0.98)*2))*1)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :capacity  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)",
+              },
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "10000",
+              },
+            
+          ],
+
+          :abilities   => {
+
+            :trading_carts => "1000*1.5*LEVEL",
+
+            :unlock_p2p_trade => 1,            
+    
+          },
+
+        },              #   END OF Rohstofflager
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -3412,7 +4575,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :building_slots => {
             0 => {
-              :max_level => 10,
+              :max_level => 15,
               
               :building  => 0,
               
@@ -3424,7 +4587,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             1 => {
-              :max_level => 10,
+              :max_level => 15,
               
               :level  => 0,
               
@@ -3434,12 +4597,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             2 => {
-              :max_level => 10,
+              :max_level => 15,
               
               :level  => 0,
               
               :options   => [
               1,
+              
+              ],
+            },
+            3 => {
+              :max_level => 15,
+              
+              :level  => 0,
+              
+              :options   => [
+              2,
               
               ],
             },
@@ -3479,20 +4652,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              2,
+              3,
               
               ],
             },
             1 => {
               :max_level => 20,
               
-              :building  => 4,
+              :building  => 5,
               
               :level  => 1,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3502,8 +4675,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3513,8 +4686,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3524,8 +4697,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3535,7 +4708,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3545,7 +4719,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3555,7 +4730,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3565,7 +4741,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3575,7 +4752,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3585,7 +4763,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3595,7 +4774,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3605,7 +4785,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3615,7 +4796,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3625,7 +4807,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3635,7 +4818,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3645,7 +4829,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3655,7 +4840,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3665,7 +4851,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3675,7 +4862,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3685,7 +4873,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3695,7 +4884,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3705,7 +4895,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3715,7 +4906,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3725,7 +4917,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3735,7 +4928,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3745,7 +4939,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3755,7 +4950,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3765,7 +4961,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3775,7 +4972,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3785,7 +4983,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3795,7 +4994,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3805,7 +5005,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3815,7 +5016,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3825,7 +5027,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3835,7 +5038,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3845,7 +5049,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3855,7 +5060,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3865,7 +5071,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3875,7 +5082,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
               
               ],
             },
@@ -3885,7 +5093,338 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              6,
+              
+              ],
+            },
+            41 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            42 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            43 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            44 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            45 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            46 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            47 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            48 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            49 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            50 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            51 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            52 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            53 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            54 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            55 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            56 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            57 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            58 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            59 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            60 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            61 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            62 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            63 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            64 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            65 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            66 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            67 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            68 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            69 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
+              
+              ],
+            },
+            70 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              6,
               
               ],
             },
@@ -3895,21 +5434,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Heimatstadt
-        {               #   Außenposten
+        {               #   Lagerstätte
           :id          => 3, 
           :symbolic_id => :settlement_outpost,
           :name        => {
             
-            :de_DE => "Außenposten",
+            :de_DE => "Lagerstätte",
   
-            :en_US => "Outpost",
+            :en_US => "Camp",
                 
           },
           :description => {
             
             :de_DE => "Außenlager eines Stammes.",
   
-            :en_US => "English Description.",
+            :en_US => "a small encampment of a tribe.",
                 
           },
 
@@ -3922,11 +5461,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             0 => {
               :max_level => 20,
               
-              :level  => 0,
+              :building  => 0,
+              
+              :level  => 1,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3936,8 +5477,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
               4,
+              5,
               
               ],
             },
@@ -3947,7 +5488,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -3957,7 +5498,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -3967,7 +5508,87 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
+              
+              ],
+            },
+            5 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            6 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            7 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            8 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            9 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            10 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            11 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
+              
+              ],
+            },
+            12 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              5,
               
               ],
             },
@@ -3976,7 +5597,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
 
-        },              #   END OF Außenposten
+        },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
 
 # ## QUEUE TYPES #############################################################
@@ -4002,8 +5623,10 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :produces    => [
             0,
             1,
-            3,
+            2,
             4,
+            5,
+            6,
             
           ],
         },              #   END OF queue_buildings
