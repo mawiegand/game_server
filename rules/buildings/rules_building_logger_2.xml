@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_logger_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2>  
+<Building id="building_logger_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2">  
   <Name lang="de_DE">Holzfäller</Name>
   <Name lang="en_US">Lumberjack</Name>
   <Description lang="de_DE">
@@ -16,6 +16,7 @@
   </Flavour>
     <Flavour lang="de_DE">
     <p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>
+  </Flavour>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="4" />
   </RequirementGroup>

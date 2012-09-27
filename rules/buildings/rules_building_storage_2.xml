@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_storage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2>  
+<Building id="building_storage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2">  
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Storage</Name>
   <Description lang="de_DE">
@@ -35,4 +35,3 @@
   <Capacity id="resource_fur">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)</Capacity>
   <Capacity id="resource_cash">10000</Capacity>  
 </Building>
-
