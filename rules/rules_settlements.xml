@@ -320,15 +320,15 @@
     <Name lang="en_US">Camp</Name>
     <Description lang="de_DE">Außenlager eines Stammes.</Description>
     <Description lang="en_US">a small encampment of a tribe.</Description>
-    <BuildingSlot number="0" max-level="20" building="building_haunt" level="1">
+    <BuildingSlot number="0" max-level="10">
+      <BuildingOption category="building_category_wall" />
+    </BuildingSlot>
+    <BuildingSlot number="1" max-level="20" building="building_haunt" level="1">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-    <BuildingSlot number="1" max-level="20">
+    <BuildingSlot number="2" max-level="20">
       <BuildingOption category="building_category_large_building" />
-      <BuildingOption category="building_category_small_building" />
-    </BuildingSlot>
-    <BuildingSlot number="2" max-level="10">
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
     <BuildingSlot number="3" max-level="10">

@@ -3807,13 +3807,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+            :de_DE => "<p>Ein Kommandoposten koordiniert die verschiedenen Armeen im Felde. Soweit man mehr Armeen in eine Richtung schicken als koordinieren bezeichnen kann.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
-Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+            :de_DE => "<p>Der Kommandoposten erhöht die maximale Anzahl an Armeen und beschleunigt die Einheitenrekrutierung.</p>",
   
             :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
@@ -3914,12 +3913,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Flavour here</p>",
   
-            :de_DE => "<p>Bronze ist härter als Stein und hier wird sie gemacht.</p>",
+            :de_DE => "<p>Kupfer glitzert zwar auch schon im Rohzustand, aber erst nach dem Schmelzen kann es zu Schmuck verarbeitet werden. Ab und zu stellt man auch hilfreiche Werkzeuge damit her.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Description here</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und auch den ein oder anderen Fortschritt bei Werkzeugen oder anderen Sachen.</p>",
   
             :en_US => "<p>Description here</p>",
                 
@@ -3995,12 +3994,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>",
+            :de_DE => "<p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Für all das Gerede die über Sicherheit, die sie bieten, ziehen Feldlager Feinde wie magisch an.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>",
+            :de_DE => "<p>Das Feldlager transformiert die Lagerstätte in einen militärischen Betrieb. Eine Mauer schützt die Krieger und größere Unterkünfte vergrößern die Garnisonsarmee.</p>",
   
             :en_US => "<p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
                 
@@ -4055,14 +4054,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Feldlager
-        {               #   Kürschner
+        {               #   Verrückter Kürschner
           :id          => 20, 
           :symbolic_id => :building_furrier_2,
 					:category    => 5,
           :db_field    => :building_furrier_2,
           :name        => {
             
-            :de_DE => "Kürschner",
+            :de_DE => "Verrückter Kürschner",
   
             :en_US => "Peltmonger",
                 
@@ -4071,12 +4070,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
   
-            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>",
+            :de_DE => "<p>Seitdem der Kürschner sein Kupfermesser bekommen hat, traut sich niemand mehr in seine Nähe. Allerdings macht er seine Arbeit jetzt schneller, sodass sich noch niemand beschwert hat.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>",
+            :de_DE => "<p>Mit Kupfermessern kann man Tiere natürlich schneller häuten. Kunsttiere natürlich, denn auch die Steinzeitmenschen legten wert Tierschutz.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>",
   
             :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
                 
@@ -4151,15 +4150,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Kürschner
-        {               #   Holzfäller
+        },              #   END OF Verrückter Kürschner
+        {               #   Holzfäller mit Kupferaxt
           :id          => 21, 
           :symbolic_id => :building_logger_2,
 					:category    => 5,
           :db_field    => :building_logger_2,
           :name        => {
             
-            :de_DE => "Holzfäller",
+            :de_DE => "Holzfäller mit Kupferaxt",
   
             :en_US => "Lumberjack",
                 
@@ -4168,12 +4167,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Wood! Even more wood!</p>",
   
-            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
+            :de_DE => "<p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er mehr selbst gefällte Bäume als loses Gestrüpp mit.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>",
+            :de_DE => "<p>Durch die Benutzung von Kupferäxten können Holzfäller schneller Bäume fällen, obwohl sie alle paar Bäume die Axt wieder geradebiegen müssen.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>",
   
             :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
                 
@@ -4247,15 +4246,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Holzfäller
-        {               #   Steinbruch
+        },              #   END OF Holzfäller mit Kupferaxt
+        {               #   Altehrwürdiger Steinbruch
           :id          => 22, 
           :symbolic_id => :building_quarry_2,
 					:category    => 5,
           :db_field    => :building_quarry_2,
           :name        => {
             
-            :de_DE => "Steinbruch",
+            :de_DE => "Altehrwürdiger Steinbruch",
   
             :en_US => "Quarry",
                 
@@ -4264,12 +4263,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Stones, even more stones!</p>",
   
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der montone Schlag der schweren Werkzeuge. Genau was man von einem Steinbruch erwartet.</p>",
+            :de_DE => "<p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Aus irgendeinem Grund sind sie trotzdem schneller beim Abbau geworden.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>",
+            :de_DE => "<p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>",
   
             :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
                 
@@ -4343,7 +4342,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Steinbruch
+        },              #   END OF Altehrwürdiger Steinbruch
         {               #   Garnison
           :id          => 23, 
           :symbolic_id => :building_garrison,
@@ -4358,17 +4357,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :en_US => "<p> lustiger Flavour Text hier </p>",
+            :en_US => "<p>This is THE place for warriors of all kinds to repeatedly bash their heads in.</p>",
   
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+            :de_DE => "<p>Dies ist der Ort für Krieger aller Art sich gegenseitig die Schädel einzuschlagen und die armen Siedlungsbewohner in Ruhe zu lassen. Dass das die Disziplin stärkt ist ein netter Nebeneffekt.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
-Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+            :de_DE => "<p>Größere Garnisonen führen zu… größeren Garnisonsarmeen, wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p>",
   
-            :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
+            :en_US => "<p>Bigger garrisons lead to… bigger garrison armies who would have thought that. They also affect the effective field army size.</p>",
                 
           },
           :hidden      => 0,
@@ -4402,14 +4400,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Garnison
-        {               #   Rohstofflager
+        {               #   Rohstofflager mit Kupferkarren
           :id          => 24, 
           :symbolic_id => :building_storage_2,
 					:category    => 5,
           :db_field    => :building_storage_2,
           :name        => {
             
-            :de_DE => "Rohstofflager",
+            :de_DE => "Rohstofflager mit Kupferkarren",
   
             :en_US => "Storage",
                 
@@ -4418,7 +4416,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Stores your resources.</p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne, Holzkarren; alles was man zum Lagern und versenden von Rohstoffen braucht.</p>",
+            :de_DE => "<p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>",
                 
           },
           :description => {
@@ -4517,7 +4515,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Rohstofflager
+        },              #   END OF Rohstofflager mit Kupferkarren
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -5459,6 +5457,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :building_slots => {
             0 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              3,
+              
+              ],
+            },
+            1 => {
               :max_level => 20,
               
               :building  => 0,
@@ -5471,23 +5479,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               ],
             },
-            1 => {
+            2 => {
               :max_level => 20,
               
               :level  => 0,
               
               :options   => [
               4,
-              5,
-              
-              ],
-            },
-            2 => {
-              :max_level => 10,
-              
-              :level  => 0,
-              
-              :options   => [
               5,
               
               ],
