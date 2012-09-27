@@ -41,6 +41,32 @@ class Military::BattleFaction < ActiveRecord::Base
     false
   end
 
+  def participant_with_largest_army
+    owner_of_largest_army = nil
+    participants.each do |participant|
+      if (owner_of_largest_army.nil? && !participant.army.empty?)
+        owner_of_largest_army = participant
+      elsif (!owner_of_largest_army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength)
+        owner_of_largest_army = participant
+      end
+    end
+    
+    owner_of_largest_army
+  end
+
+  def takeover_candidate_with_largest_army
+    owner_of_largest_army = nil
+    participants.each do |participant|
+      if (owner_of_largest_army.nil? && !participant.army.empty? && participant.army.owner.can_takeover_settlement?)
+        owner_of_largest_army = participant
+      elsif (!owner_of_largest_army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength && participant.army.owner.can_takeover_settlement?)
+        owner_of_largest_army = participant
+      end
+    end
+    
+    owner_of_largest_army
+  end
+
 
   def update_leader
     #check if current leader has still units
@@ -51,18 +77,11 @@ class Military::BattleFaction < ActiveRecord::Base
     end
 
     #find a new leader
-    best_army = nil
-    participants.each do |participant|
-      if (best_army.nil? && !participant.army.empty?)
-        best_army = participant.army
-      elsif (!best_army.nil? && !participant.army.empty? && participant.army.strength > best_army.strength)
-        best_army = participant.army
-      end
-    end
+    strongest = participant_with_largest_army
 
     #if there was found a new leader save him
-    if !best_army.nil?
-      self.leader_id = best_army.owner_id
+    if !strongest.nil?
+      self.leader_id = strongest.army.owner_id
       return self.save
     else
       true
