@@ -3290,21 +3290,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Heimatstadt
-        {               #   Außenposten
+        {               #   Lagerstätte
           :id          => 3, 
           :symbolic_id => :settlement_outpost,
           :name        => {
             
-            :de_DE => "Außenposten",
+            :de_DE => "Lagerstätte",
   
-            :en_US => "Outpost",
+            :en_US => "Camp",
                 
           },
           :description => {
             
             :de_DE => "Außenlager eines Stammes.",
   
-            :en_US => "English Description.",
+            :en_US => "A small encampment of a tribe.",
                 
           },
 
@@ -3317,7 +3317,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             0 => {
               :max_level => 20,
               
-              :level  => 0,
+              :building  => 4,
+              
+              :level  => 1,
               
               :options   => [
               3,
@@ -3366,12 +3368,92 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               ],
             },
+            5 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            6 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            7 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            8 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            9 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            10 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            11 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            12 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
             
           },
 
 
 
-        },              #   END OF Außenposten
+        },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
 
 # ## QUEUE TYPES #############################################################
