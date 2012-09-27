@@ -1325,7 +1325,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1.5,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1390,7 +1390,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1.5,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1494,7 +1494,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1.5,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1598,7 +1598,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1.5,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1707,7 +1707,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 0.9,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 16,
           :effectiveness => {
@@ -1768,7 +1768,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 0.7,
+          :velocity    => 1,
           :action_points => 4,
           :initiative  => 16,
           :effectiveness => {
