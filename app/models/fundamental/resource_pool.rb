@@ -127,13 +127,14 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     set_clauses   = []
     where_clauses = []
     values        = []
-    resources.each do |key, value|
-      base     = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
+    
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base          = resource_type[:symbolic_id].to_s()
       
       set_clauses   << Fundamental::ResourcePool.modify_resource_sql_set_fragment(base)
       where_clauses << Fundamental::ResourcePool.modify_resource_sql_where_fragment(base)
 
-      values.push(value)
+      values.push(resources[resource_type[:id]])
     end     
     set_clauses   << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses   << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
