@@ -919,14 +919,14 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl10" />
+      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
         <ResourceReward resource="resource_fur">250</ResourceReward> 
       </Rewards>
       <RewardTests>
-        <SettlementTest type="settlement_outpost" min_count="1" />
+        <SettlementTest type="settlement_outpost" min_count="10" />
       </RewardTests>
     </Quest>
 

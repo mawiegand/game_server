@@ -2592,7 +2592,7 @@ Aufgabentext: Gründe eine Lagerstätte. ",
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl10',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -2625,7 +2625,7 @@ Aufgabentext: Gründe eine Lagerstätte. ",
 
               {
                 :type => 'settlement_outpost',
-                :min_count => 1,
+                :min_count => 10,
               },
 
             ],
