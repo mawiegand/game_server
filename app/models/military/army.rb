@@ -189,6 +189,7 @@ class Military::Army < ActiveRecord::Base
     raise InternalServerError.new("no settlement founder in army")   if consume_type.nil?
     
     self.details.decrement(consume_type[:db_field], 1)
+    self.details.save!
     self.save!
   end
   

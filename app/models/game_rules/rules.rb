@@ -1815,25 +1815,25 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1000",
+                :formula            => "10000",
               },
             
           ],
@@ -3675,7 +3675,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  1
           :id          => 1, 
-          :exp         => 100000000,
+          :exp         => 1000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -3683,6 +3683,71 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :de_DE => "Kläglicher Anführer",
   
             :en_US => "Feeble Leader",
+                
+          },
+        },             #   END OF 
+        {              #  2
+          :id          => 2, 
+          :exp         => 4000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer erprobungshalber",
+  
+            :en_US => "Junior Leader",
+                
+          },
+        },             #   END OF 
+        {              #  3
+          :id          => 3, 
+          :exp         => 16000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer",
+  
+            :en_US => "Leader",
+                
+          },
+        },             #   END OF 
+        {              #  4
+          :id          => 4, 
+          :exp         => 64000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Bekannter Anführer",
+  
+            :en_US => "Known Leader",
+                
+          },
+        },             #   END OF 
+        {              #  5
+          :id          => 5, 
+          :exp         => 256000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Großer Anführer",
+  
+            :en_US => "Great Leader",
+                
+          },
+        },             #   END OF 
+        {              #  6
+          :id          => 6, 
+          :exp         => 100000000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
                 
           },
         },             #   END OF 
