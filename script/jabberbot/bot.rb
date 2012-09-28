@@ -53,7 +53,7 @@ begin
     puts "loooop"
     # Auslesen der nächsten Aktionen aus der Datenbank
     
-    commands = Messaging::JabberCommand.where(['processed = ? AND blocked_at IS NULL AND command="muc_create"', false]).order(:created_at)
+    commands = Messaging::JabberCommand.where(processed: false, blocked_at: nil, command: 'muc_create').order(:created_at)
     if commands.count == 0
       commands = Messaging::JabberCommand.where(['processed = ? AND blocked_at IS NULL', false]).order(:created_at)
     end

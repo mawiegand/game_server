@@ -11,7 +11,7 @@ STDOUT.sync = true
 puts
 puts "This script recreates all jabber commands."
 
-Messaging::JabberCommand.open_room('global') 
+Messaging::JabberCommand.open_room('global').save
 
 
 Fundamental::Character.find(:all).each do |character|
