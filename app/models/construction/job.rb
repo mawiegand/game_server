@@ -48,8 +48,6 @@ class Construction::Job < ActiveRecord::Base
         converted_time += converted_building_time_formula.apply(level)
       end
       
-      logger.debug '-----------------------------> ' + converted_time.to_s + ' ' + time.to_s + ' ' + [converted_time - time, converted_time * (1 - GameRules::Rules.the_rules.building_conversion[:time_factor])].max.to_s
-      
       return [converted_time - time, converted_time * (1 - GameRules::Rules.the_rules.building_conversion[:time_factor])].max
     end
   end

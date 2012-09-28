@@ -414,6 +414,14 @@
       <RewardTests>
 	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
+      <Message>
+        <Subject>Subject</Subject>
+        <Body>Message with content</Body>
+      </Message>
+      <Message lang="de">
+        <Subject> Begrüßungsnachricht </Subject>
+        <Body> Begrüßungsnachricht hier</Body>
+      </Message>
     </Quest>
 
     <Quest id="quest_build_1cottagelvl1" advisor="girl">

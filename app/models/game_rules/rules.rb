@@ -1815,25 +1815,25 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "400000",
+                :formula            => "300000",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1000",
+                :formula            => "10000",
               },
             
           ],

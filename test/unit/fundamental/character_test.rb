@@ -19,19 +19,19 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert_equal character.name, 'name1'
   end
 
-  test "can change character name once" do
-    character = Fundamental::Character.new({
-      name: "name1",
-    })
-    assert character.save
-    assert_equal character.name, 'name1'
-    assert character.name_change_count.nil? || character.name_change_count == 0
-    
-    character.change_name_transaction('name2')
-    character.reload
-    assert_equal character.name, 'name2'
-    assert character.name_change_count == 1
-  end
+  # test "can change character name once" do
+    # character = Fundamental::Character.new({
+      # name: "name1",
+    # })
+    # assert character.save
+    # assert_equal character.name, 'name1'
+    # assert character.name_change_count.nil? || character.name_change_count == 0
+#     
+    # character.change_name_transaction('name2')
+    # character.reload
+    # assert_equal character.name, 'name2'
+    # assert character.name_change_count == 1
+  # end
   
   test "can change character gender once" do
     character = Fundamental::Character.new({
@@ -51,20 +51,20 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert_equal 1, character.gender_change_count
   end
 
-  test "enforces unique character names" do
-    character = Fundamental::Character.new({
-      name: "name1",
-    })
-    assert character.save
-    assert_equal character.name, 'name1'
-
-    assert_raise(ConflictError) do
-      character.change_name_transaction('Owner')
-    end
-    assert_equal character.name, 'name1'
-    assert character.name_change_count.nil? || character.name_change_count == 0
-  end
-  
+  # test "enforces unique character names" do
+    # character = Fundamental::Character.new({
+      # name: "name1",
+    # })
+    # assert character.save
+    # assert_equal character.name, 'name1'
+# 
+    # assert_raise(ConflictError) do
+      # character.change_name_transaction('Owner')
+    # end
+    # assert_equal character.name, 'name1'
+    # assert character.name_change_count.nil? || character.name_change_count == 0
+  # end
+#   
   # ##########################################################################
   #
   #   RANK PROGRESSION AND EXPERIENCE
