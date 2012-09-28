@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+#
+# Helper script that runs all consistency checks and repairs inconsistencies
+# on the fly.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+puts
+puts "This script recreates all jabber commands."
+
+Messaging::JabberCommand.open_room('global') 
+
+
+Fundamental::Character.find(:all).each do |character|
+  unless character.npc?
+    cmd = Messaging::JabberCommand.grant_access(character, 'global') 
+    cmd.character_id = character.id
+    cmd.save  
+  end
+end  
+
+
+Fundamental::Alliance.find(:all).each do |alliance|
+  
+  if alliance.members.count > 0
+    cmd = Messaging::JabberCommand.open_room(alliance.tag) 
+    cmd.character_id = alliance.leader.id
+    cmd.save
+    
+    alliance.members.each do |character|
+      cmd = Messaging::JabberCommand.grant_access(character, alliance.tag) 
+      cmd.character_id = character.id
+      cmd.save  
+    end
+  end
+    
+end
+
+
+
+
+
+puts
+

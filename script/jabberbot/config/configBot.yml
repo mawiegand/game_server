@@ -1,12 +1,12 @@
 
 jabber:
   debug:    true
-  host:     jabber.wack-a-doo.de
-  muc:      conference.jabber.wack-a-doo.de
-  botJid:   service@jabber.wack-a-doo.de
+  host:     jabber.wack-a-doo.com
+  muc:      conference.jabber.wack-a-doo.com
+  botJid:   service@jabber.wack-a-doo.com
   password: P5Dda5eZmvCLFTw2
   name:     service
-  adminJid: shadow-dragon@jabber.wack-a-doo.de
+  adminJid: shadow-dragon@jabber.wack-a-doo.com
 
 loggerPath:  ./bot.log
 sleep:      5

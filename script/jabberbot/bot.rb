@@ -33,9 +33,9 @@ require File.expand_path(File.join(File.dirname(__FILE__), '../..', 'config', 'e
 
 #require 'yaml'
 #require "dbi"
-#require 'xmpp4r'
-#require 'xmpp4r/muc'
-#require 'xmpp4r/muc/helper/mucbrowser'
+require 'xmpp4r'
+require 'xmpp4r/muc'
+require 'xmpp4r/muc/helper/mucbrowser'
 require './include/patch.rb'
 require './include/xmpp.rb'
 
@@ -65,18 +65,25 @@ begin
       Xmpp.connect
 
       commands.each do |command|
+        command.blocked_at = Time.now
+        command.blocked_by = "GAME SERVER BOT"
+        command.save
         case command.command
           when "muc_create"
-            Xmpp.muc_create  command.room, command.data
+            Xmpp.muc_create  command
           when "muc_delete"
-            Xmpp.muc_delete  command.room, command.data
+            Xmpp.muc_delete  command
           when "auth_add"
-            Xmpp.auth_add    command.room, command.data
+            Xmpp.auth_add    command
           when "auth_delete"
-            Xmpp.auth_delete command.room, command.data
+            Xmpp.auth_delete command
           else
             @logger.error "Unbekannter Befehl #{command.command}."
         end
+        command.blocked_at = nil
+        command.blocked_by = nil
+        command.processed = true
+        command.save
       end
 
       Xmpp.close
