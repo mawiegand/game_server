@@ -3290,21 +3290,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Heimatstadt
-        {               #   Außenposten
+        {               #   Lagerstätte
           :id          => 3, 
           :symbolic_id => :settlement_outpost,
           :name        => {
             
-            :de_DE => "Außenposten",
+            :de_DE => "Lagerstätte",
   
-            :en_US => "Outpost",
+            :en_US => "Camp",
                 
           },
           :description => {
             
             :de_DE => "Außenlager eines Stammes.",
   
-            :en_US => "English Description.",
+            :en_US => "A small encampment of a tribe.",
                 
           },
 
@@ -3315,20 +3315,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :building_slots => {
             0 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
               :options   => [
-              3,
-              4,
+              2,
               
               ],
             },
             1 => {
               :max_level => 20,
               
-              :level  => 0,
+              :building  => 4,
+              
+              :level  => 1,
               
               :options   => [
               3,
@@ -3337,11 +3338,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             2 => {
-              :max_level => 10,
+              :max_level => 20,
               
               :level  => 0,
               
               :options   => [
+              3,
               4,
               
               ],
@@ -3366,12 +3368,92 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               ],
             },
+            5 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            6 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            7 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            8 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            9 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            10 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            11 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
+            12 => {
+              :max_level => 10,
+              
+              :level  => 0,
+              
+              :options   => [
+              4,
+              
+              ],
+            },
             
           },
 
 
 
-        },              #   END OF Außenposten
+        },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
 
 # ## QUEUE TYPES #############################################################
@@ -3593,7 +3675,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  1
           :id          => 1, 
-          :exp         => 100000000,
+          :exp         => 1000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -3601,6 +3683,71 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :de_DE => "Kläglicher Anführer",
   
             :en_US => "Feeble Leader",
+                
+          },
+        },             #   END OF 
+        {              #  2
+          :id          => 2, 
+          :exp         => 4000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer erprobungshalber",
+  
+            :en_US => "Junior Leader",
+                
+          },
+        },             #   END OF 
+        {              #  3
+          :id          => 3, 
+          :exp         => 16000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer",
+  
+            :en_US => "Leader",
+                
+          },
+        },             #   END OF 
+        {              #  4
+          :id          => 4, 
+          :exp         => 64000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Bekannter Anführer",
+  
+            :en_US => "Known Leader",
+                
+          },
+        },             #   END OF 
+        {              #  5
+          :id          => 5, 
+          :exp         => 256000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Großer Anführer",
+  
+            :en_US => "Great Leader",
+                
+          },
+        },             #   END OF 
+        {              #  6
+          :id          => 6, 
+          :exp         => 100000000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
                 
           },
         },             #   END OF 

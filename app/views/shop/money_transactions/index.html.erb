@@ -4,7 +4,9 @@
   <tr>
     <th>Bytro UpdateTstamp</th>
     <th>Bytro UserID</th>
+    <th>Identifier</th>
     <th>Bytro InvoiceID</th>
+    <th>Bytro offerID</th>
     <th>Provider</th>
     <th>Country</th>
     <th>Currency</th>
@@ -26,7 +28,9 @@
   <tr>
     <td><%= money_transaction['updateTstamp'] %></td>
     <td><%= money_transaction['userID'] %></td>
+    <td><%= link_to money_transaction['partnerUserID'], "/identity_provider/identities/#{money_transaction['partnerUserID']}" %></td>
     <td><%= money_transaction['invoiceID'] %></td>
+    <td><%= money_transaction['offerID'] %></td>
     <td><%= money_transaction['method'] %></td>
     <td><%= money_transaction['country'] %></td>
     <td><%= money_transaction['grossCurrency'] %></td>
@@ -46,6 +50,49 @@
 <% end %>
 </table>
 
+<h3>Offers</h3>
+<table>
+<tr>
+  <th>OfferID</th>
+  <th>Paket</th>
+</tr>
+<tr>
+  <td>358</td>
+  <td>1600 5D-Credits</td>
+</tr>
+<tr>
+  <td>359</td>
+  <td>30 5D-Credits</td>
+</tr>
+<tr>
+  <td>360</td>
+  <td>100 5D-Credits</td>
+</tr>
+<tr>
+  <td>361</td>
+  <td>250 5D-Credits</td>
+</tr>
+<tr>
+  <td>362</td>
+  <td>600 5D-Credits</td>
+</tr>
+<tr>
+  <td>363</td>
+  <td>6 M Platinum-Account</td>
+</tr>
+<tr>
+  <td>364</td>
+  <td>12 M Platinum-Account</td>
+</tr>
+<tr>
+  <td>365</td>
+  <td>Life-Time-Platinum-Account</td>
+</tr>
+<tr>
+  <td>366</td>
+  <td>Life-Time-Platinum-Account + Tasse</td>
+</tr>
+</table>
+
 <br />
 
-<%= link_to 'New Transaction', new_shop_transaction_path %>

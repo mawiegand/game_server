@@ -100,19 +100,31 @@ class Ticker::BattleHandler
             #if  do the takeover
             if takeover
               if !battle.location.settlement.nil?
-                runloop.say "Execute takeover of settlement ID #{ battle.location.settlement.id }."
+                runloop.say "Check for possible takeover of settlement ID #{ battle.location.settlement.id }."
                 
                 #do the takeover
                 old_owner = target_settlement.owner
-                target_settlement.new_owner_transaction(winner_leader)
-                
-                runloop.say "Send takeover messages."
+                new_owner = if winner_leader.can_takeover_settlement?
+                              winner_leader
+                            else
+                              winner_faction.takeover_candidate_with_largest_army
+                            end
 
-                #message for old and new owner
-                Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, winner_leader) unless old_owner.nil? || old_owner.npc?
-                Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, winner_leader) unless winner_leader.nil? || winner_leader.npc?
-    
-                runloop.say "Takeover finished."
+                if !new_owner.nil?
+                  runloop.say "Execute takeover of settlement ID #{ battle.location.settlement.id }."
+                             
+                  target_settlement.new_owner_transaction(new_owner)
+                
+                  runloop.say "Send takeover messages."
+
+                  #message for old and new owner
+                  Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, winner_leader) unless old_owner.nil? || old_owner.npc?
+                  Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, winner_leader) unless winner_leader.nil? || winner_leader.npc?
+
+                  runloop.say "Takeover finished."
+                else
+                  runloop.say "No takeover possible."    
+                end
               end
             end
           end

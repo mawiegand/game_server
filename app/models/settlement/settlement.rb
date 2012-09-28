@@ -174,18 +174,26 @@ class Settlement::Settlement < ActiveRecord::Base
   #  BATTLE
   #
   ############################################################################   
-    
-  def can_be_taken_over?
-    #TODO define in the rules
-    #get the base
+  
+  # finds the entry regarding character's home bases from the rules
+  def self.home_base_type_rule
     base_type = nil
     GameRules::Rules.the_rules.settlement_types.each do |t|
-      if t[:symbolic_id] == :settlement_home_base
-        base_type = t
+      if t[:symbolic_id] == :settlement_home_base   
+        base_type = t                               
       end
-    end
+    end    
     raise InternalServerError.new('base_type not found in the rules') if base_type.nil?
-    (self.type_id != base_type[:id])
+    base_type
+  end
+    
+  def can_be_taken_over?
+    # simply checking the conquerable flag should be enough, BUT
+    # to make absolutely sure, no home base is lost, this also
+    # checks whether or not the settlement is a home base
+    base_type        = Settlement::Settlement.home_base_type_rule
+    settlement_types = GameRules::Rules.the_rules.settlement_types
+    self.type_id != base_type[:id] && settlement_types[self.type_id][:conquerable] == true
   end
 
   ############################################################################
