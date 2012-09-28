@@ -131,13 +131,15 @@ class Xmpp
         useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
         useritem.affiliation= :member
         useritem.jid = "#{command.data}@#{APP_CONFIG['jabber']['host']}"
-        muc.send_affiliations(useritem)
+
+        @logger.error "JID: #{ useritem.jid }"
+        muc.send_affiliations([useritem])
 
         muc.exit
 
-        @logger.info "Userrechte fuer #{command.character.name} bei Raum #{command.room} hinzugefuegt"
+        @logger.info "Userrechte fuer #{command.character.name} bei Raum #{command.room} hinzugefuegt. jid: #{useritem.jid}."
       else
-        @logger.info "Fehlerhafte Berechtigung beim Rechte hinzufuegen von #{command.character.name} im Raume #{command.room}"
+        @logger.info "Fehlerhafte Berechtigung beim Rechte hinzufuegen von #{command.character.name} im Raume #{command.room}. jid: #{useritem.jid}."
       end
     rescue Exception => e
       @logger.error "Die Berechtigungen von #{command.character.name} konnten beim Raum #{command.room} nicht hinzugefuegt werden!"
@@ -159,7 +161,7 @@ class Xmpp
         useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
         useritem.affiliation= :none
         useritem.jid = "#{command.data}@#{APP_CONFIG['jabber']['host']}"
-        muc.send_affiliations(useritem)
+        muc.send_affiliations([useritem])
 
         muc.exit
 
