@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="clubbers3" category="unitcategory_infantry">
+<Unit id="clubbers_3" category="unitcategory_infantry">
   <Name>Drunk Clubber</Name>
   <Name lang="de_DE">Betrunkener Keulenkrieger</Name>
   

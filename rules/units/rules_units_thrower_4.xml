@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="thrower4" category="unitcategory_artillery">
+    <Unit id="thrower_4" category="unitcategory_artillery">
       <Name>Pebble Thrower4</Name>
       <Name lang="de_DE"> Speerschleuderer </Name>
   <Flavour lang="en_US">

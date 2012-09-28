@@ -591,9 +591,9 @@ class GameRules::Rules
         },              #   END OF Club Warrior
         {               #   Thick-skinned Clubber
           :id          => 1, 
-          :symbolic_id => :clubbers2,
+          :symbolic_id => :clubbers_2,
 					:category    => 0,
-          :db_field    => :unit_clubbers2,
+          :db_field    => :unit_clubbers_2,
           :name        => {
             
             :en_US => "Thick-skinned Clubber",
@@ -695,9 +695,9 @@ class GameRules::Rules
         },              #   END OF Thick-skinned Clubber
         {               #   Drunk Clubber
           :id          => 2, 
-          :symbolic_id => :clubbers3,
+          :symbolic_id => :clubbers_3,
 					:category    => 0,
-          :db_field    => :unit_clubbers3,
+          :db_field    => :unit_clubbers_3,
           :name        => {
             
             :en_US => "Drunk Clubber",
@@ -977,9 +977,9 @@ class GameRules::Rules
         },              #   END OF Pebble Thrower
         {               #   Pebble Thrower2
           :id          => 5, 
-          :symbolic_id => :thrower2,
+          :symbolic_id => :thrower_2,
 					:category    => 2,
-          :db_field    => :unit_thrower2,
+          :db_field    => :unit_thrower_2,
           :name        => {
             
             :en_US => "Pebble Thrower2",
@@ -1081,9 +1081,9 @@ class GameRules::Rules
         },              #   END OF Pebble Thrower2
         {               #   Pebble Thrower3
           :id          => 6, 
-          :symbolic_id => :thrower3,
+          :symbolic_id => :thrower_3,
 					:category    => 2,
-          :db_field    => :unit_thrower3,
+          :db_field    => :unit_thrower_3,
           :name        => {
             
             :en_US => "Pebble Thrower3",
@@ -1185,9 +1185,9 @@ class GameRules::Rules
         },              #   END OF Pebble Thrower3
         {               #   Pebble Thrower4
           :id          => 7, 
-          :symbolic_id => :thrower4,
+          :symbolic_id => :thrower_4,
 					:category    => 2,
-          :db_field    => :unit_thrower4,
+          :db_field    => :unit_thrower_4,
           :name        => {
             
             :en_US => "Pebble Thrower4",
@@ -1363,9 +1363,9 @@ class GameRules::Rules
         },              #   END OF Ostrich Riders
         {               #   Ostrich Riders2
           :id          => 9, 
-          :symbolic_id => :light_cavalry2,
+          :symbolic_id => :light_cavalry_2,
 					:category    => 1,
-          :db_field    => :unit_light_cavalry2,
+          :db_field    => :unit_light_cavalry_2,
           :name        => {
             
             :en_US => "Ostrich Riders2",
@@ -1467,9 +1467,9 @@ class GameRules::Rules
         },              #   END OF Ostrich Riders2
         {               #   Ostrich Riders3
           :id          => 10, 
-          :symbolic_id => :light_cavalry3,
+          :symbolic_id => :light_cavalry_3,
 					:category    => 1,
-          :db_field    => :unit_light_cavalry3,
+          :db_field    => :unit_light_cavalry_3,
           :name        => {
             
             :en_US => "Ostrich Riders3",
@@ -1571,9 +1571,9 @@ class GameRules::Rules
         },              #   END OF Ostrich Riders3
         {               #   Ostrich Riders4
           :id          => 11, 
-          :symbolic_id => :light_cavalry4,
+          :symbolic_id => :light_cavalry_4,
 					:category    => 1,
-          :db_field    => :unit_light_cavalry4,
+          :db_field    => :unit_light_cavalry_4,
           :name        => {
             
             :en_US => "Ostrich Riders4",
@@ -1853,24 +1853,24 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 1.0,
+            :unitcategory_infantry => 0.75,
   
-            :unitcategory_cavalry => 0.8,
+            :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1.0,
+            :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 1.0,
+            :unitcategory_siege => 0.8,
   
             :unitcategory_special => 1,
                 
           },
-          :attack      => 15,
-          :armor       => 0,
+          :attack      => 5,
+          :armor       => 4,
           :hitpoints   => 90,
 
           :overrunnable => true,
 
-          :critical_hit_damage => 2,
+          :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
           :production_time => '1200',
@@ -2618,25 +2618,25 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "500000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "500000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "500000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)*0.5",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1000",
+                :formula            => "10000",
               },
             
           ],
@@ -3673,12 +3673,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)",
               },
             
-              {
-                :id                 => 3,
-                :symbolic_id        => :resource_cash,
-                :formula            => "10000",
-              },
-            
           ],
 
           :abilities   => {
@@ -4484,25 +4478,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*2.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*2.5)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)",
-              },
-            
-              {
-                :id                 => 3,
-                :symbolic_id        => :resource_cash,
-                :formula            => "10000",
+                :formula            => "FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*1.25)",
               },
             
           ],

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="clubbers2" category="unitcategory_infantry">
+<Unit id="clubbers_2" category="unitcategory_infantry">
   <Name>Thick-skinned Clubber</Name>
   <Name lang="de_DE">Dickhäutiger Keulenkrieger</Name>
   
