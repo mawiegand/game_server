@@ -603,8 +603,6 @@ class Settlement::Settlement < ActiveRecord::Base
       if self.changed?
         queue_types = GameRules::Rules.the_rules().queue_types
         
-        puts '-------------> ' + changes.inspect
-      
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
