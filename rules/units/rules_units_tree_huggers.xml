@@ -19,10 +19,10 @@
         <p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p>
 		<p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>
       </Description>
-      <Cost id="resource_stone" round="true">40</Cost>  
-      <Cost id="resource_wood" round="true">80</Cost>    
-      <Cost id="resource_fur" round="true">60</Cost>    
-      <ProductionTime shortenable="true">720</ProductionTime>  
+      <Cost id="resource_stone" round="true">140</Cost>  
+      <Cost id="resource_wood" round="true">180</Cost>    
+      <Cost id="resource_fur" round="true">240</Cost>    
+      <ProductionTime shortenable="true">900</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>16</Initiative>

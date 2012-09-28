@@ -16,10 +16,10 @@
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
-      <Cost id="resource_stone" round="true">140</Cost>  
+      <Cost id="resource_stone" round="true">80</Cost>  
       <Cost id="resource_wood" round="true">70</Cost>    
       <Cost id="resource_fur" round="true">100</Cost>    
-      <ProductionTime shortenable="true">1080</ProductionTime>  
+      <ProductionTime shortenable="true">675</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>

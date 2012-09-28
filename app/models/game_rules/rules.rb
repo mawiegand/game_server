@@ -578,12 +578,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
-          :production_time => '600',
+          :production_time => '300',
 
           :costs      => {
-            0 => '20',
-            1 => '40',
-            2 => '30',
+            0 => '25',
+            1 => '30',
+            2 => '40',
             
           },
 
@@ -643,12 +643,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
-          :production_time => '600',
+          :production_time => '400',
 
           :costs      => {
-            0 => '20',
-            1 => '40',
-            2 => '30',
+            0 => '35',
+            1 => '45',
+            2 => '60',
             
           },
 
@@ -750,9 +750,9 @@ class GameRules::Rules
           :production_time => '600',
 
           :costs      => {
-            0 => '20',
-            1 => '40',
-            2 => '30',
+            0 => '70',
+            1 => '90',
+            2 => '120',
             
           },
 
@@ -851,12 +851,12 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
-          :production_time => '720',
+          :production_time => '900',
 
           :costs      => {
-            0 => '40',
-            1 => '80',
-            2 => '60',
+            0 => '140',
+            1 => '180',
+            2 => '240',
             
           },
 
@@ -964,12 +964,12 @@ class GameRules::Rules
           :critical_hit_damage => 5,
           :critical_hit_chance => 0.05,
 
-          :production_time => '900',
+          :production_time => '450',
 
           :costs      => {
-            0 => '90',
-            1 => '45',
-            2 => '67',
+            0 => '35',
+            1 => '35',
+            2 => '50',
             
           },
 
@@ -1029,12 +1029,12 @@ class GameRules::Rules
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.05,
 
-          :production_time => '900',
+          :production_time => '525',
 
           :costs      => {
-            0 => '90',
+            0 => '45',
             1 => '45',
-            2 => '67',
+            2 => '60',
             
           },
 
@@ -1133,12 +1133,12 @@ class GameRules::Rules
           :critical_hit_damage => 7,
           :critical_hit_chance => 0.05,
 
-          :production_time => '900',
+          :production_time => '750',
 
           :costs      => {
             0 => '90',
-            1 => '45',
-            2 => '67',
+            1 => '90',
+            2 => '120',
             
           },
 
@@ -1237,12 +1237,12 @@ class GameRules::Rules
           :critical_hit_damage => 8,
           :critical_hit_chance => 0.1,
 
-          :production_time => '900',
+          :production_time => '950',
 
           :costs      => {
-            0 => '90',
-            1 => '45',
-            2 => '67',
+            0 => '180',
+            1 => '180',
+            2 => '240',
             
           },
 
@@ -1350,12 +1350,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1080',
+          :production_time => '350',
 
           :costs      => {
-            0 => '140',
-            1 => '70',
-            2 => '100',
+            0 => '30',
+            1 => '25',
+            2 => '40',
             
           },
 
@@ -1415,12 +1415,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1080',
+          :production_time => '450',
 
           :costs      => {
-            0 => '140',
-            1 => '70',
-            2 => '100',
+            0 => '40',
+            1 => '35',
+            2 => '50',
             
           },
 
@@ -1519,10 +1519,10 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1080',
+          :production_time => '675',
 
           :costs      => {
-            0 => '140',
+            0 => '80',
             1 => '70',
             2 => '100',
             
@@ -1623,12 +1623,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1080',
+          :production_time => '950',
 
           :costs      => {
-            0 => '140',
-            1 => '70',
-            2 => '100',
+            0 => '160',
+            1 => '140',
+            2 => '200',
             
           },
 
@@ -2151,7 +2151,7 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
   
           :buyable     => true,
           :demolishable=> false,
@@ -2236,7 +2236,7 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2327,7 +2327,7 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2418,7 +2418,7 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2510,7 +2510,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -2569,7 +2569,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "1+MIN(MAX(LEVEL-3,0),1)+MIN(MAX(LEVEL-6,0),1)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -2694,7 +2694,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2788,7 +2788,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2889,7 +2889,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2994,7 +2994,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -3088,7 +3088,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3189,7 +3189,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3290,7 +3290,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3392,7 +3392,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3497,7 +3497,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3602,7 +3602,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3717,7 +3717,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25)*1.1+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3813,7 +3813,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -3919,7 +3919,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4000,7 +4000,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4076,7 +4076,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4173,7 +4173,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4269,7 +4269,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4365,7 +4365,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4422,7 +4422,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
   
           :buyable     => true,
           :demolishable=> true,

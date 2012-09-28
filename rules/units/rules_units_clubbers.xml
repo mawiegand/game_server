@@ -17,10 +17,10 @@
   <Flavour lang="de_DE">
     <p> Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz. </p>
   </Flavour>
-  <Cost id="resource_stone" round="true">20</Cost>  
-  <Cost id="resource_wood" round="true">40</Cost>    
-  <Cost id="resource_fur" round="true">30</Cost>    
-  <ProductionTime shortenable="true">600</ProductionTime>  
+  <Cost id="resource_stone" round="true">25</Cost>  
+  <Cost id="resource_wood" round="true">30</Cost>    
+  <Cost id="resource_fur" round="true">40</Cost>    
+  <ProductionTime shortenable="true">300</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>

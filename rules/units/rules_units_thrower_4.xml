@@ -16,10 +16,10 @@
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
       </Description>
-      <Cost id="resource_stone" round="true">90</Cost>  
-      <Cost id="resource_wood" round="true">45</Cost>
-      <Cost id="resource_fur" round="true">67</Cost>    
-      <ProductionTime shortenable="true">900</ProductionTime>  
+      <Cost id="resource_stone" round="true">180</Cost>  
+      <Cost id="resource_wood" round="true">180</Cost>
+      <Cost id="resource_fur" round="true">240</Cost>    
+      <ProductionTime shortenable="true">950</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>

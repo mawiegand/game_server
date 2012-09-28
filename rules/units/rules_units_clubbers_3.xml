@@ -17,9 +17,9 @@
   <Flavour lang="de_DE">
     <p> Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Das viele Bier, das sie vor den Schlachten trinken, verschafft ihnen ein noch stärkeres Durchhaltevermögen. </p>
   </Flavour>
-  <Cost id="resource_stone" round="true">20</Cost>  
-  <Cost id="resource_wood" round="true">40</Cost>    
-  <Cost id="resource_fur" round="true">30</Cost>    
+  <Cost id="resource_stone" round="true">70</Cost>  
+  <Cost id="resource_wood" round="true">90</Cost>    
+  <Cost id="resource_fur" round="true">120</Cost>    
   <ProductionTime shortenable="true">600</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
