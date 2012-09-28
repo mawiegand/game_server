@@ -17,7 +17,8 @@
   </Flavour>
     <Flavour lang="de_DE">
     <p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf dein Ding.</p>
-  </Flavour>  
+  </Flavour>
+  <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="3" />
   </RequirementGroup>

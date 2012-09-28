@@ -19,6 +19,7 @@
     <Flavour lang="de_DE">
     <p>Stinkende Tiere und brüllende Ausbilder. Genau das bietet ein Stall bei der Ausbildung von Kavallerieeinheiten. Der Traum aller Pferdemädchen!</p>
   </Flavour>
+  <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="6" />
   </RequirementGroup>

@@ -18,7 +18,7 @@
     <Flavour lang="de_DE">
     <p>In den kleinen Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>  
 	</Flavour>
-	<Population>LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)</Population>
+  <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+0.5)</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="2" />
   </RequirementGroup>

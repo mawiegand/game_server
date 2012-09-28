@@ -16,6 +16,7 @@
   <Flavour lang="de_DE">
     <p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>
   </Flavour>
+  <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="2" />
   </RequirementGroup>
