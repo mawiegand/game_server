@@ -152,13 +152,23 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
-    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
+    raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
     freeChange = (self.name_change_count || 0) < 1 
     
     if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the name change."
     end
+
+    # change name on identity provider
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.change_character_name(self.identifier, name)
+    raise ConflictError.new("this name is already used in identity provider") unless response.code == 200
     
     self.name = name
     self.increment(:name_change_count)  
