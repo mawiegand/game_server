@@ -3981,7 +3981,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {               #   Feldlager
           :id          => 19, 
           :symbolic_id => :building_field_camp,
-					:category    => 5,
+					:category    => 4,
           :db_field    => :building_field_camp,
           :name        => {
             
