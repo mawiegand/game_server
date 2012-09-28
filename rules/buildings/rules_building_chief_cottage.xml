@@ -33,9 +33,9 @@
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
-  <Capacity id="resource_stone">500000</Capacity>
-  <Capacity id="resource_wood">500000</Capacity>
-  <Capacity id="resource_fur">500000</Capacity>
-  <Capacity id="resource_cash">1000</Capacity> 
+  <Capacity id="resource_stone">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
+  <Capacity id="resource_wood">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
+  <Capacity id="resource_fur">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)*0.5</Capacity>
+  <Capacity id="resource_cash">10000</Capacity> 
 </Building>
   

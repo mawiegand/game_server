@@ -30,8 +30,7 @@
     <UnlockP2PTrade level="1" />
     <TradingCarts>1000*1.5*LEVEL</TradingCarts>
   </Abilities>
-  <Capacity id="resource_stone">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)</Capacity>
-  <Capacity id="resource_wood">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)</Capacity>
-  <Capacity id="resource_fur">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)</Capacity>
-  <Capacity id="resource_cash">10000</Capacity>  
+  <Capacity id="resource_stone">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*2.5)</Capacity>
+  <Capacity id="resource_wood">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*2.5)</Capacity>
+  <Capacity id="resource_fur">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*((0.06*(LEVEL-10)+0.98)*2)*1.25)</Capacity>
 </Building>
