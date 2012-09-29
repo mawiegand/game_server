@@ -56,7 +56,7 @@
   quest IDREF #REQUIRED
 >
 
-<!ELEMENT Rewards (ResourceReward*, UnitReward*)>
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
 
 <!ELEMENT ResourceReward (#PCDATA)>
 <!ATTLIST ResourceReward
@@ -67,6 +67,9 @@
 <!ATTLIST UnitReward
   unit     CDATA #REQUIRED
 >
+
+<!ELEMENT ExperienceReward (#PCDATA)>
+
 
 
 <!ELEMENT RewardTests ((BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>

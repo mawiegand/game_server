@@ -111,6 +111,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :rewards => {
+            
+            :experience_reward => 12,
+
+          },          
+
           :reward_tests => {
             
             :construction_queue_tests => [
@@ -200,6 +206,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 12,
 
           },          
 
@@ -297,6 +305,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 12,
+
           },          
 
           :reward_tests => {
@@ -393,6 +403,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 12,
+
           },          
 
           :reward_tests => {
@@ -488,6 +500,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 12,
 
           },          
 
@@ -680,6 +694,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 12,
 
           },          
 

@@ -39,6 +39,9 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"> Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
+      <Rewards>
+        <ExperienceReward>12</ExperienceReward>
+      </Rewards>
       <RewardTests>
         <ConstructionQueueTest building="building_gatherer" min_count="1" />
       </RewardTests>
@@ -66,6 +69,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>12</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
@@ -94,6 +98,7 @@
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">40</ResourceReward>    
         <ResourceReward resource="resource_fur">30</ResourceReward>
+        <ExperienceReward>12</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="2" />
@@ -150,6 +155,7 @@
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>12</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="4" />
@@ -178,6 +184,7 @@
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ExperienceReward>12</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
@@ -202,7 +209,7 @@
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
-     <Rewards>
+      <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
         <ResourceReward resource="resource_fur">50</ResourceReward>
@@ -234,6 +241,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ExperienceReward>12</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_change_profile">change profile text</CustomTest>
