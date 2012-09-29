@@ -24,7 +24,7 @@
 <% @fundamental_characters.each do |fundamental_character| %>
   <tr>
     <td><%= fundamental_character.id %></td>
-    <td><%= link_to fundamental_character.identifier, "/identity_provider/identities/#{fundamental_character.identifier}" %></td>
+    <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
     <td><%= fundamental_character.premium_account %></td>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
