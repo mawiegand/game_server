@@ -43,7 +43,7 @@
   <xi:include href="buildings/rules_building_storage_2.xml" />
 
   <xi:include href="buildings/rules_building_altar.xml" />
-  <xi:include href="buildings/rules_building_haunt.xml" />  
-       
+  <xi:include href="buildings/rules_building_haunt.xml" />
+
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>
