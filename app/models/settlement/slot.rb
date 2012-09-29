@@ -416,6 +416,9 @@ class Settlement::Slot < ActiveRecord::Base
       if !building_type[:abilities][:unlock_p2p_trade].blank?
         propagate_unlock(:settlement_unlock_p2p_trade_count, building_type[:abilities][:unlock_p2p_trade], old_level, new_level)
       end
+      if !building_type[:abilities][:unlock_prevent_takeover].blank?
+        propagate_unlock(:settlement_unlock_prevent_takeover_count, building_type[:abilities][:unlock_prevent_takeover], old_level, new_level)
+      end
       if !building_type[:abilities][:unlock_garrison].blank?
         propagate_unlock(:settlement_unlock_garrison_count, building_type[:abilities][:unlock_garrison], old_level, new_level)
       end

@@ -79,7 +79,12 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade? )>
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover? )>
+
+<!ELEMENT PreventTakeover EMPTY>
+<!ATTLIST PreventTakeover 
+  level	CDATA "1"
+>
 
 <!ELEMENT UnlockP2PTrade EMPTY>
 <!ATTLIST UnlockP2PTrade 
