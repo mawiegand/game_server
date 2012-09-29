@@ -28,7 +28,7 @@
   <tr>
     <td><%= money_transaction['updateTstamp'] %></td>
     <td><%= money_transaction['userID'] %></td>
-    <td><%= link_to money_transaction['partnerUserID'], "/identity_provider/identities/#{money_transaction['partnerUserID']}" %></td>
+    <td><%= link_to money_transaction['partnerUserID'], GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{money_transaction['partnerUserID']}" %></td>
     <td><%= money_transaction['invoiceID'] %></td>
     <td><%= money_transaction['offerID'] %></td>
     <td><%= money_transaction['method'] %></td>
