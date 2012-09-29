@@ -191,6 +191,10 @@ class Military::Army < ActiveRecord::Base
     self.details.decrement(consume_type[:db_field], 1)
     self.details.save!
     self.save!
+    
+    if self.empty?
+      self.destroy
+    end
   end
   
   def critical_damage_bonus
