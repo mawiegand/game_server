@@ -414,6 +414,14 @@
       <RewardTests>
 	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
+      <Message>
+        <Subject>Subject</Subject>
+        <Body>Message with content</Body>
+      </Message>
+      <Message lang="de">
+        <Subject>Nachricht vom Questgeber</Subject>
+        <Body> Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.</Body>
+      </Message>
     </Quest>
 
     <Quest id="quest_build_1cottagelvl1" advisor="girl">
