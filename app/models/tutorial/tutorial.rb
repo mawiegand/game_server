@@ -84,28 +84,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Nunja, vielleicht noch ein bisschen leer. Wenn du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt dir einen Teil der Rohstoffe ab, die er findet. ",
+            :de_DE => "Willkommen Halbgott. Schau dir deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt dir einen Teil der Rohstoffe ab, die er findet.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler. Du kannst jederzeit alle laufenden Quests sehen, indem du oben rechts auf den Quests Knopf drückst.</p>",
+            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler. Du kannst jederzeit alle laufenden Quests sehen, indem du oben rechts auf den Quests Knopf drückst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.",
+            :de_DE => "Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird, Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn du nicht im Spiel bist. ",
+            :de_DE => " Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird. Du kannst Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn du nicht im Spiel bist. ",
   
             :en_US => " ",
                 
@@ -147,21 +147,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Mehr als warten können wir grad nicht machen. ",
+            :de_DE => "Mehr als warten können wir grad nicht.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Bauaufträge brauchen Zeit. Sie bauen allerdings auch weiter, wenn du nicht im Spiel bist.</p>",
+            :de_DE => "<p>Bauaufträge brauchen Zeit. Sie werden allerdings auch weiter ausgeführt, wenn du nicht im Spiel bist.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey das sieht doch schon viel besser aus, findest du nicht?  Der nette Sammler will dir sogar ein paar Rohstoffe schenken.",
+            :de_DE => " Hey, dass sieht doch schon viel besser aus, findest du nicht?  Der nette Sammler will dir sogar ein paar Rohstoffe schenken.",
   
             :en_US => "",
                 
@@ -257,14 +257,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Cool jetzt sind sie schon zu zweit.",
+            :de_DE => "Cool, jetzt sind sie schon zu zweit.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Du solltest versuchen deine Rohstoffproduktion auszubauen. 10 Jäger und Sammler wären zum Beispiel ein guter Start. ",
+            :de_DE => "Du solltest versuchen deine Rohstoffproduktion auszubauen. 10 Jäger und Sammler wären zum Beispiel ein guter Start.",
   
             :en_US => " ",
                 
@@ -346,7 +346,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Es wird allerdings nur das erste gebaut, das andere geht in die Bauschleife und wird angefangen, sobald das erste fertiggestellt wurde. </p>",
+            :de_DE => "<p>Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Es wird allerdings nur das erste gebaut, das andere geht in die Bauschleife und wird angefangen, sobald das erste fertiggestellt wurde.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -360,7 +360,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Du solltest darauf achten, dass du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt. ",
+            :de_DE => "Du solltest darauf achten, dass du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt.",
   
             :en_US => " ",
                 
@@ -435,28 +435,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen. ",
+            :de_DE => "Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Wähle dazu einen Jäger und Sammler aus, das Gebäude, das du bei einem klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand des Gebäudes, darunter die nächste Ausbaustufe. Klicke auf Upgrade um den Ausbau zu beginnen. </p>",
+            :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf Upgrade, um den Ausbau zu beginnen. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Wie nett von dir. Der Sammler freut sich wie verrückt.  und hat mir ein paar Rohstoffe für dich mitgegeben.",
+            :de_DE => " Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal auf Stufe 10 ausgebaut werden.",
+            :de_DE => "Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Stufe 10 ausgebaut werden.",
   
             :en_US => " ",
                 
@@ -531,21 +531,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Änder das sofort! Bau sie aus und ich geb dir eine Belohnung. ",
+            :de_DE => " Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich geb dir eine Belohnung.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung. </p>",
+            :de_DE => "<p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht dir es nicht das deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier nimm das und verschwinde.",
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es dir nicht, dass deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.",
   
             :en_US => "",
                 
@@ -627,14 +627,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Achte nicht ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. ",
+            :de_DE => "Achte nicht auf ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen gemacht und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. ",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Wähle dann choose Name. Die erste Namensänderung ist umsonst. </p>",
+            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Wähle dann "Namen ändern". Die erste Namensänderung ist kostenlos.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -714,28 +714,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Was? Dir ist es hier zu klein? Es hat eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!",
+            :de_DE => "Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Wenn du mal aus diesem Loch rauskommen würdest, wüsstest du das auch. Worauf wartest du? Geh!",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf der Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>",
+            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Na was gelernt? Da hast du sogar noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst. ",
+            :de_DE => "Na, was gelernt? Hier hast du noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Auf der Weltkarte kannst du andere Spieler um dich herum sehen. ",
+            :de_DE => "Auf der Weltkarte kannst du andere Spieler um dich herum sehen.",
   
             :en_US => " ",
                 
@@ -801,21 +801,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Soso fühlst dich nicht mehr so groß nicht? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern.",
+            :de_DE => "So so, fühlst dich nicht mehr so groß? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern da?",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Ranking Knopf, oben links. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>",
+            :de_DE => "<p>Klicke dazu auf den Ranking Knopf, oben rechts. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Oh Gott. Das ist ja schrecklich. Fang sofort an das zu verbessern. Hier sind ein paar Rohstoffe, verschwende sie nicht.",
+            :de_DE => "Oh Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.",
   
             :en_US => "",
                 
@@ -888,7 +888,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Die Festungen die du siehst, beherrschen die Regionen. Ich glaub es einfach nicht, dass du so etwas einfaches nicht weißt. Guck nach wem die Festung in deiner Region gehört. ",
+            :de_DE => "Festungen sind die Zentren der Macht. Hol sie dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht?Ich glaub' es einfach nicht, dass du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!",
   
             :en_US => "flavor text english",
                 
@@ -902,14 +902,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Aha, dem sollten wir eine Lektion erteilen. ",
+            :de_DE => "Aha, dem sollten wir eine Lektion erteilen!",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Festungen ziehen Steuern aus der Region, die sie beherrschen ein. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.",
+            :de_DE => "Festungen ziehen Steuern aus der Region ein, die sie beherrschen. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.",
   
             :en_US => " ",
                 
@@ -982,14 +982,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um mit anderen Halbgöttern zu kommunizieren, kannst du ihnen Nachrichten schicken. Ich hab dir eine geschickt, lies sie doch bitte.</p>",
+            :de_DE => "<p>Um mit anderen Halbgöttern zu kommunizieren, kannst du ihnen Nachrichten schicken. Ich hab dir eine Nachricht geschickt, lies sie doch bitte.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ich hoffe sie hat dir gefallen. Hier diese Kröten hab ich gerade gefunden, ich glaube du kannst sie ganz gut gebrauchen.",
+            :de_DE => "Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen.",
   
             :en_US => "",
                 
@@ -1073,21 +1073,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Benutze den Siedlungsbutton um die Karte über deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungbutton um die Karte auf deiner Siedlung zu zentrieren. Zurück in deine Siedlung kommst du, indem du die Siedlung anwählst und auf Enter drückst.</p>",
+            :de_DE => "<p>Benutze den Siedlungsbutton, um die Karte über deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungbutton um die Karte auf deiner Siedlung zu zentrieren. Zurück in deine Siedlung kommst du, indem du die Siedlung anwählst und auf Enter drückst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Na? Ging doch ganz einfach oder? ",
+            :de_DE => "Na? Ging doch ganz einfach, oder? ",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du kannst in alle deine Siedlungen und Festungen, indem du sie auswählst und enter drückst. ",
+            :de_DE => "Alle deine Siedlungen und Festungen kannst du betreten, indem du sie auswählst und Enter drückst. ",
   
             :en_US => " ",
                 
@@ -1153,21 +1153,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Hey Chef hat mich gefragt wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. guck mal. Kannst du bitte gucken ob du es findest? ",
+            :de_DE => " Hey, der Chef hat mich gefragt, wieviel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. Schau mal. Kannst du bitte gucken, ob du es findest? ",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann buildings aus und klicke auf Ausbildungsgelände. Suche dort die Holzkosten von Level 2 und gib sie hier ein. </p>",
+            :de_DE => "<p>Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann "buildings" aus und klicke auf Ausbildungsgelände. Suche dort die Holzkosten von Level 2 und gib sie hier ein.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast es gefunden? Super, ich geh gleich zu Chef.",
+            :de_DE => "Du hast es gefunden? Super, ich geh gleich zum Chef.",
   
             :en_US => "",
                 
@@ -1236,16 +1236,16 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Willkommen bei Wack-a-Doo',
-              :body => "<h2>Willkommen in der halböffentlichen geschlossenen Erprobungsrunde</h2>
-                <p>Mit dieser Runde wollen wir unser Spielsystem und unsere Server testen, und sind sehr gespannt auf Deine Interpretation von Wack-a-Doo.</p>
-                <p>Zur besseren Orientierung empfehlen wir Dir die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
+              :body => "<h2>Willkommen in der öffentlichen Erprobungsrunde.</h2>
+                <p>Unser Spiel "Wackadoo" befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wackadoo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
+                <p>Im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
+                <p>Zur besseren Orientierung empfehlen wir Dir die Übersichten in der Enzyklopädie und die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
                 <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
                 <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>
-                <p>Wack-a-Doo befindet sich gerade in der Entwicklungsphase. In dieser Erprobungsrunde werden wir natürlich auftretende Fehler beheben, wollen aber laufend Neuerungen oder Verbesserungen vornehmen. Jede Änderung werden wir entsprechend ankündigen.</p>
                 <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
                 <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
                 <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
-                <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in unserem Wiki zusammengefasst:</p>
+                <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzykloädie und in unserem Wiki zusammengefasst:</p>
                 <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
                 <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>
                 <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>
@@ -1277,7 +1277,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch. ",
+            :de_DE => "Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch.",
   
             :en_US => "flavor text english",
                 
@@ -1298,7 +1298,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und ausbauen. ",
+            :de_DE => "Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und weiter ausbauen.",
   
             :en_US => " ",
                 
@@ -1387,7 +1387,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll. Und guck, dein erster großer Bauplatz. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
+            :de_DE => "Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.",
   
             :en_US => "",
                 
@@ -1469,28 +1469,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.",
+            :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich geb dir etwas aus meiner Schatzkiste.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten gibt es auf Level 15, dafür müsstest du es aber auf einen großen Bauplatz bauen.</p>",
+            :de_DE => "<p>Ein Ausbildungsgelände bildet Infanterieeinheiten aus. Die besten Einheiten werden auf Level 15 freigeschaltet, dafür müsstest du aber auf einen großen Bauplatz bauen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Fertig? Na endlich. Da deine Belohnung, mehr gibt's nicht also verschwinde. ",
+            :de_DE => "Fertig? Na endlich! Da, deine Belohnung, mehr gibt's nicht. Verschwinde.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie. ",
+            :de_DE => "Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Infanterie.",
   
             :en_US => " ",
                 
@@ -1565,28 +1565,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Wähle dazu das Ausbildungsgelände aus, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke Train Keulenkrieger. Die trainierten Einheiten landen in der Garnison der Siedlung. </p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf "Rekrutiere Keulenkrieger". Die rekrutierten Einheiten landen in der Garnison der Siedlung. </p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Naja aller Anfang ist schwer, da musst du noch dran arbeiten. Fürs erste stell ich dir 3 meiner Keulenkrieger zur Verfügung. ",
+            :de_DE => "Aller Anfang ist schwer, aber da musst du noch dran arbeiten. Fürs erste stell ich dir drei meiner Keulenkrieger zur Verfügung.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Nachdem du Einheiten in Auftrag gegeben hast, kannst du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn du wissen willst, wie weit der Auftrag ist, klickst du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst du die gewünschte Zahl anstatt der 1 ein und klickst dann auf Train. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.",
+            :de_DE => "Nachdem du Einheiten in Auftrag gegeben hast, kannst du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn du wissen willst, wie weit der Auftrag ist, klickst du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst du die gewünschte Zahl anstatt der 1 ein und klickst dann auf Train. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.",
   
             :en_US => " ",
                 
@@ -1654,21 +1654,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor New Army. </p><p> Im nachfolgenden Dialog  siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Einheitenzahl des Typs in der Garnison, auf der rechten, die Zahl, die in der Armee landen wird. </p><p> Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein. </p><p> Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor "Neue Armee".</p><p>Im nachfolgenden Dialog siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Zahl der Einheiten des Typs in der Garnison, auf der rechten, die Einheitenzahl, die in der Armee landen wird.</p><p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p><p>Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Naja eine Armee ist das wohl, aber noch ziemlich klein oder? Trotzdem hier deine Belohnung. ",
+            :de_DE => "Das soll eine Armee sein? Ziemlich klein, oder? Trotzdem hier deine Belohnung.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit. ",
+            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.",
   
             :en_US => " ",
                 
@@ -1739,28 +1739,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Eine Armee kann mehr als nur rumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen. ",
+            :de_DE => "Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p> Wenn du bereit bist, wähle deine Armee aus, drücke auf Move und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
+            :de_DE => "<p>Wenn du bereit bist, wähle deine Armee aus, klicke auf "Move" und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Hm? Die Armee ist unterwegs? Sicher das du genug Truppen hast? Na okay ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.",
+            :de_DE => "Hm? Die Armee ist unterwegs? Sicher, dass du genug Truppen hast? Na okay, ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Unter deiner Armee siehst du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder. ",
+            :de_DE => "Unter deiner Armee siehst du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.",
   
             :en_US => " ",
                 
@@ -1819,12 +1819,12 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => " Baue deine Häuptlingshütte auf Level 4 aus. ",
+            :de_DE => "Baue deine Häuptlingshütte auf Level 4 aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Ich denke es ist mal wieder Zeit für eine größere Häuptlingshütte. Bau sie doch bitte aus.",
+            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.",
   
             :en_US => "flavor text english",
                 
@@ -1838,7 +1838,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ist es nicht toll wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können dir etwas von seinem Rohstoffberg abzugeben.",
+            :de_DE => "Ist es nicht toll, wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, dir etwas von seinem Rohstoffberg abzugeben.",
   
             :en_US => "",
                 
@@ -1920,7 +1920,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Hey wie wär's mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön so etwas zu haben oder? ",
+            :de_DE => "Hey wie wär's mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
             :en_US => "flavor text english",
                 
@@ -1934,7 +1934,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ach wie das Feuer knistert. Wie schön.",
+            :de_DE => "Ach, wie das Feuer knistert. So schön warm.",
   
             :en_US => "",
                 
@@ -2011,7 +2011,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => " Tritt einer Allianz bei oder gründe deine eigene. ",
+            :de_DE => "Tritt einer Allianz bei oder gründe deine eigene.",
                 
           },
           :flavour => {
@@ -2023,21 +2023,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p> Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei. </p>",
+            :de_DE => "<p>Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Hui das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.",
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Du kannst das Allianzprofil einsehen, indem du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst. ",
+            :de_DE => "Du kannst das Profil der Allianz einsehen, indem du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
   
             :en_US => " ",
                 
@@ -2101,28 +2101,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Stört es dich nicht auch, dass das Lagerplatz so gering ist? Bau doch bitte ein Rohstofflager, damit wir mehr Platz haben. ",
+            :de_DE => "Stört es dich nicht auch, dass der Lagerplatz so gering ist? Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben sie dir mit anderen Spielern zu handeln.</p>",
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karrenden Handel mit anderen Spielern.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Sachen.",
+            :de_DE => "Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Jeder Handelskarren kann 10 Ressourcen befördern.",
+            :de_DE => "Jeder Handelskarren kann zehn Ressourcen befördern.",
   
             :en_US => " ",
                 
@@ -2197,7 +2197,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Sieht so aus, als wärst du wieder so weit, deine Häuptlingshütte auszubauen.",
+            :de_DE => "Hey, Du bist wieder so weit deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?",
   
             :en_US => "flavor text english",
                 
@@ -2211,7 +2211,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll wie weit du schon gekommen bist.",
+            :de_DE => "Toll wie weit du schon gekommen bist. Weiter so!",
   
             :en_US => "",
                 
@@ -2288,12 +2288,12 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => " Baue einen Steinbruch und einen Holzfäller ",
+            :de_DE => "Baue einen Steinbruch und einen Holzfäller.",
                 
           },
           :flavour => {
             
-            :de_DE => "Hast du gesehen, dass du jetzt spezielle Rohstoffgebäude bauen kannst? Ja genau Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.",
+            :de_DE => "Hast du gesehen, dass du jetzt spezielle Rohstoffgebäude bauen kannst? Ja genau, Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn du einen Steinbruch und einen Holzfäller bauen würdest.",
   
             :en_US => "flavor text english",
                 
@@ -2498,12 +2498,12 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => " Baue dein Lagerfeuer auf Level 10 aus.",
+            :de_DE => "Baue dein Lagerfeuer auf Level 10 aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Verwalter und der kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?",
+            :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Kleinen Häuptling. Der Kleine Häuptling kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust du es bitte für mich aus?",
   
             :en_US => "flavor text english",
                 
@@ -2517,14 +2517,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Gut. Jetzt kannst du Verwalter trainieren. ",
+            :de_DE => "Gut. Jetzt kannst Du einen Kleinen Häuptling trainieren. Schau dafür am Lagerfeuer vorbei.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Verwalter sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie Infanterieeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
+            :de_DE => "Kleine Häuptlinge sind teuer und haben eine lange Rekrutierungszeit.. Außerdem sind sie trotz ihrer wichtigen Stellung Teil der Infanterie. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
   
             :en_US => " ",
                 
@@ -2599,22 +2599,21 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Du musst dich mehr ausbreiten. Gründe eine Lagerstätte aber flott. Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.
-Aufgabentext: Gründe eine Lagerstätte. ",
+            :de_DE => "Wie? Nur eine Siedlung? Du musst dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich dir überlassen kann.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Verwalter am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell</p><p>Du kannst nur weitere Siedlungen gründen, wenn du im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst du immer so lange für einfach Aufgaben? Hier nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
+            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
   
             :en_US => "",
                 

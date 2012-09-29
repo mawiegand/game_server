@@ -5,8 +5,8 @@
   <Name lang="de_DE">Jäger und Sammler</Name>
   <Name lang="en_US">Hunter-Gatherer</Name>
   <Description lang="de_DE">
-    <p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p>
-    <p>Er jagt und sammelt einfach alles was ihm vor die Flinte -äh Steinschleuder kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>
+    <p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten, schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p>
+    <p>Er jagt und sammelt einfach alles was ihm vor die Flinte -äh Steinschleuder- kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>
   </Description>
   <Description lang="en_US">
     <p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easily slain animals.</p>
@@ -15,7 +15,7 @@
     <p>Collecs resources for the daily needs.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Die wahren Schätze aus Sicht des Jäger und Sammlers sind aber Pilze. Vor allem die weißen mit den roten Punkten.</p>
+    <p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Die wahren Schätze aus Sicht des Jägers und Sammlers sind aber Pilze. Vor allem die weißen mit den roten Punkten.</p>
   </Flavour>
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <Requirement id="building_chief_cottage" min_level="1" />  

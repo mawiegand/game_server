@@ -20,7 +20,7 @@
     <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
     <Flavour lang="en_US">Hard as wood.</Flavour>
     <Description lang="de_DE">
-      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohtoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffe.</p>
+      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>
     </Description>
     <Description lang="en_US">
       <p>Basic resource for constructing buildings and siege machines.</p>
@@ -32,7 +32,7 @@
     <Flavour lang="de_DE">In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!</Flavour>
     <Flavour lang="en_US">Softer than wood.</Flavour>
     <Description lang="de_DE">
-      <p>Hällt warm, hällt Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>
+      <p>Hält warm, hält Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>
     </Description>
     <Description lang="en_US">
       <p>Basic resource to be worn by warriors and also utilized in buildings..</p>
@@ -44,7 +44,7 @@
     <Flavour lang="de_DE">Jeder mag Kröten! Die Steinzeitwährung.</Flavour>
     <Flavour lang="en_US">Everybody loves toads! Stoneage-Cash.</Flavour>
     <Description lang="de_DE">
-      <p>Quasi-Wärhung in der Steinzeit. Gerne genommen in jeglichen Tauschhandeln.</p>
+      <p>Quasi-Währung in der Steinzeit. Gerne genommen bei jeglichem Tauschhandel.</p>
     </Description>
     <Description lang="en_US">
       <p>Currency of the stone-age.</p>

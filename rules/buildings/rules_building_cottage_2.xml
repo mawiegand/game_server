@@ -2,10 +2,10 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_cottage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2">  
-  <Name lang="de_DE">Hütte</Name>
+  <Name lang="de_DE">Winddichte Hütte</Name>
   <Name lang="en_US">Hut</Name>
   <Description lang="de_DE">
-    <p>In der fortschrittlichen Hütten wohnen die verdienten sprich fleißigen Bewohner.  Diese Hütte hat sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, den seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>
+    <p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>
   </Description>
   <Description lang="en_US">
     <p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p> 

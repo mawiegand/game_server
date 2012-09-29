@@ -9,7 +9,7 @@
         <p>English description here.</p>
       </Description>
       <Description lang="de_DE">
-        <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkt Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
+        <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkten Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
       </Description>
       <Ability id="prevent-flanking" />
 			<TargetPriorities testType="no_test">
