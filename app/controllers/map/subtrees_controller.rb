@@ -55,7 +55,7 @@ class Map::SubtreesController < ApplicationController
       @max_levels = 6 if @max_levels > 6       # absolute maximum depth -> prevent too long processing
 
       if_modified_since = nil
-      if_modified_since = Time.httpdate(request.env['HTTP_IF_MODIFIED_SINCE']) unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?
+      if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE']) unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?
 
       @map_subtree = map_node.subtree(@max_levels, if_modified_since)
       
