@@ -6,7 +6,7 @@
   <Name lang="de_DE">Betrunkener Keulenkrieger</Name>
   
   <Description lang="de_DE">
-    <p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf, gibt es doch nichts besseres als ein paar Krüge vor und nach der Schlacht. Allein schon der Gestank schreckt Straußen und andere Reittiere ab, aber Steine und Speere finden weiterhin ein einfaches Ziel, nur ab und zu geht ein Schuß ins leere, wenn der Keulenkrieger über das Schlachtfeld wankt.</p>		
+    <p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf. Nicht geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p>		
   </Description>
   <Description lang="en_US">
     <p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>
@@ -15,7 +15,7 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Das viele Bier, das sie vor den Schlachten trinken, verschafft ihnen ein noch stärkeres Durchhaltevermögen. </p>
+    <p>Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Durch ausreichend Bier erhöht sich die Kampfkraft und verringert sich das Schmerzempfinden.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">70</Cost>  
   <Cost id="resource_wood" round="true">90</Cost>    

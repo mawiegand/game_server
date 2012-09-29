@@ -5,8 +5,7 @@
   <Name lang="de_DE">Kleine Hütte</Name>
   <Name lang="en_US">Small Hut</Name>
   <Description lang="de_DE">
-    <p>Je mehr Untertanen, desto schneller können Gebäude gebaut werden.</p>
-    <p>Doch irgendwo müssen eure Arbeiter unterkommen. Die kleine Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>
+    <p>Die kleine Hütte schützt eure Untertanen mal gerade vor Sonne und Regen. Hauptsache sie sind fleißig und beschweren sich nicht. Je mehr Hütten desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>
   </Description>
   <Description lang="en_US">
     <p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p> 
@@ -16,7 +15,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>In den kleinen Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>  
+    <p>In den kleinen Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Bau von Gebäuden.</p>  
 	</Flavour>
   <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+0.5)</Population>
   <RequirementGroup>

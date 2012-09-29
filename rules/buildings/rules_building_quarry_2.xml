@@ -5,8 +5,8 @@
   <Name lang="de_DE">Altehrwürdiger Steinbruch</Name>
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
-    <p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben.</p>
-    <p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>
+    <p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben. Aber trotzdem geht der Abbau spürbar schneller.</p>
+    <p>Ab einer gewissen Größe werden die Arbeiter noch schneller und treiben sogar andere Steinbrüche zu schnellerer Arbeit an.</p>
   </Description>
   <Description lang="en_US">
     <p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>
@@ -15,7 +15,7 @@
     <p>Stones, even more stones!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Aus irgendeinem Grund sind sie trotzdem schneller beim Abbau geworden.</p>
+    <p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Offensichtlich die bessere Investition, denn die Belohnung der glücklichen Frauen ist umso größer.</p>
  </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
   <RequirementGroup>

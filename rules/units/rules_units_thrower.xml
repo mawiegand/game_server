@@ -8,11 +8,11 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Diese Fernkämpfer könnten eine Zielscheibe nicht aus 10 Meter Entfernung treffen, aber zum Glück sind Infanterieabteilungen meist viel größer als Zielscheiben. </p>
+    <p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>
   </Flavour>
       <Description lang="de_DE">
-        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p>
-	<p> Die größte Furcht eines Kieselsteinwerfers ist eine anstürmende Horde Straußenreiter, denn diese überrennen einfach alles was ihnen in den Weg kommt.</p>
+        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
+        <p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter die diesen bringen.</p>
       </Description>
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>

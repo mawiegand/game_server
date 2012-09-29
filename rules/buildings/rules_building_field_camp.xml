@@ -5,7 +5,7 @@
   <Name lang="de_DE">Feldlager</Name>
   <Name lang="en_US">Field Camp</Name>
   <Description lang="de_DE">
-    <p>Das Feldlager transformiert die Lagerstätte in einen militärischen Betrieb. Eine Mauer schützt die Krieger und größere Unterkünfte vergrößern die Garnisonsarmee.</p>
+    <p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“ Tatsächlich ermöglicht das Feldlager die Aufstellung von mehr Kämpfern, sorgt aber auch für eine bessere Verteidigung.</p>
   </Description>
   <Description lang="en_US">
     <p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p> 
@@ -15,7 +15,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Für all das Gerede die über Sicherheit, die sie bieten, ziehen Feldlager Feinde wie magisch an.</p>
+    <p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>
   </Flavour>
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <RequirementGroup>

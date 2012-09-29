@@ -5,7 +5,7 @@
   <Name lang="de_DE">Kommandozentrale</Name>
   <Name lang="en_US">Command Post</Name>
   <Description lang="de_DE">
-    <p>Der Kommandoposten erhöht die maximale Anzahl an Armeen und beschleunigt die Einheitenrekrutierung.</p> 
+    <p>Ein paar Äste zwischen drei Bäume gespannt, darauf Rinde und Blätter und fertig ist das Sonnensegel. Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Hier wird die Taktik bestimmt und Befehle erteilt. Meist immer derselbe: Haut sie feste!</p> 
   </Description>
   <Description lang="en_US">
     <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
@@ -15,7 +15,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Kommandoposten koordiniert die verschiedenen Armeen im Felde. Soweit man mehr Armeen in eine Richtung schicken als koordinieren bezeichnen kann.</p>  
+    <p>Die Koordination von Armeen ist die hohe Kunst des Krieges. Selbst wenn alle Armeen nur in eine Richtung mit dem Auftrag „immer feste druff“ geschickt werden.</p>  
 	</Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>  

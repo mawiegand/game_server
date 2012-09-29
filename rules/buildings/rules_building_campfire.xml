@@ -5,9 +5,9 @@
   <Name lang="de_DE">Lagerfeuer</Name>
   <Name lang="en_US">Campfire</Name>
   <Description lang="de_DE">
-    <p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p>
-    <p>Die freiwilligen und unfreiwilligen Gästen werden wahlweise ans Feuer gebeten oder am Marterfall aufgestellt.</p> 
-	<p>Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>
+    <p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p>
+    <p>Verhandlungen mit Nachbarn oder Allianzen alles findet bei reichlich Gerstensaft am Lagerfeuer statt.</p> 
+    <p>Am Lagerfeuer beginnen auch die Karrieren der Kleinen Häuptlinge. Eine paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des Kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p>
    </Description>
   <Description lang="en_US">
     <p>Assembly area for the locals and also the district of foreign embassies. Random guests are normally invited to sit by the fire while hostile messengers get hammered at the stake.</p> 
@@ -17,7 +17,7 @@
     <p>Diplomatic bla-bla or alliance conferences can be held in the embassies. And a good conversation is not a monologue!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ort für Diplomatischer Austausch oder Allianzbesprechungen. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet.</p>
+    <p> Ort diplomatischen Austausch oder Besprechungen innerhalb der Allianz. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet. Reden, dass kann der Kleine Häuptling wie kein zweiter.</p>
    </Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <Requirement id="building_chief_cottage" min_level="4" />

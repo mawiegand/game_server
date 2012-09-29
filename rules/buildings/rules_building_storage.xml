@@ -5,7 +5,7 @@
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Storage</Name>
   <Description lang="de_DE">
-    <p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>
+    <p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>
    </Description>
   <Description lang="en_US">
     <p>Storage space.</p>
@@ -14,7 +14,7 @@
     <p>Stores your resources.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steincontainer, Saurierkräne, Holzkarren; alles was man zum Lagern und versenden von Rohstoffen braucht.</p>
+    <p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Soviel Stil muss sein!</p>
   </Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <RequirementGroup>

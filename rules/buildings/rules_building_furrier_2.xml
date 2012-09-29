@@ -5,8 +5,8 @@
   <Name lang="de_DE">Verrückter Kürschner</Name>
   <Name lang="en_US">Peltmonger</Name>
   <Description lang="de_DE">
-    <p>Mit Kupfermessern kann man Tiere natürlich schneller häuten. Kunsttiere natürlich, denn auch die Steinzeitmenschen legten wert Tierschutz.</p>
-    <p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>
+    <p>Die Kupfermesser waren ein Geschenk der Götter. Zumindest glauben das die Kürschner, die mit den Kupfermesser herausragende Mode entwerfen. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>
+    <p>Genau deswegen sind die verrückten Kürschner natürlich große Vorbilder für andere Kürschner.</p>
   </Description>
   <Description lang="en_US">
     <p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p> 
@@ -15,7 +15,7 @@
 	<p>The peltmonger is literally flaying all day long!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Seitdem der Kürschner sein Kupfermesser bekommen hat, traut sich niemand mehr in seine Nähe. Allerdings macht er seine Arbeit jetzt schneller, sodass sich noch niemand beschwert hat.</p>
+    <p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
   <RequirementGroup>

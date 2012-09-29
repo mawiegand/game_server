@@ -8,10 +8,10 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Je größer der Stein, desto mehr tut es weh. Das meinen zumindest die Steinschleuderer und versuchen mit immer größeren Steinen nach ihren Gegnern zu werfen.</p>
+    <p>Zielen ist was für Anfänger. Das Motto der Steinschleuderer: "Je weiterer der Stein geworfen wird, desto besser!" Stimmt sogar manchmal.</p>
   </Flavour>
       <Description lang="de_DE">
-        <p> Große Steine tuen tatsächlich mehr weh, auch wenn die Steinschleuderer die gleichen Schwächen, wie ihre kieselsteinwerfenden Kollegen haben. </p> 
+        <p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. Zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p> 
       </Description>
       <Description lang="en_US">
         <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
@@ -32,7 +32,8 @@
       <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
       <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>  
-      <Effectiveness category="unitcategory_special">1</Effectiveness>         <RequirementGroup>
+      <Effectiveness category="unitcategory_special">1</Effectiveness>   
+      <RequirementGroup>
         <Requirement id="building_artillery_tower" min_level="10" />
         <Requirement id="building_fortress_main" min_level="10" />
       </RequirementGroup>

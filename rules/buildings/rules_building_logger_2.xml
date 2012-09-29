@@ -5,8 +5,7 @@
   <Name lang="de_DE">Holzfäller mit Kupferaxt</Name>
   <Name lang="en_US">Lumberjack</Name>
   <Description lang="de_DE">
-    <p>Durch die Benutzung von Kupferäxten können Holzfäller schneller Bäume fällen, obwohl sie alle paar Bäume die Axt wieder geradebiegen müssen.</p>
-    <p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>
+    <p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>
   </Description>
   <Description lang="en_US">
     <p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>
@@ -15,7 +14,7 @@
     <p>Wood! Even more wood!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er mehr selbst gefällte Bäume als loses Gestrüpp mit.</p>
+    <p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er tatsächlich selbst gefällte Bäume und weniger loses Gestrüpp mit.</p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
   <RequirementGroup>

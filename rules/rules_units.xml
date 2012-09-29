@@ -25,9 +25,6 @@
   <xi:include href="units/rules_units_light_cavalry_2.xml" />  
   <xi:include href="units/rules_units_light_cavalry_3.xml" />  
   <xi:include href="units/rules_units_light_cavalry_4.xml" />  
-  
-  <xi:include href="units/rules_units_ram.xml" />    
-  <xi:include href="units/rules_units_catapult.xml" />
     
   <xi:include href="units/rules_units_neandertaler.xml" />  <!-- npc unit -->
    

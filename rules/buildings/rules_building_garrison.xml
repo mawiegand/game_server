@@ -5,7 +5,7 @@
   <Name lang="de_DE">Garnison</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
-    <p>Größere Garnisonen führen zu… größeren Garnisonsarmeen, wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p> 
+    <p>Größere Garnisonen führen zu… größeren Garnisonsarmeen wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p> 
   </Description>
   <Description lang="en_US">
     <p>Bigger garrisons lead to… bigger garrison armies who would have thought that. They also affect the effective field army size.</p> 
@@ -14,7 +14,7 @@
     <p>This is THE place for warriors of all kinds to repeatedly bash their heads in.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Dies ist der Ort für Krieger aller Art sich gegenseitig die Schädel einzuschlagen und die armen Siedlungsbewohner in Ruhe zu lassen. Dass das die Disziplin stärkt ist ein netter Nebeneffekt.</p>  
+    <p>Krieger aller Art sollten getrennt von der normalen arbeitenden Bevölkerung gehalten werden. In der Garnison können sie sich gegenseitig die Schädel einzuschlagen und die armen Siedlungsbewohner in Ruhe lassen.</p>  
   </Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>  

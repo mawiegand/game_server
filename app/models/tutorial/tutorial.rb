@@ -1217,6 +1217,20 @@ class Tutorial::Tutorial
 
           },          
 
+          :message => {
+            
+            :en => {
+              :subject => 'Subject',
+              :body => 'Message with content',
+            },
+
+            :de => {
+              :subject => 'Nachricht vom Questgeber',
+              :body => ' Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.',
+            },
+
+          },          
+
         },              #   END OF quest_encyclopedia
         {               #   quest_build_1cottagelvl1
           :id                => 13, 

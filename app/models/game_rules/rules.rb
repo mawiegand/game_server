@@ -540,12 +540,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz. </p>",
+            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Keulenkrieger sind der Grundbestanteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindlichen Fernkämpfer.</p>",
+            :de_DE => "<p>Keulenkrieger sind der Grundbestandteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindlichen Fernkämpfer.</p>",
   
             :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
                 
@@ -605,12 +605,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Nach ein paar Schlachten hat sich bei den Keulenkriegern eine dicke Haut gebildet, wodurch sie noch länger aufeinander einhauen können. </p>",
+            :de_DE => "<p>Erfahrene Keulenkrieger erkennt man an ihrer dicken Haut und ihrer großen Keule und natürlich an ihren Ausrufen. „Ihr zwei? Holt euch noch drei dazu, damit es ein halbwegs fairer Kampf wird!“</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Die dicke Haut beschützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Straußen überrannt wird.</p>",
+            :de_DE => "<p>Die dicke Haut schützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Straußen überrannt wird und die Zeitspanne bis zur Bewusstlosigkeit muss nicht in Schmerzen durchstanden werden.</p>",
   
             :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
                 
@@ -709,12 +709,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Das viele Bier, das sie vor den Schlachten trinken, verschafft ihnen ein noch stärkeres Durchhaltevermögen. </p>",
+            :de_DE => "<p>Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Durch ausreichend Bier erhöht sich die Kampfkraft und verringert sich das Schmerzempfinden.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf, gibt es doch nichts besseres als ein paar Krüge vor und nach der Schlacht. Allein schon der Gestank schreckt Straußen und andere Reittiere ab, aber Steine und Speere finden weiterhin ein einfaches Ziel, nur ab und zu geht ein Schuß ins leere, wenn der Keulenkrieger über das Schlachtfeld wankt.</p>",
+            :de_DE => "<p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf. Nicht geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p>",
   
             :en_US => "<p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>",
                 
@@ -813,12 +813,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Wozu den Baum zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann.</p>",
+            :de_DE => "<p>Wozu einen Ast vom Baum schlagen und zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann?</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säberlzahntiger, der sich den Schwanz geklammt hat. Nicht den flauschigen, den anderen...</p><p> Kein Feind kann einen Baum-Brutalo erreichen, wenn er erst einmal in Fahrt gekommen ist. Da bleibt nur wegrennen und hoffen, dass ihm irgendwann die Puste ausgeht, oder er von Steinen und Speeren gespickt zu Boden geht.</p>",
+            :de_DE => "<p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfass auf dem Schlachtfeld auf. Nicht geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschen Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säbelzahntiger, der sich den Schwanz geklemmt hat. Nicht den flauschigen, den anderen...</p>",
   
             :en_US => "<p>What Tree-Huggers lack in brains, they make up for with sheer strength.</p><p>Telling by an unverified legend, those guys are brought up in a tree-nursery.</p>",
                 
@@ -926,12 +926,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Diese Fernkämpfer könnten eine Zielscheibe nicht aus 10 Meter Entfernung treffen, aber zum Glück sind Infanterieabteilungen meist viel größer als Zielscheiben. </p>",
+            :de_DE => "<p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Nichtsdestotrotz kann er moderaten kritischen Schaden zufügen - denn, wie jeder weiß, das kann auch ins Auge gehen.</p><p> Die größte Furcht eines Kieselsteinwerfers ist eine anstürmende Horde Straußenreiter, denn diese überrennen einfach alles was ihnen in den Weg kommt.</p>",
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter die diesen bringen.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -991,12 +991,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Einen Stein auf 50 Meter Entfernung genau auf ein Ziel zu werfen ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg. </p>",
+            :de_DE => "<p>Einen Stein auf fünfzig Meter Entfernung genau auf ein Ziel zu werfen ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meistens ist eh genug Infanterie da, sodass zielen unnötig wird, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p> Ein bewegliches Ziel zu treffen, wie zum Beispiel einen Straußenreiter, ist eine große Leistung und derjenige, dem es gelingt, wird von seinen Kollegen sehr geschätzt... wenn er es überlebt.</p>",
+            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meistens sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen ist eine große Leistung und oftmals der Unterschied zwischen Leben und Tod.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -1095,12 +1095,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Je größer der Stein, desto mehr tut es weh. Das meinen zumindest die Steinschleuderer und versuchen mit immer größeren Steinen nach ihren Gegnern zu werfen.</p>",
+            :de_DE => "<p>Zielen ist was für Anfänger. Das Motto der Steinschleuderer: "Je weiterer der Stein geworfen wird, desto besser!" Stimmt sogar manchmal.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Große Steine tuen tatsächlich mehr weh, auch wenn die Steinschleuderer die gleichen Schwächen, wie ihre kieselsteinwerfenden Kollegen haben. </p>",
+            :de_DE => "<p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. Zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -1199,12 +1199,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Wieso jemand einen Stock an einen Stein gebunden hat, ist unverständlich, sind Steine doch schon hervorragende Wurfgeschosse. Aber der Effekt ist großartig, größere Reichweite, zielgenauer und einfacher einzusammeln, was will man mehr. </p>",
+            :de_DE => "<p>Wieso jemand einen Stock an einen Stein gebunden hat, ist unverständlich, sind Steine doch schon hervorragende Wurfgeschosse. Aber der Effekt ist großartig, größere Reichweite, zielgenauer und einfacher einzusammeln. Was will man mehr?</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Theoretisch ist ein Speer auch im Nahkampf, vor allem gegen Reiter, effektiv, aber die Speerschleuderer kommen erst gar nicht darauf ihn so einzusetzen, sie versuchen weiterhin alle ihre Speere zu werfen auch wenn es kaum von Speeren getötete Reiter gibt. Den ein oder anderen mit Speeren gespickten Straußen gibt es allerdings doch, denn ein guter Speertreffer fügt wirklich tiefe Wunden zu. </p>",
+            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte als zur Verfügung stehen. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -1312,12 +1312,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Zweihändige Straußenreiter werden so genannt, weil sie beide Hände brauchen, um sich an ihrem Straußen festzuklammern. Sie sind trotzdem effektiv, denn Strauße haben zwar keine großen Klauen oder Fangzähne, aber ihr Schnabel ist ziemlich spitz. </p>",
+            :de_DE => "<p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine Gefahr dar.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Strauße sind nicht nur lecker sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug um an der Infanterie vorbeizukommen und bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn das meist wenig Unterschied macht. </p>",
+            :de_DE => "<p>Strauße sind nicht nur lecker sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug um an der Infanterie vorbeizukommen bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn dies meist wenig Unterschied macht.</p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -1377,12 +1377,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Mit etwas Übung schafft der erfahrene Reiter auch sich mit einer Hand festzuhalten, und so die andere für sinnvollere Tätigkeiten freizuhaben. Wie zum Beispiel seinen Feinden den Schädel einzuhauen. </p>",
+            :de_DE => "<p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zu winken oder seinen Feinden den Schädel einzuhauen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Mit einer Keule in der freien Hand sind einhändige Straußenreiter natürlich effektiver im Angriff. Vor allem die Fernkämpfer fliehen meist beim Anblick einer Horde Straußenreiter. Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen. </p>",
+            :de_DE => "<p>Eine handliche Keule in der freien Hand sind einhändige Straußenkrieger der Todfeind aller Fernkämpfer.</p><p>Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen.</p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -1481,12 +1481,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Besonders talentierte Reiter brüsten sich damit, freihändig reiten zu können. Wozu sie die zusätzliche Hand brauchen, da sie die Keule nur mit einer führen, können sie allerdings auch nicht sagen. </p>",
+            :de_DE => "<p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Sie reiten durch die Gegnerreihen und führen präzise Schläge aus, die besonders Feinde mit schwachem Durchhaltevermögen, wie Kieselsteinwerfer, einfach umhauen. Da sie durch Keulenkriegerlinien nicht hindurchreiten können, vermeiden sie diese. Denn ein stehender Strauß ist ein toter Strauß. </p>",
+            :de_DE => "<p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine werfen. Besonders Fernkämpfer mit ihren geringen Rüstungen sind willkommene Ziele.</p><p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -1585,12 +1585,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p> Der Traum eines jeden Reiters, der riesige Dino nimmt ihm die ganze Arbeit ab. Aber nach der Schlacht bleibt man besser im Sattel, bis der Dino sich beruhigt hat. </p>",
+            :de_DE => "<p>Der Traum eines jeden neuen Reiters. Einen Dino reiten. Wenn man es endlich geschafft hat wünscht man sich doch lieber Fernkämpfer geworden zu sein. Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p> Der riesige Dino trampelt seine Feinde um, fegt sie mit dem Schwanz weg und ist so stark gepanzert, dass ihm Geschosse nichts anhaben können. Keulenkrieger mag der Dino gar nicht, hauen die fiesen Kerle ihm doch immer auf die Zehen, seine empfindsamste Stelle. </p>",
+            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgeborchen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p><p>Kein Wunder, gibt es zu Hause doch nichts zu fressen.</p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -1682,145 +1682,8 @@ class GameRules::Rules
 
 
         },              #   END OF Ostrich Riders4
-        {               #   Battering Ram
-          :id          => 12, 
-          :symbolic_id => :ram,
-					:category    => 3,
-          :db_field    => :unit_ram,
-          :name        => {
-            
-            :en_US => "Battering Ram",
-  
-            :de_DE => "Rammbock",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Nur wenige wissen, dass der Name Rammbock von einem prähistorischen Tier aus der Unterfamilie der ziegenartigen (caprinae) abstammt.</p>",
-  
-            :en_US => "<p>The battering ram is the lockpick of choice to open doors, gates and cracking down fortifications.</p>",
-                
-          },
-
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.2,
-  
-            :unitcategory_cavalry => 0.1,
-  
-            :unitcategory_artillery => 0.2,
-  
-            :unitcategory_siege => 1,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 15,
-          :armor       => 0,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 2,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '300',
-
-          :costs      => {
-            0 => '2',
-            1 => '10',
-            2 => '4',
-            
-          },
-
-
-        },              #   END OF Battering Ram
-        {               #   Catapult
-          :id          => 13, 
-          :symbolic_id => :catapult,
-					:category    => 3,
-          :db_field    => :unit_catapult,
-          :name        => {
-            
-            :en_US => "Catapult",
-  
-            :de_DE => "Katapult",
-                
-          },
-          :flavour     => {
-                          
-          },
-          :description => {
-            
-            :de_DE => "<p>Das Basismodell 'Catabilly' zum selber zusammenbauen, unschlagbar günstig.</p>",
-  
-            :en_US => "<p>The catapults take the cake in every intense battle because of their devastating damage.</p>",
-                
-          },
-
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.2,
-  
-            :unitcategory_cavalry => 0.1,
-  
-            :unitcategory_artillery => 0.2,
-  
-            :unitcategory_siege => 1,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 15,
-          :armor       => 0,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 2,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '300',
-
-          :costs      => {
-            0 => '2',
-            1 => '10',
-            2 => '4',
-            
-          },
-
-          :requirementGroups=> [
-            [
-              
-            {
-              :symbolic_id => 'building_workshop',
-              :id => 0,
-              :type => '',
-
-              :min_level => 11,
-
-            },
-
-            ]
-          ],          
-
-
-        },              #   END OF Catapult
         {               #   Neanderthal
-          :id          => 14, 
+          :id          => 12, 
           :symbolic_id => :neanderthal,
 					:category    => 0,
           :db_field    => :unit_neanderthal,
@@ -1840,7 +1703,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Wilder Vormenschenstamm.</p>",
+            :de_DE => "<p>Die Neanderthaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn schreien und angreifen nicht mehr ausreichen ist es meist schon zu spät für den Neanderthaler.</p>",
   
             :en_US => "<p>Fierce Fighters.</p>",
                 
@@ -1900,7 +1763,7 @@ class GameRules::Rules
 
         },              #   END OF Neanderthal
         {               #   Little Chief
-          :id          => 15, 
+          :id          => 13, 
           :symbolic_id => :little_chief,
 					:category    => 4,
           :db_field    => :unit_little_chief,
@@ -1915,12 +1778,12 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Noch keine Funktion. Zwar kein richtiger Häuptling, aber führt immerhin eine Lagerstätte an.</p>",
+            :de_DE => "<p>Ein Halber Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre nur ein Bonus.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kleine Häuptlinge haben ihr eigenes Lager, dass sie für den Häuptling führen.</p>",
+            :de_DE => "<p>Ein Halber Häuptling ist ungefähr so beliebt wie die Begegnung mit einem hungrigen Dinosaurier. Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Halbe Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Halbe Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
   
             :en_US => "<p>Little Chiefs are in charge of expansions.</p>",
                 
@@ -2144,7 +2007,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>In der Sicherheit der Festung bauen die Arbeiter schneller und Krieger werden schneller ausgebildet.</p><p>Je größer die Festung wird, desto besser sind auch die Verteidigungsanlagen und Unterkünfte.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>In der Festung werden Krieger ausgebildet, Steuern eingetrieben und sich hinter Verteidigungsanlagen verschanzt.</p>",
   
             :en_US => "<p>Some debris, tied tree trunks, a provisional gate, small parade-ground, main building and some walls; rudimentary stronghold finished. Improving the fortification results in a higher maximum size of the garrison, speeding-up all other construction sites and increases the defensive abilities.</p>",
                 
@@ -2320,7 +2183,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Von Außen betrachtet ist der Turm der Ballistik eine Augenweide. Von Innen betrachtet ist der Turm ein Trümmerfeld. Kleine Kieselsteine liegen auf dem ganzen Boden verteilt, Bratspieße, Speere und Pfeile haben sich in sämtliche Stützpfeiler gebort und an den Wänden spuren hinterlassen.</p><p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildende haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steinen oder Splittern halbwegs überstehen.</p><p> Verglichen mit der Ordnung einer Artillerie-Kampfreihe auf dem Schlachtfeld ist das herrschende Chaos überraschend. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt, nur leider wissen die Wenigsten auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Von Außen betrachtet ist der Turm der Ballistik eine Augenweide. Von Innen betrachtet ist der Turm ein Trümmerfeld. Kleine Kieselsteine liegen auf dem ganzen Boden verteilt, Bratspieße, Speere und Pfeile haben sich in sämtliche Stützpfeiler gebort und an den Wänden spuren hinterlassen.</p><p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildende haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steinen oder Splittern halbwegs überstehen.</p><p>Verglichen mit der Ordnung einer Artillerie-Kampfreihe auf dem Schlachtfeld ist das herrschende Chaos überraschend. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt, nur leider wissen die Wenigsten auf welches Kommando sie eigentlich gerade achten sollen.</p>",
   
             :en_US => "<p>Trains artillery.</p>",
                 
@@ -2411,7 +2274,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Turm der Reitmeisterei dient zur Ausbildung aller berittenen Einheiten. Dabei wird der Wert vor allem auf den Umgang mit den Tieren wie auch die Reittechnik gelegt.</p><p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzweitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Die Tierpfleger entsorgen die blutige Kleidung ohne großes Aufhebens.</p>",
+            :de_DE => "<p>Der Turm der Reitmeisterei dient zur Ausbildung aller berittenen Einheiten. Dabei wird der Wert vor allem auf den Umgang mit den Tieren wie auch die Reittechnik gelegt.</p><p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Zwar beeindruckt das die Mädchen ungemein, aber die Jungs haben keine Zeit mehr sich in der Aufmerksamkeit zu sonnen. Die Tierpfleger entsorgen die blutigen Überreste ohne großes Aufhebens.</p>",
   
             :en_US => "<p>Training center for all mounted units. Horse-back riding is not vanilla, so, 101-riding courses, how to put spur on horses and domesticating them; all this is done here.</p><p>Access is only granted to equestrians and zookeepers.</p>",
                 
@@ -2556,13 +2419,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
+            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
-Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe läßt sich der Fortschritt der Siedlung ablesen. Je größer desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p><p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p>",
   
             :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
@@ -2682,12 +2544,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Collecs resources for the daily needs.</p>",
   
-            :de_DE => "<p>Sammelt für Dich Holz und Steine, und wenn sein Gelände weit genug ausgebaut wird, findet er sogar hin und wieder eine Kröte auf seinem Gelände, die zu langsam für seine schwerfälligen Füße ist.</p>",
+            :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Die wahren Schätze aus Sicht des Jäger und Sammlers sind aber Pilze. Vor allem die weißen mit den roten Punkten.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Primitivster aller Steinzeiteinwohner. Ihr könnt frohe sein, ihn in eine Hütte bekommen zu haben. Manchmal bleibt er sogar für ein paar Stunden da.</p><p>Jedenfalls sammelt und jagt er alles, was ihm for die Flinte, äh, die Steinschleuder kommt. Auf seinem Gelände können die Stammesangehörigen alles finden, was sie zur Abdeckungen des täglichen Bedarfs benötigen; er findet alles von Knochen und Steinen über Wurzeln bis hin zu Kröten (natürlich nur bei ausreichend großem Gelände).</p>",
+            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p><p>Er jagt und sammelt einfach alles was ihm vor die Flinte -äh Steinschleuder kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
   
             :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easily slain animals.</p>",
                 
@@ -2776,12 +2638,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>In den kleinen Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>",
+            :de_DE => "<p>In den kleinen Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Bau von Gebäuden.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Je mehr Untertanen, desto schneller können Gebäude gebaut werden.</p><p>Doch irgendwo müssen eure Arbeiter unterkommen. Die kleine Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
+            :de_DE => "<p>Die kleine Hütte schützt eure Untertanen mal gerade vor Sonne und Regen. Hauptsache sie sind fleißig und beschweren sich nicht. Je mehr Hütten desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
   
             :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
                 
@@ -2877,12 +2739,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf, lange nicht mehr verprügelt worden? Im Ausbildungsgelände werden die Nahkämpfer ausgebildet, die Freund und Feind gerne mal eine verpassen.</p>",
+            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden? In der Kaserne finden sich alle die sich gerne mitten ins Getümmel stürzen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer, denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den Waffen eine Frau natürlich, und die sind tödlich!</p>",
+            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer! Denn zumeist gewinnt eine Frau diese Turnier. Wie? Mit den tödlichen Waffen einer Frau natürlich!</p>",
   
             :en_US => "<p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
                 
@@ -2982,12 +2844,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Diplomatic bla-bla or alliance conferences can be held in the embassies. And a good conversation is not a monologue!</p>",
   
-            :de_DE => "<p>Ort für Diplomatischer Austausch oder Allianzbesprechungen. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet.</p>",
+            :de_DE => "<p> Ort diplomatischen Austausch oder Besprechungen innerhalb der Allianz. Zu einer guten Unterhaltung gehören mindestens zwei. Auch wenn oft nur einer redet. Reden, dass kann der Kleine Häuptling wie kein zweiter.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Lagerfeuer ist der Versammlungsort einer Siedlung und übernimmt in der Steinzeit auch die Rolle einer Botschaft.</p><p>Die freiwilligen und unfreiwilligen Gästen werden wahlweise ans Feuer gebeten oder am Marterfall aufgestellt.</p><p>Hier ist der Ort, um  Entsandte von benachbarten und weit entfernten Stämmen zu bewirten, Kontakte zu pflegen und die wichtigen Dinge zu besprechen. Hier ist aber auch der Ort, um an den gutgläubigen Entsandten oder eingefangenen Gegnern ein Exempel zu statuieren oder sie kurzerhand zu verspeisen.</p>",
+            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Verhandlungen mit Nachbarn oder Allianzen alles findet bei reichlich Gerstensaft am Lagerfeuer statt.</p><p>Am Lagerfeuer beginnen auch die Karrieren der Kleinen Häuptlinge. Eine paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des Kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p>",
   
             :en_US => "<p>Assembly area for the locals and also the district of foreign embassies. Random guests are normally invited to sit by the fire while hostile messengers get hammered at the stake.</p><p>The place to be in every settlement for networking and discussing the really important matters, like whether a stranger gets eaten alive or tickled to ecstasy.</p>",
                 
@@ -3081,7 +2943,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>",
+            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller was sich sehr positiv auf ihren Ertrag auswirkt.</p>",
   
             :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
                 
@@ -3182,7 +3044,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Durch eine komplizierte Kette von Arbeitsvorgängen (kompliziert in der Steinzeit), werden im Steinbruch Steine gewonnen. Größere Steinbrüche produzieren mehr Steine pro Stunde. Unglaublich, oder?</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>",
+            :de_DE => "<p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>",
   
             :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
                 
@@ -3283,7 +3145,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Verarbeitet Häute zu Leder und hat manchmal auch ein paar schöne Säbelzahntigerfelle für die Dame von Welt im Angebot.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>",
+            :de_DE => "<p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Und wenn tatsächlich mal ein Säbelzahntiger erlegt wird, dann zaubert er auch etwas für die Dame von Welt im Angebot.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet und erhöht damit die Fellproduktion deutlich.</p>",
   
             :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
                 
@@ -3380,12 +3242,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf dein Ding.</p>",
+            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf dein Ding!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Ausbildungsgelände für Fernkämpfer. Steine, Speere und alles was man werfen oder schießen kann fliegt hier durch die Luft.</p><p> Je größer das Gelände, desto weniger Unfälle verzögern die Ausbildung. </p>",
+            :de_DE => "<p>Steine, Speere und alles was man werfen oder schießen kann fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p><p>Ein größerer Aufbau sorgt für eine beschleunigte Ausbildung und sogar für die Entwicklung völlig neuer Techniken auf deren Basis neue Einheiten ausgebildet werden können.</p>",
   
             :en_US => "<p>Training area for ranged units. Stones and javelins fill the air with a whiring buzz.</p><p>If some-one lacks courage to fight face-to-face, the firing range is the place to make a career in the army. Accidents that go pear-shaped are possible!</p>",
                 
@@ -3485,12 +3347,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Stinkende Tiere und brüllende Ausbilder. Genau das bietet ein Stall bei der Ausbildung von Kavallerieeinheiten. Der Traum aller Pferdemädchen!</p>",
+            :de_DE => "<p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p><p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihrer wichtigen Position.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p><p>Die Ausbildung würde schneller gehen, wenn mehr Platz da wäre und die Tiere aufhören würden sich gegenseitig aufzufressen.</p>",
+            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, um sich ganz auf das Reiten zu konzentrieren. Das Reittier an sich die Waffe!</p><p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>",
   
             :en_US => "<p>Hosts troops.</p>",
                 
@@ -3590,12 +3452,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Stores your resources.</p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne, Holzkarren; alles was man zum Lagern und versenden von Rohstoffen braucht.</p>",
+            :de_DE => "<p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Soviel Stil muss sein!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>",
+            :de_DE => "<p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>",
   
             :en_US => "<p>Storage space.</p>",
                 
@@ -3705,12 +3567,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>In den Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>",
+            :de_DE => "<p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
+            :de_DE => "<p>In der fortschrittlichen Hütten wohnen die verdienten sprich fleißigen Bewohner.  Diese Hütte hat sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, den seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>",
   
             :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
                 
@@ -3801,12 +3663,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Ein Kommandoposten koordiniert die verschiedenen Armeen im Felde. Soweit man mehr Armeen in eine Richtung schicken als koordinieren bezeichnen kann.</p>",
+            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges. Selbst wenn alle Armeen nur in eine Richtung mit dem Auftrag „immer feste druff“ geschickt werden.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Kommandoposten erhöht die maximale Anzahl an Armeen und beschleunigt die Einheitenrekrutierung.</p>",
+            :de_DE => "<p>Ein paar Äste zwischen drei Bäume gespannt, darauf Rinde und Blätter und fertig ist das Sonnensegel. Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Hier wird die Taktik bestimmt und Befehle erteilt. Meist immer derselbe: Haut sie feste!</p>",
   
             :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
@@ -3912,7 +3774,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und auch den ein oder anderen Fortschritt bei Werkzeugen oder anderen Sachen.</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch den ein oder anderen Fortschritt bei Werkzeugen.</p>",
   
             :en_US => "<p>Description here</p>",
                 
@@ -3988,12 +3850,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Für all das Gerede die über Sicherheit, die sie bieten, ziehen Feldlager Feinde wie magisch an.</p>",
+            :de_DE => "<p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Feldlager transformiert die Lagerstätte in einen militärischen Betrieb. Eine Mauer schützt die Krieger und größere Unterkünfte vergrößern die Garnisonsarmee.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“ Tatsächlich ermöglicht das Feldlager die Aufstellung von mehr Kämpfern, sorgt aber auch für eine bessere Verteidigung.</p>",
   
             :en_US => "<p>Training facility for all kinds of groud units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
                 
@@ -4064,12 +3926,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>The peltmonger is literally flaying all day long!</p>",
   
-            :de_DE => "<p>Seitdem der Kürschner sein Kupfermesser bekommen hat, traut sich niemand mehr in seine Nähe. Allerdings macht er seine Arbeit jetzt schneller, sodass sich noch niemand beschwert hat.</p>",
+            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Kupfermessern kann man Tiere natürlich schneller häuten. Kunsttiere natürlich, denn auch die Steinzeitmenschen legten wert Tierschutz.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet.</p>",
+            :de_DE => "<p>Die Kupfermesser waren ein Geschenk der Götter. Zumindest glauben das die Kürschner, die mit den Kupfermesser herausragende Mode entwerfen. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p><p>Genau deswegen sind die verrückten Kürschner natürlich große Vorbilder für andere Kürschner.</p>",
   
             :en_US => "<p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p>",
                 
@@ -4161,12 +4023,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Wood! Even more wood!</p>",
   
-            :de_DE => "<p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er mehr selbst gefällte Bäume als loses Gestrüpp mit.</p>",
+            :de_DE => "<p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er tatsächlich selbst gefällte Bäume und weniger loses Gestrüpp mit.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Durch die Benutzung von Kupferäxten können Holzfäller schneller Bäume fällen, obwohl sie alle paar Bäume die Axt wieder geradebiegen müssen.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller.</p>",
+            :de_DE => "<p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>",
   
             :en_US => "<p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>",
                 
@@ -4257,12 +4119,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Stones, even more stones!</p>",
   
-            :de_DE => "<p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Aus irgendeinem Grund sind sie trotzdem schneller beim Abbau geworden.</p>",
+            :de_DE => "<p>In der Kupferzeit würde man erwarten kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Offensichtlich die bessere Investition, denn die Belohnung der glücklichen Frauen ist umso größer.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für schnelleren Abbau.</p>",
+            :de_DE => "<p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben. Aber trotzdem geht der Abbau spürbar schneller.</p><p>Ab einer gewissen Größe werden die Arbeiter noch schneller und treiben sogar andere Steinbrüche zu schnellerer Arbeit an.</p>",
   
             :en_US => "<p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>",
                 
@@ -4353,12 +4215,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>This is THE place for warriors of all kinds to repeatedly bash their heads in.</p>",
   
-            :de_DE => "<p>Dies ist der Ort für Krieger aller Art sich gegenseitig die Schädel einzuschlagen und die armen Siedlungsbewohner in Ruhe zu lassen. Dass das die Disziplin stärkt ist ein netter Nebeneffekt.</p>",
+            :de_DE => "<p>Krieger aller Art sollten getrennt von der normalen arbeitenden Bevölkerung gehalten werden. In der Garnison können sie sich gegenseitig die Schädel einzuschlagen und die armen Siedlungsbewohner in Ruhe lassen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Größere Garnisonen führen zu… größeren Garnisonsarmeen, wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p>",
+            :de_DE => "<p>Größere Garnisonen führen zu… größeren Garnisonsarmeen wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p>",
   
             :en_US => "<p>Bigger garrisons lead to… bigger garrison armies who would have thought that. They also affect the effective field army size.</p>",
                 

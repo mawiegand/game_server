@@ -5,7 +5,7 @@
   <Name lang="de_DE">Turm der Tüftler</Name>
   <Name lang="en_US">Inventor Tower</Name>
   <Description lang="de_DE">
-    <p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hämmerschläge oder leisem Geflüster unterbrochen wird.</p>
+    <p>Der Turm der Tüftler ist ein Ort der Stille, die nur durch kurze Hammerschläge oder leisem Geflüster unterbrochen wird.</p>
     <p>An den Wänden hängen Skizzen, Pläne und unvollendete Entwürfe. Die Tüftler sehen sich als Elite, da sie als einzige ihr Gehirn für ihre Arbeit einsetzen.</p>
     <p>Die anderen Krieger halten die Tütfler natürlich für Idioten, die nur in ihrem Turm eingesperrt werden, damit sie nicht im Weg rumstehen.</p>
   </Description>
@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschinene werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
+    <pFür Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschine werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
   </Flavour>
   <Population>2.5*POW(LEVEL,2)-2.5*LEVEL+5</Population>
   <Requirement id="building_fortress_fortification" min_level="21" />  

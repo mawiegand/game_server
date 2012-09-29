@@ -5,10 +5,9 @@
   <Name lang="de_DE">Stall</Name>
   <Name lang="en_US">Stable</Name>
   <Description lang="de_DE">
-    <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und eine Katze gehalten.</p>
-  <p>Die Katze ist das einzige Wesen vor denen die Dinos Angst haben. Ihre Körperfülle entspricht ihrer wichtigen Position.</p>
-  <p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, zumeist ist das Reittier an sich die Waffe.</p>
-  <p>Die Ausbildung würde schneller gehen, wenn mehr Platz da wäre und die Tiere aufhören würden sich gegenseitig aufzufressen.</p>
+    <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten.</p>
+  <p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, um sich ganz auf das Reiten zu konzentrieren. Das Reittier an sich die Waffe!</p>
+  <p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>
   </Description>
   <Description lang="en_US">
     <p>Hosts troops.</p>
@@ -17,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Stinkende Tiere und brüllende Ausbilder. Genau das bietet ein Stall bei der Ausbildung von Kavallerieeinheiten. Der Traum aller Pferdemädchen!</p>
+    <p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>
   </Flavour>
   <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
   <RequirementGroup>

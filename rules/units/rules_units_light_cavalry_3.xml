@@ -8,10 +8,11 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p> Besonders talentierte Reiter brüsten sich damit, freihändig reiten zu können. Wozu sie die zusätzliche Hand brauchen, da sie die Keule nur mit einer führen, können sie allerdings auch nicht sagen. </p>
+    <p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>
   </Flavour>
       <Description lang="de_DE">
-        <p> Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Sie reiten durch die Gegnerreihen und führen präzise Schläge aus, die besonders Feinde mit schwachem Durchhaltevermögen, wie Kieselsteinwerfer, einfach umhauen. Da sie durch Keulenkriegerlinien nicht hindurchreiten können, vermeiden sie diese. Denn ein stehender Strauß ist ein toter Strauß. </p> 
+        <p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine werfen. Besonders Fernkämpfer mit ihren geringen Rüstungen sind willkommene Ziele.</p>
+        <p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p> 
       </Description>
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>

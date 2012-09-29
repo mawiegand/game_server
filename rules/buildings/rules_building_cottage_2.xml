@@ -5,7 +5,7 @@
   <Name lang="de_DE">Hütte</Name>
   <Name lang="en_US">Hut</Name>
   <Description lang="de_DE">
-    <p>Die Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>
+    <p>In der fortschrittlichen Hütten wohnen die verdienten sprich fleißigen Bewohner.  Diese Hütte hat sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, den seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>
   </Description>
   <Description lang="en_US">
     <p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p> 
@@ -15,7 +15,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>In den Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>  
+    <p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>  
 	</Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25)*1.1+0.5)</Population>  <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="1" />
