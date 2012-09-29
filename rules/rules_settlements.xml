@@ -319,19 +319,11 @@
     <Name lang="de_DE">Lagerstätte</Name>
     <Name lang="en_US">Camp</Name>
     <Description lang="de_DE">Außenlager eines Stammes.</Description>
-<<<<<<< HEAD
     <Description lang="en_US">a small encampment of a tribe.</Description>
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
     <BuildingSlot number="1" max-level="20" building="building_haunt" level="1">
-=======
-    <Description lang="en_US">A small encampment of a tribe.</Description>
-    <BuildingSlot number="0" max-level="10">
-      <BuildingOption category="building_category_wall" />
-    </BuildingSlot>
-    <BuildingSlot number="1" max-level="20" building="building_chief_cottage" level="1">
->>>>>>> master
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
@@ -369,10 +361,6 @@
     <BuildingSlot number="12" max-level="10">
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-<<<<<<< HEAD
   </Settlement>
-=======
-  </Settlement>  
->>>>>>> master
 </SettlementTypes>
   

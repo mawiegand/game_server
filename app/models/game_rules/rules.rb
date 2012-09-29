@@ -1506,7 +1506,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1.5,
   
-            :unitcategory_siege => 1,
+            :unitcategory_siege => 0.8,
   
             :unitcategory_special => 1,
                 
@@ -1610,7 +1610,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1.5,
   
-            :unitcategory_siege => 1,
+            :unitcategory_siege => 0.8,
   
             :unitcategory_special => 1,
                 
@@ -1723,7 +1723,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 1.0,
+            :unitcategory_siege => 0.8,
   
             :unitcategory_special => 1,
                 
@@ -1840,11 +1840,6 @@ class GameRules::Rules
 
             ]
           ],          
-
-          :can_create => [
-3,
-
-          ],
 
 
         },              #   END OF Little Chief
@@ -2486,19 +2481,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "200000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "200000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "200000",
+                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)*0.5",
               },
             
               {
@@ -5302,7 +5297,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Außenlager eines Stammes.",
   
-            :en_US => "A small encampment of a tribe.",
+            :en_US => "a small encampment of a tribe.",
                 
           },
 
@@ -5318,14 +5313,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              2,
+              3,
               
               ],
             },
             1 => {
               :max_level => 20,
               
-              :building  => 4,
+              :building  => 0,
               
               :level  => 1,
               
@@ -5341,7 +5336,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
               4,
               5,
               
@@ -5373,7 +5367,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5383,7 +5377,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5393,7 +5387,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5403,7 +5397,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5413,7 +5407,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5423,7 +5417,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5433,7 +5427,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
@@ -5443,7 +5437,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              4,
+              5,
               
               ],
             },
