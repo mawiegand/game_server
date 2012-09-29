@@ -1217,6 +1217,20 @@ class Tutorial::Tutorial
 
           },          
 
+          :message => {
+            
+            :en => {
+              :subject => 'Subject',
+              :body => 'Message with content',
+            },
+
+            :de => {
+              :subject => ' Begrüßungsnachricht ',
+              :body => ' Begrüßungsnachricht hier',
+            },
+
+          },          
+
         },              #   END OF quest_encyclopedia
         {               #   quest_build_1cottagelvl1
           :id                => 13, 

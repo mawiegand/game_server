@@ -5,7 +5,8 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hall</Name>
   <Description lang="de_DE">
-    <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
+    <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
+Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
   <p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p>
   <p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p> 
   </Description>
@@ -33,9 +34,9 @@
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
-  <Capacity id="resource_stone">300000</Capacity>
-  <Capacity id="resource_wood">300000</Capacity>
-  <Capacity id="resource_fur">300000</Capacity>
+  <Capacity id="resource_stone">200000</Capacity>
+  <Capacity id="resource_wood">200000</Capacity>
+  <Capacity id="resource_fur">200000</Capacity>
   <Capacity id="resource_cash">10000</Capacity> 
 </Building>
   
