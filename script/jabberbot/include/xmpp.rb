@@ -133,7 +133,7 @@ class Xmpp
         useritem.jid = "#{command.data}@#{APP_CONFIG['jabber']['host']}"
 
         @logger.error "JID: #{ useritem.jid }"
-        muc.send_affiliations([useritem])
+        muc.send_affiliations([useritem])  # wrap this in an array because the code in the gem xmpp / muc / helper / mucclient.rb is broken for non-arrays!!!!
 
         muc.exit
 
@@ -161,7 +161,8 @@ class Xmpp
         useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
         useritem.affiliation= :none
         useritem.jid = "#{command.data}@#{APP_CONFIG['jabber']['host']}"
-        muc.send_affiliations([useritem])
+        muc.send_affiliations([useritem])  # wrap this in an array because the code in the gem xmpp / muc / helper / mucclient.rb is broken for non-arrays!!!!
+
 
         muc.exit
 
