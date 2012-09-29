@@ -147,7 +147,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_outbox
       character.create_archive
       
-      Messaging::Message.create_welcome_message(character)
+      # sending of welcome message is now triggered by a tutorial quest
+      # Messaging::Message.create_welcome_message(character)
       
       character.create_tutorial_state
       character.tutorial_state.create_start_quest_state     
