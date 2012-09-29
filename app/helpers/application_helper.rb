@@ -10,10 +10,10 @@ module ApplicationHelper
     if_modified_since = request.env['HTTP_IF_MODIFIED_SINCE']
     
     logger.debug("RESOURCE LAST MODIFIED: #{ last_modified }. IF MODIFIED: #{ if_modified_since }.")
-    logger.debug("NOT MODIFIED COMPARISION: #{ last_modified <= Time.httpdate(if_modified_since) } = #{last_modified} <= #{ Time.httpdate(if_modified_since) }.")   if last_modified && if_modified_since
-    logger.debug("NOT MODIFIED COMPARISION TIME: #{ last_modified.to_i <= Time.httpdate(if_modified_since).to_i } = #{last_modified.to_i} <= #{ Time.httpdate(if_modified_since).to_i }.")   if last_modified && if_modified_since
+    logger.debug("NOT MODIFIED COMPARISION: #{ last_modified <= Time.parse(if_modified_since) } = #{last_modified} <= #{ Time.parse(if_modified_since) }.")   if last_modified && if_modified_since
+    logger.debug("NOT MODIFIED COMPARISION TIME: #{ last_modified.to_i <= Time.parse(if_modified_since).to_i } = #{last_modified.to_i} <= #{ Time.parse(if_modified_since).to_i }.")   if last_modified && if_modified_since
 
-    if if_modified_since && last_modified && last_modified.to_i <= Time.httpdate(if_modified_since).to_i 
+    if if_modified_since && last_modified && last_modified.to_i <= Time.parse(if_modified_since).to_i 
       # has not changed
       render :nothing => true, :status => '304 Not Modified'
     else
@@ -26,7 +26,7 @@ module ApplicationHelper
     return @if_modified_since_time    unless @if_modified_since_time.blank?
     
     if_modified_since       = request.env['HTTP_IF_MODIFIED_SINCE']    
-    @if_modified_since_time = if_modified_since.blank? ? nil : Time.httpdate(if_modified_since)  
+    @if_modified_since_time = if_modified_since.blank? ? nil : Time.parse(if_modified_since)  
   end
 
   
