@@ -19,8 +19,8 @@ class Construction::Job < ActiveRecord::Base
   end
   
   def building_time
-    rules = GameRules::Rules.the_rules
-    formula = Util::Formula.parse_from_formula(rules.building_types[self.building_id][:production_time])
+    building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+    formula = Util::Formula.parse_from_formula(building_type[:production_time])
     if self.job_type == TYPE_CREATE || self.job_type == TYPE_UPGRADE
       return formula.apply(self.level_after)
     elsif self.job_type == TYPE_DESTROY
@@ -29,17 +29,69 @@ class Construction::Job < ActiveRecord::Base
         time += formula.apply(level)
       end
       return time
+    elsif self.job_type == TYPE_CONVERT
+      # calculate time sum of current building
+      time = 0
+      1.upto(self.level_before) do |level|
+        time += formula.apply(level)
+      end
+
+      # calculate time sum of converted building
+      converted_level_formula = Util::Formula.parse_from_formula(building_type[:conversion_option][:target_level_formula])
+      converted_level = converted_level_formula.apply(self.level_before)
+      
+      converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      converted_building_time_formula = Util::Formula.parse_from_formula(converted_building_type[:production_time])
+      
+      converted_time = 0
+      1.upto(converted_level) do |level|
+        converted_time += converted_building_time_formula.apply(level)
+      end
+      
+      return [converted_time - time, converted_time * (1 - GameRules::Rules.the_rules.building_conversion[:time_factor])].max
     end
   end
   
   def costs
     costs = {}
-    unless self.job_type == TYPE_DESTROY
-      buildingType = GameRules::Rules.the_rules.building_types[self.building_id]
-      return {} if buildingType[:costs].nil?
-      buildingType[:costs].each do |resource_id, formula|
+    if self.job_type == TYPE_CREATE || self.job_type == TYPE_UPGRADE
+      building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+      return {} if building_type[:costs].nil?
+      building_type[:costs].each do |resource_id, formula|
         f = Util::Formula.parse_from_formula(formula)
         costs[resource_id] = f.apply(self.level_after)
+      end
+    elsif self.job_type == TYPE_CONVERT
+      # calculate time sum of current building
+      building_type = GameRules::Rules.the_rules.building_type_with_id(self.building_id)
+      unless building_type[:costs].nil?
+        building_type[:costs].each do |resource_id, formula|
+          costs[resource_id] = 0
+          f = Util::Formula.parse_from_formula(formula)
+          1.upto(self.level_before) do |level|
+            costs[resource_id] += f.apply(level)
+            logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
+          end
+        end
+      end
+
+      # calculate time sum of converted building
+      converted_level_formula = Util::Formula.parse_from_formula(building_type[:conversion_option][:target_level_formula])
+      converted_level = converted_level_formula.apply(self.level_before)
+      
+      converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      converted_costs = {}
+      unless converted_building_type[:costs].nil?
+        converted_building_type[:costs].each do |resource_id, formula|
+          converted_costs[resource_id] = 0
+          f = Util::Formula.parse_from_formula(formula)
+          1.upto(converted_level) do |level|
+            converted_costs[resource_id] += f.apply(level)
+            logger.debug "---> conv.cost #{resource_id.to_s} " + converted_costs[resource_id].inspect
+          end
+          costs[resource_id] = [converted_costs[resource_id] - costs[resource_id], converted_costs[resource_id] * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor])].max
+          logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
+        end
       end
     end
     return costs
@@ -52,8 +104,8 @@ class Construction::Job < ActiveRecord::Base
   def create_queueable?
     logger.debug '---> create_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
-    requirementGroups = building_type[:requirementGroups]
-    raise ForbiddenError.new('Requirements not met.')  if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, slot.settlement.owner, slot.settlement, slot)
+    requirement_groups = building_type[:requirementGroups]
+    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
     self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty?
     # TODO test if building can be build in slot according to the slots building categories
@@ -62,8 +114,8 @@ class Construction::Job < ActiveRecord::Base
   def upgrade_queueable?
     logger.debug '---> upgrade_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
-    requirementGroups = building_type[:requirementGroups]
-    raise ForbiddenError.new('Requirements not met.')  if !requirementGroups.nil? && !requirementGroups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirementGroups, slot.settlement.owner, slot.settlement, slot)
+    requirement_groups = building_type[:requirementGroups]
+    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
     self.level_after == slot.last_level + 1 &&
     self.level_after <= slot.max_level &&
@@ -83,17 +135,21 @@ class Construction::Job < ActiveRecord::Base
     logger.debug '---> convert_queueable?'
     # conversion option testen
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
-    conversion_option = building_type.conversion_option
+    conversion_option = building_type[:conversion_option]
     raise ForbiddenError.new('Building is not convertible.') if conversion_option.nil?
     logger.debug '---> conversion_option ' + conversion_option.inspect
-    converted_building_type = GameRules::Rules.the_rules.building_types[conversion_option[:building]]
-    logger.debug '---> converted_building_type ' + converted_building_type.inspect
-
-    # don't test self.slot for requirements of converted building
-    raise ForbiddenError.new('Requirements not met.')  if !requirements.nil? && !requirements.empty? && !GameState::Requirements.meet_requirements?(requirements, slot.settlement.owner, slot.settlement, slot)
+    requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
+    logger.debug '---> requirement_groups ' + requirement_groups.inspect
     
-    false
-    # level testen
+    # don't test self.slot for requirements of converted building
+    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
+    
+    # level anhand formel testen
+    formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])
+    converted_level = formula.apply(self.level_before)
+    logger.debug '---> converted_level ' + converted_level.inspect + ', level_after ' + level_after.inspect
+    
+    converted_level == self.level_after
   end
   
   # checks if a job can be queueable due to requirements like e.g. building levels
@@ -173,6 +229,12 @@ class Construction::Job < ActiveRecord::Base
         # TODO check requirements like enough resources 
         
         slot.destroy_building
+      else
+        raise ForbiddenError.new('slot is empty')
+      end        
+    elsif self.job_type == 'convert'
+      if !slot.empty?
+        slot.convert_building
       else
         raise ForbiddenError.new('slot is empty')
       end        

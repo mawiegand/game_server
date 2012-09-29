@@ -172,7 +172,7 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?)>
+<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?, CanCreate)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -188,6 +188,11 @@
 <!ELEMENT TargetList (Target)>
 <!ELEMENT Target EMPTY>
 <!ATTLIST Target
+ id IDREF #REQUIRED
+>
+
+<!ELEMENT CanCreate EMPTY>
+<!ATTLIST CanCreate
  id IDREF #REQUIRED
 >
 

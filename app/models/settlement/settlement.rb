@@ -85,6 +85,8 @@ class Settlement::Settlement < ActiveRecord::Base
     })
     Military::Army.create_garrison_at(settlement)
     settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
+
+    settlement
   end
   
   # creates building slotes for the present settlements according to the given
@@ -172,18 +174,26 @@ class Settlement::Settlement < ActiveRecord::Base
   #  BATTLE
   #
   ############################################################################   
-    
-  def can_be_taken_over?
-    #TODO define in the rules
-    #get the base
+  
+  # finds the entry regarding character's home bases from the rules
+  def self.home_base_type_rule
     base_type = nil
     GameRules::Rules.the_rules.settlement_types.each do |t|
-      if t[:symbolic_id] == :settlement_home_base
-        base_type = t
+      if t[:symbolic_id] == :settlement_home_base   
+        base_type = t                               
       end
-    end
+    end    
     raise InternalServerError.new('base_type not found in the rules') if base_type.nil?
-    (self.type_id != base_type[:id])
+    base_type
+  end
+    
+  def can_be_taken_over?
+    # simply checking the conquerable flag should be enough, BUT
+    # to make absolutely sure, no home base is lost, this also
+    # checks whether or not the settlement is a home base
+    base_type        = Settlement::Settlement.home_base_type_rule
+    settlement_types = GameRules::Rules.the_rules.settlement_types
+    self.type_id != base_type[:id] && settlement_types[self.type_id][:conquerable] == true
   end
 
   ############################################################################
@@ -593,8 +603,6 @@ class Settlement::Settlement < ActiveRecord::Base
       if self.changed?
         queue_types = GameRules::Rules.the_rules().queue_types
         
-        puts '-------------> ' + changes.inspect
-      
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
@@ -978,14 +986,32 @@ class Settlement::Settlement < ActiveRecord::Base
     ##########################################################################
     
     def propagate_owner_changes    
-      owner_change = self.changes[:owner_id]
-      if !owner_change.nil?
+      if self.owner_id_changed?
+        update_settlement_points_on_changed_possesion
         propagate_changes_to_resource_pool_on_changed_possession
         propagate_score_on_changed_possession
         propagate_unlock_changes_on_changed_possession
       end
       true
     end
+  
+    def update_settlement_points_of_character_transaction(character)
+      return       if character.nil?
+      character.update_settlement_points_used
+      character.save
+    end
+      
+    
+    def update_settlement_points_on_changed_possesion
+      owner_change = self.changes[:owner_id]
+      
+      old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+      new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+
+      update_settlement_points_of_character_transaction(old_owner)
+      update_settlement_points_of_character_transaction(new_owner)
+    end
+    
              
     def propagate_unlock_changes_on_changed_possession
       owner_change = self.changes[:owner_id]
@@ -1006,7 +1032,6 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
     end
-        
         
         
     def propagate_unlock_changes_on_changed_possession_to_model(old_model, new_model, fields)

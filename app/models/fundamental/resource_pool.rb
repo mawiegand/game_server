@@ -43,15 +43,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   end
   
   def self.least_sql_fragment
-    Rails.env.development? ? 'MIN' : 'LEAST'
+    Rails.env.development? || Rails.env.test? ? 'MIN' : 'LEAST'
   end
   
   def self.now_sql_fragment
-    Rails.env.development? ? 'datetime("now")' : 'NOW()'
+    Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'
   end
   
   def self.elapsed_time_sql_fragment
-    if Rails.env.development?
+    if Rails.env.development? || Rails.env.test?
       return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::ResourcePool.now_sql_fragment }) - strftime('%s', COALESCE(productionUpdatedAt,  #{ Fundamental::ResourcePool.now_sql_fragment })))"
     else
       return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::ResourcePool.now_sql_fragment + '-COALESCE("productionUpdatedAt", ' + Fundamental::ResourcePool.now_sql_fragment + ')))'      
@@ -127,13 +127,14 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     set_clauses   = []
     where_clauses = []
     values        = []
-    resources.each do |key, value|
-      base     = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
+    
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      base          = resource_type[:symbolic_id].to_s()
       
       set_clauses   << Fundamental::ResourcePool.modify_resource_sql_set_fragment(base)
       where_clauses << Fundamental::ResourcePool.modify_resource_sql_where_fragment(base)
 
-      values.push(value)
+      values.push(resources[resource_type[:id]] || 0)
     end     
     set_clauses   << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses   << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"

@@ -5,8 +5,15 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hall</Name>
   <Description lang="de_DE">
+<<<<<<< HEAD
     <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe läßt sich der Fortschritt der Siedlung ablesen. Je größer desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p>
   <p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p> 
+=======
+    <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
+Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
+  <p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p>
+  <p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p> 
+>>>>>>> master
   </Description>
   <Description lang="en_US">
     <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
@@ -33,9 +40,15 @@
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
   </Abilities>
+<<<<<<< HEAD
   <Capacity id="resource_stone">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
   <Capacity id="resource_wood">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
   <Capacity id="resource_fur">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)*0.5</Capacity>
+=======
+  <Capacity id="resource_stone">200000</Capacity>
+  <Capacity id="resource_wood">200000</Capacity>
+  <Capacity id="resource_fur">200000</Capacity>
+>>>>>>> master
   <Capacity id="resource_cash">10000</Capacity> 
 </Building>
   

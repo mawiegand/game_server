@@ -1,0 +1,2 @@
+module Action::Fundamental::ChangeCharacterPasswordActionsHelper
+end

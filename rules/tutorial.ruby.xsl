@@ -330,7 +330,7 @@ end
 <xsl:template match="Message">
             :<xsl:value-of select="@lang"/> => {
               :subject => '<xsl:value-of select="Subject" />',
-              :body => '<xsl:value-of select="Body" />',
+              :body => "<xsl:value-of select="Body" />",
             },
 </xsl:template>
 

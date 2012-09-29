@@ -151,6 +151,48 @@ class Military::Army < ActiveRecord::Base
     !self.battle_id.nil? && self.battle_id > 0
   end
   
+  def can_found_outpost?
+    return false    if self.details.nil?
+    
+    founder = nil
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      founder = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    !founder.nil?
+  end
+  
+  def found_outpost!
+    return   if owner.nil? || location.nil?    
+    owner.update_settlement_points_used
+    return   unless owner.can_found_outpost?
+    return   unless location.can_found_outpost_here?
+    return   unless can_found_outpost?
+    
+    settlement = Settlement::Settlement.create_settlement_at_location(location, 3, owner)    
+    raise InternalServerError.new('Could not found outpost.') if settlement.nil?
+
+    consume_one_settlement_founder!
+    
+    settlement
+  end
+  
+  def consume_one_settlement_founder!
+    raise InternalServerError.new("no army details")   if self.details.nil?
+      
+    consume_type = nil
+  
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      consume_type = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    raise InternalServerError.new("no settlement founder in army")   if consume_type.nil?
+    
+    self.details.decrement(consume_type[:db_field], 1)
+    self.details.save!
+    self.save!
+  end
+  
   def critical_damage_bonus
     logger.debug "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
     puts "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
@@ -612,14 +654,18 @@ class Military::Army < ActiveRecord::Base
       if self.region_id_changed? && !self.region_id_change[0].blank?
         logger.debug "Set armies changed timestamp at old region."
         old_region = Map::Region.find_by_id(self.region_id_change[0])
-        old_region.armies_changed_at = change_timestamp    unless old_region.nil?
-        old_region.save
+        unless old_region.nil?
+          old_region.armies_changed_at = change_timestamp    
+          old_region.save
+        end
       end      
       if self.location_id_changed? && !self.location_id_change[0].blank?
         logger.debug "Set armies changed timestamp at old location."
         old_location = Map::Location.find_by_id(self.location_id_change[0])
-        old_location.armies_changed_at = change_timestamp    unless old_location.nil?
-        old_location.save
+        unless old_location.nil?
+          old_location.armies_changed_at = change_timestamp    
+          old_location.save
+        end
       end
       
       true

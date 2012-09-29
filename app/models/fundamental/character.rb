@@ -1,3 +1,5 @@
+require 'identity_provider/access'
+
 class Fundamental::Character < ActiveRecord::Base
 
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
@@ -71,6 +73,8 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end  
   
+
+  
   def online?
     !self.last_request_at.nil? && self.last_request_at + 2.minutes > Time.now
   end
@@ -86,6 +90,19 @@ class Fundamental::Character < ActiveRecord::Base
   def male?
     !female?   # presently, due to community structure, male is the default in case nothing is set
   end
+  
+  def settlement_point_available?
+    (settlement_points_used || 0) < (settlement_points_total || 0)
+  end
+
+  
+  def can_found_outpost?
+    settlement_point_available?
+  end
+  
+  def can_takeover_settlement?
+    settlement_point_available?
+  end  
   
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
@@ -130,7 +147,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_outbox
       character.create_archive
       
-      Messaging::Message.create_welcome_message(character)
+      # sending of welcome message is now triggered by a tutorial quest
+      # Messaging::Message.create_welcome_message(character)
       
       character.create_tutorial_state
       character.tutorial_state.create_start_quest_state     
@@ -144,13 +162,23 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
-    raise ConflictError.new("this name is already used by someone else") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
+    raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
     freeChange = (self.name_change_count || 0) < 1 
     
     if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the name change."
     end
+
+    # change name on identity provider
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.change_character_name(self.identifier, name)
+    raise ConflictError.new("this name is already used in identity provider") unless response.code == 200
     
     self.name = name
     self.increment(:name_change_count)  
@@ -182,6 +210,18 @@ class Fundamental::Character < ActiveRecord::Base
     end
   
     return self
+  end  
+  
+  def change_password_transaction(password)
+
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.change_character_passwort(self.identifier, password)
+    raise ConflictError.new('Could not change password.') unless response.code == 200
   end  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
@@ -408,6 +448,10 @@ class Fundamental::Character < ActiveRecord::Base
 
     settlement_points = recalc_settlement_points_total
     check_and_apply_settlement_points_total(settlement_points)
+
+    settlement_points_used = recalc_settlement_points_used
+    check_and_apply_settlement_points_used(settlement_points_used)
+
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -425,6 +469,21 @@ class Fundamental::Character < ActiveRecord::Base
   #
   ############################################################################  
   
+  def recalc_settlement_points_used
+    self.settlements.count
+  end
+  
+  def update_settlement_points_used
+    self.settlement_points_used = recalc_settlement_points_used
+  end  
+  
+  def check_and_apply_settlement_points_used(points)
+    if (self.settlement_points_used || 0) !=  points
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC FOR USED POINTS DIFFERS for character #{self.id}. Old: #{self.settlement_points_used} Corrected: #{points}.")
+      self.settlement_points_used = points
+    end    
+  end  
+  
   def recalc_settlement_points_total
     sp = 0
     ranks = GameRules::Rules.the_rules.character_ranks[:mundane]
@@ -436,7 +495,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def check_and_apply_settlement_points_total(points)
     if (self.settlement_points_total || 0) !=  points
-      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
+      logger.warn(">>> CONSISTENCY ERROR: SETTLEMENT POINT RECALC FOR TOTAL POINTS DIFFERS for character #{self.id}. Old: #{self.settlement_points_total} Corrected: #{points}.")
       self.settlement_points_total = points
     end    
   end  

@@ -6,13 +6,14 @@ one:
   home_settlement_id: 1
   home_settlement_name: MyString
   location_id: 1
+  region_id: 1
   owner_id: 1
   owner_name: MyString
   alliance_id: 1
   alliance_tag: MyString
   mode: 1
   stance: 1
-  size_max: 1
+  size_max: 1000
   size_present: 1
   strength: 1
   exp: 1
@@ -37,7 +38,7 @@ two:
   alliance_tag: MyString
   mode: 1
   stance: 1
-  size_max: 1
+  size_max: 1000
   size_present: 1
   strength: 1
   exp: 1

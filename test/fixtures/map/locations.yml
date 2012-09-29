@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+one:    # this location is owned by the owner-character and has a settlement on it
+  id: 1
   region_id: 1
   slot: 1
   count_markers: 1
@@ -10,12 +11,10 @@ one:
   alliance_id: 1
   visible: false
 
-two:
-  region_id: 1
+two:   # this one is not owned by anybody and is empty
+  id: 2
+  region_id: 2
   slot: 1
   count_markers: 1
   count_armies: 1
-  owner_id: 1
-  owner_name: MyString
-  alliance_id: 1
   visible: false

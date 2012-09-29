@@ -29,6 +29,7 @@ class GameRules::Rules
   include ActiveModel::Serializers::JSON
   include ActiveModel::Serializers::Xml
   include ActiveModel::Conversion
+  include GameRules::RulesHelper
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
@@ -1505,7 +1506,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1.5,
   
-            :unitcategory_siege => 0.8,
+            :unitcategory_siege => 1,
   
             :unitcategory_special => 1,
                 
@@ -1609,7 +1610,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1.5,
   
-            :unitcategory_siege => 0.8,
+            :unitcategory_siege => 1,
   
             :unitcategory_special => 1,
                 
@@ -1722,7 +1723,7 @@ class GameRules::Rules
   
             :unitcategory_artillery => 1,
   
-            :unitcategory_siege => 0.8,
+            :unitcategory_siege => 1.0,
   
             :unitcategory_special => 1,
                 
@@ -1839,6 +1840,11 @@ class GameRules::Rules
 
             ]
           ],          
+
+          :can_create => [
+3,
+
+          ],
 
 
         },              #   END OF Little Chief
@@ -2480,19 +2486,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
+                :formula            => "200000",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)",
+                :formula            => "200000",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)*0.5",
+                :formula            => "200000",
               },
             
               {
@@ -5296,7 +5302,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Außenlager eines Stammes.",
   
-            :en_US => "a small encampment of a tribe.",
+            :en_US => "A small encampment of a tribe.",
                 
           },
 
@@ -5312,14 +5318,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              3,
+              2,
               
               ],
             },
             1 => {
               :max_level => 20,
               
-              :building  => 0,
+              :building  => 4,
               
               :level  => 1,
               
@@ -5335,6 +5341,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
+              3,
               4,
               5,
               
@@ -5366,7 +5373,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5376,7 +5383,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5386,7 +5393,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5396,7 +5403,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5406,7 +5413,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5416,7 +5423,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5426,7 +5433,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5436,7 +5443,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :level  => 0,
               
               :options   => [
-              5,
+              4,
               
               ],
             },
@@ -5669,7 +5676,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  1
           :id          => 1, 
-          :exp         => 100000000,
+          :exp         => 1000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5677,6 +5684,71 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :de_DE => "Kläglicher Anführer",
   
             :en_US => "Feeble Leader",
+                
+          },
+        },             #   END OF 
+        {              #  2
+          :id          => 2, 
+          :exp         => 4000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer erprobungshalber",
+  
+            :en_US => "Junior Leader",
+                
+          },
+        },             #   END OF 
+        {              #  3
+          :id          => 3, 
+          :exp         => 16000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Anführer",
+  
+            :en_US => "Leader",
+                
+          },
+        },             #   END OF 
+        {              #  4
+          :id          => 4, 
+          :exp         => 64000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Bekannter Anführer",
+  
+            :en_US => "Known Leader",
+                
+          },
+        },             #   END OF 
+        {              #  5
+          :id          => 5, 
+          :exp         => 256000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Großer Anführer",
+  
+            :en_US => "Great Leader",
+                
+          },
+        },             #   END OF 
+        {              #  6
+          :id          => 6, 
+          :exp         => 100000000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
                 
           },
         },             #   END OF 

@@ -8,6 +8,8 @@ class Map::Location < ActiveRecord::Base
   has_many   :battles,    :class_name => "Military::Battle",                                      :inverse_of => :location
   has_one    :settlement, :class_name => "Settlement::Settlement", :foreign_key => 'location_id', :inverse_of => :location
 
+  scope :excluding_fortress_slots,  where(['slot <> ?', 0])
+  scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
 
   def self.find_empty
     Map::Location.where("settlement_type_id = ?", 0).offset(Random.rand(Map::Location.where("settlement_type_id = ?", 0).count)).first
@@ -42,6 +44,10 @@ class Map::Location < ActiveRecord::Base
   
   def can_be_retreated_to?(character)
     !owner.nil? && (owner == character || owner.is_ally_of?(character))
+  end
+  
+  def can_found_outpost_here?
+    !fortress? && settlement.nil?
   end
 
 end

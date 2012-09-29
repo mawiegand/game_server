@@ -1033,12 +1033,12 @@ class Tutorial::Tutorial
             
             :en => {
               :subject => 'Subject',
-              :body => 'Message with content',
+              :body => "Message with content",
             },
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => ' Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.',
+              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.",
             },
 
           },          
@@ -1220,6 +1220,7 @@ class Tutorial::Tutorial
           :message => {
             
             :en => {
+<<<<<<< HEAD
               :subject => 'Subject',
               :body => 'Message with content',
             },
@@ -1227,6 +1228,38 @@ class Tutorial::Tutorial
             :de => {
               :subject => 'Nachricht vom Questgeber',
               :body => ' Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.',
+=======
+              :subject => 'Welcome to Wack-a-Doo',
+              :body => "<h2>Welcome to the half-offical testround of Wack-a-Doo</h2>
+                <p>With this round we will be testing our software and our servers. Nevertheless, we hope you'll enjoy playing Wack-a-Doo.</p>
+                <p>Presently, there's no tutorial. To get started, please have a look at these screenshots explaining the interface:</p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+                <p>Wack-a-Doo is still under construction. In this testround we will fix bugs on the fly, and also introduce new features while you're playing. So please expect changes and more interesting stuff to come.</p>
+                <p>We would be pleased to get your feedback, either via email or by posting in the forum (German):</p>
+                <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
+                <p>A more detailed description of game mechanics and attributes of buildings and units can be found in our wiki (presently only in German):</p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+                <p>We wish you a pleasent time in Wack-a-Doo.</p>
+                <p>The Wack-a-Doo Team</p>",
+            },
+
+            :de => {
+              :subject => 'Willkommen bei Wack-a-Doo',
+              :body => "<h2>Willkommen in der halböffentlichen geschlossenen Erprobungsrunde</h2>
+                <p>Mit dieser Runde wollen wir unser Spielsystem und unsere Server testen, und sind sehr gespannt auf Deine Interpretation von Wack-a-Doo.</p>
+                <p>Zur besseren Orientierung empfehlen wir Dir die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+                <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>
+                <p>Wack-a-Doo befindet sich gerade in der Entwicklungsphase. In dieser Erprobungsrunde werden wir natürlich auftretende Fehler beheben, wollen aber laufend Neuerungen oder Verbesserungen vornehmen. Jede Änderung werden wir entsprechend ankündigen.</p>
+                <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
+                <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
+                <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
+                <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in unserem Wiki zusammengefasst:</p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+                <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>
+                <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>
+                <p>Das Wack-a-Doo Team</p>",
+>>>>>>> master
             },
 
           },          

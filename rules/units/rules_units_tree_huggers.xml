@@ -29,6 +29,7 @@
       <CriticalDamage chance="0.02">2</CriticalDamage>
       <Armor>9</Armor>
       <Overrunnable>true</Overrunnable>
+<<<<<<< HEAD
       <Hitpoints>135</Hitpoints>
       <Effectiveness category="unitcategory_infantry">0.75</Effectiveness>
       <Effectiveness category="unitcategory_cavalry">1.5</Effectiveness>
@@ -44,3 +45,12 @@
         <Requirement id="building_copper_smelter" min_level="1" />
       </RequirementGroup>
     </Unit>
+=======
+      <Hitpoints>100</Hitpoints>
+      <Effectiveness category="unitcategory_infantry">1</Effectiveness>
+      <Effectiveness category="unitcategory_cavalry">1.2</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">0.92</Effectiveness>
+      <Effectiveness category="unitcategory_siege">0.8</Effectiveness>
+      <Effectiveness category="unitcategory_special">1</Effectiveness>                  
+    </Unit>
+>>>>>>> master

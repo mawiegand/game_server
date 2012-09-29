@@ -6,8 +6,28 @@
     <Name lang="de_DE">Grünling</Name>
     <Name lang="en_US">Newbie</Name>
   </MundaneRank>
-  <MundaneRank exp="100000000" settlementPoints="1" mininumSacredRank="0">
+  <MundaneRank exp="1000" settlementPoints="1" mininumSacredRank="0">
     <Name lang="de_DE">Kläglicher Anführer</Name>
     <Name lang="en_US">Feeble Leader</Name>
+  </MundaneRank>
+  <MundaneRank exp="4000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Anführer erprobungshalber</Name>
+    <Name lang="en_US">Junior Leader</Name>
+  </MundaneRank>
+  <MundaneRank exp="16000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Anführer</Name>
+    <Name lang="en_US">Leader</Name>
+  </MundaneRank>
+  <MundaneRank exp="64000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Bekannter Anführer</Name>
+    <Name lang="en_US">Known Leader</Name>
+  </MundaneRank>
+  <MundaneRank exp="256000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Großer Anführer</Name>
+    <Name lang="en_US">Great Leader</Name>
+  </MundaneRank>
+  <MundaneRank exp="100000000" settlementPoints="1" mininumSacredRank="0">
+    <Name lang="de_DE">Fantastischer Anführer</Name>
+    <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
 </MundaneRanks>

@@ -27,5 +27,6 @@ client
 /rules/*.cpp
 /rules/*.o
 /rules/database_fields
+/rules/*.german.html
 
 /config/thin_local.yml

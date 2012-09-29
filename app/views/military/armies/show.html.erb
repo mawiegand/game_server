@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Details:</b>
+  <% if @military_army.details.nil? %>
+    missing
+  <% else%>
+    <%= link_to "##{@military_army.details.id}", military_army_detail_path( @military_army.details ) %>
+  <% end %>
+</p>
+
+
+<p>
   <b>Name:</b>
   <%= @military_army.name %>
 </p>

@@ -4,6 +4,13 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
   
   fixtures 'military/armies'
 
+
+  # ##########################################################################
+  #
+  #   CHARACTER CUSTOMIZATION
+  #
+  # ##########################################################################  
+
   test "can name character" do
     character = Fundamental::Character.new({
       name: "name1",
@@ -12,19 +19,19 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert_equal character.name, 'name1'
   end
 
-  test "can change character name once" do
-    character = Fundamental::Character.new({
-      name: "name1",
-    })
-    assert character.save
-    assert_equal character.name, 'name1'
-    assert character.name_change_count.nil? || character.name_change_count == 0
-    
-    character.change_name_transaction('name2')
-    character.reload
-    assert_equal character.name, 'name2'
-    assert character.name_change_count == 1
-  end
+  # test "can change character name once" do
+    # character = Fundamental::Character.new({
+      # name: "name1",
+    # })
+    # assert character.save
+    # assert_equal character.name, 'name1'
+    # assert character.name_change_count.nil? || character.name_change_count == 0
+#     
+    # character.change_name_transaction('name2')
+    # character.reload
+    # assert_equal character.name, 'name2'
+    # assert character.name_change_count == 1
+  # end
   
   test "can change character gender once" do
     character = Fundamental::Character.new({
@@ -44,19 +51,25 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert_equal 1, character.gender_change_count
   end
 
-  test "enforces unique character names" do
-    character = Fundamental::Character.new({
-      name: "name1",
-    })
-    assert character.save
-    assert_equal character.name, 'name1'
-
-    assert_raise(ConflictError) do
-      character.change_name_transaction('Owner')
-    end
-    assert_equal character.name, 'name1'
-    assert character.name_change_count.nil? || character.name_change_count == 0
-  end
+  # test "enforces unique character names" do
+    # character = Fundamental::Character.new({
+      # name: "name1",
+    # })
+    # assert character.save
+    # assert_equal character.name, 'name1'
+# 
+    # assert_raise(ConflictError) do
+      # character.change_name_transaction('Owner')
+    # end
+    # assert_equal character.name, 'name1'
+    # assert character.name_change_count.nil? || character.name_change_count == 0
+  # end
+#   
+  # ##########################################################################
+  #
+  #   RANK PROGRESSION AND EXPERIENCE
+  #
+  # ##########################################################################  
   
   test "accumulates experience from armies" do
     army  = military_armies(:one)
@@ -80,7 +93,7 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
       army.destroy
     end 
   end
-  
+
   
   test "correctly advances mundane ranks and adds skill points" do
     character = Fundamental::Character.find(1)
@@ -147,6 +160,12 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     assert_equal skill_points_per_rank*2, character.skill_points  
 
   end
+  
+  # ##########################################################################
+  #
+  #   CONSISTENCY CHECK RELATED
+  #
+  # ##########################################################################
 
   test "consistency check correctly repairs character" do
     character = Fundamental::Character.find(1)
@@ -155,15 +174,18 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     sp_r1 = (ranks[1][:settlement_points] || 0) + sp_r0
     
     assert_not_nil character
+    sp_used = character.recalc_settlement_points_used
     
     character.exp = 0         
     character.mundane_rank = 1
     character.skill_points = nil
     character.settlement_points_total = 0
+    character.settlement_points_used = sp_used + 10
     assert character.save
     
     character.check_consistency
-    assert_equal sp_r1, character.settlement_points_total
+    assert_equal sp_r1,   character.settlement_points_total
+    assert_equal sp_used, character.settlement_points_used
 
     character.mundane_rank = 0
     character.check_consistency
@@ -172,5 +194,63 @@ class Fundamental::CharacterTest < ActiveSupport::TestCase
     character.check_consistency
     assert_equal sp_r0, character.settlement_points_total    
   end
+  
+  # ##########################################################################
+  #
+  #   SETTLEMENT POINTS RELATED
+  #
+  # ##########################################################################
+  
+  test "increment settlement points on home settlement creation" do
+    character = fundamental_characters(:owner)
+    location  = map_locations(:two)
+    region    = map_regions(:one)
+    node      = map_nodes(:one)
+
+    region.node     = node
+    location.region = region
+    character.update_settlement_points_used
+    
+    assert_difference(lambda { character.settlement_points_used }, 1) do
+      settlement = Settlement::Settlement.create_settlement_at_location(location, 2, character)
+      assert character.reload
+      assert_not_nil settlement
+    end
+  end
+
+
+  test "update settlement points correctly on settlement ownership change" do
+    character = fundamental_characters(:owner)
+    new_owner = fundamental_characters(:ally)
+    location  = map_locations(:two)
+    region    = map_regions(:one)
+    node      = map_nodes(:one)
+
+    region.node     = node
+    location.region = region
+    new_owner.resource_pool = fundamental_resource_pools(:two)
+    
+    settlement = Settlement::Settlement.create_settlement_at_location(location, 2, character)
+    assert character.reload
+    assert_not_nil settlement
+    assert_equal character, settlement.owner
+
+    new_owner.update_settlement_points_used
+    character.update_settlement_points_used
+    
+    
+    assert_difference(lambda { new_owner.settlement_points_used }, 1) do
+      assert_difference(lambda { character.settlement_points_used }, -1) do
+        settlement.new_owner_transaction(new_owner)
+        assert_equal new_owner, settlement.owner
+        
+        assert character.reload
+        assert new_owner.reload
+      end
+    end
+
+  end
+
+
 
 end
