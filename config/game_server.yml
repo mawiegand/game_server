@@ -29,7 +29,7 @@ development:
   <<: *defaults
   base_time_factor: 1
   
-  identity_provider_base_url: 'https://localhost/identity_provider'
+  identity_provider_base_url: 'https://5dentity.localhost'
 
   payment_provider_base_url: 'https://localhost/payment_provider'
 
