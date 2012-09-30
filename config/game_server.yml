@@ -15,7 +15,7 @@ defaults: &defaults
 
   default_character_name: 'WackyUser'
   
-  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
+  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
   
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
