@@ -26,7 +26,7 @@
       <Name> the first building</Name>
       <Name locale="de_DE">Das erste Gebäude</Name>
      <Task>Build one Gatherer</Task>
-      <Task locale="de_DE"> Gib einen Jäger und Sammler Stufe 1 in Auftrag. </Task>
+      <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag. </Task>
       <Description locale="de_DE">
         <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler. Du kannst jederzeit alle laufenden Quests sehen, indem du oben rechts auf den Quests Knopf drückst.</p>
       </Description>
@@ -39,9 +39,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Rewards>
-        <ExperienceReward>12</ExperienceReward>
-      </Rewards>
       <RewardTests>
         <ConstructionQueueTest building="building_gatherer" min_count="1" />
       </RewardTests>
@@ -51,7 +48,7 @@
       <Name> the first building</Name>
       <Name locale="de_DE">Auf den Bauauftrag warten.</Name>
      <Task>Build one Gatherer</Task>
-      <Task locale="de_DE"> Warte bis der Jäger und Sammler Stufe 1 fertiggestellt wurde.</Task>
+      <Task locale="de_DE"> Warte bis der Jäger und Sammler Level 1 fertiggestellt wurde.</Task>
       <Description locale="de_DE">
         <p>Bauaufträge brauchen Zeit. Sie werden allerdings auch weiter ausgeführt, wenn du nicht im Spiel bist.</p>
       </Description>
@@ -69,7 +66,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
-        <ExperienceReward>12</ExperienceReward>
+        <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
@@ -98,7 +95,7 @@
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">40</ResourceReward>    
         <ResourceReward resource="resource_fur">30</ResourceReward>
-        <ExperienceReward>12</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="2" />
@@ -127,6 +124,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">25</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
@@ -137,7 +135,7 @@
       <Name></Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue zwei weitere Jäger und Sammler Stufe 1.</Task>
+      <Task locale="de_DE">Baue zwei weitere Jäger und Sammler Level 1.</Task>
       <Description locale="de_DE">
         <p>Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Es wird allerdings nur das erste gebaut, das andere geht in die Bauschleife und wird angefangen, sobald das erste fertiggestellt wurde.</p>
       </Description>
@@ -155,7 +153,7 @@
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
-        <ExperienceReward>12</ExperienceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="4" />
@@ -173,9 +171,9 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen.</Flavor>
+      <Flavor locale="de_DE">Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen? Dann fühlt er sich wohler und bringt dir mehr Ressourcen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Stufe 10 ausgebaut werden.</RewardText>
+      <RewardText locale="de_DE">Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"> Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -184,7 +182,7 @@
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
-        <ExperienceReward>12</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
@@ -195,7 +193,7 @@
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Stufe 2 aus.</Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
       <Description locale="de_DE">
         <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
       </Description>
@@ -213,6 +211,7 @@
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
         <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="2" />
@@ -241,7 +240,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
-        <ExperienceReward>12</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_change_profile">change profile text</CustomTest>
@@ -272,6 +271,7 @@
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">30</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
@@ -300,6 +300,7 @@
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <TextboxTest id="test_army_rank" />
@@ -317,7 +318,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Festungen sind die Zentren der Macht. Hol sie dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht?Ich glaub' es einfach nicht, dass du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!</Flavor>
+      <Flavor locale="de_DE">Festungen sind die Zentren der Macht. Hol sie dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht? Ich glaub' es einfach nicht, dass du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Festungen ziehen Steuern aus der Region ein, die sie beherrschen. Der Steuersatz liegt bei 5-20% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -328,6 +329,7 @@
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <TextboxTest id="test_fortress_owner">fortress owner in Region</TextboxTest>
@@ -354,6 +356,7 @@
       <Requirement quest="quest_settlementowner" />
       <Rewards>
         <ResourceReward resource="resource_cash">15</ResourceReward>  
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
@@ -390,6 +393,7 @@
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
         <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
@@ -418,6 +422,7 @@
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
 	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
@@ -477,6 +482,7 @@
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
@@ -489,7 +495,7 @@
       <Task></Task>
       <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
+        <p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -505,6 +511,7 @@
         <ResourceReward resource="resource_stone">220</ResourceReward>  
         <ResourceReward resource="resource_wood">220</ResourceReward>    
         <ResourceReward resource="resource_fur">110</ResourceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="3" />
@@ -533,6 +540,7 @@
         <ResourceReward resource="resource_stone">80</ResourceReward>  
         <ResourceReward resource="resource_wood">70</ResourceReward>    
         <ResourceReward resource="resource_fur">90</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
@@ -559,6 +567,7 @@
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">3</UnitReward>  
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <TrainingQueueTest unit="unit_clubbers" min_count="1" />
@@ -617,7 +626,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">65</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward> 
+        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
@@ -645,7 +655,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward> 
+        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
         <MovementTest />
@@ -673,7 +684,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
         <ResourceReward resource="resource_wood">250</ResourceReward>    
-        <ResourceReward resource="resource_fur">125</ResourceReward> 
+        <ResourceReward resource="resource_fur">125</ResourceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="4" />
@@ -701,7 +713,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">65</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward> 
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
@@ -730,6 +743,7 @@
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">105</ResourceReward>    
         <ResourceReward resource="resource_fur">45</ResourceReward> 
+        <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
         <AllianceTest />
@@ -772,7 +786,7 @@
       <Task></Task>
       <Task locale="de_DE">Baue ein Rohstofflager.</Task>
       <Description locale="de_DE">
-        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karrenden Handel mit anderen Spielern.</p>
+        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karren den Handel mit anderen Spielern.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -787,7 +801,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">65</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward> 
+        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_storage" min_level="1" />
@@ -846,7 +861,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>  
         <ResourceReward resource="resource_wood">250</ResourceReward>    
-        <ResourceReward resource="resource_fur">125</ResourceReward> 
+        <ResourceReward resource="resource_fur">125</ResourceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="5" />
@@ -874,7 +890,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward> 
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_quarry" min_level="1" />
@@ -886,14 +903,14 @@
       <Name>Noch mehr Holzfäller und Steinbrüche</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE">5 Steinbruch und 5 Holzfäller auf Level 5 ausbauen</Task>
+      <Task locale="de_DE">5 Steinbrüche und 5 Holzfäller auf Level 5 ausbauen</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und die dann ausbauen. </Flavor>
+      <Flavor locale="de_DE">Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Wow, guck mal wie viel Rohstoffe du produzierst. Ist ja cool.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -903,7 +920,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>  
         <ResourceReward resource="resource_wood">300</ResourceReward>    
-        <ResourceReward resource="resource_fur">60</ResourceReward> 
+        <ResourceReward resource="resource_fur">60</ResourceReward>
+        <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_quarry" min_level="5" min_count="5" />
@@ -932,7 +950,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward> 
+        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="10" />
@@ -962,7 +981,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
-        <ResourceReward resource="resource_fur">250</ResourceReward> 
+        <ResourceReward resource="resource_fur">250</ResourceReward>
+        <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
         <SettlementTest type="settlement_outpost" min_count="1" />

@@ -4432,6 +4432,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
+
+            :unlock_prevent_takeover => 1,            
     
           },
 
@@ -5830,7 +5832,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  1
           :id          => 1, 
-          :exp         => 1000,
+          :exp         => 2000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5843,7 +5845,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  2
           :id          => 2, 
-          :exp         => 4000,
+          :exp         => 5000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5856,7 +5858,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  3
           :id          => 3, 
-          :exp         => 16000,
+          :exp         => 9500,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5869,7 +5871,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  4
           :id          => 4, 
-          :exp         => 64000,
+          :exp         => 16250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5882,7 +5884,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  5
           :id          => 5, 
-          :exp         => 256000,
+          :exp         => 25750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
@@ -5895,7 +5897,436 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  6
           :id          => 6, 
-          :exp         => 100000000,
+          :exp         => 38250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  7
+          :id          => 7, 
+          :exp         => 54250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  8
+          :id          => 8, 
+          :exp         => 74250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  9
+          :id          => 9, 
+          :exp         => 98750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  10
+          :id          => 10, 
+          :exp         => 128250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  11
+          :id          => 11, 
+          :exp         => 163250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  12
+          :id          => 12, 
+          :exp         => 204250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  13
+          :id          => 13, 
+          :exp         => 251750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  14
+          :id          => 14, 
+          :exp         => 306000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  15
+          :id          => 15, 
+          :exp         => 367500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  16
+          :id          => 16, 
+          :exp         => 436750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  17
+          :id          => 17, 
+          :exp         => 514000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  18
+          :id          => 18, 
+          :exp         => 599500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  19
+          :id          => 19, 
+          :exp         => 693500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  20
+          :id          => 20, 
+          :exp         => 796250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  21
+          :id          => 21, 
+          :exp         => 907250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  22
+          :id          => 22, 
+          :exp         => 1028250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  23
+          :id          => 23, 
+          :exp         => 1157750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  24
+          :id          => 24, 
+          :exp         => 1296250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  25
+          :id          => 25, 
+          :exp         => 1443500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  26
+          :id          => 26, 
+          :exp         => 1599500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  27
+          :id          => 27, 
+          :exp         => 1764000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  28
+          :id          => 28, 
+          :exp         => 1936750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  29
+          :id          => 29, 
+          :exp         => 2117250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  30
+          :id          => 30, 
+          :exp         => 2305250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  31
+          :id          => 31, 
+          :exp         => 2500250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  32
+          :id          => 32, 
+          :exp         => 2701750,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  33
+          :id          => 33, 
+          :exp         => 2909250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  34
+          :id          => 34, 
+          :exp         => 3122250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  35
+          :id          => 35, 
+          :exp         => 3340000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  36
+          :id          => 36, 
+          :exp         => 3562000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  37
+          :id          => 37, 
+          :exp         => 3787500,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  38
+          :id          => 38, 
+          :exp         => 4016000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Fantastischer Anführer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  39
+          :id          => 39, 
+          :exp         => 4246750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {

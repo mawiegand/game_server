@@ -79,7 +79,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build one Gatherer",
   
-            :de_DE => " Gib einen Jäger und Sammler Stufe 1 in Auftrag. ",
+            :de_DE => " Gib einen Jäger und Sammler Level 1 in Auftrag. ",
                 
           },
           :flavour => {
@@ -110,12 +110,6 @@ class Tutorial::Tutorial
             :en_US => " ",
                 
           },
-
-          :rewards => {
-            
-            :experience_reward => 12,
-
-          },          
 
           :reward_tests => {
             
@@ -148,7 +142,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build one Gatherer",
   
-            :de_DE => " Warte bis der Jäger und Sammler Stufe 1 fertiggestellt wurde.",
+            :de_DE => " Warte bis der Jäger und Sammler Level 1 fertiggestellt wurde.",
                 
           },
           :flavour => {
@@ -207,7 +201,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 12,
+            :experience_reward => 500,
 
           },          
 
@@ -305,7 +299,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 12,
+            :experience_reward => 200,
 
           },          
 
@@ -344,7 +338,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Baue zwei weitere Jäger und Sammler Stufe 1.",
+            :de_DE => "Baue zwei weitere Jäger und Sammler Level 1.",
                 
           },
           :flavour => {
@@ -403,7 +397,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 12,
+            :experience_reward => 100,
 
           },          
 
@@ -447,7 +441,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen. Dann fühlt er sich wohler und bringt dir mehr Ressourcen.",
+            :de_DE => "Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen? Dann fühlt er sich wohler und bringt dir mehr Ressourcen.",
   
             :en_US => "flavor text english",
                 
@@ -468,7 +462,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denke daran deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Stufe 10 ausgebaut werden.",
+            :de_DE => "Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.",
   
             :en_US => " ",
                 
@@ -501,7 +495,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 12,
+            :experience_reward => 200,
 
           },          
 
@@ -540,7 +534,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Baue deine Häuptlingshütte auf Stufe 2 aus.",
+            :de_DE => "Baue deine Häuptlingshütte auf Level 2 aus.",
                 
           },
           :flavour => {
@@ -598,6 +592,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 400,
 
           },          
 
@@ -695,7 +691,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 12,
+            :experience_reward => 200,
 
           },          
 
@@ -784,6 +780,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 200,
+
           },          
 
           :reward_tests => {
@@ -871,6 +869,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 200,
+
           },          
 
           :reward_tests => {
@@ -904,7 +904,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Festungen sind die Zentren der Macht. Hol sie dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht?Ich glaub' es einfach nicht, dass du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!",
+            :de_DE => "Festungen sind die Zentren der Macht. Hol sie dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht? Ich glaub' es einfach nicht, dass du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!",
   
             :en_US => "flavor text english",
                 
@@ -957,6 +957,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 200,
 
           },          
 
@@ -1034,6 +1036,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 200,
 
           },          
 
@@ -1136,6 +1140,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 100,
+
           },          
 
           :reward_tests => {
@@ -1222,6 +1228,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 200,
 
           },          
 
@@ -1347,6 +1355,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 100,
+
           },          
 
           :reward_tests => {
@@ -1396,7 +1406,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Auf den Stufen 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
+            :de_DE => "<p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1442,6 +1452,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 400,
 
           },          
 
@@ -1539,6 +1551,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 100,
+
           },          
 
           :reward_tests => {
@@ -1624,6 +1638,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 200,
 
           },          
 
@@ -1717,6 +1733,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 300,
+
           },          
 
           :reward_tests => {
@@ -1809,6 +1827,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 300,
+
           },          
 
           :reward_tests => {
@@ -1893,6 +1913,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 400,
 
           },          
 
@@ -1990,6 +2012,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 100,
+
           },          
 
           :reward_tests => {
@@ -2086,6 +2110,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 300,
+
           },          
 
           :reward_tests => {
@@ -2124,7 +2150,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karrenden Handel mit anderen Spielern.</p>",
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karren den Handel mit anderen Spielern.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2170,6 +2196,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 100,
 
           },          
 
@@ -2267,6 +2295,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 400,
+
           },          
 
           :reward_tests => {
@@ -2363,6 +2393,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 100,
+
           },          
 
           :reward_tests => {
@@ -2409,12 +2441,12 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "5 Steinbruch und 5 Holzfäller auf Level 5 ausbauen",
+            :de_DE => "5 Steinbrüche und 5 Holzfäller auf Level 5 ausbauen",
                 
           },
           :flavour => {
             
-            :de_DE => " Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und die dann ausbauen. ",
+            :de_DE => "Wenn du deine Rohstoffproduktion steigern willst, musst du mehr Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.",
   
             :en_US => "flavor text english",
                 
@@ -2467,6 +2499,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 250,
 
           },          
 
@@ -2573,6 +2607,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 300,
+
           },          
 
           :reward_tests => {
@@ -2668,6 +2704,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 250,
 
           },          
 
