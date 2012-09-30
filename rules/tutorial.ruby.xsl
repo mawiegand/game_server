@@ -223,6 +223,9 @@ end
 <xsl:apply-templates select="UnitReward" />
             ],
 </xsl:if>
+<xsl:if test="ExperienceReward">
+            :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">

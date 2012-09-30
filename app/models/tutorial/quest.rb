@@ -417,9 +417,13 @@ class Tutorial::Quest < ActiveRecord::Base
       self.closed_at = Time.now
       self.save
   
-      # reward resources and units
+      # reward resources, units and experience
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
+      unless rewards[:experience_reward].nil?
+        self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
+        self.tutorial_state.owner.save
+      end
     end
     
     # check queues for waiting jobs, that can start with rewarded resources

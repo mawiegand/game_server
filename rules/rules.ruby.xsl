@@ -677,6 +677,7 @@ end
 <xsl:apply-templates select="CommandPoints" />    
 <xsl:apply-templates select="TradingCarts" />    
 <xsl:apply-templates select="UnlockP2PTrade" />    
+<xsl:apply-templates select="PreventTakeover" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
 <xsl:apply-templates select="ArmySizeBonus" />    
 <xsl:apply-templates select="UnlockDiplomacy" />    
@@ -708,6 +709,10 @@ end
 
 <xsl:template match="UnlockP2PTrade">
             :unlock_p2p_trade => <xsl:value-of select="@level" />,            
+</xsl:template>
+
+<xsl:template match="PreventTakeover">
+            :unlock_prevent_takeover => <xsl:value-of select="@level" />,            
 </xsl:template>
 
 <xsl:template match="UnlockDiplomacy">

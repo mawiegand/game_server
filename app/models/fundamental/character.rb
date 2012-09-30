@@ -104,6 +104,7 @@ class Fundamental::Character < ActiveRecord::Base
     settlement_point_available?
   end  
   
+  # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
   def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
     character = Fundamental::Character.new({
       identifier: identifier,
@@ -116,7 +117,6 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     character.create_resource_pool
-    character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
@@ -136,6 +136,10 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_location_id = location.id
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
+      
+      character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+      
+      character
     end
     
     if !character.save
