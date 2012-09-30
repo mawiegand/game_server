@@ -6,7 +6,7 @@
   <Name lang="de_DE">Neandertaler</Name>
   <Description lang="de_DE">
     <p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p>
-    <p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Angreifen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>
+    <p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>
   </Description>
   <Description lang="en_US">
     <p>Fierce Fighters.</p>
@@ -15,7 +15,7 @@
     <p>Don't talk, fight.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Reden nicht, handeln. Äh, schlagen.</p>
+    <p>Neandertaler reden nicht, sie handeln äh, schlagen.</p>
   </Flavour>
 	<Requirement id="building_stud" min_level="100" />
   <Cost id="resource_stone" round="true">40</Cost>  

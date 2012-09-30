@@ -15,7 +15,7 @@
     <p>Kills opposing units.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Ein Halber Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre nur ein Bonus.</p>
+    <p>Ein Kleiner Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre ein Bonus.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">3000</Cost>  
   <Cost id="resource_wood" round="true">3000</Cost>    

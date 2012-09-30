@@ -1101,7 +1101,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. Zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p>",
+            :de_DE => "<p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -1205,7 +1205,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als zur Verfügung stehen. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
+            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
   
             :en_US => "<p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>",
                 
@@ -1313,7 +1313,7 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine Gefahr dar.</p>",
+            :de_DE => "<p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>",
                 
           },
           :description => {
@@ -1378,7 +1378,7 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zu winken oder seinen Feinden den Schädel einzuhauen.</p>",
+            :de_DE => "<p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zuzuwinken oder seinen Feinden den Schädel einzuhauen.</p>",
                 
           },
           :description => {
@@ -1487,7 +1487,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine werfen. Besonders Fernkämpfer mit ihren geringen Rüstungen sind willkommene Ziele.</p><p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
+            :de_DE => "<p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine auf ungeschützte Fernkämpfer werfen.</p><p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
   
             :en_US => "<p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>",
                 
@@ -1699,12 +1699,12 @@ class GameRules::Rules
             
             :en_US => "<p>Don't talk, fight.</p>",
   
-            :de_DE => "<p>Reden nicht, handeln. Äh, schlagen.</p>",
+            :de_DE => "<p>Neandertaler reden nicht, sie handeln äh, schlagen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Angreifen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
+            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
   
             :en_US => "<p>Fierce Fighters.</p>",
                 
@@ -1779,7 +1779,7 @@ class GameRules::Rules
             
             :en_US => "<p>Kills opposing units.</p>",
   
-            :de_DE => "<p>Ein Halber Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre nur ein Bonus.</p>",
+            :de_DE => "<p>Ein Kleiner Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre ein Bonus.</p>",
                 
           },
           :description => {
@@ -2550,7 +2550,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten, schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p><p>Er jagt und sammelt einfach alles was ihm vor die Flinte -äh Steinschleuder- kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten, schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p><p>Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
   
             :en_US => "<p>Hunting and gathering everything useful which comes in sight and is accordingly the collector of basic resources for the daily needs. He comes home with wood, stones and easily slain animals.</p>",
                 
@@ -2644,7 +2644,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Die kleine Hütte schützt eure Untertanen gerade mal vor Sonne und Regen. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
+            :de_DE => "<p>Die kleine Hütte schützt Eure Untertanen gerade mal vor Sonne und Regen. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
   
             :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
                 
@@ -3851,7 +3851,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Feldlager verändern Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>",
+            :de_DE => "<p>Feldlager verwandeln Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>",
                 
           },
           :description => {
@@ -4273,7 +4273,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Stores your resources.</p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>",
+            :de_DE => "<p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>",
                 
           },
           :description => {
@@ -4432,8 +4432,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-
-            :unlock_prevent_takeover => 1,            
     
           },
 
@@ -5820,11 +5818,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  0
           :id          => 0, 
           :exp         => 0,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Grünling",
+            :de_DE => "Fellflohdompteur",
   
             :en_US => "Newbie",
                 
@@ -5833,13 +5831,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  1
           :id          => 1, 
           :exp         => 2000,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Kläglicher Anführer",
+            :de_DE => "Unter-Steinzeitrattenkuschler",
   
-            :en_US => "Feeble Leader",
+            :en_US => "Newbie",
                 
           },
         },             #   END OF 
@@ -5850,48 +5848,48 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Anführer erprobungshalber",
+            :de_DE => "Ober-Unter-Steinzeitrattenkuschler",
   
-            :en_US => "Junior Leader",
+            :en_US => "Feeble Leader",
                 
           },
         },             #   END OF 
         {              #  3
           :id          => 3, 
           :exp         => 9500,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Anführer",
+            :de_DE => "Unter-Ober-Steinzeitrattenkuschler",
   
-            :en_US => "Leader",
+            :en_US => "Junior Leader",
                 
           },
         },             #   END OF 
         {              #  4
           :id          => 4, 
-          :exp         => 16250,
+          :exp         => 16200,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Bekannter Anführer",
+            :de_DE => "Ober-Steinzeitrattenkuschler",
   
-            :en_US => "Known Leader",
+            :en_US => "Leader",
                 
           },
         },             #   END OF 
         {              #  5
           :id          => 5, 
           :exp         => 25750,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Großer Anführer",
+            :de_DE => "Unter-Mähnenwolfschmuser",
   
-            :en_US => "Great Leader",
+            :en_US => "Known Leader",
                 
           },
         },             #   END OF 
@@ -5902,20 +5900,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Mähnenwolfschmuser",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Great Leader",
                 
           },
         },             #   END OF 
         {              #  7
           :id          => 7, 
           :exp         => 54250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Mähnenwolfschmuser",
   
             :en_US => "Fantastic Leader",
                 
@@ -5928,7 +5926,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Mähnenwolfschmuser",
   
             :en_US => "Fantastic Leader",
                 
@@ -5937,11 +5935,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  9
           :id          => 9, 
           :exp         => 98750,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Urschweinbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -5954,7 +5952,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Urschweinbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -5963,11 +5961,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  11
           :id          => 11, 
           :exp         => 163250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Urschweinbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -5980,7 +5978,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Urschweinbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -5989,11 +5987,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  13
           :id          => 13, 
           :exp         => 251750,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6006,7 +6004,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6015,11 +6013,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  15
           :id          => 15, 
           :exp         => 367500,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6032,7 +6030,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6041,11 +6039,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  17
           :id          => 17, 
           :exp         => 514000,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6058,7 +6056,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6067,11 +6065,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  19
           :id          => 19, 
           :exp         => 693500,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6084,7 +6082,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6093,11 +6091,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  21
           :id          => 21, 
           :exp         => 907250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -6110,7 +6108,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -6119,11 +6117,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  23
           :id          => 23, 
           :exp         => 1157750,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -6136,7 +6134,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -6145,11 +6143,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  25
           :id          => 25, 
           :exp         => 1443500,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6162,7 +6160,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6171,11 +6169,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  27
           :id          => 27, 
           :exp         => 1764000,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6188,7 +6186,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6197,11 +6195,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  29
           :id          => 29, 
           :exp         => 2117250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6214,7 +6212,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6223,11 +6221,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  31
           :id          => 31, 
           :exp         => 2500250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6240,7 +6238,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6249,11 +6247,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  33
           :id          => 33, 
           :exp         => 2909250,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Mammuttreiber",
   
             :en_US => "Fantastic Leader",
                 
@@ -6266,7 +6264,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Mammuttreiber",
   
             :en_US => "Fantastic Leader",
                 
@@ -6275,11 +6273,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  35
           :id          => 35, 
           :exp         => 3340000,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Ober-Mammuttreiber",
   
             :en_US => "Fantastic Leader",
                 
@@ -6292,7 +6290,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Mammuttreiber",
   
             :en_US => "Fantastic Leader",
                 
@@ -6301,11 +6299,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  37
           :id          => 37, 
           :exp         => 3787500,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Unter-Dinosaurierdressierer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6318,7 +6316,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Unter-Dinosaurierdressierer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6327,11 +6325,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  39
           :id          => 39, 
           :exp         => 4246750,
+          :settlement_points   => 0,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Unter-Ober-Dinosaurierdressierer",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  40
+          :id          => 40, 
+          :exp         => 4479250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Fantastischer Anführer",
+            :de_DE => "Ober-Dinosaurierdressierer",
   
             :en_US => "Fantastic Leader",
                 
