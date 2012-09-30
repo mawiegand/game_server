@@ -20,7 +20,7 @@ GameServer::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
   
-  config.action_controller.asset_host = "https://gs02.wack-a-doo.de/game_server"  # cannot stay static if we wanna have several servers
+  config.action_controller.asset_host = "https://test1.wack-a-doo.de/game_server"
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
