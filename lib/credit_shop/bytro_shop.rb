@@ -91,11 +91,15 @@ module CreditShop
     
     # get account of current user
     def get_money_transactions
+      data = {
+        startTstamp: '1',
+      }
+      
       query = {
         eID:    'api',
         key:    KEY,
         action: 'getTransactions',
-        data: '',
+        data: encoded_data(data),
       }
       
       query = add_hash(query)
