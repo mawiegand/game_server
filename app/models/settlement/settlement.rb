@@ -17,7 +17,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   attr_readable :id, :type_id, :region_id, :location_id, :node_id, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :settlement_unlock_prevent_takeover_count, :as => :default 
   attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_rate, :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :as => :owner
+  attr_readable *readable_attributes(:ally),    :tax_rate, :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
