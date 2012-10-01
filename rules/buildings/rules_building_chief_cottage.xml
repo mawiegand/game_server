@@ -33,6 +33,7 @@
     <UnlockQueue  queue="queue_buildings" />
     <UnlockGarrison level="2" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
+    <UnlockBuildingSlots>4</UnlockBuildingSlots>
   </Abilities>
   <Capacity id="resource_stone">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
   <Capacity id="resource_wood">(MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)</Capacity>
