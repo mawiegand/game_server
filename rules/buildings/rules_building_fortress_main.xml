@@ -30,5 +30,6 @@
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
+    <UnlockBuildingSlots>2</UnlockBuildingSlots>
   </Abilities>
 </Building>
