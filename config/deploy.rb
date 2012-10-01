@@ -13,6 +13,7 @@ set :port, 5775
 
 set :application, "game server"
 set :repository,  "git@github.com:wackadoo/game_server.git"
+set :branch,      "staging"
 
 set :scm, :git
 
