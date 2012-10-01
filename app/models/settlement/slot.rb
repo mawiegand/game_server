@@ -8,6 +8,9 @@ class Settlement::Slot < ActiveRecord::Base
 
   after_save   :propagate_level_changes
   after_commit :trigger_consistency_check
+  
+  scope :empty,    where(['level IS NULL OR level = ?', 0])
+  scope :occupied, where(['level IS NOT NULL AND level > ?', 0])
 
   def empty?
     return self.level == 0 || self.level.nil?
@@ -96,6 +99,17 @@ class Settlement::Slot < ActiveRecord::Base
 
     Util::Formula.parse_from_formula(building_type[:abilities][:trading_carts]).apply(self.level)
   end
+  
+  def unlock_building_slots
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    return 0   if building_type[:abilities][:unlock_building_slots].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:unlock_building_slots]).apply(self.level)
+  end  
   
     
   # returns the number of command points the building on this slot provides
@@ -406,6 +420,9 @@ class Settlement::Slot < ActiveRecord::Base
       end
       if !building_type[:abilities][:trading_carts].blank?
         propagate_evaluatable_settlement_ability(:trading_carts, building_type[:abilities][:trading_carts], old_level, new_level)
+      end
+      if !building_type[:abilities][:unlock_building_slots].blank?
+        propagate_evaluatable_settlement_ability(:building_slots_total, building_type[:abilities][:unlock_building_slots], old_level, new_level)
       end
       if !building_type[:abilities][:army_size_bonus].blank?
         propagate_evaluatable_settlement_ability(:army_size_max, building_type[:abilities][:army_size_bonus], old_level, new_level)

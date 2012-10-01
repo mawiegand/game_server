@@ -272,8 +272,10 @@ class Settlement::Settlement < ActiveRecord::Base
 
     n_trading_carts = recalc_trading_carts
     check_and_apply_trading_carts(n_trading_carts)
-
     check_and_repair_used_trading_carts
+
+    building_slots = recalc_building_slots_total
+    check_and_apply_building_slots_total(building_slots)
     
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
@@ -451,6 +453,21 @@ class Settlement::Settlement < ActiveRecord::Base
         self.command_points = cp
       end
     end
+
+    def recalc_building_slots_total
+      bs = 1  # one for the settlement!
+      self.slots.each do |slot|
+        bs += slot.unlock_building_slots
+      end
+      bs    
+    end
+    
+    def check_and_apply_building_slots_total(total)
+      if (self.building_slots_total != total) 
+        logger.warn(">>> BUILDING SLOTS TOTAL RECALC DIFFERS. Old: #{self.building_slots_total} Corrected: #{total}.")
+        self.building_slots_total = total
+      end
+    end  
     
     def recalc_trading_carts
       tc = 0
