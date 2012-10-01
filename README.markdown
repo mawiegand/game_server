@@ -12,6 +12,3 @@ Before you update the server, you should build the rules locally (see above) and
   bundle exec cap deploy:migrations
 to push the changes to the server.
 
-
-
-this is the staging branch
