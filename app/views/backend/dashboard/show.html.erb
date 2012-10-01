@@ -33,7 +33,7 @@
   </p>
 
   
-  <% if @backend_stats %>
+  <% if @backend_stats && !@backend_stats.empty? %>
     <% backend_stat = @backend_stats.last %>
     <p><b>Yesterday's Cohort:</b> <%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> /
           <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
@@ -46,7 +46,7 @@
 
   
   
-  <% if @backend_stats %>
+  <% if @backend_stats && !@backend_stats.empty? %>
     <br/>
     <hr/>
     <div class="chart" style="float: none;" id="conversions_daily"></div>
