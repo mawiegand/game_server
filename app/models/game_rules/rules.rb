@@ -2004,7 +2004,7 @@ class GameRules::Rules
 
             :command_points => "1",
 
-            :unlock_building_slots => "2",
+            :unlock_building_slots => "MIN(LEVEL,1)*2",
 
             :garrison_size_bonus => "1000",
 
@@ -2474,7 +2474,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :command_points => "MAX(LEVEL+1,3)-MAX(LEVEL,3)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)",
 
-            :unlock_building_slots => "4",
+            :unlock_building_slots => "LEVEL*4-1",
 
             :garrison_size_bonus => "1000",
 
@@ -4555,7 +4555,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :command_points => "1",
 
-            :unlock_building_slots => "4",
+            :unlock_building_slots => "MIN(LEVEL,1)*8+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2",
 
             :garrison_size_bonus => "200",
 

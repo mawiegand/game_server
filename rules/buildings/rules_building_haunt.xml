@@ -31,7 +31,7 @@
     <UnlockQueue  queue="queue_buildings" />
     <UnlockGarrison level="2" />
     <DefenseBonus>0.25*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>4</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(LEVEL,1)*8+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2</UnlockBuildingSlots>
   </Abilities>
 </Building>
   
