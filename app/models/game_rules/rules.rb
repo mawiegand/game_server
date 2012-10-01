@@ -2391,6 +2391,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ]
           ],          
 
@@ -3644,6 +3655,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ]
           ],          
 
@@ -3750,6 +3772,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ]
           ],          
 
@@ -3818,6 +3851,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :type => 'building',
 
               :min_level => 4,
+
+            },
+
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -4173,6 +4217,32 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :demolishable=> false,
           :destructable=> false,
 
+          :requirementGroups=> [
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 8,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ]
+          ],          
+
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
@@ -4352,6 +4422,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ]
           ],          
 
@@ -4415,6 +4496,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :symbolic_id => 'building_haunt',
               :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 0,
