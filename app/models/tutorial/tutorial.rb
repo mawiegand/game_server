@@ -1032,7 +1032,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 15,
+                :amount => 5,
               },
 
             ],
