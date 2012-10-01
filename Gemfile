@@ -12,6 +12,8 @@ gem 'httparty'
 gem 'rb-readline'	
 gem 'gravatar_image_tag'
 
+gem 'highline', '>= 1.6.12'
+
 gem 'xmpp4r'
 
 
