@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_garrison" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" tier="2">  
-  <Name lang="de_DE">Garnison</Name>
+<Building id="building_garrison" group="military" category="building_category_small_building" buyable="true" destructable="false" demolishable="false" tier="2">  
+  <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
     <p>Größere Garnisonen führen zu… größeren Garnisonsarmeen wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin.</p> 
