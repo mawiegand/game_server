@@ -30,13 +30,11 @@ development:
   base_time_factor: 1
   
   identity_provider_base_url: 'https://localhost/identity_provider'
-
-  payment_provider_base_url: 'https://localhost/payment_provider'
+  payment_provider_base_url:  'https://localhost/payment_provider'
 
   settlement_recalc_probability:    0.5
   character_recalc_probability:     0.5
   resource_pool_recalc_probability: 0.1
-
 
 test:
   <<: *defaults
@@ -45,5 +43,24 @@ test:
   character_recalc_probability:     0
   resource_pool_recalc_probability: 0
 
+staging:
+  <<: *defaults
+
 production:
   <<: *defaults
+  
+  game_identifier: 'WACKADOO-ROUND2'
+  scope: 'wackadoo-round2'
+
+  default_character_name: 'WackyUser'
+  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
+  
+  settlement_recalc_probability:    0.2
+  resource_pool_recalc_probability: 0.05
+  character_recalc_probability:     0.2
+  
+  cookie_name: 'wackadoo_r2_remember_token'  
+  
+  
+  
+  
