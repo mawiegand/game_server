@@ -10,7 +10,7 @@ class Backend::Stat < ActiveRecord::Base
     Fundamental::Character.update_all_conversions
     Backend::Stat.find(:all).each do |stat|
       stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = 0
-      characters = Fundamental::Character.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
+      characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
       characters.each do |character|
         stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.month_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
@@ -21,7 +21,7 @@ class Backend::Stat < ActiveRecord::Base
       end
 
       stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = 0
-      characters = Fundamental::Character.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
+      characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
       characters.each do |character|
         stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.day_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001113346) do
+ActiveRecord::Schema.define(:version => 20121001114953) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -274,6 +274,7 @@ ActiveRecord::Schema.define(:version => 20121001113346) do
     t.integer  "sacred_rank",                              :default => 0,     :null => false
     t.string   "gender"
     t.integer  "gender_change_count",                      :default => 0,     :null => false
+    t.datetime "reached_game"
   end
 
   create_table "fundamental_guilds", :force => true do |t|

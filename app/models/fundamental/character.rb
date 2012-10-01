@@ -36,6 +36,8 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
+  
+  scope :non_npc, where(['(npc IS NULL OR npc = ?)', false])
 
 
   @identifier_regex = /[a-z]{16}/i 
@@ -317,7 +319,11 @@ class Fundamental::Character < ActiveRecord::Base
       return 
     end 
     return   if self.max_conversion_state == "logged_in_once"
-    self.max_conversion_state = "logged_in_once"
+    if !reached_game.nil?
+      self.max_conversion_state = "logged_in_once"
+      return
+    end
+    self.max_conversion_state = "registered"
   end
   
   # ##########################################################################
