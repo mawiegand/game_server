@@ -34,7 +34,7 @@ class Construction::Queue < ActiveRecord::Base
       # logger.debug '--> queued_jobs ' + queued_jobs.inspect
       if !queued_jobs.empty?
         # create active job 
-        next_job = queued_jobs.first
+        next_job = queued_jobs.first   # FIXME : this must re-check some criterions that were checked during queuing but might have changed until know. example: building-slots-available? in settlement?
         # test if job can be payed
         if next_job.pay_for_job
           active_job = next_job.build_active_job

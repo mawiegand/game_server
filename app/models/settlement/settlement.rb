@@ -128,6 +128,18 @@ class Settlement::Settlement < ActiveRecord::Base
   def tax_rate_change_possible?
     self.tax_changed_at.blank? || self.tax_changed_at + 1.hours < Time.now
   end  
+  
+  def num_occupied_slots
+    slots.occupied.count
+  end
+  
+  def available_building_slots
+    (building_slots_total || 1) - num_occupied_slots
+  end
+  
+  def building_slots_available?
+    available_building_slots > 0
+  end
 
   ############################################################################
   #
@@ -468,6 +480,7 @@ class Settlement::Settlement < ActiveRecord::Base
         self.building_slots_total = total
       end
     end  
+
     
     def recalc_trading_carts
       tc = 0
