@@ -355,7 +355,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_settlementowner" />
       <Rewards>
-        <ResourceReward resource="resource_cash">15</ResourceReward>  
+        <ResourceReward resource="resource_cash">5</ResourceReward>  
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>

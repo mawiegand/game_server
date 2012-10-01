@@ -5519,7 +5519,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  0
           :id          => 0, 
           :exp         => 0,
-          :settlement_points   => 0,
+          :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
