@@ -662,7 +662,7 @@ class GameRules::Rules
               :id => 1,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -671,7 +671,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -766,7 +766,7 @@ class GameRules::Rules
               :id => 1,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -775,7 +775,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -862,28 +862,6 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_infantry_tower',
-              :id => 1,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_main',
-              :id => 0,
-              :type => '',
-
-              :min_level => 15,
-
-            },
-
-            ],
 
             [
               
@@ -1048,7 +1026,7 @@ class GameRules::Rules
               :id => 2,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -1057,7 +1035,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -1152,7 +1130,7 @@ class GameRules::Rules
               :id => 2,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -1161,7 +1139,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -1248,28 +1226,6 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_artillery_tower',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_main',
-              :id => 0,
-              :type => '',
-
-              :min_level => 15,
-
-            },
-
-            ],
 
             [
               
@@ -1434,7 +1390,7 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -1443,7 +1399,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 5,
+              :min_level => 7,
 
             },
 
@@ -1538,7 +1494,7 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -1547,7 +1503,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 10,
+              :min_level => 15,
 
             },
 
@@ -1634,28 +1590,6 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 3,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_main',
-              :id => 0,
-              :type => '',
-
-              :min_level => 15,
-
-            },
-
-            ],
 
             [
               
@@ -1840,6 +1774,11 @@ class GameRules::Rules
 
             ]
           ],          
+
+          :can_create => [
+3,
+
+          ],
 
 
         },              #   END OF Little Chief

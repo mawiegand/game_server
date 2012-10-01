@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929220727) do
+ActiveRecord::Schema.define(:version => 20121001113346) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -526,6 +526,14 @@ ActiveRecord::Schema.define(:version => 20120929220727) do
     t.integer  "unit_slingshot_warrior"
     t.integer  "unit_babysaurus"
     t.integer  "unit_little_chief"
+    t.integer  "unit_clubbers_2"
+    t.integer  "unit_clubbers_3"
+    t.integer  "unit_thrower_2"
+    t.integer  "unit_thrower_3"
+    t.integer  "unit_thrower_4"
+    t.integer  "unit_light_cavalry_2"
+    t.integer  "unit_light_cavalry_3"
+    t.integer  "unit_light_cavalry_4"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
@@ -622,6 +630,38 @@ ActiveRecord::Schema.define(:version => 20120929220727) do
     t.integer  "unit_little_chief_casualties"
     t.decimal  "unit_little_chief_damage_taken"
     t.decimal  "unit_little_chief_damage_inflicted"
+    t.integer  "unit_clubbers_2"
+    t.integer  "unit_clubbers_2_casualties"
+    t.decimal  "unit_clubbers_2_damage_taken"
+    t.decimal  "unit_clubbers_2_damage_inflicted"
+    t.integer  "unit_clubbers_3"
+    t.integer  "unit_clubbers_3_casualties"
+    t.decimal  "unit_clubbers_3_damage_taken"
+    t.decimal  "unit_clubbers_3_damage_inflicted"
+    t.integer  "unit_thrower_2"
+    t.integer  "unit_thrower_2_casualties"
+    t.decimal  "unit_thrower_2_damage_taken"
+    t.decimal  "unit_thrower_2_damage_inflicted"
+    t.integer  "unit_thrower_3"
+    t.integer  "unit_thrower_3_casualties"
+    t.decimal  "unit_thrower_3_damage_taken"
+    t.decimal  "unit_thrower_3_damage_inflicted"
+    t.integer  "unit_thrower_4"
+    t.integer  "unit_thrower_4_casualties"
+    t.decimal  "unit_thrower_4_damage_taken"
+    t.decimal  "unit_thrower_4_damage_inflicted"
+    t.integer  "unit_light_cavalry_2"
+    t.integer  "unit_light_cavalry_2_casualties"
+    t.decimal  "unit_light_cavalry_2_damage_taken"
+    t.decimal  "unit_light_cavalry_2_damage_inflicted"
+    t.integer  "unit_light_cavalry_3"
+    t.integer  "unit_light_cavalry_3_casualties"
+    t.decimal  "unit_light_cavalry_3_damage_taken"
+    t.decimal  "unit_light_cavalry_3_damage_inflicted"
+    t.integer  "unit_light_cavalry_4"
+    t.integer  "unit_light_cavalry_4_casualties"
+    t.decimal  "unit_light_cavalry_4_damage_taken"
+    t.decimal  "unit_light_cavalry_4_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|

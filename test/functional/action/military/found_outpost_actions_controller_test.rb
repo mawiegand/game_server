@@ -16,10 +16,17 @@ class Action::Military::FoundOutpostActionsControllerTest < ActionController::Te
     founder_field = nil
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
       founder_field = unit_type[:db_field]  if !unit_type[:can_create].nil? && founder_field.nil?
-    end    
-    army.details[founder_field] = 1
+    end
+    assert_not_nil founder_field    
+    army.details[founder_field] = 2 ## army will NOT be deleted
+    
+    puts army.inspect
+    puts army.details.inspect
     
     assert army.save
+    assert_not_nil army.details
+    assert !army.frozen?
+    
     assert army.details.save
     assert character.save
     
