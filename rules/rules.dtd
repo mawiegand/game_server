@@ -79,7 +79,7 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover? )>
+<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
 
 <!ELEMENT PreventTakeover EMPTY>
 <!ATTLIST PreventTakeover 
@@ -115,6 +115,8 @@
 >
 
 <!ELEMENT TradingCarts (#PCDATA)>
+
+<!ELEMENT UnlockBuildingSlots (#PCDATA)>
 
 <!ELEMENT CommandPoints (#PCDATA)>
 

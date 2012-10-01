@@ -677,6 +677,7 @@ end
 <xsl:apply-templates select="CommandPoints" />    
 <xsl:apply-templates select="TradingCarts" />    
 <xsl:apply-templates select="UnlockP2PTrade" />    
+<xsl:apply-templates select="UnlockBuildingSlots" />    
 <xsl:apply-templates select="PreventTakeover" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
 <xsl:apply-templates select="ArmySizeBonus" />    
@@ -732,6 +733,10 @@ end
 
 <xsl:template match="TradingCarts">
             :trading_carts => "<xsl:apply-templates />",
+</xsl:template>
+
+<xsl:template match="UnlockBuildingSlots">
+            :unlock_building_slots => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="GarrisonSizeBonus">
