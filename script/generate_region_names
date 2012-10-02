@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+#
+# Helper script to generate a list (ASCII FILE) of possible region names.
+#
+
+puts "Recreates the region name files in rules/region_names from the "
+puts "terrain specific files for word stem, prefix and modifier part."
+puts
+puts "Starting..."
+
+terrains = ['forest', 'plain', 'desert', 'mountain']
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+terrains.each do |terrain|
+
+  puts "working on names for terrain #{terrain}..."  
+  
+  # construct filenames
+  terrain_filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_names.txt"))
+  prefixes_filename  = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_prefixes.txt"))
+  modifiers_filename = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_modifiers.txt")) 
+  output_filename    = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}.txt"))  
+  
+  terrain_names   = File.open(terrain_filename).readlines
+  prefixes        = File.open(prefixes_filename).readlines
+  modifiers       = File.open(modifiers_filename).readlines
+  
+  output = File.open(output_filename, 'w')
+
+  terrain_names.each do |name|    
+    if name.chomp.length > 1
+      stem, gender = name.split
+      prefixes.each do |prefix|
+        modifiers.each do |modifier|
+          output.puts (modifier.chomp+prefix.chomp+stem.chomp).capitalize
+        end
+      end
+    end
+  end
+  
+  output.close
+end
+
+puts "Done."
+
+
