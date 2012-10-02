@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+#
+# Helper script to reassign names to all regions in the game.
+#
+
+puts "Resets the names of all regions in the game."
+puts
+puts "Starting..."
+
+terrains = ['forest', 'mountain', 'desert', 'plain']
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+names    = []
+
+terrains.each do |terrain|
+
+  print "loading names for terrain #{terrain}... "  
+  
+  # construct filenames
+  filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}.txt"))
+  names << File.open(filename).readlines
+  
+  puts "found #{ names.last.count } names to chose from." 
+end
+
+Map::Region.find(:all).each do |region|
+  old_name = region.name
+  new_name = names[region.terrain_id].sample
+  names[region.terrain_id].delete(new_name)
+  region.name = new_name
+  region.save
+  puts "Changed region name from #{old_name} to #{new_name}."
+end
+
+puts "Done."
+
+
