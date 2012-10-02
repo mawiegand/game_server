@@ -33,7 +33,7 @@ class Construction::QueuesController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
           
-          render :json => @construction_queues.to_json(:include => :active_jobs)
+          render :json => @construction_queues
         end
       end
     end
@@ -48,7 +48,7 @@ class Construction::QueuesController < ApplicationController
       format.html # show.html.erb
       format.json do
         logger.debug @construction_queue.inspect
-        render :json => @construction_queue.to_json(:include => :active_jobs)
+        render :json => @construction_queue
       end
     end
   end

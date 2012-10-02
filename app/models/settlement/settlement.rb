@@ -371,7 +371,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.queues.create({
       :type_id    => queue_type[:id], 
       :threads    => queue_type[:base_threads],
-      :max_length => queue_type[:base_slots],      
+#     :max_length => queue_type[:base_slots],      
     })  
   end
   

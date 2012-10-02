@@ -16,6 +16,19 @@ class Training::Queue < ActiveRecord::Base
     self.jobs.select{ |job| job.active? }
   end  
   
+  def queue_type
+    self.type_id.nil? ? nil : GameRules::Rules.the_rules().queue_types[self.type_id]    
+  end
+  
+  def additional_platinum_slots
+    !settlement.owner.nil? && settlement.owner.platinum_account? ? GAME_SERVER_CONFIG['platinum_additional_training_jobs'] : 0
+  end
+  
+  def max_length
+    logger.debug "QUEUE LENGTH: #{self.queue_type[:base_slots]} + #{self.additional_platinum_slots} = #{self.queue_type[:base_slots] + self.additional_platinum_slots}"
+    self.queue_type[:base_slots] + self.additional_platinum_slots
+  end  
+  
   # checks if there are unused threads in this queue and if there
   # is a new job to execute in this thread. In this case a new active job
   # is created, if there are enough resources to pay the job. Otherwise, an
@@ -103,6 +116,14 @@ class Training::Queue < ActiveRecord::Base
         raise ArgumentError.new('could not create event for training queue check')
       end
     end
+  end
+  
+  def as_json(options={})
+    options.reverse_merge!({  # these are defaults; can be overwritten by specifying different includes
+      :include => :active_jobs,
+      :methods => :max_length
+    })
+    super(options)
   end
 
   protected
