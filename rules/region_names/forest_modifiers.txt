@@ -15,5 +15,6 @@ Sonnen
 Eis
 Silber
 Schwarz
+Finster
 Grau
 Tiger

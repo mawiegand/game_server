@@ -1,19 +1,14 @@
 
-Dunkel
+Weiß
 Rot
-Nacht
-Schatten
-Spinnen
-Dörr
-Gold
-Glanz
-Blau
+Hell
 Gelb
-Stern
-Mond
-Sonnen
-Eis
+Spinnen
+Skorpion
+Gold
 Silber
-Schwarz
+Sonnen
 Grau
 Tiger
+Wunder
+Teufels
