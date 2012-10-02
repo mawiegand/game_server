@@ -96,6 +96,10 @@ class Fundamental::Character < ActiveRecord::Base
     !female?   # presently, due to community structure, male is the default in case nothing is set
   end
   
+  def platinum_account?
+    !premium_expiration.nil? && premium_expiration > DateTime.now
+  end
+  
   def settlement_point_available?
     (settlement_points_used || 0) < (settlement_points_total || 0)
   end

@@ -5339,7 +5339,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_construction,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 2,
           :name        => {
             
             :en_US => "Construction of Buildings",
@@ -5365,7 +5365,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_construction,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 2,
           :name        => {
             
             :en_US => "Construction of Fortifications",
@@ -5385,7 +5385,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_training,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 1,
           :name        => {
             
             :en_US => "Training of Infantry",
@@ -5406,7 +5406,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_training,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 1,
           :name        => {
             
             :en_US => "Training of Artillery",
@@ -5427,7 +5427,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_training,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 1,
           :name        => {
             
             :en_US => "Training of Cavalry",
@@ -5448,7 +5448,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_training,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 1,
           :name        => {
             
             :en_US => "Training of Siege",
@@ -5469,7 +5469,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_training,
           :domain      => :settlement,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 1,
           :name        => {
             
             :en_US => "Training of Special Units",
@@ -5490,7 +5490,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 					:category    => :queue_category_research,
           :domain      => :character,
           :base_threads=> 1,
-          :base_slots  => 4,
+          :base_slots  => 2,
           :name        => {
             
             :en_US => "Forschung",

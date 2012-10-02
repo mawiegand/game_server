@@ -1,7 +1,7 @@
 defaults: &defaults
   base_time_factor: 60                    # duration of a minute in seconds; can be used to speed-up all operations
   movement_duration: 15                   # base-time of a movement in minutes 
-  ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
+  ap_regeneration_duration: 180           # time needed to regenerate a single action point in minutes
   
   overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
 
@@ -24,6 +24,10 @@ defaults: &defaults
   cookie_name: 'gs_remember_token'  
   
   status_email_recipient: 'info@5dlab.com'
+  
+  platinum_additional_construction_jobs : 3
+  platinum_additional_training_jobs     : 1
+  
       
 development:
   <<: *defaults
@@ -45,7 +49,13 @@ test:
 
 staging:
   <<: *defaults
+  
+  ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
 
+  platinum_additional_construction_jobs : 1
+  platinum_additional_training_jobs     : 2
+
+  
 production:
   <<: *defaults
   
