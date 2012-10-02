@@ -35,7 +35,7 @@ class Training::QueuesController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
           
-          render :json => @training_queues.to_json(:include => :active_jobs)
+          render :json => @training_queues
         end
       end
     end
