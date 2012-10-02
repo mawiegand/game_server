@@ -27,12 +27,13 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests
+  attr_accessor :version, :quests, :updated_at
   
   def attributes 
     { 
       'version'        => version,
       'quests'         => quests,
+      'updated_at'     => updated_at,
     }
   end
   
@@ -56,7 +57,9 @@ class Tutorial::Tutorial
         :major => 0, 
         :minor => 0, 
         :build => 1, 
-      },
+      }, 
+      
+      :updated_at => File.ctime(__FILE__),
   
 # ## QUESTS ##########################################################
   
