@@ -3,12 +3,9 @@ Dunkel
 Rot
 Nacht
 Schatten
-Spinnen
-Dörr
 Gold
 Glanz
 Blau
-Gelb
 Stern
 Mond
 Sonnen
@@ -16,4 +13,6 @@ Eis
 Silber
 Schwarz
 Grau
-Tiger
+Schnee
+Weiß
+Finster
