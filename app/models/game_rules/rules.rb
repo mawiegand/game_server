@@ -671,7 +671,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 7,
+              :min_level => 6,
 
             },
 
@@ -775,7 +775,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 15,
+              :min_level => 14,
 
             },
 
@@ -1035,7 +1035,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 7,
+              :min_level => 6,
 
             },
 
@@ -1139,7 +1139,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 15,
+              :min_level => 14,
 
             },
 
@@ -1399,7 +1399,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 7,
+              :min_level => 6,
 
             },
 
@@ -1503,7 +1503,7 @@ class GameRules::Rules
               :id => 0,
               :type => '',
 
-              :min_level => 15,
+              :min_level => 14,
 
             },
 
@@ -2146,7 +2146,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 8,
 
             },
 
@@ -2237,7 +2237,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 10,
 
             },
 
