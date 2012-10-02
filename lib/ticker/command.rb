@@ -62,11 +62,7 @@ module Ticker
     def run(worker_name = nil)
       Dir.chdir(Rails.root)
 
-      logname = if Rails.env.development?
-        'ticker_development.log'
-      else
-        'ticker_production.log'
-      end
+      logname = "ticker_#{Rails.env}.log"
 
       Ticker::Runloop.after_fork      
       Ticker::Runloop.logger ||= Logger.new(File.join(Rails.root, 'log', logname))
