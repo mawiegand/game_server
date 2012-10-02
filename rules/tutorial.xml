@@ -1216,7 +1216,7 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_1storagelvl1" advisor="chef">
+<Quest id="quest_build_1storagelvl5" advisor="chef">
    <Name>Rohstofflager Level 5</Name>
    <Name locale="de_DE"> Rohstofflager Level 5 </Name>
    <Task></Task>
@@ -1245,7 +1245,7 @@
    </RewardTests>
  </Quest>
 
- <Quest id="quest_army_move" advisor="warrior">
+ <Quest id="quest_build_1barrackslvl10" advisor="warrior">
    <Name>Barracks</Name>
    <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
    <Task></Task>
