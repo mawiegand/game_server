@@ -152,10 +152,8 @@ def create_fortress(location)
   Settlement::Settlement.create_settlement_at_location(location, 1, owner)   # 1: fortress
   
   details = location.settlement.garrison_army.details
-  GameRules::Rules.the_rules.unit_types.each do |unit_type| 
-    if (unit_type[:id] < 3)
-      details[unit_type[:db_field]] = rand(10)
-    end
+  if details.has_attribute? 'unit_neanderthal'
+    details.increment('unit_neanderthal', 60 + rand(60))
   end
   details.save  
 end
