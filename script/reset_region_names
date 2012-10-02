@@ -7,7 +7,7 @@ puts "Resets the names of all regions in the game."
 puts
 puts "Starting..."
 
-terrains = ['forest', 'mountain', 'desert', 'plain']
+terrains = ['plain', 'forest', 'mountain', 'desert']
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
@@ -26,13 +26,17 @@ terrains.each do |terrain|
   puts "found #{ names.last.count } names to chose from." 
 end
 
+puts "changing #{Map::Region.count} region names..."
+
 Map::Region.find(:all).each do |region|
   old_name = region.name
-  new_name = names[region.terrain_id].sample
+  new_name = names[region.terrain_id].sample.chomp
   names[region.terrain_id].delete(new_name)
   region.name = new_name
+  region.fortress.name = new_name
+  region.fortress.save
   region.save
-  puts "Changed region name from #{old_name} to #{new_name}."
+#  puts "Changed region name from #{old_name} to #{new_name}."
 end
 
 puts "Done."
