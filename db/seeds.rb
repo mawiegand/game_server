@@ -15,6 +15,30 @@ user.save
 NUM_FULL_LEVELS   = 2
 NUM_SPARSE_LEVELS = 2
 
+
+# ############################################################################
+# 
+#   Load Region Names
+#
+# ############################################################################
+
+terrains = ['plain', 'forest', 'mountain', 'desert']
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+region_names = []
+
+terrains.each do |terrain|
+  print "loading region names for terrain #{terrain}... "  
+  
+  # construct filenames
+  filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}.txt"))
+  region_names << File.open(filename).readlines
+  
+  puts "found #{ region_names.last.count } names to chose from." 
+end
+
+
 # ############################################################################
 # 
 #   Seed NPCs
@@ -154,6 +178,17 @@ while !nodes.empty?
   end
   
   region.terrain_id = rand(4)
+  # hack for missing terrain tiles
+  if region.terrain_id != 3
+    region.terrain_id = 0    # everything not a desert is a plain
+  end
+  
+  new_name = region_names[region.terrain_id].sample.chomp
+  region_names[region.terrain_id].delete(new_name)
+  
+  region.name = new_name
+  region.fortress.name = new_name
+  region.fortress.save
   region.save
 end
 

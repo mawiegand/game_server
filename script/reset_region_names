@@ -36,7 +36,7 @@ Map::Region.find(:all).each do |region|
   region.fortress.name = new_name
   region.fortress.save
   region.save
-#  puts "Changed region name from #{old_name} to #{new_name}."
+# puts "Changed region name from #{old_name} to #{new_name}."
 end
 
 puts "Done."
