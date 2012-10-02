@@ -16,7 +16,7 @@ class Action::Settlement::ChangeTaxRateActionsController < ApplicationController
     raise NotFoundError.new ('Settlement with id #{params[:tax_rate_action][:settlement_id]} not Found.') if settlement.nil?
     raise ForbiddenError.new('tried to set tax rate on a foreign settlement.')   unless  settlement.owner == current_character
     raise BadRequestError.new('settlement does not own the region.')             unless settlement.owns_region?
-    raise ForbiddenError.new ('tax rate out of range.')                          if tax_rate < 0.05 || tax_rate > 0.2
+    raise ForbiddenError.new ('tax rate out of range.')                          if tax_rate < 0.05 || tax_rate > 0.15
     raise ForbiddenError.new ('no tax rate change possible at the moment')       unless settlement.tax_rate_change_possible?
 
     settlement.tax_rate = tax_rate

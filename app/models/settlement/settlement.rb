@@ -62,7 +62,7 @@ class Settlement::Settlement < ActiveRecord::Base
     tax_rate = nil
     # determine local tax-rate
     if type_id == 1  # fortress?
-      tax_rate = 0.20
+      tax_rate = 0.15
     else
       if !location.region.fortress.nil?
         tax_rate = location.region.fortress.tax_rate || 0.0
@@ -116,7 +116,7 @@ class Settlement::Settlement < ActiveRecord::Base
     level           ||= 1
     defense_bonus     = 0     if defense_bonus.nil?
     morale            = 1.0   if morale.nil?
-    tax_rate          = 0.2   if tax_rate.nil? && owns_region
+    tax_rate          = 0.15   if tax_rate.nil? && owns_region
     taxable           = !owns_region
     command_points    = 0     if command_points.nil?
     besieged          = false if besieged.nil?
@@ -759,9 +759,10 @@ class Settlement::Settlement < ActiveRecord::Base
     # the option tax_it controls whether or not the local tax_rate should be deducted
     # of the production.
     def update_resource_production_rate(base, tax_it)
+      base_production  = self[base+"_base_production"]
       total_before_tax = self[base+"_base_production"]  * (1.0 + self[base+"_production_bonus"])
       if (tax_it)
-        self[base+"_production_tax_rate"] = -(self.tax_rate || 0.0) * total_before_tax
+        self[base+"_production_tax_rate"] = -(self.tax_rate || 0.0) * base_production  # only the base production is taxed
       end
       self[base+"_production_rate"] = total_before_tax + self[base+"_production_tax_rate"]
       true
