@@ -2034,7 +2034,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p><p>Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p>",
+            :de_DE => "<p>In dem Turm der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p><p>Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p>",
   
             :en_US => "<p>Training center for close combat warriors. Without the infantry every army becomes useless - and this is the place where the backbone of every stone-aged and postmodern army composition gets finishing. Reckless. Ruthless. Relentless.</p>",
                 
@@ -3286,14 +3286,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Schießstand
-        {               #   Stall
+        {               #   Stinkender Stall
           :id          => 14, 
           :symbolic_id => :building_stud,
 					:category    => 5,
           :db_field    => :building_stud,
           :name        => {
             
-            :de_DE => "Stall",
+            :de_DE => "Stinkender Stall",
   
             :en_US => "Stable",
                 
@@ -3390,7 +3390,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Stall
+        },              #   END OF Stinkender Stall
         {               #   Rohstofflager
           :id          => 15, 
           :symbolic_id => :building_storage,
@@ -4187,14 +4187,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Altehrwürdiger Steinbruch
-        {               #   Garnison
+        {               #   Garnisonsgebäude
           :id          => 23, 
           :symbolic_id => :building_garrison,
-					:category    => 4,
+					:category    => 5,
           :db_field    => :building_garrison,
           :name        => {
             
-            :de_DE => "Garnison",
+            :de_DE => "Garnisonsgebäude",
   
             :en_US => "Garrison",
                 
@@ -4234,6 +4234,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             },
 
             {
+              :symbolic_id => 'building_garrison',
+              :id => 23,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
               :symbolic_id => 'building_haunt',
               :id => 26,
               :type => 'building',
@@ -4269,7 +4280,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Garnison
+        },              #   END OF Garnisonsgebäude
         {               #   Rohstofflager mit Kupferkarren
           :id          => 24, 
           :symbolic_id => :building_storage_2,
@@ -4380,14 +4391,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Rohstofflager mit Kupferkarren
-        {               #   Altar
+        {               #   Ritualstein
           :id          => 25, 
           :symbolic_id => :building_altar,
 					:category    => 4,
           :db_field    => :building_altar,
           :name        => {
             
-            :de_DE => "Altar",
+            :de_DE => "Ritualstein",
   
             :en_US => "Altar",
                 
@@ -4396,12 +4407,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Ritual sacrifices are made on the altar to appease the gods. Because no one wants to be struck down by an angry god.</p>",
   
-            :de_DE => "<p>Der Altar besänftigt die Götter bei regelmäßigen Opfergaben. Eine derart von den Göttern gesegnete Lagerstätte kann von Feinden nicht erobert werden.</p>",
+            :de_DE => "<p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter. Eine derart von den Göttern gesegnete Lagerstätte kann von Feinden nicht erobert werden.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Baumstumpf. Die Götter sind begeistert! Zumindest ist die Lagerstätte mit einem Altar vor einer feindlichen Übernahme sicher. Wenn das kein Wink der  Götter ist!</p>",
+            :de_DE => "<p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der  Götter ist!</p>",
   
             :en_US => "<p>At the altar the tribe prays and makes ritual sacrifices. Legend tells of great wars, in which half-gods lead tribes against each other battling for dominance over the valley.</p><p>The next war is coming and every tribe is competing to get the attention of the gods.</p>",
                 
@@ -4459,7 +4470,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
-        },              #   END OF Altar
+        },              #   END OF Ritualstein
         {               #   Versammlungsplatz
           :id          => 26, 
           :symbolic_id => :building_haunt,
@@ -4555,7 +4566,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :command_points => "1",
 
-            :unlock_building_slots => "MIN(LEVEL,1)*8+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2",
+            :unlock_building_slots => "MIN(LEVEL,1)*7+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2",
 
             :garrison_size_bonus => "200",
 

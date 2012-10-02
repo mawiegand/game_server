@@ -2,10 +2,10 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_altar" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
-  <Name lang="de_DE">Altar</Name>
+  <Name lang="de_DE">Ritualstein</Name>
   <Name lang="en_US">Altar</Name>
   <Description lang="de_DE">
-    <p>Ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Baumstumpf. Die Götter sind begeistert! Zumindest ist die Lagerstätte mit einem Altar vor einer feindlichen Übernahme sicher. Wenn das kein Wink der  Götter ist!</p>
+    <p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der  Götter ist!</p>
    </Description>
   <Description lang="en_US">
     <p>At the altar the tribe prays and makes ritual sacrifices. Legend tells of great wars, in which half-gods lead tribes against each other battling for dominance over the valley.</p>
@@ -15,7 +15,7 @@
     <p>Ritual sacrifices are made on the altar to appease the gods. Because no one wants to be struck down by an angry god.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Der Altar besänftigt die Götter bei regelmäßigen Opfergaben. Eine derart von den Göttern gesegnete Lagerstätte kann von Feinden nicht erobert werden.</p>
+    <p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter. Eine derart von den Göttern gesegnete Lagerstätte kann von Feinden nicht erobert werden.</p>
    </Flavour> 
   <Requirement id="building_haunt" min_level="4" />
   <Requirement id="building_chief_cottage" max_level="0" />
