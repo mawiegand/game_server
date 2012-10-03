@@ -104,6 +104,26 @@ class Fundamental::CharactersController < ApplicationController
       character.last_login_at = DateTime.now
       character.increment(:login_count)
       character.save
+      
+      if params.has_key?(:client_id)   # fetch gift
+        
+        response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, params[:client_id])
+      
+        logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+      
+        if response.code == 200
+          gifts = response.parsed_response
+          logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+          unless gifts.nil? || gifts.empty?
+            signup_gift = gifts[0]
+            if !signup_gift.nil? && !signup_gift['data'].blank?
+              character.redeem_startup_gift(signup_gift['data'])
+            end
+          end
+        end        
+        
+      end  
        
       redirect_to fundamental_character_path(character.id)
       
