@@ -216,16 +216,24 @@ Map::Node.root.recount_settlements true # recursively update number of settlemen
 puts "INFO: creating shop offers."
 
 Shop::ResourceOffer.create({
-  price: 10,
-  amount: 20,
+  price: 8,
+  amount: 15,
   resource_id: 3,
   started_at: Time.now,
   ends_at: Time.now + 1.year 
 })
 
 Shop::ResourceOffer.create({
-  price: 50,
-  amount: 150,
+  price: 24,
+  amount: 50,
+  resource_id: 3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
+Shop::ResourceOffer.create({
+  price: 47,
+  amount: 120,
   resource_id: 3,
   started_at: Time.now,
   ends_at: Time.now + 1.year 
