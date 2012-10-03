@@ -229,7 +229,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Achte nicht auf ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavor>
+      <Flavor locale="de_DE">Achte nicht auf den Chef, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> </RewardText>
       <RewardText locale="en_US"> </RewardText>
