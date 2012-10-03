@@ -758,7 +758,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
