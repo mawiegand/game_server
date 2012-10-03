@@ -195,11 +195,11 @@ while !nodes.empty?
     region.terrain_id = 0    # everything not a desert is a plain
   end
   
-  new_name = region_names[region.terrain_id].sample.chomp
+  new_name = region_names[region.terrain_id].sample
   region_names[region.terrain_id].delete(new_name)
   
-  region.name = new_name
-  region.fortress.name = new_name
+  region.name = new_name.chomp
+  region.fortress.name = new_name.chomp
   region.fortress.save
   region.save
 end
