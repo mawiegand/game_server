@@ -55,8 +55,10 @@ end
 #
 # ############################################################################
 
+puts "add command to create clobal chat room." 
+
 Messaging::JabberCommand.create({
-  type_id:   'muc_create',
+  command:   'muc_create',
   room:      'global',
   processed: false,
 })
