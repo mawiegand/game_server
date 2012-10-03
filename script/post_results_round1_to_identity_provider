@@ -33,7 +33,7 @@ winner_ally = Ranking::AllianceRanking.find(:all, :order => "num_fortress DESC")
 Fundamental::Character.all.each do |character|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+#	  sleep (1)
 	end
 	
 	if !character.npc?
