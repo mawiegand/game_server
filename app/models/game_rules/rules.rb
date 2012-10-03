@@ -110,39 +110,39 @@ class GameRules::Rules
           :hours     => 1,
         },              #   END OF 1 hours
 
-        {               #   less than 4 hours
+        {               #   less than 3 hours
           :resource_id => 3, 
           :amount      => 2,
-          :hours     => 4,
-        },              #   END OF 4 hours
+          :hours     => 3,
+        },              #   END OF 3 hours
 
-        {               #   less than 10 hours
+        {               #   less than 7 hours
           :resource_id => 3, 
           :amount      => 4,
-          :hours     => 10,
-        },              #   END OF 10 hours
+          :hours     => 7,
+        },              #   END OF 7 hours
 
-        {               #   less than 24 hours
+        {               #   less than 12 hours
+          :resource_id => 3, 
+          :amount      => 6,
+          :hours     => 12,
+        },              #   END OF 12 hours
+
+        {               #   less than 18 hours
           :resource_id => 3, 
           :amount      => 8,
-          :hours     => 24,
-        },              #   END OF 24 hours
+          :hours     => 18,
+        },              #   END OF 18 hours
 
-        {               #   less than 48 hours
+        {               #   less than 30 hours
           :resource_id => 3, 
           :amount      => 12,
-          :hours     => 48,
-        },              #   END OF 48 hours
-
-        {               #   less than 96 hours
-          :resource_id => 3, 
-          :amount      => 20,
-          :hours     => 96,
-        },              #   END OF 96 hours
+          :hours     => 30,
+        },              #   END OF 30 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 30,
+          :amount      => 20,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -152,51 +152,51 @@ class GameRules::Rules
   
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
-        {               #   less than 6 hours
+        {               #   less than 3 hours
           :resource_id => 3, 
           :amount      => 1,
+          :hours     => 3,
+        },              #   END OF 3 hours
+
+        {               #   less than 6 hours
+          :resource_id => 3, 
+          :amount      => 2,
           :hours     => 6,
         },              #   END OF 6 hours
 
-        {               #   less than 12 hours
-          :resource_id => 3, 
-          :amount      => 2,
-          :hours     => 12,
-        },              #   END OF 12 hours
-
-        {               #   less than 24 hours
+        {               #   less than 11 hours
           :resource_id => 3, 
           :amount      => 3,
-          :hours     => 24,
-        },              #   END OF 24 hours
+          :hours     => 11,
+        },              #   END OF 11 hours
 
-        {               #   less than 48 hours
+        {               #   less than 17 hours
           :resource_id => 3, 
           :amount      => 4,
-          :hours     => 48,
-        },              #   END OF 48 hours
+          :hours     => 17,
+        },              #   END OF 17 hours
+
+        {               #   less than 36 hours
+          :resource_id => 3, 
+          :amount      => 6,
+          :hours     => 36,
+        },              #   END OF 36 hours
+
+        {               #   less than 56 hours
+          :resource_id => 3, 
+          :amount      => 8,
+          :hours     => 56,
+        },              #   END OF 56 hours
 
         {               #   less than 96 hours
           :resource_id => 3, 
-          :amount      => 5,
+          :amount      => 12,
           :hours     => 96,
         },              #   END OF 96 hours
 
-        {               #   less than 192 hours
-          :resource_id => 3, 
-          :amount      => 6,
-          :hours     => 192,
-        },              #   END OF 192 hours
-
-        {               #   less than 480 hours
-          :resource_id => 3, 
-          :amount      => 10,
-          :hours     => 480,
-        },              #   END OF 480 hours
-
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 15,
+          :amount      => 20,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
