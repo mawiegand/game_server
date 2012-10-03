@@ -230,7 +230,7 @@ Shop::ResourceOffer.create({
 Shop::BonusOffer.create({
   price: 5,
   resource_id: 0,
-  duration: 168,
+  duration: 148,
   bonus: 0.15, 
   started_at: Time.now,
   ends_at: Time.now + 1.year 
@@ -239,7 +239,7 @@ Shop::BonusOffer.create({
 Shop::BonusOffer.create({
   price: 5,
   resource_id: 1,
-  duration: 168,
+  duration: 148,
   bonus: 0.15, 
   started_at: Time.now,
   ends_at: Time.now + 1.year 
@@ -248,7 +248,7 @@ Shop::BonusOffer.create({
 Shop::BonusOffer.create({
   price: 5,
   resource_id: 2,
-  duration: 168,
+  duration: 148,
   bonus: 0.15, 
   started_at: Time.now,
   ends_at: Time.now + 1.year 
