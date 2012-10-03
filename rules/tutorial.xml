@@ -266,7 +266,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast du noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl3" />
+      <Requirement quest="quest_build_2gathererlvl3" />
      <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">30</ResourceReward>    
