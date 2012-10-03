@@ -847,7 +847,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button1',
+            :quest => 'quest_profile',
 
           },
 
@@ -936,7 +936,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_rank',
+            :quest => 'quest_settlement_button1',
 
           },
 
@@ -1025,7 +1025,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
@@ -2832,7 +2832,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Hütten",
+            :en_US => "Mehr Hütten",
   
             :de_DE => "Kleine Hütten, ganz groß!",
                 
@@ -2885,12 +2885,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 75,
+                :amount => 95,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 75,
               },
 
               {
@@ -2983,7 +2983,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 70,
+                :amount => 90,
               },
 
               {
