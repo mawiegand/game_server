@@ -728,6 +728,7 @@
       <Task locale="de_DE">Tritt einer Allianz bei oder gründe deine eigene.</Task>
       <Description locale="de_DE">
         <p>Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei.</p>
+        <p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 5 gründen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -888,9 +889,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">50</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ResourceReward resource="resource_stone">60</ResourceReward>  
+        <ResourceReward resource="resource_wood">60</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -946,7 +947,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut. Jetzt kannst Du einen Kleinen Häuptling trainieren. Schau dafür am Lagerfeuer vorbei.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Requirement quest="quest_build_campfirelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
@@ -954,7 +955,7 @@
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_campfire" min_level="10" />
+        <BuildingTest building="building_campfire" min_level="5" />
       </RewardTests>
     </Quest>
 
@@ -1060,9 +1061,9 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1cottagelvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">30</ResourceReward>  
-    <ResourceReward resource="resource_wood">30</ResourceReward>    
-    <ResourceReward resource="resource_fur">10</ResourceReward>
+    <ResourceReward resource="resource_stone">60</ResourceReward>  
+    <ResourceReward resource="resource_wood">60</ResourceReward>    
+    <ResourceReward resource="resource_fur">20</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1089,9 +1090,9 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1cottagelvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">30</ResourceReward>  
-    <ResourceReward resource="resource_wood">30</ResourceReward>    
-    <ResourceReward resource="resource_fur">15</ResourceReward>
+    <ResourceReward resource="resource_stone">75</ResourceReward>  
+    <ResourceReward resource="resource_wood">50</ResourceReward>    
+    <ResourceReward resource="resource_fur">45</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1118,8 +1119,8 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">40</ResourceReward>  
-    <ResourceReward resource="resource_wood">40</ResourceReward>    
+    <ResourceReward resource="resource_stone">70</ResourceReward>  
+    <ResourceReward resource="resource_wood">60</ResourceReward>    
     <ResourceReward resource="resource_fur">15</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
@@ -1147,9 +1148,9 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">30</ResourceReward>  
-    <ResourceReward resource="resource_wood">30</ResourceReward>    
-    <ResourceReward resource="resource_fur">25</ResourceReward>
+    <ResourceReward resource="resource_stone">100</ResourceReward>  
+    <ResourceReward resource="resource_wood">100</ResourceReward>    
+    <ResourceReward resource="resource_fur">55</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1160,7 +1161,7 @@
 <Quest id="quest_build_3gathererlvl7" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Jäger und Sammler weiter ausbauen</Name>
-  <Task>Baue drei Jäger und Sammler auf Level 5 aus.</Task>
+  <Task>Baue drei Jäger und Sammler auf Level 7 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>Die Jäger und Sammler mögen nicht die besten Produzenten von Rohstoffen sein, aber sie bringen von allem etwas. Das lohnt sich.</p>
@@ -1174,11 +1175,11 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl4" />
+  <Requirement quest="quest_build_3gathererlvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">30</ResourceReward>  
-    <ResourceReward resource="resource_wood">30</ResourceReward>    
-    <ResourceReward resource="resource_fur">25</ResourceReward>
+    <ResourceReward resource="resource_stone">80</ResourceReward>  
+    <ResourceReward resource="resource_wood">80</ResourceReward>    
+    <ResourceReward resource="resource_fur">40</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1205,13 +1206,13 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">80</ResourceReward>  
-    <ResourceReward resource="resource_wood">70</ResourceReward>    
+    <ResourceReward resource="resource_stone">100</ResourceReward>  
+    <ResourceReward resource="resource_wood">75</ResourceReward>    
     <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_barracks" min_level="1" />
+    <BuildingTest building="building_barracks" min_level="2" />
   </RewardTests>
 </Quest>
 
@@ -1277,7 +1278,7 @@
   <Name>Mehr Holzfäller und Steinbrüche</Name>
   <Name locale="de_DE"></Name>
   <Task></Task>
-  <Task locale="de_DE">5 Steinbrüche und 5 Holzfäller auf Level 5 ausbauen</Task>
+  <Task locale="de_DE">Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen</Task>
   <Description locale="de_DE">
     <p></p>
   </Description>
@@ -1292,8 +1293,8 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>  
-    <ResourceReward resource="resource_wood">100</ResourceReward>    
+    <ResourceReward resource="resource_stone">120</ResourceReward>  
+    <ResourceReward resource="resource_wood">120</ResourceReward>    
     <ResourceReward resource="resource_fur">40</ResourceReward>
     <ExperienceReward>125</ExperienceReward>
   </Rewards>
@@ -1331,6 +1332,36 @@
      <BuildingTest building="building_storage" min_level="5" />
    </RewardTests>
  </Quest>
+
+ <Quest id="quest_build_1campfirelvl5" advisor="chef">
+   <Name>Lagerfeuer auf Level 5</Name>
+   <Name locale="de_DE">Lagerfeuer Level 5</Name>
+   <Task></Task>
+   <Task locale="de_DE">Baue dein Lagerfeuer auf Level 5, damit Du die Möglichkeit hast, eine eine eigene Allianz zu gründen.</Task>
+   <Description locale="de_DE">
+     <p></p>
+   </Description>
+   <Description locale="en_US">
+     <p>Beschreibung des Quests auf englisch.</p>
+   </Description>
+   <Flavor locale="de_DE">Halbgott? Gib mir mehr Macht! Vergrößere das Lagerfeuer, damit ich meine eigene Allianz gründen kann! Los!</Flavor>
+   <Flavor locale="en_US">flavor text english</Flavor>
+   <RewardText locale="de_DE">Manchmal muss ein Häuptling auch eigene Ziele verfolgen. Eine eigene Allianz zu Ruhm und Ehren zu führen ist so etwas.</RewardText>
+   <RewardText locale="en_US"> </RewardText>
+   <RewardFlavor locale="de_DE">Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!</RewardFlavor>
+   <RewardFlavor locale="en_US"></RewardFlavor>
+   <Requirement quest="quest_build_chiefcottagelvl5" />
+   <Rewards>
+     <ResourceReward resource="resource_stone">150</ResourceReward>  
+     <ResourceReward resource="resource_wood">150</ResourceReward>    
+     <ResourceReward resource="resource_fur">100</ResourceReward>
+     <ExperienceReward>250</ExperienceReward>
+   </Rewards>
+   <RewardTests>
+     <BuildingTest building="building_campfire" min_level="5" />
+   </RewardTests>
+ </Quest>
+
 
 </Quests>
 </Tutorial>
