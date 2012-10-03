@@ -13,9 +13,11 @@ class Tutorial::TutorialsController < ApplicationController
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @tutorial.to_json}
+    render_not_modified_or(@tutorial.updated_at) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render :json => @tutorial.to_json}
+      end
     end    
   end
 end
