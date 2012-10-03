@@ -473,7 +473,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl1',
+            :quest => 'quest_build_1gathererlvl1',
 
           },
 
@@ -571,7 +571,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl2',
+            :quest => 'quest_build_1gathererlvl1',
 
           },
 
