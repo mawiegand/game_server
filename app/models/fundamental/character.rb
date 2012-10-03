@@ -465,6 +465,7 @@ class Fundamental::Character < ActiveRecord::Base
   ############################################################################  
 
   def check_consistency_sometimes
+    return         if self.login_count.nil? || self.login_count < 3   # do NOT check consistency on character creation
     return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)  
     check_consistency
   end  
