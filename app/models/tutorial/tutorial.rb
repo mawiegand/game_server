@@ -269,7 +269,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du solltest versuchen deine Rohstoffproduktion auszubauen. Bis Du später spezialisierte Rohstoffsammler hast sind Jäger und Sammler ein guter Start.",
+            :de_DE => "Du solltest versuchen deine Rohstoffproduktion auszubauen. Bis Du später spezialisierte Rohstoffsammler hast, sind Jäger und Sammler ein guter Start.",
   
             :en_US => " ",
                 
@@ -542,7 +542,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => " Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.",
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.",
   
             :en_US => "flavor text english",
                 
@@ -571,7 +571,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl1',
+            :quest => 'quest_build_1gathererlvl2',
 
           },
 
@@ -1017,7 +1017,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst zwar Nachrichten empfangen, aber noch keine schreiben.",
+            :de_DE => "Du kannst jetzt Nachrichten empfangen und schreiben.",
   
             :en_US => " ",
                 
@@ -1025,7 +1025,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlementowner',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -1333,7 +1333,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button2',
+            :quest => 'quest_build_2gathererlvl1',
 
           },
 
@@ -2328,7 +2328,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Baumfäller und Steinbruch",
+            :en_US => "Holzfäller und Steinbruch",
   
             :de_DE => "Steinbrüche und Holzfäller",
                 
@@ -2427,9 +2427,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
-        {               #   quest_build_5quarrylvl5_5loggerlvl5
+        {               #   quest_build_4quarrylvl5_4loggerlvl5
           :id                => 25, 
-          :symbolic_id       => :quest_build_5quarrylvl5_5loggerlvl5,
+          :symbolic_id       => :quest_build_4quarrylvl5_4loggerlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2533,7 +2533,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_5quarrylvl5_5loggerlvl5
+        },              #   END OF quest_build_4quarrylvl5_4loggerlvl5
         {               #   quest_build_1campfirelvl10
           :id                => 26, 
           :symbolic_id       => :quest_build_1campfirelvl10,
@@ -2542,7 +2542,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Lagerfeuer",
+            :en_US => "Lagerfeuer Level 10",
   
             :de_DE => "Lagerfeuer Level 10",
                 
@@ -2585,7 +2585,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -2922,9 +2922,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1cottagelvl3
-        {               #   quest_build_1gathererlvl4
+        {               #   quest_build_2gathererlvl4
           :id                => 30, 
-          :symbolic_id       => :quest_build_1gathererlvl4,
+          :symbolic_id       => :quest_build_2gathererlvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3019,10 +3019,10 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1gathererlvl4
-        {               #   quest_build_1gathererlvl5
+        },              #   END OF quest_build_2gathererlvl4
+        {               #   quest_build_4gathererlvl5
           :id                => 31, 
-          :symbolic_id       => :quest_build_1gathererlvl5,
+          :symbolic_id       => :quest_build_4gathererlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3049,7 +3049,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -3071,7 +3071,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl4',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -3117,16 +3117,114 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1gathererlvl5
-        {               #   quest_build_1barrackslvl2
+        },              #   END OF quest_build_4gathererlvl5
+        {               #   quest_build_3gathererlvl7
           :id                => 32, 
+          :symbolic_id       => :quest_build_3gathererlvl7,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Jäger und Sammler weiter ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue drei Jäger und Sammler auf Level 5 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hmm, mein Kleiderschrank ist leer und in meine Hütte zieht es rein. Vielleicht brauchen wir mehr Rohstoffe?",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Jäger und Sammler mögen nicht die besten Produzenten von Rohstoffen sein, aber sie bringen von allem etwas. Das lohnt sich.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Verbessere die Jäger und Sammler noch weiter.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_2gathererlvl4',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 30,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 30,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 25,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 7,
+
+                :min_count => 3,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_3gathererlvl7
+        {               #   quest_build_1barrackslvl2
+          :id                => 33, 
           :symbolic_id       => :quest_build_1barrackslvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
           
           :name => {
             
-            :en_US => "Barracks",
+            :en_US => "More Barracks",
   
             :de_DE => "Ausbildungsgelände Level 2",
                 
@@ -3169,7 +3267,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl4',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -3216,8 +3314,204 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1barrackslvl2
+        {               #   quest_build_1barrackslvl5
+          :id                => 34, 
+          :symbolic_id       => :quest_build_1barrackslvl5,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Barracks",
+  
+            :de_DE => "Ausbildungsgelände Level 5",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue ein Ausbildungsgelände auf Level 5.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Der Chef hat gerade das Ausbildungsgelände inspiziert. Er ist unzufrieden mit meiner Ausbildung der Krieger! Kannst Du dir das vorstellen? Mit MEINER Ausbildung? Wie soll ich eine schlagkräftige Truppe aufbauen, wenn wir kaum Platz zum Keulenschwingen haben? Bau für mich das Ausbildungsgelände aus.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit jedem Level des Ausbildungsgebäudes sinkt die Zeitdauer der Rekrutierung einer Nahkampfeinheit.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Sehr schön, das erzähle ich gleich dem Chef! Hier hast Du ein paar Rohstoffe für meine Jungs mit der Keule.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl2',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 150,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_barracks',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1barrackslvl5
+        {               #   quest_build_1barrackslvl10
+          :id                => 35, 
+          :symbolic_id       => :quest_build_1barrackslvl10,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Barracks",
+  
+            :de_DE => "Ausbildungsgelände Level 10",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dickhäutigen Keulenkrieger. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl5',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 150,
+              },
+
+            ],
+
+            :experience_reward => 300,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_barracks',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1barrackslvl10
         {               #   quest_build_2quarrylvl3_2loggerlvl3
-          :id                => 33, 
+          :id                => 36, 
           :symbolic_id       => :quest_build_2quarrylvl3_2loggerlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3324,7 +3618,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2quarrylvl3_2loggerlvl3
         {               #   quest_build_1storagelvl5
-          :id                => 34, 
+          :id                => 37, 
           :symbolic_id       => :quest_build_1storagelvl5,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3421,104 +3715,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1storagelvl5
-        {               #   quest_build_1barrackslvl10
-          :id                => 35, 
-          :symbolic_id       => :quest_build_1barrackslvl10,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          
-          :name => {
-            
-            :en_US => "Barracks",
-  
-            :de_DE => "Ausbildungsgelände Level 10",
-                
-          },
-          :task => {
-            
-            :en_US => "",
-  
-            :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dickhäutigen Keulenkrieger. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
-  
-            :en_US => "flavor text english",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>",
-  
-            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.",
-  
-            :en_US => "",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
-  
-            :en_US => " ",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_move',
-
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 150,
-              },
-
-            ],
-
-            :experience_reward => 300,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_barracks',
-
-                :min_level => 10,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_1barrackslvl10
       ],                # END OF QUESTS
 
     )
