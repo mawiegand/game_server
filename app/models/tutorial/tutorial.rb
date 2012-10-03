@@ -1431,7 +1431,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl3',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -2066,7 +2066,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei.</p>",
+            :de_DE => "<p>Ab jetzt kannst du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn du dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 5 gründen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2381,17 +2381,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 15,
               },
 
             ],
@@ -2585,7 +2585,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_1campfirelvl5',
 
           },
 
@@ -2621,7 +2621,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_campfire',
 
-                :min_level => 10,
+                :min_level => 5,
 
                 :min_count => 1,
 
@@ -2726,9 +2726,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_outpost
-        {               #   quest_build_1gathererlvl3
+        {               #   quest_build_2gathererlvl3
           :id                => 28, 
-          :symbolic_id       => :quest_build_1gathererlvl3,
+          :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2741,7 +2741,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue zwei Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -2787,17 +2787,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 70,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 20,
               },
 
             ],
@@ -2815,7 +2815,7 @@ class Tutorial::Tutorial
 
                 :min_level => 3,
 
-                :min_count => 3,
+                :min_count => 2,
 
               },
 
@@ -2823,7 +2823,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1gathererlvl3
+        },              #   END OF quest_build_2gathererlvl3
         {               #   quest_build_1cottagelvl3
           :id                => 29, 
           :symbolic_id       => :quest_build_1cottagelvl3,
@@ -2885,17 +2885,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 75,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 15,
+                :amount => 45,
               },
 
             ],
@@ -2983,12 +2983,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 40,
+                :amount => 70,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 40,
+                :amount => 60,
               },
 
               {
@@ -3081,17 +3081,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 55,
               },
 
             ],
@@ -3133,7 +3133,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei Jäger und Sammler auf Level 5 aus.",
+            :en_US => "Baue drei Jäger und Sammler auf Level 7 aus.",
   
             :de_DE => "",
                 
@@ -3169,7 +3169,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_4gathererlvl5',
 
           },
 
@@ -3179,17 +3179,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 40,
               },
 
             ],
@@ -3277,12 +3277,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 70,
+                :amount => 75,
               },
 
               {
@@ -3303,7 +3303,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_barracks',
 
-                :min_level => 1,
+                :min_level => 2,
 
                 :min_count => 1,
 
@@ -3527,7 +3527,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "5 Steinbrüche und 5 Holzfäller auf Level 5 ausbauen",
+            :de_DE => "Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen",
                 
           },
           :flavour => {
@@ -3571,12 +3571,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 120,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 120,
               },
 
               {
@@ -3715,6 +3715,104 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1storagelvl5
+        {               #   quest_build_1campfirelvl5
+          :id                => 38, 
+          :symbolic_id       => :quest_build_1campfirelvl5,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Lagerfeuer auf Level 5",
+  
+            :de_DE => "Lagerfeuer Level 5",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue dein Lagerfeuer auf Level 5, damit Du die Möglichkeit hast, eine eine eigene Allianz zu gründen.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott? Gib mir mehr Macht! Vergrößere das Lagerfeuer, damit ich meine eigene Allianz gründen kann! Los!",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Manchmal muss ein Häuptling auch eigene Ziele verfolgen. Eine eigene Allianz zu Ruhm und Ehren zu führen ist so etwas.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl5',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_campfire',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1campfirelvl5
       ],                # END OF QUESTS
 
     )
