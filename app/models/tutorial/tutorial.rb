@@ -626,9 +626,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Profile",
+            :en_US => "Namen und Profil",
   
-            :de_DE => " Profil ",
+            :de_DE => "Namen und Profil",
                 
           },
           :task => {
@@ -640,7 +640,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Achte nicht auf ihn, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. ",
+            :de_DE => "Achte nicht auf den Chef, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie du heißt. Bitte sag mir deinen Namen. ",
   
             :en_US => "flavor text english",
                 
@@ -758,7 +758,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -1207,7 +1207,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button2',
+            :quest => 'quest_message',
 
           },
 
@@ -1263,8 +1263,8 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Willkommen bei Wack-a-Doo',
-              :body => "<h2>Willkommen in der öffentlichen Erprobungsrunde.</h2>
-                <p>Unser Spiel 'Wackadoo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wackadoo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
+              :body => "<h2>Willkommen in der öffentlichen Betarunde.</h2>
+                <p>Unser Spiel 'Wack-a-doo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wack-a-doo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
                 <p>Im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
                 <p>Zur besseren Orientierung empfehlen wir Dir die Übersichten in der Enzyklopädie und die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
                 <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
@@ -1721,12 +1721,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 65,
+                :amount => 165,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 150,
               },
 
               {
@@ -1815,17 +1815,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 110,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 110,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 120,
               },
 
             ],
@@ -1902,7 +1902,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 235,
               },
 
               {
@@ -2000,12 +2000,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 60,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 65,
+                :amount => 75,
               },
 
               {
@@ -2381,12 +2381,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 60,
+                :amount => 75,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 60,
+                :amount => 65,
               },
 
               {
@@ -2595,22 +2595,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 240,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 450,
               },
 
             ],
 
-            :experience_reward => 300,
+            :experience_reward => 350,
 
           },          
 
@@ -2640,7 +2640,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Dorf",
+            :en_US => "Lagerstätte gründen",
   
             :de_DE => "Lagerstätte",
                 
@@ -3277,12 +3277,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 160,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 75,
+                :amount => 95,
               },
 
               {
@@ -3322,7 +3322,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Barracks",
+            :en_US => "Even more Barracks",
   
             :de_DE => "Ausbildungsgelände Level 5",
                 
@@ -3375,17 +3375,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 250,
               },
 
             ],
@@ -3776,17 +3776,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 275,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 70,
               },
 
             ],
