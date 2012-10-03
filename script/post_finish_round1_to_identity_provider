@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'identity_provider/access'
+
+
+Rails.logger.info "Start posting finished round events for all existing characters."
+print "Start posting finished round events for all existing characters."
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+});
+
+step = Fundamental::Character.count / 10  
+step = step > 0 ? step : 1
+
+count = 0
+
+Fundamental::Character.all.each do |character|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+	
+	if !character.npc?
+	  event = {
+	    type:       :finished_round,
+	    round:      1,
+	    round_name: 'Light',
+	  }
+	  description = {
+	    :de_DE => "Die Runde 1, 'Light', überlebt.",
+	    :en_US => "Survived until the end of round 1, 'Light'.",
+	  }
+    identity_provider_access.post_history_event(character.identifier, event, description)
+  end
+end
+
+puts "finished."
+Rails.logger.info "Finished posting finished round events."
+
+  
