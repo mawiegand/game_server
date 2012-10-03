@@ -77,9 +77,9 @@ class Fundamental::Character < ActiveRecord::Base
   
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
+      logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"
     (list || []).each do |resource_gift|    # nothing else allowed at present
-      logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{character.identifier}: #{ resource_gift.inspect }"
-      self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'], resource_gift['amount'].to_f)
+      self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
     end
   end
     
