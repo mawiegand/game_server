@@ -51,6 +51,18 @@ end
 
 # ############################################################################
 # 
+#   Seed Global Chat Channel
+#
+# ############################################################################
+
+Messaging::JabberCommand.create({
+  type_id:   'muc_create',
+  room:      'global',
+  processed: false,
+})
+
+# ############################################################################
+# 
 #   Seed the map
 #
 #   Seeds a world-map with 500 x 500 km tiles. Ranges (min|max  x|y) are 

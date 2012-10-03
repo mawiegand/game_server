@@ -28,6 +28,8 @@ defaults: &defaults
   platinum_additional_construction_jobs : 3
   platinum_additional_training_jobs     : 1
   
+  chat_host: jabber.wack-a-doo.com
+  
       
 development:
   <<: *defaults
@@ -57,6 +59,8 @@ staging:
   platinum_additional_construction_jobs : 1
   platinum_additional_training_jobs     : 2
 
+  chat_host: jabber.wack-a-doo.com
+
   
 production:
   <<: *defaults
@@ -71,6 +75,9 @@ production:
   character_recalc_probability:     0.2
   
   cookie_name: 'wackadoo_r2_remember_token'  
+  
+  chat_host: jabber2.wack-a-doo.com
+
   
   
   
