@@ -12,8 +12,8 @@ user.staff = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 3
-NUM_SPARSE_LEVELS = 2
+NUM_FULL_LEVELS   = 4
+NUM_SPARSE_LEVELS = 3
 
 
 # ############################################################################
