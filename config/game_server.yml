@@ -49,7 +49,6 @@ staging:
 production:
   <<: *defaults
   
-  game_identifier: 'WACKADOO-ROUND2'
   scope: 'wackadoo-round2'
 
   default_character_name: 'WackyUser'
