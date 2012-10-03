@@ -18,7 +18,7 @@ module IdentityProvider
     end
     
     def fetch_signup_gift(identifier, client_identifier)
-      get('/identities/'  + identifier + "/singup_gifts?client_id=#{client_identifier}")
+      get('/identities/'  + identifier + "/signup_gifts?client_id=#{client_identifier}")
     end
     
     def create_character_property(identifier, data_object)
