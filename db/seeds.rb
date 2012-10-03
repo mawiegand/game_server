@@ -12,8 +12,8 @@ user.staff = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 2
-NUM_SPARSE_LEVELS = 2
+NUM_FULL_LEVELS   = 3
+NUM_SPARSE_LEVELS = 4
 
 
 # ############################################################################
@@ -48,6 +48,20 @@ end
 @npcs = [
   Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
 ]
+
+# ############################################################################
+# 
+#   Seed Global Chat Channel
+#
+# ############################################################################
+
+puts "add command to create clobal chat room." 
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'global',
+  processed: false,
+})
 
 # ############################################################################
 # 
@@ -181,11 +195,11 @@ while !nodes.empty?
     region.terrain_id = 0    # everything not a desert is a plain
   end
   
-  new_name = region_names[region.terrain_id].sample.chomp
+  new_name = region_names[region.terrain_id].sample
   region_names[region.terrain_id].delete(new_name)
   
-  region.name = new_name
-  region.fortress.name = new_name
+  region.name = new_name.chomp
+  region.fortress.name = new_name.chomp
   region.fortress.save
   region.save
 end
