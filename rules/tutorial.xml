@@ -295,7 +295,7 @@
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_settlement_button1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -324,7 +324,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Aha, dem sollten wir eine Lektion erteilen!</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_rank" />
+      <Requirement quest="quest_settlement_button1" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
@@ -353,7 +353,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_cash">5</ResourceReward>  
         <ExperienceReward>150</ExperienceReward>
@@ -1072,7 +1072,7 @@
 </Quest>
 
 <Quest id="quest_build_1cottagelvl3" advisor="girl">
-  <Name>Hütten</Name>
+  <Name>Mehr Hütten</Name>
   <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
   <Task></Task>
   <Task locale="de_DE">Baue eine kleine Hütte auf Level 3.</Task>
@@ -1090,8 +1090,8 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1cottagelvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">75</ResourceReward>  
-    <ResourceReward resource="resource_wood">50</ResourceReward>    
+    <ResourceReward resource="resource_stone">95</ResourceReward>  
+    <ResourceReward resource="resource_wood">75</ResourceReward>    
     <ResourceReward resource="resource_fur">45</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
@@ -1119,7 +1119,7 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">70</ResourceReward>  
+    <ResourceReward resource="resource_stone">90</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
     <ResourceReward resource="resource_fur">15</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
