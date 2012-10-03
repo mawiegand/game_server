@@ -219,8 +219,8 @@
     </Quest>
 
     <Quest id="quest_profile" advisor="girl">
-      <Name>Profile</Name>
-      <Name locale="de_DE"> Profil </Name>
+      <Name>Namen und Profil</Name>
+      <Name locale="de_DE">Namen und Profil</Name>
       <Task></Task>
       <Task locale="de_DE">Ändere deinen Namen.</Task>
       <Description locale="de_DE">
@@ -417,7 +417,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Du hast es gefunden? Super, ich geh gleich zum Chef.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_settlement_button2" />
+      <Requirement quest="quest_message" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
@@ -443,8 +443,8 @@
       </Message>
       <Message lang="de">
         <Subject>Willkommen bei Wack-a-Doo</Subject>
-        <Body><![CDATA[<h2>Willkommen in der öffentlichen Erprobungsrunde.</h2>
-                <p>Unser Spiel 'Wackadoo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wackadoo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
+        <Body><![CDATA[<h2>Willkommen in der öffentlichen Betarunde.</h2>
+                <p>Unser Spiel 'Wack-a-doo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wack-a-doo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
                 <p>Im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
                 <p>Zur besseren Orientierung empfehlen wir Dir die Übersichten in der Enzyklopädie und die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
                 <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
@@ -624,8 +624,8 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
-        <ResourceReward resource="resource_stone">65</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
+        <ResourceReward resource="resource_stone">165</ResourceReward>  
+        <ResourceReward resource="resource_wood">150</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
@@ -653,9 +653,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>  
-        <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ResourceReward resource="resource_stone">110</ResourceReward>  
+        <ResourceReward resource="resource_wood">110</ResourceReward>    
+        <ResourceReward resource="resource_fur">120</ResourceReward>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -682,7 +682,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>  
+        <ResourceReward resource="resource_stone">235</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
         <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
@@ -711,8 +711,8 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">60</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
+        <ResourceReward resource="resource_stone">80</ResourceReward>  
+        <ResourceReward resource="resource_wood">75</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -889,8 +889,8 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">60</ResourceReward>  
-        <ResourceReward resource="resource_wood">60</ResourceReward>    
+        <ResourceReward resource="resource_stone">75</ResourceReward>  
+        <ResourceReward resource="resource_wood">65</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -949,10 +949,10 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>  
-        <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ExperienceReward>300</ExperienceReward>
+        <ResourceReward resource="resource_stone">240</ResourceReward>  
+        <ResourceReward resource="resource_wood">180</ResourceReward>    
+        <ResourceReward resource="resource_fur">450</ResourceReward>
+        <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="5" />
@@ -960,7 +960,7 @@
     </Quest>
 
     <Quest id="quest_outpost" advisor="chef">
-      <Name>Dorf</Name>
+      <Name>Lagerstätte gründen</Name>
       <Name locale="de_DE">Lagerstätte</Name>
       <Task></Task>
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
@@ -1206,8 +1206,8 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>  
-    <ResourceReward resource="resource_wood">75</ResourceReward>    
+    <ResourceReward resource="resource_stone">160</ResourceReward>  
+    <ResourceReward resource="resource_wood">95</ResourceReward>    
     <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
@@ -1217,7 +1217,7 @@
 </Quest>
 
 <Quest id="quest_build_1barrackslvl5" advisor="warrior">
-  <Name>Barracks</Name>
+  <Name>Even more Barracks</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
   <Task></Task>
   <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 5.</Task>
@@ -1235,9 +1235,9 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1barrackslvl2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">50</ResourceReward>  
-    <ResourceReward resource="resource_wood">50</ResourceReward>    
-    <ResourceReward resource="resource_fur">150</ResourceReward>
+    <ResourceReward resource="resource_stone">250</ResourceReward>  
+    <ResourceReward resource="resource_wood">250</ResourceReward>    
+    <ResourceReward resource="resource_fur">250</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1352,9 +1352,9 @@
    <RewardFlavor locale="en_US"></RewardFlavor>
    <Requirement quest="quest_build_chiefcottagelvl5" />
    <Rewards>
-     <ResourceReward resource="resource_stone">150</ResourceReward>  
-     <ResourceReward resource="resource_wood">150</ResourceReward>    
-     <ResourceReward resource="resource_fur">100</ResourceReward>
+     <ResourceReward resource="resource_stone">275</ResourceReward>  
+     <ResourceReward resource="resource_wood">250</ResourceReward>    
+     <ResourceReward resource="resource_fur">70</ResourceReward>
      <ExperienceReward>250</ExperienceReward>
    </Rewards>
    <RewardTests>

@@ -17,6 +17,10 @@ module IdentityProvider
       get('/identities/'  + identifier + '/character_properties')
     end
     
+    def fetch_signup_gift(identifier, client_identifier)
+      get('/identities/'  + identifier + "/signup_gifts?client_id=#{client_identifier}")
+    end
+    
     def create_character_property(identifier, data_object)
       post('/identities/' + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
     end

@@ -75,6 +75,15 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end  
   
+  def redeem_startup_gift(gift_list)
+    list = ActiveSupport::JSON.decode(gift_list)
+      logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"
+    (list || []).each do |resource_gift|    # nothing else allowed at present
+      self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
+    end
+  end
+    
+  
   def can_create_alliance?
     !character_unlock_alliance_creation_count.blank? && character_unlock_alliance_creation_count >= 1
   end
@@ -456,6 +465,7 @@ class Fundamental::Character < ActiveRecord::Base
   ############################################################################  
 
   def check_consistency_sometimes
+    return         if self.login_count.nil? || self.login_count < 3   # do NOT check consistency on character creation
     return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)  
     check_consistency
   end  

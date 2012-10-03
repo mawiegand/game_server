@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'identity_provider/access'
+
+Rails.logger.info "Start updating character ranks."
+puts "Start updating character ranks."
+Ranking::CharacterRanking.update_ranks
+
+Rails.logger.info "Start updating alliance ranks."
+puts "Start updating alliance ranks."
+Ranking::AllianceRanking.update_ranks
+
+Rails.logger.info "Start transfering ranking results."
+print "Start transfering ranking results"
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+});
+
+step = Fundamental::Character.count / 10  
+step = step > 0 ? step : 1
+
+count = 0
+
+winner_ally = Ranking::AllianceRanking.find(:all, :order => "num_fortress DESC").first
+
+Fundamental::Character.all.each do |character|
+	if count.modulo(step) == 0 
+	  print "." 
+#	  sleep (1)
+	end
+	
+	if !character.npc?
+    identity_provider_access.post_result(character, 1, 'Light', !character.alliance_id.nil? && character.alliance_id == winner_ally.id)
+  end
+end
+
+puts "finished."
+Rails.logger.info "Finished transfering ranking results."
+
+  
