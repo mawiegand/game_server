@@ -13,7 +13,7 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   = 3
-NUM_SPARSE_LEVELS = 4
+NUM_SPARSE_LEVELS = 5
 
 
 # ############################################################################
@@ -154,6 +154,8 @@ for i in (NUM_FULL_LEVELS..(NUM_FULL_LEVELS+NUM_SPARSE_LEVELS))
   puts "INFO: working on level #{i}."
   split_all_nodes(nodes, i-NUM_FULL_LEVELS+4, 1)     # i-3 (when starting with level 5)
 end
+
+puts "Created #{ Map::Node.where(leaf: true).count} leaf nodes."
 
 # create regions and locations
 
