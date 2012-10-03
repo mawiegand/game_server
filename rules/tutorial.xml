@@ -682,7 +682,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">220</ResourceReward>  
+        <ResourceReward resource="resource_stone">235</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
         <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
