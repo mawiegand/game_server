@@ -506,7 +506,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl3" />
+      <Requirement quest="quest_build_2gathererlvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -947,7 +947,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut. Jetzt kannst Du einen Kleinen Häuptling trainieren. Schau dafür am Lagerfeuer vorbei.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_campfirelvl5" />
+      <Requirement quest="quest_build_1campfirelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
@@ -1042,10 +1042,10 @@
       </Rewards>
     </Quest>
 -->
-<Quest id="quest_build_1gathererlvl3" advisor="girl">
+<Quest id="quest_build_2gathererlvl3" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Weitere Jäger und Sammler</Name>
-  <Task>Baue drei Jäger und Sammler auf Level 3 aus.</Task>
+  <Task>Baue zwei Jäger und Sammler auf Level 3 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens drei Deiner Jäger und Sammler auf Level 3.</p>
@@ -1061,13 +1061,13 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1cottagelvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">60</ResourceReward>  
+    <ResourceReward resource="resource_stone">70</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
     <ResourceReward resource="resource_fur">20</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="3" min_count="3"/>
+    <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
   </RewardTests>
 </Quest>
 
@@ -1175,7 +1175,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_3gathererlvl5" />
+  <Requirement quest="quest_build_4gathererlvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">80</ResourceReward>  
     <ResourceReward resource="resource_wood">80</ResourceReward>    
