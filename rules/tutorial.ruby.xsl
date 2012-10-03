@@ -75,12 +75,13 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests
+  attr_accessor :version, :quests, :updated_at
   
   def attributes 
     { 
       'version'        => version,
       'quests'         => quests,
+      'updated_at'     => updated_at,
     }
   end
   
@@ -105,6 +106,8 @@ class Tutorial::Tutorial
         :minor => <xsl:value-of select="//General/Version/@minor" />, 
         :build => <xsl:value-of select="//General/Version/@build" />, 
       },
+      
+      :updated_at => File.ctime(__FILE__),
   <xsl:apply-templates select="Quests" />
 
   <xsl:text><![CDATA[
