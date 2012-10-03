@@ -177,7 +177,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"> Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl1" />
+      <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -206,7 +206,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es dir nicht, dass deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl2" />
+      <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
