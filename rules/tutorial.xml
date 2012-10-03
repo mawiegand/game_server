@@ -1352,9 +1352,9 @@
    <RewardFlavor locale="en_US"></RewardFlavor>
    <Requirement quest="quest_build_chiefcottagelvl5" />
    <Rewards>
-     <ResourceReward resource="resource_stone">150</ResourceReward>  
-     <ResourceReward resource="resource_wood">150</ResourceReward>    
-     <ResourceReward resource="resource_fur">100</ResourceReward>
+     <ResourceReward resource="resource_stone">275</ResourceReward>  
+     <ResourceReward resource="resource_wood">250</ResourceReward>    
+     <ResourceReward resource="resource_fur">70</ResourceReward>
      <ExperienceReward>250</ExperienceReward>
    </Rewards>
    <RewardTests>
