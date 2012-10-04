@@ -1010,14 +1010,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen.",
+            :de_DE => "Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen, um den Ausbau der Häuptlingshütte sofort fertig zu stellen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du kannst jetzt Nachrichten empfangen und schreiben.",
+            :de_DE => "Du kannst jetzt Nachrichten empfangen. Als Belohnung hast Du fünf Kröten erhalten. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
   
             :en_US => " ",
                 
@@ -1061,7 +1061,7 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.",
+              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich fünf Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
             },
 
           },          
@@ -1343,17 +1343,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 60,
+                :amount => 120,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 45,
               },
 
             ],
@@ -1431,7 +1431,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_3gathererlvl2',
 
           },
 
@@ -1529,7 +1529,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_build_6gathererlvl2',
 
           },
 
@@ -1892,7 +1892,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl2',
+            :quest => 'quest_build_3gathererlvl4',
 
           },
 
@@ -2000,17 +2000,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 75,
+                :amount => 95,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 15,
               },
 
             ],
@@ -2185,12 +2185,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 55,
+                :amount => 85,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 65,
+                :amount => 75,
               },
 
               {
@@ -2726,9 +2726,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_outpost
-        {               #   quest_build_2gathererlvl3
+        {               #   quest_build_3gathererlvl2
           :id                => 28, 
-          :symbolic_id       => :quest_build_2gathererlvl3,
+          :symbolic_id       => :quest_build_3gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2741,7 +2741,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue zwei Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue drei weitere Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
@@ -2755,7 +2755,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens drei Deiner Jäger und Sammler auf Level 3.</p>",
+            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür insgesamt vier Deiner Jäger und Sammler auf Level 2.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2787,12 +2787,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 70,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 60,
+                :amount => 50,
               },
 
               {
@@ -2813,9 +2813,9 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 3,
+                :min_level => 2,
 
-                :min_count => 2,
+                :min_count => 4,
 
               },
 
@@ -2823,7 +2823,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_2gathererlvl3
+        },              #   END OF quest_build_3gathererlvl2
         {               #   quest_build_1cottagelvl3
           :id                => 29, 
           :symbolic_id       => :quest_build_1cottagelvl3,
@@ -2922,9 +2922,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1cottagelvl3
-        {               #   quest_build_2gathererlvl4
+        {               #   quest_build_2gathererlvl3
           :id                => 30, 
-          :symbolic_id       => :quest_build_2gathererlvl4,
+          :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2937,7 +2937,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue zwei Jäger und Sammler auf Level 4 aus.",
+            :en_US => "Baue drei weitere Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
@@ -2951,7 +2951,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 4.</p>",
+            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2983,17 +2983,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 90,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 60,
+                :amount => 130,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 15,
+                :amount => 60,
               },
 
             ],
@@ -3009,7 +3009,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 4,
+                :min_level => 3,
 
                 :min_count => 2,
 
@@ -3019,10 +3019,10 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_2gathererlvl4
-        {               #   quest_build_4gathererlvl5
+        },              #   END OF quest_build_2gathererlvl3
+        {               #   quest_build_6gathererlvl3
           :id                => 31, 
-          :symbolic_id       => :quest_build_4gathererlvl5,
+          :symbolic_id       => :quest_build_6gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3035,7 +3035,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue vier Jäger und Sammler auf Level 5 aus.",
+            :en_US => "Baue vier Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -3071,7 +3071,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -3081,17 +3081,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 55,
+                :amount => 90,
               },
 
             ],
@@ -3107,9 +3107,9 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 5,
+                :min_level => 3,
 
-                :min_count => 4,
+                :min_count => 6,
 
               },
 
@@ -3117,10 +3117,10 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_4gathererlvl5
-        {               #   quest_build_3gathererlvl7
+        },              #   END OF quest_build_6gathererlvl3
+        {               #   quest_build_3gathererlvl4
           :id                => 32, 
-          :symbolic_id       => :quest_build_3gathererlvl7,
+          :symbolic_id       => :quest_build_3gathererlvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3133,7 +3133,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei Jäger und Sammler auf Level 7 aus.",
+            :en_US => "Baue drei Jäger und Sammler auf Level 4 aus.",
   
             :de_DE => "",
                 
@@ -3169,7 +3169,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4gathererlvl5',
+            :quest => 'quest_build_1barrackslvl2',
 
           },
 
@@ -3179,22 +3179,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 80,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 40,
+                :amount => 100,
               },
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 50,
 
           },          
 
@@ -3205,7 +3205,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 7,
+                :min_level => 4,
 
                 :min_count => 3,
 
@@ -3215,7 +3215,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_3gathererlvl7
+        },              #   END OF quest_build_3gathererlvl4
         {               #   quest_build_1barrackslvl2
           :id                => 33, 
           :symbolic_id       => :quest_build_1barrackslvl2,
@@ -3267,7 +3267,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -3617,15 +3617,15 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_2quarrylvl3_2loggerlvl3
-        {               #   quest_build_1storagelvl5
+        {               #   quest_build_1storagelvl3
           :id                => 37, 
-          :symbolic_id       => :quest_build_1storagelvl5,
+          :symbolic_id       => :quest_build_1storagelvl3,
           :advisor           => :chef,
           :hide_start_dialog => false,
           
           :name => {
             
-            :en_US => "Rohstofflager Level 5",
+            :en_US => "Rohstofflager Level 3",
   
             :de_DE => " Rohstofflager Level 5 ",
                 
@@ -3678,12 +3678,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 25,
+                :amount => 105,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 25,
+                :amount => 105,
               },
 
               {
@@ -3704,7 +3704,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_storage',
 
-                :min_level => 5,
+                :min_level => 3,
 
                 :min_count => 1,
 
@@ -3714,7 +3714,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1storagelvl5
+        },              #   END OF quest_build_1storagelvl3
         {               #   quest_build_1campfirelvl5
           :id                => 38, 
           :symbolic_id       => :quest_build_1campfirelvl5,
@@ -3813,6 +3813,104 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1campfirelvl5
+        {               #   quest_build_6gathererlvl2
+          :id                => 39, 
+          :symbolic_id       => :quest_build_6gathererlvl2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Immer mehr Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue vier Jäger und Sammler auf Level 2 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, toll was die Jäger und Sammler alles finden. Aus den Fellen lasse ich mir ein neues Höschen schneidern. Bist Du so nett und kümmerst Dich um ihre weitere Ausbildung.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Juhu, nicht nur Fell für ein Höschen, sondern ein Top ist auch noch drin! Klasse!",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler solltest Du immer nebenbei mit aufwerten.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl3',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 65,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 35,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 2,
+
+                :min_count => 6,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_6gathererlvl2
       ],                # END OF QUESTS
 
     )
