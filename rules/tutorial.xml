@@ -1180,7 +1180,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Juhu, nicht nur Fell für ein Höschen, sondern ein Top ist auch noch drin! Klasse!</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl4" />
+  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">175</ResourceReward>  
     <ResourceReward resource="resource_wood">180</ResourceReward>    
