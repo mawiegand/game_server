@@ -17,7 +17,7 @@
     <Flavour lang="de_DE">
     <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen.</p>
   </Flavour>  
-  <Population>2.5*POW(LEVEL,2)-2.5*LEVEL+5</Population>
+  <Population>FLOOR(99*POW(2.71828*LEVEL))</Population>
   <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>    
   <Cost id="resource_fur" round="true">FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))*0.5*(10*POW(LEVEL,-0.7))+0.5)</Cost>
