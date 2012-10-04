@@ -21,6 +21,7 @@
     </Advisors>
   </General>
   
+<!-- 0 -->
   <Quests>
     <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" >
       <Name> the first building</Name>
@@ -44,6 +45,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 1 -->
     <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" >
       <Name> the first building</Name>
       <Name locale="de_DE">Auf den Bauauftrag warten.</Name>
@@ -73,6 +75,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 2 -->
     <Quest id="quest_build_1gathererlvl1" advisor="girl">
       <Name> Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
@@ -131,6 +134,7 @@
       </RewardTests>
     </Quest -->
 
+<!-- 3 -->
     <Quest id="quest_build_2gathererlvl1" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -160,6 +164,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 4 -->
     <Quest id="quest_build_1gathererlvl2" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Ausbau</Name>
@@ -189,6 +194,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 5 -->
     <Quest id="quest_build_chiefcottagelvl2" advisor="chef">
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
@@ -218,6 +224,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 6 -->
     <Quest id="quest_profile" advisor="girl">
       <Name>Namen und Profil</Name>
       <Name locale="de_DE">Namen und Profil</Name>
@@ -247,6 +254,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 7 -->
     <Quest id="quest_settlement_button1" advisor="chef">
       <Name>Karte</Name>
       <Name locale="de_DE">Auf die Karte</Name>
@@ -278,6 +286,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 8 -->
     <Quest id="quest_rank" advisor="chef">
       <Name>Rang</Name>
       <Name locale="de_DE">Rang</Name>
@@ -307,6 +316,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 9 -->
     <Quest id="quest_settlementowner" advisor="chef">
       <Name>Festungen</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
@@ -336,6 +346,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 10 -->
     <Quest id="quest_message" advisor="girl">
       <Name>Nachrichten</Name>
       <Name locale="de_DE">Nachrichten</Name>
@@ -371,6 +382,7 @@
       </Message>
     </Quest>
 
+<!-- 11 -->
     <Quest id="quest_settlement_button2" advisor="girl">
       <Name>Karte</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
@@ -400,6 +412,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 12 -->
     <Quest id="quest_encyclopedia" advisor="girl">
       <Name>Enzyklopädie</Name>
       <Name locale="de_DE"> Enzyklopädie </Name>
@@ -460,6 +473,7 @@
       </Message>
     </Quest>
 
+<!-- 13 -->
     <Quest id="quest_build_1cottagelvl1" advisor="girl">
       <Name>Hütten</Name>
       <Name locale="de_DE">Die kleine Hütte</Name>
@@ -479,16 +493,18 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">60</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ResourceReward resource="resource_stone">120</ResourceReward>  
+        <ResourceReward resource="resource_wood">100</ResourceReward>    
+        <ResourceReward resource="resource_fur">45</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
       </RewardTests>
     </Quest>
-
+    
+    
+<!-- 14 -->
     <Quest id="quest_build_chiefcottagelvl3" advisor="girl">
       <Name>Chief Cottage l3</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
@@ -506,7 +522,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_3gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -518,6 +534,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 15 -->
     <Quest id="quest_build_1barrackslvl1" advisor="chef">
       <Name>Barracks</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
@@ -535,7 +552,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Fertig? Na endlich! Da, deine Belohnung, mehr gibt's nicht. Verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl3" />
+      <Requirement quest="quest_build_6gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
         <ResourceReward resource="resource_wood">70</ResourceReward>    
@@ -547,6 +564,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 16 -->
     <Quest id="quest_recruit_1clubbers" advisor="warrior">
       <Name>Einheiten</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
@@ -602,6 +620,7 @@
       </RewardTests>
     </Quest -->
 
+<!-- 17 -->
     <Quest id="quest_army_create" advisor="warrior">
       <Name>Armee</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
@@ -634,6 +653,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 18 -->
     <Quest id="quest_army_move" advisor="warrior">
       <Name>Armeebewegung</Name>
       <Name locale="de_DE">Armeebewegung</Name>
@@ -663,6 +683,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 19 -->
     <Quest id="quest_build_chiefcottagelvl4" advisor="girl">
       <Name>Häuptlingshütte Level 4</Name>
       <Name locale="de_DE"> Und wieder die Häuptlingshütte </Name>
@@ -680,7 +701,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1barrackslvl2" />
+      <Requirement quest="quest_build_3gathererlvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">235</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -692,6 +713,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 20 -->
     <Quest id="quest_build_1campfirelvl1" advisor="girl">
       <Name>Lagerfeuer</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
@@ -711,9 +733,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">80</ResourceReward>  
-        <ResourceReward resource="resource_wood">75</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ResourceReward resource="resource_stone">100</ResourceReward>  
+        <ResourceReward resource="resource_wood">95</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -721,6 +743,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 21 -->
     <Quest id="quest_alliance" advisor="girl">
       <Name>Allianzen</Name>
       <Name locale="de_DE"></Name>
@@ -781,6 +804,7 @@
     </Quest>
 -->
 
+<!-- 22 -->
    <Quest id="quest_build_1storagelvl1" advisor="girl">
       <Name>Rohstofflager</Name>
       <Name locale="de_DE"> Rohstofflager </Name>
@@ -800,8 +824,8 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">55</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
+        <ResourceReward resource="resource_stone">85</ResourceReward>  
+        <ResourceReward resource="resource_wood">75</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -841,6 +865,7 @@
     </Quest>
 -->
 
+<!-- 23 -->
     <Quest id="quest_build_chiefcottagelvl5" advisor="girl">
       <Name>Häuptlingshütte Level 5</Name>
       <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
@@ -870,6 +895,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 24 -->
     <Quest id="quest_build_1quarrylvl1_1loggerlvl1" advisor="girl">
       <Name>Holzfäller und Steinbruch</Name>
       <Name locale="de_DE">Steinbrüche und Holzfäller</Name>
@@ -900,6 +926,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 25 -->
     <Quest id="quest_build_4quarrylvl5_4loggerlvl5" advisor="girl">
       <Name>Noch mehr Holzfäller und Steinbrüche</Name>
       <Name locale="de_DE"></Name>
@@ -930,6 +957,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 26 -->
     <Quest id="quest_build_1campfirelvl10" advisor="girl">
       <Name>Lagerfeuer Level 10</Name>
       <Name locale="de_DE">Lagerfeuer Level 10</Name>
@@ -959,6 +987,7 @@
       </RewardTests>
     </Quest>
 
+<!-- 27 -->
     <Quest id="quest_outpost" advisor="chef">
       <Name>Lagerstätte gründen</Name>
       <Name locale="de_DE">Lagerstätte</Name>
@@ -1042,13 +1071,15 @@
       </Rewards>
     </Quest>
 -->
-<Quest id="quest_build_2gathererlvl3" advisor="girl">
+
+<!-- 28 -->
+<Quest id="quest_build_3gathererlvl2" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Weitere Jäger und Sammler</Name>
-  <Task>Baue zwei Jäger und Sammler auf Level 3 aus.</Task>
+  <Task>Baue drei weitere Jäger und Sammler auf Level 2 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
-    <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens drei Deiner Jäger und Sammler auf Level 3.</p>
+    <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür insgesamt vier Deiner Jäger und Sammler auf Level 2.</p>
   </Description>
   <Description locale="en_US">
     <p>Beschreibung des Quests auf englisch.</p>
@@ -1061,16 +1092,17 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1cottagelvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">70</ResourceReward>  
-    <ResourceReward resource="resource_wood">60</ResourceReward>    
+    <ResourceReward resource="resource_stone">60</ResourceReward>  
+    <ResourceReward resource="resource_wood">50</ResourceReward>    
     <ResourceReward resource="resource_fur">20</ResourceReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
+    <BuildingTest building="building_gatherer" min_level="2" min_count="4"/>
   </RewardTests>
 </Quest>
 
+<!-- 29 -->
 <Quest id="quest_build_1cottagelvl3" advisor="girl">
   <Name>Mehr Hütten</Name>
   <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
@@ -1100,13 +1132,14 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_2gathererlvl4" advisor="girl">
+<!-- 30 -->
+<Quest id="quest_build_2gathererlvl3" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
-  <Task>Baue zwei Jäger und Sammler auf Level 4 aus.</Task>
+  <Task>Baue drei weitere Jäger und Sammler auf Level 2 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
-    <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 4.</p>
+    <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>
   </Description>
   <Description locale="en_US">
     <p>Beschreibung des Quests auf englisch.</p>
@@ -1119,20 +1152,21 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">90</ResourceReward>  
-    <ResourceReward resource="resource_wood">60</ResourceReward>    
-    <ResourceReward resource="resource_fur">15</ResourceReward>
+    <ResourceReward resource="resource_stone">125</ResourceReward>  
+    <ResourceReward resource="resource_wood">130</ResourceReward>    
+    <ResourceReward resource="resource_fur">60</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="4" min_count="2"/>
+    <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_4gathererlvl5" advisor="girl">
+<!-- 31 -->
+<Quest id="quest_build_6gathererlvl3" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
-  <Task>Baue vier Jäger und Sammler auf Level 5 aus.</Task>
+  <Task>Baue vier Jäger und Sammler auf Level 3 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>
@@ -1148,20 +1182,21 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>  
-    <ResourceReward resource="resource_wood">100</ResourceReward>    
-    <ResourceReward resource="resource_fur">55</ResourceReward>
+    <ResourceReward resource="resource_stone">175</ResourceReward>  
+    <ResourceReward resource="resource_wood">180</ResourceReward>    
+    <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="5" min_count="4"/>
+    <BuildingTest building="building_gatherer" min_level="3" min_count="6"/>
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_3gathererlvl7" advisor="girl">
+<!-- 32 -->
+<Quest id="quest_build_3gathererlvl4" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Jäger und Sammler weiter ausbauen</Name>
-  <Task>Baue drei Jäger und Sammler auf Level 7 aus.</Task>
+  <Task>Baue drei Jäger und Sammler auf Level 4 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>Die Jäger und Sammler mögen nicht die besten Produzenten von Rohstoffen sein, aber sie bringen von allem etwas. Das lohnt sich.</p>
@@ -1175,18 +1210,19 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_4gathererlvl5" />
+  <Requirement quest="quest_build_1barrackslvl2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">80</ResourceReward>  
-    <ResourceReward resource="resource_wood">80</ResourceReward>    
-    <ResourceReward resource="resource_fur">40</ResourceReward>
-    <ExperienceReward>100</ExperienceReward>
+    <ResourceReward resource="resource_stone">180</ResourceReward>  
+    <ResourceReward resource="resource_wood">180</ResourceReward>    
+    <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>50</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="7" min_count="3"/>
+    <BuildingTest building="building_gatherer" min_level="4" min_count="3"/>
   </RewardTests>
 </Quest>
 
+<!-- 33 -->
 <Quest id="quest_build_1barrackslvl2" advisor="chef">
   <Name>More Barracks</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 2</Name>
@@ -1204,7 +1240,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">War das jetzt so schwer? Hier ein paar Kleinigkeiten, damit Du nicht wieder Deine militärische Schlagkraft vernachlässigst! </RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl4" />
+  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">160</ResourceReward>  
     <ResourceReward resource="resource_wood">95</ResourceReward>    
@@ -1216,6 +1252,7 @@
   </RewardTests>
 </Quest>
 
+<!-- 34 -->
 <Quest id="quest_build_1barrackslvl5" advisor="warrior">
   <Name>Even more Barracks</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
@@ -1245,6 +1282,7 @@
   </RewardTests>
 </Quest>
 
+<!-- 35 -->
 <Quest id="quest_build_1barrackslvl10" advisor="warrior">
   <Name>Barracks</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
@@ -1274,6 +1312,7 @@
   </RewardTests>
 </Quest>
 
+<!-- 36 -->
 <Quest id="quest_build_2quarrylvl3_2loggerlvl3" advisor="girl">
   <Name>Mehr Holzfäller und Steinbrüche</Name>
   <Name locale="de_DE"></Name>
@@ -1304,8 +1343,9 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_1storagelvl5" advisor="chef">
-   <Name>Rohstofflager Level 5</Name>
+<!-- 37 -->
+<Quest id="quest_build_1storagelvl3" advisor="chef">
+   <Name>Rohstofflager Level 3</Name>
    <Name locale="de_DE"> Rohstofflager Level 5 </Name>
    <Task></Task>
    <Task locale="de_DE">Baue ein Rohstofflager Level 5.</Task>
@@ -1323,16 +1363,17 @@
    <RewardFlavor locale="en_US"></RewardFlavor>
    <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
    <Rewards>
-     <ResourceReward resource="resource_stone">25</ResourceReward>  
-     <ResourceReward resource="resource_wood">25</ResourceReward>    
+     <ResourceReward resource="resource_stone">105</ResourceReward>  
+     <ResourceReward resource="resource_wood">105</ResourceReward>    
      <ResourceReward resource="resource_fur">35</ResourceReward>
      <ExperienceReward>75</ExperienceReward>
    </Rewards>
    <RewardTests>
-     <BuildingTest building="building_storage" min_level="5" />
+     <BuildingTest building="building_storage" min_level="3" />
    </RewardTests>
  </Quest>
 
+<!-- 38 -->
  <Quest id="quest_build_1campfirelvl5" advisor="chef">
    <Name>Lagerfeuer auf Level 5</Name>
    <Name locale="de_DE">Lagerfeuer Level 5</Name>
@@ -1362,6 +1403,35 @@
    </RewardTests>
  </Quest>
 
+ <!-- 39 -->
+ <Quest id="quest_build_6gathererlvl2" advisor="girl">
+   <Name></Name>
+   <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
+   <Task>Baue vier Jäger und Sammler auf Level 2 aus.</Task>
+   <Task locale="de_DE"></Task>
+   <Description locale="de_DE">
+     <p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>
+   </Description>
+   <Description locale="en_US">
+     <p>Beschreibung des Quests auf englisch.</p>
+   </Description>
+   <Flavor locale="de_DE">Hey, toll was die Jäger und Sammler alles finden. Aus den Fellen lasse ich mir ein neues Höschen schneidern. Bist Du so nett und kümmerst Dich um ihre weitere Ausbildung.</Flavor>
+   <Flavor locale="en_US">flavor text english</Flavor>
+   <RewardText locale="de_DE">Jäger und Sammler solltest Du immer nebenbei mit aufwerten.</RewardText>
+   <RewardText locale="en_US"> </RewardText>
+   <RewardFlavor locale="de_DE">Juhu, nicht nur Fell für ein Höschen, sondern ein Top ist auch noch drin! Klasse!</RewardFlavor>
+   <RewardFlavor locale="en_US"></RewardFlavor>
+   <Requirement quest="quest_build_chiefcottagelvl3" />
+   <Rewards>
+     <ResourceReward resource="resource_stone">65</ResourceReward>  
+     <ResourceReward resource="resource_wood">75</ResourceReward>    
+     <ResourceReward resource="resource_fur">35</ResourceReward>
+     <ExperienceReward>100</ExperienceReward>
+   </Rewards>
+   <RewardTests>
+     <BuildingTest building="building_gatherer" min_level="2" min_count="6"/>
+   </RewardTests>
+ </Quest>
 
 </Quests>
 </Tutorial>
