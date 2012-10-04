@@ -69,8 +69,9 @@ class Tutorial::QuestsController < ApplicationController
 
       # Send Mail if required
       quest_message = @tutorial_quest.quest[:message]
-      unless quest_message.nil?
-        Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body]) # TODO I18n
+      
+      if !quest_message.nil? && @tutorial_quest.status < Tutorial::Quest::STATE_DISPLAYED
+        Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body])
       end
     end
 
