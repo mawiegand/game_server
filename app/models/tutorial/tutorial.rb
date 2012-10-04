@@ -768,17 +768,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 40,
+                :amount => 95,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 75,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 40,
               },
 
             ],
@@ -832,14 +832,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.",
+            :de_DE => "Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier nimm die Kröten und beschleunige Deinen Ausbau!",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Als Belohnung erhälst Du zwei Kröten. Mit diesen Kröten kannst Du längere Ausbauten sofort fertig stellen, wie zum Beispiel den Ausbau der Häuptlingshütte.",
   
             :en_US => "",
                 
@@ -856,18 +856,8 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => :resource_stone,
-                :amount => 55,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 45,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 15,
+                :resource => :resource_cash,
+                :amount => 2,
               },
 
             ],
@@ -1035,7 +1025,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 5,
+                :amount => 3,
               },
 
             ],
@@ -1402,14 +1392,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
+            :de_DE => "<p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2444,7 +2434,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "4 Steinbrüche und 4 Holzfäller auf Level 5 ausbauen",
+            :de_DE => "Vier Steinbrüche und Holzfäller auf Level 3 ausbauen",
                 
           },
           :flavour => {
@@ -2488,17 +2478,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 30,
+                :amount => 80,
               },
 
             ],
@@ -2514,7 +2504,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_quarry',
 
-                :min_level => 5,
+                :min_level => 3,
 
                 :min_count => 4,
 
@@ -2523,7 +2513,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_logger',
 
-                :min_level => 5,
+                :min_level => 3,
 
                 :min_count => 4,
 
@@ -2741,7 +2731,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei weitere Jäger und Sammler auf Level 2 aus.",
+            :en_US => "Baue insgesamt vier Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
@@ -2937,7 +2927,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei weitere Jäger und Sammler auf Level 2 aus.",
+            :en_US => "Baue insgesamt zwei Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -3035,7 +3025,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue vier Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue insgesamt sechs Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -3828,7 +3818,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue vier Jäger und Sammler auf Level 2 aus.",
+            :en_US => "Baue insgesamt sechs Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
