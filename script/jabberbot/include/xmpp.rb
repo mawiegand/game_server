@@ -54,7 +54,7 @@ class Xmpp
           'muc#roomconfig_publicroom'              => 0,    # Raum öffentlich suchbar machen
           'muc#roomconfig_passwordprotectedroom'   => 0,    # Raum mit Passwort schuetzen
           'muc#roomconfig_roomsecret'              => '',   # Passwort
-          'muc#roomconfig_maxusers'                => 200,  # Maximale Anzahl von Teilnehmern
+          'muc#roomconfig_maxusers'                => command.room == "global" ? 10000 : 1000,  # Maximale Anzahl von Teilnehmern
           'muc#roomconfig_whois'                   => "moderators", # Echte Jabber-IDs anzeigen für
           'muc#roomconfig_membersonly'             => 1,    # Raum nur für Mitglieder zugänglich machen
           'muc#roomconfig_moderatedroom'           => 1,    # Raum moderiert machen
@@ -126,7 +126,11 @@ class Xmpp
       muc.join(room_jid)
 
       if muc.owner?
-        muc.say("Hi an alle. Ab sofort darf #{command.character.name} nun auch hier rein :)")
+        if command.room == "global" 
+          muc.say("Gerade angemeldet: #{command.character.name}. Herzlich willkommen! :)")          
+        else
+          muc.say("Ab sofort darf #{command.character.name} auch hier rein.")
+        end
 
         useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
         useritem.affiliation= :member
