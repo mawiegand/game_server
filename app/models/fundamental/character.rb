@@ -186,7 +186,7 @@ class Fundamental::Character < ActiveRecord::Base
   def change_name_transaction(name)
     raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
-    freeChange = (self.name_change_count || 0) < 1 
+    freeChange = (self.name_change_count || 0) < 2 
     
     if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the name change."
@@ -207,7 +207,7 @@ class Fundamental::Character < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > 1 # test for 1, count was already incremented!
+    if (self.name_change_count || 0) > 2 # test for 2, count was already incremented!  -> two changes are free!
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
@@ -216,7 +216,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   def change_gender_transaction(newGender)
     
-    freeChange = (self.gender_change_count || 0) < 1 
+    freeChange = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
     
     if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
@@ -227,7 +227,7 @@ class Fundamental::Character < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
     
-    if (self.gender_change_count || 0) > 1  #  test for 1, count was already incremented! 
+    if (self.gender_change_count || 0) > 2  #  test for 2, count was already incremented!  -> two changes are free
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
