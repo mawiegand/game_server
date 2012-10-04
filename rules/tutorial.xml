@@ -276,9 +276,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl3" />
      <Rewards>
-        <ResourceReward resource="resource_stone">40</ResourceReward>  
-        <ResourceReward resource="resource_wood">30</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ResourceReward resource="resource_stone">95</ResourceReward>  
+        <ResourceReward resource="resource_wood">75</ResourceReward>    
+        <ResourceReward resource="resource_fur">40</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -300,15 +300,13 @@
       </Description>
       <Flavor locale="de_DE">So so, fühlst dich nicht mehr so groß? Sag mir, wie stehst du eigentlich im Vergleich zu den ganzen anderen Halbgöttern da?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Als Belohnung erhälst Du zwei Kröten. Mit diesen Kröten kannst Du längere Ausbauten sofort fertig stellen, wie zum Beispiel den Ausbau der Häuptlingshütte.</RewardText>
       <RewardText locale="en_US"></RewardText>
-      <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier nimm die Kröten und beschleunige Deinen Ausbau!</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_profile" />
       <Rewards>
-        <ResourceReward resource="resource_stone">55</ResourceReward>  
-        <ResourceReward resource="resource_wood">45</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -366,7 +364,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_cash">5</ResourceReward>  
+        <ResourceReward resource="resource_cash">3</ResourceReward>  
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -511,12 +509,12 @@
       <Task></Task>
       <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
+        <p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.</Flavor>
+      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -931,7 +929,7 @@
       <Name>Noch mehr Holzfäller und Steinbrüche</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE">4 Steinbrüche und 4 Holzfäller auf Level 5 ausbauen</Task>
+      <Task locale="de_DE">Vier Steinbrüche und Holzfäller auf Level 3 ausbauen</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -946,14 +944,14 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward>
+        <ResourceReward resource="resource_stone">250</ResourceReward>  
+        <ResourceReward resource="resource_wood">250</ResourceReward>    
+        <ResourceReward resource="resource_fur">80</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_quarry" min_level="5" min_count="4" />
-        <BuildingTest building="building_logger" min_level="5" min_count="4" />
+        <BuildingTest building="building_quarry" min_level="3" min_count="4" />
+        <BuildingTest building="building_logger" min_level="3" min_count="4" />
       </RewardTests>
     </Quest>
 
@@ -1076,7 +1074,7 @@
 <Quest id="quest_build_3gathererlvl2" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Weitere Jäger und Sammler</Name>
-  <Task>Baue drei weitere Jäger und Sammler auf Level 2 aus.</Task>
+  <Task>Baue insgesamt vier Jäger und Sammler auf Level 2 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür insgesamt vier Deiner Jäger und Sammler auf Level 2.</p>
@@ -1136,7 +1134,7 @@
 <Quest id="quest_build_2gathererlvl3" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
-  <Task>Baue drei weitere Jäger und Sammler auf Level 2 aus.</Task>
+  <Task>Baue insgesamt zwei Jäger und Sammler auf Level 3 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>
@@ -1166,7 +1164,7 @@
 <Quest id="quest_build_6gathererlvl3" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
-  <Task>Baue vier Jäger und Sammler auf Level 3 aus.</Task>
+  <Task>Baue insgesamt sechs Jäger und Sammler auf Level 3 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
     <p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>
@@ -1407,7 +1405,7 @@
  <Quest id="quest_build_6gathererlvl2" advisor="girl">
    <Name></Name>
    <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
-   <Task>Baue vier Jäger und Sammler auf Level 2 aus.</Task>
+   <Task>Baue insgesamt sechs Jäger und Sammler auf Level 2 aus.</Task>
    <Task locale="de_DE"></Task>
    <Description locale="de_DE">
      <p>Behalte Deine Jäger und Sammler im Auge, sie sollten stetig weiter ausgebildet werden.</p>
