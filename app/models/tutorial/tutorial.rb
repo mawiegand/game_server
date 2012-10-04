@@ -1007,7 +1007,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst jetzt Nachrichten empfangen. Als Belohnung hast Du fünf Kröten erhalten. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
+            :de_DE => "Du kannst jetzt Nachrichten empfangen. Als Belohnung hast Du drei Kröten erhalten. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
   
             :en_US => " ",
                 
