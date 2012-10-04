@@ -360,9 +360,9 @@
       </Description>
       <Flavor locale="de_DE">Um die Nachricht zu lesen, klicke auf den Nachrichten-Knopf oben rechts und wähle dann die Nachricht auf der rechten Seite aus.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Du kannst jetzt Nachrichten empfangen und schreiben.</RewardText>
+      <RewardText locale="de_DE">Du kannst jetzt Nachrichten empfangen. Als Belohnung hast Du fünf Kröten erhalten. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen, um den Ausbau der Häuptlingshütte sofort fertig zu stellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
@@ -378,7 +378,7 @@
       </Message>
       <Message lang="de">
         <Subject>Nachricht vom Questgeber</Subject>
-        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.]]></Body>
+        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich fünf Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.]]></Body>
       </Message>
     </Quest>
 
