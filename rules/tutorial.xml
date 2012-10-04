@@ -981,7 +981,7 @@
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_campfire" min_level="5" />
+        <BuildingTest building="building_campfire" min_level="10" />
       </RewardTests>
     </Quest>
 
