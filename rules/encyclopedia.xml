@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tutorial SYSTEM "encyclopedia.dtd">
+<Encyclopedia>
+  <Topics>
+    <Topic id="topic_X">
+      <Name>Settlements</Name>
+      <Name locale="de_DE">Siedlungen</Name>
+      <Content>
+        English Content still to come.
+      </Content>
+      <Content locale="de_DE">
+        <h2>Siedlungstypen</h2>
+        <p>Es gibt 3 Siedlungstypen: Hauptsiedlungen, Lagerstätten und Festungen.</p>
+
+        <p>Die Hauptsiedlung ist die Startsiedlung eines jeden Spielers. Sie ist die größte Siedlung und kann nicht eingenommen oder komplett zerstört werden. Jeder Spieler hat eine Hauptsiedlung.</p>
+
+        <p>Festungen beherrschen eine Region und treiben den Siedlungen innerhalb der Region Steuern ein. Sie sind kleine Militärstützpunkte mit großer strategischer Bedeutung.
+Festungen sind können eingenommen werden.</p>
+
+        <p>Lagerstätten sind kleine von Spielern gründbare Siedlungen, die auf Militär oder Rohstoffe spezialisiert werden können. Sie sind generell einnehmbar, allerdings ist es möglich durch den Bau eines Gebäudes die Lagerstätte uneinnehmbar zu machen.</p>
+
+        <h2>Siedlungsgründung</h2>
+        <p>Lagerstätten können an unbebauten Orten gegründet werden. Dazu werden ein Siedlungspunkt, ein kleiner Häuptling in einer Armee am Siedlungsort und 10.000 Stein, 10.000 Holz und 5.000 Fell benötigt.
+Es kann nur eine Siedlung pro Region gegründet werden.</p>
+
+        <p>Der kleine Häuptling kann mit einem Lagerfeuer Stufe 10 rekrutiert werden.</p>
+
+        <h2>Siedlungspunkte</h2>
+        <p>Siedlungspunkte werden benötigt um Siedlungen zu übernehmen oder zu gründen. Alle Siedlungen inklusive der Hauptsiedlung verbrauchen einen Siedlungspunkt.</p>
+        <p>Wenn du versuchst eine Festung oder Lagerstätte zu übernehmen, aber keine Siedlungspunkte hast, so bekommt entweder ein anderer Teilnehmer des Kampfes die Siedlung, oder wenn keiner der Angreifer Siedlungspunkte hat, bleibt sie in der Hand des Verteidigers.
+Siedlungspunkte bekommst du, wenn du im weltlichen Rang aufsteigst.</p>
+      </Content>
+    </Topic>
+  </Topics>
+</Encyclopedia>
+
