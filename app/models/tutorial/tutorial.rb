@@ -3901,6 +3901,678 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_6gathererlvl2
+        {               #   quest_build_1gathererlvl4
+          :id                => 40, 
+          :symbolic_id       => :quest_build_1gathererlvl4,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Immer größere Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 4 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Jäger und Sammler hat gar nicht genug Holz auf seinem Gelände. Bau es doch bitte aus, vorzugsweise in Richtung des Waldes.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere einen Deiner Jäger und Sammler auf Level 4.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Guck mal, dein Jäger und Sammler hat schon richtig Holz vor der Hütte.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_2gathererlvl3',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 35,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 4,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl4
+        {               #   quest_build_1gathererlvl5
+          :id                => 41, 
+          :symbolic_id       => :quest_build_1gathererlvl5,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Immer diese Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 5 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Diese Jäger und Sammler sind unersättlich. Ständig treiben sie sich vor meiner Häuptlingshütte rum. Sorg dafür, dass sie mich in Ruhe lassen.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Ausbau der Jäger und Sammler erhöht ihre Produktion. Verbessere einen Deiner Jäger und Sammler auf Level 5.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Was? Du hast ihr Gelände ausgebaut? Das wird sie doch höchstens einen Tag beschäftigt halten. Was bringen sie euch Halbgöttern denn heutzutage bei?!",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl4',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 80,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 80,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 50,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl5
+        {               #   quest_build_1gathererlvl6
+          :id                => 42, 
+          :symbolic_id       => :quest_build_1gathererlvl6,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Und wieder Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 6 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Dein Jäger und Sammler langweilt sich schon wieder. Bau ihm doch bitte ein größeres Gelände.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wenn du nicht weiter weißt, baue deine Gebäude aus.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke ich habe den Jäger und Sammler schon über sein neues Gelände wirbeln sehen. Ich glaube, er wird eine Weile beschäftigt sein.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl5',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 120,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 120,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 75,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl6
+        {               #   quest_build_1gathererlvl7
+          :id                => 43, 
+          :symbolic_id       => :quest_build_1gathererlvl7,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Das Jäger und Sammler Problem",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 7 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Die Jäger und Sammler rennen schon auf den Ausbildungsgeländen herum. Das verschlechtert die Ausbildung der Truppen und außerdem fehlen ständig Waffen. Jemand sollte sich um dieses Problem kümmern.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Verbessere einen Deiner Jäger und Sammler auf Level 7.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ich habe gehört, dass die Jäger und Sammler nicht mehr die Ausbildung stören. Hoffentlich bleibt das auch so.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl6',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 160,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 160,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 7,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl7
+        {               #   quest_build_1gathererlvl8
+          :id                => 44, 
+          :symbolic_id       => :quest_build_1gathererlvl8,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Immer noch Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 8 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößer es für ihn aus.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Jäger und Sammler sind die billigsten Gebäude. Deshalb können sie am schnellsten ausgebaut werden.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hast du schon gesehen, wie sich der Jäger und Sammler freut? Er hat heute sogar eine Stunde lang versucht eine Kröte zu fangen. Geschafft hat er es aber nicht.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler finden ab Level 11 auch ab und an eine Kröte .",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl7',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 220,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 220,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 150,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 8,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl8
+        {               #   quest_build_1gathererlvl9
+          :id                => 45, 
+          :symbolic_id       => :quest_build_1gathererlvl9,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Fast ausgebaute Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 9 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Diese Jäger und Sammler sind seltsam. Er sitzt da und bläst Trübsal. Vielleicht geht es ihm ja besser, wenn du sein Gelände erweiterst.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Nur noch zwei Level. Verbessere einen Deiner Jäger und Sammler auf Level 9.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke, ich glaube, jetzt geht es dem Jäger und Sammler besser.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl8',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 350,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 350,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 200,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 9,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl9
+        {               #   quest_build_1gathererlvl10
+          :id                => 46, 
+          :symbolic_id       => :quest_build_1gathererlvl10,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "",
+  
+            :de_DE => "Ein letztes mal der Jäger und Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Baue einen Jäger und Sammler auf Level 10 aus.",
+  
+            :de_DE => "",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Tu dem Jäger und Sammler doch einen Gefallen und erweiter sein Gelände. Dann ist es auch so groß, dass ihm nie wieder langweilig wird.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Gebäude auf kleinen Bauplätzen können bis auf Level 10 ausgebaut werden. Verbessere einen Deiner Jäger und Sammler auf Level 10.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ach wie schön. Der Jäger und Sammler hat jetzt immer etwas zu tun..",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl9',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 400,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1gathererlvl10
       ],                # END OF QUESTS
 
     )
