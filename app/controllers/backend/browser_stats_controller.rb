@@ -2,7 +2,7 @@ class Backend::BrowserStatsController < ApplicationController
   layout 'backend'
 
   before_filter :deny_api,                :except => [:create] 
-  before_filter :authenticate,            :only   => [:create]
+  # before_filter :authenticate,            :only   => [:create]  TODO reenable authemtication!
   before_filter :authenticate_backend,    :except => [:create] 
   before_filter :authorize_staff,         :except => [:create]
   
