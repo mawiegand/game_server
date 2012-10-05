@@ -48,7 +48,7 @@ class Backend::BrowserStatsController < ApplicationController
   # POST /backend/browser_stats
   # POST /backend/browser_stats.json
   def create
-    params[:backend_browser_stat][:identifier] = current_character.identifier
+    params[:backend_browser_stat][:identifier] = current_character.identifier unless current_character.nil?
     @backend_browser_stat = Backend::BrowserStat.new(params[:backend_browser_stat])
 
     respond_to do |format|
