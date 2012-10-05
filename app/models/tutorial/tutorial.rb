@@ -4307,7 +4307,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößer es für ihn aus.",
+            :de_DE => "Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößere es für ihn.",
   
             :en_US => "flavor text english",
                 

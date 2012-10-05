@@ -1559,7 +1559,7 @@
   <Description locale="en_US">
     <p>Beschreibung des Quests auf englisch.</p>
   </Description>
-  <Flavor locale="de_DE">Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößer es für ihn aus.</Flavor>
+  <Flavor locale="de_DE">Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößere es für ihn.</Flavor>
   <Flavor locale="en_US">flavor text english</Flavor>
   <RewardText locale="de_DE">Jäger und Sammler finden ab Level 11 auch ab und an eine Kröte .</RewardText>
   <RewardText locale="en_US"> </RewardText>
