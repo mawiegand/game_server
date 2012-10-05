@@ -1892,17 +1892,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 235,
+                :amount => 330,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 330,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 165,
               },
 
             ],
@@ -2273,17 +2273,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 220,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 220,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 250,
               },
 
             ],
@@ -4780,6 +4780,104 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl4
+        {               #   quest_build_chiefcottagelvl6
+          :id                => 50, 
+          :symbolic_id       => :quest_build_chiefcottagelvl6,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Häuptlingshütte Level 6",
+  
+            :de_DE => "Häuptlingshütte Level 6",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue deine Häuptlingshütte auf Level 6 aus.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, bau doch deine Häuptlingshütte weiter aus.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll wie weit du schon gekommen bist. Weiter so!",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 300,
+              },
+
+            ],
+
+            :experience_reward => 300,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_chiefcottagelvl6
       ],                # END OF QUESTS
 
     )

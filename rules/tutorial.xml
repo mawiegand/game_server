@@ -701,9 +701,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_3gathererlvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">235</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ResourceReward resource="resource_stone">330</ResourceReward>  
+        <ResourceReward resource="resource_wood">330</ResourceReward>    
+        <ResourceReward resource="resource_fur">165</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -883,9 +883,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">220</ResourceReward>  
-        <ResourceReward resource="resource_wood">220</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ResourceReward resource="resource_stone">500</ResourceReward>  
+        <ResourceReward resource="resource_wood">500</ResourceReward>    
+        <ResourceReward resource="resource_fur">250</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1705,6 +1705,37 @@
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
       </RewardTests>
     </Quest>
+
+<!-- 50 -->
+    <Quest id="quest_build_chiefcottagelvl6" advisor="girl">
+      <Name>Häuptlingshütte Level 6</Name>
+      <Name locale="de_DE">Häuptlingshütte Level 6</Name>
+      <Task></Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 6 aus.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Hey, bau doch deine Häuptlingshütte weiter aus.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Toll wie weit du schon gekommen bist. Weiter so!</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">600</ResourceReward>  
+        <ResourceReward resource="resource_wood">600</ResourceReward>    
+        <ResourceReward resource="resource_fur">300</ResourceReward>
+        <ExperienceReward>300</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_chief_cottage" min_level="6" />
+      </RewardTests>
+    </Quest>
+
 
 </Quests>
 </Tutorial>
