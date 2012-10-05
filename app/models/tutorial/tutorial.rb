@@ -669,7 +669,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_queue_chiefcottagelvl2',
 
           },
 
@@ -758,7 +758,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_queue_chiefcottagelvl3',
 
           },
 
@@ -1015,7 +1015,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_queue_chiefcottagelvl4',
 
           },
 
@@ -3517,7 +3517,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen",
+            :de_DE => "Zwei Steinbrüche und zwei Holzfäller auf Level 3 ausbauen",
                 
           },
           :flavour => {
@@ -4307,7 +4307,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößer es für ihn aus.",
+            :de_DE => "Ich weiß zwar nicht wie er es macht, aber dem Jäger und Sammler ist sein Gelände schon wieder zu klein. Sei doch so lieb und vergrößere es für ihn.",
   
             :en_US => "flavor text english",
                 
@@ -4573,6 +4573,213 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1gathererlvl10
+        {               #   quest_queue_chiefcottagelvl2
+          :id                => 47, 
+          :symbolic_id       => :quest_queue_chiefcottagelvl2,
+          :advisor           => :chef,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => "Häuptlingshütte Level 2",
+  
+            :de_DE => "Die Häuptlingshütte in der Bauschleife",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Gib den Ausbau der Häuptlingshütte in Auftrag.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fertig? Wie du hast deinen Arbeitern den Auftrag gegeben? Das hilft mir mal gar nicht. Geh mir aus den Augen, bis die Arbeiten fertig sind.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl2',
+
+          },
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_chiefcottagelvl2
+        {               #   quest_queue_chiefcottagelvl3
+          :id                => 48, 
+          :symbolic_id       => :quest_queue_chiefcottagelvl3,
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => "Chief Cottage l3",
+  
+            :de_DE => "Der Anfang einer noch größeren Häuptlingshütte",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Gib das nächste Level der Häuptlingshütte in Auftrag.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Während du darauf wartest, dass der Auftrag fertig gestellt wird, kannst du ja etwas anderes machen.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_3gathererlvl2',
+
+          },
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_chiefcottagelvl3
+        {               #   quest_queue_chiefcottagelvl4
+          :id                => 49, 
+          :symbolic_id       => :quest_queue_chiefcottagelvl4,
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => "Häuptlingshütte Level 4",
+  
+            :de_DE => " Und wieder der Häuptlingshüttenausbau ",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Gib den Ausbau der Häuptlingshütte in Auftrag.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_3gathererlvl4',
+
+          },
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_chiefcottagelvl4
       ],                # END OF QUESTS
 
     )
