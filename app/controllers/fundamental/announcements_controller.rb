@@ -87,6 +87,7 @@ class Fundamental::AnnouncementsController < ApplicationController
   # POST /fundamental/announcements.json
   def create
     @fundamental_announcement = Fundamental::Announcement.new(params[:fundamental_announcement])
+    @fundamental_announcement.author = current_backend_user
 
     respond_to do |format|
       if @fundamental_announcement.save
