@@ -3617,14 +3617,14 @@ class Tutorial::Tutorial
             
             :en_US => "Rohstofflager Level 3",
   
-            :de_DE => " Rohstofflager Level 5 ",
+            :de_DE => " Rohstofflager Level 3 ",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Baue ein Rohstofflager Level 5.",
+            :de_DE => "Baue ein Rohstofflager Level 3.",
                 
           },
           :flavour => {

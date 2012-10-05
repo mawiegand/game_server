@@ -1344,9 +1344,9 @@
 <!-- 37 -->
 <Quest id="quest_build_1storagelvl3" advisor="chef">
    <Name>Rohstofflager Level 3</Name>
-   <Name locale="de_DE"> Rohstofflager Level 5 </Name>
+   <Name locale="de_DE"> Rohstofflager Level 3 </Name>
    <Task></Task>
-   <Task locale="de_DE">Baue ein Rohstofflager Level 5.</Task>
+   <Task locale="de_DE">Baue ein Rohstofflager Level 3.</Task>
    <Description locale="de_DE">
      <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karren den Handel mit anderen Spielern.</p>
    </Description>
