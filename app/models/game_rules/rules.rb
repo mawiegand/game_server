@@ -1954,7 +1954,7 @@ class GameRules::Rules
           },
           :hidden      => 0,
 
-	        :population  => "FLOOR(99*POW(2.71828*LEVEL))",
+	        :population  => "FLOOR(99*POW(2.71828,0.11*LEVEL))",
   
           :buyable     => true,
           :demolishable=> false,
