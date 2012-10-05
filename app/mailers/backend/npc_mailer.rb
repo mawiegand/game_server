@@ -1,9 +1,9 @@
 class Backend::NpcMailer < ActionMailer::Base
-  default from: "npcjob@wack-a-doo.de"
+  default from: Rails.env.production? ?  "npcjob@gs02.wack-a-doo.de" : "npcjob@test1.wack-a-doo.de"
   
   def npc_placement_report(report)
     @report = report
     
-    mail(:to => GAME_SERVER_CONFIG['status_email_recipient'], :subject => "#{@report[:num_npcs]} NPC armies have been placed.")
+    mail(:to => GAME_SERVER_CONFIG['status_email_recipient'], :subject => "#{@report[:num_npcs_placed]} new NPC armies have been placed for a total of #{@report[:num_npcs]}.")
   end
 end
