@@ -242,7 +242,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Requirement quest="quest_queue_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -274,7 +274,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast du noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_queue_chiefcottagelvl3" />
      <Rewards>
         <ResourceReward resource="resource_stone">95</ResourceReward>  
         <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -362,7 +362,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen, um den Ausbau der Häuptlingshütte sofort fertig zu stellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_queue_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_cash">3</ResourceReward>  
         <ExperienceReward>150</ExperienceReward>
@@ -1315,7 +1315,7 @@
   <Name>Mehr Holzfäller und Steinbrüche</Name>
   <Name locale="de_DE"></Name>
   <Task></Task>
-  <Task locale="de_DE">Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen</Task>
+  <Task locale="de_DE">Zwei Steinbrüche und zwei Holzfäller auf Level 3 ausbauen</Task>
   <Description locale="de_DE">
     <p></p>
   </Description>
@@ -1634,6 +1634,77 @@
   </RewardTests>
 </Quest>
 
+<!-- 47 -->
+    <Quest id="quest_queue_chiefcottagelvl2" advisor="chef" hide_start_dialog="true">
+      <Name>Häuptlingshütte Level 2</Name>
+      <Name locale="de_DE">Die Häuptlingshütte in der Bauschleife</Name>
+      <Task></Task>
+      <Task locale="de_DE">Gib den Ausbau der Häuptlingshütte in Auftrag.</Task>
+      <Description locale="de_DE">
+        <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Fertig? Wie du hast deinen Arbeitern den Auftrag gegeben? Das hilft mir mal gar nicht. Geh mir aus den Augen, bis die Arbeiten fertig sind.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1gathererlvl2" />
+      <RewardTests>
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+      </RewardTests>
+    </Quest>
+
+<!-- 48 -->
+    <Quest id="quest_queue_chiefcottagelvl3" advisor="girl" hide_start_dialog="true">
+      <Name>Chief Cottage l3</Name>
+      <Name locale="de_DE">Der Anfang einer noch größeren Häuptlingshütte</Name>
+      <Task></Task>
+      <Task locale="de_DE">Gib das nächste Level der Häuptlingshütte in Auftrag.</Task>
+      <Description locale="de_DE">
+        <p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Während du darauf wartest, dass der Auftrag fertig gestellt wird, kannst du ja etwas anderes machen.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_3gathererlvl2" />
+      <RewardTests>
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+      </RewardTests>
+    </Quest>
+
+<!-- 49 -->
+    <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
+      <Name>Häuptlingshütte Level 4</Name>
+      <Name locale="de_DE"> Und wieder der Häuptlingshüttenausbau </Name>
+      <Task></Task>
+      <Task locale="de_DE">Gib den Ausbau der Häuptlingshütte in Auftrag.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_3gathererlvl4" />
+      <RewardTests>
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+      </RewardTests>
+    </Quest>
 
 </Quests>
 </Tutorial>
