@@ -11,12 +11,17 @@ Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
   :started_at => Time.now
 }
 
+region_factor     = 0.5   # at least num_regions * region_factor npc armies
+
 num_armies        = Military::Army.where(npc: false, garrison: false).count
 avg_size_armies   = Military::Army.where(npc: false, garrison: false).average(:size_present)  || 1.0
 max_size_armies   = Military::Army.where(npc: false, garrison: false).maximum(:size_present)  || 1
 
 num_npcs          = Military::Army.where(npc: true,  garrison: false).count
 avg_size_npcs     = Military::Army.where(npc: true,  garrison: false).average(:size_present)  || 0.0
+
+num_characters    = Fundamental::Character.count || 1
+num_regions       = Map::Region.count || 1
 
 Rails.logger.info "NPC PLACEMENT: #{num_armies} armies, with an average size of #{avg_size_armies || "0"}."
 Rails.logger.info "NPC PLACEMENT: #{num_npcs} npc armies, with an average size of #{avg_size_npcs || "0"}."
@@ -25,8 +30,18 @@ count_npc_placed = 0
 max_npc_placed   = nil
 min_npc_placed   = nil
 
+# logic for desired number: if not nr*nf armies, place up to nr*nf armies, 
+# but not more than twice as much as there are characters. If there are
+# more than nr*nf armies, place as many npcs, but not more than there
+# are regions (in average: one per region).
+desired_number_of_npcs = if num_armies < (num_regions * region_factor).ceil
+  [num_characters * 2, (num_regions * region_factor).ceil].min
+else
+  [num_armies, num_regions].min
+end
+
 total_size = num_npcs * avg_size_npcs  
-while (num_npcs < num_armies)
+while (num_npcs < desired_number_of_npcs)
   size = avg_size_armies
   
   if (avg_size_npcs < avg_size_armies)
