@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002174312) do
+ActiveRecord::Schema.define(:version => 20121005125525) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(:version => 20121002174312) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+  end
+
+  create_table "backend_browser_stats", :force => true do |t|
+    t.string   "identifier"
+    t.boolean  "success"
+    t.string   "user_agent"
+    t.text     "modernizr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "backend_stats", :force => true do |t|
