@@ -1,0 +1,2 @@
+module Backend::BrowserStatsHelper
+end

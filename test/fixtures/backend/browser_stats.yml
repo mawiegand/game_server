@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: MyString
+  success: false
+  user_agent: MyString
+  modernizr: MyText
+
+two:
+  identifier: MyString
+  success: false
+  user_agent: MyString
+  modernizr: MyText

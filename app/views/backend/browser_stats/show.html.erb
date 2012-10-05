@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @backend_browser_stat.identifier %>
+</p>
+
+<p>
+  <b>Success:</b>
+  <%= @backend_browser_stat.success %>
+</p>
+
+<p>
+  <b>User agent:</b>
+  <%= @backend_browser_stat.user_agent %>
+</p>
+
+<p>
+  <b>Modernizr:</b>
+  <%= @backend_browser_stat.modernizr %>
+</p>
+
+
+<%= link_to 'Edit', edit_backend_browser_stat_path(@backend_browser_stat) %> |
+<%= link_to 'Back', backend_browser_stats_path %>

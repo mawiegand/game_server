@@ -1,0 +1,33 @@
+<%= form_for(@backend_browser_stat) do |f| %>
+  <% if @backend_browser_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@backend_browser_stat.errors.count, "error") %> prohibited this backend_browser_stat from being saved:</h2>
+
+      <ul>
+      <% @backend_browser_stat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :success %><br />
+    <%= f.check_box :success %>
+  </div>
+  <div class="field">
+    <%= f.label :user_agent %><br />
+    <%= f.text_field :user_agent %>
+  </div>
+  <div class="field">
+    <%= f.label :modernizr %><br />
+    <%= f.text_area :modernizr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
