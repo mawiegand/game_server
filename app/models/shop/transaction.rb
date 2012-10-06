@@ -1,6 +1,6 @@
 class Shop::Transaction < ActiveRecord::Base
   
-  belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => 'shop_transactions'
+  belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :shop_transactions
   
 
   STATES = []
