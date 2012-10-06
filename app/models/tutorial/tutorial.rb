@@ -3985,7 +3985,7 @@ class Tutorial::Tutorial
           :id                => 40, 
           :symbolic_id       => :quest_build_1gathererlvl4,
           :advisor           => :girl,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -4083,7 +4083,7 @@ class Tutorial::Tutorial
           :id                => 41, 
           :symbolic_id       => :quest_build_1gathererlvl5,
           :advisor           => :chef,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -4279,7 +4279,7 @@ class Tutorial::Tutorial
           :id                => 43, 
           :symbolic_id       => :quest_build_1gathererlvl7,
           :advisor           => :warrior,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -4475,7 +4475,7 @@ class Tutorial::Tutorial
           :id                => 45, 
           :symbolic_id       => :quest_build_1gathererlvl9,
           :advisor           => :girl,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
