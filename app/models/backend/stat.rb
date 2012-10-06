@@ -6,10 +6,15 @@ class Backend::Stat < ActiveRecord::Base
     1.weeks
   end
   
-  def self.update_all_character_conversions
+  def self.update_all_character_stats
     Fundamental::Character.update_all_conversions
+    Fundamental::Character.update_all_credits_spent
+  end
+ 
+  
+  def self.update_all_cohorts
     Backend::Stat.find(:all).each do |stat|
-      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = 0
+      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = stat.month_credits_spent = 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
       characters.each do |character|
         stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
@@ -18,9 +23,10 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_num_active             += 1   if character.max_conversion_state == "active"
         stat.month_num_long_term_active   += 1   if character.max_conversion_state == "long_term_active"
         stat.month_num_paying             += 1   if character.max_conversion_state == "paying"
+        stat.month_credits_spent          += character.credits_spent_total || 0
       end
 
-      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = 0
+      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
       characters.each do |character|
         stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
@@ -29,10 +35,25 @@ class Backend::Stat < ActiveRecord::Base
         stat.day_num_active             += 1   if character.max_conversion_state == "active"
         stat.day_num_long_term_active   += 1   if character.max_conversion_state == "long_term_active"
         stat.day_num_paying             += 1   if character.max_conversion_state == "paying"
+        stat.day_credits_spent          += character.credits_spent_total || 0
       end      
       stat.save
     end
   end
+ 
+  
+  
+  def self.credits_spent_last_day
+    Shop::Transaction.closed.where(['created_at > ?', Time.now - 1.days]).sum(:credit_amount_booked)
+  end
+  
+  def self.credits_spent_last_week
+    Shop::Transaction.closed.where(['created_at > ?', Time.now - 1.weeks]).sum(:credit_amount_booked)
+  end
+  
+  def self.credits_spent_last_month
+    Shop::Transaction.closed.where(['created_at > ?', Time.now - 1.months]).sum(:credit_amount_booked)
+  end  
   
 
   def self.num_new_users_last_day
@@ -195,6 +216,10 @@ class Backend::Stat < ActiveRecord::Base
     self.dlu              = Backend::Stat.num_lost_users_last_day
     self.wlu              = Backend::Stat.num_lost_users_last_week
     self.mlu              = Backend::Stat.num_lost_users_last_month    
+
+    self.dcs              = Backend::Stat.credits_spent_last_day
+    self.wcs              = Backend::Stat.credits_spent_last_week
+    self.mcs              = Backend::Stat.credits_spent_last_month   
     
     self.active_users     = Backend::Stat.num_active_users
     self.active_customers = Backend::Stat.num_paying_active_users

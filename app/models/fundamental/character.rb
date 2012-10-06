@@ -69,6 +69,13 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end
   
+  def self.update_all_credits_spent
+    Fundamental::Character.find(:all).each do |character|
+      character.update_credits_spent
+      character.save
+    end
+  end  
+  
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
@@ -299,6 +306,10 @@ class Fundamental::Character < ActiveRecord::Base
   def logged_in_once?
     login_count >= 1
   end  
+  
+  def update_credits_spent
+    credits_spent_total = shop_transactions.closed.sum(:credit_amount_booked)
+  end
   
   def update_conversion_state
     return   if self.max_conversion_state == "paying"   # nothing to do, this is the highest state

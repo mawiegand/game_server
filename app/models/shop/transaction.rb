@@ -1,6 +1,8 @@
 class Shop::Transaction < ActiveRecord::Base
   
-  belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id"
+  belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => 'shop_transactions'
+  
+  scope :closed, where(state: :closed)
 
   STATES = []
   STATE_CREATED = 1

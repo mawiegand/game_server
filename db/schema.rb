@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001114953) do
+ActiveRecord::Schema.define(:version => 20121006073250) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -113,6 +113,11 @@ ActiveRecord::Schema.define(:version => 20121001114953) do
     t.integer  "day_num_active",                     :default => 0,   :null => false
     t.integer  "day_num_long_term_active",           :default => 0,   :null => false
     t.integer  "day_num_paying",                     :default => 0,   :null => false
+    t.integer  "month_credits_spent",                :default => 0,   :null => false
+    t.integer  "day_credits_spent",                  :default => 0,   :null => false
+    t.integer  "dcs",                                :default => 0,   :null => false
+    t.integer  "mcs",                                :default => 0,   :null => false
+    t.integer  "wcs",                                :default => 0,   :null => false
   end
 
   create_table "backend_users", :force => true do |t|
@@ -275,6 +280,7 @@ ActiveRecord::Schema.define(:version => 20121001114953) do
     t.string   "gender"
     t.integer  "gender_change_count",                      :default => 0,     :null => false
     t.datetime "reached_game"
+    t.integer  "credits_spent_total",                      :default => 0,     :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
