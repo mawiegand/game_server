@@ -114,11 +114,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_end_1gathererlvl1',
-  
-          ],
+          :successor_quests => [1, ],
 
           :reward_tests => {
             
@@ -189,11 +185,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl1',
-  
-          ],
+          :successor_quests => [2, ],
 
           :rewards => {
             
@@ -293,11 +285,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl2',
-  
-          ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -397,11 +385,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1cottagelvl1',
-  
-          ],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -501,13 +485,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_chiefcottagelvl2',
-  
-            :quest => 'quest_queue_chiefcottagelvl2',
-  
-          ],
+          :successor_quests => [5, 47, ],
 
           :rewards => {
             
@@ -607,11 +585,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_2gathererlvl1',
-  
-          ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -711,11 +685,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_rank',
-  
-          ],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -806,11 +776,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_settlementowner',
-  
-          ],
+          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -901,9 +867,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -984,11 +948,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_settlement_button2',
-  
-          ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1079,11 +1039,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_encyclopedia',
-  
-          ],
+          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1178,9 +1134,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1271,9 +1225,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1401,13 +1353,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_3gathererlvl2',
-  
-            :quest => 'quest_build_1cottagelvl3',
-  
-          ],
+          :successor_quests => [28, 29, ],
 
           :rewards => {
             
@@ -1507,11 +1453,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_6gathererlvl2',
-  
-          ],
+          :successor_quests => [39, ],
 
           :rewards => {
             
@@ -1611,13 +1553,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_recruit_1clubbers',
-  
-            :quest => 'quest_build_2gathererlvl3',
-  
-          ],
+          :successor_quests => [16, 30, ],
 
           :rewards => {
             
@@ -1717,11 +1653,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_army_create',
-  
-          ],
+          :successor_quests => [17, ],
 
           :rewards => {
             
@@ -1807,11 +1739,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_army_move',
-  
-          ],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -1907,9 +1835,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1998,11 +1924,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1campfirelvl1',
-  
-          ],
+          :successor_quests => [20, ],
 
           :rewards => {
             
@@ -2102,13 +2024,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_alliance',
-  
-            :quest => 'quest_build_1storagelvl1',
-  
-          ],
+          :successor_quests => [21, 22, ],
 
           :rewards => {
             
@@ -2208,9 +2124,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2299,11 +2213,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_chiefcottagelvl5',
-  
-          ],
+          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -2403,13 +2313,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-  
-            :quest => 'quest_build_1campfirelvl5',
-  
-          ],
+          :successor_quests => [24, 38, ],
 
           :rewards => {
             
@@ -2509,13 +2413,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_2quarrylvl3_2loggerlvl3',
-  
-            :quest => 'quest_build_chiefcottagelvl6',
-  
-          ],
+          :successor_quests => [36, 50, ],
 
           :rewards => {
             
@@ -2624,9 +2522,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2735,11 +2631,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_outpost',
-  
-          ],
+          :successor_quests => [27, ],
 
           :rewards => {
             
@@ -2839,9 +2731,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2937,13 +2827,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_chiefcottagelvl3',
-  
-            :quest => 'quest_queue_chiefcottagelvl3',
-  
-          ],
+          :successor_quests => [14, 48, ],
 
           :rewards => {
             
@@ -3043,9 +2927,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3145,15 +3027,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_6gathererlvl3',
-  
-            :quest => 'quest_build_1barrackslvl2',
-  
-            :quest => 'quest_build_1gathererlvl4',
-  
-          ],
+          :successor_quests => [31, 33, 40, ],
 
           :rewards => {
             
@@ -3253,9 +3127,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3355,13 +3227,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_chiefcottagelvl4',
-  
-            :quest => 'quest_queue_chiefcottagelvl4',
-  
-          ],
+          :successor_quests => [19, 49, ],
 
           :rewards => {
             
@@ -3461,13 +3327,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_3gathererlvl4',
-  
-            :quest => 'quest_build_1barrackslvl5',
-  
-          ],
+          :successor_quests => [32, 34, ],
 
           :rewards => {
             
@@ -3567,11 +3427,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1barrackslvl10',
-  
-          ],
+          :successor_quests => [35, ],
 
           :rewards => {
             
@@ -3671,9 +3527,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3773,13 +3627,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
-  
-            :quest => 'quest_build_1storagelvl3',
-  
-          ],
+          :successor_quests => [25, 37, ],
 
           :rewards => {
             
@@ -3888,9 +3736,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3990,11 +3836,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1campfirelvl10',
-  
-          ],
+          :successor_quests => [26, ],
 
           :rewards => {
             
@@ -4094,11 +3936,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1barrackslvl1',
-  
-          ],
+          :successor_quests => [15, ],
 
           :rewards => {
             
@@ -4147,7 +3985,7 @@ class Tutorial::Tutorial
           :id                => 40, 
           :symbolic_id       => :quest_build_1gathererlvl4,
           :advisor           => :girl,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4198,11 +4036,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl5',
-  
-          ],
+          :successor_quests => [41, ],
 
           :rewards => {
             
@@ -4249,7 +4083,7 @@ class Tutorial::Tutorial
           :id                => 41, 
           :symbolic_id       => :quest_build_1gathererlvl5,
           :advisor           => :chef,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4300,11 +4134,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl6',
-  
-          ],
+          :successor_quests => [42, ],
 
           :rewards => {
             
@@ -4402,11 +4232,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl7',
-  
-          ],
+          :successor_quests => [43, ],
 
           :rewards => {
             
@@ -4453,7 +4279,7 @@ class Tutorial::Tutorial
           :id                => 43, 
           :symbolic_id       => :quest_build_1gathererlvl7,
           :advisor           => :warrior,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4504,11 +4330,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl8',
-  
-          ],
+          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -4606,11 +4428,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl9',
-  
-          ],
+          :successor_quests => [45, ],
 
           :rewards => {
             
@@ -4657,7 +4475,7 @@ class Tutorial::Tutorial
           :id                => 45, 
           :symbolic_id       => :quest_build_1gathererlvl9,
           :advisor           => :girl,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4708,11 +4526,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_build_1gathererlvl10',
-  
-          ],
+          :successor_quests => [46, ],
 
           :rewards => {
             
@@ -4810,9 +4624,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -4910,11 +4722,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_profile',
-  
-          ],
+          :successor_quests => [6, ],
 
           :reward_tests => {
             
@@ -4985,11 +4793,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_settlement_button1',
-  
-          ],
+          :successor_quests => [7, ],
 
           :reward_tests => {
             
@@ -5060,11 +4864,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-            :quest => 'quest_message',
-  
-          ],
+          :successor_quests => [10, ],
 
           :reward_tests => {
             
@@ -5116,7 +4916,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll wie weit du schon gekommen bist. Weiter so!",
+            :de_DE => "Oh wow, Du hast die Häutptlingshütte weiter ausgebaut. Toll wie weit du schon gekommen bist. Weiter so!",
   
             :en_US => "",
                 
@@ -5135,9 +4935,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [
-
-          ],
+          :successor_quests => [],
 
           :rewards => {
             

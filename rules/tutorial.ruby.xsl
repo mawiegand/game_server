@@ -190,14 +190,10 @@ end
             <xsl:apply-templates select="Requirement" />
           },
 </xsl:if>
-          :successor_quests => [
-<xsl:variable name="self" select="."/>          
-<xsl:for-each select="//Tutorial/Quests/Quest">
-  <xsl:if test="$self/@id = Requirement/@quest">
-            :quest => '<xsl:value-of select="@id" />',
-  </xsl:if>
-</xsl:for-each>
-          ],
+          :successor_quests => [<xsl:variable name="self" select="."/>          
+  <xsl:for-each select="//Tutorial/Quests/Quest">
+    <xsl:if test="$self/@id = Requirement/@quest"><xsl:value-of select="position()-1"/>, </xsl:if>
+  </xsl:for-each>],
 <xsl:if test="Rewards">
           :rewards => {
             <xsl:apply-templates select="Rewards" />
