@@ -1432,7 +1432,7 @@
  </Quest>
 
 <!-- 40 -->
-<Quest id="quest_build_1gathererlvl4" advisor="girl">
+<Quest id="quest_build_1gathererlvl4" advisor="girl" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Immer größere Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 4 aus.</Task>
@@ -1461,7 +1461,7 @@
 </Quest>
 
 <!-- 41 -->
-<Quest id="quest_build_1gathererlvl5" advisor="chef">
+<Quest id="quest_build_1gathererlvl5" advisor="chef" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 5 aus.</Task>
@@ -1519,7 +1519,7 @@
 </Quest>
 
 <!-- 43 -->
-<Quest id="quest_build_1gathererlvl7" advisor="warrior">
+<Quest id="quest_build_1gathererlvl7" advisor="warrior" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Das Jäger und Sammler Problem</Name>
   <Task>Baue einen Jäger und Sammler auf Level 7 aus.</Task>
@@ -1577,7 +1577,7 @@
 </Quest>
 
 <!-- 45 -->
-<Quest id="quest_build_1gathererlvl9" advisor="girl">
+<Quest id="quest_build_1gathererlvl9" advisor="girl" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Fast ausgebaute Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 9 aus.</Task>
@@ -1707,7 +1707,7 @@
     </Quest>
 
 <!-- 50 -->
-    <Quest id="quest_build_chiefcottagelvl6" advisor="girl">
+    <Quest id="quest_build_chiefcottagelvl6" advisor="girl" >
       <Name>Häuptlingshütte Level 6</Name>
       <Name locale="de_DE">Häuptlingshütte Level 6</Name>
       <Task></Task>
@@ -1722,7 +1722,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Toll wie weit du schon gekommen bist. Weiter so!</RewardFlavor>
+      <RewardFlavor locale="de_DE">Oh wow, Du hast die Häutptlingshütte weiter ausgebaut. Toll wie weit du schon gekommen bist. Weiter so!</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
