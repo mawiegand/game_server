@@ -49,15 +49,38 @@
   <% if @backend_stats && !@backend_stats.empty? %>
     <br/>
     <hr/>
-    <div class="chart" style="float: none;" id="conversions_daily"></div>
+    <div class="chart" style="float: left;" id="newUsers"></div>
+    <div class="chart" style="float: left;" id="conversions_daily"></div>
+    <div class="chart" style="float: left;" id="credits_spent_total"></div>
+    <div class="clear"></div>
+    
     <p >This graph displays the conversion rates in our retail funnel of "daily cohorts". This means,
        all users that created their character during the same day (24 hours before the generation of the stats entry)
        are grouped together (build one cohort). The x-axis of the graph denominates these cohorts: e.g. the
        numbers for the 2012/9/9 refer to those users, that joined on that particular day.</p>
   
     <script>
-    var conversions = new Dygraph(
+    var newNewUsers = new Dygraph(
+      document.getElementById("newUsers"),
 
+      "Date, Monthly, Weekly, Daily \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mnu %>, <%= backend_stat.wnu %>, <%= backend_stat.dnu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'New Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    ); 
+    
+    var conversions = new Dygraph(
       document.getElementById("conversions_daily"),
 
       "Date, logged-in once, 2nd day login, active, long term, paying \n"+
@@ -76,6 +99,27 @@
         },
       }
     );
+    
+      var creditsSpentTotal = new Dygraph(
+
+        document.getElementById("credits_spent_total"),
+
+        "Date, Monthly, Weekly, Daily\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mcs %>, <%= backend_stat.wcs %>, <%= backend_stat.dcs %>\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Credits Spent (total)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
     </script>
   <% end %>
   

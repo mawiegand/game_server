@@ -9,5 +9,6 @@ STDOUT.sync = true
 
 print "Creating stats entry... "
 Backend::Stat.create
-Backend::Stat.update_all_character_conversions
+Backend::Stat.update_all_character_stats
+Backend::Stat.update_all_cohorts
 puts "done."
