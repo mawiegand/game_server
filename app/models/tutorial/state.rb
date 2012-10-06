@@ -30,25 +30,20 @@ class Tutorial::State < ActiveRecord::Base
       status: Tutorial::Quest::STATE_NEW,
     })
   end
-  
+
   def check_consistency
     # durchlaufe alle beendeten quest_states
-    logger.debug '---> finished_quests ' + finished_quests.inspect
-    puts '---> finished_quests ' + finished_quests.inspect
     self.finished_quests.each do |quest_state|
       # durchlauf alle nachfolge-quests
-      logger.debug '---> quest_state.quest[:successor_quests] ' + quest_state.quest[:successor_quests].inspect
-      puts '---> quest_state.quest[:successor_quests] ' + quest_state.quest[:successor_quests].inspect
       quest_state.quest[:successor_quests].each do |quest_id|
         # if qe.nachfolger nicht vorhanden
         if self.quest_state_with_quest_id(quest_id).nil?
           # offenen nachfolger erzeugen
-          logger.debug "----------------------> create missing quest_state: quest_id #{quest_id}"
-          puts "----------------------> create missing quest_state: quest_id #{quest_id}"
-          # self.quests.create({
-            # quest_id: quest_id,
-            # status: Tutorial::Quest::STATE_NEW,
-          # })
+          logger.debug "create missing quest_state: quest_id #{quest_id} for character #{self.owner.id}"
+         self.quests.create({
+           quest_id: quest_id,
+           status: Tutorial::Quest::STATE_NEW,
+         })
         end
       end
     end
