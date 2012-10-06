@@ -2,19 +2,24 @@ class Backend::BrowserStatsController < ApplicationController
   layout 'backend'
 
   before_filter :deny_api,                :except => [:create] 
-  # before_filter :authenticate,            :only   => [:create]  TODO reenable authemtication!
+# before_filter :authenticate,            :only   => [:create]  TODO reenable authemtication!
   before_filter :authenticate_backend,    :except => [:create] 
   before_filter :authorize_staff,         :except => [:create]
   
 
   # GET /backend/browser_stats
-  # GET /backend/browser_stats.json
   def index
-    @backend_browser_stats = Backend::BrowserStat.all
+    @backend_browser_stats = Backend::BrowserStat.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 40)
+
+    @last_failed = Backend::BrowserStat.failed.last(10)
+
+    @num_failed_today = Backend::BrowserStat.failed.where('created_at > ?', DateTime.now - 1.days).count
+    @num_total_today  = Backend::BrowserStat.where('created_at > ?', DateTime.now - 1.days).count
+    
+    @paginating = !params[:page].nil? && params[:page] > 0
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @backend_browser_stats }
     end
   end
 

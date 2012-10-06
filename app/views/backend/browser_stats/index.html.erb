@@ -1,4 +1,41 @@
-<h1>Listing backend_browser_stats</h1>
+<% if !@paginating %>
+
+  <p>During the last 24 hours failed <b><%= @num_failed_today %></b> of <b><%=@num_total_today %></b> sign in attempts.</p>
+
+  <h1>Last 10 failed</h1>
+
+  <table>
+    <tr>
+      <th>Created at</th>
+      <th>Identifier</th>
+      <th>Success</th>
+      <th>User agent</th>
+      <th>Modernizr</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @last_failed.each do |backend_browser_stat| %>
+    <tr>
+      <td><%= backend_browser_stat.created_at %></td>
+      <td><%= backend_browser_stat.identifier %></td>
+      <td><%= backend_browser_stat.success %></td>
+      <td><%= backend_browser_stat.user_agent %></td>
+      <td><%= backend_browser_stat.modernizr %></td>
+      <td><%= link_to 'Show', backend_browser_stat %></td>
+      <td><%= link_to 'Edit', edit_backend_browser_stat_path(backend_browser_stat) %></td>
+      <td><%= link_to 'Destroy', backend_browser_stat, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<% end %>
+
+<h1>Listing All Browser Stats</h1>
+
+<%= will_paginate @backend_browser_stats %>
+
 
 <table>
   <tr>
@@ -25,6 +62,9 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @backend_browser_stats %>
+
 
 <br />
 
