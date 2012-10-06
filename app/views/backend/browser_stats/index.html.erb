@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Created at</th>
     <th>Identifier</th>
     <th>Success</th>
     <th>User agent</th>
@@ -13,6 +14,7 @@
 
 <% @backend_browser_stats.each do |backend_browser_stat| %>
   <tr>
+    <td><%= backend_browser_stat.created_at %></td>
     <td><%= backend_browser_stat.identifier %></td>
     <td><%= backend_browser_stat.success %></td>
     <td><%= backend_browser_stat.user_agent %></td>
