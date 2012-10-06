@@ -19,7 +19,7 @@ puts
 puts "You can find details on the detected and repaired "
 puts "inconsistencies in the environment specific log-file."
 puts 
-puts "This script should usually be started aferter a larger "
+puts "This script should usually be started after a larger "
 puts "change of the game rules during a running game."
 puts
 
@@ -153,6 +153,32 @@ Messaging::Inbox.all.each { |i| i.unread_messages_count = i.unread_entries.count
 puts " done."
 
 
+# ############################################################################
+#
+#   TUTORIAL STATES
+#
+# ############################################################################
+
+
+print "CHECKING Tutorial States "
+
+step = Tutorial::State.count / 10  
+step = step > 0 ? step : 1
+
+count = 0
+
+Tutorial::State.all.each do |state|
+  if count.modulo(step) == 0 
+    print "." 
+    sleep (1)
+  end
+  
+  state.check_consistency
+  
+  count += 1
+end
+puts " done."
+
+
 
 puts
-
