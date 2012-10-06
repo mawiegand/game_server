@@ -17,7 +17,7 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
     quest_id = @action[:quest_id].to_i
     raise BadRequestError.new('quest_id not valid') unless quest_id >= 0
     
-    quest_state = tutorial_state.quest_state_with_quest_id(quest_id)
+    quest_state = tutorial_state.open_quest_state_with_quest_id(quest_id)
     raise BadRequestError.new('quest state not found') if quest_state.nil?
 
     answer_text = @action[:answer_text]
