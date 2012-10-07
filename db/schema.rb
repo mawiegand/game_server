@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006073250) do
+ActiveRecord::Schema.define(:version => 20121007204702) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -289,6 +289,9 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
     t.integer  "gender_change_count",                      :default => 0,     :null => false
     t.datetime "reached_game"
     t.integer  "credits_spent_total",                      :default => 0,     :null => false
+    t.boolean  "banned"
+    t.string   "ban_reason"
+    t.datetime "ban_ended_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|

@@ -1,5 +1,8 @@
 require 'mapping/global_mercator'
 
+exit(1)  if Rails.env.production?
+
+
 # This file seeds the database after its creation (or a reset)
 # Everything a "blank" game needs to be ready to be started should go in here.
 
@@ -14,6 +17,7 @@ user.save
 
 NUM_FULL_LEVELS   = 3
 NUM_SPARSE_LEVELS = 5
+
 
 
 # ############################################################################
