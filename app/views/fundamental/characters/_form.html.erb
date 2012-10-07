@@ -66,6 +66,15 @@
   </div>
 
   <div class="field">
+    <%= f.label :banned %><br />
+    <%= f.check_box :banned %>
+  </div>
+  <div class="field">
+    <%= f.label :ban_reason %><br />
+    <%= f.text_field :ban_reason %>
+  </div>
+
+  <div class="field">
     <%= f.label :skill_points %><br />
     <%= f.number_field :skill_points %>
   </div>

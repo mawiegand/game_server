@@ -15,6 +15,7 @@
     <th>Ranks</th>
     <th>SP</th>
     <th>Locked</th>
+    <th>Banned</th>
     <th>Base</th>
     <th></th>
     <th></th>
@@ -49,6 +50,7 @@
     <td><%= fundamental_character.settlement_points_used %> / 
         <%= fundamental_character.settlement_points_total %></td>
     <td><%= fundamental_character.locked %> <%= fundamental_character.locked_by %></td>
+    <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
     <td><%= fundamental_character.base_location_id %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
