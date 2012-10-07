@@ -177,10 +177,10 @@ module CreditShop
             money_transaction.seed = transaction['seed']
             money_transaction.partner_user_id = transaction['partnerUserID']
       
+            money_transaction.save
+            
             # update timestamp even if transaction is unchanged
             money_transaction.touch      
-            
-            money_transaction.save
           end
         end
       end
