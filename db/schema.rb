@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006073250) do
+ActiveRecord::Schema.define(:version => 20121007164806) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+  end
+
+  create_table "backend_browser_stats", :force => true do |t|
+    t.string   "identifier"
+    t.boolean  "success"
+    t.string   "user_agent"
+    t.text     "modernizr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "backend_stats", :force => true do |t|
@@ -160,7 +169,6 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
     t.integer  "settlement_id"
     t.integer  "type_id"
     t.decimal  "speed",             :default => 0.0
-    t.integer  "max_length"
     t.integer  "threads"
     t.integer  "jobs_count",        :default => 0,   :null => false
     t.datetime "created_at"
@@ -853,6 +861,7 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
     t.integer  "trading_carts_used",                             :default => 0,            :null => false
     t.integer  "settlement_queue_special_unlock_count",          :default => 0
     t.integer  "settlement_unlock_prevent_takeover_count",       :default => 0,            :null => false
+    t.integer  "building_slots_total",                           :default => 1,            :null => false
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -875,6 +884,55 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
     t.datetime "updated_at"
     t.integer  "duration"
     t.decimal  "bonus",       :default => 0.0, :null => false
+  end
+
+  create_table "shop_money_transactions", :force => true do |t|
+    t.integer  "uid"
+    t.integer  "tstamp"
+    t.string   "updatetstamp"
+    t.integer  "user_id"
+    t.string   "invoice_id"
+    t.string   "title_id"
+    t.string   "method"
+    t.string   "carrier"
+    t.string   "country"
+    t.integer  "offer_id"
+    t.string   "offer_category"
+    t.decimal  "gross"
+    t.string   "gross_currency"
+    t.decimal  "exchange_rate"
+    t.decimal  "vat"
+    t.decimal  "tax"
+    t.decimal  "net"
+    t.decimal  "fee"
+    t.decimal  "ebp"
+    t.string   "referrer_id"
+    t.decimal  "referrer_share"
+    t.decimal  "earnings"
+    t.decimal  "chargeback"
+    t.string   "campaign_id"
+    t.boolean  "transaction_payed"
+    t.string   "transaction_state"
+    t.string   "comment"
+    t.string   "scale_factor"
+    t.string   "user_mail"
+    t.string   "payment_transaction_uid"
+    t.string   "payment_state"
+    t.string   "payment_state_reason"
+    t.string   "payer_id"
+    t.string   "payer_first_name"
+    t.string   "payer_last_name"
+    t.string   "payer_mail"
+    t.string   "payer_zip"
+    t.string   "payer_city"
+    t.string   "payer_street"
+    t.string   "payer_country"
+    t.string   "payer_state"
+    t.string   "hash"
+    t.string   "seed"
+    t.string   "partner_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shop_offers", :force => true do |t|
@@ -938,7 +996,6 @@ ActiveRecord::Schema.define(:version => 20121006073250) do
   create_table "training_queues", :force => true do |t|
     t.integer  "settlement_id"
     t.integer  "type_id"
-    t.integer  "max_length"
     t.integer  "threads"
     t.integer  "jobs_count",        :default => 0,   :null => false
     t.decimal  "speedup_buildings", :default => 0.0, :null => false

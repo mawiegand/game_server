@@ -1,5 +1,13 @@
 <h1>Listing shop_money_transactions</h1>
 
+<p>Last Update: <%= @last_update %> <%= link_to 'Update from Bytro API', shop_money_transactions_path + '?update=true' %>  
+</p>
+
+<%= if (@paginate) 
+  will_paginate @money_transactions 
+end %>
+
+
 <table>
   <tr>
     <th>Bytro UpdateTstamp</th>
@@ -26,26 +34,26 @@
 
 <% @money_transactions.each do |money_transaction| %>
   <tr>
-    <td><%= money_transaction['updateTstamp'] %></td>
-    <td><%= money_transaction['userID'] %></td>
-    <td><%= link_to money_transaction['partnerUserID'], GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{money_transaction['partnerUserID']}" %></td>
-    <td><%= money_transaction['invoiceID'] %></td>
-    <td><%= money_transaction['offerID'] %></td>
-    <td><%= money_transaction['method'] %></td>
-    <td><%= money_transaction['country'] %></td>
-    <td><%= money_transaction['grossCurrency'] %></td>
-    <td><%= money_transaction['gross'].to_f.round(3) %></td>
-    <td><%= money_transaction['vat'].to_f.round(3) %></td>
-    <td><%= money_transaction['tax'].to_f.round(3) %></td>
-    <td><%= money_transaction['net'].to_f.round(3) %></td>
-    <td><%= money_transaction['fee'].to_f.round(3) %></td>
-    <td><%= money_transaction['ebp'].to_f.round(3) %></td>
-    <td><%= money_transaction['earnings'].to_f.round(3) %></td>
-    <td><%= money_transaction['transactionState'] %></td>
-    <td><%= money_transaction['payerFirstName'] %></td>
-    <td><%= money_transaction['payerLastName'] %></td>
-    <td><%= money_transaction['payerMail'] %></td>
-    <td><%= money_transaction['payerCountry'] %></td>
+    <td><%= money_transaction.updatetstamp %></td>
+    <td><%= money_transaction.user_id %></td>
+    <td><%= link_to money_transaction.partner_user_id, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{money_transaction.partner_user_id}" %></td>
+    <td><%= money_transaction.invoice_id %></td>
+    <td><%= money_transaction.offer_id %></td>
+    <td><%= money_transaction.method %></td>
+    <td><%= money_transaction.country %></td>
+    <td><%= money_transaction.gross_currency %></td>
+    <td><%= money_transaction.gross.round(3) %></td>
+    <td><%= money_transaction.vat.round(3) %></td>
+    <td><%= money_transaction.tax.round(3) %></td>
+    <td><%= money_transaction.net.round(3) %></td>
+    <td><%= money_transaction.fee.round(3) %></td>
+    <td><%= money_transaction.ebp.round(3) %></td>
+    <td><%= money_transaction.earnings.round(3) %></td>
+    <td><%= money_transaction.transaction_state %></td>
+    <td><%= money_transaction.payer_first_name %></td>
+    <td><%= money_transaction.payer_last_name %></td>
+    <td><%= money_transaction.payer_mail %></td>
+    <td><%= money_transaction.payer_country %></td>
   </tr>
 <% end %>
 </table>
@@ -95,4 +103,9 @@
 </table>
 
 <br />
+
+<%= if (@paginate) 
+  will_paginate @money_transactions 
+end %>
+
 

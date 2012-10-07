@@ -9,4 +9,4 @@ require 'credit_shop/bytro_shop'
 STDOUT.sync = true
 
 shop = CreditShop::BytroShop.new(nil)
-puts shop.get_money_transactions.inspect
+shop.update_money_transactions
