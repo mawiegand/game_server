@@ -19,7 +19,9 @@ class Shop::MoneyTransactionsController < ApplicationController
     @money_transactions = Shop::MoneyTransaction.paginate(:order => 'uid desc', :page => params[:page], :per_page => 20)    
     @paginate = true    
     
-    @last_update = Shop::MoneyTransaction.order('uid desc').first.updated_at
+    last_transaction = Shop::MoneyTransaction.order('uid desc').first
+    
+    @last_update = last_transaction.nil? ? '-' : last_transaction.updated_at
 
     respond_to do |format|
       format.html # index.html.erb
