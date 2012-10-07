@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-    <Unit id="thrower" category="unitcategory_artillery">
-      <Name>Pebble Thrower</Name>
-      <Name lang="de_DE">Kieselsteinwerfer</Name>
-  <Flavour lang="en_US">
-    <p>Kills opposing units.</p>
-  </Flavour>
-  <Flavour lang="de_DE">
-    <p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>
-  </Flavour>
-      <Description lang="de_DE">
-        <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
-        <p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>
-      </Description>
-      <Description lang="en_US">
-        <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
-      </Description>
-      <Cost id="resource_stone" round="true">35</Cost>  
-      <Cost id="resource_wood" round="true">35</Cost>
-      <Cost id="resource_fur" round="true">60</Cost>    
-      <ProductionTime shortenable="true">750</ProductionTime>  
-      <Velocity>1</Velocity>
-      <ActionPoints>4</ActionPoints>
-      <Initiative>8</Initiative>
-      <Attack>8</Attack>
-      <CriticalDamage chance="0.05">5</CriticalDamage>
-      <Armor>3</Armor>
-      <Overrunnable>true</Overrunnable>
-      <Hitpoints>50</Hitpoints>
-      <Effectiveness category="unitcategory_infantry">1.5</Effectiveness>
-      <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
-      <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
-      <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
-      <Effectiveness category="unitcategory_special">1</Effectiveness>   
-    </Unit>
+  <Unit id="thrower" category="unitcategory_artillery">
+    <Name>Pebble Thrower</Name>
+    <Name lang="de_DE">Kieselsteinwerfer</Name>
+    <Description lang="de_DE">
+      <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
+      <p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
+    </Description>
+    <Flavour lang="en_US"> 
+      <p>Kills opposing units.</p>
+    </Flavour>
+    <Flavour lang="de_DE">
+      <p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>
+    </Flavour>
+    <Cost id="resource_stone" round="true">35</Cost>  
+    <Cost id="resource_wood" round="true">35</Cost>
+    <Cost id="resource_fur" round="true">60</Cost>    
+    <ProductionTime shortenable="true">750</ProductionTime>  
+    <Velocity>1</Velocity>
+    <ActionPoints>4</ActionPoints>
+    <Initiative>8</Initiative>
+    <Attack>8</Attack>
+    <CriticalDamage chance="0.05">5</CriticalDamage>
+    <Armor>3</Armor>
+    <Overrunnable>true</Overrunnable>
+    <Hitpoints>50</Hitpoints>
+    <Effectiveness category="unitcategory_infantry">1.5</Effectiveness>
+    <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
+    <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
+    <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
+    <Effectiveness category="unitcategory_special">1</Effectiveness>   
+  </Unit>

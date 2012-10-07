@@ -4,18 +4,18 @@
     <Unit id="light_cavalry" category="unitcategory_cavalry">
       <Name>Ostrich Riders</Name>
       <Name lang="de_DE">Zweihändiger Straußenreiter</Name>
-  <Flavour lang="en_US">
-    <p>Kills opposing units.</p>
-  </Flavour>
-  <Flavour lang="de_DE">
-    <p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>
-  </Flavour>
       <Description lang="de_DE">
         <p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug, um an der Infanterie vorbeizukommen, bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn dies meist wenig Unterschied macht.</p> 
       </Description>
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
+      <Flavour lang="en_US">
+        <p>Kills opposing units.</p>
+      </Flavour>
+      <Flavour lang="de_DE">
+        <p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>
+      </Flavour>
       <Cost id="resource_stone" round="true">30</Cost>  
       <Cost id="resource_wood" round="true">25</Cost>    
       <Cost id="resource_fur" round="true">40</Cost>    

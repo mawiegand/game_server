@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, Languages?, ResourceTypes?, BuildingTypes?, ScienceTypes?, UnitCategories?, UnitTypes?, MundaneRanks?, SacredRanks?)>
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup)>
+<!ELEMENT Rules (General, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
+<!ATTLIST Rules
+  xmlns:xi CDATA #REQUIRED
+>
+
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion)>
+
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -35,14 +40,28 @@
   id IDREF #REQUIRED
 >
 
+<!ELEMENT BuildingConversion (CostFactor, TimeFactor)>
+<!ELEMENT CostFactor (#PCDATA)>
+<!ELEMENT TimeFactor (#PCDATA)>
+
+
 <!--Types-->
 <!ELEMENT ResourceTypes (Resource*)>
 <!ELEMENT SettlementTypes (Settlement*)>
 <!ELEMENT BuildingTypes (Building*)>
+<!ATTLIST BuildingTypes
+  xmlns:xi CDATA #REQUIRED
+>
+
 <!ELEMENT BuildingCategories (BuildingCategory*)>
 <!ELEMENT BuildingGroups (BuildingGroup*)>
+<!ELEMENT ScienceCategories (ScienceCategory*)>
 <!ELEMENT ScienceTypes (Science*)>
 <!ELEMENT UnitTypes (Unit*)>
+<!ATTLIST UnitTypes
+  xmlns:xi CDATA #REQUIRED
+>
+
 <!ELEMENT UnitCategories (UnitCategory*)>
 <!ELEMENT QueueTypes (Queue*)>
 <!ELEMENT QueueCategories (QueueCategory*)>
@@ -79,7 +98,7 @@
 >
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, UnlockGarrison*, CommandPoints*, GarrisonSizeBonus*, ArmySizeBonus*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
+<!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
 
 <!ELEMENT PreventTakeover EMPTY>
 <!ATTLIST PreventTakeover 
@@ -138,7 +157,8 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Flavour+, Description+, Position?, Population?, Cost*, ProductionTime, (Requirement* | RequirementGroup*)?, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
+<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, (Requirement* | RequirementGroup*)?, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
+
 <!ATTLIST Building 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -147,7 +167,12 @@
 	demolishable (false | true) "true"
 	destructable (false | true) "true"
   hidden (0 | 1) "0"
+	tier CDATA #IMPLIED
+	xml:base CDATA #REQUIRED
 >
+
+<!ELEMENT Population (#PCDATA)>
+
 
 <!--CharacterRanks-->
 <!ELEMENT MundaneRanks (MundaneRank*)>
@@ -158,8 +183,8 @@
 <!ELEMENT MundaneRank (Name+)>
 <!ATTLIST MundaneRank 
   exp CDATA #REQUIRED
-  settlementPoints CDATA "0"
-  minimumSacredRank CDATA "0"
+  settlementPoints CDATA #REQUIRED
+  minimumSacredRank CDATA #REQUIRED
 >
 
 <!ELEMENT SacredRanks (SacredRank*)>
@@ -168,9 +193,20 @@
 >
 
 <!ELEMENT SacredRank (Name+, Cost*, ItemCost*)>
+<!ELEMENT ItemCost (#PCDATA)>
+<!ATTLIST ItemCost
+  id CDATA #REQUIRED
+  round CDATA #REQUIRED
+>
 
 
 <!--Science-->
+<!-- Hack for Validation -->
+<!ELEMENT ScienceCategory (#PCDATA)>
+<!ATTLIST ScienceCategory
+  id ID #REQUIRED
+>
+
 <!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement* | RequirementGroup*)?)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
@@ -179,20 +215,21 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?, CanCreate)>
+<!ELEMENT Unit (Name+, Description+, Flavour+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?, CanCreate?)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
-	trainable (false | true) "true"
+	trainable (false|true) "true"
+	xml:base CDATA #REQUIRED
 >
 
-<!ELEMENT TargetPriorities (TargetList, TargetList)>
+<!ELEMENT TargetPriorities (TargetList+)>
 <!ATTLIST TargetPriorities
 	testType CDATA #REQUIRED
-	testCategory IDREF #IMPLIED
+	testCategory CDATA #IMPLIED
 >
 
-<!ELEMENT TargetList (Target)>
+<!ELEMENT TargetList (Target+)>
 <!ELEMENT Target EMPTY>
 <!ATTLIST Target
  id IDREF #REQUIRED
@@ -228,10 +265,19 @@
 >
 
 
+<!ELEMENT ProductionTime (#PCDATA)>
+<!ATTLIST ProductionTime 
+  shortenable (true | false) "true" 
+>
+
+
 
 <!--Webinterface: Production-->
 <!ELEMENT Cost (#PCDATA | object)*>
-<!ATTLIST Cost id IDREF #REQUIRED>
+<!ATTLIST Cost
+  id IDREF #REQUIRED
+  round CDATA #REQUIRED
+>
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
 
@@ -293,11 +339,11 @@
 >
 
 <!--Common Leafs-->
-<!ELEMENT Description (p*)>
+<!ELEMENT Description (#PCDATA | p)*>
 <!ATTLIST Description lang IDREF "en_US">
 <!ELEMENT Name (#PCDATA)>
 <!ATTLIST Name lang IDREF "en_US">
-<!ELEMENT Flavour (#PCDATA)>
+<!ELEMENT Flavour (#PCDATA | p)*>
 <!ATTLIST Flavour lang IDREF "en_US">
 <!ELEMENT p (#PCDATA)>
 <!ELEMENT Position (#PCDATA)>

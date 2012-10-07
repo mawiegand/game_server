@@ -115,8 +115,10 @@
   <xi:include href="rules_unitcategories.xml" />
   <xi:include href="rules_buildings.xml" />
   <xi:include href="rules_buildingcategories.xml" />
+  <xi:include href="rules_buildinggroups.xml" />
   <xi:include href="rules_queuecategories.xml" />
   <xi:include href="rules_queues.xml" />
+  <xi:include href="rules_sciencecategories.xml" />
   <xi:include href="rules_character_mundane_ranks.xml" />
   <xi:include href="rules_character_sacred_ranks.xml" />
 </Rules>

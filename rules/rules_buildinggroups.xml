@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<BuildingGroups>
+  <BuildingGroup id="military" />
+  <BuildingGroup id="miscellaneous" />
+  <BuildingGroup id="resource" />
+</BuildingGroups>

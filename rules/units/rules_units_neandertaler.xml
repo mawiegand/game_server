@@ -17,7 +17,6 @@
   <Flavour lang="de_DE">
     <p>Neandertaler reden nicht, sie handeln äh, schlagen.</p>
   </Flavour>
-	<Requirement id="building_stud" min_level="100" />
   <Cost id="resource_stone" round="true">40</Cost>  
   <Cost id="resource_wood" round="true">20</Cost>    
   <Cost id="resource_fur" round="true">12</Cost>    
@@ -35,4 +34,5 @@
   <Effectiveness category="unitcategory_artillery">1</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
+	<Requirement id="building_stud" min_level="100" />
 </Unit>

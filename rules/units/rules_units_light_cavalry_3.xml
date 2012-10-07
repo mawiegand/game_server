@@ -4,12 +4,6 @@
     <Unit id="light_cavalry_3" category="unitcategory_cavalry">
       <Name>Ostrich Riders3</Name>
       <Name lang="de_DE"> Freihändiger Straußenreiter </Name>
-  <Flavour lang="en_US">
-    <p>Kills opposing units.</p>
-  </Flavour>
-  <Flavour lang="de_DE">
-    <p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>
-  </Flavour>
       <Description lang="de_DE">
         <p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine auf ungeschützte Fernkämpfer werfen.</p>
         <p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p> 
@@ -17,6 +11,12 @@
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
+      <Flavour lang="en_US">
+        <p>Kills opposing units.</p>
+      </Flavour>
+      <Flavour lang="de_DE">
+        <p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>
+      </Flavour>
       <Cost id="resource_stone" round="true">80</Cost>  
       <Cost id="resource_wood" round="true">70</Cost>    
       <Cost id="resource_fur" round="true">100</Cost>    
@@ -36,7 +36,7 @@
       <Effectiveness category="unitcategory_special">1</Effectiveness>
       <RequirementGroup>
         <Requirement id="building_cavalry_tower" min_level="15" />
-        <Requirement id="building_fortress_main" min_level="14" />  
+        <Requirement id="building_fortress_fortification" min_level="14" />  
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="15" />  
