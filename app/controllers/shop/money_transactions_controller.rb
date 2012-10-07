@@ -7,14 +7,21 @@ class Shop::MoneyTransactionsController < ApplicationController
   before_filter :deny_api
   
   def index
-    credit_shop = CreditShop.credit_shop(request)
-    api_response = credit_shop.get_money_transactions
     
-    if api_response[:response_code] == Shop::Transaction::API_RESPONSE_OK
-      @money_transactions = api_response[:response_data][:transactions]
-    else
-      @money_transactions = []
+    logger.debug params.inspect
+    logger.debug '---> ' + params[:update].inspect
+    
+    if params.has_key?(:update)
+      shop = CreditShop::BytroShop.new(request)
+      shop.update_money_transactions      
     end
+    
+    @money_transactions = Shop::MoneyTransaction.paginate(:order => 'uid desc', :page => params[:page], :per_page => 20)    
+    @paginate = true    
+    
+    last_transaction = Shop::MoneyTransaction.order('uid desc').first
+    
+    @last_update = last_transaction.nil? ? '-' : last_transaction.updated_at
 
     respond_to do |format|
       format.html # index.html.erb

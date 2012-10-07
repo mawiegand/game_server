@@ -38,8 +38,9 @@ namespace :deploy do
 
 #  desc "Reset DB"
   task :reset do
-#    run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
-#    restart
+    # run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
+    # restart
+    exit
   end
 
   desc "Start Thin"
@@ -66,5 +67,10 @@ namespace :deploy do
   desc "Stop Ticker"
   task :stop_ticker do
     run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/ticker stop"
+  end
+  
+  desc "Check Consistency"
+  task :check_consistency do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/repair_consistency"
   end
 end

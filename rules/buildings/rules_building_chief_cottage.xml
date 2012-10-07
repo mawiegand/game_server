@@ -19,25 +19,25 @@
     <p>Hier werden die Entscheidungen getroffen! Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>  
 	</Flavour>
   <Population>1+MIN(MAX(LEVEL-3,0),1)+MIN(MAX(LEVEL-6,0),1)</Population> 
+  <Requirement id="building_chief_cottage" max_level="0" /> 
+  <Requirement id="building_haunt" max_level="0" />   
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2+0.5)</Cost> 
   <Cost id="resource_fur" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1+0.5)</Cost> 
-  <Requirement id="building_chief_cottage" max_level="0" /> 
-  <Requirement id="building_haunt" max_level="0" />   
   <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*4+0.5)</ProductionTime>     
-  <Production id="resource_stone">2</Production>        
-  <Abilities> <!-- just for grouping -->
-    <CommandPoints>MAX(LEVEL+1,3)-MAX(LEVEL,3)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)</CommandPoints>
-    <GarrisonSizeBonus>1000</GarrisonSizeBonus>
-    <ArmySizeBonus>1000</ArmySizeBonus>
-    <UnlockQueue  queue="queue_buildings" />
-    <UnlockGarrison level="2" />
-    <DefenseBonus>0.5*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>LEVEL*4-1</UnlockBuildingSlots>
-  </Abilities>
   <Capacity id="resource_stone">MIN(FLOOR((MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)),8000)</Capacity>
   <Capacity id="resource_wood">MIN(FLOOR((MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400)),8000)</Capacity>
   <Capacity id="resource_fur">MIN(FLOOR(((MIN(LEVEL+1,6)-MIN(LEVEL,6))*(25*POW(LEVEL,2)-25*LEVEL+600)+(MIN(LEVEL,6)-MIN(LEVEL,5))*(307.14*POW((LEVEL-5),2)-212.86*(LEVEL-5)+1400))*0.5),4000)</Capacity>
   <Capacity id="resource_cash">10000</Capacity> 
+  <Production id="resource_stone">2</Production>        
+  <Abilities> <!-- just for grouping -->
+    <UnlockGarrison level="2" />
+    <GarrisonSizeBonus>1000</GarrisonSizeBonus>
+    <ArmySizeBonus>1000</ArmySizeBonus>
+    <CommandPoints>MAX(LEVEL+1,3)-MAX(LEVEL,3)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)</CommandPoints>
+    <UnlockQueue  queue="queue_buildings" />
+    <DefenseBonus>0.5*LEVEL</DefenseBonus>
+    <UnlockBuildingSlots>LEVEL*4-1</UnlockBuildingSlots>
+  </Abilities>
 </Building>
   

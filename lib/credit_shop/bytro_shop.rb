@@ -92,7 +92,7 @@ module CreditShop
     # get account of current user
     def get_money_transactions
       data = {
-        startTstamp: '1',
+        startTstamp: Time.now.weeks_ago(4).to_i.to_s,
       }
       
       query = {
@@ -120,6 +120,72 @@ module CreditShop
       # if any error occured  
       {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
+    
+    def update_money_transactions
+      response = self.get_money_transactions
+      
+      if response[:response_code] === Shop::Transaction::API_RESPONSE_OK
+        transactions = response[:response_data][:transactions]
+        
+        transactions.each do |transaction|
+          uid = transaction['uid'].to_i
+          if uid > 0
+            money_transaction = Shop::MoneyTransaction.find_or_initialize_by_uid(uid)
+      
+            money_transaction.uid = uid 
+            money_transaction.tstamp = transaction['tstamp'].to_i
+            money_transaction.updatetstamp = transaction['updateTstamp']
+            money_transaction.user_id = transaction['userID'].to_i
+            money_transaction.invoice_id = transaction['invoiceID']
+            money_transaction.title_id = transaction['titleID']
+            money_transaction.method = transaction['method']
+            money_transaction.carrier = transaction['carrier']
+            money_transaction.country = transaction['country']
+            money_transaction.offer_id = transaction['offerID'].to_i
+            money_transaction.offer_category = transaction['offerCategory']
+            money_transaction.gross = transaction['gross'].to_d
+            money_transaction.gross_currency = transaction['grossCurrency'] 
+            money_transaction.exchange_rate = transaction['exchangeRate'].to_f
+            money_transaction.vat = transaction['vat'].to_f
+            money_transaction.tax = transaction['tax'].to_f
+            money_transaction.net = transaction['net'].to_f
+            money_transaction.fee = transaction['fee'].to_f
+            money_transaction.ebp = transaction['ebp'].to_f
+            money_transaction.referrer_id = transaction['referrerID'] 
+            money_transaction.referrer_share = transaction['referrerShare'].to_f
+            money_transaction.earnings = transaction['earnings'].to_f
+            money_transaction.chargeback = transaction['chargeback'].to_f
+            money_transaction.campaign_id = transaction['campaignID']
+            money_transaction.transaction_payed = transaction['transactionPayed'] == '1'
+            money_transaction.transaction_state = transaction['transactionState']
+            money_transaction.comment = transaction['comment']
+            money_transaction.scale_factor = transaction['scaleFactor']
+            money_transaction.user_mail = transaction['userMail']
+            money_transaction.payment_transaction_uid = transaction['paymentTransactionUid'] 
+            money_transaction.payment_state = transaction['paymentState']
+            money_transaction.payment_state_reason = transaction['paymentStateReason']
+            money_transaction.payer_id = transaction['payerID']
+            money_transaction.payer_first_name = transaction['payerFirstName'] 
+            money_transaction.payer_last_name = transaction['payerLastName']
+            money_transaction.payer_mail = transaction['payerMail']
+            money_transaction.payer_zip = transaction['payerZip']
+            money_transaction.payer_city = transaction['payerCity']
+            money_transaction.payer_street = transaction['payerStreet']
+            money_transaction.payer_country = transaction['payerCountry']
+            money_transaction.payer_state = transaction['payerState']
+            money_transaction.hash = transaction['hash']
+            money_transaction.seed = transaction['seed']
+            money_transaction.partner_user_id = transaction['partnerUserID']
+      
+            # update timestamp even if transaction is unchanged
+            money_transaction.touch      
+            
+            money_transaction.save
+          end
+        end
+      end
+    end
+    
     
     # request object needed for SessionHelper
     def initialize(request_object)

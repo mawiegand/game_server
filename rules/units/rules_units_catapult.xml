@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
+
     <Unit id="catapult" category="unitcategory_siege">
       <Name>Catapult</Name>
       <Name lang="de_DE">Katapult</Name>

@@ -4,12 +4,6 @@
     <Unit id="light_cavalry_4" category="unitcategory_cavalry">
       <Name>Ostrich Riders4</Name>
       <Name lang="de_DE">Dinoreiter</Name>
-  <Flavour lang="en_US">
-    <p>Kills opposing units.</p>
-  </Flavour>
-  <Flavour lang="de_DE">
-    <p>Der Traum eines jeden neuen Reiters. Einen Dino reiten. Wenn man es endlich geschafft hat wünscht man sich, doch lieber Fernkämpfer geworden zu sein. Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>
-  </Flavour>
       <Description lang="de_DE">
         <p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p> 
         <p>Kein Wunder, gibt es zu Hause doch nichts zu fressen.</p> 
@@ -17,6 +11,12 @@
       <Description lang="en_US">
         <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
       </Description>
+      <Flavour lang="en_US">
+        <p>Kills opposing units.</p>
+      </Flavour>
+      <Flavour lang="de_DE">
+        <p>Der Traum eines jeden neuen Reiters. Einen Dino reiten. Wenn man es endlich geschafft hat wünscht man sich, doch lieber Fernkämpfer geworden zu sein. Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>
+      </Flavour>
       <Cost id="resource_stone" round="true">160</Cost>  
       <Cost id="resource_wood" round="true">140</Cost>    
       <Cost id="resource_fur" round="true">200</Cost>    

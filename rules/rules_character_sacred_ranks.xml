@@ -9,7 +9,7 @@
   <SacredRank>
     <Name lang="de_DE">Weitgehend ignoriert</Name>
     <Name lang="en_US">Almost always ignored</Name>
-    <Cost     id="resource_favor" round="true">1000</Cost> 
+    <Cost     id="resource_fur" round="true">1000</Cost> <!-- resource_favor --> 
     <ItemCost id="item_mud_medal" round="true">2</ItemCost> 
   </SacredRank>
 </SacredRanks>
