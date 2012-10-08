@@ -1,0 +1,53 @@
+<%= form_for(@messaging_message) do |f| %>
+  <% if @messaging_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@messaging_message.errors.count, "error") %> prohibited this messaging_message from being saved:</h2>
+
+      <ul>
+      <% @messaging_message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recipient_id %><br />
+    <%= f.number_field :recipient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sender_id %><br />
+    <%= f.number_field :sender_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.label :send_at %><br />
+    <%= f.datetime_select :send_at %>
+  </div>
+  <div class="field">
+    <%= f.label :reported %><br />
+    <%= f.check_box :reported %>
+  </div>
+  <div class="field">
+    <%= f.label :reporter_id %><br />
+    <%= f.number_field :reporter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flag %><br />
+    <%= f.number_field :flag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

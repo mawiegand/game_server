@@ -23,7 +23,7 @@
   <Cost id="resource_wood" round="true">(MIN(LEVEL+1,2)-MIN(LEVEL,2))*3+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)</Cost>    
   <Cost id="resource_fur" round="true">(MIN(LEVEL+1,2)-MIN(LEVEL,2))*0+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.16+0.5)</Cost>    
   <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost>
-  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.2)/1.8+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*0.7+0.5)</ProductionTime>             
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)/1.8+(MIN(LEVEL,11)-MIN(LEVEL,10))*27054*(0.06*(LEVEL-10)+0.98))*0.7+0.5)</ProductionTime>             
   <Production id="resource_stone">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)</Production>        
   <Production id="resource_wood">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)</Production>        
   <Production id="resource_fur">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.125+0.5)</Production>         

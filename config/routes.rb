@@ -18,6 +18,7 @@ GameServer::Application.routes.draw do
         resources :users 
         resources :stats
         resources :browser_stats
+        resources :system_messages
       end
 
       namespace :effect do 
