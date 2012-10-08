@@ -5,7 +5,7 @@
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Storage</Name>
   <Description lang="de_DE">
-    <p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>
+        <p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>
    </Description>
   <Description lang="en_US">
     <p>Storage space.</p>
@@ -14,7 +14,7 @@
     <p>Stores your resources.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steincontainer, Saurierkräne und seit neuestem, Kupferkarren. Soviel Stil muss sein!</p>
+    <p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>
   </Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <RequirementGroup>
@@ -25,10 +25,17 @@
   </RequirementGroup>  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1+0.5)</Cost>
     <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
+<<<<<<< HEAD
   <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*1+0.5)</ProductionTime>             
   <Capacity id="resource_stone">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1)</Capacity>
   <Capacity id="resource_wood">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1)</Capacity>
   <Capacity id="resource_fur">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5)</Capacity>
+=======
+<ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)/1.8+(MIN(LEVEL,11)-MIN(LEVEL,10))*27054*(0.06*(LEVEL-10)+0.98))*1.1+0.5)</ProductionTime>         
+  <Capacity id="resource_stone">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)</Capacity>
+  <Capacity id="resource_wood">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*2.5)</Capacity>
+  <Capacity id="resource_fur">FLOOR(((MIN(LEVEL,4)-MIN(LEVEL-1,4))*(50*POW(LEVEL,3)-250*POW(LEVEL,2)+500*LEVEL-200)+(MAX(LEVEL,4)-MAX(LEVEL-1,4))*(1339.3*POW((LEVEL-4),2)-2175*(LEVEL-4)+4300))*1.25)</Capacity>
+>>>>>>> 1c23574c9a132c58a74fc2a8c2c1294e8240ab0b
   <Abilities> <!-- just for grouping -->
     <TradingCarts>10*LEVEL*LEVEL</TradingCarts>
     <UnlockP2PTrade level="1" />
