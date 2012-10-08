@@ -27,6 +27,9 @@ class Messaging::Message < ActiveRecord::Base
   WELCOME_MESSAGE_TYPE_ID       = 9
   TUTORIAL_MESSAGE_TYPE_ID      = 10
   TRADE_MESSAGE_TYPE_ID         = 11
+  ANNOUNCEMENT_TYPE_ID          = 12
+  
+  scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
   # creates inbox and outbox entries for the message
   def deliver_message
