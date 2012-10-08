@@ -17,10 +17,10 @@
   <Flavour lang="de_DE">
     <p>Ein Kleiner Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre ein Bonus.</p>
   </Flavour>
-  <Cost id="resource_stone" round="true">3000</Cost>  
-  <Cost id="resource_wood" round="true">3000</Cost>    
-  <Cost id="resource_fur" round="true">1500</Cost>    
-  <ProductionTime shortenable="true">7200</ProductionTime>
+  <Cost id="resource_stone" round="true">5000</Cost>  
+  <Cost id="resource_wood" round="true">5000</Cost>    
+  <Cost id="resource_fur" round="true">2000</Cost>    
+  <ProductionTime shortenable="true">28800</ProductionTime>
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>10</Initiative>
