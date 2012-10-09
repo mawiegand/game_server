@@ -1,10 +1,10 @@
-<%= form_for(@messaging_message) do |f| %>
-  <% if @messaging_message.errors.any? %>
+<%= form_for(@system_message, :url => { :action => "create", :controller => :system_messages }) do |f| %>
+  <% if @system_message.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@messaging_message.errors.count, "error") %> prohibited this messaging_message from being saved:</h2>
+      <h2><%= pluralize(@system_message.errors.count, "error") %> prohibited this system message from being saved:</h2>
 
       <ul>
-      <% @messaging_message.errors.full_messages.each do |msg| %>
+      <% @system_message.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,42 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :recipient_id %><br />
-    <%= f.number_field :recipient_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sender_id %><br />
-    <%= f.number_field :sender_id %>
-  </div>
-  <div class="field">
-    <%= f.label :type_id %><br />
-    <%= f.number_field :type_id %>
-  </div>
-  <div class="field">
     <%= f.label :subject %><br />
     <%= f.text_field :subject %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :send_at %><br />
-    <%= f.datetime_select :send_at %>
-  </div>
-  <div class="field">
-    <%= f.label :reported %><br />
-    <%= f.check_box :reported %>
-  </div>
-  <div class="field">
-    <%= f.label :reporter_id %><br />
-    <%= f.number_field :reporter_id %>
-  </div>
-  <div class="field">
-    <%= f.label :flag %><br />
-    <%= f.number_field :flag %>
-  </div>
+    Tick the following checkbox to really store and deliver this message. Otherwise, it'll be previewed here and not stored and not send.</br>
+    <%= check_box_tag :deliver, "1", (@deliver || false) %> <%= label_tag 'Deliver Now' %>
+  </div>  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Send" %>
   </div>
+<% end %>
+
+
+
+<% if !@system_message.body.blank? %>
+
+  <p><b><em>Preview</em></b></p>
+  <hr/>
+  
+  <h1><%= @system_message.subject %></h1>
+  <%=raw @system_message.body %>
+  
+  <hr/>
+
 <% end %>

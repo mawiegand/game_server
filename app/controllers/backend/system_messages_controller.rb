@@ -11,7 +11,16 @@ class Backend::SystemMessagesController < ApplicationController
 
   # GET /backend/browser_stats/new
   def new
-    @system_messages = Backend::SystemMessage.new
+    @system_message = Messaging::Message.new
   end  
+  
+  def create
+    @system_message = Messaging::Message.new(params[:messaging_message])
+    if params.has_key? :deliver     # deliver message
+      redirect_to action: "index", notice: 'System message was successfully created.'    
+    else
+      render action: "new"                              # just present preview
+    end
+  end
   
 end
