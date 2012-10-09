@@ -186,6 +186,38 @@ module CreditShop
       end
     end
     
+    def get_ingame_transactions
+      data = {
+        startTstamp: Time.now.weeks_ago(4).to_i.to_s,
+        mode: 'ingame',
+      }
+      
+      query = {
+        eID:    'api',
+        key:    KEY,
+        action: 'getTransactions',
+        data: encoded_data(data),
+      }
+      
+      query = add_hash(query)
+      http_response = HTTParty.post(URL_BASE, :query => query)
+      
+      if (http_response.code === 200)
+        api_response = JSON.parse(http_response.parsed_response)
+        if (api_response['resultCode'] === 0)
+          return {
+            response_code: Shop::Transaction::API_RESPONSE_OK,
+            response_data: {
+              transactions: api_response['result'],
+            }
+          }
+        end
+      end
+      
+      # if any error occured  
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
+    end
+    
     
     # request object needed for SessionHelper
     def initialize(request_object)
