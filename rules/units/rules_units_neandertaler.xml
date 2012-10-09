@@ -34,5 +34,7 @@
   <Effectiveness category="unitcategory_artillery">1</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
-	<Requirement id="building_stud" min_level="100" />
+  <RequirementGroup>
+  	<Requirement id="building_stud" min_level="100" />
+  </RequirementGroup>
 </Unit>

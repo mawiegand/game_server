@@ -157,7 +157,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, (Requirement* | RequirementGroup*)?, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities)>
+<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, RequirementGroup*, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities, ConversionOption?)>
 
 <!ATTLIST Building 
   id ID #REQUIRED 
@@ -172,6 +172,12 @@
 >
 
 <!ELEMENT Population (#PCDATA)>
+
+<!ELEMENT ConversionOption EMPTY>
+<!ATTLIST ConversionOption
+  building CDATA #REQUIRED
+  level CDATA #REQUIRED
+>
 
 
 <!--CharacterRanks-->
@@ -207,7 +213,7 @@
   id ID #REQUIRED
 >
 
-<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, (Requirement* | RequirementGroup*)?)>
+<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, RequirementGroup*)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Units-->
@@ -215,7 +221,7 @@
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Description+, Flavour+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, (Requirement* | RequirementGroup*)?, CanCreate?)>
+<!ELEMENT Unit (Name+, Description+, Flavour+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, RequirementGroup*, CanCreate?)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED

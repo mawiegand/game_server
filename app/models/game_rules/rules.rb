@@ -1681,6 +1681,7 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
+
             [
               
             {
@@ -1692,7 +1693,8 @@ class GameRules::Rules
 
             },
 
-            ]
+            ],
+
           ],          
 
 
@@ -1761,6 +1763,7 @@ class GameRules::Rules
           },
 
           :requirementGroups=> [
+
             [
               
             {
@@ -1772,7 +1775,8 @@ class GameRules::Rules
 
             },
 
-            ]
+            ],
+
           ],          
 
           :can_create => [
@@ -2048,6 +2052,7 @@ class GameRules::Rules
           :destructable=> true,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2059,7 +2064,8 @@ class GameRules::Rules
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -2139,6 +2145,7 @@ class GameRules::Rules
           :destructable=> true,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2150,7 +2157,8 @@ class GameRules::Rules
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -2230,6 +2238,7 @@ class GameRules::Rules
           :destructable=> true,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2241,7 +2250,8 @@ class GameRules::Rules
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -2380,6 +2390,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2404,7 +2415,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -2518,6 +2530,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> true,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2529,7 +2542,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -2813,6 +2827,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -2835,7 +2850,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -3612,6 +3628,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -3645,7 +3662,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -3729,6 +3747,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -3762,7 +3781,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -4197,6 +4217,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -4230,7 +4251,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -4401,6 +4423,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> true,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -4423,7 +4446,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {
@@ -4481,6 +4505,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> false,
 
           :requirementGroups=> [
+
             [
               
             {
@@ -4505,7 +4530,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            ]
+            ],
+
           ],          
 
           :costs      => {

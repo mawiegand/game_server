@@ -342,13 +342,6 @@ end
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>
-<xsl:if test="Requirement">
-          :requirementGroups=> [
-            [
-              <xsl:apply-templates select="Requirement" />
-            ]
-          ],          
-</xsl:if>
 <xsl:if test="RequirementGroup">
           :requirementGroups=> [
 <xsl:for-each select="RequirementGroup">
@@ -471,13 +464,6 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
-<xsl:if test="Requirement">
-          :requirementGroups=> [
-            [
-              <xsl:apply-templates select="Requirement" />
-            ]
-          ],          
-</xsl:if>
 <xsl:if test="RequirementGroup">
           :requirementGroups=> [
 <xsl:for-each select="RequirementGroup">
