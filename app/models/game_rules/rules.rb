@@ -4479,6 +4479,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
+
+            :unlock_prevent_takeover => 1,            
     
           },
 
