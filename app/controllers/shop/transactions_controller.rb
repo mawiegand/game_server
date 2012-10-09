@@ -74,8 +74,7 @@ class Shop::TransactionsController < ApplicationController
       transaction_id: @shop_transaction.id,
     }
     
-    credit_shop = CreditShop.credit_shop(request)
-    account_response = credit_shop.get_customer_account
+    account_response = CreditShop::BytroShop.get_customer_account(current_character.identifier)
     raise BadRequestError.new("Could not connect to Shop to get account balance") unless (account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK)
     credit_amount = account_response[:response_data][:amount]
      
@@ -85,10 +84,9 @@ class Shop::TransactionsController < ApplicationController
     
     if (credit_amount >= offer.price)
 
-      transaction_response = credit_shop.post_virtual_bank_transaction(virtual_bank_transaction)
+      transaction_response = CreditShop::BytroShop.post_virtual_bank_transaction(virtual_bank_transaction, current_character.identifier)
   
       if transaction_response[:response_code] === Shop::Transaction::API_RESPONSE_OK
-        # account_response = credit_shop.get_customer_account
         @shop_transaction.credit_amount_after = transaction_response[:response_data][:amount]
         @shop_transaction.state = Shop::Transaction::STATE_CONFIRMED
         @shop_transaction.credit_amount_booked = offer.price

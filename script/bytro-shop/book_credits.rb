@@ -40,7 +40,7 @@ end
 # if amount is positive, amount of user will increase
 
 identifier = 'mQRaAkAXCZPBJLfr'
-amount = 1
+amount = 100
 
 ###############################################################################
 

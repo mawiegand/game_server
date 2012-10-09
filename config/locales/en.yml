@@ -82,8 +82,9 @@ en:
         category: Shop
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
-        transactions: Transactions
-        money_transactions: Money Transactions
+        transactions: Ingame Transactions
+        credit_transactions: Bytro Credit Transactions
+        money_transactions: Bytro Money Transactions
       tutorial:
         category: Tutorial
         tutorial: Tutorial

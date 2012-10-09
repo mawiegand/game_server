@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: 1
+  tstamp: 1
+  user_id: 1
+  invoice_id: MyString
+  title_id: MyString
+  game_id: MyString
+  country: MyString
+  offer_id: 1
+  option_id: MyString
+  offer_category: MyString
+  gross: 9.99
+  gross_currency: MyString
+  referrer_id: MyString
+  chargeback: 9.99
+  tutorial: false
+  tournament_id: MyString
+  transaction_payed: false
+  transaction_state: MyString
+  comment: MyString
+  scale-factor: 9.99
+  money_tid: 1
+  hash: MyString
+  seed: MyString
+  partner_user_id: MyString
+
+two:
+  uid: 1
+  tstamp: 1
+  user_id: 1
+  invoice_id: MyString
+  title_id: MyString
+  game_id: MyString
+  country: MyString
+  offer_id: 1
+  option_id: MyString
+  offer_category: MyString
+  gross: 9.99
+  gross_currency: MyString
+  referrer_id: MyString
+  chargeback: 9.99
+  tutorial: false
+  tournament_id: MyString
+  transaction_payed: false
+  transaction_state: MyString
+  comment: MyString
+  scale-factor: 9.99
+  money_tid: 1
+  hash: MyString
+  seed: MyString
+  partner_user_id: MyString

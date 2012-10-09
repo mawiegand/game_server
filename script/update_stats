@@ -11,8 +11,8 @@ STDOUT.sync = true
 
 
 print "Update Money Transaction from Bytro API... "
-shop = CreditShop::BytroShop.new(nil)
-shop.update_money_transactions
+CreditShop::BytroShop.update_money_transactions
+CreditShop::BytroShop.update_ingame_transactions
 puts "done."
 
 print "Creating stats entry... "

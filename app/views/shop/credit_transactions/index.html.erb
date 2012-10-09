@@ -1,0 +1,79 @@
+<h1>Listing shop_credit_transactions</h1>
+
+<p>Last Update: <%= @last_update %>&nbsp;&nbsp;&nbsp;<%= link_to 'Update from Bytro API', shop_credit_transactions_path + '?update=true' %>  
+</p>
+
+<%= if (@paginate) 
+  will_paginate @credit_transactions 
+end %>
+
+
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>Tstamp</th>
+    <th>Bytro UserID</th>
+    <th>Identifier</th>
+    <th>Invoice</th>
+    <th>Title</th>
+    <th>Game</th>
+    <th>Country</th>
+    <th>Offer</th>
+    <th>Option</th>
+    <th>Offer category</th>
+    <th>Scale Factor</th>
+    <th>Gross</th>
+    <th>Gross currency</th>
+    <th>Referrer</th>
+    <th>Chargeback</th>
+    <th>Tutorial</th>
+    <th>Tournament</th>
+    <th>Transaction payed</th>
+    <th>Transaction state</th>
+    <th>Comment</th>
+    <th>Money tid</th>
+    <th>Hash</th>
+    <th>Seed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @credit_transactions.each do |shop_credit_transaction| %>
+  <tr>
+    <td><%= shop_credit_transaction.uid %></td>
+    <td><%= Time.at(shop_credit_transaction.tstamp).ctime %></td>
+    <td><%= shop_credit_transaction.user_id %></td>
+    <td><%= link_to shop_credit_transaction.partner_user_id, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{shop_credit_transaction.partner_user_id}" %></td>
+    <td><%= shop_credit_transaction.invoice_id %></td>
+    <td><%= shop_credit_transaction.title_id %></td>
+    <td><%= shop_credit_transaction.game_id %></td>
+    <td><%= shop_credit_transaction.country %></td>
+    <td><%= shop_credit_transaction.offer_id %></td>
+    <td><%= shop_credit_transaction.option_id %></td>
+    <td><%= shop_credit_transaction.offer_category %></td>
+    <td><%= shop_credit_transaction.scale_factor %></td>
+    <td><%= shop_credit_transaction.gross %></td>
+    <td><%= shop_credit_transaction.gross_currency %></td>
+    <td><%= shop_credit_transaction.referrer_id %></td>
+    <td><%= shop_credit_transaction.chargeback %></td>
+    <td><%= shop_credit_transaction.tutorial %></td>
+    <td><%= shop_credit_transaction.tournament_id %></td>
+    <td><%= shop_credit_transaction.transaction_payed %></td>
+    <td><%= shop_credit_transaction.transaction_state %></td>
+    <td><%= shop_credit_transaction.comment %></td>
+    <td><%= shop_credit_transaction.money_tid %></td>
+    <td><%= shop_credit_transaction.hash %></td>
+    <td><%= shop_credit_transaction.seed %></td>
+    <td><%= link_to 'Show', shop_credit_transaction %></td>
+    <td><%= link_to 'Edit', edit_shop_credit_transaction_path(shop_credit_transaction) %></td>
+    <td><%= link_to 'Destroy', shop_credit_transaction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= if (@paginate) 
+  will_paginate @credit_transactions 
+end %>
