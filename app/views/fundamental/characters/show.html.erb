@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<p class="red"><b><%= @fundamental_character.platinum_account? ? "Platinum User" : ""%></b></p>
+
 <p>
   <b>Identifier:</b>
   <%= @fundamental_character.identifier %>
 </p>
 
 <p>
-  <b>Premium account:</b>
-  <%= @fundamental_character.premium_account %>
+  <b>Platinum End:</b>
+  <%= @fundamental_character.premium_expiration %>
 </p>
+
 
 <p>
   <b>Name:</b>
@@ -111,10 +114,7 @@
 </p>
 
 
-<p>
-  <b>Premium End:</b>
-  <%= @fundamental_character.premium_expiration %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_fundamental_character_path(@fundamental_character) %> |
