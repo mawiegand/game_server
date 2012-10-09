@@ -37,7 +37,8 @@ class Fundamental::Character < ActiveRecord::Base
   
   after_commit :check_consistency_sometimes
   
-  scope :non_npc, where(['(npc IS NULL OR npc = ?)', false])
+  scope :non_npc,    where(['(npc IS NULL OR npc = ?)', false])
+  scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
 
 
   @identifier_regex = /[a-z]{16}/i 

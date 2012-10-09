@@ -38,20 +38,24 @@ module IdentityProvider
     end
     
     def deliver_message_notification(recipient, sender, message)
-      
-      subject = "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten."
+      subject = if sender.nil?
+        "Du hast soeben eine Nachricht in Wack-a-Doo erhalten."
+      else
+        "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten."        
+      end
       body    = "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen."
 
       if recipient.premium_account?
-        subject = "Du hast soeben eine Nachricht von #{sender.name}  in Wack-a-Doo erhalten."
-        body    = "Betreff: #{message.subject}\n\n   #{CGI::escapeHTML(message.body)} Log Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
+        body  = "Betreff: #{message.subject}\n\n"+ 
+                " #{ sender.nil? ? message.body : CGI::escapeHTML(message.body) } " +     # don't escape system messages.
+                "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
       end
       
       notification = {
         recipient_id:             recipient.identifier,
         recipient_character_name: recipient.name,
-        sender_id:                sender.identifier,
-        sender_character_name:    sender.name,
+        sender_id:                sender.nil? ? nil : sender.identifier,
+        sender_character_name:    sender.nil? ? nil : sender.name,
         subject:                  subject,
         body:                     body,
       }

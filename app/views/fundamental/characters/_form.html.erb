@@ -10,23 +10,34 @@
       </ul>
     </div>
   <% end %>
+  
+  <p class="red"><b><%= @fundamental_character.platinum_account? ? "Platinum User" : ""%></b></p>
 
-  <div class="field">
-    <%= f.label :identifier %><br />
-    <%= f.text_field :identifier %>
-  </div>
-  <div class="field">
-    <%= f.label :premium_account %><br />
-    <%= f.check_box :premium_account %>
-  </div>
+
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :lvel %><br />
-    <%= f.number_field :lvel %>
+    <%= f.label :premium_expiration %><br />
+    <%= f.datetime_select :premium_expiration %>
+  </div>  
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
   </div>
+  
+  <hr/>
+  
+  <div class="field">
+    <%= f.check_box :banned %><%= f.label :banned %> &nbsp;
+    <%= f.label :reason %>
+    <%= f.text_field :ban_reason %>
+  </div>
+  
+  <hr/>
+    
   <div class="field">
     <%= f.label :exp %><br />
     <%= f.number_field :exp %>
@@ -57,24 +68,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :locked %><br />
-    <%= f.check_box :locked %>
-  </div>
-  <div class="field">
-    <%= f.label :locked_by %><br />
-    <%= f.text_field :locked_by %>
-  </div>
-
-  <div class="field">
-    <%= f.label :banned %><br />
-    <%= f.check_box :banned %>
-  </div>
-  <div class="field">
-    <%= f.label :ban_reason %><br />
-    <%= f.text_field :ban_reason %>
-  </div>
-
-  <div class="field">
     <%= f.label :skill_points %><br />
     <%= f.number_field :skill_points %>
   </div>
@@ -85,18 +78,6 @@
   <div class="field">
     <%= f.label :alliance_tag %><br />
     <%= f.text_field :alliance_tag %>
-  </div>
-  <div class="field">
-    <%= f.label :base_location_id %><br />
-    <%= f.number_field :base_location_id %>
-  </div>
-  <div class="field">
-    <%= f.label :base_region_id %><br />
-    <%= f.number_field :base_region_id %>
-  </div>
-  <div class="field">
-    <%= f.label :premium_expiration %><br />
-    <%= f.datetime_select :premium_expiration %>
   </div>
   <div class="actions">
     <%= f.submit %>

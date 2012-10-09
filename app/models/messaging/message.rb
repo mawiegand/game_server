@@ -7,9 +7,9 @@ class Messaging::Message < ActiveRecord::Base
   belongs_to :recipient,      :class_name => "Fundamental::Character",   :foreign_key => "recipient_id"
   belongs_to :sender,         :class_name => "Fundamental::Character",   :foreign_key => "sender_id"
   
-  has_one    :inbox_entry,    :class_name => "Messaging::InboxEntry",    :foreign_key => "message_id",  :inverse_of => :message   # can be in one or no inbox
-  has_one    :archive_entry,  :class_name => "Messaging::ArchiveEntry",  :foreign_key => "message_id",  :inverse_of => :message   # can be in one or no archive
-  has_one    :outbox_entry,   :class_name => "Messaging::OutboxEntry",   :foreign_key => "message_id",  :inverse_of => :message   # can be in one or no outbox 
+  has_many   :inbox_entries,   :class_name => "Messaging::InboxEntry",    :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no inbox
+  has_many   :archive_entries, :class_name => "Messaging::ArchiveEntry",  :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no archive
+  has_one    :outbox_entry,    :class_name => "Messaging::OutboxEntry",   :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no outbox 
   
   
   after_create :deliver_message
@@ -33,35 +33,69 @@ class Messaging::Message < ActiveRecord::Base
 
   # creates inbox and outbox entries for the message
   def deliver_message
-    if !self.recipient_id.nil?
-      @character = Fundamental::Character.find(self.recipient_id)
-      if !@character.nil? && !@character.inbox.nil?
-        @character.inbox.entries.create({
-          sender_id:  self.sender_id,
-          owner_id:   @character.id,
-          message_id: self.id,
-          subject:    self.subject,
-        });
-      else
-        logger.error "Could not deliver message #{ self.id} to recipient. Failed to create an inbox entry."
+    if self.type_id == ANNOUNCEMENT_TYPE_ID
+      Fundamental::Character.non_banned.non_npc.each do |character|
+        if !character.inbox.nil?
+          character.inbox.entries.create({
+            sender_id:  nil,
+            owner_id:   character.id,
+            message_id: self.id,
+            subject:    self.subject,
+          });
+        else
+          logger.error "ERROR: Could not deliver newsletter message #{ self.id } to character #{ character.id }. Failed to create an inbox entry."
+        end
       end
+    else # standard message
+      if !self.recipient_id.nil?
+        @character = Fundamental::Character.find(self.recipient_id)
+        if !@character.nil? && !@character.inbox.nil?
+          @character.inbox.entries.create({
+            sender_id:  self.sender_id,
+            owner_id:   @character.id,
+            message_id: self.id,
+            subject:    self.subject,
+          });
+        else
+          logger.error "ERROR: Could not deliver message #{ self.id} to recipient. Failed to create an inbox entry."
+        end
+      end
+    
+      if !self.sender_id.nil?
+        @character = Fundamental::Character.find(self.sender_id)
+        if !@character.nil? && !@character.outbox.nil?
+          @character.outbox.entries.create({
+            recipient_id:  self.recipient_id,
+            owner_id:      @character.id,
+            message_id:    self.id,
+            subject:       self.subject,
+          });
+        else
+          logger.error "ERROR: Could not store message #{ self.id} in sender's outbox. Failed to create an outbox entry."
+        end
+      end    
     end
     
-    if !self.sender_id.nil?
-      @character = Fundamental::Character.find(self.sender_id)
-      if !@character.nil? && !@character.outbox.nil?
-        @character.outbox.entries.create({
-          recipient_id:  self.recipient_id,
-          owner_id:      @character.id,
-          message_id:    self.id,
-          subject:       self.subject,
-        });
-      else
-        logger.error "Could not store message #{ self.id} in sender's outbox. Failed to create an outbox entry."
-      end
-    end    
-    
     return true # need to return true, because otherwise the filter chain would break
+  end
+  
+  def notify_offline_recipients
+    if self.type_id = ANNOUNCEMENT_TYPE_ID
+      self.inbox_entries.each do |inbox_entry|
+        if !inbox_entry.owner.nil? && inbox_entry.owner.offline?
+          
+          ip_access = IdentityProvider::Access.new(
+            identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+            game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+            scopes:                     ['5dentity'],
+          )
+          ip_access.deliver_message_notification(inbox_entry.owner, self.sender, self)      
+          
+        end
+      end  
+    else
+      # TODO : move implementation from messaging_messages controller to here.
+    end
   end
 
   ## specialiced messages ####################################
@@ -217,7 +251,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<th>Army Name</th><th>Owner</th><th>Size</th>\n"
     text += "</tr>\n"
     text += "<tr>\n"
-    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
+    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td> ? </td>\n"
     text += "</tr>\n"
     text += "<tr>\n"
     text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"

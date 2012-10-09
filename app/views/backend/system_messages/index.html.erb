@@ -2,15 +2,10 @@
 
 <table>
   <tr>
-    <th>Recipient</th>
-    <th>Sender</th>
     <th>Type</th>
     <th>Subject</th>
     <th>Body</th>
     <th>Send at</th>
-    <th>Reported</th>
-    <th>Reporter</th>
-    <th>Flag</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,17 +13,12 @@
 
 <% @system_messages.each do |message| %>
   <tr>
-    <td><%= message.recipient_id %></td>
-    <td><%= message.sender_id %></td>
     <td><%= message.type_id %></td>
     <td><%= message.subject %></td>
-    <td><%= message.body.length > 64 ? message.body[0..63] + ' ...' : message.body %></td>
+    <td><%= message.body.length > 256 ? message.body[0..256] + ' ...' : message.body %></td>
     <td><%= message.send_at %></td>
-    <td><%= message.reported %></td>
-    <td><%= message.reporter_id %></td>
-    <td><%= message.flag %></td>
     <td><%= link_to 'Show', messaging_message_path(message) %></td>
-    <td><%= link_to 'Edit', edit_backend_system_message_path(message) %></td>
+    <td><%= link_to 'Edit', edit_messaging_message_path(message) %></td>
     <td><%= link_to 'Destroy', message, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

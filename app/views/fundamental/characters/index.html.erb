@@ -14,7 +14,6 @@
     <th>Conversion</th>
     <th>Ranks</th>
     <th>SP</th>
-    <th>Locked</th>
     <th>Banned</th>
     <th>Base</th>
     <th></th>
@@ -26,7 +25,9 @@
   <tr>
     <td><%= fundamental_character.id %></td>
     <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
-    <td><%= fundamental_character.premium_account %></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.platinum_account? ? 'X' : "" %>
+    </b></span></td>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
           | <%= fundamental_character.alliance_tag %>
@@ -49,9 +50,8 @@
         <%= fundamental_character.sacred_rank %></td>
     <td><%= fundamental_character.settlement_points_used %> / 
         <%= fundamental_character.settlement_points_total %></td>
-    <td><%= fundamental_character.locked %> <%= fundamental_character.locked_by %></td>
     <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
-    <td><%= fundamental_character.base_location_id %></td>
+    <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
