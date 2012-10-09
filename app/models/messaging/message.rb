@@ -251,7 +251,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<th>Army Name</th><th>Owner</th><th>Size</th>\n"
     text += "</tr>\n"
     text += "<tr>\n"
-    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
+    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td> ? </td>\n"
     text += "</tr>\n"
     text += "<tr>\n"
     text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"
