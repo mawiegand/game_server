@@ -15,6 +15,7 @@ en:
         users: Users
         stats: Stats
         browser_stats: Browser
+        system_message: InGameMessage
       rules:
         category: Rules
         all: All

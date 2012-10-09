@@ -7,7 +7,8 @@ class Messaging::MessagesController < ApplicationController
   layout 'messaging'
 
   before_filter :authenticate
-  before_filter :deny_api,      :except => [:show, :create]
+  before_filter :deny_api,        :except => [:show, :create]
+  before_filter :authorize_staff, :except => [:show, :create]
 
 
   # GET /messaging/messages

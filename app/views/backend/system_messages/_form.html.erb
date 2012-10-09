@@ -1,4 +1,4 @@
-<%= form_for(@system_message, :url => { :action => "create", :controller => :system_messages }) do |f| %>
+<%= form_for(@system_message, url: { controller: :system_messages }) do |f| %>
   <% if @system_message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@system_message.errors.count, "error") %> prohibited this system message from being saved:</h2>
@@ -20,11 +20,13 @@
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    Tick the following checkbox to really store and deliver this message. Otherwise, it'll be previewed here and not stored and not send.</br>
-    <%= check_box_tag :deliver, "1", (@deliver || false) %> <%= label_tag 'Deliver Now' %>
+    <%= check_box_tag :notify_offline %> <%= label_tag 'Notify Offline Users (use with caution and only in very rare cases)' %>
+  </div>  
+  <div class="field">
+    <%= check_box_tag :deliver, "1", (@deliver || false) %> <%= label_tag "Deliver Now (tick to really store and deliver this message; otherwise, it'll be previewed but neither stored nor send)" %>
   </div>  
   <div class="actions">
-    <%= f.submit "Send" %>
+    <%= f.submit "Preview Or Send" %>
   </div>
 <% end %>
 
