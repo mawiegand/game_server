@@ -289,8 +289,8 @@ class Settlement::Settlement < ActiveRecord::Base
     building_slots = recalc_building_slots_total
     check_and_apply_building_slots_total(building_slots)
 
-    unlock_prevent_takeover = recalc_unlock_prevent_takeover_total
-    check_and_apply_unlock_prevent_takeover_total(unlock_prevent_takeover)
+    unlock_prevent_takeover = recalc_unlock_prevent_takeover_count
+    check_and_apply_unlock_prevent_takeover_count(unlock_prevent_takeover)
     
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
@@ -484,17 +484,17 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end  
 
-    def recalc_unlock_prevent_takeover_total
-      pt = 1  # one for the settlement!
+    def recalc_unlock_prevent_takeover_count
+      pt = 0
       self.slots.each do |slot|
         pt += slot.unlock_prevent_takeover
       end
       pt    
     end
     
-    def check_and_apply_unlock_prevent_takeover_total(total)
+    def check_and_apply_unlock_prevent_takeover_count(total)
       if (self.settlement_unlock_prevent_takeover_count != total) 
-        logger.warn(">>> UNLOCK PREVENT TAKEOVER COUNt RECALC DIFFERS. Old: #{self.settlement_unlock_prevent_takeover_count} Corrected: #{total}.")
+        logger.warn(">>> UNLOCK PREVENT TAKEOVER COUNT RECALC DIFFERS. Old: #{self.settlement_unlock_prevent_takeover_count} Corrected: #{total}.")
         self.settlement_unlock_prevent_takeover_count = total
       end
     end  
