@@ -2573,7 +2573,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
               :min_level => 0,
 
-              :max_level => 1,
+              :max_level => 0,
 
             },
 
