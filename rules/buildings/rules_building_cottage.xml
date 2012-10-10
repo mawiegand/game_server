@@ -28,5 +28,5 @@
   <Abilities> <!-- just for grouping -->
     <SpeedupQueue queue="queue_buildings" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0</SpeedupQueue>
   </Abilities>
-  <!-- <ConversionOption building="building_cottage_2" level="MAX(LEVEL,10)-9"/> -->
+  <ConversionOption building="building_cottage_2" level="MAX(LEVEL,10)-9"/>
 </Building>
