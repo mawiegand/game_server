@@ -20,7 +20,7 @@ one:
   transaction_payed: false
   transaction_state: MyString
   comment: MyString
-  scale-factor: 9.99
+  scale_factor: 9.99
   money_tid: 1
   hash: MyString
   seed: MyString
@@ -46,7 +46,7 @@ two:
   transaction_payed: false
   transaction_state: MyString
   comment: MyString
-  scale-factor: 9.99
+  scale_factor: 9.99
   money_tid: 1
   hash: MyString
   seed: MyString
