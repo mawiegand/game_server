@@ -33,5 +33,6 @@
     <TradingCarts>10*LEVEL*LEVEL</TradingCarts>
     <UnlockP2PTrade level="1" />
   </Abilities>
+  <ConversionOption building="building_storage_2" level="MAX(LEVEL,10)-9"/>  
 </Building>
 

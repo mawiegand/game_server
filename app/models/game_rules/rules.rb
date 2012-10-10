@@ -2721,6 +2721,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
+          :conversion_option => {
+            :building              => :building_cottage_2,
+            :target_level_formula  => "MAX(LEVEL,10)-9", 
+          },
+
         },              #   END OF Kleine Hütte
         {               #   Ausbildungsgelände
           :id          => 8, 
@@ -3018,6 +3023,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
     
           },
 
+          :conversion_option => {
+            :building              => :building_logger_2,
+            :target_level_formula  => "(MIN(LEVEL+1,11)-MIN(LEVEL,11))+(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(MAX(LEVEL,10)-9)+((MIN(LEVEL,11)-MIN(LEVEL,10))*4*(LEVEL-10)-1)*(MIN(LEVEL+1,13)-MIN(LEVEL,13))+(MIN(LEVEL,13)-MIN(LEVEL,12))*(LEVEL-3)-(MIN(LEVEL,18)-MIN(LEVEL,17))", 
+          },
+
         },              #   END OF Holzfäller
         {               #   Steinbruch
           :id          => 11, 
@@ -3112,6 +3122,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
     
+          },
+
+          :conversion_option => {
+            :building              => :building_quarry_2,
+            :target_level_formula  => "(MIN(LEVEL+1,11)-MIN(LEVEL,11))+(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(MAX(LEVEL,10)-9)+((MIN(LEVEL,11)-MIN(LEVEL,10))*4*(LEVEL-10)-1)*(MIN(LEVEL+1,13)-MIN(LEVEL,13))+(MIN(LEVEL,13)-MIN(LEVEL,12))*(LEVEL-3)-(MIN(LEVEL,18)-MIN(LEVEL,17))", 
           },
 
         },              #   END OF Steinbruch
@@ -3209,6 +3224,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
     
+          },
+
+          :conversion_option => {
+            :building              => :building_furrier_2,
+            :target_level_formula  => "(MIN(LEVEL+1,11)-MIN(LEVEL,11))+(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(MAX(LEVEL,10)-9)+((MIN(LEVEL,11)-MIN(LEVEL,10))*4*(LEVEL-10)-1)*(MIN(LEVEL+1,13)-MIN(LEVEL,13))+(MIN(LEVEL,13)-MIN(LEVEL,12))*(LEVEL-3)-(MIN(LEVEL,18)-MIN(LEVEL,17))", 
           },
 
         },              #   END OF Kürschner
@@ -3529,6 +3549,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :unlock_p2p_trade => 1,            
     
+          },
+
+          :conversion_option => {
+            :building              => :building_storage_2,
+            :target_level_formula  => "MAX(LEVEL,10)-9", 
           },
 
         },              #   END OF Rohstofflager
