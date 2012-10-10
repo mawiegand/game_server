@@ -111,6 +111,15 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:abilities][:unlock_building_slots]).apply(self.level)
   end  
   
+  
+  def unlock_prevent_takeover
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    building_type[:abilities][:unlock_prevent_takeover].blank? || building_type[:abilities][:unlock_prevent_takeover] > self.level ? 0 : 1
+  end    
     
   # returns the number of command points the building on this slot provides
   def command_points

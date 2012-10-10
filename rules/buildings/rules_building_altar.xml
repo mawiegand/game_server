@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_altar" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false">  
+<Building id="building_altar" group="miscellaneous" category="building_category_large_building" buyable="false" destructable="false" demolishable="false">  
   <Name lang="de_DE">Ritualstein</Name>
   <Name lang="en_US">Altar</Name>
   <Description lang="de_DE">
