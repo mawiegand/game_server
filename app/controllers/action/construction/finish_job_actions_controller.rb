@@ -9,7 +9,9 @@ class Action::Construction::FinishJobActionsController < ApplicationController
     Construction::Job.transaction do
 
       @construction_job = Construction::Job.lock.find(params[:action_construction_finish_job_actions][:job_id])
-      raise BadRequestError.new('no active job')   if @construction_job.active_job.nil?
+      raise BadRequestError.new('no active job')                               if @construction_job.active_job.nil?
+      
+      raise BadRequestError.new('this building can not be bought using cash')  unless @construction_job.buyable?
       
       speedup_costs = GameRules::Rules.the_rules.construction_speedup
       entry = nil
