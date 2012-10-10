@@ -197,6 +197,11 @@ class Construction::Job < ActiveRecord::Base
     self.slot.settlement.owner.resource_pool.add_resources_transaction(self.costs)
   end
   
+  def buyable?
+    building_type = GameRules::Rules.the_rules.building_types[self.building_id]    
+    !building_type.nil? && building_type[:buyable]
+  end
+  
   def finish
     slot = self.slot
     
