@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_altar" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="true" demolishable="true">  
+<Building id="building_altar" group="miscellaneous" category="building_category_large_building" buyable="false" destructable="false" demolishable="false">  
   <Name lang="de_DE">Ritualstein</Name>
   <Name lang="en_US">Altar</Name>
   <Description lang="de_DE">
@@ -27,6 +27,7 @@
     <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
   <ProductionTime shortenable="true">(MIN(LEVEL+1,1)-MIN(LEVEL,1))*54000+FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*3+0.5)</ProductionTime>
   <Abilities><!-- just for grouping -->
+    <PreventTakeover level="1" />
   </Abilities>
 </Building>
 
