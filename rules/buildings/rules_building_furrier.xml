@@ -32,6 +32,7 @@
   <ProductionBonus id="resource_fur">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>
+  <ConversionOption building="building_furrier_2" level="(MIN(LEVEL+1,11)-MIN(LEVEL,11))+(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(MAX(LEVEL,10)-9)+((MIN(LEVEL,11)-MIN(LEVEL,10))*4*(LEVEL-10)-1)*(MIN(LEVEL+1,13)-MIN(LEVEL,13))+(MIN(LEVEL,13)-MIN(LEVEL,12))*(LEVEL-3)-(MIN(LEVEL,18)-MIN(LEVEL,17))"/>  
 </Building>
 
 
