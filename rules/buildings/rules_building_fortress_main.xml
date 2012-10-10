@@ -18,10 +18,11 @@
     <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen.</p>
   </Flavour>  
   <Population>FLOOR(99*POW(2.71828,0.11*LEVEL))</Population>
-  <Cost id="resource_stone" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(30*POW(LEVEL,2.95)*(10*POW(LEVEL,-0.7))+0.5)</Cost>    
-  <Cost id="resource_fur" round="true">FLOOR(((MIN(LEVEL,3)-MIN(LEVEL,2))*30*POW(LEVEL,2.95))*0.5*(10*POW(LEVEL,-0.7))+0.5)</Cost>
-  <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(293.33*POW(LEVEL,3)-1760*POW(LEVEL,2)+3286.7*LEVEL-1760)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(6*POW(LEVEL,4.3)+250*LEVEL))*(10*POW(LEVEL,-0.7))+0.5)</ProductionTime>     
+  <Cost id="resource_stone" round="true">FLOOR(((0.9*MIN(LEVEL,10)^4-9.7*MIN(LEVEL,10)^3+49.25*MIN(LEVEL,10)^2-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((0.9*MIN(LEVEL,10)^4-9.7*MIN(LEVEL,10)^3+49.25*MIN(LEVEL,10)^2-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4+0.5)</Cost>    
+  <Cost id="resource_fur" round="true">(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*MIN(LEVEL,10)^4-9.7*MIN(LEVEL,10)^3+49.25*MIN(LEVEL,10)^2-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1+0.5)</Cost>
+  <Cost id="resource_cash" round="true">MAX(LEVEL-14,0)*2</Cost> 
+  <ProductionTime shortenable="false">58400+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100+1)*25000</ProductionTime>     
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
     <GarrisonSizeBonus>1000</GarrisonSizeBonus>

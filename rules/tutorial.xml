@@ -262,8 +262,8 @@
       <Task locale="de_DE">Begib dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
         <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-        <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo du bist.</p>
-        <p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>
+	<p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo du bist.</p>
+	<p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -436,7 +436,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
+	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
       <Message>
         <Subject>Welcome to Wack-a-Doo</Subject>
@@ -626,9 +626,9 @@
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
         <p>Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
-        <p>Im nachfolgenden Dialog siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Zahl der Einheiten des Typs in der Garnison, auf der rechten, die Einheitenzahl, die in der Armee landen wird.</p>
-        <p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p>
-        <p>Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>
+	<p>Im nachfolgenden Dialog siehst du die verfügbaren Einheitentypen. Auf der linken Seite ist die Zahl der Einheiten des Typs in der Garnison, auf der rechten, die Einheitenzahl, die in der Armee landen wird.</p>
+	<p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p>
+	<p>Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -993,8 +993,8 @@
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
         <p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
-        <p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p>
-        <p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>
+	<p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p>
+	<p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -1432,7 +1432,7 @@
  </Quest>
 
 <!-- 40 -->
-<Quest id="quest_build_1gathererlvl4" advisor="girl">
+<Quest id="quest_build_1gathererlvl4" advisor="girl" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Immer größere Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 4 aus.</Task>
@@ -1461,7 +1461,7 @@
 </Quest>
 
 <!-- 41 -->
-<Quest id="quest_build_1gathererlvl5" advisor="chef">
+<Quest id="quest_build_1gathererlvl5" advisor="chef" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 5 aus.</Task>
@@ -1519,7 +1519,7 @@
 </Quest>
 
 <!-- 43 -->
-<Quest id="quest_build_1gathererlvl7" advisor="warrior">
+<Quest id="quest_build_1gathererlvl7" advisor="warrior" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Das Jäger und Sammler Problem</Name>
   <Task>Baue einen Jäger und Sammler auf Level 7 aus.</Task>
@@ -1577,7 +1577,7 @@
 </Quest>
 
 <!-- 45 -->
-<Quest id="quest_build_1gathererlvl9" advisor="girl">
+<Quest id="quest_build_1gathererlvl9" advisor="girl" hide_start_dialog="true">
   <Name></Name>
   <Name locale="de_DE">Fast ausgebaute Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 9 aus.</Task>
@@ -1707,7 +1707,7 @@
     </Quest>
 
 <!-- 50 -->
-    <Quest id="quest_build_chiefcottagelvl6" advisor="girl">
+    <Quest id="quest_build_chiefcottagelvl6" advisor="girl" >
       <Name>Häuptlingshütte Level 6</Name>
       <Name locale="de_DE">Häuptlingshütte Level 6</Name>
       <Task></Task>

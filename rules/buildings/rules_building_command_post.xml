@@ -23,9 +23,9 @@
     <Requirement id="building_command_post" max_level="0" />
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)</Cost>
-  <ProductionTime shortenable="false">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*4+0.5)</ProductionTime>  
+  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4+0.5)</Cost>  
+  <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4+0.5)</Cost>
+  <ProductionTime shortenable="false">FLOOR((30000*EXP(0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>  
   <Abilities> <!-- just for grouping -->
     <CommandPoints>1+FLOOR(LEVEL/10.0)</CommandPoints>
     <SpeedupQueue queue="queue_infantry" domain="settlement">MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
