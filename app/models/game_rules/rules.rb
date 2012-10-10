@@ -2755,6 +2755,87 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Rohstofflager
+        {               #   Hütte
+          :id          => 15, 
+          :symbolic_id => :building_cottage_2,
+					:category    => 4,
+          :db_field    => :building_cottage_2,
+          :name        => {
+            
+            :de_DE => "Hütte",
+  
+            :en_US => "Hut",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> lustiger Flavour Text hier </p>",
+  
+            :de_DE => "<p>In den Hütten leben Eure Untertanen. Je mehr Untertanen desto schneller geht auch der Ausbau von Gebäuden.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Hütte schützt eure Untertanen vor Sonne und Regen. Solange ihr alles habt, brauchen eure Untertanen natürlich auch nicht mehr.</p>",
+  
+            :en_US => "<p>Provides shelter for your subjects. No-one is as demanding as you are, so your people only need basic fit-outs inside their own four walls.</p><p>Your grace and foreseeing leadership is fullfilling all their needs of luxury. The good old times!</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL+MAX(0,LEVEL-2)+MAX(0,LEVEL-5)",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+
+          :requirementGroups=> [
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 4,
+              :type => 'building',
+
+              :min_level => 12,
+
+            },
+
+            ]
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5+0.5)',
+            1 => 'FLOOR(((MIN(LEVEL+1,5)-MIN(LEVEL,5))*(40*POW(LEVEL,2)-80*LEVEL+60)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*(132*POW(LEVEL,2)-543*LEVEL+520)+(MIN(LEVEL,11)-MIN(LEVEL,10))*8032/2.6*POW(2.71828,0.0953*LEVEL))*0.5+0.5)',
+            2 => 'FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(3.6926*POW(2.71828,0.8021*LEVEL)/2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*(5270*POW(2.71828,0.097*LEVEL)/2.58))*0.5)',
+            3 => 'MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)+(MIN(LEVEL,11)-MIN(LEVEL,10))*950*POW(LEVEL,2))+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "FLOOR((1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0*(1.88*POW(LEVEL,1.425)+0.5)/100.0)",
+              },
+
+            ],
+    
+          },
+
+        },              #   END OF Hütte
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
