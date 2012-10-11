@@ -95,6 +95,10 @@ class Fundamental::Character < ActiveRecord::Base
   def can_create_alliance?
     !character_unlock_alliance_creation_count.blank? && character_unlock_alliance_creation_count >= 1
   end
+  
+  def alliance_leader?
+    !self.alliance.nil? && self.alliance.leader_id == self.id
+  end
 
   
   def online?

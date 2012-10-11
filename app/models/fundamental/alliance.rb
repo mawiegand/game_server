@@ -72,7 +72,14 @@ class Fundamental::Alliance < ActiveRecord::Base
     cmd.save
   end
   
+  def kick_character(character, kicking_character)
+    return false unless kicking_character.alliance_leader?
+    remove_character(character)
+    Messaging::Message.generate_kicked_from_alliance_message(character, kicking_character)
+  end
+  
   def remove_character(character)
+    return false unless character.alliance_id == self.id 
     character.alliance_tag = nil
     character.alliance_id = nil
     self.decrement!(:members_count)
@@ -80,8 +87,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     
     if self.leader_id == character.id
       determine_new_leader
-      self.save
     end
+    self.save
     
     cmd = Messaging::JabberCommand.revoke_access(character, self.tag) 
     cmd.character_id = character.id

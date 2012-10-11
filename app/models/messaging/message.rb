@@ -28,6 +28,7 @@ class Messaging::Message < ActiveRecord::Base
   TUTORIAL_MESSAGE_TYPE_ID      = 10
   TRADE_MESSAGE_TYPE_ID         = 11
   ANNOUNCEMENT_TYPE_ID          = 12
+  ALLIANCE_TYPE_ID              = 13
   
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
@@ -261,6 +262,17 @@ class Messaging::Message < ActiveRecord::Base
     self.body = text
   end
   
+  def self.generate_kicked_from_alliance_message(character, kicking_character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   ALLIANCE_TYPE_ID,
+      send_at:   DateTime.now,
+    })
+    message.subject = "Rauswurf"
+    message.body    = "<p>Du wurdest soeben von #{kicking_character.name} aus der Allianz #{kicking_character.alliance.name} geworfen.</p>"
+    message.save
+  end  
+  
   def self.generate_gained_fortress_message(settlement, old_owner, new_owner)
     message = Messaging::Message.new({
       recipient: new_owner,
@@ -274,6 +286,7 @@ class Messaging::Message < ActiveRecord::Base
     message.add_gained_fortress_message_body(settlement, old_owner, new_owner)
     message.save
   end
+
   
   def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
     self.subject = "Won fortress of " + settlement.region.name.to_s 

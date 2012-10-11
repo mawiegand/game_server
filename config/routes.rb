@@ -167,6 +167,7 @@ GameServer::Application.routes.draw do
           resources :join_alliance_actions    
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
+          resources :kick_alliance_member_actions,      :only => [ :create ]    
           resources :change_character_name_actions,     :only => [ :create ]    
           resources :change_character_gender_actions,   :only => [ :create ]    
           resources :change_character_password_actions, :only => [ :create ]    
