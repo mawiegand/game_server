@@ -2705,7 +2705,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -3985,7 +3985,7 @@ class Tutorial::Tutorial
           :id                => 40, 
           :symbolic_id       => :quest_build_1gathererlvl4,
           :advisor           => :girl,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4083,7 +4083,7 @@ class Tutorial::Tutorial
           :id                => 41, 
           :symbolic_id       => :quest_build_1gathererlvl5,
           :advisor           => :chef,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4279,7 +4279,7 @@ class Tutorial::Tutorial
           :id                => 43, 
           :symbolic_id       => :quest_build_1gathererlvl7,
           :advisor           => :warrior,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             
@@ -4475,7 +4475,7 @@ class Tutorial::Tutorial
           :id                => 45, 
           :symbolic_id       => :quest_build_1gathererlvl9,
           :advisor           => :girl,
-          :hide_start_dialog => false,
+          :hide_start_dialog => true,
           
           :name => {
             

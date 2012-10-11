@@ -993,7 +993,6 @@
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
         <p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
-	<p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p>
 	<p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>
       </Description>
       <Description locale="en_US">
@@ -1300,8 +1299,8 @@
   <RewardFlavor locale="en_US"></RewardFlavor>
   <Requirement quest="quest_build_1barrackslvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">50</ResourceReward>  
-    <ResourceReward resource="resource_wood">50</ResourceReward>    
+    <ResourceReward resource="resource_stone">150</ResourceReward>  
+    <ResourceReward resource="resource_wood">150</ResourceReward>    
     <ResourceReward resource="resource_fur">150</ResourceReward>
     <ExperienceReward>300</ExperienceReward>
   </Rewards>
@@ -1461,7 +1460,7 @@
 </Quest>
 
 <!-- 41 -->
-<Quest id="quest_build_1gathererlvl5" advisor="chef" hide_start_dialog="true">
+<Quest id="quest_build_1gathererlvl5" advisor="chef">
   <Name></Name>
   <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 5 aus.</Task>
@@ -1519,7 +1518,7 @@
 </Quest>
 
 <!-- 43 -->
-<Quest id="quest_build_1gathererlvl7" advisor="warrior" hide_start_dialog="true">
+<Quest id="quest_build_1gathererlvl7" advisor="warrior">
   <Name></Name>
   <Name locale="de_DE">Das Jäger und Sammler Problem</Name>
   <Task>Baue einen Jäger und Sammler auf Level 7 aus.</Task>
@@ -1577,7 +1576,7 @@
 </Quest>
 
 <!-- 45 -->
-<Quest id="quest_build_1gathererlvl9" advisor="girl" hide_start_dialog="true">
+<Quest id="quest_build_1gathererlvl9" advisor="girl">
   <Name></Name>
   <Name locale="de_DE">Fast ausgebaute Jäger und Sammler</Name>
   <Task>Baue einen Jäger und Sammler auf Level 9 aus.</Task>
