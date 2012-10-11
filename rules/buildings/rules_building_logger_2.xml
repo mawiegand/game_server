@@ -28,7 +28,7 @@
   <Cost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*2)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1)</Cost>    
   <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
-  <ProductionTime shortenable="true">FLOOR((30000*EXP(0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)</ProductionTime>             
+  <ProductionTime shortenable="true">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)</ProductionTime>             
   <Production id="resource_wood">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)</Production>  
   <ProductionBonus id="resource_wood">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
