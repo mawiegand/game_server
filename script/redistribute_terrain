@@ -44,7 +44,8 @@ Map::Region.find(:all).each do |region|
   new_name = names[region.terrain_id].sample.chomp
   names[region.terrain_id].delete(new_name)
   region.name = new_name
-  region.fortress.name = new_name
+  region.fortress.name = "Festung #{ new_name }"
+  #puts "Festung #{ region.fortress.inspect} #{ region.fortress.name }."
   region.fortress.save
   region.save
 # puts "Changed region name from #{old_name} to #{new_name}."
