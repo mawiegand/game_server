@@ -55,6 +55,8 @@ class Shop::TransactionsController < ApplicationController
       offer = Shop::ResourceOffer.find(params[:shop_transaction][:offer_id])
     elsif offer_type === 'bonus'
       offer = Shop::BonusOffer.find(params[:shop_transaction][:offer_id])
+    elsif offer_type === 'platinum'
+      offer = Shop::PlatinumOffer.find(params[:shop_transaction][:offer_id])
     else
       raise BadRequestError.new('invalid offer type')
     end

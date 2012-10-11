@@ -192,6 +192,7 @@ GameServer::Application.routes.draw do
         resources :offers
         resources :resource_offers
         resources :bonus_offers
+        resources :platinum_offers
         resources :transactions
         resources :money_transactions
         resources :credit_transactions

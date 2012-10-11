@@ -1,0 +1,31 @@
+<h1>Listing shop_platinum_offers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Duration</th>
+    <th>Started at</th>
+    <th>Ends at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_platinum_offers.each do |shop_platinum_offer| %>
+  <tr>
+    <td><%= shop_platinum_offer.title %></td>
+    <td><%= shop_platinum_offer.price %></td>
+    <td><%= shop_platinum_offer.duration %></td>
+    <td><%= shop_platinum_offer.started_at %></td>
+    <td><%= shop_platinum_offer.ends_at %></td>
+    <td><%= link_to 'Show', shop_platinum_offer %></td>
+    <td><%= link_to 'Edit', edit_shop_platinum_offer_path(shop_platinum_offer) %></td>
+    <td><%= link_to 'Destroy', shop_platinum_offer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Platinum offer', new_shop_platinum_offer_path %>
