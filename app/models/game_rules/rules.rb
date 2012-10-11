@@ -2324,7 +2324,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p><p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>",
                 
           },
-          :hidden      => 0,
+          :hidden      => 1,
 
 	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
