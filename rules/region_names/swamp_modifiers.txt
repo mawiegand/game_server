@@ -17,3 +17,6 @@ Silber
 Schwarz
 Grau
 Schnee
+Tief
+Schlangen
+Echsen
