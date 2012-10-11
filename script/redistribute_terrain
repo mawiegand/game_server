@@ -1,13 +1,19 @@
 #!/usr/bin/env ruby
 #
-# Helper script to reassign names to all regions in the game.
+# Helper script to reassign terrain and corresponding names to all regions in the game.
 #
 
-puts "Resets the names of all regions in the game."
+puts "Resets the terrain types of all regions in the game."
 puts
 puts "Starting..."
 
-terrains = ['plain', 'forest', 'mountain', 'desert', 'swamp']
+terrains     = ['plain', 'forest', 'mountain', 'desert', 'swamp']
+weights      = [ 16, 16, 1, 4, 4 ]   # non-negative integers controlling the frequency of terrain types: p(x) = weight_of_x / total_sum_of_weights
+
+lookup = []
+weights.each_index { |i| weights[i].times { lookup.push i } }
+
+
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
@@ -26,9 +32,14 @@ terrains.each do |terrain|
   puts "found #{ names.last.count } names to chose from." 
 end
 
-puts "changing #{Map::Region.count} region names..."
+puts "using terrain type id sample list: #{ lookup.inspect }."
+
+puts "changing #{Map::Region.count} region terrains and names..."
 
 Map::Region.find(:all).each do |region|
+  region.terrain_id = lookup.sample
+  weights = 0 
+  
   old_name = region.name
   new_name = names[region.terrain_id].sample.chomp
   names[region.terrain_id].delete(new_name)
