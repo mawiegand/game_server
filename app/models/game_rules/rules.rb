@@ -1663,8 +1663,8 @@ class GameRules::Rules
                 
           },
           :attack      => 5,
-          :armor       => 4,
-          :hitpoints   => 90,
+          :armor       => 3,
+          :hitpoints   => 80,
 
           :overrunnable => true,
 
