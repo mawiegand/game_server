@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'identity_provider/access'
 
 class Fundamental::Character < ActiveRecord::Base
@@ -188,6 +190,15 @@ class Fundamental::Character < ActiveRecord::Base
       character.tutorial_state.create_start_quest_state     
       
       cmd = Messaging::JabberCommand.grant_access(character, 'global') 
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'handel') 
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle') 
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'help') 
       cmd.character_id = character.id
       cmd.save
     end

@@ -922,7 +922,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Die Festung ist in der Mitte der Region, wenn du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 

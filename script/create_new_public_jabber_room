@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+#
+# Helper script that runs opens a public room and grants access to all characters.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+ROOM = 'handel'
+
+puts
+puts "This script recreates all jabber commands for the public channel #{ ROOM }."
+
+Messaging::JabberCommand.open_room(ROOM).save
+
+
+Fundamental::Character.find(:all).each do |character|
+  unless character.npc?
+    cmd = Messaging::JabberCommand.grant_access(character, ROOM) 
+    cmd.character_id = character.id
+    cmd.save  
+  end
+end  
+
+puts "Done."
+
