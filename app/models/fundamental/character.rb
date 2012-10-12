@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'identity_provider/access'
 
 class Fundamental::Character < ActiveRecord::Base
