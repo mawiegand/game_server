@@ -190,6 +190,15 @@ class Fundamental::Character < ActiveRecord::Base
       cmd = Messaging::JabberCommand.grant_access(character, 'global') 
       cmd.character_id = character.id
       cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'handel') 
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle') 
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'help') 
+      cmd.character_id = character.id
+      cmd.save
     end
     
     return character 
