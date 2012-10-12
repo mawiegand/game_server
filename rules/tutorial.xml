@@ -321,7 +321,7 @@
       <Task></Task>
       <Task locale="de_DE">Trage den Besitzer der Festung in deiner Region ein.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Die Festung ist in der Mitte der Region, wenn du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
