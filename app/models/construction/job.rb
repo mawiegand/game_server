@@ -40,7 +40,11 @@ class Construction::Job < ActiveRecord::Base
       converted_level_formula = Util::Formula.parse_from_formula(building_type[:conversion_option][:target_level_formula])
       converted_level = converted_level_formula.apply(self.level_before)
       
-      converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      # converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      GameRules::Rules.the_rules.building_types.each do |type|
+        converted_building_type = type if type[:symbolic_id].to_s == building_type[:conversion_option][:building].to_s
+      end
+      
       converted_building_time_formula = Util::Formula.parse_from_formula(converted_building_type[:production_time])
       
       converted_time = 0
@@ -63,7 +67,10 @@ class Construction::Job < ActiveRecord::Base
       end
     elsif self.job_type == TYPE_CONVERT
       # calculate time sum of current building
-      building_type = GameRules::Rules.the_rules.building_type_with_id(self.building_id)
+      # building_type = GameRules::Rules.the_rules.building_type_with_id(self.building_id)
+      building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+      raise InternalServerError.new("Could not find building id #{self.building_id} in rules") if building_type.nil?
+      
       unless building_type[:costs].nil?
         building_type[:costs].each do |resource_id, formula|
           costs[resource_id] = 0
@@ -79,7 +86,10 @@ class Construction::Job < ActiveRecord::Base
       converted_level_formula = Util::Formula.parse_from_formula(building_type[:conversion_option][:target_level_formula])
       converted_level = converted_level_formula.apply(self.level_before)
       
-      converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      # converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      GameRules::Rules.the_rules.building_types.each do |type|
+        converted_building_type = type if type[:symbolic_id].to_s == building_type[:conversion_option][:building].to_s
+      end
       converted_costs = {}
       unless converted_building_type[:costs].nil?
         converted_building_type[:costs].each do |resource_id, formula|
@@ -138,7 +148,12 @@ class Construction::Job < ActiveRecord::Base
     conversion_option = building_type[:conversion_option]
     raise ForbiddenError.new('Building is not convertible.') if conversion_option.nil?
     logger.debug '---> conversion_option ' + conversion_option.inspect
-    requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
+    
+    GameRules::Rules.the_rules.building_types.each do |type|
+      requirement_groups = type[:requirementGroups] if type[:symbolic_id].to_s == conversion_option[:building].to_s
+    end
+    # requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
+    
     logger.debug '---> requirement_groups ' + requirement_groups.inspect
     
     # don't test self.slot for requirements of converted building
