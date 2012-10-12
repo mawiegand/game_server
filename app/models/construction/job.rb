@@ -41,6 +41,7 @@ class Construction::Job < ActiveRecord::Base
       converted_level = converted_level_formula.apply(self.level_before)
       
       # converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      converted_building_type = nil
       GameRules::Rules.the_rules.building_types.each do |type|
         converted_building_type = type if type[:symbolic_id].to_s == building_type[:conversion_option][:building].to_s
       end
@@ -87,6 +88,7 @@ class Construction::Job < ActiveRecord::Base
       converted_level = converted_level_formula.apply(self.level_before)
       
       # converted_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(building_type[:conversion_option][:building])
+      converted_building_type = nil
       GameRules::Rules.the_rules.building_types.each do |type|
         converted_building_type = type if type[:symbolic_id].to_s == building_type[:conversion_option][:building].to_s
       end
@@ -149,12 +151,11 @@ class Construction::Job < ActiveRecord::Base
     raise ForbiddenError.new('Building is not convertible.') if conversion_option.nil?
     logger.debug '---> conversion_option ' + conversion_option.inspect
     
+    requirement_groups = nil
     GameRules::Rules.the_rules.building_types.each do |type|
       requirement_groups = type[:requirementGroups] if type[:symbolic_id].to_s == conversion_option[:building].to_s
     end
     # requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
-    
-    logger.debug '---> requirement_groups ' + requirement_groups.inspect
     
     # don't test self.slot for requirements of converted building
     raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
