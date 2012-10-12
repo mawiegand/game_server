@@ -23,7 +23,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     now = Time.now
     lastUpdate = self.productionUpdatedAt || now # last update, or now, if it has never been updated before.
 
-    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fration)
+    hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fraction)
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
       self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
@@ -104,12 +104,24 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     self.modify_resources_atomically(resources)
   end
   
+  # This is a sql fragment that adds as well removes resources 
+  # from the resource pool, in both cases respecting the available
+  # resource amount and capacity limits.
+  #
+  # Implementation note: this needs to check the capacity TWICE,
+  # first, after adding the production (cut-off at the capacity
+  # limit), than after "adding" resources. This is necessary for
+  # the case, where the resource amount to add is negative.
   def self.modify_resource_sql_set_fragment(resource_symbol)
     "#{ resource_symbol + '_amount' } = \
       #{ Fundamental::ResourcePool.least_sql_fragment }(\
-        COALESCE(#{ resource_symbol + '_amount' }, 0) + \
-        #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') } + ?, \
-        CAST(#{ resource_symbol + '_capacity'} AS double precision))"
+        #{ Fundamental::ResourcePool.least_sql_fragment }(\
+          COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+          #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+          CAST(#{ resource_symbol + '_capacity'} AS double precision) \
+        ) + ?, \
+        CAST(#{ resource_symbol + '_capacity'} AS double precision) \
+      )"
   end
 
   def self.modify_resource_sql_where_fragment(resource_symbol)
