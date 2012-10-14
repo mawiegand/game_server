@@ -81,6 +81,7 @@ class Fundamental::Character < ActiveRecord::Base
   def self.update_all_credits_spent
     Fundamental::Character.find(:all).each do |character|
       character.update_credits_spent
+      character.update_gross
       character.save
     end
   end  
@@ -316,6 +317,14 @@ class Fundamental::Character < ActiveRecord::Base
   
   def name_and_ally_tag
     self.alliance_tag.nil? ? self.name : self.name + ' | ' + self.alliance_tag
+  end
+  
+  def recalc_gross
+    Shop::MoneyTransaction.where(partner_user_id: self.identifier).sum(:gross)
+  end
+  
+  def update_gross
+    self.gross = self.recalc_gross
   end
   
   def paying_user?

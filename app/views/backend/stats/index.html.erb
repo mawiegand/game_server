@@ -10,6 +10,7 @@
   <div class="chart" id="conversions"></div>
   <div class="chart" id="conversions_daily"></div>
   <div class="chart" id="credit_cohorts"></div>
+  <div class="chart" id="gross_cohorts"></div>
 
   <div class="clear"></div>
 
@@ -28,6 +29,9 @@
 
 
   <h1>Economic Charts</h1>
+
+  <div class="chart" id="gross_total"></div>
+  <div class="chart" id="gross_average"></div>
 
   <div class="chart" id="credits_spent_total"></div>
   <div class="chart" id="credits_spent_average"></div>
@@ -82,6 +86,48 @@
         {
           legend: 'always',
           title: 'Credits Spent (total)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+      var grossAverage = new Dygraph(
+
+        document.getElementById("gross_average"),
+
+        "Date, Monthly, Weekly, Daily\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.active_users || 1)%>, <%= backend_stat.wgross/ (backend_stat.active_users || 1) %>, <%= backend_stat.dgross/ (backend_stat.active_users || 1) %>\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Gross (EUR, Avg per User)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+      var grossTotal = new Dygraph(
+
+        document.getElementById("gross_total"),
+
+        "Date, Monthly, Weekly, Daily\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross %>, <%= backend_stat.wgross %>, <%= backend_stat.dgross %>\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Gross (EUR, total)',
           fillGraph: true,
           highlightSeriesOpts: {
             strokeWidth: 3,
@@ -232,6 +278,27 @@
       {
         legend: 'always',
         title: 'Credits Spent (cohorts)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+    var gross_cohorts = new Dygraph(
+
+      document.getElementById("gross_cohorts"),
+
+      "Date, daily cohorts, monthly cohorts \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_gross  %>, <%= backend_stat.month_gross %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Gross (EUR, cohorts)',
         fillGraph: true,
         highlightSeriesOpts: {
           strokeWidth: 3,

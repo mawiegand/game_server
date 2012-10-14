@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007204702) do
+ActiveRecord::Schema.define(:version => 20121014230602) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -127,6 +127,11 @@ ActiveRecord::Schema.define(:version => 20121007204702) do
     t.integer  "dcs",                                :default => 0,   :null => false
     t.integer  "mcs",                                :default => 0,   :null => false
     t.integer  "wcs",                                :default => 0,   :null => false
+    t.decimal  "mgross",                             :default => 0.0, :null => false
+    t.decimal  "wgross",                             :default => 0.0, :null => false
+    t.decimal  "dgross",                             :default => 0.0, :null => false
+    t.decimal  "day_gross",                          :default => 0.0, :null => false
+    t.decimal  "month_gross",                        :default => 0.0, :null => false
   end
 
   create_table "backend_users", :force => true do |t|
@@ -292,6 +297,7 @@ ActiveRecord::Schema.define(:version => 20121007204702) do
     t.boolean  "banned"
     t.string   "ban_reason"
     t.datetime "ban_ended_at"
+    t.decimal  "gross",                                    :default => 0.0
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -887,6 +893,35 @@ ActiveRecord::Schema.define(:version => 20121007204702) do
     t.datetime "updated_at"
     t.integer  "duration"
     t.decimal  "bonus",       :default => 0.0, :null => false
+  end
+
+  create_table "shop_credit_transactions", :force => true do |t|
+    t.integer  "uid"
+    t.integer  "tstamp"
+    t.integer  "user_id"
+    t.string   "invoice_id"
+    t.string   "title_id"
+    t.string   "game_id"
+    t.string   "country"
+    t.integer  "offer_id"
+    t.string   "option_id"
+    t.string   "offer_category"
+    t.decimal  "gross"
+    t.string   "gross_currency"
+    t.string   "referrer_id"
+    t.decimal  "chargeback"
+    t.boolean  "tutorial"
+    t.string   "tournament_id"
+    t.boolean  "transaction_payed"
+    t.string   "transaction_state"
+    t.string   "comment"
+    t.decimal  "scale_factor"
+    t.integer  "money_tid"
+    t.string   "hash"
+    t.string   "seed"
+    t.string   "partner_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shop_money_transactions", :force => true do |t|
