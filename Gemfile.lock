@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:wackadoo/awe_native_extensions.git
-  revision: 0a63c2e7e42fff67cd819b7fe14ac640f57309ab
+  revision: d5793062b9626cce03acd5c56a0f3a56aea73e70
   specs:
-    awe_native_extensions (0.0.15)
+    awe_native_extensions (0.0.16)
 
 GEM
   remote: http://rubygems.org/
@@ -161,7 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awe_native_extensions (>= 0.0.15)!
+  awe_native_extensions (>= 0.0.16)!
   capistrano (>= 2.12.0)
   ci_reporter
   coffee-rails (~> 3.1.1)
