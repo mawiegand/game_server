@@ -12,6 +12,7 @@ class Fundamental::CharactersController < ApplicationController
   def index
 
     last_modified = nil 
+    role = :default # assume lowest possible authorization
 
     if params.has_key?(:alliance_id)  
       @alliance = Fundamental::Alliance.find(params[:alliance_id])
@@ -36,12 +37,9 @@ class Fundamental::CharactersController < ApplicationController
             raise ForbiddenError.new('Access Forbidden')        
           end  
           @fundamental_characters = [] if @fundamental_characters.nil?  # necessary? or ok to send 'null' ?
-          if params.has_key?(:short)
-            render json: @fundamental_characters, :only => @@short_fields
-          elsif params.has_key?(:aggregate)
-            render json: @fundamental_characters, :only => @@aggregate_fields          
-          else
-            render json: @fundamental_characters
+          render json: @fundamental_characters.map do |character| 
+            role = determine_access_role(character.id, character.alliance_id)
+            character.sanitized_hash(role) 
           end
         end
       end
@@ -143,12 +141,11 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters/1.json
   def show
     @fundamental_character = Fundamental::Character.find(params[:id])
-
-    # TODO: respect rules and sanitize attributes
+    role = determine_access_role(@fundamental_character.id, @fundamental_character.alliance_id) || :default
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @fundamental_character }
+      format.json { render json: @fundamental_character.sanitized_hash(role) }
     end
   end
 

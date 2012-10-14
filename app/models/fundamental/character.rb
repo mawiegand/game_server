@@ -29,6 +29,12 @@ class Fundamental::Character < ActiveRecord::Base
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned,      :as => :default 
+  attr_readable *readable_attributes(:default),                                                                                :as => :ally 
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :login_count, :last_login_at, :settlement_points_total, :settlement_points_used, :gender_change_count, :ban_reason, :ban_ended_at,       :as => :owner
+  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
+  attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
+
   before_save :sync_alliance_tag
   before_save :update_mundane_rank
   

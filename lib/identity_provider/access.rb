@@ -36,6 +36,25 @@ module IdentityProvider
     def change_character_name(identifier, name)
       put('/identities/' + identifier, {:identity => {:nickname => name}})
     end
+
+
+    def deliver_attack_notification(recipient, attacked_army, attacker, message)
+      subject = "Du wirst von #{attacker.name} in Wack-a-Doo angegriffen!"        
+      body    = "Deine Armee #{attacked_army.name} mit #{attacked_army.size} Einheiten wird "+
+                 "in der Region #{attacked_army.region.name} von #{attacker.name}"+
+                 "#{ attacker.alliance_id.nil? ? "" : " | " + attacker.alliance_tag} angegriffen. "+
+                 "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf den Angriff zu reagieren."
+
+      notification = {
+        recipient_id:             recipient.identifier,
+        recipient_character_name: recipient.name,
+        sender_id:                nil,
+        subject:                  subject,
+        body:                     body,
+      }
+      post("/identities/#{recipient.identifier}/messages", { :message => notification })
+    end
+    
     
     def deliver_message_notification(recipient, sender, message)
       subject = if sender.nil?
@@ -43,12 +62,12 @@ module IdentityProvider
       else
         "Du hast soeben eine Nachricht von #{sender.name} in Wack-a-Doo erhalten."        
       end
-      body    = "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen."
-
-      if recipient.premium_account?
-        body  = "Betreff: #{message.subject}\n\n"+ 
-                " #{ sender.nil? ? message.body : CGI::escapeHTML(message.body) } " +     # don't escape system messages.
-                "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
+      body = if recipient.platinum_account?
+        "Betreff: #{message.subject}\n\n"+ 
+        " #{ sender.nil? ? message.body : CGI::escapeHTML(message.body) } " +     # don't escape system messages.
+        "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
+      else
+        "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen."
       end
       
       notification = {
@@ -61,6 +80,7 @@ module IdentityProvider
       }
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
     end
+    
 
     def post_result(character, round_number, round_name, won = false)
       return                            if character.ranking.nil?
