@@ -44,18 +44,22 @@ class Military::Battle < ActiveRecord::Base
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
       battle.add_fortress_defenders(attacker, defender)
+      self.send_attack_notification_if_necessary_to(defender, attacker)      
     elsif defender.fighting?                                     # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.battle_participant.faction_id))
       battle.add_fortress_defenders(attacker, defender)
     elsif attacker.able_to_overrun?(defender)                    # C) 
       self.overrun(attacker, defender)
+      self.send_attack_notification_if_necessary_to(defender, attacker)
     elsif defender.able_to_overrun?(attacker)                    # D)
       self.overrun(defender, attacker)
+      self.send_attack_notification_if_necessary_to(defender, attacker)
     else                                                         # E) create new battle (not involved, yet)
       battle = Military::Battle.create_battle_between(attacker, defender)
       battle.add_fortress_defenders(attacker, defender)
       battle.create_event_for_next_round
+      self.send_attack_notification_if_necessary_to(defender, attacker)
     end
     
     return battle
@@ -72,6 +76,7 @@ class Military::Battle < ActiveRecord::Base
             other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance
           other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
           self.add_army(other_army, defender.battle_participant.faction)
+          Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
         end
       end
     elsif attacker.garrison && attacker.location.fortress?  
@@ -136,6 +141,17 @@ class Military::Battle < ActiveRecord::Base
     
     #add defenders of garrison, if necessary
     battle
+  end
+  
+  def self.send_attack_notification_if_necessary_to(defender, attacker)
+    if !defender.owner.npc? && defender.owner.offline? && defender.owner.platinum_account?
+      ip_access = IdentityProvider::Access.new(
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
+      )
+      ip_access.deliver_attack_notification(defender.owner, defender, attacker.owner)
+    end    
   end
 
   #advanced the next_round_at field

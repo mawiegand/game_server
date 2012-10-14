@@ -38,9 +38,9 @@ module IdentityProvider
     end
 
 
-    def deliver_attack_notification(recipient, attacked_army, attacker, message)
+    def deliver_attack_notification(recipient, attacked_army, attacker)
       subject = "Du wirst von #{attacker.name} in Wack-a-Doo angegriffen!"        
-      body    = "Deine Armee #{attacked_army.name} mit #{attacked_army.size} Einheiten wird "+
+      body    = "Deine Armee #{attacked_army.name} mit #{attacked_army.size_present} Einheiten wird "+
                  "in der Region #{attacked_army.region.name} von #{attacker.name}"+
                  "#{ attacker.alliance_id.nil? ? "" : " | " + attacker.alliance_tag} angegriffen. "+
                  "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf den Angriff zu reagieren."
