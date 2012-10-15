@@ -107,8 +107,8 @@ class Ticker::BattleHandler
                 new_owner = if winner_leader.can_takeover_settlement?
                               winner_leader
                             else
-                              participant = winner_faction.takeover_candidate_with_largest_army
-                              participant.nil?  ? nil : participant.army.owner
+                              candidate = winner_faction.takeover_candidate_with_largest_army
+                              candidate.nil?  ? nil : candidate.army.owner
                             end
 
                 if !new_owner.nil?
@@ -179,7 +179,7 @@ class Ticker::BattleHandler
   #deletes armies that no longer exists (or marks them as removed)
   def cleanup_armies(battle)
     battle.armies.each do |army|
-      if (army.empty? && !army.garrison)
+      if (army.empty? && !army.garrison?)
         if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
           army.removed = true
           if !army.save
