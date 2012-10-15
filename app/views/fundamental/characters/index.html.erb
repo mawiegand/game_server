@@ -11,6 +11,7 @@
     <th>Name</th>
     <th>Login</th>
     <th>Activity</th>
+    <th>Playtime</th>
     <th>Conversion</th>
     <th>Gross</th>
     <th>Ranks</th>
@@ -46,8 +47,9 @@
           never
         <%end%>
     </td>
+    <td><%= (fundamental_character.playtime / 60.0).ceil %> m</td>
     <td><%= fundamental_character.max_conversion_state %></td>
-    <td><%= fundamental_character.gross %> EUR</td>
+    <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : fundamental_character.gross + " EUR" %></td>
     <td><%= fundamental_character.mundane_rank %> (XP: <%= fundamental_character.exp %>) / 
         <%= fundamental_character.sacred_rank %></td>
     <td><%= fundamental_character.settlement_points_used %> / 
