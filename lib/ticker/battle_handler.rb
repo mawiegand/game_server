@@ -107,7 +107,8 @@ class Ticker::BattleHandler
                 new_owner = if winner_leader.can_takeover_settlement?
                               winner_leader
                             else
-                              winner_faction.takeover_candidate_with_largest_army
+                              participant = winner_faction.takeover_candidate_with_largest_army
+                              participant.nil?  ? nil : participant.army.owner
                             end
 
                 if !new_owner.nil?
