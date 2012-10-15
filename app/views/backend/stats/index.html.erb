@@ -59,7 +59,7 @@
 
         "Date, Monthly, Weekly, Daily\n" +        
 <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mcs / (backend_stat.active_users || 1)%>, <%= backend_stat.wcs/ (backend_stat.active_users || 1) %>, <%= backend_stat.dcs/ (backend_stat.active_users || 1) %>\n" +
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= 1.0*backend_stat.mcs / (backend_stat.active_users || 1)%>, <%= 1.0*backend_stat.wcs/ (backend_stat.active_users || 1) %>, <%= 1.0*backend_stat.dcs/ (backend_stat.active_users || 1) %>\n" +
 <%end%>         
         "",
         {
