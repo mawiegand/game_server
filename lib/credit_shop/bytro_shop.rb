@@ -12,9 +12,9 @@ module CreditShop
     KEY = 'wackadoo'
     
     # get account of current user
-    def get_customer_account
+    def self.get_customer_account(identifier)
       data = {
-        userID: request_access_token.identifier,
+        userID: identifier,
       }
       
       query = {
@@ -51,9 +51,9 @@ module CreditShop
     end
     
     # post virtual_bank_transaction to bytro shop for charging containing credit amount 
-    def post_virtual_bank_transaction(virtual_bank_transaction)
+    def self.post_virtual_bank_transaction(virtual_bank_transaction, identifier)
       data = {
-        userID: request_access_token.identifier,
+        userID: identifier,
         method:  'bytro',
         offerID: '54',
         scaleFactor: (-virtual_bank_transaction[:credit_amount_booked]).to_s,
@@ -90,7 +90,7 @@ module CreditShop
     end
     
     # get account of current user
-    def get_money_transactions
+    def self.get_money_transactions
       data = {
         startTstamp: Time.now.weeks_ago(4).to_i.to_s,
       }
@@ -121,7 +121,7 @@ module CreditShop
       {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
-    def update_money_transactions
+    def self.update_money_transactions
       response = self.get_money_transactions
       
       if response[:response_code] === Shop::Transaction::API_RESPONSE_OK
@@ -186,20 +186,86 @@ module CreditShop
       end
     end
     
-    
-    # request object needed for SessionHelper
-    def initialize(request_object)
-      @request = request_object
+    def self.get_ingame_transactions
+      data = {
+        startTstamp: Time.now.weeks_ago(4).to_i.to_s,
+        mode: 'ingame',
+      }
+      
+      query = {
+        eID:    'api',
+        key:    KEY,
+        action: 'getTransactions',
+        data: encoded_data(data),
+      }
+      
+      query = add_hash(query)
+      http_response = HTTParty.post(URL_BASE, :query => query)
+      
+      if (http_response.code === 200)
+        api_response = JSON.parse(http_response.parsed_response)
+        if (api_response['resultCode'] === 0)
+          return {
+            response_code: Shop::Transaction::API_RESPONSE_OK,
+            response_data: {
+              transactions: api_response['result'],
+            }
+          }
+        end
+      end
+      
+      # if any error occured  
+      {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
-    # request object needed for SessionHelper
-    def request
-      @request
+    def self.update_ingame_transactions
+      response = self.get_ingame_transactions
+      
+      if response[:response_code] === Shop::Transaction::API_RESPONSE_OK
+        transactions = response[:response_data][:transactions]
+        
+        transactions.each do |transaction|
+          uid = transaction['uid'].to_i
+          if uid > 0
+            credit_transactions = Shop::CreditTransaction.find_or_initialize_by_uid(uid)
+      
+            credit_transactions.uid = uid 
+            credit_transactions.tstamp = transaction['tstamp'].to_i
+            credit_transactions.user_id = transaction['userID'].to_i
+            credit_transactions.invoice_id = transaction['invoiceID']
+            credit_transactions.title_id = transaction['titleID']
+            credit_transactions.game_id = transaction['gameID']
+            credit_transactions.country = transaction['country']
+            credit_transactions.offer_id = transaction['offerID'].to_i
+            credit_transactions.option_id = transaction['optionID']
+            credit_transactions.offer_category = transaction['offerCategory']
+            credit_transactions.gross = transaction['gross'].to_d
+            credit_transactions.gross_currency = transaction['grossCurrency'] 
+            credit_transactions.referrer_id = transaction['referrerID'] 
+            credit_transactions.chargeback = transaction['chargeback'].to_f
+            credit_transactions.tutorial = transaction['tutorial'] == '1'
+            credit_transactions.tournament_id = transaction['tournamentID']
+            credit_transactions.transaction_payed = transaction['transactionPayed'] == '1'
+            credit_transactions.transaction_state = transaction['transactionState']
+            credit_transactions.comment = transaction['comment']
+            credit_transactions.scale_factor = transaction['scaleFactor'].to_f
+            credit_transactions.money_tid = transaction['moneyTID'].to_i
+            credit_transactions.hash = transaction['hash']
+            credit_transactions.seed = transaction['seed']
+            credit_transactions.partner_user_id = transaction['partnerUserID']
+      
+            # update timestamp even if transaction is unchanged
+            credit_transactions.touch      
+            
+            credit_transactions.save
+          end
+        end
+      end
     end
-
+    
     protected
     
-      def encoded_data(data)
+      def self.encoded_data(data)
         url_encoded_data = {}
         data.each do |k, v|
           url_encoded_data[k] = CGI.escape(v)
@@ -208,7 +274,7 @@ module CreditShop
         base64_encoded_data.gsub(/[\n\r ]/,'')
       end
       
-      def add_hash(query)
+      def self.add_hash(query)
         hash_base = query[:key] + query[:action] + CGI.escape(query[:data]) + SHARED_SECRET
         query[:hash] = Digest::SHA1.hexdigest(hash_base)
         query

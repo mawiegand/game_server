@@ -5,7 +5,15 @@
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
+require 'credit_shop/bytro_shop'
+
 STDOUT.sync = true
+
+
+print "Update Money Transaction from Bytro API... "
+CreditShop::BytroShop.update_money_transactions
+CreditShop::BytroShop.update_ingame_transactions
+puts "done."
 
 print "Creating stats entry... "
 Backend::Stat.create

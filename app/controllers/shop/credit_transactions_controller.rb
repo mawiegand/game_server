@@ -1,6 +1,6 @@
 require 'credit_shop'
 
-class Shop::MoneyTransactionsController < ApplicationController
+class Shop::CreditTransactionsController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
@@ -8,13 +8,13 @@ class Shop::MoneyTransactionsController < ApplicationController
   
   def index
     if params.has_key?(:update)
-      CreditShop::BytroShop.update_money_transactions      
+      CreditShop::BytroShop.update_ingame_transactions      
     end
     
-    @money_transactions = Shop::MoneyTransaction.paginate(:order => 'uid desc', :page => params[:page], :per_page => 20)    
+    @credit_transactions = Shop::CreditTransaction.paginate(:order => 'uid desc', :page => params[:page], :per_page => 20) || []    
     @paginate = true    
     
-    last_transaction = Shop::MoneyTransaction.order('uid desc').first
+    last_transaction = Shop::CreditTransaction.order('uid desc').first
     
     @last_update = last_transaction.nil? ? '-' : last_transaction.updated_at
 

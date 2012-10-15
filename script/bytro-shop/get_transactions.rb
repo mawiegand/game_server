@@ -8,5 +8,5 @@ require 'credit_shop/bytro_shop'
 
 STDOUT.sync = true
 
-shop = CreditShop::BytroShop.new(nil)
-puts shop.get_money_transactions.inspect
+puts CreditShop::BytroShop.get_money_transactions.inspect
+puts CreditShop::BytroShop.get_ingame_transactions.inspect

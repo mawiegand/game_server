@@ -285,12 +285,19 @@ class Settlement::Slot < ActiveRecord::Base
       old_level = self.level
       
       # new building id heraussuchen
-      old_building_type = GameRules::Rules.the_rules.building_type_with_id(old_building_id)
+      # old_building_type = GameRules::Rules.the_rules.building_type_with_id(old_building_id)
+      old_building_type = GameRules::Rules.the_rules.building_types[old_building_id]
+      raise InternalServerError.new("Could not find building id #{old_building_id} in rules") if old_building_type.nil?
+      
       conversion_option = old_building_type[:conversion_option]
       raise InternalServerError.new("Could not find conversion option for building id #{old_building_type[:id]} in rules") if conversion_option.nil?
       
       # new building id setzen
-      new_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])
+      new_building_type = nil
+      GameRules::Rules.the_rules.building_types.each do |type|
+        new_building_type = type if type[:symbolic_id].to_s == conversion_option[:building].to_s
+      end
+      # new_building_type = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])
       
       new_building_id = new_building_type[:id]
       self.building_id = new_building_id

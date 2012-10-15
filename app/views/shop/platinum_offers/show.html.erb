@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @shop_platinum_offer.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shop_platinum_offer.price %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @shop_platinum_offer.duration %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @shop_platinum_offer.started_at %>
+</p>
+
+<p>
+  <b>Ends at:</b>
+  <%= @shop_platinum_offer.ends_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_platinum_offer_path(@shop_platinum_offer) %> |
+<%= link_to 'Back', shop_platinum_offers_path %>

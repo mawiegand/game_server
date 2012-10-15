@@ -537,6 +537,23 @@ class Fundamental::Character < ActiveRecord::Base
   #  C H A R A C T E R   R A N K S  and  S E T T L E M E N T   P O I N T S 
   #
   ############################################################################  
+
+
+  def extend_premium_atomically(duration)
+    if self.premium_expiration.nil? || self.premium_expiration < Time.now
+      self.premium_expiration = Time.now.advance(:hours => duration)
+    else
+      self.premium_expiration = self.premium_expiration.advance(:hours => duration)
+    end
+    self.save
+  end
+
+  
+  ############################################################################
+  #
+  #  C H A R A C T E R   R A N K S  and  S E T T L E M E N T   P O I N T S 
+  #
+  ############################################################################  
   
   def recalc_settlement_points_used
     self.settlements.count
