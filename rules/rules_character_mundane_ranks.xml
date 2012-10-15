@@ -8,7 +8,7 @@
     <Name lang="en_US">Newbie</Name>
   </MundaneRank>
   <!-- 1 -->
-  <MundaneRank exp="2000" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="2000" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Unter-Steinzeitrattenkuschler</Name>
     <Name lang="en_US">Newbie</Name>
   </MundaneRank>
@@ -18,7 +18,7 @@
     <Name lang="en_US">Feeble Leader</Name>
   </MundaneRank>
   <!-- 3 -->
-  <MundaneRank exp="9500" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="9500" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Unter-Ober-Steinzeitrattenkuschler</Name>
     <Name lang="en_US">Junior Leader</Name>
   </MundaneRank>
