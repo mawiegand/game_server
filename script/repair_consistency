@@ -100,6 +100,29 @@ Fundamental::ResourcePool.find(:all).each do |pool|
 end
 puts " done."
 
+
+# ############################################################################
+#
+#   CHARACTERS
+#
+# ############################################################################
+
+print "CHECKING Characters "
+
+step = Fundamental::Character.count / 10 
+step = step > 0 ? step : 1
+count = 0
+
+Fundamental::Character.find(:all).each do |character|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep (1)
+	end
+	character.check_consistency
+	count += 1 
+end
+puts " done."
+
 # ############################################################################
 #
 #   OWNER NAMES
