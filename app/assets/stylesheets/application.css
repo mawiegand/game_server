@@ -361,3 +361,37 @@ div.player-ranking-pane td.number, div.player-ranking-pane th.number {
   border-color: #a00;
   color: #a00;
 }
+
+div.platinum-account-info {
+  position: absolute;
+  background-color: #DDF;
+  width: 100%;
+  min-height: 100%;
+}
+
+div.platinum-account-info-pane {
+  width: 800px;
+
+  background-color: #FFF;
+  border-radius: 8px;
+  padding: 10px 40px 80px 40px;
+  margin-bottom: 200px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.platinum-account-info-pane img {
+  margin: 0px 30px 40px 0px;
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: rgb(153, 153, 153) 1px 2px 3px 2px;
+  float: left;
+}
+
+div.platinum-account-info-pane .feature {
+  clear: both;
+}
+

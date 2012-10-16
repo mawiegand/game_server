@@ -200,6 +200,7 @@ GameServer::Application.routes.draw do
         resources :money_transactions
         resources :credit_transactions
         resource :account, :only => [ :show ]
+        resource :info, :controller => 'info', :only => [:show]
       end
       
       namespace :construction do
