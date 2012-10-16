@@ -111,6 +111,19 @@ class Fundamental::Character < ActiveRecord::Base
     !self.alliance.nil? && self.alliance.leader_id == self.id
   end
 
+
+  def max_finished_quest
+    tutorial_state.nil? ? nil : tutorial_state.finished_quests.maximum(:quest_id)
+  end
+  
+  def num_finished_quests
+    tutorial_state.nil? ? 0 : tutorial_state.finished_quests.count
+  end
+  
+  def num_open_quests
+    tutorial_state.nil? ? 0 : tutorial_state.open_quests.count
+  end
+  
   
   def online?
     !self.last_request_at.nil? && self.last_request_at + 2.minutes > Time.now
