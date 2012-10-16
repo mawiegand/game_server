@@ -6,6 +6,7 @@ class Tutorial::State < ActiveRecord::Base
   has_many    :open_quests,     :class_name => "Tutorial::Quest",         :foreign_key => "state_id",     :conditions => ["status < ?", Tutorial::Quest::STATE_FINISHED]
   has_many    :finished_quests, :class_name => "Tutorial::Quest",         :foreign_key => "state_id",     :conditions => ["status >= ?", Tutorial::Quest::STATE_FINISHED]
   
+  
   def quest_state_with_quest_id(quest_id)
     self.quests.each do |quest_state|
       if quest_state.quest_id == quest_id

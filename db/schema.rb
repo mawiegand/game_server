@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015225507) do
+ActiveRecord::Schema.define(:version => 20121016134058) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -132,6 +132,8 @@ ActiveRecord::Schema.define(:version => 20121015225507) do
     t.decimal  "dgross",                             :default => 0.0, :null => false
     t.decimal  "day_gross",                          :default => 0.0, :null => false
     t.decimal  "month_gross",                        :default => 0.0, :null => false
+    t.integer  "day_finished_quests",                :default => 0,   :null => false
+    t.integer  "month_finished_quests",              :default => 0,   :null => false
   end
 
   create_table "backend_users", :force => true do |t|

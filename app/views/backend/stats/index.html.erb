@@ -11,6 +11,7 @@
   <div class="chart" id="conversions_daily"></div>
   <div class="chart" id="credit_cohorts"></div>
   <div class="chart" id="gross_cohorts"></div>
+  <div class="chart" id="quests_cohorts"></div>
 
   <div class="clear"></div>
 
@@ -278,6 +279,28 @@
       {
         legend: 'always',
         title: 'Credits Spent (cohorts)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+
+
+    var quests_cohorts = new Dygraph(
+
+      document.getElementById("quests_cohorts"),
+
+      "Date, daily cohorts, monthly cohorts \n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= (backend_stat.day_finished_quests || 0) / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= (backend_stat.month_finished_quests || 0) / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Avg. finished quests (cohorts)',
         fillGraph: true,
         highlightSeriesOpts: {
           strokeWidth: 3,

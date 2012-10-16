@@ -25,6 +25,7 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_num_paying             += 1   if character.max_conversion_state == "paying"
         stat.month_credits_spent          += character.credits_spent_total || 0
         stat.month_gross                  += character.gross || 0.0
+        stat.month_finished_quests        += character.num_finished_quests || 0
       end
 
       stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = 0
@@ -38,6 +39,7 @@ class Backend::Stat < ActiveRecord::Base
         stat.day_num_paying             += 1   if character.max_conversion_state == "paying"
         stat.day_credits_spent          += character.credits_spent_total || 0
         stat.day_gross                  += character.gross || 0.0
+        stat.day_finished_quests        += character.num_finished_quests || 0
       end   
          
       stat.save
