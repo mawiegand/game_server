@@ -295,7 +295,7 @@
 
       "Date, daily cohorts, monthly cohorts \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= (backend_stat.day_finished_quests || 0) / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= (backend_stat.month_finished_quests || 0) / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= (backend_stat.day_finished_quests || 0) / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= (backend_stat.month_finished_quests || 0) / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {
