@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_storage" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true">  
+<Building id="building_storage" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="1.5">  
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Storage</Name>
   <Description lang="de_DE">
