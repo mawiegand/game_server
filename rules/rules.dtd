@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion)>
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -32,6 +32,7 @@
   retreatProbability CDATA "0.6"
 >
 
+<!ELEMENT BuildingExperienceFormula (#PCDATA)>
 
 <!--CharacterCreation-->
 <!ELEMENT CharacterCreation (StartResource*)>
@@ -166,6 +167,7 @@
 	buyable (false | true) "true"
 	demolishable (false | true) "true"
 	destructable (false | true) "true"
+	experienceFactor CDATA "1"
   hidden (0 | 1) "0"
 	tier CDATA #IMPLIED
 	xml:base CDATA #REQUIRED

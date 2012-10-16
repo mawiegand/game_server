@@ -80,25 +80,26 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
   
   def attributes 
     { 
-      'version'              => version,
-      'battle'               => battle,
-      'character_creation'   => character_creation,
-      'construction_speedup' => construction_speedup,
-      'training_speedup'     => training_speedup,
-      'building_conversion'  => building_conversion,
-      'unit_categories'      => unit_categories,
-      'building_categories'  => building_categories,
-      'unit_types'           => unit_types,
-      'resource_types'       => resource_types,
-      'building_types'       => building_types,
-      'science_types'        => science_types,  
-      'settlement_types'     => settlement_types,  
-      'queue_types'          => queue_types,  
-      'character_ranks'      => character_ranks,  
+      'version'                     => version,
+      'battle'                      => battle,
+      'character_creation'          => character_creation,
+      'construction_speedup'        => construction_speedup,
+      'training_speedup'            => training_speedup,
+      'building_conversion'         => building_conversion,
+      'building_experience_formula' => building_experience_formula,
+      'unit_categories'             => unit_categories,
+      'building_categories'         => building_categories,
+      'unit_types'                  => unit_types,
+      'resource_types'              => resource_types,
+      'building_types'              => building_types,
+      'science_types'               => science_types,  
+      'settlement_types'            => settlement_types,  
+      'queue_types'                 => queue_types,  
+      'character_ranks'             => character_ranks,  
     }
   end
   
@@ -142,6 +143,7 @@ class GameRules::Rules
           :cost_factor => <xsl:apply-templates select="//General/BuildingConversion/CostFactor" />,
           :time_factor => <xsl:apply-templates select="//General/BuildingConversion/TimeFactor" />,
         },
+        :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
@@ -464,6 +466,7 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+          :experience_factor => <xsl:value-of select="@experienceFactor" />,
 <xsl:if test="RequirementGroup">
           :requirementGroups=> [
 <xsl:for-each select="RequirementGroup">
