@@ -20,7 +20,6 @@ de:
       map_regions: Regionen
     military:
       new_army: Neue Armee
-      
     messaging:
       welcome_message:
         subject: Willkommen bei Wack-a-Doo
@@ -38,6 +37,40 @@ de:
           <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>\n
           <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
           <p>Das Wack-a-Doo Team</p>\n"
-
-
+    shop:
+      platinum_info:
+        title: Platinum Account
+        description1:
+          Den Platinum Account hat eine beschränkte Laufzeit. Ihr könnt
+          ihn in der Fundgrube jederzeit aktivieren oder einen bereits aktiven Platinum Account verlängern. 
+        description2:
+          Mit dem Platinum Account könnt Ihr Euch einige Komfortfunktionen freischalten, die wir Euch im
+          Folgenden näher erläutern wollen. 
+        construction:
+          title:
+            Bauschleife
+          description:
+            Der Platinum Account erweitert die Bauschleife um zusätzliche 3 Plätze. Dadurch könnt Ihr 
+            mehr Aufträge gleichzeitig erteilen. Diese werden nach und nach abgearbeitet, auch wenn ihr Euch
+            nicht im Spiel einloggt, vorausgesetzt, Ihr habt genug Ressourcen.   
+        training:
+          title:
+            Trainingsschleife
+          description:
+            Die Trainingsschleife wird durch den Platinum Account um einen zusätzlichen Platz erweitert. Ihr
+            habt dadurch die Möglichkeit, zwei verschiedene Einheiten in einem Ausbildungsgebäude trainieren
+            zu lassen. 
+        battle_message:
+          title:
+            Kampfbenachrichtigungen per E-Mail
+          description:
+            Mit aktiviertem Platinum Account werdet Ihr umgehend per E-Mail über Angriffe auf Eure Siedlungen,
+            Festungen und Armeen informiert. Damit könnt ihr direkt auf Eure Gegner reagieren, auch wenn Ihr
+            Euch nicht gerade im Spiel befunden habt. Ihr könnt weitere Armeen zur Unterstützung zum Ort des
+            Geschehens beordern oder Eure Allianz um Hilfe ersuchen.
+        footer:
+          Wir werden den Platinum Account noch ausbauen. Es werden mit der Zeit weitere Komfortfunktionen
+          folgen, die dann natürlich direkt zusätzlich freigeschaltet werden.
+          
+          
 
