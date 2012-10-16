@@ -1965,7 +1965,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
-          :experience_factor => 360,
+          :experience_factor => 6,
 
           :costs      => {
             0 => '(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)',
@@ -2054,7 +2054,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :experience_factor => 200,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2148,7 +2148,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :experience_factor => 200,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2242,7 +2242,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
-          :experience_factor => 200,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
