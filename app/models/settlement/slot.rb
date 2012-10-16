@@ -322,6 +322,7 @@ class Settlement::Slot < ActiveRecord::Base
     propagate_resource_production_bonus building_id, old_level, new_level
     propagate_resource_capacity         building_id, old_level, new_level
     propagate_abilities                 building_id, old_level, new_level
+    propagate_experience                building_id, old_level, new_level
   end
     
   ############################################################################
@@ -513,6 +514,21 @@ class Settlement::Slot < ActiveRecord::Base
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
     else
       logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      
+    end
+  end
+  
+  def propagate_experience(building_id, old_level, new_level)
+    if new_level > old_level
+      rules = GameRules::Rules.the_rules
+      formula = Util::Formula.parse_from_formula(rules.building_experience_formula)
+      building_type = rules.building_types[building_id]
+      raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+      experience = 0
+      ((old_level + 1)..new_level).each do |level|
+        experience += (building_type[:experience_factor] * formula.apply(level)).floor
+        logger.debug "---------> experience #{experience} for level #{level}"
+      end
+      self.settlement.owner.add_experience(experience)
     end
   end
   
