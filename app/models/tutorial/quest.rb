@@ -38,11 +38,12 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
       
-      unless reward_tests[:settlement_test].nil?
-        settlement_test = reward_tests[:settlement_test]
-        unless settlement_test.nil?
-          unless check_settlements(settlement_test)
-            return false
+      unless reward_tests[:settlement_tests].nil?
+        reward_tests[:settlement_tests].each do |settlement_test|
+          unless settlement_test.nil?
+            unless check_settlements(settlement_test)
+              return false
+            end
           end
         end
       end
@@ -178,13 +179,26 @@ class Tutorial::Quest < ActiveRecord::Base
   end
   
   def check_settlements(settlement_test)
-    # check for min count
-    return false if settlement_test[:min_count].nil?
+    # check for min count and type
+    return false if settlement_test[:min_count].nil? || settlement_test[:type].nil?
     
-    logger.debug "check_settlements: check if min #{settlement_test[:min_count]} settlements of type 'outpost' exists"
+    logger.debug "check_settlements: check if min #{settlement_test[:min_count]} settlements of type #{settlement_test[:type]} exists"
  
-    settlements = self.tutorial_state.owner.settlements
-    return !settlements.nil? && settlements.count > settlement_test[:min_count]  # don't check equality => don't count home base
+    settlement_type = nil
+    GameRules::Rules.the_rules().settlement_types.each do |type|
+      if type[:symbolic_id].to_s == settlement_test[:type].to_s
+        settlement_type = type
+        break
+      end
+    end
+    return false if settlement_type.nil?
+    
+    # logger.debug "-----> check_settlements: type " + settlement_type.inspect
+
+    settlements = self.tutorial_state.owner.settlements.where({type_id: settlement_type[:id]})
+    # logger.debug "-----> check_settlements: settlements " + settlements.inspect
+    # logger.debug "-----> check_settlements: result " + (!settlements.nil? && settlements.count >= settlement_test[:min_count]).to_s
+    return !settlements.nil? && settlements.count >= settlement_test[:min_count]
   end
 
   def check_armies(army_test)
