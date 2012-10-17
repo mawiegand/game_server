@@ -159,7 +159,7 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="4" />
+        <BuildingTest building="building_gatherer" min_count="3" />
       </RewardTests>
     </Quest>
 
@@ -373,7 +373,7 @@
       </Message>
       <Message lang="de">
         <Subject>Nachricht vom Questgeber</Subject>
-        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich fünf Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.]]></Body>
+        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich drei Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.]]></Body>
       </Message>
     </Quest>
 
@@ -487,7 +487,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl1" />
+      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">25</ResourceReward>    
@@ -673,7 +673,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass du genug Truppen hast? Na okay, ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    
@@ -703,11 +702,11 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_3gathererlvl4" />
+      <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">300</ResourceReward>  
-        <ResourceReward resource="resource_wood">300</ResourceReward>    
-        <ResourceReward resource="resource_fur">150</ResourceReward>
+        <ResourceReward resource="resource_stone">250</ResourceReward>  
+        <ResourceReward resource="resource_wood">250</ResourceReward>    
+        <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1385,6 +1384,7 @@
    <RewardText locale="en_US"> </RewardText>
    <RewardFlavor locale="de_DE">Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!</RewardFlavor>
    <RewardFlavor locale="en_US"></RewardFlavor>
+  <Requirement quest="quest_build_chiefcottagelvl6" />
    <Rewards>
      <ResourceReward resource="resource_stone">275</ResourceReward>  
      <ResourceReward resource="resource_wood">250</ResourceReward>    

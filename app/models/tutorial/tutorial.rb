@@ -379,7 +379,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 13, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -415,7 +415,7 @@ class Tutorial::Tutorial
 
                 :min_level => 1,
 
-                :min_count => 4,
+                :min_count => 3,
 
               },
 
@@ -579,7 +579,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -1055,7 +1055,7 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich fünf Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
+              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich drei Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
             },
 
           },          
@@ -1336,7 +1336,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl1',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
@@ -1545,7 +1545,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [49, ],
+          :successor_quests => [19, 49, ],
 
           :rewards => {
             
@@ -1750,7 +1750,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, 18, ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1849,12 +1849,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_army_create',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -1940,7 +1934,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_3gathererlvl4',
+            :quest => 'quest_build_1barrackslvl1',
 
           },
 
@@ -1952,17 +1946,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 300,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 300,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 100,
               },
 
             ],
@@ -3218,7 +3212,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [19, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3807,6 +3801,12 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl6',
+
           },
 
           :successor_quests => [26, ],
@@ -4896,7 +4896,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, ],
+          :successor_quests => [21, 38, ],
 
           :rewards => {
             
