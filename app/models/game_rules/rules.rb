@@ -33,25 +33,26 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
   
   def attributes 
     { 
-      'version'              => version,
-      'battle'               => battle,
-      'character_creation'   => character_creation,
-      'construction_speedup' => construction_speedup,
-      'training_speedup'     => training_speedup,
-      'building_conversion'  => building_conversion,
-      'unit_categories'      => unit_categories,
-      'building_categories'  => building_categories,
-      'unit_types'           => unit_types,
-      'resource_types'       => resource_types,
-      'building_types'       => building_types,
-      'science_types'        => science_types,  
-      'settlement_types'     => settlement_types,  
-      'queue_types'          => queue_types,  
-      'character_ranks'      => character_ranks,  
+      'version'                     => version,
+      'battle'                      => battle,
+      'character_creation'          => character_creation,
+      'construction_speedup'        => construction_speedup,
+      'training_speedup'            => training_speedup,
+      'building_conversion'         => building_conversion,
+      'building_experience_formula' => building_experience_formula,
+      'unit_categories'             => unit_categories,
+      'building_categories'         => building_categories,
+      'unit_types'                  => unit_types,
+      'resource_types'              => resource_types,
+      'building_types'              => building_types,
+      'science_types'               => science_types,  
+      'settlement_types'            => settlement_types,  
+      'queue_types'                 => queue_types,  
+      'character_ranks'             => character_ranks,  
     }
   end
   
@@ -99,6 +100,7 @@ class GameRules::Rules
           :cost_factor => 0.3,
           :time_factor => 0.3,
         },
+        :building_experience_formula => '2*LEVEL',
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -1963,6 +1965,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 6,
 
           :costs      => {
             0 => '(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)',
@@ -2051,6 +2054,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2144,6 +2148,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2237,6 +2242,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2331,6 +2337,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 1,
 
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1*1.5+0.5)',
@@ -2389,6 +2396,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 6,
 
           :requirementGroups=> [
 
@@ -2529,6 +2537,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 0.49,
 
           :requirementGroups=> [
 
@@ -2660,6 +2669,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -2783,6 +2793,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -2910,6 +2921,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3006,6 +3018,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3129,6 +3142,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3252,6 +3266,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3376,6 +3391,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -3503,6 +3519,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -3628,6 +3645,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3765,6 +3783,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 3.3,
 
           :requirementGroups=> [
 
@@ -3883,6 +3902,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 10,
 
           :requirementGroups=> [
 
@@ -4002,6 +4022,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 12,
 
           :requirementGroups=> [
 
@@ -4096,6 +4117,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => false,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 8,
 
           :requirementGroups=> [
 
@@ -4183,6 +4205,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 3.3,
 
           :requirementGroups=> [
 
@@ -4302,6 +4325,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 3.3,
 
           :requirementGroups=> [
 
@@ -4420,6 +4444,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 3.3,
 
           :requirementGroups=> [
 
@@ -4538,6 +4563,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 3,
 
           :requirementGroups=> [
 
@@ -4634,6 +4660,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :experience_factor => 3.3,
 
           :requirementGroups=> [
 
@@ -4766,6 +4793,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => false,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 8,
 
           :requirementGroups=> [
 
@@ -4851,6 +4879,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :experience_factor => 6,
 
           :requirementGroups=> [
 

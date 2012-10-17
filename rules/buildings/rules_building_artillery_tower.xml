@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true">  
+<Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="4.5">  
   <Name lang="de_DE">Turm der Ballistik</Name>
   <Name lang="en_US">Ballistic Tower</Name>
   <Description lang="de_DE">

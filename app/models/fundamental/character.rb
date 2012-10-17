@@ -399,6 +399,12 @@ class Fundamental::Character < ActiveRecord::Base
     self.max_conversion_state = "registered"
   end
   
+  def add_experience(points)
+    logger.debug "---------------> hier! #{points.floor}"
+    self.increment(:exp, points.floor)
+    self.save    
+  end
+  
   # ##########################################################################
   #
   #   Alliance related stuff
@@ -549,7 +555,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   ############################################################################
   #
-  #  C H A R A C T E R   R A N K S  and  S E T T L E M E N T   P O I N T S 
+  #  P R E M I U M  A C C O U N T
   #
   ############################################################################  
 

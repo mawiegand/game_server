@@ -108,6 +108,7 @@
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>
     </BuildingConversion>  
+    <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />

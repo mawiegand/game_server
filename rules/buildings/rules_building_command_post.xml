@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_command_post" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" tier="2">  
+<Building id="building_command_post" group="military" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" tier="2" experienceFactor="10">  
   <Name lang="de_DE">Kommandozentrale</Name>
   <Name lang="en_US">Command Post</Name>
   <Description lang="de_DE">
