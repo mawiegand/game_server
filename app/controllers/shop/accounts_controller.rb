@@ -10,8 +10,6 @@ class Shop::AccountsController < ApplicationController
     raise NotFoundError.new("User not found in Shop") if (account_response[:response_code] === Shop::Transaction::API_RESPONSE_USER_NOT_FOUND)
     @shop_account = {credit_amount: account_response[:response_data][:amount]}
     
-    logger.debug '---> @shop_account' + @shop_account.inspect
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shop_account }
