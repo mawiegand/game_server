@@ -245,35 +245,35 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue einen zweiten Jäger und Sammler Level 1.",
+            :en_US => "Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.",
   
-            :de_DE => "",
+            :de_DE => "Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Baue bitte einen zweiten Sammler, dann wird das besser.",
+            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Du siehst sie in den drei Felder oben links. Lass uns einen zweiten Sammler bauen, um das zu verbessern.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.</p>",
+            :de_DE => "<p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Sehr schön! Mit dieser Belohnung erhöht sich Dein Lagerbestand.",
+            :de_DE => "Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Mit dieser Belohnung erhöht sich Dein Lagerbestand.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Sammler erhöhen Deine Rohstoffproduktion. Du kannst beruhigt mehrere bauen.",
+            :de_DE => "Sammler erhöhen Deine Rohstoffproduktion.",
   
             :en_US => " ",
                 
@@ -1443,6 +1443,12 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_2cottagelvl1',
+
           },
 
           :successor_quests => [15, ],
@@ -2905,12 +2911,6 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_2cottagelvl1',
-
           },
 
           :successor_quests => [],
@@ -5050,7 +5050,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [7, 29, ],
+          :successor_quests => [7, 14, ],
 
           :rewards => {
             

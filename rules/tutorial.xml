@@ -82,7 +82,7 @@
       <Task>Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
       <Task locale="de_DE">Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
       <Description locale="de_DE">
-        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion pro Stunde.</p>
+        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
