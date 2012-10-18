@@ -89,9 +89,9 @@
       </Description>
       <Flavor locale="de_DE">Deine Rohstoffproduktion ist noch sehr niedrig. Baue bitte einen zweiten Sammler, dann wird das besser.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Jetzt weißt Du, das Du oben links Deinen aktuellen Rohstoffstand sehen kannst. Mit dieser Belohnung erhöht sich Dein Lagerbestand.</RewardText>
+      <RewardText locale="de_DE">Sammler erhöhen Deine Rohstoffproduktion. Du kannst beruhigt mehrere bauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Sehr schön!</RewardFlavor>
+      <RewardFlavor locale="de_DE">Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Sehr schön! Mit dieser Belohnung erhöht sich Dein Lagerbestand.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_end_1gathererlvl1" />
       <Rewards>
@@ -182,12 +182,12 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl1" />
+      <Requirement quest="quest_quest_button" />
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
         <ResourceReward resource="resource_fur">15</ResourceReward>
-        <ExperienceReward>200</ExperienceReward>
+        <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
@@ -1755,4 +1755,33 @@
       </RewardTests>
     </Quest>
 </Quests>
+
+<!-- 51 -->
+    <Quest id="quest_quest_button" advisor="girl" hide_start_dialog="true">
+      <Name>Finde den Questknopf</Name>
+      <Name locale="de_DE">Finde den Questknopf</Name>
+      <Task></Task>
+      <Task locale="de_DE">Finde den Questknopf und informiere Dich über die aktuellen Quests. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Hey, Du bist wieder so weit deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Questknopf gefunden! Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+            <Requirement quest="quest_build_1gathererlvl1" />
+            <Rewards>
+              <ExperienceReward>50</ExperienceReward>
+            </Rewards>
+      <RewardTests>
+        <CustomTest id="test_quest_button">quest button pressed</CustomTest>
+      </RewardTests>
+    </Quest>
+</Quests>
+
 </Tutorial>
