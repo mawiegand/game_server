@@ -153,9 +153,9 @@
       <RewardFlavor locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Rewards>
-        <ResourceReward resource="resource_stone">45</ResourceReward>  
-        <ResourceReward resource="resource_wood">35</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ResourceReward resource="resource_stone">65</ResourceReward>  
+        <ResourceReward resource="resource_wood">55</ResourceReward>    
+        <ResourceReward resource="resource_fur">25</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -168,7 +168,7 @@
       <Name></Name>
       <Name locale="de_DE">Ausbau</Name>
       <Task>Baue einen Jäger und Sammler auf Level 2 aus.</Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE"> Baue einen Jäger und Sammler auf Level 2 aus. </Task>
       <Description locale="de_DE">
         <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
       </Description>
@@ -213,9 +213,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>  
-        <ResourceReward resource="resource_wood">100</ResourceReward>    
-        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ResourceReward resource="resource_stone">150</ResourceReward>  
+        <ResourceReward resource="resource_wood">150</ResourceReward>    
+        <ResourceReward resource="resource_fur">75</ResourceReward>
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1175,7 +1175,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Juhu, nicht nur Fell für ein Höschen, sondern ein Top ist auch noch drin! Klasse!</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
     <ResourceReward resource="resource_stone">100</ResourceReward>  
     <ResourceReward resource="resource_wood">100</ResourceReward>    
@@ -1783,13 +1782,13 @@
 
 
 <!-- 53 -->
-    <Quest id="quest_quest_button" advisor="girl" hide_start_dialog="true">
+    <Quest id="quest_quest_button" advisor="girl">
       <Name>Finde und drücke den Questknopf</Name>
-      <Name locale="de_DE">Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast. Öffne dort </Name>
+      <Name locale="de_DE">Questknopf</Name>
       <Task></Task>
       <Task locale="de_DE">Finde den Questknopf und informiere Dich über die aktuellen Quests. Klicke dort auf 'Anzeigen', um die Quest abzuschließen.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>

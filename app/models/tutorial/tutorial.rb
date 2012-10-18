@@ -387,17 +387,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 45,
+                :amount => 65,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 35,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -441,7 +441,7 @@ class Tutorial::Tutorial
             
             :en_US => "Baue einen Jäger und Sammler auf Level 2 aus.",
   
-            :de_DE => "",
+            :de_DE => " Baue einen Jäger und Sammler auf Level 2 aus. ",
                 
           },
           :flavour => {
@@ -587,17 +587,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 50,
+                :amount => 75,
               },
 
             ],
@@ -3019,7 +3019,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [31, 33, ],
+          :successor_quests => [33, ],
 
           :rewards => {
             
@@ -3111,12 +3111,6 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_2gathererlvl4',
-
           },
 
           :successor_quests => [32, ],
@@ -5111,13 +5105,13 @@ class Tutorial::Tutorial
           :id                => 53, 
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
             :en_US => "Finde und drücke den Questknopf",
   
-            :de_DE => "Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast. Öffne dort ",
+            :de_DE => "Questknopf",
                 
           },
           :task => {
@@ -5136,7 +5130,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
