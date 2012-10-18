@@ -79,10 +79,10 @@
     <Quest id="quest_build_1gathererlvl1" advisor="girl">
       <Name>Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE">Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.</Task>
+      <Task>Baue einen zweiten Jäger und Sammler Level 1.</Task>
+      <Task locale="de_DE"></Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -1785,9 +1785,9 @@
 <!-- 53 -->
     <Quest id="quest_quest_button" advisor="girl" hide_start_dialog="true">
       <Name>Finde und drücke den Questknopf</Name>
-      <Name locale="de_DE">Finde und drücke den Questknopf</Name>
+      <Name locale="de_DE">Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast. Öffne dort </Name>
       <Task></Task>
-      <Task locale="de_DE">Finde den Questknopf und informiere Dich über die aktuellen Quests. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</Task>
+      <Task locale="de_DE">Finde den Questknopf und informiere Dich über die aktuellen Quests. Klicke dort auf 'Anzeigen', um die Quest abzuschließen.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>

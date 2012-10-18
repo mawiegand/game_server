@@ -245,9 +245,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Baue einen zweiten Jäger und Sammler Level 1.",
   
-            :de_DE => "Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.",
+            :de_DE => "",
                 
           },
           :flavour => {
@@ -259,7 +259,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -5117,14 +5117,14 @@ class Tutorial::Tutorial
             
             :en_US => "Finde und drücke den Questknopf",
   
-            :de_DE => "Finde und drücke den Questknopf",
+            :de_DE => "Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast. Öffne dort ",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Finde den Questknopf und informiere Dich über die aktuellen Quests. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.",
+            :de_DE => "Finde den Questknopf und informiere Dich über die aktuellen Quests. Klicke dort auf 'Anzeigen', um die Quest abzuschließen.",
                 
           },
           :flavour => {
