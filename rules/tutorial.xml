@@ -77,21 +77,21 @@
 
 <!-- 2 -->
     <Quest id="quest_build_1gathererlvl1" advisor="girl">
-      <Name> Ein zweiter Jäger und Sammler</Name>
+      <Name>Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE">Baue einen weiteren Sammler.</Task>
+      <Task locale="de_DE">Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Wie wäre es mit einem zweiten Jäger und Sammler? Kannst du den für mich bauen?</Flavor>
+      <Flavor locale="de_DE">Deine Rohstoffproduktion ist noch sehr niedrig. Baue bitte einen zweiten Sammler, dann wird das besser.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Du solltest versuchen deine Rohstoffproduktion auszubauen. Bis Du später spezialisierte Rohstoffsammler hast, sind Jäger und Sammler ein guter Start.</RewardText>
+      <RewardText locale="de_DE">Jetzt weißt Du, das Du oben links Deinen aktuellen Rohstoffstand sehen kannst. Mit dieser Belohnung erhöht sich Dein Lagerbestand.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Cool, jetzt sind sie schon zu zweit. Sehr schön!</RewardFlavor>
+      <RewardFlavor locale="de_DE">Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Sehr schön!</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_end_1gathererlvl1" />
       <Rewards>
@@ -171,7 +171,7 @@
       <Task>Baue einen Jäger und Sammler auf Level 2 aus.</Task>
       <Task locale="de_DE"></Task>
       <Description locale="de_DE">
-        <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen. </p>
+        <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -180,7 +180,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Denke daran, deine Gebäude auszubauen. Jedes Level bringt eine höhere Produktion. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"> Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl1" />
       <Rewards>
