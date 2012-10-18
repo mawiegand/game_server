@@ -4128,7 +4128,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 3,
 
             },
 
@@ -4804,7 +4804,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 3,
 
             },
 
