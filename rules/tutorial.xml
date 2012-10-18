@@ -1758,8 +1758,8 @@
 
 <!-- 51 -->
     <Quest id="quest_quest_button" advisor="girl" hide_start_dialog="true">
-      <Name>Finde den Questknopf</Name>
-      <Name locale="de_DE">Finde den Questknopf</Name>
+      <Name>Finde und drücke den Questknopf</Name>
+      <Name locale="de_DE">Finde und drücke den Questknopf</Name>
       <Task></Task>
       <Task locale="de_DE">Finde den Questknopf und informiere Dich über die aktuellen Quests. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</Task>
       <Description locale="de_DE">
@@ -1768,7 +1768,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, Du bist wieder so weit deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
+      <Flavor locale="de_DE">Du kennst Dich noch nicht so gut aus. Zur besseren Übersicht suche den Questknopf, dadurch erhöht sich Deine Übersicht.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.</RewardText>
       <RewardText locale="en_US"> </RewardText>
