@@ -191,6 +191,9 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
       
+      character.home_location.settlement.name = "Hauptsiedlung"
+      character.home_location.settlement.save
+      
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
       
       character

@@ -152,7 +152,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
@@ -160,7 +159,7 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="3" />
+        <BuildingTest building="building_gatherer" min_count="4" />
       </RewardTests>
     </Quest>
 
@@ -274,7 +273,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast du noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_2cottagelvl1" />
      <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">30</ResourceReward>    
@@ -293,7 +292,7 @@
       <Task></Task>
       <Task locale="de_DE">Suche deinen derzeitigen Rang heraus.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Ranking Knopf, oben rechts. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>
+        <p>Klicke dazu auf den Ranglisten-Knopf, oben rechts. Die Rangliste öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -323,7 +322,7 @@
       <Task></Task>
       <Task locale="de_DE">Trage den Besitzer der Festung in deiner Region ein.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Die Festung ist in der Mitte der Region, wenn du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -491,7 +490,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl1" />
+      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -521,7 +520,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_2cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -822,9 +821,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">55</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ResourceReward resource="resource_stone">500</ResourceReward>  
+        <ResourceReward resource="resource_wood">500</ResourceReward>    
+        <ResourceReward resource="resource_fur">200</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -981,7 +980,7 @@
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_campfire" min_level="5" />
+        <BuildingTest building="building_campfire" min_level="10" />
       </RewardTests>
     </Quest>
 
@@ -993,7 +992,6 @@
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
         <p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
-	<p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p>
 	<p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>
       </Description>
       <Description locale="en_US">
@@ -1088,7 +1086,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl1" />
+  <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">70</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -1118,7 +1116,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl1" />
+  <Requirement quest="quest_build_2cottagelvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">95</ResourceReward>  
     <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -1148,7 +1146,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl1" />
+  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">90</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -1343,10 +1341,10 @@
 
 <!-- 37 -->
 <Quest id="quest_build_1storagelvl5" advisor="chef">
-   <Name>Rohstofflager Level 5</Name>
-   <Name locale="de_DE"> Rohstofflager Level 5 </Name>
+   <Name>Rohstofflager Level 3</Name>
+   <Name locale="de_DE"> Rohstofflager Level 3 </Name>
    <Task></Task>
-   <Task locale="de_DE">Baue ein Rohstofflager Level 5.</Task>
+   <Task locale="de_DE">Baue ein Rohstofflager Level 3.</Task>
    <Description locale="de_DE">
      <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die du lagern kannst. Wenn du die Grenze erreichst, verfällt die überschüssige Produktion. Außerdem erlauben die Karren den Handel mit anderen Spielern.</p>
    </Description>
@@ -1367,7 +1365,7 @@
      <ExperienceReward>75</ExperienceReward>
    </Rewards>
    <RewardTests>
-     <BuildingTest building="building_storage" min_level="5" />
+     <BuildingTest building="building_storage" min_level="3" />
    </RewardTests>
  </Quest>
 
@@ -1448,7 +1446,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Guck mal, dein Jäger und Sammler hat schon richtig Holz vor der Hütte.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">50</ResourceReward>  
     <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -1754,6 +1751,37 @@
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
       </RewardTests>
     </Quest>
+
+<!-- 52 -->
+    <Quest id="quest_build_2cottagelvl1" advisor="girl">
+      <Name>Hütten</Name>
+      <Name locale="de_DE">Die kleinen Hütten</Name>
+      <Task></Task>
+      <Task locale="de_DE">Baue zwei kleine Hütten.</Task>
+      <Description locale="de_DE">
+        <p>Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Diese werden dann nacheinander gebaut. Kleine Hütten verkürzen die Bauzeit von Gebäuden.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte oder zwei. Wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst? Denn je besser es deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">120</ResourceReward>  
+        <ResourceReward resource="resource_wood">100</ResourceReward>    
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_cottage" min_level="1" min_count="2" />
+      </RewardTests>
+    </Quest>
+
 </Quests>
 
 <!-- 51 -->
