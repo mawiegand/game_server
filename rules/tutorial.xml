@@ -80,9 +80,9 @@
       <Name>Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
       <Task>Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
-      <Task locale="de_DE"></Task>
+      <Task locale="de_DE">Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
       <Description locale="de_DE">
-        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion pro Stunde.</p>
+        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion pro Stunde.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -519,6 +519,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_2cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -1114,7 +1115,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2cottagelvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">95</ResourceReward>  
     <ResourceReward resource="resource_wood">75</ResourceReward>    
