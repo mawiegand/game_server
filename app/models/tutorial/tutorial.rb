@@ -2669,7 +2669,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_campfire',
 
-                :min_level => 5,
+                :min_level => 10,
 
                 :min_count => 1,
 
