@@ -208,7 +208,7 @@ class Backend::Stat < ActiveRecord::Base
   end
 
   def month_characters_total
-    @month_characters_total ||= month_num_registered + month_num_logged_in_once + month_num_logged_in_two_days + month_num_active + month_num_long_term_active + month_num_paying
+    @month_characters_total ||= month_num_registered + month_num_logged_in_once + month_num_ten_minutes + month_num_logged_in_two_days + month_num_active + month_num_long_term_active + month_num_paying
   end
   
   
@@ -242,7 +242,7 @@ class Backend::Stat < ActiveRecord::Base
   end
 
   def day_characters_total
-    @day_characters_total ||= day_num_registered + day_num_logged_in_once + day_num_logged_in_two_days + day_num_active + day_num_long_term_active + day_num_paying
+    @day_characters_total ||= day_num_registered + day_num_logged_in_once + day_num_ten_minutes + day_num_logged_in_two_days + day_num_active + day_num_long_term_active + day_num_paying
   end
 
   
