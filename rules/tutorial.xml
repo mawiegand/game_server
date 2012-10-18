@@ -178,7 +178,7 @@
       </Description>
       <Flavor locale="de_DE">Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen? Dann fühlt er sich wohler und bringt dir mehr Ressourcen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
+      <RewardText locale="de_DE">Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden. Jedes Level bringt eine höhere Produktion.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"> Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -231,7 +231,7 @@
       <Task></Task>
       <Task locale="de_DE">Ändere deinen Namen.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Wähle dann 'Namen ändern'. Die erste Namensänderung ist kostenlos.</p>
+        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Anpassung und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>

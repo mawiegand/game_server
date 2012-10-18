@@ -473,7 +473,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.",
+            :de_DE => "Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden. Jedes Level bringt eine höhere Produktion.",
   
             :en_US => " ",
                 
@@ -659,7 +659,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Wähle dann 'Namen ändern'. Die erste Namensänderung ist kostenlos.</p>",
+            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Anpassung und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
