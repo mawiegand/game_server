@@ -160,7 +160,7 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="4" />
+        <BuildingTest building="building_gatherer" min_count="3" />
       </RewardTests>
     </Quest>
 
@@ -378,7 +378,7 @@
       </Message>
       <Message lang="de">
         <Subject>Nachricht vom Questgeber</Subject>
-        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.]]></Body>
+        <Body><![CDATA[Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich drei Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.]]></Body>
       </Message>
     </Quest>
 
@@ -491,7 +491,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl1" />
+      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -670,7 +670,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass du genug Truppen hast? Na okay, ich glaub dir ja, hier hast du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    

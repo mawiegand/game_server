@@ -385,7 +385,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [13, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -421,7 +421,7 @@ class Tutorial::Tutorial
 
                 :min_level => 1,
 
-                :min_count => 4,
+                :min_count => 3,
 
               },
 
@@ -585,7 +585,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, 6, ],
+          :successor_quests => [3, 6, 13, ],
 
           :rewards => {
             
@@ -1083,7 +1083,7 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.",
+              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich drei Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
             },
 
           },          
@@ -1359,7 +1359,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl1',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
@@ -1749,7 +1749,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1837,12 +1837,6 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_create',
-
           },
 
           :successor_quests => [],
