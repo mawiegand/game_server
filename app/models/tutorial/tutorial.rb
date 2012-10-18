@@ -166,7 +166,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey, dass sieht doch schon viel besser aus, findest du nicht? Der nette Sammler will dir sogar seine ganzen Rohstoffe schenken. ",
+            :de_DE => " Hey, dass sieht doch schon viel besser aus, findest du nicht?  Der nette Sammler will dir sogar ein paar Rohstoffe schenken.",
   
             :en_US => "",
                 
@@ -185,7 +185,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, ],
+          :successor_quests => [2, ],
 
           :rewards => {
             
@@ -193,17 +193,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 10,
               },
 
             ],
@@ -279,7 +279,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_end_1gathererlvl1',
+
+          },
+
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -375,11 +381,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_end_1gathererlvl1',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
-          :successor_quests => [4, 13, ],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -387,17 +393,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 10,
               },
 
             ],
@@ -475,7 +481,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl1',
+            :quest => 'quest_build_1gathererlvl1',
 
           },
 
@@ -487,17 +493,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 55,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 55,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 15,
               },
 
             ],
@@ -579,7 +585,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [3, 6, ],
 
           :rewards => {
             
@@ -675,11 +681,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_chiefcottagelvl3',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -687,17 +693,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 35,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 15,
               },
 
             ],
@@ -766,11 +772,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
-          :successor_quests => [17, ],
+          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -778,17 +784,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 75,
+                :amount => 40,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 30,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -842,17 +848,23 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier nimm die Kröten und beschleunige Deinen Ausbau!",
+            :de_DE => "Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Als Belohnung erhälst Du zwei Kröten. Mit diesen Kröten kannst Du längere Ausbauten sofort fertig stellen, wie zum Beispiel den Ausbau der Häuptlingshütte.",
+            :de_DE => "",
   
             :en_US => "",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_profile',
+
           },
 
           :successor_quests => [],
@@ -862,8 +874,18 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => :resource_cash,
-                :amount => 2,
+                :resource => :resource_stone,
+                :amount => 55,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 45,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 15,
               },
 
             ],
@@ -910,7 +932,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Die Festung ist in der Mitte der Region, wenn du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>",
+            :de_DE => "<p></p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -930,7 +952,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_settlement_button1',
+
+          },
+
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1002,14 +1030,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen, um den Ausbau der Häuptlingshütte sofort fertig zu stellen.",
+            :de_DE => "Ich hoffe, sie hat dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube du kannst sie ganz gut gebrauchen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du kannst jetzt Nachrichten empfangen. Als Belohnung hast Du drei Kröten erhalten. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
+            :de_DE => "Du kannst jetzt Nachrichten empfangen und schreiben.",
   
             :en_US => " ",
                 
@@ -1017,7 +1045,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_chiefcottagelvl5',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
@@ -1029,7 +1057,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 3,
+                :amount => 5,
               },
 
             ],
@@ -1055,7 +1083,7 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Nachricht vom Questgeber',
-              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.<br/>Als Belohnung habe ich fünf Kröten für Dich. Mit Kröten kannst Du den Ausbau eines Gebäudes sofort fertig stellen. Versuche es doch bei der Häuptlingshütte.",
+              :body => "Hey, toll du hast die Nachricht gefunden. Wenn du wieder auf die Karte willst, drücke wie überall auf oben rechts auf den Siedlung-Knopf.",
             },
 
           },          
@@ -1104,7 +1132,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Alle deine Siedlungen und Festungen kannst du betreten, indem du sie auswählst und Betreten drückst.",
+            :de_DE => "Alle deine Siedlungen und Festungen kannst du betreten, indem du sie auswählst und Enter drückst.",
   
             :en_US => " ",
                 
@@ -1112,7 +1140,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_create',
+            :quest => 'quest_settlementowner',
 
           },
 
@@ -1124,22 +1152,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
+                :amount => 20,
               },
 
             ],
@@ -1340,7 +1363,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [14, 48, ],
+          :successor_quests => [28, 29, ],
 
           :rewards => {
             
@@ -1348,17 +1371,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 25,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -1407,14 +1430,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen, das bringt dir nämlich einen großen Bauplatz.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>",
+            :de_DE => "<p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1436,7 +1459,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl1',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -1448,22 +1471,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 250,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
+                :amount => 100,
               },
 
             ],
@@ -1512,14 +1530,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe dir etwas aus meiner Schatzkiste. Du hast sogar eine Kröte. Benutze sie um den Bau direkt abzuschließen!",
+            :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe dir etwas aus meiner Schatzkiste.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein Ausbildungsgelände bildet Nahkampfeinheiten aus. Die besten Einheiten werden auf Level 20 freigeschaltet, dafür müsstest du aber auf einen großen Bauplatz bauen.</p><p>Du kannst eine Kröte einsetzen, um den Bau des derzeitigen Bauauftrages direkt abzuschließen. Drücke dazu rechts in der Bauschleife beim aktiven Auftrag auf 'hurtig!'.</p>",
+            :de_DE => "<p>Ein Ausbildungsgelände bildet Nahkampfeinheiten aus. Die besten Einheiten werden auf Level 20 freigeschaltet, dafür müsstest du aber auf einen großen Bauplatz bauen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1545,7 +1563,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [49, ],
+          :successor_quests => [16, 30, ],
 
           :rewards => {
             
@@ -1553,17 +1571,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 325,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 325,
+                :amount => 70,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 180,
+                :amount => 90,
               },
 
             ],
@@ -1641,33 +1659,14 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_chiefcottagelvl4',
+            :quest => 'quest_build_1barrackslvl1',
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [17, ],
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 100,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 100,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 50,
-              },
-
-            ],
-
             :unit_rewards => [
 
               {
@@ -1746,11 +1745,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button1',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
-          :successor_quests => [11, 18, ],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -1758,26 +1757,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 175,
+                :amount => 165,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 205,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 65,
-              },
-
-            ],
-
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -1940,11 +1930,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_3gathererlvl4',
+            :quest => 'quest_build_1barrackslvl2',
 
           },
 
-          :successor_quests => [20, ],
+          :successor_quests => [10, 20, ],
 
           :rewards => {
             
@@ -1952,17 +1942,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 300,
+                :amount => 235,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 100,
               },
 
             ],
@@ -2044,7 +2034,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [22, ],
+          :successor_quests => [21, 22, ],
 
           :rewards => {
             
@@ -2052,12 +2042,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 110,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 140,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 10,
               },
 
             ],
@@ -2135,7 +2130,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -2228,7 +2223,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [23, 51, ],
+          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -2236,17 +2231,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 55,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 65,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 50,
+                :amount => 25,
               },
 
             ],
@@ -2328,7 +2323,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [24, ],
+          :successor_quests => [24, 38, ],
 
           :rewards => {
             
@@ -2336,17 +2331,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 220,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 220,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 100,
               },
 
             ],
@@ -2499,7 +2494,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Vier Steinbrüche und Holzfäller auf Level 3 ausbauen",
+            :de_DE => "4 Steinbrüche und 4 Holzfäller auf Level 5 ausbauen",
                 
           },
           :flavour => {
@@ -2545,17 +2540,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 250,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 250,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 80,
+                :amount => 30,
               },
 
             ],
@@ -2571,7 +2566,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_quarry',
 
-                :min_level => 3,
+                :min_level => 5,
 
                 :min_count => 4,
 
@@ -2580,7 +2575,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_logger',
 
-                :min_level => 3,
+                :min_level => 5,
 
                 :min_count => 4,
 
@@ -2680,7 +2675,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_campfire',
 
-                :min_level => 10,
+                :min_level => 5,
 
                 :min_count => 1,
 
@@ -2720,7 +2715,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2787,9 +2782,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_outpost
-        {               #   quest_build_3gathererlvl2
+        {               #   quest_build_2gathererlvl3
           :id                => 28, 
-          :symbolic_id       => :quest_build_3gathererlvl2,
+          :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2802,7 +2797,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue insgesamt vier Jäger und Sammler auf Level 2 aus.",
+            :en_US => "Baue zwei Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -2816,7 +2811,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür insgesamt vier Deiner Jäger und Sammler auf Level 2.</p>",
+            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens drei Deiner Jäger und Sammler auf Level 3.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2836,7 +2831,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_build_1cottagelvl1',
+
+          },
+
+          :successor_quests => [7, 14, 40, ],
 
           :rewards => {
             
@@ -2844,12 +2845,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 60,
+                :amount => 70,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 60,
               },
 
               {
@@ -2870,9 +2871,9 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 2,
+                :min_level => 3,
 
-                :min_count => 4,
+                :min_count => 2,
 
               },
 
@@ -2880,7 +2881,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_3gathererlvl2
+        },              #   END OF quest_build_2gathererlvl3
         {               #   quest_build_1cottagelvl3
           :id                => 29, 
           :symbolic_id       => :quest_build_1cottagelvl3,
@@ -2930,6 +2931,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_1cottagelvl1',
+
+          },
+
           :successor_quests => [],
 
           :rewards => {
@@ -2975,9 +2982,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1cottagelvl3
-        {               #   quest_build_2gathererlvl3
+        {               #   quest_build_2gathererlvl4
           :id                => 30, 
-          :symbolic_id       => :quest_build_2gathererlvl3,
+          :symbolic_id       => :quest_build_2gathererlvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -2990,7 +2997,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue insgesamt zwei Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue zwei Jäger und Sammler auf Level 4 aus.",
   
             :de_DE => "",
                 
@@ -3004,7 +3011,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>",
+            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 4.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -3024,7 +3031,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [31, 40, ],
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl1',
+
+          },
+
+          :successor_quests => [31, 33, ],
 
           :rewards => {
             
@@ -3032,17 +3045,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 125,
+                :amount => 90,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 130,
+                :amount => 60,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 60,
+                :amount => 15,
               },
 
             ],
@@ -3058,7 +3071,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 3,
+                :min_level => 4,
 
                 :min_count => 2,
 
@@ -3068,10 +3081,10 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_2gathererlvl3
-        {               #   quest_build_6gathererlvl3
+        },              #   END OF quest_build_2gathererlvl4
+        {               #   quest_build_4gathererlvl5
           :id                => 31, 
-          :symbolic_id       => :quest_build_6gathererlvl3,
+          :symbolic_id       => :quest_build_4gathererlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3084,7 +3097,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue insgesamt sechs Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue vier Jäger und Sammler auf Level 5 aus.",
   
             :de_DE => "",
                 
@@ -3120,11 +3133,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [32, ],
 
           :rewards => {
             
@@ -3132,17 +3145,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 175,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 90,
+                :amount => 55,
               },
 
             ],
@@ -3158,9 +3171,9 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 3,
+                :min_level => 5,
 
-                :min_count => 6,
+                :min_count => 4,
 
               },
 
@@ -3168,10 +3181,10 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_6gathererlvl3
-        {               #   quest_build_3gathererlvl4
+        },              #   END OF quest_build_4gathererlvl5
+        {               #   quest_build_3gathererlvl7
           :id                => 32, 
-          :symbolic_id       => :quest_build_3gathererlvl4,
+          :symbolic_id       => :quest_build_3gathererlvl7,
           :advisor           => :girl,
           :hide_start_dialog => false,
           
@@ -3184,7 +3197,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue drei Jäger und Sammler auf Level 4 aus.",
+            :en_US => "Baue drei Jäger und Sammler auf Level 7 aus.",
   
             :de_DE => "",
                 
@@ -3218,7 +3231,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [19, ],
+          :requirement => {
+            
+            :quest => 'quest_build_4gathererlvl5',
+
+          },
+
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3226,22 +3245,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 180,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 80,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 40,
               },
 
             ],
 
-            :experience_reward => 50,
+            :experience_reward => 100,
 
           },          
 
@@ -3252,7 +3271,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 4,
+                :min_level => 7,
 
                 :min_count => 3,
 
@@ -3262,7 +3281,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_3gathererlvl4
+        },              #   END OF quest_build_3gathererlvl7
         {               #   quest_build_1barrackslvl2
           :id                => 33, 
           :symbolic_id       => :quest_build_1barrackslvl2,
@@ -3312,7 +3331,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [34, ],
+          :requirement => {
+            
+            :quest => 'quest_build_2gathererlvl4',
+
+          },
+
+          :successor_quests => [19, 34, ],
 
           :rewards => {
             
@@ -3520,12 +3545,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 50,
               },
 
               {
@@ -3574,7 +3599,7 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Zwei Steinbrüche und zwei Holzfäller auf Level 3 ausbauen",
+            :de_DE => "Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen",
                 
           },
           :flavour => {
@@ -3612,7 +3637,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, ],
+          :successor_quests => [25, 37, ],
 
           :rewards => {
             
@@ -3666,24 +3691,24 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_2quarrylvl3_2loggerlvl3
-        {               #   quest_build_1storagelvl3
+        {               #   quest_build_1storagelvl5
           :id                => 37, 
-          :symbolic_id       => :quest_build_1storagelvl3,
+          :symbolic_id       => :quest_build_1storagelvl5,
           :advisor           => :chef,
           :hide_start_dialog => false,
           
           :name => {
             
-            :en_US => "Rohstofflager Level 3",
+            :en_US => "Rohstofflager Level 5",
   
-            :de_DE => " Rohstofflager Level 3 ",
+            :de_DE => " Rohstofflager Level 5 ",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Baue ein Rohstofflager Level 3.",
+            :de_DE => "Baue ein Rohstofflager Level 5.",
                 
           },
           :flavour => {
@@ -3715,6 +3740,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_2quarrylvl3_2loggerlvl3',
+
+          },
+
           :successor_quests => [],
 
           :rewards => {
@@ -3723,12 +3754,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 105,
+                :amount => 25,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 105,
+                :amount => 25,
               },
 
               {
@@ -3749,7 +3780,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_storage',
 
-                :min_level => 3,
+                :min_level => 5,
 
                 :min_count => 1,
 
@@ -3759,7 +3790,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1storagelvl3
+        },              #   END OF quest_build_1storagelvl5
         {               #   quest_build_1campfirelvl5
           :id                => 38, 
           :symbolic_id       => :quest_build_1campfirelvl5,
@@ -3807,6 +3838,12 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl5',
+
           },
 
           :successor_quests => [26, ],
@@ -4748,13 +4785,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1cottagelvl1',
-
-          },
-
-          :successor_quests => [6, ],
+          :successor_quests => [],
 
           :reward_tests => {
             
@@ -4819,13 +4850,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1barrackslvl1',
-
-          },
-
-          :successor_quests => [16, ],
+          :successor_quests => [],
 
           :reward_tests => {
             
@@ -4896,7 +4921,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -4990,13 +5015,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1storagelvl1',
-
-          },
-
-          :successor_quests => [10, ],
+          :successor_quests => [],
 
           :reward_tests => {
             
