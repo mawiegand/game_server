@@ -361,7 +361,7 @@
 
       "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1, <%= backend_stat.month_num_logged_in_once_acc     / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_ten_minutes     / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_logged_in_two_days_acc / (1.0*[backend_stat.month_characters_total, 1].max)  %>, <%= backend_stat.month_num_active_acc             / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_long_term_active_acc   / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_paying_acc             / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1, <%= backend_stat.month_num_logged_in_once_acc     / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_ten_minutes                   / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_logged_in_two_days_acc        / (1.0*[backend_stat.month_characters_total, 1].max)  %>, <%= backend_stat.month_num_active_acc                   / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_long_term_active_acc          / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_paying_acc                    / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {

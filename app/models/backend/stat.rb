@@ -194,9 +194,13 @@ class Backend::Stat < ActiveRecord::Base
   def month_num_logged_in_two_days_acc
     month_num_active_acc + month_num_logged_in_two_days
   end
+
+  def month_num_ten_minutes_acc
+    month_num_logged_in_two_days_acc + month_num_ten_minutes
+  end 
   
   def month_num_logged_in_once_acc
-    month_num_logged_in_two_days_acc + month_num_logged_in_once
+    month_num_ten_minutes_acc + month_num_logged_in_once
   end  
   
   def month_num_registered_acc
@@ -224,9 +228,13 @@ class Backend::Stat < ActiveRecord::Base
   def day_num_logged_in_two_days_acc
     day_num_active_acc + day_num_logged_in_two_days
   end
+
+  def day_num_ten_minutes_acc
+    day_num_logged_in_two_days_acc + day_num_ten_minutes
+  end  
   
   def day_num_logged_in_once_acc
-    day_num_logged_in_two_days_acc + day_num_logged_in_once
+    day_num_ten_minutes_acc + day_num_logged_in_once
   end  
   
   def day_num_registered_acc
