@@ -211,7 +211,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es dir nicht, dass deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
         <ResourceReward resource="resource_wood">150</ResourceReward>    
@@ -230,7 +229,7 @@
       <Task></Task>
       <Task locale="de_DE">Ändere deinen Namen.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>
+        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -241,7 +240,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Requirement quest="quest_queue_chiefcottagelvl2_V2" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -1767,7 +1766,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Requirement quest="quest_build_chiefcottagelvl2_V2" />
       <Rewards>
         <ResourceReward resource="resource_stone">120</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
@@ -1806,6 +1805,63 @@
         <CustomTest id="test_quest_button">quest button pressed</CustomTest>
       </RewardTests>
     </Quest>
-</Quests>
 
+<!-- 54 -->
+    <Quest id="quest_build_chiefcottagelvl2_V2" advisor="chef" hide_start_dialog="true">
+      <Name>Häuptlingshütte Level 2</Name>
+      <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
+      <Task></Task>
+      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
+      <Description locale="de_DE">
+        <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Ah endlich fertig? Nein? Was machst du dann hier? Komm erst wieder, wenn der Ausbau der Häuptlingshütte abgeschlossen ist.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Zusätzliche Level der Häuptlingshütte lassen dich mehr Gebäude bauen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es dir nicht, dass deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Außerdem hab ich dir doch gerade schon eine Belohnung gegeben! Verschwinde du gieriger Halbgott.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1gathererlvl2" />
+      <Rewards>
+        <ExperienceReward>100</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_chief_cottage" min_level="2" />
+      </RewardTests>
+    </Quest>
+
+<!-- 55 -->
+    <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef">
+      <Name>Häuptlingshütte Level 2</Name>
+      <Name locale="de_DE">Beauftrage die Häuptlingshütte</Name>
+      <Task></Task>
+      <Task locale="de_DE">Beauftrage den Ausbau der Häuptlingshütte auf Level 2.</Task>
+      <Description locale="de_DE">
+        <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Nein? Und du willst trotzdem eine Belohnung? Manche haben auch nie genug. Hier, nimm das und komm wieder wenn der Ausbau fertig ist.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1gathererlvl2" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">150</ResourceReward>  
+        <ResourceReward resource="resource_wood">150</ResourceReward>    
+        <ResourceReward resource="resource_fur">75</ResourceReward>
+        <ExperienceReward>400</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+      </RewardTests>
+    </Quest>
+
+  </Quests>
 </Tutorial>
