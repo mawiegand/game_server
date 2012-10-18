@@ -238,7 +238,7 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => " Ein zweiter Jäger und Sammler",
+            :en_US => "Ein zweiter Jäger und Sammler",
   
             :de_DE => "",
                 
@@ -247,12 +247,12 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Baue einen weiteren Sammler.",
+            :de_DE => "Sieh bitte mal nach oben links. Dort siehst Du die Rohstoffe Stein, Holz und Fell. Die großen Zahlen zeigen Dir Deinen aktuellen Lagerbestand, die Zahlen da drunter 'Max:' Deine maximale Lagerkapazität. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deinen Rohstoffproduktion in einer Stunde. Um diese zu erhöhen bauen, bitte einen zweiten Sammler.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wie wäre es mit einem zweiten Jäger und Sammler? Kannst du den für mich bauen?",
+            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Baue bitte einen zweiten Sammler, dann wird das besser.",
   
             :en_US => "flavor text english",
                 
@@ -266,14 +266,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Cool, jetzt sind sie schon zu zweit. Sehr schön!",
+            :de_DE => "Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Sehr schön! Mit dieser Belohnung erhöht sich Dein Lagerbestand.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du solltest versuchen deine Rohstoffproduktion auszubauen. Bis Du später spezialisierte Rohstoffsammler hast, sind Jäger und Sammler ein guter Start.",
+            :de_DE => "Sammler erhöhen Deine Rohstoffproduktion. Du kannst beruhigt mehrere bauen.",
   
             :en_US => " ",
                 
@@ -285,7 +285,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [53, ],
 
           :rewards => {
             
@@ -379,13 +379,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl2',
-
-          },
-
-          :successor_quests => [13, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -421,7 +415,7 @@ class Tutorial::Tutorial
 
                 :min_level => 1,
 
-                :min_count => 3,
+                :min_count => 4,
 
               },
 
@@ -459,14 +453,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen. </p>",
+            :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das du bei einem Klick auswählen würdest, erkennst du am orangenen Rahmen. Im sich öffnenden Fenster siehst du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => " Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.",
+            :de_DE => "Wie nett von dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für dich mitgegeben.",
   
             :en_US => "",
                 
@@ -481,7 +475,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl1',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -508,7 +502,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 150,
 
           },          
 
@@ -585,7 +579,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, 6, ],
+          :successor_quests => [6, 52, ],
 
           :rewards => {
             
@@ -772,7 +766,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_2cottagelvl1',
 
           },
 
@@ -841,7 +835,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Ranking Knopf, oben rechts. Das Ranking öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>",
+            :de_DE => "<p>Klicke dazu auf den Ranglisten-Knopf, oben rechts. Die Rangliste öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -932,7 +926,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Die Festung ist in der Mitte der Region, wenn du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1357,13 +1351,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_2gathererlvl1',
-
-          },
-
-          :successor_quests => [28, 29, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1459,7 +1447,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_2cottagelvl1',
 
           },
 
@@ -1563,7 +1551,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, 30, ],
+          :successor_quests => [16, 28, ],
 
           :rewards => {
             
@@ -2225,17 +2213,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 55,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 65,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25,
+                :amount => 200,
               },
 
             ],
@@ -2709,7 +2697,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Außerdem kostet die Dorfgründung noch 10.000 Holz, 10.000 Stein und 5.000 Fell.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Du kannst nur weitere Siedlungen gründen, wenn du Erfahrungen sammelst und im Rang aufsteigst.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2827,11 +2815,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl1',
+            :quest => 'quest_build_1barrackslvl1',
 
           },
 
-          :successor_quests => [7, 14, 40, ],
+          :successor_quests => [30, ],
 
           :rewards => {
             
@@ -2927,7 +2915,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl1',
+            :quest => 'quest_build_2cottagelvl1',
 
           },
 
@@ -3027,7 +3015,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl1',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -3693,16 +3681,16 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Rohstofflager Level 5",
+            :en_US => "Rohstofflager Level 3",
   
-            :de_DE => " Rohstofflager Level 5 ",
+            :de_DE => " Rohstofflager Level 3 ",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "Baue ein Rohstofflager Level 5.",
+            :de_DE => "Baue ein Rohstofflager Level 3.",
                 
           },
           :flavour => {
@@ -3774,7 +3762,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_storage',
 
-                :min_level => 5,
+                :min_level => 3,
 
                 :min_count => 1,
 
@@ -4026,12 +4014,6 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_2gathererlvl3',
-
           },
 
           :successor_quests => [41, ],
@@ -5025,6 +5007,178 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl5
+        {               #   quest_build_2cottagelvl1
+          :id                => 52, 
+          :symbolic_id       => :quest_build_2cottagelvl1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Hütten",
+  
+            :de_DE => "Die kleinen Hütten",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue zwei kleine Hütten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte oder zwei. Wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst? Denn je besser es deinen Arbeitern geht, desto schneller bauen sie auch.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Diese werden dann nacheinander gebaut. Kleine Hütten verkürzen die Bauzeit von Gebäuden.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und weiter ausbauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl2',
+
+          },
+
+          :successor_quests => [7, 14, 29, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 120,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 100,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 50,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_cottage',
+
+                :min_level => 1,
+
+                :min_count => 2,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_2cottagelvl1
+        {               #   quest_quest_button
+          :id                => 53, 
+          :symbolic_id       => :quest_quest_button,
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => "Finde und drücke den Questknopf",
+  
+            :de_DE => "Finde und drücke den Questknopf",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Finde den Questknopf und informiere Dich über die aktuellen Quests. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du kennst Dich noch nicht so gut aus. Zur besseren Übersicht suche den Questknopf, dadurch erhöht sich Deine Übersicht.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Questknopf gefunden! Klasse, jetzt hast Du alle Quests auf einem Blick. ",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl1',
+
+          },
+
+          :successor_quests => [4, ],
+
+          :rewards => {
+            
+            :experience_reward => 50,
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_quest_button',
+            },
+
+          },          
+
+        },              #   END OF quest_quest_button
       ],                # END OF QUESTS
 
     )

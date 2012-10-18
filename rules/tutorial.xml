@@ -490,7 +490,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -1782,9 +1781,8 @@
       </RewardTests>
     </Quest>
 
-</Quests>
 
-<!-- 51 -->
+<!-- 53 -->
     <Quest id="quest_quest_button" advisor="girl" hide_start_dialog="true">
       <Name>Finde und drücke den Questknopf</Name>
       <Name locale="de_DE">Finde und drücke den Questknopf</Name>
