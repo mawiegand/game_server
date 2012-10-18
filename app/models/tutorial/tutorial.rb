@@ -5112,19 +5112,19 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Finde den Questknopf und informiere Dich über die aktuellen Quests. Klicke dort auf 'Anzeigen', um die Quest abzuschließen.",
+            :de_DE => "Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.",
                 
           },
           :flavour => {
             
-            :de_DE => "Du kennst Dich noch nicht so gut aus. Zur besseren Übersicht suche den Questknopf, dadurch erhöht sich Deine Übersicht.",
+            :de_DE => "Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+            :de_DE => "<p>Der Questknopf ist oben rechts am Hauptmenü. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
