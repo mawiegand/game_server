@@ -491,7 +491,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Requirement quest="quest_build_2gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">60</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    

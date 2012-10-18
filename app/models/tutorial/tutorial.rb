@@ -385,7 +385,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -585,7 +585,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, 6, 13, ],
+          :successor_quests => [3, 6, ],
 
           :rewards => {
             
@@ -1359,7 +1359,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_build_2gathererlvl1',
 
           },
 
