@@ -364,6 +364,10 @@ class Fundamental::Character < ActiveRecord::Base
     login_count >= 2 && self.last_login_at-1.days > self.created_at 
   end
   
+  def ten_minutes?
+    logged_in_once? && playtime >= 10
+  end
+  
   # logged-in at least once
   def logged_in_once?
     login_count >= 1
@@ -394,6 +398,11 @@ class Fundamental::Character < ActiveRecord::Base
       self.max_conversion_state = "logged_in_two_days"
       return 
     end 
+    return   if self.max_conversion_state == "ten_minutes"
+    if ten_minutes?
+      self.max_conversion_state = "ten_minutes"
+      return 
+    end     
     return   if self.max_conversion_state == "logged_in_once"
     if !reached_game.nil?
       self.max_conversion_state = "logged_in_once"
