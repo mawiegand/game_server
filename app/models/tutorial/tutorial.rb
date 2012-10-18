@@ -1445,12 +1445,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_2cottagelvl1',
-
-          },
-
           :successor_quests => [15, ],
 
           :rewards => {
@@ -5056,7 +5050,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [7, 14, 29, ],
+          :successor_quests => [7, 29, ],
 
           :rewards => {
             
