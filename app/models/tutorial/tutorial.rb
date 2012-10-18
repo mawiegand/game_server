@@ -452,7 +452,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Siehst du, du bist schon so weit gekommen. Könntest du bitte noch einen Jäger und Sammler ausbauen? Dann fühlt er sich wohler und bringt dir mehr Ressourcen.",
+            :de_DE => "Siehst du, du bist schon so weit gekommen. Könntest du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann fühlt er sich wohler und bringt dir mehr Ressourcen.",
   
             :en_US => "flavor text english",
                 
@@ -473,7 +473,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denke daran, deine Gebäude auszubauen. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden. Jedes Level bringt eine höhere Produktion.",
+            :de_DE => "Denke daran, deine Gebäude auszubauen. Jedes Level bringt eine höhere Produktion. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.",
   
             :en_US => " ",
                 
@@ -573,7 +573,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.",
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen. Zusätzliche Level der Häuptlingshütte lassen dich mehr Gebäude bauen.",
   
             :en_US => " ",
                 
@@ -659,7 +659,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Anpassung und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>",
+            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1716,7 +1716,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Das müsste mal jemand machen.",
+            :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe dir ja gerade drei Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
   
             :en_US => "flavor text english",
                 
