@@ -248,9 +248,9 @@ class Backend::Stat < ActiveRecord::Base
   
   
   def recalc_all_stats
-    self.dtimenew         = Backend::Stat.playtime_new_users_last_day
-    self.wtimenew         = Backend::Stat.playtime_new_users_last_week
-    self.mtimenew         = Backend::Stat.playtime_new_users_last_month
+    self.dtimenew         = (Backend::Stat.playtime_new_users_last_day / 60.0).ceil
+    self.wtimenew         = (Backend::Stat.playtime_new_users_last_week / 60.0).ceil
+    self.mtimenew         = (Backend::Stat.playtime_new_users_last_month / 60.0).ceil
 
     self.dnu              = Backend::Stat.num_new_users_last_day
     self.wnu              = Backend::Stat.num_new_users_last_week
