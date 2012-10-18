@@ -82,7 +82,7 @@
       <Task></Task>
       <Task locale="de_DE">Baue einen weiteren Sammler.</Task>
       <Description locale="de_DE">
-        <p>Oben links siehst du deine Rohstoffproduktion</p>
+        <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -273,7 +273,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast du noch ein paar Ressourcen, bevor du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_2cottagelvl1" />
      <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">30</ResourceReward>    
@@ -520,7 +520,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll. Wenn du willst, kannst du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_2cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>  
         <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -1086,7 +1086,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl1" />
+  <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">70</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -1116,7 +1116,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl1" />
+  <Requirement quest="quest_build_2cottagelvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">95</ResourceReward>  
     <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -1146,7 +1146,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl1" />
+  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">90</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -1446,7 +1446,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Guck mal, dein Jäger und Sammler hat schon richtig Holz vor der Hütte.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl3" />
   <Rewards>
     <ResourceReward resource="resource_stone">50</ResourceReward>  
     <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -1752,5 +1751,36 @@
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
       </RewardTests>
     </Quest>
+
+<!-- 52 -->
+    <Quest id="quest_build_2cottagelvl1" advisor="girl">
+      <Name>Hütten</Name>
+      <Name locale="de_DE">Die kleinen Hütten</Name>
+      <Task></Task>
+      <Task locale="de_DE">Baue zwei kleine Hütten.</Task>
+      <Description locale="de_DE">
+        <p>Du kannst zwei Gebäude gleichzeitig in Auftrag geben. Diese werden dann nacheinander gebaut. Kleine Hütten verkürzen die Bauzeit von Gebäuden.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte oder zwei. Wusstest du, dass du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn du das mal versuchst? Denn je besser es deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Wenn dir die Bauaufträge zu lange dauern, kannst du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_chiefcottagelvl2" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">120</ResourceReward>  
+        <ResourceReward resource="resource_wood">100</ResourceReward>    
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_cottage" min_level="1" min_count="2" />
+      </RewardTests>
+    </Quest>
+
 </Quests>
 </Tutorial>
