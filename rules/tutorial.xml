@@ -281,7 +281,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
+        <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
     </Quest>
 
@@ -407,7 +407,7 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_settlement_button">settlement button pressed</CustomTest>
+        <CustomTest id="test_settlement_button2">settlement button pressed</CustomTest>
       </RewardTests>
     </Quest>
 

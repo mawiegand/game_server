@@ -800,7 +800,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_settlement_button',
+              :id => 'test_settlement_button1',
             },
 
           },          
@@ -1168,7 +1168,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_settlement_button',
+              :id => 'test_settlement_button2',
             },
 
           },          
