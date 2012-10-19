@@ -479,7 +479,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [5, ],
+          :successor_quests => [54, 55, ],
 
           :rewards => {
             
@@ -573,13 +573,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl2',
-
-          },
-
-          :successor_quests => [6, 52, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -653,7 +647,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die erste zwei Namensänderungen sind kostenlos.</p>",
+            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -675,7 +669,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_queue_chiefcottagelvl2_V2',
 
           },
 
@@ -744,7 +738,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf Enter.</p>",
+            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo du bist.</p><p>Wenn du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf 'Betreten'.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -5046,7 +5040,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_build_chiefcottagelvl2_V2',
 
           },
 
@@ -5112,19 +5106,19 @@ class Tutorial::Tutorial
             
             :en_US => "",
   
-            :de_DE => "Finde den Questknopf und informiere Dich über die aktuellen Quests. Klicke dort auf 'Anzeigen', um die Quest abzuschließen.",
+            :de_DE => "Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.",
                 
           },
           :flavour => {
             
-            :de_DE => "Du kennst Dich noch nicht so gut aus. Zur besseren Übersicht suche den Questknopf, dadurch erhöht sich Deine Übersicht.",
+            :de_DE => "Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Finde und drücke den Questknopf. Hier findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+            :de_DE => "<p>Der Questknopf ist oben rechts am Hauptmenü. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -5167,6 +5161,183 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_quest_button
+        {               #   quest_build_chiefcottagelvl2_V2
+          :id                => 54, 
+          :symbolic_id       => :quest_build_chiefcottagelvl2_V2,
+          :advisor           => :chef,
+          :hide_start_dialog => true,
+          
+          :name => {
+            
+            :en_US => "Häuptlingshütte Level 2",
+  
+            :de_DE => "Ausbau der Häuptlingshütte",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue deine Häuptlingshütte auf Level 2 aus.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ah endlich fertig? Nein? Was machst du dann hier? Komm erst wieder, wenn der Ausbau der Häuptlingshütte abgeschlossen ist.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es dir nicht, dass deine Siedlung größer ist und du ein neues Gebäude bauen kannst? Außerdem hab ich dir doch gerade schon eine Belohnung gegeben! Verschwinde du gieriger Halbgott.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Zusätzliche Level der Häuptlingshütte lassen dich mehr Gebäude bauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl2',
+
+          },
+
+          :successor_quests => [52, ],
+
+          :rewards => {
+            
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 2,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_chiefcottagelvl2_V2
+        {               #   quest_queue_chiefcottagelvl2_V2
+          :id                => 55, 
+          :symbolic_id       => :quest_queue_chiefcottagelvl2_V2,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Häuptlingshütte Level 2",
+  
+            :de_DE => "Beauftrage die Häuptlingshütte",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Beauftrage den Ausbau der Häuptlingshütte auf Level 2.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe dir eine Belohnung.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Endlich fertig hm? Nein? Und du willst trotzdem eine Belohnung? Manche haben auch nie genug. Hier, nimm das und komm wieder wenn der Ausbau fertig ist.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt dir mehr Gebäude zu bauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1gathererlvl2',
+
+          },
+
+          :successor_quests => [6, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 75,
+              },
+
+            ],
+
+            :experience_reward => 400,
+
+          },          
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_chiefcottagelvl2_V2
       ],                # END OF QUESTS
 
     )

@@ -26,6 +26,8 @@
   <div class="chart" id="newUsers"></div>
   <div class="chart" id="lostUsers"></div>
 
+  <div class="chart" id="playtimeNewUsers"></div>
+
   <div class="clear"></div>
 
 
@@ -108,6 +110,27 @@
         {
           legend: 'always',
           title: 'Gross (EUR, Avg per User)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+      
+      var playtimeAverage = new Dygraph(
+
+        document.getElementById("playtimeNewUsers"),
+
+        "Date, Monthly, Weekly, Daily\n" +        
+<% @backend_stats.each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mtimenew / (backend_stat.mnu || 1)%>, <%= backend_stat.wtimenew / (backend_stat.wnu || 1) %>, <%= backend_stat.dtimenew / (backend_stat.dnu || 1) %>\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Playtime of new Users',
           fillGraph: true,
           highlightSeriesOpts: {
             strokeWidth: 3,
@@ -267,13 +290,14 @@
       }
     );
 
+
     var credit_cohorts = new Dygraph(
 
       document.getElementById("credit_cohorts"),
 
       "Date, daily cohorts, monthly cohorts \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_credits_spent  %>, <%= backend_stat.month_credits_spent %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_credits_spent / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.month_credits_spent / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {
@@ -316,12 +340,12 @@
 
       "Date, daily cohorts, monthly cohorts \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_gross  %>, <%= backend_stat.month_gross %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.day_gross / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.month_gross / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {
         legend: 'always',
-        title: 'Gross (EUR, cohorts)',
+        title: 'Avg. Revenue (EUR, cohorts)',
         fillGraph: true,
         highlightSeriesOpts: {
           strokeWidth: 3,
@@ -335,9 +359,9 @@
 
       document.getElementById("conversions"),
 
-      "Date, registered, logged-in once, 2nd day login, active, long term, paying \n"+
+      "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1, <%= backend_stat.month_num_logged_in_once_acc     / (1.0*[backend_stat.month_characters_total, 1].max) %>,<%= backend_stat.month_num_logged_in_two_days_acc / (1.0*[backend_stat.month_characters_total, 1].max)  %>, <%= backend_stat.month_num_active_acc             / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_long_term_active_acc   / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_paying_acc             / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1, <%= backend_stat.month_num_logged_in_once_acc     / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_ten_minutes_acc                 / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_logged_in_two_days_acc        / (1.0*[backend_stat.month_characters_total, 1].max)  %>, <%= backend_stat.month_num_active_acc                   / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_long_term_active_acc          / (1.0*[backend_stat.month_characters_total, 1].max) %>, <%= backend_stat.month_num_paying_acc                    / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {
@@ -352,13 +376,13 @@
       }
     );
     
-    var conversions = new Dygraph(
+    var conversionsDaily = new Dygraph(
 
       document.getElementById("conversions_daily"),
 
-      "Date, registered, logged-in once, 2nd day login, active, long term, paying \n"+
+      "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
   <% @backend_stats.each do |backend_stat| %>
-      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1,<%= backend_stat.day_num_logged_in_once_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_logged_in_two_days_acc / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.day_num_active_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_long_term_active_acc   / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_paying_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1,<%= backend_stat.day_num_logged_in_once_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_ten_minutes_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_logged_in_two_days_acc / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.day_num_active_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_long_term_active_acc   / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_paying_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
   <%end%>
       "",
       {
@@ -500,10 +524,12 @@
     <td><%= backend_stat.total_customers %>/<%= backend_stat.active_customers %></td>
     
     <td><%= backend_stat.month_num_registered %> / <%= backend_stat.month_num_logged_in_once %> /
+        <%= backend_stat.month_num_ten_minutes %> /
         <%= backend_stat.month_num_logged_in_two_days %> / <%= backend_stat.month_num_active %> /
         <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %></td>
         
     <td><%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> /
+        <%= backend_stat.day_num_ten_minutes %> /
         <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
         <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %></td>
         
