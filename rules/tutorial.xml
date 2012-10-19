@@ -105,35 +105,6 @@
       </RewardTests>
     </Quest>
 
-    <!-- Quest id="quest_change_settlementname" advisor="girl">
-      <Name></Name>
-      <Name locale="de_DE">Siedlungsname</Name>
-      <Task></Task>
-      <Task locale="de_DE">Ändere den Namen Deiner Siedlung.</Task>
-      <Description locale="de_DE">
-        <p></p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE"> Wie soll eigentlich die Siedlung heißen? Bitte denk Dir einen schönen Namen aus. </Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Hach, was ein schöner Name. </RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>  
-        <ResourceReward resource="resource_wood">25</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
-        <ExperienceReward>200</ExperienceReward>
-      </Rewards>
-      <RewardTests>
-        <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
-      </RewardTests>
-    </Quest -->
-
 <!-- 3 -->
     <Quest id="quest_build_2gathererlvl1" advisor="girl">
       <Name></Name>
@@ -302,7 +273,7 @@
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_settlement_button2" />
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -588,34 +559,6 @@
       </RewardTests>
     </Quest>
 
-    <!-- Quest id="quest_build_1walllvl1">
-      <Name>Verteidigungsanlagen</Name>
-      <Name locale="de_DE"></Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p>Baue einen Wall.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <RewardText locale="de_DE">Gut gemacht!</RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <Flavor locale="de_DE">Flavortext deutsch</Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_recruit_1clubbers" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">55</ResourceReward>  
-        <ResourceReward resource="resource_wood">35</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward> 
-      </Rewards>
-      <RewardTests>
-        <!- <BuildingTest building="building_wall" min_level="1" /> ->
-      </RewardTests>
-    </Quest -->
-
 <!-- 17 -->
     <Quest id="quest_army_create" advisor="warrior">
       <Name>Armee</Name>
@@ -668,12 +611,11 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_army_create" />
+      <Requirement quest="quest_army_reinforce" />
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    
         <ResourceReward resource="resource_fur">120</ResourceReward>
-        <UnitReward unit="unit_clubbers">6</UnitReward>  
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -729,7 +671,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
         <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -772,36 +714,6 @@
       </RewardTests>
     </Quest>
 
-<!-- NOT IN
-    <Quest id="quest_recruitfriends" advisor="girl">
-      <Name>Freunde</Name>
-      <Name locale="de_DE">Freunde</Name>
-      <Task></Task>
-      <Task locale="de_DE"> Trage ein, was die maximale Belohnung für das Werben von Freunden ist. </Task>
-      <Description locale="de_DE">
-        <p>Wo kann man sehen was man bekommt.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE">Wenn Deine Freunde Dich unterstützen würden, wäre das doch toll oder? Und Du bekommst sogar noch mehr, als nur ihre Unterstützung wenn Du sie dazu animierst.</Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Genau. Das ist doch ganz schön viel oder?/RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"></RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">50</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">50</ResourceReward> 
-      </Rewards>
-      <RewardTests>
-        <TextboxTest id="test_recruit_friends_reward"> Reward Freunde werben </TextboxTest>
-      </RewardTests>
-    </Quest>
--->
-
 <!-- 22 -->
    <Quest id="quest_build_1storagelvl1" advisor="girl">
       <Name>Rohstofflager</Name>
@@ -820,7 +732,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -831,37 +743,6 @@
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
     </Quest>
-
-<!-- TEST NOT IN
-   <Quest id="quest_trade" advisor="girl">
-      <Name>Trade</Name>
-      <Name locale="de_DE"> Waren verschicken </Name>
-      <Task></Task>
-      <Task locale="de_DE"> Verschicke mindestens 100 Rohstoffe an einen anderen Spieler.</Task>
-      <Description locale="de_DE">
-        <p></p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE"> Mit dem Rohstofflager kannst Du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <Requirement quest="quest_build_1storagelvl1" />
-      <RewardText locale="de_DE"></RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1storagelvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">50</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">50</ResourceReward> 
-      </Rewards>
-      <RewardTests>
-        <CustomTest>Handelstest</CustomTest>
-      </RewardTests>
-    </Quest>
--->
 
 <!-- 23 -->
     <Quest id="quest_build_chiefcottagelvl5" advisor="girl">
@@ -881,7 +762,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1storagelvl1" />
+      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">220</ResourceReward>  
         <ResourceReward resource="resource_wood">220</ResourceReward>    
@@ -1016,59 +897,6 @@
       </RewardTests>
     </Quest>
 
-<!-- NOT IN
-    <Quest id="quest_faction">
-      <Name>Chief</Name>
-      <Name locale="de_DE">Anführer</Name>
-      <Task></Task>
-      <Task locale="de_DE">Wähle einen Anführer aus.</Task>
-      <Description locale="de_DE">
-        <p> Entscheide Dich für einen Anführer. Jeder Anführer hat eine spezielle Einheit und andere Boni. Liste mit Boni unter Auswahlbuttons</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE"> Du musst Dich entscheiden, wen Du als den Anführer Deines Stammes einsetzen willst.</Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Kommt auf Wahl an</RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Kommt auf Wahl an</RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      Requirement time = 120h
-      <Rewards>
-        join Faction
-      </Rewards>
-      <RewardTests>
-        Three Buttons, if one is pressed assign correct faction
-      </RewardTests>
-    </Quest>
--->
-
-<!-- NOT IN
-    <Quest id="quest_title">
-      <Name>Title</Name>
-      <Name locale="de_DE">Titel</Name>
-      <Task></Task>
-      <Task locale="de_DE"></Task>
-      <Description locale="de_DE">
-        <p> </p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE"></Flavor>
-      <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Jetzt kannst Du eine weitere Lagerstätte gründen.</RewardText>
-      <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">titelaufstieg Flavor</RewardFlavor>
-      <RewardFlavor locale="en_US"></RewardFlavor>
-      Requirement time = 120h
-      <Rewards>
-        reward next title
-      </Rewards>
-    </Quest>
--->
-
 <!-- 28 -->
 <Quest id="quest_build_2gathererlvl3" advisor="girl">
   <Name></Name>
@@ -1087,7 +915,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">70</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -1235,7 +1062,7 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">War das jetzt so schwer? Hier ein paar Kleinigkeiten, damit Du nicht wieder Deine militärische Schlagkraft vernachlässigst! </RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_2gathererlvl4" />
+  <Requirement quest="quest_build_1cottagelvl2" />
   <Rewards>
     <ResourceReward resource="resource_stone">160</ResourceReward>  
     <ResourceReward resource="resource_wood">95</ResourceReward>    
@@ -1265,7 +1092,6 @@
   <RewardText locale="en_US"> </RewardText>
   <RewardFlavor locale="de_DE">Sehr schön, das erzähle ich gleich dem Chef! Hier hast Du ein paar Rohstoffe für meine Jungs mit der Keule.</RewardFlavor>
   <RewardFlavor locale="en_US"></RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl2" />
   <Rewards>
     <ResourceReward resource="resource_stone">250</ResourceReward>  
     <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -1866,5 +1692,240 @@
       </RewardTests>
     </Quest>
 
+<!-- 56 -->
+<Quest id="quest_build_1cottagelvl2" advisor="girl">
+  <Name>Mehr Hütten</Name>
+  <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
+  <Task></Task>
+  <Task locale="de_DE">Baue eine kleine Hütte auf Level 2.</Task>
+  <Description locale="de_DE">
+    <p>Die ersten Bewohner sind in die Hütten gezogen, doch schon wird der Platz knapp. Erweitere die Kleinen Hütten auf Level 2.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Beschreibung des Quests auf englisch.</p>
+  </Description>
+  <Flavor locale="de_DE">Die Kleine Hütte ist ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.</Flavor>
+  <Flavor locale="en_US">flavor text english</Flavor>
+  <RewardText locale="de_DE">Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.</RewardText>
+  <RewardText locale="en_US"> </RewardText>
+  <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
+  <RewardFlavor locale="en_US"></RewardFlavor>
+  <Requirement quest="quest_build_1barrackslvl1" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">95</ResourceReward>  
+    <ResourceReward resource="resource_wood">75</ResourceReward>    
+    <ResourceReward resource="resource_fur">45</ResourceReward>
+    <ExperienceReward>100</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_cottage" min_level="2" min_count="1" />
+  </RewardTests>
+</Quest>
+
+<!-- 57 -->
+    <Quest id="quest_army_reinforce" advisor="warrior">
+      <Name>Armee</Name>
+      <Name locale="de_DE">Verstärke deine Armee</Name>
+      <Task></Task>
+      <Task locale="de_DE">Verstärke deine Armee auf mindestens 5 Mann.</Task>
+      <Description locale="de_DE">
+        <p>Wähle deine gerade erstellte Armee aus. Wähle dann unten rechts im Inspektor 'Verstärken'.</p>
+	<p>Der folgende Dialog ist der selbe, wie der von der Armeeerstellung. Schiebe mindestens 5 Keulenkrieger auf die rechte Seite</p>
+	<p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p>
+	<p>Wenn du fertig bist, drücke auf 'Ändern'.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Drei Einheiten hat diese Armee nur? Das sollte sich ändern. Die sollten verstärkt werden. So kleine Armeen werden zu einfach überrant!</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Wenn eine Armee einen Kampf mit einer mehr als 10 mal so großen Armee beginnt, wird sie überrant, das heißt, dass sie ohne einen Kampf von der Karte gefegt wird.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Naja, besser als vorher, aber da geht noch mehr. Hier hast Du ein bisschen Verstärkung.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_army_create" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">180</ResourceReward>  
+        <ResourceReward resource="resource_wood">140</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward>
+        <UnitReward unit="unit_clubbers">6</UnitReward>  
+        <ExperienceReward>250</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ArmyTest type="visible" min_count="5" />
+      </RewardTests>
+    </Quest>
+
+
+    <!-- Quest id="quest_change_settlementname" advisor="girl">
+      <Name></Name>
+      <Name locale="de_DE">Siedlungsname</Name>
+      <Task></Task>
+      <Task locale="de_DE">Ändere den Namen Deiner Siedlung.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"> Wie soll eigentlich die Siedlung heißen? Bitte denk Dir einen schönen Namen aus. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"> Hach, was ein schöner Name. </RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1gathererlvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+        <ResourceReward resource="resource_wood">25</ResourceReward>    
+        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <CustomTest id="test_change_settlement_name"> Dorfname geändert </CustomTest>
+      </RewardTests>
+    </Quest -->
+
+    <!-- Quest id="quest_build_1walllvl1">
+      <Name>Verteidigungsanlagen</Name>
+      <Name locale="de_DE"></Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
+        <p>Baue einen Wall.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <RewardText locale="de_DE">Gut gemacht!</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <Flavor locale="de_DE">Flavortext deutsch</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_recruit_1clubbers" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">55</ResourceReward>  
+        <ResourceReward resource="resource_wood">35</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <!- <BuildingTest building="building_wall" min_level="1" /> ->
+      </RewardTests>
+    </Quest -->
+
+<!-- NOT IN
+    <Quest id="quest_recruitfriends" advisor="girl">
+      <Name>Freunde</Name>
+      <Name locale="de_DE">Freunde</Name>
+      <Task></Task>
+      <Task locale="de_DE"> Trage ein, was die maximale Belohnung für das Werben von Freunden ist. </Task>
+      <Description locale="de_DE">
+        <p>Wo kann man sehen was man bekommt.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Wenn Deine Freunde Dich unterstützen würden, wäre das doch toll oder? Und Du bekommst sogar noch mehr, als nur ihre Unterstützung wenn Du sie dazu animierst.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE"> Genau. Das ist doch ganz schön viel oder?/RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE"></RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1campfirelvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">50</ResourceReward>  
+        <ResourceReward resource="resource_wood">50</ResourceReward>    
+        <ResourceReward resource="resource_fur">50</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <TextboxTest id="test_recruit_friends_reward"> Reward Freunde werben </TextboxTest>
+      </RewardTests>
+    </Quest>
+-->
+
+<!-- TEST NOT IN
+   <Quest id="quest_trade" advisor="girl">
+      <Name>Trade</Name>
+      <Name locale="de_DE"> Waren verschicken </Name>
+      <Task></Task>
+      <Task locale="de_DE"> Verschicke mindestens 100 Rohstoffe an einen anderen Spieler.</Task>
+      <Description locale="de_DE">
+        <p></p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"> Mit dem Rohstofflager kannst Du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <Requirement quest="quest_build_1storagelvl1" />
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_build_1storagelvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">50</ResourceReward>  
+        <ResourceReward resource="resource_wood">50</ResourceReward>    
+        <ResourceReward resource="resource_fur">50</ResourceReward> 
+      </Rewards>
+      <RewardTests>
+        <CustomTest>Handelstest</CustomTest>
+      </RewardTests>
+    </Quest>
+-->
+
+<!-- NOT IN
+    <Quest id="quest_faction">
+      <Name>Chief</Name>
+      <Name locale="de_DE">Anführer</Name>
+      <Task></Task>
+      <Task locale="de_DE">Wähle einen Anführer aus.</Task>
+      <Description locale="de_DE">
+        <p> Entscheide Dich für einen Anführer. Jeder Anführer hat eine spezielle Einheit und andere Boni. Liste mit Boni unter Auswahlbuttons</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"> Du musst Dich entscheiden, wen Du als den Anführer Deines Stammes einsetzen willst.</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Kommt auf Wahl an</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Kommt auf Wahl an</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      Requirement time = 120h
+      <Rewards>
+        join Faction
+      </Rewards>
+      <RewardTests>
+        Three Buttons, if one is pressed assign correct faction
+      </RewardTests>
+    </Quest>
+-->
+
+<!-- NOT IN
+    <Quest id="quest_title">
+      <Name>Title</Name>
+      <Name locale="de_DE">Titel</Name>
+      <Task></Task>
+      <Task locale="de_DE"></Task>
+      <Description locale="de_DE">
+        <p> </p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE"></Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Jetzt kannst Du eine weitere Lagerstätte gründen.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">titelaufstieg Flavor</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      Requirement time = 120h
+      <Rewards>
+        reward next title
+      </Rewards>
+    </Quest>
+-->
   </Quests>
 </Tutorial>

@@ -673,7 +673,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -851,7 +851,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_settlement_button2',
 
           },
 
@@ -1132,7 +1132,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -1545,7 +1545,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, 28, ],
+          :successor_quests => [16, 56, ],
 
           :rewards => {
             
@@ -1731,7 +1731,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [57, ],
 
           :rewards => {
             
@@ -1832,7 +1832,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_create',
+            :quest => 'quest_army_reinforce',
 
           },
 
@@ -1855,15 +1855,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 120,
-              },
-
-            ],
-
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 6,
               },
 
             ],
@@ -1934,7 +1925,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [10, 20, ],
+          :successor_quests => [10, 22, ],
 
           :rewards => {
             
@@ -2030,11 +2021,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_1storagelvl1',
 
           },
 
-          :successor_quests => [21, 22, ],
+          :successor_quests => [21, 23, ],
 
           :rewards => {
             
@@ -2219,11 +2210,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
-          :successor_quests => [23, ],
+          :successor_quests => [20, ],
 
           :rewards => {
             
@@ -2319,7 +2310,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1storagelvl1',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -2831,12 +2822,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1barrackslvl1',
-
-          },
-
           :successor_quests => [30, ],
 
           :rewards => {
@@ -3031,7 +3016,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [33, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3321,11 +3306,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_1cottagelvl2',
 
           },
 
-          :successor_quests => [19, 34, ],
+          :successor_quests => [19, ],
 
           :rewards => {
             
@@ -3417,12 +3402,6 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1barrackslvl2',
-
           },
 
           :successor_quests => [35, ],
@@ -5362,6 +5341,211 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl2_V2
+        {               #   quest_build_1cottagelvl2
+          :id                => 56, 
+          :symbolic_id       => :quest_build_1cottagelvl2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Mehr Hütten",
+  
+            :de_DE => "Kleine Hütten, ganz groß!",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue eine kleine Hütte auf Level 2.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Die Kleine Hütte ist ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die ersten Bewohner sind in die Hütten gezogen, doch schon wird der Platz knapp. Erweitere die Kleinen Hütten auf Level 2.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl1',
+
+          },
+
+          :successor_quests => [33, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 95,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 45,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_cottage',
+
+                :min_level => 2,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1cottagelvl2
+        {               #   quest_army_reinforce
+          :id                => 57, 
+          :symbolic_id       => :quest_army_reinforce,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Armee",
+  
+            :de_DE => "Verstärke deine Armee",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Verstärke deine Armee auf mindestens 5 Mann.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Drei Einheiten hat diese Armee nur? Das sollte sich ändern. Die sollten verstärkt werden. So kleine Armeen werden zu einfach überrant!",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wähle deine gerade erstellte Armee aus. Wähle dann unten rechts im Inspektor 'Verstärken'.</p><p>Der folgende Dialog ist der selbe, wie der von der Armeeerstellung. Schiebe mindestens 5 Keulenkrieger auf die rechte Seite</p><p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p><p>Wenn du fertig bist, drücke auf 'Ändern'.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Naja, besser als vorher, aber da geht noch mehr. Hier hast Du ein bisschen Verstärkung.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn eine Armee einen Kampf mit einer mehr als 10 mal so großen Armee beginnt, wird sie überrant, das heißt, dass sie ohne einen Kampf von der Karte gefegt wird.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_create',
+
+          },
+
+          :successor_quests => [18, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 180,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 140,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 15,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 6,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_tests => [
+
+              {
+                :type => 'visible',
+                :min_count => 5,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_army_reinforce
       ],                # END OF QUESTS
 
     )
