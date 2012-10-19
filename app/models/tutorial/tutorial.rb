@@ -1754,6 +1754,15 @@ class Tutorial::Tutorial
 
             ],
 
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 6,
+              },
+
+            ],
+
             :experience_reward => 300,
 
           },          
@@ -1846,6 +1855,15 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 120,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 6,
               },
 
             ],

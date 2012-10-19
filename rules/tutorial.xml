@@ -642,6 +642,7 @@
         <ResourceReward resource="resource_stone">165</ResourceReward>  
         <ResourceReward resource="resource_wood">150</ResourceReward>    
         <ResourceReward resource="resource_fur">25</ResourceReward>
+        <UnitReward unit="unit_clubbers">6</UnitReward>  
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -672,6 +673,7 @@
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    
         <ResourceReward resource="resource_fur">120</ResourceReward>
+        <UnitReward unit="unit_clubbers">6</UnitReward>  
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
