@@ -34,11 +34,11 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt Dir einen Teil der Rohstoffe ab, die er findet.</Flavor>
+      <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt Dir einen Teil der Rohstoffe ab, die er findet.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst Du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird. Du kannst Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. </RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während Deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
         <ConstructionQueueTest building="building_gatherer" min_count="1" />
@@ -109,7 +109,7 @@
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>
       <Task></Task>
-      <Task locale="de_DE">Ändere den Namen deiner Siedlung.</Task>
+      <Task locale="de_DE">Ändere den Namen Deiner Siedlung.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -146,11 +146,11 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Häuptlingshütte ist jetzt größer, dadurch hast Du auch mehr Bauplätze frei. Hey, wusstest Du, dass Du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn Du das mal versuchst?</Flavor>
+      <Flavor locale="de_DE">Deine Häuptlingshütte ist jetzt größer, dadurch hast Du auch mehr Bauplätze frei. Hey, wusstest Du, dass Du Deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn Du das mal versuchst?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Du solltest darauf achten, dass Du immer etwas baust oder ausbaust. Jäger und Sammler bauen ist nie verkehrt.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Schön, deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Schön, Deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Rewards>
         <ResourceReward resource="resource_stone">65</ResourceReward>  
@@ -170,14 +170,14 @@
       <Task>Baue einen Jäger und Sammler auf Level 2 aus.</Task>
       <Task locale="de_DE"> Baue einen Jäger und Sammler auf Level 2 aus. </Task>
       <Description locale="de_DE">
-        <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das Du bei einem Klick auswählen würdest, erkennst Du am orangenen Rahmen. Im sich öffnenden Fenster siehst Du oben den derzeitigen Stand deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
+        <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das Du bei einem Klick auswählen würdest, erkennst Du am orangenen Rahmen. Im sich öffnenden Fenster siehst Du oben den derzeitigen Stand Deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Siehst Du, so weit bist Du schon gekommen. Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann fühlt er sich wohler und bringt Dir mehr Ressourcen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Denke daran, deine Gebäude auszubauen. Jedes Level bringt eine höhere Produktion. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
+      <RewardText locale="de_DE">Denke daran, Deine Gebäude auszubauen. Jedes Level bringt eine höhere Produktion. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für Dich mitgegeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -198,7 +198,7 @@
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 2 aus.</Task>
       <Description locale="de_DE">
         <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
       </Description>
@@ -209,7 +209,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen. Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
@@ -227,14 +227,14 @@
       <Name>Namen und Profil</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task></Task>
-      <Task locale="de_DE">Ändere deinen Namen.</Task>
+      <Task locale="de_DE">Ändere Deinen Namen.</Task>
       <Description locale="de_DE">
         <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Achte nicht auf den Chef, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir deinen Namen. </Flavor>
+      <Flavor locale="de_DE">Achte nicht auf den Chef, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> </RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -260,8 +260,8 @@
       <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
         <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-	<p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit deiner Siedlung, egal wo Du bist.</p>
-	<p>Wenn Du zurück in deine Siedlung willst, wähle deine Siedlung aus und klicke auf 'Betreten'.</p>
+	<p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
+	<p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -289,9 +289,9 @@
       <Name>Rang</Name>
       <Name locale="de_DE">Rang</Name>
       <Task></Task>
-      <Task locale="de_DE">Suche deinen derzeitigen Rang heraus.</Task>
+      <Task locale="de_DE">Suche Deinen derzeitigen Rang heraus.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Ranglisten-Knopf, oben rechts. Die Rangliste öffnet sich in einem neuen Fenster. Suche dort deinen Namen und trage deinen Rang in das Textfeld ein.</p>
+        <p>Klicke dazu auf den Ranglisten-Knopf, oben rechts. Die Rangliste öffnet sich in einem neuen Fenster. Suche dort Deinen Namen und trage Deinen Rang in das Textfeld ein.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
@@ -319,14 +319,14 @@
       <Name>Festungen</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
       <Task></Task>
-      <Task locale="de_DE">Trage den Besitzer der Festung in deiner Region ein.</Task>
+      <Task locale="de_DE">Trage den Besitzer der Festung in Deiner Region ein.</Task>
       <Description locale="de_DE">
-        <p>Die Festung ist in der Mitte der Region, wenn Du die Karte auf deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>
+        <p>Die Festung ist in der Mitte der Region, wenn Du die Karte auf Deiner Region zentriert hast. Wer der Besitzer der Festung ist, steht direkt unter der Festung.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Festungen sind die Zentren der Macht. Hol sie Dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht? Ich glaub' es einfach nicht, dass Du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in deiner Region gehört!</Flavor>
+      <Flavor locale="de_DE">Festungen sind die Zentren der Macht. Hol sie Dir! Wie? Du weißt nicht, dass die Festung die Region beherrscht? Ich glaub' es einfach nicht, dass Du so etwas einfaches nicht weißt. Sieh sofort nach, wem die Festung in Deiner Region gehört!</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Festungen ziehen Steuern aus der Region ein, die sie beherrschen. Der Steuersatz liegt bei 5-15% und wird von der Rohstoffproduktion der Siedlungen in dem Gebiet abgezogen und an den Besitzer der Festung übergeben.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -385,16 +385,16 @@
       <Name>Karte</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task></Task>
-      <Task locale="de_DE">Begib Dich zurück in deine Siedlung.</Task>
+      <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Benutze den Siedlungsknopf, um die Karte über deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf deiner Siedlung zu zentrieren. Zurück in deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf Enter drückst.</p>
+        <p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf Enter drückst.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Du findest deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
+      <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Alle deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und Enter drückst.</RewardText>
+      <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und Enter drückst.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -483,7 +483,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
+      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es Deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -505,7 +505,7 @@
       <Name>Chief Cottage l3</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
         <p>Auf den Leveln 3, 6 und 9 schaltet die Häuptlingshütte einen großen Bauplatz frei.</p>
       </Description>
@@ -546,7 +546,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Fertig? Na endlich! Da, deine Belohnung, mehr gibt's nicht. Verschwinde.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl3" />
       <Rewards>
@@ -623,7 +623,7 @@
       <Task></Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
+        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
 	<p>Im nachfolgenden Dialog siehst Du die verfügbaren Einheitentypen. Auf der linken Seite ist die Zahl der Einheiten des Typs in der Garnison, auf der rechten, die Einheitenzahl, die in der Armee landen wird.</p>
 	<p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p>
 	<p>Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>
@@ -635,7 +635,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder? Trotzdem hier deine Belohnung.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder? Trotzdem hier Deine Belohnung.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
@@ -654,16 +654,16 @@
       <Name>Armeebewegung</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task></Task>
-      <Task locale="de_DE">Bewege deine Armee zur Festung</Task>
+      <Task locale="de_DE">Bewege Deine Armee zur Festung</Task>
       <Description locale="de_DE">
-        <p>Wenn Du bereit bist, wähle deine Armee aus, klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>
+        <p>Wenn Du bereit bist, wähle Deine Armee aus, klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
       <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE">Unter deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.</RewardText>
+      <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
@@ -683,7 +683,7 @@
       <Name>Häuptlingshütte Level 4</Name>
       <Name locale="de_DE"> Und wieder die Häuptlingshütte </Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 4 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -694,7 +694,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Ist es nicht toll, wie deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
@@ -720,7 +720,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hey wie wär's mit einem Lagerfeuer für deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
+      <Flavor locale="de_DE">Hey wie wär's mit einem Lagerfeuer für Deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -743,7 +743,7 @@
       <Name>Allianzen</Name>
       <Name locale="de_DE"></Name>
       <Task></Task>
-      <Task locale="de_DE">Tritt einer Allianz bei oder gründe deine eigene.</Task>
+      <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
       <Description locale="de_DE">
         <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
         <p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 5 gründen.</p>
@@ -751,7 +751,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Feindliche Armeen mit deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
+      <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -781,7 +781,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Wenn deine Freunde Dich unterstützen würden, wäre das doch toll oder? Und Du bekommst sogar noch mehr, als nur ihre Unterstützung wenn Du sie dazu animierst.</Flavor>
+      <Flavor locale="de_DE">Wenn Deine Freunde Dich unterstützen würden, wäre das doch toll oder? Und Du bekommst sogar noch mehr, als nur ihre Unterstützung wenn Du sie dazu animierst.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Genau. Das ist doch ganz schön viel oder?/RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -865,14 +865,14 @@
       <Name>Häuptlingshütte Level 5</Name>
       <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 5 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 5 aus.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, Du bist wieder so weit deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
+      <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -933,7 +933,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Wenn Du deine Rohstoffproduktion steigern willst, musst Du mehr Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.</Flavor>
+      <Flavor locale="de_DE">Wenn Du Deine Rohstoffproduktion steigern willst, musst Du mehr Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -1025,7 +1025,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE"> Du musst Dich entscheiden, wen Du als den Anführer deines Stammes einsetzen willst.</Flavor>
+      <Flavor locale="de_DE"> Du musst Dich entscheiden, wen Du als den Anführer Deines Stammes einsetzen willst.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Kommt auf Wahl an</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -1488,7 +1488,7 @@
   <Task>Baue einen Jäger und Sammler auf Level 6 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
-    <p>Wenn Du nicht weiter weißt, baue deine Gebäude aus.</p>
+    <p>Wenn Du nicht weiter weißt, baue Deine Gebäude aus.</p>
   </Description>
   <Description locale="en_US">
     <p>Beschreibung des Quests auf englisch.</p>
@@ -1642,7 +1642,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Fertig? Wie Du hast deinen Arbeitern den Auftrag gegeben? Das hilft mir mal gar nicht. Geh mir aus den Augen, bis die Arbeiten fertig sind.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Fertig? Wie Du hast Deinen Arbeitern den Auftrag gegeben? Das hilft mir mal gar nicht. Geh mir aus den Augen, bis die Arbeiten fertig sind.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
@@ -1700,14 +1700,14 @@
       <Name>Häuptlingshütte Level 6</Name>
       <Name locale="de_DE">Häuptlingshütte Level 6</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 6 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 6 aus.</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, bau doch deine Häuptlingshütte weiter aus.</Flavor>
+      <Flavor locale="de_DE">Hey, bau doch Deine Häuptlingshütte weiter aus.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -1737,7 +1737,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, Du bist wieder so weit deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
+      <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -1760,7 +1760,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte oder zwei. Wusstest Du, dass Du deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn Du das mal versuchst? Denn je besser es deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
+      <Flavor locale="de_DE">Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte oder zwei. Wusstest Du, dass Du Deinen Arbeitern zwei Aufträge erteilen kannst? Sie können zwar nur an einem arbeiten, aber sie merken sich den anderen. Wie wäre es, wenn Du das mal versuchst? Denn je besser es Deinen Arbeitern geht, desto schneller bauen sie auch.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
@@ -1811,7 +1811,7 @@
       <Name>Häuptlingshütte Level 2</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task></Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 2 aus.</Task>
       <Description locale="de_DE">
         <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
       </Description>
@@ -1822,7 +1822,7 @@
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Außerdem hab ich Dir doch gerade schon eine Belohnung gegeben! Verschwinde Du gieriger Halbgott.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Außerdem hab ich Dir doch gerade schon eine Belohnung gegeben! Verschwinde Du gieriger Halbgott.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
