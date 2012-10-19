@@ -1731,7 +1731,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -1819,6 +1819,12 @@ class Tutorial::Tutorial
   
             :en_US => " ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_create',
+
           },
 
           :successor_quests => [],

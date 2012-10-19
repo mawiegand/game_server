@@ -667,6 +667,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
+      <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    
