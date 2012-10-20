@@ -124,5 +124,61 @@
     </script>
   <% end %>
   
+  <hr/>
+
+  <h1>Sign Ups Today</h1>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Identifier</th>
+    <th>Name</th>
+    <th>Login</th>
+    <th>Activity</th>
+    <th>Playtime</th>
+    <th>Solved Quests</th>
+    <th>Open Quests</th>
+    <th>Conversion</th>
+    <th>Gross</th>
+  </tr>
+
+<% @new_characters.each do |fundamental_character| %>
+  <tr>
+    <td><%= link_to fundamental_character.id, fundamental_character_path(fundamental_character.id) %></td>
+    <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.platinum_account? ? 'X' : "" %>
+    </b></span></td>
+    <td><%= fundamental_character.name %> 
+        <%if !fundamental_character.alliance_tag.blank? %>
+          | <%= fundamental_character.alliance_tag %>
+        <%end%></td>
+    <td><% if !fundamental_character.last_login_at.nil? %>
+          
+          <span class="<%= fundamental_character.last_login_at > Time.now - Backend::Stat.activity_period ? 'green' : (fundamental_character.last_login_at > Time.now -  (2*Backend::Stat.activity_period) ? 'red' : 'black') %>"><%= time_ago_in_words(fundamental_character.last_login_at) %></span> ago (#<%= fundamental_character.login_count %>)
+        <%else%>
+          never
+        <%end%>
+    </td>
+    <td><% if !fundamental_character.last_request_at.nil? %>          
+          <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
+        <%else%>
+          never
+        <%end%>
+    </td>
+    <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+    <td><%= fundamental_character.num_finished_quest %></td>
+    <td>
+      <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
+        <%= quest.quest_id %> 
+      <% end %>
+    </td>
+    <td><%= fundamental_character.max_conversion_state %></td>
+    <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+  </tr>
+<% end %>
+</table>
+  
   
 </div>

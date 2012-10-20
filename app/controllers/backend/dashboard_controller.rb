@@ -27,6 +27,8 @@ class Backend::DashboardController < ApplicationController
     
     @last_character = Fundamental::Character.unscoped.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
     @last_character_signup = Fundamental::Character.unscoped.where('created_at IS NOT NULL').order('created_at DESC').first
+    
+    @new_characters = Fundamental::Character.unscoped.where(['created_at IS NOT NULL AND created_at > ?', DateTime.now-1.days]).order('created_at DESC')
 
   end
   
