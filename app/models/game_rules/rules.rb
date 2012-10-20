@@ -89,8 +89,8 @@ class GameRules::Rules
         },
         :character_creation => {
           :start_resources => {
-            1 => 150,
-            0 => 150,
+            1 => 200,
+            0 => 200,
             2 => 100,
             3 => 0,
             
