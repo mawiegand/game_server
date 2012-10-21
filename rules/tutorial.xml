@@ -186,6 +186,7 @@
         <ResourceReward resource="resource_stone">150</ResourceReward>  
         <ResourceReward resource="resource_wood">150</ResourceReward>    
         <ResourceReward resource="resource_fur">75</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>  
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -335,7 +336,7 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
-        <ResourceReward resource="resource_cash">3</ResourceReward>  
+        <ResourceReward resource="resource_cash">2</ResourceReward>  
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -674,8 +675,9 @@
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
         <ResourceReward resource="resource_wood">75</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
-        <ExperienceReward>100</ExperienceReward>
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>  
+        <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
