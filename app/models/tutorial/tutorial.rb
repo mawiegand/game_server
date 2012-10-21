@@ -661,7 +661,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " ",
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.",
   
             :en_US => " ",
                 
@@ -673,7 +673,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -843,7 +843,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Die Rangliste ist nach der Bevölkerung sortiert. Baue Deine Siedlung aus, um Deine Bevölkerung zu erhöhen und in der Rangliste zu steigen.",
   
             :en_US => "",
                 
@@ -851,7 +851,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_settlement_button2',
 
           },
 
@@ -1025,7 +1025,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst jetzt Nachrichten empfangen und schreiben.",
+            :de_DE => "Du hast gerade Kröten bekommen. Mit Kröten kannst Du den Ausbau von Gebäuden und die Ausbildung von Truppen beschleunigen.",
   
             :en_US => " ",
                 
@@ -1033,11 +1033,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_1barrackslvl2',
 
           },
 
-          :successor_quests => [12, ],
+          :successor_quests => [12, 19, ],
 
           :rewards => {
             
@@ -1045,7 +1045,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 5,
+                :amount => 3,
               },
 
             ],
@@ -1132,7 +1132,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -1545,7 +1545,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, 28, ],
+          :successor_quests => [16, 56, ],
 
           :rewards => {
             
@@ -1705,7 +1705,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Im nachfolgenden Dialog siehst Du die verfügbaren Einheitentypen. Auf der linken Seite ist die Zahl der Einheiten des Typs in der Garnison, auf der rechten, die Einheitenzahl, die in der Armee landen wird.</p><p>Benutze entweder die Pfeile, um alle oder einzelne Einheiten eines Typs in die Armee zu verschieben, oder gib direkt eine Zahl ins Textfeld ein.</p><p>Gib der Armee einen Namen und drücke auf Erzeugen. Zurücksetzen setzt die Zahlen wieder auf den Anfangszustand zurück.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1731,7 +1731,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [57, ],
 
           :rewards => {
             
@@ -1832,7 +1832,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_create',
+            :quest => 'quest_army_reinforce',
 
           },
 
@@ -1855,15 +1855,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 120,
-              },
-
-            ],
-
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 6,
               },
 
             ],
@@ -1908,7 +1899,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Du kannst die Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'hurtig!'. Probiere es doch einmal aus.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -1922,7 +1913,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.",
   
             :en_US => " ",
                 
@@ -1930,11 +1921,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl2',
+            :quest => 'quest_message',
 
           },
 
-          :successor_quests => [10, 20, ],
+          :successor_quests => [22, ],
 
           :rewards => {
             
@@ -2022,7 +2013,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.",
   
             :en_US => " ",
                 
@@ -2030,11 +2021,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_1storagelvl1',
 
           },
 
-          :successor_quests => [21, 22, ],
+          :successor_quests => [21, 28, ],
 
           :rewards => {
             
@@ -2219,11 +2210,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
-          :successor_quests => [23, ],
+          :successor_quests => [20, ],
 
           :rewards => {
             
@@ -2319,7 +2310,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1storagelvl1',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -2413,7 +2404,7 @@ class Tutorial::Tutorial
             
             :de_DE => "",
   
-            :en_US => " ",
+            :en_US => "Steinbruch und Holzfäller erhöhen Deine Stein und Holzproduktion stärker als Jäger und Sammler. ",
                 
           },
 
@@ -2423,7 +2414,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [36, 50, ],
+          :successor_quests => [36, 41, ],
 
           :rewards => {
             
@@ -2487,14 +2478,14 @@ class Tutorial::Tutorial
             
             :en_US => "Noch mehr Holzfäller und Steinbrüche",
   
-            :de_DE => "",
+            :de_DE => "Noch mehr Holzfäller und Steinbrüche",
                 
           },
           :task => {
             
             :en_US => "",
   
-            :de_DE => "4 Steinbrüche und 4 Holzfäller auf Level 5 ausbauen",
+            :de_DE => "Je drei Steinbrüche und  Holzfäller auf Level 4 ausbauen",
                 
           },
           :flavour => {
@@ -2506,7 +2497,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Baue je drei Steinbrüche und Holzfäller auf Level 4 aus, um Deine Produktion weiter zu erhöhen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2522,7 +2513,7 @@ class Tutorial::Tutorial
             
             :de_DE => " Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.",
   
-            :en_US => " ",
+            :en_US => "Achte auf Deine Lagerkapazität, sonst laufen die Lager in Deiner Abwesenheit über.",
                 
           },
 
@@ -2550,7 +2541,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 30,
+                :amount => 40,
               },
 
             ],
@@ -2566,18 +2557,18 @@ class Tutorial::Tutorial
               {
                 :building => 'building_quarry',
 
-                :min_level => 5,
+                :min_level => 4,
 
-                :min_count => 4,
+                :min_count => 3,
 
               },
 
               {
                 :building => 'building_logger',
 
-                :min_level => 5,
+                :min_level => 4,
 
-                :min_count => 4,
+                :min_count => 3,
 
               },
 
@@ -2637,7 +2628,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl5',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 
@@ -2764,7 +2755,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 500,
 
           },          
 
@@ -2797,7 +2788,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue zwei Jäger und Sammler auf Level 3 aus.",
+            :en_US => "Baue insgesamt vier Jäger und Sammler auf Level 2 aus.",
   
             :de_DE => "",
                 
@@ -2811,7 +2802,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens drei Deiner Jäger und Sammler auf Level 3.</p>",
+            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigene n Weg gehen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -2827,17 +2818,17 @@ class Tutorial::Tutorial
             
             :de_DE => "Behalte Deine Rohstoffproduktion im Auge. Die Jäger und Sammler auszubauen lohnt sich auf jeden Fall.",
   
-            :en_US => " ",
+            :en_US => "Das Tutorial ist zu Ende! Du solltest jetzt Deinen eigenen Ausbauweg einschlagen.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl1',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
-          :successor_quests => [30, ],
+          :successor_quests => [29, ],
 
           :rewards => {
             
@@ -2855,7 +2846,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -2871,9 +2862,9 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 3,
+                :min_level => 2,
 
-                :min_count => 2,
+                :min_count => 4,
 
               },
 
@@ -2904,7 +2895,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Die Kleine Hütte ist ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.",
+            :de_DE => "Die Kleinen Hütten sind ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.",
   
             :en_US => "flavor text english",
                 
@@ -2927,11 +2918,17 @@ class Tutorial::Tutorial
             
             :de_DE => "Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.",
   
-            :en_US => " ",
+            :en_US => "Hütten beschleunigen Deinen Ausbau. Wenn Dir die Bauzeiten zu lang sind, erweitere Deine Hütten!",
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_build_2gathererlvl3',
+
+          },
+
+          :successor_quests => [30, ],
 
           :rewards => {
             
@@ -2991,7 +2988,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Baue zwei Jäger und Sammler auf Level 4 aus.",
+            :en_US => "Baue zwei Jäger und Sammler auf Level 3 aus.",
   
             :de_DE => "",
                 
@@ -3005,7 +3002,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 4.</p>",
+            :de_DE => "<p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -3021,17 +3018,17 @@ class Tutorial::Tutorial
             
             :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
   
-            :en_US => " ",
+            :en_US => "Jäger und Sammler sind lange Zeit die einzige Quelle für Fell. Bedenke dies bei Deinem Ausbau.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_1cottagelvl3',
 
           },
 
-          :successor_quests => [33, ],
+          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -3065,7 +3062,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
 
-                :min_level => 4,
+                :min_level => 3,
 
                 :min_count => 2,
 
@@ -3321,11 +3318,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_1cottagelvl2',
 
           },
 
-          :successor_quests => [19, 34, ],
+          :successor_quests => [10, ],
 
           :rewards => {
             
@@ -3421,7 +3418,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl2',
+            :quest => 'quest_build_1gathererlvl7',
 
           },
 
@@ -3533,17 +3530,26 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
                 :amount => 150,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers_2,
+                :amount => 10,
               },
 
             ],
@@ -3585,7 +3591,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Bau je 2 Steinbrüche und Holzfäller auf Level 3 aus, damit Deine Produktion steigt.",
   
             :de_DE => "Zwei Steinbrüche und Holzfäller auf Level 3 ausbauen",
                 
@@ -3606,16 +3612,16 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "",
+            :de_DE => "Die Steinbrüche und Holzfäller ergänzen sich in den Kosten. Baue sie abwechselnd.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.",
+            :de_DE => "Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.",
   
-            :en_US => " ",
+            :en_US => "",
                 
           },
 
@@ -3694,7 +3700,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Baue Dein Rohstofflager auf Level 3 aus, damit das Lager mit der Produktion mithalten kann.",
   
             :de_DE => "Baue ein Rohstofflager Level 3.",
                 
@@ -3742,12 +3748,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 25,
+                :amount => 45,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 25,
+                :amount => 45,
               },
 
               {
@@ -3794,7 +3800,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Baue Dein Lagerfeuer auf 5 aus, um die Möglichkeit zu haben eine eigene Allianz zu gründen.",
   
             :de_DE => "Baue dein Lagerfeuer auf Level 5, damit Du die Möglichkeit hast, eine eine eigene Allianz zu gründen.",
                 
@@ -3824,7 +3830,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Manchmal muss ein Häuptling auch eigene Ziele verfolgen. Eine eigene Allianz zu Ruhm und Ehren zu führen ist so etwas.",
   
-            :en_US => " ",
+            :en_US => "Mit dem Lagerfeuer kannst Du jetzt eine eigene Allianz gründen.",
                 
           },
 
@@ -3834,7 +3840,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [26, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -4022,7 +4028,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [41, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -4082,7 +4088,7 @@ class Tutorial::Tutorial
             
             :en_US => "Baue einen Jäger und Sammler auf Level 5 aus.",
   
-            :de_DE => "",
+            :de_DE => "Baue einen Jäger und Sammler auf Level 5 aus.",
                 
           },
           :flavour => {
@@ -4108,7 +4114,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+            :de_DE => "Jäger und Sammler liefern alle drei Rohstoffe. Auch Fell!",
   
             :en_US => " ",
                 
@@ -4116,11 +4122,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl4',
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
 
           },
 
-          :successor_quests => [42, ],
+          :successor_quests => [42, 50, ],
 
           :rewards => {
             
@@ -4218,7 +4224,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [43, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -4304,7 +4310,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jäger und Sammler bauen ist immer eine gute Idee.",
+            :de_DE => "Es ist ab einem bestimmten Zeitpunkt ratsam die Jäger und Sammler durch die Spezialisten Steinbruch. Holzfäller und Kürschner zu ersetzen. Du entscheidest selbst, wann es soweit ist.",
   
             :en_US => " ",
                 
@@ -4312,11 +4318,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl6',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 
-          :successor_quests => [44, ],
+          :successor_quests => [34, 44, ],
 
           :rewards => {
             
@@ -4657,7 +4663,7 @@ class Tutorial::Tutorial
           :id                => 47, 
           :symbolic_id       => :quest_queue_chiefcottagelvl2,
           :advisor           => :chef,
-          :hide_start_dialog => true,
+          :hide_start_dialog => false,
           
           :name => {
             
@@ -4863,7 +4869,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Baue Deine Häuptlingshütte auf Level 6 aus.",
   
             :de_DE => "Baue Deine Häuptlingshütte auf Level 6 aus.",
                 
@@ -4891,7 +4897,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Auf Level 8 der Häuptlingshütte werden die wichtigen Kürschner freigeschaltet.",
   
             :en_US => " ",
                 
@@ -4899,11 +4905,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+            :quest => 'quest_build_1gathererlvl5',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [26, 43, ],
 
           :rewards => {
             
@@ -5362,6 +5368,211 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl2_V2
+        {               #   quest_build_1cottagelvl2
+          :id                => 56, 
+          :symbolic_id       => :quest_build_1cottagelvl2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Mehr Hütten",
+  
+            :de_DE => "Kleine Hütten, ganz groß!",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Baue eine kleine Hütte auf Level 2.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Die Kleine Hütte ist ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die ersten Bewohner sind in die Hütten gezogen, doch schon wird der Platz knapp. Erweitere die Kleinen Hütten auf Level 2.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl1',
+
+          },
+
+          :successor_quests => [33, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 95,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 45,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_cottage',
+
+                :min_level => 2,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1cottagelvl2
+        {               #   quest_army_reinforce
+          :id                => 57, 
+          :symbolic_id       => :quest_army_reinforce,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          
+          :name => {
+            
+            :en_US => "Armee",
+  
+            :de_DE => "Verstärke Deine Armee",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Verstärke Deine Armee auf mindestens 5 Mann.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrant! Verstärke die Armee.",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wähle Deine gerade erstellte Armee aus. Wähle dann unten rechts im Inspektor 'Verstärken'. Benutze die Pfeile, um alle Einheiten in die Armee zu verschieben. Wenn Du fertig bist, drücke auf 'Ändern'.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Naja, besser als vorher, aber da geht noch mehr. Hier hast Du ein bisschen mehr Verstärkung.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Kleine Armeen werden von großen Armeen ohne einen Kampf überrannt.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_create',
+
+          },
+
+          :successor_quests => [18, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 180,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 140,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 15,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 6,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_tests => [
+
+              {
+                :type => 'visible',
+                :min_count => 5,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_army_reinforce
       ],                # END OF QUESTS
 
     )
