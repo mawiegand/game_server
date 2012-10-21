@@ -611,7 +611,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_army_reinforce" />
+      <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>  
         <ResourceReward resource="resource_wood">110</ResourceReward>    
@@ -905,7 +905,7 @@
   <Task>Baue insgesamt vier Jäger und Sammler auf Level 2 aus.</Task>
   <Task locale="de_DE"></Task>
   <Description locale="de_DE">
-    <p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigene n Weg gehen.</p>
+    <p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>
   </Description>
   <Description locale="en_US">
     <p>Beschreibung des Quests auf englisch.</p>
@@ -1739,7 +1739,7 @@
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
       </Description>
-      <Flavor locale="de_DE">Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrant! Verstärke die Armee.</Flavor>
+      <Flavor locale="de_DE">Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrannt! Verstärke die Armee.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
       <RewardText locale="de_DE">Kleine Armeen werden von großen Armeen ohne einen Kampf überrannt.</RewardText>
       <RewardText locale="en_US"> </RewardText>
