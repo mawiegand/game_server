@@ -27,12 +27,19 @@
   </head>
   
   <body>
+    <table border="1">
+      <tr>
+        <th>Key</th>
+        <th>Deutsch</th>
+        <th>Englisch</th>
+      </tr>
 ]]></xsl:text>
 
     <xsl:apply-templates select="//Building|//Resource|//Science|//Unit|//UnitCategory" />
     
 <xsl:text>
 <![CDATA[
+    </table>
   </body>
   
 </html>
@@ -42,33 +49,36 @@
 
   <!-- standard template for database relevant entities -->
   <xsl:template match="Resource|Science|Unit|Building|UnitCategory"> 
-<xsl:text><![CDATA[<h1>]]></xsl:text>
-    <xsl:value-of select="Name[@lang='de_DE']"/> 
-<xsl:text><![CDATA[</h1>
 
-]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.name</td>
+        <td>]]><xsl:value-of select="Name[@lang='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Flavour[@lang='de_DE']"/> 
-<xsl:text><![CDATA[</p>
+<xsl:if test="Flavour">     
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.flavor</td>
+        <td>]]><xsl:value-of select="Flavour[@lang='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
+</xsl:if>     
 
-]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.description</td>
+        <td>]]><xsl:value-of select="Description[@lang='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Description[@lang='de_DE']"/> 
-<xsl:text><![CDATA[</p>
-
-]]></xsl:text>
   </xsl:template>
  
-  
-  
-  
-  <!-- Helper template for inserting line breaks. -->
-  <xsl:template name="Newline"><xsl:text>
-</xsl:text></xsl:template>  <!-- ATTENTION: the line break in 
-                                 <xsl:text></xsl:text> is significant as would
-                                 be any space inbetween. Thus, </xsl:text> MUST
-                                 NOT BE INDENTED but has to start at the first
-                                 character in the line. -->  
 </xsl:stylesheet>

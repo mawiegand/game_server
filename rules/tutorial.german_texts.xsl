@@ -27,12 +27,19 @@
   </head>
   
   <body>
+    <table border="1">
+      <tr>
+        <th>Key</th>
+        <th>Deutsch</th>
+        <th>Englisch</th>
+      </tr>
 ]]></xsl:text>
 
     <xsl:apply-templates select="//Quest" />
     
 <xsl:text>
 <![CDATA[
+    </table>
   </body>
   
 </html>
@@ -41,52 +48,82 @@
 
 
   <!-- standard template for database relevant entities -->
-  <xsl:template match="Quest"> 
-<xsl:text><![CDATA[<h1>]]></xsl:text>
-    <xsl:value-of select="Name[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</h1>
+  <xsl:template match="Quest">
 
-]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.name</td>
+        <td>]]><xsl:value-of select="Name[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Task[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
+<xsl:if test="Task">     
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.task</td>
+        <td>]]><xsl:value-of select="Task[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
+</xsl:if>     
 
-]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.description</td>
+        <td>]]><xsl:value-of select="Description[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Description[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.flavor</td>
+        <td>]]><xsl:value-of select="Flavor[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.reward_text</td>
+        <td>]]><xsl:value-of select="RewardText[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.reward_flavor</td>
+        <td>]]><xsl:value-of select="RewardFlavor[@locale='de_DE']"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
 
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Flavor[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
-
-]]></xsl:text>
-
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="RewardText[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
-
-]]></xsl:text>
-
-
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="RewardFlavor[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
-
-]]></xsl:text>
-
-
-<xsl:text><![CDATA[<p>]]></xsl:text>
-    <xsl:value-of select="Message[@locale='de_DE']"/> 
-<xsl:text><![CDATA[</p>
-
-]]></xsl:text>
-
+<xsl:if test="Message">     
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.message.subject</td>
+        <td>]]><xsl:value-of select="Message[@lang='de']/Subject"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
+<xsl:text><![CDATA[
+      <tr>
+        <td>]]></xsl:text>
+    <xsl:value-of select="@id"/><![CDATA[.message.body</td>
+        <td>]]><xsl:value-of select="Message[@lang='de']/Body"/> 
+<xsl:text><![CDATA[</td>
+        <td></td>
+      </tr>]]></xsl:text>
+</xsl:if>
 
   </xsl:template>
  

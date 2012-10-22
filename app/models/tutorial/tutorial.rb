@@ -594,6 +594,11 @@ class Tutorial::Tutorial
                 :amount => 75,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :experience_reward => 400,
@@ -1045,7 +1050,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 3,
+                :amount => 2,
               },
 
             ],
@@ -2043,12 +2048,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 10,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 150,
 
           },          
 
