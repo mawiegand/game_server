@@ -96,10 +96,18 @@ class Fundamental::Character < ActiveRecord::Base
   
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
-      logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"
+    logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"
     (list || []).each do |resource_gift|    # nothing else allowed at present
       self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
     end
+    
+    # mail schicken
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
     
   
