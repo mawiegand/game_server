@@ -21,6 +21,27 @@ module IdentityProvider
       get('/identities/'  + identifier + "/signup_gifts?client_id=#{client_identifier}")
     end
     
+    def deliver_gift_received_notification(identity, resource_gifts)
+      subject = "Wir haben Dir Deine Bonus-Startressourcen gutgeschrieben!"        
+      body    = "Wir haben Dir als Start-Bonus die folgenden Extra-Ressourcen gutgeschrieben:\n\n"
+                
+      resource_gifts.each do |resource_gift|
+        resourceType = GameRules::Rules.the_rules().resource_types[resource_gift['resource_type_id'].to_i]
+        body += "  #{resourceType[:name][:de_DE]}: #{resource_gift['amount']}\n"
+      end
+                      
+      body   += "\nViel Spass mit Wack-A-Doo!\n\nDein Wack-A-Doo Team"
+
+      notification = {
+        recipient_id:             identity.identifier,
+        recipient_character_name: identity.name,
+        sender_id:                nil,
+        subject:                  subject,
+        body:                     body,
+      }
+      post("/identities/#{identity.identifier}/messages", { :message => notification })
+    end
+    
     def create_character_property(identifier, data_object)
       post('/identities/' + identifier + '/character_properties', {:resource_character_property => {:data => data_object}})
     end
