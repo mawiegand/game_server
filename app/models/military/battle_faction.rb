@@ -44,9 +44,9 @@ class Military::BattleFaction < ActiveRecord::Base
   def participant_with_largest_army
     owner_of_largest_army = nil
     participants.each do |participant|
-      if (owner_of_largest_army.nil? && !participant.army.empty?)
+      if (owner_of_largest_army.nil? && !participant.army.nil? && !participant.army.empty?)
         owner_of_largest_army = participant
-      elsif (!owner_of_largest_army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength)
+      elsif (!owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength)
         owner_of_largest_army = participant
       end
     end
@@ -57,9 +57,9 @@ class Military::BattleFaction < ActiveRecord::Base
   def takeover_candidate_with_largest_army
     owner_of_largest_army = nil
     participants.each do |participant|
-      if (owner_of_largest_army.nil? && !participant.army.empty? && participant.army.owner.can_takeover_settlement?)
+      if (owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.owner.can_takeover_settlement?)
         owner_of_largest_army = participant
-      elsif (!owner_of_largest_army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength && participant.army.owner.can_takeover_settlement?)
+      elsif (!owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength && participant.army.owner.can_takeover_settlement?)
         owner_of_largest_army = participant
       end
     end
@@ -71,7 +71,7 @@ class Military::BattleFaction < ActiveRecord::Base
   def update_leader
     #check if current leader has still units
     participants.each do |participant|
-      if (participant.army.owner_id == leader_id && !participant.army.empty?)
+      if (!participant.army.nil? && participant.army.owner_id == leader_id && !participant.army.empty?)  # check for nil, because army may have died in battle
         return true
       end
     end
