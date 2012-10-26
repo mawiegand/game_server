@@ -39,7 +39,7 @@
     <CommandPoints>MAX(LEVEL+1,3)-MAX(LEVEL,3)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>LEVEL*4-1</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(LEVEL,10)*4-1</UnlockBuildingSlots>
   </Abilities>
 </Building>
   
