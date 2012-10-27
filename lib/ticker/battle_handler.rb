@@ -92,7 +92,7 @@ class Ticker::BattleHandler
             #check if the battle location is owned by a participant of the winner faction
             takeover = true
             winner_faction.participants.each do |participant|
-              if participant.army.owner_id == battle.location.owner_id   
+              if !participant.army.nil? && participant.army.owner_id == battle.location.owner_id   # TODO : danger, danger! if the garrison somehow is killed, an army fighting ON THE SIDE of the garrison would takeover the fortress in case of a victory!  -> NEED to store the attacked fortress with the battle when starting a fight!  
                 takeover = false
               end
             end
