@@ -8,7 +8,7 @@ class Action::Fundamental::ChangeCharacterNameActionsController < ApplicationCon
   def create
 
     raise BadRequestError.new('no current character') if current_character.nil?
-    raise BadRequest.new('missing parameter(s)') if params[:character].nil? || params[:character][:name].blank?
+    raise BadRequestError.new('missing parameter(s)') if params[:character].nil? || params[:character][:name].blank?
 
     current_character.change_name_transaction(params[:character][:name]) 
     
