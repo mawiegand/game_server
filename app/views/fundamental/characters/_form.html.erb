@@ -28,6 +28,7 @@
     <%= f.text_field :identifier %>
   </div>
   
+  
   <hr/>
   
   <div class="field">
@@ -35,13 +36,41 @@
     <%= f.label :reason %>
     <%= f.text_field :ban_reason %>
   </div>
+
+  <div class="field">
+    <%= f.label :staff_roles %><br />
+    <%= f.text_field :staff_roles %><br/>
+    comma separated list of roles (available: staff, help, support). these are client-side roles only and have no effect in the backend.
+  </div>
   
   <hr/>
+
     
   <div class="field">
     <%= f.label :exp %><br />
     <%= f.number_field :exp %>
   </div>
+
+  <div class="field">
+    <%= f.label :mundane_rank %><br />
+    <%= f.number_field :mundane_rank %>
+  </div>
+  <div class="field">
+    <%= f.label :notified_mundane_rank %><br />
+    <%= f.number_field :notified_mundane_rank %>
+  </div>
+  <div class="field">
+    <%= f.label :sacred_rank %><br />
+    <%= f.number_field :sacred_rank %>
+  </div>
+  <div class="field">
+    <%= f.label :notified_sacred_rank %><br />
+    <%= f.number_field :notified_sacred_rank %>
+  </div>
+  
+  <hr/>
+
+
   <div class="field">
     <%= f.label :att %><br />
     <%= f.number_field :att %>
