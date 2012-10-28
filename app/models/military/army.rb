@@ -386,7 +386,7 @@ class Military::Army < ActiveRecord::Base
     value = 0
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       unless units[unit_type[:db_field]].nil?
-        value += units[unit_type[:db_field]].to_i * 10
+        value += units[unit_type[:db_field]].to_i.abs * 10
       end
     end
     value

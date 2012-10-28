@@ -8,6 +8,7 @@
     <th>ID</th>
     <th>Identifier</th>
     <th>Premium</th>
+    <th>Staff</th>
     <th>Name</th>
     <th>Login</th>
     <th>Activity</th>
@@ -31,6 +32,7 @@
     <td><span class="green"><b>
       <%= fundamental_character.platinum_account? ? 'X' : "" %>
     </b></span></td>
+    <td><%= fundamental_character.staff_roles %></td>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
           | <%= fundamental_character.alliance_tag %>
