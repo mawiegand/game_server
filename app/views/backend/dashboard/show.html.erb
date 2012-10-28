@@ -10,7 +10,7 @@
   </div>
   
   <h1>User Stats</h1>
-  <b>Accounts:</b> <%= @user_stats[:active_accounts]%> / <%= @user_stats[:total_accounts]%> (premium / total)<br/> 
+  <b>Accounts:</b> <%= @user_stats[:active_accounts]%> / <%= @user_stats[:total_accounts]%> (platinum / total)<br/> 
   <b>Unique Users:</b> 
     <%= @user_stats[:signins_last_hour] %> / 
     <%= @user_stats[:signins_last_eight_hours]  %> /
@@ -37,10 +37,10 @@
     <% backend_stat = @backend_stats.last %>
     <p><b>Yesterday's Cohort:</b> <%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> / <%= backend_stat.day_num_ten_minutes %> /
           <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
-          <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %> (Reg / 1Log / 2nd / Act / LT / Pay)<br/>
+          <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %> (Reg / 1Log / 10min / 2nd / Act / LT / Pay)<br/>
       <b>Month's Cohort:</b> <%= backend_stat.month_num_registered %> / <%= backend_stat.month_num_logged_in_once %> / <%= backend_stat.month_num_ten_minutes %> /
          <%= backend_stat.month_num_logged_in_two_days %> / <%= backend_stat.month_num_active %> /
-         <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %> (Reg / 1Log / 2nd / Act / LT / Pay)</p>
+         <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %> (Reg / 1Log / 10min / 2nd / Act / LT / Pay)</p>
 
   <% end %>
 
