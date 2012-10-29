@@ -7,13 +7,18 @@ module Util
     
     def initialize(formula)
       functions = {
-        'MIN'   => 'min',
-        'MAX'   => 'max',
-        'ROUND' => 'round',
-        'CEIL'  => 'ceil',
-        'FLOOR' => 'floor',
-        'POW'   => 'power',
-        'SIGN'  => 'sign',
+        'MIN'     => 'min',
+        'MAX'     => 'max',
+        'ROUND'   => 'round',
+        'CEIL'    => 'ceil',
+        'FLOOR'   => 'floor',
+        'POW'     => 'power',
+        'SIGN'    => 'sign',
+        'EQUAL'   => 'equal',
+        'LESS'    => 'less',
+        'GREATER' => 'greater',
+        'NOT'     => 'not',
+        'AND'     => 'and',
       }
       
       
@@ -40,35 +45,59 @@ module Util
       
     protected
     
-    def floor(n) 
-      n.floor
-    end
+      def floor(n) 
+        n.floor
+      end
     
-    def ceil(n)
-      n.ceil
-    end
+      def ceil(n)
+        n.ceil
+      end
     
-    def round(n)
-      n.round
-    end
+      def round(n)
+        n.round
+      end
 
-    def power(base, exp)
-      (base) ** (exp)
-    end
+      def power(base, exp)
+        (base) ** (exp)
+      end
 
-    def min(a, b)
-      [a, b].min
-    end
+      def min(a, b)
+        [a, b].min
+      end
 
-    def max(a, b)
-      [a, b].max
-    end
+      def max(a, b)
+        [a, b].max
+      end
 
-    def sign(a)
-      return -1 if a < 0
-      return +1 if a > 0
-      0
-    end
+      def sign(a)
+        return -1 if a < 0
+        return +1 if a > 0
+        0
+      end
+      
+      def equal(a, b)
+        a == b ? 1 : 0
+      end
+      
+      def less(a, b)
+        a < b ? 1 : 0
+      end
+      
+      def greater(a, b)
+        a > b ? 1 : 0
+      end
+      
+      def not(a)
+        a == 0 ? 1 : 0
+      end
+      
+      def and(a,b)
+        not(a) == 0 && not(b) == 0 ? 1 : 0
+      end
+      
+      def or(a,b) 
+        not(a) == 0 || not(b) == 0 ? 1 : 0
+      end
 
   end
 end
