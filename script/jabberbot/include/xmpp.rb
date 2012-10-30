@@ -130,7 +130,7 @@ class Xmpp
           muc.say("Herzlich willkommen #{command.character.name}! :)")          
         elsif command.room == "help" || command.room == "handel" || command.room == "global"
           # say nothing
-        end
+        else
           muc.say("Ab sofort darf #{command.character.name} auch hier rein.")
         end
 
