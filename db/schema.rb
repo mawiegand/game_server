@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027132059) do
+ActiveRecord::Schema.define(:version => 20121029213134) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1076,6 +1076,9 @@ ActiveRecord::Schema.define(:version => 20121027132059) do
     t.integer  "status",       :default => 0
     t.datetime "closed_at"
   end
+
+  add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"
+  add_index "tutorial_quests", ["status"], :name => "index_tutorial_quests_on_status"
 
   create_table "tutorial_states", :force => true do |t|
     t.integer  "character_id"

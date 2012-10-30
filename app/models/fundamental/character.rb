@@ -47,10 +47,11 @@ class Fundamental::Character < ActiveRecord::Base
   
   scope :non_npc,    where(['(npc IS NULL OR npc = ?)', false])
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
+  scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
 
 
   @identifier_regex = /[a-z]{16}/i 
-  
+    
   def self.find_by_id_or_identifier(user_identifier)
     
     identity = Fundamental::Character.find_by_id(user_identifier) if Fundamental::Character.valid_id?(user_identifier)
