@@ -104,7 +104,7 @@
 
         "Date, Monthly, Weekly, Daily\n" +        
 <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.mau || 1)%>, <%= backend_stat.wgross / (backend_stat.wau || 1) %>, <%= backend_stat.dgross/ (backend_stat.dau || 1) %>\n" +
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.mu || 1)%>, <%= backend_stat.wgross / (backend_stat.wu || 1) %>, <%= backend_stat.dgross/ (backend_stat.du || 1) %>\n" +
 <%end%>         
         "",
         {
@@ -430,7 +430,7 @@
       "",
       {
         legend: 'always',
-        title: 'Unique Users in Period',
+        title: 'Unique Users in Period (MAU, WAU, DAU)',
         fillGraph: true,
         highlightSeriesOpts: {
           strokeWidth: 3,
@@ -495,9 +495,6 @@
     <th>Customers (Tot/Act)</th>
     <th>Conversions (monthly)</th>
     <th>Conversions (daily)</th>
-    <th>Dau</th>
-    <th>Wau</th>
-    <th>Mau</th>
     <th>Churn today</th>
     <th>Churn week</th>
     <th>Churn month</th>
@@ -533,9 +530,6 @@
         <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
         <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %></td>
         
-    <td><%= backend_stat.dau %></td>
-    <td><%= backend_stat.wau %></td>
-    <td><%= backend_stat.mau %></td>
     <td><%= backend_stat.churn_today %></td>
     <td><%= backend_stat.churn_week  %></td>
     <td><%= backend_stat.churn_month %></td>
