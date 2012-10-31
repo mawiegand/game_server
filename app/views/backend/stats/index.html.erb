@@ -104,12 +104,12 @@
 
         "Date, Monthly, Weekly, Daily\n" +        
 <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.active_users || 1)%>, <%= backend_stat.wgross/ (backend_stat.active_users || 1) %>, <%= backend_stat.dgross/ (backend_stat.active_users || 1) %>\n" +
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.mau || 1)%>, <%= backend_stat.wau/ (backend_stat.active_users || 1) %>, <%= backend_stat.dgross/ (backend_stat.dau || 1) %>\n" +
 <%end%>         
         "",
         {
           legend: 'always',
-          title: 'Gross (EUR, Avg per User)',
+          title: 'Gross (EUR, Avg per MAU/WAU/DAU)',
           fillGraph: true,
           highlightSeriesOpts: {
             strokeWidth: 3,
