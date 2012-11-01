@@ -11,6 +11,13 @@ class Ranking::CharacterRankingsController < ApplicationController
 
     @ranking_character_rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort} DESC")
     @title = "Player Ranking"
+    
+    if current_character
+      @marked_character = current_character
+    elsif !params[:mark].blank?
+      char = Fundamental::Character.find_by_id(params[:mark])
+      @marked_character = char   unless char.nil?
+    end
 
     respond_to do |format|
       format.html    # index.html.erb

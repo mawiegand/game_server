@@ -47,6 +47,21 @@ class Messaging::Message < ActiveRecord::Base
           logger.error "ERROR: Could not deliver newsletter message #{ self.id } to character #{ character.id }. Failed to create an inbox entry."
         end
       end
+    elsif self.type_id == ALLIANCE_TYPE_ID
+      if !self.sender.nil? && !self.sender.alliance.nil?
+        self.sender.alliance.members.each do |member| 
+     #    if member != self.sender   # TODO : decide whether or not to deliver the message to self.
+             @character.inbox.entries.create({
+               sender_id:  self.sender.id,
+               owner_id:   member.id,
+               message_id: self.id,
+               subject:    self.subject,
+             })
+          end
+    #     end
+      else 
+        logger.error "ERROR: Could not deliver alliance message #{ self.id } to recipients beacause sender is not in an alliance."
+      end
     else # standard message
       if !self.recipient_id.nil?
         @character = Fundamental::Character.find(self.recipient_id)
@@ -81,7 +96,7 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def notify_offline_recipients
-    if self.type_id = ANNOUNCEMENT_TYPE_ID
+    if self.type_id == ANNOUNCEMENT_TYPE_ID || self.type_id == ALLIANCE_TYPE_ID
       self.inbox_entries.each do |inbox_entry|
         if !inbox_entry.owner.nil? && inbox_entry.owner.offline?
           

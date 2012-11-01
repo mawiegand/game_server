@@ -15,17 +15,17 @@
       rank = 0
       @ranking_character_rankings.each do |ranking_character_ranking|   
     %>
-    <tr>
-      <td><%= rank=rank+1%></td>
-      <td><%= ranking_character_ranking.character_name %> 
-          <% if !ranking_character_ranking.alliance_tag.blank? %>
-            | <%= ranking_character_ranking.alliance_tag %>
-          <%end%>
-      </td>
-      <td class="number"><%= ranking_character_ranking.overall_score %></td>
-      <td class="number"><%= ranking_character_ranking.resource_score %></td>
-      <td class="number"><span title="<%= ranking_character_ranking.max_experience_army_name.blank? ? "no veteran army" : "#{ranking_character_ranking.max_experience_army_name}, rank #{ranking_character_ranking.max_experience_army_rank}"  %>"><%= ranking_character_ranking.max_experience %></span></td>
-    </tr>
+      <%= content_tag_for(:tr, ranking_character_ranking, :class => (!@marked_character.nil? && ranking_character_ranking.id == @marked_character.id ? "marked" : "")) do %>
+        <td><%= rank=rank+1%></td>
+        <td><a name="<%= "char#{ranking_character_ranking.id}" %>"><%= ranking_character_ranking.character_name %> 
+            <% if !ranking_character_ranking.alliance_tag.blank? %>
+              | <%= ranking_character_ranking.alliance_tag %>
+            <%end%></a>
+        </td>
+        <td class="number"><%= ranking_character_ranking.overall_score %></td>
+        <td class="number"><%= ranking_character_ranking.resource_score %></td>
+        <td class="number"><span title="<%= ranking_character_ranking.max_experience_army_name.blank? ? "no veteran army" : "#{ranking_character_ranking.max_experience_army_name}, rank #{ranking_character_ranking.max_experience_army_rank}"  %>"><%= ranking_character_ranking.max_experience %></span></td>
+      <% end %>
     <% end %>
   </table>
 

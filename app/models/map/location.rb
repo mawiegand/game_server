@@ -10,9 +10,10 @@ class Map::Location < ActiveRecord::Base
 
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
+  scope :empty,                     where("settlement_type_id = ?", 0)
 
   def self.find_empty
-    Map::Location.where("settlement_type_id = ?", 0).offset(Random.rand(Map::Location.where("settlement_type_id = ?", 0).count)).first
+    Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end
   
   def garrison_army
