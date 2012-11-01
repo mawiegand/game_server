@@ -678,7 +678,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -856,7 +856,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button2',
+            :quest => 'quest_profile',
 
           },
 
@@ -1137,7 +1137,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [],
 
           :rewards => {
             

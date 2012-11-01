@@ -274,7 +274,7 @@
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_settlement_button2" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
