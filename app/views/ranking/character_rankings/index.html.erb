@@ -17,7 +17,7 @@
     %>
       <%= content_tag_for(:tr, ranking_character_ranking, :class => (!@marked_character.nil? && ranking_character_ranking.character_id == @marked_character.id ? "marked" : "")) do %>
         <td><%= rank=rank+1%></td>
-        <td><a name="<%= "char#{ranking_character_ranking.id}" %>"><%= ranking_character_ranking.character_name %> 
+        <td><a name="<%= "char#{ranking_character_ranking.character_id}" %>"><%= ranking_character_ranking.character_name %> 
             <% if !ranking_character_ranking.alliance_tag.blank? %>
               | <%= ranking_character_ranking.alliance_tag %>
             <%end%></a>
