@@ -53,7 +53,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.name</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.name</td>
         <td>]]><xsl:value-of select="Name[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -63,7 +63,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.task</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.task</td>
         <td>]]><xsl:value-of select="Task[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -73,7 +73,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.description</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.description</td>
         <td>]]><xsl:value-of select="Description[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -82,7 +82,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.flavor</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.flavor</td>
         <td>]]><xsl:value-of select="Flavor[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -91,7 +91,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.reward_text</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.reward_text</td>
         <td>]]><xsl:value-of select="RewardText[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -100,7 +100,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.reward_flavor</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.reward_flavor</td>
         <td>]]><xsl:value-of select="RewardFlavor[@locale='de_DE']"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -110,7 +110,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.message.subject</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.message.subject</td>
         <td>]]><xsl:value-of select="Message[@lang='de']/Subject"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
@@ -118,7 +118,7 @@
 <xsl:text><![CDATA[
       <tr>
         <td>]]></xsl:text>
-    <xsl:value-of select="@id"/><![CDATA[.message.body</td>
+    <xsl:value-of select="@id"/>.<xsl:value-of select="@advisor"/><![CDATA[.message.body</td>
         <td>]]><xsl:value-of select="Message[@lang='de']/Body"/> 
 <xsl:text><![CDATA[</td>
         <td></td>
