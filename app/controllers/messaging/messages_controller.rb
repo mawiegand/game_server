@@ -34,6 +34,12 @@ class Messaging::MessagesController < ApplicationController
     roleRecipient = determine_access_role(@messaging_message.recipient_id, nil)
     
     is_public = @messaging_message.type_id == Messaging::Message::ANNOUNCEMENT_TYPE_ID
+
+    if @messaging_message.type_id == Messaging::Message::ALLIANCE_TYPE_ID && !current_character.nil? && roleRecipient != :owner && roleRecipient != :admin
+      if @messaging_message.inbox_entries.where(owner_id: current_character.id).count >= 1
+        roleRecipient = :owner
+      end
+    end
     
     role = roleSender == :default ? roleRecipient : roleSender          # chose the higher role by a trick: roleSender can only be :default or :owner (we do not care which one ot chose for :admin and :staff)
     raise ForbiddenError.new('Access Forbidden. Messages can only be accessed by sender, recipient and admins.') unless admin? || role == :owner || is_public
