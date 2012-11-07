@@ -95,8 +95,8 @@ class Messaging::MessagesController < ApplicationController
         @messaging_message[:recipient_id] = params[:message][:recipient_id].to_i
       end
 
-      @messaging_message[:subject] = params[:message][:subject] || "-"
-      @messaging_message[:body] = format_body(CGI::escapeHTML(params[:message][:body] || "")) # we have to escape html here, because the body field is displayed "raw" in the client. reason: we want to allow battle reports to be formatted with html    
+      @messaging_message[:subject] = CGI::escapeHTML(params[:message][:subject] || "-")
+      @messaging_message[:body]    = format_body(CGI::escapeHTML(params[:message][:body] || "")) # we have to escape html here, because the body field is displayed "raw" in the client. reason: we want to allow battle reports to be formatted with html    
     end 
     
     role = determine_access_role(@messaging_message.sender_id,    nil)    
