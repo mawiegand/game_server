@@ -72,31 +72,37 @@ class Messaging::MessagesController < ApplicationController
     else
       @messaging_message = Messaging::Message.new
       
+      if !params[:message].has_key?(:sender_id) && !current_character.nil?
+        @messaging_message[:sender_id] = current_character.id
+      end
+      
+      #resolve recipient (by name, id or to the whole alliance?)
       if params[:message].has_key? :recipient_name
         @recipient = Fundamental::Character.find_by_name_case_insensitive(params[:message][:recipient_name])
         raise NotFoundError.new('Unknown Recipient.')   if @recipient.nil?
         @messaging_message[:recipient_id] = @recipient.id
-      else 
-        @messaging_message[:recipient_id] = params[:message][:recipient_id]
+      elsif params[:message].has_key? :alliance_id
+        raise ForbiddenError.new('Not allowed to send a mail to another alliance.')    if current_character.nil? || current_character.alliance_id != params[:message][:alliance_id].to_i
+        raise ForbiddenError.new('Not allowed to send a mail to the whole alliance.')  if current_character.nil? || !current_character.alliance_leader?
+        @messaging_message[:type_id] = Messaging::Message::ALLIANCE_TYPE_ID
+      else
+        @messaging_message[:recipient_id] = params[:message][:recipient_id].to_i
       end
-      
-      if !params[:message].has_key?(:sender_id) && !current_character.nil?
-        @messaging_message[:sender_id] = current_character.id
-      end
+
       @messaging_message[:subject] = params[:message][:subject] || "-"
       @messaging_message[:body] = format_body(CGI::escapeHTML(params[:message][:body] || "")) # we have to escape html here, because the body field is displayed "raw" in the client. reason: we want to allow battle reports to be formatted with html    
     end 
-          
-    raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
+    
     role = determine_access_role(@messaging_message.sender_id,    nil)    
     raise ForbiddenError.new("Tried to forge a message from another sender.") unless role == :owner || admin? || staff?
+          
+    raise BadRequestError.new('Malformed message could not be delivered.') unless @messaging_message.valid? 
     
-
     if !@messaging_message.save 
       raise BadRequestError.new('could not save and deliver message')  if event.save
     end
 
-    @recipient ||= @messaging_mesage.recipient
+    @recipient ||= @messaging_message.recipient
 
     if !@recipient.nil? && @recipient.offline?
       ip_access = IdentityProvider::Access.new(

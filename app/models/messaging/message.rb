@@ -51,7 +51,7 @@ class Messaging::Message < ActiveRecord::Base
       if !self.sender.nil? && !self.sender.alliance.nil?
         self.sender.alliance.members.each do |member| 
      #    if member != self.sender   # TODO : decide whether or not to deliver the message to self.
-             @character.inbox.entries.create({
+             member.inbox.entries.create({
                sender_id:  self.sender.id,
                owner_id:   member.id,
                message_id: self.id,
