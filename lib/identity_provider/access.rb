@@ -85,8 +85,8 @@ module IdentityProvider
       end
       body = if recipient.platinum_account?
         "Betreff: #{message.subject}\n\n"+ 
-        " #{ sender.nil? ? message.body : CGI::escapeHTML(message.body) } " +     # don't escape system messages.
-        "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
+        " #{ message.body } " +  # : CGI::escapeHTML(message.body) } " +  # since we escape user emails before entering to the database, it seems like we do not need to escape here
+        "\n<br/>\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf die Nachricht zu antworten."        
       else
         "Betreff: #{message.subject}\n\n Log Dich jetzt unter https://wack-a-doo.de ein, um die ganze Nachricht zu lesen."
       end

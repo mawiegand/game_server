@@ -126,8 +126,10 @@ class Xmpp
       muc.join(room_jid)
 
       if muc.owner?
-        if command.room == "global" 
-          muc.say("Gerade angemeldet: #{command.character.name}. Herzlich willkommen! :)")          
+        if command.room.starts_with? "plauderh" 
+          muc.say("Herzlich willkommen #{command.character.name}! :)")          
+        elsif command.room == "help" || command.room == "handel" || command.room == "global"
+          # say nothing
         else
           muc.say("Ab sofort darf #{command.character.name} auch hier rein.")
         end

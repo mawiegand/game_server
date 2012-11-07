@@ -22,9 +22,10 @@ class Backend::SystemMessagesController < ApplicationController
       if @system_message.save
         redirect_to action: "index", notice: 'System message was successfully created.'    
          
-        if params.has_key? :notify_offline
-          @system_message.notify_offline_recipients
-        end
+      # TODO : delay this!   
+      #  if params.has_key? :notify_offline
+      #    @system_message.notify_offline_recipients
+      #  end
       else
         render action: "new", flash: 'Could not be delivered.'
       end

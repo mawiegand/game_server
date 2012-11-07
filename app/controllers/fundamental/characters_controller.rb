@@ -144,7 +144,9 @@ class Fundamental::CharactersController < ApplicationController
     role = determine_access_role(@fundamental_character.id, @fundamental_character.alliance_id) || :default
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html do
+        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin)
+      end
       format.json { render json: @fundamental_character.sanitized_hash(role) }
     end
   end

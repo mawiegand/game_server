@@ -105,7 +105,7 @@ class Ticker::BattleHandler
                 
                 #do the takeover
                 old_owner = target_settlement.owner
-                new_owner = if winner_leader.can_takeover_settlement?
+                new_owner = if winner_leader.can_takeover_settlement? && (battle.location.fortress? || battle.location.region.settleable_by?(winner_leader))
                               winner_leader
                             else
                               candidate = winner_faction.takeover_candidate_with_largest_army
