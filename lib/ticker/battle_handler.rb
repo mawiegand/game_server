@@ -1,10 +1,13 @@
-require 'ticker/runloop'
 require 'awe_native_extensions'
 require 'ticker/battle_handler_awe_factory'
 require 'ticker/battle_handler_result_extractor'
 require 'ticker/battle_handler_message_factory'
 
 class Ticker::BattleHandler
+  
+  include Ticker::BattleHandlerResultExtractor
+  include Ticker::BattleHandlerMessageFactory
+  include Ticker::BattleHandlerAweFactory
   
   def runloop 
     return @runloop 

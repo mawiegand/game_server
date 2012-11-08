@@ -1,7 +1,5 @@
-require 'ticker/runloop'
-require 'awe_native_extensions'
-
-class Ticker::BattleHandler
+module Ticker
+  module BattleHandlerResultExtractor
 
   def runloop 
     return @runloop 
@@ -208,4 +206,5 @@ class Ticker::BattleHandler
     participant.army.save
   end
 
+end
 end
