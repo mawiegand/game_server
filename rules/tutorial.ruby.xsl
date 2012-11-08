@@ -159,6 +159,8 @@ end
 <xsl:template match="Quests">
 # ## QUESTS ##########################################################
   
+      :num_tutorial_quests => <xsl:value-of select="count(*[@tutorial = 'true'])" />,
+  
       :quests => [  # ALL QUESTS
 <xsl:for-each select="Quest">
         {               #   <xsl:value-of select="@id"/>
@@ -166,6 +168,7 @@ end
           :symbolic_id       => :<xsl:value-of select="@id"/>,
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
+          :tutorial          => <xsl:value-of select="@tutorial"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              

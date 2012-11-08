@@ -23,7 +23,7 @@
   
 <!-- 0 -->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
       <Name> the first building</Name>
       <Name locale="de_DE">Das erste Gebäude</Name>
      <Task>Build one Gatherer</Task>
@@ -46,7 +46,7 @@
     </Quest>
 
 <!-- 1 -->
-    <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" >
+    <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="true">
       <Name> the first building</Name>
       <Name locale="de_DE">Auf den Bauauftrag warten.</Name>
      <Task>Build one Gatherer</Task>
@@ -76,7 +76,7 @@
     </Quest>
 
 <!-- 2 -->
-    <Quest id="quest_build_1gathererlvl1" advisor="girl">
+    <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="true">
       <Name>Ein zweiter Jäger und Sammler</Name>
       <Name locale="de_DE"></Name>
       <Task>Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
@@ -336,6 +336,9 @@
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
+        <ResourceReward resource="resource_wood">200</ResourceReward>  
+        <ResourceReward resource="resource_stone">200</ResourceReward>  
+        <ResourceReward resource="resource_fur">100</ResourceReward>  
         <ResourceReward resource="resource_cash">2</ResourceReward>  
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
