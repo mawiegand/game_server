@@ -87,5 +87,12 @@ class Military::BattleFaction < ActiveRecord::Base
       true
     end
   end
+  
+  def opposing_faction
+    self.battle.factions.each do |faction|
+      return faction if faction != self
+    end
+    nil
+  end
 
 end

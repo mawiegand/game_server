@@ -1,4 +1,8 @@
+require 'ticker/battle_handler_message_factory'
+
 class Military::Battle < ActiveRecord::Base
+  
+  include Ticker::BattleHandlerMessageFactory
   
   has_one    :event,        :class_name => "Event::Event",                :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
@@ -25,7 +29,6 @@ class Military::Battle < ActiveRecord::Base
   # involved in an ongoing battle, the other is added to the opposing
   # faction.
   def self.start_fight_between(attacker, defender)
-    raise ArgumentError.new('both armies are already fighting') if !attacker.battle_id.nil? && !defender.battle_id.nil?
     raise ArgumentError.new('armies NOT at same location') unless attacker.location_id == defender.location_id
     
     battle = nil
@@ -40,7 +43,11 @@ class Military::Battle < ActiveRecord::Base
       defender.delete_movement
     end
     
-    if attacker.fighting?                                        # A) add defender to attacker's battle
+    if attacker.fighting? && defender.fighting?                  # merge fights
+      raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
+      raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
+      self.merge_battles(attacker, defender)
+    elsif attacker.fighting?                                     # add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
       battle.add_fortress_defenders(attacker, defender)
@@ -63,6 +70,75 @@ class Military::Battle < ActiveRecord::Base
     end
     
     return battle
+  end
+  
+  def self.merge_battles(attacker, defender)
+    # end current battle of defender
+    defender.battle.ended_at = Time.now
+    defender.battle.save
+
+    # send notification messages for participants of ending battle
+    defender.battle.generate_messages_for_battle(nil, defender.battle)
+        
+    # put participants of defender's faction in defender's battle to the faction of attacker's opponents in attacker's battle
+    defender.battle_participant.faction.participants.each do |participant|
+      
+      logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.opposing_faction.id}"
+      
+      participant.battle = attacker.battle
+      participant.faction = attacker.battle_participant.faction.opposing_faction
+      participant.save
+      
+      participant.army.battle = attacker.battle
+      participant.army.save
+    end
+    
+    # put participants of defender's opposing faction in defender's battle to attacker's faction in attacker's battle
+    defender.battle_participant.faction.opposing_faction.participants.each do |participant|
+      
+      logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.id}"
+      
+      participant.battle = attacker.battle
+      participant.faction = attacker.battle_participant.faction
+      participant.save
+      
+      participant.army.battle = attacker.battle
+      participant.army.save
+    end
+    
+    # cleanup defenders battle
+    ## cleanup of the destroyed armies and the battle object
+    defender.battle.cleanup
+  end
+  
+  #deletes armies that no longer exists (or marks them as removed)
+  def cleanup
+    # delete participating armies
+    self.armies.each do |army|
+      if (army.empty? && !army.garrison?)
+        if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
+          army.removed = true
+          if !army.save
+            raise InternalServerError.new('Failed to flag an army as removed')
+          end
+        else
+          army.destroy
+        end
+      end
+    end
+    
+    # remove battle or set to removed
+    if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
+      self.removed = true
+      if !self.save
+        raise InternalServerError.new('Failed to flag an battle as removed')
+      end
+    else
+      self.destroy
+    end
+    
+    # destroy appropriate event
+    self.event.destroy
   end
   
   # add armies with stance 'defending fortress' to garrison fraction of battle

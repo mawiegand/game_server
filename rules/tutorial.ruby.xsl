@@ -75,13 +75,14 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests
   
   def attributes 
     { 
       'version'        => version,
       'quests'         => quests,
       'updated_at'     => updated_at,
+      'num_tutorial_quests' => num_tutorial_quests,
     }
   end
   
@@ -159,6 +160,8 @@ end
 <xsl:template match="Quests">
 # ## QUESTS ##########################################################
   
+      :num_tutorial_quests => <xsl:value-of select="count(*[@tutorial = 'true'])" />,
+  
       :quests => [  # ALL QUESTS
 <xsl:for-each select="Quest">
         {               #   <xsl:value-of select="@id"/>
@@ -166,6 +169,7 @@ end
           :symbolic_id       => :<xsl:value-of select="@id"/>,
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
+          :tutorial          => <xsl:value-of select="@tutorial"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              

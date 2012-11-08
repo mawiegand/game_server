@@ -28,6 +28,14 @@ class Tutorial::Quest < ActiveRecord::Base
     
     unless reward_tests.nil?
       
+      unless reward_tests[:resource_production_tests].nil?
+        reward_tests[:resource_production_tests].each do |resource_production_test|
+          unless check_resource_production(resource_production_test)
+            return false
+          end
+        end
+      end        
+      
       unless reward_tests[:building_tests].nil?
         reward_tests[:building_tests].each do |building_test|
           unless building_test.nil?
@@ -137,6 +145,15 @@ class Tutorial::Quest < ActiveRecord::Base
         })
       end
     end
+  end
+  
+  def check_resource_production(test)
+    pool = self.tutorial_state.owner.resource_pool
+    return false    if pool.nil?
+    
+    symbol = test[:resource_type].to_s + '_production_rate'
+    
+    pool[symbol.to_sym] >= (test[:minimum] || 0).to_f
   end
   
   def check_buildings(building_test)

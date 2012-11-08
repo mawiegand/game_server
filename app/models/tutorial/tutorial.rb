@@ -27,13 +27,14 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests
   
   def attributes 
     { 
       'version'        => version,
       'quests'         => quests,
       'updated_at'     => updated_at,
+      'num_tutorial_quests' => num_tutorial_quests,
     }
   end
   
@@ -63,6 +64,8 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
+      :num_tutorial_quests => 3,
+  
       :quests => [  # ALL QUESTS
 
         {               #   quest_queue_1gathererlvl1
@@ -70,6 +73,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -135,6 +139,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_end_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => true,
+          :tutorial          => true,
           
           :name => {
             
@@ -235,6 +240,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -335,6 +341,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -429,6 +436,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -529,6 +537,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -628,6 +637,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -719,6 +729,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlement_button1,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -810,6 +821,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_rank,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -901,6 +913,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlementowner,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -992,6 +1005,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1049,6 +1063,21 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -1087,6 +1116,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlement_button2,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1178,6 +1208,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1306,6 +1337,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1400,6 +1432,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1500,6 +1533,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl1,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1600,6 +1634,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_recruit_1clubbers,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1686,6 +1721,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_army_create,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1791,6 +1827,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_army_move,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1880,6 +1917,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -1980,6 +2018,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1campfirelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2085,6 +2124,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_alliance,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2174,6 +2214,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1storagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2274,6 +2315,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2374,6 +2416,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1quarrylvl1_1loggerlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2483,6 +2526,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_4quarrylvl5_4loggerlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2592,6 +2636,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1campfirelvl10,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2692,6 +2737,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_outpost,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2788,6 +2834,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2888,6 +2935,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -2988,6 +3036,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2gathererlvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3088,6 +3137,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_4gathererlvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3182,6 +3232,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_3gathererlvl7,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3282,6 +3333,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3382,6 +3434,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3482,6 +3535,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3591,6 +3645,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2quarrylvl3_2loggerlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3700,6 +3755,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1storagelvl5,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3800,6 +3856,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1campfirelvl5,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3900,6 +3957,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_6gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -3994,6 +4052,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl4,
           :advisor           => :girl,
           :hide_start_dialog => true,
+          :tutorial          => false,
           
           :name => {
             
@@ -4086,6 +4145,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl5,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4184,6 +4244,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl6,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4282,6 +4343,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4380,6 +4442,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl8,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4478,6 +4541,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl9,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4576,6 +4640,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl10,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4674,6 +4739,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4739,6 +4805,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => true,
+          :tutorial          => false,
           
           :name => {
             
@@ -4804,6 +4871,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => true,
+          :tutorial          => false,
           
           :name => {
             
@@ -4869,6 +4937,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl6,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -4969,6 +5038,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => true,
+          :tutorial          => false,
           
           :name => {
             
@@ -5034,6 +5104,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -5134,6 +5205,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -5206,6 +5278,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => true,
+          :tutorial          => false,
           
           :name => {
             
@@ -5287,6 +5360,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -5383,6 +5457,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
@@ -5483,6 +5558,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_army_reinforce,
           :advisor           => :warrior,
           :hide_start_dialog => false,
+          :tutorial          => false,
           
           :name => {
             
