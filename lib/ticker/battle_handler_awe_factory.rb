@@ -1,7 +1,5 @@
-require 'ticker/runloop'
-require 'awe_native_extensions'
-
-class Ticker::BattleHandler
+module Ticker
+  module BattleHandlerAweFactory
 
   def runloop 
     return @runloop 
@@ -155,4 +153,5 @@ class Ticker::BattleHandler
     } 
     raise InternalServerError.new('could not find the associated unit_category for a symbol.')
   end
+end
 end
