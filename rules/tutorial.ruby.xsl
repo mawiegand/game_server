@@ -256,6 +256,11 @@ end
 
 
 <xsl:template match="RewardTests">
+<xsl:if test="ResourceProductionTest">
+            :resource_production_tests => [
+<xsl:apply-templates select="ResourceProductionTest" />
+            ],
+</xsl:if>
 <xsl:if test="BuildingTest">
             :building_tests => [
 <xsl:apply-templates select="BuildingTest" />
@@ -309,6 +314,13 @@ end
 <xsl:if test="@min_count">
                 :min_count => <xsl:value-of select="@min_count" />,
 </xsl:if>
+              },
+</xsl:template>
+
+<xsl:template match="ResourceProductionTest">
+              {
+                :resource => '<xsl:value-of select="@resource" />',
+                :minimum  => <xsl:apply-templates/>,
               },
 </xsl:template>
 

@@ -5738,6 +5738,20 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :resource_production_tests => [
+
+              {
+                :resource => 'resource_wood',
+                :minimum  => 20,
+              },
+
+              {
+                :resource => 'resource_stone',
+                :minimum  => 20,
+              },
+
+            ],
+
           },          
 
         },              #   END OF quest_improve_production_1
