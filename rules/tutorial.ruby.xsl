@@ -75,13 +75,14 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests
   
   def attributes 
     { 
       'version'        => version,
       'quests'         => quests,
       'updated_at'     => updated_at,
+      'num_tutorial_quests' => num_tutorial_quests,
     }
   end
   
