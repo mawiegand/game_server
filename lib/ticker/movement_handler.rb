@@ -37,7 +37,6 @@ class Ticker::MovementHandler
       action.army.target_region = nil
       action.army.target_reached_at = nil
       action.army.mode = 0
-      action.army.stance = Military::Army::STANCE_DEFENDING_NONE
       
       if !action.army.save
         runloop.say "Army #{action.army_id} could not be moved to new location. Save did fail.", Logger::ERROR
