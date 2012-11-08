@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121029213134) do
+ActiveRecord::Schema.define(:version => 20121108131607) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1084,6 +1084,8 @@ ActiveRecord::Schema.define(:version => 20121029213134) do
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tutorial_completed",                      :default => false, :null => false
+    t.datetime "displayed_tutorial_completion_notice_at"
   end
 
 end
