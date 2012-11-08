@@ -79,9 +79,9 @@ class Tutorial::Tutorial
   
   def attributes 
     { 
-      'version'        => version,
-      'quests'         => quests,
-      'updated_at'     => updated_at,
+      'version'             => version,
+      'quests'              => quests,
+      'updated_at'          => updated_at,
       'num_tutorial_quests' => num_tutorial_quests,
     }
   end

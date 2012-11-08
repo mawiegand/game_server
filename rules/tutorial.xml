@@ -1762,6 +1762,37 @@
     </Quest>
 
 
+<!-- 58 -->
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
+      <Name>Produktionssteigerung</Name>
+      <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
+      <Task></Task>
+      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 20 Einheiten pro Stunde.</Task>
+      <Description locale="de_DE">
+        <p>Baue zusätzliche Sammler und baue die vorhandenen aus, um das Ziel zu erreichen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Beschreibung des Quests auf englisch.</p>
+      </Description>
+      <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
+      <Flavor locale="en_US">flavor text english</Flavor>
+      <RewardText locale="de_DE">Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Super, tolle Leistung! So sieht es doch jetzt schon sehr viel besser aus.</RewardFlavor>
+      <RewardFlavor locale="en_US"></RewardFlavor>
+      <Rewards>
+        <ResourceReward resource="resource_stone">200</ResourceReward>  
+        <ResourceReward resource="resource_wood">200</ResourceReward>    
+        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ResourceProductionTest resource="resource_wood">20</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_stone">20</ResourceProductionTest>
+      </RewardTests>
+    </Quest>
+
+
     <!-- Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>

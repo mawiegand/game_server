@@ -31,9 +31,9 @@ class Tutorial::Tutorial
   
   def attributes 
     { 
-      'version'        => version,
-      'quests'         => quests,
-      'updated_at'     => updated_at,
+      'version'             => version,
+      'quests'              => quests,
+      'updated_at'          => updated_at,
       'num_tutorial_quests' => num_tutorial_quests,
     }
   end
@@ -64,7 +64,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 3,
+      :num_tutorial_quests => 4,
   
       :quests => [  # ALL QUESTS
 
@@ -5659,6 +5659,88 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_army_reinforce
+        {               #   quest_improve_production_1
+          :id                => 58, 
+          :symbolic_id       => :quest_improve_production_1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          
+          :name => {
+            
+            :en_US => "Produktionssteigerung",
+  
+            :de_DE => "Erhöhe Deine Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 20 Einheiten pro Stunde.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Baue zusätzliche Sammler und baue die vorhandenen aus, um das Ziel zu erreichen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Super, tolle Leistung! So sieht es doch jetzt schon sehr viel besser aus.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.",
+  
+            :en_US => " ",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF quest_improve_production_1
       ],                # END OF QUESTS
 
     )
