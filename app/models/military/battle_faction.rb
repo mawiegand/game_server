@@ -22,8 +22,8 @@ class Military::BattleFaction < ActiveRecord::Base
         Rails.logger.debug self
         Rails.logger.debug participant
         Rails.logger.debug self.participants
-
-        self[field] += participant.army.send(field)
+        
+        self[field] += participant.army.send(field) unless participant.army.nil?
       end
     end    
   end
