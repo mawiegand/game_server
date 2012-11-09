@@ -13,6 +13,8 @@ class Training::JobsController < ApplicationController
     if params.has_key?(:queue_id)
       @queue = Training::Queue.find(params[:queue_id])
       raise NotFoundError.new('Queue not found.') if @queue.nil?
+      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character
+
       @training_jobs = @queue.jobs
       @training_jobs = [] if @training_jobs.nil?  # necessary? or ok to send 'null' ?
     else 
@@ -45,6 +47,8 @@ class Training::JobsController < ApplicationController
   # GET /training/jobs/1.json
   def show
     @training_job = Training::Job.find(params[:id])
+
+    raise ForbiddenError.new('not owner of job') unless @training_job.queue.settlement.owner == current_character
 
     respond_to do |format|
       format.html # show.html.erb
