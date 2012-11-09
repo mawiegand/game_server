@@ -88,7 +88,7 @@ class Military::Battle < ActiveRecord::Base
       if participant.army.nil? || participant.army.empty?
         logger.debug "don't add the above army because it is already dead."
       else
-        self.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id))
+        attacker.battle.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id))
       end
     end
     
@@ -100,11 +100,11 @@ class Military::Battle < ActiveRecord::Base
       if participant.army.nil? || participant.army.empty?
         logger.debug "don't add the above army because it is already dead."
       else
-        self.add_army(participant.army, attacker.battle_participant)
+        attacker.battle.add_army(participant.army, attacker.battle_participant.faction)
       end      
     end
     
-    self.save
+    attacker.battle.save
     
     # cleanup defenders battle
     ## cleanup of the destroyed armies and the battle object
