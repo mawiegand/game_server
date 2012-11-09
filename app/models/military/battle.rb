@@ -88,7 +88,7 @@ class Military::Battle < ActiveRecord::Base
       if participant.army.nil? || participant.army.empty?
         logger.debug "don't add the above army because it is already dead."
       else
-        self.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id)
+        self.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id))
       end
     end
     
