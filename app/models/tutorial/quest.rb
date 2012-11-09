@@ -2,6 +2,8 @@ class Tutorial::Quest < ActiveRecord::Base
   
   belongs_to  :tutorial_state,  :class_name => "Tutorial::State",  :foreign_key => "state_id", :inverse_of => :quests, :touch => true
 
+  after_save :count_completed_tutorial_quests
+
   STATES = []
   STATE_NEW = 0
   STATES[STATE_NEW] = :new
@@ -14,6 +16,10 @@ class Tutorial::Quest < ActiveRecord::Base
   
   def quest
     Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
+  end
+  
+  def belongs_to_tutorial?
+    !quest.nil? && quest[:tutorial]
   end
   
   def check_for_rewards(answer_text)
@@ -477,5 +483,14 @@ class Tutorial::Quest < ActiveRecord::Base
     
     next_quest[:requirement][:quest].to_s == this_quest[:symbolic_id].to_s
   end
+  
+  protected
+  
+    def count_completed_tutorial_quests
+      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED && self.belongs_to_tutorial?
+        self.tutorial_state.increment(:tutorial_states_completed)
+        self.tutorial_state.save
+      end
+    end
 
 end

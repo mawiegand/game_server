@@ -73,7 +73,7 @@
 
 
 
-<!ELEMENT RewardTests ((BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
@@ -81,6 +81,12 @@
   min_level CDATA "1"
   min_count CDATA "1"
 >
+
+<!ELEMENT ResourceProductionTest (#PCDATA)>
+<!ATTLIST ResourceProductionTest
+  resource CDATA #REQUIRED
+>
+
 
 <!ELEMENT SettlementTest (#PCDATA)>
 <!ATTLIST SettlementTest

@@ -1087,6 +1087,7 @@ ActiveRecord::Schema.define(:version => 20121108152959) do
     t.datetime "updated_at"
     t.boolean  "tutorial_completed",                      :default => false, :null => false
     t.datetime "displayed_tutorial_completion_notice_at"
+    t.integer  "tutorial_states_completed",               :default => 0,     :null => false
   end
 
 end

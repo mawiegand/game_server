@@ -85,12 +85,11 @@ class Military::Battle < ActiveRecord::Base
       
       logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.opposing_faction.id}"
       
-      participant.battle = attacker.battle
-      participant.faction = attacker.battle_participant.faction.opposing_faction
-      participant.save
-      
-      participant.army.battle = attacker.battle
-      participant.army.save
+      if participant.army.nil? || participant.army.empty?
+        logger.debug "don't add the above army because it is already dead."
+      else
+        self.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id))
+      end
     end
     
     # put participants of defender's opposing faction in defender's battle to attacker's faction in attacker's battle
@@ -98,13 +97,14 @@ class Military::Battle < ActiveRecord::Base
       
       logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.id}"
       
-      participant.battle = attacker.battle
-      participant.faction = attacker.battle_participant.faction
-      participant.save
-      
-      participant.army.battle = attacker.battle
-      participant.army.save
+      if participant.army.nil? || participant.army.empty?
+        logger.debug "don't add the above army because it is already dead."
+      else
+        self.add_army(participant.army, attacker.battle_participant)
+      end      
     end
+    
+    self.save
     
     # cleanup defenders battle
     ## cleanup of the destroyed armies and the battle object
@@ -126,6 +126,9 @@ class Military::Battle < ActiveRecord::Base
         end
       end
     end
+
+    # destroy appropriate event
+    self.event.destroy
     
     # remove battle or set to removed
     if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
@@ -136,9 +139,6 @@ class Military::Battle < ActiveRecord::Base
     else
       self.destroy
     end
-    
-    # destroy appropriate event
-    self.event.destroy
   end
   
   # add armies with stance 'defending fortress' to garrison fraction of battle
