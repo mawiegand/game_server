@@ -115,6 +115,8 @@ class Training::JobsController < ApplicationController
   def destroy
     @training_job = Training::Job.find(params[:id])
     
+    raise ForbiddenError.new('not owner of job') unless @training_job.queue.settlement.owner == current_character
+
     queue = @training_job.queue
     @training_job.refund_for_job if @training_job.active?
     @training_job.destroy      

@@ -124,6 +124,8 @@ class Construction::JobsController < ApplicationController
     Construction::Job.transaction do
       @construction_job = Construction::Job.lock.find(params[:id])
     
+      raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character
+
       # test if there are jobs depending on this one, if not, remove job
     
       queue = @construction_job.queue
