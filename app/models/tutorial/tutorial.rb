@@ -79,7 +79,7 @@ class Tutorial::Tutorial
             
             :en_US => " the first building",
   
-            :de_DE => "Das erste Gebäude",
+            :de_DE => "Der erste Jäger und Sammler",
                 
           },
           :task => {
@@ -145,7 +145,7 @@ class Tutorial::Tutorial
             
             :en_US => " the first building",
   
-            :de_DE => "Auf den Bauauftrag warten.",
+            :de_DE => "Der erste Jäger und Sammler.",
                 
           },
           :task => {
@@ -171,14 +171,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey, dass sieht doch schon viel besser aus, findest Du nicht?  Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
+            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. Das sieht doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.",
+            :de_DE => " Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
   
             :en_US => " ",
                 
@@ -212,8 +212,6 @@ class Tutorial::Tutorial
               },
 
             ],
-
-            :experience_reward => 350,
 
           },          
 

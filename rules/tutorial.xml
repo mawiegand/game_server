@@ -25,7 +25,7 @@
   <Quests>
     <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
       <Name> the first building</Name>
-      <Name locale="de_DE">Das erste Gebäude</Name>
+      <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Build one Gatherer</Task>
       <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag. </Task>
       <Description locale="de_DE">
@@ -48,7 +48,7 @@
 <!-- 1 -->
     <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="true">
       <Name> the first building</Name>
-      <Name locale="de_DE">Auf den Bauauftrag warten.</Name>
+      <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Build one Gatherer</Task>
       <Task locale="de_DE"> Warte bis der Jäger und Sammler Level 1 fertiggestellt wurde.</Task>
       <Description locale="de_DE">
@@ -59,16 +59,15 @@
       </Description>
       <Flavor locale="de_DE">Mehr als warten können wir grad nicht.</Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <RewardText locale="de_DE"> Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.</RewardText>
+      <RewardText locale="de_DE">Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE"> Hey, dass sieht doch schon viel besser aus, findest Du nicht?  Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.</RewardFlavor>
+      <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">35</ResourceReward>    
         <ResourceReward resource="resource_fur">10</ResourceReward>
-        <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
@@ -82,7 +81,7 @@
       <Task>Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
       <Task locale="de_DE">Baue einen zweiten Jäger und Sammler Level 1, um Deine Produktion zu erhöhen.</Task>
       <Description locale="de_DE">
-        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>
+        <p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Rohstofffeldern ganz oben links zeigen Dir Deinen aktuellen Vorrat. Ganz wichtig sind die Zahlen hinter dem '+' (z.B. '2/h'). Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>
       </Description>
       <Description locale="en_US">
         <p>Beschreibung des Quests auf englisch.</p>
