@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108131607) do
+ActiveRecord::Schema.define(:version => 20121108152959) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -536,6 +536,7 @@ ActiveRecord::Schema.define(:version => 20121108131607) do
     t.boolean  "removed",                         :default => false, :null => false
     t.boolean  "npc",                             :default => false, :null => false
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
+    t.datetime "suspension_ends_at"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
