@@ -157,9 +157,9 @@ class Tutorial::Quest < ActiveRecord::Base
     pool = self.tutorial_state.owner.resource_pool
     return false    if pool.nil?
     
-    symbol = test[:resource_type].to_s + '_production_rate'
+    symbol = test[:resource].to_s + '_production_rate'
     
-    pool[symbol.to_sym] >= (test[:minimum] || 0).to_f
+    (pool[symbol.to_sym] || 0) >= (test[:minimum] || 0).to_f
   end
   
   def check_buildings(building_test)
