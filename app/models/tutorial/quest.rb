@@ -243,7 +243,7 @@ class Tutorial::Quest < ActiveRecord::Base
 
   def check_construction_queues(queue_test)
     # check for min count
-    return false if queue_test[:min_count].nil?
+    return false if queue_test[:min_count].nil? || queue_test[:min_level].nil?
     
     #check for building type
     building_type = nil
@@ -265,7 +265,9 @@ class Tutorial::Quest < ActiveRecord::Base
         settlement.queues.each do |queue|
           unless queue.jobs.nil?
             queue.jobs.each do |job|
-              if building_type[:id] === job.building_id && (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
+              if (building_type[:id] === job.building_id &&
+                  (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
+                  job.level >= queue_test[:min_level])
                 check_count += 1
                 if check_count >= queue_test[:min_count]
                   return true
@@ -275,7 +277,22 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+    
+      unless settlement.slots.nil?
+        settlement.slots.each do |slot|
+          if (!slot.level.nil? &&
+              !slot.building_id.nil? &&
+              building_type[:id] == slot.building_id &&
+              slot.level >= queue_test[:min_level])
+            check_count += 1
+            if check_count >= queue_test[:min_count]
+              return true
+            end
+          end
+        end
+      end
     end
+    
     
     # queue check failed, if method reaches this point
     false

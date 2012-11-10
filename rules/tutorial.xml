@@ -41,7 +41,7 @@
       <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während Deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
-        <ConstructionQueueTest building="building_gatherer" min_count="1" />
+        <ConstructionQueueTest building="building_gatherer" min_count="1" min_level="1" />
       </RewardTests>
     </Quest>
 
@@ -1480,7 +1480,7 @@
       <RewardFlavor locale="de_DE">Fertig? Wie Du hast Deinen Arbeitern den Auftrag gegeben? Das hilft mir mal gar nicht. Geh mir aus den Augen, bis die Arbeiten fertig sind.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="2" />
       </RewardTests>
     </Quest>
 
@@ -1503,7 +1503,7 @@
       <RewardFlavor locale="de_DE">Während Du darauf wartest, dass der Auftrag fertig gestellt wird, kannst Du ja etwas anderes machen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="3" />
       </RewardTests>
     </Quest>
 
@@ -1526,7 +1526,7 @@
       <RewardFlavor locale="de_DE">Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
       </RewardTests>
     </Quest>
 
@@ -1579,7 +1579,7 @@
       <RewardFlavor locale="de_DE">Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
       <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="5" />
       </RewardTests>
     </Quest>
 
@@ -1694,7 +1694,7 @@
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" />
+        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="2" />
       </RewardTests>
     </Quest>
 

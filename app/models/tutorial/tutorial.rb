@@ -127,6 +127,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
                 :min_count => 1,
+                :min_level => 1,
               },
 
             ],
@@ -4789,6 +4790,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 2,
               },
 
             ],
@@ -4855,6 +4857,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 3,
               },
 
             ],
@@ -4921,6 +4924,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 4,
               },
 
             ],
@@ -5088,6 +5092,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 5,
               },
 
             ],
@@ -5441,6 +5446,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 2,
               },
 
             ],
