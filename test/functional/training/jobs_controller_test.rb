@@ -28,10 +28,10 @@ class Training::JobsControllerTest < ActionController::TestCase
   #  assert_redirected_to training_job_path(assigns(:training_job))
   end
 
-  test "should show training_job" do
-    get :show, id: @training_job.to_param
-    assert_response :success
-  end
+  # test "should show training_job" do
+    # get :show, id: @training_job.to_param
+    # assert_response :success
+  # end
 
   test "should get edit" do
     get :edit, id: @training_job.to_param
@@ -43,11 +43,11 @@ class Training::JobsControllerTest < ActionController::TestCase
     assert_redirected_to training_job_path(assigns(:training_job))
   end
 
-  test "should destroy training_job" do
-    assert_difference('Training::Job.count', -1) do
-      delete :destroy, id: @training_job.to_param
-    end
-
-    assert_redirected_to training_jobs_path
-  end
+  # test "should destroy training_job" do
+    # assert_difference('Training::Job.count', -1) do
+      # delete :destroy, id: @training_job.to_param
+    # end
+# 
+    # assert_redirected_to training_jobs_path
+  # end
 end
