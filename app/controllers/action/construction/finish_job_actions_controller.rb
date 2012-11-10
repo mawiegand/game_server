@@ -3,12 +3,13 @@ class Action::Construction::FinishJobActionsController < ApplicationController
 
   before_filter :authenticate
 
-  # TODO:   THIS DOES NOT CHECK THE OWNERSHIP OF THE JOB!!!
   def create
     logger.debug params.inspect
     Construction::Job.transaction do
 
       @construction_job = Construction::Job.lock.find(params[:action_construction_finish_job_actions][:job_id])
+      raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character
+
       raise BadRequestError.new('no active job')                               if @construction_job.active_job.nil?
       
       raise BadRequestError.new('this building can not be bought using cash')  unless @construction_job.buyable?
