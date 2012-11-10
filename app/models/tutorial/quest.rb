@@ -267,7 +267,7 @@ class Tutorial::Quest < ActiveRecord::Base
             queue.jobs.each do |job|
               if (building_type[:id] === job.building_id &&
                   (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
-                  job.level >= queue_test[:min_level])
+                  job.level_after >= queue_test[:min_level])
                 check_count += 1
                 if check_count >= queue_test[:min_count]
                   return true
