@@ -20,3 +20,8 @@ Backend::Stat.create
 Backend::Stat.update_all_character_stats
 Backend::Stat.update_all_cohorts
 puts "done."
+
+print "Creating tutorial stats entry... "
+Backend::TutorialStat.create
+Backend::TutorialStat.update_all_cohorts
+puts "done."

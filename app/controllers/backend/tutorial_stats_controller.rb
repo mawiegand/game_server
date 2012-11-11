@@ -51,6 +51,9 @@ class Backend::TutorialStatsController < ApplicationController
 
     respond_to do |format|
       if @backend_tutorial_stat.save
+        Backend::TutorialStat.update_all_cohorts
+        Backend::Stat.update_all_cohorts
+        
         format.html { redirect_to @backend_tutorial_stat, notice: 'Tutorial stat was successfully created.' }
         format.json { render json: @backend_tutorial_stat, status: :created, location: @backend_tutorial_stat }
       else

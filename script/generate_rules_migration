@@ -60,6 +60,15 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_production_rate_max',        :type => ':decimal', :options => { :default => 0.0 } }, 
   ],
 
+  Backend::TutorialStat      => [ { :prefix => 'quest_',           :postfix => '_num_finished_day_1',         :type => ':integer', :options => { :default => 0   } }, 
+                                  { :prefix => 'quest_',           :postfix => '_num_started_day_1',          :type => ':integer', :options => { :default => 0   } }, 
+                                  { :prefix => 'quest_',           :postfix => '_playtime_finished_day_1',    :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'quest_',           :postfix => '_playtime_started_day_1',     :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'quest_',           :postfix => '_num_finished',               :type => ':integer', :options => { :default => 0   } }, 
+                                  { :prefix => 'quest_',           :postfix => '_num_started',                :type => ':integer', :options => { :default => 0   } }, 
+                                  { :prefix => 'quest_',           :postfix => '_playtime_finished',          :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'quest_',           :postfix => '_playtime_started',           :type => ':decimal', :options => { :default => 0.0 } }, 
+  ],
   
   Fundamental::Character     => [ { :prefix => 'character_queue',  :postfix => '',                                                 :options => { :default => 0   } },
                                   { :prefix => 'character_unlock', :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks 

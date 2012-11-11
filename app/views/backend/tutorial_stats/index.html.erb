@@ -2,17 +2,17 @@
 
 <table>
   <tr>
+    <th>Created At</th>
     <th>Cohort size</th>
 <% Tutorial::Tutorial.the_tutorial.quests.each do |quest| %>
     <th><%=quest[:id]%></th>
 <% end %>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @backend_tutorial_stats.each do |backend_tutorial_stat| %>
   <tr>
+    <td><%= backend_tutorial_stat.created_at %></td>
     <td><%= backend_tutorial_stat.cohort_size %></td>
 <% Tutorial::Tutorial.the_tutorial.quests.each do |quest| %>
     <td><%= backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] %> <br/>
@@ -20,8 +20,6 @@
         <%= backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s].floor %>
     </td>
 <% end %>
-    <td><%= link_to 'Show', backend_tutorial_stat %></td>
-    <td><%= link_to 'Edit', edit_backend_tutorial_stat_path(backend_tutorial_stat) %></td>
     <td><%= link_to 'Destroy', backend_tutorial_stat, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
