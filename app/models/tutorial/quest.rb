@@ -2,6 +2,8 @@ class Tutorial::Quest < ActiveRecord::Base
   
   belongs_to  :tutorial_state,  :class_name => "Tutorial::State",  :foreign_key => "state_id", :inverse_of => :quests, :touch => true
 
+  before_create :set_start_playtime
+  before_save   :set_finished_playtime
   after_save :count_completed_tutorial_quests
 
   STATES = []
@@ -492,5 +494,20 @@ class Tutorial::Quest < ActiveRecord::Base
         self.tutorial_state.save
       end
     end
+    
+    def set_start_playtime
+      unless tutorial_state.nil? || tutorial_state.owner.nil?
+        self.playtime_started = tutorial_state.owner.playtime || 0
+      end
+    end
+      
+    def set_finished_playtime
+      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED
+        unless tutorial_state.nil? || tutorial_state.owner.nil?
+          self.playtime_finished = tutorial_state.owner.playtime || 0
+        end
+      end
+    end
+        
 
 end

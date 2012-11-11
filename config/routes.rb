@@ -1,5 +1,6 @@
 GameServer::Application.routes.draw do
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -17,6 +18,7 @@ GameServer::Application.routes.draw do
         resource  :dashboard, :controller => 'dashboard', :only => [:show, :create]
         resources :users 
         resources :stats
+        resources :tutorial_stats
         resources :browser_stats
         resources :system_messages
       end

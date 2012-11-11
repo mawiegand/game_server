@@ -14,6 +14,7 @@ en:
         dashboard: Dashboard
         users: Users
         stats: Stats
+        tutorial_stats: Tutorial Stats
         browser_stats: Browser
         system_message: InGameMessage
       rules:
