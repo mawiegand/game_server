@@ -1,3 +1,121 @@
+
+
+<% if @backend_tutorial_stats.nil? %>
+  <p> Nothing to chart. </p>
+<% else 
+  quests = Tutorial::Tutorial.the_tutorial.quests
+%>
+
+
+  <h1>Cohort Analysis</h1>
+
+  <div class="chart large" id="finished_quests"></div>
+  <div class="chart large" id="finished_quests_day_1"></div>
+  <div class="chart large" id="playtime_finished_quests"></div>
+  
+  <div class="clear"></div>
+
+    
+  <script>
+
+      var finished_quests = new Dygraph(
+
+        document.getElementById("finished_quests"),
+
+        "Date" +
+<%quests.each do |quest|  %>
+        ", <%= quest[:id] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_tutorial_stats.each do |backend_tutorial_stat| %>
+        "<%= backend_tutorial_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%quests.each do |quest|  %>
+        ", <%= (backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_sym] || 0) / (backend_tutorial_stat.cohort_size || 1).to_f %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Quest Completion',
+          height: 400,
+          width: 600,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+        
+
+      var finished_quests_day_1 = new Dygraph(
+
+        document.getElementById("finished_quests_day_1"),
+
+        "Date" +
+<%quests.each do |quest|  %>
+        ", <%= quest[:id] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_tutorial_stats.each do |backend_tutorial_stat| %>
+        "<%= backend_tutorial_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%quests.each do |quest|  %>
+        ", <%= (backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_sym] || 0) / (backend_tutorial_stat.cohort_size || 1).to_f %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Quest Completion on 1st Day',
+          height: 400,
+          width: 600,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+
+      var playtime_finished_quests = new Dygraph(
+
+        document.getElementById("playtime_finished_quests"),
+
+        "Date" +
+<%quests.each do |quest|  %>
+        ", <%= quest[:id] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_tutorial_stats.each do |backend_tutorial_stat| %>
+        "<%= backend_tutorial_stat.created_at.strftime('%Y-%m-%d') %>" +
+  <%quests.each do |quest|  %>
+        ", <%= (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_sym] || 0.0) / (backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_sym] || 0).to_f %>" +
+  <%end%>         
+        "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Playtime needed for Completion',
+          height: 400,
+          width: 600,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+  
+  </script>
+
+<% end %>
+<hr/>
+
 <h1>Listing backend_tutorial_stats</h1>
 
 <table>

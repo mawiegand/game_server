@@ -9,7 +9,7 @@ class Backend::TutorialStatsController < ApplicationController
   # GET /backend/tutorial_stats
   # GET /backend/tutorial_stats.json
   def index
-    @backend_tutorial_stats = Backend::TutorialStat.all
+    @backend_tutorial_stats = Backend::TutorialStat.order('created_at ASC')
 
     respond_to do |format|
       format.html # index.html.erb
