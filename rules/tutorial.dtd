@@ -104,6 +104,7 @@
 <!ATTLIST ConstructionQueueTest
   building  CDATA #REQUIRED
   min_count CDATA "1"
+  min_level CDATA "1"
 >
 
 <!ELEMENT TrainingQueueTest (#PCDATA)>

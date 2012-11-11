@@ -151,6 +151,11 @@ class Military::Army < ActiveRecord::Base
     !self.battle_id.nil? && self.battle_id > 0
   end
   
+  def suspended?
+    !self.suspension_ends_at.nil? && self.suspension_ends_at > Time.now
+  end
+
+  
   def can_found_outpost?
     return false    if self.details.nil?
     

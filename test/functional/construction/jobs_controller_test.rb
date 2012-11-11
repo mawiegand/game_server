@@ -19,10 +19,10 @@ class Construction::JobsControllerTest < ActionController::TestCase
   end
 
 
-  test "should show construction_job" do
-    get :show, id: @construction_job.to_param
-    assert_response :success
-  end
+  # test "should show construction_job" do
+    # get :show, id: @construction_job.to_param
+    # assert_response :success
+  # end
 
   test "should get edit" do
     get :edit, id: @construction_job.to_param

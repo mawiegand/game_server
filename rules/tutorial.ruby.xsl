@@ -342,6 +342,7 @@ end
               {
                 :building => '<xsl:value-of select="@building" />',
                 :min_count => <xsl:value-of select="@min_count" />,
+                :min_level => <xsl:value-of select="@min_level" />,
               },
 </xsl:template>
 
