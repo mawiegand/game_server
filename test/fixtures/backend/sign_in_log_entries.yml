@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  user_agent: MyText
+  referer: MyString
+  referer_url: MyText
+  remote_ip: MyString
+
+two:
+  character_id: 1
+  user_agent: MyText
+  referer: MyString
+  referer_url: MyText
+  remote_ip: MyString

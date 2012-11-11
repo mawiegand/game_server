@@ -1,6 +1,7 @@
 GameServer::Application.routes.draw do
 
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -19,6 +20,7 @@ GameServer::Application.routes.draw do
         resources :users 
         resources :stats
         resources :tutorial_stats
+        resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
       end
