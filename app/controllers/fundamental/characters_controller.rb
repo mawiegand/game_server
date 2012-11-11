@@ -105,7 +105,7 @@ class Fundamental::CharactersController < ApplicationController
         referer_url:        external_referer,
         character_id:       character.id,
         remote_ip:          request.remote_ip,
-        signup:             true
+        sign_up:            true
       });
       
       character.last_login_at = DateTime.now
