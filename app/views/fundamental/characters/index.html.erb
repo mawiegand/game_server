@@ -20,6 +20,8 @@
     <th>SP</th>
     <th>Banned</th>
     <th>Base</th>
+    <th>Referer</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -60,6 +62,7 @@
         <%= fundamental_character.settlement_points_total %></td>
     <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
     <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
+    <td><%= fundamental_character.referer %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
