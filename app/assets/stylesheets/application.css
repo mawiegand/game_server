@@ -105,6 +105,11 @@ section.content {
   float: left;
 }
 
+.chart.large .dygraph-legend {
+  left: 60px !important;
+  width: 530px !important;
+}
+
 nav.site-navigation {
   width: 100%;
   padding: 0px;
