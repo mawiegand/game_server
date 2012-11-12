@@ -133,6 +133,7 @@
   <tr>
     <th>ID</th>
     <th>Identifier</th>
+    <th>Referer</th>
     <th>Name</th>
     <th>Login</th>
     <th>Activity</th>
@@ -147,6 +148,7 @@
   <tr>
     <td><%= link_to fundamental_character.id, fundamental_character_path(fundamental_character.id) %></td>
     <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+    <td><%= fundamental_character.referer %></td>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
           | <%= fundamental_character.alliance_tag %>
