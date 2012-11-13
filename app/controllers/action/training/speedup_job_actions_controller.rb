@@ -3,12 +3,12 @@ class Action::Training::SpeedupJobActionsController < ApplicationController
 
   before_filter :authenticate
 
-  # TODO:   THIS DOES NOT CHECK THE OWNERSHIP OF THE JOB!!!
   def create
     logger.debug params.inspect
     Training::Job.transaction do
 
       @training_job = Training::Job.lock.find(params[:action_training_speedup_job_actions][:job_id])
+      raise ForbiddenError.new('not owner of job')       unless @training_job.queue.settlement.owner == current_character
       raise BadRequestError.new('no active job')         if @training_job.active_job.nil?
       raise BadRequestError.new('already hurried job')   if @training_job.hurried?
       

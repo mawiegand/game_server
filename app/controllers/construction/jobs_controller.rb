@@ -13,6 +13,8 @@ class Construction::JobsController < ApplicationController
     if params.has_key?(:queue_id)
       @queue = Construction::Queue.find(params[:queue_id])
       raise NotFoundError.new('Queue not found.') if @queue.nil?
+      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character
+
       @construction_jobs = @queue.jobs
       @construction_jobs = [] if @construction_jobs.nil?  # necessary? or ok to send 'null' ?
     else 
@@ -45,6 +47,8 @@ class Construction::JobsController < ApplicationController
   # GET /construction/jobs/1.json
   def show
     @construction_job = Construction::Job.find(params[:id])
+
+    raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character
 
     respond_to do |format|
       format.html # show.html.erb
@@ -124,6 +128,8 @@ class Construction::JobsController < ApplicationController
     Construction::Job.transaction do
       @construction_job = Construction::Job.lock.find(params[:id])
     
+      raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character
+
       # test if there are jobs depending on this one, if not, remove job
     
       queue = @construction_job.queue

@@ -79,9 +79,9 @@ class Tutorial::Tutorial
   
   def attributes 
     { 
-      'version'        => version,
-      'quests'         => quests,
-      'updated_at'     => updated_at,
+      'version'             => version,
+      'quests'              => quests,
+      'updated_at'          => updated_at,
       'num_tutorial_quests' => num_tutorial_quests,
     }
   end
@@ -256,6 +256,11 @@ end
 
 
 <xsl:template match="RewardTests">
+<xsl:if test="ResourceProductionTest">
+            :resource_production_tests => [
+<xsl:apply-templates select="ResourceProductionTest" />
+            ],
+</xsl:if>
 <xsl:if test="BuildingTest">
             :building_tests => [
 <xsl:apply-templates select="BuildingTest" />
@@ -312,6 +317,13 @@ end
               },
 </xsl:template>
 
+<xsl:template match="ResourceProductionTest">
+              {
+                :resource => '<xsl:value-of select="@resource" />',
+                :minimum  => <xsl:apply-templates/>,
+              },
+</xsl:template>
+
 <xsl:template match="SettlementTest">
               {
                 :type => '<xsl:value-of select="@type" />',
@@ -330,6 +342,7 @@ end
               {
                 :building => '<xsl:value-of select="@building" />',
                 :min_count => <xsl:value-of select="@min_count" />,
+                :min_level => <xsl:value-of select="@min_level" />,
               },
 </xsl:template>
 

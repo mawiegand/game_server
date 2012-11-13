@@ -134,10 +134,22 @@ class Ticker::BattleHandler
             end
           end
           
-          if !winner_leader.nil?
-            
-          end
-
+          # suspend all losers of battle
+          # loser_faction = battle.other_faction(winner_faction.id)
+          # runloop.say "Loser faction #{loser_faction.id}, Participants #{loser_faction.participants.count}"
+#           
+          # if !loser_faction.nil?
+            # loser_faction.participants.each do |participant|
+              # if !participant.army.nil?  
+                # participant.army.suspension_ends_at = DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])
+                # if !participant.army.save
+                  # raise InternalServerError.new('Failed to suspend the army after battle loss')
+                # end
+#                 
+                # runloop.say "Army #{participant.army.id} '#{participant.army.name}' suspended from #{DateTime.now} till #{DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])}"
+              # end
+            # end
+          # end
         end
         
         runloop.say "Cleanup armies and battle"
@@ -182,8 +194,6 @@ class Ticker::BattleHandler
     end
   end
 
-
-
   #deletes armies that no longer exists (or marks them as removed)
   def cleanup_armies(battle)
     battle.armies.each do |army|
@@ -199,7 +209,7 @@ class Ticker::BattleHandler
       else
         #remove battle id  !!! battle_id must be set to nil for removing army from battle
         army.battle = nil
-        #army.mode = 0
+        
         if !army.save
           raise InternalServerError.new('Failed to set the battle id in the army to null')
         end

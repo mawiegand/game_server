@@ -31,9 +31,9 @@ class Tutorial::Tutorial
   
   def attributes 
     { 
-      'version'        => version,
-      'quests'         => quests,
-      'updated_at'     => updated_at,
+      'version'             => version,
+      'quests'              => quests,
+      'updated_at'          => updated_at,
       'num_tutorial_quests' => num_tutorial_quests,
     }
   end
@@ -64,7 +64,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 3,
+      :num_tutorial_quests => 26,
   
       :quests => [  # ALL QUESTS
 
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
             
             :en_US => " the first building",
   
-            :de_DE => "Das erste Gebäude",
+            :de_DE => "Der erste Jäger und Sammler",
                 
           },
           :task => {
@@ -127,6 +127,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_gatherer',
                 :min_count => 1,
+                :min_level => 1,
               },
 
             ],
@@ -145,7 +146,7 @@ class Tutorial::Tutorial
             
             :en_US => " the first building",
   
-            :de_DE => "Auf den Bauauftrag warten.",
+            :de_DE => "Der erste Jäger und Sammler",
                 
           },
           :task => {
@@ -171,14 +172,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey, dass sieht doch schon viel besser aus, findest Du nicht?  Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
+            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => " Der Jäger und Sammler sammelt alle verschiedenen Rohstoffe in geringen Mengen.",
+            :de_DE => "Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
   
             :en_US => " ",
                 
@@ -212,8 +213,6 @@ class Tutorial::Tutorial
               },
 
             ],
-
-            :experience_reward => 350,
 
           },          
 
@@ -258,28 +257,28 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Du siehst sie in den drei Felder oben links. Lass uns einen zweiten Sammler bauen, um das zu verbessern.",
+            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Du siehst sie in den drei Feldern ganz oben links. Lass uns einen zweiten Jäger und Sammler bauen, um das zu verbessern.",
   
             :en_US => "flavor text english",
                 
           },
           :description => {
             
-            :de_DE => "<p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Feldern oben links zeigen Dir Deinen aktuellen Lagerbestand. Ganz wichtig sind die Zahlen hinter dem '+'. Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>",
+            :de_DE => "<p>Deine Sammler produziert die drei Rohstoffe Stein, Holz und Fell. Die großen Zahlen in den drei Rohstofffeldern ganz oben links zeigen Dir Deinen aktuellen Vorrat. Ganz wichtig sind die Zahlen hinter dem '+' (z.B. '2/h'). Sie zeigen Dir Deine Rohstoffproduktion pro Stunde.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Cool, jetzt hast Du zwei Sammler und Deine Produktion steigt. Mit dieser Belohnung erhöht sich Dein Lagerbestand.",
+            :de_DE => "Sehr schön! Jetzt hast Du zwei Sammler und Deine Produktion ist gestiegen.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Sammler erhöhen Deine Rohstoffproduktion.",
+            :de_DE => "Jäger und Sammler bilden am Anfang den Grundstock Deiner Rohstoffproduktion.",
   
             :en_US => " ",
                 
@@ -313,8 +312,6 @@ class Tutorial::Tutorial
               },
 
             ],
-
-            :experience_reward => 200,
 
           },          
 
@@ -436,13 +433,13 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
             :en_US => "",
   
-            :de_DE => "Ausbau",
+            :de_DE => "Jäger und Sammler Level 2",
                 
           },
           :task => {
@@ -454,7 +451,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Siehst Du, so weit bist Du schon gekommen. Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann fühlt er sich wohler und bringt Dir mehr Ressourcen.",
+            :de_DE => "Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.",
   
             :en_US => "flavor text english",
                 
@@ -468,14 +465,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Wie nett von Dir. Der Sammler freut sich wie verrückt. Er hat mir ein paar Rohstoffe für Dich mitgegeben.",
+            :de_DE => "Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Er hat mir ein paar Rohstoffe für Dich mitgegeben. Außerdem erhältst Du wertvolle Erfahrung.",
   
             :en_US => "",
                 
           },
           :reward_text => {
             
-            :de_DE => "Denke daran, Deine Gebäude auszubauen. Jedes Level bringt eine höhere Produktion. Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.",
+            :de_DE => "Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.",
   
             :en_US => " ",
                 
@@ -487,7 +484,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [54, 55, ],
+          :successor_quests => [55, ],
 
           :rewards => {
             
@@ -510,7 +507,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 150,
+            :experience_reward => 50,
 
           },          
 
@@ -537,7 +534,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -555,7 +552,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine Belohnung.",
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine tolle Belohnung.",
   
             :en_US => "flavor text english",
                 
@@ -590,17 +587,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 100,
               },
 
               {
@@ -637,7 +634,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -729,7 +726,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlement_button1,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -821,7 +818,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_rank,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -913,7 +910,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlementowner,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1005,7 +1002,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1116,7 +1113,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlement_button2,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1208,7 +1205,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1337,7 +1334,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1432,7 +1429,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1533,7 +1530,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl1,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1584,7 +1581,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, 56, ],
+          :successor_quests => [16, 56, 58, ],
 
           :rewards => {
             
@@ -1634,7 +1631,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_recruit_1clubbers,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1721,7 +1718,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_army_create,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1827,7 +1824,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_army_move,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -1917,7 +1914,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -2018,7 +2015,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1campfirelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -2214,7 +2211,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1storagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -4793,6 +4790,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 2,
               },
 
             ],
@@ -4859,6 +4857,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 3,
               },
 
             ],
@@ -4925,6 +4924,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 4,
               },
 
             ],
@@ -5092,6 +5092,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 5,
               },
 
             ],
@@ -5104,7 +5105,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -5205,7 +5206,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -5278,7 +5279,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => true,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -5325,7 +5326,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl2',
+            :quest => 'quest_queue_chiefcottagelvl2_V2',
 
           },
 
@@ -5360,13 +5361,13 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
             :en_US => "Häuptlingshütte Level 2",
   
-            :de_DE => "Beauftrage die Häuptlingshütte",
+            :de_DE => "Ausbau der Häuptlingshütte",
                 
           },
           :task => {
@@ -5378,7 +5379,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine Belohnung.",
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine tolle Belohnung.",
   
             :en_US => "flavor text english",
                 
@@ -5392,7 +5393,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Endlich fertig hm? Nein? Und Du willst trotzdem eine Belohnung? Manche haben auch nie genug. Hier, nimm das und komm wieder wenn der Ausbau fertig ist.",
+            :de_DE => "Ah. Der Ausbau läuft schon. Es gibt eine weitere Belohnung, sobald sie fertig ist. Und bis dahin störe mich nicht.",
   
             :en_US => "",
                 
@@ -5411,7 +5412,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [6, ],
+          :successor_quests => [6, 54, ],
 
           :rewards => {
             
@@ -5445,6 +5446,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
                 :min_count => 1,
+                :min_level => 2,
               },
 
             ],
@@ -5457,7 +5459,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           
           :name => {
             
@@ -5496,7 +5498,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.",
+            :de_DE => "Wann immer Dir die Fertigstellung der Bauaufträge zu lange dauert, kannst Du mehr kleine Hütten bauen oder bestehende auf höhere Stufen ausbauen. Jede weitere Stuffe beschleunigt die Arbeiten.",
   
             :en_US => " ",
                 
@@ -5659,6 +5661,108 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_army_reinforce
+        {               #   quest_improve_production_1
+          :id                => 58, 
+          :symbolic_id       => :quest_improve_production_1,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Produktionssteigerung",
+  
+            :de_DE => "Erhöhe Deine Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "",
+  
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!",
+  
+            :en_US => "flavor text english",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Du solltest zum Erreichen des Ziels 5 oder 6 Jäger und Sammler bauen und einige auf Level 2 oder sogar 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
+  
+            :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Super! Das ist schon mal ein Anfang.",
+  
+            :en_US => "",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.",
+  
+            :en_US => " ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl1',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 300,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 300,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 150,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :resource_production_tests => [
+
+              {
+                :resource => 'resource_wood',
+                :minimum  => 10,
+              },
+
+              {
+                :resource => 'resource_stone',
+                :minimum  => 10,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_improve_production_1
       ],                # END OF QUESTS
 
     )

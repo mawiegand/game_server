@@ -49,6 +49,7 @@ class Fundamental::CharactersController < ApplicationController
   
 
   def self
+    external_referer = request.env["HTTP_X_ALT_REFERER"]
     
     if !current_character && request_access_token &&  request_access_token.valid? &&
         request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
@@ -99,6 +100,14 @@ class Fundamental::CharactersController < ApplicationController
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
       
+      Backend::SignInLogEntry.create({
+        direct_referer_url: request.referer,
+        referer_url:        external_referer,
+        character_id:       character.id,
+        remote_ip:          request.remote_ip,
+        sign_up:            true
+      });
+      
       character.last_login_at = DateTime.now
       character.increment(:login_count)
       character.save
@@ -131,7 +140,14 @@ class Fundamental::CharactersController < ApplicationController
       
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
-      current_character.save      
+      current_character.save   
+      
+      Backend::SignInLogEntry.create({
+        direct_referer_url: request.referer,
+        referer_url:        external_referer,
+        character_id:       current_character.id,
+        remote_ip:          request.remote_ip,
+      });   
       
       redirect_to fundamental_character_path(current_character_id)
     end

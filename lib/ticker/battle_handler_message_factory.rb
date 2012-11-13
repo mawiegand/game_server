@@ -55,7 +55,7 @@ module Ticker
     details_body = generate_message_details_body(battle)
 
     #search for all characters
-    characters = awe_battle.nil? ?  participants_from_battle(battle) : participants_from_awe_battle(awe_battle, battle) 
+    characters = awe_battle.nil? ? participants_from_battle(battle) : participants_from_awe_battle(awe_battle, battle) 
 
     #generate the messages for the characters
     characters.each do |k,v|

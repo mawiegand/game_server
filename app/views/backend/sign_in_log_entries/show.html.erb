@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @backend_sign_in_log_entry.character_id %>
+</p>
+
+<p>
+  <b>User agent:</b>
+  <%= @backend_sign_in_log_entry.user_agent %>
+</p>
+
+<p>
+  <b>Referer:</b>
+  <%= @backend_sign_in_log_entry.referer %>
+</p>
+
+<p>
+  <b>Referer url:</b>
+  <%= @backend_sign_in_log_entry.referer_url %>
+</p>
+
+<p>
+  <b>Remote ip:</b>
+  <%= @backend_sign_in_log_entry.remote_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_backend_sign_in_log_entry_path(@backend_sign_in_log_entry) %> |
+<%= link_to 'Back', backend_sign_in_log_entries_path %>

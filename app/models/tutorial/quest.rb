@@ -2,6 +2,10 @@ class Tutorial::Quest < ActiveRecord::Base
   
   belongs_to  :tutorial_state,  :class_name => "Tutorial::State",  :foreign_key => "state_id", :inverse_of => :quests, :touch => true
 
+  before_create :set_start_playtime
+  before_save   :set_finished_playtime
+  after_save :count_completed_tutorial_quests
+
   STATES = []
   STATE_NEW = 0
   STATES[STATE_NEW] = :new
@@ -14,6 +18,10 @@ class Tutorial::Quest < ActiveRecord::Base
   
   def quest
     Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
+  end
+  
+  def belongs_to_tutorial?
+    !quest.nil? && quest[:tutorial]
   end
   
   def check_for_rewards(answer_text)
@@ -151,9 +159,9 @@ class Tutorial::Quest < ActiveRecord::Base
     pool = self.tutorial_state.owner.resource_pool
     return false    if pool.nil?
     
-    symbol = test[:resource_type].to_s + '_production_rate'
+    symbol = test[:resource].to_s + '_production_rate'
     
-    pool[symbol.to_sym] >= (test[:minimum] || 0).to_f
+    (pool[symbol.to_sym] || 0) >= (test[:minimum] || 0).to_f
   end
   
   def check_buildings(building_test)
@@ -237,7 +245,7 @@ class Tutorial::Quest < ActiveRecord::Base
 
   def check_construction_queues(queue_test)
     # check for min count
-    return false if queue_test[:min_count].nil?
+    return false if queue_test[:min_count].nil? || queue_test[:min_level].nil?
     
     #check for building type
     building_type = nil
@@ -259,7 +267,9 @@ class Tutorial::Quest < ActiveRecord::Base
         settlement.queues.each do |queue|
           unless queue.jobs.nil?
             queue.jobs.each do |job|
-              if building_type[:id] === job.building_id && (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
+              if (building_type[:id] === job.building_id &&
+                  (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE)
+                  job.level_after >= queue_test[:min_level])
                 check_count += 1
                 if check_count >= queue_test[:min_count]
                   return true
@@ -269,7 +279,22 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+    
+      unless settlement.slots.nil?
+        settlement.slots.each do |slot|
+          if (!slot.level.nil? &&
+              !slot.building_id.nil? &&
+              building_type[:id] == slot.building_id &&
+              slot.level >= queue_test[:min_level])
+            check_count += 1
+            if check_count >= queue_test[:min_count]
+              return true
+            end
+          end
+        end
+      end
     end
+    
     
     # queue check failed, if method reaches this point
     false
@@ -477,5 +502,29 @@ class Tutorial::Quest < ActiveRecord::Base
     
     next_quest[:requirement][:quest].to_s == this_quest[:symbolic_id].to_s
   end
+  
+  protected
+  
+    def count_completed_tutorial_quests
+      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED && self.belongs_to_tutorial?
+        self.tutorial_state.increment(:tutorial_states_completed)
+        self.tutorial_state.save
+      end
+    end
+    
+    def set_start_playtime
+      unless tutorial_state.nil? || tutorial_state.owner.nil?
+        self.playtime_started = tutorial_state.owner.playtime || 0
+      end
+    end
+      
+    def set_finished_playtime
+      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED
+        unless tutorial_state.nil? || tutorial_state.owner.nil?
+          self.playtime_finished = tutorial_state.owner.playtime || 0
+        end
+      end
+    end
+        
 
 end
