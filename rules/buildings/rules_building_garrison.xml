@@ -5,7 +5,7 @@
   <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
-    <p>Größere Garnisonen führen zu… größeren Garnisonsarmeen wer hätte das gedacht. Auch die Feldarmeen profitieren von der erhöhten Disziplin. Es können dadurch größere Armeen ins Feld geführt werden.</p> 
+    <p>Mit größere Garnisonen können größere Armeen aufgestellt werden. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p> 
   </Description>
   <Description lang="en_US">
     <p>Bigger garrisons lead to… bigger garrison armies who would have thought that. They also affect the effective field army size.</p> 
@@ -26,7 +26,7 @@
   <Cost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</Cost> 
   <ProductionTime shortenable="false">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>     
   <Abilities> <!-- just for grouping -->
-    <GarrisonSizeBonus>20*LEVEL</GarrisonSizeBonus>
-    <ArmySizeBonus>10*LEVEL</ArmySizeBonus>
+    <GarrisonSizeBonus>25*LEVEL</GarrisonSizeBonus>
+    <ArmySizeBonus>25*LEVEL</ArmySizeBonus>
   </Abilities> 
 </Building>

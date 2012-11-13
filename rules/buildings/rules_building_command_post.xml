@@ -6,7 +6,7 @@
   <Name lang="en_US">Command Post</Name>
   <Description lang="de_DE">
     <p>Ein paar Äste zwischen drei Bäume gespannt, darauf Rinde und Blätter und fertig ist das Sonnensegel. Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Hier wird die Taktik bestimmt und Befehle erteilt. Meist immer derselbe: Haut sie feste!</p> 
-    <p>Die Kommandozentrale erhöht die Anzahl der Kommandopunkte einer Siedlung.</p>
+    <p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>  
   </Description>
   <Description lang="en_US">
     <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
@@ -29,9 +29,9 @@
   <ProductionTime shortenable="false">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>  
   <Abilities> <!-- just for grouping -->
     <CommandPoints>1+FLOOR(LEVEL/10.0)</CommandPoints>
-    <SpeedupQueue queue="queue_infantry" domain="settlement">MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_artillery" domain="settlement">MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">MIN(MAX(LEVEL-10,0),1)*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
   </Abilities>
 </Building>
   
