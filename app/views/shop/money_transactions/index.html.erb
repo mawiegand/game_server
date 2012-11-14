@@ -60,51 +60,86 @@ end %>
 <% end %>
 </table>
 
+
+<% unless @hide_offers %>
+
 <h3>Offers</h3>
 <table>
 <tr>
   <th>OfferID</th>
   <th>Paket</th>
+  <th>Anzahl</th>
+  <th>Umsatz</th>
+  <th>Erlös</th>
 </tr>
 <tr>
   <td>358</td>
   <td>1600 5D-Credits</td>
+  <td><%= Shop::MoneyTransaction.offer(358).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(358).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(358).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>359</td>
   <td>30 5D-Credits</td>
+  <td><%= Shop::MoneyTransaction.offer(359).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(359).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(359).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>360</td>
   <td>100 5D-Credits</td>
+  <td><%= Shop::MoneyTransaction.offer(360).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(360).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(360).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>361</td>
   <td>250 5D-Credits</td>
+  <td><%= Shop::MoneyTransaction.offer(361).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(361).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(361).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>362</td>
   <td>600 5D-Credits</td>
+  <td><%= Shop::MoneyTransaction.offer(362).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(362).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(362).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>363</td>
   <td>6 M Platinum-Account</td>
+  <td><%= Shop::MoneyTransaction.offer(363).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(363).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(363).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>364</td>
   <td>12 M Platinum-Account</td>
+  <td><%= Shop::MoneyTransaction.offer(364).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(364).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(364).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>365</td>
   <td>Life-Time-Platinum-Account</td>
+  <td><%= Shop::MoneyTransaction.offer(365).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(365).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(365).sum(:earnings) %> EUR</td>
 </tr>
 <tr>
   <td>366</td>
   <td>Life-Time-Platinum-Account + Tasse</td>
+  <td><%= Shop::MoneyTransaction.offer(366).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(366).sum(:gross) %> EUR</td>
+  <td><%= Shop::MoneyTransaction.offer(366).sum(:earnings) %> EUR</td>
 </tr>
 </table>
 
 <br />
+
+<% end %>
 
 <%= if (@paginate) 
   will_paginate @money_transactions 
