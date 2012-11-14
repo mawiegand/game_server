@@ -1769,7 +1769,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [57, ],
+          :successor_quests => [18, 57, ],
 
           :rewards => {
             
@@ -1871,7 +1871,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_reinforce',
+            :quest => 'quest_army_create',
 
           },
 
@@ -2856,7 +2856,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigene n Weg gehen.</p>",
+            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>",
   
             :en_US => "<p>Beschreibung des Quests auf englisch.</p>",
                 
@@ -5578,7 +5578,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrant! Verstärke die Armee.",
+            :de_DE => "Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrannt! Verstärke die Armee.",
   
             :en_US => "flavor text english",
                 
@@ -5611,7 +5611,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [],
 
           :rewards => {
             
