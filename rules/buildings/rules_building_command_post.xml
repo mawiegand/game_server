@@ -29,9 +29,9 @@
   <ProductionTime shortenable="false">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>  
   <Abilities> <!-- just for grouping -->
     <CommandPoints>1+FLOOR(LEVEL/10.0)</CommandPoints>
-    <SpeedupQueue queue="queue_infantry" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_artillery" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
   </Abilities>
 </Building>
   
