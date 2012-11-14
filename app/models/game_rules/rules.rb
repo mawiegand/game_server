@@ -3964,21 +3964,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
               {
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
               {
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "MIN(FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
               },
 
             ],
