@@ -23,9 +23,11 @@ module Ticker
       (0..(awe_faction.numArmies-1)).each do | a |
 
         participant = faction.participants[a]
-        owner = participant.army.owner
-        characters[owner.id] = Array.new if (!characters.has_key?(owner.id))
-        characters[owner.id] << participant
+        if !participant.disbanded? && !participant.army.nil?
+          owner = participant.army.owner
+          characters[owner.id] = Array.new if (!characters.has_key?(owner.id))
+          characters[owner.id] << participant
+        end
       end
     end
     characters
