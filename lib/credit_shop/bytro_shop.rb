@@ -193,7 +193,7 @@ module CreditShop
     
     def self.get_ingame_transactions
       data = {
-        startTstamp: Time.now.weeks_ago(4).to_i.to_s,
+        startTstamp: Time.now.advance(:days => -3).to_i.to_s,
         mode: 'ingame',
       }
       
