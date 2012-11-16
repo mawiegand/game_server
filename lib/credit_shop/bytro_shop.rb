@@ -55,11 +55,16 @@ module CreditShop
       data = {
         userID: identifier,
         method:  'bytro',
-        offerID: '54',
         scaleFactor: (-virtual_bank_transaction[:credit_amount_booked]).to_s,
         tstamp: Time.now.to_i.to_s,
         comment: Base64.encode64(virtual_bank_transaction[:transaction_id].to_s).gsub(/[\n\r ]/,'')  # Hack!
       }
+      
+      if virtual_bank_transaction[:credit_amount_booked] < 0
+        data[:offerID] = '249'
+      else
+        data[:offerID] = '248'
+      end
       
       query = {
         eID:    'api',
