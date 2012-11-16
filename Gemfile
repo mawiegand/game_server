@@ -14,11 +14,14 @@ gem 'gravatar_image_tag'
 
 gem 'highline', '>= 1.6.12'
 
-gem 'xmpp4r'
-
 
 gem 'simplecov',      :require => false, :group => :test
 gem 'simplecov-rcov', :require => false, :group => :test
+
+gem 'xmpp4r'
+gem 'xmpp4r-simple', '>= 0.3.2', :git => "git@github.com:blaine/xmpp4r-simple.git"
+gem 'jabber-bot'
+
 
 group :production do
   gem 'pg'
