@@ -135,21 +135,21 @@ class Ticker::BattleHandler
           end
           
           # suspend all losers of battle
-          # loser_faction = battle.other_faction(winner_faction.id)
-          # runloop.say "Loser faction #{loser_faction.id}, Participants #{loser_faction.participants.count}"
-#           
-          # if !loser_faction.nil?
-            # loser_faction.participants.each do |participant|
-              # if !participant.army.nil?  
-                # participant.army.suspension_ends_at = DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])
-                # if !participant.army.save
-                  # raise InternalServerError.new('Failed to suspend the army after battle loss')
-                # end
-#                 
-                # runloop.say "Army #{participant.army.id} '#{participant.army.name}' suspended from #{DateTime.now} till #{DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])}"
-              # end
-            # end
-          # end
+          loser_faction = battle.other_faction(winner_faction.id)
+          runloop.say "Loser faction #{loser_faction.id}, Participants #{loser_faction.participants.count}"
+          
+          if !loser_faction.nil?
+            loser_faction.participants.each do |participant|
+              if !participant.army.nil?  
+                participant.army.suspension_ends_at = DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])
+                if !participant.army.save
+                  raise InternalServerError.new('Failed to suspend the army after battle loss')
+                end
+                
+                runloop.say "Army #{participant.army.id} '#{participant.army.name}' suspended from #{DateTime.now} till #{DateTime.now.advance(:minutes => GAME_SERVER_CONFIG['ap_regeneration_duration'])}"
+              end
+            end
+          end
         end
         
         runloop.say "Cleanup armies and battle"
