@@ -63,7 +63,7 @@ class Jabber::MUC::WatchGuard < Jabber::MUC::MUCClient
     super(stream)
 
     self.add_message_callback  { |m|  }
-#   self.add_presence_callback { |ri, oldp, newp| handle_new_presence(newp) }
+    self.add_presence_callback { |ri, oldp, newp| handle_new_presence(newp) }
     self.add_join_callback     { |p|  handle_new_presence(p) }    
   end
   
@@ -79,9 +79,9 @@ begin
   
   public_room_jids = [
     "global@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D",
-#    Jabber::JID.new("plauderhöhle@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D"),
-#    Jabber::JID.new("help@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D"),
-#    Jabber::JID.new("handel@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D"),
+    "plauderhöhle@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D",
+    "help@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D",
+    "handel@#{APP_CONFIG['jabber']['muc']}/Wächter | 5D",
   ]
   
   public_room_jids.each do |room|
