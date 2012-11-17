@@ -51,6 +51,7 @@ class Fundamental::Character < ActiveRecord::Base
   scope :non_npc,    where(['(npc IS NULL OR npc = ?)', false])
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
+  scope :case_insensitive_identifier, lambda { |uid| where(["lower(identifier) = ?", uid.downcase]) }
 
   @identifier_regex = /[a-z]{16}/i 
     
