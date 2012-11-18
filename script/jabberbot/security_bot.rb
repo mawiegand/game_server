@@ -37,6 +37,8 @@ end
 
 
 def handle_new_presence(p)
+  puts p
+  
   begin
     if p.x && p.x.kind_of?(Jabber::MUC::XMUCUser) && p.x.items && p.x.items.size > 0
 
@@ -50,6 +52,7 @@ def handle_new_presence(p)
       end
     else 
       Rails.logger.error "CHAT SECURITY: ERROR: MISSING USER ITEM: #{p}"
+      puts "ERROR: MISSING USER ITEM: #{p.x}"      
     end  
   rescue => e
     Rails.logger.error  "CHAT SECURITY: ERROR: CATCHED XCEPTION WHILE HANDLING PRESENCE #{e.message}, #{e.backtrace}."
