@@ -21,9 +21,36 @@ APP_CONFIG = YAML.load(raw_config)
 
 #Jabber::debug = true
 
+class BotMailer < ActionMailer::Base
+  default from: Rails.env.production? ?  "watchguard@gs02.wack-a-doo.de" : "watchguard@test1.wack-a-doo.de"
+  
+  def breach_report(uid, domain, nickname, presence)
+    mail(:to => 'sascha@5dlab.com', 
+         :subject => "CHAT BOT: possible security breach by #{uid}.",
+         :body => "#{uid}@#{domain} tried to access the chat as #{nickname}.\n\n#{presence}"
+        )
+  end
+  
+  def missing_report(presence)
+    mail(:to => 'sascha@5dlab.com', 
+         :subject => "CHAT BOT: missing user item.",
+         :body => "Original Presence: #{presence}"
+        )
+  end
+
+  def exception_report(presence, e)
+    mail(:to => 'sascha@5dlab.com', 
+         :subject => "CHAT BOT: exception.",
+         :body => "Original Presence: #{presence}\nException #{e.message}, #{e.backtrace.inspect}"
+        )
+  end
+end
+
+
 def is_valid(uid, nickname, domain)
   return false  if domain.nil? || APP_CONFIG['jabber']['host'] != domain.downcase
   return true   if nickname == APP_CONFIG['jabber']['name']
+  return true   if nickname.starts_with? "WackyUser"    # most common reason are name changes...
 
   characters = Fundamental::Character.case_insensitive_identifier(uid)
 
@@ -37,8 +64,6 @@ end
 
 
 def handle_new_presence(p)
-  puts p
-  
   begin
     if p.x && p.x.kind_of?(Jabber::MUC::XMUCUser) && p.x.items && p.x.items.size > 0
 
@@ -49,14 +74,17 @@ def handle_new_presence(p)
       if !is_valid(uid, nickname, domain)
         Rails.logger.error "CHAT SECURITY: ERROR OR POSSIBLE BREACH: INVALID PRESENCE #{uid} on #{domain} as #{nickname}"
         puts "POSSIBLE BREACH: INVALID PRESENCE #{uid} on #{domain} as #{nickname}"
+        BotMailer.breach_report(uid, domain, nickname, p).deliver
       end
     else 
       Rails.logger.error "CHAT SECURITY: ERROR: MISSING USER ITEM: #{p}"
       puts "ERROR: MISSING USER ITEM: #{p.x}"      
+      BotMailer.missing_report(p).deliver
     end  
   rescue => e
-    Rails.logger.error  "CHAT SECURITY: ERROR: CATCHED XCEPTION WHILE HANDLING PRESENCE #{e.message}, #{e.backtrace}."
+    Rails.logger.error  "CHAT SECURITY: ERROR: CATCHED EXCEPTION WHILE HANDLING PRESENCE #{e.message}, #{e.backtrace}."
     puts  "EXCEPTION WHILE HANDLING PRESENCE #{e.message}, #{e.backtrace}."
+    BotMailer.exception_report(p, e).deliver
   end
 end
 
@@ -66,8 +94,8 @@ class Jabber::MUC::WatchGuard < Jabber::MUC::MUCClient
     super(stream)
 
     self.add_message_callback  { |m|  }
-    self.add_presence_callback { |ri, oldp, newp| handle_new_presence(newp) }
-    self.add_join_callback     { |p|  handle_new_presence(p) }    
+    self.add_presence_callback { |p| handle_new_presence(p) }
+    self.add_join_callback     { |p| handle_new_presence(p) }    
   end
   
 end
