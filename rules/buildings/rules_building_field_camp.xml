@@ -33,6 +33,6 @@
   <Abilities> <!-- just for grouping -->
     <GarrisonSizeBonus>300+40*LEVEL</GarrisonSizeBonus>
     <ArmySizeBonus>300+20*LEVEL</ArmySizeBonus>  
-    <CommandPoints>MAX(LEVEL,10)-MAX(LEVEL,9)</CommandPoints>
+    <CommandPoints>MAX(LEVEL+1,10)-MAX(LEVEL,10)</CommandPoints>
   </Abilities>
 </Building>
