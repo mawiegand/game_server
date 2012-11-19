@@ -4099,12 +4099,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p> lustiger Flavour Text hier </p>",
   
-            :de_DE => "<p>Feldlager verwandeln Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>",
+            :de_DE => "<p>Feldlager verwandeln Lagerstätten mit größeren und auch einer Armee mehr in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht an.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“ Tatsächlich ermöglicht das Feldlager die Aufstellung von mehr Kämpfern, sorgt aber auch für eine bessere Verteidigung.</p><p>Vorsicht: Ein Feldlager kann nicht abgerissen werden! Die Entscheidung ist endgültig.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus jeden Level um 40 in der Garnison und 20 für die Armee.</p><p>Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p><p>Vorsicht: Ein Feldlager kann nicht abgerissen werden! Die Entscheidung ist endgültig.</p>",
   
             :en_US => "<p>Training facility for all kinds of ground units and also hosts troops. It has its own drill ground and from to time to time you can see magnificient parades.</p><p>Don´t get mistaken for one of the punching dummies or you won´t leave the barracks alive! Training of beserkers is in progress.</p>",
                 
@@ -4163,6 +4163,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
+
+            :command_points => "MAX(LEVEL,10)-MAX(LEVEL,9)",
 
             :garrison_size_bonus => "300+40*LEVEL",
 
