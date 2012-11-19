@@ -5,7 +5,9 @@
   <Name lang="de_DE">Feldlager</Name>
   <Name lang="en_US">Field Camp</Name>
   <Description lang="de_DE">
-    <p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“ Tatsächlich ermöglicht das Feldlager die Aufstellung von mehr Kämpfern, sorgt aber auch für eine bessere Verteidigung.</p>
+    <p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p> 
+    <p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus jeden Level um 40 in der Garnison und 20 für die Armee.</p>
+    <p>Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>
     <p>Vorsicht: Ein Feldlager kann nicht abgerissen werden! Die Entscheidung ist endgültig.</p>
   </Description>
   <Description lang="en_US">
@@ -16,7 +18,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Feldlager verwandeln Lagerstätten in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht magisch an.</p>
+    <p>Feldlager verwandeln Lagerstätten mit größeren und auch einer Armee mehr in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht an.</p>
   </Flavour>
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <RequirementGroup>
@@ -29,6 +31,8 @@
     <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
   <ProductionTime shortenable="true">32*3600+4*LEVEL*3600</ProductionTime>
   <Abilities> <!-- just for grouping -->
+    <CommandPoints>MAX(LEVEL,10)-MAX(LEVEL,9)</CommandPoints>
     <GarrisonSizeBonus>300+40*LEVEL</GarrisonSizeBonus>
-    <ArmySizeBonus>300+20*LEVEL</ArmySizeBonus>  </Abilities>
+    <ArmySizeBonus>300+20*LEVEL</ArmySizeBonus>  
+    </Abilities>
 </Building>
