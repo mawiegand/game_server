@@ -39,7 +39,7 @@ end
 # identifier and booking amount
 # if amount is positive, amount of user will increase
 
-identifier = 'mQRaAkAXCZPBJLfr'
+identifier = 'IDBILitHCIsGwdWb'
 amount = 100
 
 ###############################################################################
@@ -99,11 +99,16 @@ end
 data = {
   userID: identifier,
   method:  'bytro',
-  offerID: '54',
   scaleFactor: (amount).to_s,
   tstamp: Time.now.to_i.to_s,
   comment: Base64.encode64('1').gsub(/[\n\r ]/,'')  # Hack!
 }
+
+if amount > 0
+  data[:offerID] = '249'
+else
+  data[:offerID] = '248'
+end
 
 query = {
   eID:    'api',
@@ -111,6 +116,7 @@ query = {
   action: 'processPayment',
   data:   encoded_data(data),
 }
+
 
 query = add_hash(query)
 http_response = HTTParty.post(URL_BASE, :query => query)
