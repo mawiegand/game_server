@@ -155,7 +155,10 @@ class Military::Army < ActiveRecord::Base
     !self.suspension_ends_at.nil? && self.suspension_ends_at > Time.now
   end
 
-  
+  def defending?
+    self.stance == Military::Army::STANCE_DEFENDING_FORTRESS
+  end
+    
   def can_found_outpost?
     return false    if self.details.nil?
     
