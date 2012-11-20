@@ -47,6 +47,7 @@ class Military::Battle < ActiveRecord::Base
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
       self.merge_battles(attacker, defender)
+      attacker.battle.add_fortress_defenders(attacker, defender)
     elsif attacker.fighting?                                     # add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
@@ -143,27 +144,31 @@ class Military::Battle < ActiveRecord::Base
   
   # add armies with stance 'defending fortress' to garrison fraction of battle
   def add_fortress_defenders(attacker, defender)
-    if defender.garrison && defender.location.fortress?                             
-      defender.location.armies.each do |other_army|
-        if (other_army != attacker &&                                          # don't add attacker
-            other_army != defender &&                                          # or defender, they are already involved
-            !other_army.fighting? &&                                           # only add non fighting armies
-            other_army.owner != attacker.owner &&                              # don't let armies of character defend his own attack
-            other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance
-          other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
-          self.add_army(other_army, defender.battle_participant.faction)
-          Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
-        end
-      end
-    elsif attacker.garrison && attacker.location.fortress?  
-      attacker.location.armies.each do |other_army|
-        if (other_army != attacker &&                                          # don't add attacker
-            other_army != defender &&                                          # or defender, they are already involved
-            !other_army.fighting? &&                                           # only add non fighting armies
-            other_army.owner != defender.owner &&                              # don't let armies of character defend his own attack
-            other_army.stance == Military::Army::STANCE_DEFENDING_FORTRESS)    # only add armies with appropriate stance            
-          other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
-          self.add_army(other_army, attacker.battle_participant.faction)
+    if attacker.location.fortress?                                               # attacker.location == defender.location
+      if attacker.garrison                                                       # if attacker is garrison army 
+        attacker.location.armies.each do |other_army|                            # add all defending armies
+          if (other_army != attacker &&                                          # don't add attacker
+              other_army != defender &&                                          # or defender, they are already involved
+              !other_army.fighting? &&                                           # only add non fighting armies
+              !defender.battle_participant.faction.contains_army_of(other_army.owner) &&   # don't let armies of current character defend his own attack
+              other_army.defending?)                                             # only add armies with appropriate stance            
+            other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
+            self.add_army(other_army, attacker.battle_participant.faction)
+          end
+        end                                                                      
+      elsif (defender.garrison ||                                                # if defender is garrison army
+             defender.defending? ||                                              # or a non fighting defending army
+             defender.battle_participant.faction.contains_garrison?)             # or a faghting army in garrison faction
+        defender.location.armies.each do |other_army|                            # add all defending armies
+          if (other_army != attacker &&                                          # don't add attacker
+              other_army != defender &&                                          # or defender, they are already involved
+              !other_army.fighting? &&                                           # only add non fighting armies
+              !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
+              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison 
+            other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
+            self.add_army(other_army, defender.battle_participant.faction)
+            Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
+          end
         end
       end
     end
