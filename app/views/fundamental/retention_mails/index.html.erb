@@ -1,0 +1,31 @@
+<h1>Listing fundamental_retention_mails</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Credit reward</th>
+    <th>Mail type</th>
+    <th>Identifier</th>
+    <th>Redeemed at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_retention_mails.each do |fundamental_retention_mail| %>
+  <tr>
+    <td><%= fundamental_retention_mail.character_id %></td>
+    <td><%= fundamental_retention_mail.credit_reward %></td>
+    <td><%= fundamental_retention_mail.mail_type %></td>
+    <td><%= fundamental_retention_mail.identifier %></td>
+    <td><%= fundamental_retention_mail.redeemed_at %></td>
+    <td><%= link_to 'Show', fundamental_retention_mail %></td>
+    <td><%= link_to 'Edit', edit_fundamental_retention_mail_path(fundamental_retention_mail) %></td>
+    <td><%= link_to 'Destroy', fundamental_retention_mail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Retention mail', new_fundamental_retention_mail_path %>
