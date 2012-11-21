@@ -64,12 +64,9 @@ class Shop::CreditTransactionsController < ApplicationController
         @shop_transaction.state = Shop::Transaction::STATE_CLOSED
         @shop_transaction.credit_amount_booked = booking_amount
         @shop_transaction.save
-        
-        redirect_to fundamental_character_path(character.id)
-        return
       end
     end    
 
-    respond_to { |format| format.html }    
+    redirect_to fundamental_character_path(character.id)
   end
 end
