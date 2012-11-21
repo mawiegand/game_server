@@ -67,6 +67,8 @@ class Shop::CreditTransactionsController < ApplicationController
       end
     end    
 
-    redirect_to fundamental_character_path(character.id)
+    respond_to do |format|
+      format.html { redirect_to fundamental_character_path(character.id) }
+    end
   end
 end
