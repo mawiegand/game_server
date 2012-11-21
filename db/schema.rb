@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111205224) do
+ActiveRecord::Schema.define(:version => 20121121103401) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(:version => 20121111205224) do
     t.integer  "dtimenew",                           :default => 0,   :null => false
     t.integer  "wtimenew",                           :default => 0,   :null => false
     t.integer  "mtimenew",                           :default => 0,   :null => false
+    t.integer  "month_inactive",                     :default => 0,   :null => false
+    t.integer  "day_inactive",                       :default => 0,   :null => false
   end
 
   create_table "backend_tutorial_stats", :force => true do |t|
