@@ -3,5 +3,6 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 require 'ticker/command'
 require 'ticker'
+
 Ticker::Command.new(ARGV).daemonize
 
