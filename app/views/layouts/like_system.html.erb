@@ -1,0 +1,12 @@
+<% content_for :like_system_links do %> 
+ <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.like_system.likes"), like_system_likes_path %></li>
+    <li><%= link_to I18n.translate("application.layout.like_system.dislikes"), like_system_dislikes_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:like_system_content) ? yield(:like_system_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

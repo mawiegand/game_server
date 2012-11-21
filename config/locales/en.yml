@@ -95,6 +95,10 @@ en:
         tutorial: Tutorial
         states: States
         quests: Quests
+      like_system:
+        category: LikeSystem
+        likes: Likes
+        dislikes: Dislikes
     military:
       new_army: New Army    
     messaging:

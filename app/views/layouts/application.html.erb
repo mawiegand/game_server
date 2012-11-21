@@ -51,6 +51,8 @@
       <%= yield :military_links %>
       <li><%= link_to I18n.translate("application.layout.training.category"), training_jobs_path %></li>
       <%= yield :training_links %>
+      <li><%= link_to I18n.translate("application.layout.like_system.category"), like_system_likes_path %></li>
+      <%= yield :like_system_links %>
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_money_transactions_path %></li>
       <%= yield :shop_links %>
       <li><%= link_to I18n.translate("application.layout.tutorial.category"), tutorial_tutorial_path %></li>
