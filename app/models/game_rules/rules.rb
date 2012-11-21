@@ -4155,7 +4155,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :production_time => 'EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+
-	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*3+0.5)',
+	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)',
           :production  => [
             
           ],
@@ -4834,7 +4834,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :production_time => 'EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+
-	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*3+0.5)
+	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)
 ',
           :production  => [
             
