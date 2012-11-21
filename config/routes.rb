@@ -2,6 +2,8 @@ GameServer::Application.routes.draw do
 
 
 
+  namespace :like_system do resources :likes end
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       

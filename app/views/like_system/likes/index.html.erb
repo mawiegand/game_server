@@ -1,0 +1,21 @@
+<h1>Listing like_system_likes</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @like_system_likes.each do |like_system_like| %>
+  <tr>
+    <td><%= link_to 'Show', like_system_like %></td>
+    <td><%= link_to 'Edit', edit_like_system_like_path(like_system_like) %></td>
+    <td><%= link_to 'Destroy', like_system_like, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Like', new_like_system_like_path %>
