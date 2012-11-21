@@ -19,6 +19,19 @@
   <%= @fundamental_character.name %>
 </p>
 
+<% if admin? %>
+<p>
+  <b>5D Platinum Credits:</b>
+  <%= @credit_amount || 0 %>
+  <%= form_for @shop_credit_transaction do |t| %>
+    <%= t.label :scale_factor, 'Book 5D Credits' %>:
+    <%= t.text_field :scale_factor %>
+    <%= t.hidden_field :partner_user_id %>
+    <%= t.submit 'Submit' %>
+  <% end %>  
+</p>
+<% end %>  
+
 
 
 <hr/>
