@@ -1,4 +1,6 @@
 class LikeSystem::DislikesController < ApplicationController
+  before_filter :authenticate
+  
   # GET /like_system/dislikes
   # GET /like_system/dislikes.json
   def index

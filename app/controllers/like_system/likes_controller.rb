@@ -1,4 +1,6 @@
 class LikeSystem::LikesController < ApplicationController
+  before_filter :authenticate
+  
   # GET /like_system/likes
   # GET /like_system/likes.json
   def index
