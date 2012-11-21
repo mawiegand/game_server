@@ -407,7 +407,7 @@
 
         "Date, precentage inactive \n"+
     <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.month_inactive     / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+        "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,<%= backend_stat.month_inactive     / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
     <%end%>
         "",
         {
