@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121121655) do
+ActiveRecord::Schema.define(:version => 20121121142308) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -855,11 +855,6 @@ ActiveRecord::Schema.define(:version => 20121121121655) do
   end
 
   create_table "like_system_likes", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "likes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

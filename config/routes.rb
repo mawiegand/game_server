@@ -1,11 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
-  namespace :like_system do resources :dislikes end
-
-  namespace :like_system do resources :likes end
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -232,6 +226,11 @@ GameServer::Application.routes.draw do
         resource :tutorial 
         resources :states 
         resources :quests
+      end
+
+      namespace :like_system do
+        resources :dislikes
+        resources :likes
       end
 
       resource :action, :only => [ :show ]
