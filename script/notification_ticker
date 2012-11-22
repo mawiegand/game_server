@@ -4,7 +4,5 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'envi
 require 'notification_ticker/command'
 require 'notification_ticker'
 
-puts ARGV.inspect
-
 NotificationTicker::Command.new(ARGV).daemonize
 
