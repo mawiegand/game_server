@@ -26,6 +26,9 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
+  
+  has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
+  belongs_to :last_retention_mail, :class_name => "Fundamental::RetentionMail", :foreign_key => "last_retention_mail_id"
 
   has_many :sign_ins,          :class_name => "Backend::SignInLogEntry",    :foreign_key => "character_id", :inverse_of => :character
   has_one  :sign_up,           :class_name => "Backend::SignInLogEntry",    :foreign_key => "character_id", :conditions => ["sign_up = ?", true]
@@ -657,6 +660,52 @@ class Fundamental::Character < ActiveRecord::Base
     return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
     self.advance_to_next_mundane_rank
     return true
+  end
+  
+  ############################################################################
+  #
+  #  R E T E N T I O N   M A I L S 
+  #
+  ############################################################################  
+  
+  # retention mail criterias
+  def played_too_short?
+    false 
+  end
+  
+  def paused_too_long?
+    false
+  end
+  
+  def getting_inactive?
+    name == 'paffi'
+  end
+  
+  
+  def check_for_retention_mail
+    ip_access = IdentityProvider::Access.new(
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes: ['5dentity'],
+    )
+    
+    if played_too_short?
+      mail = retention_mails.create({
+        mail_type: 'played_too_short'
+      })
+      ip_access.deliver_retention_mail(self, 'played_too_short', 'https://localhost')      
+    elsif paused_too_long?
+      mail = retention_mails.create({
+        mail_type: 'paused_too_long'
+      })
+      ip_access.deliver_retention_mail(self, 'paused_too_long', 'https://localhost')      
+    elsif getting_inactive?
+      mail = retention_mails.create({
+        credit_reward: 10,
+        mail_type: 'getting_inactive'
+      })
+      ip_access.deliver_retention_mail(self, "getting_inactive #{mail.identifier}", 'https://localhost')      
+    end
   end
   
   protected
