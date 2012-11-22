@@ -2,7 +2,7 @@ class Fundamental::RetentionMailsController < ApplicationController
   layout 'fundamental'
   
   before_filter :authenticate
-  before_filter :deny_api
+  before_filter :deny_api,        :except => [:update]
 
   # GET /fundamental/retention_mails
   # GET /fundamental/retention_mails.json
@@ -61,10 +61,10 @@ class Fundamental::RetentionMailsController < ApplicationController
   # PUT /fundamental/retention_mails/1
   # PUT /fundamental/retention_mails/1.json
   def update
-    @fundamental_retention_mail = Fundamental::RetentionMail.find(params[:id])
+    @fundamental_retention_mail = Fundamental::RetentionMail.find_by_identifier(params[:id])
 
     respond_to do |format|
-      if @fundamental_retention_mail.update_attributes(params[:fundamental_retention_mail])
+      if !@fundamental_retention_mail.nil? && !@fundamental_retention_mail.redeem_credit_reward
         format.html { redirect_to @fundamental_retention_mail, notice: 'Retention mail was successfully updated.' }
         format.json { head :ok }
       else
