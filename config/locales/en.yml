@@ -37,6 +37,7 @@ en:
         alliance_shouts: Ally-Shouts
         announcements: Announcements
         settings: Settings
+        retention_mails: Retention Mails
       messaging:
         category: Messaging
         inboxes: Inboxes
@@ -82,6 +83,7 @@ en:
       event:
         category: Event
         events: Events
+        notifications: Notifications
       shop:
         category: Shop
         resource_offers: Resource Offers

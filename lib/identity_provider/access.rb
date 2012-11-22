@@ -102,6 +102,15 @@ module IdentityProvider
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
     end
     
+    def deliver_retention_mail(recipient, subject, body)
+      notification = {
+        recipient_id:             recipient.identifier,
+        recipient_character_name: recipient.name,
+        subject:                  subject,
+        body:                     body,
+      }
+      post("/identities/#{recipient.identifier}/messages", { :message => notification })
+    end
 
     def post_result(character, round_number, round_name, won = false)
       return                            if character.ranking.nil?

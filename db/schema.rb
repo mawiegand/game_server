@@ -801,6 +801,8 @@ ActiveRecord::Schema.define(:version => 20121121142308) do
     t.integer  "notified_mundane_rank",                    :default => 0,     :null => false
     t.integer  "notified_sacred_rank",                     :default => 0,     :null => false
     t.string   "staff_roles"
+    t.integer  "last_retention_mail_id"
+    t.datetime "last_retention_mail_sent_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -840,6 +842,16 @@ ActiveRecord::Schema.define(:version => 20121121142308) do
     t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
     t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
+  end
+
+  create_table "fundamental_retention_mails", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "credit_reward"
+    t.string   "mail_type"
+    t.string   "identifier"
+    t.datetime "redeemed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "fundamental_settings", :force => true do |t|

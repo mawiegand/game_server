@@ -141,7 +141,14 @@ class Fundamental::CharactersController < ApplicationController
       
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
-      current_character.save   
+      
+      # handle if character has open retention mail
+      unless current_character.last_retention_mail.nil?
+        current_character.last_retention_mail.redeem_credit_reward
+        current_character.last_retention_mail = nil
+      end
+      
+      current_character.save
       
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,

@@ -155,7 +155,10 @@ class Military::Army < ActiveRecord::Base
     !self.suspension_ends_at.nil? && self.suspension_ends_at > Time.now
   end
 
-  
+  def defending?
+    self.stance == Military::Army::STANCE_DEFENDING_FORTRESS
+  end
+    
   def can_found_outpost?
     return false    if self.details.nil?
     
@@ -286,6 +289,12 @@ class Military::Army < ActiveRecord::Base
     
     return started_battles
   end
+  
+  # checks if the current army is in the same existing alliance as the garrison army 
+  # of the given location
+  def same_alliance_as?(location)
+    !self.alliance.nil? && !location.alliance.nil? && self.alliance == location.alliance
+  end       
   
   # implement an arbitrary formula calculating the unit's strength here. is
   # used to caclulate the army's strength and the strength of particular
