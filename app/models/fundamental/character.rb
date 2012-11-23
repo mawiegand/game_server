@@ -80,11 +80,18 @@ class Fundamental::Character < ActiveRecord::Base
   
   scope :retention_getting_inactive, where([
     Rails.env.development? || Rails.env.test? ?
-      "datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
-      "NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
-    145, 144   # 145h ago > last login > 144h (6 days) ago 
+      "last_login_at < datetime('now', '-? hours')" :
+      "last_login_at < NOW() - INTERVAL '? hour' ",
+    144   # last login > 144h (6 days) ago 
   ])
 
+  # scope :retention_getting_inactive, where([
+    # Rails.env.development? || Rails.env.test? ?
+      # "datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
+      # "NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
+    # 145, 144   # 145h ago > last login > 144h (6 days) ago 
+  # ])
+# 
   @identifier_regex = /[a-z]{16}/i 
     
   def self.find_by_id_or_identifier(user_identifier)
