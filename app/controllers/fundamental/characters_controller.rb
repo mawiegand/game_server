@@ -141,12 +141,6 @@ class Fundamental::CharactersController < ApplicationController
       
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
-      
-      # handle if character has open retention mail
-      if !current_character.last_retention_mail.nil? && current_character.last_retention_mail.credit_reward > 0
-        current_character.last_retention_mail.redeem_credit_reward
-      end
-      
       current_character.save
       
       Backend::SignInLogEntry.create({

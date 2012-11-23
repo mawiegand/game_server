@@ -57,6 +57,7 @@ class NotificationTicker::RetentionMailHandler
           # mail_type: 'retention_getting_inactive',
           # credit_reward: credit_reward,
         # })
+        # mail.redeem_credit_reward if credit_reward > 0
         # ip_access.deliver_retention_mail(mail)
         # runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, credit_reward: #{credit_reward}"
       # end      
