@@ -34,7 +34,7 @@
   <ProductionBonus id="resource_stone">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>
-  <ConversionOption building="building_quarry_2" level="(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)"/>  
+  <ConversionOption building="building_quarry_2" level="(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2.0+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)"/>  
 </Building>
 
 
