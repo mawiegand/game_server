@@ -19,7 +19,7 @@ module NotificationTicker
 
   class Runloop
     
-    DEFAULT_SLEEP_DELAY     = 10     # 300 -> 5 Minutes 
+    DEFAULT_SLEEP_DELAY     = 300    # 300 -> 5 Minutes 
 
     cattr_accessor :sleep_delay, :logger
 
