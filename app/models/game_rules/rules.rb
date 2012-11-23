@@ -4755,7 +4755,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
 
-            :trading_carts => "10*LEVEL*LEVEL*1.75",
+            :trading_carts => "FLOOR(10*LEVEL*LEVEL*1.75+0.5)",
 
             :unlock_p2p_trade => 1,            
     
