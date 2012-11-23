@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @fundamental_retention_mail.character_id %>
+</p>
+
+<p>
+  <b>Credit reward:</b>
+  <%= @fundamental_retention_mail.credit_reward %>
+</p>
+
+<p>
+  <b>Mail type:</b>
+  <%= @fundamental_retention_mail.mail_type %>
+</p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @fundamental_retention_mail.identifier %>
+</p>
+
+<p>
+  <b>Redeemed at:</b>
+  <%= @fundamental_retention_mail.redeemed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_retention_mail_path(@fundamental_retention_mail) %> |
+<%= link_to 'Back', fundamental_retention_mails_path %>

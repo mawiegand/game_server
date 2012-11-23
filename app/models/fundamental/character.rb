@@ -26,11 +26,20 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
+  
+  has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
+  belongs_to :last_retention_mail, :class_name => "Fundamental::RetentionMail", :foreign_key => "last_retention_mail_id"
 
   has_many :sign_ins,          :class_name => "Backend::SignInLogEntry",    :foreign_key => "character_id", :inverse_of => :character
   has_one  :sign_up,           :class_name => "Backend::SignInLogEntry",    :foreign_key => "character_id", :conditions => ["sign_up = ?", true]
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
+
+  has_many :send_likes,        :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :sender
+  has_many :received_likes,    :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :receiver
+
+  has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :sender
+  has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :receiver
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned,      :as => :default 
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
@@ -52,6 +61,29 @@ class Fundamental::Character < ActiveRecord::Base
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
   scope :case_insensitive_identifier, lambda { |uid| where(["lower(identifier) = ?", uid.downcase]) }
+
+  scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
+  scope :retention_played_too_short, where([
+    Rails.env.development? || Rails.env.test? ?
+      "datetime('now', '-? hours') < created_at AND created_at < datetime('now', '-? hours') AND last_login_at < datetime('now', '-? hours')" :
+      "NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'",
+    44, 24, 20  # 44h ago > created > 24h ago and last login > 20h ago 
+  ])
+  # Fundamental::Character.where(["NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'", 44, 24, 20])  
+  scope :retention_paused_too_long,  where([
+    Rails.env.development? || Rails.env.test? ?
+      "created_at < datetime('now', '-? hours') AND datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
+      "created_at < NOW() - INTERVAL '? hour'   AND NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
+    44, 49, 48  # created > 44h ago and  49h ago > last login > 48h (2 days) ago 
+  ])
+  # Fundamental::Character.where(["created_at < NOW() - INTERVAL '? hour'  AND NOW() - INTERVAL '? hour'  < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ", 44, 49, 48])
+  
+  scope :retention_getting_inactive, where([
+    Rails.env.development? || Rails.env.test? ?
+      "datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
+      "NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
+    145, 144   # 145h ago > last login > 144h (6 days) ago 
+  ])
 
   @identifier_regex = /[a-z]{16}/i 
     

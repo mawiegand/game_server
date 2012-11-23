@@ -1,7 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -58,6 +56,8 @@ GameServer::Application.routes.draw do
         resources :announcements
         
         resources :settings
+        
+        resources :retention_mails
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
       resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
@@ -154,7 +154,7 @@ GameServer::Application.routes.draw do
       end
 
       namespace :event do 
-        resources :events 
+        resources :events
       end
 
       namespace :action do  
@@ -228,6 +228,11 @@ GameServer::Application.routes.draw do
         resource :tutorial 
         resources :states 
         resources :quests
+      end
+
+      namespace :like_system do
+        resources :dislikes
+        resources :likes
       end
 
       resource :action, :only => [ :show ]

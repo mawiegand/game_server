@@ -1,0 +1,37 @@
+<%= form_for(@fundamental_retention_mail) do |f| %>
+  <% if @fundamental_retention_mail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_retention_mail.errors.count, "error") %> prohibited this fundamental_retention_mail from being saved:</h2>
+
+      <ul>
+      <% @fundamental_retention_mail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_reward %><br />
+    <%= f.number_field :credit_reward %>
+  </div>
+  <div class="field">
+    <%= f.label :mail_type %><br />
+    <%= f.text_field :mail_type %>
+  </div>
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :redeemed_at %><br />
+    <%= f.datetime_select :redeemed_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

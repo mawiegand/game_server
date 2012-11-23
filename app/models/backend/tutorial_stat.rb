@@ -10,7 +10,7 @@ class Backend::TutorialStat < ActiveRecord::Base
   def recalc_stats
     self.reset_stats
     characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', self.created_at, self.created_at - 1.days ])
-    cohort_size = characters.count
+    self.cohort_size = characters.count
 
     characters.each do |character|
       character.tutorial_state.quests.each do |quest|

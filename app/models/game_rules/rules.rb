@@ -4165,7 +4165,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
 
-            :command_points => "MAX(LEVEL,10)-MAX(LEVEL,9)",
+            :command_points => "MAX(LEVEL+1,10)-MAX(LEVEL,10)",
 
             :garrison_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 

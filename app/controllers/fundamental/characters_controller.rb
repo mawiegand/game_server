@@ -1,5 +1,6 @@
 require 'httparty'
 require 'identity_provider/access'
+require 'credit_shop'
 
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
@@ -140,7 +141,7 @@ class Fundamental::CharactersController < ApplicationController
       
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
-      current_character.save   
+      current_character.save
       
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,
@@ -158,6 +159,12 @@ class Fundamental::CharactersController < ApplicationController
   def show
     @fundamental_character = Fundamental::Character.find(params[:id])
     role = determine_access_role(@fundamental_character.id, @fundamental_character.alliance_id) || :default
+    
+    if admin?
+      account_response = CreditShop::BytroShop.get_customer_account(@fundamental_character.identifier)
+      @credit_amount = account_response[:response_data][:amount]
+      @shop_credit_transaction = Shop::CreditTransaction.new({partner_user_id: @fundamental_character.identifier})
+    end
 
     respond_to do |format|
       format.html do

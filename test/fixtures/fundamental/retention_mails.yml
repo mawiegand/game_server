@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  credit_reward: 1
+  mail_type: MyString
+  identifier: MyString
+  redeemed_at: 2012-11-21 14:29:13
+
+two:
+  character_id: 1
+  credit_reward: 1
+  mail_type: MyString
+  identifier: MyString
+  redeemed_at: 2012-11-21 14:29:13

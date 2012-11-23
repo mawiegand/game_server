@@ -14,7 +14,7 @@ class Backend::Stat < ActiveRecord::Base
   
   def self.update_all_cohorts
     Backend::Stat.find(:all).each do |stat|
-      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_ten_minutes = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = stat.month_credits_spent = stat.month_gross = stat.month_finished_quests = 0
+      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_ten_minutes = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = stat.month_credits_spent = stat.month_gross = stat.month_finished_quests = stat.month_inactive= 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
       characters.each do |character|
         stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
@@ -27,9 +27,10 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_credits_spent          += character.credits_spent_total || 0
         stat.month_gross                  += character.gross || 0.0
         stat.month_finished_quests        += character.num_finished_quests || 0
+        stat.month_inactive               += 1   if character.last_login_at < Time.now - Backend::Stat.activity_period
       end
 
-      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_ten_minutes = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = stat.day_finished_quests = 0
+      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_ten_minutes = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = stat.day_finished_quests = stat.day_inactive = 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
       characters.each do |character|
         stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
@@ -42,6 +43,7 @@ class Backend::Stat < ActiveRecord::Base
         stat.day_credits_spent          += character.credits_spent_total || 0
         stat.day_gross                  += character.gross || 0.0
         stat.day_finished_quests        += character.num_finished_quests || 0
+        stat.day_inactive               += 1   if character.last_login_at < Time.now - Backend::Stat.activity_period
       end   
          
       stat.save
@@ -115,7 +117,7 @@ class Backend::Stat < ActiveRecord::Base
   def self.num_users_last_month
     Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 1.months]).count
   end  
-  
+    
   
   def self.num_lost_users_last_day
     Fundamental::Character.where(['npc != ? AND last_login_at > ? AND last_login_at < ?',

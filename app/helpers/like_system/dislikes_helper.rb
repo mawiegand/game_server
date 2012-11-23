@@ -1,0 +1,2 @@
+module LikeSystem::DislikesHelper
+end

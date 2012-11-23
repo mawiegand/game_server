@@ -19,6 +19,19 @@
   <%= @fundamental_character.name %>
 </p>
 
+<% if admin? %>
+<p>
+  <b>5D Platinum Credits:</b>
+  <%= @credit_amount || 0 %>
+  <%= form_for @shop_credit_transaction do |t| %>
+    <%= t.label :scale_factor, 'Book 5D Credits' %>:
+    <%= t.text_field :scale_factor %>
+    <%= t.hidden_field :partner_user_id %>
+    <%= t.submit 'Submit' %>
+  <% end %>  
+</p>
+<% end %>  
+
 
 
 <hr/>
@@ -131,6 +144,16 @@
 <p>
   <b>Base region:</b>
   <%= @fundamental_character.base_region_id %>
+</p>
+
+<p>
+  <b>Last Retention Mail:</b>
+  <%= @fundamental_character.last_retention_mail_id %>
+</p>
+
+<p>
+  <b>Last Retention Mail sent at:</b>
+  <%= @fundamental_character.last_retention_mail_sent_at %>
 </p>
 
 

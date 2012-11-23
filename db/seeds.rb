@@ -274,5 +274,13 @@ Shop::BonusOffer.create({
   ends_at: Time.now + 1.year 
 })
 
+Shop::PlatinumOffer.create({
+  title: 'Platinum Account',
+  price: 10,
+  duration: 168,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year 
+})
+
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111205224) do
+ActiveRecord::Schema.define(:version => 20121122162812) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(:version => 20121111205224) do
     t.integer  "dtimenew",                           :default => 0,   :null => false
     t.integer  "wtimenew",                           :default => 0,   :null => false
     t.integer  "mtimenew",                           :default => 0,   :null => false
+    t.integer  "month_inactive",                     :default => 0,   :null => false
+    t.integer  "day_inactive",                       :default => 0,   :null => false
   end
 
   create_table "backend_tutorial_stats", :force => true do |t|
@@ -799,6 +801,8 @@ ActiveRecord::Schema.define(:version => 20121111205224) do
     t.integer  "notified_mundane_rank",                    :default => 0,     :null => false
     t.integer  "notified_sacred_rank",                     :default => 0,     :null => false
     t.string   "staff_roles"
+    t.integer  "last_retention_mail_id"
+    t.datetime "last_retention_mail_sent_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -840,9 +844,29 @@ ActiveRecord::Schema.define(:version => 20121111205224) do
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
   end
 
+  create_table "fundamental_retention_mails", :force => true do |t|
+    t.integer  "character_id"
+    t.string   "mail_type"
+    t.string   "identifier"
+    t.datetime "redeemed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "credit_reward", :default => 0, :null => false
+  end
+
   create_table "fundamental_settings", :force => true do |t|
     t.boolean  "email_messages", :default => true, :null => false
     t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "like_system_dislikes", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "like_system_likes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

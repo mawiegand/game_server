@@ -2,7 +2,7 @@ class Event::EventsController < ApplicationController
   layout 'event'  
   
   before_filter :authenticate
-  
+  before_filter :deny_api
   
   # GET /events/events
   # GET /events/events.json

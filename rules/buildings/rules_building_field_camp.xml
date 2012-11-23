@@ -31,8 +31,8 @@
   <ProductionTime shortenable="true">EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+
 	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <GarrisonSizeBonus>300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</GarrisonSizeBonus>
-    <ArmySizeBonus>300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</ArmySizeBonus>  
-    <CommandPoints>MAX(LEVEL,10)-MAX(LEVEL,9)</CommandPoints>
+    <GarrisonSizeBonus>300+40*LEVEL</GarrisonSizeBonus>
+    <ArmySizeBonus>300+20*LEVEL</ArmySizeBonus>  
+    <CommandPoints>MAX(LEVEL+1,10)-MAX(LEVEL,10)</CommandPoints>
   </Abilities>
 </Building>
