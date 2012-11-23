@@ -53,15 +53,19 @@ class ApplicationController < ActionController::Base
       logger.debug("Executing #{controller_name}::#{action_name} took #{elapsed*1000}ms in real-time.")
     end
     
-    def setup_for_restkit
-      if use_restkit_api
+    def setup_for_restkit 
+      if use_restkit_api?  
         ActiveRecord::Base.include_root_in_json = true 
         logger.debug "USE RESTKIT API"
       end 
     end
     
-    def use_restkit_api
-      request.headers['X-RESTKIT-API']      
+    def use_restkit_api?
+      request.headers['X-RESTKIT-API']     
+    end
+    
+    def include_root(hash, root) 
+      use_restkit_api? ? { root => hash } : hash
     end
   
     # Set the locale according to the user specified locale or to the default
