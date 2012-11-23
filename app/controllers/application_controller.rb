@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   include Auth::SessionsHelper
 
   before_filter :set_locale  # get the locale from the user parameters
+  before_filter :setup_for_restkit
   around_filter :time_action
 
   rescue_from BearerAuthError, :with => :render_response_for_bearer_auth_exception
@@ -50,6 +51,17 @@ class ApplicationController < ActionController::Base
       elapsed = Time.now - started
       logger.debug("IF MODIFIED SINCE IN REQUEST HEADER: #{ request.env['HTTP_IF_MODIFIED_SINCE'] }.")
       logger.debug("Executing #{controller_name}::#{action_name} took #{elapsed*1000}ms in real-time.")
+    end
+    
+    def setup_for_restkit
+      if use_restkit_api
+        ActiveRecord::Base.include_root_in_json = true 
+        logger.debug "USE RESTKIT API"
+      end 
+    end
+    
+    def use_restkit_api
+      request.headers['X-RESTKIT-API']      
     end
   
     # Set the locale according to the user specified locale or to the default
