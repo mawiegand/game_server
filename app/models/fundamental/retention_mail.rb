@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'credit_shop'
 
 class Fundamental::RetentionMail < ActiveRecord::Base
@@ -38,10 +40,7 @@ class Fundamental::RetentionMail < ActiveRecord::Base
       shop_transaction.credit_amount_after = transaction_response[:response_data][:amount]
       shop_transaction.state = Shop::Transaction::STATE_CLOSED
       shop_transaction.credit_amount_booked = booking_amount
-      if shop_transaction.save
-        self.redeemed_at = Time.now
-        self.save
-      end
+      shop_transaction.save
     else
       false
     end
@@ -49,33 +48,33 @@ class Fundamental::RetentionMail < ActiveRecord::Base
   
   def subject
     if mail_type == 'played_too_short'
-      "In Deiner Siedlung geht's grad drunter und drueber"
+      "In Deiner Siedlung geht's grad drunter und drüber"
     elsif mail_type == 'paused_too_long'
-      "In Deiner Siedlung geht's grad drunter und drueber"
+      "In Deiner Siedlung geht's grad drunter und drüber"
     elsif mail_type == 'retention_getting_inactive'
-      "In Deiner Siedlung geht's grad drunter und drueber"
+      "In Deiner Siedlung geht's grad drunter und drüber"
     end
   end
   
   def body
     if mail_type == 'played_too_short'
       "Hallo #{character.name},\n\n" +
-      "Deine Steine schimmeln, Dein Holz schlaegt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drueber. Log Dich jetzt ein und sorge fuer Ordnung:\n\n" +
+      "Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n" +
       "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
-      "Viel Spass wuenscht dir\n\n" +
+      "Viel Spaß wünscht Dir\n\n" +
       "Dein Wack-A-Doo Team"
     elsif mail_type == 'paused_too_long'
       "Hallo #{character.name},\n\n" +
-      "Deine Steine schimmeln, Dein Holz schlaegt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drueber. Log Dich jetzt ein und sorge fuer Ordnung:\n\n" +
+      "Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n" +
       "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
-      "Viel Spass wuenscht dir\n\n" +
+      "Viel Spaß wünscht Dir\n\n" +
       "Dein Wack-A-Doo Team"
     elsif mail_type == 'retention_getting_inactive'
       "Hallo #{character.name},\n\n" +
-      "Deine Steine schimmeln, Dein Holz schlaegt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drueber. Log Dich jetzt ein und sorge fuer Ordnung:\n\n" +
+      "Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n" +
       "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
       "Als Belohnung warten #{credit_reward} 5D Platinum Credits im Shop auf Dich!\n\n" +
-      "Viel Spass wuenscht dir\n\n" +
+      "Viel Spaß wünscht Dir\n\n" +
       "Dein Wack-A-Doo Team"
     end
   end
