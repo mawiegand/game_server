@@ -34,6 +34,7 @@ namespace :deploy do
     stop
     start
     restart_ticker
+    # restart_notification_ticker
   end
 
 #  desc "Reset DB"
@@ -67,6 +68,22 @@ namespace :deploy do
   desc "Stop Ticker"
   task :stop_ticker do
     run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/ticker stop"
+  end
+  
+  desc "Restart Notification Ticker"
+  task :restart_notification_ticker do
+    stop_notification_ticker
+    start_notification_ticker
+  end
+
+  desc "Start Notification Ticker"
+  task :start_notification_ticker do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+  end
+
+  desc "Stop Notification Ticker"
+  task :stop_notification_ticker do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
   end
   
   desc "Check Consistency"

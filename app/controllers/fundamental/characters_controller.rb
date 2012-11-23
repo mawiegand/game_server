@@ -143,9 +143,8 @@ class Fundamental::CharactersController < ApplicationController
       current_character.increment(:login_count)
       
       # handle if character has open retention mail
-      unless current_character.last_retention_mail.nil?
+      if !current_character.last_retention_mail.nil? && current_character.last_retention_mail.credit_reward > 0
         current_character.last_retention_mail.redeem_credit_reward
-        current_character.last_retention_mail = nil
       end
       
       current_character.save

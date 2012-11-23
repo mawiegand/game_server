@@ -102,14 +102,14 @@ module IdentityProvider
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
     end
     
-    def deliver_retention_mail(recipient, subject, body)
+    def deliver_retention_mail(mail)
       notification = {
-        recipient_id:             recipient.identifier,
-        recipient_character_name: recipient.name,
-        subject:                  subject,
-        body:                     body,
+        recipient_id:             mail.character.identifier,
+        recipient_character_name: mail.character.name,
+        subject:                  mail.subject,
+        body:                     mail.body,
       }
-      post("/identities/#{recipient.identifier}/messages", { :message => notification })
+      post("/identities/#{mail.character.identifier}/messages", { :message => notification })
     end
 
     def post_result(character, round_number, round_name, won = false)

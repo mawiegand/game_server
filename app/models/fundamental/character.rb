@@ -62,6 +62,26 @@ class Fundamental::Character < ActiveRecord::Base
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
   scope :case_insensitive_identifier, lambda { |uid| where(["lower(identifier) = ?", uid.downcase]) }
 
+  scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
+  scope :retention_played_too_short, where([
+    Rails.env.development? || Rails.env.test? ?
+      "datetime('now', '? hours') < created_at AND created_at < datetime('now', '? hours') AND last_login_at < datetime('now', '? hours')" :
+      "NOW() - INTERVAL '? hour'  < created_at AND created_at < NOW() - INTERVAL '? hour'  AND last_login_at < NOW() - INTERVAL '? hour'",
+    -44, -24, -20  # 44h ago > created > 24h ago and last login > 20h ago 
+  ])
+  scope :retention_paused_too_long,  where([
+    Rails.env.development? || Rails.env.test? ?
+      "created_at < datetime('now', '? hours') AND datetime('now', '? hours') < last_login_at AND last_login_at < datetime('now', '? hours')" :
+      "created_at < NOW() - INTERVAL '? hour'  AND NOW() - INTERVAL '? hour'  < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
+    -44, -49, -48  # created > 44h ago and  49h ago > last login > 48h (2 days) ago 
+  ])
+  scope :retention_getting_inactive, where([
+    Rails.env.development? || Rails.env.test? ?
+      "datetime('now', '? hours') < last_login_at AND last_login_at < datetime('now', '? hours')" :
+      "NOW() - INTERVAL '? hour'  < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
+    -145, -144   # 145h ago > last login > 144h (6 days) ago 
+  ])
+
   @identifier_regex = /[a-z]{16}/i 
     
   def self.find_by_id_or_identifier(user_identifier)
@@ -666,52 +686,6 @@ class Fundamental::Character < ActiveRecord::Base
     return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
     self.advance_to_next_mundane_rank
     return true
-  end
-  
-  ############################################################################
-  #
-  #  R E T E N T I O N   M A I L S 
-  #
-  ############################################################################  
-  
-  # retention mail criterias
-  def played_too_short?
-    false 
-  end
-  
-  def paused_too_long?
-    false
-  end
-  
-  def getting_inactive?
-    name == 'paffi'
-  end
-  
-  
-  def check_for_retention_mail
-    ip_access = IdentityProvider::Access.new(
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes: ['5dentity'],
-    )
-    
-    if played_too_short?
-      mail = retention_mails.create({
-        mail_type: 'played_too_short'
-      })
-      ip_access.deliver_retention_mail(self, 'played_too_short', 'https://localhost')      
-    elsif paused_too_long?
-      mail = retention_mails.create({
-        mail_type: 'paused_too_long'
-      })
-      ip_access.deliver_retention_mail(self, 'paused_too_long', 'https://localhost')      
-    elsif getting_inactive?
-      mail = retention_mails.create({
-        credit_reward: 10,
-        mail_type: 'getting_inactive'
-      })
-      ip_access.deliver_retention_mail(self, "getting_inactive #{mail.identifier}", 'https://localhost')      
-    end
   end
   
   protected

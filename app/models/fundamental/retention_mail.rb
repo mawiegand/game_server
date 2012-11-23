@@ -38,10 +38,36 @@ class Fundamental::RetentionMail < ActiveRecord::Base
       shop_transaction.credit_amount_after = transaction_response[:response_data][:amount]
       shop_transaction.state = Shop::Transaction::STATE_CLOSED
       shop_transaction.credit_amount_booked = booking_amount
-      shop_transaction.save
+      if shop_transaction.save
+        self.redeemed_at = Time.now
+        self.save
+      end
     else
       false
     end
+  end
+  
+  def subject
+    "Deine Untertanen vermissen Dich"
+  end
+  
+  def body
+    if mail_type == 'getting_inactive'
+      "Hallo #{name},\n\n" +
+      "Deine Siedlungsbewohner vermissen sehnsuechtig ihren Halbgott. Log Dich jetzt ein und beschuetze Deine Bevoelkerung vor feindlichen Angriffen:\n\n" +
+      "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
+      "Als Belohnung warten #{max_conversion_state == paying ? 16 : 12} 5D Platinum Credits im Shop auf Dich!\n\n" +
+      "Viel Spass wuenscht dir\n\n" +
+      "Dein Wack-A-Doo Team"
+    else
+      "Hallo #{name},\n\n" +
+      "Deine Steine schimmeln, Dein Holz schlaegt wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drueber. Log Dich jetzt ein und sorge fuer Ordnung:\n\n" +
+      "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
+      "Viel Spass wuenscht dir\n\n" +
+      "Dein Wack-A-Doo Team"
+    end
+    
+    "#{mail_type} #{GAME_SERVER_CONFIG['base_url']}"
   end
   
   protected
