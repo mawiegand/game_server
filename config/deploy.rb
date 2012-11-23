@@ -34,7 +34,7 @@ namespace :deploy do
     stop
     start
     restart_ticker
-    # restart_notification_ticker
+    restart_notification_ticker
   end
 
 #  desc "Reset DB"
