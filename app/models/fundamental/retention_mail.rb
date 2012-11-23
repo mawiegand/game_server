@@ -56,7 +56,7 @@ class Fundamental::RetentionMail < ActiveRecord::Base
     elsif mail_type == 'paused_too_long'
       "In Deiner Siedlung geht's grad drunter und drüber"
     elsif mail_type == 'getting_inactive'
-      "#{character.name}, " + (character.max_conversion_state == 'paying' ? "#{credit_reward} 5D Platinum Credits" : "10 Goldkröten") + " - Hol dir deine Belohnung!"
+      "#{character.name}, " + (character.paying_user? ? "#{credit_reward} 5D Platinum Credits" : "10 Goldkröten") + " - Hol dir deine Belohnung!"
     end
   end
   
@@ -76,7 +76,7 @@ class Fundamental::RetentionMail < ActiveRecord::Base
     elsif mail_type == 'getting_inactive'
       "#{character.name}!\n\n" +
       "Du hast Dein Können bewiesen und unsere Siedlung aufgebaut, aber wir Siedlungsbewohner haben schon lange nichts mehr von Dir gehört. Deine Gegner haben Dich schon abgeschrieben, aber ich glaube weiterhin an Dich!\n\n" + 
-      "Log Dich umgehend unter #{GAME_SERVER_CONFIG['base_url']} ein und zeig es ihnen! Als Unterstützung gebe ich Dir " + (character.max_conversion_state == 'paying' ? "#{credit_reward} 5D Platinum Credits" : "10 Goldkröten") + " aus meiner persönlichen Schatzkiste.\n\n" +
+      "Log Dich umgehend unter #{GAME_SERVER_CONFIG['base_url']} ein und zeig es ihnen! Als Unterstützung gebe ich Dir " + (character.paying_user? ? "#{credit_reward} 5D Platinum Credits" : "10 Goldkröten") + " aus meiner persönlichen Schatzkiste.\n\n" +
       "Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n" +
       "Der Chef\n\n"      
     end
