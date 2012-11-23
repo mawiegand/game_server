@@ -47,21 +47,20 @@ class NotificationTicker::RetentionMailHandler
       end      
     end     
          
-    # Fundamental::Character.non_npc.retention_getting_inactive.retention_no_mail_pending.each do |character|
-      # if(!character.max_conversion_state.nil? &&
-          # character.max_conversion_state != 'registered' &&
-          # character.max_conversion_state != 'logged_in_once' &&
-          # character.max_conversion_state != 'ten_minutes')
-        # credit_reward = (character.max_conversion_state == "paying") ? 16 : 12
-        # mail = character.retention_mails.create({
-          # mail_type: 'retention_getting_inactive',
-          # credit_reward: credit_reward,
-        # })
-        # mail.redeem_credit_reward if credit_reward > 0
-        # ip_access.deliver_retention_mail(mail)
-        # runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, credit_reward: #{credit_reward}"
-      # end      
-    # end     
+    Fundamental::Character.non_npc.retention_getting_inactive.retention_no_mail_pending.each do |character|
+      credit_reward = (character.max_conversion_state == "paying") ? 16 : 12
+      mail = character.retention_mails.create({
+        mail_type: 'getting_inactive',
+        credit_reward: credit_reward,
+      })
+      mail.redeem_credit_reward if credit_reward > 0
+      ip_access.deliver_retention_mail(mail)
+      if character.max_conversion_state == "paying"
+        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, credit_reward: #{credit_reward}"
+      else
+        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, toad_reward: 10"
+      end
+    end     
          
     runloop.say "Retention mail handler process completed"
   end
