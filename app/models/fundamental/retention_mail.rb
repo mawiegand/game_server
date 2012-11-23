@@ -10,7 +10,7 @@ class Fundamental::RetentionMail < ActiveRecord::Base
   before_save  :add_identifier
    
   def redeem_credit_reward
-    if character.max_conversion_state == 'paying'
+    if character.paying_user?
       booking_amount = -self.credit_reward    # for adding credits the amount has to be negative
       return false if booking_amount >= 0
       
