@@ -1,11 +1,13 @@
 <h1>Listing fundamental_retention_mails</h1>
 
+<%= will_paginate @fundamental_retention_mails %>
+
 <table>
   <tr>
     <th>Character</th>
     <th>Credit reward</th>
     <th>Mail type</th>
-    <th>Identifier</th>
+    <th>Mail Identifier</th>
     <th>Redeemed at</th>
     <th></th>
     <th></th>
@@ -14,7 +16,7 @@
 
 <% @fundamental_retention_mails.each do |fundamental_retention_mail| %>
   <tr>
-    <td><%= fundamental_retention_mail.character_id %></td>
+    <td><%= link_to fundamental_retention_mail.character.name, fundamental_retention_mail.character %></td>
     <td><%= fundamental_retention_mail.credit_reward %></td>
     <td><%= fundamental_retention_mail.mail_type %></td>
     <td><%= fundamental_retention_mail.identifier %></td>
@@ -25,6 +27,8 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @fundamental_retention_mails %>
 
 <br />
 

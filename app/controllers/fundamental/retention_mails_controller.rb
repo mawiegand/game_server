@@ -7,7 +7,7 @@ class Fundamental::RetentionMailsController < ApplicationController
   # GET /fundamental/retention_mails
   # GET /fundamental/retention_mails.json
   def index
-    @fundamental_retention_mails = Fundamental::RetentionMail.all
+    @fundamental_retention_mails = Fundamental::RetentionMail.paginate(:order => 'id', :page => params[:page], :per_page => 50)    
 
     respond_to do |format|
       format.html # index.html.erb

@@ -20,7 +20,9 @@
     <th>SP</th>
     <th>Banned</th>
     <th>Base</th>
-    <th>Referer</th>
+    <th>Referrer</th>
+    <th>Last Retention Mail</th>
+    <th>Mail sent at</th>
     <th></th>
     <th></th>
     <th></th>
@@ -63,6 +65,8 @@
     <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
     <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
     <td><%= fundamental_character.referer %></td>
+    <td><%= fundamental_character.last_retention_mail.nil? ? '-' : link_to(fundamental_character.last_retention_mail.mail_type, fundamental_character.last_retention_mail) %></td>
+    <td><%= fundamental_character.last_retention_mail_sent_at %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
