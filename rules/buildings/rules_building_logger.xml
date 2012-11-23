@@ -29,12 +29,12 @@
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)</Cost>    
   <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
-<ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)</ProductionTime>            
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)</ProductionTime>            
   <Production id="resource_wood">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)</Production>  
   <ProductionBonus id="resource_wood">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>
-  <ConversionOption building="building_logger_2" level="(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)"/>  
+  <ConversionOption building="building_logger_2" level="(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2.0+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)"/>  
 </Building>
 
 
