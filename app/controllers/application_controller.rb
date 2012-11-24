@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include Auth::SessionsHelper
 
   before_filter :set_locale  # get the locale from the user parameters
-  before_filter :setup_for_restkit
+#  before_filter :setup_for_restkit
   around_filter :time_action
 
   rescue_from BearerAuthError, :with => :render_response_for_bearer_auth_exception
