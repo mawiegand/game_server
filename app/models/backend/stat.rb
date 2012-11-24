@@ -27,7 +27,7 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_credits_spent          += character.credits_spent_total || 0
         stat.month_gross                  += character.gross || 0.0
         stat.month_finished_quests        += character.num_finished_quests || 0
-        stat.month_inactive               += 1   if character.last_login_at < Time.now - Backend::Stat.activity_period
+        stat.month_inactive               += 1   if character.last_login_at.nil? || character.last_login_at < Time.now - Backend::Stat.activity_period
       end
 
       stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_ten_minutes = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = stat.day_finished_quests = stat.day_inactive = 0
@@ -43,7 +43,7 @@ class Backend::Stat < ActiveRecord::Base
         stat.day_credits_spent          += character.credits_spent_total || 0
         stat.day_gross                  += character.gross || 0.0
         stat.day_finished_quests        += character.num_finished_quests || 0
-        stat.day_inactive               += 1   if character.last_login_at < Time.now - Backend::Stat.activity_period
+        stat.day_inactive               += 1   if character.last_login_at.nil? || character.last_login_at < Time.now - Backend::Stat.activity_period
       end   
          
       stat.save
