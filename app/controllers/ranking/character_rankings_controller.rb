@@ -8,6 +8,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "overall_score"  if params[:sort] == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "max_experience" if params[:sort] == 'experience'
+    sort = "kills"          if params[:sort] == 'kills'
 
     @ranking_character_rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort} DESC")
     @title = "Player Ranking"
