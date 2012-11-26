@@ -559,6 +559,17 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
   
+  def propagate_kill_changes
+    kills_change = self.changes[:kills]
+    if !kills_change.nil?
+      if !self.ranking.nil?
+        self.ranking.kills = kill_change[1]
+        self.ranking.save
+      end
+    end
+    true
+  end    
+  
   def propagate_score_changes
     score_change = self.changes[:score]
     if !score_change.nil?
