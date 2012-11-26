@@ -61,6 +61,13 @@ class Fundamental::Character < ActiveRecord::Base
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
   scope :case_insensitive_identifier, lambda { |uid| where(["lower(identifier) = ?", uid.downcase]) }
+  
+  scope :paying,           where(max_conversion_state: "paying")
+  scope :long_term_active, where(max_conversion_state: "long_term_active")
+  scope :active,           where(max_conversion_state: "active")
+  scope :second_day,       where(max_conversion_state: "logged_in_two_days")
+  scope :ten_minutes,      where(max_conversion_state: "ten_minutes")
+  scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
 
   scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, where([

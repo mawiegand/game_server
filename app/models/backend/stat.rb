@@ -152,7 +152,27 @@ class Backend::Stat < ActiveRecord::Base
   end
   
   def self.num_users
-    Fundamental::Character.where(['npc != ?', true]).count
+    Fundamental::Character.non_npc.count
+  end
+
+  def self.num_logged_in_once
+    Fundamental::Character.non_npc.logged_in_once.count
+  end
+  
+  def self.num_ten_minutes
+    Fundamental::Character.non_npc.ten_minutes.count
+  end
+  
+  def self.num_second_day
+    Fundamental::Character.non_npc.second_day.count
+  end
+  
+  def self.num_active
+    Fundamental::Character.non_npc.active.count
+  end
+  
+  def self.num_long_term_active
+    Fundamental::Character.non_npc.long_term_active.count
   end
   
   def self.num_paying_users
@@ -278,8 +298,13 @@ class Backend::Stat < ActiveRecord::Base
     self.active_users     = Backend::Stat.num_active_users
     self.active_customers = Backend::Stat.num_paying_active_users
 
-    self.total_users      = Backend::Stat.num_users
-    self.total_customers  = Backend::Stat.num_paying_users
+    self.total_users            = Backend::Stat.num_users
+    self.total_logged_in_once   = Backend::Stat.num_logged_in_once
+    self.total_ten_minutes      = Backend::Stat.num_ten_minutes
+    self.total_second_day       = Backend::Stat.num_second_day
+    self.total_active           = Backend::Stat.num_active
+    self.total_long_term_active = Backend::Stat.num_long_term_active
+    self.total_customers        = Backend::Stat.num_paying_users
 
     resource_stats = Backend::Stat.resource_stats
     resource_stats.attributes.each do |k,v|
