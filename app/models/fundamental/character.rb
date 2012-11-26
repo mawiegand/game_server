@@ -207,7 +207,7 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
-  def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
+  def self.create_new_character(identifier, name, start_resource_modificator, npc = false, start_location = nil)
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
@@ -226,8 +226,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_ranking({
         character_name: name,
       });
-
-      location = Map::Location.find_empty
+      
+      location = start_location.nil? ? Map::Location.find_empty : start_location
       if !location || !character.claim_location(location)
         character.destroy
         raise InternalServerError.new('Could not claim an empty location.')
