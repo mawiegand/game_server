@@ -12,6 +12,7 @@ class AddConversionStatsToBackendStat < ActiveRecord::Migration
       stat.total_second_day       = Fundamental::Character.non_npc.where(["created_at < ?", stat.created_at]).second_day.count
       stat.total_active           = Fundamental::Character.non_npc.where(["created_at < ?", stat.created_at]).active.count
       stat.total_long_term_active = Fundamental::Character.non_npc.where(["created_at < ?", stat.created_at]).long_term_active.count
+      stat.save
     end
   end
   
