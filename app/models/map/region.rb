@@ -1,4 +1,4 @@
-require 'Util'
+require 'util'
 
 class Map::Region < ActiveRecord::Base
   
