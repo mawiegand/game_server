@@ -4,7 +4,7 @@ class AddCharacterIdToBattleParticipant < ActiveRecord::Migration
     add_column :military_battle_participants, :total_kills, :integer, :default => 0, :null => false
     
     Military::BattleParticipant.all.each do |participant|
-      participant.charcter_id = participant.army.owner_id unless participant.army.nil?
+      participant.character_id = participant.army.owner_id unless participant.army.nil?
       participant.save
     end
   end
