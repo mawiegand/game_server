@@ -1281,6 +1281,8 @@ ActiveRecord::Schema.define(:version => 20121126133342) do
     t.integer  "members_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "kills",            :default => 0, :null => false
+    t.integer  "kills_rank"
   end
 
   create_table "ranking_character_rankings", :force => true do |t|
@@ -1307,6 +1309,8 @@ ActiveRecord::Schema.define(:version => 20121126133342) do
     t.string   "max_experience_army_name"
     t.integer  "max_experience_army_rank"
     t.integer  "max_experience_army_id"
+    t.integer  "kills",                    :default => 0, :null => false
+    t.integer  "kills_rank"
   end
 
   create_table "settlement_histories", :force => true do |t|
