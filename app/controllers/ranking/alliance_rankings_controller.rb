@@ -9,6 +9,7 @@ class Ranking::AllianceRankingsController < ApplicationController
     sort = "overall_score"  if params[:sort] == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "num_members"    if params[:sort] == 'members'
+    sort = "kills"          if params[:sort] == 'kills'
 
     @ranking_alliance_rankings = Ranking::AllianceRanking.find(:all, :order => "#{sort} DESC")
     @title = "Alliance Ranking"

@@ -10,6 +10,7 @@
       <th class="number"><%= link_to "Controlled Regions", ranking_alliance_rankings_path(:sort => 'fortress') %></th>
       <th class="number"><%= link_to "Overall score", ranking_alliance_rankings_path(:sort => 'overall') %></th>
       <th class="number"><%= link_to "Resource score", ranking_alliance_rankings_path(:sort => 'resource') %></th>
+      <th class="number"><%= link_to "Beaten Units", ranking_alliance_rankings_path(:sort => 'kills') %></th>
       <th class="number"><%= link_to "Members", ranking_alliance_rankings_path(:sort => 'members') %></th>
     </tr>
     <% 
@@ -22,6 +23,7 @@
       <td class="number"><%= ranking_alliance_ranking.num_fortress %></td>
       <td class="number"><%= ranking_alliance_ranking.overall_score %></td>
       <td class="number"><%= ranking_alliance_ranking.resource_score %></td>
+      <td class="number"><%= ranking_alliance_ranking.kills %></td>
       <td class="number"><%= ranking_alliance_ranking.num_members %></td>
     </tr>
     <% end %>

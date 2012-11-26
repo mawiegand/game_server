@@ -53,6 +53,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
+  after_save  :propagate_kills_changes
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
@@ -558,6 +559,17 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  def propagate_kills_changes
+    kills_change = self.changes[:kills]
+    if !kills_change.nil?
+      if !self.ranking.nil?
+        self.ranking.kills = kills_change[1]
+        self.ranking.save
+      end
+    end
+    true
+  end    
   
   def propagate_score_changes
     score_change = self.changes[:score]
