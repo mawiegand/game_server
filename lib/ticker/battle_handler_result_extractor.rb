@@ -148,7 +148,8 @@ module Ticker
         participant = faction.participants[current_participant_index]
       end while participant.retreated || participant.disbanded?      # skip disbanded and retreated armies that do not participate in the battle
       #extract
-      participant[:total_experience_gained] = participant[:total_experience_gained] + awe_army.sumNewExp
+      participant[:total_experience_gained] = participant[:total_experience_gained] + awe_army.sumNewExp # FIXME: this collides with the calculation in extract_results_from_awe_participant; which one is actually used???
+      participant[:total_kills] = (participant[:total_kills] || 0) + awe_army.numKills
       participant_results = faction_results.participant_results.build(
         :battle_id => faction.battle_id,
         :round_id => faction_results.round.id,
@@ -202,7 +203,8 @@ module Ticker
     experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash)
     participant_results.experience_gained = experience
     participant.army.reduce_units(participant_results.get_unit_reduce_hash)
-    participant.army.exp   += experience
+    participant.army.exp   += experience                 # this is directly propagated to the character
+    participant.army.kills += participant_results.kills  # this is directly propagated to the character 
     participant.army.save
   end
 

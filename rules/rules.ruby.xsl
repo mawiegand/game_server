@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
   
   def attributes 
     { 
@@ -98,7 +98,8 @@ class GameRules::Rules
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
       'queue_types'                 => queue_types,  
-      'character_ranks'             => character_ranks,  
+      'character_ranks'             => character_ranks,
+      'alliance_max_members'        => alliance_max_members,
     }
   end
   
@@ -143,6 +144,7 @@ class GameRules::Rules
           :time_factor => <xsl:apply-templates select="//General/BuildingConversion/TimeFactor" />,
         },
         :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
+        :alliance_max_members => <xsl:value-of select="//General/AllianceMaxMembers" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />

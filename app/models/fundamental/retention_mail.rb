@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'credit_shop'
+require 'util'
 
 class Fundamental::RetentionMail < ActiveRecord::Base
   
@@ -92,13 +93,7 @@ class Fundamental::RetentionMail < ActiveRecord::Base
   
     def add_identifier
       begin
-        self.identifier = make_random_string(16)
+        self.identifier = Util.make_random_string(16)
       end while !Fundamental::RetentionMail.find_by_identifier(self.identifier).nil?
     end  
-  
-    def make_random_string(len = 64)
-      chars = ('a'..'z').to_a + ('A'..'Z').to_a
-      (0..(len-1)).collect { chars[Kernel.rand(chars.length)] }.join
-    end    
-  
 end

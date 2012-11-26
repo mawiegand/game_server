@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126120947) do
+ActiveRecord::Schema.define(:version => 20121126141307) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -808,6 +808,7 @@ ActiveRecord::Schema.define(:version => 20121126120947) do
     t.string   "staff_roles"
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
+    t.integer  "kills",                                    :default => 0,     :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -933,6 +934,7 @@ ActiveRecord::Schema.define(:version => 20121126120947) do
     t.integer  "fortress_id"
     t.integer  "settlement_type_id"
     t.integer  "settlement_score",   :default => 0, :null => false
+    t.string   "invitation_code"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -1231,6 +1233,8 @@ ActiveRecord::Schema.define(:version => 20121126120947) do
     t.datetime "updated_at"
     t.integer  "total_experience_gained",  :default => 0, :null => false
     t.boolean  "disbanded"
+    t.integer  "character_id"
+    t.integer  "total_kills",              :default => 0, :null => false
   end
 
   create_table "military_battle_rounds", :force => true do |t|
@@ -1278,6 +1282,8 @@ ActiveRecord::Schema.define(:version => 20121126120947) do
     t.integer  "members_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "kills",            :default => 0, :null => false
+    t.integer  "kills_rank"
   end
 
   create_table "ranking_character_rankings", :force => true do |t|
@@ -1304,6 +1310,8 @@ ActiveRecord::Schema.define(:version => 20121126120947) do
     t.string   "max_experience_army_name"
     t.integer  "max_experience_army_rank"
     t.integer  "max_experience_army_id"
+    t.integer  "kills",                    :default => 0, :null => false
+    t.integer  "kills_rank"
   end
 
   create_table "settlement_histories", :force => true do |t|

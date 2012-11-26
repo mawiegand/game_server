@@ -95,6 +95,10 @@ class Fundamental::Alliance < ActiveRecord::Base
     cmd.save
   end
   
+  def full?
+    self.members.count >= GameRules::Rules.the_rules.alliance_max_members
+  end
+  
   private
   
     def prevent_empty_password 

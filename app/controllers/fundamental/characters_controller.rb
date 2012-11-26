@@ -98,7 +98,15 @@ class Fundamental::CharactersController < ApplicationController
 
       logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
       
-      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator)
+      start_location = nil
+      if params.has_key?(:player_invitation)
+        logger.debug "-----> :player_invitation gesetzt, suche Location"
+        start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
+      elsif params.has_key?(:alliance_invitation)
+        # start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
+      end
+      
+      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
       
       Backend::SignInLogEntry.create({
@@ -170,7 +178,10 @@ class Fundamental::CharactersController < ApplicationController
       format.html do
         raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin)
       end
-      format.json { render json: @fundamental_character.sanitized_hash(role) }
+      format.json do
+        logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
+        render json: include_root(@fundamental_character.sanitized_hash(role), :character) 
+      end
     end
   end
 
