@@ -426,7 +426,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # logged-in at least once
   def logged_in_once?
-    login_count >= 1
+    login_count >= 1 && reached_game?
   end  
   
   def update_credits_spent
