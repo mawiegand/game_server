@@ -83,7 +83,15 @@ class Training::Job < ActiveRecord::Base
   end
   
   def refund_for_job
-    self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs)
+    successfully_refunded = true
+    if self.paid? 
+      successfully_refunded = self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs) 
+      if successfully_refunded
+        self.paid = false
+        self.save
+      end
+    end
+    successfully_refunded
   end
   
   def speedup
@@ -131,9 +139,9 @@ class Training::Job < ActiveRecord::Base
         active_job.destroy
         # job aktualisieren
         self.quantity_finished += added_units
-        # refund resources for units not created yet
-        self.refund_for_job
+     #   self.refund_for_job   if self.paid? # refund resources for units not created yet  # TODO: don't refund! it's confusing for players, although from a game design perspecitve it would be better (exploit: enlarge storage by scheduling jobs storage)
         self.save
+        
         # queue check event erzeugen
         queue.create_queue_check_event
       else

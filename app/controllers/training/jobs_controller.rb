@@ -122,7 +122,7 @@ class Training::JobsController < ApplicationController
     raise ForbiddenError.new('not owner of job') unless @training_job.queue.settlement.owner == current_character
 
     queue = @training_job.queue
-    @training_job.refund_for_job if @training_job.active?
+    @training_job.refund_for_job if @training_job.paid?   # changed this: "active" is not a valid criterion; might be inactive but paid due to a full garrison
     @training_job.destroy      
     queue.reload
     queue.check_for_new_jobs
