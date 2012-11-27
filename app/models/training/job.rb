@@ -70,8 +70,17 @@ class Training::Job < ActiveRecord::Base
   end
   
   # checks if user owns enough resources for job and reduces them instantly
+  # returns true if the job has been paid for and false in case the payment failed
   def pay_for_job
-    self.queue.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
+    successfully_paid = true
+    unless self.paid?
+      successfully_paid = self.queue.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
+      if successfully_paid
+        self.paid = true
+        self.save
+      end
+    end
+    successfully_paid 
   end
   
   def refund_for_job
