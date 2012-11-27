@@ -18,6 +18,13 @@ one:
   dc: 1
   wc: 1
   mc: 1
+  total_users: 10
+  total_logged_in_once: 9
+  total_ten_minutes: 8
+  total_second_day: 7
+  total_active: 6
+  total_long_term_active: 5
+  total_customers: 4
 
 two:
   new_users: 1
@@ -37,3 +44,10 @@ two:
   dc: 1
   wc: 1
   mc: 1
+  total_users: 10
+  total_logged_in_once: 9
+  total_ten_minutes: 8
+  total_second_day: 7
+  total_active: 6
+  total_long_term_active: 5
+  total_customers: 4

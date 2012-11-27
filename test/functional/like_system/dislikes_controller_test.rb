@@ -3,6 +3,7 @@ require 'test_helper'
 class LikeSystem::DislikesControllerTest < ActionController::TestCase
   setup do
     @like_system_dislike = like_system_dislikes(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do

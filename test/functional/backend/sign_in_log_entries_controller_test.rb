@@ -3,6 +3,7 @@ require 'test_helper'
 class Backend::SignInLogEntriesControllerTest < ActionController::TestCase
   setup do
     @backend_sign_in_log_entry = backend_sign_in_log_entries(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do
