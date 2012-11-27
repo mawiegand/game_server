@@ -103,7 +103,8 @@ class Fundamental::CharactersController < ApplicationController
         logger.debug "-----> :player_invitation gesetzt, suche Location"
         start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
       elsif params.has_key?(:alliance_invitation)
-        # start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
+        logger.debug "-----> :alliance_invitation gesetzt, suche Location"
+        start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
       end
       
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)

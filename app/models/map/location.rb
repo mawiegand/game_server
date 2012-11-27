@@ -30,6 +30,39 @@ class Map::Location < ActiveRecord::Base
     # try to find free location in other regions that are controlled vy inviting player or
     # try to find free location in neighboring locations
   end
+
+  def self.location_for_alliance_invitation(invitation_code)
+    inviting_alliance = Fundamental::Alliance.find_by_invitation_code(invitation_code)
+    return nil if inviting_alliance.nil?
+    
+    # select from owned regions, if any free location
+    
+    target_location = nil
+    inviting_alliance.regions.order("updated_at ASC").each do |region|   # pseudo random order
+      if target_location.nil? 
+        num_free_locations = region.locations.empty.count
+        if num_free_locations > 0
+          return target_location = region.locations.empty.offset(Random.rand(num_free_locations)).first
+        end
+      end
+    end
+    
+    return target_location unless target_location.nil?
+    
+    # select from regions that have at least the home settlement of an alliance player in it.
+
+    inviting_alliance.members.order("updated_at ASC").each do |character|   # pseudo random order
+      if target_location.nil? 
+        num_free_locations = character.home_location.region.locations.empty.count
+        if num_free_locations > 0
+          return target_location = character.home_location.region.locations.empty.offset(Random.rand(num_free_locations)).first
+        end
+      end
+    end
+    
+    target_location
+  end  
+    
   
   def garrison_army
     self.armies.each do |army|
