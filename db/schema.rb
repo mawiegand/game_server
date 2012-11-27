@@ -1578,21 +1578,21 @@ ActiveRecord::Schema.define(:version => 20121127125656) do
     t.datetime "updated_at"
     t.integer  "quantity_finished"
     t.boolean  "hurried",           :default => false, :null => false
+    t.boolean  "paid",              :default => false, :null => false
   end
 
   create_table "training_queues", :force => true do |t|
     t.integer  "settlement_id"
     t.integer  "type_id"
     t.integer  "threads"
-    t.integer  "jobs_count",        :default => 0,     :null => false
-    t.decimal  "speedup_buildings", :default => 0.0,   :null => false
-    t.decimal  "speedup_sciences",  :default => 0.0,   :null => false
-    t.decimal  "speedup_alliance",  :default => 0.0,   :null => false
-    t.decimal  "speedup_effects",   :default => 0.0,   :null => false
+    t.integer  "jobs_count",        :default => 0,   :null => false
+    t.decimal  "speedup_buildings", :default => 0.0, :null => false
+    t.decimal  "speedup_sciences",  :default => 0.0, :null => false
+    t.decimal  "speedup_alliance",  :default => 0.0, :null => false
+    t.decimal  "speedup_effects",   :default => 0.0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "speed",             :default => 1.0,   :null => false
-    t.boolean  "paid",              :default => false, :null => false
+    t.decimal  "speed",             :default => 1.0, :null => false
   end
 
   create_table "tutorial_quests", :force => true do |t|
