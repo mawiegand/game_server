@@ -3,8 +3,7 @@ require 'game_state/requirements'
 
 class Training::Job < ActiveRecord::Base
   
-  has_one    :active_job,  :class_name => "Training::ActiveJob", :foreign_key => "job_id",    :inverse_of => :job, :dependent => :destroy
-  
+  has_one    :active_job,  :class_name => "Training::ActiveJob", :foreign_key => "job_id",    :inverse_of => :job,   :dependent => :destroy
   belongs_to :queue,       :class_name => "Training::Queue",     :foreign_key => "queue_id",  :inverse_of => :jobs,  :counter_cache => true, :touch => true
   
   def active?
