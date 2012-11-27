@@ -1,3 +1,5 @@
+require 'util'
+
 class Fundamental::Alliance < ActiveRecord::Base  
   
   has_many   :members,   :class_name => "Fundamental::Character",     :foreign_key => "alliance_id", :inverse_of => :alliance
@@ -19,15 +21,16 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
   attr_readable :id, :tag, :name, :description, :banner, :leader_id, :created_at, :updated_at,       :as => :default 
-  attr_readable *readable_attributes(:default), :alliance_queue_,                                    :as => :ally 
+  attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code,                  :as => :ally 
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
   attr_readable *readable_attributes(:staff),                                                        :as => :admin
   
+  before_create :add_unique_invitation_code  
   
-  before_save :prevent_empty_password
+  before_save   :prevent_empty_password
   
-  after_save  :propagate_to_ranking
+  after_save    :propagate_to_ranking
   
   
   
@@ -99,6 +102,13 @@ class Fundamental::Alliance < ActiveRecord::Base
     self.members.count >= GameRules::Rules.the_rules.alliance_max_members
   end
   
+  def add_unique_invitation_code
+    begin
+      self.invitation_code = Util.make_random_string(16, true)
+    end while !Fundamental::Alliance.find_by_invitation_code(self.invitation_code).nil?
+  end
+
+  
   private
   
     def prevent_empty_password 
@@ -119,5 +129,6 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.save
       end
     end
+    
   
 end

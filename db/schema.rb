@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127125656) do
+ActiveRecord::Schema.define(:version => 20121127203947) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -740,6 +740,7 @@ ActiveRecord::Schema.define(:version => 20121127125656) do
     t.datetime "updated_at"
     t.integer  "alliance_queue_alliance_research_unlock_count", :default => 0
     t.integer  "members_count"
+    t.string   "invitation_code"
   end
 
   create_table "fundamental_announcements", :force => true do |t|
