@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127203947) do
+ActiveRecord::Schema.define(:version => 20121128201601) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -810,6 +810,9 @@ ActiveRecord::Schema.define(:version => 20121127203947) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
+    t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
+    t.datetime "production_updated_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -1092,6 +1095,15 @@ ActiveRecord::Schema.define(:version => 20121127203947) do
     t.integer  "unit_light_cavalry_2"
     t.integer  "unit_light_cavalry_3"
     t.integer  "unit_light_cavalry_4"
+  end
+
+  create_table "military_battle_character_results", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "character_id"
+    t.integer  "faction_id"
+    t.integer  "experience_gained"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "military_battle_faction_results", :force => true do |t|
