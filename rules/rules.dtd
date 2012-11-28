@@ -160,7 +160,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, RequirementGroup*, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ProductionBonus*, Abilities, ConversionOption?)>
+<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, RequirementGroup*, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ExperienceProduction?, ProductionBonus*, Abilities, ConversionOption?)>
 
 <!ATTLIST Building 
   id ID #REQUIRED 
@@ -300,16 +300,17 @@
 	hours    CDATA #REQUIRED 
 >
 
-
 <!ELEMENT Production (#PCDATA)>
 <!ATTLIST Production
 	id IDREF #REQUIRED
 >
 
-<!ELEMENT Capacity (#PCDATA)>
-<!ATTLIST Capacity
+<!ELEMENT ExperienceProduction (#PCDATA)>
+<!ATTLIST ExperienceProduction
 	id IDREF #REQUIRED
 >
+
+<!ELEMENT Capacity (#PCDATA)>
 
 <!ELEMENT ProductionBonus (#PCDATA)>
 <!ATTLIST ProductionBonus
