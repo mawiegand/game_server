@@ -15,7 +15,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
   before_save  :update_resources_on_production_rate_changes
 
- # after_commit :propagate_bonus_changes   # don't use an after save handler. need to 
+  # after_commit :propagate_bonus_changes   # don't use an after save handler. need to 
   
   RESOURCE_ID_CASH = 3
   
@@ -248,18 +248,18 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       if self.changed?
         changed = false 
         amount_changed = false
-        weightedProductionRate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
+        weighted_production_rate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
         GameRules::Rules.the_rules().resource_types.each do |resource_type|
           attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
-          weightedProductionRate += self[attribute] * (resource_type[:rating_value] || 0) 
+          weighted_production_rate += self[attribute] * (resource_type[:rating_value] || 0) 
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
           amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
         end
         Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
-        update_resource_in_ranking(weightedProductionRate) if changed
-        update_resource_amount_atomically                  if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
+        update_resource_in_ranking(weighted_production_rate) if changed
+        update_resource_amount_atomically                    if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
       end    
       true
     end
