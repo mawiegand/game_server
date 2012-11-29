@@ -2455,19 +2455,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1600+100*(FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1600+100*(FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "(1600+100*(FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100))*0.5",
+                :formula            => "800+50*FLOOR(((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
