@@ -3,8 +3,7 @@ require 'game_state/requirements'
 
 class Training::Job < ActiveRecord::Base
   
-  has_one    :active_job,  :class_name => "Training::ActiveJob", :foreign_key => "job_id",    :inverse_of => :job, :dependent => :destroy
-  
+  has_one    :active_job,  :class_name => "Training::ActiveJob", :foreign_key => "job_id",    :inverse_of => :job,   :dependent => :destroy
   belongs_to :queue,       :class_name => "Training::Queue",     :foreign_key => "queue_id",  :inverse_of => :jobs,  :counter_cache => true, :touch => true
   
   def active?
@@ -70,12 +69,29 @@ class Training::Job < ActiveRecord::Base
   end
   
   # checks if user owns enough resources for job and reduces them instantly
+  # returns true if the job has been paid for and false in case the payment failed
   def pay_for_job
-    self.queue.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
+    successfully_paid = true
+    unless self.paid?
+      successfully_paid = self.queue.settlement.owner.resource_pool.remove_resources_transaction(self.costs)
+      if successfully_paid
+        self.paid = true
+        self.save
+      end
+    end
+    successfully_paid 
   end
   
   def refund_for_job
-    self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs)
+    successfully_refunded = true
+    if self.paid? 
+      successfully_refunded = self.queue.settlement.owner.resource_pool.add_resources_transaction(self.costs) 
+      if successfully_refunded
+        self.paid = false
+        self.save
+      end
+    end
+    successfully_refunded
   end
   
   def speedup
@@ -123,9 +139,9 @@ class Training::Job < ActiveRecord::Base
         active_job.destroy
         # job aktualisieren
         self.quantity_finished += added_units
-        # refund resources for units not created yet
-        self.refund_for_job
+     #   self.refund_for_job   if self.paid? # refund resources for units not created yet  # TODO: don't refund! it's confusing for players, although from a game design perspecitve it would be better (exploit: enlarge storage by scheduling jobs storage)
         self.save
+        
         # queue check event erzeugen
         queue.create_queue_check_event
       else

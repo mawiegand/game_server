@@ -1,3 +1,5 @@
+require 'util'
+
 class Map::Region < ActiveRecord::Base
   
   belongs_to :node,            :class_name => "Node",                   :foreign_key => "node_id"
@@ -11,6 +13,8 @@ class Map::Region < ActiveRecord::Base
   has_many :armies,            :class_name => "Military::Army",         :foreign_key => "region_id",   :inverse_of => :region
   
   has_many :battles,           :class_name => "Military::Battle", :inverse_of => :region
+  
+  before_create :add_unique_invitation_code
   
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
@@ -38,4 +42,9 @@ class Map::Region < ActiveRecord::Base
     end
   end
   
+  def add_unique_invitation_code
+    begin
+      self.invitation_code = Util.make_random_string(16, true)
+    end while !Map::Region.find_by_invitation_code(self.invitation_code).nil?
+  end
 end

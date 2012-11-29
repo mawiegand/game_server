@@ -53,6 +53,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
+  after_save  :propagate_kills_changes
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
@@ -61,6 +62,13 @@ class Fundamental::Character < ActiveRecord::Base
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
   scope :case_insensitive_identifier, lambda { |uid| where(["lower(identifier) = ?", uid.downcase]) }
+  
+  scope :paying,           where(max_conversion_state: "paying")
+  scope :long_term_active, where(max_conversion_state: "long_term_active")
+  scope :active,           where(max_conversion_state: "active")
+  scope :second_day,       where(max_conversion_state: "logged_in_two_days")
+  scope :ten_minutes,      where(max_conversion_state: "ten_minutes")
+  scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
 
   scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, where([
@@ -207,7 +215,7 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
-  def self.create_new_character(identifier, name, start_resource_modificator, npc=false)
+  def self.create_new_character(identifier, name, start_resource_modificator, npc = false, start_location = nil)
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
@@ -226,8 +234,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_ranking({
         character_name: name,
       });
-
-      location = Map::Location.find_empty
+      
+      location = start_location.nil? ? Map::Location.find_empty : start_location
       if !location || !character.claim_location(location)
         character.destroy
         raise InternalServerError.new('Could not claim an empty location.')
@@ -558,6 +566,17 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  def propagate_kills_changes
+    kills_change = self.changes[:kills]
+    if !kills_change.nil?
+      if !self.ranking.nil?
+        self.ranking.kills = kills_change[1]
+        self.ranking.save
+      end
+    end
+    true
+  end    
   
   def propagate_score_changes
     score_change = self.changes[:score]

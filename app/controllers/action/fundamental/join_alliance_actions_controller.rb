@@ -13,6 +13,7 @@ class Action::Fundamental::JoinAllianceActionsController < ApplicationController
     raise UnauthorizedError.new('no alliance password given') if params[:alliance][:password].nil?
     raise NotFoundError.new('alliance with given tag not found') if alliance.nil?
     raise ForbiddenError.new('wrong alliance password') unless alliance.password == params[:alliance][:password]
+    raise ConflictError.new("too many members in alliance") if alliance.full?
 
     alliance.add_character(current_character)    
     

@@ -197,7 +197,7 @@ class Military::Battle < ActiveRecord::Base
       end
     end
 
-    attacker.kills += killed_units               # add kills
+    attacker.kills += killed_units     # add kills
     attacker.save
 
     # create message for winner and loser

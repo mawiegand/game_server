@@ -16,6 +16,54 @@ class Map::Location < ActiveRecord::Base
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end
   
+  def self.location_for_player_invitation(invitation_code)
+    inviting_region = Map::Region.find_by_invitation_code(invitation_code)
+    return nil if inviting_region.nil?
+    
+    free_locations = inviting_region.locations.empty.count
+    return nil if free_locations == 0
+    
+    target_location = inviting_region.locations.empty.offset(Random.rand(free_locations)).first
+    target_location
+    # return target_location unless target_location.nil?  # no location available in invitung region
+
+    # try to find free location in other regions that are controlled vy inviting player or
+    # try to find free location in neighboring locations
+  end
+
+  def self.location_for_alliance_invitation(invitation_code)
+    inviting_alliance = Fundamental::Alliance.find_by_invitation_code(invitation_code)
+    return nil if inviting_alliance.nil?
+    
+    # select from owned regions, if any free location
+    
+    target_location = nil
+    inviting_alliance.regions.order("updated_at ASC").each do |region|   # pseudo random order
+      if target_location.nil? 
+        num_free_locations = region.locations.empty.count
+        if num_free_locations > 0
+          return target_location = region.locations.empty.offset(Random.rand(num_free_locations)).first
+        end
+      end
+    end
+    
+    return target_location unless target_location.nil?
+    
+    # select from regions that have at least the home settlement of an alliance player in it.
+
+    inviting_alliance.members.order("updated_at ASC").each do |character|   # pseudo random order
+      if target_location.nil? 
+        num_free_locations = character.home_location.region.locations.empty.count
+        if num_free_locations > 0
+          return target_location = character.home_location.region.locations.empty.offset(Random.rand(num_free_locations)).first
+        end
+      end
+    end
+    
+    target_location
+  end  
+    
+  
   def garrison_army
     self.armies.each do |army|
       if army.garrison 

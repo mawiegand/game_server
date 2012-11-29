@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula)>
+<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -33,6 +33,8 @@
 >
 
 <!ELEMENT BuildingExperienceFormula (#PCDATA)>
+
+<!ELEMENT AllianceMaxMembers (#PCDATA)>
 
 <!--CharacterCreation-->
 <!ELEMENT CharacterCreation (StartResource*)>

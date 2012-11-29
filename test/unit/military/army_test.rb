@@ -9,7 +9,7 @@ class Military::ArmyTest < ActiveSupport::TestCase
     assert_not_nil army.owner
     
     army.exp = 1
-    army.send :update_experience_character
+    army.send :update_experience_and_kills_character
     assert_equal 1, army.exp
   end
   

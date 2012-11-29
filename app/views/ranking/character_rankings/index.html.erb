@@ -7,8 +7,9 @@
     <tr>
       <th>Rank</th>
       <th>Character</th>
-      <th class="number"><%= link_to "Overall score", ranking_character_rankings_path(:sort => 'overall') %></th>
-      <th class="number"><%= link_to "Resource score", ranking_character_rankings_path(:sort => 'resource') %></th>
+      <th class="number"><%= link_to "Overall score",    ranking_character_rankings_path(:sort => 'overall') %></th>
+      <th class="number"><%= link_to "Resource score",   ranking_character_rankings_path(:sort => 'resource') %></th>
+      <th class="number"><%= link_to "Beaten Units",     ranking_character_rankings_path(:sort => 'kills') %></th>
       <th class="number"><%= link_to "Experienced Army", ranking_character_rankings_path(:sort => 'experience') %></th>
     </tr>
     <% 
@@ -24,6 +25,7 @@
         </td>
         <td class="number"><%= ranking_character_ranking.overall_score %></td>
         <td class="number"><%= ranking_character_ranking.resource_score %></td>
+        <td class="number"><%= ranking_character_ranking.kills %></td>
         <td class="number"><span title="<%= ranking_character_ranking.max_experience_army_name.blank? ? "no veteran army" : "#{ranking_character_ranking.max_experience_army_name}, rank #{ranking_character_ranking.max_experience_army_rank}"  %>"><%= ranking_character_ranking.max_experience %></span></td>
       <% end %>
     <% end %>
