@@ -7,7 +7,7 @@ class Ticker::BattleHandler::ArmySummary < Ticker::BattleHandler::UnitSummary
 		super()
 		@army = army
 		@has_retreated = false
-		@destroyed = army.has_units?
+		@destroyed = !army.has_units?
 	end
 
 	def update_based_on_result(new_army, participant_result)

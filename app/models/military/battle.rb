@@ -1,8 +1,4 @@
-require 'ticker/battle_handler_message_factory'
-
 class Military::Battle < ActiveRecord::Base
-  
-  include Ticker::BattleHandlerMessageFactory
   
   has_one    :event,        :class_name => "Event::Event",                :foreign_key => "local_event_id", :conditions => "event_type = 'military_battle'"
 
