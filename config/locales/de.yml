@@ -37,6 +37,17 @@ de:
           <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>\n
           <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
           <p>Das Wack-a-Doo Team</p>\n"
+      battle_report:
+        title: Kampfbericht
+        initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
+        your_army: Deine Armee
+        overview: Overview
+        details: Details
+        round: Runde
+        total_army_of_my_faction: Gesammte Armee deiner Fraktion
+        total_army_of_enemy_faction: Armee der feindlichen Fraktion
+        total_damage: Total angerichter Schaden
+        total_lost_unts: Verlorene Einheiten
     shop:
       platinum_info:
         title: Platinum Account

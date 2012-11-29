@@ -2,6 +2,7 @@ require 'awe_native_extensions'
 require 'ticker/battle_handler_awe_factory'
 require 'ticker/battle_handler_result_extractor'
 require 'ticker/battle_handler_message_factory'
+require 'ticker/battle_handler/battle_summary'
 
 class Ticker::BattleHandler
   
@@ -67,7 +68,10 @@ class Ticker::BattleHandler
         runloop.say "Battle done, starting to send out messages"
 
         ## generate message for participants
-        generate_messages_for_battle(awe_battle, battle)
+        battle_summary = Ticker::BattleHandler::BattleSummary.new(battle)
+        #send messages
+        battle_summary.send_battle_report_messages()
+        #generate_messages_for_battle(awe_battle, battle)
 
         runloop.say "Determine winner and check takeover"
 

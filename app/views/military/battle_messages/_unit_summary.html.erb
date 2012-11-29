@@ -1,0 +1,80 @@
+			<!-- begin unit summary -->
+			<table>
+				<% if  unit_summary.methods.include? :army %>
+				<tr>
+					<td colspan="2"><%= unit_summary.army.name %></td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr></td>
+				</tr>
+				<% end %>
+				<% unit_summary.unit_stats.each do |unit_type_symbol, unit_stats| %>
+				<tr>
+					<td><div class="unit-image uc-0 tiny">&nbsp;</div><div class="unit_name_text"> <%= get_unit_name(unit_stats[:unit_type], character) %></div></td>
+					<td>
+						<div class="bar_container">
+							<div class="bar_container" style="width: auto; min-width: <%= percent_of(unit_stats[:num], @max_faction_unit_num) %>%">
+								<div class="dead_bar" style="width: 100%"></div>
+								<div class="survivor_bar" style="width: <%= percent_of((unit_stats[:num] - unit_stats[:casualties]), unit_stats[:num]) %>%"></div>
+								<div class="bar_numbers"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
+								<div class="bar_text_padding"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<tr>
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+					<td><%= I18n.translate('application.messaging.battle_report.total_damage') %></td>
+					<td>
+						<div class="bar_container">
+							<div class="bar_container" style="width: auto; min-width: <%= unit_summary.get_damage_percentage(@max_faction_damage_inflicted) %>%;">
+								<div class="damage_bar" style="width: 100%;"></div>
+								<div class="bar_numbers"><%= unit_summary.sum_damage_inflicted.to_i %></div>
+								<div class="bar_text_padding"><%= unit_summary.sum_damage_inflicted.to_i %></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><%= I18n.translate('application.messaging.battle_report.total_lost_unts') %></td>
+					<td>
+						<div class="bar_container">
+							<div class="bar_container" style="width: auto; min-width: <%= unit_summary.get_casulties_percentage(max_faction_casulties) %>%;">
+								<div class="dead_bar" style="width: 100%;"></div>
+								<div class="bar_numbers"><%= unit_summary.sum_casulties.to_i %></div>
+								<div class="bar_text_padding"><%= unit_summary.sum_casulties.to_i %></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% if  unit_summary.methods.include? :army %>
+				<tr>
+					<td><div class="xp-icon">&nbsp;</div> XP</td>
+					<td>
+						<div class="bar_container">
+							<div class="bar_container" style="width: auto; min-width: 100%;">
+								<div class="xp_bar" style="width: 100%;"></div>
+								<div class="bar_numbers"><%= unit_summary.sum_experience_gained %></div>
+								<div class="bar_text_padding"><%= unit_summary.sum_experience_gained %></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% if  unit_summary.methods.include? :armies %>
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+					<% unit_summary.armies.each do |army| %>
+						<%= army.name %> ( <%= get_character_name(army.owner) %> )<br>
+					<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+			<!-- end unit summary -->

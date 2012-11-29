@@ -15,4 +15,21 @@ class Military::BattleParticipantResult < ActiveRecord::Base
   	result
   end
 
+  def get_units_of_unit_type(unit_type)
+    result = self[unit_type[:db_field].to_s]
+    result = 0 if result == nil
+    result
+  end
+
+  def get_unit_casualties_of_unit_type(unit_type)
+    result = self[unit_type[:db_field].to_s+"_casualties"]
+    result = 0 if result == nil
+    result
+  end
+
+  def get_unit_damage_inflicted_of_unit_type(unit_type)
+    result = self[unit_type[:db_field].to_s+"_damage_inflicted"]
+    result = 0 if result == nil
+    result
+  end
 end
