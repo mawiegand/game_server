@@ -2467,7 +2467,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "(1600+100*(FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100))*0,5",
+                :formula            => "(1600+100*(FLOOR((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(110*POW(LEVEL,2)-105*LEVEL)+(MAX(LEVEL+1,11)-MAX(LEVEL,11))*(20*POW((LEVEL),2)+9000))/100))*0.5",
               },
             
               {
