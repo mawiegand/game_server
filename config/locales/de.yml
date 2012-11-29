@@ -38,16 +38,20 @@ de:
           <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
           <p>Das Wack-a-Doo Team</p>\n"
       battle_report:
+        subject: "Kampfbericht: <%= @battle.region.name %>"
         title: Kampfbericht
         initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
         your_army: Deine Armee
-        overview: Overview
+        overview: Übersicht
         details: Details
         round: Runde
         total_army_of_my_faction: Gesammte Armee deiner Fraktion
         total_army_of_enemy_faction: Armee der feindlichen Fraktion
         total_damage: Total angerichter Schaden
         total_lost_unts: Verlorene Einheiten
+        destroyed: "zerstört"
+        retreated: "zurückgezogen"
+        survived: "hat überlebt"
     shop:
       platinum_info:
         title: Platinum Account

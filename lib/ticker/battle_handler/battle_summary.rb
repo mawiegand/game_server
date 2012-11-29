@@ -112,7 +112,7 @@ class Ticker::BattleHandler::BattleSummary
 
 	def generate_message(character)
 		old_local = I18n.locale
-		#TODO set language local based on character
+		#TODO set language local based on character settings?
 		I18n.locale = :de
 
 		#army summary
@@ -122,8 +122,8 @@ class Ticker::BattleHandler::BattleSummary
 		my_faction_summary = get_own_faction_summary(character)
 		enemy_faction_summaries = get_enemy_faction_summaries(character)
 
-		@message_template = ERB.new(File.open("app/views/military/battle_messages/report.html.erb", "rb").read)
-		@unit_summary_template = ERB.new(File.open("app/views/military/battle_messages/_unit_summary.html.erb", "rb").read)
+		@message_template = ERB.new(File.open("app/views/military/battle_messages/report.html.erb", "rb:UTF-8").read)
+		@unit_summary_template = ERB.new(File.open("app/views/military/battle_messages/_unit_summary.html.erb", "rb:UTF-8").read)
 
 		Messaging::Message.generate_battle_report_message(character, render(I18n.translate('application.messaging.battle_report.subject')), @message_template.result(binding))
 	
@@ -139,8 +139,8 @@ class Ticker::BattleHandler::BattleSummary
 	end
 
 	def get_unit_name(unit_type, character)
-		#TODO detect languages somehow?
-		unit_type[:name][:de_DE]
+		return unit_type[:name][:de_DE] if I18n.locale == :de
+		unit_type[:name][:en_US]
 	end
 
 	def get_character_name(character)
