@@ -118,7 +118,8 @@ GameServer::Application.routes.draw do
           resources :battle_participants 
         end
         resources :battle_participants 
-        
+
+        resources :battle_character_results
         resources :battle_participant_results 
         resources :battle_faction_results
         resources :battle_rounds

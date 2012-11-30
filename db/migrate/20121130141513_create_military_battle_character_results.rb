@@ -4,7 +4,8 @@ class CreateMilitaryBattleCharacterResults < ActiveRecord::Migration
       t.integer :battle_id
       t.integer :character_id
       t.integer :faction_id
-      t.integer :experience_gained
+      t.integer :experience_gained,  :default => 0,      :null => false
+      t.boolean :winner,             :default => false,  :nll => false
 
       t.timestamps
     end

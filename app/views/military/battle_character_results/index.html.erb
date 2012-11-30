@@ -1,0 +1,31 @@
+<h1>Listing military_battle_character_results</h1>
+
+<table>
+  <tr>
+    <th>Battle</th>
+    <th>Character</th>
+    <th>Faction</th>
+    <th>Experience gained</th>
+    <th>Winner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @military_battle_character_results.each do |military_battle_character_result| %>
+  <tr>
+    <td><%= military_battle_character_result.battle_id %></td>
+    <td><%= military_battle_character_result.character_id %></td>
+    <td><%= military_battle_character_result.faction_id %></td>
+    <td><%= military_battle_character_result.experience_gained %></td>
+    <td><%= military_battle_character_result.winner %></td>
+    <td><%= link_to 'Show', military_battle_character_result %></td>
+    <td><%= link_to 'Edit', edit_military_battle_character_result_path(military_battle_character_result) %></td>
+    <td><%= link_to 'Destroy', military_battle_character_result, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battle character result', new_military_battle_character_result_path %>
