@@ -1,0 +1,57 @@
+<!-- begin message -->
+<div class="battle_report">
+		<h1><%= render(I18n.translate('application.messaging.battle_report.title')) %></h1>
+		<p>
+			<%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %>
+		</p>
+		<% my_army_summaries.each do |army_id, army_summary| %>
+		<div class="block">
+			<h3>
+				<%= render(I18n.translate('application.messaging.battle_report.your_army')) %>
+				<% if (army_summary.destroyed) %>
+					(<font color="red"><%= I18n.translate('application.messaging.battle_report.destroyed') %></font>)
+				<% elsif (army_summary.has_retreated) %>
+					(<font color="orange"><%= I18n.translate('application.messaging.battle_report.retreated') %></font>)
+				<% else %>
+					(<font color="green"><%= I18n.translate('application.messaging.battle_report.survived') %></font>)
+				<% end %>
+			</h3>
+			<%= render_unit_summary(army_summary, character) %>
+		</div>
+		<% end %>
+		<br>
+		<div class="block">
+			<h2>&Uuml;bersicht</h2>
+			<div class="block">
+				<h3><%= I18n.translate('application.messaging.battle_report.total_army_of_my_faction') %></h3>
+				<%= render_unit_summary(my_faction_summary, character) %>
+			</div>	
+			<% enemy_faction_summaries.each do |faction_summary| %>
+			<div class="block">
+				<h3><%= I18n.translate('application.messaging.battle_report.total_army_of_enemy_faction') %></h3>
+				<%= render_unit_summary(faction_summary, character) %> 
+			</div>
+			<% end %>
+		</div>
+		<br>
+		<div class="block">
+			<h2><%= I18n.translate('application.messaging.battle_report.details') %></h2>
+			<% @round_summaries.each do |round_id, round_summary| %>
+			<div class="round_block">
+				<h3><%= I18n.translate('application.messaging.battle_report.round') %> <%= round_summary.round.round_num+1 %></h3>
+				<div class="block">
+					<h3><%= I18n.translate('application.messaging.battle_report.total_army_of_my_faction') %></h3>
+					<%= render_unit_summary(round_summary.get_own_faction_summary(character), character) %> 
+				</div>
+				<% round_summary.get_enemy_faction_summaries(character).each do |faction_summary| %>
+				<div class="block">
+					<h3><%= I18n.translate('application.messaging.battle_report.total_army_of_enemy_faction') %></h3>
+					<%= render_unit_summary(faction_summary, character) %> 
+				</div>
+				<% end %>
+			</div>
+			<br>
+			<% end %>
+		</div>
+	</div>
+<!-- end message -->

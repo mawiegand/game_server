@@ -117,7 +117,22 @@ en:
           <p>A more detailed description of game mechanics and attributes of buildings and units can be found in our wiki (presently only in German):</p>\n
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>\n
           <p>We wish you a pleasent time in Wack-a-Doo.</p>\n
-          <p>The Wack-a-Doo Team</p>\n"      
+          <p>The Wack-a-Doo Team</p>\n"
+      battle_report:
+        subject: "The battle at <%= @battle.region.name %>"
+        title: "The battle at <%= @battle.region.name %>"
+        initial_sentance: This conflict was initiated by an attack of <%= get_character_name(@battle.initiator) %> on <%= get_character_name(@battle.opponent) %> on <%= @battle.started_at %>
+        your_army: Your Army
+        overview: Overview
+        details: Details
+        round: Round
+        total_army_of_my_faction: Full army of your faction
+        total_army_of_enemy_faction: Full army of the enemy faction
+        total_damage: Total damage dealt
+        total_lost_unts: Units lost
+        destroyed: "destroyed"
+        retreated: "retreated"
+        survived: "survived"    
         
   sessions:
         

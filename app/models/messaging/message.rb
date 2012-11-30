@@ -148,7 +148,19 @@ class Messaging::Message < ActiveRecord::Base
     message.add_overrun_winner_message_body(winner, loser)
     message.save
   end
-  
+
+  def self.generate_battle_report_message(recipient, subject, body)
+    message = Messaging::Message.new({
+      recipient: recipient,
+      type_id:   BATTLE_REPORT_TYPE_ID,
+      subject:   subject,
+      body:      body,
+      send_at:   DateTime.now,
+      reported:  false,
+    })
+    message.save
+  end  
+
   def self.generate_trade_recipient_message(action)
     return if action.nil?
     message = Messaging::Message.new({
