@@ -326,7 +326,7 @@ class Military::Battle < ActiveRecord::Base
   #
   ################################################################################
   
-  def calculate_charcter_results
+  def calculate_character_results
     winner_units_count = 0
     winner_faction.participants.each do |participant|
       winner_units_count += participant.results.first.units_count
@@ -342,7 +342,7 @@ class Military::Battle < ActiveRecord::Base
     # winner faction: calculate winner experience according to new function
     winner_faction.participants.each do |participant|
       character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
-      character_result.experience_gained += (500.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
+      character_result.experience_gained += (5.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
       logger.debug "participant.num_rounds #{participant.num_rounds}, participant.army.units_count #{participant.results.first.units_count}, loser_units_count: #{loser_units_count}, winner_units_count: #{winner_units_count}"
       character_result.winner = true
       character_result.save
@@ -351,6 +351,7 @@ class Military::Battle < ActiveRecord::Base
   
   def propagate_character_results_to_character
     self.character_results.each do |result|
+      logger.debug "propagate_character_results_to_character: add #{result.experience_gained} to character id #{result.character.id}"
       result.character.add_experience(result.experience_gained)
     end
   end
