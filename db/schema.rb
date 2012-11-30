@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128231014) do
+ActiveRecord::Schema.define(:version => 20121130133232) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1104,6 +1104,7 @@ ActiveRecord::Schema.define(:version => 20121128231014) do
     t.integer  "experience_gained"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "winner",            :default => false, :null => false
   end
 
   create_table "military_battle_faction_results", :force => true do |t|

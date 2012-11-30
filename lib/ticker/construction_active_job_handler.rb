@@ -39,7 +39,15 @@ class Ticker::ConstructionActiveJobHandler
         runloop.say "No settlement given for job '#{ job.id }'.", Logger::ERROR
         return
       end 
- 
+      
+      unless event.character == settlement.owner
+        runloop.say "Job creator is not settlement owner in job '#{ job.id }'.", Logger::ERROR
+        job.destroy
+        return
+      end 
+      
+      # runloop.say "1"
+
       # construction code
       job.finish
       
