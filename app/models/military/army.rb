@@ -125,7 +125,7 @@ class Military::Army < ActiveRecord::Base
     end
     false
   end
-
+  
   def update_ap_if_necessary
     update_ap if needs_ap_update?
   end

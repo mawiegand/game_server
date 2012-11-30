@@ -151,9 +151,11 @@ module Ticker
       participant[:total_experience_gained] = participant[:total_experience_gained] + awe_army.sumNewExp # FIXME: this collides with the calculation in extract_results_from_awe_participant; which one is actually used???
       participant[:total_kills] = (participant[:total_kills] || 0) + awe_army.numKills
       participant[:num_rounds] += 1
+      participant.save
       participant_results = faction_results.participant_results.build(
         :battle_id => faction.battle_id,
         :round_id => faction_results.round.id,
+        :participant_id => participant.id,
         :battle_faction_result_id => faction_results.id,             # TODO: add faction to database, rename this field (strip battle_)
         :army_id => participant.army.id,
         :kills => awe_army.numKills,

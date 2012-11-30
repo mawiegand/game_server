@@ -72,6 +72,7 @@ en:
         battle_faction_results: F.Results
         participants: Participants
         participant_results: P.Results
+        character_results: Char.Results
       training:
         category: Training
         queues: Queues

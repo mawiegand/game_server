@@ -1,4 +1,10 @@
 class Military::BattleCharacterResultsController < ApplicationController
+  layout 'military'
+  
+  before_filter :authenticate
+  before_filter :deny_api,        :except => [ :show ]
+  before_filter :authorize_staff, :except => [ :show ]
+
   # GET /military/battle_character_results
   # GET /military/battle_character_results.json
   def index

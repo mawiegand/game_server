@@ -64,11 +64,6 @@ class Ticker::BattleHandler
         battle.ended_at = Time.now
         battle.save
 
-        runloop.say "Battle done, starting to send out messages"
-
-        ## generate message for participants
-        generate_messages_for_battle(awe_battle, battle)
-
         runloop.say "Determine winner and check takeover"
 
         ## get winner of the battle
@@ -96,7 +91,9 @@ class Ticker::BattleHandler
           if !target_settlement.nil? && target_settlement.can_be_taken_over?
             #check if the battle location is owned by a participant of the winner faction
             winner_faction.participants.each do |participant|
-              if !participant.army.nil? && participant.army.owner_id == battle.location.owner_id   # TODO : danger, danger! if the garrison somehow is killed, an army fighting ON THE SIDE of the garrison would takeover the fortress in case of a victory!  -> NEED to store the attacked fortress with the battle when starting a fight!  
+              if !participant.army.nil? && participant.army.owner_id == battle.location.owner_id   # TODO : danger, danger! if the garrison somehow is killed, an army fighting ON THE SIDE of the garrison would takeover the fortress in case of a victory!
+                                                                                                   # -> NEED to store the attacked fortress with the battle when starting a fight!
+                                                                                                   # or simply check against newly introduced character of participant :-)   
                 takeover = false
               end
             end
@@ -151,6 +148,17 @@ class Ticker::BattleHandler
             end
           end
         end
+
+        runloop.say "Calculate XP for both factions"
+        battle.calculate_charcter_results
+        
+        runloop.say "Propagate XP to characters"
+        # battle.propagate_charcter_results_to_characters
+        
+        runloop.say "Battle done, starting to send out messages"
+
+        ## generate message for participants
+        generate_messages_for_battle(awe_battle, battle)
         
         runloop.say "Cleanup armies and battle"
 
