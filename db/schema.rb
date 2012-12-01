@@ -873,11 +873,19 @@ ActiveRecord::Schema.define(:version => 20121201022348) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "like_system_dislikes" because of following StandardError
-#   Unknown type 'id' for column 'sender_id'
+  create_table "like_system_dislikes", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sender_id",   :default => 0
+    t.integer  "receiver_id", :default => 0
+  end
 
-# Could not dump table "like_system_likes" because of following StandardError
-#   Unknown type 'id' for column 'sender_id'
+  create_table "like_system_likes", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sender_id",   :default => 0
+    t.integer  "receiver_id", :default => 0
+  end
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
