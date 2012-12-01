@@ -35,10 +35,10 @@ class Ticker::BattleHandler::BattleSummary
 		#------------------------------
 		#initialize the army summaries
 		participants.each do |participant|
-			if (@character_army_summaries[participant.army.owner_id].nil?) 
-				@character_army_summaries[participant.army.owner_id] = Hash.new
+			if (@character_army_summaries[participant.character_id].nil?) 
+				@character_army_summaries[participant.character_id] = Hash.new
 			end
-			hash = @character_army_summaries[participant.army.owner_id]
+			hash = @character_army_summaries[participant.character_id]
 			hash[participant.army_id] = Ticker::BattleHandler::ArmySummary.new(participant.army)
 		end
 
@@ -71,7 +71,7 @@ class Ticker::BattleHandler::BattleSummary
 					#TODO detect leader change
 
 					#update the corresponding army summary
-					army_summary = @character_army_summaries[participant_result.army.owner_id][participant_result.army.id]
+					army_summary = @character_army_summaries[participant_result.participant.character_id][participant_result.participant.army_id]
 					army_summary.update_based_on_result(is_new_participant, participant_result)
 					#update the faction summaries
 					faction_summary.update_based_on_result(is_new_participant, participant_result)
