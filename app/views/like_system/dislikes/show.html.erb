@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>ID:</b>
+  <%= @like_system_dislike.id %>
+</p>
+
+<p>
+  <b>Sender:</b>
+  <%= @like_system_dislike.sender_id %>
+</p>
+
+<p>
+  <b>Receiver:</b>
+  <%= @like_system_dislike.receiver_id %>
+</p>
 
 <%= link_to 'Edit', edit_like_system_dislike_path(@like_system_dislike) %> |
 <%= link_to 'Back', like_system_dislikes_path %>
