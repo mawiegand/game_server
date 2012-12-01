@@ -1,4 +1,4 @@
-class RemoveLikesCountFromFundamentalCharacters < ActiveRecord::Migration
+class RemoveDislikesCountFromFundamentalCharacters < ActiveRecord::Migration
   def up
     remove_column :fundamental_characters, :dislikes_count
     add_column :fundamental_characters, :send_dislikes_count, :integer, :default => 0
