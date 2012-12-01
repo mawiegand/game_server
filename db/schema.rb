@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201012144) do
+ActiveRecord::Schema.define(:version => 20121201022348) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -803,9 +803,10 @@ ActiveRecord::Schema.define(:version => 20121201012144) do
     t.string   "staff_roles"
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
-    t.integer  "dislikes_count",                           :default => 0
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
+    t.integer  "send_dislikes_count",                      :default => 0
+    t.integer  "received_dislikes_count",                  :default => 0
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -872,10 +873,8 @@ ActiveRecord::Schema.define(:version => 20121201012144) do
     t.datetime "updated_at"
   end
 
-  create_table "like_system_dislikes", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "like_system_dislikes" because of following StandardError
+#   Unknown type 'id' for column 'sender_id'
 
 # Could not dump table "like_system_likes" because of following StandardError
 #   Unknown type 'id' for column 'sender_id'

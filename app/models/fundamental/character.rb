@@ -38,8 +38,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_likes,        :class_name => "LikeSystem::Like",           :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_likes,    :class_name => "LikeSystem::Like",           :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :sender
-  has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :receiver
+  has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
+  has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned,      :as => :default 
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
