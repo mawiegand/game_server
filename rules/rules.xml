@@ -109,7 +109,7 @@
       <TimeFactor>0.3</TimeFactor>
     </BuildingConversion>  
     <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
-    <AllianceMaxMembers>100</AllianceMaxMembers>
+    <AllianceMaxMembers>80</AllianceMaxMembers>
   </General>
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
