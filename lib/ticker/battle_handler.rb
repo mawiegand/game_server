@@ -150,10 +150,9 @@ class Ticker::BattleHandler
 
         runloop.say "Calculate XP for both factions"
         battle.calculate_character_results
-        battle.propagate_character_results_to_character
         
         runloop.say "Propagate XP to characters"
-        # battle.propagate_charcter_results_to_characters
+        battle.propagate_character_results_to_character
         
         runloop.say "Battle done, starting to send out messages"
 
