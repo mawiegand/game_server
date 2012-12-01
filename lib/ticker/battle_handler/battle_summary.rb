@@ -100,10 +100,11 @@ class Ticker::BattleHandler::BattleSummary
 
 	def send_battle_report_messages()
 		@character_army_summaries.each do |character_id, army_summaries|
-			first_army_summary_key =army_summaries.keys.first
+			first_army_summary_key = army_summaries.keys.first
 			if !first_army_summary_key.nil?
-				character = army_summaries[first_army_summary_key].army.owner
-				if !character.npc?
+			  army = army_summaries[first_army_summary_key].army
+				character = army.nil? ? Fundamental::Character.find_by_id(character_id) : army.owner
+				if character && !character.npc?
 					generate_message(character)
 				end
 			end

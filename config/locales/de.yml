@@ -50,6 +50,7 @@ de:
         total_damage: Total angerichter Schaden
         total_lost_unts: Verlorene Einheiten
         destroyed: "zerstört"
+        dissolved: "aufgelöst"
         retreated: "zurückgezogen"
         survived: "hat überlebt"
     shop:
