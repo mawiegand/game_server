@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201002051) do
+ActiveRecord::Schema.define(:version => 20121201012144) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -803,8 +803,9 @@ ActiveRecord::Schema.define(:version => 20121201002051) do
     t.string   "staff_roles"
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
-    t.integer  "likes_count",                              :default => 0
     t.integer  "dislikes_count",                           :default => 0
+    t.integer  "send_likes_count",                         :default => 0
+    t.integer  "received_likes_count",                     :default => 0
   end
 
   create_table "fundamental_guilds", :force => true do |t|
