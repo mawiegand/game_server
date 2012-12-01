@@ -35,8 +35,8 @@ class Fundamental::Character < ActiveRecord::Base
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
 
-  has_many :send_likes,        :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :sender
-  has_many :received_likes,    :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :receiver
+  has_many :send_likes,        :class_name => "LikeSystem::Like",           :foreign_key => "sender_id", :inverse_of => :sender
+  has_many :received_likes,    :class_name => "LikeSystem::Like",           :foreign_key => "receiver_id", :inverse_of => :receiver
 
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "character_id", :inverse_of => :receiver

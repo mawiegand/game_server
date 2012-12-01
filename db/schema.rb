@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130015600) do
+ActiveRecord::Schema.define(:version => 20121201002051) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -876,10 +876,8 @@ ActiveRecord::Schema.define(:version => 20121130015600) do
     t.datetime "updated_at"
   end
 
-  create_table "like_system_likes", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "like_system_likes" because of following StandardError
+#   Unknown type 'id' for column 'sender_id'
 
   create_table "map_locations", :force => true do |t|
     t.integer  "region_id"
