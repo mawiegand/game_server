@@ -122,6 +122,9 @@ en:
         subject: "The battle at <%= @battle.region.name %>"
         title: "The battle at <%= @battle.region.name %>"
         initial_sentance: This conflict was initiated by an attack of <%= get_character_name(@battle.initiator) %> on <%= get_character_name(@battle.opponent) %> on <%= @battle.started_at %>
+        winner_message: Your faction won the battle. 
+        loser_message: Your faction lost the battle.
+        xp: You got %{xp} additional experience points.
         your_army: Your Army
         overview: Overview
         details: Details

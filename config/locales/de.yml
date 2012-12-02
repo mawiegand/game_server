@@ -41,6 +41,9 @@ de:
         subject: "Kampfbericht: <%= @battle.region.name %>"
         title: Kampfbericht
         initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
+        winner_message: Deine Fraktion hat den Kampf gewonnen. 
+        loser_message: Deine Fraktion hat den Kampf verloren.
+        xp: Du erhälst daher %{xp} zusätzliche Erfahrungspunkte.
         your_army: Deine Armee
         overview: Übersicht
         details: Details

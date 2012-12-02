@@ -309,6 +309,11 @@ class Military::Battle < ActiveRecord::Base
   def loser_faction
     other_faction(winner_faction.id)
   end
+  
+  def xp_for_character_and_faction(character, faction)
+    character_result = self.character_results.where(['character_id = ? and faction_id = ?', character.id, faction.id]).first
+    character_result.nil? ? 0 : character_result.experience_gained
+  end
 
   #returns the a settlement if there was an battle over one
   def targeted_settlement

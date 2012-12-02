@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130162015) do
+ActiveRecord::Schema.define(:version => 20121202150333) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1135,7 +1135,8 @@ ActiveRecord::Schema.define(:version => 20121130162015) do
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
     t.decimal  "unitcategory_siege_strength"
-    t.decimal  "unitcategory_special_strength",   :default => 0.0, :null => false
+    t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
+    t.boolean  "winner",                          :default => false
   end
 
   create_table "military_battle_participant_results", :force => true do |t|

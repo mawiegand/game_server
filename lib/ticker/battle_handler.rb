@@ -72,6 +72,7 @@ class Ticker::BattleHandler
         if !winner_faction.nil?
 
           winner_leader = nil
+          winner_faction.set_winner
           winner_faction.update_leader
           winner_leader = winner_faction.leader
 

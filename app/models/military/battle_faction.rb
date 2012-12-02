@@ -88,6 +88,11 @@ class Military::BattleFaction < ActiveRecord::Base
     end
   end
   
+  def set_winner
+    self.winner = true
+    self.save
+  end
+  
   def opposing_faction
     self.battle.factions.each do |faction|
       return faction if faction != self
