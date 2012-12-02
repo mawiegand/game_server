@@ -109,7 +109,7 @@ class Military::BattleFaction < ActiveRecord::Base
   
   def contains_army_of(character)
     participants.each do |participant|
-      return true if !participant.army.nil? && participant.army.owner_id == character.id
+      return true if participant.character_id == character.id
     end
     false
   end

@@ -1,6 +1,6 @@
 			<!-- begin unit summary -->
 			<table>
-				<% if  unit_summary.methods.include? :army %>
+				<% if  unit_summary.methods.include?(:army) && !unit_summary.army.nil? %>
 				<tr>
 					<td colspan="2">
 						<%= unit_summary.army.name %>
@@ -52,7 +52,7 @@
 						</div>
 					</td>
 				</tr>
-				<% if  unit_summary.methods.include? :army %>
+				<% if  unit_summary.methods.include?(:army) && !unit_summary.army.nil? %>
 				<tr>
 					<td><div class="xp-icon">&nbsp;</div> XP</td>
 					<td>
@@ -73,7 +73,11 @@
 					<tr>
 						<td colspan="2">
 					<% unit_summary.armies.each do |army| %>
-						<%= army.name %> ( <%= get_character_name(army.owner) %> )<br>
+					  <% unless army.nil? %>
+						  <%= army.name %> ( <%= get_character_name(army.owner) %> )<br>
+						<% else %>
+						  Aufgelöste Armee</br>
+						<% end %>
 					<% end %>
 						</td>
 					</tr>

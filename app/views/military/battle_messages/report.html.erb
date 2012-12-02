@@ -16,7 +16,9 @@
 		<div class="block">
 			<h3>
 				<%= render(I18n.translate('application.messaging.battle_report.your_army')) %>
-				<% if (army_summary.destroyed) %>
+				<% if (army_summary.dissolved) %>
+					(<font color="red"><%= I18n.translate('application.messaging.battle_report.dissolved') %></font>)
+				<% elsif (army_summary.destroyed) %>
 					(<font color="red"><%= I18n.translate('application.messaging.battle_report.destroyed') %></font>)
 				<% elsif (army_summary.has_retreated) %>
 					(<font color="orange"><%= I18n.translate('application.messaging.battle_report.retreated') %></font>)

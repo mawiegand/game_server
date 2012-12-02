@@ -133,6 +133,7 @@ en:
         total_army_of_enemy_faction: Full army of the enemy faction
         total_damage: Total damage dealt
         total_lost_unts: Units lost
+        dissolved: disbanded
         destroyed: "destroyed"
         retreated: "retreated"
         survived: "survived"    
