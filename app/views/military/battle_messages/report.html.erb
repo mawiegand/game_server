@@ -3,14 +3,14 @@
 		<h1><%= render(I18n.translate('application.messaging.battle_report.title')) %></h1>
 		<p><%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %></p>
 		<% if my_faction_summary.faction.winner %>
-		  <p><%= render(I18n.translate('application.messaging.battle_report.winner_message')) %>
+		  <p><%= I18n.translate('application.messaging.battle_report.winner_message') %>
 		  <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction) %>
 		  <% if xp > 0 %>
-		    <%= render(I18n.translate('application.messaging.battle_report.xp', :xp => xp)) %>
+		    <%= I18n.translate('application.messaging.battle_report.xp', :xp => xp) %>
   		<% end %>
   		</p>
 		<% else %>
-		  <p><%= render(I18n.translate('application.messaging.battle_report.loser_message')) %></p>
+		  <p><%= I18n.translate('application.messaging.battle_report.loser_message') %></p>
 		<% end %>
 		<% my_army_summaries.each do |army_id, army_summary| %>
 		<div class="block">
