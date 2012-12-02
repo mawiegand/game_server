@@ -10,10 +10,10 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:character].nil? || params[:character][:id].blank?
 
-	like = LikeSystem::Like.new
-	like.sender = current_character
-  like.receiver = Fundamental::Character.find(params[:character][:id])
-	like.save
+    like = LikeSystem::Like.new
+    like.sender = current_character
+    like.receiver = Fundamental::Character.find(params[:character][:id])
+    like.save
 
     respond_to do |format|
       format.json { render json: {}, status: :ok }
