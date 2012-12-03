@@ -26,10 +26,12 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :manage_queues_as_needed
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
+  before_save :update_experience_production           # recalculates the exp production rates
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
   after_save  :propagate_changes_to_resource_pool     # does nothing on owner change
+  after_save  :propagate_changes_to_character         # does nothing on owner change
   after_save  :propagate_score_changes                # does nothing on owner change
   after_save  :propagate_unlock_changes               # does nothing on owner change  
   after_save  :propagate_owner_changes                # corrects resource production, ranking scores, and unlock_counts on owner change
@@ -260,6 +262,9 @@ class Settlement::Settlement < ActiveRecord::Base
     productions = recalc_resource_production_base
     check_and_apply_productions(productions)
     
+    exp = recalc_experience_production
+    check_and_apply_experience_production(exp)
+    
     boni = recalc_local_resource_production_boni
     check_and_apply_local_resource_production_boni(boni)
 
@@ -431,6 +436,7 @@ class Settlement::Settlement < ActiveRecord::Base
     q
   end
 
+    
   protected
   
     ############################################################################
@@ -786,7 +792,12 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
-
+    # recalculates the overall experience production rate
+    # up to now there is only the experience production rate of buildings
+    def update_experience_production
+      self.exp_production_rate = self.exp_production_rate_buildings 
+      true
+    end
 
     def recalc_tax_income
       resource_types = GameRules::Rules.the_rules().resource_types
@@ -839,6 +850,22 @@ class Settlement::Settlement < ActiveRecord::Base
       end    
     end
     
+    
+    def recalc_experience_production
+      exp = 0.0
+      self.slots.each do |slot|
+        exp += slot.experience_production
+      end
+      exp
+    end
+    
+    def check_and_apply_experience_production(recalc_exp)
+      if (self.exp_production_rate_buildings - recalc_exp).abs > 0.000001
+        self.exp_production_rate_buildings = recalc_exp
+        self.save
+        logger.warn(">>> BASE RATE RECALC DIFFERS for experience production. Old: #{self.exp_production_rate_buildings} Corrected: #{recalc_exp}.")
+      end
+    end
     
     
     def recalc_resource_capacity
@@ -978,6 +1005,27 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
+    def propagate_change_of_attribute_to_character(attribute)
+      
+      if !self.changes[attribute].nil?
+        change = self.changes[attribute]
+        delta = change[1] - change[0]   # new - old value
+        self.owner[attribute] += delta
+        return true
+      else
+        return false
+      end
+    end
+    
+    def propagate_changes_to_character
+      return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
+      if (!self.owner_id.nil? && self.owner_id > 0 && propagate_change_of_attribute_to_character('exp_production_rate'))
+        self.owner.save                                        # only save character, if there hase been a change!
+      end
+      
+      true
+    end
+    
     def propagate_score_changes
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
       if (!self.owner_id.nil? && self.owner_id > 0)            # only spread, if there's a resource pool
@@ -1039,6 +1087,7 @@ class Settlement::Settlement < ActiveRecord::Base
       if self.owner_id_changed?
         update_settlement_points_on_changed_possesion
         propagate_changes_to_resource_pool_on_changed_possession
+        propagate_changes_to_character_on_changed_possession
         propagate_score_on_changed_possession
         propagate_unlock_changes_on_changed_possession
       end
@@ -1104,9 +1153,6 @@ class Settlement::Settlement < ActiveRecord::Base
       new_model.save   unless new_model.nil?
     end          
 
-
-    
-    
     def propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, attribute)
       old_value = self[attribute]
       new_value = self[attribute]
@@ -1117,6 +1163,18 @@ class Settlement::Settlement < ActiveRecord::Base
       end
       old_owner.resource_pool[attribute] = (old_owner.resource_pool[attribute] || 0.0) - old_value   unless old_owner.nil?
       new_owner.resource_pool[attribute] = (new_owner.resource_pool[attribute] || 0.0) + new_value   unless new_owner.nil? 
+    end
+    
+    def propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, attribute)
+      old_value = self[attribute]
+      new_value = self[attribute]
+      if !self.changes[attribute].nil?
+        change = self.changes[attribute]
+        new_value = (change[1] || 0)
+        old_value = (change[0] || 0)
+      end
+      old_owner[attribute] = (old_owner[attribute] || 0.0) - old_value   unless old_owner.nil?
+      new_owner[attribute] = (new_owner[attribute] || 0.0) + new_value   unless new_owner.nil? 
     end
     
     # this case (owner changed) is a little bit more tricky; bascially,
@@ -1138,6 +1196,21 @@ class Settlement::Settlement < ActiveRecord::Base
           propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, resource_type[:symbolic_id].to_s() + '_production_rate')
           propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, resource_type[:symbolic_id].to_s() + '_capacity')
         end
+
+        old_owner.resource_pool.save   unless old_owner.nil?
+        new_owner.resource_pool.save   unless new_owner.nil?
+      end
+      true
+    end
+    
+
+    def propagate_changes_to_character_on_changed_possession
+      owner_change = self.changes[:owner_id]
+      if !owner_change.blank?
+        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+
+        propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
 
         old_owner.resource_pool.save   unless old_owner.nil?
         new_owner.resource_pool.save   unless new_owner.nil?

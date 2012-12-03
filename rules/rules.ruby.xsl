@@ -468,6 +468,9 @@ end
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
           :experience_factor => <xsl:value-of select="@experienceFactor" />,
+<xsl:if test="ExperienceProduction">
+          :experience_production => '<xsl:value-of select="ExperienceProduction"/>',
+</xsl:if>
 <xsl:if test="RequirementGroup">
           :requirementGroups=> [
 <xsl:for-each select="RequirementGroup">

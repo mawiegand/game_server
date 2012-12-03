@@ -53,15 +53,15 @@ class Settlement::Slot < ActiveRecord::Base
   end
   
   # calculates the base production produced by this slot for 
-  # experience poiints. returns an array.
+  # experience points. only return the exp value.
   def experience_production
-    return if building_id.nil?
+    return 0 if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
-    return if building_id[:experience_production].nil?
+    return 0 if building_type[:experience_production].nil?
     
-    formula = Util::Formula.parse_from_formula(building_id[:experience_production])
+    formula = Util::Formula.parse_from_formula(building_type[:experience_production])
     formula.apply(self.level)   
   end
 
@@ -332,10 +332,10 @@ class Settlement::Slot < ActiveRecord::Base
   
   def propagate_change(building_id, old_level, new_level)
     propagate_resource_production       building_id, old_level, new_level
+    propagate_experience_production     building_id, old_level, new_level
     propagate_resource_production_bonus building_id, old_level, new_level
     propagate_resource_capacity         building_id, old_level, new_level
     propagate_abilities                 building_id, old_level, new_level
-    propagate_experience                building_id, old_level, new_level
   end
     
   ############################################################################
@@ -363,6 +363,27 @@ class Settlement::Slot < ActiveRecord::Base
     delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
 
     self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
+  end
+  
+  
+  ############################################################################
+  #
+  #  EXPERIENCE PRODUCTION CHANGES
+  #
+  ############################################################################
+
+  def propagate_experience_production(building_id, old_level, new_level)
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    if building_type[:experience_production]
+      attribute = 'exp_production_rate_buildings'
+      
+      formula = Util::Formula.parse_from_formula(building_type[:experience_production])
+      delta = formula.difference(old_level, new_level)        # delta will be added, might be negative (that's abolutely ok)
+      
+      self.settlement[attribute] = (self.settlement[attribute] || 0.0) + delta
+      self.settlement.save               # if something has changed on settlement, save it  
+    end
   end
   
   
@@ -527,21 +548,6 @@ class Settlement::Slot < ActiveRecord::Base
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
     else
       logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      
-    end
-  end
-  
-  def propagate_experience(building_id, old_level, new_level)
-    if new_level > old_level
-      rules = GameRules::Rules.the_rules
-      formula = Util::Formula.parse_from_formula(rules.building_experience_formula)
-      building_type = rules.building_types[building_id]
-      raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
-      experience = 0
-      ((old_level + 1)..new_level).each do |level|
-        experience += (building_type[:experience_factor] * formula.apply(level)).floor
-        logger.debug "---------> experience #{experience} for level #{level}"
-      end
-      self.settlement.owner.add_experience(experience)
     end
   end
   

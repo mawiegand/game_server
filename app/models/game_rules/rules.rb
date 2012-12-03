@@ -4994,6 +4994,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :destructable=> true,
           :experience_factor => 8,
 
+          :experience_production => '4*LEVEL',
+
           :requirementGroups=> [
 
             [

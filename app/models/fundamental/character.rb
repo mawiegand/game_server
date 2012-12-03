@@ -622,6 +622,8 @@ class Fundamental::Character < ActiveRecord::Base
     settlement_points_used = recalc_settlement_points_used
     check_and_apply_settlement_points_used(settlement_points_used)
 
+    experience_production_rate = recalc_experience_production_rate
+    check_and_apply_experience_production_rate(experience_production_rate)
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -709,6 +711,74 @@ class Fundamental::Character < ActiveRecord::Base
     return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
     self.advance_to_next_mundane_rank
     return true
+  end
+  
+  def recalc_experience_production_rate
+    exp_rate = 0.0
+    self.settlements.each do |settlement|
+      exp_rate += settlement.exp_production_rate
+    end
+    exp_rate
+  end
+  
+  def check_and_apply_experience_production_rate(experience_production_rate)
+    if (self.exp_production_rate || 0) !=  experience_production_rate
+      logger.warn(">>> CONSISTENCY ERROR: EXP PRODUCTION RATE RECALC DIFFERS for character #{self.id}. Old: #{self.exp_production_rate} Corrected: #{experience_production_rate}.")
+      self.exp_production_rate = experience_production_rate
+    end    
+  end
+  
+  # updates the resource amounts if the rate changes with this write
+  def update_experience_amount_periodically
+    if self.changed?
+      changed = false 
+      amount_changed = false
+      weighted_production_rate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+        weighted_production_rate += self[attribute] * (resource_type[:rating_value] || 0) 
+        if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
+          changed = true
+        end
+        amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
+      end
+      Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
+      update_resource_amount_atomically                    if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
+    end    
+    true
+  end
+  
+  def update_experience_amount
+    now = Time.now
+    last_update = self.production_updated_at || now # last update, or now, if it has never been updated before.
+
+    hours = (now - last_update) / 3600.0    # hours since last update (this is a fraction)
+    self.exp += self.exp_production_rate * hours
+    self.production_updated_at = now  
+  end    
+  
+  def update_experience_amount_atomically
+    set_clauses = []
+    set_clauses << "exp = exp + #{ Fundamental::Character.produced_experience_amount_sql_fragment('exp_production_rate')}"
+    set_clauses << "\"production_updated_at\" = #{ Fundamental::Character.now_sql_fragment }"
+    set_clauses << "\"updated_at\" = #{ Fundamental::Character.now_sql_fragment }"
+    Fundamental::Character.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
+  end
+  
+  def self.now_sql_fragment
+    Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'
+  end
+  
+  def self.elapsed_time_sql_fragment
+    if Rails.env.development? || Rails.env.test?
+      return @elapsed_time_sql_fragment ||= "(strftime('%s', #{ Fundamental::Character.now_sql_fragment }) - strftime('%s', COALESCE(production_updated_at,  #{ Fundamental::Character.now_sql_fragment })))"
+    else
+      return @elapsed_time_sql_fragment ||= 'EXTRACT(EPOCH FROM (' + Fundamental::Character.now_sql_fragment + '-COALESCE("production_updated_at", ' + Fundamental::Character.now_sql_fragment + ')))'      
+    end
+  end
+  
+  def self.produced_experience_amount_sql_fragment(resource_field)
+    "(#{ Fundamental::Character.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
   end
   
   protected
