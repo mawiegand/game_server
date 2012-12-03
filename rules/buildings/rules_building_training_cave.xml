@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_training_cave" group="miscellaneous" category="building_category_small_building" buyable="false" destructable="true" demolishable="true" experienceFactor="8">  
+<Building id="building_training_cave" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="8">  
   <Name lang="de_DE">Trainingshöhle</Name>
   <Name lang="en_US">Training Cave</Name>
   <Description lang="de_DE">
@@ -17,6 +17,10 @@
   <Flavour lang="en_US">
     <p>translation missing</p>
   </Flavour>
+  <RequirementGroup>
+    <Requirement id="building_chief_cottage" min_level="1" />    
+    <Requirement id="building_haunt" max_level="0" />
+  </RequirementGroup>
   <Cost id="resource_stone"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
   <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
   <Cost id="resource_fur"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5)</Cost>

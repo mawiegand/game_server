@@ -4959,6 +4959,89 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Versammlungsplatz
+        {               #   Trainingshöhle
+          :id          => 27, 
+          :symbolic_id => :building_training_cave,
+					:category    => 5,
+          :db_field    => :building_training_cave,
+          :name        => {
+            
+            :de_DE => "Trainingshöhle",
+  
+            :en_US => "Training Cave",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "<p>Diese Höhle ist ein schöner Platz. Ruhig, kühl, ein perfekter Platz, um sich auszuruhen. Der Halbgott verbringt hier viel seiner Zeit.</p><p>Gerüchte über ein weitreichendes Höhlennetzwerk, in dem Monster hausen, die der Halbgott fernhält, gehen um. Aber keiner der Siedlungsbewohner traut sich in die Höhle, da das den Zorn der Götter auf sie ziehen könnte.</p>",
+  
+            :en_US => "<p>translation missing</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+  
+            :en_US => "<p>translation missing</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+          :experience_factor => 8,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5)',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Trainingshöhle
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################

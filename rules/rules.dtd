@@ -308,6 +308,9 @@
 <!ELEMENT ExperienceProduction (#PCDATA)>
 
 <!ELEMENT Capacity (#PCDATA)>
+<!ATTLIST Capacity
+  id IDREF #REQUIRED
+>
 
 <!ELEMENT ProductionBonus (#PCDATA)>
 <!ATTLIST ProductionBonus
