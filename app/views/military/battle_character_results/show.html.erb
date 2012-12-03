@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battle:</b>
+  <%= @military_battle_character_result.battle_id %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%= @military_battle_character_result.character_id %>
+</p>
+
+<p>
+  <b>Faction:</b>
+  <%= @military_battle_character_result.faction_id %>
+</p>
+
+<p>
+  <b>Experience gained:</b>
+  <%= @military_battle_character_result.experience_gained %>
+</p>
+
+<p>
+  <b>Winner:</b>
+  <%= @military_battle_character_result.winner %>
+</p>
+
+
+<%= link_to 'Edit', edit_military_battle_character_result_path(@military_battle_character_result) %> |
+<%= link_to 'Back', military_battle_character_results_path %>

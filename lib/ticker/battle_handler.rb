@@ -1,12 +1,11 @@
 require 'awe_native_extensions'
 require 'ticker/battle_handler_awe_factory'
 require 'ticker/battle_handler_result_extractor'
-require 'ticker/battle_handler_message_factory'
+require 'ticker/battle_handler/battle_summary'
 
 class Ticker::BattleHandler
   
   include Ticker::BattleHandlerResultExtractor
-  include Ticker::BattleHandlerMessageFactory
   include Ticker::BattleHandlerAweFactory
   
   def runloop 
@@ -64,11 +63,6 @@ class Ticker::BattleHandler
         battle.ended_at = Time.now
         battle.save
 
-        runloop.say "Battle done, starting to send out messages"
-
-        ## generate message for participants
-        generate_messages_for_battle(awe_battle, battle)
-
         runloop.say "Determine winner and check takeover"
 
         ## get winner of the battle
@@ -78,6 +72,7 @@ class Ticker::BattleHandler
         if !winner_faction.nil?
 
           winner_leader = nil
+          winner_faction.set_winner
           winner_faction.update_leader
           winner_leader = winner_faction.leader
 
@@ -96,7 +91,9 @@ class Ticker::BattleHandler
           if !target_settlement.nil? && target_settlement.can_be_taken_over?
             #check if the battle location is owned by a participant of the winner faction
             winner_faction.participants.each do |participant|
-              if !participant.army.nil? && participant.army.owner_id == battle.location.owner_id   # TODO : danger, danger! if the garrison somehow is killed, an army fighting ON THE SIDE of the garrison would takeover the fortress in case of a victory!  -> NEED to store the attacked fortress with the battle when starting a fight!  
+              if !participant.army.nil? && participant.army.owner_id == battle.location.owner_id   # TODO : danger, danger! if the garrison somehow is killed, an army fighting ON THE SIDE of the garrison would takeover the fortress in case of a victory!
+                                                                                                   # -> NEED to store the attacked fortress with the battle when starting a fight!
+                                                                                                   # or simply check against newly introduced character of participant :-)   
                 takeover = false
               end
             end
@@ -151,7 +148,20 @@ class Ticker::BattleHandler
             end
           end
         end
+
+        runloop.say "Calculate XP for both factions"
+        battle.calculate_character_results
         
+        runloop.say "Propagate XP to characters"
+        battle.propagate_character_results_to_character
+        
+        runloop.say "Battle done, starting to send out messages"
+
+        ## generate message for participants
+        battle_summary = Ticker::BattleHandler::BattleSummary.new(battle)
+        #send messages
+        battle_summary.send_battle_report_messages()
+
         runloop.say "Cleanup armies and battle"
 
         ## cleanup of the destroyed armies

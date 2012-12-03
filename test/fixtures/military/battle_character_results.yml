@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_id: 1
+  character_id: 1
+  faction_id: 1
+  experience_gained: 1
+  winner: false
+
+two:
+  battle_id: 1
+  character_id: 1
+  faction_id: 1
+  experience_gained: 1
+  winner: false

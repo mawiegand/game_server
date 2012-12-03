@@ -34,6 +34,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :sign_up,           :class_name => "Backend::SignInLogEntry",    :foreign_key => "character_id", :conditions => ["sign_up = ?", true]
 
   has_many :leads_battle_factions, :class_name => "Military::BattleFaction",  :foreign_key => "leader_id", :inverse_of => :leader
+  has_many :battle_results,    :class_name => "Military::BattleCharacterResult",  :foreign_key => "character_id", :inverse_of => :character
 
   has_many :send_likes,        :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :sender
   has_many :received_likes,    :class_name => "LikeSystem::Like",           :foreign_key => "character_id", :inverse_of => :receiver

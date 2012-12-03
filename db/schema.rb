@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128120838) do
+ActiveRecord::Schema.define(:version => 20121202150333) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1097,6 +1097,16 @@ ActiveRecord::Schema.define(:version => 20121128120838) do
     t.integer  "unit_light_cavalry_4"
   end
 
+  create_table "military_battle_character_results", :force => true do |t|
+    t.integer  "battle_id"
+    t.integer  "character_id"
+    t.integer  "faction_id"
+    t.integer  "experience_gained", :default => 0,     :null => false
+    t.boolean  "winner",            :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "military_battle_faction_results", :force => true do |t|
     t.integer  "battle_id"
     t.integer  "round_id"
@@ -1125,7 +1135,8 @@ ActiveRecord::Schema.define(:version => 20121128120838) do
     t.decimal  "unitcategory_cavalry_strength"
     t.decimal  "unitcategory_artillery_strength"
     t.decimal  "unitcategory_siege_strength"
-    t.decimal  "unitcategory_special_strength",   :default => 0.0, :null => false
+    t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
+    t.boolean  "winner",                          :default => false
   end
 
   create_table "military_battle_participant_results", :force => true do |t|
@@ -1223,6 +1234,7 @@ ActiveRecord::Schema.define(:version => 20121128120838) do
     t.integer  "unit_light_cavalry_4_casualties"
     t.decimal  "unit_light_cavalry_4_damage_taken"
     t.decimal  "unit_light_cavalry_4_damage_inflicted"
+    t.integer  "participant_id"
   end
 
   create_table "military_battle_participants", :force => true do |t|
@@ -1239,6 +1251,7 @@ ActiveRecord::Schema.define(:version => 20121128120838) do
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
+    t.integer  "num_rounds",               :default => 0, :null => false
   end
 
   create_table "military_battle_rounds", :force => true do |t|

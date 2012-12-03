@@ -1,5 +1,6 @@
 all: rules_check tutorial_check
 	xsltproc --xinclude rules.ruby.xsl rules.xml > ../app/models/game_rules/rules.rb
+	../script/rules/check_formula.rb
 	xsltproc --xinclude rules.fields.xsl rules.xml  > database_fields
 	xsltproc --xinclude rules.cpp.xsl rules.xml  > rules.cpp
 	xsltproc --xinclude rules.h.xsl rules.xml    > rules.h

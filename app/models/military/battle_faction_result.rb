@@ -6,7 +6,6 @@ class Military::BattleFactionResult < ActiveRecord::Base
 
   has_many   :participant_results, :class_name => "Military::BattleParticipantResult", :foreign_key => "battle_faction_result_id", :inverse_of => :faction_result
 
-
   def calculate_total_stats
   	rules = GameRules::Rules.the_rules
 

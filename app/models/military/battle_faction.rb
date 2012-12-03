@@ -88,6 +88,11 @@ class Military::BattleFaction < ActiveRecord::Base
     end
   end
   
+  def set_winner
+    self.winner = true
+    self.save
+  end
+  
   def opposing_faction
     self.battle.factions.each do |faction|
       return faction if faction != self
@@ -104,7 +109,7 @@ class Military::BattleFaction < ActiveRecord::Base
   
   def contains_army_of(character)
     participants.each do |participant|
-      return true if !participant.army.nil? && participant.army.owner == character
+      return true if participant.character_id == character.id
     end
     false
   end
