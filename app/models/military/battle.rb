@@ -347,7 +347,7 @@ class Military::Battle < ActiveRecord::Base
     # winner faction: calculate winner experience according to new function
     winner_faction.participants.each do |participant|
       character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
-      character_result.experience_gained += (5.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
+      character_result.experience_gained += (2.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
       logger.debug "participant.num_rounds #{participant.num_rounds}, participant.army.units_count #{participant.results.first.units_count}, loser_units_count: #{loser_units_count}, winner_units_count: #{winner_units_count}"
       character_result.winner = true
       character_result.save
