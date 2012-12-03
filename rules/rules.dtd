@@ -306,9 +306,6 @@
 >
 
 <!ELEMENT ExperienceProduction (#PCDATA)>
-<!ATTLIST ExperienceProduction
-	id IDREF #REQUIRED
->
 
 <!ELEMENT Capacity (#PCDATA)>
 
