@@ -9,11 +9,10 @@ class LikeSystem::Like < ActiveRecord::Base
   after_save :pay_like
   
   def validate_like
-    return false if self.sender == self.receiver
-    true #if self.sender has enough like resources
+    return false if self.sender == self.receiver || self.sender.resource_pool.like_amount < 1.0
   end
   
   def pay_like
-    #reduce like resources of self.sender
+    self.sender.resource_pool.decrement!(:like_amount)
   end
 end
