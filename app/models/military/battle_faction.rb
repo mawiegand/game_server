@@ -113,4 +113,25 @@ class Military::BattleFaction < ActiveRecord::Base
     end
     false
   end
+  
+  # get all characters of this faction without duplicates
+  def characters
+    chars = []
+    participants.each do |participant|
+      chars << participant.character unless chars.include?(participant.character)
+    end
+    chars
+  end
+  
+  def count_victory
+    self.characters.each do |character|
+      character.increment!(:victories, 1)
+    end
+  end
+  
+  def count_defeat
+    self.characters.each do |character|
+      character.increment!(:defeats, 1)
+    end
+  end
 end

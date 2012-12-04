@@ -334,23 +334,25 @@ class Military::Battle < ActiveRecord::Base
   def calculate_character_results
     winner_units_count = 0
     winner_faction.participants.each do |participant|
-      winner_units_count += participant.results.first.units_count
+      winner_units_count += participant.results.first.units_count unless participant.results.empty?
     end
     
     loser_units_count = 0
     loser_faction.participants.each do |participant|
-      loser_units_count += participant.results.first.units_count
+      loser_units_count += participant.results.first.units_count unless participant.results.empty?
     end
     
     logger.debug "winner_units: #{winner_units_count}, loser_units_count #{loser_units_count}, rounds.count #{rounds.count}"
     
     # winner faction: calculate winner experience according to new function
     winner_faction.participants.each do |participant|
-      character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
-      character_result.experience_gained += (2.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
-      logger.debug "participant.num_rounds #{participant.num_rounds}, participant.army.units_count #{participant.results.first.units_count}, loser_units_count: #{loser_units_count}, winner_units_count: #{winner_units_count}"
-      character_result.winner = true
-      character_result.save
+      unless participant.results.empty?
+        character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
+        character_result.experience_gained += (2.0 * participant.num_rounds / rounds.count * participant.results.first.units_count * (loser_units_count ** 2) / (winner_units_count ** 2)).to_i
+        logger.debug "participant.num_rounds #{participant.num_rounds}, participant.army.units_count #{participant.results.first.units_count}, loser_units_count: #{loser_units_count}, winner_units_count: #{winner_units_count}"
+        character_result.winner = true
+        character_result.save
+      end
     end
   end
   
@@ -359,6 +361,11 @@ class Military::Battle < ActiveRecord::Base
       logger.debug "propagate_character_results_to_character: add #{result.experience_gained} to character id #{result.character.id}"
       result.character.add_experience(result.experience_gained)
     end
+  end
+  
+  def count_victory_and_defeat
+    winner_faction.count_victory
+    loser_faction.count_defeat
   end
   
   protected
