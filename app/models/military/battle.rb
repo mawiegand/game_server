@@ -334,12 +334,12 @@ class Military::Battle < ActiveRecord::Base
   def calculate_character_results
     winner_units_count = 0
     winner_faction.participants.each do |participant|
-      winner_units_count += participant.results.first.units_count
+      winner_units_count += participant.results.first.units_count unless participant.results.empty?
     end
     
     loser_units_count = 0
     loser_faction.participants.each do |participant|
-      loser_units_count += participant.results.first.units_count
+      loser_units_count += participant.results.first.units_count unless participant.results.empty?
     end
     
     logger.debug "winner_units: #{winner_units_count}, loser_units_count #{loser_units_count}, rounds.count #{rounds.count}"
