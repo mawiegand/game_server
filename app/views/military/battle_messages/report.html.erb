@@ -2,7 +2,7 @@
 <div class="battle_report">
 		<h1><%= render(I18n.translate('application.messaging.battle_report.title')) %></h1>
 		<p><%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %></p>
-		<% if my_faction_summary.faction.winner %>
+		<% if !my_faction_summary.nil? && my_faction_summary.faction.winner %>
 		  <p><%= I18n.translate('application.messaging.battle_report.winner_message') %>
 		  <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction) %>
 		  <% if xp > 0 %>
