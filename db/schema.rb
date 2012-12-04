@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202150333) do
+ActiveRecord::Schema.define(:version => 20121204131452) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -813,6 +813,8 @@ ActiveRecord::Schema.define(:version => 20121202150333) do
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -1427,6 +1429,8 @@ ActiveRecord::Schema.define(:version => 20121202150333) do
     t.integer  "settlement_queue_special_unlock_count",          :default => 0
     t.integer  "settlement_unlock_prevent_takeover_count",       :default => 0,            :null => false
     t.integer  "building_slots_total",                           :default => 1,            :null => false
+    t.decimal  "exp_production_rate",                            :default => 0.0
+    t.decimal  "exp_production_rate_buildings",                  :default => 0.0
   end
 
   create_table "settlement_slots", :force => true do |t|

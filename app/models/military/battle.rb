@@ -361,6 +361,11 @@ class Military::Battle < ActiveRecord::Base
     end
   end
   
+  def count_victory_and_defeat
+    winner_faction.count_victory
+    loser_faction.count_defeat
+  end
+  
   protected
     
     def destroy_dependent_models
