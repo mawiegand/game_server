@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201022348) do
+ActiveRecord::Schema.define(:version => 20121204215941) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -830,30 +830,30 @@ ActiveRecord::Schema.define(:version => 20121201022348) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "productionUpdatedAt"
-    t.decimal  "resource_wood_amount",                      :default => 0.0
-    t.decimal  "resource_wood_capacity",                    :default => 0.0
-    t.decimal  "resource_wood_production_rate",             :default => 0.0
-    t.decimal  "resource_stone_amount",                     :default => 0.0
-    t.decimal  "resource_stone_capacity",                   :default => 0.0
-    t.decimal  "resource_stone_production_rate",            :default => 0.0
-    t.decimal  "resource_fur_amount",                       :default => 0.0
-    t.decimal  "resource_fur_capacity",                     :default => 0.0
-    t.decimal  "resource_fur_production_rate",              :default => 0.0
-    t.decimal  "resource_cash_amount",                      :default => 0.0
-    t.decimal  "resource_cash_capacity",                    :default => 0.0
-    t.decimal  "resource_cash_production_rate",             :default => 0.0
-    t.decimal  "resource_wood_production_bonus_effects",    :default => 0.0
-    t.decimal  "resource_stone_production_bonus_effects",   :default => 0.0
-    t.decimal  "resource_fur_production_bonus_effects",     :default => 0.0
-    t.decimal  "resource_cash_production_bonus_effects",    :default => 0.0
-    t.decimal  "resource_like_amount",                      :default => 0.0
-    t.decimal  "resource_like_capacity",                    :default => 0.0
-    t.decimal  "resource_like_production_rate",             :default => 0.0
-    t.decimal  "resource_like_production_bonus_effects",    :default => 0.0
-    t.decimal  "resource_dislike_amount",                   :default => 0.0
-    t.decimal  "resource_dislike_capacity",                 :default => 0.0
-    t.decimal  "resource_dislike_production_rate",          :default => 0.0
-    t.decimal  "resource_dislike_production_bonus_effects", :default => 0.0
+    t.decimal  "resource_wood_amount",                    :default => 0.0
+    t.decimal  "resource_wood_capacity",                  :default => 0.0
+    t.decimal  "resource_wood_production_rate",           :default => 0.0
+    t.decimal  "resource_stone_amount",                   :default => 0.0
+    t.decimal  "resource_stone_capacity",                 :default => 0.0
+    t.decimal  "resource_stone_production_rate",          :default => 0.0
+    t.decimal  "resource_fur_amount",                     :default => 0.0
+    t.decimal  "resource_fur_capacity",                   :default => 0.0
+    t.decimal  "resource_fur_production_rate",            :default => 0.0
+    t.decimal  "resource_cash_amount",                    :default => 0.0
+    t.decimal  "resource_cash_capacity",                  :default => 0.0
+    t.decimal  "resource_cash_production_rate",           :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",  :default => 0.0
+    t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
+    t.decimal  "like_amount",                             :default => 0.0
+    t.decimal  "like_capacity",                           :default => 0.0
+    t.decimal  "like_production_rate",                    :default => 0.0
+    t.decimal  "like_bonus_effects",                      :default => 0.0
+    t.decimal  "dislike_amount",                          :default => 0.0
+    t.decimal  "dislike_capacity",                        :default => 0.0
+    t.decimal  "dislike_production_rate",                 :default => 0.0
+    t.decimal  "dislike_bonus_effects",                   :default => 0.0
   end
 
   create_table "fundamental_retention_mails", :force => true do |t|
