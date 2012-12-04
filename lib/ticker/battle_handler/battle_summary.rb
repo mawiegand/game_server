@@ -25,7 +25,7 @@ class Ticker::BattleHandler::BattleSummary
 		#-- Database requests --
 		#-----------------------
 		#load the battle rounds
-		rounds = battle.rounds.includes(:faction_results => [{:faction => [{:participants => :army}]}, {:participant_results => :army} ]).order("round_num")
+		@rounds = battle.rounds.includes(:faction_results => [{:faction => [{:participants => :army}]}, {:participant_results => :army} ]).order("round_num")
 
 		#load the participants for the specific user history
 		participants = battle.participants.includes(:army => [{:owner => :alliance}])
@@ -43,7 +43,7 @@ class Ticker::BattleHandler::BattleSummary
 		end
 
 		#initialize the round and faction summaries
-		rounds.each do |round|
+		@rounds.each do |round|
 			@round_summaries[round.id] = Ticker::BattleHandler::RoundSummary.new(round)
 			round.faction_results.each do |faction_result|
 				if (@faction_summaries[faction_result.faction_id].nil?)
@@ -57,7 +57,7 @@ class Ticker::BattleHandler::BattleSummary
 		#---------------------
 		#update all the summaries with the participant_results
 		joined_participants = Hash.new
-		rounds.each do |round|
+		@rounds.each do |round|
 			round_summary = @round_summaries[round.id]
 			round.faction_results.each do |faction_result|
 				faction_summary = @faction_summaries[faction_result.faction_id]
@@ -128,7 +128,7 @@ class Ticker::BattleHandler::BattleSummary
 
 		Messaging::Message.generate_battle_report_message(character, render(I18n.translate('application.messaging.battle_report.subject')), @message_template.result(binding))
 	
-		#reset the local the old one
+		#reset the local the old one  
 		I18n.locale = old_local
 	end
 
