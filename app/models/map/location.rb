@@ -87,6 +87,10 @@ class Map::Location < ActiveRecord::Base
     end
   end
 
+  def empty?
+    self.settlement_type_id == Settlement::Settlement::TYPE_NONE
+  end
+  
   def fortress?
     (!slot.nil?() && slot == 0)
   end
