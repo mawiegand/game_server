@@ -15,7 +15,29 @@ class Ticker::BattleHandler::UnitSummary
 		@sum_experience_gained = 0
 	end
 
-	def update_based_on_result(new_army, participant_result)
+	def update_with_participant(participant)
+		army = participant.army
+		if !army.nil?
+			rules = GameRules::Rules.the_rules
+			rules.unit_types.each do |unit_type|
+				num = army.number_of_units_of_type(unit_type)
+				if (num > 0)
+					if (@unit_stats[unit_type[:symbolic_id]].nil?)
+					@unit_stats[unit_type[:symbolic_id]] = { 
+						:unit_type => unit_type,
+						:num => 0, 
+						:casualties => 0, 
+						:damage_inflicted => 0}
+					end
+					stat = @unit_stats[unit_type[:symbolic_id]] 
+					stat[:num] += num
+					@sum_units += num
+				end
+			end
+		end
+	end
+
+	def update_based_on_result(new_participant, participant_result)
 		rules = GameRules::Rules.the_rules
 		#puts rules.unit_types
 		rules.unit_types.each do |unit_type|
@@ -31,7 +53,7 @@ class Ticker::BattleHandler::UnitSummary
 				end
 				stat = @unit_stats[unit_type[:symbolic_id]] 
 				#num
-				if (new_army)
+				if (new_participant)
 					stat[:num] += num
 					@sum_units += num
 				end

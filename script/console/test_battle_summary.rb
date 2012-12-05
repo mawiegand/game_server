@@ -7,7 +7,7 @@ end
 end
 
 require 'ticker/battle_handler/battle_summary'
-sum = Ticker::BattleHandler::BattleSummary.new(Military::Battle.find(13))
+sum = Ticker::BattleHandler::BattleSummary.new(Military::Battle.find(4))
 sum.send_battle_report_messages
 
 #sum = Ticker::BattleHandler::BattleSummary.new(Military::Battle.find(1))

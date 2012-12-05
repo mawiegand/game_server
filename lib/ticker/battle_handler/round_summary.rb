@@ -1,15 +1,14 @@
 require 'ticker/battle_handler/unit_summary'
 require 'ticker/battle_handler/faction_summary'
-#require 'ticker/battle_handler/army_summary'
 
 class Ticker::BattleHandler::RoundSummary < Ticker::BattleHandler::UnitSummary
-	attr_accessor :round, :faction_summaries, :new_armies, :retreat_tried_armies, :retreat_succeeded_armies
+	attr_accessor :round, :faction_summaries, :new_participants, :retreat_tried_armies, :retreat_succeeded_armies
 	
 	def initialize(round)
 		super()
 		@round = round
 		@faction_summaries = Hash.new
-		@new_armies = Array.new
+		@new_participants = Array.new
 		@retreat_tried_armies = Array.new
 		@retreat_succeeded_armies = Array.new
 		#generate faction summaries
@@ -18,12 +17,12 @@ class Ticker::BattleHandler::RoundSummary < Ticker::BattleHandler::UnitSummary
 		end
 	end
 
-	def update_based_on_result(add_num, participant_result)
-		super(add_num, participant_result)
+	def update_based_on_result(new_participant, participant_result)
+		super(new_participant, participant_result)
 		#update faction summaries
-		@faction_summaries[participant_result.battle_faction_result_id].update_based_on_result(add_num, participant_result)
+		@faction_summaries[participant_result.battle_faction_result_id].update_based_on_result(new_participant, participant_result)
 		#new army
-		new_armies.push(participant_result.army) if add_num
+		new_participants.push(participant_result.participant) if new_participant
 		#check if the there was a try to flee
 		if (participant_result.retreat_tried)
 			@retreat_tried_armies.push(participant_result.army)
