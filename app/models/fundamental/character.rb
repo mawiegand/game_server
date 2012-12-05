@@ -162,7 +162,11 @@ class Fundamental::Character < ActiveRecord::Base
     })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
-    
+
+  def locale
+    #TODO set language local
+    :de_DE
+  end  
   
   def can_create_alliance?
     !character_unlock_alliance_creation_count.blank? && character_unlock_alliance_creation_count >= 1

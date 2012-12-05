@@ -25,21 +25,25 @@ class Ticker::BattleHandler::BattleSummary
 		#-- Database requests --
 		#-----------------------
 		#load the battle rounds
-		@rounds = battle.rounds.includes(:faction_results => [{:faction => [{:participants => :army}]}, {:participant_results => :army} ]).order("round_num")
+		@rounds = battle.rounds.includes(:faction_results => [{:faction => [{:participants => [:army, :character]}]}, {:participant_results => [:army, {:participant => :character}]} ]).order("round_num")
 
 		#load the participants for the specific user history
-		participants = battle.participants.includes(:army => [{:owner => :alliance}])
+		participants = battle.participants.includes(:army, :character => [:alliance])
 
 		#------------------------------
 		#-- Summaries initialization --
 		#------------------------------
-		#initialize the army summaries
+		#initialize the participant summaries
 		participants.each do |participant|
 			if (@character_army_summaries[participant.character_id].nil?) 
 				@character_army_summaries[participant.character_id] = Hash.new
 			end
 			hash = @character_army_summaries[participant.character_id]
-			hash[participant.army_id] = Ticker::BattleHandler::ArmySummary.new(participant.army)
+			hash[participant.id] = Ticker::BattleHandler::ArmySummary.new(participant)
+			#if empty initialize with the army itself
+			if @rounds.empty?
+				hash[participant.id].update_with_participant(participant)
+			end
 		end
 
 		#initialize the round and faction summaries
@@ -48,6 +52,16 @@ class Ticker::BattleHandler::BattleSummary
 			round.faction_results.each do |faction_result|
 				if (@faction_summaries[faction_result.faction_id].nil?)
 					@faction_summaries[faction_result.faction_id] = Ticker::BattleHandler::FactionSummary.new(faction_result.faction)
+				end
+			end
+		end
+
+		#in case of no rounds do the faction summaries manualy
+		if @rounds.empty?
+			battle.factions.each do |faction|
+				@faction_summaries[faction.id] = Ticker::BattleHandler::FactionSummary.new(faction)
+				faction.participants.each do |participant|
+					@faction_summaries[faction.id].update_with_participant(participant)
 				end
 			end
 		end
@@ -64,14 +78,14 @@ class Ticker::BattleHandler::BattleSummary
 				faction_result.participant_results.each do |participant_result|
 					#find if new armies have joined the battle
 					is_new_participant = false
-					if joined_participants[participant_result.army_id].nil?
+					if joined_participants[participant_result.participant_id].nil?
 						is_new_participant = true
-						joined_participants[participant_result.army_id] = true
+						joined_participants[participant_result.participant_id] = true
 					end
 					#TODO detect leader change
 
 					#update the corresponding army summary
-					army_summary = @character_army_summaries[participant_result.participant.character_id][participant_result.participant.army_id]
+					army_summary = @character_army_summaries[participant_result.participant.character_id][participant_result.participant_id]
 					army_summary.update_based_on_result(is_new_participant, participant_result)
 					#update the faction summaries
 					faction_summary.update_based_on_result(is_new_participant, participant_result)
@@ -113,8 +127,12 @@ class Ticker::BattleHandler::BattleSummary
 
 	def generate_message(character)
 		old_local = I18n.locale
-		#TODO set language local based on character settings?
-		I18n.locale = :de
+		@locale = character.locale
+		if (character.locale.to_s[0,2] == "de")
+			I18n.locale = :de
+		else
+			I18n.locale = :en
+		end
 
 		#army summary
 		my_army_summaries = @character_army_summaries[character.id];
@@ -140,12 +158,12 @@ class Ticker::BattleHandler::BattleSummary
 	end
 
 	def get_unit_name(unit_type, character)
-		return unit_type[:name][:de_DE] if I18n.locale == :de
-		unit_type[:name][:en_US]
+		return unit_type[:name][@locale] unless unit_type[:name][@locale].nil?
+		return unit_type[:name][:en_US] unless unit_type[:name][:en_US].nil?
+		nil
 	end
 
 	def get_character_name(character)
-		#TODO detect languages somehow?
 		return character.name if character.alliance.nil?
 		character.name + " | " +character.alliance.tag
 	end

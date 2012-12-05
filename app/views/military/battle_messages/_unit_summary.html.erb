@@ -1,29 +1,40 @@
 			<!-- begin unit summary -->
 			<table>
-				<% if  unit_summary.methods.include?(:army) && !unit_summary.army.nil? %>
-				<tr>
-					<td colspan="2">
-						<%= unit_summary.army.name %>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><hr></td>
-				</tr>
+				<% if  unit_summary.methods.include?(:participant) && !unit_summary.participant.nil? %>
+					<tr>
+						<td colspan="2">
+							<%= unit_summary.participant.army_name %>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+				<% end %>
+
+				<% if unit_summary.unit_stats.empty? %>
+					<% unless  unit_summary.methods.include?(:participant) && !unit_summary.participant.nil? %>
+						<tr>
+							<td colspan="2"><hr></td>
+						</tr>
+					<% end %>
+					<tr>
+						<td colspan="2"><%= I18n.translate('application.messaging.battle_report.no_units') %></td>
+					</tr>
 				<% end %>
 				<% unit_summary.unit_stats.each do |unit_type_symbol, unit_stats| %>
-				<tr>
-					<td><div class="unit-image uc-0 tiny">&nbsp;</div><div class="unit_name_text"> <%= get_unit_name(unit_stats[:unit_type], character) %></div></td>
-					<td>
-						<div class="bar_container">
-							<div class="bar_container" style="width: auto; min-width: <%= percent_of(unit_stats[:num], @max_faction_unit_num) %>%">
-								<div class="dead_bar" style="width: 100%"></div>
-								<div class="survivor_bar" style="width: <%= percent_of((unit_stats[:num] - unit_stats[:casualties]), unit_stats[:num]) %>%"></div>
-								<div class="bar_numbers"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
-								<div class="bar_text_padding"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
+					<tr>
+						<td><div class="unit-image uc-0 tiny">&nbsp;</div><div class="unit_name_text"> <%= get_unit_name(unit_stats[:unit_type], character) %></div></td>
+						<td>
+							<div class="bar_container">
+								<div class="bar_container" style="width: auto; min-width: <%= percent_of(unit_stats[:num], @max_faction_unit_num) %>%">
+									<div class="dead_bar" style="width: 100%"></div>
+									<div class="survivor_bar" style="width: <%= percent_of((unit_stats[:num] - unit_stats[:casualties]), unit_stats[:num]) %>%"></div>
+									<div class="bar_numbers"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
+									<div class="bar_text_padding"><%= (unit_stats[:num]-unit_stats[:casualties]) %>/<%= unit_stats[:num] %></div>
+								</div>
 							</div>
-						</div>
-					</td>
-				</tr>
+						</td>
+					</tr>
 				<% end %>
 				<tr>
 					<td colspan="2"><hr></td>
@@ -52,33 +63,39 @@
 						</div>
 					</td>
 				</tr>
-				<% if  unit_summary.methods.include?(:army) && !unit_summary.army.nil? %>
-				<tr>
-					<td><div class="xp-icon">&nbsp;</div> XP</td>
-					<td>
-						<div class="bar_container">
-							<div class="bar_container" style="width: auto; min-width: 100%;">
-								<div class="xp_bar" style="width: 100%;"></div>
-								<div class="bar_numbers"><%= unit_summary.sum_experience_gained %></div>
-								<div class="bar_text_padding"><%= unit_summary.sum_experience_gained %></div>
+				<% if  unit_summary.methods.include?(:participant) && !unit_summary.participant.nil? %>
+					<tr>
+						<td><div class="xp-icon">&nbsp;</div> XP</td>
+						<td>
+							<div class="bar_container">
+								<div class="bar_container" style="width: auto; min-width: <%= 
+									if (unit_summary.sum_experience_gained > 0) 
+										"100%" 
+									else 
+										"0%" 
+									end 
+									%>;">
+									<div class="xp_bar" style="width: 100%;"></div>
+									<div class="bar_numbers"><%= unit_summary.sum_experience_gained %></div>
+									<div class="bar_text_padding"><%= unit_summary.sum_experience_gained %></div>
+								</div>
 							</div>
-						</div>
-					</td>
-				</tr>
+						</td>
+					</tr>
 				<% end %>
-				<% if  unit_summary.methods.include? :armies %>
+				<% if  unit_summary.methods.include? :participants %>
 					<tr>
 						<td colspan="2"><hr></td>
 					</tr>
 					<tr>
 						<td colspan="2">
-					<% unit_summary.armies.each do |army| %>
-					  <% unless army.nil? %>
-						  <%= army.name %> ( <%= get_character_name(army.owner) %> )<br>
-						<% else %>
-						  Aufgelöste Armee</br>
-						<% end %>
-					<% end %>
+							<% unit_summary.participants.each do |participant| %>
+								<% unless participant.nil? %>
+									<%= participant.army_name %> ( <%= get_character_name(participant.character) %> )<br>
+								<% else %>
+									Aufgelöste Armee</br>
+								<% end %>
+							<% end %>
 						</td>
 					</tr>
 				<% end %>

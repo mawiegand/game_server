@@ -136,7 +136,8 @@ en:
         dissolved: disbanded
         destroyed: "destroyed"
         retreated: "retreated"
-        survived: "survived"    
+        survived: "survived"   
+        no_units: "no units" 
         
   sessions:
         
