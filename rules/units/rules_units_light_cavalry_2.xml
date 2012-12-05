@@ -2,17 +2,17 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="light_cavalry_2" category="unitcategory_cavalry">
-      <Name>Ostrich Riders2</Name>
+      <Name>One-handed Ostrich Rider</Name>
       <Name lang="de_DE">Einhändiger Straußenreiter</Name>
       <Description lang="de_DE">
         <p>Eine handliche Keule in der freien Hand sind einhändige Straußenkrieger der Todfeind aller Fernkämpfer.</p>
         <p>Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen.</p>
       </Description>
       <Description lang="en_US">
-        <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
+        <p>With a handy little club in his free hand, the one-handed ostrich rider is a deadly enemy for stone throwers. In battle against clubbers, though, they usually come off worse because they only have rather small, light clubs.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>Kills opposing units.</p>
+        <p>Experienced ostrich riders only need one hand to hold on to their mounts, which means they have one hand free to do more practical things. Like picking their noses, for instance, or smashing in the skulls of their enemies.</p>
       </Flavour>
       <Flavour lang="de_DE">
         <p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zuzuwinken oder seinen Feinden den Schädel einzuhauen.</p>

@@ -3,16 +3,17 @@
 
 <Building id="building_furrier" group="resource" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="1.5">  
   <Name lang="de_DE">Kürschner</Name>
-  <Name lang="en_US">Peltmonger</Name>
+  <Name lang="en_US">Furrier</Name>
   <Description lang="de_DE">
     <p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Und wenn tatsächlich mal ein Säbelzahntiger erlegt wird, dann zaubert er auch etwas für die Dame von Welt im Angebot.</p>
     <p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet und erhöht damit die Fellproduktion deutlich.</p>
   </Description>
   <Description lang="en_US">
-    <p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p> 
+    <p>The furrier turns skins into leather – he can make a useful hide out of even the smallest rodent. And if a sabre-toothed tiger should actually be killed, he can also conjure up something for a sophisticated lady.</p>
+    <p>The waste from larger furriers’ businesses is processed by smaller furriers with lower overheads, giving a noticeable boost to fur production.</p> 
   </Description>
   <Flavour lang="en_US">
-	<p>The peltmonger is literally flaying all day long!</p>
+	<p>TheA furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there’s usually something tasty roasting over the fire too.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>

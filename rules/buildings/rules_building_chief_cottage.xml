@@ -3,17 +3,17 @@
 
 <Building id="building_chief_cottage" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6">  
   <Name lang="de_DE">Häuptlingshütte</Name>
-  <Name lang="en_US">Chieftain‘s Hall</Name>
+  <Name lang="en_US">Chieftain‘s Hut</Name>
   <Description lang="de_DE">
     <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe läßt sich der Fortschritt der Siedlung ablesen. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p>
   <p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p> 
   </Description>
   <Description lang="en_US">
-    <p>At start it is more a hut or but later an area to represent the chieftain‘s glory, advancement and power.</p> 
-	<p>Symbols of triumph, the banners and iconic loot is shown off here. Rumor has it that the chieftain uses his hall for excessive orgies from time to time!</p>
+    <p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Its size alone will tell you how the settlement is progressing. The bigger the chieftain’s hut, the more – and better – the buildings and the more armies the settlement can have. Of course, the chieftain has a little store in his hut for when times get tough.</p>
+    <p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>
   </Description>
   <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+    <p>This is where decisions are made! Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Hier werden die Entscheidungen getroffen! Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>  

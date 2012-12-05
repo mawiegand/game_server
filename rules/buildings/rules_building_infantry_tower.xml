@@ -3,16 +3,16 @@
 
 <Building id="building_infantry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="4.5">  
   <Name lang="de_DE">Truppenunterkunft</Name>
-  <Name lang="en_US">Vertical Barracks</Name>
+  <Name lang="en_US">Infantry Tower</Name>
   <Description lang="de_DE">
     <p>In dem Turm der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p>
   <p>Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p> 
   </Description>
   <Description lang="en_US">
-    <p>Training center for close combat warriors. Without the infantry every army becomes useless - and this is the place where the backbone of every stone-aged and postmodern army composition gets finishing. Reckless. Ruthless. Relentless.</p> 
+    <p>Infantry troops are instructed in the art of fighting in the infantry tower. The extremely sadistic trainer sets great store by obedience and discipline. And if someone doesn’t obey orders or is even more stupid than the others during training, he has to clean the stables in the cavalry tower. Anyone who can survive that usually comes back and fights with noticeably more enthusiasm.</p> 
   </Description>
   <Flavour lang="en_US">
-	<p>Hooray! Strike first then talk, is the overall principle the instructors drum into the recruits‘ brains.</p>
+	<p>No place for thinkers! Infantry members need strength and stamina, whether they’re armed with a truncheon, a club or a spear.</p>
   </Flavour>
     <Flavour lang="de_DE">
    <p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>

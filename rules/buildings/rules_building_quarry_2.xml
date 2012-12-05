@@ -3,16 +3,17 @@
 
 <Building id="building_quarry_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2" experienceFactor="3.3">  
   <Name lang="de_DE">Altehrwürdiger Steinbruch</Name>
-  <Name lang="en_US">Quarry</Name>
+  <Name lang="en_US">Age-old Stone Quarry</Name>
   <Description lang="de_DE">
-    <p>Wie die Steinbrüche in der Kupferzeit mehr Steine abbauen können, bleibt rätselhaft. Denn sie sind die einzigen, die keine Kupferwerkzeuge bekommen haben. Aber trotzdem geht der Abbau spürbar schneller.</p>
-    <p>Ab einer gewissen Größe werden die Arbeiter noch schneller und treiben sogar andere Steinbrüche zu schnellerer Arbeit an.</p>
+    <p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p>
+    <p>Ab einer gewissen Größe werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>
   </Description>
   <Description lang="en_US">
-    <p>Specialized in rock cutting more efficiently than the gatherer and produces stones. It is still not clear, if lumberjacks and quarry men are akin to each other or not.</p>
+    <p>How they managed to excavate so much stone from the quarries in the copper-stone age is a mystery. They were the only ones who didn’t have copper implements. But still, excavation was noticeably faster.</p>
+    <p>Workers of a certain size and upwards were even faster, encouraging the workers in other quarries to work faster.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stones, even more stones!</p>
+    <p>In the copper-stone age, you’d expect workers to have copper pickaxes. But the workers preferred to invest their copper in jewellery for their wives. Apparently a better investment, as the grateful women rewarded them lavishly.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>In der Kupferzeit würde man erwarten, kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Offensichtlich die bessere Investition, denn die Belohnung der glücklichen Frauen ist umso größer.</p>

@@ -2,17 +2,17 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Unit id="clubbers_3" category="unitcategory_infantry">
-  <Name>Drunk Clubber</Name>
+  <Name>Drunken Clubber</Name>
   <Name lang="de_DE">Betrunkener Keulenkrieger</Name>
   
   <Description lang="de_DE">
     <p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf. Nichts geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Actually armed with a club, the mace-men are in the front rank of all armies.</p>
+    <p>Some clubbers even show up on the battlefield with a barrel of beer. There’s nothing like a good swig of beer before, during and after a battle. A slightly drunk clubber staggers and weaves, making him a much more difficult target for ranged combatants. But ranged combatants can’t aim anyway, which makes them just as deadly for clubbers. </p>
   </Description>
   <Flavour lang="en_US">
-    <p>Kills opposing units.</p>
+    <p>Very few clubbers survive their first battles, and almost none of them survive an entire war. Drinking enough beer increases their combat strength and reduces their ability to feel pain. </p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Durch ausreichend Bier erhöht sich die Kampfkraft und verringert sich das Schmerzempfinden.</p>

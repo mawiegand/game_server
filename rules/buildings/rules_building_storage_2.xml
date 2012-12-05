@@ -3,15 +3,15 @@
 
 <Building id="building_storage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">  
   <Name lang="de_DE">Rohstofflager mit Kupferkarren</Name>
-  <Name lang="en_US">Storage</Name>
+  <Name lang="en_US">Raw Materials Store with Copper Carts</Name>
   <Description lang="de_DE">
     <p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>
    </Description>
   <Description lang="en_US">
-    <p>Storage space.</p>
+    <p>Copper carts! THE status symbol for a chieftain. There is also a bigger store room, but who cares when you see those shiny copper carts gleaming in the sunlight.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stores your resources.</p>
+    <p>Stone containers, dinosaur cranes, and, more recently, copper carts. At last raw materials can be transported in style.</p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>

@@ -9,11 +9,11 @@
     <p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Zwar beeindruckt das die Mädchen ungemein, aber die Jungs haben keine Zeit mehr sich in der Aufmerksamkeit zu sonnen. Die Tierpfleger entsorgen die blutigen Überreste ohne großes Aufheben.</p>
  </Description>
   <Description lang="en_US">
-    <p>Training center for all mounted units. Horse-back riding is not vanilla, so, 101-riding courses, how to put spur on horses and domesticating them; all this is done here.</p> 
-	<p>Access is only granted to equestrians and zookeepers.</p>
+    <p>The cavalry tower is where all mounted units are trained. Great store is set on proper animal handling as well as on riding technique.</p>
+    <p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>
   </Description>
   <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+    <p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Hier sind Unmengen an Tieren und verschwitzten Männern untergebracht. Vorsicht vor Dung und penetrantem Geruch!</p>

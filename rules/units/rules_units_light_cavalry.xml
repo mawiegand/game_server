@@ -2,16 +2,16 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="light_cavalry" category="unitcategory_cavalry">
-      <Name>Ostrich Riders</Name>
+      <Name>Two-handed Ostrich Rider</Name>
       <Name lang="de_DE">Zweihändiger Straußenreiter</Name>
       <Description lang="de_DE">
         <p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug, um an der Infanterie vorbeizukommen, bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn dies meist wenig Unterschied macht.</p> 
       </Description>
       <Description lang="en_US">
-        <p>Ostrichs are not only delicious but also excellent and fast animals to be used in combats. Ostrich riders are very quick, but only lightly armored.</p>
+        <p>Ostriches don’t just taste delicious, they’re also really good, speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off, although that doesn’t seem to make much difference.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>Kills opposing units.</p>
+        <p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>
       </Flavour>
       <Flavour lang="de_DE">
         <p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>

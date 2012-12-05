@@ -3,16 +3,16 @@
 
 <Building id="building_furrier_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">  
   <Name lang="de_DE">Verrückter Kürschner</Name>
-  <Name lang="en_US">Peltmonger</Name>
+  <Name lang="en_US">Crazy Furrier</Name>
   <Description lang="de_DE">
     <p>Die Kupfermesser waren ein Geschenk der Götter. Zumindest glauben das die Kürschner, die mit den Kupfermessern herausragende Mode entwerfen. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>
     <p>Genau deswegen sind die verrückten Kürschner natürlich große Vorbilder für andere Kürschner.</p>
   </Description>
   <Description lang="en_US">
-    <p>Manufacturing hides into leather. Sometimes there are also must-have sabre cat furs as ready-to-wear fashion for the lady or cosy brontosaurus regulation underwear.</p> 
+    <p>The copper knife was a gift from the gods. At least, that’s what the furriers believe who use their copper knives to create gorgeous fashions. Sadly, they suffer from the usual unfortunate side-effects: vigorous fanning, a high-pitched nasal voice and other limp-wristed craziness. This is why crazy furriers set such a good example for other furriers.</p> 
   </Description>
   <Flavour lang="en_US">
-	<p>The peltmonger is literally flaying all day long!</p>
+	<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>

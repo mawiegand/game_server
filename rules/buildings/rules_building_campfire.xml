@@ -11,11 +11,12 @@
         <p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht und nicht abgerissen werden!</p>
    </Description>
   <Description lang="en_US">
-    <p>Assembly area for the locals and also the district of foreign embassies. Random guests are normally invited to sit by the fire while hostile messengers get hammered at the stake.</p> 
-	<p>The place to be in every settlement for networking and discussing the really important matters, like whether a stranger gets eaten alive or tickled to ecstasy.</p>
+    <p>At the campfire, inhabitants gather in sociable groups, or to make important arrangements. Guests are also either selected to join the campfire group, or arranged round it on stakes.</p>
+    <p>Negotiations with neighbours or forging alliances, it all happens – well lubricated by plenty of beer – around the campfire.</p>
+    <p>It’s also where the little chiefs’ careers begin. A couple of flattering words here, a bit of scheming there, taking credit for someone else’s bravery and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Diplomatic bla-bla or alliance conferences can be held in the embassies. And a good conversation is not a monologue!</p>
+    <p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p> Ort diplomatischen Austauschs oder Besprechungen innerhalb der Allianz. Zu einer guten Unterhaltung gehören mindestens zwei, auch wenn oft nur einer redet. Reden, das kann der Kleine Häuptling wie kein zweiter.</p>

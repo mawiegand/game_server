@@ -2,17 +2,17 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
   <Unit id="thrower" category="unitcategory_artillery">
-    <Name>Pebble Thrower</Name>
+    <Name>Gravel Stone Thrower</Name>
     <Name lang="de_DE">Kieselsteinwerfer</Name>
     <Description lang="de_DE">
       <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
       <p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>
     </Description>
     <Description lang="en_US">
-      <p>Small Stones, big Stones, a Peeble Thrower likes them all, as long as he can throw them at people. Ok, granted, the small ones are slightly prefered... Nevertheless, he may inflict moderate critical damage by sometimes hitting an opponent's eye.'</p>
+      <p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone’s head. Well, OK – they do prefer the smaller ones. Stone throwers don’t actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren’t afraid of death as such – they’re more afraid of the ostrich riders who cause it.</p>
     </Description>
-    <Flavour lang="en_US"> 
-      <p>Kills opposing units.</p>
+    <Flavour lang="en_US">
+      <p>These ranged combatants couldn’t hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that’s hard to miss. </p>
     </Flavour>
     <Flavour lang="de_DE">
       <p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>
