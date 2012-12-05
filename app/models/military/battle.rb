@@ -76,7 +76,7 @@ class Military::Battle < ActiveRecord::Base
     defender.battle.save
 
     # send notification messages for participants of ending battle
-    defender.battle.generate_messages_for_battle(nil, defender.battle)
+    # defender.battle.generate_messages_for_battle(nil, defender.battle)
         
     # put participants of defender's faction in defender's battle to the faction of attacker's opponents in attacker's battle
     defender.battle_participant.faction.participants.each do |participant|
@@ -177,6 +177,11 @@ class Military::Battle < ActiveRecord::Base
             other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
+          elsif (other_army != attacker &&                                       # if other army is the garrison army
+              other_army != defender &&
+              other_army.garrison &&
+              other_army.fighting?)                                              # and if it's fighting
+            Military::Battle.merge_battles(attacker, other_army)                 # merge battle with garrison battle
           end
         end
       end
