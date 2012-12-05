@@ -23,7 +23,7 @@
 				<% end %>
 				<% unit_summary.unit_stats.each do |unit_type_symbol, unit_stats| %>
 					<tr>
-						<td><div class="unit-image uc-0 tiny">&nbsp;</div><div class="unit_name_text"> <%= get_unit_name(unit_stats[:unit_type], character) %></div></td>
+						<td><div class="unit-image uc-<%= unit_stats[:unit_type][:category] %> tiny">&nbsp;</div><div class="unit_name_text"> <%= get_unit_name(unit_stats[:unit_type], character) %></div></td>
 						<td>
 							<div class="bar_container">
 								<div class="bar_container" style="width: auto; min-width: <%= percent_of(unit_stats[:num], @max_faction_unit_num) %>%">
