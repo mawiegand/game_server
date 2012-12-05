@@ -284,6 +284,7 @@ class Military::Battle < ActiveRecord::Base
       battle_id: faction.battle_id,
       character_id: army.owner_id,
       army_id: army.id,
+      army_name: army.name,
       joined_at: DateTime.now,
       retreated: false
     })
