@@ -3,17 +3,19 @@
 
 <Building id="building_stud" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="4.5">  
   <Name lang="de_DE">Stinkender Stall</Name>
-  <Name lang="en_US">Stable</Name>
+  <Name lang="en_US">Smelly Barn</Name>
   <Description lang="de_DE">
     <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten.</p>
   <p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, um sich ganz auf das Reiten zu konzentrieren. Das Reittier ist die Waffe!</p>
   <p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>
   </Description>
   <Description lang="en_US">
-    <p>Hosts troops.</p>
+    <p>The barn smells like no other building in the settlement. Not surprisingly, it’s where ostriches, sabre-toothed tigers and little dinosaurs are kept – as well as a kitty cat as mascot.</p>
+    <p>The animals are trained and the riders are taught how to handle them. Very few riders carry weapons into battle, as they have to concentrate on riding. Their mount is their weapon!</p>
+    <p>Big barns smell even worse, but that speeds up the training and they can drill bigger animals.</p>
   </Description>
   <Flavour lang="en_US">
-    <p> lustiger Flavour Text hier </p>
+    <p>Smelly animals and a kitty cat. Life on a stud farm couldn’t be better.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>

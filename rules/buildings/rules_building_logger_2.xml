@@ -3,15 +3,15 @@
 
 <Building id="building_logger_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2" experienceFactor="3.3">  
   <Name lang="de_DE">Holzfäller mit Kupferaxt</Name>
-  <Name lang="en_US">Lumberjack</Name>
+  <Name lang="en_US">Logger with Copper Axe</Name>
   <Description lang="de_DE">
     <p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>
   </Description>
   <Description lang="en_US">
-    <p>Specialized in cutting trees more efficiently than the gatherer and produces logs. Is by definition permanently competing with the quarry man.</p>
+    <p>Copper axes fell trees much faster. Unfortunately, copper axes constantly need repairing. But loggers who use them are more efficient and motivate ordinary loggers to fell more trees, though generally smaller ones.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Wood! Even more wood!</p>
+    <p>A man and his copper axe! Although the copper axes always bend, he actually does manage to bring home trees he has felled himself, as well as some brushwood.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er tatsächlich selbst gefällte Bäume und weniger loses Gestrüpp mit.</p>

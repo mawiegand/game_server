@@ -6,7 +6,7 @@
       <Name>Infantry</Name>
       <Name lang="de_DE">Fußtruppen</Name>
       <Description>
-        <p>English description here.</p>
+        <p>Infantry is the basic unit in every army squad. They protect stone throwers from direct attack and, given enough of them, can also fend off flank attacks.</p>
       </Description>
       <Description lang="de_DE">
         <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkten Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
@@ -23,10 +23,10 @@
 			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="unitcategory_cavalry">
-      <Name>cavalry</Name>
+      <Name>Riders</Name>
       <Name lang="de_DE">Reiter</Name>
       <Description>
-        <p>English description here.</p>
+        <p>Mounted units move fast across the battlefield and are the only ones able to avoid enemy infantry and mount a direct attack on enemy throwers (flank attack).</p>
       </Description>
       <Description lang="de_DE">
         <p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>
@@ -50,10 +50,10 @@
 			</TargetPriorities>
     </UnitCategory>
     <UnitCategory id="unitcategory_artillery">
-      <Name>Ranged Troops</Name>
+      <Name>Ranged Combatants</Name>
       <Name lang="de_DE">Fernkämpfer</Name>
       <Description>
-        <p>English description here.</p>
+        <p>Ranged combatants shoot at the enemy from a safe distance – preferably at foot soldiers. They are extremely vulnerable in a melee.</p>
       </Description>
       <Description lang="de_DE">
         <p>Die Fernkämpfer schießen aus sicherer Distanz auf den Gegner, vorzugsweise auf Fußsoldaten. Im Nahkampf sind sie extrem anfällig.</p>
@@ -72,7 +72,7 @@
       <Name>Siege Weapons</Name>
       <Name lang="de_DE">Belagerungsgeräte</Name>
       <Description>
-        <p>Siege Weapons support armies in battle against settlements.</p>
+        <p>Siege weapons are used to back up attacks on settlements.</p>
       </Description>
       <Description lang="de_DE">
         <p>Belagerungsgerät dient der Unterstützung im Kampf gegen Siedlungen.</p>
@@ -92,7 +92,7 @@
       <Name>Special Units</Name>
       <Name lang="de_DE">Spezialeinheiten</Name>
       <Description>
-        <p>English description here.</p>
+        <p>Special units are needed when founding settlements, for example.</p>
       </Description>
       <Description lang="de_DE">
         <p>Spezialeinheiten werden zum Beispiel für die Siedlungsgründung benötigt.</p>

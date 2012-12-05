@@ -3,20 +3,19 @@
 
 <Building id="building_storage" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="1.5">  
   <Name lang="de_DE">Rohstofflager</Name>
-  <Name lang="en_US">Storage</Name>
+  <Name lang="en_US">Raw Materials Store</Name>
   <Description lang="de_DE">
         <p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>
             <p>Ein Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lager- als auch die Handelsmenge.</p>
    </Description>
   <Description lang="en_US">
-    <p>Storage space.</p>
+    <p>Stone-age logistics centre where raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stores your resources.</p>
+    <p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>
-
   </Flavour> 
   <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
   <RequirementGroup>
