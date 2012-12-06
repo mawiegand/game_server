@@ -125,6 +125,12 @@ class Military::Army < ActiveRecord::Base
     end
     false
   end
+
+  def number_of_units_of_type(unit_type)
+    value = self.details[unit_type[:db_field]]
+    return value if ((!value.nil?) && (value > 0))
+    0
+  end
   
   def update_ap_if_necessary
     update_ap if needs_ap_update?

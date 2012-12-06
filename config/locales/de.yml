@@ -49,7 +49,7 @@ de:
         overview: Übersicht
         details: Details
         round: Runde
-        total_army_of_my_faction: Gesammte Armee deiner Fraktion
+        total_army_of_my_faction: Gesamte Armee deiner Fraktion
         total_army_of_enemy_faction: Armee der feindlichen Fraktion
         total_damage: Total angerichter Schaden
         total_lost_unts: Verlorene Einheiten
@@ -57,6 +57,7 @@ de:
         dissolved: "aufgelöst"
         retreated: "zurückgezogen"
         survived: "hat überlebt"
+        no_units: "keine Einheiten"
     shop:
       platinum_info:
         title: Platinum Account

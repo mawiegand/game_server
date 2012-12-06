@@ -2,9 +2,6 @@
 <div class="battle_report">
     <h1><%= render(I18n.translate('application.messaging.battle_report.title')) %></h1>
   		<p><%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %></p>
-  	<% if @rounds.empty? %>
-  		<p><%= I18n.translate('application.messaging.battle_report.no_rounds') %></p>
-  	<% else %>
   		<% if !my_faction_summary.nil? && my_faction_summary.faction.winner %>
   		  <p><%= I18n.translate('application.messaging.battle_report.winner_message') %>
   		  <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction) %>
@@ -47,8 +44,12 @@
   			<% end %>
   		</div>
   		<br>
+      
   		<div class="block">
   			<h2><%= I18n.translate('application.messaging.battle_report.details') %></h2>
+        <% if @round_summaries.empty? %>
+          <%= I18n.translate('application.messaging.battle_report.no_rounds') %>
+        <% end %>
   			<% @round_summaries.each do |round_id, round_summary| %>
   			<div class="round_block">
   				<h3><%= I18n.translate('application.messaging.battle_report.round') %> <%= round_summary.round.round_num+1 %></h3>
@@ -63,9 +64,9 @@
   				</div>
   				<% end %>
   			</div>
+        <% end %>
   			<br>
-  			<% end %>
   		</div>
-		<% end %>
+		<% #end %>
 </div>
 <!-- end message -->

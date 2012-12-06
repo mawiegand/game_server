@@ -44,16 +44,16 @@ class Military::Battle < ActiveRecord::Base
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
       self.merge_battles(attacker, defender)
-      attacker.battle.add_fortress_defenders(attacker, defender, true, true)
+      attacker.battle.add_settlement_defenders(attacker, defender, true, true)
     elsif attacker.fighting?                                     # add defender to attacker's battle
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
-      battle.add_fortress_defenders(attacker, defender, true, false)
+      battle.add_settlement_defenders(attacker, defender, true, false)
       self.send_attack_notification_if_necessary_to(defender, attacker)      
     elsif defender.fighting?                                     # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.battle_participant.faction_id))
-      battle.add_fortress_defenders(attacker, defender, false, true)
+      battle.add_settlement_defenders(attacker, defender, false, true)
     elsif attacker.able_to_overrun?(defender)                    # C) 
       self.overrun(attacker, defender)
       self.send_attack_notification_if_necessary_to(defender, attacker)
@@ -62,7 +62,7 @@ class Military::Battle < ActiveRecord::Base
       self.send_attack_notification_if_necessary_to(defender, attacker)
     else                                                         # E) create new battle (not involved, yet)
       battle = Military::Battle.create_battle_between(attacker, defender)
-      battle.add_fortress_defenders(attacker, defender, false, false)
+      battle.add_settlement_defenders(attacker, defender, false, false)
       battle.create_event_for_next_round
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
@@ -76,7 +76,7 @@ class Military::Battle < ActiveRecord::Base
     defender.battle.save
 
     # send notification messages for participants of ending battle
-    defender.battle.generate_messages_for_battle(nil, defender.battle)
+    # defender.battle.generate_messages_for_battle(nil, defender.battle)
         
     # put participants of defender's faction in defender's battle to the faction of attacker's opponents in attacker's battle
     defender.battle_participant.faction.participants.each do |participant|
@@ -139,9 +139,9 @@ class Military::Battle < ActiveRecord::Base
     end
   end
   
-  # add armies with stance 'defending fortress' to garrison fraction of battle
-  def add_fortress_defenders(attacker, defender, attacker_fighting, defender_fighting)
-    if attacker.location.fortress?                                               # attacker.location == defender.location
+  # add armies with stance 'defending settlement' to garrison fraction of battle
+  def add_settlement_defenders(attacker, defender, attacker_fighting, defender_fighting)
+    unless attacker.location.empty?                                              # don't add defenders at empty locations
       if attacker.garrison                                                       # if attacker is garrison army 
         attacker.location.armies.each do |other_army|                            # add all defending armies
           if (other_army != attacker &&                                          # don't add attacker
@@ -177,6 +177,11 @@ class Military::Battle < ActiveRecord::Base
             other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
+          elsif (other_army != attacker &&                                       # if other army is the garrison army
+              other_army != defender &&
+              other_army.garrison &&
+              other_army.fighting?)                                              # and if it's fighting
+            Military::Battle.merge_battles(attacker, other_army)                 # merge battle with garrison battle
           end
         end
       end
@@ -279,6 +284,7 @@ class Military::Battle < ActiveRecord::Base
       battle_id: faction.battle_id,
       character_id: army.owner_id,
       army_id: army.id,
+      army_name: army.name,
       joined_at: DateTime.now,
       retreated: false
     })
