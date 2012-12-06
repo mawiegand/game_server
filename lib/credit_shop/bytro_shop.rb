@@ -94,7 +94,6 @@ module CreditShop
       {response_code: Shop::Transaction::API_RESPONSE_ERROR}
     end
     
-    # get account of current user
     def self.get_money_transactions
       data = {
         startTstamp: Time.now.weeks_ago(4).to_i.to_s,
