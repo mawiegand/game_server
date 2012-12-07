@@ -92,7 +92,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Sehr schön! Jetzt hast Du zwei Sammler und Deine Produktion ist gestiegen.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_end_1gathererlvl1" />
+<!--      <Requirement quest="quest_end_1gathererlvl1" />  -->
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">40</ResourceReward>    
@@ -1632,7 +1632,7 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Questknopf gefunden! Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-            <Requirement quest="quest_build_1gathererlvl1" />
+            <Requirement quest="quest_end_1gathererlvl1" />
             <Rewards>
               <ExperienceReward>50</ExperienceReward>
             </Rewards>
