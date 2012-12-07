@@ -137,7 +137,7 @@
 <% Tutorial::Tutorial.the_tutorial.quests.each do |quest| %>
     <td><%= backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] %> <br/>
         <%= backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s] %> <br/>
-        <%= backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s].floor %>
+        <%= (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor %>
     </td>
 <% end %>
     <td><%= link_to 'Destroy', backend_tutorial_stat, confirm: 'Are you sure?', method: :delete %></td>
