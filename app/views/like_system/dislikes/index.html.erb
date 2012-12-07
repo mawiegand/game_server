@@ -2,6 +2,9 @@
 
 <table>
   <tr>
+    <th>ID</th>
+    <th>Sender</th>
+    <th>Receiver</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +12,9 @@
 
 <% @like_system_dislikes.each do |like_system_dislike| %>
   <tr>
+    <td><%= like_system_dislike.id %></td>
+    <td><%= like_system_dislike.sender_id %></td>
+    <td><%= like_system_dislike.receiver_id %></td>
     <td><%= link_to 'Show', like_system_dislike %></td>
     <td><%= link_to 'Edit', edit_like_system_dislike_path(like_system_dislike) %></td>
     <td><%= link_to 'Destroy', like_system_dislike, confirm: 'Are you sure?', method: :delete %></td>

@@ -813,6 +813,10 @@ ActiveRecord::Schema.define(:version => 20121205162136) do
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
+    t.integer  "send_likes_count",                         :default => 0
+    t.integer  "received_likes_count",                     :default => 0
+    t.integer  "send_dislikes_count",                      :default => 0
+    t.integer  "received_dislikes_count",                  :default => 0
     t.integer  "victories",                                :default => 0,     :null => false
     t.integer  "defeats",                                  :default => 0,     :null => false
   end
@@ -854,6 +858,14 @@ ActiveRecord::Schema.define(:version => 20121205162136) do
     t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
     t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
+    t.decimal  "like_amount",                             :default => 0.0
+    t.decimal  "like_capacity",                           :default => 0.0
+    t.decimal  "like_production_rate",                    :default => 0.0
+    t.decimal  "like_bonus_effects",                      :default => 0.0
+    t.decimal  "dislike_amount",                          :default => 0.0
+    t.decimal  "dislike_capacity",                        :default => 0.0
+    t.decimal  "dislike_production_rate",                 :default => 0.0
+    t.decimal  "dislike_bonus_effects",                   :default => 0.0
   end
 
   create_table "fundamental_retention_mails", :force => true do |t|
@@ -876,11 +888,15 @@ ActiveRecord::Schema.define(:version => 20121205162136) do
   create_table "like_system_dislikes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sender_id",   :default => 0
+    t.integer  "receiver_id", :default => 0
   end
 
   create_table "like_system_likes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sender_id",   :default => 0
+    t.integer  "receiver_id", :default => 0
   end
 
   create_table "map_locations", :force => true do |t|
@@ -1249,7 +1265,7 @@ ActiveRecord::Schema.define(:version => 20121205162136) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0, :null => false
+    t.integer  "total_experience_gained",  :default => 0
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
@@ -1417,12 +1433,12 @@ ActiveRecord::Schema.define(:version => 20121205162136) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
     t.integer  "trading_carts",                                  :default => 0,            :null => false
     t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
