@@ -11,6 +11,7 @@
 
   <div class="chart large" id="finished_quests"></div>
   <div class="chart large" id="finished_quests_day_1"></div>
+  <div class="chart large" id="finished_quests_day_1_relative"></div>
   <div class="chart large" id="playtime_finished_quests"></div>
   
   <div class="clear"></div>
@@ -40,7 +41,7 @@
           title: 'Quest Completion',
           height: 400,
           width: 600,
-          valueRange: [0, 1.3],
+          valueRange: [0, 1.4],
           highlightSeriesOpts: {
             strokeWidth: 3,
             strokeBorderWidth: 1,
@@ -72,7 +73,44 @@
           title: 'Quest Completion on 1st Day',
           height: 400,
           width: 600,
-          valueRange: [0, 1.3],
+          valueRange: [0, 1.4],
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+
+
+      var finished_quests_day_1_relative = new Dygraph(
+
+        document.getElementById("finished_quests_day_1_relative"),
+
+        "Date" +
+<%quests.each do |quest|  %>
+        ", <%= quest[:id] %>" +
+<%end%>         
+        "\n" +        
+<% @backend_tutorial_stats.each do |backend_tutorial_stat| %>
+        "<%= backend_tutorial_stat.created_at.strftime('%Y-%m-%d') %>" +
+        <%quests.each do |quest| 
+          prev_quest = required_quest(quest)  %>
+              ", <%= if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
+                   "#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1)*100).floor}" 
+                  else 
+                    "0"
+                  end %>" +
+          <%end%> 
+          "\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Quest Retention Rates on 1st Day',
+          height: 400,
+          width: 600,
+          valueRange: [0, 150],
           highlightSeriesOpts: {
             strokeWidth: 3,
             strokeBorderWidth: 1,
@@ -134,10 +172,17 @@
   <tr>
     <td><%= backend_tutorial_stat.created_at %></td>
     <td><%= backend_tutorial_stat.cohort_size %></td>
-<% Tutorial::Tutorial.the_tutorial.quests.each do |quest| %>
+<% Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+  prev_quest = required_quest(quest)
+  %>
     <td><%= backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] %> <br/>
         <%= backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s] %> <br/>
-        <%= backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s].floor %>
+        <%= (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor %> <br/>
+        <%= if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
+             "#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%" 
+            else 
+              ""
+            end %>
     </td>
 <% end %>
     <td><%= link_to 'Destroy', backend_tutorial_stat, confirm: 'Are you sure?', method: :delete %></td>
