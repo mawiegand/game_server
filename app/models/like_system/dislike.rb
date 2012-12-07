@@ -12,7 +12,7 @@ class LikeSystem::Dislike < ActiveRecord::Base
     return false if self.sender == self.receiver || self.sender.resource_pool.dislike_amount < 1.0
   end
   
-  def pay_like
+  def pay_dislike
     self.sender.resource_pool.decrement!(:dislike_amount)
   end
 end
