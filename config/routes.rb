@@ -178,6 +178,8 @@ GameServer::Application.routes.draw do
           resources :change_character_gender_actions,   :only => [ :create ]    
           resources :change_character_password_actions, :only => [ :create ]    
           resources :track_character_conversions,       :only => [ :create ]    
+          resources :send_like_actions,                 :only => [ :create ]    
+          resources :send_dislike_actions,              :only => [ :create ]    
         end
         namespace :construction do
           resources :finish_job_actions    

@@ -30,3 +30,4 @@ client
 /rules/*.german.html
 
 /config/thin_local.yml
+/nbproject/private/

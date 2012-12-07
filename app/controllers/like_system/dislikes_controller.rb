@@ -1,4 +1,7 @@
 class LikeSystem::DislikesController < ApplicationController
+  layout 'like_system'
+  
+  
   before_filter :authenticate
   
   # GET /like_system/dislikes
