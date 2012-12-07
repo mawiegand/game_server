@@ -53,8 +53,8 @@ class Backend::TutorialStat < ActiveRecord::Base
     Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
       prev_quest = Backend::TutorialStat.required_quest(quest)
       if !prev_quest.nil?
-        quest_finished      = Tutorial::Quest.where( quest_id:      quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.updated_at, self.updated_at - 1.weeks ]).count
-        prev_quest_finished = Tutorial::Quest.where( quest_id: prev_quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.updated_at, self.updated_at - 1.weeks ]).count
+        quest_finished      = Tutorial::Quest.where( quest_id:      quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.created_at, self.created_at - 1.weeks ]).count
+        prev_quest_finished = Tutorial::Quest.where( quest_id: prev_quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.created_at, self.created_at - 1.weeks ]).count
         self["quest_#{quest[:id]}_retention_rate_week_1".to_s] = (quest_finished || 0).to_f / ([prev_quest_finished || 1, 1].max).to_f
       end
     end    
