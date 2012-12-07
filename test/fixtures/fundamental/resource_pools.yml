@@ -5,9 +5,13 @@ one:
   locked_at: 2012-06-12 16:30:24
   locked_by: MyString
   locked_reason: MyString
+  like_amount: 15.0
+  dislike_amount: 10.0
 
 two:
   character_id: 1
   locked_at: 2012-06-12 16:30:24
   locked_by: MyString
   locked_reason: MyString
+  like_amount: 10.0
+  dislike_amount: 5.0
