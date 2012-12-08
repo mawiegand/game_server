@@ -37,7 +37,7 @@ group :development do
   gem 'rails-erd'
 end
 
-gem 'therubyracer'          # missing javascript runtime
+gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
 
 gem 'will_paginate'
 
