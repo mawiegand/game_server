@@ -266,11 +266,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   protected
   
     def update_likes(minutes_elapsed)
-      self.like_amount = [self.like_amount + [minutes_elapsed / like_regeneration_time, 0.0].max, self.like_capacity].min
+      if self.like_amount < self.like_capacity   # update only, in case the player has not a full storage of dislikes (he may have more, in case he bought them)
+        self.like_amount = [self.like_amount + [minutes_elapsed / like_regeneration_time, 0.0].max, self.like_capacity].min
+      end
     end
   
     def update_dislikes(minutes_elapsed)
-      self.dislike_amount = [self.dislike_amount + [minutes_elapsed / dislike_regeneration_time, 0.0].max, self.dislike_capacity].min
+      if self.dislike_amount < self.dislike_capacity   # update only, in case the player has not a full storage of dislikes (he may have more, in case he bought them)
+        self.dislike_amount = [self.dislike_amount + [minutes_elapsed / dislike_regeneration_time, 0.0].max, self.dislike_capacity].min
+      end
     end  
   
     def update_lazy_production_if_necessary
