@@ -313,8 +313,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       
       true
     end 
-    
-    
+        
     def check_consistency_sometimes
       return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['resource_pool_recalc_probability']       # do the check only seldomly (determined by random event)  
       check_consistency

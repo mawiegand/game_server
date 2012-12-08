@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207223144) do
+ActiveRecord::Schema.define(:version => 20121208125419) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1279,13 +1279,8 @@ ActiveRecord::Schema.define(:version => 20121207223144) do
     t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
     t.decimal  "like_amount",                             :default => 0.0
-    t.decimal  "like_capacity",                           :default => 0.0
-    t.decimal  "like_production_rate",                    :default => 0.0
-    t.decimal  "like_bonus_effects",                      :default => 0.0
     t.decimal  "dislike_amount",                          :default => 0.0
-    t.decimal  "dislike_capacity",                        :default => 0.0
-    t.decimal  "dislike_production_rate",                 :default => 0.0
-    t.decimal  "dislike_bonus_effects",                   :default => 0.0
+    t.datetime "lazy_production_updated_at"
   end
 
   create_table "fundamental_retention_mails", :force => true do |t|
