@@ -89,6 +89,13 @@ de:
             Festungen und Armeen informiert, wenn Du gerade nicht im Spiel bist. Damit kannst Du direkt auf
             Eure Gegner reagieren, auch wenn Du Dich nicht gerade im Spiel befunden hast. Du kannst weitere
             Armeen zur Unterstützung zum Ort des Geschehens beordern oder Deine Allianz um Hilfe ersuchen.
+        like_regeneration:
+          title:
+            Schnellere Regeneration vergebener Likes / Dislikes
+          description:
+            Likes und Disklikes, die Du an andere Spieler vergeben hast, regenerieren sich doppelt so schnell,
+            sobald der Platinum Account aktiviert ist. Du kannst also mehr Spielern pro Tag Deine Zu- oder
+            Abneigung ausdrücken.
         footer:
           Wir werden den Platinum Account noch ausbauen. Es werden mit der Zeit weitere Komfortfunktionen
           folgen, die wir Dir dann natürlich direkt zusätzlich freigeschalten werden.
