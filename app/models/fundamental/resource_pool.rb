@@ -14,7 +14,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   belongs_to   :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
   before_save  :update_resources_on_production_rate_changes
-
+  before_save  :update_lazy_production_if_necessary
+  
   # after_commit :propagate_bonus_changes   # don't use an after save handler. need to 
   
   RESOURCE_ID_CASH = 3
@@ -235,7 +236,49 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     true      
   end
   
+  def update_lazy_production
+    now = Time.now
+    unless self.lazy_production_updated_at.nil?  # on first update only set the time stamp
+      minutes_elapsed = (now - lazy_production_updated_at) / 60.0
+      update_likes(minutes_elapsed)
+      update_dislikes(minutes_elapsed)
+      # add further lazily updated resources here (updated once per hour in case other resources are updated)
+    end
+    self.lazy_production_updated_at = now
+  end
+  
+  def like_regeneration_time
+    !owner.nil? && owner.platinum_account? ? GAME_SERVER_CONFIG['like_regeneration_duration_platinum'] : GAME_SERVER_CONFIG['like_regeneration_duration'] 
+  end
+  
+  def like_capacity
+    GAME_SERVER_CONFIG['like_maximum_amount']
+  end
+
+  def dislike_regeneration_time
+    !owner.nil? && owner.platinum_account? ? GAME_SERVER_CONFIG['dislike_regeneration_duration_platinum'] : GAME_SERVER_CONFIG['dislike_regeneration_duration'] 
+  end
+
+  def dislike_capacity
+    GAME_SERVER_CONFIG['dislike_maximum_amount']
+  end
+
   protected
+  
+    def update_likes(minutes_elapsed)
+      self.like_amount = [self.like_amount + [minutes_elapsed / like_regeneration_time, 0.0].max, self.like_capacity].min
+    end
+  
+    def update_dislikes(minutes_elapsed)
+      self.dislike_amount = [self.dislike_amount + [minutes_elapsed / dislike_regeneration_time, 0.0].max, self.dislike_capacity].min
+    end  
+  
+    def update_lazy_production_if_necessary
+      if self.lazy_production_updated_at.nil? || lazy_production_updated_at + 1.hours < Time.now
+        update_lazy_production  
+      end
+      true
+    end
   
     def update_resource_in_ranking(totalProductionRate)
       return   if self.owner.nil? || self.owner.ranking.nil?     # NPCs might not have a ranking entry
