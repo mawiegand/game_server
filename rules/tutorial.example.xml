@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tutorial SYSTEM "tutorial.dtd">
+<Tutorial>
+
+  <General>
+    <Game branch="development" tag="alpha">Wack-A-Doo</Game>
+    <Version major="0" minor="0" build="1" />
+    <Languages>
+      <Language lang="en">English</Language>
+      <Language lang="de">Deutsch</Language>
+    </Languages>
+    <Locales>
+      <Locale locale="en_US" lang="en">English (US)</Locale>
+      <Locale locale="de_DE" lang="de">Deutsch (DE)</Locale>
+    </Locales>
+    <Advisors>
+      <Advisor id="warrior"></Advisor>
+      <Advisor id="chef"></Advisor>
+      <Advisor id="girl"></Advisor>
+      <Advisor id="shaman"></Advisor>
+    </Advisors>
+    <ProductionTestWeights>
+      <ResourceFactor resource="resource_wood">1</ResourceFactor>
+      <ResourceFactor resource="resource_stone">1</ResourceFactor>
+      <ResourceFactor resource="resource_fur">2</ResourceFactor>
+      <ResourceFactor resource="resource_cash">0</ResourceFactor>
+    </ProductionTestWeights>
+  </General>
+  
+<!-- 0 -->
+  <Quests>
+    <Quest id="quest_test" advisor="girl" hide_start_dialog="false" tutorial="true" >
+      <Name>The first building</Name>
+      <Name locale="de_DE">Testquest</Name>
+      <Task>Order a Hunter Gatherer Level 1</Task>
+      <Task locale="de_DE">Testauftrag!</Task>
+      <Description locale="de_DE">
+        <p>Hallo Welt</p>
+      </Description>
+      <Description locale="en_US">
+        <p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there. You can see all your current quests by clicking on the Quest button top right of the screen.</p>
+      </Description>
+      <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt Dir einen Teil der Rohstoffe ab, die er findet.</Flavor>
+      <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn’t it great? A bit empty, though. If you built a Hunter Gatherer it would definitely look much better and he’d give you some of the raw materials he finds.</Flavor>
+      <RewardText locale="de_DE"> Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst Du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird. Du kannst Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. </RewardText>
+      <RewardText locale="en_US">The Hunter Gatherer appears on the right in the construction queue. There you can see how long it will take until the building is finished. You can cancel or speed up an order. Building orders continue in your absence when you leave the game. </RewardText>
+      <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während Deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
+      <RewardFlavor locale="en_US">Well done. Now we just have to wait a bit while your workers complete the order.</RewardFlavor>
+      <Rewards>
+        <ResourceReward resource="resource_stone">35</ResourceReward>  
+        <ResourceReward resource="resource_wood">50</ResourceReward>    
+        <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <KillTest min_units="10" />
+        <ScoreTest min_population="3" />
+        <SettlementProductionTest min_resources="10" />
+        <ArmyExperienceTest min_experience="10" />
+      </RewardTests>
+    </Quest>
+  </Quests>
+
+</Tutorial>
