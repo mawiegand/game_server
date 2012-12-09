@@ -4,7 +4,7 @@
 
 
 <!-- General -->
-<!ELEMENT General (Game, Version, Languages, Locales, Advisors)>
+<!ELEMENT General (Game, Version, Languages, Locales, Advisors, ProductionTestWeights)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -41,6 +41,14 @@
   id  ID #REQUIRED
 >
 
+<!ELEMENT ProductionTestWeights (ResourceFactor*)>
+
+<!ELEMENT ResourceFactor (#PCDATA)>
+<!ATTLIST ResourceFactor
+  resource ID #REQUIRED
+>
+
+
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
@@ -73,7 +81,7 @@
 
 
 
-<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
@@ -125,6 +133,26 @@
 <!ELEMENT CustomTest (#PCDATA)>
 <!ATTLIST CustomTest
   id        CDATA #REQUIRED
+>
+
+<!ELEMENT KillTest (#PCDATA)>
+<!ATTLIST KillTest
+  min_units CDATA #REQUIRED
+>
+
+<!ELEMENT ArmyExperienceTest (#PCDATA)>
+<!ATTLIST ArmyExperienceTest
+  min_experience CDATA #REQUIRED
+>
+
+<!ELEMENT ScoreTest (#PCDATA)>
+<!ATTLIST ScoreTest
+  min_population CDATA #REQUIRED
+>
+
+<!ELEMENT SettlementProductionTest (#PCDATA)>
+<!ATTLIST SettlementProductionTest
+  min_resources CDATA #REQUIRED
 >
 
 <!ELEMENT Message (Subject, Body)>

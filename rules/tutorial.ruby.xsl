@@ -75,14 +75,15 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
   
   def attributes 
     { 
-      'version'             => version,
-      'quests'              => quests,
-      'updated_at'          => updated_at,
-      'num_tutorial_quests' => num_tutorial_quests,
+      'version'                  => version,
+      'quests'                   => quests,
+      'updated_at'               => updated_at,
+      'num_tutorial_quests'      => num_tutorial_quests,
+      'production_test_weights'  => production_test_weights,
     }
   end
   
@@ -108,7 +109,12 @@ class Tutorial::Tutorial
         :build => <xsl:value-of select="//General/Version/@build" />, 
       },
       
+      :production_test_weights => {
+  <xsl:apply-templates select="//ProductionTestWeights" />
+      },
+      
       :updated_at => File.ctime(__FILE__),
+      
   <xsl:apply-templates select="Quests" />
 
   <xsl:text><![CDATA[
@@ -126,6 +132,11 @@ end
 
 ]]></xsl:text>
 
+</xsl:template>
+
+<xsl:template match="ProductionTestWeights">
+  <xsl:for-each select="ResourceFactor">
+        :<xsl:value-of select="@resource"/> => <xsl:value-of select="."/>,</xsl:for-each>
 </xsl:template>
 
 <!-- Name, Task, Flavour (One-Liner, Short Flavour Text), Description -->
@@ -300,6 +311,26 @@ end
 <xsl:if test="CustomTest">
             :custom_test => {
               :id => '<xsl:value-of select="CustomTest/@id" />',
+            },
+</xsl:if>
+<xsl:if test="KillTest">
+            :kill_test => {
+              :min_units => <xsl:value-of select="KillTest/@min_units" />,
+            },
+</xsl:if>
+<xsl:if test="ArmyExperienceTest">
+            :army_experience_test => {
+              :min_experience => <xsl:value-of select="ArmyExperienceTest/@min_experience" />,
+            },
+</xsl:if>
+<xsl:if test="ScoreTest">
+            :score_test => {
+              :min_population => <xsl:value-of select="ScoreTest/@min_population" />,
+            },
+</xsl:if>
+<xsl:if test="SettlementProductionTest">
+            :settlement_production_test => {
+              :min_resources => <xsl:value-of select="SettlementProductionTest/@min_resources" />,
             },
 </xsl:if>
 </xsl:template>

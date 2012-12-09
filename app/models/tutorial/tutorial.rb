@@ -27,14 +27,15 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
   
   def attributes 
     { 
-      'version'             => version,
-      'quests'              => quests,
-      'updated_at'          => updated_at,
-      'num_tutorial_quests' => num_tutorial_quests,
+      'version'                  => version,
+      'quests'                   => quests,
+      'updated_at'               => updated_at,
+      'num_tutorial_quests'      => num_tutorial_quests,
+      'production_test_weights'  => production_test_weights,
     }
   end
   
@@ -60,7 +61,16 @@ class Tutorial::Tutorial
         :build => 1, 
       },
       
+      :production_test_weights => {
+  
+        :resource_wood => 1,
+        :resource_stone => 1,
+        :resource_fur => 2,
+        :resource_cash => 0,
+      },
+      
       :updated_at => File.ctime(__FILE__),
+      
   
 # ## QUESTS ##########################################################
   

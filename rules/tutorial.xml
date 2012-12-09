@@ -19,6 +19,12 @@
       <Advisor id="girl"></Advisor>
       <Advisor id="shaman"></Advisor>
     </Advisors>
+    <ProductionTestWeights>
+      <ResourceFactor resource="resource_wood">1</ResourceFactor>
+      <ResourceFactor resource="resource_stone">1</ResourceFactor>
+      <ResourceFactor resource="resource_fur">2</ResourceFactor>
+      <ResourceFactor resource="resource_cash">0</ResourceFactor>
+    </ProductionTestWeights>
   </General>
   
 <!-- 0 -->
@@ -230,8 +236,8 @@
       <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
         <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-	<p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
-	<p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
+        <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
+        <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
       </Description>
       <Description locale="en_US">
         <p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p>
@@ -410,7 +416,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-	      <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
+        <TextboxTest id="test_costs"> Textbox Holzkosten Kaserne l2 </TextboxTest>
       </RewardTests>
       <Message>
         <Subject>Welcome to Wack-a-Doo.</Subject>
@@ -573,8 +579,8 @@
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
         <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
-	<p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
-	<p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
+        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
+        <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
@@ -882,7 +888,7 @@
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
         <p>Um eine Lagerstätte zu gründen, musst Du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p>
-	<p>Du kannst nur weitere Siedlungen gründen, wenn Du Erfahrungen sammelst und im Rang aufsteigst.</p>
+        <p>Du kannst nur weitere Siedlungen gründen, wenn Du Erfahrungen sammelst und im Rang aufsteigst.</p>
       </Description>
       <Description locale="en_US">
         <p>To start an encampment you have to train a little chieftain at a campfire and move him together with an army to a free field. But you can only have one encampment per region.</p>

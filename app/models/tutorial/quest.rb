@@ -119,6 +119,34 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
       
+      unless reward_tests[:kill_test].nil?
+        kill_test = reward_tests[:kill_test]
+        unless check_kills(kill_test)
+          return false
+        end
+      end
+      
+      unless reward_tests[:army_experience_test].nil?
+        army_experience_test = reward_tests[:army_experience_test]
+        unless check_army_experience(army_experience_test)
+          return false
+        end
+      end
+      
+      unless reward_tests[:score_test].nil?
+        score_test = reward_tests[:score_test]
+        unless check_score(score_test)
+          return false
+        end
+      end
+      
+      unless reward_tests[:settlement_production_test].nil?
+        settlement_production_test = reward_tests[:settlement_production_test]
+        unless check_settlement_production(settlement_production_test)
+          return false
+        end
+      end
+      
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
       end
@@ -398,6 +426,51 @@ class Tutorial::Quest < ActiveRecord::Base
       return true
     end
       
+    false
+  end
+
+  def check_kills(kill_test) 
+    return false if kill_test[:min_units].nil?
+    
+    logger.debug "check_kills: check if min #{kill_test[:min_units]} units are already killed"
+    
+    self.tutorial_state.owner.kills >= kill_test[:min_units]
+  end
+
+  def check_army_experience(army_experience_test) 
+    return false if army_experience_test[:min_experience].nil?
+    
+    logger.debug "check_army_experience: check if one army has at least #{army_experience_test[:min_experience]} XP"
+    
+    self.tutorial_state.owner.armies.each do |army|
+     return true if army.exp >= army_experience_test[:min_experience]
+    end
+    false
+  end
+
+  def check_score(score_test) 
+    return false if score_test[:min_population].nil?
+    
+    logger.debug "check_score: check if a min score of #{score_test[:min_population]} is already reached"
+    
+    self.tutorial_state.owner.score >= score_test[:min_population]
+  end
+  
+  def check_settlement_production(settlement_production_test) 
+    return false if settlement_production_test[:min_resources].nil?
+    
+    logger.debug "check_settlement_production: check if one settlement has at least a weighted resource production of #{settlement_production_test[:min_resources]} "
+    
+    production_test_weights = Tutorial::Tutorial.the_tutorial.production_test_weights
+    
+    self.tutorial_state.owner.settlements.each do |settlement|
+      resources = 0.0
+      GameRules::Rules.the_rules().resource_types.each do |type|
+        resources += settlement[type[:symbolic_id].to_s + '_base_production'] * (production_test_weights[type[:symbolic_id].to_sym] || 0)
+      end
+      return true if resources >= settlement_production_test[:min_resources]
+    end
+
     false
   end
   
