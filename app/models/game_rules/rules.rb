@@ -1061,14 +1061,14 @@ class GameRules::Rules
 
 
         },              #   END OF Accurate Gravel Stone Thrower
-        {               #   Pebble Thrower3
+        {               #   Stone Thrower
           :id          => 6, 
           :symbolic_id => :thrower_3,
 					:category    => 2,
           :db_field    => :unit_thrower_3,
           :name        => {
             
-            :en_US => "Pebble Thrower3",
+            :en_US => "Stone Thrower",
   
             :de_DE => "Steinschleuderer",
                 
@@ -1164,15 +1164,15 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Pebble Thrower3
-        {               #   Pebble Thrower4
+        },              #   END OF Stone Thrower
+        {               #   Spear Thrower
           :id          => 7, 
           :symbolic_id => :thrower_4,
 					:category    => 2,
           :db_field    => :unit_thrower_4,
           :name        => {
             
-            :en_US => "Pebble Thrower4",
+            :en_US => "Spear Thrower",
   
             :de_DE => " Speerschleuderer ",
                 
@@ -1255,7 +1255,7 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Pebble Thrower4
+        },              #   END OF Spear Thrower
         {               #   Two-handed Ostrich Rider
           :id          => 8, 
           :symbolic_id => :light_cavalry,

@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="thrower_4" category="unitcategory_artillery">
-      <Name>Pebble Thrower4</Name>
+      <Name>Spear Thrower</Name>
       <Name lang="de_DE"> Speerschleuderer </Name>
       <Description lang="de_DE">
         <p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p> 
