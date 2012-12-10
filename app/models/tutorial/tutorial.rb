@@ -191,7 +191,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [2, ],
+          :successor_quests => [53, ],
 
           :rewards => {
             
@@ -284,13 +284,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_end_1gathererlvl1',
-
-          },
-
-          :successor_quests => [53, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5257,7 +5251,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl1',
+            :quest => 'quest_end_1gathererlvl1',
 
           },
 

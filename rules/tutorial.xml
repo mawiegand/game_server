@@ -92,7 +92,7 @@
       <RewardText locale="en_US">Hunter Gatherers boost your raw materials production. </RewardText>
       <RewardFlavor locale="de_DE">Sehr schön! Jetzt hast Du zwei Sammler und Deine Produktion ist gestiegen.</RewardFlavor>
       <RewardFlavor locale="en_US">Cool, now you’ve got two Hunter Gatherers and your production is rising. This reward will increase your stock levels.</RewardFlavor>
-      <Requirement quest="quest_end_1gathererlvl1" />
+<!--      <Requirement quest="quest_end_1gathererlvl1" />  -->
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">40</ResourceReward>    
@@ -1639,7 +1639,7 @@
       <RewardText locale="en_US">Take a look at the quest overview regularly, then you won’t lose track of them. </RewardText>
       <RewardFlavor locale="de_DE">Questknopf gefunden! Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">You found the quest button! Great – now you can see all your quests at a glance.</RewardFlavor>
-            <Requirement quest="quest_build_1gathererlvl1" />
+            <Requirement quest="quest_end_1gathererlvl1" />
             <Rewards>
               <ExperienceReward>50</ExperienceReward>
             </Rewards>
