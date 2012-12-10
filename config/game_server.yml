@@ -2,14 +2,23 @@ defaults: &defaults
   
   base_url: 'https://wack-a-doo.de'
   
-  base_time_factor: 60                    # duration of a minute in seconds; can be used to speed-up all operations
-  movement_duration: 15                   # base-time of a movement in minutes 
-  ap_regeneration_duration: 180           # time needed to regenerate a single action point in minutes
+  base_time_factor:                         60 # duration of a minute in seconds; can be used to speed-up all operations
+  movement_duration:                        15 # base-time of a movement in minutes 
+  ap_regeneration_duration:                180 # time needed to regenerate a single action point in minutes
   
-  overrunnable_threshold: 10              # factor which an army has to be bigger than its oppenent to overrun it
+  overrunnable_threshold:                   10 # factor which an army has to be bigger than its oppenent to overrun it
+  
+  like_regeneration_duration:              360 # time needed to regenerate one like resource in minutes
+  like_regeneration_duration_platinum:     180 # time needed by a platinum user to regenerate one like resource in minutes
 
-  military_only_flag_destroyed_armies: false #if true the field removed for destroyed armies will be set true instead of deleting them from the database after a battle
-  military_only_flag_destroyed_battles: true #if true the field removed for finished battles will be set true instead of deleting them from the database after the battle is done
+  dislike_regeneration_duration:          1440 # time needed to regenerate one like resource in minutes
+  dislike_regeneration_duration_platinum:  720 # time needed by a platinum user to regenerate one like resource in minutes
+  
+  like_maximum_amount:                       4 # regeneration stops after this amount of likes is reached
+  dislike_maximum_amount:                    1 # regeneration stops after this amount of dislikes is reached
+
+  military_only_flag_destroyed_armies:   false #if true the field removed for destroyed armies will be set true instead of deleting them from the database after a battle
+  military_only_flag_destroyed_battles:   true #if true the field removed for finished battles will be set true instead of deleting them from the database after the battle is done
   
   payment_provider_base_url: 'https://wack-a-doo.de/payment_provider'
   
