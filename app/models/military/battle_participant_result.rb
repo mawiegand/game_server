@@ -41,4 +41,12 @@ class Military::BattleParticipantResult < ActiveRecord::Base
   	end
   	count
   end
+  
+  def lost_units_count
+    count = 0
+  	GameRules::Rules.the_rules.unit_types.each do |unit_type|
+  		count += (self[unit_type[:db_field].to_s+"_casualties"] || 0)
+  	end
+  	count
+  end
 end

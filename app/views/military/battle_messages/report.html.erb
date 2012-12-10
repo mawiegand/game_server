@@ -4,7 +4,7 @@
   		<p><%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %></p>
   		<% if !my_faction_summary.nil? && my_faction_summary.faction.winner %>
   		  <p><%= I18n.translate('application.messaging.battle_report.winner_message') %>
-  		  <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction) %>
+  		  <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction).to_i %>
   		  <% if xp > 0 %>
   		    <%= I18n.translate('application.messaging.battle_report.xp', :xp => xp) %>
     		<% end %>
