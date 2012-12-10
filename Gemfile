@@ -38,6 +38,7 @@ group :development do
 end
 
 gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
+gem 'libv8'
 
 gem 'will_paginate'
 
