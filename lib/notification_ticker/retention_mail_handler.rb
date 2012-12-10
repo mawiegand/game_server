@@ -55,11 +55,7 @@ class NotificationTicker::RetentionMailHandler
       })
       mail.redeem_credit_reward if credit_reward > 0
       ip_access.deliver_retention_mail(mail)
-      if character.paying_user?
-        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, credit_reward: #{credit_reward}"
-      else
-        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, toad_reward: 10"
-      end
+      runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}, credit_reward: #{credit_reward}"
     end     
          
     runloop.say "Retention mail handler process completed"

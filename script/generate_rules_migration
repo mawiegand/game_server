@@ -68,6 +68,8 @@ hash_of_models = {
                                   { :prefix => 'quest_',           :postfix => '_num_started',                :type => ':integer', :options => { :default => 0   } }, 
                                   { :prefix => 'quest_',           :postfix => '_playtime_finished',          :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'quest_',           :postfix => '_playtime_started',           :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'quest_',           :postfix => '_retention_rate_week_1',      :type => ':decimal', :options => { :default => 0.0 } }, 
+
   ],
   
   Fundamental::Character     => [ { :prefix => 'character_queue',  :postfix => '',                                                 :options => { :default => 0   } },
