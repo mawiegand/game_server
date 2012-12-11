@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210011448) do
+ActiveRecord::Schema.define(:version => 20121211125957) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(:version => 20121210011448) do
     t.datetime "updated_at"
     t.boolean  "sign_up",            :default => false, :null => false
     t.text     "direct_referer_url"
+    t.text     "request_url"
+    t.text     "google_r"
+    t.text     "google_k"
+    t.text     "google_p"
+    t.text     "google_n"
   end
 
   create_table "backend_stats", :force => true do |t|
