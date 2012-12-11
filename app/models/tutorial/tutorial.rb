@@ -6680,9 +6680,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6770,9 +6770,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6860,9 +6860,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6950,9 +6950,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7040,9 +7040,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7130,9 +7130,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7220,9 +7220,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7310,9 +7310,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7400,9 +7400,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7490,9 +7490,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
