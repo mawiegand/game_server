@@ -16,6 +16,7 @@ GameServer::Application.routes.draw do
       namespace :backend do 
         resource  :dashboard, :controller => 'dashboard', :only => [:show, :create]
         resources :users 
+        resources :partner_sites
         resources :stats
         resources :tutorial_stats
         resources :sign_in_log_entries

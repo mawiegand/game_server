@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208125419) do
+ActiveRecord::Schema.define(:version => 20121211143855) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(:version => 20121208125419) do
     t.datetime "updated_at"
   end
 
+  create_table "backend_partner_sites", :force => true do |t|
+    t.integer  "backend_user_id"
+    t.string   "referer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "backend_sign_in_log_entries", :force => true do |t|
     t.integer  "character_id"
     t.text     "user_agent"
@@ -75,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20121208125419) do
     t.datetime "updated_at"
     t.boolean  "sign_up",            :default => false, :null => false
     t.text     "direct_referer_url"
+    t.text     "request_url"
+    t.text     "google_r"
+    t.text     "google_k"
+    t.text     "google_p"
+    t.text     "google_n"
   end
 
   create_table "backend_stats", :force => true do |t|
@@ -1070,6 +1082,7 @@ ActiveRecord::Schema.define(:version => 20121208125419) do
     t.boolean  "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "partner"
   end
 
   create_table "construction_active_jobs", :force => true do |t|
@@ -1534,7 +1547,7 @@ ActiveRecord::Schema.define(:version => 20121208125419) do
     t.integer  "battle_id"
     t.integer  "character_id"
     t.integer  "faction_id"
-    t.integer  "experience_gained", :default => 0,     :null => false
+    t.decimal  "experience_gained", :default => 0.0,   :null => false
     t.boolean  "winner",            :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
