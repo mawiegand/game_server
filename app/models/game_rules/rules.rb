@@ -3106,7 +3106,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_logger_2,
-            :target_level_formula  => "(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2.0+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
           },
 
         },              #   END OF Holzfäller
@@ -3230,7 +3230,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_quarry_2,
-            :target_level_formula  => "(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2.0+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
           },
 
         },              #   END OF Steinbruch
@@ -3355,7 +3355,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "(MIN(LEVEL+1,5)-MIN(LEVEL,5))*FLOOR((LEVEL+1)/2.0+0.5)+(MIN(LEVEL,5)-MIN(LEVEL,4))*(MIN(LEVEL+1,15)-MIN(LEVEL,15))*(LEVEL-2)+(MIN(LEVEL,15)-MIN(LEVEL,14))*(LEVEL-3)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
           },
 
         },              #   END OF Kürschner
