@@ -3720,19 +3720,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
           ],
@@ -4264,9 +4264,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5*8.05+0.5)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
+            2 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.25)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -4277,7 +4277,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5*2.25+0.5)",
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
               },
             
           ],
@@ -4384,8 +4384,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5*8.05+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*1)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -4396,7 +4396,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*2.25+0.5)",
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
               },
             
           ],
@@ -4503,8 +4503,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5*8.05+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*1)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -4515,7 +4515,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*2.25+0.5)",
+                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
               },
             
           ],
@@ -4738,19 +4738,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*1.75)",
+                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
               },
             
           ],
