@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [59, 69, 79, 89, ],
 
           :rewards => {
             
@@ -5821,6 +5821,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [60, ],
 
           :rewards => {
@@ -5848,6 +5854,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 350,
+            },
+
           },          
 
         },              #   END OF quest_charkills_1
@@ -5934,6 +5944,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 650,
+            },
+
           },          
 
         },              #   END OF quest_charkills_2
@@ -6020,6 +6034,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 1150,
+            },
+
           },          
 
         },              #   END OF quest_charkills_3
@@ -6106,6 +6124,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 1850,
+            },
+
           },          
 
         },              #   END OF quest_charkills_4
@@ -6192,6 +6214,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 2750,
+            },
+
           },          
 
         },              #   END OF quest_charkills_5
@@ -6278,6 +6304,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 3850,
+            },
+
           },          
 
         },              #   END OF quest_charkills_6
@@ -6364,6 +6394,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 5150,
+            },
+
           },          
 
         },              #   END OF quest_charkills_7
@@ -6450,6 +6484,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 6650,
+            },
+
           },          
 
         },              #   END OF quest_charkills_8
@@ -6536,6 +6574,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 8350,
+            },
+
           },          
 
         },              #   END OF quest_charkills_9
@@ -6622,6 +6664,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :kill_test => {
+              :min_units => 10250,
+            },
+
           },          
 
         },              #   END OF quest_charkills_10
@@ -6675,6 +6721,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [70, ],
 
           :rewards => {
@@ -6702,6 +6754,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 750,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_1
@@ -6788,6 +6844,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 1400,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_2
@@ -6874,6 +6934,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 2500,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_3
@@ -6960,6 +7024,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 4100,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_4
@@ -7046,6 +7114,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 6100,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_5
@@ -7132,6 +7204,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 8600,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_6
@@ -7218,6 +7294,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 11500,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_7
@@ -7304,6 +7384,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 14900,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_8
@@ -7390,6 +7474,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 18750,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_9
@@ -7476,6 +7564,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :army_experience_test => {
+              :min_experience => 23000,
+            },
+
           },          
 
         },              #   END OF quest_armyXP_10
@@ -7529,6 +7621,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [80, ],
 
           :rewards => {
@@ -7556,6 +7654,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 1000,
+            },
+
           },          
 
         },              #   END OF quest_score_1
@@ -7642,6 +7744,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 1675,
+            },
+
           },          
 
         },              #   END OF quest_score_2
@@ -7728,6 +7834,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 2800,
+            },
+
           },          
 
         },              #   END OF quest_score_3
@@ -7814,6 +7924,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 4375,
+            },
+
           },          
 
         },              #   END OF quest_score_4
@@ -7900,6 +8014,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 6400,
+            },
+
           },          
 
         },              #   END OF quest_score_5
@@ -7986,6 +8104,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 8875,
+            },
+
           },          
 
         },              #   END OF quest_score_6
@@ -8072,6 +8194,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 11800,
+            },
+
           },          
 
         },              #   END OF quest_score_7
@@ -8158,6 +8284,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 15175,
+            },
+
           },          
 
         },              #   END OF quest_score_8
@@ -8244,6 +8374,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 19000,
+            },
+
           },          
 
         },              #   END OF quest_score_9
@@ -8330,6 +8464,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :score_test => {
+              :min_population => 23275,
+            },
+
           },          
 
         },              #   END OF quest_score_10
@@ -8383,6 +8521,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [90, ],
 
           :rewards => {
@@ -8410,6 +8554,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 500,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_1
@@ -8496,6 +8644,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 740,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_2
@@ -8582,6 +8734,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 1140,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_3
@@ -8668,6 +8824,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 1700,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_4
@@ -8754,6 +8914,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 2420,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_5
@@ -8840,6 +9004,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 3300,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_6
@@ -8926,6 +9094,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 4340,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_7
@@ -9012,6 +9184,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 5540,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_8
@@ -9098,6 +9274,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 6900,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_9
@@ -9184,6 +9364,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :settlement_production_test => {
+              :min_resources => 8420,
+            },
+
           },          
 
         },              #   END OF quest_resourcescore_10
