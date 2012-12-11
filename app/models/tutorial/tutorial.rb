@@ -5774,97 +5774,7 @@ class Tutorial::Tutorial
         {               #   quest_charkills_1
           :id                => 59, 
           :symbolic_id       => :quest_charkills_1,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Decimate enemy units",
-  
-            :de_DE => "Vernichte feindliche Einheiten",
-                
-          },
-          :task => {
-            
-            :en_US => "Kill 350 units.",
-  
-            :de_DE => "Töte 350 Einheiten",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
-  
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
-  
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
-  
-            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
-  
-            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
-
-          },
-
-          :successor_quests => [60, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 350,
-            },
-
-          },          
-
-        },              #   END OF quest_charkills_1
-        {               #   quest_charkills_2
-          :id                => 60, 
-          :symbolic_id       => :quest_charkills_2,
-          :advisor           => :chef,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           
@@ -5913,11 +5823,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_1',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
-          :successor_quests => [61, ],
+          :successor_quests => [60, ],
 
           :rewards => {
             
@@ -5925,17 +5835,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 250,
               },
 
             ],
@@ -5950,101 +5860,11 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_charkills_2
-        {               #   quest_charkills_3
-          :id                => 61, 
-          :symbolic_id       => :quest_charkills_3,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Decimate enemy units",
-  
-            :de_DE => "Vernichte feindliche Einheiten",
-                
-          },
-          :task => {
-            
-            :en_US => "Kill 1150 units.",
-  
-            :de_DE => "Töte 1150 Einheiten",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
-  
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
-  
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
-  
-            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
-  
-            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_charkills_2',
-
-          },
-
-          :successor_quests => [62, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 1500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 1150,
-            },
-
-          },          
-
-        },              #   END OF quest_charkills_3
-        {               #   quest_charkills_4
-          :id                => 62, 
-          :symbolic_id       => :quest_charkills_4,
-          :advisor           => :chef,
+        },              #   END OF quest_charkills_1
+        {               #   quest_charkills_2
+          :id                => 60, 
+          :symbolic_id       => :quest_charkills_2,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           
@@ -6093,11 +5913,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_3',
+            :quest => 'quest_charkills_1',
 
           },
 
-          :successor_quests => [63, ],
+          :successor_quests => [61, ],
 
           :rewards => {
             
@@ -6105,17 +5925,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 500,
               },
 
             ],
@@ -6130,101 +5950,11 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_charkills_4
-        {               #   quest_charkills_5
-          :id                => 63, 
-          :symbolic_id       => :quest_charkills_5,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Decimate enemy units",
-  
-            :de_DE => "Vernichte feindliche Einheiten",
-                
-          },
-          :task => {
-            
-            :en_US => "Kill 2750 units.",
-  
-            :de_DE => "Töte 2750 Einheiten",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
-  
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
-  
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
-  
-            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
-  
-            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_charkills_4',
-
-          },
-
-          :successor_quests => [64, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 5000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 5000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 2500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 2750,
-            },
-
-          },          
-
-        },              #   END OF quest_charkills_5
-        {               #   quest_charkills_6
-          :id                => 64, 
-          :symbolic_id       => :quest_charkills_6,
-          :advisor           => :chef,
+        },              #   END OF quest_charkills_2
+        {               #   quest_charkills_3
+          :id                => 61, 
+          :symbolic_id       => :quest_charkills_3,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           
@@ -6273,11 +6003,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_5',
+            :quest => 'quest_charkills_2',
 
           },
 
-          :successor_quests => [65, ],
+          :successor_quests => [62, ],
 
           :rewards => {
             
@@ -6285,17 +6015,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 6000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 6000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 750,
               },
 
             ],
@@ -6310,101 +6040,11 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_charkills_6
-        {               #   quest_charkills_7
-          :id                => 65, 
-          :symbolic_id       => :quest_charkills_7,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Decimate enemy units",
-  
-            :de_DE => "Vernichte feindliche Einheiten",
-                
-          },
-          :task => {
-            
-            :en_US => "Kill 5150 units.",
-  
-            :de_DE => "Töte 5150 Einheiten",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
-  
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
-  
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
-  
-            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
-  
-            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_charkills_6',
-
-          },
-
-          :successor_quests => [66, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 7000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 7000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 3500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 5150,
-            },
-
-          },          
-
-        },              #   END OF quest_charkills_7
-        {               #   quest_charkills_8
-          :id                => 66, 
-          :symbolic_id       => :quest_charkills_8,
-          :advisor           => :chef,
+        },              #   END OF quest_charkills_3
+        {               #   quest_charkills_4
+          :id                => 62, 
+          :symbolic_id       => :quest_charkills_4,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           
@@ -6453,11 +6093,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_7',
+            :quest => 'quest_charkills_3',
 
           },
 
-          :successor_quests => [67, ],
+          :successor_quests => [63, ],
 
           :rewards => {
             
@@ -6465,17 +6105,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 8000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 8000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 1000,
               },
 
             ],
@@ -6490,101 +6130,11 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_charkills_8
-        {               #   quest_charkills_9
-          :id                => 67, 
-          :symbolic_id       => :quest_charkills_9,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Decimate enemy units",
-  
-            :de_DE => "Vernichte feindliche Einheiten",
-                
-          },
-          :task => {
-            
-            :en_US => "Kill 8350 units.",
-  
-            :de_DE => "Töte 8350 Einheiten",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
-  
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
-  
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
-  
-            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
-  
-            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_charkills_8',
-
-          },
-
-          :successor_quests => [68, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 9000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 9000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 4500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 8350,
-            },
-
-          },          
-
-        },              #   END OF quest_charkills_9
-        {               #   quest_charkills_10
-          :id                => 68, 
-          :symbolic_id       => :quest_charkills_10,
-          :advisor           => :chef,
+        },              #   END OF quest_charkills_4
+        {               #   quest_charkills_5
+          :id                => 63, 
+          :symbolic_id       => :quest_charkills_5,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           
@@ -6633,11 +6183,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_9',
+            :quest => 'quest_charkills_4',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [64, ],
 
           :rewards => {
             
@@ -6645,17 +6195,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 1250,
               },
 
             ],
@@ -6670,6 +6220,456 @@ class Tutorial::Tutorial
 
           },          
 
+        },              #   END OF quest_charkills_5
+        {               #   quest_charkills_6
+          :id                => 64, 
+          :symbolic_id       => :quest_charkills_6,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 14650 units.",
+  
+            :de_DE => "Töte 14650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_5',
+
+          },
+
+          :successor_quests => [65, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 14650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_6
+        {               #   quest_charkills_7
+          :id                => 65, 
+          :symbolic_id       => :quest_charkills_7,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 19850 units.",
+  
+            :de_DE => "Töte 19850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_6',
+
+          },
+
+          :successor_quests => [66, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 19850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_7
+        {               #   quest_charkills_8
+          :id                => 66, 
+          :symbolic_id       => :quest_charkills_8,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 25850 units.",
+  
+            :de_DE => "Töte 25850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_7',
+
+          },
+
+          :successor_quests => [67, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 25850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_8
+        {               #   quest_charkills_9
+          :id                => 67, 
+          :symbolic_id       => :quest_charkills_9,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 32650 units.",
+  
+            :de_DE => "Töte 32650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_8',
+
+          },
+
+          :successor_quests => [68, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 4500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 4500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 32650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_9
+        {               #   quest_charkills_10
+          :id                => 68, 
+          :symbolic_id       => :quest_charkills_10,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 40250 units.",
+  
+            :de_DE => "Töte 40250 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_9',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 40250,
+            },
+
+          },          
+
         },              #   END OF quest_charkills_10
         {               #   quest_armyXP_1
           :id                => 69, 
@@ -6680,9 +6680,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6735,17 +6735,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
@@ -6770,9 +6770,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6825,17 +6825,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 500,
               },
 
             ],
@@ -6860,9 +6860,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -6915,17 +6915,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 750,
               },
 
             ],
@@ -6950,9 +6950,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7005,17 +7005,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1000,
               },
 
             ],
@@ -7040,9 +7040,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7095,17 +7095,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 1250,
               },
 
             ],
@@ -7130,9 +7130,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7185,17 +7185,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 1500,
               },
 
             ],
@@ -7220,9 +7220,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7275,17 +7275,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 1750,
               },
 
             ],
@@ -7310,9 +7310,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7365,17 +7365,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 2000,
               },
 
             ],
@@ -7400,9 +7400,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7455,17 +7455,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5500,
+                :amount => 2250,
               },
 
             ],
@@ -7490,9 +7490,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Decimate enemy units",
+            :en_US => "Experienced armies",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Erfahrene Armeen",
                 
           },
           :task => {
@@ -7545,17 +7545,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 2500,
               },
 
             ],
@@ -7635,17 +7635,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
@@ -7725,17 +7725,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 500,
               },
 
             ],
@@ -7815,17 +7815,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 750,
               },
 
             ],
@@ -7905,17 +7905,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1000,
               },
 
             ],
@@ -7995,17 +7995,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 1250,
               },
 
             ],
@@ -8085,17 +8085,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 1500,
               },
 
             ],
@@ -8175,17 +8175,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 1750,
               },
 
             ],
@@ -8265,17 +8265,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 2000,
               },
 
             ],
@@ -8355,17 +8355,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 2250,
               },
 
             ],
@@ -8445,17 +8445,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 2500,
               },
 
             ],
@@ -8535,17 +8535,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
@@ -8625,17 +8625,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 500,
               },
 
             ],
@@ -8715,17 +8715,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 750,
               },
 
             ],
@@ -8805,17 +8805,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1000,
               },
 
             ],
@@ -8895,17 +8895,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 1250,
               },
 
             ],
@@ -8985,17 +8985,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 6000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 1500,
               },
 
             ],
@@ -9075,17 +9075,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 7000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 1750,
               },
 
             ],
@@ -9165,17 +9165,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 8000,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 2000,
               },
 
             ],
@@ -9255,17 +9255,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 9000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 2250,
               },
 
             ],
@@ -9345,17 +9345,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 2500,
               },
 
             ],
