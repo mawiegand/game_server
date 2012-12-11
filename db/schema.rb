@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211135059) do
+ActiveRecord::Schema.define(:version => 20121211143855) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(:version => 20121211135059) do
     t.boolean  "success"
     t.string   "user_agent"
     t.text     "modernizr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "backend_partner_sites", :force => true do |t|
+    t.integer  "backend_user_id"
+    t.string   "referer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

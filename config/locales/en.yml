@@ -13,6 +13,7 @@ en:
         category: Backend
         dashboard: Dashboard
         users: Users
+        partner_sites: Partner Sites
         stats: Stats
         sign_in_log: Sign-Ins
         tutorial_stats: Tutorial Stats
