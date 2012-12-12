@@ -466,7 +466,7 @@ class Tutorial::Quest < ActiveRecord::Base
     self.tutorial_state.owner.settlements.each do |settlement|
       resources = 0.0
       GameRules::Rules.the_rules().resource_types.each do |type|
-        resources += settlement[type[:symbolic_id].to_s + '_base_production'] * (production_test_weights[type[:symbolic_id].to_sym] || 0)
+        resources += settlement[type[:symbolic_id].to_s + '_production_rate'] * (production_test_weights[type[:symbolic_id].to_sym] || 0)
       end
       return true if resources >= settlement_production_test[:min_resources]
     end
