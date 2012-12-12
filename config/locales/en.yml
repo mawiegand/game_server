@@ -143,43 +143,31 @@ en:
       platinum_info:
         title: Platinum Account
         description1:
-          Der Platinum Account hat eine beschränkte Laufzeit. Du kannst
-          ihn in der Fundgrube jederzeit aktivieren oder einen bereits aktiven Platinum Account verlängern. 
+          The platinum account has a limited duration. You can activate it in the repository at any moment or extend an already active platinum account.
         description2:
-          Mit dem Platinum Account kannst Du Dir einige Komfortfunktionen freischalten, die wir Dir im
-          Folgenden näher erläutern wollen. 
+          With the platinum account you can unlock several comfort features which we would like to explain below in more detail.
         construction:
           title:
-            Bauschleife
+            Construction Loop
           description:
-            Der Platinum Account erweitert die Bauschleife um zusätzliche 3 Plätze. Dadurch kannst Du
-            mehr Aufträge gleichzeitig erteilen. Diese werden nach und nach abgearbeitet, auch wenn Du 
-            nicht im Spiel einloggt bist, vorausgesetzt, Du hast genug Ressourcen.
+            The platinum account expands the construction loop over 3 additional places. They are processed on and on even when you are not logged into the game, provided that you have enough resources.
         training:
           title:
-            Trainingsschleife
+            Training Loop
           description:
-            Die Trainingsschleife wird durch den Platinum Account um drei zusätzliche Plätze erweitert.
-            Du hast dadurch die Möglichkeit, in einem Ausbildungsgebäude weitere Trainingsaufträge zu
-            erteilen, die nach dem ersten ausgeführt werden. 
+            The training loop is expanded over three additional places with platinum account. By this means you have the opportunity to accept further training contracts in the same training construction, after the first contract is over.
         battle_message:
           title:
-            Kampfbenachrichtigungen per E-Mail
+            Combat Notifications per E-Mail
           description:
-            Mit aktiviertem Platinum Account wirst Du umgehend per E-Mail über Angriffe auf Deine Siedlungen,
-            Festungen und Armeen informiert, wenn Du gerade nicht im Spiel bist. Damit kannst Du direkt auf
-            Eure Gegner reagieren, auch wenn Du Dich nicht gerade im Spiel befunden hast. Du kannst weitere
-            Armeen zur Unterstützung zum Ort des Geschehens beordern oder Deine Allianz um Hilfe ersuchen.
+            With an enabled platinum account you will be immediately notified of attacks on your colonies, fortresses, or armies per e-mail when you are not in the game at the moment. So even if you are not currently playing, you can immediately react to your opponents. You can send for further armies to assist you in the secene or request your alliance for help.
         like_regeneration:
           title:
-            Schnellere Regeneration vergebener Likes / Dislikes
+            Faster Regeneration of the given Likes / Dislikes
           description:
-            Likes und Disklikes, die Du an andere Spieler vergeben hast, regenerieren sich doppelt so schnell,
-            sobald der Platinum Account aktiviert ist. Du kannst also mehr Spielern pro Tag Deine Zu- oder
-            Abneigung ausdrücken.
+            As soon as the platinum account is enabled, the likes and disklikes that you give to other players are regenerated with a doubled speed. So you can express your like/dislike to more players per day.
         footer:
-          Wir werden den Platinum Account noch ausbauen. Es werden mit der Zeit weitere Komfortfunktionen
-          folgen, die wir Dir dann natürlich direkt zusätzlich freischalten werden.        
+          We will still improve the platinum account. More comfort features will follow by time, which we will of course enable for you immediately.
         
         
   sessions:
