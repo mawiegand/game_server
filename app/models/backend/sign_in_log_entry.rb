@@ -18,7 +18,7 @@ class Backend::SignInLogEntry < ActiveRecord::Base
     def determine_tracking_params_from_request_url
       uri = URI.parse(self.request_url) unless self.request_url.blank?
       
-      unless uri.query.blank?
+      if !uri.nil? && !uri.query.blank?
         params = Rack::Utils.parse_query(uri.query)
         
         self.r = params['r'][0..1] unless params['r'].empty?
