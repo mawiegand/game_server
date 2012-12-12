@@ -21,10 +21,10 @@ class Backend::SignInLogEntry < ActiveRecord::Base
       if !uri.nil? && !uri.query.blank?
         params = Rack::Utils.parse_query(uri.query)
         
-        self.r = params['r'] unless params['r'].empty?
-        self.k = params['k'] unless params['k'].empty?
-        self.p = params['p'] unless params['p'].empty?
-        self.n = params['n'] unless params['n'].empty?
+        self.r = params['r'] if (params.has_key?('r') && !params['r'].empty?)
+        self.k = params['k'] if (params.has_key?('k') && !params['k'].empty?)
+        self.p = params['p'] if (params.has_key?('p') && !params['p'].empty?)
+        self.n = params['n'] if (params.has_key?('n') && !params['n'].empty?)
       end
     end
   
