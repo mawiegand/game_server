@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211143855) do
+ActiveRecord::Schema.define(:version => 20121211153219) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20121211143855) do
     t.text     "google_k"
     t.text     "google_p"
     t.text     "google_n"
+    t.integer  "partner_site_id"
   end
 
   create_table "backend_stats", :force => true do |t|

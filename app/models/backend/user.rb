@@ -33,7 +33,7 @@ require 'base64'
 #
 class Backend::User < ActiveRecord::Base
 
-  has_many   :announcements,   :class_name => "Fundamental::Announcement",     :foreign_key => "user_id",          :inverse_of => :author
+  has_many   :announcements,   :class_name => "Fundamental::Announcement",    :foreign_key => "user_id",          :inverse_of => :author
   has_many   :partner_sites,   :class_name => "Backend::PartnerSite",         :foreign_key => "backend_user_id",  :inverse_of => :partner
   
   attr_accessor :password
@@ -149,6 +149,7 @@ class Backend::User < ActiveRecord::Base
   def role
     return :admin if admin
     return :staff if staff
+    return :partner if partner
     return :user
   end
   
@@ -198,6 +199,7 @@ class Backend::User < ActiveRecord::Base
   def address_role 
     return I18n.translate('general.address.admin') if admin?
     return I18n.translate('general.address.staff') if staff?
+    return I18n.translate('general.address.partner') if partner?
     return I18n.translate('general.address.user')
   end
   
