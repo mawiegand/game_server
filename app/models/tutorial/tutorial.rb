@@ -6637,7 +6637,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [99, ],
 
           :rewards => {
             
@@ -7537,7 +7537,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [109, ],
 
           :rewards => {
             
@@ -8437,7 +8437,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [119, ],
 
           :rewards => {
             
@@ -9337,7 +9337,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [129, ],
 
           :rewards => {
             
@@ -9371,6 +9371,3606 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_10
+        {               #   quest_charkills_11
+          :id                => 99, 
+          :symbolic_id       => :quest_charkills_11,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 48650 units.",
+  
+            :de_DE => "Töte 48650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_10',
+
+          },
+
+          :successor_quests => [100, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 48650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_11
+        {               #   quest_charkills_12
+          :id                => 100, 
+          :symbolic_id       => :quest_charkills_12,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 57850 units.",
+  
+            :de_DE => "Töte 1850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_11',
+
+          },
+
+          :successor_quests => [101, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 57850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_12
+        {               #   quest_charkills_13
+          :id                => 101, 
+          :symbolic_id       => :quest_charkills_13,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 67850 units.",
+  
+            :de_DE => "Töte 67850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_12',
+
+          },
+
+          :successor_quests => [102, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 67850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_13
+        {               #   quest_charkills_14
+          :id                => 102, 
+          :symbolic_id       => :quest_charkills_14,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 78650 units.",
+  
+            :de_DE => "Töte 78650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_13',
+
+          },
+
+          :successor_quests => [103, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 78650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_14
+        {               #   quest_charkills_15
+          :id                => 103, 
+          :symbolic_id       => :quest_charkills_15,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 90250 units.",
+  
+            :de_DE => "Töte 90250 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_14',
+
+          },
+
+          :successor_quests => [104, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 90250,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_15
+        {               #   quest_charkills_16
+          :id                => 104, 
+          :symbolic_id       => :quest_charkills_16,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 102650 units.",
+  
+            :de_DE => "Töte 102650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_15',
+
+          },
+
+          :successor_quests => [105, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 102650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_16
+        {               #   quest_charkills_17
+          :id                => 105, 
+          :symbolic_id       => :quest_charkills_17,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 115850 units.",
+  
+            :de_DE => "Töte 115850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_16',
+
+          },
+
+          :successor_quests => [106, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 115850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_17
+        {               #   quest_charkills_18
+          :id                => 106, 
+          :symbolic_id       => :quest_charkills_18,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 129850 units.",
+  
+            :de_DE => "Töte 129850 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_17',
+
+          },
+
+          :successor_quests => [107, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 129850,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_18
+        {               #   quest_charkills_19
+          :id                => 107, 
+          :symbolic_id       => :quest_charkills_19,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 144650 units.",
+  
+            :de_DE => "Töte 144650 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_18',
+
+          },
+
+          :successor_quests => [108, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 144650,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_19
+        {               #   quest_charkills_20
+          :id                => 108, 
+          :symbolic_id       => :quest_charkills_20,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Vernichte feindliche Einheiten",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 160250 units.",
+  
+            :de_DE => "Töte 160250 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_19',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 160250,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_20
+        {               #   quest_armyXP_11
+          :id                => 109, 
+          :symbolic_id       => :quest_armyXP_11,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 27750 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 27750 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_10',
+
+          },
+
+          :successor_quests => [110, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 27750,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_11
+        {               #   quest_armyXP_12
+          :id                => 110, 
+          :symbolic_id       => :quest_armyXP_12,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 32900 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 32900 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_11',
+
+          },
+
+          :successor_quests => [111, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 32900,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_12
+        {               #   quest_armyXP_13
+          :id                => 111, 
+          :symbolic_id       => :quest_armyXP_13,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 38550 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 38550 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_12',
+
+          },
+
+          :successor_quests => [112, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 38550,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_13
+        {               #   quest_armyXP_14
+          :id                => 112, 
+          :symbolic_id       => :quest_armyXP_14,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 44600 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 44600 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_13',
+
+          },
+
+          :successor_quests => [113, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 44600,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_14
+        {               #   quest_armyXP_15
+          :id                => 113, 
+          :symbolic_id       => :quest_armyXP_15,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 51150 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 51150 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_14',
+
+          },
+
+          :successor_quests => [114, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 51150,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_15
+        {               #   quest_armyXP_16
+          :id                => 114, 
+          :symbolic_id       => :quest_armyXP_16,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 58100 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 58100 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_15',
+
+          },
+
+          :successor_quests => [115, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 58100,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_16
+        {               #   quest_armyXP_17
+          :id                => 115, 
+          :symbolic_id       => :quest_armyXP_17,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 65500 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 65500 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_16',
+
+          },
+
+          :successor_quests => [116, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 65500,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_17
+        {               #   quest_armyXP_18
+          :id                => 116, 
+          :symbolic_id       => :quest_armyXP_18,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 73400 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 73400 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_17',
+
+          },
+
+          :successor_quests => [117, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 73400,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_18
+        {               #   quest_armyXP_19
+          :id                => 117, 
+          :symbolic_id       => :quest_armyXP_19,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 81750 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 81750 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_18',
+
+          },
+
+          :successor_quests => [118, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 81750,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_19
+        {               #   quest_armyXP_20
+          :id                => 118, 
+          :symbolic_id       => :quest_armyXP_20,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 90500 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_19',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 90500,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_20
+        {               #   quest_score_11
+          :id                => 119, 
+          :symbolic_id       => :quest_score_11,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 28000",
+  
+            :de_DE => "Erreiche 28000 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_10',
+
+          },
+
+          :successor_quests => [120, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 28000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_11
+        {               #   quest_score_12
+          :id                => 120, 
+          :symbolic_id       => :quest_score_12,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 33175",
+  
+            :de_DE => "Erreiche 33175 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_11',
+
+          },
+
+          :successor_quests => [121, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 33175,
+            },
+
+          },          
+
+        },              #   END OF quest_score_12
+        {               #   quest_score_13
+          :id                => 121, 
+          :symbolic_id       => :quest_score_13,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 38800",
+  
+            :de_DE => "Erreiche 38800 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_12',
+
+          },
+
+          :successor_quests => [122, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 38800,
+            },
+
+          },          
+
+        },              #   END OF quest_score_13
+        {               #   quest_score_14
+          :id                => 122, 
+          :symbolic_id       => :quest_score_14,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 44875",
+  
+            :de_DE => "Erreiche 44875 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_13',
+
+          },
+
+          :successor_quests => [123, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 44875,
+            },
+
+          },          
+
+        },              #   END OF quest_score_14
+        {               #   quest_score_15
+          :id                => 123, 
+          :symbolic_id       => :quest_score_15,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 51400",
+  
+            :de_DE => "Erreiche 51400 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_14',
+
+          },
+
+          :successor_quests => [124, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 51400,
+            },
+
+          },          
+
+        },              #   END OF quest_score_15
+        {               #   quest_score_16
+          :id                => 124, 
+          :symbolic_id       => :quest_score_16,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 58375",
+  
+            :de_DE => "Erreiche 58375 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_15',
+
+          },
+
+          :successor_quests => [125, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 58375,
+            },
+
+          },          
+
+        },              #   END OF quest_score_16
+        {               #   quest_score_17
+          :id                => 125, 
+          :symbolic_id       => :quest_score_17,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 65800",
+  
+            :de_DE => "Erreiche 65800 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_16',
+
+          },
+
+          :successor_quests => [126, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 65800,
+            },
+
+          },          
+
+        },              #   END OF quest_score_17
+        {               #   quest_score_18
+          :id                => 126, 
+          :symbolic_id       => :quest_score_18,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 73675",
+  
+            :de_DE => "Erreiche 73675 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_17',
+
+          },
+
+          :successor_quests => [127, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 73675,
+            },
+
+          },          
+
+        },              #   END OF quest_score_18
+        {               #   quest_score_19
+          :id                => 127, 
+          :symbolic_id       => :quest_score_19,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 82000",
+  
+            :de_DE => "Erreiche 82000 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_18',
+
+          },
+
+          :successor_quests => [128, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 82000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_19
+        {               #   quest_score_20
+          :id                => 128, 
+          :symbolic_id       => :quest_score_20,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 90775",
+  
+            :de_DE => "Erreiche 90775 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_19',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 90775,
+            },
+
+          },          
+
+        },              #   END OF quest_score_20
+        {               #   quest_resourcescore_11
+          :id                => 129, 
+          :symbolic_id       => :quest_resourcescore_11,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 10100 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 10100 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_10',
+
+          },
+
+          :successor_quests => [130, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 10100,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_11
+        {               #   quest_resourcescore_12
+          :id                => 130, 
+          :symbolic_id       => :quest_resourcescore_12,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 11940 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 11940 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_11',
+
+          },
+
+          :successor_quests => [131, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 11940,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_12
+        {               #   quest_resourcescore_13
+          :id                => 131, 
+          :symbolic_id       => :quest_resourcescore_13,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 13940 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 13940 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_12',
+
+          },
+
+          :successor_quests => [132, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 13940,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_13
+        {               #   quest_resourcescore_14
+          :id                => 132, 
+          :symbolic_id       => :quest_resourcescore_14,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 16100 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 16100 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_13',
+
+          },
+
+          :successor_quests => [133, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 16100,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_14
+        {               #   quest_resourcescore_15
+          :id                => 133, 
+          :symbolic_id       => :quest_resourcescore_15,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 18420 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 18420 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_14',
+
+          },
+
+          :successor_quests => [134, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 18420,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_15
+        {               #   quest_resourcescore_16
+          :id                => 134, 
+          :symbolic_id       => :quest_resourcescore_16,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 20900 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 20900 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_15',
+
+          },
+
+          :successor_quests => [135, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 20900,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_16
+        {               #   quest_resourcescore_17
+          :id                => 135, 
+          :symbolic_id       => :quest_resourcescore_17,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 23540 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 23540 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_16',
+
+          },
+
+          :successor_quests => [136, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 23540,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_17
+        {               #   quest_resourcescore_18
+          :id                => 136, 
+          :symbolic_id       => :quest_resourcescore_18,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 26340 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 26340 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_17',
+
+          },
+
+          :successor_quests => [137, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 26340,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_18
+        {               #   quest_resourcescore_19
+          :id                => 137, 
+          :symbolic_id       => :quest_resourcescore_19,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 29300 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 29300 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_18',
+
+          },
+
+          :successor_quests => [138, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 9500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4750,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 29300,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_19
+        {               #   quest_resourcescore_20
+          :id                => 138, 
+          :symbolic_id       => :quest_resourcescore_20,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 32420 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32420 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_19',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 32420,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_20
       ],                # END OF QUESTS
 
     )
