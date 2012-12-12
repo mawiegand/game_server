@@ -1,0 +1,168 @@
+  <hr />
+  <h2><%= user_group[:header] %></h2>
+  
+  <b>Accounts:</b> <%= user_group[:user_stats][:active_accounts]%> / <%= user_group[:user_stats][:total_accounts]%> (platinum / total)<br/> 
+  <b>Unique Users:</b> 
+    <%= user_group[:user_stats][:signins_last_hour] %> / 
+    <%= user_group[:user_stats][:signins_last_eight_hours]  %> /
+    <%= user_group[:user_stats][:signins_last_day] %> /
+    <%= user_group[:user_stats][:signins_last_week]%> (last 1h / 8h / 24h / week) <br/>
+  <b>Users Online:</b> <%= user_group[:user_stats][:presently_online] %> / <%= user_group[:user_stats][:online_last_hour] %> (right now / during last hour) </br>
+     
+  <p>
+    <% if user_group[:last_character] %>
+      <b>Latest Sign In</b>: 
+      <%= link_to user_group[:last_character].name, user_group[:last_character] %> (<%= user_group[:last_character].identifier %>),
+      <b><%= time_ago_in_words user_group[:last_character].last_login_at %></b> ago<br/>
+    <% end %>
+
+    <% if user_group[:last_character_signup] %>
+      <b>Latest Sign Up</b>: 
+      <%= link_to user_group[:last_character_signup].name, user_group[:last_character] %> (<%= user_group[:last_character_signup].identifier %>),
+      <b><%= time_ago_in_words user_group[:last_character_signup].created_at %></b> ago<br/>
+    <% end %>
+  </p>
+
+  
+  <% if user_group[:backend_stats] && !user_group[:backend_stats].empty? %>
+    <% backend_stat = user_group[:backend_stats].last %>
+    <p><b>Yesterday's Cohort:</b> <%= backend_stat.day_num_registered %> / <%= backend_stat.day_num_logged_in_once %> / <%= backend_stat.day_num_ten_minutes %> /
+          <%= backend_stat.day_num_logged_in_two_days %> / <%= backend_stat.day_num_active %> /
+          <%= backend_stat.day_num_long_term_active %> / <%= backend_stat.day_num_paying %> (Reg / 1Log / 10min / 2nd / Act / LT / Pay)<br/>
+      <b>Month's Cohort:</b> <%= backend_stat.month_num_registered %> / <%= backend_stat.month_num_logged_in_once %> / <%= backend_stat.month_num_ten_minutes %> /
+         <%= backend_stat.month_num_logged_in_two_days %> / <%= backend_stat.month_num_active %> /
+         <%= backend_stat.month_num_long_term_active %> /<%= backend_stat.month_num_paying %> (Reg / 1Log / 10min / 2nd / Act / LT / Pay)</p>
+
+  <% end %>
+
+  
+  
+  <% if user_group[:backend_stats] && !user_group[:backend_stats].empty? %>
+    <br/>
+    <div class="chart" style="float: left;" id="newUsers"></div>
+    <div class="chart" style="float: left;" id="conversions_daily"></div>
+    <div class="chart" style="float: left;" id="credits_spent_total"></div>
+    <div class="clear"></div>
+    
+    <p >This graph displays the conversion rates in our retail funnel of "daily cohorts". This means,
+       all users that created their character during the same day (24 hours before the generation of the stats entry)
+       are grouped together (build one cohort). The x-axis of the graph denominates these cohorts: e.g. the
+       numbers for the 2012/9/9 refer to those users, that joined on that particular day.</p>
+  
+    <script>
+    var newNewUsers = new Dygraph(
+      document.getElementById("newUsers"),
+
+      "Date, Monthly, Weekly, Daily \n"+
+  <% user_group[:backend_stats].each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>, <%= backend_stat.mnu %>, <%= backend_stat.wnu %>, <%= backend_stat.dnu %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'New Users in Period',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    ); 
+    
+    var conversionsDaily = new Dygraph(
+
+      document.getElementById("conversions_daily"),
+
+      "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
+  <% user_group[:backend_stats].each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,1,<%= backend_stat.day_num_logged_in_once_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_ten_minutes_acc     / (1.0*[backend_stat.day_characters_total, 1].max) %>,<%= backend_stat.day_num_logged_in_two_days_acc / (1.0*[backend_stat.day_characters_total, 1].max)  %>, <%= backend_stat.day_num_active_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_long_term_active_acc   / (1.0*[backend_stat.day_characters_total, 1].max) %>, <%= backend_stat.day_num_paying_acc             / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Conversions (daily)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+    
+      var creditsSpentTotal = new Dygraph(
+
+        document.getElementById("credits_spent_total"),
+
+        "Date, Monthly, Weekly, Daily\n" +        
+<% user_group[:backend_stats].each do |backend_stat| %>
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mcs %>, <%= backend_stat.wcs %>, <%= backend_stat.dcs %>\n" +
+<%end%>         
+        "",
+        {
+          legend: 'always',
+          title: 'Credits Spent (total)',
+          fillGraph: true,
+          highlightSeriesOpts: {
+            strokeWidth: 3,
+            strokeBorderWidth: 1,
+            highlightCircleSize: 5,
+          },
+        }
+      );
+    </script>
+  <% end %>
+  
+  <h1>Sign Ups Today</h1>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Identifier</th>
+    <th>Referer</th>
+    <th>Name</th>
+    <th>Login</th>
+    <th>Activity</th>
+    <th>Playtime</th>
+    <th>Solved Quests</th>
+    <th>Open Quests</th>
+    <th>Conversion</th>
+    <th>Gross</th>
+  </tr>
+
+<% user_group[:new_characters].each do |fundamental_character| %>
+  <tr>
+    <td><%= link_to fundamental_character.id, fundamental_character_path(fundamental_character.id) %></td>
+    <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+    <td><%= fundamental_character.referer %></td>
+    <td><%= fundamental_character.name %> 
+        <%if !fundamental_character.alliance_tag.blank? %>
+          | <%= fundamental_character.alliance_tag %>
+        <%end%></td>
+    <td><% if !fundamental_character.last_login_at.nil? %>
+          
+          <span class="<%= fundamental_character.last_login_at > Time.now - Backend::Stat.activity_period ? 'green' : (fundamental_character.last_login_at > Time.now -  (2*Backend::Stat.activity_period) ? 'red' : 'black') %>"><%= time_ago_in_words(fundamental_character.last_login_at) %></span> ago (#<%= fundamental_character.login_count %>)
+        <%else%>
+          never
+        <%end%>
+    </td>
+    <td><% if !fundamental_character.last_request_at.nil? %>          
+          <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
+        <%else%>
+          never
+        <%end%>
+    </td>
+    <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+    <td><%= fundamental_character.num_finished_quests %></td>
+    <td>
+      <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
+        <%= quest.quest_id %> 
+      <% end %>
+    </td>
+    <td><%= fundamental_character.max_conversion_state %></td>
+    <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+  </tr>
+<% end %>
+</table>
