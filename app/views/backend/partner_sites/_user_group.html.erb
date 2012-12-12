@@ -1,0 +1,35 @@
+  <hr />
+  <h3><%= user_group[:header] %></h2>
+  
+<table class="backend-stats">
+  <tr>
+    <th></th>
+    <th>Last 24 Hours</th>
+    <th>Last 7 Days</th>
+    <th>Last Month</th>
+  </tr>
+  <tr>
+    <td>Users</td>
+    <td class="center"><%= user_group[:sign_up_stats][:signins_last_day] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signins_last_week] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signins_last_month] %></td>
+  </tr>
+</table>
+
+  <h3>Last 50 Sign Ups</h3>
+
+<table class="backend-stats">
+  <tr>
+    <th>Created At</th>
+    <th>Identifier</th>
+    <th>Referer</th>
+  </tr>
+
+<% user_group[:sign_ups].each do |fundamental_character| %>
+  <tr>
+    <td><%= fundamental_character.created_at %></td>
+    <td><%= fundamental_character.identifier %></td>
+    <td><%= fundamental_character.referer %></td>
+  </tr>
+<% end %>
+</table>

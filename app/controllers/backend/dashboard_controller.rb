@@ -3,7 +3,7 @@ class Backend::DashboardController < ApplicationController
   layout 'backend'
   
   before_filter :authenticate_backend
-  # before_filter :authorize_staff
+  before_filter :authorize_staff
   before_filter :deny_api
   
   def show

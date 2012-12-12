@@ -22,7 +22,11 @@ class Auth::SessionsController < ApplicationController
       render 'new'
     else 
       sign_in_to_backend(user)
-      redirect_to backend_dashboard_path
+      if user.partner?
+        redirect_to backend_partner_sites_path
+      else
+        redirect_to backend_dashboard_path
+      end
     end    
 
   end

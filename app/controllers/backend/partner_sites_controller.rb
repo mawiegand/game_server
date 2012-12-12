@@ -3,15 +3,27 @@ class Backend::PartnerSitesController < ApplicationController
   layout 'backend'
   
   before_filter :authenticate_backend
-  before_filter :authorize_staff
+  # before_filter :authorize_staff
   before_filter :deny_api
   
   def index
-    @backend_partner_sites = Backend::PartnerSite.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @backend_partner_sites }
+    @title = "Partner Sites"
+    @backend_user = current_backend_user
+    @backend_partner_sites = !@backend_user.admin? && !@backend_user.staff? && @backend_user.partner? ? @backend_user.partner_sites : Backend::PartnerSite.all
+    
+    @user_groups = []
+    
+    @backend_partner_sites.each do |site|
+      user_group = {}
+      user_group[:header] = "#{site.description} (" + (site.referer.empty? ? "" : "referer: #{site.referer}") + (site.r.empty? ? "" : " r=#{site.r}") + ")" 
+      user_group[:sign_up_stats] = {
+        signins_last_day:         site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.days]).count,
+        signins_last_week:        site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.weeks]).count,   
+        signins_last_month:        site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.month]).count,   
+      }
+      user_group[:sign_ups] = site.characters.non_npc.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').limit(2)
+      
+      @user_groups << user_group
     end
   end
 

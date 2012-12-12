@@ -132,6 +132,17 @@ nav.backend-user {
   margin-top: 2px;
 }
 
+.backend-stats th {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888;
+}
+
+td.center {
+  text-align: center;
+}
+
+
 nav ul {
   padding: 5px 0px;
   margin:0px;

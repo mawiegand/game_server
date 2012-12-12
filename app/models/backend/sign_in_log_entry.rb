@@ -21,7 +21,7 @@ class Backend::SignInLogEntry < ActiveRecord::Base
       if !uri.nil? && !uri.query.blank?
         params = Rack::Utils.parse_query(uri.query)
         
-        self.r = params['r'][0..1] unless params['r'].empty?
+        self.r = params['r'] unless params['r'].empty?
         self.k = params['k'] unless params['k'].empty?
         self.p = params['p'] unless params['p'].empty?
         self.n = params['n'] unless params['n'].empty?
@@ -29,8 +29,8 @@ class Backend::SignInLogEntry < ActiveRecord::Base
     end
   
     def add_partner_site
-      self.partner_site = Backend::PartnerSite.find_by_referer_and_r(self.referer, self.r) unless self.r.nil?
-      self.partner_site = Backend::PartnerSite.find_by_referer_and_r(self.referer, '') if self.partner_site.nil?
+      self.partner_site = Backend::PartnerSite.find_by_r(self.r) unless self.r.nil?
+      self.partner_site = Backend::PartnerSite.find_by_referer(self.referer) if self.partner_site.nil?
     end  
   
 end
