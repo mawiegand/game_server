@@ -1810,36 +1810,7 @@
 <!-- character kills -->
 
 <!-- 59 -->
-<Quest id="quest_charkills_1" advisor="chef">
-  <Name>Decimate enemy units</Name>
-  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
-  <Task>Kill 350 units.</Task>
-  <Task locale="de_DE">Töte 350 Einheiten</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
-  </Rewards>
-  <RewardTests>
-    <KillTest min_units="350" />
-  </RewardTests>
-</Quest>
-
-<!-- 60 -->
-<Quest id="quest_charkills_2" advisor="chef">
+<Quest id="quest_charkills_1" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
   <Task>Kill 650 units.</Task>
@@ -1856,48 +1827,19 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_1" />
+  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>  
+    <ResourceReward resource="resource_wood">500</ResourceReward>    
+    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="650" />
   </RewardTests>
 </Quest>
 
-<!-- 61 -->
-<Quest id="quest_charkills_3" advisor="chef">
-  <Name>Decimate enemy units</Name>
-  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
-  <Task>Kill 1150 units.</Task>
-  <Task locale="de_DE">Töte 1150 Einheiten</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_2" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>  
-    <ResourceReward resource="resource_wood">3000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1500</ResourceReward>
-  </Rewards>
-  <RewardTests>
-    <KillTest min_units="1150" />
-  </RewardTests>
-</Quest>
-
-<!-- 62 -->
-<Quest id="quest_charkills_4" advisor="chef">
+<!-- 60 -->
+<Quest id="quest_charkills_2" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
   <Task>Kill 1850 units.</Task>
@@ -1914,48 +1856,19 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_3" />
+  <Requirement quest="quest_charkills_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>  
-    <ResourceReward resource="resource_wood">4000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>  
+    <ResourceReward resource="resource_wood">1000</ResourceReward>    
+    <ResourceReward resource="resource_fur">500</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="1850" />
   </RewardTests>
 </Quest>
 
-<!-- 63 -->
-<Quest id="quest_charkills_5" advisor="chef">
-  <Name>Decimate enemy units</Name>
-  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
-  <Task>Kill 2750 units.</Task>
-  <Task locale="de_DE">Töte 2750 Einheiten</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_4" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">5000</ResourceReward>  
-    <ResourceReward resource="resource_wood">5000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
-  </Rewards>
-  <RewardTests>
-    <KillTest min_units="2750" />
-  </RewardTests>
-</Quest>
-
-<!-- 64 -->
-<Quest id="quest_charkills_6" advisor="chef">
+<!-- 61 -->
+<Quest id="quest_charkills_3" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
   <Task>Kill 3850 units.</Task>
@@ -1972,48 +1885,19 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_5" />
+  <Requirement quest="quest_charkills_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">6000</ResourceReward>  
-    <ResourceReward resource="resource_wood">6000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>  
+    <ResourceReward resource="resource_wood">1500</ResourceReward>    
+    <ResourceReward resource="resource_fur">750</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="3850" />
   </RewardTests>
 </Quest>
 
-<!-- 65 -->
-<Quest id="quest_charkills_7" advisor="chef">
-  <Name>Decimate enemy units</Name>
-  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
-  <Task>Kill 5150 units.</Task>
-  <Task locale="de_DE">Töte 5150 Einheiten</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_6" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">7000</ResourceReward>  
-    <ResourceReward resource="resource_wood">7000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3500</ResourceReward>
-  </Rewards>
-  <RewardTests>
-    <KillTest min_units="5150" />
-  </RewardTests>
-</Quest>
-
-<!-- 66 -->
-<Quest id="quest_charkills_8" advisor="chef">
+<!-- 62 -->
+<Quest id="quest_charkills_4" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
   <Task>Kill 6650 units.</Task>
@@ -2030,48 +1914,19 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_7" />
+  <Requirement quest="quest_charkills_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">8000</ResourceReward>  
-    <ResourceReward resource="resource_wood">8000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>  
+    <ResourceReward resource="resource_wood">2000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="6650" />
   </RewardTests>
 </Quest>
 
-<!-- 67 -->
-<Quest id="quest_charkills_9" advisor="chef">
-  <Name>Decimate enemy units</Name>
-  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
-  <Task>Kill 8350 units.</Task>
-  <Task locale="de_DE">Töte 8350 Einheiten</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_8" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">9000</ResourceReward>  
-    <ResourceReward resource="resource_wood">9000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4500</ResourceReward>
-  </Rewards>
-  <RewardTests>
-    <KillTest min_units="8350" />
-  </RewardTests>
-</Quest>
-
-<!-- 68 -->
-<Quest id="quest_charkills_10" advisor="chef">
+<!-- 63 -->
+<Quest id="quest_charkills_5" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
   <Task>Kill 10250 units.</Task>
@@ -2088,14 +1943,159 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_charkills_9" />
+  <Requirement quest="quest_charkills_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>  
-    <ResourceReward resource="resource_wood">10000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_stone">2500</ResourceReward>  
+    <ResourceReward resource="resource_wood">2500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1250</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="10250" />
+  </RewardTests>
+</Quest>
+
+<!-- 64 -->
+<Quest id="quest_charkills_6" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
+  <Task>Kill 14650 units.</Task>
+  <Task locale="de_DE">Töte 14650 Einheiten</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+  <Requirement quest="quest_charkills_5" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>  
+    <ResourceReward resource="resource_wood">3000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="14650" />
+  </RewardTests>
+</Quest>
+
+<!-- 65 -->
+<Quest id="quest_charkills_7" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
+  <Task>Kill 19850 units.</Task>
+  <Task locale="de_DE">Töte 19850 Einheiten</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+  <Requirement quest="quest_charkills_6" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">3500</ResourceReward>  
+    <ResourceReward resource="resource_wood">3500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1750</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="19850" />
+  </RewardTests>
+</Quest>
+
+<!-- 66 -->
+<Quest id="quest_charkills_8" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
+  <Task>Kill 25850 units.</Task>
+  <Task locale="de_DE">Töte 25850 Einheiten</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+  <Requirement quest="quest_charkills_7" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">4000</ResourceReward>  
+    <ResourceReward resource="resource_wood">4000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2000</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="25850" />
+  </RewardTests>
+</Quest>
+
+<!-- 67 -->
+<Quest id="quest_charkills_9" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
+  <Task>Kill 32650 units.</Task>
+  <Task locale="de_DE">Töte 32650 Einheiten</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+  <Requirement quest="quest_charkills_8" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">4500</ResourceReward>  
+    <ResourceReward resource="resource_wood">4500</ResourceReward>    
+    <ResourceReward resource="resource_fur">2250</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="32650" />
+  </RewardTests>
+</Quest>
+
+<!-- 68 -->
+<Quest id="quest_charkills_10" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Vernichte feindliche Einheiten</Name>
+  <Task>Kill 40250 units.</Task>
+  <Task locale="de_DE">Töte 40250 Einheiten</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+  <Requirement quest="quest_charkills_9" />
+  <Rewards>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>  
+    <ResourceReward resource="resource_wood">5000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2500</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="40250" />
   </RewardTests>
 </Quest>
 
@@ -2122,9 +2122,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>  
+    <ResourceReward resource="resource_wood">500</ResourceReward>    
+    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="750" />
@@ -2151,9 +2151,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>  
+    <ResourceReward resource="resource_wood">1000</ResourceReward>    
+    <ResourceReward resource="resource_fur">500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="1400" />
@@ -2180,9 +2180,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>  
-    <ResourceReward resource="resource_wood">3000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>  
+    <ResourceReward resource="resource_wood">1500</ResourceReward>    
+    <ResourceReward resource="resource_fur">750</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="2500" />
@@ -2209,9 +2209,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>  
-    <ResourceReward resource="resource_wood">4000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>  
+    <ResourceReward resource="resource_wood">2000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="4100" />
@@ -2238,9 +2238,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">5000</ResourceReward>  
-    <ResourceReward resource="resource_wood">5000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ResourceReward resource="resource_stone">2500</ResourceReward>  
+    <ResourceReward resource="resource_wood">2500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="6100" />
@@ -2267,9 +2267,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">6000</ResourceReward>  
-    <ResourceReward resource="resource_wood">6000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>  
+    <ResourceReward resource="resource_wood">3000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="8600" />
@@ -2296,9 +2296,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_6" />
   <Rewards>
-    <ResourceReward resource="resource_stone">7000</ResourceReward>  
-    <ResourceReward resource="resource_wood">7000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3500</ResourceReward>
+    <ResourceReward resource="resource_stone">3500</ResourceReward>  
+    <ResourceReward resource="resource_wood">3500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1750</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="11500" />
@@ -2325,9 +2325,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_7" />
   <Rewards>
-    <ResourceReward resource="resource_stone">8000</ResourceReward>  
-    <ResourceReward resource="resource_wood">8000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ResourceReward resource="resource_stone">4000</ResourceReward>  
+    <ResourceReward resource="resource_wood">4000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2000</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="14900" />
@@ -2354,9 +2354,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_8" />
   <Rewards>
-    <ResourceReward resource="resource_stone">9000</ResourceReward>  
-    <ResourceReward resource="resource_wood">9000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5500</ResourceReward>
+    <ResourceReward resource="resource_stone">4500</ResourceReward>  
+    <ResourceReward resource="resource_wood">4500</ResourceReward>    
+    <ResourceReward resource="resource_fur">2250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="18750" />
@@ -2383,9 +2383,9 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_9" />
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>  
-    <ResourceReward resource="resource_wood">10000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>  
+    <ResourceReward resource="resource_wood">5000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ArmyExperienceTest min_experience="23000" />
@@ -2415,9 +2415,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>  
+    <ResourceReward resource="resource_wood">500</ResourceReward>    
+    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="1000" />
@@ -2444,9 +2444,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>  
+    <ResourceReward resource="resource_wood">1000</ResourceReward>    
+    <ResourceReward resource="resource_fur">500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="1675" />
@@ -2473,9 +2473,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>  
-    <ResourceReward resource="resource_wood">3000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>  
+    <ResourceReward resource="resource_wood">1500</ResourceReward>    
+    <ResourceReward resource="resource_fur">750</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="2800" />
@@ -2502,9 +2502,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>  
-    <ResourceReward resource="resource_wood">4000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>  
+    <ResourceReward resource="resource_wood">2000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="4375" />
@@ -2531,9 +2531,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">5000</ResourceReward>  
-    <ResourceReward resource="resource_wood">5000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ResourceReward resource="resource_stone">2500</ResourceReward>  
+    <ResourceReward resource="resource_wood">2500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="6400" />
@@ -2560,9 +2560,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">6000</ResourceReward>  
-    <ResourceReward resource="resource_wood">6000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>  
+    <ResourceReward resource="resource_wood">3000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="8875" />
@@ -2589,9 +2589,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_6" />
   <Rewards>
-    <ResourceReward resource="resource_stone">7000</ResourceReward>  
-    <ResourceReward resource="resource_wood">7000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3500</ResourceReward>
+    <ResourceReward resource="resource_stone">3500</ResourceReward>  
+    <ResourceReward resource="resource_wood">3500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1750</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="11800" />
@@ -2618,9 +2618,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_7" />
   <Rewards>
-    <ResourceReward resource="resource_stone">8000</ResourceReward>  
-    <ResourceReward resource="resource_wood">8000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ResourceReward resource="resource_stone">4000</ResourceReward>  
+    <ResourceReward resource="resource_wood">4000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2000</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="15175" />
@@ -2647,9 +2647,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_8" />
   <Rewards>
-    <ResourceReward resource="resource_stone">9000</ResourceReward>  
-    <ResourceReward resource="resource_wood">9000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4500</ResourceReward>
+    <ResourceReward resource="resource_stone">4500</ResourceReward>  
+    <ResourceReward resource="resource_wood">4500</ResourceReward>    
+    <ResourceReward resource="resource_fur">2250</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="19000" />
@@ -2676,9 +2676,9 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_9" />
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>  
-    <ResourceReward resource="resource_wood">10000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>  
+    <ResourceReward resource="resource_wood">5000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2500</ResourceReward>
   </Rewards>
   <RewardTests>
     <ScoreTest min_population="23275" />
@@ -2708,9 +2708,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>  
+    <ResourceReward resource="resource_wood">500</ResourceReward>    
+    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="500" />
@@ -2737,9 +2737,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>  
+    <ResourceReward resource="resource_wood">1000</ResourceReward>    
+    <ResourceReward resource="resource_fur">500</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="740" />
@@ -2766,9 +2766,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>  
-    <ResourceReward resource="resource_wood">3000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>  
+    <ResourceReward resource="resource_wood">1500</ResourceReward>    
+    <ResourceReward resource="resource_fur">750</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="1140" />
@@ -2795,9 +2795,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>  
-    <ResourceReward resource="resource_wood">4000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>  
+    <ResourceReward resource="resource_wood">2000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="1700" />
@@ -2824,9 +2824,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">5000</ResourceReward>  
-    <ResourceReward resource="resource_wood">5000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ResourceReward resource="resource_stone">2500</ResourceReward>  
+    <ResourceReward resource="resource_wood">2500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1250</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="2420" />
@@ -2853,9 +2853,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">6000</ResourceReward>  
-    <ResourceReward resource="resource_wood">6000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>  
+    <ResourceReward resource="resource_wood">3000</ResourceReward>    
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="3300" />
@@ -2882,9 +2882,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_6" />
   <Rewards>
-    <ResourceReward resource="resource_stone">7000</ResourceReward>  
-    <ResourceReward resource="resource_wood">7000</ResourceReward>    
-    <ResourceReward resource="resource_fur">3500</ResourceReward>
+    <ResourceReward resource="resource_stone">3500</ResourceReward>  
+    <ResourceReward resource="resource_wood">3500</ResourceReward>    
+    <ResourceReward resource="resource_fur">1750</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="4340" />
@@ -2911,9 +2911,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_7" />
   <Rewards>
-    <ResourceReward resource="resource_stone">8000</ResourceReward>  
-    <ResourceReward resource="resource_wood">8000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ResourceReward resource="resource_stone">4000</ResourceReward>  
+    <ResourceReward resource="resource_wood">4000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2000</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="5540" />
@@ -2940,9 +2940,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_8" />
   <Rewards>
-    <ResourceReward resource="resource_stone">9000</ResourceReward>  
-    <ResourceReward resource="resource_wood">9000</ResourceReward>    
-    <ResourceReward resource="resource_fur">4500</ResourceReward>
+    <ResourceReward resource="resource_stone">4500</ResourceReward>  
+    <ResourceReward resource="resource_wood">4500</ResourceReward>    
+    <ResourceReward resource="resource_fur">2250</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="6900" />
@@ -2969,9 +2969,9 @@
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_9" />
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>  
-    <ResourceReward resource="resource_wood">10000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>  
+    <ResourceReward resource="resource_wood">5000</ResourceReward>    
+    <ResourceReward resource="resource_fur">2500</ResourceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="8420" />
