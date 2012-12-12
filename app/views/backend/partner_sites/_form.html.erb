@@ -16,8 +16,16 @@
     <%= f.number_field :backend_user_id %>
   </div>
   <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
     <%= f.label :referer %><br />
     <%= f.text_field :referer %>
+  </div>
+  <div class="field">
+    <%= f.label :r %><br />
+    <%= f.text_field :r %>
   </div>
   <div class="actions">
     <%= f.submit %>
