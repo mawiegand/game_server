@@ -15,7 +15,9 @@
   <nav class="backend-user">  
     <ul>
       <% if signed_in_to_backend? %>
+        <% if backend_staff? %>
         <li><%= link_to current_backend_user.login, current_backend_user %></li>
+        <% end %>
         <li><%= link_to I18n.translate("application.layout.signout"), signout_path %></li>
       <% else %>
         <li><%= link_to I18n.translate("application.layout.signin"), signin_path %></li>
@@ -27,35 +29,42 @@
   <% if signed_in_to_backend? && backend_staff? %>
     <ul>
       <li><%= link_to I18n.translate("application.layout.backend.category"), backend_dashboard_path %></li>
-      <%= yield :backend_links %>
       <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
-      <%= yield :rules_links %>
       <li><%= link_to I18n.translate("application.layout.event.category"), event_events_path %></li>
-      <%= yield :event_links %>
       <li><%= link_to I18n.translate("application.layout.effect.category"), effect_resource_effects_path %></li>
-      <%= yield :effect_links %>
       <li><%= link_to I18n.translate("application.layout.action.category"), action_path %></li>
-      <%= yield :action_links %>
       <li><%= link_to I18n.translate("application.layout.ranking.category"), ranking_character_rankings_path %></li>
       <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
-      <%= yield :fundamental_links %>
       <li><%= link_to I18n.translate("application.layout.messaging.category"), messaging_inboxes_path %></li>
-      <%= yield :messaging_links %>
       <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
-      <%= yield :map_links %>
       <li><%= link_to I18n.translate("application.layout.settlement.category"), settlement_settlements_path %></li>
-      <%= yield :settlement_links %>
       <li><%= link_to I18n.translate("application.layout.construction.category"), construction_jobs_path %></li>
-      <%= yield :construction_links %>
       <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
-      <%= yield :military_links %>
       <li><%= link_to I18n.translate("application.layout.training.category"), training_jobs_path %></li>
-      <%= yield :training_links %>
       <li><%= link_to I18n.translate("application.layout.like_system.category"), like_system_likes_path %></li>
-      <%= yield :like_system_links %>
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_money_transactions_path %></li>
-      <%= yield :shop_links %>
       <li><%= link_to I18n.translate("application.layout.tutorial.category"), tutorial_tutorial_path %></li>
+    </ul>
+  <% end %>
+  </nav>
+    
+  <nav class="site-navigation">  
+  <% if signed_in_to_backend? && backend_staff? %>
+    <ul>
+      <%= yield :backend_links %>
+      <%= yield :rules_links %>
+      <%= yield :event_links %>
+      <%= yield :effect_links %>
+      <%= yield :action_links %>
+      <%= yield :fundamental_links %>
+      <%= yield :messaging_links %>
+      <%= yield :map_links %>
+      <%= yield :settlement_links %>
+      <%= yield :construction_links %>
+      <%= yield :military_links %>
+      <%= yield :training_links %>
+      <%= yield :like_system_links %>
+      <%= yield :shop_links %>
       <%= yield :tutorial_links %>
     </ul>
   <% end %>
