@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Backend user:</b>
+  <%= @backend_partner_site.backend_user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @backend_partner_site.description %>
+</p>
+
+<p>
+  <b>Referer:</b>
+  <%= @backend_partner_site.referer %>
+</p>
+
+<p>
+  <b>R:</b>
+  <%= @backend_partner_site.r %>
+</p>
+
+
+<%= link_to 'Edit', edit_backend_partner_site_path(@backend_partner_site) %> |
+<%= link_to 'Back', backend_partner_sites_path %>

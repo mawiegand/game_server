@@ -51,6 +51,7 @@ class Fundamental::CharactersController < ApplicationController
 
   def self
     external_referer = request.env["HTTP_X_ALT_REFERER"]
+    request_url = request.env["HTTP_X_ALT_REQUEST"]
     
     if !current_character && request_access_token &&  request_access_token.valid? &&
         request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
@@ -113,9 +114,10 @@ class Fundamental::CharactersController < ApplicationController
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,
         referer_url:        external_referer,
+        request_url:        request_url,
         character_id:       character.id,
         remote_ip:          request.remote_ip,
-        sign_up:            true
+        sign_up:            true,
       });
       
       character.last_login_at = DateTime.now
@@ -155,6 +157,7 @@ class Fundamental::CharactersController < ApplicationController
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,
         referer_url:        external_referer,
+        request_url:        request_url,
         character_id:       current_character.id,
         remote_ip:          request.remote_ip,
       });   

@@ -49,6 +49,7 @@ module Auth
       else
         return :admin     if admin?
         return :staff     if staff?
+        return :partner   if partner?
       end
       return :default
     end
@@ -212,6 +213,10 @@ module Auth
       backend_staff?
     end
   
+    def partner?
+      backend_partner?
+    end
+  
     # Checks whether the present user has admin-status and redirects to 
     # sign-in otherwise.
     def authorize_admin
@@ -222,6 +227,12 @@ module Auth
     # sign-in otherwise. Admin users always have staff-status.
     def authorize_staff
       deny_access I18n.translate('sessions.authorization.access_denied.staff') unless staff?
+    end
+  
+    # Checks whether the present user has staff-status and redirects to
+    # sign-in otherwise. Admin users always have staff-status.
+    def authorize_partner
+      deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? || !admin?
     end
   
     # Sign-in to the backend as the specified user. Places a cookie for session tracking
@@ -247,6 +258,10 @@ module Auth
     # staff status, even when their staff flag hasn't been set properly.
     def backend_staff?
       backend_admin? || (!current_backend_user.nil? && current_backend_user.staff?) # admin is always staff
+    end
+  
+    def backend_partner?
+      !current_backend_user.nil? && current_backend_user.partner?
     end
   
     # Signs the present user out by destroying the cookie and unsetting

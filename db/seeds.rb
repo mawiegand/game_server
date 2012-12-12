@@ -12,6 +12,7 @@ user.email = 'info@5dlab.com'
 user.password = '5dlab5dlab'
 user.admin = true
 user.staff = true
+user.partner = true
 user.deleted = false
 user.save
 

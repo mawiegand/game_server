@@ -1,0 +1,29 @@
+<h1>Listing backend_partner_sites</h1>
+
+<table>
+  <tr>
+    <th>Backend user</th>
+    <th>Description</th>
+    <th>Referer</th>
+    <th>R</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @backend_partner_sites.each do |backend_partner_site| %>
+  <tr>
+    <td><%= backend_partner_site.backend_user_id %></td>
+    <td><%= backend_partner_site.description %></td>
+    <td><%= backend_partner_site.referer %></td>
+    <td><%= backend_partner_site.r %></td>
+    <td><%= link_to 'Show', backend_partner_site %></td>
+    <td><%= link_to 'Edit', edit_backend_partner_site_path(backend_partner_site) %></td>
+    <td><%= link_to 'Destroy', backend_partner_site, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Partner site', new_backend_partner_site_path %>

@@ -33,16 +33,17 @@ require 'base64'
 #
 class Backend::User < ActiveRecord::Base
 
-  has_many   :announcements,   :class_name => "Fundamental::Announcement",     :foreign_key => "user_id", :inverse_of => :author
+  has_many   :announcements,   :class_name => "Fundamental::Announcement",    :foreign_key => "user_id",          :inverse_of => :author
+  has_many   :partner_sites,   :class_name => "Backend::PartnerSite",         :foreign_key => "backend_user_id",  :inverse_of => :partner
   
   attr_accessor :password
   
   attr_accessible :login, :firstname, :surname, :password, :password_confirmation,                        :as => :owner
   attr_accessible *accessible_attributes(:owner), :email,                                                 :as => :creator # fields accesible during creation
   attr_accessible :login, :firstname, :surname, :deleted, :staff,                                         :as => :staff
-  attr_accessible *accessible_attributes(:staff), :email, :admin, :password, :password_confirmation,      :as => :admin
+  attr_accessible *accessible_attributes(:staff), :partner, :email, :admin, :password, :password_confirmation,  :as => :admin
     
-  attr_readable :login, :id, :admin, :staff,                                                              :as => :default 
+  attr_readable :login, :id, :admin, :staff, :partner,                                                    :as => :default 
   attr_readable *readable_attributes(:default), :created_at,                                              :as => :user
   attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted,         :as => :owner
   attr_readable *readable_attributes(:user), :email, :firstname, :surname, :updated_at, :deleted, :salt,  :as => :staff
@@ -148,6 +149,7 @@ class Backend::User < ActiveRecord::Base
   def role
     return :admin if admin
     return :staff if staff
+    return :partner if partner
     return :user
   end
   
@@ -197,6 +199,7 @@ class Backend::User < ActiveRecord::Base
   def address_role 
     return I18n.translate('general.address.admin') if admin?
     return I18n.translate('general.address.staff') if staff?
+    return I18n.translate('general.address.partner') if partner?
     return I18n.translate('general.address.user')
   end
   
