@@ -3,6 +3,7 @@ class Backend::PartnerSitesController < ApplicationController
   layout 'backend'
   
   before_filter :authenticate_backend
+  before_filter :authorize_staff, :except => [:index] 
   before_filter :deny_api
   
   def index
