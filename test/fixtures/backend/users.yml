@@ -28,7 +28,7 @@ admin_no_staff:
   partner: false
   login: admin_no_staff
   
-partnert:
+partner:
   email: partner@5dlab.com
   admin: false
   staff: false
