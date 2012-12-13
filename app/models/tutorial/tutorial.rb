@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 69, 79, 89, ],
+          :successor_quests => [89, ],
 
           :rewards => {
             
@@ -5821,12 +5821,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
-
-          },
-
           :successor_quests => [60, ],
 
           :rewards => {
@@ -6721,12 +6715,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
-
-          },
-
           :successor_quests => [70, ],
 
           :rewards => {
@@ -7619,12 +7607,6 @@ class Tutorial::Tutorial
   
             :en_US => "The ranking is sorted by population by default.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
-
           },
 
           :successor_quests => [80, ],

@@ -1827,7 +1827,7 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+<!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />  -->
   <Rewards>
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -2120,7 +2120,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+<!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> -->
   <Rewards>
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -2413,7 +2413,7 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+<!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> -->
   <Rewards>
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
