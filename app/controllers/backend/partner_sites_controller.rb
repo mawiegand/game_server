@@ -13,12 +13,21 @@ class Backend::PartnerSitesController < ApplicationController
     @user_groups = []
     
     @backend_partner_sites.each do |site|
+      signins_all =      site.characters.non_npc.count
+      gross_all =        site.characters.non_npc.sum(:gross),   
+      avg_gross_all =    site.characters.non_npc.sum(:gross) / signins_all,   
+      avg_playtime_all = site.characters.non_npc.sum(:playtime) / 60 / signins_all
+        
       user_group = {}
       user_group[:header] = "#{site.description} (" + (site.referer.empty? ? "" : "referer: #{site.referer}") + (site.r.empty? ? "" : " r=#{site.r}") + ")" 
       user_group[:sign_up_stats] = {
         signins_last_day:         site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.days]).count,
         signins_last_week:        site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.weeks]).count,   
-        signins_last_month:        site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.month]).count,   
+        signins_last_month:       site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.month]).count,   
+        signins_all:              signins_all,   
+        gross_all:                site.characters.non_npc.sum(:gross),   
+        avg_gross_all:            signins_all == 0 ? 0.0 : avg_gross_all.round(2),   
+        avg_playtime_all:         signins_all == 0 ? 0 : avg_playtime_all.round,
       }
       user_group[:sign_ups] = site.characters.non_npc.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').limit(2)
       

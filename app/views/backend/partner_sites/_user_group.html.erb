@@ -7,13 +7,38 @@
     <th>Last 24 Hours</th>
     <th>Last 7 Days</th>
     <th>Last Month</th>
+    <th>All</th>
   </tr>
   <tr>
     <td>Users</td>
     <td class="center"><%= user_group[:sign_up_stats][:signins_last_day] %></td>
     <td class="center"><%= user_group[:sign_up_stats][:signins_last_week] %></td>
     <td class="center"><%= user_group[:sign_up_stats][:signins_last_month] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signins_all] %></td>
   </tr>
+  <% if @backend_user.staff? %>
+  <tr>
+    <td>Gross</td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"><%= user_group[:sign_up_stats][:gross_all] %> EUR</td>
+  </tr>
+  <tr>
+    <td>Avg. Gross</td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"><%= user_group[:sign_up_stats][:avg_gross_all] %> EUR</td>
+  </tr>
+  <tr>
+    <td>Avg. Playtime</td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"><%= user_group[:sign_up_stats][:avg_playtime_all] %> min.</td>
+  </tr>
+  <% end %>
 </table>
 
   <h3>Last 50 Sign Ups</h3>
