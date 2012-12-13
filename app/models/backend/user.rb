@@ -39,9 +39,9 @@ class Backend::User < ActiveRecord::Base
   attr_accessor :password
   
   attr_accessible :login, :firstname, :surname, :password, :password_confirmation,                        :as => :owner
-  attr_accessible *accessible_attributes(:owner), :email,                                                 :as => :creator # fields accesible during creation
+  attr_accessible *accessible_attributes(:owner), :email, :partner,                                       :as => :creator # fields accesible during creation
   attr_accessible :login, :firstname, :surname, :deleted, :staff,                                         :as => :staff
-  attr_accessible *accessible_attributes(:staff), :partner, :email, :admin, :password, :password_confirmation,  :as => :admin
+  attr_accessible *accessible_attributes(:staff), :email, :admin, :password, :password_confirmation,      :as => :admin
     
   attr_readable :login, :id, :admin, :staff, :partner,                                                    :as => :default 
   attr_readable *readable_attributes(:default), :created_at,                                              :as => :user

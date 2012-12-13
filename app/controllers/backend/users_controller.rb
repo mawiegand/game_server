@@ -49,7 +49,6 @@ class Backend::UsersController < ApplicationController
       
         if @backend_user.save                                  # created successfully
 #          IdentityMailer.validation_email(@identity).deliver  # send email validation email
-          sign_in_to_backend @backend_user                     # sign in with newly created identity
           flash[:success] =    
             I18n.t('identities.signup.flash.welcome', :name => @backend_user.address_informal(:owner))
           redirect_to @backend_user                            # redirect to new user
