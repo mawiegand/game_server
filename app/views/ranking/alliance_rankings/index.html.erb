@@ -12,6 +12,7 @@
       <th class="number"><%= link_to "Resource score", ranking_alliance_rankings_path(:sort => 'resource') %></th>
       <th class="number"><%= link_to "Beaten Units", ranking_alliance_rankings_path(:sort => 'kills') %></th>
       <th class="number"><%= link_to "Members", ranking_alliance_rankings_path(:sort => 'members') %></th>
+      <th class="number"><%= link_to "Regions per Member", ranking_alliance_rankings_path(:sort => 'fortressmembers') %></th>
     </tr>
     <% 
       rank = 0
@@ -25,6 +26,7 @@
       <td class="number"><%= ranking_alliance_ranking.resource_score %></td>
       <td class="number"><%= ranking_alliance_ranking.kills %></td>
       <td class="number"><%= ranking_alliance_ranking.num_members %></td>
+      <td class="number"><%= ranking_alliance_ranking.num_members == 0 ? 0 : (1.0 * ranking_alliance_ranking.num_fortress / ranking_alliance_ranking.num_members).round(1) %></td>
     </tr>
     <% end %>
   </table>
