@@ -29,7 +29,7 @@ class Backend::PartnerSitesController < ApplicationController
         avg_gross_all:            signins_all == 0 ? 0.0 : avg_gross_all.round(2),   
         avg_playtime_all:         signins_all == 0 ? 0 : avg_playtime_all.round,
       }
-      user_group[:sign_ups] = site.characters.non_npc.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').limit(2)
+      user_group[:sign_ups] = site.characters.non_npc.where(['last_login_at > ?', Time.new.midnight]).order('fundamental_characters.created_at DESC')
       
       @user_groups << user_group
     end
@@ -67,8 +67,8 @@ class Backend::PartnerSitesController < ApplicationController
   def create
     @backend_partner_site = Backend::PartnerSite.new(params[:backend_partner_site])
 
-    @backend_partner_site.referer.strip!
-    @backend_partner_site.r.strip! 
+    @backend_partner_site.referer.strip! unless @backend_partner_site.referer.empty?
+    @backend_partner_site.r.strip! unless @backend_partner_site.r.empty?
 
     respond_to do |format|
       if @backend_partner_site.save
@@ -86,8 +86,8 @@ class Backend::PartnerSitesController < ApplicationController
   def update
     @backend_partner_site = Backend::PartnerSite.find(params[:id])
 
-    @backend_partner_site.referer.strip!
-    @backend_partner_site.r.strip! 
+    @backend_partner_site.referer.strip! unless @backend_partner_site.referer.empty?
+    @backend_partner_site.r.strip! unless @backend_partner_site.r.empty?
 
     respond_to do |format|
       if @backend_partner_site.update_attributes(params[:backend_partner_site])
