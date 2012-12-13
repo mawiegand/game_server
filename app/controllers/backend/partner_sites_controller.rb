@@ -67,6 +67,9 @@ class Backend::PartnerSitesController < ApplicationController
   def create
     @backend_partner_site = Backend::PartnerSite.new(params[:backend_partner_site])
 
+    @backend_partner_site.referer.strip!
+    @backend_partner_site.r.strip! 
+
     respond_to do |format|
       if @backend_partner_site.save
         format.html { redirect_to @backend_partner_site, notice: 'Partner site was successfully created.' }
@@ -82,6 +85,9 @@ class Backend::PartnerSitesController < ApplicationController
   # PUT /backend/partner_sites/1.json
   def update
     @backend_partner_site = Backend::PartnerSite.find(params[:id])
+
+    @backend_partner_site.referer.strip!
+    @backend_partner_site.r.strip! 
 
     respond_to do |format|
       if @backend_partner_site.update_attributes(params[:backend_partner_site])
