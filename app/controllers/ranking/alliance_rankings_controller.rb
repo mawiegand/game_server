@@ -10,7 +10,7 @@ class Ranking::AllianceRankingsController < ApplicationController
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "num_members"    if params[:sort] == 'members'
     sort = "kills"          if params[:sort] == 'kills'
-    sort = "(num_fortress / num_members)" if params[:sort] == 'fortressmembers'
+    sort = "(1.0 * num_fortress / num_members)" if params[:sort] == 'fortressmembers'
 
     @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.order("#{sort} DESC")
     @title = "Alliance Ranking"
