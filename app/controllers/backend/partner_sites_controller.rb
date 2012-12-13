@@ -26,6 +26,7 @@ class Backend::PartnerSitesController < ApplicationController
         signins_last_week:        site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.weeks]).count,   
         signins_last_month:       site.characters.non_npc.where(['last_login_at > ?', Time.now - 1.month]).count,   
         signins_all:              signins_all,   
+        churned_all:              site.characters.non_npc.churned.count,   
         gross_all:                site.characters.non_npc.sum(:gross),   
         avg_gross_all:            signins_all == 0 ? 0.0 : avg_gross_all.round(2),   
         avg_playtime_all:         signins_all == 0 ? 0 : avg_playtime_all.round,

@@ -18,6 +18,13 @@
   </tr>
   <% if @backend_user.staff? %>
   <tr>
+    <td>Churned</td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"></td>
+    <td class="center"><%= user_group[:sign_up_stats][:churned_all] %></td>
+  </tr>
+  <tr>
     <td>Gross</td>
     <td class="center"></td>
     <td class="center"></td>
