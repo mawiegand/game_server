@@ -69,8 +69,8 @@ class Backend::PartnerSitesController < ApplicationController
     @backend_partner_site = Backend::PartnerSite.new(params[:backend_partner_site])
 
     unless @backend_partner_site.nil?
-      @backend_partner_site.referer.strip! unless @backend_partner_site.referer.empty?
-      @backend_partner_site.r.strip! unless @backend_partner_site.r.empty?
+      @backend_partner_site.referer.strip! unless @backend_partner_site.referer.nil?
+      @backend_partner_site.r.strip! unless @backend_partner_site.r.nil?
     end
     
     respond_to do |format|
@@ -90,8 +90,8 @@ class Backend::PartnerSitesController < ApplicationController
     @backend_partner_site = Backend::PartnerSite.find(params[:id])
 
     unless @backend_partner_site.nil?
-      @backend_partner_site.referer.strip! unless @backend_partner_site.referer.empty?
-      @backend_partner_site.r.strip! unless @backend_partner_site.r.empty?
+      @backend_partner_site.referer.strip! unless @backend_partner_site.referer.nil?
+      @backend_partner_site.r.strip! unless @backend_partner_site.r.nil?
     end
 
     respond_to do |format|
