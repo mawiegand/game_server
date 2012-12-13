@@ -11,10 +11,10 @@
   </tr>
   <tr>
     <td>Users</td>
-    <td class="center"><%= user_group[:sign_up_stats][:signins_last_day] %></td>
-    <td class="center"><%= user_group[:sign_up_stats][:signins_last_week] %></td>
-    <td class="center"><%= user_group[:sign_up_stats][:signins_last_month] %></td>
-    <td class="center"><%= user_group[:sign_up_stats][:signins_all] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signups_last_day] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signups_last_week] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signups_last_month] %></td>
+    <td class="center"><%= user_group[:sign_up_stats][:signups_all] %></td>
   </tr>
   <% if @backend_user.staff? %>
   <tr>
