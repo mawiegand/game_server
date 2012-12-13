@@ -7,9 +7,9 @@ class Backend::PartnerSitesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    # get :index
-    # assert_response :success
-    # assert_not_nil assigns(:backend_partner_sites)
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:backend_partner_sites)
   end
 
   test "should get new" do

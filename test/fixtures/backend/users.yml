@@ -4,34 +4,47 @@ user:
   email: sascha@5dlab.com
   admin: false
   staff: false
+  partner: false
   login: user
 
 admin:
   email: info@5dlab.com
   admin: true
   staff: true
+  partner: false
   login: admin
   
 staff:
   email: staff@5dlab.com
   admin: false
   staff: true
+  partner: false
   login: staff
   
 admin_no_staff:
   email: patrick@5dlab.com
   admin: true
   staff: false
+  partner: false
+  login: admin_no_staff
+  
+partnert:
+  email: partner@5dlab.com
+  admin: false
+  staff: false
+  partner: true
   login: admin_no_staff
   
 one:
   email: test1@5dlab.com
   admin: false
   staff: false
+  partner: false
   login: test1
   
 two:
   email: test2@5dlab.com
   admin: true
   staff: true
+  partner: false
   login: test2
