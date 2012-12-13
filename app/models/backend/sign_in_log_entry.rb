@@ -8,6 +8,10 @@ class Backend::SignInLogEntry < ActiveRecord::Base
   before_save :determine_referer_from_url
   before_save :determine_tracking_params_from_request_url
   before_save :add_partner_site
+  
+  scope :signups,         where(sign_up: true)
+  scope :refered_by_host, lambda { |host| where(referer: host) }
+  scope :refered_by_id,   lambda { |rid|  where(r: rid) }
 
   protected
   
