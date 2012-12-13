@@ -29,7 +29,7 @@ class Backend::PartnerSitesController < ApplicationController
         avg_gross_all:            signins_all == 0 ? 0.0 : avg_gross_all.round(2),   
         avg_playtime_all:         signins_all == 0 ? 0 : avg_playtime_all.round,
       }
-      user_group[:sign_ups] = site.characters.non_npc.where(['created_at > ?', Time.new.midnight]).order('fundamental_characters.created_at DESC')
+      user_group[:sign_ups] = site.characters.non_npc.where(['fundamental_characters.created_at > ?', Time.new.midnight]).order('fundamental_characters.created_at DESC')
       
       @user_groups << user_group
     end
