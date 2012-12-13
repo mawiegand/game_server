@@ -10,7 +10,7 @@ class Backend::SignInLogEntry < ActiveRecord::Base
   before_save :add_partner_site
   
   scope :signups,         where(sign_up: true)
-  scope :refered_by_host, lambda { |host| where(referer: host) }
+  scope :refered_by_host, lambda { |host| where(["referer LIKE '%?%']", host]) }
   scope :refered_by_id,   lambda { |rid|  where(r: rid) }
 
   protected
