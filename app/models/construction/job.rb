@@ -119,8 +119,8 @@ class Construction::Job < ActiveRecord::Base
     requirement_groups = building_type[:requirementGroups]
     raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
+    logger.debug "---> create_queueable? #{self.level_after} #{queue.settlement.building_slots_available?} #{self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?}"
     self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?
-    logger.debug "---> create_queueable? #{self.level_after} #{queue.settlement.building_slots_available?}"
     # TODO test if building can be build in slot according to the slots building categories
   end
   
