@@ -3,7 +3,7 @@ require 'test_helper'
 class Backend::PartnerSitesControllerTest < ActionController::TestCase
   setup do
     @backend_partner_site = backend_partner_sites(:one)
-    @controller.current_backend_user = backend_users(:partner)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
+    @controller.current_backend_user = backend_users(:admin)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do
