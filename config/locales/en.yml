@@ -172,6 +172,9 @@ en:
         
   sessions:
         
+    signup:
+      user_created: User created successfully
+
     signin:
       title: Sign In
       

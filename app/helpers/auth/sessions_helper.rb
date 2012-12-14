@@ -229,8 +229,8 @@ module Auth
       deny_access I18n.translate('sessions.authorization.access_denied.staff') unless staff?
     end
   
-    # Checks whether the present user has staff-status and redirects to
-    # sign-in otherwise. Admin users always have staff-status.
+    # Checks whether the present user has partner-status and redirects to
+    # sign-in otherwise. Admin users always have partner-status.
     def authorize_partner
       deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? || !admin?
     end

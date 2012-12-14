@@ -418,3 +418,17 @@ div.platinum-account-info-pane .feature {
   clear: both;
 }
 
+.backend-sign-in-log-entries .url {
+  max-width: 500px;
+  overflow: hidden;
+  word-break:break-all;
+  word-wrap:break-word;  
+}
+
+.word-break {
+  word-break:break-all;
+  word-wrap:break-word;  
+}
+
+
+
