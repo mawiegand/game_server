@@ -192,7 +192,8 @@ GameServer::Application.routes.draw do
           resources :speedup_job_actions    
         end
         namespace :settlement do
-          resources :change_tax_rate_actions, :only => [ :create ]    
+          resources :change_tax_rate_actions, :only => [ :create ] 
+		  resources :abandon_outpost_actions, :only => [ :create ]
         end
         namespace :tutorial do
           resources :check_quest_actions,     :only => [ :create ]    
