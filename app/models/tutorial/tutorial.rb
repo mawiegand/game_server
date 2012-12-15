@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [89, ],
+          :successor_quests => [59, 89, ],
 
           :rewards => {
             
@@ -5782,14 +5782,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 650 units.",
+            :en_US => "Kill 10 units.",
   
-            :de_DE => "Töte 650 Einheiten",
+            :de_DE => "Besiege 10 Einheiten",
                 
           },
           :flavour => {
@@ -5821,6 +5821,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [60, ],
 
           :rewards => {
@@ -5829,17 +5835,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 100,
               },
 
             ],
@@ -5849,7 +5855,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 650,
+              :min_units => 10,
             },
 
           },          
@@ -5866,14 +5872,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 1850 units.",
+            :en_US => "Kill 100 units.",
   
-            :de_DE => "Töte 1850 Einheiten",
+            :de_DE => "Besiege 100 Einheiten",
                 
           },
           :flavour => {
@@ -5919,17 +5925,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
@@ -5939,7 +5945,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 1850,
+              :min_units => 100,
             },
 
           },          
@@ -5956,14 +5962,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 3850 units.",
+            :en_US => "Kill 500 units.",
   
-            :de_DE => "Töte 3850 Einheiten",
+            :de_DE => "Besiege 500 Einheiten",
                 
           },
           :flavour => {
@@ -6029,7 +6035,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 3850,
+              :min_units => 500,
             },
 
           },          
@@ -6046,14 +6052,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 6650 units.",
+            :en_US => "Kill 1000 units.",
   
-            :de_DE => "Töte 6650 Einheiten",
+            :de_DE => "Besiege 1000 Einheiten",
                 
           },
           :flavour => {
@@ -6112,6 +6118,11 @@ class Tutorial::Tutorial
                 :amount => 1000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -6119,7 +6130,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 6650,
+              :min_units => 1000,
             },
 
           },          
@@ -6136,14 +6147,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 10250 units.",
+            :en_US => "Kill 5000 units.",
   
-            :de_DE => "Töte 10250 Einheiten",
+            :de_DE => "Besiege 5000 Einheiten",
                 
           },
           :flavour => {
@@ -6209,7 +6220,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 10250,
+              :min_units => 5000,
             },
 
           },          
@@ -6226,14 +6237,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 14650 units.",
+            :en_US => "Kill 10000 units.",
   
-            :de_DE => "Töte 14650 Einheiten",
+            :de_DE => "Besiege 10000 Einheiten",
                 
           },
           :flavour => {
@@ -6292,6 +6303,11 @@ class Tutorial::Tutorial
                 :amount => 1500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -6299,7 +6315,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 14650,
+              :min_units => 10000,
             },
 
           },          
@@ -6316,14 +6332,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 19850 units.",
+            :en_US => "Kill 20000 units.",
   
-            :de_DE => "Töte 19850 Einheiten",
+            :de_DE => "Besiege 20000 Einheiten",
                 
           },
           :flavour => {
@@ -6382,6 +6398,11 @@ class Tutorial::Tutorial
                 :amount => 1750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -6389,7 +6410,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 19850,
+              :min_units => 20000,
             },
 
           },          
@@ -6406,14 +6427,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 25850 units.",
   
-            :de_DE => "Töte 25850 Einheiten",
+            :de_DE => "Besiege 25850 Einheiten",
                 
           },
           :flavour => {
@@ -6496,14 +6517,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 32650 units.",
   
-            :de_DE => "Töte 32650 Einheiten",
+            :de_DE => "Besiege 32650 Einheiten",
                 
           },
           :flavour => {
@@ -6562,6 +6583,11 @@ class Tutorial::Tutorial
                 :amount => 2250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -6586,14 +6612,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 40250 units.",
   
-            :de_DE => "Töte 40250 Einheiten",
+            :de_DE => "Besiege 40250 Einheiten",
                 
           },
           :flavour => {
@@ -6650,6 +6676,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 2500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
@@ -9364,14 +9395,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 48650 units.",
   
-            :de_DE => "Töte 48650 Einheiten",
+            :de_DE => "Besiege 48650 Einheiten",
                 
           },
           :flavour => {
@@ -9454,14 +9485,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 57850 units.",
   
-            :de_DE => "Töte 1850 Einheiten",
+            :de_DE => "Besiege 1850 Einheiten",
                 
           },
           :flavour => {
@@ -9520,6 +9551,11 @@ class Tutorial::Tutorial
                 :amount => 3000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9544,14 +9580,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 67850 units.",
   
-            :de_DE => "Töte 67850 Einheiten",
+            :de_DE => "Besiege 67850 Einheiten",
                 
           },
           :flavour => {
@@ -9610,6 +9646,11 @@ class Tutorial::Tutorial
                 :amount => 3250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9634,14 +9675,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 78650 units.",
   
-            :de_DE => "Töte 78650 Einheiten",
+            :de_DE => "Besiege 78650 Einheiten",
                 
           },
           :flavour => {
@@ -9700,6 +9741,11 @@ class Tutorial::Tutorial
                 :amount => 3500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9724,14 +9770,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 90250 units.",
   
-            :de_DE => "Töte 90250 Einheiten",
+            :de_DE => "Besiege 90250 Einheiten",
                 
           },
           :flavour => {
@@ -9790,6 +9836,11 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9814,14 +9865,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 102650 units.",
   
-            :de_DE => "Töte 102650 Einheiten",
+            :de_DE => "Besiege 102650 Einheiten",
                 
           },
           :flavour => {
@@ -9880,6 +9931,11 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9904,14 +9960,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 115850 units.",
   
-            :de_DE => "Töte 115850 Einheiten",
+            :de_DE => "Besiege 115850 Einheiten",
                 
           },
           :flavour => {
@@ -9970,6 +10026,11 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -9994,14 +10055,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 129850 units.",
   
-            :de_DE => "Töte 129850 Einheiten",
+            :de_DE => "Besiege 129850 Einheiten",
                 
           },
           :flavour => {
@@ -10060,6 +10121,11 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -10084,14 +10150,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 144650 units.",
   
-            :de_DE => "Töte 144650 Einheiten",
+            :de_DE => "Besiege 144650 Einheiten",
                 
           },
           :flavour => {
@@ -10150,6 +10216,11 @@ class Tutorial::Tutorial
                 :amount => 4750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
           },          
@@ -10174,14 +10245,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 160250 units.",
   
-            :de_DE => "Töte 160250 Einheiten",
+            :de_DE => "Besiege 160250 Einheiten",
                 
           },
           :flavour => {
@@ -10238,6 +10309,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 5000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
