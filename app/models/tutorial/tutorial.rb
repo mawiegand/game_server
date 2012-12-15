@@ -10155,9 +10155,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 144650 units.",
+            :en_US => "Kill 200,000 units.",
   
-            :de_DE => "Besiege 144650 Einheiten",
+            :de_DE => "Besiege 200.000 Einheiten",
                 
           },
           :flavour => {
@@ -10203,22 +10203,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 9500,
+                :amount => 15000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 9500,
+                :amount => 15000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 7750,
               },
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -10228,7 +10228,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 144650,
+              :min_units => 200000,
             },
 
           },          
@@ -10250,9 +10250,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 160250 units.",
+            :en_US => "Kill 999,999 units.",
   
-            :de_DE => "Besiege 160250 Einheiten",
+            :de_DE => "Besiege 999.999 Einheiten",
                 
           },
           :flavour => {
@@ -10298,22 +10298,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 10000,
+                :amount => 50000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 50000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 25000,
               },
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 10,
               },
 
             ],

@@ -3227,8 +3227,8 @@
 <Quest id="quest_charkills_19" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
-  <Task>Kill 144650 units.</Task>
-  <Task locale="de_DE">Besiege 144650 Einheiten</Task>
+  <Task>Kill 200,000 units.</Task>
+  <Task locale="de_DE">Besiege 200.000 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
@@ -3243,13 +3243,13 @@
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
   <Requirement quest="quest_charkills_18" />
   <Rewards>
-    <ResourceReward resource="resource_stone">9500</ResourceReward>  
-    <ResourceReward resource="resource_wood">9500</ResourceReward>    
-    <ResourceReward resource="resource_fur">4750</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ResourceReward resource="resource_stone">15000</ResourceReward>  
+    <ResourceReward resource="resource_wood">15000</ResourceReward>    
+    <ResourceReward resource="resource_fur">7750</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
   </Rewards>
   <RewardTests>
-    <KillTest min_units="144650" />
+    <KillTest min_units="200000" />
   </RewardTests>
 </Quest>
 
@@ -3257,8 +3257,8 @@
 <Quest id="quest_charkills_20" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
-  <Task>Kill 160250 units.</Task>
-  <Task locale="de_DE">Besiege 160250 Einheiten</Task>
+  <Task>Kill 999,999 units.</Task>
+  <Task locale="de_DE">Besiege 999.999 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
@@ -3273,10 +3273,10 @@
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
   <Requirement quest="quest_charkills_19" />
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>  
-    <ResourceReward resource="resource_wood">10000</ResourceReward>    
-    <ResourceReward resource="resource_fur">5000</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ResourceReward resource="resource_stone">50000</ResourceReward>  
+    <ResourceReward resource="resource_wood">50000</ResourceReward>    
+    <ResourceReward resource="resource_fur">25000</ResourceReward>
+    <ResourceReward resource="resource_cash">10</ResourceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="160250" />
