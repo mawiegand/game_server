@@ -3,7 +3,8 @@ class AddCounterCacheToBackendPartnerSite < ActiveRecord::Migration
     Backend::PartnerSite.reset_column_information
     
     Backend::PartnerSite.all.each do |s|
-      Backend::PartnerSite.reset_counters(s.id, :sign_ups)
+      s.sign_ups_count = s.sign_ups.count
+      s.save
     end
   end
   
