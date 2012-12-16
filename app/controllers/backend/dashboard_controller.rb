@@ -36,9 +36,9 @@ class Backend::DashboardController < ApplicationController
     end
     
     @partner_sites = if @backend_user.admin? || @backend_user.staff?
-      Backend::PartnerSite.all 
+      Backend::PartnerSite.order('sign_ups_count DESC') 
     elsif @backend_user.partner? 
-      @backend_user.partner_sites
+      @backend_user.partner_sites.order('sign_ups_count DESC')
     else 
       []
     end
