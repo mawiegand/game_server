@@ -4,7 +4,7 @@ class Backend::SignInLogEntry < ActiveRecord::Base
   
   belongs_to :character,     :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :sign_ins
   belongs_to :partner_site,  :class_name => "Backend::PartnerSite",   :foreign_key => "partner_site_id", :inverse_of => :sign_ins
-  belongs_to :referer_site,  :class_name => "Backend::PartnerSite",   :foreign_key => "partner_site_id", :inverse_of => :sign_ups, :conditions => ["sign_up=?", true], :counter_cache => :signups_count
+  belongs_to :referer_site,  :class_name => "Backend::PartnerSite",   :foreign_key => "partner_site_id", :inverse_of => :sign_ups, :conditions => ["sign_up=?", true], :counter_cache => 'sign_ups_count'
   
   before_save :determine_referer_from_url
   before_save :determine_tracking_params_from_request_url
