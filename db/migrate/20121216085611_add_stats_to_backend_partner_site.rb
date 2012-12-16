@@ -11,10 +11,6 @@ class AddStatsToBackendPartnerSite < ActiveRecord::Migration
     add_column :backend_partner_sites, :total_active,           :integer, :default => 0,   :null => false
     add_column :backend_partner_sites, :total_long_term_active, :integer, :default => 0,   :null => false
     add_column :backend_partner_sites, :total_paying,           :integer, :default => 0,   :null => false
-    
-    Backend::PartnerSite.all.each do |site|
-      Backend::PartnerSite.reset_counters(site.id, :signups_count)
-    end
   end
   
   def down
