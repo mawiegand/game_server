@@ -35,7 +35,14 @@ class Backend::DashboardController < ApplicationController
       @user_groups << user_group
     end
     
-    @partner_sites = !@backend_user.admin? && !@backend_user.staff? ? Backend::PartnerSite.all : (@backend_user.partner? ? @backend_user.partner_sites : [])
+    @partner_sites = if @backend_user.admin? || @backend_user.staff?
+      Backend::PartnerSite.all 
+    elsif @backend_user.partner? 
+      @backend_user.partner_sites
+    else 
+      []
+    end
+    
   end
   
   def create 
