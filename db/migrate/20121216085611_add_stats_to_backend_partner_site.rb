@@ -14,7 +14,7 @@ class AddStatsToBackendPartnerSite < ActiveRecord::Migration
   end
   
   def down
-    remove_column :backend_partner_sites, :signups_count
+    remove_column :backend_partner_sites, :sign_ups_count
     remove_column :backend_partner_sites, :playtime
     remove_column :backend_partner_sites, :gross
     remove_column :backend_partner_sites, :revenue
