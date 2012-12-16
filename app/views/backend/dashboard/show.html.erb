@@ -47,7 +47,7 @@
         <td><%= (site.sign_ups_count || 0) - site.total_churned %></td>        
         <td><%= site.total_churned %></td>        
 
-        <td><%= site.gross.nil? || site.gross <= 0.1 ? "--" : "#{ number_to_currency site.gross, :locale => de } / #{ number_to_currency (site.gross / [(site.sign_ups_count || 0), 1].max), :locale => de }" %></td>        
+        <td><%= site.gross.nil? || site.gross <= 0.1 ? "--" : "#{ number_to_currency site.gross, :locale => :de } / #{ number_to_currency (site.gross / [(site.sign_ups_count || 0), 1].max), :locale => :de }" %></td>        
         <td><%= ((site.playtime || 0.0) / 60.0 / [(site.sign_ups_count || 0), 1].max).ceil  %> min.</td>        
 
         <td><%= site.total_logged_in_once %></td>        
