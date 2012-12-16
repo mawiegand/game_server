@@ -15,13 +15,26 @@ CreditShop::BytroShop.update_money_transactions
 CreditShop::BytroShop.update_ingame_transactions
 puts "done."
 
+print "Update Character stats (payments and conversion states)... "
+Backend::Stat.update_all_character_stats
+puts "done."
+
+print "Updating partner sites... "
+Backend::PartnerSite.update_all_partner_sites
+puts "done."
+
 print "Creating stats entry... "
 Backend::Stat.create
-Backend::Stat.update_all_character_stats
+puts "done."
+
+print "Updating stats cohorts... "
 Backend::Stat.update_all_cohorts
 puts "done."
 
 print "Creating tutorial stats entry... "
 Backend::TutorialStat.create
+puts "done."
+
+print "Updating tutorial stat cohorts... "
 Backend::TutorialStat.update_all_cohorts
 puts "done."
