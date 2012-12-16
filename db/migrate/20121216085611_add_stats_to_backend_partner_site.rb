@@ -1,6 +1,6 @@
 class AddStatsToBackendPartnerSite < ActiveRecord::Migration
   def up
-    add_column :backend_partner_sites, :signups_count,          :integer, :default => 0
+    add_column :backend_partner_sites, :sign_ups_count,         :integer
     add_column :backend_partner_sites, :playtime,               :decimal, :default => 0.0, :null => false
     add_column :backend_partner_sites, :gross,                  :decimal, :default => 0.0, :null => false
     add_column :backend_partner_sites, :revenue,                :decimal, :default => 0.0, :null => false
@@ -14,7 +14,7 @@ class AddStatsToBackendPartnerSite < ActiveRecord::Migration
   end
   
   def down
-    remove_column :backend_partner_sites, :signup_counter_cache
+    remove_column :backend_partner_sites, :signups_count
     remove_column :backend_partner_sites, :playtime
     remove_column :backend_partner_sites, :gross
     remove_column :backend_partner_sites, :revenue
