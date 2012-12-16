@@ -112,8 +112,10 @@
     </script>
   <% end %>
   
-  <h1>Sign Ups Last 48h</h1>
+  <h1>Latest Signups</h1>
 
+  <%= will_paginate user_group[:new_characters] %>
+  <br />
 
 <table>
   <tr>

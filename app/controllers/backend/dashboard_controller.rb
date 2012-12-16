@@ -30,7 +30,7 @@ class Backend::DashboardController < ApplicationController
       
       user_group[:last_character] = Fundamental::Character.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
       user_group[:last_character_signup] = Fundamental::Character.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').first
-      user_group[:new_characters] = Fundamental::Character.where(['npc != ? AND fundamental_characters.created_at IS NOT NULL AND fundamental_characters.created_at > ?', true, DateTime.now-2.days]).order('fundamental_characters.created_at DESC')
+      user_group[:new_characters] = Fundamental::Character.non_npc.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
       
       @user_groups << user_group
     end
