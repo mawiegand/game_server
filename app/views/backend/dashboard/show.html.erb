@@ -9,10 +9,50 @@
     </div>
   </div>
   
+
+    
   <h1>User Stats</h1>
 
   <% @user_groups.each do |group| %>
   <%= render :partial => "backend/dashboard/user_group", :locals => { :user_group => group } %>
   <% end %>
+  
+  
+
+  <h1>Partner Sites</h1>
+  
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Sign Ups</th>
+      <th>Playing</th>
+      <th>Churned</th>
+      
+      <th>1st Sign In</th>
+      <th>10 min</th>
+      <th>2nd Day</th>
+      <th>Active</th>
+      <th>Long Term</th>
+      <th>Paying</th>
+    </tr>
+    <% @partner_sites.each do |site| %>
+      <tr>
+        <td><%= site.id %></td>
+        <td><%= site.description %></td>
+        <td><%= site.sign_ups_count %></td>        
+        <td><%= (site.sign_ups_count || 0) - site.total_churned %></td>        
+        <td><%= site.total_churned %></td>        
+
+        <td><%= site.total_logged_in_once %></td>        
+        <td><%= site.total_ten_minutes %></td>        
+        <td><%= site.total_second_day %></td>        
+        <td><%= site.total_active %></td>        
+        <td><%= site.total_long_term_active %></td>        
+        <td><%= site.total_paying %></td>        
+
+      </tr>
+    <% end %>
+  </table>
   
 </div>
