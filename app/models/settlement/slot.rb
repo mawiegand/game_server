@@ -9,11 +9,11 @@ class Settlement::Slot < ActiveRecord::Base
   after_save   :propagate_level_changes
   after_commit :trigger_consistency_check
   
-  scope :empty,    where(['level IS NULL OR level = ?', 0])
-  scope :occupied, where(['level IS NOT NULL AND level > ?', 0])
+  scope :empty,    where(['(level IS NULL OR level = ?) AND building_id IS NULL', 0])
+  scope :occupied, where(['(level IS NOT NULL AND level > ?) OR building_id IS NOT NULL', 0])
 
   def empty?
-    return self.level == 0 || self.level.nil?
+    return (self.level == 0 || self.level.nil?) && self.building_id.nil?
   end
 
   # calculates the storage capacity provided by this slot for all
