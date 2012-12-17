@@ -661,34 +661,27 @@ class Settlement::Settlement < ActiveRecord::Base
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
-              
               if change[0].nil?
                 puts 'change is nil, ' +  change[1].to_s
               else
-              
-              if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
-                create_queue(queue)
-              elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
-                destroy_queue(queue)
-              elsif change[1] >= 1                
-                existing_queue = find_existing_queue(queue)
-                if existing_queue.nil?
-                  logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
+                if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
                   create_queue(queue)
+                elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
+                  destroy_queue(queue)
+                elsif change[1] >= 1                
+                  existing_queue = find_existing_queue(queue)
+                  if existing_queue.nil?
+                    logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
+                    create_queue(queue)
+                  end
                 end
               end
-              
-              end
-              
             end
           end
         end
       end
       return true
     end
-    
-
-    
     
     def recalc_queue_unlocks
       queue_types = GameRules::Rules.the_rules().queue_types
@@ -1090,6 +1083,7 @@ class Settlement::Settlement < ActiveRecord::Base
         propagate_changes_to_character_on_changed_possession
         propagate_score_on_changed_possession
         propagate_unlock_changes_on_changed_possession
+        propagate_changes_to_victory_progress_on_changed_possession
       end
       true
     end
@@ -1218,7 +1212,6 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
-
     # propagates score changes to old and new owner (Fundamtal::Character) and adapts the
     # fortress_count counter appropriately
     def propagate_score_on_changed_possession
@@ -1247,5 +1240,22 @@ class Settlement::Settlement < ActiveRecord::Base
       true      
     end
     
+    # propagates owner changes to victory progress of old and new alliance
+    def propagate_changes_to_victory_progress_on_changed_possession
+      if self.type_id === TYPE_FORTESS
+        alliance_change = self.changes[:alliance_id]
+        if !alliance_change.blank?
+          old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
+          logger.debug "---> old_alliance #{old_alliance.name}"
+          
+          new_alliance = alliance_change[1].nil? ? nil : Fundamental::Alliance.find(alliance_change[1])
+          logger.debug "---> new_alliance #{new_alliance.name}"
+          
+          old_alliance.recalc_victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+          new_alliance.recalc_victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+        end
+      end
+      true      
+    end    
 
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  victory_type: 1
+  alliance_id: 1
+  percentage: 9.99
+  days: 9.99
+
+two:
+  victory_type: 1
+  alliance_id: 1
+  percentage: 9.99
+  days: 9.99

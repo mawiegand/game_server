@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Victory type:</b>
+  <%= @fundamental_victory_progress.victory_type %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @fundamental_victory_progress.alliance_id %>
+</p>
+
+<p>
+  <b>Fulfillment Ratio:</b>
+  <%= @fundamental_victory_progress.fulfillment_ratio %>
+</p>
+
+<p>
+  <b>First Fulfilled:</b>
+  <%= @fundamental_victory_progress.first_fulfilled_at %>
+</p>
+
+<p>
+  <b>Days:</b>
+  <%= @fundamental_victory_progress.fulfilled_since %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_victory_progress_path(@fundamental_victory_progress) %> |
+<%= link_to 'Back', fundamental_victory_progresses_path %>

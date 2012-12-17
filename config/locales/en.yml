@@ -34,6 +34,7 @@ en:
         resource_pools: Resources
         characters: Characters
         alliances: Alliances
+        victory_progress: Victory Progress
         guilds: Guilds
         alliance_shouts: Ally-Shouts
         announcements: Announcements

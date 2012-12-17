@@ -8,10 +8,10 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :regions,   :class_name => "Map::Region",                :foreign_key => "alliance_id"
   has_many   :shouts,    :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id", :order => "created_at DESC"
   has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
+  has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance
   
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
   
-
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
   
@@ -25,15 +25,14 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
   attr_readable *readable_attributes(:staff),                                                        :as => :admin
+
   
   before_create :add_unique_invitation_code  
   
   before_save   :prevent_empty_password
   
   after_save    :propagate_to_ranking
-  
-  
-  
+
   
   def self.create_alliance(tag, name, leader, role = :creator)
     raise ConflictError.new("this alliance tag is already used") unless Fundamental::Alliance.find_by_tag(tag).nil?
@@ -47,6 +46,12 @@ class Fundamental::Alliance < ActiveRecord::Base
     
     raise InternalServerError.new('could not create alliance') unless alliance.save
     alliance.create_ranking({ alliance_tag: tag })
+
+    # get victory conditions form rules
+    victory_conditions = [0]
+    victory_conditions.each do |condition|
+      alliance.create_victory_progress({ victory_type: condition })
+    end
     
     cmd = Messaging::JabberCommand.open_room(tag) 
     cmd.character_id = leader.id
@@ -107,10 +112,68 @@ class Fundamental::Alliance < ActiveRecord::Base
       self.invitation_code = Util.make_random_string(16, true)
     end while !Fundamental::Alliance.find_by_invitation_code(self.invitation_code).nil?
   end
+  
+  def victory_progress(victory_type)
+    victory_progresses = self.victory_progresses.where(:victory_type => victory_type)
+    victory_progresses.empty? ? nil : victory_progresses.first
+  end
+  
+  def check_consistency
+    check_and_apply_ranking_fortress_count
+    check_and_apply_member_count
+    apply_victory_progresses
 
+    if self.changed?
+      logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
+      self.save
+    elsif self.ranking.changed?
+      logger.info(">>> SAVING ALLIANCE RANKING AFTER DETECTING ERRORS.")
+      self.ranking.save
+    else
+      logger.info(">>> ALLIANCE OK.")
+    end
+
+    true      
+  end
+  
+  def recalc_victory_progress_for_type(type)
+    progress = self.victory_progress(type)
+    progress.apply_victory_progress_for_type(type) unless progress.nil?
+  end
   
   private
   
+    def check_and_apply_ranking_fortress_count
+      if !self.ranking.nil? && self.ranking.num_fortress != self.fortresses.count
+        logger.warn(">>> RANKING FORTRESS COUNT RECALC DIFFERS. Old: #{self.ranking.num_fortress} Corrected: #{self.fortresses.count}.")
+        self.ranking.num_fortress = self.fortresses.count
+      end
+    end
+  
+    def check_and_apply_member_count
+      if self.members_count != self.members.count 
+        logger.warn(">>> MEMBER COUNT RECALC DIFFERS. Old: #{self.members_count} Corrected: #{self.members.count}.")
+        self.members_count = self.members.count
+      end
+    end
+      
+    def apply_victory_progresses
+      # TODO get victory conditions form rules
+      victory_types = [Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION]
+      
+      victory_types.each do |type|
+        # get victory progress of alliance and condition
+        progress = self.victory_progress(type)
+        # create victory progress for this victory condition if not exists 
+        progress = self.victory_progresses.create({
+          victory_type: type,
+        }) if progress.nil?
+
+        # calculate progress according to condition
+        progress.apply_victory_progress_for_type(type)
+      end
+    end
+      
     def prevent_empty_password 
       if self.password.nil?
         self.password = random_string(4)

@@ -43,16 +43,11 @@ Fundamental::Alliance.find(:all).each do |alliance|
 	  print "." 
 	  sleep (1)
 	end
-  alliance.members_count = alliance.members.count
-  alliance.save
-  if !alliance.ranking.nil?
-    alliance.ranking.num_fortress = alliance.fortresses.count
-    alliance.ranking.save
-  end
+	alliance.check_consistency
 end
 puts " done."
 
-
+exit(0)
 
 
 # ############################################################################
