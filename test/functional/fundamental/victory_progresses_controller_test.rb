@@ -3,6 +3,7 @@ require 'test_helper'
 class Fundamental::VictoryProgressesControllerTest < ActionController::TestCase
   setup do
     @fundamental_victory_progress = fundamental_victory_progresses(:one)
+    @controller.current_backend_user = backend_users(:admin)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do

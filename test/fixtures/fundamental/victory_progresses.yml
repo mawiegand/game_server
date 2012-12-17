@@ -3,11 +3,9 @@
 one:
   victory_type: 1
   alliance_id: 1
-  percentage: 9.99
-  days: 9.99
+  fulfillment_ratio: 9.99
 
 two:
   victory_type: 1
   alliance_id: 1
-  percentage: 9.99
-  days: 9.99
+  fulfillment_ratio: 9.99
