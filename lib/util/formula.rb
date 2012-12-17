@@ -1,11 +1,11 @@
 module Util
   class Formula
     # Parses a formula givin in the rules.
-    def self.parse_from_formula(formula)
-      Util::Formula.new(formula)
+    def self.parse_from_formula(formula, var = 'LEVEL')
+      Util::Formula.new(formula, var)
     end
     
-    def initialize(formula)
+    def initialize(formula, var = 'LEVEL')
       functions = {
         'MIN'     => 'min',
         'MAX'     => 'max',
@@ -28,19 +28,19 @@ module Util
         @formula.gsub!(/#{k}/, v)
       end
 
-      @formula.gsub!(/LEVEL/, 'level')
+      @formula.gsub!(/#{var}/, 'x')
     end
 
     # Evaluates a parsed formular with a given level
-    def apply(level = nil)
-      level == nil || level == 0 ? 0 : eval(@formula)
+    def apply(x = nil)
+      x == nil || x == 0 ? 0 : eval(@formula)
     end
     
     
-    def difference(old_level, new_level)
-      old_value = apply(old_level)
-      new_value = apply(new_level)
-      new_value-old_value
+    def difference(old_x, new_x)
+      old_value = apply(old_x)
+      new_value = apply(new_x)
+      new_value - old_value
     end
       
     protected
