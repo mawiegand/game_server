@@ -34,24 +34,31 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
     end      
   end
 
-    def fulfilled?
-      case self.victory_type
-        when VICTORY_TYPE_DOMINATION
-          # TODO get required_region_ratio from rules
-          rrr = 0.001
-          # TODO get Map::Region.count from RoundInfo
-          return self.fulfillment_count > Map::Region.count * rrr
-  
-        when VICTORY_TYPE_ARTIFACTS
-          return false
-  
-        when VICTORY_TYPE_POPULARITY
-          return false
-  
-        when VICTORY_TYPE_SCIENCE
-          return false
-      end      
-    end
+  # gets  victory conditions from rules and current settings from round info to check
+  # if alliance has already reached the victory
+  def fulfilled?
+    case self.victory_type
+      when VICTORY_TYPE_DOMINATION
+        # get regions count
+        regions_count = Fundamental::RoundInfo.the_round_info.regions_count
+        # get victory type
+        victory_type = GameRules::Rules.the_rules.victory_types[self.victory_type]
+        # get victory condition
+        # TODO evaluate required_regions_ratio as formula
+        required_regions_ratio = victory_type[:condition][:required_regions_ratio].to_f
+        logger.debug "---> self.fulfillment_count #{self.fulfillment_count} regions_count * required_regions_ratio #{regions_count * required_regions_ratio}"
+        return self.fulfillment_count > regions_count * required_regions_ratio
+
+      when VICTORY_TYPE_ARTIFACTS
+        return false
+
+      when VICTORY_TYPE_POPULARITY
+        return false
+
+      when VICTORY_TYPE_SCIENCE
+        return false
+    end      
+  end
 
   private
   
