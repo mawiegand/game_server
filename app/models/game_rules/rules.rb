@@ -5822,8 +5822,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '0.009'
-            :duration => 5
+            :required_regions_ratio => '0.009',
+            :duration => 5,
+
           },
 
         },              #   END OF Herrschaftssieg
