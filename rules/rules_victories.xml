@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<VictoryTypes>
+  <Victory id="victory_domination">
+    <Name lang="de_DE">Herrschaftssieg</Name>
+    <Name lang="en_US">Domination Victory</Name>
+    <Description lang="de_DE">Beschreibung des Herrschaftssiegs</Description>
+    <Description lang="en_US">Description of Domination Victory</Description>
+    <Condition>    
+      <RequiredRegionsRatio>0.01</RequiredRegionsRatio>
+    </Condition>    
+  </Victory>
+</VictoryTypes>

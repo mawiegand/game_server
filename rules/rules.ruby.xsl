@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :victory_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
   
   def attributes 
     { 
@@ -97,6 +97,7 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
+      'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
@@ -153,6 +154,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
         :character_ranks => {
           <xsl:apply-templates select="MundaneRanks" />
@@ -619,6 +621,37 @@ end
       ],                # END OF SETTLEMENT TYPES
 </xsl:template>
 
+
+
+
+<xsl:template match="VictoryTypes">
+# ## VICTORY TYPES ########################################################
+  
+      :victory_types => [  # ALL VICTORY TYPES
+<xsl:for-each select="Victory">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:apply-templates select="Condition" />
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF VICTORY TYPES
+</xsl:template>
+
+
+<xsl:template match="Condition">
+          :condition   => {
+<xsl:if test="RequiredRegionsRatio">
+            :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>'
+</xsl:if>
+          },
+</xsl:template>
 
 
 

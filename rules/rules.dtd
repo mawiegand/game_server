@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
+<!ELEMENT Rules (General, VictoryTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
 <!ATTLIST Rules
   xmlns:xi CDATA #REQUIRED
 >
@@ -49,6 +49,7 @@
 
 
 <!--Types-->
+<!ELEMENT VictoryTypes (Victory*)>
 <!ELEMENT ResourceTypes (Resource*)>
 <!ELEMENT SettlementTypes (Settlement*)>
 <!ELEMENT BuildingTypes (Building*)>
@@ -99,6 +100,13 @@
 <!ATTLIST BuildingOption 
 	category IDREF #REQUIRED 
 >
+
+<!ELEMENT Victory (Name+, Description+, Condition)>
+<!ATTLIST Victory 
+  id ID #REQUIRED
+>
+<!ELEMENT Condition (RequiredRegionsRatio)>
+<!ELEMENT RequiredRegionsRatio (#PCDATA)>
 
 <!--Abilities of Buildings, Sciences-->
 <!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
