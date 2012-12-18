@@ -649,6 +649,7 @@ end
           :condition   => {
 <xsl:if test="RequiredRegionsRatio">
             :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>'
+            :duration => <xsl:value-of select="RequiredRegionsRatio/@duration"/>
 </xsl:if>
           },
 </xsl:template>

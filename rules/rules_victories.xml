@@ -8,7 +8,7 @@
     <Description lang="de_DE">Beschreibung des Herrschaftssiegs</Description>
     <Description lang="en_US">Description of Domination Victory</Description>
     <Condition>    
-      <RequiredRegionsRatio>0.01</RequiredRegionsRatio>
+      <RequiredRegionsRatio duration="5">0.009</RequiredRegionsRatio>
     </Condition>    
   </Victory>
 </VictoryTypes>

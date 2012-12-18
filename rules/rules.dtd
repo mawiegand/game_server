@@ -106,7 +106,11 @@
   id ID #REQUIRED
 >
 <!ELEMENT Condition (RequiredRegionsRatio)>
+
 <!ELEMENT RequiredRegionsRatio (#PCDATA)>
+<!ATTLIST RequiredRegionsRatio 
+	duration CDATA #REQUIRED 
+>
 
 <!--Abilities of Buildings, Sciences-->
 <!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
