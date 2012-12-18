@@ -1246,13 +1246,23 @@ class Settlement::Settlement < ActiveRecord::Base
         alliance_change = self.changes[:alliance_id]
         if !alliance_change.blank?
           old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
-          logger.debug "---> old_alliance #{old_alliance.name}"
-          
           new_alliance = alliance_change[1].nil? ? nil : Fundamental::Alliance.find(alliance_change[1])
-          logger.debug "---> new_alliance #{new_alliance.name}"
           
-          old_alliance.recalc_victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
-          new_alliance.recalc_victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+          unless old_alliance.nil?
+            victory_progress = old_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+            unless victory_progress.nil?
+              victory_progress.decrement(:fulfillment_count)
+              victory_progress.save
+            end
+          end
+          
+          unless new_alliance.nil?
+            victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+            unless victory_progress.nil?
+              victory_progress.increment(:fulfillment_count)
+              victory_progress.save
+            end
+          end
         end
       end
       true      

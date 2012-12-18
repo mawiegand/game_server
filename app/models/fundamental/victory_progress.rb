@@ -17,54 +17,59 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
     self.first_fulfilled_at.nil? ? nil : ((Time.now - self.first_fulfilled_at)/(3600*24)).to_i
   end
   
-  def apply_victory_progress_for_type(type)
-    fulfillment_ratio = 0
-    case type
+  def recalc_fulfillment_count
+    case self.victory_type
       when VICTORY_TYPE_DOMINATION
-        # size ratio of dominated area
-        domination_ratio = alliance.fortresses.count.to_f / Settlement::Settlement.where(:type_id => Settlement::Settlement::TYPE_FORTESS).count
-        # calc fulfillment ratio of victory condition
-        required_domination_ratio = 0.001 # TODO aus Regeln holen
-        self.fulfillment_ratio = domination_ratio / required_domination_ratio
+        return alliance.fortresses.count
 
       when VICTORY_TYPE_ARTIFACTS
-        self.fulfillment_ratio = 0
-
+        return 0
+        
       when VICTORY_TYPE_POPULARITY
-        self.fulfillment_ratio = 0
+        return 0
 
       when VICTORY_TYPE_SCIENCE
-        self.fulfillment_ratio = 0
+        return 0
 
     end      
-    self.save
   end
+
+    def fulfilled?
+      case self.victory_type
+        when VICTORY_TYPE_DOMINATION
+          # TODO get required_region_ratio from rules
+          rrr = 0.001
+          # TODO get Map::Region.count from RoundInfo
+          return self.fulfillment_count > Map::Region.count * rrr
+  
+        when VICTORY_TYPE_ARTIFACTS
+          return false
+  
+        when VICTORY_TYPE_POPULARITY
+          return false
+  
+        when VICTORY_TYPE_SCIENCE
+          return false
+      end      
+    end
 
   private
   
+    # the round is won if a victory condition is fulfilled for a specific amount of days
     def check_for_victory
-      case self.victory_type
-      when VICTORY_TYPE_DOMINATION
-        # TODO get victory condition from rules
-        if !self.fulfilled_since.nil? && self.fulfilled_since >= 2
-          logger.debug "Siegbedingung erfüllt!"
-        else
-          logger.debug "Siegbedingung nicht erfüllt!"
-        end 
-      when VICTORY_TYPE_ARTIFACTS
-        # puts "Foo is between 2 and 9"
-      when VICTORY_TYPE_POPULARITY
-        # puts "Foo is equal to 10"
-      when VICTORY_TYPE_SCIENCE
-        # puts 'peng'
-      end      
+      if !self.fulfilled_since.nil? && self.fulfilled_since >= 2
+        logger.debug "Siegbedingung erfüllt!"
+      else
+        logger.debug "Siegbedingung nicht erfüllt!"
+      end 
       true
     end
   
     def update_first_fulfilled_at
-      if self.fulfillment_ratio >= 1 && self.first_fulfilled_at.nil?
+      fulfilled = self.fulfilled?
+      if fulfilled && self.first_fulfilled_at.nil?
         self.first_fulfilled_at = Time.now
-      elsif self.fulfillment_ratio < 1 && !self.first_fulfilled_at.nil?
+      elsif !fulfilled && !self.first_fulfilled_at.nil?
         self.first_fulfilled_at = nil
       end
       true

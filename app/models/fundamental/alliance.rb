@@ -48,9 +48,9 @@ class Fundamental::Alliance < ActiveRecord::Base
     alliance.create_ranking({ alliance_tag: tag })
 
     # get victory conditions form rules
-    victory_conditions = [0]
-    victory_conditions.each do |condition|
-      alliance.create_victory_progress({ victory_type: condition })
+    victory_types = [0]
+    victory_types.each do |type|
+      alliance.victory_progresses.create({ victory_type: type })
     end
     
     cmd = Messaging::JabberCommand.open_room(tag) 
@@ -113,7 +113,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     end while !Fundamental::Alliance.find_by_invitation_code(self.invitation_code).nil?
   end
   
-  def victory_progress(victory_type)
+  def victory_progress_for_type(victory_type)
     victory_progresses = self.victory_progresses.where(:victory_type => victory_type)
     victory_progresses.empty? ? nil : victory_progresses.first
   end
@@ -121,7 +121,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   def check_consistency
     check_and_apply_ranking_fortress_count
     check_and_apply_member_count
-    apply_victory_progresses
+    check_and_apply_victory_progresses
 
     if self.changed?
       logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
@@ -137,7 +137,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def recalc_victory_progress_for_type(type)
-    progress = self.victory_progress(type)
+    progress = self.victory_progress_for_type(type)
     progress.apply_victory_progress_for_type(type) unless progress.nil?
   end
   
@@ -157,20 +157,29 @@ class Fundamental::Alliance < ActiveRecord::Base
       end
     end
       
-    def apply_victory_progresses
+    def check_and_apply_victory_progresses
       # TODO get victory conditions form rules
       victory_types = [Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION]
       
       victory_types.each do |type|
         # get victory progress of alliance and condition
-        progress = self.victory_progress(type)
+        progress = self.victory_progress_for_type(type)
+        
         # create victory progress for this victory condition if not exists 
-        progress = self.victory_progresses.create({
-          victory_type: type,
-        }) if progress.nil?
+        if progress.nil?
+          logger.warn(">>> VICTORY PROGRESS DOESN'T EXIST. Alliance: #{self.id} VictoryType: #{type}.")
+          progress = self.victory_progresses.create({
+            victory_type: type,
+          })
+        end
 
         # calculate progress according to condition
-        progress.apply_victory_progress_for_type(type)
+        fulfillment_count = progress.recalc_fulfillment_count
+        if fulfillment_count != progress.fulfillment_count
+          logger.warn(">>> FULFILLMENT COUNT RECALC DIFFERS. Old: #{progress.fulfillment_count} Corrected: #{fulfillment_count}.")
+          progress.fulfillment_count = fulfillment_count
+          progress.save
+        end
       end
     end
       
