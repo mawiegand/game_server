@@ -31,6 +31,7 @@ en:
         category: Action
       fundamental:
         category: Fundamental
+        round_info: Round Info
         resource_pools: Resources
         characters: Characters
         alliances: Alliances

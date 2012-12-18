@@ -305,7 +305,7 @@ tr.announcement-original {
 div.flash {
   position: absolute;
   left: 50%;
-  top: 90px;
+  top: 5px;
   width: 300px;
   margin-left:-150px;
   background-color: #777;

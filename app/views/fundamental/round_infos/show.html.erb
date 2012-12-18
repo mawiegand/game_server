@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fundamental_round_info.name %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @fundamental_round_info.started_at %>
+</p>
+
+<p>
+  <b>Regions count:</b>
+  <%= @fundamental_round_info.regions_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_round_info_path(@fundamental_round_info) %> |
+<%= link_to 'Back', fundamental_round_info_path %>

@@ -28,7 +28,9 @@ GameServer::Application.routes.draw do
         resources :resource_effects 
       end
 
-      namespace :fundamental do 
+      namespace :fundamental do
+        
+        resource :round_info, :only => [:show, :edit, :update]
         
         resources :persistent_character_properties
         
