@@ -24,7 +24,7 @@ class Fundamental::AlliancesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @fundamental_alliance.sanitized_hash(role, :victory_progresses) }
+      format.json { render json: @fundamental_alliance.sanitized_hash(role) }
     end
   end
 
