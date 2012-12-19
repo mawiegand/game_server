@@ -54,10 +54,15 @@ class ApplicationController < ActionController::Base
     end
     
     def setup_for_restkit 
+      logger.debug "IN SETUP RESTKIT API, PRESENT BEHAVIOUR: include_root_in_json = #{ ActiveRecord::Base.include_root_in_json == true ? 'true' : 'false' }"
+      
       if use_restkit_api?  
         ActiveRecord::Base.include_root_in_json = true 
         logger.debug "USE RESTKIT API"
-      end 
+      else 
+        ActiveRecord::Base.include_root_in_json = false 
+        logger.debug "USE STANDARD API"
+      end
     end
     
     def use_restkit_api?
