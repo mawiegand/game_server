@@ -68,8 +68,8 @@ module ActiveRecord
     # the specified role is allowed to read
     #
     #   model.sanitized_hash(:user)  #  => { :readable_attribute1 => 'value', :readable_attribute2 => 'value2' }
-    def sanitized_hash(role = :default)
-      self.class.sanitized_hash_from_model(self, role)
+    def sanitized_hash(role = :default, include = nil)
+      self.class.sanitized_hash_from_model(self, role, include)
     end
   
     # Use the +attr_readable+ expresion to define and control read access to 
@@ -110,8 +110,8 @@ module ActiveRecord
       # attributes set readable to the given role.
       #
       #  Model.sanitized_hash_from_model(instace_of_model, :admin)  # => [ :id => a_number, :name => 'a name' ]
-      def sanitized_hash_from_model(object, role = :default)
-        sanitized_hash_from_keys_and_whitelist(object.attribute_names, object, readable_attributes(role))
+      def sanitized_hash_from_model(object, role = :default, include = nil)
+        sanitized_hash_from_keys_and_whitelist(object.attribute_names, object, readable_attributes(role), include)
       end
 
       # Returns a hash that only contains those attribute - value pairs of 
@@ -126,7 +126,7 @@ module ActiveRecord
       
         # Private method that actually does the sanitization. Is called by all the 
         # other sanitization methods.  
-        def sanitized_hash_from_keys_and_whitelist(keys, hash, whitelist) # :nodoc:
+        def sanitized_hash_from_keys_and_whitelist(keys, hash, whitelist, include = nil) # :nodoc:
           prefixes   = []
           attributes = []
           whitelist.each do |attr|            # split whitelist into fully qulified attributes and prefixes
@@ -147,6 +147,11 @@ module ActiveRecord
               end
             end 
           end
+          
+          logger.debug "---> include " + hash.send(include).inspect unless include.nil?
+          result[include] = hash.send(include) if !include.nil? && attributes.include?(include.to_s)
+
+          logger.debug "---> result " + result.inspect unless include.nil?
           return result
         end
          
