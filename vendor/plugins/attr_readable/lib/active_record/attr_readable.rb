@@ -136,7 +136,7 @@ module ActiveRecord
               attributes.push attr
             end
           end
-  
+
           result = {}
           keys.each do |attr| 
             if attributes.include? attr.to_s  # corresponding attribute
@@ -147,14 +147,8 @@ module ActiveRecord
               end
             end 
           end
-          
-          # logger.debug "---> include " + hash.send(include).inspect unless include.nil?
-          # result[include] = hash.send(include) if !include.nil? && attributes.include?(include.to_s)
-# 
-          # logger.debug "---> result " + result.inspect unless include.nil?
           return result
         end
-         
   
         # Private method managing the access to the attributes hash of hashes. 
         # Automatically constructs a new hash, if there hasn't been any.
@@ -169,4 +163,3 @@ module ActiveRecord
   
   end
 end
-
