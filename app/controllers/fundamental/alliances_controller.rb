@@ -20,11 +20,15 @@ class Fundamental::AlliancesController < ApplicationController
   # GET /fundamental/alliances/1.json
   def show
     @fundamental_alliance = Fundamental::Alliance.find(params[:id])
-    role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)    
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @fundamental_alliance.sanitized_hash(role) }
+      format.json do
+        render(json: @fundamental_alliance.as_json(
+          :include => :victory_progresses,
+          :role => determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)
+        ))
+      end
     end
   end
 
