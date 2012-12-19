@@ -13,7 +13,7 @@ class Settlement::Slot < ActiveRecord::Base
   scope :occupied, where(['(level IS NOT NULL AND level > ?) OR building_id IS NOT NULL', 0])
 
   def empty?
-    return (self.level == 0 || self.level.nil?) && self.building_id.nil?
+    return self.level == 0 || self.level.nil?
   end
 
   # calculates the storage capacity provided by this slot for all
