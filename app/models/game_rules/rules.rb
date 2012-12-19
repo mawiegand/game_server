@@ -5814,15 +5814,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "Beschreibung des Herrschaftssiegs",
+            :de_DE => "Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.",
   
-            :en_US => "Description of Domination Victory",
+            :en_US => "For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.",
                 
           },
 
           :condition   => {
 
-            :required_regions_ratio => '0.009',
+            :required_regions_ratio => '1',
             :duration => 5,
 
           },
