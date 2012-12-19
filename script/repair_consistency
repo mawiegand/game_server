@@ -197,5 +197,21 @@ end
 puts " done."
 
 
+# ############################################################################
+#
+#   ROUND INFO
+#
+# ############################################################################
+
+
+print "CHECKING Round Info "
+
+regions_count = Map::Region.count
+
+round_info = Fundamental::RoundInfo.find(1)
+round_info.regions_count = regions_count
+round_info.save
+
+puts ". done."
 
 puts
