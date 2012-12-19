@@ -47,7 +47,6 @@ Fundamental::Alliance.find(:all).each do |alliance|
 end
 puts " done."
 
-exit(0)
 
 
 # ############################################################################
