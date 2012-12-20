@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(:version => 20121218111516) do
     t.datetime "updated_at"
     t.string   "r"
     t.string   "description"
+    t.integer  "sign_ups_count"
+    t.decimal  "playtime",               :default => 0.0, :null => false
+    t.decimal  "gross",                  :default => 0.0, :null => false
+    t.decimal  "revenue",                :default => 0.0, :null => false
+    t.integer  "total_churned",          :default => 0,   :null => false
+    t.integer  "total_logged_in_once",   :default => 0,   :null => false
+    t.integer  "total_ten_minutes",      :default => 0,   :null => false
+    t.integer  "total_second_day",       :default => 0,   :null => false
+    t.integer  "total_active",           :default => 0,   :null => false
+    t.integer  "total_long_term_active", :default => 0,   :null => false
+    t.integer  "total_paying",           :default => 0,   :null => false
   end
 
   create_table "backend_sign_in_log_entries", :force => true do |t|

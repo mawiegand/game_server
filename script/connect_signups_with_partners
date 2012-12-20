@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+#
+# Helper that creates a new stats entry.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+Backend::PartnerSite.all.each do |partner|
+  
+  print "Update signup for #{partner.description}... "
+  
+  if !partner.referer.blank?
+    Backend::SignInLogEntry.signups.refered_by_host(partner.referer).each do |signup|
+      signup.partner_site_id = partner.id
+      signup.save
+    end
+  elsif !partner.r.blank?
+    Backend::SignInLogEntry.signups.refered_by_id(partner.r).each do |signup|
+      signup.partner_site_id = partner.id
+      signup.save
+    end    
+  end
+  
+  puts "done."
+end
+
+puts "Completed."

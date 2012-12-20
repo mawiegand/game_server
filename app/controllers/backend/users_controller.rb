@@ -3,7 +3,8 @@ class Backend::UsersController < ApplicationController
   
   before_filter :deny_api
   before_filter :authenticate_backend
-  before_filter :authorize_staff
+  before_filter :authorize_staff, :except => [:create]
+  before_filter :authorize_admin, :only   => [:create]
 
   
   # GET /backend/users
@@ -49,9 +50,8 @@ class Backend::UsersController < ApplicationController
       
         if @backend_user.save                                  # created successfully
 #          IdentityMailer.validation_email(@identity).deliver  # send email validation email
-          sign_in_to_backend @backend_user                     # sign in with newly created identity
           flash[:success] =    
-            I18n.t('identities.signup.flash.welcome', :name => @backend_user.address_informal(:owner))
+            I18n.t('sessions.signup.user_created', :name => @backend_user.address_informal(:owner))
           redirect_to @backend_user                            # redirect to new user
         else 
           @title = I18n.t('identities.signup.title')

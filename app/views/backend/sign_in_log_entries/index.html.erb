@@ -2,7 +2,7 @@
 
 <%= will_paginate @backend_sign_in_log_entries %>
 
-<table>
+<table class="backend-sign-in-log-entries">
   <tr>
     <th>Character</th>
     <th>Sign Up</th>
@@ -27,8 +27,8 @@
     <td><%= backend_sign_in_log_entry.sign_up %></td>
     <td><%= backend_sign_in_log_entry.user_agent %></td>
     <td><%= backend_sign_in_log_entry.referer %></td>
-    <td><%= backend_sign_in_log_entry.referer_url %></td>
-    <td><%= backend_sign_in_log_entry.request_url %></td>
+    <td class="url"><%= backend_sign_in_log_entry.referer_url %></td>
+    <td class="url"><%= backend_sign_in_log_entry.request_url %></td>
     <td><%= backend_sign_in_log_entry.r %></td>
     <td><%= backend_sign_in_log_entry.k %></td>
     <td><%= backend_sign_in_log_entry.p %></td>
