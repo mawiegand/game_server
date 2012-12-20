@@ -12,7 +12,7 @@ class Backend::DashboardController < ApplicationController
     
     @user_groups = []
     
-    if @backend_user.admin?
+    if @backend_user.staff?
       user_group = {}
       user_group[:header] = "All Users"
       user_group[:user_stats] = {
