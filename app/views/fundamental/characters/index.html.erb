@@ -28,6 +28,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @fundamental_characters.each do |fundamental_character| %>
@@ -71,6 +72,7 @@
     <td><%= fundamental_character.victories %>/<%= fundamental_character.defeats %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
+    <td><%= link_to 'History', fundamental_character_history_events_path(fundamental_character.id) %></td>
     <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
     <td><%= link_to 'Destroy', fundamental_character, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

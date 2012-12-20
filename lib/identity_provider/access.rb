@@ -129,6 +129,10 @@ module IdentityProvider
       post('/identities/' + character.identifier + '/results', {:resource_result => resource_result})
     end
 
+    def fetch_history_events(identifier)
+      get('/identities/'  + identifier + '/histories')
+    end
+    
     def post_history_event(identifier, data_object, description = "an awe history event")
       return                            if identifier.nil?
       resource_history = {
