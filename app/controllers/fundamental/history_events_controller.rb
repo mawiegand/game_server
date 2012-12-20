@@ -17,6 +17,9 @@ class Fundamental::HistoryEventsController < ApplicationController
     
     if response.code == 200
       @fundamental_history_events = response.parsed_response.nil? ? nil : response.parsed_response
+      @fundamental_history_events.each do |event|
+        event['character_id'] = params[:character_id]
+      end
     elsif response.code == 404
       @not_found = true
     else
