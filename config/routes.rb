@@ -41,6 +41,7 @@ GameServer::Application.routes.draw do
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
           resources :settings
+          resources :history_events,                           :only => [ :index ]
         end
         
         resources :resource_pools 
