@@ -18,7 +18,7 @@ class Action::Fundamental::SendDislikeActionsController < ApplicationController
       dislike = LikeSystem::Dislike.new(:sender => current_character, :receiver => receiver)
       dislike.save
     else
-      raise BadRequestError.new('Allready sent dislike!')
+      raise ConflictError.new('Allready sent dislike!')
     end
 
     respond_to do |format|

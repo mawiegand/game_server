@@ -18,7 +18,7 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
       like = LikeSystem::Like.new(:sender => current_character, :receiver => receiver)
       like.save
     else
-      raise BadRequestError.new('Allready sent like!')
+      raise ConflictError.new('Allready sent like!')
     end
 
     respond_to do |format|
