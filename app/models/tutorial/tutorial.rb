@@ -7055,7 +7055,7 @@ class Tutorial::Tutorial
               },
 
               {
-                :resource => :cash,
+                :resource => :resource_cash,
                 :amount => 1,
               },
 
@@ -10881,7 +10881,7 @@ class Tutorial::Tutorial
               },
 
               {
-                :resource => :cash,
+                :resource => :resource_cash,
                 :amount => 2,
               },
 
@@ -11070,7 +11070,7 @@ class Tutorial::Tutorial
               },
 
               {
-                :resource => :cash,
+                :resource => :resource_cash,
                 :amount => 4,
               },
 
@@ -11259,7 +11259,7 @@ class Tutorial::Tutorial
               },
 
               {
-                :resource => :cash,
+                :resource => :resource_cash,
                 :amount => 6,
               },
 
