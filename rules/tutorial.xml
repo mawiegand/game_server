@@ -1794,9 +1794,9 @@
       <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">300</ResourceReward>  
-        <ResourceReward resource="resource_wood">300</ResourceReward>    
-        <ResourceReward resource="resource_fur">150</ResourceReward>
+        <ResourceReward resource="resource_stone">200</ResourceReward>
+        <ResourceReward resource="resource_wood">200</ResourceReward>
+        <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1832,6 +1832,7 @@
     <ResourceReward resource="resource_stone">200</ResourceReward>  
     <ResourceReward resource="resource_wood">200</ResourceReward>    
     <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="10" />
@@ -1861,6 +1862,7 @@
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
     <ResourceReward resource="resource_fur">250</ResourceReward>
+       <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="100" />
@@ -1890,6 +1892,8 @@
     <ResourceReward resource="resource_stone">1500</ResourceReward>  
     <ResourceReward resource="resource_wood">1500</ResourceReward>    
     <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>320</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="500" />
@@ -1920,6 +1924,7 @@
     <ResourceReward resource="resource_wood">2000</ResourceReward>    
     <ResourceReward resource="resource_fur">1000</ResourceReward>
     <ResourceReward resource="resource_cash">1</ResourceReward>
+       <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="1000" />
@@ -1949,6 +1954,7 @@
     <ResourceReward resource="resource_stone">2500</ResourceReward>  
     <ResourceReward resource="resource_wood">2500</ResourceReward>    
     <ResourceReward resource="resource_fur">1250</ResourceReward>
+      <ExperienceReward>720</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="5000" />
@@ -1978,7 +1984,7 @@
     <ResourceReward resource="resource_stone">3000</ResourceReward>  
     <ResourceReward resource="resource_wood">3000</ResourceReward>    
     <ResourceReward resource="resource_fur">1500</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>980</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="10000" />
@@ -2008,7 +2014,7 @@
     <ResourceReward resource="resource_stone">3500</ResourceReward>  
     <ResourceReward resource="resource_wood">3500</ResourceReward>    
     <ResourceReward resource="resource_fur">1750</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>1280</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="20000" />
@@ -2038,6 +2044,7 @@
     <ResourceReward resource="resource_stone">4000</ResourceReward>  
     <ResourceReward resource="resource_wood">4000</ResourceReward>    
     <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ExperienceReward>1620</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="25850" />
@@ -2067,7 +2074,7 @@
     <ResourceReward resource="resource_stone">4500</ResourceReward>  
     <ResourceReward resource="resource_wood">4500</ResourceReward>    
     <ResourceReward resource="resource_fur">2250</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>2000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="32650" />
@@ -2097,7 +2104,7 @@
     <ResourceReward resource="resource_stone">5000</ResourceReward>  
     <ResourceReward resource="resource_wood">5000</ResourceReward>    
     <ResourceReward resource="resource_fur">2500</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>2420</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="40250" />
@@ -2125,14 +2132,15 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> -->
+<Requirement quest="quest_build_1barrackslvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">500</ResourceReward>  
-    <ResourceReward resource="resource_wood">500</ResourceReward>    
-    <ResourceReward resource="resource_fur">250</ResourceReward>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
+    <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="750" />
+    <ArmyExperienceTest min_experience="10" />
   </RewardTests>
 </Quest>
 
@@ -2156,12 +2164,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>
+    <ResourceReward resource="resource_wood">500</ResourceReward>
+    <ResourceReward resource="resource_fur">250</ResourceReward>
+    <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="1400" />
+    <ArmyExperienceTest min_experience="100" />
   </RewardTests>
 </Quest>
 
@@ -2185,12 +2194,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1500</ResourceReward>  
-    <ResourceReward resource="resource_wood">1500</ResourceReward>    
-    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>
+    <ResourceReward resource="resource_wood">1000</ResourceReward>
+    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ExperienceReward>180</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="2500" />
+    <ArmyExperienceTest min_experience="250" />
   </RewardTests>
 </Quest>
 
@@ -2214,12 +2224,14 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>
+    <ResourceReward resource="resource_wood">1500</ResourceReward>
+    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="cash">1</ResourceReward>
+    <ExperienceReward>320</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="4100" />
+    <ArmyExperienceTest min_experience="500" />
   </RewardTests>
 </Quest>
 
@@ -2243,12 +2255,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2500</ResourceReward>  
-    <ResourceReward resource="resource_wood">2500</ResourceReward>    
-    <ResourceReward resource="resource_fur">1250</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>
+    <ResourceReward resource="resource_wood">2000</ResourceReward>
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="6100" />
+    <ArmyExperienceTest min_experience="1000" />
   </RewardTests>
 </Quest>
 
@@ -2272,12 +2285,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>  
-    <ResourceReward resource="resource_wood">3000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ResourceReward resource="resource_stone">2500</ResourceReward>
+    <ResourceReward resource="resource_wood">2500</ResourceReward>
+    <ResourceReward resource="resource_fur">1250</ResourceReward>
+    <ExperienceReward>720</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="8600" />
+    <ArmyExperienceTest min_experience="2000" />
   </RewardTests>
 </Quest>
 
@@ -2301,12 +2315,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_6" />
   <Rewards>
-    <ResourceReward resource="resource_stone">3500</ResourceReward>  
-    <ResourceReward resource="resource_wood">3500</ResourceReward>    
-    <ResourceReward resource="resource_fur">1750</ResourceReward>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>
+    <ResourceReward resource="resource_wood">3000</ResourceReward>
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ExperienceReward>980</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="11500" />
+    <ArmyExperienceTest min_experience="4000" />
   </RewardTests>
 </Quest>
 
@@ -2330,12 +2345,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_7" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>  
-    <ResourceReward resource="resource_wood">4000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ResourceReward resource="resource_stone">3500</ResourceReward>
+    <ResourceReward resource="resource_wood">3500</ResourceReward>
+    <ResourceReward resource="resource_fur">1750</ResourceReward>
+    <ExperienceReward>1280</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="14900" />
+    <ArmyExperienceTest min_experience="6000" />
   </RewardTests>
 </Quest>
 
@@ -2359,12 +2375,13 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_8" />
   <Rewards>
-    <ResourceReward resource="resource_stone">4500</ResourceReward>  
-    <ResourceReward resource="resource_wood">4500</ResourceReward>    
-    <ResourceReward resource="resource_fur">2250</ResourceReward>
+    <ResourceReward resource="resource_stone">4000</ResourceReward>
+    <ResourceReward resource="resource_wood">4000</ResourceReward>
+    <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ExperienceReward>1620</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="18750" />
+    <ArmyExperienceTest min_experience="10000" />
   </RewardTests>
 </Quest>
 
@@ -2388,12 +2405,14 @@
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
   <Requirement quest="quest_armyXP_9" />
   <Rewards>
-    <ResourceReward resource="resource_stone">5000</ResourceReward>  
-    <ResourceReward resource="resource_wood">5000</ResourceReward>    
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ResourceReward resource="resource_stone">4500</ResourceReward>
+    <ResourceReward resource="resource_wood">4500</ResourceReward>
+    <ResourceReward resource="resource_fur">2250</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>2000</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="23000" />
+    <ArmyExperienceTest min_experience="15000" />
   </RewardTests>
 </Quest>
 
@@ -2420,12 +2439,13 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
 <!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> -->
   <Rewards>
-    <ResourceReward resource="resource_stone">500</ResourceReward>  
-    <ResourceReward resource="resource_wood">500</ResourceReward>    
-    <ResourceReward resource="resource_fur">250</ResourceReward>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
+    <ResourceReward resource="resource_fur">200</ResourceReward>
+        <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="1000" />
+    <ScoreTest min_population="400" />
   </RewardTests>
 </Quest>
 
@@ -2449,12 +2469,13 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_1" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>  
-    <ResourceReward resource="resource_wood">1000</ResourceReward>    
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">500</ResourceReward>
+    <ResourceReward resource="resource_wood">500</ResourceReward>
+    <ResourceReward resource="resource_fur">250</ResourceReward>
+        <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="1675" />
+    <ScoreTest min_population="500" />
   </RewardTests>
 </Quest>
 
@@ -2478,12 +2499,13 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_2" />
   <Rewards>
-    <ResourceReward resource="resource_stone">1500</ResourceReward>  
-    <ResourceReward resource="resource_wood">1500</ResourceReward>    
-    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>
+    <ResourceReward resource="resource_wood">1000</ResourceReward>
+    <ResourceReward resource="resource_fur">500</ResourceReward>
+        <ExperienceReward>180</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="2800" />
+    <ScoreTest min_population="700" />
   </RewardTests>
 </Quest>
 
@@ -2507,12 +2529,13 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_3" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2000</ResourceReward>  
-    <ResourceReward resource="resource_wood">2000</ResourceReward>    
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>
+    <ResourceReward resource="resource_wood">1500</ResourceReward>
+    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ExperienceReward>320</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="4375" />
+    <ScoreTest min_population="1000" />
   </RewardTests>
 </Quest>
 
@@ -2536,12 +2559,14 @@
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
   <Requirement quest="quest_score_4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">2500</ResourceReward>  
-    <ResourceReward resource="resource_wood">2500</ResourceReward>    
-    <ResourceReward resource="resource_fur">1250</ResourceReward>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>
+    <ResourceReward resource="resource_wood">2000</ResourceReward>
+    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="6400" />
+    <ScoreTest min_population="1500" />
   </RewardTests>
 </Quest>
 
@@ -2568,9 +2593,10 @@
     <ResourceReward resource="resource_stone">3000</ResourceReward>  
     <ResourceReward resource="resource_wood">3000</ResourceReward>    
     <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ExperienceReward>720</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="8875" />
+    <ScoreTest min_population="2000" />
   </RewardTests>
 </Quest>
 
@@ -2597,9 +2623,10 @@
     <ResourceReward resource="resource_stone">3500</ResourceReward>  
     <ResourceReward resource="resource_wood">3500</ResourceReward>    
     <ResourceReward resource="resource_fur">1750</ResourceReward>
+    <ExperienceReward>980</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="11800" />
+    <ScoreTest min_population="2800" />
   </RewardTests>
 </Quest>
 
@@ -2626,9 +2653,10 @@
     <ResourceReward resource="resource_stone">4000</ResourceReward>  
     <ResourceReward resource="resource_wood">4000</ResourceReward>    
     <ResourceReward resource="resource_fur">2000</ResourceReward>
+        <ExperienceReward>1280</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="15175" />
+    <ScoreTest min_population="4000" />
   </RewardTests>
 </Quest>
 
@@ -2655,9 +2683,10 @@
     <ResourceReward resource="resource_stone">4500</ResourceReward>  
     <ResourceReward resource="resource_wood">4500</ResourceReward>    
     <ResourceReward resource="resource_fur">2250</ResourceReward>
+    <ExperienceReward>1620</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="19000" />
+    <ScoreTest min_population="6000" />
   </RewardTests>
 </Quest>
 
@@ -2684,9 +2713,11 @@
     <ResourceReward resource="resource_stone">5000</ResourceReward>  
     <ResourceReward resource="resource_wood">5000</ResourceReward>    
     <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>2000</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="23275" />
+    <ScoreTest min_population="10000" />
   </RewardTests>
 </Quest>
 
@@ -2716,6 +2747,7 @@
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
     <ResourceReward resource="resource_fur">250</ResourceReward>
+    <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="500" />
@@ -2745,6 +2777,7 @@
     <ResourceReward resource="resource_stone">1000</ResourceReward>  
     <ResourceReward resource="resource_wood">1000</ResourceReward>    
     <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ExperienceReward>180</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="740" />
@@ -2774,6 +2807,8 @@
     <ResourceReward resource="resource_stone">1500</ResourceReward>  
     <ResourceReward resource="resource_wood">1500</ResourceReward>    
     <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>320</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="1140" />
@@ -2803,6 +2838,7 @@
     <ResourceReward resource="resource_stone">2000</ResourceReward>  
     <ResourceReward resource="resource_wood">2000</ResourceReward>    
     <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="1700" />
@@ -2832,6 +2868,7 @@
     <ResourceReward resource="resource_stone">2500</ResourceReward>  
     <ResourceReward resource="resource_wood">2500</ResourceReward>    
     <ResourceReward resource="resource_fur">1250</ResourceReward>
+    <ExperienceReward>720</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="2420" />
@@ -2861,6 +2898,7 @@
     <ResourceReward resource="resource_stone">3000</ResourceReward>  
     <ResourceReward resource="resource_wood">3000</ResourceReward>    
     <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ExperienceReward>980</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="3300" />
@@ -2890,6 +2928,7 @@
     <ResourceReward resource="resource_stone">3500</ResourceReward>  
     <ResourceReward resource="resource_wood">3500</ResourceReward>    
     <ResourceReward resource="resource_fur">1750</ResourceReward>
+    <ExperienceReward>1280</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="4340" />
@@ -2919,6 +2958,7 @@
     <ResourceReward resource="resource_stone">4000</ResourceReward>  
     <ResourceReward resource="resource_wood">4000</ResourceReward>    
     <ResourceReward resource="resource_fur">2000</ResourceReward>
+    <ExperienceReward>1620</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="5540" />
@@ -2948,6 +2988,8 @@
     <ResourceReward resource="resource_stone">4500</ResourceReward>  
     <ResourceReward resource="resource_wood">4500</ResourceReward>    
     <ResourceReward resource="resource_fur">2250</ResourceReward>
+    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>2000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="6900" />
@@ -2977,6 +3019,7 @@
     <ResourceReward resource="resource_stone">5000</ResourceReward>  
     <ResourceReward resource="resource_wood">5000</ResourceReward>    
     <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <ExperienceReward>2420</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="8420" />
@@ -3007,6 +3050,7 @@
     <ResourceReward resource="resource_stone">5500</ResourceReward>  
     <ResourceReward resource="resource_wood">5500</ResourceReward>    
     <ResourceReward resource="resource_fur">2750</ResourceReward>
+    <ExperienceReward>2880</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="48650" />
@@ -3036,7 +3080,7 @@
     <ResourceReward resource="resource_stone">6000</ResourceReward>  
     <ResourceReward resource="resource_wood">6000</ResourceReward>    
     <ResourceReward resource="resource_fur">3000</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>3380</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="57850" />
@@ -3066,7 +3110,7 @@
     <ResourceReward resource="resource_stone">6500</ResourceReward>  
     <ResourceReward resource="resource_wood">6500</ResourceReward>    
     <ResourceReward resource="resource_fur">3250</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>3920</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="67850" />
@@ -3097,6 +3141,7 @@
     <ResourceReward resource="resource_wood">7000</ResourceReward>    
     <ResourceReward resource="resource_fur">3500</ResourceReward>
     <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="78650" />
@@ -3126,7 +3171,8 @@
     <ResourceReward resource="resource_stone">7500</ResourceReward>  
     <ResourceReward resource="resource_wood">7500</ResourceReward>    
     <ResourceReward resource="resource_fur">3750</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <ExperienceReward>5120</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="90250" />
@@ -3156,7 +3202,8 @@
     <ResourceReward resource="resource_stone">8000</ResourceReward>  
     <ResourceReward resource="resource_wood">8000</ResourceReward>    
     <ResourceReward resource="resource_fur">4000</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ResourceReward resource="resource_cash">4</ResourceReward>
+    <ExperienceReward>5780</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="102650" />
@@ -3187,6 +3234,7 @@
     <ResourceReward resource="resource_wood">8500</ResourceReward>    
     <ResourceReward resource="resource_fur">4250</ResourceReward>
     <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ExperienceReward>6480</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="115850" />
@@ -3216,7 +3264,8 @@
     <ResourceReward resource="resource_stone">9000</ResourceReward>  
     <ResourceReward resource="resource_wood">9000</ResourceReward>    
     <ResourceReward resource="resource_fur">4500</ResourceReward>
-    <ResourceReward resource="resource_cash">1</ResourceReward>
+    <ResourceReward resource="resource_cash">6</ResourceReward>
+    <ExperienceReward>7220</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="129850" />
@@ -3243,13 +3292,13 @@
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
   <Requirement quest="quest_charkills_18" />
   <Rewards>
-    <ResourceReward resource="resource_stone">15000</ResourceReward>  
-    <ResourceReward resource="resource_wood">15000</ResourceReward>    
-    <ResourceReward resource="resource_fur">7750</ResourceReward>
-    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <ResourceReward resource="resource_stone">9500</ResourceReward>
+    <ResourceReward resource="resource_wood">9500</ResourceReward>
+    <ResourceReward resource="resource_fur">4750</ResourceReward>
+    <ExperienceReward>8000</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <KillTest min_units="200000" />
+    <KillTest min_units="144640" />
   </RewardTests>
 </Quest>
 
@@ -3273,10 +3322,11 @@
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
   <Requirement quest="quest_charkills_19" />
   <Rewards>
-    <ResourceReward resource="resource_stone">50000</ResourceReward>  
-    <ResourceReward resource="resource_wood">50000</ResourceReward>    
-    <ResourceReward resource="resource_fur">25000</ResourceReward>
-    <ResourceReward resource="resource_cash">10</ResourceReward>
+    <ResourceReward resource="resource_stone">10000</ResourceReward>
+    <ResourceReward resource="resource_wood">5000</ResourceReward>
+    <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_cash">8</ResourceReward>
+    <ExperienceReward>10000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <KillTest min_units="160250" />
@@ -3309,9 +3359,10 @@
     <ResourceReward resource="resource_stone">5500</ResourceReward>  
     <ResourceReward resource="resource_wood">5500</ResourceReward>    
     <ResourceReward resource="resource_fur">2750</ResourceReward>
+     <ExperienceReward>2420</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="27750" />
+    <ArmyExperienceTest min_experience="22500" />
   </RewardTests>
 </Quest>
 
@@ -3338,9 +3389,10 @@
     <ResourceReward resource="resource_stone">6000</ResourceReward>  
     <ResourceReward resource="resource_wood">6000</ResourceReward>    
     <ResourceReward resource="resource_fur">3000</ResourceReward>
+     <ExperienceReward>2880</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="32900" />
+    <ArmyExperienceTest min_experience="30000" />
   </RewardTests>
 </Quest>
 
@@ -3365,11 +3417,12 @@
   <Requirement quest="quest_armyXP_12" />
   <Rewards>
     <ResourceReward resource="resource_stone">6500</ResourceReward>  
-    <ResourceReward resource="resource_wood">6500</ResourceReward>    
+    <ResourceReward resource="resource_wood">6500</ResourceReward>
     <ResourceReward resource="resource_fur">3250</ResourceReward>
+    <ExperienceReward>3380</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="38550" />
+    <ArmyExperienceTest min_experience="40000" />
   </RewardTests>
 </Quest>
 
@@ -3396,9 +3449,10 @@
     <ResourceReward resource="resource_stone">7000</ResourceReward>  
     <ResourceReward resource="resource_wood">7000</ResourceReward>    
     <ResourceReward resource="resource_fur">3500</ResourceReward>
+     <ExperienceReward>3920</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="44600" />
+    <ArmyExperienceTest min_experience="50000" />
   </RewardTests>
 </Quest>
 
@@ -3425,9 +3479,11 @@
     <ResourceReward resource="resource_stone">7500</ResourceReward>  
     <ResourceReward resource="resource_wood">7500</ResourceReward>    
     <ResourceReward resource="resource_fur">3750</ResourceReward>
+    <ResourceReward resource="cash">2</ResourceReward>
+    <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="51150" />
+    <ArmyExperienceTest min_experience="60000" />
   </RewardTests>
 </Quest>
 
@@ -3454,9 +3510,10 @@
     <ResourceReward resource="resource_stone">8000</ResourceReward>  
     <ResourceReward resource="resource_wood">8000</ResourceReward>    
     <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ExperienceReward>5120</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="58100" />
+    <ArmyExperienceTest min_experience="75000" />
   </RewardTests>
 </Quest>
 
@@ -3483,9 +3540,11 @@
     <ResourceReward resource="resource_stone">8500</ResourceReward>  
     <ResourceReward resource="resource_wood">8500</ResourceReward>    
     <ResourceReward resource="resource_fur">4250</ResourceReward>
+    <ResourceReward resource="cash">4</ResourceReward>
+    <ExperienceReward>5780</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="65500" />
+    <ArmyExperienceTest min_experience="80000" />
   </RewardTests>
 </Quest>
 
@@ -3512,9 +3571,10 @@
     <ResourceReward resource="resource_stone">9000</ResourceReward>  
     <ResourceReward resource="resource_wood">9000</ResourceReward>    
     <ResourceReward resource="resource_fur">4500</ResourceReward>
+    <ExperienceReward>6480</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="73400" />
+    <ArmyExperienceTest min_experience="100000" />
   </RewardTests>
 </Quest>
 
@@ -3539,11 +3599,13 @@
   <Requirement quest="quest_armyXP_18" />
   <Rewards>
     <ResourceReward resource="resource_stone">9500</ResourceReward>  
-    <ResourceReward resource="resource_wood">9500</ResourceReward>    
+    <ResourceReward resource="resource_wood">9500</ResourceReward>
     <ResourceReward resource="resource_fur">4750</ResourceReward>
+    <ResourceReward resource="cash">6</ResourceReward>
+    <ExperienceReward>7220</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="81750" />
+    <ArmyExperienceTest min_experience="200000" />
   </RewardTests>
 </Quest>
 
@@ -3570,9 +3632,10 @@
     <ResourceReward resource="resource_stone">10000</ResourceReward>  
     <ResourceReward resource="resource_wood">10000</ResourceReward>    
     <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ExperienceReward>8000</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="90500" />
+    <ArmyExperienceTest min_experience="200000" />
   </RewardTests>
 </Quest>
 
@@ -3602,9 +3665,10 @@
     <ResourceReward resource="resource_stone">5500</ResourceReward>  
     <ResourceReward resource="resource_wood">5500</ResourceReward>    
     <ResourceReward resource="resource_fur">2750</ResourceReward>
+    <ExperienceReward>2420</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="28000" />
+    <ScoreTest min_population="15000" />
   </RewardTests>
 </Quest>
 
@@ -3631,9 +3695,10 @@
     <ResourceReward resource="resource_stone">6000</ResourceReward>  
     <ResourceReward resource="resource_wood">6000</ResourceReward>    
     <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ExperienceReward>2880</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="33175" />
+    <ScoreTest min_population="22500" />
   </RewardTests>
 </Quest>
 
@@ -3658,11 +3723,12 @@
   <Requirement quest="quest_score_12" />
   <Rewards>
     <ResourceReward resource="resource_stone">6500</ResourceReward>  
-    <ResourceReward resource="resource_wood">6500</ResourceReward>    
+    <ResourceReward resource="resource_wood">6500</ResourceReward>
     <ResourceReward resource="resource_fur">3250</ResourceReward>
+        <ExperienceReward>3380</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="38800" />
+    <ScoreTest min_population="30000" />
   </RewardTests>
 </Quest>
 
@@ -3689,9 +3755,10 @@
     <ResourceReward resource="resource_stone">7000</ResourceReward>  
     <ResourceReward resource="resource_wood">7000</ResourceReward>    
     <ResourceReward resource="resource_fur">3500</ResourceReward>
+    <ExperienceReward>3920</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="44875" />
+    <ScoreTest min_population="40000" />
   </RewardTests>
 </Quest>
 
@@ -3718,9 +3785,11 @@
     <ResourceReward resource="resource_stone">7500</ResourceReward>  
     <ResourceReward resource="resource_wood">7500</ResourceReward>    
     <ResourceReward resource="resource_fur">3750</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="51400" />
+    <ScoreTest min_population="50000" />
   </RewardTests>
 </Quest>
 
@@ -3747,9 +3816,10 @@
     <ResourceReward resource="resource_stone">8000</ResourceReward>  
     <ResourceReward resource="resource_wood">8000</ResourceReward>    
     <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ExperienceReward>5120</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="58375" />
+    <ScoreTest min_population="6000" />
   </RewardTests>
 </Quest>
 
@@ -3774,11 +3844,13 @@
   <Requirement quest="quest_score_16" />
   <Rewards>
     <ResourceReward resource="resource_stone">8500</ResourceReward>  
-    <ResourceReward resource="resource_wood">8500</ResourceReward>    
+    <ResourceReward resource="resource_wood">8500</ResourceReward>
     <ResourceReward resource="resource_fur">4250</ResourceReward>
+    <ResourceReward resource="resource_cash">4</ResourceReward>
+    <ExperienceReward>5780</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="65800" />
+    <ScoreTest min_population="75000" />
   </RewardTests>
 </Quest>
 
@@ -3805,9 +3877,10 @@
     <ResourceReward resource="resource_stone">9000</ResourceReward>  
     <ResourceReward resource="resource_wood">9000</ResourceReward>    
     <ResourceReward resource="resource_fur">4500</ResourceReward>
+    <ExperienceReward>6480</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="73675" />
+    <ScoreTest min_population="80000" />
   </RewardTests>
 </Quest>
 
@@ -3832,11 +3905,13 @@
   <Requirement quest="quest_score_18" />
   <Rewards>
     <ResourceReward resource="resource_stone">9500</ResourceReward>  
-    <ResourceReward resource="resource_wood">9500</ResourceReward>    
+    <ResourceReward resource="resource_wood">9500</ResourceReward>
     <ResourceReward resource="resource_fur">4750</ResourceReward>
+    <ResourceReward resource="resource_cash">6</ResourceReward>
+    <ExperienceReward>7220</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="82000" />
+    <ScoreTest min_population="100000" />
   </RewardTests>
 </Quest>
 
@@ -3863,9 +3938,10 @@
     <ResourceReward resource="resource_stone">10000</ResourceReward>  
     <ResourceReward resource="resource_wood">10000</ResourceReward>    
     <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ExperienceReward>8000</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="90775" />
+    <ScoreTest min_population="150000" />
   </RewardTests>
 </Quest>
 
@@ -3895,6 +3971,7 @@
     <ResourceReward resource="resource_stone">5500</ResourceReward>  
     <ResourceReward resource="resource_wood">5500</ResourceReward>    
     <ResourceReward resource="resource_fur">2750</ResourceReward>
+    <ExperienceReward>2880</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="10100" />
@@ -3924,6 +4001,7 @@
     <ResourceReward resource="resource_stone">6000</ResourceReward>  
     <ResourceReward resource="resource_wood">6000</ResourceReward>    
     <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ExperienceReward>3380</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="11940" />
@@ -3951,8 +4029,9 @@
   <Requirement quest="quest_resourcescore_12" />
   <Rewards>
     <ResourceReward resource="resource_stone">6500</ResourceReward>  
-    <ResourceReward resource="resource_wood">6500</ResourceReward>    
+    <ResourceReward resource="resource_wood">6500</ResourceReward>
     <ResourceReward resource="resource_fur">3250</ResourceReward>
+    <ExperienceReward>3920</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="13940" />
@@ -3982,6 +4061,8 @@
     <ResourceReward resource="resource_stone">7000</ResourceReward>  
     <ResourceReward resource="resource_wood">7000</ResourceReward>    
     <ResourceReward resource="resource_fur">3500</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="16100" />
@@ -4011,6 +4092,7 @@
     <ResourceReward resource="resource_stone">7500</ResourceReward>  
     <ResourceReward resource="resource_wood">7500</ResourceReward>    
     <ResourceReward resource="resource_fur">3750</ResourceReward>
+    <ExperienceReward>5120</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="18420" />
@@ -4040,6 +4122,8 @@
     <ResourceReward resource="resource_stone">8000</ResourceReward>  
     <ResourceReward resource="resource_wood">8000</ResourceReward>    
     <ResourceReward resource="resource_fur">4000</ResourceReward>
+    <ResourceReward resource="resource_cash">4</ResourceReward>
+    <ExperienceReward>5780</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="20900" />
@@ -4067,8 +4151,9 @@
   <Requirement quest="quest_resourcescore_16" />
   <Rewards>
     <ResourceReward resource="resource_stone">8500</ResourceReward>  
-    <ResourceReward resource="resource_wood">8500</ResourceReward>    
+    <ResourceReward resource="resource_wood">8500</ResourceReward>
     <ResourceReward resource="resource_fur">4250</ResourceReward>
+    <ExperienceReward>6480</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="23540" />
@@ -4098,6 +4183,8 @@
     <ResourceReward resource="resource_stone">9000</ResourceReward>  
     <ResourceReward resource="resource_wood">9000</ResourceReward>    
     <ResourceReward resource="resource_fur">4500</ResourceReward>
+    <ResourceReward resource="resource_cash">6</ResourceReward>
+    <ExperienceReward>7220</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="26340" />
@@ -4127,6 +4214,7 @@
     <ResourceReward resource="resource_stone">9500</ResourceReward>  
     <ResourceReward resource="resource_wood">9500</ResourceReward>    
     <ResourceReward resource="resource_fur">4750</ResourceReward>
+    <ExperienceReward>8000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="29300" />
@@ -4156,11 +4244,200 @@
     <ResourceReward resource="resource_stone">10000</ResourceReward>  
     <ResourceReward resource="resource_wood">10000</ResourceReward>    
     <ResourceReward resource="resource_fur">5000</ResourceReward>
+    <ResourceReward resource="resource_cash">8</ResourceReward>
+    <ExperienceReward>10000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementProductionTest min_resources="32420" />
   </RewardTests>
 </Quest>
+      
+      <!-- 139 -->
+      <Quest id="quest_charkills_21" advisor="warrior">
+          <Name>Decimate enemy units</Name>
+          <Name locale="de_DE">Gegner dezimieren</Name>
+          <Task>Kill 10 units.</Task>
+          <Task locale="de_DE">Besiege 10 Einheiten</Task>
+          <Description locale="de_DE">
+              <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
+          </Description>
+          <Description locale="en_US">
+              <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+          </Description>
+          <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+          <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+          <RewardText locale="de_DE">Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.</RewardText>
+          <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+          <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+          <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+          <Requirement quest="quest_charkills_21" />
+          <Rewards>
+              <ResourceReward resource="resource_stone">15000</ResourceReward>
+              <ResourceReward resource="resource_wood">15000</ResourceReward>
+              <ResourceReward resource="resource_fur">7500</ResourceReward>
+              <ResourceReward resource="resource_cash">10</ResourceReward>
+              <ExperienceReward>15000</ExperienceReward>
+          </Rewards>
+          <RewardTests>
+              <KillTest min_units="500000" />
+          </RewardTests>
+      </Quest>
+    
+    <!-- 140 -->
+    <Quest id="quest_armyXP_21" advisor="warrior">
+      <Name>Experienced armies</Name>
+      <Name locale="de_DE">Erfahrene Armeen</Name>
+      <Task>Fight with an army until it gained 90500 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.</Task>
+      <Description locale="de_DE">
+        <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>An army gains experience for each unit it looses.</p>
+      </Description>
+      <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
+      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
+      <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
+      <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
+      <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
+      <Requirement quest="quest_armyXP_20" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">12000</ResourceReward>
+        <ResourceReward resource="resource_wood">12000</ResourceReward>
+        <ResourceReward resource="resource_fur">6000</ResourceReward>
+        <ResourceReward resource="resource_cash">8</ResourceReward>
+        <ExperienceReward>10000</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ArmyExperienceTest min_experience="250000" />
+      </RewardTests>
+    </Quest>
+    
+    <!-- 141 -->
+    <Quest id="quest_armyXP_22" advisor="warrior">
+      <Name>Experienced armies</Name>
+      <Name locale="de_DE">Erfahrene Armeen</Name>
+      <Task>Fight with an army until it gained 90500 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.</Task>
+      <Description locale="de_DE">
+        <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>An army gains experience for each unit it looses.</p>
+      </Description>
+      <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
+      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
+      <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
+      <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
+      <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
+      <Requirement quest="quest_armyXP_21" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">15000</ResourceReward>
+        <ResourceReward resource="resource_wood">15000</ResourceReward>
+        <ResourceReward resource="resource_fur">7500</ResourceReward>
+        <ResourceReward resource="resource_cash">10</ResourceReward>
+        <ExperienceReward>15000</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ArmyExperienceTest min_experience="500000" />
+      </RewardTests>
+    </Quest>
+    
+    <!-- 142 -->
+    <Quest id="quest_score_21" advisor="chef">
+      <Name>Population</Name>
+      <Name locale="de_DE"> Einwohner </Name>
+      <Task>Reach a Population of 90775</Task>
+      <Task locale="de_DE">Erreiche 90775 Einwohner</Task>
+      <Description locale="de_DE">
+        <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>You gain additional population for each building you build or upgrade.</p>
+      </Description>
+      <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!</Flavor>
+      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
+      <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
+      <Requirement quest="quest_score_20" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">12000</ResourceReward>
+        <ResourceReward resource="resource_wood">12000</ResourceReward>
+        <ResourceReward resource="resource_fur">6000</ResourceReward>
+        <ResourceReward resource="resource_cash">8</ResourceReward>
+        <ExperienceReward>10000</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ScoreTest min_population="250000" />
+      </RewardTests>
+    </Quest>
+    
+    <!-- 143 -->
+    <Quest id="quest_score_22" advisor="chef">
+      <Name>Population</Name>
+      <Name locale="de_DE"> Einwohner </Name>
+      <Task>Reach a Population of 90775</Task>
+      <Task locale="de_DE">Erreiche 90775 Einwohner</Task>
+      <Description locale="de_DE">
+        <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>You gain additional population for each building you build or upgrade.</p>
+      </Description>
+      <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!</Flavor>
+      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
+      <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
+      <Requirement quest="quest_score_21" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">15000</ResourceReward>
+        <ResourceReward resource="resource_wood">15000</ResourceReward>
+        <ResourceReward resource="resource_fur">7500</ResourceReward>
+        <ResourceReward resource="resource_cash">10</ResourceReward>
+        <ExperienceReward>15000</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <ScoreTest min_population="500000" />
+      </RewardTests>
+    </Quest>
+    
+    <!-- 138 -->
+    <Quest id="quest_resourcescore_21" advisor="girl">
+      <Name>Resource Production</Name>
+      <Name locale="de_DE">Rohstoffproduktion</Name>
+      <Task>Increase the resource production of one settlement to 32420 resource points</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 32420 Rohstoffpunkte</Task>
+      <Description locale="de_DE">
+        <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Fur is worth to resource points, stone and wood are worth one each.</p>
+      </Description>
+      <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
+      <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+      <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
+      <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
+      <Requirement quest="quest_resourcescore_20" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">12000</ResourceReward>
+        <ResourceReward resource="resource_wood">12000</ResourceReward>
+        <ResourceReward resource="resource_fur">7500</ResourceReward>
+        <ResourceReward resource="resource_cash">10</ResourceReward>
+        <ExperienceReward>15000</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <SettlementProductionTest min_resources="32420" />
+      </RewardTests>
+    </Quest>
+    
 
     <!-- Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
