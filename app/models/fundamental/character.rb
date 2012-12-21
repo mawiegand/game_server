@@ -74,6 +74,8 @@ class Fundamental::Character < ActiveRecord::Base
   scope :second_day,       where(max_conversion_state: "logged_in_two_days")
   scope :ten_minutes,      where(max_conversion_state: "ten_minutes")
   scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
+  
+  scope :churned,          where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks])
 
   scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, where([

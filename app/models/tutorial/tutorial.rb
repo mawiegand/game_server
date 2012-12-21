@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [89, ],
+          :successor_quests => [59, 89, ],
 
           :rewards => {
             
@@ -3490,7 +3490,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [35, ],
+          :successor_quests => [35, 69, ],
 
           :rewards => {
             
@@ -5733,17 +5733,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 100,
               },
 
             ],
@@ -5782,14 +5782,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 650 units.",
+            :en_US => "Kill 10 units.",
   
-            :de_DE => "Töte 650 Einheiten",
+            :de_DE => "Besiege 10 Einheiten",
                 
           },
           :flavour => {
@@ -5821,6 +5821,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
           :successor_quests => [60, ],
 
           :rewards => {
@@ -5829,27 +5835,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 100,
               },
 
             ],
+
+            :experience_reward => 20,
 
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 650,
+              :min_units => 10,
             },
 
           },          
@@ -5866,14 +5874,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 1850 units.",
+            :en_US => "Kill 100 units.",
   
-            :de_DE => "Töte 1850 Einheiten",
+            :de_DE => "Besiege 100 Einheiten",
                 
           },
           :flavour => {
@@ -5919,27 +5927,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 1850,
+              :min_units => 100,
             },
 
           },          
@@ -5956,14 +5966,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 3850 units.",
+            :en_US => "Kill 500 units.",
   
-            :de_DE => "Töte 3850 Einheiten",
+            :de_DE => "Besiege 500 Einheiten",
                 
           },
           :flavour => {
@@ -6022,14 +6032,21 @@ class Tutorial::Tutorial
                 :amount => 750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 320,
 
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 3850,
+              :min_units => 500,
             },
 
           },          
@@ -6046,14 +6063,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 6650 units.",
+            :en_US => "Kill 1000 units.",
   
-            :de_DE => "Töte 6650 Einheiten",
+            :de_DE => "Besiege 1000 Einheiten",
                 
           },
           :flavour => {
@@ -6112,14 +6129,21 @@ class Tutorial::Tutorial
                 :amount => 1000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 500,
 
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 6650,
+              :min_units => 1000,
             },
 
           },          
@@ -6136,14 +6160,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 10250 units.",
+            :en_US => "Kill 5000 units.",
   
-            :de_DE => "Töte 10250 Einheiten",
+            :de_DE => "Besiege 5000 Einheiten",
                 
           },
           :flavour => {
@@ -6204,12 +6228,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 720,
+
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 10250,
+              :min_units => 5000,
             },
 
           },          
@@ -6226,14 +6252,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 14650 units.",
+            :en_US => "Kill 10000 units.",
   
-            :de_DE => "Töte 14650 Einheiten",
+            :de_DE => "Besiege 10000 Einheiten",
                 
           },
           :flavour => {
@@ -6294,12 +6320,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 980,
+
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 14650,
+              :min_units => 10000,
             },
 
           },          
@@ -6316,14 +6344,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 19850 units.",
+            :en_US => "Kill 20000 units.",
   
-            :de_DE => "Töte 19850 Einheiten",
+            :de_DE => "Besiege 20000 Einheiten",
                 
           },
           :flavour => {
@@ -6384,12 +6412,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1280,
+
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 19850,
+              :min_units => 20000,
             },
 
           },          
@@ -6406,14 +6436,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 25850 units.",
   
-            :de_DE => "Töte 25850 Einheiten",
+            :de_DE => "Besiege 25850 Einheiten",
                 
           },
           :flavour => {
@@ -6474,6 +6504,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
@@ -6496,14 +6528,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 32650 units.",
   
-            :de_DE => "Töte 32650 Einheiten",
+            :de_DE => "Besiege 32650 Einheiten",
                 
           },
           :flavour => {
@@ -6564,6 +6596,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2000,
+
           },          
 
           :reward_tests => {
@@ -6586,14 +6620,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 40250 units.",
   
-            :de_DE => "Töte 40250 Einheiten",
+            :de_DE => "Besiege 40250 Einheiten",
                 
           },
           :flavour => {
@@ -6653,6 +6687,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 2420,
 
           },          
 
@@ -6715,6 +6751,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl5',
+
+          },
+
           :successor_quests => [70, ],
 
           :rewards => {
@@ -6723,27 +6765,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 100,
               },
 
             ],
+
+            :experience_reward => 20,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 750,
+              :min_experience => 10,
             },
 
           },          
@@ -6813,27 +6857,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 1400,
+              :min_experience => 100,
             },
 
           },          
@@ -6903,27 +6949,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 500,
               },
 
             ],
+
+            :experience_reward => 180,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 2500,
+              :min_experience => 250,
             },
 
           },          
@@ -6993,27 +7041,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 320,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 4100,
+              :min_experience => 500,
             },
 
           },          
@@ -7083,27 +7138,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 1000,
               },
 
             ],
+
+            :experience_reward => 500,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 6100,
+              :min_experience => 1000,
             },
 
           },          
@@ -7173,27 +7230,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1250,
               },
 
             ],
+
+            :experience_reward => 720,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 8600,
+              :min_experience => 2000,
             },
 
           },          
@@ -7263,27 +7322,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 1500,
               },
 
             ],
+
+            :experience_reward => 980,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 11500,
+              :min_experience => 4000,
             },
 
           },          
@@ -7353,27 +7414,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1750,
               },
 
             ],
+
+            :experience_reward => 1280,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 14900,
+              :min_experience => 6000,
             },
 
           },          
@@ -7443,27 +7506,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4500,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4500,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 2000,
               },
 
             ],
+
+            :experience_reward => 1620,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 18750,
+              :min_experience => 10000,
             },
 
           },          
@@ -7533,27 +7598,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 2250,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 2000,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 23000,
+              :min_experience => 15000,
             },
 
           },          
@@ -7617,27 +7689,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 200,
               },
 
             ],
+
+            :experience_reward => 20,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 1000,
+              :min_population => 400,
             },
 
           },          
@@ -7707,27 +7781,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 1675,
+              :min_population => 500,
             },
 
           },          
@@ -7797,27 +7873,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 500,
               },
 
             ],
+
+            :experience_reward => 180,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 2800,
+              :min_population => 700,
             },
 
           },          
@@ -7887,27 +7965,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 750,
               },
 
             ],
+
+            :experience_reward => 320,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 4375,
+              :min_population => 1000,
             },
 
           },          
@@ -7977,27 +8057,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 500,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 6400,
+              :min_population => 1500,
             },
 
           },          
@@ -8082,12 +8169,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 720,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 8875,
+              :min_population => 2000,
             },
 
           },          
@@ -8172,12 +8261,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 980,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 11800,
+              :min_population => 2800,
             },
 
           },          
@@ -8262,12 +8353,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1280,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 15175,
+              :min_population => 4000,
             },
 
           },          
@@ -8352,12 +8445,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 19000,
+              :min_population => 6000,
             },
 
           },          
@@ -8440,14 +8535,21 @@ class Tutorial::Tutorial
                 :amount => 2500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 2000,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 23275,
+              :min_population => 10000,
             },
 
           },          
@@ -8531,6 +8633,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
@@ -8622,6 +8726,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 180,
+
           },          
 
           :reward_tests => {
@@ -8710,7 +8816,14 @@ class Tutorial::Tutorial
                 :amount => 750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 320,
 
           },          
 
@@ -8802,6 +8915,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 500,
+
           },          
 
           :reward_tests => {
@@ -8891,6 +9006,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 720,
 
           },          
 
@@ -8982,6 +9099,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 980,
+
           },          
 
           :reward_tests => {
@@ -9071,6 +9190,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 1280,
 
           },          
 
@@ -9162,6 +9283,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
@@ -9250,7 +9373,14 @@ class Tutorial::Tutorial
                 :amount => 2250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 2000,
 
           },          
 
@@ -9342,6 +9472,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
@@ -9364,14 +9496,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 48650 units.",
   
-            :de_DE => "Töte 48650 Einheiten",
+            :de_DE => "Besiege 48650 Einheiten",
                 
           },
           :flavour => {
@@ -9432,6 +9564,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
@@ -9454,14 +9588,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 57850 units.",
   
-            :de_DE => "Töte 1850 Einheiten",
+            :de_DE => "Besiege 1850 Einheiten",
                 
           },
           :flavour => {
@@ -9522,6 +9656,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
@@ -9544,14 +9680,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 67850 units.",
   
-            :de_DE => "Töte 67850 Einheiten",
+            :de_DE => "Besiege 67850 Einheiten",
                 
           },
           :flavour => {
@@ -9612,6 +9748,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
@@ -9634,14 +9772,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 78650 units.",
   
-            :de_DE => "Töte 78650 Einheiten",
+            :de_DE => "Besiege 78650 Einheiten",
                 
           },
           :flavour => {
@@ -9700,7 +9838,14 @@ class Tutorial::Tutorial
                 :amount => 3500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
@@ -9724,14 +9869,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 90250 units.",
   
-            :de_DE => "Töte 90250 Einheiten",
+            :de_DE => "Besiege 90250 Einheiten",
                 
           },
           :flavour => {
@@ -9790,7 +9935,14 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 5120,
 
           },          
 
@@ -9814,14 +9966,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 102650 units.",
   
-            :de_DE => "Töte 102650 Einheiten",
+            :de_DE => "Besiege 102650 Einheiten",
                 
           },
           :flavour => {
@@ -9880,7 +10032,14 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
@@ -9904,14 +10063,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 115850 units.",
   
-            :de_DE => "Töte 115850 Einheiten",
+            :de_DE => "Besiege 115850 Einheiten",
                 
           },
           :flavour => {
@@ -9970,7 +10129,14 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 6480,
 
           },          
 
@@ -9994,14 +10160,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
             :en_US => "Kill 129850 units.",
   
-            :de_DE => "Töte 129850 Einheiten",
+            :de_DE => "Besiege 129850 Einheiten",
                 
           },
           :flavour => {
@@ -10060,7 +10226,14 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
@@ -10084,14 +10257,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 144650 units.",
+            :en_US => "Kill 200,000 units.",
   
-            :de_DE => "Töte 144650 Einheiten",
+            :de_DE => "Besiege 200.000 Einheiten",
                 
           },
           :flavour => {
@@ -10152,12 +10325,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 144650,
+              :min_units => 144640,
             },
 
           },          
@@ -10174,14 +10349,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Vernichte feindliche Einheiten",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
             
-            :en_US => "Kill 160250 units.",
+            :en_US => "Kill 999,999 units.",
   
-            :de_DE => "Töte 160250 Einheiten",
+            :de_DE => "Besiege 999.999 Einheiten",
                 
           },
           :flavour => {
@@ -10232,7 +10407,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_wood,
-                :amount => 10000,
+                :amount => 5000,
               },
 
               {
@@ -10240,7 +10415,14 @@ class Tutorial::Tutorial
                 :amount => 5000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
             ],
+
+            :experience_reward => 10000,
 
           },          
 
@@ -10332,12 +10514,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 27750,
+              :min_experience => 22500,
             },
 
           },          
@@ -10422,12 +10606,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 32900,
+              :min_experience => 30000,
             },
 
           },          
@@ -10512,12 +10698,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 38550,
+              :min_experience => 40000,
             },
 
           },          
@@ -10602,12 +10790,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 44600,
+              :min_experience => 50000,
             },
 
           },          
@@ -10690,14 +10880,21 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 51150,
+              :min_experience => 60000,
             },
 
           },          
@@ -10782,12 +10979,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 58100,
+              :min_experience => 75000,
             },
 
           },          
@@ -10870,14 +11069,21 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 65500,
+              :min_experience => 80000,
             },
 
           },          
@@ -10962,12 +11168,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 73400,
+              :min_experience => 100000,
             },
 
           },          
@@ -11050,14 +11258,21 @@ class Tutorial::Tutorial
                 :amount => 4750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 81750,
+              :min_experience => 200000,
             },
 
           },          
@@ -11119,7 +11334,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [140, ],
 
           :rewards => {
             
@@ -11142,12 +11357,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 90500,
+              :min_experience => 200000,
             },
 
           },          
@@ -11232,12 +11449,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 28000,
+              :min_population => 15000,
             },
 
           },          
@@ -11322,12 +11541,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 33175,
+              :min_population => 22500,
             },
 
           },          
@@ -11412,12 +11633,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 38800,
+              :min_population => 30000,
             },
 
           },          
@@ -11502,12 +11725,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 44875,
+              :min_population => 40000,
             },
 
           },          
@@ -11590,14 +11815,21 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 51400,
+              :min_population => 50000,
             },
 
           },          
@@ -11682,12 +11914,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 58375,
+              :min_population => 6000,
             },
 
           },          
@@ -11770,14 +12004,21 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 65800,
+              :min_population => 75000,
             },
 
           },          
@@ -11862,12 +12103,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 73675,
+              :min_population => 80000,
             },
 
           },          
@@ -11950,14 +12193,21 @@ class Tutorial::Tutorial
                 :amount => 4750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 82000,
+              :min_population => 100000,
             },
 
           },          
@@ -12019,7 +12269,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [142, ],
 
           :rewards => {
             
@@ -12042,12 +12292,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 90775,
+              :min_population => 150000,
             },
 
           },          
@@ -12131,6 +12383,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 2880,
 
           },          
 
@@ -12222,6 +12476,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
@@ -12312,6 +12568,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
@@ -12400,7 +12658,14 @@ class Tutorial::Tutorial
                 :amount => 3500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
@@ -12492,6 +12757,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
@@ -12580,7 +12847,14 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
@@ -12672,6 +12946,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
@@ -12760,7 +13036,14 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
@@ -12852,6 +13135,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
@@ -12919,7 +13204,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [144, ],
 
           :rewards => {
             
@@ -12940,7 +13225,14 @@ class Tutorial::Tutorial
                 :amount => 5000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
             ],
+
+            :experience_reward => 10000,
 
           },          
 
@@ -12953,6 +13245,588 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_20
+        {               #   quest_charkills_21
+          :id                => 139, 
+          :symbolic_id       => :quest_charkills_21,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 10 units.",
+  
+            :de_DE => "Besiege 10 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_21',
+
+          },
+
+          :successor_quests => [139, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_21
+        {               #   quest_armyXP_21
+          :id                => 140, 
+          :symbolic_id       => :quest_armyXP_21,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 90500 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_20',
+
+          },
+
+          :successor_quests => [141, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
+            :experience_reward => 10000,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 250000,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_21
+        {               #   quest_armyXP_22
+          :id                => 141, 
+          :symbolic_id       => :quest_armyXP_22,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 90500 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_21',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_22
+        {               #   quest_score_21
+          :id                => 142, 
+          :symbolic_id       => :quest_score_21,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 90775",
+  
+            :de_DE => "Erreiche 90775 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_20',
+
+          },
+
+          :successor_quests => [143, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
+            :experience_reward => 10000,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 250000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_21
+        {               #   quest_score_22
+          :id                => 143, 
+          :symbolic_id       => :quest_score_22,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 90775",
+  
+            :de_DE => "Erreiche 90775 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_21',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_22
+        {               #   quest_resourcescore_21
+          :id                => 144, 
+          :symbolic_id       => :quest_resourcescore_21,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 32420 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32420 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_20',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 32420,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_21
       ],                # END OF QUESTS
 
     )

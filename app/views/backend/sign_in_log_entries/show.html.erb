@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Sign Up:</b>
+  <%= @backend_sign_in_log_entry.sign_up %>
+</p>
+
+<p>
   <b>User agent:</b>
   <%= @backend_sign_in_log_entry.user_agent %>
 </p>
@@ -15,9 +20,39 @@
   <%= @backend_sign_in_log_entry.referer %>
 </p>
 
-<p>
+<p class="word-break">
   <b>Referer url:</b>
   <%= @backend_sign_in_log_entry.referer_url %>
+</p>
+
+<p class="word-break">
+  <b>Request url:</b>
+  <%= @backend_sign_in_log_entry.request_url %>
+</p>
+
+<p>
+  <b>R:</b>
+  <%= @backend_sign_in_log_entry.r %>
+</p>
+
+<p>
+  <b>K:</b>
+  <%= @backend_sign_in_log_entry.k %>
+</p>
+
+<p>
+  <b>P:</b>
+  <%= @backend_sign_in_log_entry.p %>
+</p>
+
+<p>
+  <b>N:</b>
+  <%= @backend_sign_in_log_entry.n %>
+</p>
+
+<p>
+  <b>Partner Site:</b>
+  <%= @backend_sign_in_log_entry.partner_site.description unless @backend_sign_in_log_entry.partner_site.nil? %>
 </p>
 
 <p>
@@ -25,6 +60,10 @@
   <%= @backend_sign_in_log_entry.remote_ip %>
 </p>
 
+<p>
+  <b>Internal Referer</b>
+  <%= @backend_sign_in_log_entry.direct_referer_url %>
+</p>
 
 <%= link_to 'Edit', edit_backend_sign_in_log_entry_path(@backend_sign_in_log_entry) %> |
 <%= link_to 'Back', backend_sign_in_log_entries_path %>
