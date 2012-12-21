@@ -17,10 +17,14 @@ class Action::Fundamental::SendDislikeActionsController < ApplicationController
                                current_character, receiver, 1.day.ago).count
                              
     raise ConflictError.new('Allready sent dislike!')  if old_dislikes > 0
-    LikeSystem::Dislike.create(:sender => current_character, :receiver => receiver)
+    dislike = LikeSystem::Dislike.new(:sender => current_character, :receiver => receiver)
 
     respond_to do |format|
-      format.json { render json: {}, status: :ok }
+      if dislike.save
+        format.json { render json: {}, status: :ok }
+      else
+        format.json { render json: {}, status: :not_found }
+      end
     end
   end
 

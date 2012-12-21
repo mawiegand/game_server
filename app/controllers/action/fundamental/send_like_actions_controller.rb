@@ -17,10 +17,14 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
                                current_character, receiver, 1.day.ago).count
     raise ConflictError.new('Allready sent like!')  if old_likes > 0
     
-    LikeSystem::Like.create(:sender => current_character, :receiver => receiver)
+    like = LikeSystem::Like.new(:sender => current_character, :receiver => receiver)
 
     respond_to do |format|
-      format.json { render json: {}, status: :ok }
+      if like.save 
+        format.json { render json: {}, status: :ok }
+      else
+        format.json { render json: {}, status: :not_found }
+      end
     end
   end
 
