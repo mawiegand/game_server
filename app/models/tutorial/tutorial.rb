@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 89, ],
+          :successor_quests => [59, 79, 89, ],
 
           :rewards => {
             
@@ -6717,9 +6717,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 750 Army Experience",
+            :en_US => "Fight with an army until it gained 10 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6809,9 +6809,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 1400 Army Experience",
+            :en_US => "Fight with an army until it gained 100 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 1400 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6901,9 +6901,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 2500 Army Experience",
+            :en_US => "Fight with an army until it gained 250 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 2500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 250 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6993,9 +6993,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 4100 Army Experience",
+            :en_US => "Fight with an army until it gained 500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 4100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 500 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7090,9 +7090,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 6100 Army Experience",
+            :en_US => "Fight with an army until it gained 1000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 6100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 1000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7182,9 +7182,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 8600 Army Experience",
+            :en_US => "Fight with an army until it gained 2000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 8600 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 2000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7274,9 +7274,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 11500 Army Experience",
+            :en_US => "Fight with an army until it gained 4000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 11500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 4000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7366,9 +7366,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 14900 Army Experience",
+            :en_US => "Fight with an army until it gained 6000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 14900 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 6000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7458,9 +7458,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 18750 Army Experience",
+            :en_US => "Fight with an army until it gained 10000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 18750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 10000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7550,9 +7550,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 23000 Army Experience",
+            :en_US => "Fight with an army until it gained 15000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 23000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 15000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7647,9 +7647,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 1000",
+            :en_US => "Reach a Population of 400",
   
-            :de_DE => "Erreiche 1000 Einwohner",
+            :de_DE => "Erreiche 400 Einwohner",
                 
           },
           :flavour => {
@@ -7679,6 +7679,12 @@ class Tutorial::Tutorial
   
             :en_US => "The ranking is sorted by population by default.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
           },
 
           :successor_quests => [80, ],
@@ -7733,9 +7739,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 1675",
+            :en_US => "Reach a Population of 500",
   
-            :de_DE => "Erreiche 1675 Einwohner",
+            :de_DE => "Erreiche 500 Einwohner",
                 
           },
           :flavour => {
@@ -7825,9 +7831,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 2800",
+            :en_US => "Reach a Population of 700",
   
-            :de_DE => "Erreiche 2800 Einwohner",
+            :de_DE => "Erreiche 700 Einwohner",
                 
           },
           :flavour => {
@@ -7917,9 +7923,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 4375",
+            :en_US => "Reach a Population of 1000",
   
-            :de_DE => "Erreiche 4375 Einwohner",
+            :de_DE => "Erreiche 1000 Einwohner",
                 
           },
           :flavour => {
@@ -8009,9 +8015,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 6400",
+            :en_US => "Reach a Population of 1500",
   
-            :de_DE => "Erreiche 6400 Einwohner",
+            :de_DE => "Erreiche 1500 Einwohner",
                 
           },
           :flavour => {
@@ -8106,9 +8112,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 8875",
+            :en_US => "Reach a Population of 2000",
   
-            :de_DE => "Erreiche 8875 Einwohner",
+            :de_DE => "Erreiche 2000 Einwohner",
                 
           },
           :flavour => {
@@ -8198,9 +8204,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 11800",
+            :en_US => "Reach a Population of 2800",
   
-            :de_DE => "Erreiche 11800 Einwohner",
+            :de_DE => "Erreiche 2800 Einwohner",
                 
           },
           :flavour => {
@@ -8290,9 +8296,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 15175",
+            :en_US => "Reach a Population of 4000",
   
-            :de_DE => "Erreiche 15175 Einwohner",
+            :de_DE => "Erreiche 4000 Einwohner",
                 
           },
           :flavour => {
@@ -8382,9 +8388,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 19000",
+            :en_US => "Reach a Population of 6000",
   
-            :de_DE => "Erreiche 19000 Einwohner",
+            :de_DE => "Erreiche 6000 Einwohner",
                 
           },
           :flavour => {
@@ -8474,9 +8480,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 23275",
+            :en_US => "Reach a Population of 10000",
   
-            :de_DE => "Erreiche 23275 Einwohner",
+            :de_DE => "Erreiche 10000 Einwohner",
                 
           },
           :flavour => {
@@ -10262,9 +10268,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 200,000 units.",
+            :en_US => "Kill 144640 units.",
   
-            :de_DE => "Besiege 200.000 Einheiten",
+            :de_DE => "Besiege 144640 Einheiten",
                 
           },
           :flavour => {
@@ -10354,9 +10360,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 999,999 units.",
+            :en_US => "Kill 160250 units.",
   
-            :de_DE => "Besiege 999.999 Einheiten",
+            :de_DE => "Besiege 160250 Einheiten",
                 
           },
           :flavour => {
@@ -10394,7 +10400,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [139, ],
 
           :rewards => {
             
@@ -10451,9 +10457,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 27750 Army Experience",
+            :en_US => "Fight with an army until it gained 22500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 27750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 22500 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10543,9 +10549,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 32900 Army Experience",
+            :en_US => "Fight with an army until it gained 30000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 32900 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 30000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10635,9 +10641,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 38550 Army Experience",
+            :en_US => "Fight with an army until it gained 40000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 38550 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 40000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10727,9 +10733,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 44600 Army Experience",
+            :en_US => "Fight with an army until it gained 50000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 44600 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 50000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10819,9 +10825,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 51150 Army Experience",
+            :en_US => "Fight with an army until it gained 60000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 51150 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 60000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10916,9 +10922,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 58100 Army Experience",
+            :en_US => "Fight with an army until it gained 75000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 58100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 75000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11008,9 +11014,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 65500 Army Experience",
+            :en_US => "Fight with an army until it gained 80000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 65500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 80000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11105,9 +11111,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 73400 Army Experience",
+            :en_US => "Fight with an army until it gained 100000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 73400 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 100000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11197,9 +11203,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 81750 Army Experience",
+            :en_US => "Fight with an army until it gained 200000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 81750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11294,9 +11300,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 90500 Army Experience",
+            :en_US => "Fight with an army until it gained 200000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11386,9 +11392,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 28000",
+            :en_US => "Reach a Population of 15000",
   
-            :de_DE => "Erreiche 28000 Einwohner",
+            :de_DE => "Erreiche 15000 Einwohner",
                 
           },
           :flavour => {
@@ -11478,9 +11484,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 33175",
+            :en_US => "Reach a Population of 22500",
   
-            :de_DE => "Erreiche 33175 Einwohner",
+            :de_DE => "Erreiche 22500 Einwohner",
                 
           },
           :flavour => {
@@ -11570,9 +11576,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 38800",
+            :en_US => "Reach a Population of 30000",
   
-            :de_DE => "Erreiche 38800 Einwohner",
+            :de_DE => "Erreiche 30000 Einwohner",
                 
           },
           :flavour => {
@@ -11662,9 +11668,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 44875",
+            :en_US => "Reach a Population of 40000",
   
-            :de_DE => "Erreiche 44875 Einwohner",
+            :de_DE => "Erreiche 40000 Einwohner",
                 
           },
           :flavour => {
@@ -11754,9 +11760,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 51400",
+            :en_US => "Reach a Population of 50000",
   
-            :de_DE => "Erreiche 51400 Einwohner",
+            :de_DE => "Erreiche 50000 Einwohner",
                 
           },
           :flavour => {
@@ -11851,9 +11857,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 58375",
+            :en_US => "Reach a Population of 60000",
   
-            :de_DE => "Erreiche 58375 Einwohner",
+            :de_DE => "Erreiche 60000 Einwohner",
                 
           },
           :flavour => {
@@ -11921,7 +11927,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 6000,
+              :min_population => 60000,
             },
 
           },          
@@ -11943,9 +11949,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 65800",
+            :en_US => "Reach a Population of 75000",
   
-            :de_DE => "Erreiche 65800 Einwohner",
+            :de_DE => "Erreiche 75000 Einwohner",
                 
           },
           :flavour => {
@@ -12040,9 +12046,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 73675",
+            :en_US => "Reach a Population of 80000",
   
-            :de_DE => "Erreiche 73675 Einwohner",
+            :de_DE => "Erreiche 80000 Einwohner",
                 
           },
           :flavour => {
@@ -12132,9 +12138,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 82000",
+            :en_US => "Reach a Population of 100000",
   
-            :de_DE => "Erreiche 82000 Einwohner",
+            :de_DE => "Erreiche 100000 Einwohner",
                 
           },
           :flavour => {
@@ -12229,9 +12235,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 90775",
+            :en_US => "Reach a Population of 150000",
   
-            :de_DE => "Erreiche 90775 Einwohner",
+            :de_DE => "Erreiche 150000 Einwohner",
                 
           },
           :flavour => {
@@ -13261,9 +13267,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 10 units.",
+            :en_US => "Kill 500000 units.",
   
-            :de_DE => "Besiege 10 Einheiten",
+            :de_DE => "Besiege 500000 Einheiten",
                 
           },
           :flavour => {
@@ -13297,11 +13303,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_charkills_21',
+            :quest => 'quest_charkills_20',
 
           },
 
-          :successor_quests => [139, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -13358,9 +13364,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 90500 Army Experience",
+            :en_US => "Fight with an army until it gained 250000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 250000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -13455,9 +13461,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 90500 Army Experience",
+            :en_US => "Fight with an army until it gained 500000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 500000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -13552,9 +13558,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 90775",
+            :en_US => "Reach a Population of 250000",
   
-            :de_DE => "Erreiche 90775 Einwohner",
+            :de_DE => "Erreiche 250000 Einwohner",
                 
           },
           :flavour => {
@@ -13649,9 +13655,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 90775",
+            :en_US => "Reach a Population of 500000",
   
-            :de_DE => "Erreiche 90775 Einwohner",
+            :de_DE => "Erreiche 500000 Einwohner",
                 
           },
           :flavour => {
