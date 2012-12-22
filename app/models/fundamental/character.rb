@@ -608,7 +608,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   def propagate_dislike_changes
     if received_dislikes_count_changed? && !self.ranking.nil?
-      self.ranking.dislikes = received_likes_count || 0
+      self.ranking.dislikes = received_dislikes_count || 0
       self.ranking.save
     end
     true
