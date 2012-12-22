@@ -28,9 +28,9 @@
         </td>
         <td class="number"><%= ranking_character_ranking.overall_score %></td>
         <td class="number"><%= ranking_character_ranking.resource_score %></td>
-        <td class="number"><%= ranking_character_ranking.likes %>&nbsp;(<%= number_to_percentage(ranking_character_ranking.like_ratio*100, :precision => 0) %>)</td>
+        <td class="number"><%= ranking_character_ranking.likes %>&nbsp;(<%= number_to_percentage(ranking_character_ranking.like_ratio.to_f*100, :precision => 0) %>)</td>
         <td class="number"><%= ranking_character_ranking.victories %></td>
-        <td class="number"><%= number_with_precision(ranking_character_ranking.victory_ratio, :precision => 1) %></td>
+        <td class="number"><%= number_with_precision(ranking_character_ranking.victory_ratio.to_f, :precision => 1) %></td>
         <td class="number"><%= ranking_character_ranking.kills %></td>
         <td class="number"><span title="<%= ranking_character_ranking.max_experience_army_name.blank? ? "no veteran army" : "#{ranking_character_ranking.max_experience_army_name}, rank #{ranking_character_ranking.max_experience_army_rank}"  %>"><%= ranking_character_ranking.max_experience %></span></td>
       <% end %>
