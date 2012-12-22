@@ -52,6 +52,7 @@ GameServer::Application.routes.draw do
         end
         
         resources :victory_progresses 
+        resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
         
