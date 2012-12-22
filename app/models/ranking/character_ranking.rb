@@ -44,7 +44,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   
     def update_ratios
       self.like_ratio    = (likes || 0) / [(likes || 0) + (dislikes || 0), 1].max.to_f
-      self.victory_ratio = (victories || 0) + (likes || 0) == 0 ? 1 : (victories || 0) / ([(defeats || 0), 1].max).to_f
+      self.victory_ratio = (victories || 0) + (defeats || 0) == 0 ? 1.0 : (victories || 0) / ([(defeats || 0), 1].max).to_f
     end
   
     def propagate_change_to_alliance
