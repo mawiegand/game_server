@@ -57,6 +57,10 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
   after_save  :propagate_kills_changes
+  after_save  :propagate_like_changes
+  after_save  :propagate_victory_changes
+  after_save  :propagate_defeat_changes
+  after_save  :propagate_dislike_changes
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
@@ -590,6 +594,38 @@ class Fundamental::Character < ActiveRecord::Base
         self.ranking.overall_score = score_change[1]
         self.ranking.save
       end
+    end
+    true
+  end
+  
+  def propagate_like_changes
+    if received_likes_count_changed? && !self.ranking.nil?
+      self.ranking.likes = received_likes_count || 0
+      self.ranking.save
+    end
+    true
+  end
+  
+  def propagate_dislike_changes
+    if received_dislikes_count_changed? && !self.ranking.nil?
+      self.ranking.dislikes = received_dislikes_count || 0
+      self.ranking.save
+    end
+    true
+  end
+
+  def propagate_victory_changes
+    if victories_changed? && !self.ranking.nil?
+      self.ranking.victories = victories || 0
+      self.ranking.save
+    end
+    true
+  end
+  
+  def propagate_defeat_changes
+    if defeats_changed? && !self.ranking.nil?
+      self.ranking.defeats = defeats || 0
+      self.ranking.save
     end
     true
   end

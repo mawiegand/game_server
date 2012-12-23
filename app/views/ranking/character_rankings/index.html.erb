@@ -9,6 +9,9 @@
       <th>Character</th>
       <th class="number"><%= link_to "Overall score",    ranking_character_rankings_path(:sort => 'overall') %></th>
       <th class="number"><%= link_to "Resource score",   ranking_character_rankings_path(:sort => 'resource') %></th>
+      <th class="number"><%= link_to "Likes",            ranking_character_rankings_path(:sort => 'likes') %></th>
+      <th class="number"><%= link_to "Victories",        ranking_character_rankings_path(:sort => 'victories') %></th>
+      <th class="number"><%= link_to "Victory Ratio",    ranking_character_rankings_path(:sort => 'victory_ratio') %></th>
       <th class="number"><%= link_to "Beaten Units",     ranking_character_rankings_path(:sort => 'kills') %></th>
       <th class="number"><%= link_to "Experienced Army", ranking_character_rankings_path(:sort => 'experience') %></th>
     </tr>
@@ -25,6 +28,9 @@
         </td>
         <td class="number"><%= ranking_character_ranking.overall_score %></td>
         <td class="number"><%= ranking_character_ranking.resource_score %></td>
+        <td class="number"><%= ranking_character_ranking.likes %>&nbsp;(<%= number_to_percentage(ranking_character_ranking.like_ratio.to_f*100, :precision => 0) %>)</td>
+        <td class="number"><%= ranking_character_ranking.victories %></td>
+        <td class="number"><%= number_with_precision(ranking_character_ranking.victory_ratio.to_f, :precision => 1, :separator => '.').to_s %></td>
         <td class="number"><%= ranking_character_ranking.kills %></td>
         <td class="number"><span title="<%= ranking_character_ranking.max_experience_army_name.blank? ? "no veteran army" : "#{ranking_character_ranking.max_experience_army_name}, rank #{ranking_character_ranking.max_experience_army_rank}"  %>"><%= ranking_character_ranking.max_experience %></span></td>
       <% end %>

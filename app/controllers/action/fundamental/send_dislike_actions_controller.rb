@@ -10,13 +10,21 @@ class Action::Fundamental::SendDislikeActionsController < ApplicationController
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:character].nil? || params[:character][:id].blank?
     
-    dislike = LikeSystem::Dislike.new
-    dislike.sender = current_character
-    dislike.receiver = Fundamental::Character.find(params[:character][:id])
-    dislike.save
+    receiver = Fundamental::Character.find(params[:character][:id])
+    raise BadRequestError.new('cannot dislike yourself') if receiver == current_character    
+    
+    old_dislikes = LikeSystem::Dislike.where('sender_id = ? and receiver_id = ? and created_at > ?',
+                               current_character, receiver, 1.day.ago).count
+                             
+    raise ConflictError.new('Allready sent dislike!')  if old_dislikes > 0
+    dislike = LikeSystem::Dislike.new(:sender => current_character, :receiver => receiver)
 
     respond_to do |format|
-      format.json { render json: {}, status: :ok }
+      if dislike.save
+        format.json { render json: {}, status: :ok }
+      else
+        format.json { render json: {}, status: :not_found }
+      end
     end
   end
 

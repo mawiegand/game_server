@@ -2582,7 +2582,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 89, ],
+          :successor_quests => [59, 79, 89, ],
 
           :rewards => {
             
@@ -3490,7 +3490,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [35, ],
+          :successor_quests => [35, 69, ],
 
           :rewards => {
             
@@ -5733,17 +5733,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 100,
               },
 
             ],
@@ -5850,6 +5850,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 20,
+
           },          
 
           :reward_tests => {
@@ -5940,6 +5942,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 80,
+
           },          
 
           :reward_tests => {
@@ -6028,7 +6032,14 @@ class Tutorial::Tutorial
                 :amount => 750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 320,
 
           },          
 
@@ -6125,6 +6136,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 500,
+
           },          
 
           :reward_tests => {
@@ -6215,6 +6228,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 720,
+
           },          
 
           :reward_tests => {
@@ -6303,12 +6318,9 @@ class Tutorial::Tutorial
                 :amount => 1500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 980,
 
           },          
 
@@ -6398,12 +6410,9 @@ class Tutorial::Tutorial
                 :amount => 1750,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 1280,
 
           },          
 
@@ -6495,6 +6504,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
@@ -6583,12 +6594,9 @@ class Tutorial::Tutorial
                 :amount => 2250,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 2000,
 
           },          
 
@@ -6678,12 +6686,9 @@ class Tutorial::Tutorial
                 :amount => 2500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 2420,
 
           },          
 
@@ -6712,9 +6717,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 750 Army Experience",
+            :en_US => "Fight with an army until it gained 10 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6746,6 +6751,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl5',
+
+          },
+
           :successor_quests => [70, ],
 
           :rewards => {
@@ -6754,27 +6765,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 100,
               },
 
             ],
+
+            :experience_reward => 20,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 750,
+              :min_experience => 10,
             },
 
           },          
@@ -6796,9 +6809,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 1400 Army Experience",
+            :en_US => "Fight with an army until it gained 100 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 1400 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6844,27 +6857,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 250,
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 1400,
+              :min_experience => 100,
             },
 
           },          
@@ -6886,9 +6901,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 2500 Army Experience",
+            :en_US => "Fight with an army until it gained 250 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 2500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 250 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6934,27 +6949,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 500,
               },
 
             ],
+
+            :experience_reward => 180,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 2500,
+              :min_experience => 250,
             },
 
           },          
@@ -6976,9 +6993,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 4100 Army Experience",
+            :en_US => "Fight with an army until it gained 500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 4100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 500 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7024,27 +7041,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 320,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 4100,
+              :min_experience => 500,
             },
 
           },          
@@ -7066,9 +7090,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 6100 Army Experience",
+            :en_US => "Fight with an army until it gained 1000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 6100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 1000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7114,27 +7138,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 1000,
               },
 
             ],
+
+            :experience_reward => 500,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 6100,
+              :min_experience => 1000,
             },
 
           },          
@@ -7156,9 +7182,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 8600 Army Experience",
+            :en_US => "Fight with an army until it gained 2000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 8600 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 2000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7204,27 +7230,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1250,
               },
 
             ],
+
+            :experience_reward => 720,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 8600,
+              :min_experience => 2000,
             },
 
           },          
@@ -7246,9 +7274,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 11500 Army Experience",
+            :en_US => "Fight with an army until it gained 4000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 11500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 4000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7294,27 +7322,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 1500,
               },
 
             ],
+
+            :experience_reward => 980,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 11500,
+              :min_experience => 4000,
             },
 
           },          
@@ -7336,9 +7366,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 14900 Army Experience",
+            :en_US => "Fight with an army until it gained 6000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 14900 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 6000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7384,27 +7414,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 3500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1750,
               },
 
             ],
+
+            :experience_reward => 1280,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 14900,
+              :min_experience => 6000,
             },
 
           },          
@@ -7426,9 +7458,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 18750 Army Experience",
+            :en_US => "Fight with an army until it gained 10000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 18750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 10000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7474,27 +7506,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4500,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4500,
+                :amount => 4000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 2000,
               },
 
             ],
+
+            :experience_reward => 1620,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 18750,
+              :min_experience => 10000,
             },
 
           },          
@@ -7516,9 +7550,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 23000 Army Experience",
+            :en_US => "Fight with an army until it gained 15000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 23000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 15000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7564,27 +7598,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 4500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 2250,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 2000,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 23000,
+              :min_experience => 15000,
             },
 
           },          
@@ -7593,6 +7634,282 @@ class Tutorial::Tutorial
         {               #   quest_score_1
           :id                => 79, 
           :symbolic_id       => :quest_score_1,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 400",
+  
+            :de_DE => "Erreiche 400 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+
+          },
+
+          :successor_quests => [80, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 200,
+              },
+
+            ],
+
+            :experience_reward => 20,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 400,
+            },
+
+          },          
+
+        },              #   END OF quest_score_1
+        {               #   quest_score_2
+          :id                => 80, 
+          :symbolic_id       => :quest_score_2,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 500",
+  
+            :de_DE => "Erreiche 500 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_1',
+
+          },
+
+          :successor_quests => [81, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+            :experience_reward => 80,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 500,
+            },
+
+          },          
+
+        },              #   END OF quest_score_2
+        {               #   quest_score_3
+          :id                => 81, 
+          :symbolic_id       => :quest_score_3,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 700",
+  
+            :de_DE => "Erreiche 700 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_2',
+
+          },
+
+          :successor_quests => [82, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 180,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 700,
+            },
+
+          },          
+
+        },              #   END OF quest_score_3
+        {               #   quest_score_4
+          :id                => 82, 
+          :symbolic_id       => :quest_score_4,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
@@ -7640,187 +7957,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [80, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 250,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :score_test => {
-              :min_population => 1000,
-            },
-
-          },          
-
-        },              #   END OF quest_score_1
-        {               #   quest_score_2
-          :id                => 80, 
-          :symbolic_id       => :quest_score_2,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Population",
-  
-            :de_DE => " Einwohner ",
-                
-          },
-          :task => {
-            
-            :en_US => "Reach a Population of 1675",
-  
-            :de_DE => "Erreiche 1675 Einwohner",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
-  
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
-  
-            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
-  
-            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
-  
-            :en_US => "The ranking is sorted by population by default.",
-                
-          },
-
           :requirement => {
             
-            :quest => 'quest_score_1',
+            :quest => 'quest_score_3',
 
           },
 
-          :successor_quests => [81, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :score_test => {
-              :min_population => 1675,
-            },
-
-          },          
-
-        },              #   END OF quest_score_2
-        {               #   quest_score_3
-          :id                => 81, 
-          :symbolic_id       => :quest_score_3,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Population",
-  
-            :de_DE => " Einwohner ",
-                
-          },
-          :task => {
-            
-            :en_US => "Reach a Population of 2800",
-  
-            :de_DE => "Erreiche 2800 Einwohner",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
-  
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
-  
-            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
-  
-            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
-  
-            :en_US => "The ranking is sorted by population by default.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_score_2',
-
-          },
-
-          :successor_quests => [82, ],
+          :successor_quests => [83, ],
 
           :rewards => {
             
@@ -7843,102 +7986,14 @@ class Tutorial::Tutorial
 
             ],
 
-          },          
-
-          :reward_tests => {
-            
-            :score_test => {
-              :min_population => 2800,
-            },
-
-          },          
-
-        },              #   END OF quest_score_3
-        {               #   quest_score_4
-          :id                => 82, 
-          :symbolic_id       => :quest_score_4,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          
-          :name => {
-            
-            :en_US => "Population",
-  
-            :de_DE => " Einwohner ",
-                
-          },
-          :task => {
-            
-            :en_US => "Reach a Population of 4375",
-  
-            :de_DE => "Erreiche 4375 Einwohner",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
-  
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
-  
-            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
-  
-            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
-  
-            :en_US => "The ranking is sorted by population by default.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_score_3',
-
-          },
-
-          :successor_quests => [83, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 1000,
-              },
-
-            ],
+            :experience_reward => 320,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 4375,
+              :min_population => 1000,
             },
 
           },          
@@ -7960,9 +8015,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 6400",
+            :en_US => "Reach a Population of 1500",
   
-            :de_DE => "Erreiche 6400 Einwohner",
+            :de_DE => "Erreiche 1500 Einwohner",
                 
           },
           :flavour => {
@@ -8008,27 +8063,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
+
+            :experience_reward => 500,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 6400,
+              :min_population => 1500,
             },
 
           },          
@@ -8050,9 +8112,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 8875",
+            :en_US => "Reach a Population of 2000",
   
-            :de_DE => "Erreiche 8875 Einwohner",
+            :de_DE => "Erreiche 2000 Einwohner",
                 
           },
           :flavour => {
@@ -8113,12 +8175,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 720,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 8875,
+              :min_population => 2000,
             },
 
           },          
@@ -8140,9 +8204,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 11800",
+            :en_US => "Reach a Population of 2800",
   
-            :de_DE => "Erreiche 11800 Einwohner",
+            :de_DE => "Erreiche 2800 Einwohner",
                 
           },
           :flavour => {
@@ -8203,12 +8267,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 980,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 11800,
+              :min_population => 2800,
             },
 
           },          
@@ -8230,9 +8296,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 15175",
+            :en_US => "Reach a Population of 4000",
   
-            :de_DE => "Erreiche 15175 Einwohner",
+            :de_DE => "Erreiche 4000 Einwohner",
                 
           },
           :flavour => {
@@ -8293,12 +8359,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1280,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 15175,
+              :min_population => 4000,
             },
 
           },          
@@ -8320,9 +8388,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 19000",
+            :en_US => "Reach a Population of 6000",
   
-            :de_DE => "Erreiche 19000 Einwohner",
+            :de_DE => "Erreiche 6000 Einwohner",
                 
           },
           :flavour => {
@@ -8383,12 +8451,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 19000,
+              :min_population => 6000,
             },
 
           },          
@@ -8410,9 +8480,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 23275",
+            :en_US => "Reach a Population of 10000",
   
-            :de_DE => "Erreiche 23275 Einwohner",
+            :de_DE => "Erreiche 10000 Einwohner",
                 
           },
           :flavour => {
@@ -8471,14 +8541,21 @@ class Tutorial::Tutorial
                 :amount => 2500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 2000,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 23275,
+              :min_population => 10000,
             },
 
           },          
@@ -8562,6 +8639,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 80,
 
           },          
 
@@ -8653,6 +8732,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 180,
+
           },          
 
           :reward_tests => {
@@ -8741,7 +8822,14 @@ class Tutorial::Tutorial
                 :amount => 750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 320,
 
           },          
 
@@ -8833,6 +8921,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 500,
+
           },          
 
           :reward_tests => {
@@ -8922,6 +9012,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 720,
 
           },          
 
@@ -9013,6 +9105,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 980,
+
           },          
 
           :reward_tests => {
@@ -9102,6 +9196,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 1280,
 
           },          
 
@@ -9193,6 +9289,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 1620,
+
           },          
 
           :reward_tests => {
@@ -9281,7 +9379,14 @@ class Tutorial::Tutorial
                 :amount => 2250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
+
+            :experience_reward => 2000,
 
           },          
 
@@ -9373,6 +9478,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
@@ -9463,6 +9570,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
@@ -9551,12 +9660,9 @@ class Tutorial::Tutorial
                 :amount => 3000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 3380,
 
           },          
 
@@ -9646,12 +9752,9 @@ class Tutorial::Tutorial
                 :amount => 3250,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
+
+            :experience_reward => 3920,
 
           },          
 
@@ -9748,6 +9851,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 4500,
+
           },          
 
           :reward_tests => {
@@ -9838,10 +9943,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
+
+            :experience_reward => 5120,
 
           },          
 
@@ -9933,10 +10040,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 4,
               },
 
             ],
+
+            :experience_reward => 5780,
 
           },          
 
@@ -10033,6 +10142,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
@@ -10123,10 +10234,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 6,
               },
 
             ],
+
+            :experience_reward => 7220,
 
           },          
 
@@ -10155,9 +10268,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 200,000 units.",
+            :en_US => "Kill 144640 units.",
   
-            :de_DE => "Besiege 200.000 Einheiten",
+            :de_DE => "Besiege 144640 Einheiten",
                 
           },
           :flavour => {
@@ -10203,32 +10316,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 15000,
+                :amount => 9500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 15000,
+                :amount => 9500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 7750,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
+                :amount => 4750,
               },
 
             ],
+
+            :experience_reward => 8000,
 
           },          
 
           :reward_tests => {
             
             :kill_test => {
-              :min_units => 200000,
+              :min_units => 144640,
             },
 
           },          
@@ -10250,9 +10360,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Kill 999,999 units.",
+            :en_US => "Kill 160250 units.",
   
-            :de_DE => "Besiege 999.999 Einheiten",
+            :de_DE => "Besiege 160250 Einheiten",
                 
           },
           :flavour => {
@@ -10290,7 +10400,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [139, ],
 
           :rewards => {
             
@@ -10298,25 +10408,27 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 50000,
+                :amount => 10000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 50000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 25000,
+                :amount => 5000,
               },
 
               {
                 :resource => :resource_cash,
-                :amount => 10,
+                :amount => 8,
               },
 
             ],
+
+            :experience_reward => 10000,
 
           },          
 
@@ -10345,9 +10457,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 27750 Army Experience",
+            :en_US => "Fight with an army until it gained 22500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 27750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 22500 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10408,12 +10520,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 27750,
+              :min_experience => 22500,
             },
 
           },          
@@ -10435,9 +10549,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 32900 Army Experience",
+            :en_US => "Fight with an army until it gained 30000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 32900 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 30000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10498,12 +10612,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 32900,
+              :min_experience => 30000,
             },
 
           },          
@@ -10525,9 +10641,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 38550 Army Experience",
+            :en_US => "Fight with an army until it gained 40000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 38550 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 40000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10588,12 +10704,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 38550,
+              :min_experience => 40000,
             },
 
           },          
@@ -10615,9 +10733,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 44600 Army Experience",
+            :en_US => "Fight with an army until it gained 50000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 44600 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 50000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10678,12 +10796,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 44600,
+              :min_experience => 50000,
             },
 
           },          
@@ -10705,9 +10825,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 51150 Army Experience",
+            :en_US => "Fight with an army until it gained 60000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 51150 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 60000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10766,14 +10886,21 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 51150,
+              :min_experience => 60000,
             },
 
           },          
@@ -10795,9 +10922,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 58100 Army Experience",
+            :en_US => "Fight with an army until it gained 75000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 58100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 75000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10858,12 +10985,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 58100,
+              :min_experience => 75000,
             },
 
           },          
@@ -10885,9 +11014,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 65500 Army Experience",
+            :en_US => "Fight with an army until it gained 80000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 65500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 80000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -10946,14 +11075,21 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 65500,
+              :min_experience => 80000,
             },
 
           },          
@@ -10975,9 +11111,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 73400 Army Experience",
+            :en_US => "Fight with an army until it gained 100000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 73400 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 100000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11038,12 +11174,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 73400,
+              :min_experience => 100000,
             },
 
           },          
@@ -11065,9 +11203,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 81750 Army Experience",
+            :en_US => "Fight with an army until it gained 200000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 81750 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11126,14 +11264,21 @@ class Tutorial::Tutorial
                 :amount => 4750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 81750,
+              :min_experience => 200000,
             },
 
           },          
@@ -11155,9 +11300,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 90500 Army Experience",
+            :en_US => "Fight with an army until it gained 200000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -11195,7 +11340,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [140, ],
 
           :rewards => {
             
@@ -11218,12 +11363,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 90500,
+              :min_experience => 200000,
             },
 
           },          
@@ -11245,9 +11392,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 28000",
+            :en_US => "Reach a Population of 15000",
   
-            :de_DE => "Erreiche 28000 Einwohner",
+            :de_DE => "Erreiche 15000 Einwohner",
                 
           },
           :flavour => {
@@ -11308,12 +11455,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2420,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 28000,
+              :min_population => 15000,
             },
 
           },          
@@ -11335,9 +11484,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 33175",
+            :en_US => "Reach a Population of 22500",
   
-            :de_DE => "Erreiche 33175 Einwohner",
+            :de_DE => "Erreiche 22500 Einwohner",
                 
           },
           :flavour => {
@@ -11398,12 +11547,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 2880,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 33175,
+              :min_population => 22500,
             },
 
           },          
@@ -11425,9 +11576,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 38800",
+            :en_US => "Reach a Population of 30000",
   
-            :de_DE => "Erreiche 38800 Einwohner",
+            :de_DE => "Erreiche 30000 Einwohner",
                 
           },
           :flavour => {
@@ -11488,12 +11639,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 38800,
+              :min_population => 30000,
             },
 
           },          
@@ -11515,9 +11668,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 44875",
+            :en_US => "Reach a Population of 40000",
   
-            :de_DE => "Erreiche 44875 Einwohner",
+            :de_DE => "Erreiche 40000 Einwohner",
                 
           },
           :flavour => {
@@ -11578,12 +11731,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 44875,
+              :min_population => 40000,
             },
 
           },          
@@ -11605,9 +11760,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 51400",
+            :en_US => "Reach a Population of 50000",
   
-            :de_DE => "Erreiche 51400 Einwohner",
+            :de_DE => "Erreiche 50000 Einwohner",
                 
           },
           :flavour => {
@@ -11666,14 +11821,21 @@ class Tutorial::Tutorial
                 :amount => 3750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 51400,
+              :min_population => 50000,
             },
 
           },          
@@ -11695,9 +11857,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 58375",
+            :en_US => "Reach a Population of 60000",
   
-            :de_DE => "Erreiche 58375 Einwohner",
+            :de_DE => "Erreiche 60000 Einwohner",
                 
           },
           :flavour => {
@@ -11758,12 +11920,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 58375,
+              :min_population => 60000,
             },
 
           },          
@@ -11785,9 +11949,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 65800",
+            :en_US => "Reach a Population of 75000",
   
-            :de_DE => "Erreiche 65800 Einwohner",
+            :de_DE => "Erreiche 75000 Einwohner",
                 
           },
           :flavour => {
@@ -11846,14 +12010,21 @@ class Tutorial::Tutorial
                 :amount => 4250,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 65800,
+              :min_population => 75000,
             },
 
           },          
@@ -11875,9 +12046,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 73675",
+            :en_US => "Reach a Population of 80000",
   
-            :de_DE => "Erreiche 73675 Einwohner",
+            :de_DE => "Erreiche 80000 Einwohner",
                 
           },
           :flavour => {
@@ -11938,12 +12109,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 73675,
+              :min_population => 80000,
             },
 
           },          
@@ -11965,9 +12138,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 82000",
+            :en_US => "Reach a Population of 100000",
   
-            :de_DE => "Erreiche 82000 Einwohner",
+            :de_DE => "Erreiche 100000 Einwohner",
                 
           },
           :flavour => {
@@ -12026,14 +12199,21 @@ class Tutorial::Tutorial
                 :amount => 4750,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 82000,
+              :min_population => 100000,
             },
 
           },          
@@ -12055,9 +12235,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 90775",
+            :en_US => "Reach a Population of 150000",
   
-            :de_DE => "Erreiche 90775 Einwohner",
+            :de_DE => "Erreiche 150000 Einwohner",
                 
           },
           :flavour => {
@@ -12095,7 +12275,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [142, ],
 
           :rewards => {
             
@@ -12118,12 +12298,14 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
             
             :score_test => {
-              :min_population => 90775,
+              :min_population => 150000,
             },
 
           },          
@@ -12207,6 +12389,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 2880,
 
           },          
 
@@ -12298,6 +12482,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3380,
+
           },          
 
           :reward_tests => {
@@ -12388,6 +12574,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 3920,
+
           },          
 
           :reward_tests => {
@@ -12476,7 +12664,14 @@ class Tutorial::Tutorial
                 :amount => 3500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
+
+            :experience_reward => 4500,
 
           },          
 
@@ -12568,6 +12763,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 5120,
+
           },          
 
           :reward_tests => {
@@ -12656,7 +12853,14 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
             ],
+
+            :experience_reward => 5780,
 
           },          
 
@@ -12748,6 +12952,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 6480,
+
           },          
 
           :reward_tests => {
@@ -12836,7 +13042,14 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
             ],
+
+            :experience_reward => 7220,
 
           },          
 
@@ -12928,6 +13141,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 8000,
+
           },          
 
           :reward_tests => {
@@ -12995,7 +13210,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [144, ],
 
           :rewards => {
             
@@ -13016,7 +13231,14 @@ class Tutorial::Tutorial
                 :amount => 5000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
             ],
+
+            :experience_reward => 10000,
 
           },          
 
@@ -13029,6 +13251,588 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_20
+        {               #   quest_charkills_21
+          :id                => 139, 
+          :symbolic_id       => :quest_charkills_21,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Kill 500000 units.",
+  
+            :de_DE => "Besiege 500000 Einheiten",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn du einen Kampf gewinnst, bekommst du für jede getötete Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_charkills_20',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_21
+        {               #   quest_armyXP_21
+          :id                => 140, 
+          :symbolic_id       => :quest_armyXP_21,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 250000 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 250000 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_20',
+
+          },
+
+          :successor_quests => [141, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
+            :experience_reward => 10000,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 250000,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_21
+        {               #   quest_armyXP_22
+          :id                => 141, 
+          :symbolic_id       => :quest_armyXP_22,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Experienced armies",
+  
+            :de_DE => "Erfahrene Armeen",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight with an army until it gained 500000 Army Experience",
+  
+            :de_DE => "Kämpfe mit einer Armee, bis sie 500000 Armee Erfahrung erlangt.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
+  
+            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+  
+            :en_US => "<p>An army gains experience for each unit it looses.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut, deine Krieger sind schon ein bisschen erfahrener.",
+  
+            :en_US => "Well done, your warriors are a little bit more experienced.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.",
+  
+            :en_US => "With each increase in the rank of an army, all units in the army get a bonus to their attributes.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_armyXP_21',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :army_experience_test => {
+              :min_experience => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_armyXP_22
+        {               #   quest_score_21
+          :id                => 142, 
+          :symbolic_id       => :quest_score_21,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 250000",
+  
+            :de_DE => "Erreiche 250000 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_20',
+
+          },
+
+          :successor_quests => [143, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
+            :experience_reward => 10000,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 250000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_21
+        {               #   quest_score_22
+          :id                => 143, 
+          :symbolic_id       => :quest_score_22,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 500000",
+  
+            :de_DE => "Erreiche 500000 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_score_21',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 15000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_score_22
+        {               #   quest_resourcescore_21
+          :id                => 144, 
+          :symbolic_id       => :quest_resourcescore_21,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 32420 resource points",
+  
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32420 Rohstoffpunkte",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>",
+  
+            :en_US => "<p>Fur is worth to resource points, stone and wood are worth one each.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+  
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_20',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 12000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 15000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 32420,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_21
       ],                # END OF QUESTS
 
     )

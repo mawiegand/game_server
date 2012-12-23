@@ -7,6 +7,9 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "overall_score"
     sort = "overall_score"  if params[:sort] == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
+    sort = "likes"          if params[:sort] == 'likes'
+    sort = "victories"      if params[:sort] == 'victories'
+    sort = "victory_ratio"  if params[:sort] == 'victory_ratio'
     sort = "max_experience" if params[:sort] == 'experience'
     sort = "kills"          if params[:sort] == 'kills'
 

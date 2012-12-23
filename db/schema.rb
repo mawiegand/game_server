@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220180641) do
+ActiveRecord::Schema.define(:version => 20121222120716) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1787,27 +1787,33 @@ ActiveRecord::Schema.define(:version => 20121220180641) do
     t.string   "character_name"
     t.integer  "alliance_id"
     t.string   "alliance_tag"
-    t.integer  "overall_score",            :default => 0, :null => false
+    t.integer  "overall_score",            :default => 0,   :null => false
     t.integer  "overall_rank"
-    t.integer  "resource_score",           :default => 0, :null => false
+    t.integer  "resource_score",           :default => 0,   :null => false
     t.integer  "resource_rank"
-    t.integer  "power_score",              :default => 0, :null => false
+    t.integer  "power_score",              :default => 0,   :null => false
     t.integer  "power_rank"
-    t.integer  "num_settlements",          :default => 0, :null => false
+    t.integer  "num_settlements",          :default => 0,   :null => false
     t.integer  "settlements_rank"
-    t.integer  "num_outposts",             :default => 0, :null => false
+    t.integer  "num_outposts",             :default => 0,   :null => false
     t.integer  "outposts_rank"
-    t.integer  "num_fortress",             :default => 0, :null => false
+    t.integer  "num_fortress",             :default => 0,   :null => false
     t.integer  "fortress_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "max_experience",           :default => 0, :null => false
+    t.integer  "max_experience",           :default => 0,   :null => false
     t.integer  "max_experience_rank"
     t.string   "max_experience_army_name"
     t.integer  "max_experience_army_rank"
     t.integer  "max_experience_army_id"
-    t.integer  "kills",                    :default => 0, :null => false
+    t.integer  "kills",                    :default => 0,   :null => false
     t.integer  "kills_rank"
+    t.integer  "victories",                :default => 0,   :null => false
+    t.integer  "defeats",                  :default => 0,   :null => false
+    t.decimal  "victory_ratio",            :default => 0.0, :null => false
+    t.integer  "likes",                    :default => 0,   :null => false
+    t.integer  "dislikes",                 :default => 0,   :null => false
+    t.decimal  "like_ratio",               :default => 0.0, :null => false
   end
 
   create_table "settlement_histories", :force => true do |t|

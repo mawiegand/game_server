@@ -4,7 +4,8 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   belongs_to :alliance,               :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"
   belongs_to :most_experienced_army,  :class_name => "Military::Army",         :foreign_key => "max_experience_army_id", :inverse_of => :ranking
   
-  after_save :propagate_change_to_alliance
+  before_save :update_ratios
+  after_save  :propagate_change_to_alliance
     
   def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
     rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC")
@@ -40,6 +41,11 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   end
     
   protected
+  
+    def update_ratios
+      self.like_ratio    = (likes || 0) / [(likes || 0) + (dislikes || 0), 1].max.to_f
+      self.victory_ratio = (victories || 0) + (defeats || 0) == 0 ? 1.0 : (victories || 0) / ([(defeats || 0), 1].max).to_f
+    end
   
     def propagate_change_to_alliance
       if self.alliance_id_changed?
