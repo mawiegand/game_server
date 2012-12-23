@@ -631,6 +631,7 @@ class Military::Army < ActiveRecord::Base
     def update_units
       if !self.size_present.blank? && !self.size_max.blank? && self.size_present > self.size_max
         logger.debug '-----> reduce units'
+        self.details.reduce_units_to_size_max
       end
     end
     
