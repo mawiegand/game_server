@@ -29,7 +29,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
   scope :highest_tax_rate, order('tax_rate DESC')
-  scope :highest_defense, order('defense_bonus DESC')
+  scope :highest_defense_bonus, order('defense_bonus DESC')
   scope :highest_normalized_income, lambda {
     parts = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|

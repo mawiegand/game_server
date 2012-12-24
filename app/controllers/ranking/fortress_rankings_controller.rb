@@ -5,7 +5,7 @@ class Ranking::FortressRankingsController < ApplicationController
   # GET /ranking/fortress_rankings.json  
   def index
     
-    @fortresses = if params[:sort] == 'defense_bonus'
+    @fortresses = if params[:sort] == 'defense'
       Settlement::Settlement.fortress.highest_defense_bonus
     elsif params[:sort] == 'income'
       Settlement::Settlement.fortress.highest_normalized_income
