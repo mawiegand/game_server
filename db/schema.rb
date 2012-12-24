@@ -1323,9 +1323,10 @@ ActiveRecord::Schema.define(:version => 20121222120716) do
   create_table "fundamental_round_infos", :force => true do |t|
     t.string   "name"
     t.datetime "started_at"
-    t.integer  "regions_count", :default => 0, :null => false
+    t.integer  "regions_count",     :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "victory_gained_at"
   end
 
   create_table "fundamental_settings", :force => true do |t|

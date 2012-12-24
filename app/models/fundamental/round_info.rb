@@ -4,4 +4,7 @@ class Fundamental::RoundInfo < ActiveRecord::Base
     Fundamental::RoundInfo.find(1)  
   end
   
+  def victory_gained?
+    !self.victory_gained_at.nil?
+  end
 end
