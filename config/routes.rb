@@ -10,6 +10,7 @@ GameServer::Application.routes.draw do
       namespace :ranking do 
         resources :character_rankings, :only => [ :index ]
         resources :alliance_rankings , :only => [ :index ]
+        resources :fortress_rankings , :only => [ :index ]
       end
 
 

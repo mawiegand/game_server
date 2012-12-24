@@ -1,0 +1,2 @@
+module Ranking::FortressRankingsHelper
+end
