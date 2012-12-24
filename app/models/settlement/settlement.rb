@@ -1,4 +1,10 @@
 class Settlement::Settlement < ActiveRecord::Base
+
+  TYPE_NONE = 0
+  TYPE_FORTESS = 1    # old typo! replace everywhere
+  TYPE_FORTRESS = 1
+  TYPE_HOME_BASE = 2
+  TYPE_OUTPOST = 3  
   
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id" ,          :inverse_of => :settlements
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
@@ -21,6 +27,11 @@ class Settlement::Settlement < ActiveRecord::Base
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
+  scope :fortress, where(type_id: TYPE_FORTRESS)
+  scope :highest_tax_rate, order('tax_rate DESC')
+  scope :highest_defense, order('defense_bonus DESC')
+  scope :highest_normalized_income, order('tax_rate DESC')
+
   after_initialize :init
   
   before_save :manage_queues_as_needed
@@ -40,11 +51,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
-  
-  TYPE_NONE = 0
-  TYPE_FORTESS = 1
-  TYPE_HOME_BASE = 2
-  TYPE_OUTPOST = 3
+
 
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
@@ -434,6 +441,16 @@ class Settlement::Settlement < ActiveRecord::Base
       logger.debug "Could not add units to garrison army, army is full"
     end
     q
+  end
+  
+  # calculates the weighted resource production rate
+  def resource_production_score
+    weighted_production_rate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+      weighted_production_rate += self[attribute] * (resource_type[:rating_value] || 0) 
+    end
+    weighted_production_rate
   end
 
     
@@ -1242,7 +1259,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     # propagates owner changes to victory progress of old and new alliance
     def propagate_changes_to_victory_progress_on_changed_possession
-      if self.type_id === TYPE_FORTESS
+      if self.type_id === TYPE_FORTRESS
         alliance_change = self.changes[:alliance_id]
         if !alliance_change.blank?
           old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
