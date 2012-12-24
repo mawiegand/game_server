@@ -35,7 +35,7 @@ class Settlement::Settlement < ActiveRecord::Base
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       parts << "#{resource_type[:symbolic_id].to_s()}_production_rate * #{resource_type[:rating_value] || 0}"
     end
-    order("#{parts.join('+')} DESC")  
+    order("(#{parts.join('+')}/(tax_rate*100)) DESC")  
   }
 
   after_initialize :init
