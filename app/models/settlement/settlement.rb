@@ -30,7 +30,13 @@ class Settlement::Settlement < ActiveRecord::Base
   scope :fortress, where(type_id: TYPE_FORTRESS)
   scope :highest_tax_rate, order('tax_rate DESC')
   scope :highest_defense, order('defense_bonus DESC')
-  scope :highest_normalized_income, order('tax_rate DESC')
+  scope :highest_normalized_income, lambda {
+    parts = []
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      parts << "#{resource_type[:symbolic_id].to_s()}_production_rate * #{resource_type[:rating_value] || 0}"
+    end
+    order("#{parts.join('+')} DESC")  
+  }
 
   after_initialize :init
   
