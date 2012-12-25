@@ -3,6 +3,14 @@
 
   <h1><%= link_to "Players", ranking_character_rankings_path %> | <%= link_to "Alliances", ranking_alliance_rankings_path %> | Fortresses</h1>
 
+  <div>
+    <div clas="page_info">
+      <%= page_entries_info @fortresses %>
+    </div>
+    <%= will_paginate @fortresses, :container => false %>
+  </div>
+  <br/>
+
   <table>
     <tr>
       <th>Rank</th>
@@ -13,7 +21,7 @@
       <th class="number"><%= link_to "Defense Bonus",   ranking_fortress_rankings_path(:sort => 'defense') %></th>
     </tr>
     <% 
-      rank = 0
+      rank = @fortresses.per_page * ((@fortresses.current_page || 1) -1)
       @fortresses.each do |fortress|   
     %>
       <%= content_tag_for(:tr, fortress, :class => (!@marked_fortress.nil? && fortress.id == @marked_fortress.id ? "marked" : "")) do %>
@@ -30,6 +38,8 @@
       <% end %>
     <% end %>
   </table>
+
+  <p><%= will_paginate @fortresses %></p>
 
 </div>
 </div>

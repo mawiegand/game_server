@@ -12,6 +12,8 @@ class Ranking::FortressRankingsController < ApplicationController
     else
       Settlement::Settlement.fortress.highest_tax_rate
     end
+    
+    @fortresses = @fortresses.paginate(:page => params[:page], :per_page => 10)
 
     @title = "Fortress Ranking"
     
