@@ -23,7 +23,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "kills"          if params[:sort] == 'kills'
 
     if params[:page].blank? && @marked_character
-      num_before = Ranking::CharacterRanking.where(['#{ sort } > ?', @marked_character.ranking[sort.to_sym]]).count
+      num_before = Ranking::CharacterRanking.where(["#{ sort } > ?", @marked_character.ranking[sort.to_sym]]).count
       @on_page = num_before / per_page
     end
 
