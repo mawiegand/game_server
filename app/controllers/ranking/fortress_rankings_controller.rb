@@ -13,13 +13,13 @@ class Ranking::FortressRankingsController < ApplicationController
       Settlement::Settlement.fortress.highest_tax_rate
     end
     
-    @fortresses = @fortresses.paginate(:page => params[:page], :per_page => 10)
+    @fortresses = @fortresses.paginate(:page => params[:page], :per_page => 25)
 
     @title = "Fortress Ranking"
     
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: @fortress }
+      format.json { render json: @fortresses }
     end    
   end
   

@@ -3,6 +3,14 @@
 
   <h1>Players | <%= link_to "Alliances", ranking_alliance_rankings_path %> | <%= link_to "Fortresses", ranking_fortress_rankings_path %></h1>
 
+  <div>
+    <div clas="page_info">
+      <%= page_entries_info @ranking_character_rankings %>
+    </div>
+    <%= will_paginate @ranking_character_rankings, :container => false %>
+  </div>
+  <br/>
+
   <table>
     <tr>
       <th>Rank</th>
@@ -16,7 +24,7 @@
       <th class="number"><%= link_to "Experienced Army", ranking_character_rankings_path(:sort => 'experience') %></th>
     </tr>
     <% 
-      rank = 0
+      rank = @ranking_character_rankings.per_page * ((@ranking_character_rankings.current_page || 1) -1)
       @ranking_character_rankings.each do |ranking_character_ranking|   
     %>
       <%= content_tag_for(:tr, ranking_character_ranking, :class => (!@marked_character.nil? && ranking_character_ranking.character_id == @marked_character.id ? "marked" : "")) do %>
@@ -36,6 +44,9 @@
       <% end %>
     <% end %>
   </table>
+
+  <p><%= will_paginate @ranking_character_rankings %></p>
+
 
 </div>
 </div>

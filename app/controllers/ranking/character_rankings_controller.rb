@@ -4,6 +4,15 @@ class Ranking::CharacterRankingsController < ApplicationController
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
+    if current_character
+      @marked_character = current_character
+    elsif !params[:mark].blank?
+      char = Fundamental::Character.find_by_id(params[:mark])
+      @marked_character = char   unless char.nil?
+    end
+    
+    per_page = 10
+    
     sort = "overall_score"
     sort = "overall_score"  if params[:sort] == 'overall'
     sort = "resource_score" if params[:sort] == 'resource'
@@ -13,15 +22,15 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "max_experience" if params[:sort] == 'experience'
     sort = "kills"          if params[:sort] == 'kills'
 
-    @ranking_character_rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort} DESC")
-    @title = "Player Ranking"
-    
-    if current_character
-      @marked_character = current_character
-    elsif !params[:mark].blank?
-      char = Fundamental::Character.find_by_id(params[:mark])
-      @marked_character = char   unless char.nil?
+    if params[:page].blank? && @marked_character
+      num_before = Ranking::CharacterRanking.where(['? > ?', sort, @marked_character.ranking[sort.to_sym]]).count
+      @on_page = num_before / per_page
     end
+
+    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => params[:page] || @on_page, 
+                                                                     :per_page => per_page, 
+                                                                     :order => "#{sort} DESC")
+    @title = "Player Ranking"
 
     respond_to do |format|
       format.html    # index.html.erb
