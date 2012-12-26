@@ -24,7 +24,7 @@ class Ranking::CharacterRankingsController < ApplicationController
 
     if params[:page].blank? && @marked_character
       num_before = Ranking::CharacterRanking.where(["#{ sort } > ?", @marked_character.ranking[sort.to_sym]]).count
-      @on_page = num_before / per_page
+      @on_page = num_before / per_page +1
     end
 
     @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => params[:page] || @on_page, 
