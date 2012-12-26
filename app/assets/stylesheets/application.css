@@ -329,10 +329,10 @@ div.player-ranking {
 
 div.player-ranking-pane {
   background-color: #FFF;
-  width: 800px;
+  width: 860px;
   min-height: 300px;
   border-radius: 12px;
-  padding: 10px 40px 80px 40px;
+  padding: 10px 30px 80px 30px;
   margin-top: 50px;
   margin-bottom: 200px;
   margin-left: auto;

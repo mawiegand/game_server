@@ -11,7 +11,7 @@ class Ranking::CharacterRankingsController < ApplicationController
       @marked_character = char   unless char.nil?
     end
     
-    per_page = 10
+    per_page = 25
     
     sort = "overall_score"
     sort = "overall_score"  if params[:sort] == 'overall'
