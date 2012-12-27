@@ -1,0 +1,112 @@
+#!/usr/bin/env ruby
+#
+# Helper script to generate a stub for a new gamestate class and manager
+# that are derived from the (abstract) entity base class and manager base 
+# class.
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+File.open(File.join(Rails.root, 'rules', 'database_fields'), 'r') do | f |
+  list_of_attributes = f.readlines.map { |str| str.chomp }
+end
+
+type_mapping = {
+  :integer  => 'NSNumber',
+  :boolean  => 'NSNumber',
+  :datetime => 'NSDate  ',
+  :string   => 'NSString',
+  :decimal  => 'NSNumber',
+  :float    => 'NSNumber',
+}
+
+if ARGV[0].blank?
+  abort "Provide a model as the only argument to the script."
+end
+
+
+model = eval(ARGV[0])
+model_name = "AWE" + (model.name.split('::').last)
+
+header  = ""
+
+header += "//\n"
+header += "//  #{model_name}.h\n"
+header += "//  Augmented Worlds Engine - GameState\n"
+header += "//\n"
+header += "//  Created by Sascha Lange on #{DateTime.now.to_date.to_s}.\n"
+header += "//  Copyright (c) #{DateTime.now.to_date.year} 5D Lab GmbH. All rights reserved.\n"
+header += "//\n\n"
+header += "#import <Foundation/Foundation.h>\n"
+header += "#import <RestKit/RestKit.h>\n\n"
+header += "#import \"AWEEntity.h\"\n\n"
+header += "@interface #{model_name} : AWEEntity\n\n"
+
+source  = ""
+
+source += "//\n"
+source += "//  #{model_name}.m\n"
+source += "//  Augmented Worlds Engine - GameState\n"
+source += "//\n"
+source += "//  Created by Sascha Lange on #{DateTime.now.to_date.to_s}.\n"
+source += "//  Copyright (c) #{DateTime.now.to_date.year} 5D Lab GmbH. All rights reserved.\n"
+source += "//\n\n"
+source += "#import \"#{model_name}.h\"\n\n"
+source += "@implementation #{model_name}\n\n"
+
+source += "+(RKObjectMapping*)responseMapping\n"
+source += "{\n"
+source += "  static RKObjectMapping* mapping = nil;\n"
+source += "  if (mapping == nil) {\n"
+source += "    mapping = [RKObjectMapping mappingForClass:[self class]];\n\n"   
+source += "    [mapping addAttributeMappingsFromDictionary:@{\n"
+
+source += "      @\"id\" : @\"uid\",\n"
+source += "      @\"created_at\" : @\"createdAt\",\n"
+source += "      @\"updated_at\" : @\"updatedAt\",\n"
+
+model.attribute_names.sort.each do |attribute|
+  
+  if (attribute != 'id' && attribute != 'created_at' && attribute != 'updated_at')
+  
+    type = model.columns_hash[attribute].type
+    type_name = type_mapping.has_key?(type) ? type_mapping[type] : type
+    camel = attribute.camelize(:lower)
+  
+    header += "@property (nonatomic, strong) #{type_name} *#{camel};\n"
+    source += "      @\"#{attribute}\" : @\"#{camel}\",\n"
+  end
+end
+
+header += "\n"
+header += "+(RKObjectMapping*)requestMapping;\n"
+header += "+(RKObjectMapping*)responseMapping;\n\n"
+header += "@end\n\n\n\n"
+
+source += "    }];\n"
+source += "  }\n"
+source += "  return mapping;\n"
+source += "}\n\n"
+source += "@end\n\n\n\n"
+
+
+header_file = File.new(File.join(Rails.root, 'tmp', model_name + '.h'), 'w' );
+if header_file
+  header_file.syswrite(header)
+  header_file.close
+  puts "Created new header file #{model_name}.h in tmp directory."
+else 
+  puts "ERROR: could not write header file."
+end
+
+source_file = File.new(File.join(Rails.root, 'tmp', model_name + '.m'), 'w' );
+if source_file
+  source_file.syswrite(source)
+  source_file.close
+  puts "Created new objetive-c source file #{model_name}.m in tmp directory."
+else 
+  puts "ERROR: could not write source file."
+end
+
+
+
+
