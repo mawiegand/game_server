@@ -21,7 +21,7 @@ class GameRules::RulesController < ApplicationController
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @rules.to_json( @only.length > 0 ? {:only => @only } : {} )}
+      format.json { render :json => include_root(@rules, :game_rules).to_json( @only.length > 0 ? {:only => @only } : {} ) }
     end    
   end
 end
