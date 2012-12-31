@@ -9,13 +9,13 @@ class GameRules::RulesController < ApplicationController
   layout 'rules'
   
   def show
- #   @only = []
+    @only = []  # render views for only part of the rules
 
-  #  @only.push(:version) if params.key? :version
-   # @only.push(:unit_types) if params.key? :units
-    #@only.push(:science_types)  if params.key? :sciences
-  #  @only.push(:building_types) if params.key? :buildings
-  #  @only.push(:resource_types) if params.key? :resources      
+    @only.push(:version) if params.key? :version
+    @only.push(:unit_types) if params.key? :units
+    @only.push(:science_types)  if params.key? :sciences
+    @only.push(:building_types) if params.key? :buildings
+    @only.push(:resource_types) if params.key? :resources      
 
     @rules = GameRules::Rules.the_rules
     
