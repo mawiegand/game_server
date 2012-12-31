@@ -6602,6 +6602,26 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
     )
   end
+  
+  def as_json(options={})
+    # as_json of rails 3.1.3 does not support option :root; thus, implement
+    # it here for the time being
+    
+    hash = {}    
+    self.attributes.each do |name, value|
+      hash[name] = value
+    end
+    
+    root = include_root_in_json
+    root = options[:root]    if options.try(:key?, :root)
+    if root
+      root = self.class.model_name.element if root == true
+      options.delete(:root)  if options.try(:key?, :root)
+      JSON.pretty_generate({ root => hash }, options)
+    else
+      hash.as_json(options)
+    end    
+  end  
 end
 
 

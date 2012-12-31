@@ -9,19 +9,22 @@ class GameRules::RulesController < ApplicationController
   layout 'rules'
   
   def show
-    @only = []
+ #   @only = []
 
-    @only.push(:version) if params.key? :version
-    @only.push(:unit_types) if params.key? :units
-    @only.push(:science_types) if params.key? :sciences
-    @only.push(:building_types) if params.key? :buildings
-    @only.push(:resource_types) if params.key? :resources      
+  #  @only.push(:version) if params.key? :version
+   # @only.push(:unit_types) if params.key? :units
+    #@only.push(:science_types)  if params.key? :sciences
+  #  @only.push(:building_types) if params.key? :buildings
+  #  @only.push(:resource_types) if params.key? :resources      
 
     @rules = GameRules::Rules.the_rules
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => include_root(@rules, :game_rules).to_json( @only.length > 0 ? {:only => @only } : {} ) }
+      format.json do
+        options = { root: use_restkit_api? }
+        render :json => @rules.as_json(options) 
+      end
     end    
   end
 end
