@@ -21,7 +21,7 @@ class Settlement::SlotsController < ApplicationController
 
       if_modified_since = nil
       last_modified = nil
-      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && use_restkit_api?
+      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && !use_restkit_api?
         if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
         @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
         @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
