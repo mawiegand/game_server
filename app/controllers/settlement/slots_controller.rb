@@ -20,8 +20,12 @@ class Settlement::SlotsController < ApplicationController
 
 
       if_modified_since = nil
-      if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE']) unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?  
-      @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
+      unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?  
+        if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
+        @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
+      else 
+        @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])        
+      end
       @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
       last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
       logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
