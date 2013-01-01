@@ -47,6 +47,8 @@ class Settlement::SlotsController < ApplicationController
             raise ForbiddenError.new('Access Forbidden')        
           end  
           
+          logger.debug "SLOTS: #{@settlement_slots.inspect}"
+          
           if params.has_key?(:short)
             render json: @settlement_slots, :only => @@short_fields
           elsif params.has_key?(:aggregate)
