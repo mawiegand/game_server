@@ -20,15 +20,16 @@ class Settlement::SlotsController < ApplicationController
 
 
       if_modified_since = nil
-      unless request.env['HTTP_IF_MODIFIED_SINCE'].blank?  
+      last_modified = nil
+      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && use_restkit_api?
         if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
         @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
+        @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
+        last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
+        logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
       else 
         @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])        
       end
-      @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
-      last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
-      logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
     else 
       @asked_for_index = true
     end   
