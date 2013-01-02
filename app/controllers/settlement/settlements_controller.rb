@@ -48,7 +48,7 @@ class Settlement::SettlementsController < ApplicationController
 
           logger.debug "Access with role #{role}."
 
-          render json: @settlement_settlements.map { |settlement| settlement.sanitized_hash(role) }
+          render json: @settlement_settlements.map { |settlement| include_root(settlement.sanitized_hash(role), :settlement) }
         end
       end
     end
@@ -69,7 +69,7 @@ class Settlement::SettlementsController < ApplicationController
       respond_to do |format|
         format.html # show.html.erb
         format.json do
-          render json: @settlement_settlement.sanitized_hash(role)
+          render json: include_root(@settlement_settlement.sanitized_hash(role), :settlement)
         end
       end
     end
