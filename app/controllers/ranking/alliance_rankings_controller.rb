@@ -1,9 +1,20 @@
 class Ranking::AllianceRankingsController < ApplicationController
   layout "ranking"
   
-  # GET /ranking/alliance_rankings
-  # GET /ranking/alliance_rankings.json
+  before_filter :authenticate
+  
+  # GET /ranking/character_rankings
+  # GET /ranking/character_rankings.json
   def index
+    if current_character
+      @marked_alliance = current_character.alliance
+    elsif !params[:mark].blank?
+      alliance = Fundamental::Alliance.find_by_id(params[:mark])
+      @marked_alliance = alliance   unless alliance.nil?
+    end
+    
+    per_page = params[:per_page].blank? ? 5 : params[:per_page].to_i
+    
     sort = "num_fortress"
     sort = "num_fortress"   if params[:sort] == 'fortress'
     sort = "overall_score"  if params[:sort] == 'overall'
@@ -12,12 +23,29 @@ class Ranking::AllianceRankingsController < ApplicationController
     sort = "kills"          if params[:sort] == 'kills'
     sort = "(1.0 * num_fortress / num_members)" if params[:sort] == 'fortressmembers'
 
-    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.order("#{sort} DESC")
-    @title = "Alliance Ranking"
+    if params[:page].blank? && @marked_alliance
+      num_before = Ranking::AllianceRanking.non_empty.where(["#{ sort } > ?", @marked_character.ranking[sort.to_sym]]).count
+      page = num_before / per_page + 1
+    elsif !params[:page].blank?
+      page = params[:page].to_i
+    else
+      page = 1
+    end
 
+    ranking_entries = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC")
+    
+    nr = (page - 1) * per_page + 1     
+    returned_ranking_entries = []                                              
+    ranking_entries.each do |ranking_entry|
+      ranking_entry_hash = ranking_entry.attributes
+      ranking_entry_hash[:rank] = nr
+      returned_ranking_entries << ranking_entry_hash
+      nr += 1
+    end
+                                                                   
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: @ranking_alliance_rankings }
+      format.json { render json: returned_ranking_entries.as_json }
     end
-  end  
+  end
 end
