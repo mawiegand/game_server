@@ -185,6 +185,33 @@ class Settlement::Settlement < ActiveRecord::Base
     
     # settlement UNBLOCK
   end
+  
+  def abandon_outpost
+    old_score = self.score
+    
+    self.slots.each do |slot|
+      if slot.slot_num == 1 && !slot.level.nil? && slot.level > 1
+        slot.donwgrade_building
+      elsif slot.slot_num == 2
+        slot.destroy_building
+      elsif slot.slot_num > 2
+        slot.donwgrade_building
+      end
+    end
+    
+    neandertaler = Fundamental::Character.find(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 500
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
 
   ############################################################################
   #
