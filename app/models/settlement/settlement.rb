@@ -190,9 +190,7 @@ class Settlement::Settlement < ActiveRecord::Base
     old_score = self.score
     
     self.slots.each do |slot|
-      if slot.slot_num == 1 && !slot.level.nil? && slot.level > 1
-        slot.donwgrade_building
-      elsif slot.slot_num == 2
+      if slot.slot_num == 2
         slot.destroy_building
       elsif slot.slot_num > 2
         slot.donwgrade_building
