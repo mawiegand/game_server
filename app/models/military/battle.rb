@@ -279,6 +279,7 @@ class Military::Battle < ActiveRecord::Base
   def add_army(army, faction)
     logger.debug "Adding army #{army.id}: #{army} to faction #{faction.id}: #{faction}."
     army.battle = self
+    army.suspension_ends_at = nil
     army.save
     faction.participants.create({
       battle_id: faction.battle_id,

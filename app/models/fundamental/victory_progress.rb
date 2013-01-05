@@ -40,14 +40,15 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
     case self.victory_type
       when VICTORY_TYPE_DOMINATION
         # get regions count
-        regions_count = Fundamental::RoundInfo.the_round_info.regions_count
+        round_info = Fundamental::RoundInfo.the_round_info
         # get victory type
         victory_type = GameRules::Rules.the_rules.victory_types[self.victory_type]
         # get victory condition
         # TODO evaluate required_regions_ratio as formula
-        required_regions_ratio = victory_type[:condition][:required_regions_ratio].to_f
-        logger.debug "---> self.fulfillment_count #{self.fulfillment_count} regions_count * required_regions_ratio #{regions_count * required_regions_ratio}"
-        return self.fulfillment_count > regions_count * required_regions_ratio
+        formula = Util::Formula.parse_from_formula(victory_type[:condition][:required_regions_ratio], 'DAYS')
+        required_regions_ratio = formula.apply(round_info.age)   
+        logger.debug "---> self.fulfillment_count #{self.fulfillment_count} regions_count * required_regions_ratio #{round_info.regions_count * required_regions_ratio}"
+        return self.fulfillment_count > round_info.regions_count * required_regions_ratio
 
       when VICTORY_TYPE_ARTIFACTS
         return false

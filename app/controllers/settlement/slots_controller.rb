@@ -18,11 +18,18 @@ class Settlement::SlotsController < ApplicationController
       raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
       raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_settlement.owner_id)
 
-      if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])  # TODO: this doesn't work in backend: settlements/X/slots -> fail!
-      @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
-      @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
-      last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
-      logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
+
+      if_modified_since = nil
+      last_modified = nil
+      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && !use_restkit_api?
+        if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
+        @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
+        @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
+        last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
+        logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
+      else 
+        @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])        
+      end
     else 
       @asked_for_index = true
     end   
@@ -39,6 +46,8 @@ class Settlement::SlotsController < ApplicationController
           if @asked_for_index 
             raise ForbiddenError.new('Access Forbidden')        
           end  
+          
+          logger.debug "SLOTS: #{@settlement_slots.inspect}"
           
           if params.has_key?(:short)
             render json: @settlement_slots, :only => @@short_fields
