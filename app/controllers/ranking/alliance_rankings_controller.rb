@@ -24,7 +24,7 @@ class Ranking::AllianceRankingsController < ApplicationController
     sort = "(1.0 * num_fortress / num_members)" if params[:sort] == 'fortressmembers'
 
     if params[:page].blank? && @marked_alliance
-      num_before = Ranking::AllianceRanking.non_empty.where(["#{ sort } > ?", @marked_character.ranking[sort.to_sym]]).count
+      num_before = Ranking::AllianceRanking.non_empty.where(["#{ sort } > ?", @marked_alliance.ranking[sort.to_sym]]).count
       page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i
