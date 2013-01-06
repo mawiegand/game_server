@@ -24,8 +24,6 @@ class Ranking::FortressRankingsController < ApplicationController
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:region_name] = ranking_entry.region.name unless ranking_entry.region.nil?
-      ranking_entry_hash[:owner_name] = ranking_entry.owner.name unless ranking_entry.owner.nil?
-      ranking_entry_hash[:alliance_tag] = ranking_entry.alliance.tag unless ranking_entry.alliance.nil?
       ranking_entry_hash[:resource_production_score] = (ranking_entry.resource_production_score / (ranking_entry.tax_rate * 100)).round
       returned_ranking_entries << ranking_entry_hash
       nr += 1
