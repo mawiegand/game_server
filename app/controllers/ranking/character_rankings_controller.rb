@@ -13,7 +13,7 @@ class Ranking::CharacterRankingsController < ApplicationController
       @marked_character = char   unless char.nil?
     end
     
-    per_page = params[:per_page].blank? ? 5 : params[:per_page].to_i
+    per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
     
     sort = "overall_score"
     sort = "overall_score"  if params[:sort] == 'overall'
@@ -33,11 +33,11 @@ class Ranking::CharacterRankingsController < ApplicationController
       page = 1
     end
 
-    ranking_entries = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC")
+    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC")
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              
-    ranking_entries.each do |ranking_entry|
+    @ranking_character_rankings.each do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       returned_ranking_entries << ranking_entry_hash

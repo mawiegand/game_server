@@ -13,14 +13,14 @@ class Ranking::FortressRankingsController < ApplicationController
       Settlement::Settlement.fortress.highest_tax_rate
     end
 
-    per_page = params[:per_page].blank? ? 5 : params[:per_page].to_i
-    page     = params[:page].blank?     ? 1 : params[:page].to_i
+    per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
+    page     = params[:page].blank?     ? 1  : params[:page].to_i
 
-    ranking_entries = @fortresses.paginate(:page => page, :per_page => per_page)
+    @fortresses = @fortresses.paginate(:page => page, :per_page => per_page)
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              
-    ranking_entries.each do |ranking_entry|
+    @fortresses.each do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:region_name] = ranking_entry.region.name unless ranking_entry.region.nil?

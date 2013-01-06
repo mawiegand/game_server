@@ -1,5 +1,13 @@
+<% content_for :ranking_links do %>
+<ul class="submenue">
+  <li><%= link_to I18n.translate("application.layout.ranking.character"), ranking_character_rankings_path %></li>
+  <li><%= link_to I18n.translate("application.layout.ranking.alliance"), ranking_alliance_rankings_path %></li>
+  <li><%= link_to I18n.translate("application.layout.ranking.fortress"), ranking_fortress_rankings_path %></li>
+</ul>
+<% end %>
+
 <% content_for :content do %>
   <%= content_for?(:ranking_content) ? yield(:ranking_content) : yield %>
 <% end %>
 
-<%= render :template => 'layouts/extern' %>
+<%= render :template => 'layouts/application' %>

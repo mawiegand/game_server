@@ -27,6 +27,9 @@ en:
         sciences: Sciences
       ranking:
         category: Ranking
+        character: Character Ranking
+        alliance: Alliance Ranking
+        fortress: Fortress Ranking
       action:
         category: Action
       fundamental:
