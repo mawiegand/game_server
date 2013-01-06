@@ -17,7 +17,12 @@ end
 
 rules = GameRules::Rules.the_rules
 
+puts "Checking Rules Formula"
+  
 rules.building_types.each do |building_type|
+  
+  puts "Checking Building #{building_type[:name][:de_DE]}"
+  
   building_type[:costs].each do |k, v|
     check_formula(building_type, v)
   end
@@ -38,3 +43,5 @@ rules.building_types.each do |building_type|
   check_formula(building_type, building_type[:abilities][:garrison_size_bonus])
   check_formula(building_type, building_type[:abilities][:army_size_bonus])
 end
+
+puts "Rules Formula Ok"
