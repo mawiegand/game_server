@@ -39,6 +39,7 @@ class Ranking::AllianceRankingsController < ApplicationController
     @ranking_alliance_rankings.each do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
+      ranking_entry_hash[:regions_per_member] = ranking_entry_hash['num_members'] == 0 ? 0 : (1.0 * (ranking_entry_hash['num_fortress']) / ranking_entry_hash['num_members']).round(1)
       returned_ranking_entries << ranking_entry_hash
       nr += 1
     end
