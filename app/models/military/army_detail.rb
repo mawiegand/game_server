@@ -16,7 +16,7 @@ class Military::ArmyDetail < ActiveRecord::Base
       orig = self[type_name] || 0
       self[type_name] = ((self[type_name] || 0) * ratio).ceil  # don't reduce too much => ceil
       size += self[type_name]
-      logger.debug "---> #{type_name} reducing by ratio #{ratio} from #{orig} to #{self[type_name]}, current size #{size}"
+      # logger.debug "---> #{type_name} reducing by ratio #{ratio} from #{orig} to #{self[type_name]}, current size #{size}"
     end
     
     # reduce every unit type by 1 unit until size present meets size maximum    
@@ -24,7 +24,7 @@ class Military::ArmyDetail < ActiveRecord::Base
       if size > army.size_max && (self[type[:db_field]] || 0) > 0
         self[type[:db_field]] -= 1
         size -= 1 
-        logger.debug "---> #{type[:db_field]} reducing by 1 to #{self[type[:db_field]]}, current size #{size}"
+        # logger.debug "---> #{type[:db_field]} reducing by 1 to #{self[type[:db_field]]}, current size #{size}"
       end
     end
     

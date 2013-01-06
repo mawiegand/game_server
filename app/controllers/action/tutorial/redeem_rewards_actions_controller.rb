@@ -7,7 +7,6 @@ class Action::Tutorial::RedeemRewardsActionsController < ApplicationController
   def create
     @action = params[:action_tutorial_redeem_rewards_action]
     
-    logger.debug '---> params ' + params.inspect
     raise BadRequestError.new('no quest state id given') if @action[:quest_state_id].nil?
     
     quest_state = Tutorial::Quest.find(@action[:quest_state_id])
@@ -20,9 +19,7 @@ class Action::Tutorial::RedeemRewardsActionsController < ApplicationController
     raise BadRequestError.new('quest is not finished yet') if quest_state.status < Tutorial::Quest::STATE_FINISHED
     raise BadRequestError.new('rewards already rewarded') if quest_state.status > Tutorial::Quest::STATE_FINISHED
 
-    logger.debug '---> quest_state ' + quest_state.inspect
     quest_state.redeem_rewards
-    logger.debug '---> quest_state ' + quest_state.inspect
 
     respond_to do |format|
       format.html { redirect_to action_path, notice: 'Redeem rewards action was successfully executed.' }

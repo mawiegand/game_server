@@ -47,7 +47,7 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
         # TODO evaluate required_regions_ratio as formula
         formula = Util::Formula.parse_from_formula(victory_type[:condition][:required_regions_ratio], 'DAYS')
         required_regions_ratio = formula.apply(round_info.age)   
-        logger.debug "---> self.fulfillment_count #{self.fulfillment_count} regions_count * required_regions_ratio #{round_info.regions_count * required_regions_ratio}"
+        # logger.debug "---> self.fulfillment_count #{self.fulfillment_count} regions_count * required_regions_ratio #{round_info.regions_count * required_regions_ratio}"
         return self.fulfillment_count > round_info.regions_count * required_regions_ratio
 
       when VICTORY_TYPE_ARTIFACTS

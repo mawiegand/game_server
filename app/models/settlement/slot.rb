@@ -197,10 +197,10 @@ class Settlement::Slot < ActiveRecord::Base
   def max_level
     return 0   if building_id.nil?
     settlement_type = GameRules::Rules.the_rules().settlement_types[self.settlement.type_id]
-    logger.debug '---> settlement_type' + settlement_type.inspect
-    logger.debug '---> slots ' + settlement_type[:building_slots].inspect
-    logger.debug '---> slot ' + settlement_type[:building_slots][self.slot_num].inspect
-    logger.debug '---> max level ' + settlement_type[:building_slots][self.slot_num][:max_level].inspect
+    # logger.debug '---> settlement_type' + settlement_type.inspect
+    # logger.debug '---> slots ' + settlement_type[:building_slots].inspect
+    # logger.debug '---> slot ' + settlement_type[:building_slots][self.slot_num].inspect
+    # logger.debug '---> max level ' + settlement_type[:building_slots][self.slot_num][:max_level].inspect
     settlement_type[:building_slots][self.slot_num][:max_level]
   end
 

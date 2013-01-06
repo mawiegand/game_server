@@ -7,8 +7,6 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
   def create
     @action = params[:action_tutorial_check_quest_action]
     
-    logger.debug '--->' + @action.inspect
-    
     raise BadRequestError.new('no quest_id given') if @action[:quest_id].nil?
     
     tutorial_state = current_character.tutorial_state
@@ -21,8 +19,6 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
     raise BadRequestError.new('quest state not found') if quest_state.nil?
 
     answer_text = @action[:answer_text]
-    logger.debug '---> quest ' + quest_state.inspect
-    
     raise BadRequestError.new('check quest rewards failed') unless quest_state.check_for_rewards(answer_text) 
     quest_state.open_dependent_quest_states
 
