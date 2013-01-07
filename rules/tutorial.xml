@@ -3062,7 +3062,7 @@
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
   <Task>Kill 57850 units.</Task>
-  <Task locale="de_DE">Besiege 1850 Einheiten</Task>
+  <Task locale="de_DE">Besiege 57850 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
