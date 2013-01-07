@@ -42,14 +42,16 @@
       <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
       <li><%= link_to I18n.translate("application.layout.training.category"), training_jobs_path %></li>
       <li><%= link_to I18n.translate("application.layout.like_system.category"), like_system_likes_path %></li>
+<% if backend_staff? %>
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_money_transactions_path %></li>
+<% end %>
       <li><%= link_to I18n.translate("application.layout.tutorial.category"), tutorial_tutorial_path %></li>
     </ul>
   <% end %>
   </nav>
     
   <nav class="site-navigation">  
-  <% if signed_in_to_backend? && backend_staff? %>
+  <% if signed_in_to_backend? && (backend_staff? || backend_developer?) %>
     <ul>
       <%= yield :backend_links %>
       <%= yield :rules_links %>
