@@ -9601,7 +9601,7 @@ class Tutorial::Tutorial
             
             :en_US => "Kill 57850 units.",
   
-            :de_DE => "Besiege 1850 Einheiten",
+            :de_DE => "Besiege 57850 Einheiten",
                 
           },
           :flavour => {
