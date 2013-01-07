@@ -170,7 +170,7 @@
         <%end%>
     </td>
     <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
-<% if end %>
+<% end %>
     <td><%= fundamental_character.num_finished_quests %></td>
     <td>
       <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
