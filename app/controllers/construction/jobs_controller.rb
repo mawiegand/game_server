@@ -13,7 +13,7 @@ class Construction::JobsController < ApplicationController
     if params.has_key?(:queue_id)
       @queue = Construction::Queue.find(params[:queue_id])
       raise NotFoundError.new('Queue not found.') if @queue.nil?
-      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character
+      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character || admin? || staff? || developer?
 
       @construction_jobs = @queue.jobs
       @construction_jobs = [] if @construction_jobs.nil?  # necessary? or ok to send 'null' ?
