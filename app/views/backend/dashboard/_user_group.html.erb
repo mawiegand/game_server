@@ -89,6 +89,8 @@
       }
     );
     
+    
+<% if @display_gross %>
       var creditsSpentTotal = new Dygraph(
 
         document.getElementById("credits_spent_total"),
@@ -109,6 +111,8 @@
           },
         }
       );
+<% end %>
+
     </script>
   <% end %>
   
@@ -131,7 +135,9 @@
     <th>Solved Quests</th>
     <th>Open Quests</th>
     <th>Conversion</th>
+<% if @display_gross %>
     <th>Gross</th>
+<% end %>
   </tr>
 
 <% user_group[:new_characters].each do |fundamental_character| %>
@@ -164,7 +170,9 @@
       <% end %>
     </td>
     <td><%= fundamental_character.max_conversion_state %></td>
+<% if @display_gross %>
     <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+<% end %>
   </tr>
 <% end %>
 </table>
