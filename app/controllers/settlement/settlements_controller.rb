@@ -32,7 +32,7 @@ class Settlement::SettlementsController < ApplicationController
       end
     else                                        # return the complete index, whereas this will only be allowed for the backend (see below)
       @asked_for_index = true
-      raise ForbiddenError.new('AccessForbidden') unless admin? || staff?
+      raise ForbiddenError.new('AccessForbidden') unless admin? || staff? || developer?
     end   
     
     render_not_modified_or(last_modified) do
