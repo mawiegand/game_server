@@ -11,16 +11,22 @@
     <th>Staff</th>
     <th>Name</th>
     <th>Login</th>
+<% if staff? || admin? %>
     <th>Activity</th>
     <th>Playtime</th>
+<% end %>
     <th><span title="Max Completed Quest">Quest</span></th>
     <th>Conversion</th>
+<% if staff? || admin? %>
     <th>Gross</th>
+<% end %>
     <th>Ranks</th>
     <th>SP</th>
     <th>Banned</th>
     <th>Base</th>
+<% if staff? || admin? %>
     <th>Referrer</th>
+<% end %>
     <th>Last Retention Mail</th>
     <th>Mail sent at</th>
     <th>V/D</th>
@@ -50,6 +56,7 @@
           never
         <%end%>
     </td>
+<% if staff? || admin? %>
     <td><% if !fundamental_character.last_request_at.nil? %>          
           <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
         <%else%>
@@ -57,16 +64,21 @@
         <%end%>
     </td>
     <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+<% end %>
     <td><%= fundamental_character.max_finished_quest %></td>
     <td><%= fundamental_character.max_conversion_state %></td>
+<% if staff? || admin? %>
     <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+<% end %>
     <td><%= fundamental_character.mundane_rank %> (XP: <%= fundamental_character.exp %>) / 
         <%= fundamental_character.sacred_rank %></td>
     <td><%= fundamental_character.settlement_points_used %> / 
         <%= fundamental_character.settlement_points_total %></td>
     <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
     <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
+    <% if staff? || admin? %>
     <td><%= fundamental_character.referer %></td>
+    <% end %>
     <td><%= fundamental_character.last_retention_mail.nil? ? '-' : link_to(fundamental_character.last_retention_mail.mail_type, fundamental_character.last_retention_mail) %></td>
     <td><%= fundamental_character.last_retention_mail_sent_at %></td>
     <td><%= fundamental_character.victories %>/<%= fundamental_character.defeats %></td>

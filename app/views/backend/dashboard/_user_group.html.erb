@@ -127,11 +127,15 @@
   <tr>
     <th>ID</th>
     <th>Identifier</th>
+<% if @display_gross %>
     <th>Referer</th>
+<% end %>
     <th>Name</th>
     <th>Login</th>
+<% if @display_gross %>
     <th>Activity</th>
     <th>Playtime</th>
+<% end %>
     <th>Solved Quests</th>
     <th>Open Quests</th>
     <th>Conversion</th>
@@ -144,7 +148,9 @@
   <tr>
     <td><%= link_to fundamental_character.id, fundamental_character_path(fundamental_character.id) %></td>
     <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+<% if @display_gross %>
     <td><%= fundamental_character.referer %></td>
+<% end %>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
           | <%= fundamental_character.alliance_tag %>
@@ -156,6 +162,7 @@
           never
         <%end%>
     </td>
+<% if @display_gross %>
     <td><% if !fundamental_character.last_request_at.nil? %>          
           <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
         <%else%>
@@ -163,6 +170,7 @@
         <%end%>
     </td>
     <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+<% if end %>
     <td><%= fundamental_character.num_finished_quests %></td>
     <td>
       <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
