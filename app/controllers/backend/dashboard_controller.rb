@@ -14,7 +14,7 @@ class Backend::DashboardController < ApplicationController
     
     @user_groups = []
     
-    if @backend_user.staff?
+    if staff? || developer?
       user_group = {}
       user_group[:user_stats] = {
         active_accounts:          Fundamental::Character.non_npc.platinum.count,
@@ -41,7 +41,7 @@ class Backend::DashboardController < ApplicationController
       Backend::PartnerSite.order('sign_ups_count DESC') 
     elsif @backend_user.partner? 
       @backend_user.partner_sites.order('sign_ups_count DESC')
-    else 
+    else # developer or no role
       []
     end
     
