@@ -15,7 +15,7 @@
   <nav class="backend-user">  
     <ul>
       <% if signed_in_to_backend? %>
-        <% if backend_staff? %>
+        <% if backend_staff? || backend_developer? %>
         <li><%= link_to current_backend_user.login, current_backend_user %></li>
         <% end %>
         <li><%= link_to I18n.translate("application.layout.signout"), signout_path %></li>
@@ -26,7 +26,7 @@
   </nav><br/>
   
   <nav class="site-navigation">  
-  <% if signed_in_to_backend? && backend_staff? %>
+  <% if signed_in_to_backend? && (backend_staff? || backend_developer?) %>
     <ul>
       <li><%= link_to I18n.translate("application.layout.backend.category"), backend_dashboard_path %></li>
       <li><%= link_to I18n.translate("application.layout.rules.category"), game_rules_rules_path %></li>
