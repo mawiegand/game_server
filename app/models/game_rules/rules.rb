@@ -1988,6 +1988,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 6,
 
           :costs      => {
@@ -2077,6 +2078,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -2171,6 +2173,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -2265,6 +2268,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -2360,6 +2364,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 1,
 
           :costs      => {
@@ -2407,7 +2412,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe läßt sich der Fortschritt der Siedlung ablesen. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p><p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe lässt sich der Fortschritt der Siedlung ablesen. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p><p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p>",
   
             :en_US => "<p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Its size alone will tell you how the settlement is progressing. The bigger the chieftain’s hut, the more – and better – the buildings and the more armies the settlement can have. Of course, the chieftain has a little store in his hut for when times get tough.</p><p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>",
                 
@@ -2419,6 +2424,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> false,
           :experience_factor => 6,
 
           :requirementGroups=> [
@@ -2560,6 +2566,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 0.49,
 
           :requirementGroups=> [
@@ -2692,6 +2699,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -2816,6 +2824,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -2944,6 +2953,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -3041,6 +3051,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -3165,6 +3176,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -3289,6 +3301,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -3414,6 +3427,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -3542,6 +3556,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 4.5,
 
           :requirementGroups=> [
@@ -3668,6 +3683,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 1.5,
 
           :requirementGroups=> [
@@ -3806,6 +3822,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 3.3,
 
           :requirementGroups=> [
@@ -3925,6 +3942,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 10,
 
           :requirementGroups=> [
@@ -4045,6 +4063,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 12,
 
           :requirementGroups=> [
@@ -4140,6 +4159,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => false,
           :demolishable=> true,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 8,
 
           :requirementGroups=> [
@@ -4231,6 +4251,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 3.3,
 
           :requirementGroups=> [
@@ -4351,6 +4372,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 3.3,
 
           :requirementGroups=> [
@@ -4470,6 +4492,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 3.3,
 
           :requirementGroups=> [
@@ -4589,6 +4612,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 3,
 
           :requirementGroups=> [
@@ -4686,6 +4710,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 3.3,
 
           :requirementGroups=> [
@@ -4819,6 +4844,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => false,
           :demolishable=> true,
           :destructable=> false,
+          :takeover_downgrade=> true,
           :experience_factor => 8,
 
           :requirementGroups=> [
@@ -4895,7 +4921,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bißchen Platz für die Ablage von ein paar Rohstoffe.</p><p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der gründbaren Lagerstätte.</p>",
+            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der gründbaren Lagerstätte.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. An area by chance left vacant, with enough space for a few raw materials and for the dwellers’ gatherings.</p>",
                 
@@ -4907,6 +4933,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
+          :takeover_downgrade=> false,
           :experience_factor => 6,
 
           :requirementGroups=> [
@@ -5014,6 +5041,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
+          :takeover_downgrade=> true,
           :experience_factor => 8,
 
           :experience_production => 'CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)',
@@ -5130,6 +5158,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 1,
               
+              :takeover_destroy  => false,
               :options   => [
               0,
               
@@ -5140,6 +5169,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               1,
               
@@ -5150,6 +5180,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               1,
               
@@ -5160,6 +5191,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               2,
               
@@ -5200,6 +5232,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               3,
               
@@ -5210,6 +5243,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               4,
               5,
@@ -5223,6 +5257,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 1,
               
+              :takeover_destroy  => false,
               :options   => [
               4,
               5,
@@ -5234,6 +5269,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               4,
               5,
@@ -5245,6 +5281,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               4,
               5,
@@ -5256,6 +5293,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5267,6 +5305,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5278,6 +5317,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5289,6 +5329,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5300,6 +5341,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5311,6 +5353,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5322,6 +5365,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5333,6 +5377,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5344,6 +5389,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5355,6 +5401,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5366,6 +5413,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5377,6 +5425,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5388,6 +5437,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5399,6 +5449,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5410,6 +5461,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5421,6 +5473,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5432,6 +5485,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5443,6 +5497,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5454,6 +5509,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5465,6 +5521,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5476,6 +5533,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5487,6 +5545,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5498,6 +5557,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5509,6 +5569,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5520,6 +5581,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5531,6 +5593,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5542,6 +5605,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5553,6 +5617,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5564,6 +5629,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5575,6 +5641,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5586,6 +5653,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5597,6 +5665,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5608,6 +5677,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5619,6 +5689,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5630,6 +5701,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5641,6 +5713,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               6,
@@ -5682,6 +5755,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               3,
               
@@ -5694,6 +5768,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 1,
               
+              :takeover_destroy  => false,
               :options   => [
               4,
               5,
@@ -5705,6 +5780,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => true,
               :options   => [
               4,
               5,
@@ -5716,6 +5792,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5726,6 +5803,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5736,6 +5814,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5746,6 +5825,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5756,6 +5836,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5766,6 +5847,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5776,6 +5858,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5786,6 +5869,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5796,6 +5880,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               
@@ -5806,6 +5891,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               :level  => 0,
               
+              :takeover_destroy  => false,
               :options   => [
               5,
               

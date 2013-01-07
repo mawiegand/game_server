@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_haunt" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6">  
+<Building id="building_haunt" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6" takeover_downgrade="false">
   <Name lang="de_DE">Versammlungsplatz</Name>
   <Name lang="en_US">Meeting Place</Name>
   <Description lang="de_DE">
-    <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bißchen Platz für die Ablage von ein paar Rohstoffe.</p>
+    <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p>
     <p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der gründbaren Lagerstätte.</p>
   </Description>
   <Description lang="en_US">
