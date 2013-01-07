@@ -237,13 +237,13 @@ module Auth
     # Checks whether the present user has partner-status and redirects to
     # sign-in otherwise. Admin users always have partner-status.
     def authorize_developer
-      deny_access I18n.translate('sessions.authorization.access_denied.developer') if !developer? && !staff? && !!admin?
+      deny_access I18n.translate('sessions.authorization.access_denied.developer') if !developer? && !staff? && !admin?
     end
   
     # Checks whether the present user has partner-status and redirects to
     # sign-in otherwise. Admin users always have partner-status.
     def authorize_partner
-      deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? && !staff && !admin?
+      deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? && !staff? && !admin?
     end
     
   
