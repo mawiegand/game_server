@@ -38,7 +38,7 @@ class Event::EventsControllerTest < ActionController::TestCase
 
   test "should update events_event" do
     put :update, id: @event_event.to_param, events_event: @event_event.attributes
-    assert_redirected_to event_event_path(assigns(:events_event))
+    assert_redirected_to event_event_path(assigns(:event_event))
   end
 
   test "should destroy events_event" do

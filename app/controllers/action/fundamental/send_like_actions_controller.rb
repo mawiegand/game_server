@@ -18,6 +18,9 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
     raise ConflictError.new('Allready sent like!')  if old_likes > 0
     
     like = LikeSystem::Like.new(:sender => current_character, :receiver => receiver)
+    
+    # propagate change manually as counter cache updates don't trigger after save handler
+    receiver.propagate_like_changes
 
     respond_to do |format|
       if like.save 
