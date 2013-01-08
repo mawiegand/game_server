@@ -171,10 +171,13 @@ class Settlement::Settlement < ActiveRecord::Base
     logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
     
     self.slots.each do |slot|
-      if slot.takeover_destroy?
-        slot.destroy_building
-      elsif slot.takeover_downgrade?
-        slot.donwgrade_building
+      if slot.takeover_level_factor > 0
+        if slot.takeover_destroy?
+          slot.destroy_building
+        elsif slot.takeover_downgrade?
+          levels = slot.takeover_downgrade_by_levels * slot.takeover_level_factor
+          slot.downgrade_building_by_levels(levels)
+        end
       end
     end
     

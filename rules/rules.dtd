@@ -183,7 +183,7 @@
 	demolishable (false | true) "true"
 	destructable (false | true) "true"
 	takeoverDestroy CDATA "false"
-	takeoverDowngradeByLevel CDATA "1"
+	takeoverDowngradeByLevels CDATA "1"
 	experienceFactor CDATA "1"
   hidden (0 | 1) "0"
 	tier CDATA #IMPLIED
