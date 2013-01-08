@@ -170,8 +170,13 @@ class Settlement::Settlement < ActiveRecord::Base
     # settlement BLOCK
     logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
     
-    # unused. throws error, if self.garrison_army is nil
-    # old_owner = self.garrison_army.npc ? nil : self.garrison_army.owner
+    self.slots.each do |slot|
+      if slot.takeover_destroy?
+        slot.destroy_building
+      elsif slot.takeover_downgrade?
+        slot.donwgrade_building
+      end
+    end
     
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
@@ -188,14 +193,6 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def abandon_outpost
     old_score = self.score
-    
-    self.slots.each do |slot|
-      if slot.slot_num == 2
-        slot.destroy_building
-      elsif slot.slot_num > 2
-        slot.donwgrade_building
-      end
-    end
     
     neandertaler = Fundamental::Character.find(1)
     self.new_owner_transaction(neandertaler) 

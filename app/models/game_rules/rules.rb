@@ -1988,7 +1988,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
-          :takeover_downgrade=> true,
+          :takeover_downgrade=> false,
           :experience_factor => 6,
 
           :costs      => {

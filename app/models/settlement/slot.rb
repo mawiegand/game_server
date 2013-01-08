@@ -204,6 +204,18 @@ class Settlement::Slot < ActiveRecord::Base
     settlement_type[:building_slots][self.slot_num][:max_level]
   end
 
+  def takeover_destroy?
+    return false if building_id.nil?
+    settlement_type = GameRules::Rules.the_rules.settlement_types[self.settlement.type_id]
+    settlement_type[:building_slots][self.slot_num][:takeover_destroy]
+  end
+
+  def takeover_downgrade?
+    return false if empty? || building_id.nil?
+    building_type = GameRules::Rules.the_rules.building_types[building_id]
+    building_type[:takeover_downgrade]
+  end
+
   # creates a building of the given id in this slot. assumes, the
   # building can be build in this slot according to the rules 
   # (= does not check the rules). calls all necesary handlers to
