@@ -94,7 +94,7 @@
 	max-level CDATA #REQUIRED 
 	building IDREF #IMPLIED 
 	level CDATA "0" 
-	takeover_destroy CDATA "false"
+	takeoverLevelFactor CDATA "1"
 >
 
 <!ELEMENT BuildingOption EMPTY>
@@ -182,7 +182,8 @@
 	buyable (false | true) "true"
 	demolishable (false | true) "true"
 	destructable (false | true) "true"
-	takeover_downgrade CDATA "true"
+	takeoverDestroy CDATA "false"
+	takeoverDowngradeByLevel CDATA "1"
 	experienceFactor CDATA "1"
   hidden (0 | 1) "0"
 	tier CDATA #IMPLIED

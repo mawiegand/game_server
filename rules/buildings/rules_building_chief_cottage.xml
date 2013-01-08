@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_chief_cottage" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6" takeover_downgrade="false">  
+<Building id="building_chief_cottage" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6">
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hut</Name>
   <Description lang="de_DE">

@@ -207,7 +207,7 @@
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-    <BuildingSlot number="2" max-level="20" takeover_destroy="true">
+    <BuildingSlot number="2" max-level="20" takeoverLevelFactor="0">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
