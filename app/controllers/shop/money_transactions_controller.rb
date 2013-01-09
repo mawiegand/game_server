@@ -4,6 +4,7 @@ class Shop::MoneyTransactionsController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
+  before_filter :authorize_staff
   before_filter :deny_api
   
   def index

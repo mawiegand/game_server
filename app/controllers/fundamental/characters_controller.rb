@@ -27,7 +27,7 @@ class Fundamental::CharactersController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
-          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff?) 
+          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
             @fundamental_characters =  Fundamental::Character.paginate(:order => 'name', :page => params[:page], :per_page => 50)    
             @paginate = true   
@@ -178,7 +178,7 @@ class Fundamental::CharactersController < ApplicationController
 
     respond_to do |format|
       format.html do
-        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin)
+        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
       end
       format.json do
         logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"

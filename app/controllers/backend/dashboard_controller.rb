@@ -3,16 +3,18 @@ class Backend::DashboardController < ApplicationController
   layout 'backend'
   
   before_filter :authenticate_backend
-  before_filter :authorize_staff
+  before_filter :authorize_developer
   before_filter :deny_api
   
   def show
     @title = "Dashboard"
     @backend_user = current_backend_user
     
+    @display_gross = admin? || staff?
+    
     @user_groups = []
     
-    if @backend_user.staff?
+    if staff? || developer?
       user_group = {}
       user_group[:user_stats] = {
         active_accounts:          Fundamental::Character.non_npc.platinum.count,
@@ -39,7 +41,7 @@ class Backend::DashboardController < ApplicationController
       Backend::PartnerSite.order('sign_ups_count DESC') 
     elsif @backend_user.partner? 
       @backend_user.partner_sites.order('sign_ups_count DESC')
-    else 
+    else # developer or no role
       []
     end
     

@@ -194,14 +194,39 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:abilities][:garrison_size_bonus]).apply(self.level)
   end
 
-  def max_level
-    return 0   if building_id.nil?
+  def min_level
+    return 0 if building_id.nil?
     settlement_type = GameRules::Rules.the_rules().settlement_types[self.settlement.type_id]
-    # logger.debug '---> settlement_type' + settlement_type.inspect
-    # logger.debug '---> slots ' + settlement_type[:building_slots].inspect
-    # logger.debug '---> slot ' + settlement_type[:building_slots][self.slot_num].inspect
-    # logger.debug '---> max level ' + settlement_type[:building_slots][self.slot_num][:max_level].inspect
+    settlement_type[:building_slots][self.slot_num][:level]
+  end
+  
+  def max_level
+    return 0 if building_id.nil?
+    settlement_type = GameRules::Rules.the_rules().settlement_types[self.settlement.type_id]
     settlement_type[:building_slots][self.slot_num][:max_level]
+  end
+  
+  def takeover_level_factor
+    settlement_type = GameRules::Rules.the_rules.settlement_types[self.settlement.type_id]
+    settlement_type[:building_slots][self.slot_num][:takeover_level_factor]
+  end
+
+  def takeover_destroy?
+    return false if empty? || building_id.nil?
+    building_type = GameRules::Rules.the_rules.building_types[building_id]
+    building_type[:takeover_destroy]
+  end
+
+  def takeover_downgrade?
+    return false if empty? || building_id.nil?
+    building_type = GameRules::Rules.the_rules.building_types[building_id]
+    building_type[:takeover_downgrade_by_levels] > 0
+  end
+
+  def takeover_downgrade_by_levels
+    return 0 if empty? || building_id.nil?
+    building_type = GameRules::Rules.the_rules.building_types[building_id]
+    building_type[:takeover_downgrade_by_levels]
   end
 
   # creates a building of the given id in this slot. assumes, the
@@ -256,6 +281,25 @@ class Settlement::Slot < ActiveRecord::Base
     else
       self.level -= 1
       propagate_change(self.building_id, self.level+1, self.level)
+      self.save
+    end
+  end
+  
+  # downgrade building slots by more than one level
+  def downgrade_building_by_levels(levels)
+    if levels == 0 || (level == 0 && building_id.nil?)
+      return false
+    elsif level - levels <= min_level
+      if min_level > 0
+        self.level = min_level
+        propagate_change(self.building_id, min_level, self.level)
+        self.save
+      else
+        return destroy_building
+      end
+    else
+      self.level -= levels
+      propagate_change(self.building_id, self.level + levels, self.level)
       self.save
     end
   end

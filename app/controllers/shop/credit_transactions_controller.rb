@@ -3,8 +3,9 @@ require 'credit_shop'
 class Shop::CreditTransactionsController < ApplicationController
   layout 'shop'
 
-  before_filter :authenticate
   before_filter :deny_api
+  before_filter :authorize_staff, :only => [:index]
+  before_filter :authorize_admin, :only => [:create]
   
   def index
     if params.has_key?(:update)

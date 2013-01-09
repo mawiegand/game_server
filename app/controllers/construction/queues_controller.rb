@@ -27,13 +27,13 @@ class Construction::QueuesController < ApplicationController
         end
         format.json do
           if @asked_for_index 
-            raise ForbiddenError.new('Access Forbidden')        
+            raise ForbiddenError.new('Access Forbidden')    
           end  
 
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
           
-          render :json => @construction_queues
+          render :json => @construction_queues, :root => :construction_queue
         end
       end
     end
@@ -48,7 +48,7 @@ class Construction::QueuesController < ApplicationController
       format.html # show.html.erb
       format.json do
         logger.debug @construction_queue.inspect
-        render :json => @construction_queue
+        render :json => @construction_queue, :root => :construction_queue
       end
     end
   end
