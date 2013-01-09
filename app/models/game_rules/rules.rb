@@ -123,7 +123,7 @@ class GameRules::Rules
           :time_factor => 0.3,
         },
         :building_experience_formula => '2*LEVEL',
-        :alliance_max_members => 60,
+        :alliance_max_members => 80,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
