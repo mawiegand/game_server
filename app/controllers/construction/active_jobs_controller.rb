@@ -2,7 +2,7 @@ class Construction::ActiveJobsController < ApplicationController
   layout 'construction'
   
   before_filter :authenticate
-
+  # ARGH: still open to all clients to create, change and delete active job entries!!!
 
   # GET /construction/active_jobs
   # GET /construction/active_jobs.json
