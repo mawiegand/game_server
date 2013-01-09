@@ -490,6 +490,8 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+          :takeover_downgrade_by_levels=> <xsl:value-of select="@takeoverDowngradeByLevels"/>,
+          :takeover_destroy  => <xsl:value-of select="@takeoverDestroy"/>,
           :experience_factor => <xsl:value-of select="@experienceFactor" />,
 <xsl:if test="ExperienceProduction">
           :experience_production => '<xsl:value-of select="ExperienceProduction"/>',
@@ -626,6 +628,7 @@ end
               <xsl:if test="@level">
               :level  => <xsl:value-of select="@level"/>,
               </xsl:if>
+              :takeover_level_factor  => <xsl:value-of select="@takeoverLevelFactor"/>,
               :options   => [
               <xsl:for-each select="BuildingOption">
                 <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
