@@ -7,6 +7,8 @@ class Ranking::FortressRankingsController < ApplicationController
     
     @fortresses = if params[:sort] == 'defense'
       Settlement::Settlement.fortress.highest_defense_bonus
+    elsif params[:sort] == 'name'
+      Settlement::Settlement.fortress.joins(:region).order('map_regions.name asc')
     elsif params[:sort] == 'income'
       Settlement::Settlement.fortress.highest_normalized_income
     else

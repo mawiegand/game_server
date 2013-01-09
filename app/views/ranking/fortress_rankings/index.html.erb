@@ -11,7 +11,7 @@
 <table>
   <tr>
     <th>Rank</th>
-    <th>Fortress</th>
+    <th><%= link_to "Fortress", ranking_fortress_rankings_path(:sort => 'name') %></th>
     <th>Owner</th>
     <th class="number"><%= link_to "Tax Rate",        ranking_fortress_rankings_path(:sort => 'tax') %></th>
     <th class="number"><%= link_to "Income Rating",   ranking_fortress_rankings_path(:sort => 'income') %></th>
