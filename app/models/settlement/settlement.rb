@@ -201,7 +201,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.new_owner_transaction(neandertaler) 
     
     if old_score > 1000
-      units = 500
+      units = 200
     elsif old_score > 100
       units = 100
     else
