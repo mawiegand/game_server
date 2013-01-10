@@ -234,7 +234,7 @@ class GameRules::Rules
         {               #   resource_stone
           :id          => 0, 
           :symbolic_id => :resource_stone,
-          :stealable   => true,
+          :stealable   => false,
           :taxable     => true,
           :tradable    => true,
           :rating_value=> 1,
@@ -263,7 +263,7 @@ class GameRules::Rules
         {               #   resource_wood
           :id          => 1, 
           :symbolic_id => :resource_wood,
-          :stealable   => true,
+          :stealable   => false,
           :taxable     => true,
           :tradable    => true,
           :rating_value=> 1,
@@ -292,7 +292,7 @@ class GameRules::Rules
         {               #   resource_fur
           :id          => 2, 
           :symbolic_id => :resource_fur,
-          :stealable   => true,
+          :stealable   => false,
           :taxable     => true,
           :tradable    => true,
           :rating_value=> 2.0,
@@ -2031,7 +2031,7 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.5*LEVEL",
+            :defense_bonus => "0.25*LEVEL",
 
             :unlock_garrison => 1,            
 
@@ -5036,7 +5036,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :unlock_garrison => 2,            
 
-            :command_points => "1",
+            :command_points => "EQUAL(LEVEL,3)",
 
             :unlock_building_slots => "MIN(LEVEL,1)*7+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2",
 
