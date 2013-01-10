@@ -155,7 +155,7 @@
       </Description>
       <Flavor locale="de_DE">Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.</Flavor>
       <Flavor locale="en_US">You see? You’ve got this far already. Do you think you could upgrade a Hunter Gatherer to level 2? He’d feel better and give you more resources. </Flavor>
-      <RewardText locale="de_DE">Es gibt zwei Arten von Bauplätzen: kleine und große. Die großen sind die drei in der Mitte rund um die Häuptlingshütte. Baue erstmal nur auf kleinen Bauplätzen!</RewardText>
+      <RewardText locale="de_DE">Es gibt zwei Arten von Bauplätzen: kleine und große. Die großen Bauplätze sind die drei in der Mitte rund um die Häuptlingshütte. Baue erstmal nur auf kleinen Bauplätzen!</RewardText>
       <RewardText locale="en_US">Remember to upgrade your buildings. Every level boosts your production. Buildings on small construction sites can only be upgraded to level 10.</RewardText>
       <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Er hat mir ein paar Rohstoffe für Dich mitgegeben. Außerdem erhältst Du wertvolle Erfahrung.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh that’s nice of you! The Hunter Gatherer is really happy. He gave me some raw materials to give you. </RewardFlavor>
@@ -358,7 +358,7 @@
       <Task>Get yourself back to your settlement.</Task>
       <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Benutze den Siedlungsknopf oben rechts um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf ´Betreten´ drückst oder einen Doppelklick auf die Siedlung ausführst.</p>
+        <p>Benutze den Siedlungsknopf oben rechts, um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst, und auf ´Betreten´ drückst, oder einen Doppelklick auf die Siedlung ausführst.</p>
       </Description>
       <Description locale="en_US">
         <p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>
@@ -799,10 +799,10 @@
     <Quest id="quest_build_4quarrylvl5_4loggerlvl5" advisor="girl">
       <Name>Camps and quarries</Name>
       <Name locale="de_DE">Holzfäller und Steinbrüche</Name>
-      <Task>Upgrade two quarries and two logging camps to level 3</Task>
-      <Task locale="de_DE">Baue je zwei Steinbrüche und  Holzfäller auf Level 3 aus</Task>
+      <Task>Upgrade two quarries and two logging camps to level 3.</Task>
+      <Task locale="de_DE">Baue je zwei Steinbrüche und  Holzfäller auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Um Steinbruch und Holzfäller freizuschalten musst Du die Häuptlingshütte auf Level 5 ausbauen.</p>
+        <p>Um Steinbruch und Holzfäller freizuschalten, musst Du die Häuptlingshütte auf Level 5 ausbauen.</p>
       </Description>
       <Description locale="en_US">
         <p>Upgrade two quarries and two logging camps to level 3 to increase your production.</p>
@@ -923,7 +923,7 @@
   <Task>Increase your buildingspeed to 126%</Task>
   <Task locale="de_DE">Erhöhe Deine Baugeschwindigkeit auf mindestens 126%.</Task>
   <Description locale="de_DE">
-    <p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links in der Übersicht der Hauptsiedlung steht das ´G´ für die Baugeschwindigkeit.</p>
+    <p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links, in der Übersicht der Hauptsiedlung, steht das ´G´ für die Baugeschwindigkeit.</p>
   </Description>
   <Description locale="en_US">
     <p>The first inhabitants have moved into the huts, but they’re running out of space already. Upgrade the small hut to level 3 for your population.</p>
@@ -960,7 +960,7 @@
  </Description>
  <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
  <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
- <RewardText locale="de_DE">Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.</RewardText>
+ <RewardText locale="de_DE">Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Nutze jeden freien und nicht anderweitig benötigten Bauplatz zur Rohstoffproduktion.</RewardText>
  <RewardText locale="en_US">Remember to increase your raw materials production. You should use every free and otherwise unused building slot.</RewardText>
  <RewardFlavor locale="de_DE">Super! Es geht voran.</RewardFlavor>
  <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
@@ -1733,8 +1733,6 @@
       </RewardTests>
     </Quest>
 
-
-
 <!-- 58 --> <!-- Tutorial 10 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
@@ -1749,7 +1747,7 @@
       </Description>
       <Flavor locale="de_DE">Rohstoffe sind das Wichtigste, wir brauchen dringend eine Produktion!</Flavor>
       <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
-      <RewardText locale="de_DE">Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.</RewardText>
+      <RewardText locale="de_DE">Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Du solltest jeden freien, und nicht anderweitig benötigten, Bauplatz dafür verwenden.</RewardText>
       <RewardText locale="en_US">Remember to increase your raw materials production. You should use every free and otherwise unused building slot.</RewardText>
       <RewardFlavor locale="de_DE">Super! Das ist schon mal ein Anfang.</RewardFlavor>
       <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
@@ -4369,7 +4367,7 @@
       </RewardTests>
     </Quest>
     
-    <!-- 138 -->
+    <!-- 144 -->
     <Quest id="quest_resourcescore_21" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
@@ -4400,19 +4398,19 @@
       </RewardTests>
     </Quest>
     
-    <!-- 139 -->
+    <!-- 145 -->
     <Quest id="quest_resourcescore_0" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 120 resource points</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte</Task>
+      <Task>Increase the resource production of one settlement to 120 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
         <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
       </Description>
       <Description locale="en_US">
         <p>Fur is worth to resource points, stone and wood are worth one each.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+      <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
@@ -4430,7 +4428,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 140 -->
+    <!-- 146 -->
     <Quest id="quest_resourcescore_0_5" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
