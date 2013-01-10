@@ -490,7 +490,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Es gibt zwei Arten von Bauplätzen: kleine und große. Die großen sind die drei in der Mitte rund um die Häuptlingshütte. Baue erstmal nur auf kleinen Bauplätzen!",
+            :de_DE => "Es gibt zwei Arten von Bauplätzen: kleine und große. Die großen Bauplätze sind die drei in der Mitte rund um die Häuptlingshütte. Baue erstmal nur auf kleinen Bauplätzen!",
   
             :en_US => "Remember to upgrade your buildings. Every level boosts your production. Buildings on small construction sites can only be upgraded to level 10.",
                 
@@ -1090,7 +1090,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Benutze den Siedlungsknopf oben rechts um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf ´Betreten´ drückst oder einen Doppelklick auf die Siedlung ausführst.</p>",
+            :de_DE => "<p>Benutze den Siedlungsknopf oben rechts, um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst, und auf ´Betreten´ drückst, oder einen Doppelklick auf die Siedlung ausführst.</p>",
   
             :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
                 
@@ -2413,9 +2413,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade two quarries and two logging camps to level 3",
+            :en_US => "Upgrade two quarries and two logging camps to level 3.",
   
-            :de_DE => "Baue je zwei Steinbrüche und  Holzfäller auf Level 3 aus",
+            :de_DE => "Baue je zwei Steinbrüche und  Holzfäller auf Level 3 aus.",
                 
           },
           :flavour => {
@@ -2427,7 +2427,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um Steinbruch und Holzfäller freizuschalten musst Du die Häuptlingshütte auf Level 5 ausbauen.</p>",
+            :de_DE => "<p>Um Steinbruch und Holzfäller freizuschalten, musst Du die Häuptlingshütte auf Level 5 ausbauen.</p>",
   
             :en_US => "<p>Upgrade two quarries and two logging camps to level 3 to increase your production.</p>",
                 
@@ -2828,7 +2828,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links in der Übersicht der Hauptsiedlung steht das ´G´ für die Baugeschwindigkeit.</p>",
+            :de_DE => "<p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links, in der Übersicht der Hauptsiedlung, steht das ´G´ für die Baugeschwindigkeit.</p>",
   
             :en_US => "<p>The first inhabitants have moved into the huts, but they’re running out of space already. Upgrade the small hut to level 3 for your population.</p>",
                 
@@ -2943,7 +2943,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.",
+            :de_DE => "Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Nutze jeden freien und nicht anderweitig benötigten Bauplatz zur Rohstoffproduktion.",
   
             :en_US => "Remember to increase your raw materials production. You should use every free and otherwise unused building slot.",
                 
@@ -5491,7 +5491,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.",
+            :de_DE => "Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Du solltest jeden freien, und nicht anderweitig benötigten, Bauplatz dafür verwenden.",
   
             :en_US => "Remember to increase your raw materials production. You should use every free and otherwise unused building slot.",
                 
@@ -13632,14 +13632,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 120 resource points",
+            :en_US => "Increase the resource production of one settlement to 120 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte.",
                 
           },
           :flavour => {
             
-            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
             :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
