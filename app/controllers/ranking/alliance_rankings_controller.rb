@@ -1,8 +1,6 @@
 class Ranking::AllianceRankingsController < ApplicationController
   layout "ranking"
   
-  before_filter :authenticate
-  
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
