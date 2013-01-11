@@ -30,10 +30,10 @@
     <UnlockGarrison level="2" />
     <GarrisonSizeBonus>200</GarrisonSizeBonus>
     <ArmySizeBonus>200</ArmySizeBonus>
-    <CommandPoints>EQUAL(LEVEL,3)</CommandPoints>
+    <CommandPoints>MAX(LEVEL+1,3)-MAX(LEVEL,3)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <DefenseBonus>0.25*LEVEL</DefenseBonus>
     <UnlockBuildingSlots>MIN(LEVEL,1)*7+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2</UnlockBuildingSlots>
   </Abilities>
 </Building>
-  
+
