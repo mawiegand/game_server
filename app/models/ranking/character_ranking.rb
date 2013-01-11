@@ -61,7 +61,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   end  
 
   def recalc_likes_count
-    likes_count = character.received_likes.count
+    likes_count = character.received_likes_count
   end
   
   def check_and_apply_likes_count(likes_count)
@@ -72,7 +72,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   end
   
   def recalc_dislikes_count
-    dislikes_count = character.received_dislikes.count
+    dislikes_count = character.received_dislikes_count
   end
   
   def check_and_apply_dislikes_count(dislikes_count)
