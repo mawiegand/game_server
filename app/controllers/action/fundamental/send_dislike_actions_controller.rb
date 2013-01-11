@@ -15,15 +15,12 @@ class Action::Fundamental::SendDislikeActionsController < ApplicationController
     
     old_dislikes = LikeSystem::Dislike.where('sender_id = ? and receiver_id = ? and created_at > ?',
                                current_character, receiver, 1.day.ago).count
-                             
     raise ConflictError.new('Allready sent dislike!')  if old_dislikes > 0
-    dislike = LikeSystem::Dislike.new(:sender => current_character, :receiver => receiver)
-
-    # propagate change manually as counter cache updates don't trigger after save handler
-    receiver.propagate_dislike_changes
-
+                             
+    saved = current_character.add_dislike_for(receiver) 
+    
     respond_to do |format|
-      if dislike.save
+      if saved 
         format.json { render json: {}, status: :ok }
       else
         format.json { render json: {}, status: :not_found }

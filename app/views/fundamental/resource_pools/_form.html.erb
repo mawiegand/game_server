@@ -30,13 +30,21 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% Fundamental::ResourcePool.new.attributes.each do |attribute, value| 
-  if attribute.start_with? 'resource_' %>
+<% Fundamental::ResourcePool.new.attributes.each do |attribute, value| %> 
+<%  if attribute.start_with? 'resource_' %>
     <div class="field">
       <%= f.label attribute %><br />
       <%= f.number_field attribute %>
     </div>
-<%end
-end %>   
+<%   end  %>
+<% end %>   
   
+  <div class="field">
+    <%= f.label :like_amount %><br />
+    <%= f.number_field :like_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :dislike_amount %><br />
+    <%= f.number_field :dislike_amount %>
+  </div>
 <% end %>

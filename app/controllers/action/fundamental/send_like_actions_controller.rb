@@ -17,13 +17,10 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
                                current_character, receiver, 1.day.ago).count
     raise ConflictError.new('Allready sent like!')  if old_likes > 0
     
-    like = LikeSystem::Like.new(:sender => current_character, :receiver => receiver)
+    saved = current_character.add_like_for(receiver) 
     
-    # propagate change manually as counter cache updates don't trigger after save handler
-    receiver.propagate_like_changes
-
     respond_to do |format|
-      if like.save 
+      if saved 
         format.json { render json: {}, status: :ok }
       else
         format.json { render json: {}, status: :not_found }

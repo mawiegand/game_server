@@ -20,14 +20,24 @@
   <%= @fundamental_resource_pool.locked_reason %>
 </p>
 
-<% Fundamental::ResourcePool.new.attributes.each do |attribute, value| 
-  if attribute.start_with?('resource_') %>
+<% Fundamental::ResourcePool.new.attributes.each do |attribute, value| %> 
+<%  if attribute.start_with?('resource_') %>
 <p>
   <b><%= attribute %>:</b>
   <%= @fundamental_resource_pool[attribute] %>
 </p>
-<%end
-end %>
+<%   end %>
+<% end %>
+
+<p>
+  <b>Like Amount:</b>
+  <%= @fundamental_resource_pool.like_amount %>
+</p>
+
+<p>
+  <b>Dislike Amount:</b>
+  <%= @fundamental_resource_pool.dislike_amount %>
+</p>
 
 <%= link_to 'Edit', edit_fundamental_resource_pool_path(@fundamental_resource_pool) %> |
 <%= link_to 'Back', fundamental_resource_pools_path %>

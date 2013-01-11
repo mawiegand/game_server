@@ -372,7 +372,33 @@ class Fundamental::Character < ActiveRecord::Base
     return true
   end
     
+  def add_like_for(character)
+    if self.send_likes.create({receiver: character})
+      self.send_likes_count += 1
+      if self.save
+        character.received_likes_count += 1
+        character.save
+      else
+        false
+      end
+    else
+      false
+    end
+  end
     
+  def add_dislike_for(character)
+    if self.send_dislikes.create({receiver: character})
+      self.send_dislikes_count += 1
+      if self.save
+        character.received_dislikes_count += 1
+        character.save
+      else
+        false
+      end
+    else
+      false
+    end
+  end
     
   
   def is_enemy_of?(opponent)
@@ -600,7 +626,9 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_like_changes
-    if received_likes_count_changed? && !self.ranking.nil?
+    logger.debug "---> propagate_like_changes"
+    if self.received_likes_count_changed? && !self.ranking.nil?
+      logger.debug "---> received_likes_count_changed? #{received_likes_count}" + self.inspect
       self.ranking.likes = received_likes_count || 0
       self.ranking.save
     end
@@ -608,7 +636,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_dislike_changes
-    if received_dislikes_count_changed? && !self.ranking.nil?
+    if self.received_dislikes_count_changed? && !self.ranking.nil?
       self.ranking.dislikes = received_dislikes_count || 0
       self.ranking.save
     end
@@ -665,6 +693,12 @@ class Fundamental::Character < ActiveRecord::Base
 
     experience_production_rate = recalc_experience_production_rate
     check_and_apply_experience_production_rate(experience_production_rate)
+    
+    likes_count = recalc_likes_count
+    check_and_apply_likes_count(likes_count)
+    
+    dislikes_count = recalc_dislikes_count
+    check_and_apply_dislikes_count(dislikes_count)
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -820,6 +854,36 @@ class Fundamental::Character < ActiveRecord::Base
   def self.produced_experience_amount_sql_fragment(resource_field)
     "(#{ Fundamental::Character.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
   end
+
+  # ##########################################################################
+  #
+  #   Likes and Dislikes
+  #
+  # ##########################################################################
+
+  def recalc_likes_count
+    likes_count = self.received_likes.count
+  end
+  
+  def check_and_apply_likes_count(likes_count)
+    if (self.received_likes_count || 0) != likes_count
+      logger.warn(">>> CONSISTENCY ERROR: LIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_likes_count} Corrected: #{likes_count}.")
+      self.received_likes_count = likes_count
+    end    
+  end
+  
+  def recalc_dislikes_count
+    dislikes_count = self.received_dislikes.count
+  end
+  
+  def check_and_apply_dislikes_count(dislikes_count)
+    if (self.received_dislikes_count || 0) != dislikes_count
+      logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_dislikes_count} Corrected: #{dislikes_count}.")
+      self.received_dislikes_count = dislikes_count
+    end    
+  end
+  
+
   
   protected
   
