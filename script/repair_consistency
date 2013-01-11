@@ -113,6 +113,7 @@ Fundamental::Character.find(:all).each do |character|
 	  sleep (1)
 	end
 	character.check_consistency
+	character.ranking.check_consistency unless character.ranking.nil?
 	count += 1 
 end
 puts " done."
