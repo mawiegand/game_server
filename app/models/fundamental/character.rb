@@ -626,9 +626,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_like_changes
-    logger.debug "---> propagate_like_changes"
     if self.received_likes_count_changed? && !self.ranking.nil?
-      logger.debug "---> received_likes_count_changed? #{received_likes_count}" + self.inspect
       self.ranking.likes = received_likes_count || 0
       self.ranking.save
     end
@@ -869,7 +867,7 @@ class Fundamental::Character < ActiveRecord::Base
     if (self.received_likes_count || 0) != likes_count
       logger.warn(">>> CONSISTENCY ERROR: LIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_likes_count} Corrected: #{likes_count}.")
       self.received_likes_count = likes_count
-    end    
+    end
   end
   
   def recalc_dislikes_count
@@ -882,8 +880,6 @@ class Fundamental::Character < ActiveRecord::Base
       self.received_dislikes_count = dislikes_count
     end    
   end
-  
-
   
   protected
   
