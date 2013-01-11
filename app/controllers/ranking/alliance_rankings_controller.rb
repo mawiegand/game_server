@@ -1,8 +1,6 @@
 class Ranking::AllianceRankingsController < ApplicationController
   layout "ranking"
   
-  before_filter :authenticate
-  
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
@@ -24,7 +22,12 @@ class Ranking::AllianceRankingsController < ApplicationController
     sort = "(1.0 * num_fortress / num_members)" if params[:sort] == 'fortressmembers'
 
     if params[:page].blank? && @marked_alliance
-      num_before = Ranking::AllianceRanking.non_empty.where(["#{ sort } > ?", @marked_alliance.ranking[sort.to_sym]]).count
+      num_before = Ranking::AllianceRanking.non_empty.where([
+        "#{ sort } > ? or (#{ sort } = ? and id < ?)",
+        @marked_alliance.ranking[sort.to_sym],
+        @marked_alliance.ranking[sort.to_sym],
+        @marked_alliance.id,
+      ]).count
       page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i
@@ -32,7 +35,7 @@ class Ranking::AllianceRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC")
+    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              

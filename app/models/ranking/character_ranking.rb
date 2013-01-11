@@ -39,6 +39,48 @@ class Ranking::CharacterRanking < ActiveRecord::Base
       self.reset_max_experience
     end
   end
+  
+
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of CHARACTER RANKING #{self.id}.")
+
+    likes_count = recalc_likes_count
+    check_and_apply_likes_count(likes_count)
+    
+    dislikes_count = recalc_dislikes_count
+    check_and_apply_dislikes_count(dislikes_count)
+    
+    if self.changed?
+      logger.warn(">>> SAVING CHARACTER RANKING AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> CHARACTER RANKING OK.")
+    end
+
+    true      
+  end  
+
+  def recalc_likes_count
+    likes_count = character.received_likes_count
+  end
+  
+  def check_and_apply_likes_count(likes_count)
+    if (self.likes || 0) != likes_count
+      logger.warn(">>> CONSISTENCY ERROR: LIKES COUNT RECALC DIFFERS for character #{character.id}. Old: #{self.likes} Corrected: #{likes_count}.")
+      self.likes = likes_count
+    end
+  end
+  
+  def recalc_dislikes_count
+    dislikes_count = character.received_dislikes_count
+  end
+  
+  def check_and_apply_dislikes_count(dislikes_count)
+    if (self.dislikes || 0) != dislikes_count
+      logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{character.id}. Old: #{self.dislikes} Corrected: #{dislikes_count}.")
+      self.dislikes = dislikes_count
+    end    
+  end  
     
   protected
   
