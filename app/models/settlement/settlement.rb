@@ -28,14 +28,14 @@ class Settlement::Settlement < ActiveRecord::Base
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
-  scope :highest_tax_rate, order('tax_rate DESC')
-  scope :highest_defense_bonus, order('defense_bonus DESC')
+  scope :highest_tax_rate, order('tax_rate DESC, id ASC')
+  scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
   scope :highest_normalized_income, lambda {
     parts = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       parts << "#{resource_type[:symbolic_id].to_s()}_production_rate * #{resource_type[:rating_value] || 0}"
     end
-    order("((#{parts.join('+')})/(tax_rate*100)) DESC")  
+    order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
   }
 
   after_initialize :init
