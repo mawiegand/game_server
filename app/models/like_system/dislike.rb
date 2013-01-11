@@ -1,6 +1,6 @@
 class LikeSystem::Dislike < ActiveRecord::Base
-  belongs_to :sender, :class_name => "Fundamental::Character", :foreign_key => "sender_id", :inverse_of => :send_dislikes, :counter_cache => :send_dislikes_count
-  belongs_to :receiver, :class_name => "Fundamental::Character", :foreign_key => "receiver_id", :inverse_of => :received_dislikes, :counter_cache => :received_dislikes_count
+  belongs_to :sender, :class_name => "Fundamental::Character", :foreign_key => "sender_id", :inverse_of => :send_dislikes
+  belongs_to :receiver, :class_name => "Fundamental::Character", :foreign_key => "receiver_id", :inverse_of => :received_dislikes
   
   validates :sender, :presence => true
   validates :receiver, :presence => true

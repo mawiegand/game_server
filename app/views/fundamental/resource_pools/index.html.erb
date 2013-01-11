@@ -11,6 +11,8 @@
     <th><%= attribute[(attribute.index('_')+1)..(attribute.rindex('_')-1)]+' production' %></th>
 <%end
 end %>
+    <th>Like Amount</th>
+    <th>Dislike Amount</th>
     <th></th>
     <th></th>
     <th></th>
@@ -29,6 +31,8 @@ end %>
      %></td>
 <%end
 end %>
+    <td><%= fundamental_resource_pool.like_amount %></td>
+    <td><%= fundamental_resource_pool.dislike_amount %></td>
     <td><%= link_to 'Show', fundamental_resource_pool %></td>
     <td><%= link_to 'Edit', edit_fundamental_resource_pool_path(fundamental_resource_pool) %></td>
     <td><%= link_to 'Destroy', fundamental_resource_pool, confirm: 'Are you sure?', method: :delete %></td>
