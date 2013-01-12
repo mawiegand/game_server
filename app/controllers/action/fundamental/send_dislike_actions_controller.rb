@@ -15,7 +15,7 @@ class Action::Fundamental::SendDislikeActionsController < ApplicationController
     
     old_dislikes = LikeSystem::Dislike.where('sender_id = ? and receiver_id = ? and created_at > ?',
                                current_character, receiver, 1.day.ago).count
-    raise ConflictError.new('Allready sent dislike!')  if old_dislikes > 0
+    raise ConflictError.new('already sent dislike!')  if old_dislikes > 0
                              
     saved = current_character.add_dislike_for(receiver) 
     

@@ -373,7 +373,8 @@ class Fundamental::Character < ActiveRecord::Base
   end
     
   def add_like_for(character)
-    if self.send_likes.create({receiver: character})
+    like = self.send_likes.new({receiver: character})
+    if like.validate_like
       self.send_likes_count += 1
       if self.save
         character.received_likes_count += 1
@@ -387,7 +388,8 @@ class Fundamental::Character < ActiveRecord::Base
   end
     
   def add_dislike_for(character)
-    if self.send_dislikes.create({receiver: character})
+    dislike = self.send_dislikes.new({receiver: character})
+    if dislike.validate_dislike
       self.send_dislikes_count += 1
       if self.save
         character.received_dislikes_count += 1
