@@ -5,7 +5,7 @@ class LikeSystem::Like < ActiveRecord::Base
   validates :sender,   :presence => true
   validates :receiver, :presence => true
   
-  before_save :validate_like
+  # before_save :validate_like
   after_save  :pay_like
   
   def validate_like

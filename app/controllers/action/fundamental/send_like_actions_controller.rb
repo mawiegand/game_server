@@ -15,10 +15,10 @@ class Action::Fundamental::SendLikeActionsController < ApplicationController
 
     old_likes = LikeSystem::Like.where('sender_id = ? and receiver_id = ? and created_at > ?',
                                current_character, receiver, 1.day.ago).count
-    raise ConflictError.new('Allready sent like!')  if old_likes > 0
+    raise ConflictError.new('already sent like!')  if old_likes > 0
     
     saved = current_character.add_like_for(receiver) 
-    
+
     respond_to do |format|
       if saved 
         format.json { render json: {}, status: :ok }
