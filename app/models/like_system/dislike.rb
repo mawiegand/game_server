@@ -9,7 +9,7 @@ class LikeSystem::Dislike < ActiveRecord::Base
   after_save :pay_dislike
   
   def validate_dislike
-    self.sender == self.receiver || self.sender.resource_pool.dislike_amount >= 1.0
+    self.sender != self.receiver && self.sender.resource_pool.dislike_amount >= 1.0
   end
   
   def pay_dislike
