@@ -30,6 +30,7 @@
     <th>Last Retention Mail</th>
     <th>Mail sent at</th>
     <th>V/D</th>
+    <th>Same IP Users</th>
     <th></th>
     <th></th>
     <th></th>
@@ -82,6 +83,7 @@
     <td><%= fundamental_character.last_retention_mail.nil? ? '-' : link_to(fundamental_character.last_retention_mail.mail_type, fundamental_character.last_retention_mail) %></td>
     <td><%= fundamental_character.last_retention_mail_sent_at %></td>
     <td><%= fundamental_character.victories %>/<%= fundamental_character.defeats %></td>
+    <td><%= fundamental_character.same_ip %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'History', fundamental_character_history_events_path(fundamental_character.id) %></td>

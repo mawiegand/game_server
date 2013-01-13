@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107134002) do
+ActiveRecord::Schema.define(:version => 20130111184234) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1267,6 +1267,7 @@ ActiveRecord::Schema.define(:version => 20130107134002) do
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
+    t.string   "same_ip"
   end
 
   create_table "fundamental_guilds", :force => true do |t|

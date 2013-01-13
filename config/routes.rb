@@ -185,6 +185,7 @@ GameServer::Application.routes.draw do
           resources :kick_alliance_member_actions,      :only => [ :create ]    
           resources :change_character_notified_rank_actions, :only => [ :create ]    
           resources :change_character_name_actions,     :only => [ :create ]    
+          resources :change_character_same_ip_actions,  :only => [ :create ]    
           resources :change_character_gender_actions,   :only => [ :create ]    
           resources :change_character_password_actions, :only => [ :create ]    
           resources :track_character_conversions,       :only => [ :create ]    
