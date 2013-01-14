@@ -8,7 +8,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   after_save  :propagate_change_to_alliance
     
   def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
-    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC")
+    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC, id asc")
     rank = 1
     rankings.each do |entry| 
       entry[rank_field] = rank
