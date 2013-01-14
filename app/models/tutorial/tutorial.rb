@@ -84,6 +84,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -174,6 +175,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -264,6 +266,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -357,6 +360,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -452,6 +456,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -553,6 +558,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -649,6 +655,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -716,6 +723,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -789,6 +797,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -875,6 +884,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -961,6 +971,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1066,6 +1077,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1158,6 +1170,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1284,6 +1297,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1379,6 +1393,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1474,6 +1489,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1575,6 +1591,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1662,6 +1679,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1749,6 +1767,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1848,6 +1867,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -1949,6 +1969,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2049,6 +2070,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2129,6 +2151,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2230,6 +2253,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2312,6 +2336,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2403,6 +2428,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2508,6 +2534,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2612,6 +2639,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2709,6 +2737,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2804,6 +2833,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -2905,6 +2935,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3007,6 +3038,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3102,6 +3134,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3197,6 +3230,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3292,6 +3326,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3387,6 +3422,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3491,6 +3527,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3595,6 +3632,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3690,6 +3728,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3800,6 +3839,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3895,6 +3935,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -3988,6 +4029,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4081,6 +4123,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4174,6 +4217,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4267,6 +4311,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4360,6 +4405,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4453,6 +4499,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4546,6 +4593,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4613,6 +4661,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4680,6 +4729,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4766,6 +4816,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4861,6 +4912,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -4928,6 +4980,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5023,6 +5076,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5090,6 +5144,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => true,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5166,6 +5221,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5258,6 +5314,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5353,6 +5410,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5453,6 +5511,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :show_finish_dialog => true,
           
           :name => {
             
@@ -5560,6 +5619,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5652,6 +5712,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5744,6 +5805,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5841,6 +5903,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -5938,6 +6001,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6030,6 +6094,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6122,6 +6187,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6214,6 +6280,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6306,6 +6373,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6398,6 +6466,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6490,6 +6559,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6582,6 +6652,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6674,6 +6745,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6766,6 +6838,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6863,6 +6936,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -6955,6 +7029,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7047,6 +7122,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7139,6 +7215,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7231,6 +7308,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7323,6 +7401,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7420,6 +7499,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7512,6 +7592,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7604,6 +7685,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7696,6 +7778,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7788,6 +7871,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7885,6 +7969,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -7977,6 +8062,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8069,6 +8155,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8161,6 +8248,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8253,6 +8341,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8350,6 +8439,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8442,6 +8532,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8534,6 +8625,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8631,6 +8723,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8723,6 +8816,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8815,6 +8909,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8907,6 +9002,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -8999,6 +9095,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9091,6 +9188,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9188,6 +9286,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9280,6 +9379,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9372,6 +9472,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9464,6 +9565,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9556,6 +9658,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9653,6 +9756,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9750,6 +9854,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9847,6 +9952,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -9944,6 +10050,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10041,6 +10148,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10133,6 +10241,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10230,6 +10339,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10322,6 +10432,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10414,6 +10525,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10506,6 +10618,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10598,6 +10711,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10695,6 +10809,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10787,6 +10902,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10884,6 +11000,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -10976,6 +11093,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11073,6 +11191,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11165,6 +11284,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11257,6 +11377,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11349,6 +11470,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11441,6 +11563,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11533,6 +11656,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11630,6 +11754,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11722,6 +11847,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11819,6 +11945,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -11911,6 +12038,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12008,6 +12136,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12100,6 +12229,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12192,6 +12322,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12284,6 +12415,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12376,6 +12508,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12473,6 +12606,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12565,6 +12699,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12662,6 +12797,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12754,6 +12890,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12851,6 +12988,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -12943,6 +13081,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13040,6 +13179,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13137,6 +13277,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13234,6 +13375,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13331,6 +13473,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13428,6 +13571,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13525,6 +13669,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13622,6 +13767,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             
@@ -13714,6 +13860,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :show_finish_dialog => false,
           
           :name => {
             

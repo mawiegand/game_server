@@ -1734,7 +1734,7 @@
     </Quest>
 
 <!-- 58 --> <!-- Tutorial 10 -->
-    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" show_finish_dialog="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your stone and wood production to at least 12 units per hour</Task>

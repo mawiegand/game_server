@@ -58,6 +58,7 @@
   advisor IDREF "warrior"
   hide_start_dialog CDATA "false"
   tutorial CDATA "false"
+  show_finish_dialog CDATA "false"  
 >
 
 <!ELEMENT Requirement EMPTY>
