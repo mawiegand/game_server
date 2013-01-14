@@ -1803,30 +1803,11 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 60,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 80,
-              },
-
-            ],
-
             :unit_rewards => [
 
               {
                 :unit => :unit_clubbers,
-                :amount => 5,
+                :amount => 10,
               },
 
             ],
@@ -1898,7 +1879,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 22, ],
+          :successor_quests => [22, ],
 
           :rewards => {
             
@@ -1906,17 +1887,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 50,
+                :amount => 100,
               },
 
             ],
@@ -2095,7 +2076,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_1storagelvl1',
 
           },
 
@@ -2179,7 +2160,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [21, ],
 
           :rewards => {
             
@@ -2280,7 +2261,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [27, ],
 
           :rewards => {
             
@@ -2350,7 +2331,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Baue Deine Kürschner weiter aus und ersetze nach und nach die Jäger und Sammler durch die spezialisierten Rohstoffsammler.",
   
             :en_US => " ",
                 
@@ -2358,11 +2339,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0_5',
+            :quest => 'quest_resourcescore_1',
 
           },
 
-          :successor_quests => [38, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2453,7 +2434,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2658,7 +2639,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -2862,17 +2843,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 195,
+                :amount => 210,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 175,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 85,
+                :amount => 90,
               },
 
             ],
@@ -2963,17 +2944,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 160,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 160,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 80,
               },
 
             ],
@@ -3732,12 +3713,6 @@ class Tutorial::Tutorial
   
             :en_US => "Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-
           },
 
           :successor_quests => [],
@@ -4692,7 +4667,7 @@ class Tutorial::Tutorial
             
             :en_US => "Order a chieftain’s hut upgrade.",
   
-            :de_DE => "Du hast eine Kröte erhalten!",
+            :de_DE => "Du hast zwei Kröten erhalten!",
                 
           },
           :flavour => {
@@ -4718,7 +4693,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du hast von mir eine Kröte erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
+            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
   
             :en_US => " ",
                 
@@ -4738,7 +4713,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -7430,9 +7405,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 300",
+            :en_US => "Reach a Population of 250",
   
-            :de_DE => "Erreiche 300 Einwohner",
+            :de_DE => "Erreiche 250 Einwohner",
                 
           },
           :flavour => {
@@ -7500,7 +7475,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 300,
+              :min_population => 250,
             },
 
           },          
@@ -7522,9 +7497,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 500",
+            :en_US => "Reach a Population of 450",
   
-            :de_DE => "Erreiche 500 Einwohner",
+            :de_DE => "Erreiche 450 Einwohner",
                 
           },
           :flavour => {
@@ -7592,7 +7567,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 500,
+              :min_population => 450,
             },
 
           },          
@@ -8400,7 +8375,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [90, ],
+          :successor_quests => [24, 90, ],
 
           :rewards => {
             
@@ -13680,17 +13655,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 225,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 225,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 125,
               },
 
             ],
@@ -13724,9 +13699,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 250 resource points",
+            :en_US => "Increase the resource production of one settlement to 225 resource points",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 250 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 225 Rohstoffpunkte",
                 
           },
           :flavour => {
@@ -13764,7 +13739,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [23, 24, 89, ],
+          :successor_quests => [23, 89, ],
 
           :rewards => {
             
@@ -13782,7 +13757,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 150,
               },
 
             ],
@@ -13794,7 +13769,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 250,
+              :min_resources => 225,
             },
 
           },          
