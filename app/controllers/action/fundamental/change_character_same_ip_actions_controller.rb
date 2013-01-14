@@ -5,7 +5,7 @@ class Action::Fundamental::ChangeCharacterSameIpActionsController < ApplicationC
 
   def create
     raise BadRequestError.new('no current character') if current_character.nil?
-    raise BadRequestError.new('missing parameter(s)') if params[:character].nil? || params[:character][:same_ip].blank?
+    raise BadRequestError.new('missing parameter(s)') if params[:character].nil?
 
     current_character.same_ip = params[:character][:same_ip]
      
