@@ -546,12 +546,18 @@ class Tutorial::Quest < ActiveRecord::Base
       self.closed_at = Time.now
       self.save
   
-      # reward resources, units and experience
+      # reward resources, units, experience and action points
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
       unless rewards[:experience_reward].nil?
         self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
         self.tutorial_state.owner.save
+      end
+      if !rewards[:action_point_reward].nil? && rewards[:action_point_reward]
+        self.tutorial_state.owner.armies.each do |army|
+          army.ap_present = army.ap_max
+          army.save          
+        end
       end
     end
     

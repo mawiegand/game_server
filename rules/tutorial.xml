@@ -583,6 +583,7 @@
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>400</ExperienceReward>
+        <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />

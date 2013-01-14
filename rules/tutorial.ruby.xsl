@@ -249,6 +249,9 @@ end
 <xsl:if test="ExperienceReward">
             :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
 </xsl:if>
+<xsl:if test="ActionPointReward">
+            :action_point_reward => true,
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">

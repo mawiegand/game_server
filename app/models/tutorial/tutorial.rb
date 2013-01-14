@@ -1745,6 +1745,8 @@ class Tutorial::Tutorial
 
             :experience_reward => 400,
 
+            :action_point_reward => true,
+
           },          
 
           :reward_tests => {
