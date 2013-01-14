@@ -29,7 +29,7 @@
   
 <!-- 0 --> <!-- Tutorial 1 -->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" tutorial_end_quest="true">
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true">
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Order a Hunter Gatherer Level 1</Task>
@@ -222,7 +222,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_change_profile">change profile text</CustomTest>
+        <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
 
@@ -339,7 +339,7 @@
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
+        <CustomTest id="test_message">send Message, Message opened</CustomTest>
       </RewardTests>
       <Message>
         <Subject>Message from quest giver</Subject>
