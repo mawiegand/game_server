@@ -181,7 +181,7 @@ end
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
           :tutorial          => <xsl:value-of select="@tutorial"/>,
-          :show_finish_dialog => <xsl:value-of select="@show_finish_dialog"/>,
+          :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              

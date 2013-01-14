@@ -29,7 +29,7 @@
   
 <!-- 0 --> <!-- Tutorial 1 -->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" tutorial_end_quest="true">
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Order a Hunter Gatherer Level 1</Task>
@@ -1734,7 +1734,7 @@
     </Quest>
 
 <!-- 58 --> <!-- Tutorial 10 -->
-    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" show_finish_dialog="true">
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your stone and wood production to at least 12 units per hour</Task>
