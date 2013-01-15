@@ -762,7 +762,7 @@
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="training_cave" min_level="1" />
+        <BuildingTest building="building_training_cave" min_level="1" />
       </RewardTests>
     </Quest>
 
