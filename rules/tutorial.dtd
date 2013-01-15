@@ -52,7 +52,7 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*, PlaceNpcs?)>
 <!ATTLIST Quest
   id ID #REQUIRED
   advisor IDREF "warrior"
@@ -162,6 +162,8 @@
 <!ATTLIST SettlementProductionTest
   min_resources CDATA #REQUIRED
 >
+
+<!ELEMENT PlaceNpcs (#PCDATA)>
 
 <!ELEMENT Message (Subject, Body)>
 <!ATTLIST Message lang IDREF "en">
