@@ -244,19 +244,6 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
-
-              {
-                :building => 'building_gatherer',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
           },          
 
         },              #   END OF quest_end_1gathererlvl1

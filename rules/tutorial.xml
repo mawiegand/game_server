@@ -80,7 +80,8 @@
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="1" />
+        <!-- BuildingTest building="building_gatherer" min_count="1" / -->
+        <BuildingSpeedTest min_speed="1.1" />
       </RewardTests>
     </Quest>
 

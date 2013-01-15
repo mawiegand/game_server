@@ -84,7 +84,7 @@
 
 
 
-<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
@@ -151,6 +151,11 @@
 <!ELEMENT ScoreTest (#PCDATA)>
 <!ATTLIST ScoreTest
   min_population CDATA #REQUIRED
+>
+
+<!ELEMENT BuildingSpeedTest EMPTY>
+<!ATTLIST BuildingSpeedTest
+  min_speed CDATA #REQUIRED
 >
 
 <!ELEMENT SettlementProductionTest (#PCDATA)>
