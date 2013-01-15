@@ -10,7 +10,7 @@ class Action::Fundamental::ChangeCharacterNameActionsController < ApplicationCon
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:character].nil? || params[:character][:name].blank?
 
-    current_character.change_name_transaction(params[:character][:name]) 
+    current_character.change_name_transaction(params[:character][:name].strip) 
     
     respond_to do |format|
       format.json { render json: {}, status: :ok }

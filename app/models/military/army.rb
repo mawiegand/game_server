@@ -168,6 +168,8 @@ class Military::Army < ActiveRecord::Base
   def can_found_outpost?
     return false    if self.details.nil?
     
+    return false    if self.ap_present < 1
+    
     founder = nil
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
       founder = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
@@ -186,6 +188,7 @@ class Military::Army < ActiveRecord::Base
     settlement = Settlement::Settlement.create_settlement_at_location(location, 3, owner)    
     raise InternalServerError.new('Could not found outpost.') if settlement.nil?
 
+    consume_ap
     consume_one_settlement_founder!
     
     settlement
@@ -627,7 +630,7 @@ class Military::Army < ActiveRecord::Base
     # reduces units evenly when army_size_max is reduced
     def update_units
       if !self.size_present.blank? && !self.size_max.blank? && self.size_present > self.size_max
-        logger.debug '-----> reduce units'
+        self.details.reduce_units_to_size_max
       end
     end
     

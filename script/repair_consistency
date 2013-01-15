@@ -43,15 +43,9 @@ Fundamental::Alliance.find(:all).each do |alliance|
 	  print "." 
 	  sleep (1)
 	end
-  alliance.members_count = alliance.members.count
-  alliance.save
-  if !alliance.ranking.nil?
-    alliance.ranking.num_fortress = alliance.fortresses.count
-    alliance.ranking.save
-  end
+	alliance.check_consistency
 end
 puts " done."
-
 
 
 
@@ -119,6 +113,7 @@ Fundamental::Character.find(:all).each do |character|
 	  sleep (1)
 	end
 	character.check_consistency
+	character.ranking.check_consistency unless character.ranking.nil?
 	count += 1 
 end
 puts " done."
@@ -203,5 +198,21 @@ end
 puts " done."
 
 
+# ############################################################################
+#
+#   ROUND INFO
+#
+# ############################################################################
+
+
+print "CHECKING Round Info "
+
+regions_count = Map::Region.count
+
+round_info = Fundamental::RoundInfo.find(1)
+round_info.regions_count = regions_count
+round_info.save
+
+puts ". done."
 
 puts

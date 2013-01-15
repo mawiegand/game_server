@@ -27,31 +27,36 @@
     </ProductionTestWeights>
   </General>
   
-<!-- 0 -->
+<!-- 0 --> <!-- Tutorial 1 -->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true">
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Order a Hunter Gatherer Level 1</Task>
       <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag. </Task>
       <Description locale="de_DE">
-        <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler. Du kannst jederzeit alle laufenden Quests sehen, indem Du oben rechts auf den Quests Knopf drückst.</p>
+        <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz. Den Bauplatz erkennst Du an der orangen Markierung. Wähle dort den Jäger und Sammler aus.</p>
       </Description>
       <Description locale="en_US">
         <p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there. You can see all your current quests by clicking on the Quest button top right of the screen.</p>
       </Description>
-      <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus und er gibt Dir einen Teil der Rohstoffe ab, die er findet.</Flavor>
+      <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus.</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn’t it great? A bit empty, though. If you built a Hunter Gatherer it would definitely look much better and he’d give you some of the raw materials he finds.</Flavor>
-      <RewardText locale="de_DE"> Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst Du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird. Du kannst Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. </RewardText>
+      <RewardText locale="de_DE">Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. </RewardText>
       <RewardText locale="en_US">The Hunter Gatherer appears on the right in the construction queue. There you can see how long it will take until the building is finished. You can cancel or speed up an order. Building orders continue in your absence when you leave the game. </RewardText>
-      <RewardFlavor locale="de_DE">Gut gemacht. Jetzt müssen wir kurz warten, während Deine Arbeiter den Auftrag fertigstellen.</RewardFlavor>
-      <RewardFlavor locale="en_US">Well done. Now we just have to wait a bit while your workers complete the order.</RewardFlavor>
+      <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.</RewardFlavor>
+      <RewardFlavor locale="en_US">Hey – that looks much better, don’t you think? And the friendly Hunter Gatherer wants to give you some of his raw materials too.</RewardFlavor>
+      <Rewards>
+        <ResourceReward resource="resource_stone">20</ResourceReward>
+        <ResourceReward resource="resource_wood">20</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
+      </Rewards>
       <RewardTests>
-        <ConstructionQueueTest building="building_gatherer" min_count="1" min_level="1" />
+        <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
     </Quest>
 
-<!-- 1 -->
+<!-- 1 --> <!-- not in -->
     <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="true">
       <Name>Wait for the building order.</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
@@ -69,18 +74,18 @@
       <RewardText locale="en_US">The Hunter Gatherer gathers small quantities of all kinds of raw materials. </RewardText>
       <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don’t you think? And the friendly Hunter Gatherer wants to give you some of his raw materials too.</RewardFlavor>
-      <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>  
-        <ResourceReward resource="resource_wood">35</ResourceReward>    
-        <ResourceReward resource="resource_fur">10</ResourceReward>
+        <ResourceReward resource="resource_stone">75</ResourceReward>
+        <ResourceReward resource="resource_wood">75</ResourceReward>
+        <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_count="1" />
+        <!-- BuildingTest building="building_gatherer" min_count="1" / -->
+        <BuildingSpeedTest min_speed="1.1" />
       </RewardTests>
     </Quest>
 
-<!-- 2 -->
+<!-- 2 --> <!-- not in -->
     <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="true">
       <Name>Another Hunter Gatherer</Name>
       <Name locale="de_DE">Ein zweiter Jäger und Sammler</Name>
@@ -98,7 +103,6 @@
       <RewardText locale="en_US">Hunter Gatherers boost your raw materials production. </RewardText>
       <RewardFlavor locale="de_DE">Sehr schön! Jetzt hast Du zwei Sammler und Deine Produktion ist gestiegen.</RewardFlavor>
       <RewardFlavor locale="en_US">Cool, now you’ve got two Hunter Gatherers and your production is rising. This reward will increase your stock levels.</RewardFlavor>
-<!--      <Requirement quest="quest_end_1gathererlvl1" />  -->
       <Rewards>
         <ResourceReward resource="resource_stone">40</ResourceReward>  
         <ResourceReward resource="resource_wood">40</ResourceReward>    
@@ -109,7 +113,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 3 -->
+<!-- 3 --> <!-- not in -->
     <Quest id="quest_build_2gathererlvl1" advisor="girl">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -128,9 +132,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung sieht mit jeder Minute besser aus.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice – your settlement is looking better every minute!</RewardFlavor>
       <Rewards>
-        <ResourceReward resource="resource_stone">65</ResourceReward>  
-        <ResourceReward resource="resource_wood">55</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ResourceReward resource="resource_stone">40</ResourceReward>
+        <ResourceReward resource="resource_wood">40</ResourceReward>
+        <ResourceReward resource="resource_fur">20</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -138,37 +142,37 @@
       </RewardTests>
     </Quest>
 
-<!-- 4 -->
+<!-- 4 --> <!-- Tutorial 2 -->
     <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
-      <Task locale="de_DE"> Baue einen Jäger und Sammler auf Level 2 aus. </Task>
+      <Task locale="de_DE">Baue einen Jäger und Sammler auf Level 2 aus.</Task>
       <Description locale="de_DE">
-        <p>Wähle dazu einen Jäger und Sammler aus. Das Grundstück, das Du bei einem Klick auswählen würdest, erkennst Du am orangenen Rahmen. Im sich öffnenden Fenster siehst Du oben den derzeitigen Stand Deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
+        <p>Wähle dazu den gerade gebauten Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du oben den derzeitigen Stand Deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
       </Description>
       <Description locale="en_US">
         <p>Choose a Hunter Gatherer. You can tell the piece of land you click on to choose by the orange border. At the top of the window that opens you’ll see the current status of your development, including the next upgrade level. Click on the “upgrade” button to start the upgrade . </p>
       </Description>
       <Flavor locale="de_DE">Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.</Flavor>
       <Flavor locale="en_US">You see? You’ve got this far already. Do you think you could upgrade a Hunter Gatherer to level 2? He’d feel better and give you more resources. </Flavor>
-      <RewardText locale="de_DE">Gebäude auf kleinen Bauplätzen können maximal bis Level 10 ausgebaut werden.</RewardText>
+      <RewardText locale="de_DE">Es gibt zwei Arten von Bauplätzen: kleine und große. Die großen Bauplätze sind die drei in der Mitte rund um die Häuptlingshütte. Baue erstmal nur auf kleinen Bauplätzen!</RewardText>
       <RewardText locale="en_US">Remember to upgrade your buildings. Every level boosts your production. Buildings on small construction sites can only be upgraded to level 10.</RewardText>
       <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Er hat mir ein paar Rohstoffe für Dich mitgegeben. Außerdem erhältst Du wertvolle Erfahrung.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh that’s nice of you! The Hunter Gatherer is really happy. He gave me some raw materials to give you. </RewardFlavor>
-      <Requirement quest="quest_quest_button" />
+      <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">40</ResourceReward>  
-        <ResourceReward resource="resource_wood">45</ResourceReward>    
+        <ResourceReward resource="resource_stone">25</ResourceReward>
+        <ResourceReward resource="resource_wood">25</ResourceReward>
         <ResourceReward resource="resource_fur">15</ResourceReward>
-        <ExperienceReward>50</ExperienceReward>
+        <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
     </Quest>
 
-<!-- 5 -->
+<!-- 5 --> <!-- Tutorial 3 -->
     <Quest id="quest_build_chiefcottagelvl2" advisor="chef" tutorial="true">
       <Name>Upgrade of the chieftain’s hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
@@ -180,17 +184,16 @@
       <Description locale="en_US">
         <p>The chieftain’s hut is the big building in the middle of the settlement.</p>
       </Description>
-      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine tolle Belohnung.</Flavor>
+      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod? And what’s that supposed to be? My chieftain’s hut? You think I’m going to live in that? Ha! Change it immediately! Upgrade it and I’ll give you a reward.</Flavor>
-      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen. Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
+      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US">Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings. </RewardText>
-      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Some people are never satisfied. Here – take this and push aaoff!</RewardFlavor>
+            <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>  
+        <ResourceReward resource="resource_stone">30</ResourceReward>
+        <ResourceReward resource="resource_wood">30</ResourceReward>
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -198,70 +201,62 @@
       </RewardTests>
     </Quest>
 
-<!-- 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true">
+<!-- 6 --> <!-- not in-->
+  <Quest id="quest_profile" advisor="girl" >
       <Name>Name and profile</Name>
-      <Name locale="de_DE">Namen und Profil</Name>
+      <Name locale="de_DE">Namen</Name>
       <Task>Change your name.</Task>
-      <Task locale="de_DE">Ändere Deinen Namen.</Task>
+      <Task locale="de_DE">Wie heißt Du?</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
+        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und dort 'Namen wählen'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Click on the profile button (the one with the head) top right. Then click on “Customize” and select “Change Name”. The first two name changes are free.</p>
+        <p>Click on the profile button (the one with the head) top right. Then click on “Customize” and select “Change Name”.</p>
       </Description>
-      <Flavor locale="de_DE">Achte nicht auf den Chef, der ist immer so drauf. Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen. </Flavor>
-      <Flavor locale="en_US">Don’t worry about the boss, he’s always like that. We’ve gone through so much together already, but I still don’t know who you are! What’s your name?</Flavor>
+      <Flavor locale="de_DE">Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen. </Flavor>
+      <Flavor locale="en_US">We’ve gone through so much together already, but I still don’t know who you are! What’s your name?</Flavor>
       <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.</RewardText>
       <RewardText locale="en_US">In your profile you can see your progress and make other changes. </RewardText>
       <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we’re going to have loads of fun together!</RewardFlavor>
-      <Requirement quest="quest_queue_chiefcottagelvl2_V2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_change_profile">change profile text</CustomTest>
+        <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
 
-<!-- 7 -->
+    
+<!-- 7 --> <!-- Tutorial 6 -->
     <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task>Go to the world map.</Task>
       <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
-        <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-        <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
-        <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
+        <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke. Der Siedlungsknopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
       </Description>
       <Description locale="en_US">
         <p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p>
         <p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>
       </Description>
-      <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Wenn Du mal aus diesem Loch rauskommen würdest, wüsstest Du das auch. Worauf wartest Du? Geh!</Flavor>
+      <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Worauf wartest Du? Geh!</Flavor>
       <Flavor locale="en_US">What? It’s too small for you here? There’s a whole world to conquer. If you got out of this hole you’d know it too. What are you waiting for? Go!</Flavor>
       <RewardText locale="de_DE">Auf der Weltkarte kannst Du andere Spieler um Dich herum sehen.</RewardText>
       <RewardText locale="en_US">On the world map you can see the other gamers around you.</RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So – did you learn anything? Here are a couple of resources, before you start asking for rewards again.</RewardFlavor>
-      <Requirement quest="quest_build_2cottagelvl1" />
+      <Requirement quest="quest_recruit_1clubbers" />
      <Rewards>
-        <ResourceReward resource="resource_stone">40</ResourceReward>  
-        <ResourceReward resource="resource_wood">30</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
-        <ExperienceReward>200</ExperienceReward>
+        <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
     </Quest>
 
-<!-- 8 -->
+<!-- 8 --> <!-- not in -->
     <Quest id="quest_rank" advisor="chef" tutorial="true">
       <Name>Rank</Name>
       <Name locale="de_DE">Rang</Name>
@@ -279,7 +274,6 @@
       <RewardText locale="en_US">The ranking list is set up according to population. Expand and upgrade your settlement to raise your population and you’ll rise in the rankings.</RewardText>
       <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, little demigod. That’s terrible! You’ve got to improve! Here are some raw materials – don’t waste them!</RewardFlavor>
-      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -291,8 +285,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 9 -->
-    <Quest id="quest_settlementowner" advisor="chef" tutorial="true">
+<!-- 9 --><!-- not in -->
+      <Quest id="quest_settlementowner" advisor="chef" tutorial="true">
       <Name>Fortress owner</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
       <Task>Enter the fortress owner in your region.</Task>
@@ -309,7 +303,6 @@
       <RewardText locale="en_US">Fortresses collect taxes from the region they rule. The tax rate is 5 – 15% and is deducted from the raw materials production of the settlements in the region and handed to the owner of the fortress. </RewardText>
       <RewardFlavor locale="de_DE">Aha, dem sollten wir eine Lektion erteilen!</RewardFlavor>
       <RewardFlavor locale="en_US">Aha – we should teach him a lesson!</RewardFlavor>
-      <Requirement quest="quest_settlement_button1" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
@@ -321,8 +314,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 10 -->
-    <Quest id="quest_message" advisor="girl" tutorial="true">
+<!-- 10 --> <!-- not in -->
+      <Quest id="quest_message" advisor="girl" tutorial="true">
       <Name>Message</Name>
       <Name locale="de_DE">Nachrichten</Name>
       <Task>Read the message</Task>
@@ -339,7 +332,6 @@
       <RewardText locale="en_US">You just got some golden frogs. You can upgrade your buildings and train your units faster if you use golden frogs. </RewardText>
       <RewardFlavor locale="de_DE">Ich hoffe, sie hat Dir gefallen. Hier, diese Kröten hab ich gerade gefunden. Ich glaube Du kannst sie ganz gut gebrauchen.</RewardFlavor>
       <RewardFlavor locale="en_US">I hope you liked it. Here – I just found this golden frog. I reckon you probably need it, right? </RewardFlavor>
-      <Requirement quest="quest_build_1barrackslvl2" />
       <Rewards>
         <ResourceReward resource="resource_wood">200</ResourceReward>  
         <ResourceReward resource="resource_stone">200</ResourceReward>  
@@ -348,7 +340,7 @@
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
+        <CustomTest id="test_message">send Message, Message opened</CustomTest>
       </RewardTests>
       <Message>
         <Subject>Message from quest giver</Subject>
@@ -360,29 +352,29 @@
       </Message>
     </Quest>
 
-<!-- 11 -->
-    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
+<!-- 11 --> <!-- Tutorial 9 -->
+      <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task>Get yourself back to your settlement.</Task>
       <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf Enter drückst.</p>
+        <p>Benutze den Siedlungsknopf oben rechts, um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst, und auf ´Betreten´ drückst, oder einen Doppelklick auf die Siedlung ausführst.</p>
       </Description>
       <Description locale="en_US">
         <p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>
       </Description>
       <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
       <Flavor locale="en_US">Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.</Flavor>
-      <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und Enter drückst.</RewardText>
+      <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und ´Betreten´ drückst.</RewardText>
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on Enter.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn’t it?!</RewardFlavor>
-      <Requirement quest="quest_settlementowner" />
+      <Requirement quest="quest_army_move" />
       <Rewards>
-        <ResourceReward resource="resource_stone">45</ResourceReward>  
-        <ResourceReward resource="resource_wood">45</ResourceReward>    
-        <ResourceReward resource="resource_fur">20</ResourceReward>
+        <ResourceReward resource="resource_stone">100</ResourceReward>
+        <ResourceReward resource="resource_wood">100</ResourceReward>
+        <ResourceReward resource="resource_fur">50</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -390,8 +382,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 12 -->
-    <Quest id="quest_encyclopedia" advisor="girl" tutorial="true">
+<!-- 12 --> <!-- not in -->
+      <Quest id="quest_encyclopedia" advisor="girl" tutorial="true">
       <Name>Encyclopaedia</Name>
       <Name locale="de_DE"> Enzyklopädie </Name>
       <Task>Enter the cost of the wood needed for a Training Grounds level 2.</Task>
@@ -408,7 +400,6 @@
       <RewardText locale="en_US">The encyclopaedia contains all the costs and construction completion times for all the units, as well as other really useful information.</RewardText>
       <RewardFlavor locale="de_DE">Du hast es gefunden? Super, ich geh gleich zum Chef.</RewardFlavor>
       <RewardFlavor locale="en_US">You found it? Great! I’ll go and tell the boss straight away. </RewardFlavor>
-      <Requirement quest="quest_message" />
       <Rewards>
         <ResourceReward resource="resource_stone">35</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
@@ -454,14 +445,14 @@
       </Message>
     </Quest>
 
-<!-- 13 -->
-    <Quest id="quest_build_1cottagelvl1" advisor="girl" tutorial="true">
+<!-- 13 --> <!-- not in-->
+    <Quest id="quest_build_1cottagelvl1" advisor="girl" tutorial="false">
       <Name>The small hut</Name>
       <Name locale="de_DE">Die kleine Hütte</Name>
       <Task>Build a small hut.</Task>
-      <Task locale="de_DE">Baue eine kleine Hütte.</Task>
+      <Task locale="de_DE">Erhöhe Deine Baugeschwindigkeit auf mindestens 103%.</Task>
       <Description locale="de_DE">
-        <p> Kleine Hütten verkürzen die Bauzeit von Gebäuden. </p>
+        <p>Die Kleinen Hütten erhöhen die Baugeschwindigkeit. Eine höhere Baugeschwindigkeit bedeutet weniger Bauzeit für den einzelnen Ausbau.</p>
       </Description>
       <Description locale="en_US">
         <p>Small huts reduce the construction time of buildings. </p>
@@ -470,12 +461,12 @@
       <Flavor locale="en_US">Your workers have nowhere to stay yet. Please build them a small hut. The happier your workers, the faster they build!</Flavor>
       <RewardText locale="de_DE">Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
       <RewardText locale="en_US">If you think your building orders are taking too long you can build more small huts and upgrade them.  </RewardText>
-      <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Oben links in der Übersicht der Hauptsiedlung steht das ´G´ für die Baugeschwindigkeit.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done. Your workers are pleased, and they’re building faster. </RewardFlavor>
       <Rewards>
-        <ResourceReward resource="resource_stone">60</ResourceReward>  
-        <ResourceReward resource="resource_wood">50</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ResourceReward resource="resource_stone">80</ResourceReward>
+        <ResourceReward resource="resource_wood">60</ResourceReward>
+        <ResourceReward resource="resource_fur">40</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -483,8 +474,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 14 -->
-    <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="true">
+<!-- 14 --> <!-- not in-->
+   <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="false">
       <Name>An even bigger chieftain’s hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
       <Task>Upgrade your chieftain’s hut to level 3</Task>
@@ -497,73 +488,72 @@
       </Description>
       <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
       <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain’s hut in order to make some progress.</Flavor>
-      <RewardText locale="de_DE">Auf großen Bauplätzen können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
-      <RewardText locale="en_US">You can upgrade buildings to level 20 on big construction sites. Buildings from level 11 to 20 give you special bonuses.</RewardText>
-      <RewardFlavor locale="de_DE">Toll. Wenn Du willst, kannst Du dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst Du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
+      <RewardText locale="de_DE">Auf kleinen Bauplätzen können Gebäude nur bis Level 10 ausgebaut werden. Auf den drei großen Bauplätzen in der Mitte der Siedlung können Gebäude bis auf Level 20 ausgebaut werden. Gebäude des Levels 11 bis 20 geben spezielle Boni.</RewardText>
+      <RewardText locale="en_US">You just unlocked four new building lots.</RewardText>
+      <RewardFlavor locale="de_DE">Toll. Jetzt hast Du vier weitere Bauplätze freigeschaltet.</RewardFlavor>
       <RewardFlavor locale="en_US">Great. If you like, you can put your next building on a big construction site. Buildings on these construction sites can be upgraded to far higher levels than on smaller sites.</RewardFlavor>
-      <Requirement quest="quest_build_2cottagelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
+        <ResourceReward resource="resource_stone">220</ResourceReward>
+        <ResourceReward resource="resource_wood">220</ResourceReward>
         <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ExperienceReward>400</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="3" />
       </RewardTests>
     </Quest>
 
-<!-- 15 -->
-    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
+<!-- 15 --> <!-- Tutorial 4 -->
+      <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task>Build a Training Grounds</Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
       <Description locale="de_DE">
-        <p>Ein Ausbildungsgelände bildet Nahkampfeinheiten aus. Die besten Einheiten werden auf Level 20 freigeschaltet, dafür müsstest Du aber auf einen großen Bauplatz bauen.</p>
+        <p>In einem Ausbildungsgelände kannst Du Nahkampfeinheiten ausbilden.</p>
       </Description>
       <Description locale="en_US">
-        <p>A training grounds trains melee fighters. The best units can make it to level 20 but you have to build on a bigger construction site.</p>
+        <p>A training grounds trains melee fighters.</p>
       </Description>
-      <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.</Flavor>
+      <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Sonst noch was?</Flavor>
       <Flavor locale="en_US">You can build a training grounds but you’re not doing it? Build one now and I’ll give you something from my treasure chest. </Flavor>
       <RewardText locale="de_DE">Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.</RewardText>
       <RewardText locale="en_US">The training grounds speeds up the recruiting time of melee fighters.</RewardText>
       <RewardFlavor locale="de_DE">Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US">Finished? About time, too. There’s your reward – that’s all there is. Push off.</RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl3" />
+      <Requirement quest="quest_build_chiefcottagelvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">80</ResourceReward>  
-        <ResourceReward resource="resource_wood">70</ResourceReward>    
-        <ResourceReward resource="resource_fur">90</ResourceReward>
-        <ExperienceReward>150</ExperienceReward>
+        <ResourceReward resource="resource_stone">50</ResourceReward>
+        <ResourceReward resource="resource_wood">60</ResourceReward>
+        <ResourceReward resource="resource_fur">80</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
     </Quest>
 
-<!-- 16 -->
+<!-- 16 --> <!-- Tutorial 5 -->
     <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a clubber</Task>
       <Task locale="de_DE">Baue einen Keulenkrieger.</Task>
       <Description locale="de_DE">
-        <p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Keulenkrieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung und werden in der Häuptlingshütte angezeigt. </p>
+        <p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Keulenkrieger'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”). The recruited units land up in the settlement’s garrison and are shown in the chieftain’s hut.</p>
+        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”.</p>
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-      <RewardText locale="de_DE">Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn Du wissen willst, wie weit der Auftrag ist, klickst Du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'. Neue Einheiten werden auf höheren Gebäudelevel freigeschaltet.</RewardText>
+      <RewardText locale="de_DE">Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn Du wissen willst, wie weit der Auftrag ist, klickst Du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.</RewardText>
       <RewardText locale="en_US">Once you’ve ordered the units you can close the building window and the order continues to be carried out. If you want to know how far the order has got, just click on the training barracks. You can also train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’. New units will be activated at higher building levels.</RewardText>
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir drei meiner Keulenkrieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have three of my clubbers. </RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">3</UnitReward>  
+        <UnitReward unit="unit_clubbers">9</UnitReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -571,52 +561,49 @@
       </RewardTests>
     </Quest>
 
-<!-- 17 -->
+<!-- 17 --> <!-- Tutorial 6 -->
     <Quest id="quest_army_create" advisor="warrior" tutorial="true">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
-        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
+        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor den Knopf mit den Männchen 'Neue Armee' aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
       </Description>
-      <Flavor locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade drei Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.</Flavor>
-      <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you three clubbers. Someone should do that with them. </Flavor>
-      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.</RewardText>
+      <Flavor locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade neun Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.</Flavor>
+      <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. </Flavor>
+      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird.</RewardText>
       <RewardText locale="en_US">Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.</RewardText>
       <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder? Trotzdem hier Deine Belohnung.</RewardFlavor>
       <RewardFlavor locale="en_US">Call that an army? Rather small, don’t you think? Still, here’s your reward.</RewardFlavor>
-      <Requirement quest="quest_recruit_1clubbers" />
+      <Requirement quest="quest_settlement_button1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">165</ResourceReward>  
-        <ResourceReward resource="resource_wood">150</ResourceReward>    
-        <ResourceReward resource="resource_fur">25</ResourceReward>
-        <UnitReward unit="unit_clubbers">6</UnitReward>  
-        <ExperienceReward>300</ExperienceReward>
+        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <ExperienceReward>400</ExperienceReward>
+        <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
     </Quest>
 
-<!-- 18 -->
+<!-- 18 --> <!-- Tutorial 8 -->
     <Quest id="quest_army_move" advisor="warrior" tutorial="true">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task>Move your army to the fortress</Task>
       <Task locale="de_DE">Bewege Deine Armee zur Festung</Task>
       <Description locale="de_DE">
-        <p>Wenn Du bereit bist, wähle Deine Armee aus, klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>
+        <p>Wähle Deine Armee aus und klicke auf 'Bewegen'; mögliche Ziele sind mit einem grünen Pfeil markiert. Der Pfeil erscheint über der Festung dieser Region.</p>
       </Description>
       <Description locale="en_US">
         <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
       </Description>
-      <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein. Vorsicht ist geboten, erst wenn eine Armee stark genug ist, sollte sie sich auf den Weg zu einer feindlichen Festung machen.</Flavor>
+      <Flavor locale="de_DE">Eine Armee ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein.</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
       <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.</RewardText>
       <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
@@ -624,9 +611,7 @@
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
-        <ResourceReward resource="resource_stone">110</ResourceReward>  
-        <ResourceReward resource="resource_wood">110</ResourceReward>    
-        <ResourceReward resource="resource_fur">120</ResourceReward>
+        <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -634,14 +619,14 @@
       </RewardTests>
     </Quest>
 
-<!-- 19 -->
-    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
+<!-- 19 --> <!-- Q3-->
+    <Quest id="quest_build_chiefcottagelvl4" advisor="chef" >
       <Name>The chieftain’s hut again</Name>
-      <Name locale="de_DE"> Und wieder die Häuptlingshütte </Name>
-      <Task>Upgrade your chieftain’s hut to level 4.</Task>
+      <Name locale="de_DE">Häuptlingshütte auf Level 4</Name>
+      <Task>Upgrade your chieftain’s hut to level 4</Task>
       <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
       <Description locale="de_DE">
-        <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'hurtig!'. Probiere es doch einmal aus.</p>
+        <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'Hurtig!'. Probiere es doch einmal aus.</p>
       </Description>
       <Description locale="en_US">
         <p>You can speed up the chieftain‘s hut upgrade with golden frogs. Click on ’Speedy’. Why not try it out?</p>
@@ -652,10 +637,10 @@
       <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US">Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of raw materials.</RewardFlavor>
-      <Requirement quest="quest_message" />
+      <Requirement quest="quest_improve_production_1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">235</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
+        <ResourceReward resource="resource_stone">175</ResourceReward>
+        <ResourceReward resource="resource_wood">175</ResourceReward>
         <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
@@ -664,26 +649,24 @@
       </RewardTests>
     </Quest>
 
-<!-- 20 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true">
+<!-- 20 --> <!-- not in -->
+    <Quest id="quest_build_1campfirelvl1" advisor="girl" >
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
       <Task locale="de_DE"> Baue ein Lagerfeuer.</Task>
       <Description locale="de_DE">
-        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
+        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben. Zudem kann man nach Bau eines Lagerfeuers einer Allianzen beitreten. </p>
       </Description>
       <Description locale="en_US">
-        <p>Campfires are needed to write messages and start or enter into alliances. And it‘s where little chieftains are recruited.  </p>
+        <p>Campfires are needed to write messages and start alliances.</p>
       </Description>
-      <Flavor locale="de_DE">Hey wie wär's mit einem Lagerfeuer für Deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
-      <Flavor locale="en_US">Hey, how about a campfire for your settlement? Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don’t you think?
-</Flavor>
+      <Flavor locale="de_DE">Hey wie wär's mit einem Lagerfeuer für Deine Siedlung? Wäre doch schön, so etwas zu haben, oder?</Flavor>
+      <Flavor locale="en_US">Hey, how about a campfire for your settlement? It would be great to have one of them, don’t you think?</Flavor>
       <RewardText locale="de_DE">Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.</RewardText>
       <RewardText locale="en_US">From now on you can send messages. Use this to communicate with your neighbours.</RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
-      <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>  
         <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -696,31 +679,28 @@
       </RewardTests>
     </Quest>
 
-<!-- 21 -->
-    <Quest id="quest_alliance" advisor="girl">
+<!-- 21 -->  <!-- Q5 -->
+    <Quest id="quest_alliance" advisor="chef">
       <Name>Alliance</Name>
       <Name locale="de_DE">Allianzen</Name>
       <Task>Enter an alliance, or start your own.</Task>
       <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
       <Description locale="de_DE">
-        <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
-        <p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 5 gründen.</p>
+        <p>He Halbgott. Alleine bist Du viel zu schwach! Such Dir eine Allianz, damit Du Hilfe und Unterstützung erhälst. Oder gründe Deine eigene sobald Du das Lagerfeuer auf Level 5 ausgebaut hast!</p>
       </Description>
       <Description locale="en_US">
         <p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other’s defences and coordinate attacks. Only an alliance can hold a large territory. If you think you’re ready for it, why not enter an alliance?</p>
         <p>You can only start your own alliance once you’ve reached campfire level 5. </p>
       </Description>
-      <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
+      <Flavor locale="de_DE">In einer Allianz kannst Du Dich mit Freunden und anderen Spielern zusammenschließen und euch gegenseitig unterstützen.</Flavor>
       <Flavor locale="en_US">Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.</Flavor>
       <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that’s some alliance! I’m sure they’re going to go far. </RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>  
-        <ResourceReward resource="resource_wood">105</ResourceReward>    
-        <ResourceReward resource="resource_fur">45</ResourceReward> 
+        <UnitReward unit="unit_clubbers">20</UnitReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -728,19 +708,20 @@
       </RewardTests>
     </Quest>
 
-<!-- 22 -->
-   <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true">
+<!-- 22 -->  <!-- Q5 -->
+   <Quest id="quest_build_1storagelvl1" advisor="girl" >
       <Name>Raw materials store</Name>
-      <Name locale="de_DE"> Rohstofflager </Name>
+      <Name locale="de_DE">Rohstofflager + Handel</Name>
       <Task>Build a raw materials store</Task>
-      <Task locale="de_DE">Baue ein Rohstofflager.</Task>
+     <Task locale="de_DE">Handel freischalten: Baue ein Rohstofflager.</Task>
       <Description locale="de_DE">
-        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion. Außerdem erlauben die Karren den Handel mit anderen Spielern.</p>
+        <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst.</p>
+        <p>Außerdem erlauben die Handelskarren des Rohstofflagers den Handel mit anderen Spielern.</p>
       </Description>
       <Description locale="en_US">
         <p>Raw materials stores increase the maximum amount of raw materials you can store. Once you’ve reached the limit, any further production is lost. The carts also let you trade with other players.</p>
       </Description>
-      <Flavor locale="de_DE">Stört es Dich nicht auch, dass der Lagerplatz so gering ist? Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
+      <Flavor locale="de_DE">Wir sollten den Handel mit anderen Siedlungen voran treiben. Gleichzeitg können wir mit dem Rohstofflager die Lagermenge erhöhen.</Flavor>
       <Flavor locale="en_US">Doesn’t it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
       <RewardText locale="de_DE">Jeder Handelskarren kann zehn Ressourcen befördern.</RewardText>
       <RewardText locale="en_US">Each trading cart can transport ten resources.</RewardText>
@@ -748,9 +729,9 @@
       <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">500</ResourceReward>  
-        <ResourceReward resource="resource_wood">500</ResourceReward>    
-        <ResourceReward resource="resource_fur">200</ResourceReward>
+        <ResourceReward resource="resource_stone">200</ResourceReward>
+        <ResourceReward resource="resource_wood">200</ResourceReward>
+        <ResourceReward resource="resource_fur">75</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -758,102 +739,95 @@
       </RewardTests>
     </Quest>
 
-<!-- 23 -->
+<!-- 23 -->  <!-- not in -->
     <Quest id="quest_build_chiefcottagelvl5" advisor="girl">
-      <Name>Chieftain’s hut level four</Name>
-      <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
-      <Task>Upgrade your chieftain‘s hut to level 5.</Task>
-      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 5 aus.</Task>
+      <Name>Furrier</Name>
+      <Name locale="de_DE">Trainingshöhle</Name>
+      <Task>Build a furrier</Task>
+      <Task locale="de_DE">Baue ein Trainingsgelände.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Wie wäre es wenn Du eine Trainingshöhle baust? Dafür benötigst Du Häuptlingshütte auf Level 6.</p>
       </Description>
       <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
+        <p>Please build a training cave.</p>
       </Description>
-      <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
-      <Flavor locale="en_US">Hey, you’re ready to upgrade your chieftain‘s hut again. Showing off a bit of style can’t hurt, eh?</Flavor>
+      <Flavor locale="de_DE">In der Trainingshöhle kannst Du Erfahrung erhalten ohne zu kämpfen.</Flavor>
+      <Flavor locale="en_US">In the training cave you earn experience without fighting.</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
-      <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl4" />
+      <RewardFlavor locale="de_DE">Sehr schön. Erfahrung kannst Du immer gebrauchen.</RewardFlavor>
+      <RewardFlavor locale="en_US">Wow – that’s a lot of experience. Cool!</RewardFlavor>
+      <Requirement quest="quest_resourcescore_0_5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">220</ResourceReward>  
-        <ResourceReward resource="resource_wood">220</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ExperienceReward>300</ExperienceReward>
+        <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_chief_cottage" min_level="5" />
+        <BuildingTest building="training_cave" min_level="1" />
       </RewardTests>
     </Quest>
 
 <!-- 24 -->
-    <Quest id="quest_build_1quarrylvl1_1loggerlvl1" advisor="girl">
-      <Name>Quarries and logging camps</Name>
-      <Name locale="de_DE">Steinbrüche und Holzfäller</Name>
-      <Task></Task>
-      <Task locale="de_DE">Build a quarry and a logging camp..</Task>
+    <Quest id="quest_build_1quarrylvl1_1loggerlvl1" advisor="warrior">
+      <Name>Furrier</Name>
+      <Name locale="de_DE">Fellproduktion</Name>
+      <Task>Build a furrier</Task>
+      <Task locale="de_DE">Baue einen Kürschner.</Task>
       <Description locale="de_DE">
-        <p></p>
+        <p>Du solltest Deine Fellproduktion erhöhen. Um den Kürschner freizuschalten mußt Du erstmal die Häuptlingshütte auf Level 8 erweitern.</p>
       </Description>
       <Description locale="en_US">
         <p></p>
       </Description>
-      <Flavor locale="de_DE">Hast Du gesehen, dass Du jetzt spezielle Rohstoffgebäude bauen kannst? Ja genau, Steinbrüche und Holzfäller. Die bringen zwar nur einen bestimmten Rohstoff, aber dafür davon viel mehr als der Sammler. Wäre toll wenn Du einen Steinbruch und einen Holzfäller bauen würdest.</Flavor>
-      <Flavor locale="en_US">Did you see that you can build special raw materials buildings now? Exactly – quarries and logging camps. They only produce specific raw materials but much more of both than the Hunter Gatherer. It’d be great if you built a quarry and a logging camp.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
-      <RewardText locale="en_US">Steinbruch und Holzfäller erhöhen Deine Stein und Holzproduktion stärker als Jäger und Sammler. </RewardText>
-      <RewardFlavor locale="de_DE">So viel Stein und Holz, wie toll.</RewardFlavor>
-      <RewardFlavor locale="en_US">Wow – that’s a lot of stone and wood. Fantastic!</RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Flavor locale="de_DE">Halbgott, wir brauchen dringend mehr Felle! Ohne Fell können wir nicht ausreichend Einheiten ausbilden.</Flavor>
+      <Flavor locale="en_US">Demigod, we need fur!</Flavor>
+      <RewardText locale="de_DE">Baue Deine Kürschner weiter aus und ersetze nach und nach die Jäger und Sammler durch die spezialisierten Rohstoffsammler.</RewardText>
+      <RewardText locale="en_US"> </RewardText>
+      <RewardFlavor locale="de_DE">Endlich ausreichend Fell für unsere Einheiten.</RewardFlavor>
+      <RewardFlavor locale="en_US">Wow – that’s a lot of fur. Fantastic!</RewardFlavor>
+            <Requirement quest="quest_resourcescore_1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">75</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
-        <ResourceReward resource="resource_fur">15</ResourceReward>
+        <ResourceReward resource="resource_fur">200</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_quarry" min_level="1" />
-        <BuildingTest building="building_logger" min_level="1" />
+        <BuildingTest building="building_furrier" min_level="1" />
       </RewardTests>
     </Quest>
 
-<!-- 25 -->
+<!-- 25 -->  <!-- Q13 -->
     <Quest id="quest_build_4quarrylvl5_4loggerlvl5" advisor="girl">
-      <Name>More logging camps and quarries</Name>
-      <Name locale="de_DE">Noch mehr Holzfäller und Steinbrüche</Name>
-      <Task>Upgrade three quarries and three logging camps to level 4</Task>
-      <Task locale="de_DE">Je drei Steinbrüche und  Holzfäller auf Level 4 ausbauen</Task>
+      <Name>Camps and quarries</Name>
+      <Name locale="de_DE">Holzfäller und Steinbrüche</Name>
+      <Task>Upgrade two quarries and two logging camps to level 3.</Task>
+      <Task locale="de_DE">Baue je zwei Steinbrüche und  Holzfäller auf Level 3 aus.</Task>
       <Description locale="de_DE">
-        <p>Baue je drei Steinbrüche und Holzfäller auf Level 4 aus, um Deine Produktion weiter zu erhöhen.</p>
+        <p>Um Steinbruch und Holzfäller freizuschalten, musst Du die Häuptlingshütte auf Level 5 ausbauen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Upgrade three quarries and three logging camps to level 4 to increase your production.</p>
+        <p>Upgrade two quarries and two logging camps to level 3 to increase your production.</p>
       </Description>
-      <Flavor locale="de_DE">Wenn Du Deine Rohstoffproduktion steigern willst, musst Du mehr Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.</Flavor>
+      <Flavor locale="de_DE">Wenn Du Deine Rohstoffproduktion steigern willst, solltest Du Steinbrüche und Holzfäller bauen und diese dann weiter ausbauen.</Flavor>
       <Flavor locale="en_US">If you want to increase your production, you have to build more quarries and logging camps, and then upgrade them.</Flavor>
       <RewardText locale="de_DE">Achte auf Deine Lagerkapazität, sonst laufen die Lager in Deiner Abwesenheit über.</RewardText>
       <RewardText locale="en_US">Pay attention to your maximum storage capacity.</RewardText>
       <RewardFlavor locale="de_DE">Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – look at your raw materials production. That’s massive! </RewardFlavor>
-      <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
+      <Requirement quest="quest_resourcescore_0" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>  
-        <ResourceReward resource="resource_wood">200</ResourceReward>    
-        <ResourceReward resource="resource_fur">40</ResourceReward>
+        <ResourceReward resource="resource_stone">200</ResourceReward>
+        <ResourceReward resource="resource_wood">200</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_quarry" min_level="4" min_count="3" />
-        <BuildingTest building="building_logger" min_level="4" min_count="3" />
+        <BuildingTest building="building_quarry" min_level="3" min_count="2" />
+        <BuildingTest building="building_logger" min_level="3" min_count="2" />
       </RewardTests>
     </Quest>
 
-<!-- 26 -->
+<!-- 26 -->  <!-- not in-->
     <Quest id="quest_build_1campfirelvl10" advisor="girl">
       <Name>Campfire level 10</Name>
-      <Name locale="de_DE">Lagerfeuer Level 10</Name>
+      <Name locale="de_DE">Lagerstätte: Lagerfeuer Level 10</Name>
       <Task>Upgrade your campfire to level 10</Task>
       <Task locale="de_DE">Baue dein Lagerfeuer auf Level 10 aus.</Task>
       <Description locale="de_DE">
@@ -866,13 +840,13 @@
       <Flavor locale="en_US">I’d love to found an encampment but first we need a little chieftain. A little chieftain can only be trained at an upgraded campfire. Could you upgrade this one for me?</Flavor>
       <RewardText locale="de_DE">Kleine Häuptlinge sind teuer und haben eine lange Rekrutierungszeit. Außerdem sind sie trotz ihrer wichtigen Stellung Teil der Nahkampfeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.</RewardText>
       <RewardText locale="en_US">Little chieftains are expensive and have a long recruiting time. They’re also members of the melee fighting unit, despite their important status. So try not to deploy them in battle.</RewardText>
-      <RewardFlavor locale="de_DE">Gut. Jetzt kannst Du einen Kleinen Häuptling trainieren. Schau dafür am Lagerfeuer vorbei.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Wunderbar! Als Belohnung hast Du einen Kleinen Häuptling erhalten. Dieser kann Dir eine zusätzliche Siedlung, eine Lagerstätte, gründen.</RewardFlavor>
       <RewardFlavor locale="en_US">Good. Now you can train a little chieftain. So I’d pay a visit to the campfire if I were you. </RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
         <ResourceReward resource="resource_stone">240</ResourceReward>  
         <ResourceReward resource="resource_wood">180</ResourceReward>    
         <ResourceReward resource="resource_fur">450</ResourceReward>
+        <UnitReward unit="little_chief">1</UnitReward>
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -880,10 +854,10 @@
       </RewardTests>
     </Quest>
 
-<!-- 27 -->
+<!-- 27 -->  <!-- Q16 -->
     <Quest id="quest_outpost" advisor="chef">
       <Name>Encampment</Name>
-      <Name locale="de_DE">Lagerstätte</Name>
+      <Name locale="de_DE">Lagerstätte gründen</Name>
       <Task>Start an encampment.</Task>
       <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
       <Description locale="de_DE">
@@ -900,7 +874,7 @@
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US">You’ve started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I’m sick of the sight of you.</RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl10" />
+      <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -912,8 +886,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 28 -->
-<Quest id="quest_build_2gathererlvl3" advisor="girl">
+<!-- 28 -->  <!-- not in -->
+    <Quest id="quest_build_2gathererlvl3" advisor="girl">
   <Name>More Hunter Gatherers </Name>
   <Name locale="de_DE">Weitere Jäger und Sammler</Name>
   <Task>Upgrade four Hunter Gatherers to level 2.</Task>
@@ -930,7 +904,6 @@
   <RewardText locale="en_US">Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.</RewardText>
   <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
   <RewardFlavor locale="en_US">Wonderful! I think it’s a great idea to upgrade all your Hunter Gatherers – that way, your raw materials won’t run out so quickly.</RewardFlavor>
-   <Requirement quest="quest_build_1campfirelvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">70</ResourceReward>  
     <ResourceReward resource="resource_wood">60</ResourceReward>    
@@ -942,68 +915,69 @@
   </RewardTests>
 </Quest>
 
-<!-- 29 -->
+<!-- 29 -->  <!-- Q9 -->
 <Quest id="quest_build_1cottagelvl3" advisor="girl">
-  <Name>small huts, big stuff!</Name>
-  <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
-  <Task>Upgrade a small hut to level 3.</Task>
-  <Task locale="de_DE">Baue eine kleine Hütte auf Level 3.</Task>
+  <Name>Small huts, big stuff!</Name>
+  <Name locale="de_DE">Baue Kleine Hütten</Name>
+  <Task>Increase your buildingspeed to 126%</Task>
+  <Task locale="de_DE">Erhöhe Deine Baugeschwindigkeit auf mindestens 126%.</Task>
   <Description locale="de_DE">
-    <p>Die ersten Bewohner sind in die Hütten gezogen, doch schon wird der Platz knapp. Erweitere die Kleinen Hütten auf Level 3.</p>
+    <p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links, in der Übersicht der Hauptsiedlung, steht das ´G´ für die Baugeschwindigkeit.</p>
   </Description>
   <Description locale="en_US">
     <p>The first inhabitants have moved into the huts, but they’re running out of space already. Upgrade the small hut to level 3 for your population.</p>
   </Description>
   <Flavor locale="de_DE">Die Kleinen Hütten sind ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.</Flavor>
   <Flavor locale="en_US">The small huts are great. But they’re already too small! Upgrade the huts again, there are more future inhabitants waiting outside the gates of your settlement.</Flavor>
-  <RewardText locale="de_DE">Wenn Dir die Bauaufträge immer noch zu lange dauern, kannst Du mehr kleine Hütten bauen und diese weiter ausbauen.</RewardText>
+  <RewardText locale="de_DE">Die Kleinen Hütten beschleunigen sich gegenseitig. Um schneller zu bauen empfiehlt es sich zwei Hütten abwechselnd auszubauen.</RewardText>
   <RewardText locale="en_US">If the building contracts are taking too long for you, you can build more small huts and then upgrade them.</RewardText>
   <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! You already have new inhabitants coming to help you upgrade.</RewardFlavor>
-     <Requirement quest="quest_build_2gathererlvl3"/>
+      <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">95</ResourceReward>  
-    <ResourceReward resource="resource_wood">75</ResourceReward>    
-    <ResourceReward resource="resource_fur">45</ResourceReward>
+    <ResourceReward resource="resource_stone">210</ResourceReward>
+    <ResourceReward resource="resource_wood">180</ResourceReward>
+    <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_cottage" min_level="3" min_count="1" />
+    <BuildingTest building="building_cottage" min_level="3" min_count="2" />
   </RewardTests>
 </Quest>
 
-<!-- 30 -->
+<!-- 30 -->  <!-- Q1 -->
 <Quest id="quest_build_2gathererlvl4" advisor="girl">
-  <Name>More Hunter Gatherers</Name>
-  <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
-  <Task>Upgrade two Hunter Gatherers to level 3.</Task>
-  <Task locale="de_DE">Baue zwei Jäger und Sammler auf Level 3 aus.</Task>
-  <Description locale="de_DE">
-    <p>In Deinen Kleinen Hütten machen es sich die ersten Bewohner gemütlich. Sehr schön. Sorge doch bitte dafür, dass Deine Bewohner auch immer genügend Rohstoffe haben. Verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>The first inhabitants are making themselves at home in your small huts. That’s great. But make sure your population always has enough raw materials. To do that, you should upgrade at least two of your Hunter Gatherers to level 3.</p>
-  </Description>
-  <Flavor locale="de_DE">Ich bin ganz begeistert wie sich Deine Jäger und Sammler bemühen Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte weitere Ausbildung.</Flavor>
-  <Flavor locale="en_US">I’m really impressed by your Hunter Gatherers‘ efforts to bring you raw materials. Why not give them some more training.  </Flavor>
-  <RewardText locale="de_DE">Jäger und Sammler bauen ist immer eine gute Idee.</RewardText>
-  <RewardText locale="en_US">Building Hunter Gatherers is always a good idea.</RewardText>
-  <RewardFlavor locale="de_DE">Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.</RewardFlavor>
-  <RewardFlavor locale="en_US">Thank you Demigod, that was great foresight on your part, raising your raw materials production. </RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl3" />
-  <Rewards>
-    <ResourceReward resource="resource_stone">90</ResourceReward>  
-    <ResourceReward resource="resource_wood">60</ResourceReward>    
-    <ResourceReward resource="resource_fur">15</ResourceReward>
-    <ExperienceReward>100</ExperienceReward>
-  </Rewards>
-  <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
-  </RewardTests>
+ <Name>Improve your raw materials production</Name>
+ <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
+ <Task>Improve your stone and wood production to at least 30 units per hour</Task>
+ <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 30 Rohstoffeinheiten pro Stunde.</Task>
+ <Description locale="de_DE">
+ <p>Du solltest zum Erreichen des Ziels mindestens 6 Jäger und Sammler mit Level 3 oder 4 ausbauen. Rohstoffe sind die Basis jeden Fortschritts.</p>
+ </Description>
+ <Description locale="en_US">
+ <p>To do this you should build 6 Hunter Gatheres and upgrade some of them to level three or four. You can see your current production at raw materials display at the top.</p>
+ </Description>
+ <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
+ <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
+ <RewardText locale="de_DE">Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Nutze jeden freien und nicht anderweitig benötigten Bauplatz zur Rohstoffproduktion.</RewardText>
+ <RewardText locale="en_US">Remember to increase your raw materials production. You should use every free and otherwise unused building slot.</RewardText>
+ <RewardFlavor locale="de_DE">Super! Es geht voran.</RewardFlavor>
+ <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
+ <Requirement quest="quest_improve_production_1" />
+ <Rewards>
+ <ResourceReward resource="resource_stone">160</ResourceReward>
+ <ResourceReward resource="resource_wood">160</ResourceReward>
+ <ResourceReward resource="resource_fur">80</ResourceReward>
+ <ExperienceReward>120</ExperienceReward>
+ </Rewards>
+ <RewardTests>
+ <ResourceProductionTest resource="resource_wood">30</ResourceProductionTest>
+ <ResourceProductionTest resource="resource_stone">30</ResourceProductionTest>
+ </RewardTests>
 </Quest>
 
-<!-- 31 -->
-<Quest id="quest_build_4gathererlvl5" advisor="girl">
+<!-- 31 -->  <!-- not in -->
+    <Quest id="quest_build_4gathererlvl5" advisor="girl">
   <Name>Always more Hunter Gatherers</Name>
   <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
   <Task>Upgrade four Hunter Gatherers to level 5</Task>
@@ -1031,7 +1005,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 32 -->
+<!-- 32 --> <!-- not in -->
 <Quest id="quest_build_3gathererlvl7" advisor="girl">
   <Name>Upgrade Hunter Gatherers </Name>
   <Name locale="de_DE">Jäger und Sammler weiter ausbauen</Name>
@@ -1049,7 +1023,6 @@
   <RewardText locale="en_US">Upgrade the Hunter Gatherers further.</RewardText>
   <RewardFlavor locale="de_DE">Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks! With all the Hunter Gatherers, we should have enough raw materials soon. </RewardFlavor>
-  <Requirement quest="quest_build_4gathererlvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">80</ResourceReward>  
     <ResourceReward resource="resource_wood">80</ResourceReward>    
@@ -1061,8 +1034,8 @@
   </RewardTests>
 </Quest>
 
-<!-- 33 -->
-<Quest id="quest_build_1barrackslvl2" advisor="chef" tutorial="true">
+<!-- 33 --> <!-- not in -->
+    <Quest id="quest_build_1barrackslvl2" advisor="chef" tutorial="true">
   <Name>Training grounds level 2</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 2</Name>
   <Task>Upgrade a training grounds to level 2</Task>
@@ -1079,7 +1052,6 @@
   <RewardText locale="en_US">The training grounds also reduces the melee unit recruitment time. </RewardText>
   <RewardFlavor locale="de_DE">War das jetzt so schwer? Hier ein paar Kleinigkeiten, damit Du nicht wieder Deine militärische Schlagkraft vernachlässigst! </RewardFlavor>
   <RewardFlavor locale="en_US">What that so difficult? Here are a couple of odds and ends to remind you not to neglect your military might again!</RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl2" />
   <Rewards>
     <ResourceReward resource="resource_stone">160</ResourceReward>  
     <ResourceReward resource="resource_wood">95</ResourceReward>    
@@ -1091,10 +1063,10 @@
   </RewardTests>
 </Quest>
 
-<!-- 34 -->
+<!-- 34 --><!-- not in -->
 <Quest id="quest_build_1barrackslvl5" advisor="warrior">
   <Name>Training grounds level 5</Name>
-  <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
+  <Name locale="de_DE">Einheiten: Ausbildungsgelände Level 5</Name>
   <Task>Upgrade a training grounds to level 5</Task>
   <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 5.</Task>
   <Description locale="de_DE">
@@ -1109,7 +1081,6 @@
   <RewardText locale="en_US">The thick-skinned clubber! Reinforcements for your melee fighters. </RewardText>
   <RewardFlavor locale="de_DE">Sehr schön, das erzähle ich gleich dem Chef! Hier hast Du ein paar Rohstoffe für meine Jungs mit der Keule.</RewardFlavor>
   <RewardFlavor locale="en_US">Excellent – I’ll tell the boss right away! Here are a couple of raw materials for the lads with their clubs.  </RewardFlavor>
-    <Requirement quest="quest_build_1gathererlvl7" />
   <Rewards>
     <ResourceReward resource="resource_stone">250</ResourceReward>  
     <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -1121,10 +1092,10 @@
   </RewardTests>
 </Quest>
 
-<!-- 35 -->
+<!-- 35 --> <!-- not in -->
 <Quest id="quest_build_1barrackslvl10" advisor="warrior">
   <Name>Training Grounds level 10</Name>
-  <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
+  <Name locale="de_DE">Einheiten: Ausbildungsgelände Level 10</Name>
   <Task> Upgrade a training grounds to level 10.</Task>
   <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 10.</Task>
   <Description locale="de_DE">
@@ -1139,12 +1110,11 @@
   <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
   <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.</RewardFlavor>
   <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">150</ResourceReward>  
-    <ResourceReward resource="resource_wood">150</ResourceReward>    
-    <ResourceReward resource="resource_fur">150</ResourceReward>
-    <UnitReward unit="unit_clubbers_2">10</UnitReward> 
+    <ResourceReward resource="resource_stone">500</ResourceReward>
+    <ResourceReward resource="resource_wood">500</ResourceReward>
+    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <UnitReward unit="unit_clubbers_2">15</UnitReward>
     <ExperienceReward>300</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1152,8 +1122,8 @@
   </RewardTests>
 </Quest>
 
-<!-- 36 -->
-<Quest id="quest_build_2quarrylvl3_2loggerlvl3" advisor="girl">
+<!-- 36 --> <!-- not in -->
+  <Quest id="quest_build_2quarrylvl3_2loggerlvl3" advisor="girl">
   <Name>More Quarries and logging camps</Name>
   <Name locale="de_DE">Mehr Holzfäller und Steinbrüche</Name>
   <Task>Upgrade two quarries and logging camps to level 3</Task>
@@ -1170,12 +1140,11 @@
   <RewardText locale="en_US">Wow – look at your raw materials production. That’s massive!</RewardText>
   <RewardFlavor locale="de_DE">Die Steinbrüche und Holzfäller ergänzen sich in den Kosten. Baue sie abwechselnd.</RewardFlavor>
   <RewardFlavor locale="en_US">The quarries and logging camps complement each other in production. Build them by turns.</RewardFlavor>
-  <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">120</ResourceReward>  
     <ResourceReward resource="resource_wood">120</ResourceReward>    
     <ResourceReward resource="resource_fur">40</ResourceReward>
-    <ExperienceReward>125</ExperienceReward>
+    <ExperienceReward>130</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_quarry" min_level="3" min_count="2" />
@@ -1183,8 +1152,8 @@
   </RewardTests>
 </Quest>
 
-<!-- 37 -->
-<Quest id="quest_build_1storagelvl5" advisor="chef">
+<!-- 37 --> <!-- not in -->
+   <Quest id="quest_build_1storagelvl5" advisor="chef">
    <Name>Raw materials store level 3</Name>
    <Name locale="de_DE"> Rohstofflager Level 3 </Name>
    <Task>Build a raw materials store level 3.</Task>
@@ -1201,7 +1170,6 @@
    <RewardText locale="en_US">With every raw materials store you can also transport more raw materials.</RewardText>
    <RewardFlavor locale="de_DE">Was willst Du? Soll ich Dich loben, oder gar drücken? Zieh ab und baue mir endlich eine Armee!</RewardFlavor>
    <RewardFlavor locale="en_US">What do you want? Praise? A hug? Buzz off and go build me an army, finally!</RewardFlavor>
-   <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
    <Rewards>
      <ResourceReward resource="resource_stone">45</ResourceReward>  
      <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -1213,12 +1181,12 @@
    </RewardTests>
  </Quest>
 
- <!-- 38 -->
+ <!-- 38 --> <!-- Q14 -->
  <Quest id="quest_build_1campfirelvl5" advisor="chef">
    <Name>Campfire level 5</Name>
-   <Name locale="de_DE">Lagerfeuer Level 5</Name>
+   <Name locale="de_DE">Allianz + Lagerstätte: Lagerfeuer Level 5</Name>
    <Task>Upgrade the campfire to level 5 so you get the chance to start your own alliance.</Task>
-   <Task locale="de_DE">Baue dein Lagerfeuer auf Level 5, damit Du die Möglichkeit hast, eine eine eigene Allianz zu gründen.</Task>
+   <Task locale="de_DE">Baue dein Lagerfeuer auf Level 5, damit Du die Möglichkeit hast, eine eigene Allianz zu gründen.</Task>
    <Description locale="de_DE">
      <p></p>
    </Description>
@@ -1231,11 +1199,11 @@
    <RewardText locale="en_US">Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.</RewardText>
    <RewardFlavor locale="de_DE">Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!</RewardFlavor>
    <RewardFlavor locale="en_US">Huh? What did you wake me up for? Oh – finished your campfire at last, eh? About time, too!</RewardFlavor>
-   <Requirement quest="quest_build_chiefcottagelvl5" />
    <Rewards>
      <ResourceReward resource="resource_stone">275</ResourceReward>  
      <ResourceReward resource="resource_wood">250</ResourceReward>    
-     <ResourceReward resource="resource_fur">70</ResourceReward>
+     <ResourceReward resource="resource_fur">150</ResourceReward>
+     <UnitReward unit="unit_clubbers">10</UnitReward>
      <ExperienceReward>250</ExperienceReward>
    </Rewards>
    <RewardTests>
@@ -1243,7 +1211,7 @@
    </RewardTests>
  </Quest>
 
- <!-- 39 -->
+ <!-- 39 --> <!-- not in -->
  <Quest id="quest_build_6gathererlvl2" advisor="girl">
    <Name>More Hunter Gatherers</Name>
    <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
@@ -1272,7 +1240,7 @@
    </RewardTests>
  </Quest>
 
-<!-- 40 -->
+<!-- 40 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl4" advisor="girl" hide_start_dialog="true">
   <Name>Bigger Hunter Gatherers</Name>
   <Name locale="de_DE">Immer größere Jäger und Sammler</Name>
@@ -1300,7 +1268,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 41 -->
+<!-- 41 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl5" advisor="chef">
   <Name>Oh, these eternal Hunter Gatherers.</Name>
   <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
@@ -1318,7 +1286,6 @@
   <RewardText locale="en_US">Hunter Gatherers produce all three raw materials. Fur, too!</RewardText>
   <RewardFlavor locale="de_DE">Was? Du hast ihr Gelände ausgebaut? Das wird sie doch höchstens einen Tag beschäftigt halten. Was bringen sie euch Halbgöttern denn heutzutage bei?!</RewardFlavor>
   <RewardFlavor locale="en_US">What? You upgraded their compound? That’ll only keep them busy for a day at most! What on earth do they teach you Demigods these days?</RewardFlavor>
-  <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">80</ResourceReward>  
     <ResourceReward resource="resource_wood">80</ResourceReward>    
@@ -1329,7 +1296,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 42 -->
+<!-- 42 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl6" advisor="girl">
   <Name>More Hunter Gatherers</Name>
   <Name locale="de_DE">Und wieder Jäger und Sammler</Name>
@@ -1347,7 +1314,6 @@
   <RewardText locale="en_US">Building Hunter Gatherers is always a good idea.</RewardText>
   <RewardFlavor locale="de_DE">Danke ich habe den Jäger und Sammler schon über sein neues Gelände wirbeln sehen. Ich glaube, er wird eine Weile beschäftigt sein.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks. I’ve just been watching the Hunter Gatherer rushing about his new compound. I think he’s going to be busy for a while.</RewardFlavor>
-  <Requirement quest="quest_build_1gathererlvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">120</ResourceReward>  
     <ResourceReward resource="resource_wood">120</ResourceReward>    
@@ -1358,7 +1324,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 43 -->
+<!-- 43 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl7" advisor="warrior">
   <Name>The Hunter Gatherer problem</Name>
   <Name locale="de_DE">Das Jäger und Sammler Problem</Name>
@@ -1376,7 +1342,6 @@
   <RewardText locale="en_US">After a certain time, it’s a good idea to replace Hunter Gatherers with specialists in their field: quarries, logging camps and furriers. It’s up to you to choose the moment. </RewardText>
   <RewardFlavor locale="de_DE">Ich habe gehört, dass die Jäger und Sammler nicht mehr die Ausbildung stören. Hoffentlich bleibt das auch so.</RewardFlavor>
   <RewardFlavor locale="en_US">I’ve heard the Hunter Gatherers aren’t disrupting troop training any more. I hope it stays that way.</RewardFlavor>
-  <Requirement quest="quest_build_chiefcottagelvl6" />
   <Rewards>
     <ResourceReward resource="resource_stone">160</ResourceReward>  
     <ResourceReward resource="resource_wood">160</ResourceReward>    
@@ -1387,7 +1352,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 44 -->
+<!-- 44 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl8" advisor="girl">
   <Name>Still Hunter Gatherers</Name>
   <Name locale="de_DE">Immer noch Jäger und Sammler</Name>
@@ -1405,7 +1370,6 @@
   <RewardText locale="en_US">From level 11 on, Hunter Gatherers sometimes find golden frogs.</RewardText>
   <RewardFlavor locale="de_DE">Hast Du schon gesehen, wie sich der Jäger und Sammler freut? Er hat heute sogar eine Stunde lang versucht eine Kröte zu fangen. Geschafft hat er es aber nicht.</RewardFlavor>
   <RewardFlavor locale="en_US">Do you see how excited the Hunter Gatherer is? He actually spent a whole hour today, trying to catch a golden frog! But he didn’t manage it in the end.</RewardFlavor>
-  <Requirement quest="quest_build_1gathererlvl7" />
   <Rewards>
     <ResourceReward resource="resource_stone">220</ResourceReward>  
     <ResourceReward resource="resource_wood">220</ResourceReward>    
@@ -1416,7 +1380,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 45 -->
+<!-- 45 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl9" advisor="girl">
   <Name>Almost upgraded Hunter Gatherer</Name>
   <Name locale="de_DE">Fast ausgebaute Jäger und Sammler</Name>
@@ -1434,7 +1398,6 @@
   <RewardText locale="en_US">Building Hunter Gatherers is always a good idea.</RewardText>
   <RewardFlavor locale="de_DE">Danke, ich glaube, jetzt geht es dem Jäger und Sammler besser.</RewardFlavor>
   <RewardFlavor locale="en_US">Thank you! I think the Hunter Gatherer is feeling better now.</RewardFlavor>
-  <Requirement quest="quest_build_1gathererlvl8" />
   <Rewards>
     <ResourceReward resource="resource_stone">350</ResourceReward>  
     <ResourceReward resource="resource_wood">350</ResourceReward>    
@@ -1445,7 +1408,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 46 -->
+<!-- 46 --> <!-- not in -->
 <Quest id="quest_build_1gathererlvl10" advisor="girl">
   <Name>A final Hunter Gatherer</Name>
   <Name locale="de_DE">Ein letztes mal der Jäger und Sammler</Name>
@@ -1463,7 +1426,6 @@
   <RewardText locale="en_US">Building a Hunter Gatherer is always a good idea.</RewardText>
   <RewardFlavor locale="de_DE">Ach wie schön. Der Jäger und Sammler hat jetzt immer etwas zu tun..</RewardFlavor>
   <RewardFlavor locale="en_US">Oh how nice! Now, the Hunter Gatherer has always got something to do…</RewardFlavor>
-  <Requirement quest="quest_build_1gathererlvl9" />
   <Rewards>
     <ResourceReward resource="resource_stone">600</ResourceReward>  
     <ResourceReward resource="resource_wood">600</ResourceReward>    
@@ -1474,8 +1436,8 @@
   </RewardTests>
 </Quest>
 
-<!-- 47 -->
-    <Quest id="quest_queue_chiefcottagelvl2" advisor="chef">
+<!-- 47 --> <!-- not in -->
+      <Quest id="quest_queue_chiefcottagelvl2" advisor="chef">
       <Name>The chieftain’s hut is in the building queue</Name>
       <Name locale="de_DE">Die Häuptlingshütte in der Bauschleife</Name>
       <Task>Order a chieftain’s hut upgrade.</Task>
@@ -1497,8 +1459,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 48 -->
-    <Quest id="quest_queue_chiefcottagelvl3" advisor="girl" hide_start_dialog="true">
+<!-- 48 --> <!-- not in -->
+      <Quest id="quest_queue_chiefcottagelvl3" advisor="girl" hide_start_dialog="true">
       <Name>The start of an even bigger chieftain’s hut</Name>
       <Name locale="de_DE">Der Anfang einer noch größeren Häuptlingshütte</Name>
       <Task>Order the next level of the chieftain’s hut.</Task>
@@ -1520,12 +1482,12 @@
       </RewardTests>
     </Quest>
 
-<!-- 49 -->
-    <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
+<!-- 49 --> <!-- Q4.5 -->
+      <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
       <Name>And another chieftain’s hut upgrade</Name>
-      <Name locale="de_DE"> Und wieder der Häuptlingshüttenausbau </Name>
+      <Name locale="de_DE">Hurtig!</Name>
       <Task>Order a chieftain’s hut upgrade.</Task>
-      <Task locale="de_DE">Gib den Ausbau der Häuptlingshütte in Auftrag.</Task>
+      <Task locale="de_DE">Du hast zwei Kröten erhalten!</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -1534,16 +1496,20 @@
       </Description>
       <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
       <Flavor locale="en_US">I think it’s time for a bigger chieftain’s hut. Why not order an upgrade. </Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.</RewardFlavor>
-      <RewardFlavor locale="en_US">The upgrade is in progress – all we can do now is wait.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
+      <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
+      <Requirement quest="quest_improve_production_1" />
+      <Rewards>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
+      </Rewards>      
       <RewardTests>
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
       </RewardTests>
     </Quest>
 
-<!-- 50 -->
+<!-- 50 --> <!-- not in -->
     <Quest id="quest_build_chiefcottagelvl6" advisor="girl" >
       <Name>Chieftain’s hut level 6</Name>
       <Name locale="de_DE">Häuptlingshütte Level 6</Name>
@@ -1561,7 +1527,6 @@
       <RewardText locale="en_US">Level 8 of the chieftain’s hut activates the furriers. They’re really important.</RewardText>
       <RewardFlavor locale="de_DE">Oh wow, Du hast die Häutptlingshütte weiter ausgebaut. Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
       <RewardFlavor locale="en_US">Oh wow – you upgraded the chieftain’s hut again. Your progress is amazing! Keep it up!</RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">600</ResourceReward>  
         <ResourceReward resource="resource_wood">600</ResourceReward>    
@@ -1573,8 +1538,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 51 -->
-    <Quest id="quest_queue_chiefcottagelvl5" advisor="girl" hide_start_dialog="true">
+<!-- 51 --> <!-- not in -->
+      <Quest id="quest_queue_chiefcottagelvl5" advisor="girl" hide_start_dialog="true">
       <Name>Another chieftain’s hut upgrade</Name>
       <Name locale="de_DE"> Und wieder der Häuptlingshüttenausbau </Name>
       <Task>Order a chieftain’s hut upgrade. </Task>
@@ -1596,8 +1561,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 52 -->
-    <Quest id="quest_build_2cottagelvl1" advisor="girl" tutorial="true">
+<!-- 52 --> <!-- not in -->
+      <Quest id="quest_build_2cottagelvl1" advisor="girl" tutorial="true">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
       <Task>Build two small huts.</Task>
@@ -1614,7 +1579,6 @@
       <RewardText locale="en_US">If the order is taking too long for you, you can build more small huts and then upgrade.</RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done! Your workers are happy, and they build faster. </RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl2_V2" />
       <Rewards>
         <ResourceReward resource="resource_stone">120</ResourceReward>  
         <ResourceReward resource="resource_wood">100</ResourceReward>    
@@ -1627,8 +1591,8 @@
     </Quest>
 
 
-<!-- 53 -->
-    <Quest id="quest_quest_button" advisor="girl" tutorial="true">
+<!-- 53 --> <!-- not in -->
+      <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and click on it. Then close the dialog and come back here.</Task>
@@ -1645,7 +1609,6 @@
       <RewardText locale="en_US">Take a look at the quest overview regularly, then you won’t lose track of them. </RewardText>
       <RewardFlavor locale="de_DE">Questknopf gefunden! Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">You found the quest button! Great – now you can see all your quests at a glance.</RewardFlavor>
-            <Requirement quest="quest_end_1gathererlvl1" />
             <Rewards>
               <ExperienceReward>50</ExperienceReward>
             </Rewards>
@@ -1654,7 +1617,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 54 -->
+<!-- 54 --> <!-- not in -->
     <Quest id="quest_build_chiefcottagelvl2_V2" advisor="chef" hide_start_dialog="true" tutorial="true">
       <Name>Chieftain’s hut upgrade</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
@@ -1672,7 +1635,6 @@
       <RewardText locale="en_US">Higher levels of the chieftain’s hut let you construct more buildings.</RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Außerdem hab ich Dir doch gerade schon eine Belohnung gegeben! Verschwinde Du gieriger Halbgott.</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Besides, I just gave you’re a reward! Push off, you greedy demigod!</RewardFlavor>
-      <Requirement quest="quest_queue_chiefcottagelvl2_V2" />
       <Rewards>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -1681,8 +1643,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 55 -->
-    <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="true">
+<!-- 55 --> <!-- not in -->
+      <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="true">
       <Name>Order a chieftain’s hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task>Order a chieftain’s hut upgrade to level 2.</Task>
@@ -1695,11 +1657,10 @@
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine tolle Belohnung.</Flavor>
       <Flavor locale="en_US">Demigod? And what’s that supposed to be? My chieftain’s hut? You think I’m going to live in that? Ha! Change it immediately! Upgrade it and I’ll give you a reward.</Flavor>
-      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
+      <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US">Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.</RewardText>
       <RewardFlavor locale="de_DE">Ah. Der Ausbau läuft schon. Es gibt eine weitere Belohnung, sobald sie fertig ist. Und bis dahin störe mich nicht.</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? No? But you still want a reward? Some people are  never satisfied. Here – take this, and come back when the upgrade is finished.</RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">150</ResourceReward>  
         <ResourceReward resource="resource_wood">150</ResourceReward>    
@@ -1711,8 +1672,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 56 -->
-<Quest id="quest_build_1cottagelvl2" advisor="girl" tutorial="true">
+<!-- 56 --> <!-- not in -->
+    <Quest id="quest_build_1cottagelvl2" advisor="girl" tutorial="true">
   <Name>Small huts, big stuff!</Name>
   <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
   <Task>Upgrade a small hut to level 2.</Task>
@@ -1729,7 +1690,6 @@
   <RewardText locale="en_US">If the building contracts are taking too long for you, you can build more small huts and then upgrade them.</RewardText>
   <RewardFlavor locale="de_DE">Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! You already have new inhabitants coming to help you upgrade.</RewardFlavor>
-  <Requirement quest="quest_build_1barrackslvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">95</ResourceReward>  
     <ResourceReward resource="resource_wood">75</ResourceReward>    
@@ -1741,8 +1701,8 @@
   </RewardTests>
 </Quest>
 
-<!-- 57 -->
-    <Quest id="quest_army_reinforce" advisor="warrior">
+<!-- 57 --> <!-- not in -->
+      <Quest id="quest_army_reinforce" advisor="warrior">
       <Name>Reinforce your army</Name>
       <Name locale="de_DE">Verstärke Deine Armee</Name>
       <Task>Reinforce your army to at least 5 units.</Task>
@@ -1759,7 +1719,6 @@
       <RewardText locale="en_US">Little armies get crushed by large armies without even a fight.</RewardText>
       <RewardFlavor locale="de_DE">Naja, besser als vorher, aber da geht noch mehr. Hier hast Du ein bisschen mehr Verstärkung.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh well – that’s better than before, but it could use some improvement. Here’s a little reinforcement for you.</RewardFlavor>
-      <Requirement quest="quest_army_create" />
       <Rewards>
         <ResourceReward resource="resource_stone">180</ResourceReward>  
         <ResourceReward resource="resource_wood">140</ResourceReward>    
@@ -1772,36 +1731,35 @@
       </RewardTests>
     </Quest>
 
-
-
-<!-- 58 -->
-    <Quest id="quest_improve_production_1" advisor="girl">
+<!-- 58 --> <!-- Tutorial 10 -->
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
-      <Task>Improve your stone and wood production to at least 10 units per hour</Task>
-      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.</Task>
+      <Task>Improve your stone and wood production to at least 12 units per hour</Task>
+      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.</Task>
       <Description locale="de_DE">
-        <p>Du solltest zum Erreichen des Ziels 5 oder 6 Jäger und Sammler bauen und einige auf Level 2 oder sogar 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
+        <p>Du solltest zum Erreichen des Ziels 5 bis 6 Jäger und Sammler mit Level 2 oder sogar 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
       </Description>
       <Description locale="en_US">
-        <p>To do this you should build 5 or 6 Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>
+        <p>To do this you should build 5 or 6  Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>
       </Description>
-      <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
+      <Flavor locale="de_DE">Rohstoffe sind das Wichtigste, wir brauchen dringend eine Produktion!</Flavor>
       <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
-      <RewardText locale="de_DE">Denk dran, wann immer möglich Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.</RewardText>
+      <RewardText locale="de_DE">Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Du solltest jeden freien, und nicht anderweitig benötigten, Bauplatz dafür verwenden.</RewardText>
       <RewardText locale="en_US">Remember to increase your raw materials production. You should use every free and otherwise unused building slot.</RewardText>
       <RewardFlavor locale="de_DE">Super! Das ist schon mal ein Anfang.</RewardFlavor>
       <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
-      <Requirement quest="quest_build_1barrackslvl1" />
+      <Requirement quest="quest_settlement_button2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>
-        <ResourceReward resource="resource_wood">200</ResourceReward>
-        <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ExperienceReward>100</ExperienceReward>
+        <ResourceReward resource="resource_stone">100</ResourceReward>
+        <ResourceReward resource="resource_wood">100</ResourceReward>
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ResourceProductionTest resource="resource_wood">10</ResourceProductionTest>
-        <ResourceProductionTest resource="resource_stone">10</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
     </Quest>
 
@@ -1827,7 +1785,7 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+  <Requirement quest="quest_improve_production_1" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>  
     <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -2118,8 +2076,8 @@
 <Quest id="quest_armyXP_1" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 750 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 750 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 30 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 30 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2132,7 +2090,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_build_1barrackslvl5" />
+<Requirement quest="quest_resourcescore_0" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2140,7 +2098,7 @@
     <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="10" />
+    <ArmyExperienceTest min_experience="30" />
   </RewardTests>
 </Quest>
 
@@ -2148,8 +2106,8 @@
 <Quest id="quest_armyXP_2" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 1400 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 1400 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 100 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2178,8 +2136,8 @@
 <Quest id="quest_armyXP_3" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 2500 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 2500 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 300 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 300 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2200,7 +2158,7 @@
     <ExperienceReward>180</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ArmyExperienceTest min_experience="250" />
+    <ArmyExperienceTest min_experience="300" />
   </RewardTests>
 </Quest>
 
@@ -2208,8 +2166,8 @@
 <Quest id="quest_armyXP_4" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 4100 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 4100 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 500 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 500 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2239,8 +2197,8 @@
 <Quest id="quest_armyXP_5" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 6100 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 6100 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 1000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 1000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2269,8 +2227,8 @@
 <Quest id="quest_armyXP_6" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 8600 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 8600 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 2000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 2000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2299,8 +2257,8 @@
 <Quest id="quest_armyXP_7" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 11500 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 11500 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 4000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 4000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2329,8 +2287,8 @@
 <Quest id="quest_armyXP_8" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 14900 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 14900 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 6000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 6000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2359,8 +2317,8 @@
 <Quest id="quest_armyXP_9" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 18750 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 18750 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 10000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 10000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2389,8 +2347,8 @@
 <Quest id="quest_armyXP_10" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 23000 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 23000 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 15000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 15000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -2423,8 +2381,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 1000</Task>
-  <Task locale="de_DE">Erreiche 1000 Einwohner</Task>
+  <Task>Reach a Population of 250</Task>
+  <Task locale="de_DE">Erreiche 250 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2437,15 +2395,15 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-<!--  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> -->
+  <Requirement quest="quest_build_1cottagelvl3" /> 
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
-    <ResourceReward resource="resource_fur">200</ResourceReward>
+    <ResourceReward resource="resource_fur">150</ResourceReward>
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="400" />
+    <ScoreTest min_population="250" />
   </RewardTests>
 </Quest>
 
@@ -2453,8 +2411,8 @@
 <Quest id="quest_score_2" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 1675</Task>
-  <Task locale="de_DE">Erreiche 1675 Einwohner</Task>
+  <Task>Reach a Population of 450</Task>
+  <Task locale="de_DE">Erreiche 450 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2475,7 +2433,7 @@
         <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="500" />
+    <ScoreTest min_population="450" />
   </RewardTests>
 </Quest>
 
@@ -2483,8 +2441,8 @@
 <Quest id="quest_score_3" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 2800</Task>
-  <Task locale="de_DE">Erreiche 2800 Einwohner</Task>
+  <Task>Reach a Population of 700</Task>
+  <Task locale="de_DE">Erreiche 700 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2513,8 +2471,8 @@
 <Quest id="quest_score_4" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 4375</Task>
-  <Task locale="de_DE">Erreiche 4375 Einwohner</Task>
+  <Task>Reach a Population of 1000</Task>
+  <Task locale="de_DE">Erreiche 1000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2543,8 +2501,8 @@
 <Quest id="quest_score_5" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 6400</Task>
-  <Task locale="de_DE">Erreiche 6400 Einwohner</Task>
+  <Task>Reach a Population of 1500</Task>
+  <Task locale="de_DE">Erreiche 1500 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2574,8 +2532,8 @@
 <Quest id="quest_score_6" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 8875</Task>
-  <Task locale="de_DE">Erreiche 8875 Einwohner</Task>
+  <Task>Reach a Population of 2000</Task>
+  <Task locale="de_DE">Erreiche 2000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2604,8 +2562,8 @@
 <Quest id="quest_score_7" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 11800</Task>
-  <Task locale="de_DE">Erreiche 11800 Einwohner</Task>
+  <Task>Reach a Population of 2800</Task>
+  <Task locale="de_DE">Erreiche 2800 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2634,8 +2592,8 @@
 <Quest id="quest_score_8" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 15175</Task>
-  <Task locale="de_DE">Erreiche 15175 Einwohner</Task>
+  <Task>Reach a Population of 4000</Task>
+  <Task locale="de_DE">Erreiche 4000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2664,8 +2622,8 @@
 <Quest id="quest_score_9" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 19000</Task>
-  <Task locale="de_DE">Erreiche 19000 Einwohner</Task>
+  <Task>Reach a Population of 6000</Task>
+  <Task locale="de_DE">Erreiche 6000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2694,8 +2652,8 @@
 <Quest id="quest_score_10" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 23275</Task>
-  <Task locale="de_DE">Erreiche 23275 Einwohner</Task>
+  <Task>Reach a Population of 10000</Task>
+  <Task locale="de_DE">Erreiche 10000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2728,8 +2686,8 @@
 <Quest id="quest_resourcescore_1" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 500 resource points</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 500 Rohstoffpunkte</Task>
+  <Task>Increase the resource production of one settlement to 400 resource points</Task>
+  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 400 Rohstoffpunkte</Task>
   <Description locale="de_DE">
     <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
   </Description>
@@ -2742,15 +2700,15 @@
   <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+  <Requirement quest="quest_resourcescore_0_5" />
   <Rewards>
     <ResourceReward resource="resource_stone">500</ResourceReward>  
     <ResourceReward resource="resource_wood">500</ResourceReward>    
     <ResourceReward resource="resource_fur">250</ResourceReward>
-    <ExperienceReward>80</ExperienceReward>
+    <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <SettlementProductionTest min_resources="500" />
+    <SettlementProductionTest min_resources="400" />
   </RewardTests>
 </Quest>
 
@@ -3062,7 +3020,7 @@
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
   <Task>Kill 57850 units.</Task>
-  <Task locale="de_DE">Besiege 1850 Einheiten</Task>
+  <Task locale="de_DE">Besiege 57850 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
@@ -3276,8 +3234,8 @@
 <Quest id="quest_charkills_19" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
-  <Task>Kill 200,000 units.</Task>
-  <Task locale="de_DE">Besiege 200.000 Einheiten</Task>
+  <Task>Kill 144640 units.</Task>
+  <Task locale="de_DE">Besiege 144640 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
@@ -3306,8 +3264,8 @@
 <Quest id="quest_charkills_20" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
-  <Task>Kill 999,999 units.</Task>
-  <Task locale="de_DE">Besiege 999.999 Einheiten</Task>
+  <Task>Kill 160250 units.</Task>
+  <Task locale="de_DE">Besiege 160250 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
@@ -3340,8 +3298,8 @@
 <Quest id="quest_armyXP_11" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 27750 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 27750 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 22500 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 22500 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3370,8 +3328,8 @@
 <Quest id="quest_armyXP_12" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 32900 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 32900 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 30000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 30000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3400,8 +3358,8 @@
 <Quest id="quest_armyXP_13" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 38550 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 38550 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 40000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 40000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3430,8 +3388,8 @@
 <Quest id="quest_armyXP_14" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 44600 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 44600 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 50000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 50000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3460,8 +3418,8 @@
 <Quest id="quest_armyXP_15" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 51150 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 51150 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 60000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 60000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3479,7 +3437,7 @@
     <ResourceReward resource="resource_stone">7500</ResourceReward>  
     <ResourceReward resource="resource_wood">7500</ResourceReward>    
     <ResourceReward resource="resource_fur">3750</ResourceReward>
-    <ResourceReward resource="cash">2</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
     <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -3491,8 +3449,8 @@
 <Quest id="quest_armyXP_16" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 58100 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 58100 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 75000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 75000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3521,8 +3479,8 @@
 <Quest id="quest_armyXP_17" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 65500 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 65500 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 80000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 80000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3552,8 +3510,8 @@
 <Quest id="quest_armyXP_18" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 73400 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 73400 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 100000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 100000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3582,8 +3540,8 @@
 <Quest id="quest_armyXP_19" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 81750 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 81750 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 200000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3613,8 +3571,8 @@
 <Quest id="quest_armyXP_20" advisor="warrior">
   <Name>Experienced armies</Name>
   <Name locale="de_DE">Erfahrene Armeen</Name>
-  <Task>Fight with an army until it gained 90500 Army Experience</Task>
-  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.</Task>
+  <Task>Fight with an army until it gained 200000 Army Experience</Task>
+  <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 200000 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
     <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
   </Description>
@@ -3646,8 +3604,8 @@
 <Quest id="quest_score_11" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 28000</Task>
-  <Task locale="de_DE">Erreiche 28000 Einwohner</Task>
+  <Task>Reach a Population of 15000</Task>
+  <Task locale="de_DE">Erreiche 15000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3676,8 +3634,8 @@
 <Quest id="quest_score_12" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 33175</Task>
-  <Task locale="de_DE">Erreiche 33175 Einwohner</Task>
+  <Task>Reach a Population of 22500</Task>
+  <Task locale="de_DE">Erreiche 22500 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3706,8 +3664,8 @@
 <Quest id="quest_score_13" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 38800</Task>
-  <Task locale="de_DE">Erreiche 38800 Einwohner</Task>
+  <Task>Reach a Population of 30000</Task>
+  <Task locale="de_DE">Erreiche 30000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3736,8 +3694,8 @@
 <Quest id="quest_score_14" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 44875</Task>
-  <Task locale="de_DE">Erreiche 44875 Einwohner</Task>
+  <Task>Reach a Population of 40000</Task>
+  <Task locale="de_DE">Erreiche 40000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3766,8 +3724,8 @@
 <Quest id="quest_score_15" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 51400</Task>
-  <Task locale="de_DE">Erreiche 51400 Einwohner</Task>
+  <Task>Reach a Population of 50000</Task>
+  <Task locale="de_DE">Erreiche 50000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3797,8 +3755,8 @@
 <Quest id="quest_score_16" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 58375</Task>
-  <Task locale="de_DE">Erreiche 58375 Einwohner</Task>
+  <Task>Reach a Population of 60000</Task>
+  <Task locale="de_DE">Erreiche 60000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3819,7 +3777,7 @@
     <ExperienceReward>5120</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="6000" />
+    <ScoreTest min_population="60000" />
   </RewardTests>
 </Quest>
 
@@ -3827,8 +3785,8 @@
 <Quest id="quest_score_17" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 65800</Task>
-  <Task locale="de_DE">Erreiche 65800 Einwohner</Task>
+  <Task>Reach a Population of 75000</Task>
+  <Task locale="de_DE">Erreiche 75000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3858,8 +3816,8 @@
 <Quest id="quest_score_18" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 73675</Task>
-  <Task locale="de_DE">Erreiche 73675 Einwohner</Task>
+  <Task>Reach a Population of 80000</Task>
+  <Task locale="de_DE">Erreiche 80000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3888,8 +3846,8 @@
 <Quest id="quest_score_19" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 82000</Task>
-  <Task locale="de_DE">Erreiche 82000 Einwohner</Task>
+  <Task>Reach a Population of 100000</Task>
+  <Task locale="de_DE">Erreiche 100000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -3919,8 +3877,8 @@
 <Quest id="quest_score_20" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 90775</Task>
-  <Task locale="de_DE">Erreiche 90775 Einwohner</Task>
+  <Task>Reach a Population of 150000</Task>
+  <Task locale="de_DE">Erreiche 150000 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -4252,12 +4210,12 @@
   </RewardTests>
 </Quest>
       
-      <!-- 139 -->
-      <Quest id="quest_charkills_21" advisor="warrior">
-          <Name>Decimate enemy units</Name>
-          <Name locale="de_DE">Gegner dezimieren</Name>
-          <Task>Kill 10 units.</Task>
-          <Task locale="de_DE">Besiege 10 Einheiten</Task>
+<!-- 139 -->
+<Quest id="quest_charkills_21" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Gegner dezimieren</Name>
+          <Task>Kill 500000 units.</Task>
+          <Task locale="de_DE">Besiege 500000 Einheiten</Task>
           <Description locale="de_DE">
               <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
           </Description>
@@ -4270,7 +4228,7 @@
           <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
           <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
           <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-          <Requirement quest="quest_charkills_21" />
+          <Requirement quest="quest_charkills_20" />
           <Rewards>
               <ResourceReward resource="resource_stone">15000</ResourceReward>
               <ResourceReward resource="resource_wood">15000</ResourceReward>
@@ -4287,8 +4245,8 @@
     <Quest id="quest_armyXP_21" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 90500 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.</Task>
+      <Task>Fight with an army until it gained 250000 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 250000 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
       </Description>
@@ -4318,8 +4276,8 @@
     <Quest id="quest_armyXP_22" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 90500 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 90500 Armee Erfahrung erlangt.</Task>
+      <Task>Fight with an army until it gained 500000 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 500000 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
       </Description>
@@ -4349,8 +4307,8 @@
     <Quest id="quest_score_21" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE"> Einwohner </Name>
-      <Task>Reach a Population of 90775</Task>
-      <Task locale="de_DE">Erreiche 90775 Einwohner</Task>
+      <Task>Reach a Population of 250000</Task>
+      <Task locale="de_DE">Erreiche 250000 Einwohner</Task>
       <Description locale="de_DE">
         <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
       </Description>
@@ -4380,8 +4338,8 @@
     <Quest id="quest_score_22" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE"> Einwohner </Name>
-      <Task>Reach a Population of 90775</Task>
-      <Task locale="de_DE">Erreiche 90775 Einwohner</Task>
+      <Task>Reach a Population of 500000</Task>
+      <Task locale="de_DE">Erreiche 500000 Einwohner</Task>
       <Description locale="de_DE">
         <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
       </Description>
@@ -4407,7 +4365,7 @@
       </RewardTests>
     </Quest>
     
-    <!-- 138 -->
+    <!-- 144 -->
     <Quest id="quest_resourcescore_21" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
@@ -4438,7 +4396,66 @@
       </RewardTests>
     </Quest>
     
+    <!-- 145 -->
+    <Quest id="quest_resourcescore_0" advisor="girl">
+      <Name>Resource Production</Name>
+      <Name locale="de_DE">Rohstoffproduktion</Name>
+      <Task>Increase the resource production of one settlement to 120 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte.</Task>
+      <Description locale="de_DE">
+        <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Fur is worth to resource points, stone and wood are worth one each.</p>
+      </Description>
+      <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
+      <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+      <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
+      <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
+      <Requirement quest="quest_build_2gathererlvl4" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">225</ResourceReward>
+        <ResourceReward resource="resource_wood">225</ResourceReward>
+        <ResourceReward resource="resource_fur">125</ResourceReward>
+        <ExperienceReward>50</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <SettlementProductionTest min_resources="120" />
+      </RewardTests>
+    </Quest>
 
+    <!-- 146 -->
+    <Quest id="quest_resourcescore_0_5" advisor="girl">
+      <Name>Resource Production</Name>
+      <Name locale="de_DE">Rohstoffproduktion</Name>
+      <Task>Increase the resource production of one settlement to 225 resource points</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 225 Rohstoffpunkte</Task>
+      <Description locale="de_DE">
+        <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Fur is worth to resource points, stone and wood are worth one each.</p>
+      </Description>
+      <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
+      <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+      <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
+      <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
+      <Requirement quest="quest_resourcescore_0" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">300</ResourceReward>
+        <ResourceReward resource="resource_wood">300</ResourceReward>
+        <ResourceReward resource="resource_fur">150</ResourceReward>
+        <ExperienceReward>75</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <SettlementProductionTest min_resources="225" />
+      </RewardTests>
+    </Quest>
+    
     <!-- Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>

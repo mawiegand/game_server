@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<VictoryTypes>
+  <Victory id="victory_domination">
+    <Name lang="de_DE">Herrschaftssieg</Name>
+    <Name lang="en_US">Domination Victory</Name>
+    <Description lang="de_DE">Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.</Description>
+    <Description lang="en_US">For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.</Description>
+    <Condition>    
+      <RequiredRegionsRatio duration="5">1+(0.005*(MIN(88-DAYS,0)))</RequiredRegionsRatio>
+    </Condition>    
+  </Victory>
+</VictoryTypes>

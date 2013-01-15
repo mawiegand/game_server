@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :victory_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
   
   def attributes 
     { 
@@ -97,6 +97,7 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
+      'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
@@ -115,6 +116,27 @@ class GameRules::Rules
   
   def persisted?
     false
+  end
+  
+  
+  def as_json(options={})
+    # as_json of rails 3.1.3 does not support option :root; thus, implement
+    # it here for the time being
+    
+    hash = {}    
+    self.attributes.each do |name, value|
+      hash[name] = value
+    end
+    
+    root = include_root_in_json
+    root = options[:root]    if options.try(:key?, :root)
+    if root
+      root = self.class.model_name.element if root == true
+      options.delete(:root)  if options.try(:key?, :root)
+      JSON.pretty_generate({ root => hash }, options)
+    else
+      JSON.pretty_generate(hash, options)
+    end    
   end
   
 
@@ -153,6 +175,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
         :character_ranks => {
           <xsl:apply-templates select="MundaneRanks" />
@@ -467,6 +490,8 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+          :takeover_downgrade_by_levels=> <xsl:value-of select="@takeoverDowngradeByLevels"/>,
+          :takeover_destroy  => <xsl:value-of select="@takeoverDestroy"/>,
           :experience_factor => <xsl:value-of select="@experienceFactor" />,
 <xsl:if test="ExperienceProduction">
           :experience_production => '<xsl:value-of select="ExperienceProduction"/>',
@@ -603,6 +628,7 @@ end
               <xsl:if test="@level">
               :level  => <xsl:value-of select="@level"/>,
               </xsl:if>
+              :takeover_level_factor  => <xsl:value-of select="@takeoverLevelFactor"/>,
               :options   => [
               <xsl:for-each select="BuildingOption">
                 <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
@@ -619,6 +645,38 @@ end
       ],                # END OF SETTLEMENT TYPES
 </xsl:template>
 
+
+
+
+<xsl:template match="VictoryTypes">
+# ## VICTORY TYPES ########################################################
+  
+      :victory_types => [  # ALL VICTORY TYPES
+<xsl:for-each select="Victory">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:apply-templates select="Condition" />
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF VICTORY TYPES
+</xsl:template>
+
+
+<xsl:template match="Condition">
+          :condition   => {
+<xsl:if test="RequiredRegionsRatio">
+            :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>',
+            :duration => <xsl:value-of select="RequiredRegionsRatio/@duration"/>,
+</xsl:if>
+          },
+</xsl:template>
 
 
 

@@ -147,6 +147,13 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
       
+      unless reward_tests[:building_speed_test].nil?
+        building_speed_test = reward_tests[:building_speed_test]
+        unless check_building_speed(building_speed_test)
+          return false
+        end
+      end
+      
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
       end
@@ -387,7 +394,7 @@ class Tutorial::Quest < ActiveRecord::Base
     return false if test_id.nil?
     
     if test_id == 'test_army_rank'
-      ranking = Ranking::CharacterRanking.find(:all, :order => "overall_score DESC")
+      ranking = Ranking::CharacterRanking.find(:all, :order => "overall_score DESC, id asc")
       character_ranking = self.tutorial_state.owner.ranking
       return answer_text == (ranking.index(character_ranking) + 1).to_s
     end
@@ -474,6 +481,17 @@ class Tutorial::Quest < ActiveRecord::Base
     false
   end
   
+  def check_building_speed(building_speed_test) 
+    return false if building_speed_test[:min_speed].nil?
+    
+    logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
+    
+    production_test_weights = Tutorial::Tutorial.the_tutorial.production_test_weights
+    
+    building_queue = self.tutorial_state.owner.home_location.settlement.queues.where("type_id = ?", queue_type[:id]).first
+    true
+  end
+  
   def redeem_rewards
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
@@ -546,12 +564,18 @@ class Tutorial::Quest < ActiveRecord::Base
       self.closed_at = Time.now
       self.save
   
-      # reward resources, units and experience
+      # reward resources, units, experience and action points
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
       unless rewards[:experience_reward].nil?
         self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
         self.tutorial_state.owner.save
+      end
+      if !rewards[:action_point_reward].nil? && rewards[:action_point_reward]
+        self.tutorial_state.owner.armies.each do |army|
+          army.ap_present = army.ap_max
+          army.save          
+        end
       end
     end
     

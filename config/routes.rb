@@ -9,7 +9,9 @@ GameServer::Application.routes.draw do
 
       namespace :ranking do 
         resources :character_rankings, :only => [ :index ]
-        resources :alliance_rankings , :only => [ :index ]
+        resources :alliance_rankings,  :only => [ :index ]
+        resources :fortress_rankings,  :only => [ :index ]
+        resource :ranking_info,        :only => [ :show ]
       end
 
 
@@ -28,7 +30,9 @@ GameServer::Application.routes.draw do
         resources :resource_effects 
       end
 
-      namespace :fundamental do 
+      namespace :fundamental do
+        
+        resource :round_info, :only => [:show, :edit, :update]
         
         resources :persistent_character_properties
         
@@ -39,6 +43,7 @@ GameServer::Application.routes.draw do
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
           resources :settings
+          resources :history_events,                           :only => [ :index ]
         end
         
         resources :resource_pools 
@@ -47,6 +52,10 @@ GameServer::Application.routes.draw do
           resources :characters
           resources :alliance_shouts
         end
+        
+        resources :victory_progresses 
+        resources :victory_progress_leaders, :only => [ :index ]
+        
         resources :alliance_shouts
         
         resources :guilds do
@@ -176,6 +185,7 @@ GameServer::Application.routes.draw do
           resources :kick_alliance_member_actions,      :only => [ :create ]    
           resources :change_character_notified_rank_actions, :only => [ :create ]    
           resources :change_character_name_actions,     :only => [ :create ]    
+          resources :change_character_same_ip_actions,  :only => [ :create ]    
           resources :change_character_gender_actions,   :only => [ :create ]    
           resources :change_character_password_actions, :only => [ :create ]    
           resources :track_character_conversions,       :only => [ :create ]    
@@ -192,11 +202,13 @@ GameServer::Application.routes.draw do
           resources :speedup_job_actions    
         end
         namespace :settlement do
-          resources :change_tax_rate_actions, :only => [ :create ]    
+          resources :change_tax_rate_actions, :only => [ :create ] 
+        resources :abandon_outpost_actions, :only => [ :create ]
         end
         namespace :tutorial do
           resources :check_quest_actions,     :only => [ :create ]    
-          resources :redeem_rewards_actions,     :only => [ :create ]    
+          resources :redeem_rewards_actions,  :only => [ :create ]    
+          resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
       end
       

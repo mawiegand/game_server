@@ -27,13 +27,18 @@ en:
         sciences: Sciences
       ranking:
         category: Ranking
+        character: Character Ranking
+        alliance: Alliance Ranking
+        fortress: Fortress Ranking
       action:
         category: Action
       fundamental:
         category: Fundamental
+        round_info: Round Info
         resource_pools: Resources
         characters: Characters
         alliances: Alliances
+        victory_progress: Victory Progress
         guilds: Guilds
         alliance_shouts: Ally-Shouts
         announcements: Announcements

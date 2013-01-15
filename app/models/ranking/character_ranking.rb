@@ -4,10 +4,11 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   belongs_to :alliance,               :class_name => "Fundamental::Alliance",  :foreign_key => "alliance_id"
   belongs_to :most_experienced_army,  :class_name => "Military::Army",         :foreign_key => "max_experience_army_id", :inverse_of => :ranking
   
-  after_save :propagate_change_to_alliance
+  before_save :update_ratios
+  after_save  :propagate_change_to_alliance
     
   def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
-    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC")
+    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC, id ASC")
     rank = 1
     rankings.each do |entry| 
       entry[rank_field] = rank
@@ -38,8 +39,55 @@ class Ranking::CharacterRanking < ActiveRecord::Base
       self.reset_max_experience
     end
   end
+  
+
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of CHARACTER RANKING #{self.id}.")
+
+    likes_count = recalc_likes_count
+    check_and_apply_likes_count(likes_count)
+    
+    dislikes_count = recalc_dislikes_count
+    check_and_apply_dislikes_count(dislikes_count)
+    
+    if self.changed?
+      logger.warn(">>> SAVING CHARACTER RANKING AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> CHARACTER RANKING OK.")
+    end
+
+    true      
+  end  
+
+  def recalc_likes_count
+    likes_count = character.received_likes_count
+  end
+  
+  def check_and_apply_likes_count(likes_count)
+    if (self.likes || 0) != likes_count
+      logger.warn(">>> CONSISTENCY ERROR: LIKES COUNT RECALC DIFFERS for character #{character.id}. Old: #{self.likes} Corrected: #{likes_count}.")
+      self.likes = likes_count
+    end
+  end
+  
+  def recalc_dislikes_count
+    dislikes_count = character.received_dislikes_count
+  end
+  
+  def check_and_apply_dislikes_count(dislikes_count)
+    if (self.dislikes || 0) != dislikes_count
+      logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{character.id}. Old: #{self.dislikes} Corrected: #{dislikes_count}.")
+      self.dislikes = dislikes_count
+    end    
+  end  
     
   protected
+  
+    def update_ratios
+      self.like_ratio    = (likes || 0) / [(likes || 0) + (dislikes || 0), 1].max.to_f
+      self.victory_ratio = (victories || 0) + (defeats || 0) == 0 ? 1.0 : (victories || 0) / ([(defeats || 0), 1].max).to_f
+    end
   
     def propagate_change_to_alliance
       if self.alliance_id_changed?

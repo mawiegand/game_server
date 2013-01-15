@@ -1,0 +1,33 @@
+<%= form_for(@fundamental_victory_progress) do |f| %>
+  <% if @fundamental_victory_progress.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_victory_progress.errors.count, "error") %> prohibited this fundamental_victory_progress from being saved:</h2>
+
+      <ul>
+      <% @fundamental_victory_progress.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :victory_type %><br />
+    <%= f.number_field :victory_type %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fulfillment_count %><br />
+    <%= f.text_field :fulfillment_count %>
+  </div>
+  <div class="field">
+    <%= f.label :first_fulfilled_at %><br />
+    <%= f.datetime_select :first_fulfilled_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

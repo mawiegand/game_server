@@ -1,0 +1,39 @@
+<h1>Fortress Ranking</h1>
+
+<div>
+  <div clas="page_info">
+    <%= page_entries_info @fortresses %>
+  </div>
+  <%= will_paginate @fortresses, :container => false %>
+</div>
+<br/>
+
+<table>
+  <tr>
+    <th>Rank</th>
+    <th><%= link_to "Fortress", ranking_fortress_rankings_path(:sort => 'name') %></th>
+    <th>Owner</th>
+    <th class="number"><%= link_to "Tax Rate",        ranking_fortress_rankings_path(:sort => 'tax') %></th>
+    <th class="number"><%= link_to "Income Rating",   ranking_fortress_rankings_path(:sort => 'income') %></th>
+    <th class="number"><%= link_to "Defense Bonus",   ranking_fortress_rankings_path(:sort => 'defense') %></th>
+  </tr>
+  <% 
+    rank = @fortresses.per_page * ((@fortresses.current_page || 1) -1)
+    @fortresses.each do |fortress|   
+  %>
+    <%= content_tag_for(:tr, fortress, :class => (!@marked_fortress.nil? && fortress.id == @marked_fortress.id ? "marked" : "")) do %>
+      <td><%= rank=rank+1%></td>
+      <td><%= fortress.name %></td>
+      <td><a name="<%= "char#{fortress.owner_id}" %>"><%= fortress.owner.name %> 
+          <% if !fortress.owner.alliance_tag.blank? %>
+            | <%= fortress.owner.alliance_tag %>
+          <%end%></a>
+      </td>
+      <td><%= number_to_percentage(fortress.tax_rate * 100, :precision => 0) %></td>
+      <td><%= number_with_precision(fortress.resource_production_score / (fortress.tax_rate*100), :precision => 0) %></td>
+      <td>+<%= number_to_percentage(fortress.defense_bonus*100,:precision=>0) %></td>
+    <% end %>
+  <% end %>
+</table>
+
+<p><%= will_paginate @fortresses %></p>

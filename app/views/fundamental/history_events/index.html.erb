@@ -1,0 +1,37 @@
+<h1>Character History</h1>
+<p>
+  <b>Character:</b> <%= @fundamental_character.id %> | <%= @fundamental_character.identifier %> | 
+  <b><%= @fundamental_character.name %></b>
+</p>
+
+
+<% if @not_found %>
+  This character does <b>not</b> have any history events on the identity provider.
+<% elsif @error_code %>
+  The identity provider responded with the following error code: <%= @error_code %> and message: <%= @error %>
+<% else %>
+
+  <h3>Listing fundamental_history_events</h3>
+  
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Localized Description</th>
+    </tr>
+  
+  <% @fundamental_history_events.each do |event| %>
+    <tr>
+      <td><%= event['data'] %></td>
+      <td><%= event['localized_description'] %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<%end%>
+  
+  
+
+<br />
+
+<%= link_to 'Character', @fundamental_character %> |
+<%= link_to 'Character List', fundamental_characters_path %>

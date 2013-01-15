@@ -16,6 +16,9 @@ class Map::Region < ActiveRecord::Base
   
   before_create :add_unique_invitation_code
   
+  after_create  :propagate_regions_count_to_round_info
+  after_destroy :propagate_regions_count_to_round_info
+  
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save
@@ -47,4 +50,12 @@ class Map::Region < ActiveRecord::Base
       self.invitation_code = Util.make_random_string(16, true)
     end while !Map::Region.find_by_invitation_code(self.invitation_code).nil?
   end
+  
+  private
+  
+    def propagate_regions_count_to_round_info
+      info = Fundamental::RoundInfo.the_round_info
+      info.regions_count = Map::Region.count
+      info.save
+    end  
 end

@@ -78,7 +78,7 @@ class Construction::Job < ActiveRecord::Base
           f = Util::Formula.parse_from_formula(formula)
           1.upto(self.level_before) do |level|
             costs[resource_id] += f.apply(level)
-            logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
+            # logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
           end
         end
       end
@@ -99,10 +99,10 @@ class Construction::Job < ActiveRecord::Base
           f = Util::Formula.parse_from_formula(formula)
           1.upto(converted_level) do |level|
             converted_costs[resource_id] += f.apply(level)
-            logger.debug "---> conv.cost #{resource_id.to_s} " + converted_costs[resource_id].inspect
+            # logger.debug "---> conv.cost #{resource_id.to_s} " + converted_costs[resource_id].inspect
           end
           costs[resource_id] = [converted_costs[resource_id] - costs[resource_id], converted_costs[resource_id] * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor])].max
-          logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
+          # logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
         end
       end
     end
@@ -114,18 +114,18 @@ class Construction::Job < ActiveRecord::Base
   end
   
   def create_queueable?
-    logger.debug '---> create_queueable?'
+    # logger.debug '---> create_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     requirement_groups = building_type[:requirementGroups]
     raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
+    # logger.debug "---> create_queueable? #{self.level_after} #{queue.settlement.building_slots_available?} #{self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?}"
     self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?
-    logger.debug "---> create_queueable? #{self.level_after} #{queue.settlement.building_slots_available?}"
     # TODO test if building can be build in slot according to the slots building categories
   end
   
   def upgrade_queueable?
-    logger.debug '---> upgrade_queueable?'
+    # logger.debug '---> upgrade_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     requirement_groups = building_type[:requirementGroups]
     raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
@@ -138,19 +138,19 @@ class Construction::Job < ActiveRecord::Base
   
   # destroy job is only queueable, if there are no other jobs in queue
   def destroy_queueable?
-    logger.debug '---> destroy_queueable?'
+    # logger.debug '---> destroy_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     raise ForbiddenError.new('Building type is not demolishable.') unless building_type[:demolishable] && building_type[:demolishable] == true
     self.building_id == slot.building_id && !slot.last_level.nil? && slot.last_level != 0
   end
   
   def convert_queueable?
-    logger.debug '---> convert_queueable?'
+    # logger.debug '---> convert_queueable?'
     # conversion option testen
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     conversion_option = building_type[:conversion_option]
     raise ForbiddenError.new('Building is not convertible.') if conversion_option.nil?
-    logger.debug '---> conversion_option ' + conversion_option.inspect
+    # logger.debug '---> conversion_option ' + conversion_option.inspect
     
     requirement_groups = nil
     GameRules::Rules.the_rules.building_types.each do |type|
@@ -164,7 +164,7 @@ class Construction::Job < ActiveRecord::Base
     # level anhand formel testen
     formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])
     converted_level = formula.apply(self.level_before)
-    logger.debug '---> converted_level ' + converted_level.inspect + ', level_after ' + level_after.inspect
+    # logger.debug '---> converted_level ' + converted_level.inspect + ', level_after ' + level_after.inspect
     
     converted_level == self.level_after
   end

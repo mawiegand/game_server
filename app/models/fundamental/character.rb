@@ -44,8 +44,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :login_count, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills,  :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
+  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
 
   before_save :sync_alliance_tag
@@ -57,6 +58,10 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
   after_save  :propagate_kills_changes
+  after_save  :propagate_like_changes
+  after_save  :propagate_victory_changes
+  after_save  :propagate_defeat_changes
+  after_save  :propagate_dislike_changes
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
@@ -163,6 +168,15 @@ class Fundamental::Character < ActiveRecord::Base
       scopes:                     ['5dentity'],
     })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
+  end
+  
+  def redeem_tutorial_end_rewards
+    Shop::BonusOffer.all.each do |bonus_offer|
+      bonus_offer.credit_to(self)
+    end
+    
+    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
+    platinum_offer.credit_to(self) unless platinum_offer.nil?
   end
 
   def locale
@@ -367,7 +381,35 @@ class Fundamental::Character < ActiveRecord::Base
     return true
   end
     
+  def add_like_for(character)
+    like = self.send_likes.new({receiver: character})
+    if like.validate_like
+      self.send_likes_count += 1
+      if self.save
+        character.received_likes_count += 1
+        character.save
+      else
+        false
+      end
+    else
+      false
+    end
+  end
     
+  def add_dislike_for(character)
+    dislike = self.send_dislikes.new({receiver: character})
+    if dislike.validate_dislike
+      self.send_dislikes_count += 1
+      if self.save
+        character.received_dislikes_count += 1
+        character.save
+      else
+        false
+      end
+    else
+      false
+    end
+  end
     
   
   def is_enemy_of?(opponent)
@@ -593,6 +635,38 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  def propagate_like_changes
+    if self.received_likes_count_changed? && !self.ranking.nil?
+      self.ranking.likes = received_likes_count || 0
+      self.ranking.save
+    end
+    true
+  end
+  
+  def propagate_dislike_changes
+    if self.received_dislikes_count_changed? && !self.ranking.nil?
+      self.ranking.dislikes = received_dislikes_count || 0
+      self.ranking.save
+    end
+    true
+  end
+
+  def propagate_victory_changes
+    if victories_changed? && !self.ranking.nil?
+      self.ranking.victories = victories || 0
+      self.ranking.save
+    end
+    true
+  end
+  
+  def propagate_defeat_changes
+    if defeats_changed? && !self.ranking.nil?
+      self.ranking.defeats = defeats || 0
+      self.ranking.save
+    end
+    true
+  end
 
   def propagate_fortress_count_changes
     fortress_count_change = self.changes[:fortress_count]
@@ -628,6 +702,12 @@ class Fundamental::Character < ActiveRecord::Base
 
     experience_production_rate = recalc_experience_production_rate
     check_and_apply_experience_production_rate(experience_production_rate)
+    
+    likes_count = recalc_likes_count
+    check_and_apply_likes_count(likes_count)
+    
+    dislikes_count = recalc_dislikes_count
+    check_and_apply_dislikes_count(dislikes_count)
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -782,6 +862,34 @@ class Fundamental::Character < ActiveRecord::Base
   
   def self.produced_experience_amount_sql_fragment(resource_field)
     "(#{ Fundamental::Character.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
+  end
+
+  # ##########################################################################
+  #
+  #   Likes and Dislikes
+  #
+  # ##########################################################################
+
+  def recalc_likes_count
+    likes_count = self.received_likes.count
+  end
+  
+  def check_and_apply_likes_count(likes_count)
+    if (self.received_likes_count || 0) != likes_count
+      logger.warn(">>> CONSISTENCY ERROR: LIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_likes_count} Corrected: #{likes_count}.")
+      self.received_likes_count = likes_count
+    end
+  end
+  
+  def recalc_dislikes_count
+    dislikes_count = self.received_dislikes.count
+  end
+  
+  def check_and_apply_dislikes_count(dislikes_count)
+    if (self.received_dislikes_count || 0) != dislikes_count
+      logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_dislikes_count} Corrected: #{dislikes_count}.")
+      self.received_dislikes_count = dislikes_count
+    end    
   end
   
   protected

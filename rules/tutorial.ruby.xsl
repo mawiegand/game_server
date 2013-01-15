@@ -181,6 +181,7 @@ end
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
           :tutorial          => <xsl:value-of select="@tutorial"/>,
+          :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              
@@ -247,6 +248,9 @@ end
 </xsl:if>
 <xsl:if test="ExperienceReward">
             :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
+</xsl:if>
+<xsl:if test="ActionPointReward">
+            :action_point_reward => true,
 </xsl:if>
 </xsl:template>
 

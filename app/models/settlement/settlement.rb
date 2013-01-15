@@ -1,4 +1,10 @@
 class Settlement::Settlement < ActiveRecord::Base
+
+  TYPE_NONE = 0
+  TYPE_FORTESS = 1    # old typo! replace everywhere
+  TYPE_FORTRESS = 1
+  TYPE_HOME_BASE = 2
+  TYPE_OUTPOST = 3  
   
   belongs_to :owner,    :class_name => "Fundamental::Character", :foreign_key => "owner_id" ,          :inverse_of => :settlements
   belongs_to :founder,  :class_name => "Fundamental::Character", :foreign_key => "founder_id"  
@@ -21,6 +27,17 @@ class Settlement::Settlement < ActiveRecord::Base
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
+  scope :fortress, where(type_id: TYPE_FORTRESS)
+  scope :highest_tax_rate, order('tax_rate DESC, id ASC')
+  scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
+  scope :highest_normalized_income, lambda {
+    parts = []
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      parts << "#{resource_type[:symbolic_id].to_s()}_production_rate * #{resource_type[:rating_value] || 0}"
+    end
+    order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
+  }
+
   after_initialize :init
   
   before_save :manage_queues_as_needed
@@ -40,11 +57,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
-  
-  TYPE_NONE = 0
-  TYPE_FORTESS = 1
-  TYPE_HOME_BASE = 2
-  TYPE_OUTPOST = 3
+
 
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
@@ -157,8 +170,16 @@ class Settlement::Settlement < ActiveRecord::Base
     # settlement BLOCK
     logger.info "NEW OWNER TRANSACTION starting on settlement ID#{ self.id } from character #{ self.owner_id } to #{ character.nil? ? "nil" : character.id }."
     
-    # unused. throws error, if self.garrison_army is nil
-    # old_owner = self.garrison_army.npc ? nil : self.garrison_army.owner
+    self.slots.each do |slot|
+      if slot.takeover_level_factor > 0
+        if slot.takeover_destroy?
+          slot.destroy_building
+        elsif slot.takeover_downgrade?
+          levels = slot.takeover_downgrade_by_levels * slot.takeover_level_factor
+          slot.downgrade_building_by_levels(levels)
+        end
+      end
+    end
     
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
@@ -171,6 +192,23 @@ class Settlement::Settlement < ActiveRecord::Base
     self.save                         # triggers before_save and after_save handlers that do all the work
     
     # settlement UNBLOCK
+  end
+  
+  def abandon_outpost
+    old_score = self.score
+    
+    neandertaler = Fundamental::Character.find(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 200
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
   end
 
   ############################################################################
@@ -435,6 +473,16 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     q
   end
+  
+  # calculates the weighted resource production rate
+  def resource_production_score
+    weighted_production_rate = 0;      # weighted according to rating_value of resource type. will be used in the ranking.
+    GameRules::Rules.the_rules().resource_types.each do |resource_type|
+      attribute = resource_type[:symbolic_id].to_s()+'_production_rate'
+      weighted_production_rate += self[attribute] * (resource_type[:rating_value] || 0) 
+    end
+    weighted_production_rate
+  end
 
     
   protected
@@ -661,34 +709,27 @@ class Settlement::Settlement < ActiveRecord::Base
         changes.each do | attribute, change |           # iterate through all changed attributes
           queue_types.each do |queue|                   # must test it against every queue
             if queue[:domain] == :settlement && queue[:unlock_field] == attribute.to_sym # to check, whether fields match :-(
-              
               if change[0].nil?
                 puts 'change is nil, ' +  change[1].to_s
               else
-              
-              if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
-                create_queue(queue)
-              elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
-                destroy_queue(queue)
-              elsif change[1] >= 1                
-                existing_queue = find_existing_queue(queue)
-                if existing_queue.nil?
-                  logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
+                if change[0] <= 0 && change[1] >= 1       # updated from 0 to >=1 -> unlock!   
                   create_queue(queue)
+                elsif change[0] >= 1 && change[1] <= 0    # updaetd from >=1 to 0 -> lock!
+                  destroy_queue(queue)
+                elsif change[1] >= 1                
+                  existing_queue = find_existing_queue(queue)
+                  if existing_queue.nil?
+                    logger.warn("Create missing queue. Should have been there. Settlement id #{ self.id }, queue type id #{ queue[:id] }.")
+                    create_queue(queue)
+                  end
                 end
               end
-              
-              end
-              
             end
           end
         end
       end
       return true
     end
-    
-
-    
     
     def recalc_queue_unlocks
       queue_types = GameRules::Rules.the_rules().queue_types
@@ -1090,6 +1131,7 @@ class Settlement::Settlement < ActiveRecord::Base
         propagate_changes_to_character_on_changed_possession
         propagate_score_on_changed_possession
         propagate_unlock_changes_on_changed_possession
+        propagate_changes_to_victory_progress_on_changed_possession
       end
       true
     end
@@ -1218,7 +1260,6 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
     
-
     # propagates score changes to old and new owner (Fundamtal::Character) and adapts the
     # fortress_count counter appropriately
     def propagate_score_on_changed_possession
@@ -1247,5 +1288,32 @@ class Settlement::Settlement < ActiveRecord::Base
       true      
     end
     
+    # propagates owner changes to victory progress of old and new alliance
+    def propagate_changes_to_victory_progress_on_changed_possession
+      if self.type_id === TYPE_FORTRESS
+        alliance_change = self.changes[:alliance_id]
+        if !alliance_change.blank?
+          old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
+          new_alliance = alliance_change[1].nil? ? nil : Fundamental::Alliance.find(alliance_change[1])
+          
+          unless old_alliance.nil?
+            victory_progress = old_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+            unless victory_progress.nil?
+              victory_progress.decrement(:fulfillment_count)
+              victory_progress.save
+            end
+          end
+          
+          unless new_alliance.nil?
+            victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION)
+            unless victory_progress.nil?
+              victory_progress.increment(:fulfillment_count)
+              victory_progress.save
+            end
+          end
+        end
+      end
+      true      
+    end    
 
 end

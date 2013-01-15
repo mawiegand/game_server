@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216091736) do
+ActiveRecord::Schema.define(:version => 20130111184234) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1097,6 +1097,7 @@ ActiveRecord::Schema.define(:version => 20121216091736) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "partner"
+    t.boolean  "developer",          :default => false, :null => false
   end
 
   create_table "construction_active_jobs", :force => true do |t|
@@ -1257,15 +1258,16 @@ ActiveRecord::Schema.define(:version => 20121216091736) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
+    t.string   "same_ip"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -1320,9 +1322,27 @@ ActiveRecord::Schema.define(:version => 20121216091736) do
     t.integer  "credit_reward", :default => 0, :null => false
   end
 
+  create_table "fundamental_round_infos", :force => true do |t|
+    t.string   "name"
+    t.datetime "started_at"
+    t.integer  "regions_count",     :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "victory_gained_at"
+  end
+
   create_table "fundamental_settings", :force => true do |t|
     t.boolean  "email_messages", :default => true, :null => false
     t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_victory_progresses", :force => true do |t|
+    t.integer  "victory_type",                      :null => false
+    t.integer  "alliance_id"
+    t.datetime "first_fulfilled_at"
+    t.integer  "fulfillment_count",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1769,27 +1789,33 @@ ActiveRecord::Schema.define(:version => 20121216091736) do
     t.string   "character_name"
     t.integer  "alliance_id"
     t.string   "alliance_tag"
-    t.integer  "overall_score",            :default => 0, :null => false
+    t.integer  "overall_score",            :default => 0,   :null => false
     t.integer  "overall_rank"
-    t.integer  "resource_score",           :default => 0, :null => false
+    t.integer  "resource_score",           :default => 0,   :null => false
     t.integer  "resource_rank"
-    t.integer  "power_score",              :default => 0, :null => false
+    t.integer  "power_score",              :default => 0,   :null => false
     t.integer  "power_rank"
-    t.integer  "num_settlements",          :default => 0, :null => false
+    t.integer  "num_settlements",          :default => 0,   :null => false
     t.integer  "settlements_rank"
-    t.integer  "num_outposts",             :default => 0, :null => false
+    t.integer  "num_outposts",             :default => 0,   :null => false
     t.integer  "outposts_rank"
-    t.integer  "num_fortress",             :default => 0, :null => false
+    t.integer  "num_fortress",             :default => 0,   :null => false
     t.integer  "fortress_rank"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "max_experience",           :default => 0, :null => false
+    t.integer  "max_experience",           :default => 0,   :null => false
     t.integer  "max_experience_rank"
     t.string   "max_experience_army_name"
     t.integer  "max_experience_army_rank"
     t.integer  "max_experience_army_id"
-    t.integer  "kills",                    :default => 0, :null => false
+    t.integer  "kills",                    :default => 0,   :null => false
     t.integer  "kills_rank"
+    t.integer  "victories",                :default => 0,   :null => false
+    t.integer  "defeats",                  :default => 0,   :null => false
+    t.decimal  "victory_ratio",            :default => 0.0, :null => false
+    t.integer  "likes",                    :default => 0,   :null => false
+    t.integer  "dislikes",                 :default => 0,   :null => false
+    t.decimal  "like_ratio",               :default => 0.0, :null => false
   end
 
   create_table "settlement_histories", :force => true do |t|

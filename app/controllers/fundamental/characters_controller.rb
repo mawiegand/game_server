@@ -27,7 +27,7 @@ class Fundamental::CharactersController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
-          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff?) 
+          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
             @fundamental_characters =  Fundamental::Character.paginate(:order => 'name', :page => params[:page], :per_page => 50)    
             @paginate = true   
@@ -101,10 +101,8 @@ class Fundamental::CharactersController < ApplicationController
       
       start_location = nil
       if params.has_key?(:player_invitation)
-        logger.debug "-----> :player_invitation gesetzt, suche Location"
         start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
       elsif params.has_key?(:alliance_invitation)
-        logger.debug "-----> :alliance_invitation gesetzt, suche Location"
         start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
       end
       
@@ -180,7 +178,7 @@ class Fundamental::CharactersController < ApplicationController
 
     respond_to do |format|
       format.html do
-        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin)
+        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
       end
       format.json do
         logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"

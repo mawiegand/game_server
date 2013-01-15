@@ -49,6 +49,7 @@ module Auth
       else
         return :admin     if admin?
         return :staff     if staff?
+        return :developer if developer?
         return :partner   if partner?
       end
       return :default
@@ -216,6 +217,10 @@ module Auth
     def partner?
       backend_partner?
     end
+    
+    def developer?
+      backend_developer?
+    end
   
     # Checks whether the present user has admin-status and redirects to 
     # sign-in otherwise.
@@ -226,14 +231,21 @@ module Auth
     # Checks whether the present user has staff-status and redirects to
     # sign-in otherwise. Admin users always have staff-status.
     def authorize_staff
-      deny_access I18n.translate('sessions.authorization.access_denied.staff') unless staff?
+      deny_access I18n.translate('sessions.authorization.access_denied.staff') unless staff? || admin?
+    end
+
+    # Checks whether the present user has partner-status and redirects to
+    # sign-in otherwise. Admin users always have partner-status.
+    def authorize_developer
+      deny_access I18n.translate('sessions.authorization.access_denied.developer') if !developer? && !staff? && !admin?
     end
   
     # Checks whether the present user has partner-status and redirects to
     # sign-in otherwise. Admin users always have partner-status.
     def authorize_partner
-      deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? || !admin?
+      deny_access I18n.translate('sessions.authorization.access_denied.partner') if !partner? && !staff? && !admin?
     end
+    
   
     # Sign-in to the backend as the specified user. Places a cookie for session tracking
     # and sets the current_backend_user. The backend_user to sign-in
@@ -258,6 +270,11 @@ module Auth
     # staff status, even when their staff flag hasn't been set properly.
     def backend_staff?
       backend_admin? || (!current_backend_user.nil? && current_backend_user.staff?) # admin is always staff
+    end
+
+
+    def backend_developer?
+      !current_backend_user.nil? && current_backend_user.developer?
     end
   
     def backend_partner?
