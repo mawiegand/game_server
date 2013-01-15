@@ -220,6 +220,9 @@ end
             <xsl:apply-templates select="RewardTests" />
           },          
 </xsl:if>
+<xsl:if test="PlaceNpcs">
+          :place_npcs => <xsl:apply-templates select="PlaceNpcs" />,         
+</xsl:if>
 <xsl:if test="Message">
           :message => {
             <xsl:apply-templates select="Message" />

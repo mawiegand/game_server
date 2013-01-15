@@ -1753,6 +1753,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 10,         
+
         },              #   END OF quest_army_create
         {               #   quest_army_move
           :id                => 18, 

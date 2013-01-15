@@ -161,12 +161,18 @@ class Tutorial::Quest < ActiveRecord::Base
     else
       logger.debug 'no reward tests found'
     end
-    # quest auf beendet setzen
+    true
+  end
+  
+  def set_finished
+      # quest auf beendet setzen
     self.status = STATE_FINISHED
     self.finished_at = Time.now
     self.save
-    
-    true
+  end
+  
+  def place_npcs
+    Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
   end
   
   def open_dependent_quest_states

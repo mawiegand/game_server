@@ -589,6 +589,7 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
+      <PlaceNpcs>10</PlaceNpcs>
     </Quest>
 
 <!-- 18 --> <!-- Tutorial 8 -->
