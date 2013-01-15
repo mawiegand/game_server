@@ -394,7 +394,7 @@ class Tutorial::Quest < ActiveRecord::Base
     return false if test_id.nil?
     
     if test_id == 'test_army_rank'
-      ranking = Ranking::CharacterRanking.find(:all, :order => "overall_score DESC")
+      ranking = Ranking::CharacterRanking.find(:all, :order => "overall_score DESC, id asc")
       character_ranking = self.tutorial_state.owner.ranking
       return answer_text == (ranking.index(character_ranking) + 1).to_s
     end
