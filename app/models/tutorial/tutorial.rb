@@ -1704,7 +1704,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1828,7 +1828,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 10,
+                :amount => 5,
               },
 
             ],
@@ -2128,6 +2128,8 @@ class Tutorial::Tutorial
             :alliance_test => {},
 
           },          
+
+          :place_npcs => 50,         
 
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
@@ -2735,7 +2737,7 @@ class Tutorial::Tutorial
             
             :en_US => "Take over a fortress",
   
-            :de_DE => "Erobere eine Festung",
+            :de_DE => "Erobere eine Festung.",
                 
           },
           :flavour => {
@@ -2747,7 +2749,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>",
+            :de_DE => "<p>Für die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>",
   
             :en_US => "<p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>",
                 
