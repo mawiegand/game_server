@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 22,
+      :num_tutorial_quests => 23,
   
       :quests => [  # ALL QUESTS
 
@@ -536,9 +536,18 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_speed_test => {
-              :min_speed => 1.08,
-            },
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 2,
+
+                :min_count => 1,
+
+              },
+
+            ],
 
           },          
 
@@ -1614,14 +1623,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir drei meiner Keulenkrieger zur Verfügung.",
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner besten Keulenkrieger zur Verfügung.",
   
-            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have three of my clubbers. ",
+            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have a few of my clubbers. ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn Du wissen willst, wie weit der Auftrag ist, klickst Du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.",
+            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl ein.",
   
             :en_US => "Once you’ve ordered the units you can close the building window and the order continues to be carried out. If you want to know how far the order has got, just click on the training barracks. You can also train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’. New units will be activated at higher building levels.",
                 
@@ -1641,7 +1650,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 9,
+                :amount => 25,
               },
 
             ],
@@ -1688,14 +1697,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade neun Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
+            :de_DE => "Aus Einheiten werden Armeen aufgestellt! Ich habe Dir ja gerade einige Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
   
             :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor den Knopf mit den Männchen 'Neue Armee' aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1721,7 +1730,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [147, ],
 
           :rewards => {
             
@@ -1751,7 +1760,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :place_npcs => 10,         
+          :place_npcs => 2,         
 
         },              #   END OF quest_army_create
         {               #   quest_army_move
@@ -1807,7 +1816,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_create',
+            :quest => 'quest_npc_battle',
 
           },
 
@@ -1824,7 +1833,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 200,
 
             :action_point_reward => true,
 
@@ -2879,12 +2888,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 210,
+                :amount => 380,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 280,
               },
 
               {
@@ -2900,18 +2909,9 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
-
-              {
-                :building => 'building_cottage',
-
-                :min_level => 3,
-
-                :min_count => 2,
-
-              },
-
-            ],
+            :building_speed_test => {
+              :min_speed => 1.26,
+            },
 
           },          
 
@@ -5592,6 +5592,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 8,         
 
         },              #   END OF quest_improve_production_1
         {               #   quest_charkills_1
@@ -13928,6 +13930,91 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_0_5
+        {               #   quest_npc_battle
+          :id                => 147, 
+          :symbolic_id       => :quest_npc_battle,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "First battle",
+  
+            :de_DE => "Der erste Kampf",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight for the first time and kill at least tweo units!",
+  
+            :de_DE => "Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
+  
+            :en_US => "An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>An Deiner Heimatsiedlung sind Neandertaler erschienen! Klicke auf Deine Armee, drücke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>",
+  
+            :en_US => "<p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Ggener erschlagen.",
+  
+            :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zeilauswahl-Dialog den Überblick!",
+  
+            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_create',
+
+          },
+
+          :successor_quests => [18, ],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+            :action_point_reward => true,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 2,
+            },
+
+          },          
+
+        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )
