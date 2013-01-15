@@ -9,6 +9,22 @@
     </div>
   </div>
   
+  
+  <h1>World Stats</h1>
+  <b>Day:</b> <%= @world_stats[:day] %> <%= @world_stats[:victory] ? '<b>VICTORY!</b>' : '' %><br/>
+  <b>Locations:</b> <%= @world_stats[:empty_locations] %> / <%= @world_stats[:total_locations] %> (free / total) 
+<%=
+  ratio = (@world_stats[:empty_locations] || 0) / [@world_stats[:total_locations] || 0, 1].max
+  
+  if (ratio < 0.1) 
+    "<b style=\"color: red;\">#{ratio*100}% free</b>"
+  else
+    "<b style=\"color: red;\">#{ratio*100}% free</b>"
+  end
+%><br/>
+  <b>Regions:</b> <%= @world_stats[:non_occupied_regions] %> / <%= @world_stats[:total_regions] %> (free / total)</br>
+  <b>Ongoing Battles:</b> <%= link_to @world_stats[:battles], military_battles_path %><br/> 
+  
 
     
   <h1>User Stats</h1>
