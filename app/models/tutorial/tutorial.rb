@@ -608,12 +608,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 50,
               },
 
             ],
