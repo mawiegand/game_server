@@ -609,10 +609,7 @@
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
       <Requirement quest="quest_army_create" />
       <Rewards>
-        <ResourceReward resource="resource_stone">50</ResourceReward>
-        <ResourceReward resource="resource_wood">60</ResourceReward>
-        <ResourceReward resource="resource_fur">80</ResourceReward>
-        <UnitReward unit="unit_clubbers">5</UnitReward>
+        <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -640,9 +637,9 @@
       <RewardFlavor locale="en_US">Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of raw materials.</RewardFlavor>
       <Requirement quest="quest_improve_production_1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>
-        <ResourceReward resource="resource_wood">100</ResourceReward>
-        <ResourceReward resource="resource_fur">50</ResourceReward>
+        <ResourceReward resource="resource_stone">175</ResourceReward>
+        <ResourceReward resource="resource_wood">175</ResourceReward>
+        <ResourceReward resource="resource_fur">100</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -699,7 +696,7 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that’s some alliance! I’m sure they’re going to go far. </RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl4" />
+      <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
         <UnitReward unit="unit_clubbers">20</UnitReward>
         <ExperienceReward>300</ExperienceReward>
@@ -781,11 +778,11 @@
       </Description>
       <Flavor locale="de_DE">Halbgott, wir brauchen dringend mehr Felle! Ohne Fell können wir nicht ausreichend Einheiten ausbilden.</Flavor>
       <Flavor locale="en_US">Demigod, we need fur!</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Baue Deine Kürschner weiter aus und ersetze nach und nach die Jäger und Sammler durch die spezialisierten Rohstoffsammler.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Endlich ausreichend Fell für unsere Einheiten.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – that’s a lot of fur. Fantastic!</RewardFlavor>
-            <Requirement quest="quest_resourcescore_0_5" />
+            <Requirement quest="quest_resourcescore_1" />
       <Rewards>
         <ResourceReward resource="resource_fur">200</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
@@ -875,7 +872,7 @@
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US">You’ve started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I’m sick of the sight of you.</RewardFlavor>
-      <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+      <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -936,9 +933,9 @@
   <RewardFlavor locale="en_US">Great! You already have new inhabitants coming to help you upgrade.</RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">195</ResourceReward>
-    <ResourceReward resource="resource_wood">175</ResourceReward>
-    <ResourceReward resource="resource_fur">85</ResourceReward>
+    <ResourceReward resource="resource_stone">210</ResourceReward>
+    <ResourceReward resource="resource_wood">180</ResourceReward>
+    <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -966,9 +963,9 @@
  <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
  <Requirement quest="quest_improve_production_1" />
  <Rewards>
- <ResourceReward resource="resource_stone">150</ResourceReward>
- <ResourceReward resource="resource_wood">150</ResourceReward>
- <ResourceReward resource="resource_fur">75</ResourceReward>
+ <ResourceReward resource="resource_stone">160</ResourceReward>
+ <ResourceReward resource="resource_wood">160</ResourceReward>
+ <ResourceReward resource="resource_fur">80</ResourceReward>
  <ExperienceReward>120</ExperienceReward>
  </Rewards>
  <RewardTests>
@@ -1200,7 +1197,6 @@
    <RewardText locale="en_US">Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.</RewardText>
    <RewardFlavor locale="de_DE">Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!</RewardFlavor>
    <RewardFlavor locale="en_US">Huh? What did you wake me up for? Oh – finished your campfire at last, eh? About time, too!</RewardFlavor>
-   <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
    <Rewards>
      <ResourceReward resource="resource_stone">275</ResourceReward>  
      <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -1489,7 +1485,7 @@
       <Name>And another chieftain’s hut upgrade</Name>
       <Name locale="de_DE">Hurtig!</Name>
       <Task>Order a chieftain’s hut upgrade.</Task>
-      <Task locale="de_DE">Du hast eine Kröte erhalten!</Task>
+      <Task locale="de_DE">Du hast zwei Kröten erhalten!</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -1498,13 +1494,13 @@
       </Description>
       <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
       <Flavor locale="en_US">I think it’s time for a bigger chieftain’s hut. Why not order an upgrade. </Flavor>
-      <RewardText locale="de_DE">Du hast von mir eine Kröte erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
+      <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
       <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
       <Requirement quest="quest_improve_production_1" />
       <Rewards>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
       </Rewards>      
       <RewardTests>
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
@@ -2383,8 +2379,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 300</Task>
-  <Task locale="de_DE">Erreiche 300 Einwohner</Task>
+  <Task>Reach a Population of 250</Task>
+  <Task locale="de_DE">Erreiche 250 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2405,7 +2401,7 @@
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="300" />
+    <ScoreTest min_population="250" />
   </RewardTests>
 </Quest>
 
@@ -2413,8 +2409,8 @@
 <Quest id="quest_score_2" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 500</Task>
-  <Task locale="de_DE">Erreiche 500 Einwohner</Task>
+  <Task>Reach a Population of 450</Task>
+  <Task locale="de_DE">Erreiche 450 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2435,7 +2431,7 @@
         <ExperienceReward>80</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="500" />
+    <ScoreTest min_population="450" />
   </RewardTests>
 </Quest>
 
@@ -4418,9 +4414,9 @@
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">200</ResourceReward>
-        <ResourceReward resource="resource_wood">200</ResourceReward>
-        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ResourceReward resource="resource_stone">225</ResourceReward>
+        <ResourceReward resource="resource_wood">225</ResourceReward>
+        <ResourceReward resource="resource_fur">125</ResourceReward>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -4432,8 +4428,8 @@
     <Quest id="quest_resourcescore_0_5" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 250 resource points</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 250 Rohstoffpunkte</Task>
+      <Task>Increase the resource production of one settlement to 225 resource points</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 225 Rohstoffpunkte</Task>
       <Description locale="de_DE">
         <p>Fell ist zwei Rohstoffpunkte wert, Stein und Holz je einen.</p>
       </Description>
@@ -4450,11 +4446,11 @@
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>
         <ResourceReward resource="resource_wood">300</ResourceReward>
-        <ResourceReward resource="resource_fur">100</ResourceReward>
+        <ResourceReward resource="resource_fur">150</ResourceReward>
         <ExperienceReward>75</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="250" />
+        <SettlementProductionTest min_resources="225" />
       </RewardTests>
     </Quest>
     
