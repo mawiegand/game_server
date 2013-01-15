@@ -192,8 +192,8 @@
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Some people are never satisfied. Here – take this and push aaoff!</RewardFlavor>
             <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">30</ResourceReward>
-        <ResourceReward resource="resource_wood">30</ResourceReward>
+        <ResourceReward resource="resource_stone">50</ResourceReward>
+        <ResourceReward resource="resource_wood">50</ResourceReward>
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -584,7 +584,6 @@
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>400</ExperienceReward>
-        <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
@@ -613,6 +612,7 @@
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>
+        <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
         <MovementTest />
@@ -753,7 +753,7 @@
       </Description>
       <Flavor locale="de_DE">In der Trainingshöhle kannst Du Erfahrung erhalten ohne zu kämpfen.</Flavor>
       <Flavor locale="en_US">In the training cave you earn experience without fighting.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Erfahrung kannst Du durch das Lösen von Aufgaben, durch Siege, durch den Verlust eigener Einheiten und in der Trainingshöhle gewinnen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Sehr schön. Erfahrung kannst Du immer gebrauchen.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – that’s a lot of experience. Cool!</RewardFlavor>
@@ -870,11 +870,11 @@
       </Description>
       <Flavor locale="de_DE">Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.</Flavor>
       <Flavor locale="en_US">What? Only one settlement? You’ve got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">In der Lagerstätte kannst Du in Abhängigkeit vom Versammlungsplatz eine Vielzahl von Gebäuden bauen. Es gibt zwei Spezialgebäude: der Ritualstein beschützt Deine Lagerstätte vor der Übernahme, während das Feldlager Dir die Möglichkeit gibt mehr und größere Armeen aufzustellen.</RewardText>
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US">You’ve started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I’m sick of the sight of you.</RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -887,31 +887,33 @@
     </Quest>
 
 <!-- 28 -->  <!-- not in -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl">
-  <Name>More Hunter Gatherers </Name>
-  <Name locale="de_DE">Weitere Jäger und Sammler</Name>
-  <Task>Upgrade four Hunter Gatherers to level 2.</Task>
-  <Task locale="de_DE">Baue insgesamt vier Jäger und Sammler auf Level 2 aus.</Task>
+    <Quest id="quest_build_2gathererlvl3" advisor="chef">
+  <Name>Take over fortress</Name>
+  <Name locale="de_DE">Festung erobern</Name>
+  <Task>Take over a fortress</Task>
+  <Task locale="de_DE">Erobere eine Festung</Task>
   <Description locale="de_DE">
     <p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>
   </Description>
   <Description locale="en_US">
     <p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>
   </Description>
-  <Flavor locale="de_DE">Du findest Dich schon gut zurecht. Deine Jäger und Sammler solltest Du weiter ausbilden.</Flavor>
-  <Flavor locale="en_US">You’re doing pretty well. You should train your Hunter Gatherers further though.</Flavor>
-  <RewardText locale="de_DE">Behalte Deine Rohstoffproduktion im Auge. Die Jäger und Sammler auszubauen lohnt sich auf jeden Fall.</RewardText>
+  <Flavor locale="de_DE">Halbgott, es wird Zeit unseren Einfluss zu vergrößern! Erobere eine Festung für Deinen Stamm!</Flavor>
+  <Flavor locale="en_US">Demigod, let us take over a fortress.</Flavor>
+  <RewardText locale="de_DE">Die Festung kassiert Steuern aus der gesamten Region. Du kannst den Steuersatz im Festungsmenü zwischen 5 und 15% einstellen.</RewardText>
   <RewardText locale="en_US">Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.</RewardText>
-  <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Muhaha, die Festung gehört uns. Die erste Region gehört uns, weitere werden folgen!</RewardFlavor>
   <RewardFlavor locale="en_US">Wonderful! I think it’s a great idea to upgrade all your Hunter Gatherers – that way, your raw materials won’t run out so quickly.</RewardFlavor>
-  <Rewards>
-    <ResourceReward resource="resource_stone">70</ResourceReward>  
-    <ResourceReward resource="resource_wood">60</ResourceReward>    
-    <ResourceReward resource="resource_fur">30</ResourceReward>
+      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_fur">300</ResourceReward>
+    <UnitReward unit="unit_clubbers">25</UnitReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="2" min_count="4"/>
+        <SettlementTest type="settlement_fortress" min_count="1" />
   </RewardTests>
 </Quest>
 
@@ -1751,8 +1753,8 @@
       <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
       <Requirement quest="quest_settlement_button2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>
-        <ResourceReward resource="resource_wood">100</ResourceReward>
+        <ResourceReward resource="resource_stone">125</ResourceReward>
+        <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">50</ResourceReward>
         <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
@@ -2381,8 +2383,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 250</Task>
-  <Task locale="de_DE">Erreiche 250 Einwohner</Task>
+  <Task>Reach a Population of 225</Task>
+  <Task locale="de_DE">Erreiche 225 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2403,7 +2405,7 @@
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="250" />
+    <ScoreTest min_population="225" />
   </RewardTests>
 </Quest>
 

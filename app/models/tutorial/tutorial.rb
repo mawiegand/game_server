@@ -1732,8 +1732,6 @@ class Tutorial::Tutorial
 
             :experience_reward => 400,
 
-            :action_point_reward => true,
-
           },          
 
           :reward_tests => {
@@ -1821,6 +1819,8 @@ class Tutorial::Tutorial
             ],
 
             :experience_reward => 250,
+
+            :action_point_reward => true,
 
           },          
 
@@ -2262,7 +2262,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Erfahrung kannst Du durch das Lösen von Aufgaben, durch Siege, durch den Verlust eigener Einheiten und in der Trainingshöhle gewinnen.",
   
             :en_US => " ",
                 
@@ -2274,7 +2274,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, ],
+          :successor_quests => [28, ],
 
           :rewards => {
             
@@ -2357,7 +2357,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [27, ],
 
           :rewards => {
             
@@ -2648,7 +2648,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "In der Lagerstätte kannst Du in Abhängigkeit vom Versammlungsplatz eine Vielzahl von Gebäuden bauen. Es gibt zwei Spezialgebäude: der Ritualstein beschützt Deine Lagerstätte vor der Übernahme, während das Feldlager Dir die Möglichkeit gibt mehr und größere Armeen aufzustellen.",
   
             :en_US => "",
                 
@@ -2656,7 +2656,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
 
           },
 
@@ -2704,30 +2704,30 @@ class Tutorial::Tutorial
         {               #   quest_build_2gathererlvl3
           :id                => 28, 
           :symbolic_id       => :quest_build_2gathererlvl3,
-          :advisor           => :girl,
+          :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
             
-            :en_US => "More Hunter Gatherers ",
+            :en_US => "Take over fortress",
   
-            :de_DE => "Weitere Jäger und Sammler",
+            :de_DE => "Festung erobern",
                 
           },
           :task => {
             
-            :en_US => "Upgrade four Hunter Gatherers to level 2.",
+            :en_US => "Take over a fortress",
   
-            :de_DE => "Baue insgesamt vier Jäger und Sammler auf Level 2 aus.",
+            :de_DE => "Erobere eine Festung",
                 
           },
           :flavour => {
             
-            :de_DE => "Du findest Dich schon gut zurecht. Deine Jäger und Sammler solltest Du weiter ausbilden.",
+            :de_DE => "Halbgott, es wird Zeit unseren Einfluss zu vergrößern! Erobere eine Festung für Deinen Stamm!",
   
-            :en_US => "You’re doing pretty well. You should train your Hunter Gatherers further though.",
+            :en_US => "Demigod, let us take over a fortress.",
                 
           },
           :description => {
@@ -2739,17 +2739,23 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.",
+            :de_DE => "Muhaha, die Festung gehört uns. Die erste Region gehört uns, weitere werden folgen!",
   
             :en_US => "Wonderful! I think it’s a great idea to upgrade all your Hunter Gatherers – that way, your raw materials won’t run out so quickly.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Behalte Deine Rohstoffproduktion im Auge. Die Jäger und Sammler auszubauen lohnt sich auf jeden Fall.",
+            :de_DE => "Die Festung kassiert Steuern aus der gesamten Region. Du kannst den Steuersatz im Festungsmenü zwischen 5 und 15% einstellen.",
   
             :en_US => "Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl5',
+
           },
 
           :successor_quests => [],
@@ -2760,17 +2766,26 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 70,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 60,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 30,
+                :amount => 300,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 25,
               },
 
             ],
@@ -2781,15 +2796,11 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
+            :settlement_tests => [
 
               {
-                :building => 'building_gatherer',
-
-                :min_level => 2,
-
-                :min_count => 4,
-
+                :type => 'settlement_fortress',
+                :min_count => 1,
               },
 
             ],
@@ -5534,12 +5545,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 125,
               },
 
               {
@@ -7474,9 +7485,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 250",
+            :en_US => "Reach a Population of 225",
   
-            :de_DE => "Erreiche 250 Einwohner",
+            :de_DE => "Erreiche 225 Einwohner",
                 
           },
           :flavour => {
@@ -7544,7 +7555,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 250,
+              :min_population => 225,
             },
 
           },          
