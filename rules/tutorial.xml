@@ -29,7 +29,7 @@
   
 <!-- 0 --> <!-- Tutorial 1 -->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true">
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Order a Hunter Gatherer Level 1</Task>
@@ -191,8 +191,8 @@
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Some people are never satisfied. Here – take this and push aaoff!</RewardFlavor>
             <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">30</ResourceReward>
-        <ResourceReward resource="resource_wood">30</ResourceReward>
+        <ResourceReward resource="resource_stone">50</ResourceReward>
+        <ResourceReward resource="resource_wood">50</ResourceReward>
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -222,7 +222,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_change_profile">change profile text</CustomTest>
+        <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
 
@@ -339,7 +339,7 @@
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_open_message">send Message, Message opened</CustomTest>
+        <CustomTest id="test_message">send Message, Message opened</CustomTest>
       </RewardTests>
       <Message>
         <Subject>Message from quest giver</Subject>
@@ -546,13 +546,13 @@
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-      <RewardText locale="de_DE">Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn Du wissen willst, wie weit der Auftrag ist, klickst Du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.</RewardText>
+      <RewardText locale="de_DE">Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl ein.</RewardText>
       <RewardText locale="en_US">Once you’ve ordered the units you can close the building window and the order continues to be carried out. If you want to know how far the order has got, just click on the training barracks. You can also train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’. New units will be activated at higher building levels.</RewardText>
-      <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir drei meiner Keulenkrieger zur Verfügung.</RewardFlavor>
-      <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have three of my clubbers. </RewardFlavor>
+      <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner besten Keulenkrieger zur Verfügung.</RewardFlavor>
+      <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have a few of my clubbers. </RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">9</UnitReward>
+        <UnitReward unit="unit_clubbers">25</UnitReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -567,13 +567,13 @@
       <Task>Assemble an army</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor den Knopf mit den Männchen 'Neue Armee' aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
-        <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
+        <p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
+        <p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
       </Description>
-      <Flavor locale="de_DE">Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade neun Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.</Flavor>
+      <Flavor locale="de_DE">Aus Einheiten werden Armeen aufgestellt! Ich habe Dir ja gerade einige Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.</Flavor>
       <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. </Flavor>
       <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird.</RewardText>
       <RewardText locale="en_US">Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.</RewardText>
@@ -587,6 +587,7 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
+      <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
 <!-- 18 --> <!-- Tutorial 8 -->
@@ -607,10 +608,11 @@
       <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.</RewardFlavor>
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
-      <Requirement quest="quest_army_create" />
+      <Requirement quest="quest_npc_battle" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
-        <ExperienceReward>250</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
+        <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
         <MovementTest />
@@ -751,7 +753,7 @@
       </Description>
       <Flavor locale="de_DE">In der Trainingshöhle kannst Du Erfahrung erhalten ohne zu kämpfen.</Flavor>
       <Flavor locale="en_US">In the training cave you earn experience without fighting.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Erfahrung kannst Du durch das Lösen von Aufgaben, durch Siege, durch den Verlust eigener Einheiten und in der Trainingshöhle gewinnen.</RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Sehr schön. Erfahrung kannst Du immer gebrauchen.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – that’s a lot of experience. Cool!</RewardFlavor>
@@ -760,7 +762,7 @@
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="training_cave" min_level="1" />
+        <BuildingTest building="building_training_cave" min_level="1" />
       </RewardTests>
     </Quest>
 
@@ -868,11 +870,11 @@
       </Description>
       <Flavor locale="de_DE">Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.</Flavor>
       <Flavor locale="en_US">What? Only one settlement? You’ve got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">In der Lagerstätte kannst Du in Abhängigkeit vom Versammlungsplatz eine Vielzahl von Gebäuden bauen. Es gibt zwei Spezialgebäude: der Ritualstein beschützt Deine Lagerstätte vor der Übernahme, während das Feldlager Dir die Möglichkeit gibt mehr und größere Armeen aufzustellen.</RewardText>
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
       <RewardFlavor locale="en_US">You’ve started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I’m sick of the sight of you.</RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>  
         <ResourceReward resource="resource_wood">500</ResourceReward>    
@@ -885,31 +887,33 @@
     </Quest>
 
 <!-- 28 -->  <!-- not in -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl">
-  <Name>More Hunter Gatherers </Name>
-  <Name locale="de_DE">Weitere Jäger und Sammler</Name>
-  <Task>Upgrade four Hunter Gatherers to level 2.</Task>
-  <Task locale="de_DE">Baue insgesamt vier Jäger und Sammler auf Level 2 aus.</Task>
+    <Quest id="quest_build_2gathererlvl3" advisor="chef">
+  <Name>Take over fortress</Name>
+  <Name locale="de_DE">Festung erobern</Name>
+  <Task>Take over a fortress</Task>
+  <Task locale="de_DE">Erobere eine Festung</Task>
   <Description locale="de_DE">
     <p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>
   </Description>
   <Description locale="en_US">
     <p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>
   </Description>
-  <Flavor locale="de_DE">Du findest Dich schon gut zurecht. Deine Jäger und Sammler solltest Du weiter ausbilden.</Flavor>
-  <Flavor locale="en_US">You’re doing pretty well. You should train your Hunter Gatherers further though.</Flavor>
-  <RewardText locale="de_DE">Behalte Deine Rohstoffproduktion im Auge. Die Jäger und Sammler auszubauen lohnt sich auf jeden Fall.</RewardText>
+  <Flavor locale="de_DE">Halbgott, es wird Zeit unseren Einfluss zu vergrößern! Erobere eine Festung für Deinen Stamm!</Flavor>
+  <Flavor locale="en_US">Demigod, let us take over a fortress.</Flavor>
+  <RewardText locale="de_DE">Die Festung kassiert Steuern aus der gesamten Region. Du kannst den Steuersatz im Festungsmenü zwischen 5 und 15% einstellen.</RewardText>
   <RewardText locale="en_US">Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.</RewardText>
-  <RewardFlavor locale="de_DE">Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Muhaha, die Festung gehört uns. Die erste Region gehört uns, weitere werden folgen!</RewardFlavor>
   <RewardFlavor locale="en_US">Wonderful! I think it’s a great idea to upgrade all your Hunter Gatherers – that way, your raw materials won’t run out so quickly.</RewardFlavor>
-  <Rewards>
-    <ResourceReward resource="resource_stone">70</ResourceReward>  
-    <ResourceReward resource="resource_wood">60</ResourceReward>    
-    <ResourceReward resource="resource_fur">30</ResourceReward>
+      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_fur">300</ResourceReward>
+    <UnitReward unit="unit_clubbers">25</UnitReward>
     <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_gatherer" min_level="2" min_count="4"/>
+        <SettlementTest type="settlement_fortress" min_count="1" />
   </RewardTests>
 </Quest>
 
@@ -933,13 +937,13 @@
   <RewardFlavor locale="en_US">Great! You already have new inhabitants coming to help you upgrade.</RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
-    <ResourceReward resource="resource_stone">210</ResourceReward>
-    <ResourceReward resource="resource_wood">180</ResourceReward>
+    <ResourceReward resource="resource_stone">380</ResourceReward>
+    <ResourceReward resource="resource_wood">280</ResourceReward>
     <ResourceReward resource="resource_fur">90</ResourceReward>
     <ExperienceReward>100</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_cottage" min_level="3" min_count="2" />
+      <BuildingSpeedTest min_speed="1.26" />
   </RewardTests>
 </Quest>
 
@@ -1730,7 +1734,7 @@
     </Quest>
 
 <!-- 58 --> <!-- Tutorial 10 -->
-    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your stone and wood production to at least 12 units per hour</Task>
@@ -1749,8 +1753,8 @@
       <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
       <Requirement quest="quest_settlement_button2" />
       <Rewards>
-        <ResourceReward resource="resource_stone">100</ResourceReward>
-        <ResourceReward resource="resource_wood">100</ResourceReward>
+        <ResourceReward resource="resource_stone">125</ResourceReward>
+        <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">50</ResourceReward>
         <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
@@ -1759,6 +1763,7 @@
         <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
         <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
+      <PlaceNpcs>8</PlaceNpcs>
     </Quest>
 
 
@@ -2379,8 +2384,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 250</Task>
-  <Task locale="de_DE">Erreiche 250 Einwohner</Task>
+  <Task>Reach a Population of 225</Task>
+  <Task locale="de_DE">Erreiche 225 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2401,7 +2406,7 @@
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="250" />
+    <ScoreTest min_population="225" />
   </RewardTests>
 </Quest>
 
@@ -4451,6 +4456,35 @@
       </Rewards>
       <RewardTests>
         <SettlementProductionTest min_resources="225" />
+      </RewardTests>
+    </Quest>
+    
+    <!-- 147 --> <!-- Tutorial 9 -->
+    <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+      <Name>First battle</Name>
+      <Name locale="de_DE">Der erste Kampf</Name>
+      <Task>Fight for the first time and kill at least tweo units!</Task>
+      <Task locale="de_DE">Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!</Task>
+      <Description locale="de_DE">
+        <p>An Deiner Heimatsiedlung sind Neandertaler erschienen! Klicke auf Deine Armee, drücke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
+      </Description>
+      <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
+      <Flavor locale="en_US">An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
+      <RewardText locale="de_DE">An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zeilauswahl-Dialog den Überblick!</RewardText>
+      <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
+      <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Ggener erschlagen.</RewardFlavor>
+      <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
+      <Requirement quest="quest_army_create" />
+      <Rewards>
+        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <ExperienceReward>250</ExperienceReward>
+        <ActionPointReward></ActionPointReward>
+      </Rewards>
+      <RewardTests>
+        <KillTest min_units="2" />
       </RewardTests>
     </Quest>
     

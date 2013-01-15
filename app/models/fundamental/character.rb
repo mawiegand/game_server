@@ -169,6 +169,15 @@ class Fundamental::Character < ActiveRecord::Base
     })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
+  
+  def redeem_tutorial_end_rewards
+    Shop::BonusOffer.all.each do |bonus_offer|
+      bonus_offer.credit_to(self)
+    end
+    
+    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
+    platinum_offer.credit_to(self) unless platinum_offer.nil?
+  end
 
   def locale
     #TODO set language local

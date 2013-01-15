@@ -4,7 +4,7 @@ class Tutorial::Quest < ActiveRecord::Base
 
   before_create :set_start_playtime
   before_save   :set_finished_playtime
-  after_save :count_completed_tutorial_quests
+  after_save    :count_completed_tutorial_quests
 
   STATES = []
   STATE_NEW = 0
@@ -147,6 +147,13 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
       
+      unless reward_tests[:building_speed_test].nil?
+        building_speed_test = reward_tests[:building_speed_test]
+        unless check_building_speed(building_speed_test)
+          return false
+        end
+      end
+      
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
       end
@@ -154,12 +161,18 @@ class Tutorial::Quest < ActiveRecord::Base
     else
       logger.debug 'no reward tests found'
     end
-    # quest auf beendet setzen
+    true
+  end
+  
+  def set_finished
+      # quest auf beendet setzen
     self.status = STATE_FINISHED
     self.finished_at = Time.now
     self.save
-    
-    true
+  end
+  
+  def place_npcs
+    Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
   end
   
   def open_dependent_quest_states
@@ -246,11 +259,7 @@ class Tutorial::Quest < ActiveRecord::Base
     end
     return false if settlement_type.nil?
     
-    # logger.debug "-----> check_settlements: type " + settlement_type.inspect
-
     settlements = self.tutorial_state.owner.settlements.where({type_id: settlement_type[:id]})
-    # logger.debug "-----> check_settlements: settlements " + settlements.inspect
-    # logger.debug "-----> check_settlements: result " + (!settlements.nil? && settlements.count >= settlement_test[:min_count]).to_s
     return !settlements.nil? && settlements.count >= settlement_test[:min_count]
   end
 
@@ -474,6 +483,20 @@ class Tutorial::Quest < ActiveRecord::Base
     false
   end
   
+  def check_building_speed(building_speed_test) 
+    return false if building_speed_test[:min_speed].nil?
+    
+    logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
+    
+    building_queues = self.tutorial_state.owner.home_location.settlement.queues
+    
+    building_queues.each do |queue|
+      return true if queue.speed >= building_speed_test[:min_speed]
+    end
+    
+    false
+  end
+  
   def redeem_rewards
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
@@ -546,12 +569,18 @@ class Tutorial::Quest < ActiveRecord::Base
       self.closed_at = Time.now
       self.save
   
-      # reward resources, units and experience
+      # reward resources, units, experience and action points
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
       unless rewards[:experience_reward].nil?
         self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
         self.tutorial_state.owner.save
+      end
+      if !rewards[:action_point_reward].nil? && rewards[:action_point_reward]
+        self.tutorial_state.owner.armies.each do |army|
+          army.ap_present = army.ap_max
+          army.save          
+        end
       end
     end
     

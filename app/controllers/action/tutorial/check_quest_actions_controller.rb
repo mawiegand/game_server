@@ -19,7 +19,9 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
     raise BadRequestError.new('quest state not found') if quest_state.nil?
 
     answer_text = @action[:answer_text]
-    raise BadRequestError.new('check quest rewards failed') unless quest_state.check_for_rewards(answer_text) 
+    raise BadRequestError.new('check quest rewards failed') unless quest_state.check_for_rewards(answer_text)
+    quest_state.set_finished 
+    quest_state.place_npcs
     quest_state.open_dependent_quest_states
 
     respond_to do |format|
