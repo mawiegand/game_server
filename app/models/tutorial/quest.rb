@@ -147,6 +147,13 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
       
+      unless reward_tests[:building_speed_test].nil?
+        building_speed_test = reward_tests[:building_speed_test]
+        unless check_building_speed(building_speed_test)
+          return false
+        end
+      end
+      
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
       end
@@ -472,6 +479,17 @@ class Tutorial::Quest < ActiveRecord::Base
     end
 
     false
+  end
+  
+  def check_building_speed(building_speed_test) 
+    return false if building_speed_test[:min_speed].nil?
+    
+    logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
+    
+    production_test_weights = Tutorial::Tutorial.the_tutorial.production_test_weights
+    
+    building_queue = self.tutorial_state.owner.home_location.settlement.queues.where("type_id = ?", queue_type[:id]).first
+    true
   end
   
   def redeem_rewards
