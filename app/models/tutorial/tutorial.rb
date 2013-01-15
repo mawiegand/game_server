@@ -2287,7 +2287,7 @@ class Tutorial::Tutorial
             :building_tests => [
 
               {
-                :building => 'training_cave',
+                :building => 'building_training_cave',
 
                 :min_level => 1,
 
