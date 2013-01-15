@@ -337,6 +337,11 @@ end
               :min_resources => <xsl:value-of select="SettlementProductionTest/@min_resources" />,
             },
 </xsl:if>
+<xsl:if test="BuildingSpeedTest">
+            :building_speed_test => {
+              :min_speed => <xsl:value-of select="BuildingSpeedTest/@min_speed" />,
+            },
+</xsl:if>
 </xsl:template>
 
 

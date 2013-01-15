@@ -4,7 +4,7 @@ class Tutorial::Quest < ActiveRecord::Base
 
   before_create :set_start_playtime
   before_save   :set_finished_playtime
-  after_save :count_completed_tutorial_quests
+  after_save    :count_completed_tutorial_quests
 
   STATES = []
   STATE_NEW = 0
@@ -253,11 +253,7 @@ class Tutorial::Quest < ActiveRecord::Base
     end
     return false if settlement_type.nil?
     
-    # logger.debug "-----> check_settlements: type " + settlement_type.inspect
-
     settlements = self.tutorial_state.owner.settlements.where({type_id: settlement_type[:id]})
-    # logger.debug "-----> check_settlements: settlements " + settlements.inspect
-    # logger.debug "-----> check_settlements: result " + (!settlements.nil? && settlements.count >= settlement_test[:min_count]).to_s
     return !settlements.nil? && settlements.count >= settlement_test[:min_count]
   end
 
@@ -486,10 +482,13 @@ class Tutorial::Quest < ActiveRecord::Base
     
     logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
     
-    production_test_weights = Tutorial::Tutorial.the_tutorial.production_test_weights
+    building_queues = self.tutorial_state.owner.home_location.settlement.queues
     
-    building_queue = self.tutorial_state.owner.home_location.settlement.queues.where("type_id = ?", queue_type[:id]).first
-    true
+    building_queues.each do |queue|
+      return true if queue.speed >= building_speed_test[:min_speed]
+    end
+    
+    false
   end
   
   def redeem_rewards
