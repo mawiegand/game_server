@@ -1,0 +1,18 @@
+The player deletion script was started at <%= @report[:started_at] %> 
+and finished running at <%= @report[:finished_at] %>.
+
+It removed a total of <%= @report[:deleted_players].count %> inactive players today:
+
+<% @report[:deleted_players].each do |player| %>
+  <%= player.name %>
+<% end %>
+
+Tomorrow will be removed a total of <%= @report[:players_getting_inactive].count %> inactive players:
+
+<% @report[:players_getting_inactive].each do |player| %>
+  <%= player.name %>
+<% end %>
+
+Whack On!
+
+- cron
