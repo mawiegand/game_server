@@ -745,7 +745,7 @@
       <Name>Furrier</Name>
       <Name locale="de_DE">Trainingshöhle</Name>
       <Task>Build a furrier</Task>
-      <Task locale="de_DE">Baue ein Trainingsgelände.</Task>
+      <Task locale="de_DE">Baue eine Trainingshöhle.</Task>
       <Description locale="de_DE">
         <p>Wie wäre es wenn Du eine Trainingshöhle baust? Dafür benötigst Du Häuptlingshütte auf Level 6.</p>
       </Description>
