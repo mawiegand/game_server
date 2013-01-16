@@ -2753,7 +2753,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Für die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>",
+            :de_DE => "<p>Die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>",
   
             :en_US => "<p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>",
                 

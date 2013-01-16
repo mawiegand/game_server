@@ -896,7 +896,7 @@
   <Task>Take over a fortress</Task>
   <Task locale="de_DE">Erobere eine Festung.</Task>
   <Description locale="de_DE">
-    <p>Für die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>
+    <p>Die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>
   </Description>
   <Description locale="en_US">
     <p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>
