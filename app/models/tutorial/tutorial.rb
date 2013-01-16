@@ -2129,7 +2129,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :place_npcs => 50,         
+          :place_npcs => 35,         
 
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
@@ -2253,7 +2253,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a furrier",
   
-            :de_DE => "Baue ein Trainingsgelände.",
+            :de_DE => "Baue eine Trainingshöhle.",
                 
           },
           :flavour => {
@@ -2315,6 +2315,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 30,         
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl1_1loggerlvl1
@@ -2382,7 +2384,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 300,
               },
 
             ],
@@ -2407,6 +2409,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 40,         
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_4quarrylvl5_4loggerlvl5
@@ -2466,7 +2470,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -2882,7 +2886,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [79, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2975,7 +2979,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 145, ],
+          :successor_quests => [29, 69, 145, ],
 
           :rewards => {
             
@@ -6591,7 +6595,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -7495,9 +7499,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 225",
+            :en_US => "Reach a Population of 230",
   
-            :de_DE => "Erreiche 225 Einwohner",
+            :de_DE => "Erreiche 230 Einwohner",
                 
           },
           :flavour => {
@@ -7531,7 +7535,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl3',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
@@ -7565,7 +7569,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 225,
+              :min_population => 230,
             },
 
           },          
@@ -13803,7 +13807,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 69, 146, ],
+          :successor_quests => [25, 146, ],
 
           :rewards => {
             

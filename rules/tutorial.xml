@@ -706,7 +706,7 @@
       <RewardTests>
         <AllianceTest />
       </RewardTests>
-        <PlaceNpcs>40</PlaceNpcs>
+        <PlaceNpcs>35</PlaceNpcs>
     </Quest>
 
 <!-- 22 -->  <!-- Q5 -->
@@ -765,6 +765,7 @@
       <RewardTests>
         <BuildingTest building="building_training_cave" min_level="1" />
       </RewardTests>
+      <PlaceNpcs>30</PlaceNpcs>
     </Quest>
 
 <!-- 24 -->
@@ -793,7 +794,7 @@
       <RewardTests>
         <BuildingTest building="building_furrier" min_level="1" />
       </RewardTests>
-        <PlaceNpcs>50</PlaceNpcs>
+        <PlaceNpcs>40</PlaceNpcs>
     </Quest>
 
 <!-- 25 -->  <!-- Q13 -->
@@ -2095,7 +2096,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_resourcescore_0" />
+<Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2386,8 +2387,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 225</Task>
-  <Task locale="de_DE">Erreiche 225 Einwohner</Task>
+  <Task>Reach a Population of 230</Task>
+  <Task locale="de_DE">Erreiche 230 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2400,7 +2401,7 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl3" /> 
+  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> 
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2408,7 +2409,7 @@
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="225" />
+    <ScoreTest min_population="230" />
   </RewardTests>
 </Quest>
 
