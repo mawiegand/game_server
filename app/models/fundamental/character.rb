@@ -81,6 +81,18 @@ class Fundamental::Character < ActiveRecord::Base
   scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
   
   scope :churned,          where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks])
+  
+  # used by player deletion script
+  scope :getting_inactive, where([
+    '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
+    Time.now - 1.days,
+    Time.now.beginning_of_day - 29.hours,  # TODO days
+  ])
+  scope :inactive,         where([
+    '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
+    Time.now - 1.days,
+    Time.now.beginning_of_day - 30.hours,  # TODO days
+  ])
 
   scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, where([
@@ -881,6 +893,16 @@ class Fundamental::Character < ActiveRecord::Base
       logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_dislikes_count} Corrected: #{dislikes_count}.")
       self.received_dislikes_count = dislikes_count
     end    
+  end
+
+  # ##########################################################################
+  #
+  #   DELETION OF CHARACTERS FROM GAME
+  #
+  # ##########################################################################
+
+  def delete_from_game
+    likes_count = self.received_likes.count
   end
   
   protected
