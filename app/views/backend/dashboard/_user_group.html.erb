@@ -16,7 +16,7 @@
 
     <% if user_group[:last_character_signup] %>
       <b>Latest Sign Up</b>: 
-      <%= link_to user_group[:last_character_signup].name, user_group[:last_character] %> (<%= user_group[:last_character_signup].identifier %>),
+      <%= link_to user_group[:last_character_signup].name, user_group[:last_character_signup] %> (<%= user_group[:last_character_signup].identifier %>),
       <b><%= time_ago_in_words user_group[:last_character_signup].created_at %></b> ago<br/>
     <% end %>
   </p>

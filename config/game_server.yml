@@ -41,7 +41,7 @@ defaults: &defaults
   platinum_additional_training_jobs     : 3
   
   chat_host: jabber.wack-a-doo.com
-  
+    
 development:
   <<: *defaults
 

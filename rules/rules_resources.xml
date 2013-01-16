@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <ResourceTypes>
-  <Resource id="resource_stone">  
+  <Resource id="resource_stone" stealable="false">  
     <Name lang="de_DE">Stein</Name>
     <Name lang="en_US">Stone</Name>
     <Flavour lang="de_DE">Grau, hart, überall zu finden.</Flavour>
@@ -14,7 +14,7 @@
       <p>Stones – in the STONE age THE most vital raw material. Can be gathered, stacked, sharpened and thrown. Not much more to say, really.</p>
     </Description>
   </Resource>
-  <Resource id="resource_wood">  
+  <Resource id="resource_wood" stealable="false">  
     <Name lang="de_DE">Holz</Name>
     <Name lang="en_US">Wood</Name>
     <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
@@ -26,7 +26,7 @@
       <p>Even in the stone age, wood was available in all its varieties: softwood, hardwood, squared timber and, of course, boards. As a raw material, wood was really important in the construction of buildings and siege weapons.</p>
     </Description>
   </Resource>
-  <Resource id="resource_fur" ratingValue="2.0">  
+  <Resource id="resource_fur" stealable="false" ratingValue="2.0">  
     <Name lang="de_DE">Fell</Name>
     <Name lang="en_US">Fur</Name>
     <Flavour lang="de_DE">In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!</Flavour>

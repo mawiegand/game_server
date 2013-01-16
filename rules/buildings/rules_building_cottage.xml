@@ -18,7 +18,7 @@
 	</Flavour>
   <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+0.5)</Population>
   <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="2" />
+    <Requirement id="building_chief_cottage" min_level="3" />
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
   <RequirementGroup>

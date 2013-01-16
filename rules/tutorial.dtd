@@ -52,12 +52,13 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*, PlaceNpcs?)>
 <!ATTLIST Quest
   id ID #REQUIRED
   advisor IDREF "warrior"
   hide_start_dialog CDATA "false"
   tutorial CDATA "false"
+  tutorial_end_quest CDATA "false"  
 >
 
 <!ELEMENT Requirement EMPTY>
@@ -65,7 +66,7 @@
   quest IDREF #REQUIRED
 >
 
-<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ActionPointReward?)>
 
 <!ELEMENT ResourceReward (#PCDATA)>
 <!ATTLIST ResourceReward
@@ -79,9 +80,11 @@
 
 <!ELEMENT ExperienceReward (#PCDATA)>
 
+<!ELEMENT ActionPointReward EMPTY>
 
 
-<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?) | TextboxTest | CustomTest)>
+
+<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest (#PCDATA)>
 <!ATTLIST BuildingTest
@@ -150,10 +153,17 @@
   min_population CDATA #REQUIRED
 >
 
+<!ELEMENT BuildingSpeedTest EMPTY>
+<!ATTLIST BuildingSpeedTest
+  min_speed CDATA #REQUIRED
+>
+
 <!ELEMENT SettlementProductionTest (#PCDATA)>
 <!ATTLIST SettlementProductionTest
   min_resources CDATA #REQUIRED
 >
+
+<!ELEMENT PlaceNpcs (#PCDATA)>
 
 <!ELEMENT Message (Subject, Body)>
 <!ATTLIST Message lang IDREF "en">
