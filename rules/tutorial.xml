@@ -351,7 +351,7 @@
       </Message>
     </Quest>
 
-<!-- 11 --> <!-- Tutorial 9 -->
+<!-- 11 --> <!-- Tutorial 12 -->
       <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
@@ -567,7 +567,7 @@
       <Task>Assemble an army</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
+        <p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
         <p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
@@ -590,7 +590,7 @@
       <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
-<!-- 18 --> <!-- Tutorial 8 -->
+<!-- 18 --> <!-- Tutorial 10 -->
     <Quest id="quest_army_move" advisor="warrior" tutorial="true">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
@@ -610,7 +610,7 @@
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
       <Requirement quest="quest_npc_battle" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <UnitReward unit="unit_clubbers">5</UnitReward>
         <ExperienceReward>200</ExperienceReward>
         <ActionPointReward></ActionPointReward>
       </Rewards>
@@ -706,6 +706,7 @@
       <RewardTests>
         <AllianceTest />
       </RewardTests>
+        <PlaceNpcs>35</PlaceNpcs>
     </Quest>
 
 <!-- 22 -->  <!-- Q5 -->
@@ -744,7 +745,7 @@
       <Name>Furrier</Name>
       <Name locale="de_DE">Trainingshöhle</Name>
       <Task>Build a furrier</Task>
-      <Task locale="de_DE">Baue ein Trainingsgelände.</Task>
+      <Task locale="de_DE">Baue eine Trainingshöhle.</Task>
       <Description locale="de_DE">
         <p>Wie wäre es wenn Du eine Trainingshöhle baust? Dafür benötigst Du Häuptlingshütte auf Level 6.</p>
       </Description>
@@ -764,6 +765,7 @@
       <RewardTests>
         <BuildingTest building="building_training_cave" min_level="1" />
       </RewardTests>
+      <PlaceNpcs>30</PlaceNpcs>
     </Quest>
 
 <!-- 24 -->
@@ -786,12 +788,13 @@
       <RewardFlavor locale="en_US">Wow – that’s a lot of fur. Fantastic!</RewardFlavor>
             <Requirement quest="quest_resourcescore_1" />
       <Rewards>
-        <ResourceReward resource="resource_fur">200</ResourceReward>
+        <ResourceReward resource="resource_fur">300</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_furrier" min_level="1" />
       </RewardTests>
+        <PlaceNpcs>40</PlaceNpcs>
     </Quest>
 
 <!-- 25 -->  <!-- Q13 -->
@@ -891,9 +894,9 @@
   <Name>Take over fortress</Name>
   <Name locale="de_DE">Festung erobern</Name>
   <Task>Take over a fortress</Task>
-  <Task locale="de_DE">Erobere eine Festung</Task>
+  <Task locale="de_DE">Erobere eine Festung.</Task>
   <Description locale="de_DE">
-    <p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>
+    <p>Für die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>
   </Description>
   <Description locale="en_US">
     <p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>
@@ -1733,7 +1736,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 58 --> <!-- Tutorial 10 -->
+<!-- 58 --> <!-- Tutorial 13 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
@@ -2093,7 +2096,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_resourcescore_0" />
+<Requirement quest="quest_build_2gathererlvl4" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2384,8 +2387,8 @@
 <Quest id="quest_score_1" advisor="chef">
   <Name>Population</Name>
   <Name locale="de_DE"> Einwohner </Name>
-  <Task>Reach a Population of 225</Task>
-  <Task locale="de_DE">Erreiche 225 Einwohner</Task>
+  <Task>Reach a Population of 230</Task>
+  <Task locale="de_DE">Erreiche 230 Einwohner</Task>
   <Description locale="de_DE">
     <p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>
   </Description>
@@ -2398,7 +2401,7 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-  <Requirement quest="quest_build_1cottagelvl3" /> 
+  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> 
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2406,7 +2409,7 @@
         <ExperienceReward>20</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <ScoreTest min_population="225" />
+    <ScoreTest min_population="230" />
   </RewardTests>
 </Quest>
 

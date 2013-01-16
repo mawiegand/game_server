@@ -1704,7 +1704,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1828,7 +1828,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 10,
+                :amount => 5,
               },
 
             ],
@@ -2129,6 +2129,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 35,         
+
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
           :id                => 22, 
@@ -2251,7 +2253,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a furrier",
   
-            :de_DE => "Baue ein Trainingsgelände.",
+            :de_DE => "Baue eine Trainingshöhle.",
                 
           },
           :flavour => {
@@ -2313,6 +2315,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 30,         
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl1_1loggerlvl1
@@ -2380,7 +2384,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 300,
               },
 
             ],
@@ -2405,6 +2409,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 40,         
 
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_4quarrylvl5_4loggerlvl5
@@ -2464,7 +2470,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -2735,7 +2741,7 @@ class Tutorial::Tutorial
             
             :en_US => "Take over a fortress",
   
-            :de_DE => "Erobere eine Festung",
+            :de_DE => "Erobere eine Festung.",
                 
           },
           :flavour => {
@@ -2747,7 +2753,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>",
+            :de_DE => "<p>Für die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>",
   
             :en_US => "<p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>",
                 
@@ -2880,7 +2886,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [79, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2973,7 +2979,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 145, ],
+          :successor_quests => [29, 69, 145, ],
 
           :rewards => {
             
@@ -6589,7 +6595,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -7493,9 +7499,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 225",
+            :en_US => "Reach a Population of 230",
   
-            :de_DE => "Erreiche 225 Einwohner",
+            :de_DE => "Erreiche 230 Einwohner",
                 
           },
           :flavour => {
@@ -7529,7 +7535,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl3',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
@@ -7563,7 +7569,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 225,
+              :min_population => 230,
             },
 
           },          
@@ -13801,7 +13807,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 69, 146, ],
+          :successor_quests => [25, 146, ],
 
           :rewards => {
             
