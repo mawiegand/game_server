@@ -902,8 +902,16 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
 
   def delete_from_game
-    likes_count = self.received_likes.count
+    # Hauptdiedlung löschen
+    
+    # abhängige Elemente löschen, die weg sollen
+    
+    # abhängige Elemente nullen, die kein Besitzer mehr haben
+    
+    # character löschen
+    self.destroy 
   end
+  
   
   protected
   
