@@ -4476,7 +4476,7 @@
       </Description>
       <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
-      <RewardText locale="de_DE">An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zeilauswahl-Dialog den Überblick!</RewardText>
+      <RewardText locale="de_DE">An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zielauswahl-Dialog den Überblick!</RewardText>
       <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
       <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Ggener erschlagen.</RewardFlavor>
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>

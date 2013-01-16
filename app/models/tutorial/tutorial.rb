@@ -13981,7 +13981,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zeilauswahl-Dialog den Überblick!",
+            :de_DE => "An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zielauswahl-Dialog den Überblick!",
   
             :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
                 
