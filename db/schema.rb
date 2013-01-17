@@ -1258,11 +1258,11 @@ ActiveRecord::Schema.define(:version => 20130111184234) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
