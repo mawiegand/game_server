@@ -570,7 +570,8 @@
       <Task>Assemble an army</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE"> 
-        <p>Unten rechts siehst Du den Siedlungsdialog. Der Knopf rechts oben im Siedlunsgdialog ist der Armee-Knopf. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die Armee.</p>
+        <p>Markiere Deine Siedlung, indem du darauf klickst. Drücke anschließend im Siedlungsinspektor den Armee-Knopf.</p>
+        <p>Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">

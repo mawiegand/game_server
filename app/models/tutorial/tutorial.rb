@@ -1724,7 +1724,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Unten rechts siehst Du den Siedlungsdialog. Der Knopf rechts oben ist der Armee-Knopf. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die Armee.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>",
+            :de_DE => "<p>Markiere Deine Siedlung, indem du darauf klickst. Drücke anschließend im Siedlungsinspektor den Armee-Knopf.</p><p>Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
