@@ -146,6 +146,18 @@ class Fundamental::CharactersController < ApplicationController
       
     elsif !current_character
       raise NotFoundError.new("Could not find user's character.")
+    elsif current_character.deleted_from_game
+      # set player back to game
+      current_character.deleted_from_game = false
+      
+      # call delete from game to be sure that all old data is removed
+      # method does not set deleted_from_game to true
+      current_character.delete_from_game
+      
+      # give him a new settlement, resource pool, etc...
+      
+      # check_consistency after creating new base settlement 
+      current_character.check_consistency
     else
       
       current_character.last_login_at = DateTime.now

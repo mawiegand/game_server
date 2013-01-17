@@ -195,9 +195,12 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def abandon_outpost
+    
+    # TODO test if outpost 
+    
     old_score = self.score
     
-    neandertaler = Fundamental::Character.find(1)
+    neandertaler = Fundamental::Character.find_by_id(1)
     self.new_owner_transaction(neandertaler) 
     
     if old_score > 1000
@@ -209,6 +212,68 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def abandon_fortress
+    
+    # TODO test if fortress
+     
+    old_score = self.score
+    
+    neandertaler = Fundamental::Character.find_by_id(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 200
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def remove_from_map
+    # settlement BLOCK
+    logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
+    
+    # destroy all trading carts
+    self.outgoing_trading_carts.destroy  unless self.outgoing_trading_carts.nil?
+    self.incoming_trading_carts.destroy  unless self.incoming_trading_carts.nil?
+    
+    # destroy all armies
+    self.garrison_army.destroy        unless self.garrison_army.nil?
+    self.armies.destroy_all           unless self.armies.nil?
+    
+    # destroy all construction queues and containing jobs  (destroy => true an die assoziation?)
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      queue.destroy
+    end
+
+    # destroy all training queues and containing jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      queue.destroy
+    end
+    
+    # destroy all slots
+    self.slots.destroy_all            unless self.slots.nil?
+    
+    # reset location
+    self.location.settlement_type_id = Settlement::Settlement::TYPE_NONE
+    self.location.settlement_level = nil
+    self.location.count_armies = nil
+    self.location.owner_id = nil
+    self.location.owner_name = nil
+    self.location.visible = nil
+    self.location.right_of_way = 0
+    self.location.settlement_score = 0
+    
+    # destroy settement itself
+    self.destroy
+    # settlement UNBLOCK
   end
 
   ############################################################################
@@ -295,6 +360,9 @@ class Settlement::Settlement < ActiveRecord::Base
   # recalculation is triggered independently of whether or not resource attributes
   # have been changed.
   def check_consistency
+    
+    return true if owner.deleted_from_game?
+    
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in settlement #{self.id}: #{self.name} of character #{self.owner_id}.")
 
     productions = recalc_resource_production_base
@@ -483,7 +551,6 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     weighted_production_rate
   end
-
     
   protected
   
