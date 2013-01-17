@@ -1692,6 +1692,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 2,         
+
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_army_create
           :id                => 17, 
@@ -1779,8 +1781,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :place_npcs => 2,         
 
         },              #   END OF quest_army_create
         {               #   quest_army_move

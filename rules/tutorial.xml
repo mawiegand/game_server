@@ -561,6 +561,7 @@
       <RewardTests>
         <TrainingQueueTest unit="unit_clubbers" min_count="1" />
       </RewardTests>
+      <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
 <!-- 17 --> <!-- Tutorial 6 -->
@@ -591,7 +592,6 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
-      <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
 <!-- 18 --> <!-- Tutorial 10 -->
