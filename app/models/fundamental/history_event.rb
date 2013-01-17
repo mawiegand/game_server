@@ -36,7 +36,7 @@ class Fundamental::HistoryEvent < ActiveRecord::Base
         if Fundamental::HistoryEvent.exists?(item['id'])
           event = Fundamental::HistoryEvent.find(item['id'])
 		  Rails.logger.debug "FOUND HISTORY"
-        elsif item['public']
+		else
           event = Fundamental::HistoryEvent.new
 		  Rails.logger.debug "NOT FOUND HISTORY"
         end
