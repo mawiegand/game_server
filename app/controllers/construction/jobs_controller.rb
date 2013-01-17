@@ -1,7 +1,7 @@
 class Construction::JobsController < ApplicationController
   layout 'construction'
   
-  before_filter :authenticate
+#  before_filter :authenticate
   before_filter :deny_api, :except => [:show, :index, :create, :destroy]
 
 
@@ -46,8 +46,9 @@ class Construction::JobsController < ApplicationController
   # GET /construction/jobs/1
   # GET /construction/jobs/1.json
   def show
-    @construction_job = Construction::Job.find(params[:id])
-
+    @construction_job = Construction::Job.find_by_id(params[:id])
+    
+    raise NotFoundError.new('not found')         unless @construction_job
     raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character || admin? || staff? || developer?
 
     respond_to do |format|
