@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 22,
+      :num_tutorial_quests => 23,
   
       :quests => [  # ALL QUESTS
 
@@ -84,6 +84,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -174,6 +175,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -264,6 +266,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -357,6 +360,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -452,6 +456,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -553,6 +558,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -611,12 +617,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 30,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 30,
+                :amount => 50,
               },
 
             ],
@@ -649,6 +655,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -704,7 +711,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_change_profile',
+              :id => 'test_profile',
             },
 
           },          
@@ -716,6 +723,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -789,6 +797,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -875,6 +884,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -961,6 +971,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1040,7 +1051,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_open_message',
+              :id => 'test_message',
             },
 
           },          
@@ -1066,6 +1077,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1158,6 +1170,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1284,6 +1297,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1379,6 +1393,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1474,6 +1489,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1575,6 +1591,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1606,14 +1623,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir drei meiner Keulenkrieger zur Verfügung.",
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner besten Keulenkrieger zur Verfügung.",
   
-            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have three of my clubbers. ",
+            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have a few of my clubbers. ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Wenn Du wissen willst, wie weit der Auftrag ist, klickst Du einfach wieder auf das Ausbildungsgelände. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.",
+            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl ein.",
   
             :en_US => "Once you’ve ordered the units you can close the building window and the order continues to be carried out. If you want to know how far the order has got, just click on the training barracks. You can also train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’. New units will be activated at higher building levels.",
                 
@@ -1633,7 +1650,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 9,
+                :amount => 25,
               },
 
             ],
@@ -1662,6 +1679,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1679,14 +1697,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade neun Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
+            :de_DE => "Aus Einheiten werden Armeen aufgestellt! Ich habe Dir ja gerade einige Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
   
             :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor den Knopf mit den Männchen 'Neue Armee' aus. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1712,7 +1730,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [147, ],
 
           :rewards => {
             
@@ -1742,6 +1760,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 2,         
+
         },              #   END OF quest_army_create
         {               #   quest_army_move
           :id                => 18, 
@@ -1749,6 +1769,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1795,7 +1816,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_create',
+            :quest => 'quest_npc_battle',
 
           },
 
@@ -1803,25 +1824,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 60,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 80,
-              },
-
-            ],
-
             :unit_rewards => [
 
               {
@@ -1831,7 +1833,9 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 200,
+
+            :action_point_reward => true,
 
           },          
 
@@ -1848,6 +1852,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -1898,7 +1903,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 22, ],
+          :successor_quests => [22, ],
 
           :rewards => {
             
@@ -1906,17 +1911,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 50,
+                :amount => 100,
               },
 
             ],
@@ -1949,6 +1954,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2049,6 +2055,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2095,7 +2102,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_build_1storagelvl1',
 
           },
 
@@ -2122,6 +2129,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 35,         
+
         },              #   END OF quest_alliance
         {               #   quest_build_1storagelvl1
           :id                => 22, 
@@ -2129,6 +2138,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2179,7 +2189,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [21, ],
 
           :rewards => {
             
@@ -2230,6 +2240,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2242,7 +2253,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a furrier",
   
-            :de_DE => "Baue ein Trainingsgelände.",
+            :de_DE => "Baue eine Trainingshöhle.",
                 
           },
           :flavour => {
@@ -2268,7 +2279,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Erfahrung kannst Du durch das Lösen von Aufgaben, durch Siege, durch den Verlust eigener Einheiten und in der Trainingshöhle gewinnen.",
   
             :en_US => " ",
                 
@@ -2280,7 +2291,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [28, ],
 
           :rewards => {
             
@@ -2293,7 +2304,7 @@ class Tutorial::Tutorial
             :building_tests => [
 
               {
-                :building => 'training_cave',
+                :building => 'building_training_cave',
 
                 :min_level => 1,
 
@@ -2305,6 +2316,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 30,         
+
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl1_1loggerlvl1
           :id                => 24, 
@@ -2312,6 +2325,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2350,7 +2364,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Baue Deine Kürschner weiter aus und ersetze nach und nach die Jäger und Sammler durch die spezialisierten Rohstoffsammler.",
   
             :en_US => " ",
                 
@@ -2358,11 +2372,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0_5',
+            :quest => 'quest_resourcescore_1',
 
           },
 
-          :successor_quests => [38, ],
+          :successor_quests => [27, ],
 
           :rewards => {
             
@@ -2370,7 +2384,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 300,
               },
 
             ],
@@ -2396,6 +2410,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 40,         
+
         },              #   END OF quest_build_1quarrylvl1_1loggerlvl1
         {               #   quest_build_4quarrylvl5_4loggerlvl5
           :id                => 25, 
@@ -2403,6 +2419,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2453,7 +2470,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, ],
+          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -2508,6 +2525,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2612,6 +2630,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2650,7 +2669,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "In der Lagerstätte kannst Du in Abhängigkeit vom Versammlungsplatz eine Vielzahl von Gebäuden bauen. Es gibt zwei Spezialgebäude: der Ritualstein beschützt Deine Lagerstätte vor der Übernahme, während das Feldlager Dir die Möglichkeit gibt mehr und größere Armeen aufzustellen.",
   
             :en_US => "",
                 
@@ -2658,7 +2677,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
 
           },
 
@@ -2706,51 +2725,58 @@ class Tutorial::Tutorial
         {               #   quest_build_2gathererlvl3
           :id                => 28, 
           :symbolic_id       => :quest_build_2gathererlvl3,
-          :advisor           => :girl,
+          :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
-            :en_US => "More Hunter Gatherers ",
+            :en_US => "Take over fortress",
   
-            :de_DE => "Weitere Jäger und Sammler",
+            :de_DE => "Festung erobern",
                 
           },
           :task => {
             
-            :en_US => "Upgrade four Hunter Gatherers to level 2.",
+            :en_US => "Take over a fortress",
   
-            :de_DE => "Baue insgesamt vier Jäger und Sammler auf Level 2 aus.",
+            :de_DE => "Erobere eine Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Du findest Dich schon gut zurecht. Deine Jäger und Sammler solltest Du weiter ausbilden.",
+            :de_DE => "Halbgott, es wird Zeit unseren Einfluss zu vergrößern! Erobere eine Festung für Deinen Stamm!",
   
-            :en_US => "You’re doing pretty well. You should train your Hunter Gatherers further though.",
+            :en_US => "Demigod, let us take over a fortress.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Du hast das Tutorial durchlaufen, ab jetzt kommen Aufgaben, die Deinen Ausbau etwas anleiten. Du kannst aber auch Deinen eigenen Weg gehen.</p>",
+            :de_DE => "<p>Die Eroberung einer Festung erfordert eine größere Armee und sollte nicht unüberlegt angegangen werden.</p>",
   
             :en_US => "<p>You’ve gone through the tutorial; from now on, you’ll be receiving tasks that will guide you through your upgrades. You can go your own way too, if you prefer. </p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Wunderbar! Ich halte es für eine gute Idee, alle Deine Sammler auszubauen, dann werden die Rohstoffe nicht so schnell knapp.",
+            :de_DE => "Muhaha, die Festung gehört uns. Die erste Region gehört uns, weitere werden folgen!",
   
             :en_US => "Wonderful! I think it’s a great idea to upgrade all your Hunter Gatherers – that way, your raw materials won’t run out so quickly.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Behalte Deine Rohstoffproduktion im Auge. Die Jäger und Sammler auszubauen lohnt sich auf jeden Fall.",
+            :de_DE => "Die Festung kassiert Steuern aus der gesamten Region. Du kannst den Steuersatz im Festungsmenü zwischen 5 und 15% einstellen.",
   
             :en_US => "Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl5',
+
           },
 
           :successor_quests => [],
@@ -2761,17 +2787,26 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 70,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 60,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 30,
+                :amount => 300,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 25,
               },
 
             ],
@@ -2782,15 +2817,11 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
+            :settlement_tests => [
 
               {
-                :building => 'building_gatherer',
-
-                :min_level => 2,
-
-                :min_count => 4,
-
+                :type => 'settlement_fortress',
+                :min_count => 1,
               },
 
             ],
@@ -2804,6 +2835,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2854,7 +2886,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [79, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2862,17 +2894,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 195,
+                :amount => 380,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 175,
+                :amount => 280,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 85,
+                :amount => 90,
               },
 
             ],
@@ -2883,18 +2915,9 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
-
-              {
-                :building => 'building_cottage',
-
-                :min_level => 3,
-
-                :min_count => 2,
-
-              },
-
-            ],
+            :building_speed_test => {
+              :min_speed => 1.26,
+            },
 
           },          
 
@@ -2905,6 +2928,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -2955,7 +2979,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 145, ],
+          :successor_quests => [29, 69, 145, ],
 
           :rewards => {
             
@@ -2963,17 +2987,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 160,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 160,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 80,
               },
 
             ],
@@ -3007,6 +3031,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3102,6 +3127,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3197,6 +3223,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3292,6 +3319,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3387,6 +3415,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3491,6 +3520,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3595,6 +3625,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3690,6 +3721,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3732,12 +3764,6 @@ class Tutorial::Tutorial
   
             :en_US => "Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-
           },
 
           :successor_quests => [],
@@ -3800,6 +3826,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3895,6 +3922,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -3988,6 +4016,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4081,6 +4110,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4174,6 +4204,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4267,6 +4298,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4360,6 +4392,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4453,6 +4486,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4546,6 +4580,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4613,6 +4648,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4680,6 +4716,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4692,7 +4729,7 @@ class Tutorial::Tutorial
             
             :en_US => "Order a chieftain’s hut upgrade.",
   
-            :de_DE => "Du hast eine Kröte erhalten!",
+            :de_DE => "Du hast zwei Kröten erhalten!",
                 
           },
           :flavour => {
@@ -4718,7 +4755,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du hast von mir eine Kröte erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
+            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
   
             :en_US => " ",
                 
@@ -4738,7 +4775,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -4766,6 +4803,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4861,6 +4899,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -4928,6 +4967,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5023,6 +5063,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5090,6 +5131,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => true,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5166,6 +5208,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5258,6 +5301,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5353,6 +5397,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5453,6 +5498,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
+          :tutorial_end_quest => true,
           
           :name => {
             
@@ -5511,12 +5557,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 125,
               },
 
               {
@@ -5553,6 +5599,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 8,         
+
         },              #   END OF quest_improve_production_1
         {               #   quest_charkills_1
           :id                => 59, 
@@ -5560,6 +5608,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5652,6 +5701,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5744,6 +5794,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5841,6 +5892,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -5938,6 +5990,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6030,6 +6083,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6122,6 +6176,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6214,6 +6269,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6306,6 +6362,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6398,6 +6455,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6490,6 +6548,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6536,7 +6595,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -6582,6 +6641,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6674,6 +6734,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6766,6 +6827,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6863,6 +6925,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -6955,6 +7018,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7047,6 +7111,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7139,6 +7204,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7231,6 +7297,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7323,6 +7390,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7420,6 +7488,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7430,9 +7499,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 300",
+            :en_US => "Reach a Population of 230",
   
-            :de_DE => "Erreiche 300 Einwohner",
+            :de_DE => "Erreiche 230 Einwohner",
                 
           },
           :flavour => {
@@ -7466,7 +7535,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl3',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
@@ -7500,7 +7569,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 300,
+              :min_population => 230,
             },
 
           },          
@@ -7512,6 +7581,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7522,9 +7592,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Reach a Population of 500",
+            :en_US => "Reach a Population of 450",
   
-            :de_DE => "Erreiche 500 Einwohner",
+            :de_DE => "Erreiche 450 Einwohner",
                 
           },
           :flavour => {
@@ -7592,7 +7662,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 500,
+              :min_population => 450,
             },
 
           },          
@@ -7604,6 +7674,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7696,6 +7767,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7788,6 +7860,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7885,6 +7958,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -7977,6 +8051,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8069,6 +8144,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8161,6 +8237,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8253,6 +8330,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8350,6 +8428,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8400,7 +8479,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [90, ],
+          :successor_quests => [24, 90, ],
 
           :rewards => {
             
@@ -8442,6 +8521,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8534,6 +8614,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8631,6 +8712,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8723,6 +8805,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8815,6 +8898,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8907,6 +8991,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -8999,6 +9084,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9091,6 +9177,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9188,6 +9275,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9280,6 +9368,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9372,6 +9461,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9464,6 +9554,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9556,6 +9647,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9653,6 +9745,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9750,6 +9843,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9847,6 +9941,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -9944,6 +10039,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10041,6 +10137,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10133,6 +10230,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10230,6 +10328,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10322,6 +10421,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10414,6 +10514,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10506,6 +10607,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10598,6 +10700,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10695,6 +10798,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10787,6 +10891,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10884,6 +10989,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -10976,6 +11082,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11073,6 +11180,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11165,6 +11273,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11257,6 +11366,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11349,6 +11459,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11441,6 +11552,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11533,6 +11645,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11630,6 +11743,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11722,6 +11836,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11819,6 +11934,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -11911,6 +12027,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12008,6 +12125,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12100,6 +12218,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12192,6 +12311,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12284,6 +12404,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12376,6 +12497,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12473,6 +12595,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12565,6 +12688,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12662,6 +12786,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12754,6 +12879,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12851,6 +12977,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -12943,6 +13070,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13040,6 +13168,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13137,6 +13266,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13234,6 +13364,7 @@ class Tutorial::Tutorial
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13331,6 +13462,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13428,6 +13560,7 @@ class Tutorial::Tutorial
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13525,6 +13658,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13622,6 +13756,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13672,7 +13807,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 69, 146, ],
+          :successor_quests => [25, 146, ],
 
           :rewards => {
             
@@ -13680,17 +13815,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 225,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 225,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 125,
               },
 
             ],
@@ -13714,6 +13849,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
+          :tutorial_end_quest => false,
           
           :name => {
             
@@ -13724,9 +13860,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 250 resource points",
+            :en_US => "Increase the resource production of one settlement to 225 resource points",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 250 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 225 Rohstoffpunkte",
                 
           },
           :flavour => {
@@ -13764,7 +13900,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [23, 24, 89, ],
+          :successor_quests => [23, 89, ],
 
           :rewards => {
             
@@ -13782,7 +13918,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 150,
               },
 
             ],
@@ -13794,12 +13930,97 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 250,
+              :min_resources => 225,
             },
 
           },          
 
         },              #   END OF quest_resourcescore_0_5
+        {               #   quest_npc_battle
+          :id                => 147, 
+          :symbolic_id       => :quest_npc_battle,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "First battle",
+  
+            :de_DE => "Der erste Kampf",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight for the first time and kill at least tweo units!",
+  
+            :de_DE => "Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
+  
+            :en_US => "An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>An Deiner Heimatsiedlung sind Neandertaler erschienen! Klicke auf Deine Armee, drücke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>",
+  
+            :en_US => "<p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Ggener erschlagen.",
+  
+            :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zeilauswahl-Dialog den Überblick!",
+  
+            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_create',
+
+          },
+
+          :successor_quests => [18, ],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+            :action_point_reward => true,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 2,
+            },
+
+          },          
+
+        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )

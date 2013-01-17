@@ -19,8 +19,9 @@ class Military::Battle < ActiveRecord::Base
   
   belongs_to :message,      :class_name => "Messaging::Message",          :foreign_key => "message_id"
   
-  
   after_save :destroy_dependent_models_on_remove
+  
+  scope :ongoing, where('ended_at IS NULL')
   
   # starts a fight between two armies. if one of the armies is already 
   # involved in an ongoing battle, the other is added to the opposing

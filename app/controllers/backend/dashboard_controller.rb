@@ -37,6 +37,16 @@ class Backend::DashboardController < ApplicationController
       @user_groups << user_group
     end
     
+    @world_stats = {
+      day: Fundamental::RoundInfo.the_round_info.age,
+      victory: Fundamental::RoundInfo.the_round_info.victory_gained?,
+      empty_locations: Map::Location.empty.count,
+      total_locations: Map::Location.count,
+      non_occupied_regions: Map::Region.non_occupied.count,
+      total_regions: Map::Region.count,
+      battles: Military::Battle.ongoing.count,
+    }
+    
     @partner_sites = if @backend_user.admin? || @backend_user.staff?
       Backend::PartnerSite.order('sign_ups_count DESC') 
     elsif @backend_user.partner? 
