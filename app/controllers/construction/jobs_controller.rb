@@ -1,7 +1,7 @@
 class Construction::JobsController < ApplicationController
   layout 'construction'
   
-#  before_filter :authenticate
+  before_filter :authenticate
   before_filter :deny_api, :except => [:show, :index, :create, :destroy]
 
 
