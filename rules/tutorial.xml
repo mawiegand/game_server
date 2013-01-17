@@ -200,10 +200,10 @@
       </RewardTests>
     </Quest>
 
-<!-- 6 --> <!-- not in-->
+<!-- 6 --> 
   <Quest id="quest_profile" advisor="girl" >
       <Name>Name and profile</Name>
-      <Name locale="de_DE">Namen</Name>
+      <Name locale="de_DE">Name</Name>
       <Task>Change your name.</Task>
       <Task locale="de_DE">Wie heißt Du?</Task>
       <Description locale="de_DE">
@@ -218,8 +218,11 @@
       <RewardText locale="en_US">In your profile you can see your progress and make other changes. </RewardText>
       <RewardFlavor locale="de_DE">Danke. Ich denke wir werden viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we’re going to have loads of fun together!</RewardFlavor>
-      <Rewards>
-        <ExperienceReward>200</ExperienceReward>
+      <Requirement quest="quest_improve_production_1" />
+    <Rewards>
+      <ResourceReward resource="resource_stone">75</ResourceReward>
+      <ResourceReward resource="resource_wood">75</ResourceReward>
+        <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_profile">change profile text</CustomTest>
@@ -566,9 +569,9 @@
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
-      <Description locale="de_DE">
-        <p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
-        <p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
+      <Description locale="de_DE"> 
+        <p>Unten rechts siehst Du den Siedlungsdialog. Der Knopf rechts oben im Siedlunsgdialog ist der Armee-Knopf. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die Armee.</p>
+        <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
@@ -4469,7 +4472,7 @@
       <Task>Fight for the first time and kill at least tweo units!</Task>
       <Task locale="de_DE">Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!</Task>
       <Description locale="de_DE">
-        <p>An Deiner Heimatsiedlung sind Neandertaler erschienen! Klicke auf Deine Armee, drücke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>
+        <p>Wähle Deine Armee aus, klicke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>
       </Description>
       <Description locale="en_US">
         <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>

@@ -661,7 +661,7 @@ class Tutorial::Tutorial
             
             :en_US => "Name and profile",
   
-            :de_DE => "Namen",
+            :de_DE => "Name",
                 
           },
           :task => {
@@ -700,11 +700,31 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_improve_production_1',
+
+          },
+
           :successor_quests => [],
 
           :rewards => {
             
-            :experience_reward => 200,
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 75,
+              },
+
+            ],
+
+            :experience_reward => 150,
 
           },          
 
@@ -1704,7 +1724,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle auf der Karte Deine Siedlung aus und drücke unten rechts im Inspektor den Knopf mit den Männchen. Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Verschiebe alle 25 Einheiten in die Armee, gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Unten rechts siehst Du den Siedlungsdialog. Der Knopf rechts oben ist der Armee-Knopf. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die Armee.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -5549,7 +5569,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 30, 49, 59, ],
+          :successor_quests => [6, 19, 30, 49, 59, ],
 
           :rewards => {
             
@@ -13967,7 +13987,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>An Deiner Heimatsiedlung sind Neandertaler erschienen! Klicke auf Deine Armee, drücke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>",
+            :de_DE => "<p>Wähle Deine Armee aus, klicke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>",
   
             :en_US => "<p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
                 
