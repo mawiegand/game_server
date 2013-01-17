@@ -108,7 +108,7 @@ class Fundamental::CharactersController < ApplicationController
       
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
-      
+            
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,
         referer_url:        external_referer,

@@ -19,6 +19,8 @@ class Map::Region < ActiveRecord::Base
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
+  scope :non_occupied, where(owner_id: 1)
+  
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save

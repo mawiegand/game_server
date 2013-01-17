@@ -49,4 +49,13 @@ class Tutorial::State < ActiveRecord::Base
       end
     end
   end
+  
+  def completed_tutorial_end_quest?
+    self.finished_quests.each do |quest_state|
+      if quest_state.quest[:tutorial_end_quest]
+        return true
+      end  
+    end
+    false
+  end
 end

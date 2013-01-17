@@ -45,7 +45,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :login_count, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills,  :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -169,6 +169,15 @@ class Fundamental::Character < ActiveRecord::Base
       scopes:                     ['5dentity'],
     })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
+  end
+  
+  def redeem_tutorial_end_rewards
+    Shop::BonusOffer.all.each do |bonus_offer|
+      bonus_offer.credit_to(self)
+    end
+    
+    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
+    platinum_offer.credit_to(self) unless platinum_offer.nil?
   end
 
   def locale

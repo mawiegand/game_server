@@ -1267,6 +1267,7 @@ ActiveRecord::Schema.define(:version => 20130116134728) do
     t.integer  "received_dislikes_count",                  :default => 0
     t.integer  "victories",                                :default => 0,     :null => false
     t.integer  "defeats",                                  :default => 0,     :null => false
+    t.string   "same_ip"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
