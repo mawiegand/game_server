@@ -85,10 +85,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     # delete non fighting npc armies
-    npc = Fundamental::Character.find_by_id(1)
-    
     location.armies.each do |army|
-      if army.owner == npc && !army.fighting?
+      if army.owned_by_npc? && !army.fighting?
         army.destroy
       end
     end
