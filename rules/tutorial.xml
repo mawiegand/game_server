@@ -580,7 +580,7 @@
       </Description>
       <Flavor locale="de_DE">Aus Einheiten werden Armeen aufgestellt! Dies solltest Du mit den von mir erhaltenen 25 Keulenkriegern direkt machen.</Flavor>
       <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. </Flavor>
-      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird.</RewardText>
+      <RewardText locale="de_DE">Du kannst Deine Armee jederzeit mit neu rekrutierten Kriegern ergänzen. Allerdings nur solange Du an der Siedlung bist, aus der die Armee stammt.</RewardText>
       <RewardText locale="en_US">Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.</RewardText>
       <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder? Trotzdem hier Deine Belohnung.</RewardFlavor>
       <RewardFlavor locale="en_US">Call that an army? Rather small, don’t you think? Still, here’s your reward.</RewardFlavor>
