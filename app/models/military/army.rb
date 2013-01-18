@@ -149,6 +149,10 @@ class Military::Army < ActiveRecord::Base
     self.owner_id === character_id
   end
   
+  def owned_by_npc?
+    return self.owner.nil? || self.owner.npc?
+  end
+    
   def moving?
     self.mode === MODE_MOVING # 1 : moving?!
   end
