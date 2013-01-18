@@ -2959,9 +2959,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 25 units per hour",
+            :en_US => "Improve your stone and wood production to at least 20 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 25 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 20 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -3032,12 +3032,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 25,
+                :minimum  => 20,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 25,
+                :minimum  => 20,
               },
 
             ],

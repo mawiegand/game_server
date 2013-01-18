@@ -958,8 +958,8 @@
 <Quest id="quest_build_2gathererlvl4" advisor="girl">
  <Name>Improve your raw materials production</Name>
  <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
- <Task>Improve your stone and wood production to at least 25 units per hour</Task>
- <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 25 Rohstoffeinheiten pro Stunde.</Task>
+ <Task>Improve your stone and wood production to at least 20 units per hour</Task>
+ <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 20 Rohstoffeinheiten pro Stunde.</Task>
  <Description locale="de_DE">
  <p>Du solltest zum Erreichen des Ziels mindestens 5 Jäger und Sammler mit Level 3 oder 4 ausbauen. Rohstoffe sind die Basis jeden Fortschritts.</p>
  </Description>
@@ -980,8 +980,8 @@
  <ExperienceReward>120</ExperienceReward>
  </Rewards>
  <RewardTests>
- <ResourceProductionTest resource="resource_wood">25</ResourceProductionTest>
- <ResourceProductionTest resource="resource_stone">25</ResourceProductionTest>
+ <ResourceProductionTest resource="resource_wood">20</ResourceProductionTest>
+ <ResourceProductionTest resource="resource_stone">20</ResourceProductionTest>
  </RewardTests>
 </Quest>
 
