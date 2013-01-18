@@ -4473,7 +4473,7 @@
       <Task>Fight for the first time and kill at least tweo units!</Task>
       <Task locale="de_DE">Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!</Task>
       <Description locale="de_DE">
-        <p>Wähle Deine Armee aus, klicke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>
+        <p>1. Wähle Deine Armee aus, klicke 'Angriff'. 2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
       </Description>
       <Description locale="en_US">
         <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>

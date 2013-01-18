@@ -1740,7 +1740,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird.",
+            :de_DE => "Du kannst Deine Armee jederzeit mit neu rekrutierten Kriegern ergänzen. Allerdings nur solange Du an der Siedlung bist, aus der die Armee stammt.",
   
             :en_US => "Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.",
                 
