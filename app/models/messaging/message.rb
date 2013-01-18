@@ -226,15 +226,13 @@ class Messaging::Message < ActiveRecord::Base
     end   
     text     
   end
-
-
     
   def add_overrun_winner_message_subject(winner, loser)
-    self.subject = "Du hast die Armee an der Siedlung " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + "überrannt" 
+    self.subject = "Du hast die Armee an der Siedlung " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt" 
   end
   
   def add_overrun_winner_message_body(winner, loser)
-    text  = "<h2>Deine Armee hat eine andere Armme an der Siedlung " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt</h2>\n"
+    text  = "<h2>Deine Armee hat eine andere Armee an der Siedlung " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt</h2>\n"
     text += "<p>Deine Armee <b>" + winner.name.to_s + "</b>, stationiert an der Siedlung <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
     text += "</b>, hat die Armee <b>" + loser.name.to_s + "</b> von <b>" + loser.owner_name_and_ally_tag + "</b> überrannt.</p>\n"
     text += "<table>\n"
