@@ -1760,7 +1760,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 10,
+                :amount => 25,
               },
 
             ],
@@ -1844,11 +1844,16 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :unit_rewards => [
+            :resource_rewards => [
 
               {
-                :unit => :unit_clubbers,
-                :amount => 5,
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 50,
               },
 
             ],
@@ -2134,12 +2139,12 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 20,
+                :amount => 25,
               },
 
             ],
 
-            :experience_reward => 300,
+            :experience_reward => 250,
 
           },          
 
