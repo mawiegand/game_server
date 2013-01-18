@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 23,
+      :num_tutorial_quests => 11,
   
       :quests => [  # ALL QUESTS
 
@@ -174,7 +174,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_end_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => true,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -265,7 +265,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -816,7 +816,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_rank,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -903,7 +903,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_settlementowner,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -990,7 +990,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -1189,7 +1189,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -3242,7 +3242,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -4986,7 +4986,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5082,7 +5082,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5150,7 +5150,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => true,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5227,7 +5227,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_queue_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5320,7 +5320,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
