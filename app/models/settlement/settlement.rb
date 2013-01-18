@@ -84,6 +84,15 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
+    # delete non fighting npc armies
+    npc = Fundamental::Character.find_by_id(1)
+    
+    location.armies.each do |army|
+      if army.owner == npc && !army.fighting?
+        army.destroy
+      end
+    end
+    
     settlement = location.create_settlement({
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
