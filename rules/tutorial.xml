@@ -57,7 +57,7 @@
     </Quest>
 
 <!-- 1 --> <!-- not in -->
-    <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="true">
+    <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="false">
       <Name>Wait for the building order.</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
      <Task>Wait until the Hunter Gatherer Level 1 is finished.</Task>
@@ -85,7 +85,7 @@
     </Quest>
 
 <!-- 2 --> <!-- not in -->
-    <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="false">
       <Name>Another Hunter Gatherer</Name>
       <Name locale="de_DE">Ein zweiter Jäger und Sammler</Name>
       <Task>Build a second Hunter Gatherer Level 1 to increase your production.</Task>
@@ -259,7 +259,7 @@
     </Quest>
 
 <!-- 8 --> <!-- not in -->
-    <Quest id="quest_rank" advisor="chef" tutorial="true">
+    <Quest id="quest_rank" advisor="chef" tutorial="false">
       <Name>Rank</Name>
       <Name locale="de_DE">Rang</Name>
       <Task>Choose your current rank.</Task>
@@ -288,7 +288,7 @@
     </Quest>
 
 <!-- 9 --><!-- not in -->
-      <Quest id="quest_settlementowner" advisor="chef" tutorial="true">
+      <Quest id="quest_settlementowner" advisor="chef" tutorial="false">
       <Name>Fortress owner</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
       <Task>Enter the fortress owner in your region.</Task>
@@ -317,7 +317,7 @@
     </Quest>
 
 <!-- 10 --> <!-- not in -->
-      <Quest id="quest_message" advisor="girl" tutorial="true">
+      <Quest id="quest_message" advisor="girl" tutorial="false">
       <Name>Message</Name>
       <Name locale="de_DE">Nachrichten</Name>
       <Task>Read the message</Task>
@@ -354,7 +354,7 @@
       </Message>
     </Quest>
 
-<!-- 11 --> <!-- Tutorial 12 -->
+<!-- 11 --> <!-- Tutorial 11 -->
       <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
@@ -385,7 +385,7 @@
     </Quest>
 
 <!-- 12 --> <!-- not in -->
-      <Quest id="quest_encyclopedia" advisor="girl" tutorial="true">
+      <Quest id="quest_encyclopedia" advisor="girl" tutorial="false">
       <Name>Encyclopaedia</Name>
       <Name locale="de_DE"> Enzyklopädie </Name>
       <Task>Enter the cost of the wood needed for a Training Grounds level 2.</Task>
@@ -594,7 +594,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 18 --> <!-- Tutorial 10 -->
+<!-- 18 --> <!-- Tutorial 9 -->
     <Quest id="quest_army_move" advisor="warrior" tutorial="true">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
@@ -1044,7 +1044,7 @@
 </Quest>
 
 <!-- 33 --> <!-- not in -->
-    <Quest id="quest_build_1barrackslvl2" advisor="chef" tutorial="true">
+    <Quest id="quest_build_1barrackslvl2" advisor="chef" tutorial="false">
   <Name>Training grounds level 2</Name>
   <Name locale="de_DE">Ausbildungsgelände Level 2</Name>
   <Task>Upgrade a training grounds to level 2</Task>
@@ -1571,7 +1571,7 @@
     </Quest>
 
 <!-- 52 --> <!-- not in -->
-      <Quest id="quest_build_2cottagelvl1" advisor="girl" tutorial="true">
+      <Quest id="quest_build_2cottagelvl1" advisor="girl" tutorial="false">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
       <Task>Build two small huts.</Task>
@@ -1601,7 +1601,7 @@
 
 
 <!-- 53 --> <!-- not in -->
-      <Quest id="quest_quest_button" advisor="girl" tutorial="true">
+      <Quest id="quest_quest_button" advisor="girl" tutorial="false">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and click on it. Then close the dialog and come back here.</Task>
@@ -1627,7 +1627,7 @@
     </Quest>
 
 <!-- 54 --> <!-- not in -->
-    <Quest id="quest_build_chiefcottagelvl2_V2" advisor="chef" hide_start_dialog="true" tutorial="true">
+    <Quest id="quest_build_chiefcottagelvl2_V2" advisor="chef" hide_start_dialog="true" tutorial="false">
       <Name>Chieftain’s hut upgrade</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task>Upgrade your chieftain’s hut to level 2.</Task>
@@ -1653,7 +1653,7 @@
     </Quest>
 
 <!-- 55 --> <!-- not in -->
-      <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="true">
+      <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="false">
       <Name>Order a chieftain’s hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task>Order a chieftain’s hut upgrade to level 2.</Task>
@@ -1682,7 +1682,7 @@
     </Quest>
 
 <!-- 56 --> <!-- not in -->
-    <Quest id="quest_build_1cottagelvl2" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1cottagelvl2" advisor="girl" tutorial="false">
   <Name>Small huts, big stuff!</Name>
   <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
   <Task>Upgrade a small hut to level 2.</Task>
@@ -1740,7 +1740,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 58 --> <!-- Tutorial 13 -->
+<!-- 58 --> <!-- Tutorial 11 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
@@ -4466,14 +4466,14 @@
       </RewardTests>
     </Quest>
     
-    <!-- 147 --> <!-- Tutorial 9 -->
+    <!-- 147 --> <!-- Tutorial 8 -->
     <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time and kill at least tweo units!</Task>
       <Task locale="de_DE">Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!</Task>
       <Description locale="de_DE">
-        <p>Wähle Deine Armee aus, klicke 'Angriff' und wähle die mit dem grünen Pfeil gekennzeichneten Neandertaler als Ziel aus und bestätige mit 'Attacke'.</p>
+        <p>1. Wähle Deine Armee aus, klicke 'Angriff'. 2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
       </Description>
       <Description locale="en_US">
         <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
