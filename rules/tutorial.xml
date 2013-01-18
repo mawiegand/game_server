@@ -586,7 +586,7 @@
       <RewardFlavor locale="en_US">Call that an army? Rather small, don’t you think? Still, here’s your reward.</RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <UnitReward unit="unit_clubbers">25</UnitReward>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -614,7 +614,8 @@
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
       <Requirement quest="quest_npc_battle" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">5</UnitReward>
+        <ResourceReward resource="resource_stone">50</ResourceReward>
+        <ResourceReward resource="resource_wood">50</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
         <ActionPointReward></ActionPointReward>
       </Rewards>
@@ -704,8 +705,8 @@
       <RewardFlavor locale="en_US">Wow, that’s some alliance! I’m sure they’re going to go far. </RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">20</UnitReward>
-        <ExperienceReward>300</ExperienceReward>
+        <UnitReward unit="unit_clubbers">25</UnitReward>
+        <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
         <AllianceTest />
