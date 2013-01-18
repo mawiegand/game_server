@@ -245,7 +245,7 @@
       </Description>
       <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Worauf wartest Du? Geh!</Flavor>
       <Flavor locale="en_US">What? It’s too small for you here? There’s a whole world to conquer. If you got out of this hole you’d know it too. What are you waiting for? Go!</Flavor>
-      <RewardText locale="de_DE">Für den Momant habe ich unsere Hauptssiedlung mit einem hüpfenden grünen Pfeil markiert.</RewardText>
+      <RewardText locale="de_DE">Für den Moment habe ich unsere Hauptsiedlung mit einem hüpfenden grünen Pfeil markiert.</RewardText>
       <RewardText locale="en_US">On the world map you can see the other gamers around you.</RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So – did you learn anything? Here are a couple of resources, before you start asking for rewards again.</RewardFlavor>
@@ -572,8 +572,8 @@
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE"> 
         <p>1. Du kannst Deine Siedlung aus- und abwählen, indem Du die Siedlung anklickst.</p>
-        <p>2. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p>
-        <p>Drücke zum Bestätigen 'Erzeugen'.</p>
+        <p>2. Drücke unten rechts den Knopf mit den Männchen. Der folgende Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Verschiebe alle 25 Verfügbaren Einheiten mit den Pfeilen in die Neue Armee.</p>
+        <p>Abschließend drücke zum Bestätigen 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
@@ -610,7 +610,7 @@
       <Flavor locale="en_US">An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
       <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.</RewardText>
       <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
-      <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
       <Requirement quest="quest_npc_battle" />
       <Rewards>
@@ -4473,7 +4473,8 @@
       <Task>Fight for the first time and kill at least tweo units!</Task>
       <Task locale="de_DE">Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!</Task>
       <Description locale="de_DE">
-        <p>1. Wähle Deine Armee aus, klicke 'Angriff'. 2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
+        <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
+        <p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
       </Description>
       <Description locale="en_US">
         <p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
