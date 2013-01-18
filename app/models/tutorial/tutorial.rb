@@ -782,7 +782,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Für den Momant habe ich unsere Hauptssiedlung mit einem hüpfenden grünen Pfeil markiert.",
+            :de_DE => "Für den Moment habe ich unsere Hauptsiedlung mit einem hüpfenden grünen Pfeil markiert.",
   
             :en_US => "On the world map you can see the other gamers around you.",
                 
@@ -1726,7 +1726,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>1. Du kannst Deine Siedlung aus- und abwählen, indem Du die Siedlung anklickst.</p><p>2. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p><p>Drücke zum Bestätigen 'Erzeugen'.</p>",
+            :de_DE => "<p>1. Du kannst Deine Siedlung aus- und abwählen, indem Du die Siedlung anklickst.</p><p>2. Drücke unten rechts den Knopf mit den Männchen. Der folgende Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Verschiebe alle 25 Verfügbaren Einheiten mit den Pfeilen in die Neue Armee.</p><p>Abschließend drücke zum Bestätigen 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1821,7 +1821,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe.",
+            :de_DE => "Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.",
   
             :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
                 
@@ -13987,7 +13987,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'. 2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>",
+            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>",
   
             :en_US => "<p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
                 
