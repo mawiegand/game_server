@@ -102,7 +102,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer. Wenn Du einen Jäger und Sammler bauen würdest, sähe das bestimmt viel besser aus.",
+            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll? Vielleicht noch ein bisschen leer.",
   
             :en_US => "Welcome Demigod! Look at your settlement – isn’t it great? A bit empty, though. If you built a Hunter Gatherer it would definitely look much better and he’d give you some of the raw materials he finds.",
                 
@@ -116,14 +116,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
+            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
   
             :en_US => "Hey – that looks much better, don’t you think? And the friendly Hunter Gatherer wants to give you some of his raw materials too.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. ",
+            :de_DE => "Jäger und Sammler liefern fortwährend Rohstoffe und bilden die Grundlage Deiner Rohstoffversorgung.",
   
             :en_US => "The Hunter Gatherer appears on the right in the construction queue. There you can see how long it will take until the building is finished. You can cancel or speed up an order. Building orders continue in your absence when you leave the game. ",
                 
@@ -474,14 +474,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.",
+            :de_DE => "Alle Gebäude können weiter ausgebaut werden. Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann liefert er uns mehr Rohstoffe.",
   
             :en_US => "You see? You’ve got this far already. Do you think you could upgrade a Hunter Gatherer to level 2? He’d feel better and give you more resources. ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wähle dazu den gerade gebauten Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du oben den derzeitigen Stand Deines Vorhabens, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>",
+            :de_DE => "<p>Wähle dazu den gerade gebauten Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du oben den derzeitigen Ausbaustand, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>",
   
             :en_US => "<p>Choose a Hunter Gatherer. You can tell the piece of land you click on to choose by the orange border. At the top of the window that opens you’ll see the current status of your development, including the next upgrade level. Click on the “upgrade” button to start the upgrade . </p>",
                 
@@ -571,7 +571,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade your chieftain’s hut to level 2.",
   
-            :de_DE => "Baue Deine Häuptlingshütte auf Level 2 aus.",
+            :de_DE => "Baue Deine Häuptlingshütte auf Level 2 aus, um mehr Gebäude freizuschalten.",
                 
           },
           :flavour => {
@@ -597,7 +597,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Bauplätze zu belegen. Zusätzlich erhöht die Häuptlingshütte den Kampfbonus Deiner Siedlung.",
   
             :en_US => "Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings. ",
                 
@@ -627,7 +627,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 300,
 
           },          
 
@@ -768,7 +768,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke. Der Siedlungsknopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>",
+            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit dem Haus, oben rechts in der Ecke. Der Siedlungsknopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>",
   
             :en_US => "<p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p><p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>",
                 
@@ -782,7 +782,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Auf der Weltkarte kannst Du andere Spieler um Dich herum sehen.",
+            :de_DE => "Für den Momant habe ich unsere Hauptssiedlung mit einem hüpfenden grünen Pfeil markiert.",
   
             :en_US => "On the world map you can see the other gamers around you.",
                 
@@ -1115,14 +1115,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.",
+            :de_DE => "Du findest nicht zurück in die Siedlung? Das ist ganz einfach, ich erklär's Dir.",
   
             :en_US => "Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Benutze den Siedlungsknopf oben rechts, um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst, und auf ´Betreten´ drückst, oder einen Doppelklick auf die Siedlung ausführst.</p>",
+            :de_DE => "<p>Zurück in die Siedlung gelangst Du immer mit einem Doppelklick auf den Siedlungsdialog mit dem Haus oben rechts.</p>",
   
             :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
                 
@@ -1583,7 +1583,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 150,
 
           },          
 
@@ -1650,7 +1650,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft trotzdem weiter. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl ein.",
+            :de_DE => "Nachdem Du Einheiten in Auftrag gegeben hast, kannst Du das Gebäudefenster schließen, der Auftrag läuft auch in Deiner Abwesenheit weiter. Du kannst auch mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl ein.",
   
             :en_US => "Once you’ve ordered the units you can close the building window and the order continues to be carried out. If you want to know how far the order has got, just click on the training barracks. You can also train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’. New units will be activated at higher building levels.",
                 
@@ -1675,7 +1675,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 100,
 
           },          
 
@@ -1719,14 +1719,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Aus Einheiten werden Armeen aufgestellt! Ich habe Dir ja gerade einige Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
+            :de_DE => "Aus Einheiten werden Armeen aufgestellt! Dies solltest Du mit den von mir erhaltenen 25 Keulenkriegern direkt machen.",
   
             :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you nine clubbers. Someone should do that with them. ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Markiere Deine Siedlung, indem du darauf klickst. Drücke anschließend im Siedlungsinspektor den Armee-Knopf.</p><p>Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen 'Erzeugen'.</p>",
+            :de_DE => "<p>1. Du kannst Deine Siedlung aus- und abwählen, indem Du die Siedlung anklickst.</p><p>2. Verschiebe im folgenden Dialog alle 25 Verfügbaren Einheiten mit den Pfeilen in die neue Armee.</p><p>Drücke zum Bestätigen 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
@@ -1765,7 +1765,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 250,
 
           },          
 
@@ -1802,12 +1802,12 @@ class Tutorial::Tutorial
             
             :en_US => "Move your army to the fortress",
   
-            :de_DE => "Bewege Deine Armee zur Festung",
+            :de_DE => "Bewege Deine Armee zur Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Eine Armee ist dazu da die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein.",
+            :de_DE => "Eine Armee ist dazu da, die Feinde des Stammes zu vernichten. Aber natürlich sollte ein Angriff nicht überstürzt sein.",
   
             :en_US => "An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
                 
@@ -1821,7 +1821,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe, für Verstärkungen.",
+            :de_DE => "Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja, hier hast Du ein paar Rohstoffe.",
   
             :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
                 
@@ -1853,7 +1853,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 150,
 
             :action_point_reward => true,
 
@@ -1919,11 +1919,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
-          :successor_quests => [22, ],
+          :successor_quests => [22, 59, ],
 
           :rewards => {
             
@@ -2880,7 +2880,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links, in der Übersicht der Hauptsiedlung, steht das ´G´ für die Baugeschwindigkeit.</p>",
+            :de_DE => "<p>Der Ausbau der Kleinen Hütten erhöht Deine Baugeschwindigkeit und senkt die Ausbauzeit aller Gebäude. Oben links, in der Übersicht der Hauptsiedlung, steht das ´G´ für die Baugeschwindigkeit. Zum Bau einer Kleinen Hütte benötigst Du Häuptlingshütte Level 3.</p>",
   
             :en_US => "<p>The first inhabitants have moved into the huts, but they’re running out of space already. Upgrade the small hut to level 3 for your population.</p>",
                 
@@ -2959,9 +2959,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 30 units per hour",
+            :en_US => "Improve your stone and wood production to at least 25 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 30 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 25 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -2973,7 +2973,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du solltest zum Erreichen des Ziels mindestens 6 Jäger und Sammler mit Level 3 oder 4 ausbauen. Rohstoffe sind die Basis jeden Fortschritts.</p>",
+            :de_DE => "<p>Du solltest zum Erreichen des Ziels mindestens 5 Jäger und Sammler mit Level 3 oder 4 ausbauen. Rohstoffe sind die Basis jeden Fortschritts.</p>",
   
             :en_US => "<p>To do this you should build 6 Hunter Gatheres and upgrade some of them to level three or four. You can see your current production at raw materials display at the top.</p>",
                 
@@ -2987,7 +2987,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Nutze jeden freien und nicht anderweitig benötigten Bauplatz zur Rohstoffproduktion.",
+            :de_DE => "Denk dran Deine Rohstoffproduktion immer weiter auszubauen. Nutze jeden freien und nicht anderweitig benötigten Bauplatz zur Rohstoffproduktion.",
   
             :en_US => "Remember to increase your raw materials production. You should use every free and otherwise unused building slot.",
                 
@@ -2999,7 +2999,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 69, 145, ],
+          :successor_quests => [19, 29, 49, 145, ],
 
           :rewards => {
             
@@ -3032,12 +3032,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 30,
+                :minimum  => 25,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 30,
+                :minimum  => 25,
               },
 
             ],
@@ -4783,7 +4783,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
@@ -5529,14 +5529,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 12 units per hour",
+            :en_US => "Improve your stone and wood production to at least 10 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
             
-            :de_DE => "Rohstoffe sind das Wichtigste, wir brauchen dringend eine Produktion!",
+            :de_DE => "Chef´s Ziel ist Eroberung. Voraussetzung dafür ist aber eine ordentliche Rohstoffproduktion.",
   
             :en_US => "We need a higher raw materials production.",
                 
@@ -5557,7 +5557,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Du solltest jeden freien, und nicht anderweitig benötigten, Bauplatz dafür verwenden.",
+            :de_DE => "Denk dran, wann immer möglich, Deine Rohstoffproduktion auszubauen. Du solltest jeden freien und nicht anderweitig benötigten Bauplatz dafür verwenden.",
   
             :en_US => "Remember to increase your raw materials production. You should use every free and otherwise unused building slot.",
                 
@@ -5569,7 +5569,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [6, 19, 30, 49, 59, ],
+          :successor_quests => [6, 30, ],
 
           :rewards => {
             
@@ -5597,7 +5597,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 150,
 
           },          
 
@@ -5607,12 +5607,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 12,
+                :minimum  => 10,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 12,
+                :minimum  => 10,
               },
 
             ],
@@ -5675,11 +5675,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
-          :successor_quests => [60, ],
+          :successor_quests => [60, 69, ],
 
           :rewards => {
             
@@ -6615,7 +6615,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_charkills_1',
 
           },
 
@@ -13787,9 +13787,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 120 resource points.",
+            :en_US => "Increase the resource production of one settlement to 100 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 120 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 100 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13857,7 +13857,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 120,
+              :min_resources => 100,
             },
 
           },          
@@ -13994,14 +13994,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Ggener erschlagen.",
+            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
   
             :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
                 
           },
           :reward_text => {
             
-            :de_DE => "An einem Kampf können beliebig viele Armeen von beliebig vielen Spielern teilnehmen. Behalte mit dem Zielauswahl-Dialog den Überblick!",
+            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
   
             :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
                 
