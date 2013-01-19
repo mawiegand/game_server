@@ -42,8 +42,8 @@ defaults: &defaults
   
   chat_host: jabber.wack-a-doo.com
 
-  history_update_intervall: 24.hours.ago
-    
+  history_update_interval: 24
+
 development:
   <<: *defaults
 
