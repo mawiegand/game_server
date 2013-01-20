@@ -80,7 +80,7 @@
     </Quest>
 
 <!-- 2 -->
-    <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="false">
       <Name>Another Hunter Gatherer</Name>
       <Name locale="de_DE">Ein zweiter Jäger und Sammler</Name>
       <Task>Build a second Hunter Gatherer Level 1 to increase your production.</Task>
@@ -391,7 +391,7 @@
     </Quest>
 
 <!-- 12 -->
-    <Quest id="quest_encyclopedia" advisor="girl" tutorial="true">
+    <Quest id="quest_encyclopedia" advisor="girl" tutorial="false">
       <Name>Encyclopaedia</Name>
       <Name locale="de_DE"> Enzyklopädie </Name>
       <Task>Enter the cost of the wood needed for a Training Grounds level 2.</Task>
@@ -1767,7 +1767,7 @@
     </Quest>
 
 <!-- 58 -->
-    <Quest id="quest_improve_production_1" advisor="girl">
+    <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your stone and wood production to at least 10 units per hour</Task>
