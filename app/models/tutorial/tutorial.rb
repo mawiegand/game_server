@@ -720,7 +720,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_change_profile',
+              :id => 'test_profile',
             },
 
           },          
