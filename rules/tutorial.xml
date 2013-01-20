@@ -258,6 +258,7 @@
       <RewardTests>
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
+      <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
 <!-- 8 -->
