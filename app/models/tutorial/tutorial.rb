@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 28,
+      :num_tutorial_quests => 20,
   
       :quests => [  # ALL QUESTS
 
@@ -97,7 +97,7 @@ class Tutorial::Tutorial
             
             :en_US => "Order a Hunter Gatherer Level 1",
   
-            :de_DE => " Gib einen Jäger und Sammler Level 1 in Auftrag. ",
+            :de_DE => " Gib einen Jäger und Sammler Level 1 in Auftrag.",
                 
           },
           :flavour => {
@@ -116,20 +116,20 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Gut gemacht. Jetzt müssen wir kurz warten, während Deine Arbeiter den Auftrag fertigstellen.",
+            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht? Der nette Sammler will Dir sogar ein paar Rohstoffe schenken.",
   
-            :en_US => "Well done. Now we just have to wait a bit while your workers complete the order.",
+            :en_US => "Hey – that looks much better, don’t you think? And the friendly Hunter Gatherer wants to give you some of his raw materials too.",
                 
           },
           :reward_text => {
             
-            :de_DE => " Der Jäger und Sammler taucht rechts in der Gebäudeproduktion auf. Dort kannst Du sehen, wie lange es dauert, bis das Gebäude fertiggestellt wird. Du kannst Aufträge abbrechen oder beschleunigen. Bauaufträge laufen auch weiter, wenn Du nicht im Spiel bist. ",
+            :de_DE => "Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
   
-            :en_US => "The Hunter Gatherer appears on the right in the construction queue. There you can see how long it will take until the building is finished. You can cancel or speed up an order. Building orders continue in your absence when you leave the game. ",
+            :en_US => "The Hunter Gatherer gathers small quantities of all kinds of raw materials. ",
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [4, ],
 
           :reward_tests => {
             
@@ -151,7 +151,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_end_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => true,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -197,13 +197,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_queue_1gathererlvl1',
-
-          },
-
-          :successor_quests => [53, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -489,11 +483,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_quest_button',
+            :quest => 'quest_queue_1gathererlvl1',
 
           },
 
-          :successor_quests => [55, ],
+          :successor_quests => [53, 55, ],
 
           :rewards => {
             
@@ -543,7 +537,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -785,11 +779,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2cottagelvl1',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
-          :successor_quests => [9, ],
+          :successor_quests => [17, ],
 
           :rewards => {
             
@@ -971,7 +965,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlement_button1',
+            :quest => 'quest_army_move',
 
           },
 
@@ -1016,7 +1010,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -1062,13 +1056,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1barrackslvl2',
-
-          },
-
-          :successor_quests => [12, 19, ],
+          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1201,9 +1189,16 @@ class Tutorial::Tutorial
                 :amount => 20,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
             ],
 
             :experience_reward => 100,
+
+            :action_point_reward => true,
 
           },          
 
@@ -1354,7 +1349,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -1464,7 +1459,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade your chieftain’s hut to level 3",
   
-            :de_DE => "Baue Deine Häuptlingshütte auf Level 3 aus.",
+            :de_DE => "Baue Deine Häuptlingshütte auf Level 3 aus, um neue Gebäude freizuschalten.",
                 
           },
           :flavour => {
@@ -1498,11 +1493,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2cottagelvl1',
+            :quest => 'quest_build_2gathererlvl4',
 
           },
 
-          :successor_quests => [15, ],
+          :successor_quests => [52, ],
 
           :rewards => {
             
@@ -1600,11 +1595,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_queue_chiefcottagelvl2_V2',
 
           },
 
-          :successor_quests => [16, 56, 58, ],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -1706,7 +1701,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [17, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -1714,7 +1709,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 3,
+                :amount => 25,
               },
 
             ],
@@ -1761,7 +1756,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Einheiten in Garnisonen können sich nicht bewegen. Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade drei Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
+            :de_DE => "Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden. Ich habe Dir ja gerade einige Keulenkrieger zur Verfügung gestellt. Mit denen müsste das jemand mal machen.",
   
             :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army. I’ve just given you three clubbers. Someone should do that with them. ",
                 
@@ -1790,11 +1785,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_settlement_button1',
 
           },
 
-          :successor_quests => [18, 57, 147, ],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -1821,7 +1816,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 6,
+                :amount => 10,
               },
 
             ],
@@ -1901,7 +1896,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -1925,6 +1920,8 @@ class Tutorial::Tutorial
             ],
 
             :experience_reward => 250,
+
+            :action_point_reward => true,
 
           },          
 
@@ -1988,7 +1985,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_message',
+            :quest => 'quest_improve_production_1',
 
           },
 
@@ -2095,7 +2092,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 28, ],
+          :successor_quests => [21, 23, ],
 
           :rewards => {
             
@@ -2383,19 +2380,19 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Der nächste Level der Häuptlingshütte ermöglicht Dir mit Steinbruch und Holzfäller den Bau von spezialisierten Rohstoffproduzenten.",
   
-            :en_US => " ",
+            :en_US => "Steinbruch und Holzfäller liefern mehr Stein und Holz als der Jäger und Sammler. Aber bis Du mit dem Kürschner den Fellproduzenten freischalten kannst vergeht noch einige Zeit.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl4',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
-          :successor_quests => [24, 38, ],
+          :successor_quests => [24, ],
 
           :rewards => {
             
@@ -2457,9 +2454,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "",
+            :en_US => "Build a quarry and a logging camp.",
   
-            :de_DE => "Build a quarry and a logging camp..",
+            :de_DE => "Baue eine Steinbruch und einen Holzfäller.",
                 
           },
           :flavour => {
@@ -2471,7 +2468,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>BAue je einen Steinbruch und einen Holzfäller um Deine Produktion zu erhöhen.</p>",
   
             :en_US => "<p></p>",
                 
@@ -2913,13 +2910,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1campfirelvl1',
-
-          },
-
-          :successor_quests => [29, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3015,13 +3006,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_2gathererlvl3',
-
-          },
-
-          :successor_quests => [30, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3119,11 +3104,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1cottagelvl3',
+            :quest => 'quest_queue_chiefcottagelvl2_V2',
 
           },
 
-          :successor_quests => [23, 145, ],
+          :successor_quests => [14, ],
 
           :rewards => {
             
@@ -3371,7 +3356,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1barrackslvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -3417,13 +3402,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1cottagelvl2',
-
-          },
-
-          :successor_quests => [10, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3738,7 +3717,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 37, ],
+          :successor_quests => [25, 37, 38, ],
 
           :rewards => {
             
@@ -3947,7 +3926,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_2quarrylvl3_2loggerlvl3',
 
           },
 
@@ -4243,7 +4222,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [42, 50, ],
+          :successor_quests => [50, ],
 
           :rewards => {
             
@@ -4335,12 +4314,6 @@ class Tutorial::Tutorial
   
             :en_US => "Building Hunter Gatherers is always a good idea.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl5',
-
           },
 
           :successor_quests => [],
@@ -5213,11 +5186,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2_V2',
+            :quest => 'quest_build_chiefcottagelvl3',
 
           },
 
-          :successor_quests => [7, 14, ],
+          :successor_quests => [58, ],
 
           :rewards => {
             
@@ -5315,11 +5288,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_end_1gathererlvl1',
+            :quest => 'quest_build_1gathererlvl2',
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5341,7 +5314,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl2_V2,
           :advisor           => :chef,
           :hide_start_dialog => true,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5387,13 +5360,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_queue_chiefcottagelvl2_V2',
-
-          },
-
-          :successor_quests => [52, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5457,16 +5424,16 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ah. Der Ausbau läuft schon. Es gibt eine weitere Belohnung, sobald sie fertig ist. Und bis dahin störe mich nicht.",
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Außerdem hab ich Dir doch gerade schon eine Belohnung gegeben! Verschwinde Du gieriger Halbgott.",
   
-            :en_US => "Finished at last, eh? No? But you still want a reward? Some people are  never satisfied. Here – take this, and come back when the upgrade is finished.",
+            :en_US => "Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Besides, I just gave you’re a reward! Push off, you greedy demigod!",
                 
           },
           :reward_text => {
             
-            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => "Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.",
   
-            :en_US => "Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.",
+            :en_US => "Higher levels of the chieftain’s hut let you construct more buildings.",
                 
           },
 
@@ -5476,7 +5443,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [6, 54, ],
+          :successor_quests => [6, 15, 30, ],
 
           :rewards => {
             
@@ -5505,12 +5472,15 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :construction_queue_tests => [
+            :building_tests => [
 
               {
                 :building => 'building_chief_cottage',
-                :min_count => 1,
+
                 :min_level => 2,
+
+                :min_count => 1,
+
               },
 
             ],
@@ -5523,7 +5493,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1cottagelvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5569,13 +5539,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1barrackslvl1',
-
-          },
-
-          :successor_quests => [33, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5669,12 +5633,6 @@ class Tutorial::Tutorial
   
             :en_US => "Little armies get crushed by large armies without even a fight.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_create',
-
           },
 
           :successor_quests => [],
@@ -5780,11 +5738,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl1',
+            :quest => 'quest_build_2cottagelvl1',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [19, ],
 
           :rewards => {
             
@@ -5803,6 +5761,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 100,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
@@ -14029,12 +13992,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_2gathererlvl4',
-
-          },
-
           :successor_quests => [146, ],
 
           :rewards => {
@@ -14169,7 +14126,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_npc_battle,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -14181,7 +14138,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight for the first time and kill at least tweo units!",
+            :en_US => "Fight for the first time and kill at least two units!",
   
             :de_DE => "Kämpfe Deinen ersten Kampf und töte mindestens zwei Einheiten!",
                 
@@ -14213,12 +14170,6 @@ class Tutorial::Tutorial
   
             :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_create',
-
           },
 
           :successor_quests => [],
