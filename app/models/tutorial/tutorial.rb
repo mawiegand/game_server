@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 20,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -245,7 +245,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -818,6 +818,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :place_npcs => 2,         
+
         },              #   END OF quest_settlement_button1
         {               #   quest_rank
           :id                => 8, 
@@ -1216,7 +1218,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           
           :name => {
@@ -5690,7 +5692,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_improve_production_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           
           :name => {
