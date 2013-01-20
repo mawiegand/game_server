@@ -31,3 +31,5 @@ client
 
 /config/thin_local.yml
 /nbproject/private/
+
+/.idea
