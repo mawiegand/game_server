@@ -313,7 +313,7 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.save
     end
     
-    return character 
+    character 
   end
   
   def change_name_transaction(name)
@@ -344,7 +344,7 @@ class Fundamental::Character < ActiveRecord::Base
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
-    return self
+    self
   end
   
   def change_gender_transaction(newGender)
@@ -364,7 +364,7 @@ class Fundamental::Character < ActiveRecord::Base
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
-    return self
+    self
   end  
   
   def change_password_transaction(password)
@@ -692,14 +692,10 @@ class Fundamental::Character < ActiveRecord::Base
   def check_consistency_sometimes
     return         if self.login_count.nil? || self.login_count < 3   # do NOT check consistency on character creation
     return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)
-    return         if self.deleted_from_game?  # don't check consistency for deleted characters  
     check_consistency
   end  
 
   def check_consistency
-    
-    return true if self.deleted_from_game?
-    
     logger.info(">>> COMPLETE RECALC of CHARACTER #{self.id}.")
 
     settlement_points = recalc_settlement_points_total
@@ -907,10 +903,6 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
 
   def delete_from_game
-    
-    self.deleted_from_game = true
-    self.save
-    
     # hand over fortresses and outposts to npcs
     self.fortresses.each do |fortress|
       fortress.abandon_fortress
@@ -923,6 +915,19 @@ class Fundamental::Character < ActiveRecord::Base
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?
     
+    # delete base settlement
+    base_settlement = self.home_location.settlement
+    base_settlement.remove_from_map
+    
+    # remove settlement from its location 
+    self.home_location.settlement = nil
+    
+    # recount base settlements in region
+    self.home_location.region.recount_settlements
+    
+    # remove home location from character
+    self.home_location = nil
+    
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access
     self.ranking.destroy
@@ -931,31 +936,14 @@ class Fundamental::Character < ActiveRecord::Base
     self.tutorial_state.quests.destroy unless self.tutorial_state.quests.nil?
     self.tutorial_state.destroy
     
-    # check if locations only contain home settlement
-    logger.debug "----> location count: #{self.locations.count}"
-    logger.debug "----> region count: #{self.regions.count}"
-    
     # delete retention_mails
     self.retention_mails.destroy_all
     self.last_retention_mail = nil
-    
-    
-    # TODO leads_battle_factions?
     
     # delete battle_results
     self.battle_results.destroy_all unless self.battle_results.nil?
     # armies are handled by settlement.remove_from_map
         
-    # delete base settlement
-    base_settlement = self.home_location.settlement
-    base_settlement.remove_from_map
-    
-    # remove settlement from its location 
-    self.home_location.settlement = nil
-    
-    # remove home location from character
-    self.home_location = nil
-    
     # remove resource pool
     self.resource_pool.destroy 
     
@@ -1001,7 +989,10 @@ class Fundamental::Character < ActiveRecord::Base
     self.production_updated_at = nil
     self.same_ip = nil?
     
+    self.deleted_from_game = true
     self.save
+    
+    check_consistency
   end
   
   protected

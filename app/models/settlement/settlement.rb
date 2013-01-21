@@ -261,15 +261,13 @@ class Settlement::Settlement < ActiveRecord::Base
     # destroy all slots
     self.slots.destroy_all            unless self.slots.nil?
     
-    # reset location
-    self.location.settlement_type_id = Settlement::Settlement::TYPE_NONE
-    self.location.settlement_level = nil
-    self.location.count_armies = nil
-    self.location.owner_id = nil
-    self.location.owner_name = nil
-    self.location.visible = nil
-    self.location.right_of_way = 0
-    self.location.settlement_score = 0
+    # reset location (region doesn't need to be reset)
+    self.location.remove_settlement
+    
+    # trigger before_save and after_save handler
+    self.save
+    
+    self.check_consistency
     
     # destroy settement itself
     self.destroy
@@ -1179,7 +1177,7 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     def propagate_information_to_garrison
-      if self.garrison_size_max_changed? && !self.garrison_army.nil?
+      if self.garrison_size_max_changed? && !self.garrison_army.nil? && !self.garrison_army.frozen?
         self.garrison_army.size_max = self.garrison_size_max
         self.garrison_army.save
       end

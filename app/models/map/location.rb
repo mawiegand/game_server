@@ -86,6 +86,18 @@ class Map::Location < ActiveRecord::Base
       self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
     end
   end
+  
+  def remove_settlement
+    self.settlement_type_id = Settlement::Settlement::TYPE_NONE
+    self.settlement_level = nil
+    self.count_armies = nil
+    self.owner_id = nil
+    self.owner_name = nil
+    self.visible = nil
+    self.right_of_way = 0
+    self.settlement_score = 0
+    self.save
+  end
 
   def empty?
     self.settlement_type_id == Settlement::Settlement::TYPE_NONE
