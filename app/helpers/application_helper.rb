@@ -26,7 +26,7 @@ module ApplicationHelper
     return @if_modified_since_time    unless @if_modified_since_time.blank?
     
     if_modified_since       = request.env['HTTP_IF_MODIFIED_SINCE']    
-    @if_modified_since_time = if_modified_since.blank? ? nil : Time.parse(if_modified_since)  
+    @if_modified_since_time = if_modified_since.blank? || if_modified_since == "" ? nil : Time.parse(if_modified_since)  
   end
 
   
