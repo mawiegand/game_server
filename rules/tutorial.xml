@@ -279,7 +279,6 @@
       <RewardText locale="en_US">The ranking list is set up according to population. Expand and upgrade your settlement to raise your population and you’ll rise in the rankings.</RewardText>
       <RewardFlavor locale="de_DE">Oh, Du kleiner Halbgott. Das ist ja schrecklich. Das muss besser werden! Hier sind ein paar Rohstoffe, verschwende sie nicht.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, little demigod. That’s terrible! You’ve got to improve! Here are some raw materials – don’t waste them!</RewardFlavor>
-      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">55</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -309,7 +308,6 @@
       <RewardText locale="en_US">Fortresses collect taxes from the region they rule. The tax rate is 5 – 15% and is deducted from the raw materials production of the settlements in the region and handed to the owner of the fortress. </RewardText>
       <RewardFlavor locale="de_DE">Aha, dem sollten wir eine Lektion erteilen!</RewardFlavor>
       <RewardFlavor locale="en_US">Aha – we should teach him a lesson!</RewardFlavor>
-      <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">55</ResourceReward>    
@@ -377,7 +375,7 @@
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on Enter.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn’t it?!</RewardFlavor>
-      <Requirement quest="quest_settlementowner" />
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_stone">45</ResourceReward>  
         <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -3055,7 +3053,7 @@
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
   <Task>Kill 57850 units.</Task>
-  <Task locale="de_DE">Besiege 1850 Einheiten</Task>
+  <Task locale="de_DE">Besiege 57850 Einheiten</Task>
   <Description locale="de_DE">
     <p>In der Rangliste kannst du sehen, wie viele Einheiten du schon getötet hast.</p>
   </Description>
