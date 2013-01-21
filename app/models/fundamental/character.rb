@@ -147,6 +147,8 @@ class Fundamental::Character < ActiveRecord::Base
     sign_up.nil? ? nil : sign_up.referer
   end
   
+  # updates the playtime of this character. called by the current_character
+  # methods during authorization of a request.
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
       difference = Time.now - (self.last_request_at ||Time.now)
