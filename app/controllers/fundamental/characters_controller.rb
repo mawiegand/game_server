@@ -146,20 +146,96 @@ class Fundamental::CharactersController < ApplicationController
       
     elsif !current_character
       raise NotFoundError.new("Could not find user's character.")
-    elsif current_character.deleted_from_game
+    elsif current_character.deleted_from_game?
+      
       # set player back to game
       current_character.deleted_from_game = false
       
-      # call delete from game to be sure that all old data is removed
-      # method does not set deleted_from_game to true
-      current_character.delete_from_game
+      identity_provider_access = IdentityProvider::Access.new({
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
+      })
       
-      # give him a new settlement, resource pool, etc...
+      response = identity_provider_access.fetch_identity(request_access_token.identifier)
+      identity = {}
+      if response.code == 200
+        identity = response.parsed_response
+      end
       
-      # check_consistency after creating new base settlement 
+      # set character properties to default values
+      start_resource_modificator = 1.0            
+      
+      # fetch persistent character properties from identity provider  
+      response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
+      properties = {}
+      
+      logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+      
+      if response.code == 200
+        properties = response.parsed_response
+        logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+        unless properties.empty?
+          character_property = properties[0]
+          if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
+            property_value = character_property['data']['start_resource_modificator'].to_f
+            logger.info "START PROPERTY_VALUE #{ property_value }."
+            start_resource_modificator = property_value if property_value > 0
+            logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+          end
+        end
+      end
+
+      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
+      
+      if !current_character.save
+        # raise InternalServerError.new('Could not create new character.') 
+      end
+  
+      current_character.create_resource_pool
+      
+      # raise InternalServerError.new('Could not save the base of the character.')  if !current_character.save
+  
+      current_character.create_ranking({
+        character_name: current_character.name,
+      });
+      
+      location = Map::Location.find_empty
+      if !location || !current_character.claim_location(location)
+        raise InternalServerError.new('Could not claim an empty location.')
+      end
+
+      Settlement::Settlement.create_settlement_at_location(location, 2, current_character)  # 2: home base
+        
+      current_character.base_location_id = location.id              # TODO is this the home_location_id?
+      current_character.base_region_id = location.region_id
+      current_character.base_node_id = location.region.node_id
+      
+      current_character.home_location.settlement.name = "Hauptsiedlung"
+      current_character.home_location.settlement.save
+      
+      current_character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+      
+      current_character.create_tutorial_state
+      current_character.tutorial_state.create_start_quest_state     
+            
+      Backend::SignInLogEntry.create({
+        direct_referer_url: request.referer,
+        referer_url:        external_referer,
+        request_url:        request_url,
+        character_id:       current_character.id,
+        remote_ip:          request.remote_ip,
+      });
+      
+      current_character.last_login_at = DateTime.now
+      current_character.increment(:login_count)
+      
       current_character.check_consistency
-    else
+      current_character.save
       
+      redirect_to fundamental_character_path(current_character.id)
+    else
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
       current_character.save
