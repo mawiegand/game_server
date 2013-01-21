@@ -27,7 +27,7 @@
     </ProductionTestWeights>
   </General>
   
-<!-- 0 -->
+<!-- 0 --> <!-- Tutorial 1-->
   <Quests>
     <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
       <Name>The first building</Name>
@@ -51,7 +51,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 1 -->
+<!-- 1 --> <!-- not in -->
     <Quest id="quest_end_1gathererlvl1" advisor="girl" hide_start_dialog="true" tutorial="false">
       <Name>Wait for the building order.</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
@@ -79,7 +79,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 2 -->
+<!-- 2 --> <!-- not in -->
     <Quest id="quest_build_1gathererlvl1" advisor="girl" tutorial="false">
       <Name>Another Hunter Gatherer</Name>
       <Name locale="de_DE">Ein zweiter Jäger und Sammler</Name>
@@ -108,7 +108,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 3 -->
+<!-- 3 --> <!-- not in -->
     <Quest id="quest_build_2gathererlvl1" advisor="girl">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -137,7 +137,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 4 -->
+<!-- 4 --> <!-- Tutorial 2 -->
     <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
@@ -181,7 +181,7 @@
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine tolle Belohnung.</Flavor>
       <Flavor locale="en_US">Demigod? And what’s that supposed to be? My chieftain’s hut? You think I’m going to live in that? Ha! Change it immediately! Upgrade it and I’ll give you a reward.</Flavor>
-      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen. Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
+      <RewardText locale="de_DE"> Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US">Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings. </RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst? Manche haben auch nie genug. Hier, nimm das und verschwinde.</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building? Some people are never satisfied. Here – take this and push aaoff!</RewardFlavor>
@@ -197,7 +197,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 6 -->
+<!-- 6 --> <!-- Tutorial 5 -->
     <Quest id="quest_profile" advisor="girl" tutorial="true">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
@@ -227,7 +227,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 7 -->
+    <!-- 7 --> <!-- Tutorial 8 -->
     <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
@@ -261,7 +261,7 @@
       <PlaceNpcs>2</PlaceNpcs>
     </Quest>
 
-<!-- 8 -->
+<!-- 8 --> <!-- Tutorial 20 -->
     <Quest id="quest_rank" advisor="chef" tutorial="true">
       <Name>Rank</Name>
       <Name locale="de_DE">Rang</Name>
@@ -291,7 +291,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 9 -->
+    <!-- 9 --> <!-- Tutorial 11 -->
     <Quest id="quest_settlementowner" advisor="chef" tutorial="true">
       <Name>Fortress owner</Name>
       <Name locale="de_DE">Festungsbesitzer</Name>
@@ -359,7 +359,7 @@
       </Message>
     </Quest>
 
-<!-- 11 -->
+<!-- 11 --> <!-- Tutorial 12 -->
     <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
@@ -484,7 +484,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 14 -->
+<!-- 14 --> <!-- Tutorial 14 -->
     <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="true">
       <Name>An even bigger chieftain’s hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
@@ -514,7 +514,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 15 -->
+<!-- 15 -->  <!-- Tutorial 6 -->
     <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
@@ -544,7 +544,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 16 -->
+    <!-- 16 --> <!-- Tutorial 7 -->
     <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
@@ -572,7 +572,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 17 -->
+    <!-- 17 --> <!-- Tutorial 9 -->
     <Quest id="quest_army_create" advisor="warrior" tutorial="true">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
@@ -605,7 +605,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 18 -->
+    <!-- 18 --> <!-- Tutorial 10 -->
     <Quest id="quest_army_move" advisor="warrior" tutorial="true">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
@@ -636,7 +636,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 19 -->
+<!-- 19 --> <!-- Tutorial 17 -->
     <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
       <Name>The chieftain’s hut again</Name>
       <Name locale="de_DE"> Und wieder die Häuptlingshütte </Name>
@@ -680,7 +680,7 @@
       </Description>
       <Flavor locale="de_DE">Hey wie wär's mit einem Lagerfeuer für Deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Hey, how about a campfire for your settlement? Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don’t you think?
-</Flavor>
+      </Flavor>
       <RewardText locale="de_DE">Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.</RewardText>
       <RewardText locale="en_US">From now on you can send messages. Use this to communicate with your neighbours.</RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
@@ -730,8 +730,8 @@
       </RewardTests>
     </Quest>
 
-<!-- 22 -->
-   <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true">
+<!-- 22 --> <!-- Tutorial 18 -->
+   <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true" >
       <Name>Raw materials store</Name>
       <Name locale="de_DE"> Rohstofflager </Name>
       <Task>Build a raw materials store</Task>
@@ -760,35 +760,35 @@
       </RewardTests>
     </Quest>
 
-<!-- 23 -->
-    <Quest id="quest_build_chiefcottagelvl5" advisor="girl">
-      <Name>Chieftain’s hut level four</Name>
-      <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
-      <Task>Upgrade your chieftain‘s hut to level 5.</Task>
-      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 5 aus.</Task>
-      <Description locale="de_DE">
-        <p></p>
-      </Description>
-      <Description locale="en_US">
-        <p>Beschreibung des Quests auf englisch.</p>
-      </Description>
-      <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
-      <Flavor locale="en_US">Hey, you’re ready to upgrade your chieftain‘s hut again. Showing off a bit of style can’t hurt, eh?</Flavor>
-      <RewardText locale="de_DE">Der nächste Level der Häuptlingshütte ermöglicht Dir mit Steinbruch und Holzfäller den Bau von spezialisierten Rohstoffproduzenten.</RewardText>
-      <RewardText locale="en_US">Steinbruch und Holzfäller liefern mehr Stein und Holz als der Jäger und Sammler. Aber bis Du mit dem Kürschner den Fellproduzenten freischalten kannst vergeht noch einige Zeit.</RewardText>
-      <RewardFlavor locale="de_DE">Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
-      <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">220</ResourceReward>  
-        <ResourceReward resource="resource_wood">220</ResourceReward>    
-        <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ExperienceReward>300</ExperienceReward>
-      </Rewards>
-      <RewardTests>
-        <BuildingTest building="building_chief_cottage" min_level="5" />
-      </RewardTests>
-    </Quest>
+<!-- 23 --> <!-- Tutorial 17 -->
+  <Quest id="quest_build_chiefcottagelvl5" advisor="girl" tutorial="true" >
+    <Name>Chieftain’s hut level four</Name>
+    <Name locale="de_DE">Häuptlingshütte die Vierte</Name>
+    <Task>Upgrade your chieftain‘s hut to level 5.</Task>
+    <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 5 aus.</Task>
+    <Description locale="de_DE">
+      <p></p>
+    </Description>
+    <Description locale="en_US">
+      <p>Beschreibung des Quests auf englisch.</p>
+    </Description>
+    <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
+    <Flavor locale="en_US">Hey, you’re ready to upgrade your chieftain‘s hut again. Showing off a bit of style can’t hurt, eh?</Flavor>
+    <RewardText locale="de_DE">Der nächste Level der Häuptlingshütte ermöglicht Dir mit Steinbruch und Holzfäller den Bau von spezialisierten Rohstoffproduzenten.</RewardText>
+    <RewardText locale="en_US">Steinbruch und Holzfäller liefern mehr Stein und Holz als der Jäger und Sammler. Aber bis Du mit dem Kürschner den Fellproduzenten freischalten kannst vergeht noch einige Zeit.</RewardText>
+    <RewardFlavor locale="de_DE">Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
+    <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
+    <Requirement quest="quest_build_1campfirelvl1" />
+    <Rewards>
+      <ResourceReward resource="resource_stone">220</ResourceReward>
+      <ResourceReward resource="resource_wood">220</ResourceReward>
+      <ResourceReward resource="resource_fur">100</ResourceReward>
+      <ExperienceReward>300</ExperienceReward>
+    </Rewards>
+    <RewardTests>
+      <BuildingTest building="building_chief_cottage" min_level="5" />
+    </RewardTests>
+  </Quest>
 
 <!-- 24 -->
     <Quest id="quest_build_1quarrylvl1_1loggerlvl1" advisor="girl">
@@ -972,7 +972,7 @@
   </RewardTests>
 </Quest>
 
-<!-- 30 -->
+<!-- 30 --> <!--Tutorial 13 -->
 <Quest id="quest_build_2gathererlvl4" advisor="girl">
   <Name>More Hunter Gatherers</Name>
   <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -1169,7 +1169,6 @@
   <RewardText locale="en_US">Wow – look at your raw materials production. That’s massive!</RewardText>
   <RewardFlavor locale="de_DE">Die Steinbrüche und Holzfäller ergänzen sich in den Kosten. Baue sie abwechselnd.</RewardFlavor>
   <RewardFlavor locale="en_US">The quarries and logging camps complement each other in production. Build them by turns.</RewardFlavor>
-  <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">120</ResourceReward>  
     <ResourceReward resource="resource_wood">120</ResourceReward>    
@@ -1594,7 +1593,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 52 -->
+<!-- 52 --> <!-- Tutorial 15 -->
     <Quest id="quest_build_2cottagelvl1" advisor="girl" tutorial="true">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
@@ -1625,7 +1624,7 @@
     </Quest>
 
 
-<!-- 53 -->
+<!-- 53 --> <!-- Tutorial 3 -->
     <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
@@ -1678,7 +1677,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 55 -->
+<!-- 55 --> <!-- Tutorial 4 -->
     <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="true">
       <Name>Order a chieftain’s hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
@@ -1767,7 +1766,7 @@
       </RewardTests>
     </Quest>
 
-<!-- 58 -->
+<!-- 58 --> <!-- Tutorial 16 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
@@ -2126,7 +2125,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_build_1barrackslvl5" />
+<Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -4595,7 +4594,6 @@
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE"></RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    
@@ -4621,12 +4619,10 @@
       </Description>
       <Flavor locale="de_DE"> Mit dem Rohstofflager kannst Du Rohstoffe an andere Halbgötter verschicken. Sei doch so lieb und schick jemandem etwas. </Flavor>
       <Flavor locale="en_US">flavor text english</Flavor>
-      <Requirement quest="quest_build_1storagelvl1" />
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"> </RewardText>
       <RewardFlavor locale="de_DE">Schön. Da freut sich der Empfänger bestimmt.</RewardFlavor>
       <RewardFlavor locale="en_US"></RewardFlavor>
-      <Requirement quest="quest_build_1storagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">50</ResourceReward>  
         <ResourceReward resource="resource_wood">50</ResourceReward>    

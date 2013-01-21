@@ -49,7 +49,7 @@ class Ranking::CharacterRankingsController < ApplicationController
                                                                    
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: returned_ranking_entries.as_json }
+      format.json { render json: include_root(returned_ranking_entries, :character_ranking) }
     end
   end
 end

@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 19,
+      :num_tutorial_quests => 20,
   
       :quests => [  # ALL QUESTS
 
@@ -577,7 +577,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen. Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.",
+            :de_DE => " Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
   
             :en_US => "Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings. ",
                 
@@ -2063,7 +2063,7 @@ class Tutorial::Tutorial
             :de_DE => "Hey wie wär's mit einem Lagerfeuer für Deine Siedlung? An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
             :en_US => "Hey, how about a campfire for your settlement? Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don’t you think?
-",
+      ",
                 
           },
           :description => {
@@ -2342,7 +2342,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           
           :name => {
@@ -2496,7 +2496,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [36, 41, ],
+          :successor_quests => [41, ],
 
           :rewards => {
             
@@ -2607,7 +2607,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 79, 89, ],
+          :successor_quests => [59, 69, 79, 89, ],
 
           :rewards => {
             
@@ -3506,7 +3506,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [35, 69, ],
+          :successor_quests => [35, ],
 
           :rewards => {
             
@@ -3711,12 +3711,6 @@ class Tutorial::Tutorial
   
             :en_US => "Wow – look at your raw materials production. That’s massive!",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
-
           },
 
           :successor_quests => [25, 37, 38, ],
@@ -6788,7 +6782,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1barrackslvl5',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
