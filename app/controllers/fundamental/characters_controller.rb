@@ -176,9 +176,7 @@ class Fundamental::CharactersController < ApplicationController
       @shop_credit_transaction = Shop::CreditTransaction.new({partner_user_id: @fundamental_character.identifier})
     end
     
-    last_modified =  @fundamental_character.updated_at
-
-    render_not_modified_or(last_modified) do
+    if stale?(:last_modified => @fundamental_character.updated_at.utc)
       respond_to do |format|
         format.html do
           raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
