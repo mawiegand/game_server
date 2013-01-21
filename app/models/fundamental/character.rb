@@ -12,6 +12,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character
   has_one  :home_location,     :class_name => "Map::Location",              :foreign_key => "owner_id",     :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   has_one  :tutorial_state,    :class_name => "Tutorial::State",            :foreign_key => "character_id", :inverse_of => :owner
+  has_many :history_events,    :class_name => "Fundemental::HistoryEvent",  :foreign_key => "character_id", :inverse_of => :character
   has_one  :settings,          :class_name => "Fundamental::Setting",       :foreign_key => "character_id", :inverse_of => :owner
   
   has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
@@ -163,6 +164,8 @@ class Fundamental::Character < ActiveRecord::Base
     sign_up.nil? ? nil : sign_up.referer
   end
   
+  # updates the playtime of this character. called by the current_character
+  # methods during authorization of a request.
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
       difference = Time.now - (self.last_request_at ||Time.now)
@@ -185,6 +188,15 @@ class Fundamental::Character < ActiveRecord::Base
       scopes:                     ['5dentity'],
     })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
+  end
+  
+  def redeem_tutorial_end_rewards
+    Shop::BonusOffer.all.each do |bonus_offer|
+      bonus_offer.credit_to(self)
+    end
+    
+    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
+    platinum_offer.credit_to(self) unless platinum_offer.nil?
   end
 
   def locale

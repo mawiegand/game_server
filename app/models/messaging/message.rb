@@ -226,20 +226,18 @@ class Messaging::Message < ActiveRecord::Base
     end   
     text     
   end
-
-
     
   def add_overrun_winner_message_subject(winner, loser)
-    self.subject = "Overrun army at " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) 
+    self.subject = "Du hast die Armee an der Siedlung " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt" 
   end
   
   def add_overrun_winner_message_body(winner, loser)
-    text  = "<h2>Your army has overrun another army at " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + "</h2>\n"
-    text += "<p>Your army <b>" + winner.name.to_s + "</b> positioned at <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
-    text += "</b> has overrun the army <b>" + loser.name.to_s + "</b> of <b>" + loser.owner_name_and_ally_tag + "</b>.</p>\n"
+    text  = "<h2>Deine Armee hat eine andere Armee an der Siedlung " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt</h2>\n"
+    text += "<p>Deine Armee <b>" + winner.name.to_s + "</b>, stationiert an der Siedlung <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    text += "</b>, hat die Armee <b>" + loser.name.to_s + "</b> von <b>" + loser.owner_name_and_ally_tag + "</b> überrannt.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
-    text += "<th>Army Name</th><th>Owner</th><th>Size</th>\n"
+    text += "<th>Armeename</th><th>Besitzer</th><th>Größe</th>\n"
     text += "</tr>\n"
     text += "<tr>\n"
     text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"
@@ -248,7 +246,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
     text += "</tr>\n"
     text += "</table>\n"
-    text += "<p>None of your opponents units survived, your army didn't suffer any loss.</p>\n"
+    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren.</p>\n"
     self.body = text
   end
 

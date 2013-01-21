@@ -203,11 +203,12 @@ GameServer::Application.routes.draw do
         end
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ] 
-		  resources :abandon_outpost_actions, :only => [ :create ]
+        resources :abandon_outpost_actions, :only => [ :create ]
         end
         namespace :tutorial do
           resources :check_quest_actions,     :only => [ :create ]    
-          resources :redeem_rewards_actions,     :only => [ :create ]    
+          resources :redeem_rewards_actions,  :only => [ :create ]    
+          resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
       end
       

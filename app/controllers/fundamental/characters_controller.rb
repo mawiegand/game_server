@@ -187,14 +187,16 @@ class Fundamental::CharactersController < ApplicationController
       @credit_amount = account_response[:response_data][:amount]
       @shop_credit_transaction = Shop::CreditTransaction.new({partner_user_id: @fundamental_character.identifier})
     end
-
-    respond_to do |format|
-      format.html do
-        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
-      end
-      format.json do
-        logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
-        render json: include_root(@fundamental_character.sanitized_hash(role), :character) 
+    
+    if stale?(:last_modified => @fundamental_character.updated_at.utc, :etag => @fundamental_character)
+      respond_to do |format|
+        format.html do
+          raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
+        end
+        format.json do
+          logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
+          render json: include_root(@fundamental_character.sanitized_hash(role), :character) 
+        end
       end
     end
   end
