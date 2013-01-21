@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 19,
+      :num_tutorial_quests => 20,
   
       :quests => [  # ALL QUESTS
 
