@@ -16,7 +16,10 @@ def list_successors(quest, depth)
     print ' '
   end
   
-  puts quest[:id].to_s + ' ' + quest[:symbolic_id].to_s
+  output = quest[:id].to_s + ' ' + quest[:symbolic_id].to_s
+  output += ' *' if quest[:tutorial]
+  output += '**' if quest[:tutorial_end_quest]
+  puts output
   
   unless quest[:successor_quests].nil?
     quest[:successor_quests].each do |id|
