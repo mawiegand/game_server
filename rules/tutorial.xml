@@ -223,7 +223,7 @@
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_change_profile">change profile text</CustomTest>
+        <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
     </Quest>
 

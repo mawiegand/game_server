@@ -74,7 +74,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 20,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -720,7 +720,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :custom_test => {
-              :id => 'test_change_profile',
+              :id => 'test_profile',
             },
 
           },          
