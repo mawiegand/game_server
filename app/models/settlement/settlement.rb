@@ -38,7 +38,14 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
   }
-
+  
+  scope :deletable, where([
+    '(last_takeover_at IS NULL AND created_at < ?) OR last_takeover_at < ?',
+    Time.now - 10.days,
+    # Time.now.beginning_of_day - 5.days,
+    Time.now.beginning_of_day - 5.seconds,
+  ])
+  
   after_initialize :init
   
   before_save :manage_queues_as_needed
@@ -190,6 +197,8 @@ class Settlement::Settlement < ActiveRecord::Base
     self.alliance_tag = character.alliance_tag
     
     Military::Army.create_garrison_at(self)
+    
+    self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
     
     # settlement UNBLOCK

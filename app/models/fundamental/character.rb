@@ -25,6 +25,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id", :inverse_of => :character
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
+  has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
   
   has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
@@ -68,6 +69,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   after_find  :update_experience_if_necessary
   
+  scope :npc,        where(['(npc = ?)', true])
   scope :non_npc,    where(['(npc IS NULL OR npc = ?)', false])
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
@@ -82,28 +84,30 @@ class Fundamental::Character < ActiveRecord::Base
   
   scope :churned,          where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks])
   
+  scope :not_deleted, where(deleted_from_game: false)
+  
   # used by player deletion script
-  scope :getting_inactive, where([
+  scope :shortly_before_deletable, not_deleted.where([
+    '? < last_login_at AND last_login_at < ?', 
+    Time.now.beginning_of_day - 130.hours,  # TODO days   ---> config!
+    Time.now.beginning_of_day - 129.hours,  # TODO days
+  ])
+  # scope :deletable, where('id = 3')
+  scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
     '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
     Time.now - 1.days,
-    Time.now.beginning_of_day - 29.hours,  # TODO days
+    Time.now.beginning_of_day - 130.hours,  # TODO days
   ])
-  scope :inactive, where('id = 3')
-  # scope :inactive,         where([
-    # '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
-    # Time.now - 1.days,
-    # Time.now.beginning_of_day - 30.hours,  # TODO days
-  # ])
 
-  scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
-  scope :retention_played_too_short, where([
+  scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
+  scope :retention_played_too_short, not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "datetime('now', '-? hours') < created_at AND created_at < datetime('now', '-? hours') AND last_login_at < datetime('now', '-? hours')" :
       "NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'",
     44, 24, 20  # 44h ago > created > 24h ago and last login > 20h ago 
   ])
   # Fundamental::Character.where(["NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'", 44, 24, 20])  
-  scope :retention_paused_too_long,  where([
+  scope :retention_paused_too_long,  not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "created_at < datetime('now', '-? hours') AND datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
       "created_at < NOW() - INTERVAL '? hour'   AND NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
@@ -111,7 +115,7 @@ class Fundamental::Character < ActiveRecord::Base
   ])
   # Fundamental::Character.where(["created_at < NOW() - INTERVAL '? hour'  AND NOW() - INTERVAL '? hour'  < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ", 44, 49, 48])
   
-  scope :retention_getting_inactive, where([
+  scope :retention_getting_inactive, not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
       "NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
@@ -914,7 +918,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     # hand over home settlement to npc
-    self.home_settlement.abandon_base
+    self.home_location.settlement.abandon_base
     
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?

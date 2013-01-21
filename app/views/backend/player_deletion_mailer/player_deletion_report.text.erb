@@ -3,15 +3,30 @@ and finished running at <%= @report[:finished_at] %>.
 
 It removed a total of <%= @report[:deleted_players].count %> inactive players today:
 
+  id     |  character name  | last login at
+--------+------------------+---------------------------
 <% @report[:deleted_players].each do |player| %>
-  <%= player.name %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(14) %>  |  <%= player.last_login_at %>
 <% end %>
 
-Tomorrow will be removed a total of <%= @report[:players_getting_inactive].count %> inactive players:
 
-<% @report[:players_getting_inactive].each do |player| %>
-  <%= player.name %>
+Tomorrow will be removed a total of <%= @report[:shortly_before_deletable_players].count %> inactive players:
+
+  id     |  character name  | last login at
+--------+------------------+---------------------------
+<% @report[:shortly_before_deletable_players].each do |player| %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(14) %>  |  <%= player.last_login_at %>
 <% end %>
+
+
+It removed a total of <%= @report[:deleted_settlements].count %> inactive npc settlements today:
+
+  id     |  settlement name           | last takeover at
+--------+----------------------------+---------------------------
+<% @report[:deleted_settlements].each do |settlement| %>
+  <%= settlement.id.to_s.rjust(5) %>  |  <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
+<% end %>
+
 
 Whack On!
 
