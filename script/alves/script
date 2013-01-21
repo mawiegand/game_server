@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+#
+# Retrieving data 
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+
+STDOUT.sync = true
+t = Time.now.to_i
+
+#
+# Data from the real players:
+#
+print "Getting real players data..."
+s1 = Fundamental::Character.select("identifier, gender, premium_account, created_at, login_count, playtime, credits_spent_total, gross").to_yaml
+
+print "saving results to file..."
+f1 = File.open("f1_" + t.to_s() + ".txt",'w')
+f1.print(s1)
+f1.close()
+puts "done"
+
+
+#
+# Data from partner site information
+#
+print "Getting partner site data..."
+s2 = Backend::PartnerSite.to_yaml
+
+print "saving results to file..."
+f2 = File.open("f2_" + t.to_s() + ".txt",'w')
+f2.print(s2)
+f2.close()
+puts "done"
+
+
+#
+# Data from money transactions
+#
+print "Getting money transactions data..."
+s3 = Shop::MoneyTransaction.select("uid, updateTstamp, user_id, method, country, offer_id, gross, referrer_id, campaign_id, payer_country, partner_user_id").to_yaml
+
+print "saving results to file..."
+f3 = File.open("f3_" + t.to_s() + ".txt",'w')
+f3.print(s3)
+f3.close()
+puts "done"
