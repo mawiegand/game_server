@@ -28,6 +28,7 @@ class Settlement::Settlement < ActiveRecord::Base
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
+  scope :base, where(type_id: TYPE_HOME_BASE)
   scope :highest_tax_rate, order('tax_rate DESC, id ASC')
   scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
   scope :highest_normalized_income, lambda {
@@ -217,6 +218,26 @@ class Settlement::Settlement < ActiveRecord::Base
   def abandon_fortress
     
     # TODO test if fortress
+     
+    old_score = self.score
+    
+    neandertaler = Fundamental::Character.find_by_id(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 200
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def abandon_base
+    
+    # TODO test if base
      
     old_score = self.score
     

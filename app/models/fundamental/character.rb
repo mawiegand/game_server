@@ -903,30 +903,31 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
 
   def delete_from_game
-    # hand over fortresses and outposts to npcs
+    # hand over fortresses to npcs
     self.fortresses.each do |fortress|
       fortress.abandon_fortress
     end
     
+    # hand over outposts to npcs
     self.outposts.each do |outpost|
       outpost.abandon_outpost
     end
+    
+    # hand over home settlement to npc
+    self.home_settlement.abandon_base
     
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?
     
     # delete base settlement
-    base_settlement = self.home_location.settlement
-    base_settlement.remove_from_map
+    # base_settlement = self.home_location.settlement
+    # base_settlement.remove_from_map
     
     # remove settlement from its location 
-    self.home_location.settlement = nil
+    # self.home_location.settlement = nil
     
     # recount base settlements in region
-    self.home_location.region.recount_settlements
-    
-    # remove home location from character
-    self.home_location = nil
+    # self.home_location.region.recount_settlements
     
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access
@@ -991,6 +992,10 @@ class Fundamental::Character < ActiveRecord::Base
     
     self.deleted_from_game = true
     self.save
+    
+    logger.debug '----------------------------------------------------------'
+    logger.debug 'check_consistency'
+    logger.debug '----------------------------------------------------------'
     
     check_consistency
   end
