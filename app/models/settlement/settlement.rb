@@ -302,9 +302,13 @@ class Settlement::Settlement < ActiveRecord::Base
     self.location.remove_settlement
     
     # trigger before_save and after_save handler
-    self.save
+    
+    logger.debug '----------------------------------------------------------'
+    logger.debug 'check_consistency'
+    logger.debug '----------------------------------------------------------'
     
     self.check_consistency
+    self.save
     
     # destroy settement itself
     self.destroy
@@ -395,8 +399,6 @@ class Settlement::Settlement < ActiveRecord::Base
   # recalculation is triggered independently of whether or not resource attributes
   # have been changed.
   def check_consistency
-    
-    return true if owner.deleted_from_game?
     
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in settlement #{self.id}: #{self.name} of character #{self.owner_id}.")
 
