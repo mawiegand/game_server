@@ -29,7 +29,7 @@ Fundamental::Character.non_npc.deletable.each do |c|
     @report[:deleted_players] << c
     
     # call delete method of character
-    # c.delete_from_game
+    c.delete_from_game
     
     deleted_count += 1
     print "." 
