@@ -19,6 +19,7 @@ module Util
         'GREATER' => 'greater',
         'NOT'     => 'not',
         'AND'     => 'and',
+        'OR'      => 'or',
       }
       
       
