@@ -17,7 +17,24 @@
     <Flavour lang="en_US">
       <p>Flavour text of artifact 1</p>
     </Flavour>
+    <Initiation>
+      <InitiationDescription initiated="false">
+        Beschreibung noch nicht eingeweiht
+      </InitiationDescription>
+      <InitiationDescription initiated="true">
+        Beschreibung eingeweiht
+      </InitiationDescription>
+      <InitiationCost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationTime shortenable="true">3600</InitiationTime>
+    </Initiation>
     <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+    <ArtifactAbilities>
+      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+      <ExperienceProduction>20*RANK</ExperienceProduction>
+      <LikeProductionBonus>2.0</LikeProductionBonus>
+    </ArtifactAbilities>
   </Artifact>
   <Artifact id="artifact_1">
     <Name lang="de_DE">Artefaktname 2</Name>
