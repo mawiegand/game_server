@@ -90,14 +90,14 @@ class Fundamental::Character < ActiveRecord::Base
   # used by player deletion script
   scope :shortly_before_deletable, not_deleted.where([
     '? < last_login_at AND last_login_at < ?', 
-    Time.now.beginning_of_day - 130.hours,
-    Time.now.beginning_of_day - 129.hours,
+    Time.now.beginning_of_day - 30.days,
+    Time.now.beginning_of_day - 29.days,
   ])
   # scope :deletable, where('id = 3')
   scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
     '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
     Time.now - 1.days,
-    Time.now.beginning_of_day - 130.hours
+    Time.now.beginning_of_day - 30.days
   ]).order('last_login_at ASC')
 
   scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
