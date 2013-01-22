@@ -29,6 +29,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
   scope :base, where(type_id: TYPE_HOME_BASE)
+  scope :outpost, where(type_id: TYPE_OUTPOST)
+  
   scope :highest_tax_rate, order('tax_rate DESC, id ASC')
   scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
   scope :highest_normalized_income, lambda {
