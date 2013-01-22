@@ -428,6 +428,8 @@ class Settlement::Settlement < ActiveRecord::Base
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
 
+    check_and_repair_armies_count
+
     n_trading_carts = recalc_trading_carts
     check_and_apply_trading_carts(n_trading_carts)
     check_and_repair_used_trading_carts
@@ -622,6 +624,13 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.command_points != cp) 
         logger.warn(">>> COMMAND POINTS RECALC DIFFERS. Old: #{self.command_points} Corrected: #{cp}.")
         self.command_points = cp
+      end
+    end
+    
+    def check_and_repair_armies_count
+      if (self.armies_count != self.armies.count) 
+        logger.warn(">>> ARMIES COUNT RECALC DIFFERS. Old: #{self.armies_count} Corrected: #{self.armies.count}.")
+        Settlement::Settlement.reset_counters(self.id, :armies)
       end
     end
 
