@@ -305,7 +305,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     logger.debug '----------------------------------------------------------'
     logger.debug 'check_consistency'
-    logger.debug '--------------------  --------------------------------------'
+    logger.debug '----------------------------------------------------------'
     
     self.check_consistency
     self.save

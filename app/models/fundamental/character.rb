@@ -98,7 +98,7 @@ class Fundamental::Character < ActiveRecord::Base
     '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
     Time.now - 1.days,
     Time.now.beginning_of_day - 130.hours
-  ])
+  ]).order('last_login_at ASC')
 
   scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, not_deleted.where([
