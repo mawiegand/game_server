@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<ArtifactTypes>
+  <Artifact id="artifact_0">
+    <Name lang="de_DE">Artefaktname 1</Name>
+    <Name lang="en_US">Artifact Name 1</Name>
+    <Description lang="de_DE">
+      <p>Beschreibung des Artefakts 1</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 1</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Flavourtext des Artefakts 1</p>
+    </Flavour> 
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 1</p>
+    </Flavour>
+    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+  </Artifact>
+  <Artifact id="artifact_1">
+    <Name lang="de_DE">Artefaktname 2</Name>
+    <Name lang="en_US">Artifact Name 2</Name>
+    <Description lang="de_DE">
+      <p>Beschreibung des Artefakts 2</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 2</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Flavourtext des Artefakts 2</p>
+    </Flavour> 
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact</p>
+    </Flavour>
+    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+  </Artifact>
+  <Artifact id="artifact_2">
+    <Name lang="de_DE">Artefaktname 3</Name>
+    <Name lang="en_US">Artifact Name 3</Name>
+    <Description lang="de_DE">
+      <p>Beschreibung des Artefakts 3</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 3</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Flavourtext des Artefakts 3</p>
+    </Flavour> 
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 3</p>
+    </Flavour>
+    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+  </Artifact>
+</ArtifactTypes>

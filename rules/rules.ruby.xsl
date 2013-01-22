@@ -79,7 +79,10 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :victory_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula,
+    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
+    :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
@@ -97,10 +100,12 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
+      'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
+      'artifact_count'              => artifact_count,
     }
   end
   
@@ -167,6 +172,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
         :alliance_max_members => <xsl:value-of select="//General/AllianceMaxMembers" />,
+        :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
@@ -175,6 +181,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
         :character_ranks => {
@@ -673,8 +680,42 @@ end
           :condition   => {
 <xsl:if test="RequiredRegionsRatio">
             :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>',
-            :duration => <xsl:value-of select="RequiredRegionsRatio/@duration"/>,
 </xsl:if>
+            :duration => <xsl:value-of select="@duration"/>,
+          },
+</xsl:template>
+
+
+
+
+<xsl:template match="ArtifactTypes">
+# ## ARTIFACT TYPES ########################################################
+  
+      :artifact_types => [  # ALL ARTIFACT TYPES
+<xsl:for-each select="Artifact">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+          :amount      => '<xsl:apply-templates select="Amount" />',              
+<xsl:apply-templates select="Condition" />
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF ARTIFACT TYPES
+</xsl:template>
+
+
+<xsl:template match="Condition">
+          :condition   => {
+<xsl:if test="RequiredRegionsRatio">
+            :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>',
+</xsl:if>
+            :duration => <xsl:value-of select="@duration"/>,
           },
 </xsl:template>
 
