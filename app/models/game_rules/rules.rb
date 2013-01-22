@@ -32,7 +32,10 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :victory_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula,
+    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
+    :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
@@ -50,10 +53,12 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
+      'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
+      'artifact_count'              => artifact_count,
     }
   end
   
@@ -124,6 +129,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '2*LEVEL',
         :alliance_max_members => 80,
+        :artifact_count => 3,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -5135,6 +5141,80 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Trainingshöhle
+        {               #   Artefaktständer
+          :id          => 28, 
+          :symbolic_id => :building_artifact_stand,
+					:category    => 5,
+          :db_field    => :building_artifact_stand,
+          :name        => {
+            
+            :de_DE => "Artefaktständer",
+  
+            :en_US => "Artefact stand",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "<p>Flavortext</p>",
+  
+            :en_US => "<p>Flavor text</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Beschreibung</p>",
+  
+            :en_US => "<p>Description</p>",
+                
+          },
+          :hidden      => 0,
+
+	        :population  => "100*LEVEL",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            2 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*5+EQUAL(LEVEL,3)*12+EQUAL(LEVEL,4)*50+EQUAL(LEVEL,5)*400+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*20700+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+    
+          },
+
+        },              #   END OF Artefaktständer
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -5945,6 +6025,72 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
 
+# ## ARTIFACT TYPES ########################################################
+  
+      :artifact_types => [  # ALL ARTIFACT TYPES
+
+        {               #   Artefaktname 1
+          :id          => 0, 
+          :symbolic_id => :artifact_0,
+          :name        => {
+            
+            :de_DE => "Artefaktname 1",
+  
+            :en_US => "Artifact Name 1",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Beschreibung des Artefakts 1</p>",
+  
+            :en_US => "<p>Description of artifact 1</p>",
+                
+          },
+          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+
+        },              #   END OF Artefaktname 1
+        {               #   Artefaktname 2
+          :id          => 1, 
+          :symbolic_id => :artifact_1,
+          :name        => {
+            
+            :de_DE => "Artefaktname 2",
+  
+            :en_US => "Artifact Name 2",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Beschreibung des Artefakts 2</p>",
+  
+            :en_US => "<p>Description of artifact 2</p>",
+                
+          },
+          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+
+        },              #   END OF Artefaktname 2
+        {               #   Artefaktname 3
+          :id          => 2, 
+          :symbolic_id => :artifact_2,
+          :name        => {
+            
+            :de_DE => "Artefaktname 3",
+  
+            :en_US => "Artifact Name 3",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Beschreibung des Artefakts 3</p>",
+  
+            :en_US => "<p>Description of artifact 3</p>",
+                
+          },
+          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+
+        },              #   END OF Artefaktname 3
+      ],                # END OF ARTIFACT TYPES
+
 # ## VICTORY TYPES ########################################################
   
       :victory_types => [  # ALL VICTORY TYPES
@@ -5970,11 +6116,35 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :condition   => {
 
             :required_regions_ratio => '1+(0.005*(MIN(88-DAYS,0)))',
-            :duration => 5,
 
+            :duration => 5,
           },
 
         },              #   END OF Herrschaftssieg
+        {               #   Artefaktsieg
+          :id          => 1, 
+          :symbolic_id => :victory_artifact,
+          :name        => {
+            
+            :de_DE => "Artefaktsieg",
+  
+            :en_US => "Artifact Victory",
+                
+          },
+          :description => {
+            
+            :de_DE => "Beschreibung des Artefaktsiegs",
+  
+            :en_US => "Description of artifatc victory",
+                
+          },
+
+          :condition   => {
+
+            :duration => 5,
+          },
+
+        },              #   END OF Artefaktsieg
       ],                # END OF VICTORY TYPES
 
 # ## QUEUE TYPES #############################################################
