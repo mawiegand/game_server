@@ -56,7 +56,7 @@ puts "DELETE PLAYERS: finished fetching players becoming deletable"
 # get and remove all inactive npc settlements
 print "DELETE PLAYERS: removing unused npc settlements "
 Fundamental::Character.npc.each do |c|
-  c.settlements.deletable.each do |s|
+  c.settlements.deletable(now).each do |s|
     @report[:removed_settlements] << s
     
     # call remove method of settlement
@@ -71,9 +71,9 @@ puts "DELETE PLAYERS: finished removing unused npc settlements"
 
 
 # send out status mail if necessary
-if @report[:deleted_players].count > 0 or @report[:shortly_before_deletable_players].count > 0 or @report[:removed_settlements].count > 0
+if true || @report[:deleted_players].count > 0 or @report[:shortly_before_deletable_players].count > 0 or @report[:removed_settlements].count > 0
   puts "DELETE PLAYERS: mail report"
-  @report[:finished_at] = Time.now
+  @report[:finished_at] = now
   Backend::PlayerDeletionMailer.player_deletion_report(@report).deliver
 else
   puts "DELETE PLAYERS: mail report"

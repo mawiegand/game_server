@@ -280,6 +280,9 @@ class Settlement::Settlement < ActiveRecord::Base
     #prevent fortresses from being removed
     return false if this.fortress?
     
+    #prevent settlements of regular characters from being removed
+    return false unless this.owner.npc?
+    
     # settlement BLOCK
     logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
     
