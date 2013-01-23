@@ -11,9 +11,9 @@ It deleted the oldest <%= @report[:deleted_players].count %> of <%= @report[:del
 <% end %>
 <% else %>
 No players were deleted.
+
+
 <% end %>
-
-
 <% if @report[:not_deleted_players].count > 0 %>
 The following <%= @report[:not_deleted_players].count %> inactive players were not deleted:
 
@@ -22,9 +22,9 @@ The following <%= @report[:not_deleted_players].count %> inactive players were n
 <% @report[:not_deleted_players].each do |player| %>
   <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
 <% end %>
+
+
 <% end %>
-
-
 <% if @report[:shortly_before_deletable_players].count > 0 %>
 In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_players].count %> inactive players:
 
@@ -35,9 +35,9 @@ In the next 24 hours will be deleted a total of <%= @report[:shortly_before_dele
 <% end %>
 <% else %>
 No players will be deleted in the next 24 hours.
+
+
 <% end %>
-
-
 <% if @report[:removed_settlements].count > 0 %>
 It removed a total of <%= @report[:removed_settlements].count %> inactive npc settlements:
 
@@ -48,9 +48,9 @@ It removed a total of <%= @report[:removed_settlements].count %> inactive npc se
 <% end %>
 <% else %>
 No settlements were removed.
+
+
 <% end %>
-
-
 Whack On!
 
 - cron
