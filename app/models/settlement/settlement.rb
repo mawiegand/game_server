@@ -210,8 +210,8 @@ class Settlement::Settlement < ActiveRecord::Base
     self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
     
-    self.location.owner = character
-    self.location.save
+    # self.location.owner = character
+    # self.location.save
     # settlement UNBLOCK
   end
   
