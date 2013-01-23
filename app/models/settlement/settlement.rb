@@ -41,12 +41,10 @@ class Settlement::Settlement < ActiveRecord::Base
     order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
   }
   
-  scope :deletable, where([
-    '(last_takeover_at IS NULL AND created_at < ?) OR last_takeover_at < ?',
-    Time.now - 10.days,
-    # Time.now.beginning_of_day - 5.days,
-    Time.now.beginning_of_day - 5.seconds,
-  ])
+  scope :deletable, lambda { |now| where([
+    '(type_id = ? OR type_id = ?) AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?)',
+    TYPE_HOME_BASE, TYPE_OUTPOST, now - 10.days, now - 5.days,
+  ]).order('last_takeover_at ASC') }
   
   after_initialize :init
   
@@ -79,7 +77,9 @@ class Settlement::Settlement < ActiveRecord::Base
     []
   end  
 
-
+  def fortress?
+    this.type_id == TYPE_FORTRESS
+  end
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -211,6 +211,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.save                         # triggers before_save and after_save handlers that do all the work
     
     self.location.owner = character
+    self.location.save
     # settlement UNBLOCK
   end
   
@@ -275,6 +276,10 @@ class Settlement::Settlement < ActiveRecord::Base
   end
 
   def remove_from_map
+    
+    #prevent fortresses from being removed
+    return false if this.fortress?
+    
     # settlement BLOCK
     logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
     
