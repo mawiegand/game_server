@@ -40,6 +40,7 @@ class Fundamental::CharactersController < ApplicationController
           @fundamental_characters = [] if @fundamental_characters.nil?  # necessary? or ok to send 'null' ?
           render json: @fundamental_characters.map do |character| 
             role = determine_access_role(character.id, character.alliance_id)
+            logger.debug "Access with ROLE: #{ role }"
             character.sanitized_hash(role) 
           end
         end
