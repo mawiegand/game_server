@@ -374,7 +374,7 @@ class Military::Battle < ActiveRecord::Base
       # winner faction: calculate winner experience according to new function
       winner_faction.participants.each do |participant|
         participant_round_results = participant.results.where(:round_id => round.id)
-        unless participant_round_results.empty?
+        if !participant_round_results.empty? && !participant.character.deleted_from_game # prevent creating new results if character is already deleted from game
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.units_count

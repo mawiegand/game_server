@@ -690,7 +690,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -872,12 +872,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_profile',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -965,13 +959,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_army_move',
-
-          },
-
-          :successor_quests => [11, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1166,7 +1154,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_settlementowner',
+            :quest => 'quest_army_move',
 
           },
 
@@ -1898,7 +1886,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [9, ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -9661,7 +9649,7 @@ class Tutorial::Tutorial
             
             :en_US => "Kill 57850 units.",
   
-            :de_DE => "Besiege 1850 Einheiten",
+            :de_DE => "Besiege 57850 Einheiten",
                 
           },
           :flavour => {
