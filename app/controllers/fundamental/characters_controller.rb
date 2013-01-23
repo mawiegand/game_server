@@ -43,7 +43,6 @@ class Fundamental::CharactersController < ApplicationController
             logger.debug "Access with ROLE: #{ role }"
             character.sanitized_hash(role) 
           end
-          logger.debug "SANITIZED: #{sanitized}"
           render json: sanitized
         end
       end
