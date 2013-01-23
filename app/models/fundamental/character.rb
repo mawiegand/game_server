@@ -26,6 +26,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id", :inverse_of => :character
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
+  has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
   
   has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
@@ -69,6 +70,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   after_find  :update_experience_if_necessary
   
+  scope :npc,        where(['(npc = ?)', true])
   scope :non_npc,    where(['(npc IS NULL OR npc = ?)', false])
   scope :non_banned, where(['(banned IS NULL OR banned = ?)', false])
   scope :platinum,   where(['premium_expiration IS NOT NULL AND premium_expiration > ?', Rails.env.development? || Rails.env.test? ? 'datetime("now")' : 'NOW()'])
@@ -82,16 +84,43 @@ class Fundamental::Character < ActiveRecord::Base
   scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
   
   scope :churned,          where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks])
+  
+  scope :not_deleted, where(deleted_from_game: false)
+  
+  # used by player deletion script
+  # scope :shortly_before_deletable, not_deleted.where([
+    # '? < last_login_at AND last_login_at < ?', 
+    # Time.now.beginning_of_day - 30.days + 12.hours,
+    # Time.now.beginning_of_day - 29.days + 12.hours,
+  # ]).order('last_login_at ASC')
+  scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
+    '? < last_login_at AND last_login_at < ?', 
+    now - 30.days + 12.hours,
+    now - 29.days + 12.hours,
+  ]).order('last_login_at ASC') }
 
-  scope :retention_no_mail_pending,  where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
-  scope :retention_played_too_short, where([
+  # scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
+    # '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
+    # Time.now - 1.days,
+    # Time.now.beginning_of_day - 30.days
+  # ]).order('last_login_at ASC')
+  scope :deletable, lambda { |now| not_deleted.where([                                        # older than 30 days or no login and older than 1 day
+    '(last_login_at IS NULL AND updated_at < ?) OR last_login_at < ?',
+    now - 1.days,
+    now - 30.days + 12.hours
+  ]).order('last_login_at ASC') }
+  
+  
+  #used by retention mail
+  scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
+  scope :retention_played_too_short, not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "datetime('now', '-? hours') < created_at AND created_at < datetime('now', '-? hours') AND last_login_at < datetime('now', '-? hours')" :
       "NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'",
     44, 24, 20  # 44h ago > created > 24h ago and last login > 20h ago 
   ])
   # Fundamental::Character.where(["NOW() - INTERVAL '? hour'   < created_at AND created_at < NOW() - INTERVAL '? hour'   AND last_login_at < NOW() - INTERVAL '? hour'", 44, 24, 20])  
-  scope :retention_paused_too_long,  where([
+  scope :retention_paused_too_long,  not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "created_at < datetime('now', '-? hours') AND datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
       "created_at < NOW() - INTERVAL '? hour'   AND NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
@@ -99,7 +128,7 @@ class Fundamental::Character < ActiveRecord::Base
   ])
   # Fundamental::Character.where(["created_at < NOW() - INTERVAL '? hour'  AND NOW() - INTERVAL '? hour'  < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ", 44, 49, 48])
   
-  scope :retention_getting_inactive, where([
+  scope :retention_getting_inactive, not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
       "datetime('now', '-? hours') < last_login_at AND last_login_at < datetime('now', '-? hours')" :
       "NOW() - INTERVAL '? hour'   < last_login_at AND last_login_at < NOW() - INTERVAL '? hour' ",
@@ -147,6 +176,8 @@ class Fundamental::Character < ActiveRecord::Base
     sign_up.nil? ? nil : sign_up.referer
   end
   
+  # updates the playtime of this character. called by the current_character
+  # methods during authorization of a request.
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
       difference = Time.now - (self.last_request_at ||Time.now)
@@ -269,7 +300,7 @@ class Fundamental::Character < ActiveRecord::Base
 
       Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
         
-      character.base_location_id = location.id
+      character.base_location_id = location.id              # TODO is this the home_location_id?
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
       
@@ -310,15 +341,15 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.save
     end
     
-    return character 
+    character 
   end
   
   def change_name_transaction(name)
     raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
-    freeChange = (self.name_change_count || 0) < 2 
+    free_change = (self.name_change_count || 0) < 2 
     
-    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    if !free_change && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the name change."
     end
 
@@ -341,14 +372,14 @@ class Fundamental::Character < ActiveRecord::Base
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
-    return self
+    self
   end
   
   def change_gender_transaction(newGender)
     
-    freeChange = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
+    free_change = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
     
-    if !freeChange && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    if !free_change && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
       raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
     end
     
@@ -361,7 +392,7 @@ class Fundamental::Character < ActiveRecord::Base
         self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
     end
   
-    return self
+    self
   end  
   
   def change_password_transaction(password)
@@ -618,7 +649,7 @@ class Fundamental::Character < ActiveRecord::Base
   def propagate_kills_changes
     kills_change = self.changes[:kills]
     if !kills_change.nil?
-      if !self.ranking.nil?
+      if !self.ranking.nil? && !self.ranking.frozen?
         self.ranking.kills = kills_change[1]
         self.ranking.save
       end
@@ -629,7 +660,7 @@ class Fundamental::Character < ActiveRecord::Base
   def propagate_score_changes
     score_change = self.changes[:score]
     if !score_change.nil?
-      if !self.ranking.nil?
+      if !self.ranking.nil? && !self.ranking.frozen? 
         self.ranking.overall_score = score_change[1]
         self.ranking.save
       end
@@ -638,7 +669,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_like_changes
-    if self.received_likes_count_changed? && !self.ranking.nil?
+    if self.received_likes_count_changed? && !self.ranking.nil? && !self.ranking.frozen?
       self.ranking.likes = received_likes_count || 0
       self.ranking.save
     end
@@ -646,7 +677,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_dislike_changes
-    if self.received_dislikes_count_changed? && !self.ranking.nil?
+    if self.received_dislikes_count_changed? && !self.ranking.nil? && !self.ranking.frozen?
       self.ranking.dislikes = received_dislikes_count || 0
       self.ranking.save
     end
@@ -654,7 +685,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def propagate_victory_changes
-    if victories_changed? && !self.ranking.nil?
+    if victories_changed? && !self.ranking.nil? && !self.ranking.frozen?
       self.ranking.victories = victories || 0
       self.ranking.save
     end
@@ -662,7 +693,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_defeat_changes
-    if defeats_changed? && !self.ranking.nil?
+    if defeats_changed? && !self.ranking.nil? && !self.ranking.frozen?
       self.ranking.defeats = defeats || 0
       self.ranking.save
     end
@@ -672,7 +703,7 @@ class Fundamental::Character < ActiveRecord::Base
   def propagate_fortress_count_changes
     fortress_count_change = self.changes[:fortress_count]
     if !fortress_count_change.nil?
-      if !self.ranking.nil?
+      if !self.ranking.nil? && !self.ranking.frozen?
         self.ranking.num_fortress = (self.ranking.num_fortress || 0) + (fortress_count_change[1] || 0) - (fortress_count_change[0] || 0)
         self.ranking.save
       end
@@ -688,7 +719,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def check_consistency_sometimes
     return         if self.login_count.nil? || self.login_count < 3   # do NOT check consistency on character creation
-    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)  
+    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['character_recalc_probability']       # do the check only seldomly (determined by random event)
     check_consistency
   end  
 
@@ -892,6 +923,110 @@ class Fundamental::Character < ActiveRecord::Base
       self.received_dislikes_count = dislikes_count
     end    
   end
+
+  # ##########################################################################
+  #
+  #   DELETION OF CHARACTERS FROM GAME
+  #
+  # ##########################################################################
+
+  def delete_from_game
+    # hand over fortresses to npcs
+    self.fortresses.each do |fortress|
+      fortress.abandon_fortress
+    end
+    
+    # hand over outposts to npcs
+    self.outposts.each do |outpost|
+      outpost.abandon_outpost
+    end
+    
+    # hand over home settlement to npc
+    self.home_location.settlement.abandon_base
+    
+    # leave alliance
+    self.alliance.remove_character(current_character) unless self.alliance.blank?
+    
+    # delete base settlement
+    # base_settlement = self.home_location.settlement
+    # base_settlement.remove_from_map
+    
+    # remove settlement from its location 
+    # self.home_location.settlement = nil
+    
+    # recount base settlements in region
+    # self.home_location.region.recount_settlements
+    
+    # remove from character ranking
+    # no need to recalc ranking as the renking will always be sorted on access
+    self.ranking.destroy
+    
+    # remove tutorial state and quests (could be optional to avoid problems with stats)
+    self.tutorial_state.quests.destroy unless self.tutorial_state.quests.nil?
+    self.tutorial_state.destroy
+    
+    # delete retention_mails
+    self.retention_mails.destroy_all
+    self.last_retention_mail = nil
+    
+    # delete battle_results
+    self.battle_results.destroy_all unless self.battle_results.nil?
+    # armies are handled by settlement.remove_from_map
+        
+    # remove resource pool
+    self.resource_pool.destroy 
+    
+    # revoke access from chat rooms
+    # cmd = Messaging::JabberCommand.revoke_access(self, 'global') 
+    # cmd.character = self
+    # cmd.save
+    # cmd = Messaging::JabberCommand.revoke_access(self, 'handel') 
+    # cmd.character = self
+    # cmd.save
+    # cmd = Messaging::JabberCommand.revoke_access(self, 'plauderhöhle') 
+    # cmd.character = self
+    # cmd.save
+    # cmd = Messaging::JabberCommand.revoke_access(self, 'help') 
+    # cmd.character = self
+    # cmd.save
+    
+    # alle attribute löschen
+    self.exp = 0
+    self.skill_points = 0
+    self.base_location_id = nil
+    self.base_region_id = nil
+    self.base_node_id = nil
+    self.character_queue_research_unlock_count = 0
+    self.character_unlock_diplomacy_count = 0
+    self.character_unlock_alliance_creation_count = 0
+    self.score = 0
+    self.settlement_points_total = 1
+    self.settlement_points_used = 0
+    self.mundane_rank = 0
+    self.sacred_rank = 0
+    self.notified_mundane_rank = 0
+    self.notified_sacred_rank = 0
+    self.staff_roles = nil
+    self.last_retention_mail_id = nil
+    self.last_retention_mail_sent_at = nil
+    self.kills = 0
+    self.victories = 0
+    self.defeats = 0
+    self.fortress_count = 0
+    self.exp_production_rate = 0.0
+    self.exp_building_production_rate = 0.0
+    self.production_updated_at = nil
+    self.same_ip = nil?
+    
+    self.deleted_from_game = true
+    self.save
+    
+    logger.debug '----------------------------------------------------------'
+    logger.debug 'check_consistency'
+    logger.debug '----------------------------------------------------------'
+    
+    check_consistency
+  end
   
   protected
   
@@ -904,8 +1039,6 @@ class Fundamental::Character < ActiveRecord::Base
       self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
       self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points
     end
-  
-  
 end
 
 

@@ -1,0 +1,56 @@
+The player deletion script was started at <%= @report[:started_at] %> 
+and finished running at <%= @report[:finished_at] %>.
+
+<% if @report[:deleted_players].count > 0 %>
+It deleted the oldest <%= @report[:deleted_players].count %> of <%= @report[:deleted_players].count + @report[:not_deleted_players].count %> inactive players:
+
+  id     |  character name            | last login at
+--------+----------------------------+---------------------------
+<% @report[:deleted_players].each do |player| %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+<% end %>
+<% else %>
+No players were deleted.
+<% end %>
+
+
+<% if @report[:not_deleted_players].count > 0 %>
+The following <%= @report[:not_deleted_players].count %> inactive players were not deleted:
+
+  id     |  character name            | last login at
+--------+----------------------------+---------------------------
+<% @report[:not_deleted_players].each do |player| %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+<% end %>
+
+
+<% end %>
+<% if @report[:shortly_before_deletable_players].count > 0 %>
+In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_players].count %> inactive players:
+
+  id     |  character name            | last login at
+--------+----------------------------+---------------------------
+<% @report[:shortly_before_deletable_players].each do |player| %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+<% end %>
+<% else %>
+No players will be deleted in the next 24 hours.
+<% end %>
+
+
+<% if @report[:removed_settlements].count > 0 %>
+It removed a total of <%= @report[:removed_settlements].count %> inactive npc settlements:
+
+  id     |  settlement name           | last takeover at
+--------+----------------------------+---------------------------
+<% @report[:removed_settlements].each do |settlement| %>
+  <%= settlement.id.to_s.rjust(5) %>  |  <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
+<% end %>
+<% else %>
+No settlements were removed.
+<% end %>
+
+
+Whack On!
+
+- cron

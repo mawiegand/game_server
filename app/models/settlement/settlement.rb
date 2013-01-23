@@ -28,6 +28,9 @@ class Settlement::Settlement < ActiveRecord::Base
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
+  scope :base, where(type_id: TYPE_HOME_BASE)
+  scope :outpost, where(type_id: TYPE_OUTPOST)
+  
   scope :highest_tax_rate, order('tax_rate DESC, id ASC')
   scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
   scope :highest_normalized_income, lambda {
@@ -37,7 +40,12 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
   }
-
+  
+  scope :deletable, lambda { |now| where([
+    '(type_id = ? OR type_id = ?) AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?)',
+    TYPE_HOME_BASE, TYPE_OUTPOST, now - 10.days, now - 5.days,
+  ]).order('last_takeover_at ASC') }
+  
   after_initialize :init
   
   before_save :manage_queues_as_needed
@@ -69,7 +77,9 @@ class Settlement::Settlement < ActiveRecord::Base
     []
   end  
 
-
+  def fortress?
+    this.type_id == TYPE_FORTRESS
+  end
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -196,15 +206,22 @@ class Settlement::Settlement < ActiveRecord::Base
     self.alliance_tag = character.alliance_tag
     
     Military::Army.create_garrison_at(self)
+    
+    self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
     
+    self.location.owner = character
+    self.location.save
     # settlement UNBLOCK
   end
   
   def abandon_outpost
+    
+    # TODO test if outpost 
+    
     old_score = self.score
     
-    neandertaler = Fundamental::Character.find(1)
+    neandertaler = Fundamental::Character.find_by_id(1)
     self.new_owner_transaction(neandertaler) 
     
     if old_score > 1000
@@ -216,6 +233,97 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def abandon_fortress
+    
+    # TODO test if fortress
+     
+    old_score = self.score
+    
+    neandertaler = Fundamental::Character.find_by_id(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 200
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def abandon_base
+    
+    # TODO test if base
+     
+    old_score = self.score
+    
+    neandertaler = Fundamental::Character.find_by_id(1)
+    self.new_owner_transaction(neandertaler) 
+    
+    if old_score > 1000
+      units = 200
+    elsif old_score > 100
+      units = 100
+    else
+      units = 10
+    end
+    
+    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
+  end
+
+  def remove_from_map
+    
+    #prevent fortresses from being removed
+    return false if this.fortress?
+    
+    #prevent settlements of regular characters from being removed
+    return false unless this.owner.npc?
+    
+    # settlement BLOCK
+    logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
+    
+    # destroy all trading carts
+    self.outgoing_trading_carts.destroy  unless self.outgoing_trading_carts.nil?
+    self.incoming_trading_carts.destroy  unless self.incoming_trading_carts.nil?
+    
+    # destroy all armies
+    self.garrison_army.destroy        unless self.garrison_army.nil?
+    self.armies.destroy_all           unless self.armies.nil?
+    
+    # destroy all construction queues and containing jobs  (destroy => true an die assoziation?)
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      queue.destroy
+    end
+
+    # destroy all training queues and containing jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      queue.destroy
+    end
+    
+    # destroy all slots
+    self.slots.destroy_all            unless self.slots.nil?
+    
+    # reset location (region doesn't need to be reset)
+    self.location.remove_settlement
+    
+    # trigger before_save and after_save handler
+    
+    logger.debug '----------------------------------------------------------'
+    logger.debug 'check_consistency'
+    logger.debug '----------------------------------------------------------'
+    
+    self.check_consistency
+    self.save
+    
+    # destroy settement itself
+    self.destroy
+    # settlement UNBLOCK
   end
 
   ############################################################################
@@ -302,6 +410,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # recalculation is triggered independently of whether or not resource attributes
   # have been changed.
   def check_consistency
+    
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in settlement #{self.id}: #{self.name} of character #{self.owner_id}.")
 
     productions = recalc_resource_production_base
@@ -331,6 +440,8 @@ class Settlement::Settlement < ActiveRecord::Base
     
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+
+    check_and_repair_armies_count
 
     n_trading_carts = recalc_trading_carts
     check_and_apply_trading_carts(n_trading_carts)
@@ -490,7 +601,6 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     weighted_production_rate
   end
-
     
   protected
   
@@ -527,6 +637,13 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.command_points != cp) 
         logger.warn(">>> COMMAND POINTS RECALC DIFFERS. Old: #{self.command_points} Corrected: #{cp}.")
         self.command_points = cp
+      end
+    end
+    
+    def check_and_repair_armies_count
+      if (self.armies_count != self.armies.count) 
+        logger.warn(">>> ARMIES COUNT RECALC DIFFERS. Old: #{self.armies_count} Corrected: #{self.armies.count}.")
+        Settlement::Settlement.reset_counters(self.id, :armies)
       end
     end
 
@@ -1119,7 +1236,7 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     def propagate_information_to_garrison
-      if self.garrison_size_max_changed? && !self.garrison_army.nil?
+      if self.garrison_size_max_changed? && !self.garrison_army.nil? && !self.garrison_army.frozen?
         self.garrison_army.size_max = self.garrison_size_max
         self.garrison_army.save
       end
