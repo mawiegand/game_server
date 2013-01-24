@@ -210,8 +210,8 @@ class Settlement::Settlement < ActiveRecord::Base
     self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
     
-    self.location.owner = character
-    self.location.save
+    # self.location.owner = character
+    # self.location.save
     # settlement UNBLOCK
   end
   
@@ -313,10 +313,6 @@ class Settlement::Settlement < ActiveRecord::Base
     self.location.remove_settlement
     
     # trigger before_save and after_save handler
-    
-    logger.debug '----------------------------------------------------------'
-    logger.debug 'check_consistency'
-    logger.debug '----------------------------------------------------------'
     
     self.check_consistency
     self.save
@@ -1104,7 +1100,7 @@ class Settlement::Settlement < ActiveRecord::Base
     # for performance reasons.
     def propagate_information_to_location
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.score_changed? || self.type_id_changed?) && !self.location.nil?
-        self.location.set_owner_and_alliance(owner_id, alliance_id)
+        self.location.set_owner_and_alliance(owner, alliance)
         
         # hotfix for issue #362 ->  (self.score || 0)
         self.location.settlement_score   = (self.score || 0)  if (self.location.settlement_score   != self.score)
@@ -1119,7 +1115,7 @@ class Settlement::Settlement < ActiveRecord::Base
     # for performance reasons.
     def propagate_information_to_region
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
-        self.region.set_owner_and_alliance(owner_id, alliance_id)
+        self.region.set_owner_and_alliance(owner, alliance)
 
         # hotfix for issue #362 ->  (self.score || 0)
         self.region.settlement_score   = (self.score || 0)    if (self.region.settlement_score   != self.score)

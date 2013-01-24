@@ -54,6 +54,8 @@ class Fundamental::RetentionMail < ActiveRecord::Base
       "In Deiner Siedlung geht's grad drunter und drüber"
     elsif mail_type == 'getting_inactive'
       "#{character.name}, #{credit_reward} 5D Platinum Credits - Hol dir deine Belohnung!"
+    elsif mail_type == 'getting_deleted'
+      "Morgen wird Deine Siedlung gelöscht"
     end
   end
   
@@ -75,6 +77,11 @@ class Fundamental::RetentionMail < ActiveRecord::Base
       "Du hast Dein Können bewiesen und unsere Siedlung aufgebaut, aber wir Siedlungsbewohner haben schon lange nichts mehr von Dir gehört. Deine Gegner haben Dich schon abgeschrieben, aber ich glaube weiterhin an Dich!\n\n" + 
       "Log Dich umgehend unter #{GAME_SERVER_CONFIG['base_url']} ein und zeig es ihnen! Als Unterstützung gebe ich Dir #{credit_reward} 5D Platinum Credits aus meiner persönlichen Schatzkiste.\n\n" +
       "Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n" +
+      "Der Chef\n\n"      
+    elsif mail_type == 'getting_deleted'
+      "Hallo #{character.name}!\n\n" +
+      "Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlung. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. Andernfalls ist Dein Dorf für Immer verloren.\n\n" +
+      "Log Dich in den nächsten 24 Stunden unter #{GAME_SERVER_CONFIG['base_url']} ein, sonst wird Deine Siedlung gelöscht.\n\n" +
       "Der Chef\n\n"      
     end
   end
