@@ -1021,10 +1021,6 @@ class Fundamental::Character < ActiveRecord::Base
     self.deleted_from_game = true
     self.save
     
-    logger.debug '----------------------------------------------------------'
-    logger.debug 'check_consistency'
-    logger.debug '----------------------------------------------------------'
-    
     check_consistency
   end
   
