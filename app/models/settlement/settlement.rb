@@ -29,6 +29,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
   scope :fortress, where(type_id: TYPE_FORTRESS)
   scope :base, where(type_id: TYPE_HOME_BASE)
+  scope :outpost, where(type_id: TYPE_OUTPOST)
+  
   scope :highest_tax_rate, order('tax_rate DESC, id ASC')
   scope :highest_defense_bonus, order('defense_bonus DESC, id ASC')
   scope :highest_normalized_income, lambda {
@@ -39,12 +41,10 @@ class Settlement::Settlement < ActiveRecord::Base
     order("((#{parts.join('+')})/(tax_rate*100)) DESC, id ASC")  
   }
   
-  scope :deletable, where([
-    '(last_takeover_at IS NULL AND created_at < ?) OR last_takeover_at < ?',
-    Time.now - 10.days,
-    # Time.now.beginning_of_day - 5.days,
-    Time.now.beginning_of_day - 5.seconds,
-  ])
+  scope :deletable, lambda { |now| where([
+    '(type_id = ? OR type_id = ?) AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?)',
+    TYPE_HOME_BASE, TYPE_OUTPOST, now - 10.days, now - 5.days,
+  ]).order('last_takeover_at ASC') }
   
   after_initialize :init
   
@@ -77,7 +77,9 @@ class Settlement::Settlement < ActiveRecord::Base
     []
   end  
 
-
+  def fortress?
+    self.type_id == TYPE_FORTRESS
+  end
 
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
@@ -208,6 +210,8 @@ class Settlement::Settlement < ActiveRecord::Base
     self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
     
+    # self.location.owner = character
+    # self.location.save
     # settlement UNBLOCK
   end
   
@@ -259,19 +263,16 @@ class Settlement::Settlement < ActiveRecord::Base
     
     neandertaler = Fundamental::Character.find_by_id(1)
     self.new_owner_transaction(neandertaler) 
-    
-    if old_score > 1000
-      units = 200
-    elsif old_score > 100
-      units = 100
-    else
-      units = 10
-    end
-    
-    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
   end
 
   def remove_from_map
+    
+    #prevent fortresses from being removed
+    return false if self.fortress?
+    
+    #prevent settlements of regular characters from being removed
+    return false unless self.owner.npc?
+    
     # settlement BLOCK
     logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
     
@@ -302,10 +303,6 @@ class Settlement::Settlement < ActiveRecord::Base
     self.location.remove_settlement
     
     # trigger before_save and after_save handler
-    
-    logger.debug '----------------------------------------------------------'
-    logger.debug 'check_consistency'
-    logger.debug '----------------------------------------------------------'
     
     self.check_consistency
     self.save
@@ -429,6 +426,8 @@ class Settlement::Settlement < ActiveRecord::Base
     
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
+
+    check_and_repair_armies_count
 
     n_trading_carts = recalc_trading_carts
     check_and_apply_trading_carts(n_trading_carts)
@@ -624,6 +623,13 @@ class Settlement::Settlement < ActiveRecord::Base
       if (self.command_points != cp) 
         logger.warn(">>> COMMAND POINTS RECALC DIFFERS. Old: #{self.command_points} Corrected: #{cp}.")
         self.command_points = cp
+      end
+    end
+    
+    def check_and_repair_armies_count
+      if (self.armies_count != self.armies.count) 
+        logger.warn(">>> ARMIES COUNT RECALC DIFFERS. Old: #{self.armies_count} Corrected: #{self.armies.count}.")
+        Settlement::Settlement.reset_counters(self.id, :armies)
       end
     end
 
@@ -1084,7 +1090,7 @@ class Settlement::Settlement < ActiveRecord::Base
     # for performance reasons.
     def propagate_information_to_location
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.score_changed? || self.type_id_changed?) && !self.location.nil?
-        self.location.set_owner_and_alliance(owner_id, alliance_id)
+        self.location.set_owner_and_alliance(owner, alliance)
         
         # hotfix for issue #362 ->  (self.score || 0)
         self.location.settlement_score   = (self.score || 0)  if (self.location.settlement_score   != self.score)
@@ -1099,7 +1105,7 @@ class Settlement::Settlement < ActiveRecord::Base
     # for performance reasons.
     def propagate_information_to_region
       if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
-        self.region.set_owner_and_alliance(owner_id, alliance_id)
+        self.region.set_owner_and_alliance(owner, alliance)
 
         # hotfix for issue #362 ->  (self.score || 0)
         self.region.settlement_score   = (self.score || 0)    if (self.region.settlement_score   != self.score)

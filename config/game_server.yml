@@ -42,7 +42,8 @@ defaults: &defaults
   
   chat_host: jabber.wack-a-doo.com
 
-  history_update_interval: 24
+  history_update_interval:   24 #hours
+  player_deletion_interval:  30 #days
 
 development:
   <<: *defaults

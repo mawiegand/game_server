@@ -22,9 +22,9 @@ The following <%= @report[:not_deleted_players].count %> inactive players were n
 <% @report[:not_deleted_players].each do |player| %>
   <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
 <% end %>
+
+
 <% end %>
-
-
 <% if @report[:shortly_before_deletable_players].count > 0 %>
 In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_players].count %> inactive players:
 

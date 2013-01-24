@@ -44,9 +44,9 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :login_count, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :login_count, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -88,18 +88,19 @@ class Fundamental::Character < ActiveRecord::Base
   scope :not_deleted, where(deleted_from_game: false)
   
   # used by player deletion script
-  scope :shortly_before_deletable, not_deleted.where([
-    '? < last_login_at AND last_login_at < ?', 
-    Time.now.beginning_of_day - 130.hours,
-    Time.now.beginning_of_day - 129.hours,
-  ])
-  # scope :deletable, where('id = 3')
-  scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
-    '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
-    Time.now - 1.days,
-    Time.now.beginning_of_day - 130.hours
-  ]).order('last_login_at ASC')
+  scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
+    'last_login_at < ?', 
+    now - (GAME_SERVER_CONFIG['player_deletion_interval'] - 1).days + 12.hours,
+  ]).order('last_login_at ASC') }
 
+  scope :deletable, lambda { |now| not_deleted.where([                                        # older than 30 days or no login and older than 1 day
+    '(last_login_at IS NULL AND updated_at < ?) OR last_login_at < ?',
+    now - 1.days,
+    now - GAME_SERVER_CONFIG['player_deletion_interval'].days + 12.hours
+  ]).order('last_login_at ASC') }
+  
+  
+  #used by retention mail
   scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
   scope :retention_played_too_short, not_deleted.where([
     Rails.env.development? || Rails.env.test? ?
@@ -930,20 +931,10 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     # hand over home settlement to npc
-    self.home_location.settlement.abandon_base
+    self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
     
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?
-    
-    # delete base settlement
-    # base_settlement = self.home_location.settlement
-    # base_settlement.remove_from_map
-    
-    # remove settlement from its location 
-    # self.home_location.settlement = nil
-    
-    # recount base settlements in region
-    # self.home_location.region.recount_settlements
     
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access
@@ -962,7 +953,12 @@ class Fundamental::Character < ActiveRecord::Base
     # armies are handled by settlement.remove_from_map
         
     # remove resource pool
-    self.resource_pool.destroy 
+    self.resource_pool.destroy
+    
+    # remove message box entries, message boxes and messages persist
+    self.inbox.entries.destroy_all unless self.inbox.entries.nil?
+    self.outbox.entries.destroy_all unless self.outbox.entries.nil?
+    # self.archive.entries.destroy_all unless self.archive.entries.nil?
     
     # revoke access from chat rooms
     # cmd = Messaging::JabberCommand.revoke_access(self, 'global') 
@@ -1008,10 +1004,6 @@ class Fundamental::Character < ActiveRecord::Base
     
     self.deleted_from_game = true
     self.save
-    
-    logger.debug '----------------------------------------------------------'
-    logger.debug 'check_consistency'
-    logger.debug '----------------------------------------------------------'
     
     check_consistency
   end
