@@ -974,7 +974,12 @@ class Fundamental::Character < ActiveRecord::Base
     # armies are handled by settlement.remove_from_map
         
     # remove resource pool
-    self.resource_pool.destroy 
+    self.resource_pool.destroy
+    
+    # remove message box entries, message boxes and messages persist
+    self.inbox.entries.destroy_all unless self.inbox.entries.nil?
+    self.outbox.entries.destroy_all unless self.outbox.entries.nil?
+    # self.archive.entries.destroy_all unless self.archive.entries.nil?
     
     # revoke access from chat rooms
     # cmd = Messaging::JabberCommand.revoke_access(self, 'global') 
