@@ -31,7 +31,7 @@ Fundamental::Character.non_npc.deletable(now).each do |c|
     @report[:deleted_players] << c
     
     # call delete method of character
-    c.delete_from_game 
+    # c.delete_from_game 
     
     deleted_count += 1
     print "." 
@@ -60,7 +60,7 @@ Fundamental::Character.npc.each do |c|
     @report[:removed_settlements] << s
     
     # call remove method of settlement
-    s.remove_from_map
+    # s.remove_from_map
   end
 
   print "." 
