@@ -90,7 +90,7 @@ class Fundamental::Character < ActiveRecord::Base
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
     '? < last_login_at AND last_login_at < ?', 
-    now - (GAME_SERVER_CONFIG['player_deletion_interval'] + 100).days + 12.hours,
+    now - (GAME_SERVER_CONFIG['player_deletion_interval'] + 60).days + 12.hours,
                                                         #   ^^^  
     now - (GAME_SERVER_CONFIG['player_deletion_interval'] - 1).days + 12.hours,
   ]).order('last_login_at ASC') }

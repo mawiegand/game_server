@@ -53,7 +53,7 @@ class Construction::JobsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @construction_job, :root => :construction_job }
+      format.json { render json: @construction_job, :include => :active_job, :root => :construction_job }
     end
   end
 
