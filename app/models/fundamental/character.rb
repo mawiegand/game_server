@@ -88,26 +88,18 @@ class Fundamental::Character < ActiveRecord::Base
   scope :not_deleted, where(deleted_from_game: false)
   
   # used by player deletion script
-  # scope :shortly_before_deletable, not_deleted.where([
-    # '? < last_login_at AND last_login_at < ?', 
-    # Time.now.beginning_of_day - 30.days + 12.hours,
-    # Time.now.beginning_of_day - 29.days + 12.hours,
-  # ]).order('last_login_at ASC')
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
     '? < last_login_at AND last_login_at < ?', 
-    now - 30.days + 12.hours,
-    now - 29.days + 12.hours,
+    now - (GAME_SERVER_CONFIG['player_deletion_interval'] + 100).days + 12.hours,
+                                                        #   ^^^  
+    now - (GAME_SERVER_CONFIG['player_deletion_interval'] - 1).days + 12.hours,
   ]).order('last_login_at ASC') }
 
   # scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
-    # '(last_login_at IS NULL AND created_at < ?) OR last_login_at < ?',
-    # Time.now - 1.days,
-    # Time.now.beginning_of_day - 30.days
-  # ]).order('last_login_at ASC')
   scope :deletable, lambda { |now| not_deleted.where([                                        # older than 30 days or no login and older than 1 day
     '(last_login_at IS NULL AND updated_at < ?) OR last_login_at < ?',
     now - 1.days,
-    now - 30.days + 12.hours
+    now - GAME_SERVER_CONFIG['player_deletion_interval'].days + 12.hours
   ]).order('last_login_at ASC') }
   
   
