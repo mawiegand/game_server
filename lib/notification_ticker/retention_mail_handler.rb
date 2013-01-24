@@ -47,7 +47,7 @@ class NotificationTicker::RetentionMailHandler
       end      
     end     
          
-    Fundamental::Character.non_npc.not_deleted.getting_deleted.each do |character|
+    Fundamental::Character.non_npc.not_deleted.shortly_before_deletable(Time.now).each do |character|
       if character.retention_mails.where("mail_type = 'getting_deleted'").empty?
         mail = character.retention_mails.create({
           mail_type: 'getting_deleted'
