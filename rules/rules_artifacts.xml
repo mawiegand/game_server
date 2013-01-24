@@ -30,6 +30,7 @@
       <InitiationTime shortenable="true">3600</InitiationTime>
     </Initiation>
     <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+    <JumpProbability>0.1</JumpProbability>
     <ArtifactAbilities>
       <ProductionBonus id="resource_stone">1.05</ProductionBonus>
       <ExperienceProduction>20*RANK</ExperienceProduction>

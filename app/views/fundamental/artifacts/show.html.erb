@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type</b>
+  <%= @fundamental_artifact.type_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @fundamental_artifact.location_id %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @fundamental_artifact.region_id %>
+</p>
+
+<p>
+  <b>Settlement:</b>
+  <%= @fundamental_artifact.settlement_id %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @fundamental_artifact.owner_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @fundamental_artifact.active %>
+</p>
+
+<p>
+  <b>Last activated at:</b>
+  <%= @fundamental_artifact.last_activated_at %>
+</p>
+
+<p>
+  <b>Last captured at:</b>
+  <%= @fundamental_artifact.last_captured_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_artifact_path(@fundamental_artifact) %> |
+<%= link_to 'Back', fundamental_artifacts_path %>
