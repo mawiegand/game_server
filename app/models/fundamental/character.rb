@@ -947,16 +947,6 @@ class Fundamental::Character < ActiveRecord::Base
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?
     
-    # delete base settlement
-    # base_settlement = self.home_location.settlement
-    # base_settlement.remove_from_map
-    
-    # remove settlement from its location 
-    # self.home_location.settlement = nil
-    
-    # recount base settlements in region
-    # self.home_location.region.recount_settlements
-    
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access
     self.ranking.destroy

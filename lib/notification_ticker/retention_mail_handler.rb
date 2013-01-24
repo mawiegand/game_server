@@ -24,7 +24,7 @@ class NotificationTicker::RetentionMailHandler
       scopes: ['5dentity'],
     )
          
-    Fundamental::Character.non_npc.retention_played_too_short.retention_no_mail_pending.each do |character|
+    Fundamental::Character.non_npc.not_deleted.retention_played_too_short.retention_no_mail_pending.each do |character|
       if character.retention_mails.where("mail_type = 'played_too_short'").empty?
         mail = character.retention_mails.create({
           mail_type: 'played_too_short'
@@ -34,7 +34,7 @@ class NotificationTicker::RetentionMailHandler
       end      
     end     
          
-    Fundamental::Character.non_npc.retention_paused_too_long.retention_no_mail_pending.each do |character|
+    Fundamental::Character.non_npc.not_deleted.retention_paused_too_long.retention_no_mail_pending.each do |character|
       if(!character.max_conversion_state.nil? &&
           character.max_conversion_state != 'registered' &&
           character.max_conversion_state != 'logged_in_once' &&
@@ -47,7 +47,17 @@ class NotificationTicker::RetentionMailHandler
       end      
     end     
          
-    Fundamental::Character.non_npc.retention_getting_inactive.retention_no_mail_pending.each do |character|
+    Fundamental::Character.non_npc.not_deleted.getting_deleted.each do |character|
+      if character.retention_mails.where("mail_type = 'getting_deleted'").empty?
+        mail = character.retention_mails.create({
+          mail_type: 'getting_deleted'
+        })
+        ip_access.deliver_retention_mail(mail)
+        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}"
+      end      
+    end     
+         
+    Fundamental::Character.non_npc.not_deleted.retention_getting_inactive.retention_no_mail_pending.each do |character|
       credit_reward = character.paying_user? ? 16 : 12
       mail = character.retention_mails.create({
         mail_type: 'getting_inactive',
