@@ -931,7 +931,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     # hand over home settlement to npc
-    self.home_location.settlement.abandon_base
+    self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
     
     # leave alliance
     self.alliance.remove_character(current_character) unless self.alliance.blank?
