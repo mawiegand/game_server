@@ -78,7 +78,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end  
 
   def fortress?
-    this.type_id == TYPE_FORTRESS
+    self.type_id == TYPE_FORTRESS
   end
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -268,10 +268,10 @@ class Settlement::Settlement < ActiveRecord::Base
   def remove_from_map
     
     #prevent fortresses from being removed
-    return false if this.fortress?
+    return false if self.fortress?
     
     #prevent settlements of regular characters from being removed
-    return false unless this.owner.npc?
+    return false unless self.owner.npc?
     
     # settlement BLOCK
     logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
