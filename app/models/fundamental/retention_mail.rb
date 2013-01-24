@@ -79,9 +79,9 @@ class Fundamental::RetentionMail < ActiveRecord::Base
       "Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n" +
       "Der Chef\n\n"      
     elsif mail_type == 'getting_deleted'
-      "#{character.name}!\n\n" +
-      "Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlung. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. ANdernfalls ist Dein Dorf für Immer verloren.\n\n" +
-      "Log Dich in den nächsten 24 Stunden unter #{GAME_SERVER_CONFIG['base_url']} ein, sonst wird Dein Account gelöscht.\n\n" +
+      "Hallo #{character.name}!\n\n" +
+      "Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlung. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. Andernfalls ist Dein Dorf für Immer verloren.\n\n" +
+      "Log Dich in den nächsten 24 Stunden unter #{GAME_SERVER_CONFIG['base_url']} ein, sonst wird Deine Siedlung gelöscht.\n\n" +
       "Der Chef\n\n"      
     end
   end
