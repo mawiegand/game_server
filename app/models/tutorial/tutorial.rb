@@ -2382,7 +2382,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [24, 69, 79, ],
+          :successor_quests => [24, 59, 69, ],
 
           :rewards => {
             
@@ -2484,7 +2484,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [41, ],
+          :successor_quests => [36, 41, ],
 
           :rewards => {
             
@@ -2595,7 +2595,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 89, ],
+          :successor_quests => [79, 89, ],
 
           :rewards => {
             
@@ -3194,7 +3194,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [32, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3288,12 +3288,6 @@ class Tutorial::Tutorial
   
             :en_US => "Upgrade the Hunter Gatherers further.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_4gathererlvl5',
-
           },
 
           :successor_quests => [],
@@ -3486,12 +3480,6 @@ class Tutorial::Tutorial
   
             :en_US => "The thick-skinned clubber! Reinforcements for your melee fighters. ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl7',
-
           },
 
           :successor_quests => [35, ],
@@ -3699,6 +3687,12 @@ class Tutorial::Tutorial
   
             :en_US => "Wow – look at your raw materials production. That’s massive!",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+
           },
 
           :successor_quests => [25, 37, 38, ],
@@ -4214,12 +4208,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
@@ -4400,7 +4394,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [34, 44, ],
+          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -5830,7 +5824,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -7710,7 +7704,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
 
           },
 
