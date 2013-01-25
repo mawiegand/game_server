@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artifact_stand" group="miscellaneous" category="building_category_small_building">
-  <Name lang="de_DE">Artefaktständer</Name>
+<Building id="building_artifact_stand" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="12">
+  <Name lang="de_DE">Artefaktstand</Name>
   <Name lang="en_US">Artefact stand</Name>
   <Description lang="de_DE">
-    <p>Beschreibung</p> 
+    <p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p>
+    <p>Der Chef und seine Gelehrten versuchen hier natürlich auch die Geheimnisse der Artefakte zu ergründen.</p>
   </Description>
   <Description lang="en_US">
     <p>Description</p> 
   </Description>
   <Flavour lang="de_DE">
-    <p>Flavortext</p>  
+    <p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p>
+    <p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>
   </Flavour>
   <Flavour lang="en_US">
     <p>Flavor text</p>
 	</Flavour>
-  <Population>100*LEVEL</Population> 
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3</Population> 
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" /> 
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-  <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-  <Cost id="resource_fur" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*5+EQUAL(LEVEL,3)*12+EQUAL(LEVEL,4)*50+EQUAL(LEVEL,5)*400+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)</Cost>
-  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*20700+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))</ProductionTime>
+  <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4)</Cost>
+  <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4)</Cost>
+  <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4)</Cost>
+  <ProductionTime shortenable="false">FLOOR(36000*POW(LEVEL,0.25)</ProductionTime>
   <Abilities> <!-- just for grouping -->
+    <DefenseBonus>0.1*LEVEL</DefenseBonus>
     <UnlockArtifactSlot />
   </Abilities>
 </Building>
