@@ -2382,7 +2382,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [24, ],
+          :successor_quests => [24, 69, 79, ],
 
           :rewards => {
             
@@ -2390,17 +2390,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 220,
+                :amount => 420,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 220,
+                :amount => 420,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 210,
               },
 
             ],
@@ -2492,12 +2492,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 75,
+                :amount => 90,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 65,
+                :amount => 70,
               },
 
               {
@@ -2595,7 +2595,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 69, 79, 89, ],
+          :successor_quests => [59, 89, ],
 
           :rewards => {
             
@@ -6770,7 +6770,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -7710,7 +7710,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 

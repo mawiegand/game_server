@@ -778,9 +778,9 @@
     <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
     <Requirement quest="quest_build_1campfirelvl1" />
     <Rewards>
-      <ResourceReward resource="resource_stone">220</ResourceReward>
-      <ResourceReward resource="resource_wood">220</ResourceReward>
-      <ResourceReward resource="resource_fur">100</ResourceReward>
+      <ResourceReward resource="resource_stone">420</ResourceReward>
+      <ResourceReward resource="resource_wood">420</ResourceReward>
+      <ResourceReward resource="resource_fur">210</ResourceReward>
       <ExperienceReward>300</ExperienceReward>
     </Rewards>
     <RewardTests>
@@ -808,8 +808,8 @@
       <RewardFlavor locale="en_US">Wow – that’s a lot of stone and wood. Fantastic!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">75</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
+        <ResourceReward resource="resource_stone">90</ResourceReward>
+        <ResourceReward resource="resource_wood">70</ResourceReward>
         <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -2123,7 +2123,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+<Requirement quest="quest_build_chiefcottagelvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2428,7 +2428,7 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> 
+  <Requirement quest="quest_build_chiefcottagelvl5" /> 
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
