@@ -2030,7 +2030,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
           
           :name => {
             
