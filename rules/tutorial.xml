@@ -665,7 +665,7 @@
     </Quest>
 
 <!-- 20 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
