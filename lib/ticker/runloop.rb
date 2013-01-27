@@ -11,11 +11,11 @@ require 'exception/http_exceptions'
 
 module Ticker
 
-  def self.add_handler_class(handlerClass)
+  def self.add_handler_class(handler_class)
     unless @handler_classes 
       @handler_classes = []
     end
-    @handler_classes.push handlerClass
+    @handler_classes.push handler_class
   end
   
   def self.handler_classes
