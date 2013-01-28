@@ -313,41 +313,41 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   
-  def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
-    self.subject = "Won fortress of " + settlement.region.name.to_s 
-  end
-  
-  def add_gained_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>You won the fortress at " + settlement.region.name.to_s + "</h2>\n"
-    text += "<p>Your army at region <b>" + settlement.region.name.to_s + "</b> won the battle for fortress <b>" + settlement.name.to_s + "</b>.</p>\n" 
-    self.body = text
-  end
-  
-  def self.generate_lost_fortress_message(settlement, old_owner, new_owner)
-    message = Messaging::Message.new({
-      recipient: old_owner,
-      # message.sender_id = nil
-      type_id:   FORTESS_LOST_REPORT_TYPE_ID,
-      send_at:   DateTime.now,
-      reported:  false,
-      flag:      0,
-    })
-    
-    message.add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-    message.add_lost_fortress_message_body(settlement, old_owner, new_owner)
-    message.save
-  end
-  
-  def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-    self.subject = "Lost fortress of " + settlement.region.name.to_s 
-  end
-  
-  def add_lost_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>You lost your fortress at " + settlement.region.name.to_s + "</h2>\n"
-    text += "<p>Your garrison army at region <b>" + settlement.region.name.to_s + "</b> has lost the battle for fortress <b>" + settlement.name.to_s + "</b>. " 
-    text += "The new owner of the fortress is <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
-    self.body = text
-  end
+def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
+  self.subject = "Siedlung gewonnen von " + settlement.region.name.to_s
+end
+
+def add_gained_fortress_message_body(settlement, old_owner, new_owner)
+  text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + "</h2>\n"
+  text += "<p>Deine Armee in der Region<b>" + settlement.region.name.to_s + "</b>hat den Kampf um eine Siedlung gewonnen<b>" + settlement.name.to_s + "</b>.</p>\n"
+  self.body = text
+end
+
+def self.generate_lost_fortress_message(settlement, old_owner, new_owner)
+message = Messaging::Message.new({
+                                 recipient: old_owner,
+                                 # message.sender_id = nil
+                                 type_id:   FORTESS_LOST_REPORT_TYPE_ID,
+                                 send_at:   DateTime.now,
+                                 reported:  false,
+                                 flag:      0,
+                                 })
+
+message.add_lost_fortress_message_subject(settlement, old_owner, new_owner)
+message.add_lost_fortress_message_body(settlement, old_owner, new_owner)
+message.save
+end
+
+def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
+  self.subject = "Siedlung verloren an " + settlement.region.name.to_s
+end
+
+def add_lost_fortress_message_body(settlement, old_owner, new_owner)
+  text  = "<h2>Du hast Deine Siedlung verloren in " + settlement.region.name.to_s + "</h2>\n"
+  text += "<p>Deine Garnisonsarmee in Region<b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren <b>" + settlement.name.to_s + "</b>. "
+  text += "Der neue Besitzer der Siedlung ist <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
+  self.body = text
+end
   
   def self.create_tutorial_message(character, subject, boby)
     message = Messaging::Message.create({
