@@ -2030,7 +2030,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
           
           :name => {
             
@@ -2382,7 +2382,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [24, ],
+          :successor_quests => [24, 41, ],
 
           :rewards => {
             
@@ -2390,17 +2390,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 220,
+                :amount => 420,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 220,
+                :amount => 420,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 210,
               },
 
             ],
@@ -2458,7 +2458,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>BAue je einen Steinbruch und einen Holzfäller um Deine Produktion zu erhöhen.</p>",
+            :de_DE => "<p>Baue je einen Steinbruch und einen Holzfäller um Deine Produktion zu erhöhen.</p>",
   
             :en_US => "<p></p>",
                 
@@ -2484,7 +2484,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [41, ],
+          :successor_quests => [36, 59, 69, ],
 
           :rewards => {
             
@@ -2492,12 +2492,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 75,
+                :amount => 90,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 65,
+                :amount => 70,
               },
 
               {
@@ -2595,7 +2595,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, 69, 79, 89, ],
+          :successor_quests => [89, ],
 
           :rewards => {
             
@@ -3194,7 +3194,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [32, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3288,12 +3288,6 @@ class Tutorial::Tutorial
   
             :en_US => "Upgrade the Hunter Gatherers further.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_4gathererlvl5',
-
           },
 
           :successor_quests => [],
@@ -3486,12 +3480,6 @@ class Tutorial::Tutorial
   
             :en_US => "The thick-skinned clubber! Reinforcements for your melee fighters. ",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl7',
-
           },
 
           :successor_quests => [35, ],
@@ -3701,7 +3689,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [25, 37, 38, ],
+          :requirement => {
+            
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+
+          },
+
+          :successor_quests => [25, ],
 
           :rewards => {
             
@@ -3806,12 +3800,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_2quarrylvl3_2loggerlvl3',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -3906,12 +3894,6 @@ class Tutorial::Tutorial
   
             :en_US => "Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_2quarrylvl3_2loggerlvl3',
-
           },
 
           :successor_quests => [],
@@ -4202,7 +4184,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
+            :quest => 'quest_build_chiefcottagelvl5',
 
           },
 
@@ -4214,12 +4196,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 80,
+                :amount => 100,
               },
 
               {
@@ -4400,7 +4382,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [34, 44, ],
+          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -4891,14 +4873,14 @@ class Tutorial::Tutorial
             
             :en_US => "And another chieftain’s hut upgrade",
   
-            :de_DE => " Und wieder der Häuptlingshüttenausbau ",
+            :de_DE => "Hurtig!",
                 
           },
           :task => {
             
             :en_US => "Order a chieftain’s hut upgrade.",
   
-            :de_DE => "Gib den Ausbau der Häuptlingshütte in Auftrag.",
+            :de_DE => "Du hast zwei Kröten erhalten!",
                 
           },
           :flavour => {
@@ -4917,20 +4899,39 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.",
+            :de_DE => "Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.",
   
-            :en_US => "The upgrade is in progress – all we can do now is wait.",
+            :en_US => "The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.",
                 
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
   
             :en_US => " ",
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_improve_production_1',
+
+          },
+
           :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+          },          
 
           :reward_tests => {
             
@@ -5004,7 +5005,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [26, 43, ],
+          :successor_quests => [26, 43, 79, ],
 
           :rewards => {
             
@@ -5726,7 +5727,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, ],
+          :successor_quests => [19, 49, ],
 
           :rewards => {
             
@@ -5830,7 +5831,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
 
           },
 
@@ -6770,7 +6771,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_1quarrylvl1_1loggerlvl1',
 
           },
 
@@ -7710,7 +7711,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_4quarrylvl5_4loggerlvl5',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 

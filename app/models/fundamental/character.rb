@@ -934,7 +934,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
     
     # leave alliance
-    self.alliance.remove_character(current_character) unless self.alliance.blank?
+    self.alliance.remove_character(self) unless self.alliance.blank?
     
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access
