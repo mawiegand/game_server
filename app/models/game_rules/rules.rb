@@ -5141,42 +5141,42 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Trainingshöhle
-        {               #   Artefaktständer
+        {               #   Artefaktstand
           :id          => 28, 
           :symbolic_id => :building_artifact_stand,
-					:category    => 5,
+					:category    => 6,
           :db_field    => :building_artifact_stand,
           :name        => {
             
-            :de_DE => "Artefaktständer",
+            :de_DE => "Artefaktstand",
   
             :en_US => "Artefact stand",
                 
           },
           :flavour     => {
             
-            :de_DE => "<p>Flavortext</p>",
+            :de_DE => "<p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p><p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>",
   
             :en_US => "<p>Flavor text</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung</p>",
+            :de_DE => "<p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p><p>Der Chef und seine Gelehrten versuchen hier natürlich auch die Geheimnisse der Artefakte zu ergründen.</p>",
   
             :en_US => "<p>Description</p>",
                 
           },
           :hidden      => 0,
 
-	        :population  => "100*LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3",
   
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 1,
+          :experience_factor => 12,
 
           :requirementGroups=> [
 
@@ -5196,13 +5196,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*5+EQUAL(LEVEL,3)*12+EQUAL(LEVEL,4)*50+EQUAL(LEVEL,5)*400+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'FLOOR(10000*POW(LEVEL,0.4))',
+            1 => 'FLOOR(15000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(20000*POW(LEVEL,0.4))',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*20700+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
+          :production_time => 'FLOOR(36000*POW(LEVEL,0.25))',
           :production  => [
             
           ],
@@ -5211,10 +5211,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
+
+            :defense_bonus => "0.1*LEVEL",
     
           },
 
-        },              #   END OF Artefaktständer
+        },              #   END OF Artefaktstand
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -6046,7 +6048,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 1</p>",
                 
           },
-          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+          :amount      => '',              
 
         },              #   END OF Artefaktname 1
         {               #   Artefaktname 2
@@ -6066,7 +6068,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 2</p>",
                 
           },
-          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+          :amount      => '',              
 
         },              #   END OF Artefaktname 2
         {               #   Artefaktname 3
@@ -6086,7 +6088,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 3</p>",
                 
           },
-          :amount      => 'MAX(FLOOR(DAYS-20/10.0),0)',              
+          :amount      => '',              
 
         },              #   END OF Artefaktname 3
       ],                # END OF ARTIFACT TYPES

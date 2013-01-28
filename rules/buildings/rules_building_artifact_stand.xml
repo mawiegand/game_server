@@ -22,10 +22,10 @@
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" /> 
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4)</Cost>
-  <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4)</Cost>
-  <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4)</Cost>
-  <ProductionTime shortenable="false">FLOOR(36000*POW(LEVEL,0.25)</ProductionTime>
+  <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
+  <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4))</Cost>
+  <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4))</Cost>
+  <ProductionTime shortenable="false">FLOOR(36000*POW(LEVEL,0.25))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <DefenseBonus>0.1*LEVEL</DefenseBonus>
     <UnlockArtifactSlot />

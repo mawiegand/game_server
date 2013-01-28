@@ -29,12 +29,12 @@
       <InitiationCost id="resource_fur" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
       <InitiationTime shortenable="true">3600</InitiationTime>
     </Initiation>
-    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
-    <JumpProbability>0.1</JumpProbability>
+    <CaptureProbabilityFactor>1.0</CaptureProbabilityFactor>
+    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
     <ArtifactAbilities>
+      <ExperienceProduction>20*MRANK</ExperienceProduction>
       <ProductionBonus id="resource_stone">1.05</ProductionBonus>
-      <ExperienceProduction>20*RANK</ExperienceProduction>
-      <LikeProductionBonus>2.0</LikeProductionBonus>
+      <SpeedupQueue queue="queue_buildings" domain="settlement">0.1</SpeedupQueue>
     </ArtifactAbilities>
   </Artifact>
   <Artifact id="artifact_1">
@@ -52,7 +52,25 @@
     <Flavour lang="en_US">
       <p>Flavour text of artifact</p>
     </Flavour>
-    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+    <Initiation>
+      <InitiationDescription initiated="false">
+        Beschreibung noch nicht eingeweiht
+      </InitiationDescription>
+      <InitiationDescription initiated="true">
+        Beschreibung eingeweiht
+      </InitiationDescription>
+      <InitiationCost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationTime shortenable="true">3600</InitiationTime>
+    </Initiation>
+    <CaptureProbabilityFactor>2.0</CaptureProbabilityFactor>
+    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
+    <ArtifactAbilities>
+      <ExperienceProduction>20*MRANK</ExperienceProduction>
+      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+      <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
+    </ArtifactAbilities>
   </Artifact>
   <Artifact id="artifact_2">
     <Name lang="de_DE">Artefaktname 3</Name>
@@ -69,6 +87,24 @@
     <Flavour lang="en_US">
       <p>Flavour text of artifact 3</p>
     </Flavour>
-    <Amount>MAX(FLOOR(DAYS-20/10.0),0)</Amount>
+    <Initiation>
+      <InitiationDescription initiated="false">
+        Beschreibung noch nicht eingeweiht
+      </InitiationDescription>
+      <InitiationDescription initiated="true">
+        Beschreibung eingeweiht
+      </InitiationDescription>
+      <InitiationCost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</InitiationCost>
+      <InitiationTime shortenable="true">3600</InitiationTime>
+    </Initiation>
+    <CaptureProbabilityFactor>1.0</CaptureProbabilityFactor>
+    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
+    <ArtifactAbilities>
+      <ExperienceProduction>20*MRANK</ExperienceProduction>
+      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+      <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
+    </ArtifactAbilities>
   </Artifact>
 </ArtifactTypes>
