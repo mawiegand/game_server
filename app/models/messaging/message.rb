@@ -265,16 +265,16 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def add_overrun_loser_message_subject(winner, loser)
-    self.subject = "Overrun army at " +  (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    self.subject = "Deine Armee ist überrant worden an " +  (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
   end
   
   def add_overrun_loser_message_body(winner, loser)
-    text  = "<h2>Your army has been overrun at " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
-    text += "<p>Your army <b>" + loser.name.to_s + "</b> positioned at location <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
-    text += "</b> has been overrun by the army <b>" + winner.name.to_s + "</b> of <b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
+    text  = "<h2>Deine Armee ist überrant worden in " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
+    text += "<p>Deine Armee<b>" + loser.name.to_s + "</b>ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    text += "</b>ist von einer Armee von<b>" + winner.name.to_s + "</b> von<b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
-    text += "<th>Army Name</th><th>Owner</th><th>Size</th>\n"
+    text += "<th>Army Name</th><th>Besitzer</th><th>Size</th>\n"
     text += "</tr>\n"
     text += "<tr>\n"
     text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td> ? </td>\n"
@@ -283,7 +283,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"
     text += "</tr>\n"
     text += "</table>\n"
-    text += "<p>None of your units survived, your army is lost irretrievably.</p>\n"
+    text += "<p>Keine Deiner Einheiten hat überlebt, Deine Armee ist engültig verloren.</p>\n"
     self.body = text
   end
   
