@@ -318,7 +318,12 @@ end
           },
           :description => {
             <xsl:apply-templates select="Description" />              
-          },          
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
         },              #   END OF <xsl:value-of select="@id"/>
 </xsl:for-each>
       ],                # END OF RESOURCE TYPES
@@ -345,6 +350,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="@hidden">
           :hidden      => <xsl:value-of select="@hidden"/>,
 </xsl:if>
@@ -442,6 +452,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
@@ -482,6 +497,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
           :hidden      => <xsl:value-of select="@hidden"/>,
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
@@ -617,6 +637,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
@@ -669,6 +694,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:apply-templates select="Condition" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
@@ -700,23 +730,36 @@ end
             <xsl:apply-templates select="Name" />              
           },
           :description => {
-            <xsl:apply-templates select="Description" />              
+            <xsl:apply-templates select="Description" />
           },
-          :amount      => '<xsl:apply-templates select="Amount" />',              
-<xsl:apply-templates select="Condition" />
+  <xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+  </xsl:if>
+          :amount      => '<xsl:apply-templates select="ArtifactAmount" />',
+          :capture_probability_factor  => <xsl:apply-templates select="CaptureProbabilityFactor" />,
+  <xsl:if test="count(SpeedupQueue)">
+          :speedup_queue => [
+            <xsl:apply-templates select="SpeedupQueue" />
+          ],
+  </xsl:if>
+          :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
+  <xsl:if test="count(ProductionBonus)">
+          :production_bonus  => [
+  <xsl:for-each select="ProductionBonus">
+            {
+            :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :symbolic_id        => :<xsl:value-of select="@id"/>,
+            :formula            => "<xsl:apply-templates/>",
+            },
+  </xsl:for-each>
+          ],
+  </xsl:if>
+  <xsl:apply-templates select="Condition" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ARTIFACT TYPES
-</xsl:template>
-
-
-<xsl:template match="Condition">
-          :condition   => {
-<xsl:if test="RequiredRegionsRatio">
-            :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>',
-</xsl:if>
-            :duration => <xsl:value-of select="@duration"/>,
-          },
 </xsl:template>
 
 

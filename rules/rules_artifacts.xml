@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
@@ -31,12 +30,10 @@
       <InitiationTime shortenable="true">3600</InitiationTime>
     </Initiation>
     <CaptureProbabilityFactor>1.0</CaptureProbabilityFactor>
-    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
-    <ArtifactAbilities>
-      <ExperienceProduction>20*MRANK</ExperienceProduction>
-      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
-      <SpeedupQueue queue="queue_buildings" domain="settlement">0.1</SpeedupQueue>
-    </ArtifactAbilities>
+    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ExperienceProduction>20*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">0.1</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_1">
     <Name lang="de_DE">Artefaktname 2</Name>
@@ -66,12 +63,10 @@
       <InitiationTime shortenable="true">3600</InitiationTime>
     </Initiation>
     <CaptureProbabilityFactor>2.0</CaptureProbabilityFactor>
-    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
-    <ArtifactAbilities>
-      <ExperienceProduction>20*MRANK</ExperienceProduction>
-      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
-      <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
-    </ArtifactAbilities>
+    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ExperienceProduction>20*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_2">
     <Name lang="de_DE">Artefaktname 3</Name>
@@ -101,11 +96,9 @@
       <InitiationTime shortenable="true">3600</InitiationTime>
     </Initiation>
     <CaptureProbabilityFactor>1.0</CaptureProbabilityFactor>
-    <ArtifactAmount>MAX(FLOOR(DAYS-20/10.0),0)</ArtifactAmount>
-    <ArtifactAbilities>
-      <ExperienceProduction>20*MRANK</ExperienceProduction>
-      <ProductionBonus id="resource_stone">1.05</ProductionBonus>
-      <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
-    </ArtifactAbilities>
+    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ExperienceProduction>20*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_stone">1.05</ProductionBonus>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">0.1</SpeedupQueue>
   </Artifact>
 </ArtifactTypes>

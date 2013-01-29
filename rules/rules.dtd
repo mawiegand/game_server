@@ -104,7 +104,7 @@
 
 
 <!ELEMENT ArtifactTypes (Artifact*)>
-<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, CaptureProbabilityFactor, ArtifactAmount, ArtifactAbilities)>
+<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, CaptureProbabilityFactor, ArtifactAmount, ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
 <!ATTLIST Artifact
   id ID #REQUIRED
 >
@@ -128,8 +128,6 @@
 <!ATTLIST InitiationTime
   shortenable (true | false) "true"
 >
-
-<!ELEMENT ArtifactAbilities (ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
 
 <!ELEMENT Victory (Name+, Description+, ShortDescription*, Condition)>
 <!ATTLIST Victory 
