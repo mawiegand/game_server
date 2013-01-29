@@ -37,7 +37,7 @@ class Training::JobsController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
 
-          render :json => @training_jobs.to_json(:include => :active_job)
+          render :json => @training_jobs.to_json(:include => :active_job, :root => :training_job)
         end
       end
     end
@@ -52,7 +52,7 @@ class Training::JobsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @training_job }
+      format.json { render json: @training_job, :include => :active_job, :root => :training_job }
     end
   end
 
