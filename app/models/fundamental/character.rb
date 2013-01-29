@@ -89,13 +89,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
-    '? < last_login_at AND last_login_at < ?', 
-    now - (GAME_SERVER_CONFIG['player_deletion_interval'] + 100).days + 12.hours,
-                                                        #   ^^^  
+    'last_login_at < ?', 
     now - (GAME_SERVER_CONFIG['player_deletion_interval'] - 1).days + 12.hours,
   ]).order('last_login_at ASC') }
 
-  # scope :deletable, not_deleted.where([                                        # older than 30 days or no login and older than 1 day
   scope :deletable, lambda { |now| not_deleted.where([                                        # older than 30 days or no login and older than 1 day
     '(last_login_at IS NULL AND updated_at < ?) OR last_login_at < ?',
     now - 1.days,
@@ -934,10 +931,10 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     # hand over home settlement to npc
-    self.home_location.settlement.abandon_base
+    self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
     
     # leave alliance
-    self.alliance.remove_character(current_character) unless self.alliance.blank?
+    self.alliance.remove_character(self) unless self.alliance.blank?
     
     # remove from character ranking
     # no need to recalc ranking as the renking will always be sorted on access

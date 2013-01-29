@@ -11,11 +11,11 @@ require 'exception/http_exceptions'
 
 module Ticker
 
-  def self.add_handler_class(handlerClass)
+  def self.add_handler_class(handler_class)
     unless @handler_classes 
       @handler_classes = []
     end
-    @handler_classes.push handlerClass
+    @handler_classes.push handler_class
   end
   
   def self.handler_classes
@@ -150,8 +150,8 @@ module Ticker
     protected
       
       def lock_next_event
-        next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at DESC').first unless Rails.env.development?
-        next_event = Event::Event.where("locked_at IS NULL AND execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
+        next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at ASC').first unless Rails.env.development?
+        next_event = Event::Event.where("locked_at IS NULL AND execute_at < datetime('now')").order('execute_at ASC').first if Rails.env.development?
     #    next_event = Event::Event.where("execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
         
         if next_event

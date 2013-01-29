@@ -665,7 +665,7 @@
     </Quest>
 
 <!-- 20 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
@@ -778,9 +778,9 @@
     <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
     <Requirement quest="quest_build_1campfirelvl1" />
     <Rewards>
-      <ResourceReward resource="resource_stone">220</ResourceReward>
-      <ResourceReward resource="resource_wood">220</ResourceReward>
-      <ResourceReward resource="resource_fur">100</ResourceReward>
+      <ResourceReward resource="resource_stone">420</ResourceReward>
+      <ResourceReward resource="resource_wood">420</ResourceReward>
+      <ResourceReward resource="resource_fur">210</ResourceReward>
       <ExperienceReward>300</ExperienceReward>
     </Rewards>
     <RewardTests>
@@ -795,7 +795,7 @@
       <Task>Build a quarry and a logging camp.</Task>
       <Task locale="de_DE">Baue eine Steinbruch und einen Holzfäller.</Task>
       <Description locale="de_DE">
-        <p>BAue je einen Steinbruch und einen Holzfäller um Deine Produktion zu erhöhen.</p>
+        <p>Baue je einen Steinbruch und einen Holzfäller um Deine Produktion zu erhöhen.</p>
       </Description>
       <Description locale="en_US">
         <p></p>
@@ -808,8 +808,8 @@
       <RewardFlavor locale="en_US">Wow – that’s a lot of stone and wood. Fantastic!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">75</ResourceReward>  
-        <ResourceReward resource="resource_wood">65</ResourceReward>    
+        <ResourceReward resource="resource_stone">90</ResourceReward>
+        <ResourceReward resource="resource_wood">70</ResourceReward>
         <ResourceReward resource="resource_fur">15</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
@@ -1047,7 +1047,6 @@
   <RewardText locale="en_US">Upgrade the Hunter Gatherers further.</RewardText>
   <RewardFlavor locale="de_DE">Vielen Dank, mit den Jägern und Sammler sollten wir bald ausreichend Rohstoffe haben.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks! With all the Hunter Gatherers, we should have enough raw materials soon. </RewardFlavor>
-  <Requirement quest="quest_build_4gathererlvl5" />
   <Rewards>
     <ResourceReward resource="resource_stone">80</ResourceReward>  
     <ResourceReward resource="resource_wood">80</ResourceReward>    
@@ -1106,7 +1105,6 @@
   <RewardText locale="en_US">The thick-skinned clubber! Reinforcements for your melee fighters. </RewardText>
   <RewardFlavor locale="de_DE">Sehr schön, das erzähle ich gleich dem Chef! Hier hast Du ein paar Rohstoffe für meine Jungs mit der Keule.</RewardFlavor>
   <RewardFlavor locale="en_US">Excellent – I’ll tell the boss right away! Here are a couple of raw materials for the lads with their clubs.  </RewardFlavor>
-    <Requirement quest="quest_build_1gathererlvl7" />
   <Rewards>
     <ResourceReward resource="resource_stone">250</ResourceReward>  
     <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -1167,6 +1165,7 @@
   <RewardText locale="en_US">Wow – look at your raw materials production. That’s massive!</RewardText>
   <RewardFlavor locale="de_DE">Die Steinbrüche und Holzfäller ergänzen sich in den Kosten. Baue sie abwechselnd.</RewardFlavor>
   <RewardFlavor locale="en_US">The quarries and logging camps complement each other in production. Build them by turns.</RewardFlavor>
+     <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">120</ResourceReward>  
     <ResourceReward resource="resource_wood">120</ResourceReward>    
@@ -1197,7 +1196,6 @@
    <RewardText locale="en_US">With every raw materials store you can also transport more raw materials.</RewardText>
    <RewardFlavor locale="de_DE">Was willst Du? Soll ich Dich loben, oder gar drücken? Zieh ab und baue mir endlich eine Armee!</RewardFlavor>
    <RewardFlavor locale="en_US">What do you want? Praise? A hug? Buzz off and go build me an army, finally!</RewardFlavor>
-   <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
    <Rewards>
      <ResourceReward resource="resource_stone">45</ResourceReward>  
      <ResourceReward resource="resource_wood">45</ResourceReward>    
@@ -1227,7 +1225,6 @@
    <RewardText locale="en_US">Sometimes a chieftain has to follow his own goals. Leading his own alliance to fame and glory is one of those times.</RewardText>
    <RewardFlavor locale="de_DE">Was? Wieso weckst Du mich? Ah, endlich fertig mit dem Lagerfeuer? Wurde ja auch Zeit!</RewardFlavor>
    <RewardFlavor locale="en_US">Huh? What did you wake me up for? Oh – finished your campfire at last, eh? About time, too!</RewardFlavor>
-   <Requirement quest="quest_build_2quarrylvl3_2loggerlvl3" />
    <Rewards>
      <ResourceReward resource="resource_stone">275</ResourceReward>  
      <ResourceReward resource="resource_wood">250</ResourceReward>    
@@ -1314,10 +1311,10 @@
   <RewardText locale="en_US">Hunter Gatherers produce all three raw materials. Fur, too!</RewardText>
   <RewardFlavor locale="de_DE">Was? Du hast ihr Gelände ausgebaut? Das wird sie doch höchstens einen Tag beschäftigt halten. Was bringen sie euch Halbgöttern denn heutzutage bei?!</RewardFlavor>
   <RewardFlavor locale="en_US">What? You upgraded their compound? That’ll only keep them busy for a day at most! What on earth do they teach you Demigods these days?</RewardFlavor>
-  <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
+  <Requirement quest="quest_build_chiefcottagelvl5" />
   <Rewards>
-    <ResourceReward resource="resource_stone">80</ResourceReward>  
-    <ResourceReward resource="resource_wood">80</ResourceReward>    
+    <ResourceReward resource="resource_stone">100</ResourceReward>
+    <ResourceReward resource="resource_wood">100</ResourceReward>
     <ResourceReward resource="resource_fur">50</ResourceReward>
   </Rewards>
   <RewardTests>
@@ -1515,12 +1512,12 @@
       </RewardTests>
     </Quest>
 
-<!-- 49 -->
+    <!-- 49 -->
     <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
       <Name>And another chieftain’s hut upgrade</Name>
-      <Name locale="de_DE"> Und wieder der Häuptlingshüttenausbau </Name>
+      <Name locale="de_DE">Hurtig!</Name>
       <Task>Order a chieftain’s hut upgrade.</Task>
-      <Task locale="de_DE">Gib den Ausbau der Häuptlingshütte in Auftrag.</Task>
+      <Task locale="de_DE">Du hast zwei Kröten erhalten!</Task>
       <Description locale="de_DE">
         <p></p>
       </Description>
@@ -1529,10 +1526,14 @@
       </Description>
       <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
       <Flavor locale="en_US">I think it’s time for a bigger chieftain’s hut. Why not order an upgrade. </Flavor>
-      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
       <RewardText locale="en_US"> </RewardText>
-      <RewardFlavor locale="de_DE">Der Ausbau ist in Arbeit, jetzt können wir erstmal nur warten.</RewardFlavor>
-      <RewardFlavor locale="en_US">The upgrade is in progress – all we can do now is wait.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
+      <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
+      <Requirement quest="quest_improve_production_1" />
+      <Rewards>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
+      </Rewards>
       <RewardTests>
         <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
       </RewardTests>
@@ -1818,7 +1819,7 @@
   <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+  <Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>  
     <ResourceReward resource="resource_wood">200</ResourceReward>    
@@ -2123,7 +2124,7 @@
   <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
   <RewardFlavor locale="de_DE">Gut, deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
-<Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" />
+<Requirement quest="quest_build_1quarrylvl1_1loggerlvl1" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2428,7 +2429,7 @@
   <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
   <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm deine Belohnung. Aber du bist noch lange nicht fertig</RewardFlavor>
   <RewardFlavor locale="en_US">Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.</RewardFlavor>
-  <Requirement quest="quest_build_4quarrylvl5_4loggerlvl5" /> 
+  <Requirement quest="quest_build_chiefcottagelvl6" />
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>

@@ -47,15 +47,15 @@ class NotificationTicker::RetentionMailHandler
       end      
     end     
          
-    # Fundamental::Character.non_npc.not_deleted.shortly_before_deletable(Time.now).each do |character|
-      # if character.retention_mails.where("mail_type = 'getting_deleted'").empty?
-        # mail = character.retention_mails.create({
-          # mail_type: 'getting_deleted'
-        # })
-        # ip_access.deliver_retention_mail(mail)
-        # runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}"
-      # end      
-    # end     
+    Fundamental::Character.non_npc.not_deleted.shortly_before_deletable(Time.now).each do |character|
+      if character.retention_mails.where("mail_type = 'getting_deleted'").empty?
+        mail = character.retention_mails.create({
+          mail_type: 'getting_deleted'
+        })
+        ip_access.deliver_retention_mail(mail)
+        runloop.say "Sent retention mail to character id: #{character.id}, type: #{mail.mail_type}"
+      end      
+    end     
          
     Fundamental::Character.non_npc.not_deleted.retention_getting_inactive.retention_no_mail_pending.each do |character|
       credit_reward = character.paying_user? ? 16 : 12

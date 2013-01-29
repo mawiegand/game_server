@@ -78,7 +78,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end  
 
   def fortress?
-    this.type_id == TYPE_FORTRESS
+    self.type_id == TYPE_FORTRESS
   end
 
   def self.create_settlement_at_location(location, type_id, owner)
@@ -263,25 +263,15 @@ class Settlement::Settlement < ActiveRecord::Base
     
     neandertaler = Fundamental::Character.find_by_id(1)
     self.new_owner_transaction(neandertaler) 
-    
-    if old_score > 1000
-      units = 200
-    elsif old_score > 100
-      units = 100
-    else
-      units = 10
-    end
-    
-    self.garrison_army.add_units({:unit_neanderthal => units}) unless self.garrison_army.nil?
   end
 
   def remove_from_map
     
     #prevent fortresses from being removed
-    return false if this.fortress?
+    return false if self.fortress?
     
     #prevent settlements of regular characters from being removed
-    return false unless this.owner.npc?
+    return false unless self.owner.npc?
     
     # settlement BLOCK
     logger.info "REMOVE FROM MAP starting on settlement ID#{ self.id } of character #{ self.owner_id }."
