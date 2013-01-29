@@ -12,7 +12,9 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
   belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
   belongs_to :garrison_army,   :class_name => "Military::Army",  :foreign_key => "garrison_id"
-  
+
+  has_one    :artifact, :class_name => "Fundamental::Artifact",  :foreign_key => "settlement_id",      :inverse_of => :settlement
+
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
