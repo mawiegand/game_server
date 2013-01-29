@@ -84,9 +84,10 @@ class Fundamental::Character < ActiveRecord::Base
   scope :logged_in_once,   where(max_conversion_state: "logged_in_once")
   
   scope :churned,          where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks])
-  
+
   scope :not_deleted, where(deleted_from_game: false)
-  
+  scope :deleted, where(deleted_from_game: true)
+
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
     'last_login_at < ?', 
