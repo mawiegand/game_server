@@ -2,7 +2,7 @@ class Fundamental::ArtifactsController < ApplicationController
   layout 'fundamental'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show]
+  before_filter :deny_api, :except => [:show, :index]
 
   # GET /fundamental/artifacts
   # GET /fundamental/artifacts.json
