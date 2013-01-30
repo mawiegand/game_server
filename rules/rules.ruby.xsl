@@ -428,8 +428,6 @@ end
 </xsl:template>
 
 
-
-
 <xsl:template match="TargetList">
               [
                 <xsl:for-each select="Target">
@@ -438,8 +436,10 @@ end
               ],
 </xsl:template>
 
+
 <xsl:template match="UnitCategories">
-  
+# ## UNIT CATEGORIES ##############################################################
+
       :unit_categories => [  # ALL UNIT CATEGORIES
 <xsl:for-each select="UnitCategory">
         {               #   <xsl:value-of select="Name"/>
@@ -473,9 +473,6 @@ end
 </xsl:for-each>
       ],                # END OF UNIT CATEGORIES
 </xsl:template>
-
-
-
 
 
 <xsl:template match="BuildingTypes">
@@ -601,7 +598,8 @@ end
 
 
 <xsl:template match="BuildingCategories">
-  
+# ## BUILDING CATEGORIES ######################################################
+
       :building_categories => [  # ALL BUILDING CATEGORIES
 <xsl:for-each select="BuildingCategory">
         {               #   <xsl:value-of select="Name"/>
@@ -717,7 +715,6 @@ end
 
 
 
-
 <xsl:template match="ArtifactTypes">
 # ## ARTIFACT TYPES ########################################################
   
@@ -732,36 +729,60 @@ end
           :description => {
             <xsl:apply-templates select="Description" />
           },
-  <xsl:if test="ShortDescription">
+<xsl:if test="ShortDescription">
           :short_description => {
             <xsl:apply-templates select="ShortDescription" />
           },
-  </xsl:if>
+</xsl:if>
           :amount      => '<xsl:apply-templates select="ArtifactAmount" />',
-          :capture_probability_factor  => <xsl:apply-templates select="CaptureProbabilityFactor" />,
-  <xsl:if test="count(SpeedupQueue)">
+<xsl:if test="count(SpeedupQueue)">
           :speedup_queue => [
             <xsl:apply-templates select="SpeedupQueue" />
           ],
-  </xsl:if>
+</xsl:if>
           :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
-  <xsl:if test="count(ProductionBonus)">
+<xsl:if test="count(ProductionBonus)">
           :production_bonus  => [
-  <xsl:for-each select="ProductionBonus">
+<xsl:for-each select="ProductionBonus">
             {
-            :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-            :symbolic_id        => :<xsl:value-of select="@id"/>,
-            :formula            => "<xsl:apply-templates/>",
+              :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+              :symbolic_id        => :<xsl:value-of select="@id"/>,
+              :formula            => "<xsl:apply-templates />",
             },
-  </xsl:for-each>
+</xsl:for-each>
           ],
-  </xsl:if>
-  <xsl:apply-templates select="Condition" />
+</xsl:if>
+<xsl:apply-templates select="Initiation" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ARTIFACT TYPES
 </xsl:template>
 
+
+<xsl:template match="Initiation">
+          :description_not_initiated => {
+<xsl:apply-templates select="DescriptionNotInitiated" />
+          },
+          :description_initiated => {
+<xsl:apply-templates select="DescriptionInitiated" />
+          },
+          :costs => {
+            <xsl:apply-templates select="InitiationCost" />
+          },
+          :initiation_time => "<xsl:apply-templates select="InitiationTime" />",
+</xsl:template>
+
+<xsl:template match="DescriptionNotInitiated">
+            :<xsl:value-of select="@lang" /> => "<xsl:apply-templates />",
+  </xsl:template>
+
+<xsl:template match="DescriptionInitiated">
+            :<xsl:value-of select="@lang" /> => "<xsl:apply-templates />",
+  </xsl:template>
+
+<xsl:template match="InitiationCost">
+            <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
+            </xsl:template>
 
 
 

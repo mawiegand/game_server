@@ -104,18 +104,22 @@
 
 
 <!ELEMENT ArtifactTypes (Artifact*)>
-<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, CaptureProbabilityFactor, ArtifactAmount, ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
+<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, ArtifactAmount, ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
 <!ATTLIST Artifact
   id ID #REQUIRED
 >
 <!ELEMENT ArtifactAmount (#PCDATA)>
-<!ELEMENT CaptureProbabilityFactor (#PCDATA)>
 
-<!ELEMENT Initiation (InitiationDescription+, InitiationCost+, InitiationTime)>
+<!ELEMENT Initiation (DescriptionNotInitiated+, DescriptionInitiated+, InitiationCost+, InitiationTime)>
 
-<!ELEMENT InitiationDescription (#PCDATA)>
-<!ATTLIST InitiationDescription
-  initiated (true | false) #REQUIRED
+<!ELEMENT DescriptionNotInitiated (#PCDATA | p)* >
+<!ATTLIST DescriptionNotInitiated
+  lang IDREF "en_US"
+>
+
+<!ELEMENT DescriptionInitiated (#PCDATA | p)* >
+<!ATTLIST DescriptionInitiated
+  lang IDREF "en_US"
 >
 
 <!ELEMENT InitiationCost (#PCDATA)>

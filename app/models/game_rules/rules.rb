@@ -359,7 +359,8 @@ class GameRules::Rules
         },              #   END OF resource_cash
       ],                # END OF RESOURCE TYPES
 
-  
+# ## UNIT CATEGORIES ##############################################################
+
       :unit_categories => [  # ALL UNIT CATEGORIES
 
         {               #   Infantry
@@ -1823,7 +1824,8 @@ class GameRules::Rules
         },              #   END OF Little Chief
       ],                # END OF UNIT TYPES
 
-  
+# ## BUILDING CATEGORIES ######################################################
+
       :building_categories => [  # ALL BUILDING CATEGORIES
 
         {               #   Fortification
@@ -6081,10 +6083,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 1</p>",
   
           },
-  
+
           :amount      => 'DAYS',
-          :capture_probability_factor  => 1.0,
-  
+
           :speedup_queue => [
             
               {
@@ -6095,19 +6096,41 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
           ],
-  
+
           :experience_production => '20*MRANK',
-  
+
           :production_bonus  => [
-  
+
             {
-            :id                 => 0,
-            :symbolic_id        => :resource_stone,
-            :formula            => "1.05",
+              :id                 => 0,
+              :symbolic_id        => :resource_stone,
+              :formula            => "1.05",
             },
-  
+
           ],
+
+          :description_not_initiated => {
+
+            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
   
+            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
+  
+          },
+          :description_initiated => {
+
+            :de_DE => "<p>Beschreibung eingeweiht</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :costs => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            
+          },
+          :initiation_time => "3600"
+
         },              #   END OF Artefaktname 1
         {               #   Artefaktname 2
           :id          => 1, 
@@ -6126,10 +6149,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 2</p>",
   
           },
-  
+
           :amount      => 'DAYS',
-          :capture_probability_factor  => 2.0,
-  
+
           :speedup_queue => [
             
               {
@@ -6140,19 +6162,41 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
           ],
-  
+
           :experience_production => '20*MRANK',
-  
+
           :production_bonus  => [
-  
+
             {
-            :id                 => 0,
-            :symbolic_id        => :resource_stone,
-            :formula            => "1.05",
+              :id                 => 0,
+              :symbolic_id        => :resource_stone,
+              :formula            => "1.05",
             },
-  
+
           ],
+
+          :description_not_initiated => {
+
+            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
   
+            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
+  
+          },
+          :description_initiated => {
+
+            :de_DE => "<p>Beschreibung eingeweiht</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :costs => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            
+          },
+          :initiation_time => "3600"
+
         },              #   END OF Artefaktname 2
         {               #   Artefaktname 3
           :id          => 2, 
@@ -6171,10 +6215,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "<p>Description of artifact 3</p>",
   
           },
-  
+
           :amount      => 'DAYS',
-          :capture_probability_factor  => 1.0,
-  
+
           :speedup_queue => [
             
               {
@@ -6185,19 +6228,41 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
           ],
-  
+
           :experience_production => '20*MRANK',
-  
+
           :production_bonus  => [
-  
+
             {
-            :id                 => 0,
-            :symbolic_id        => :resource_stone,
-            :formula            => "1.05",
+              :id                 => 0,
+              :symbolic_id        => :resource_stone,
+              :formula            => "1.05",
             },
-  
+
           ],
+
+          :description_not_initiated => {
+
+            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
   
+            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
+  
+          },
+          :description_initiated => {
+
+            :de_DE => "<p>Beschreibung eingeweiht</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :costs => {
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            
+          },
+          :initiation_time => "3600"
+
         },              #   END OF Artefaktname 3
       ],                # END OF ARTIFACT TYPES
 
