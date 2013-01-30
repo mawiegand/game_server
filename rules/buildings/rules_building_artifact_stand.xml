@@ -6,7 +6,7 @@
   <Name lang="en_US">Artefact stand</Name>
   <Description lang="de_DE">
     <p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p>
-    <p>Der Chef und seine Gelehrten versuchen hier natürlich auch die Geheimnisse der Artefakte zu ergründen.</p>
+    <p>Der Chef und seine Gelehrten versuchen hier die Geheimnisse der Artefakte zu ergründen.</p>
   </Description>
   <Description lang="en_US">
     <p>Description</p> 
@@ -25,9 +25,9 @@
   <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
   <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4))</Cost>
   <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4))</Cost>
-  <ProductionTime shortenable="false">FLOOR(36000*POW(LEVEL,0.25))</ProductionTime>
+  <ProductionTime shortenable="false">FLOOR(7*3600+POW(LEVEL,0.7)/50)</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <DefenseBonus>0.1*LEVEL</DefenseBonus>
+    <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockArtifactSlot />
   </Abilities>
 </Building>

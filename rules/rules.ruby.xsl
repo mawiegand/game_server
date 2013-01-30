@@ -729,6 +729,7 @@ end
           :description => {
             <xsl:apply-templates select="Description" />
           },
+<<<<<<< HEAD
 <xsl:if test="ShortDescription">
           :short_description => {
             <xsl:apply-templates select="ShortDescription" />
@@ -753,12 +754,40 @@ end
           ],
 </xsl:if>
 <xsl:apply-templates select="Initiation" />
+=======
+  <xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+  </xsl:if>
+          :amount      => '<xsl:apply-templates select="ArtifactAmount" />',
+          :capture_probability_factor  => <xsl:apply-templates select="CaptureProbabilityFactor" />,
+  <xsl:if test="count(SpeedupQueue)">
+          :speedup_queue => [
+            <xsl:apply-templates select="SpeedupQueue" />
+          ],
+  </xsl:if>
+          :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
+  <xsl:if test="count(ProductionBonus)">
+          :production_bonus  => [
+  <xsl:for-each select="ProductionBonus">
+            {
+            :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :symbolic_id        => :<xsl:value-of select="@id"/>,
+            :formula            => "<xsl:apply-templates/>",
+            },
+  </xsl:for-each>
+          ],
+  </xsl:if>
+  <xsl:apply-templates select="Condition" />
+>>>>>>> merge artifacts
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ARTIFACT TYPES
 </xsl:template>
 
 
+<<<<<<< HEAD
 <xsl:template match="Initiation">
           :description_not_initiated => {
 <xsl:apply-templates select="DescriptionNotInitiated" />
@@ -784,6 +813,8 @@ end
             <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
             </xsl:template>
 
+=======
+>>>>>>> merge artifacts
 
 
 <xsl:template match="QueueTypes">

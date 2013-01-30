@@ -3,16 +3,16 @@
 
 <ArtifactTypes>
   <Artifact id="artifact_0">
-    <Name lang="de_DE">Artefaktname 1</Name>
-    <Name lang="en_US">Artifact Name 1</Name>
+    <Name lang="de_DE">Großer Obelisk</Name>
+    <Name lang="en_US">Great Obelisk</Name>
     <Description lang="de_DE">
-      <p>Beschreibung des Artefakts 1</p>
+      <p>Ein makelloser großer Obelisk, der völlig deplatziert in dieser Welt wirkt. Es heißt sein Anblick allein bringt einen den Göttern nahe.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 1</p>
     </Description>
     <Flavour lang="de_DE">
-      <p>Flavourtext des Artefakts 1</p>
+      <p>Gotteslästerer sprechen von "Dem Stein"; die Gottesfürchtigen hingegen von den "Tränen der Götter". Die Wahrheit liegt irgendwo dazwischen, oder auch nicht.</p>
     </Flavour> 
     <Flavour lang="en_US">
       <p>Flavour text of artifact 1</p>

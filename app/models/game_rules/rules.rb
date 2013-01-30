@@ -6082,6 +6082,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
             :en_US => "<p>Description of artifact 1</p>",
   
+<<<<<<< HEAD
           },
 
           :amount      => 'DAYS',
@@ -6130,7 +6131,36 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
           :initiation_time => "3600"
+=======
+          },
+  
+          :amount      => 'DAYS',
+          :capture_probability_factor  => 1.0,
+  
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "0.1",
+              },
+>>>>>>> merge artifacts
 
+          ],
+  
+          :experience_production => '20*MRANK',
+  
+          :production_bonus  => [
+  
+            {
+            :id                 => 0,
+            :symbolic_id        => :resource_stone,
+            :formula            => "1.05",
+            },
+  
+          ],
+  
         },              #   END OF Artefaktname 1
         {               #   Artefaktname 2
           :id          => 1, 
@@ -6148,6 +6178,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
             :en_US => "<p>Description of artifact 2</p>",
   
+<<<<<<< HEAD
           },
 
           :amount      => 'DAYS',
@@ -6196,7 +6227,36 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
           :initiation_time => "3600"
+=======
+          },
+  
+          :amount      => 'DAYS',
+          :capture_probability_factor  => 2.0,
+  
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "0.1",
+              },
+>>>>>>> merge artifacts
 
+          ],
+  
+          :experience_production => '20*MRANK',
+  
+          :production_bonus  => [
+  
+            {
+            :id                 => 0,
+            :symbolic_id        => :resource_stone,
+            :formula            => "1.05",
+            },
+  
+          ],
+  
         },              #   END OF Artefaktname 2
         {               #   Artefaktname 3
           :id          => 2, 
@@ -6214,6 +6274,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
             :en_US => "<p>Description of artifact 3</p>",
   
+<<<<<<< HEAD
           },
 
           :amount      => 'DAYS',
@@ -6262,7 +6323,36 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
           :initiation_time => "3600"
+=======
+          },
+  
+          :amount      => 'DAYS',
+          :capture_probability_factor  => 1.0,
+  
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "0.1",
+              },
+>>>>>>> merge artifacts
 
+          ],
+  
+          :experience_production => '20*MRANK',
+  
+          :production_bonus  => [
+  
+            {
+            :id                 => 0,
+            :symbolic_id        => :resource_stone,
+            :formula            => "1.05",
+            },
+  
+          ],
+  
         },              #   END OF Artefaktname 3
       ],                # END OF ARTIFACT TYPES
 
