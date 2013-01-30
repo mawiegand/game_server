@@ -183,6 +183,9 @@ class Ticker::BattleHandler
           end
         end
 
+        runloop.say "Check for artifacts stealing"
+        battle.check_for_artifact_stealing
+
         #schedule next round
         battle.schedule_next_round
         battle.save

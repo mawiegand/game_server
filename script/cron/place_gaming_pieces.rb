@@ -7,6 +7,15 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config',
 require 'util/formula'
 
 
+
+
+Military::Army.where(npc: true, garrison: false).destroy_all
+Fundamental::Artifact.destroy_all
+
+
+
+
+
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
 @report = {
@@ -56,7 +65,7 @@ while (num_npcs < desired_number_of_npcs)
   location = Map::Location.find_empty
   raise InternalServerError.new('Could not claim an empty location.') if location.nil?
   
-  Military::Army.create_npc(location, size)
+  #Military::Army.create_npc(location, size)
   
   max_npc_placed = [(max_npc_placed || 0),       size].max
   min_npc_placed = [(min_npc_placed || 9999999), size].min
@@ -71,8 +80,7 @@ end
 Rails.logger.info "NPC PLACEMENT: Placed #{count_npc_placed || "0" } npc armies, smallest with #{ min_npc_placed || "0" } units, largest with #{ max_npc_placed || "0" }."
 
 
-new_artifacts = 0
-current_artifacts = Fundamental::Artifact.count
+artifact_count = 0
 
 artifact_types = GameRules::Rules.the_rules.artifact_types
 artifact_types.each do |artifact_type|
@@ -92,9 +100,11 @@ artifact_types.each do |artifact_type|
     location = Map::Location.find_empty_without_army
     puts "create_at_location_with_type  #{location.id} #{artifact_type[:id]}"
     Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
-    new_artifacts += 1
+    artifact_count += 1
   end
 end
+
+current_artifacts = Fundamental::Artifact.count
 
 
 if count_npc_placed > 0 || new_artifacts > 0
@@ -106,7 +116,7 @@ if count_npc_placed > 0 || new_artifacts > 0
   @report[:max_size]          = max_npc_placed || 0
   @report[:num_npcs]          = num_npcs
   @report[:average_size]      = avg_size_npcs
-  @report[:num_artifacts]     = new_artifacts
+  @report[:num_artifacts]     = artifact_count
   @report[:current_artifacts] = current_artifacts
 
   Backend::NpcMailer.npc_placement_report(@report).deliver

@@ -433,8 +433,7 @@ class Fundamental::Character < ActiveRecord::Base
       false
     end
   end
-    
-  
+
   def is_enemy_of?(opponent)
     return !self.is_neutral? && !opponent.is_neutral? && self.alliance != opponent.alliance  
   end

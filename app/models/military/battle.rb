@@ -209,6 +209,7 @@ class Military::Battle < ActiveRecord::Base
 
     Military::Army.destroy(defender.id)
 
+    logger.debug "-------> artifact? #{!attacker.location.artifact.nil?}"
     attacker.location.artifact.capture_by_character(attacker.owner) unless attacker.location.artifact.nil?
   end
 
@@ -333,6 +334,30 @@ class Military::Battle < ActiveRecord::Base
       end
     end
     nil
+  end
+
+  def faction_owning_artifact(artifact)
+    self.participants.each do |participant|
+      return participant.faction if participant.character == artifact.owner
+    end
+    nil
+  end
+
+  def check_for_artifact_stealing
+    artifact = self.location.artifact
+    return false if artifact.nil?
+
+    artifact_faction = faction_owning_artifact(artifact)
+    return false if artifact_faction.nil?
+
+    ratio = 1.0 * artifact_faction.strength / (artifact_faction.opposing_faction.strength + artifact_faction.strength)
+
+    if Random.rand(1.0) > ratio * 0.1
+      artifact.capture_by_character(artifact_faction.opposing_faction.leader)
+      true
+    else
+      false
+    end
   end
 
   ################################################################################
