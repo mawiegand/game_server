@@ -44,7 +44,7 @@ It removed a total of <%= @report[:removed_settlements].count %> inactive npc se
   id     | lid  | path   |  settlement name           | last takeover at
 --------+------+--------+----------------------------+---------------------------
 <% @report[:removed_settlements].each do |settlement| %>
-  <%= settlement.id.to_s.rjust(5) %>  | <%= settlement.region.location.id.to_s.rjust(4) %> | <%= settlement.region.node.path.rjust(6) %> | <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
+  <%= settlement.id.to_s.rjust(5) %>  | <%= settlement.location.id.to_s.rjust(4) %> | <%= settlement.region.node.path.rjust(6) %> | <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
 <% end %>
 <% else %>
 No settlements were removed.
