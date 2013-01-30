@@ -71,7 +71,6 @@ class Ticker::BattleHandler
         #if there is a winner
         if !winner_faction.nil?
 
-          winner_leader = nil
           winner_faction.set_winner
           winner_faction.update_leader
           winner_leader = winner_faction.leader
@@ -147,6 +146,10 @@ class Ticker::BattleHandler
               end
             end
           end
+
+          runloop.say "Check for artifacts"
+          artifact = battle.location.artifact
+          artifact.capture_by_character(winner_leader) unless artifact.nil?
         end
 
         runloop.say "Calculate XP for both factions"
