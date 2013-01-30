@@ -60,7 +60,7 @@ Fundamental::Character.npc.each do |c|
     @report[:removed_settlements] << s
     
     # call remove method of settlement
-    # s.remove_from_map
+    s.remove_from_map
   end
 
   print "." 
