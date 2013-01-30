@@ -1,6 +1,6 @@
 class Shop::InfoController < ApplicationController
-  layout "ranking"
-  
+  layout "extern"
+
   def show
     respond_to do |format|
       format.html    # index.html.erb
