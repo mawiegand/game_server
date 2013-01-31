@@ -89,7 +89,7 @@ class GameRules::Rules
     root = include_root_in_json
     root = options[:root]    if options.try(:key?, :root)
     if root
-      root = self.class.model_name.element if root == true
+      root = self.class.model_name.element if root
       options.delete(:root)  if options.try(:key?, :root)
       JSON.pretty_generate({ root => hash }, options)
     else
