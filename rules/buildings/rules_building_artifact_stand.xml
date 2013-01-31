@@ -28,6 +28,6 @@
   <ProductionTime shortenable="false">FLOOR(36000*POW(LEVEL,0.25))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <DefenseBonus>0.1*LEVEL</DefenseBonus>
-    <UnlockArtifactSlot />
+    <UnlockArtifactInitiation />
   </Abilities>
 </Building>

@@ -836,8 +836,9 @@ end
 <xsl:apply-templates select="UnlockBuildingSlots" />    
 <xsl:apply-templates select="PreventTakeover" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
-<xsl:apply-templates select="ArmySizeBonus" />    
-<xsl:apply-templates select="UnlockDiplomacy" />    
+<xsl:apply-templates select="ArmySizeBonus" />
+<xsl:apply-templates select="UnlockDiplomacy" />
+<xsl:apply-templates select="UnlockArtifactInitiation" />
           },
 </xsl:template>
 
@@ -877,6 +878,10 @@ end
 <xsl:if test="@foundAllianceLevel">
             :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
 </xsl:if>
+</xsl:template>
+
+<xsl:template match="UnlockArtifactInitiation">
+            :unlock_artifact_initiation => true,
 </xsl:template>
 
 <xsl:template match="DefenseBonus">

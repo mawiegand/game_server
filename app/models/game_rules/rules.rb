@@ -2055,7 +2055,7 @@ class GameRules::Rules
             :garrison_size_bonus => "1000",
 
             :army_size_bonus => "1000",
-    
+
           },
 
         },              #   END OF Festungsanlagen
@@ -2152,7 +2152,7 @@ class GameRules::Rules
               },
 
             ],
-    
+
           },
 
         },              #   END OF Truppenunterkunft
@@ -2249,7 +2249,7 @@ class GameRules::Rules
               },
 
             ],
-    
+
           },
 
         },              #   END OF Turm der Ballistik
@@ -2346,7 +2346,7 @@ class GameRules::Rules
               },
 
             ],
-    
+
           },
 
         },              #   END OF Turm der Reitmeisterei
@@ -2409,7 +2409,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :garrison_size_bonus => "20*LEVEL",
 
             :army_size_bonus => "10*LEVEL",
-    
+
           },
 
         },              #   END OF Garnison
@@ -2565,7 +2565,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :garrison_size_bonus => "1000",
 
             :army_size_bonus => "1000",
-    
+
           },
 
         },              #   END OF Häuptlingshütte
@@ -2700,7 +2700,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Jäger und Sammler
@@ -2822,7 +2822,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
             ],
-    
+
           },
 
           :conversion_option => {
@@ -2958,7 +2958,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
             ],
-    
+
           },
 
         },              #   END OF Ausbildungsgelände
@@ -3058,7 +3058,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :unlock_diplomacy     => 1,
 
             :unlock_alliance_creation => 5,
-    
+
           },
 
         },              #   END OF Lagerfeuer
@@ -3180,7 +3180,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
           :conversion_option => {
@@ -3307,7 +3307,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
           :conversion_option => {
@@ -3435,7 +3435,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
           :conversion_option => {
@@ -3571,7 +3571,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
             ],
-    
+
           },
 
         },              #   END OF Schießstand
@@ -3700,7 +3700,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
             ],
-    
+
           },
 
         },              #   END OF Stinkender Stall
@@ -3836,7 +3836,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :trading_carts => "10*LEVEL*LEVEL",
 
             :unlock_p2p_trade => 1,            
-    
+
           },
 
           :conversion_option => {
@@ -3963,7 +3963,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               },
 
             ],
-    
+
           },
 
         },              #   END OF Winddichte Hütte
@@ -4086,7 +4086,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             ],
 
             :command_points => "1+FLOOR(LEVEL/10.0)",
-    
+
           },
 
         },              #   END OF Kommandozentrale
@@ -4184,7 +4184,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Kupferschmelze
@@ -4278,7 +4278,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :garrison_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
             :army_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
-    
+
           },
 
         },              #   END OF Feldlager
@@ -4401,7 +4401,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Verrückter Kürschner
@@ -4523,7 +4523,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Holzfäller mit Kupferaxt
@@ -4645,7 +4645,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Altehrwürdiger Steinbruch
@@ -4745,7 +4745,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :garrison_size_bonus => "25*LEVEL",
 
             :army_size_bonus => "25*LEVEL",
-    
+
           },
 
         },              #   END OF Garnisonsgebäude
@@ -4881,7 +4881,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :trading_carts => "FLOOR(10*LEVEL*LEVEL*1.75+0.5)",
 
             :unlock_p2p_trade => 1,            
-    
+
           },
 
         },              #   END OF Rohstofflager mit Kupferkarren
@@ -4972,7 +4972,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :abilities   => {
 
             :unlock_prevent_takeover => 1,            
-    
+
           },
 
         },              #   END OF Ritualstein
@@ -5082,7 +5082,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :garrison_size_bonus => "200",
 
             :army_size_bonus => "200",
-    
+
           },
 
         },              #   END OF Versammlungsplatz
@@ -5171,7 +5171,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-    
+
           },
 
         },              #   END OF Trainingshöhle
@@ -5248,7 +5248,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :abilities   => {
 
             :defense_bonus => "0.1*LEVEL",
-    
+
+            :unlock_artifact_initiation => true,
+
           },
 
         },              #   END OF Artefaktstand
@@ -6129,7 +6131,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
             
           },
-          :initiation_time => "3600"
+          :initiation_time => "3600",
 
         },              #   END OF Artefaktname 1
         {               #   Artefaktname 2
@@ -6195,7 +6197,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
             
           },
-          :initiation_time => "3600"
+          :initiation_time => "3600",
 
         },              #   END OF Artefaktname 2
         {               #   Artefaktname 3
@@ -6261,7 +6263,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
             
           },
-          :initiation_time => "3600"
+          :initiation_time => "3600",
 
         },              #   END OF Artefaktname 3
       ],                # END OF ARTIFACT TYPES
