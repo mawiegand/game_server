@@ -27,7 +27,7 @@
   <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4))</Cost>
   <ProductionTime shortenable="false">FLOOR(7*3600+POW(LEVEL,0.7)/50)</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <DefenseBonus>0.1*LEVEL</DefenseBonus>
+    <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockArtifactInitiation />
   </Abilities>
 </Building>
