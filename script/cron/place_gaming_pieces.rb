@@ -7,12 +7,8 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config',
 require 'util/formula'
 
 
-
-
 Military::Army.where(npc: true, garrison: false).destroy_all
 Fundamental::Artifact.destroy_all
-
-
 
 
 
@@ -93,7 +89,7 @@ artifact_types.each do |artifact_type|
   calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
 
   # determine artifact count to create
-  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
+   new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
 
   # create missing artifacts with npc army at same location
   (0...new_artifacts).each do |nr|
@@ -105,7 +101,6 @@ artifact_types.each do |artifact_type|
 end
 
 current_artifacts = Fundamental::Artifact.count
-
 
 if count_npc_placed > 0 || new_artifacts > 0
   Rails.logger.info "NPC PLACEMENT: Compile and email report."

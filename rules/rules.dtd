@@ -105,6 +105,7 @@
 
 <!ELEMENT ArtifactTypes (Artifact*)>
 <!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, ArtifactAmount, ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
+
 <!ATTLIST Artifact
   id ID #REQUIRED
 >
