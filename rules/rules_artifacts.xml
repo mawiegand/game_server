@@ -28,7 +28,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -60,7 +60,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -91,7 +91,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -123,7 +123,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -155,7 +155,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -187,7 +187,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -219,7 +219,7 @@
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">=120*3600-FLOOR(8*3600*MAX(LEVEL-1;0))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
