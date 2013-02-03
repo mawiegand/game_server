@@ -352,6 +352,8 @@ class Military::Battle < ActiveRecord::Base
 
     ratio = 1.0 * artifact_faction.strength / (artifact_faction.opposing_faction.strength + artifact_faction.strength)
 
+    # TODO add function to calculate probalitity
+
     if Random.rand(1.0) > ratio * 0.1
       artifact.capture_by_character(artifact_faction.opposing_faction.leader)
       true

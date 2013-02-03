@@ -129,7 +129,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '2*LEVEL',
         :alliance_max_members => 80,
-        :artifact_count => 3,
+        :artifact_count => 7,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -5222,7 +5222,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 5,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 1,
 
             },
 
@@ -5247,9 +5247,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
 
-            :defense_bonus => "0.1*LEVEL",
+            :defense_bonus => "0.2*LEVEL",
 
-            :unlock_artifact_initiation => true,
+            :unlock_artifact_initiation => "LEVEL",
 
           },
 
@@ -6068,19 +6068,67 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Artefaktname 1
+        {               #   Großer Kristall
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Artefaktname 1",
+            :de_DE => "Großer Kristall",
   
-            :en_US => "Artifact Name 1",
+            :en_US => "Great Kristall",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des Artefakts 1</p>",
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>Description of artifact 0</p>",
+  
+          },
+
+          :amount      => 'DAYS',
+
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :id                 => 0,
+              :symbolic_id        => :resource_stone,
+              :formula            => "1.15",
+            },
+
+          ],
+
+          :description_initiated => {
+
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
+            
+          },
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 1, 
+          :symbolic_id => :artifact_1,
+          :name        => {
+            
+            :de_DE => "Großer Kristall",
+  
+            :en_US => "Great Kristall",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>Description of artifact 1</p>",
   
@@ -6088,65 +6136,47 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => 'DAYS',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :domain            => :settlement,
-                :speedup_formula   => "0.1",
-              },
-
-          ],
-
-          :experience_production => '20*MRANK',
+          :experience_production => '10*MRANK',
 
           :production_bonus  => [
 
             {
-              :id                 => 0,
-              :symbolic_id        => :resource_stone,
-              :formula            => "1.05",
+              :id                 => 1,
+              :symbolic_id        => :resource_wood,
+              :formula            => "1.15",
             },
 
           ],
 
-          :description_not_initiated => {
-
-            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-          },
           :description_initiated => {
 
-            :de_DE => "<p>Beschreibung eingeweiht</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
           },
-          :costs => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
             
           },
-          :initiation_time => "3600",
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Artefaktname 1
-        {               #   Artefaktname 2
-          :id          => 1, 
-          :symbolic_id => :artifact_1,
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 2, 
+          :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Artefaktname 2",
+            :de_DE => "Großer Kristall",
   
-            :en_US => "Artifact Name 2",
+            :en_US => "Great Kristall",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des Artefakts 2</p>",
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>Description of artifact 2</p>",
   
@@ -6154,65 +6184,47 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => 'DAYS',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :domain            => :settlement,
-                :speedup_formula   => "0.1",
-              },
-
-          ],
-
-          :experience_production => '20*MRANK',
+          :experience_production => '10*MRANK',
 
           :production_bonus  => [
 
             {
-              :id                 => 0,
-              :symbolic_id        => :resource_stone,
-              :formula            => "1.05",
+              :id                 => 2,
+              :symbolic_id        => :resource_fur,
+              :formula            => "1.15",
             },
 
           ],
 
-          :description_not_initiated => {
-
-            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-          },
           :description_initiated => {
 
-            :de_DE => "<p>Beschreibung eingeweiht</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
           },
-          :costs => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
             
           },
-          :initiation_time => "3600",
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Artefaktname 2
-        {               #   Artefaktname 3
-          :id          => 2, 
-          :symbolic_id => :artifact_2,
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 3, 
+          :symbolic_id => :artifact_3,
           :name        => {
             
-            :de_DE => "Artefaktname 3",
+            :de_DE => "Großer Kristall",
   
-            :en_US => "Artifact Name 3",
+            :en_US => "Great Kristall",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des Artefakts 3</p>",
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>Description of artifact 3</p>",
   
@@ -6226,46 +6238,176 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "0.1",
+                :speedup_formula   => "0.5",
               },
 
           ],
 
-          :experience_production => '20*MRANK',
+          :experience_production => '10*MRANK',
 
-          :production_bonus  => [
-
-            {
-              :id                 => 0,
-              :symbolic_id        => :resource_stone,
-              :formula            => "1.05",
-            },
-
-          ],
-
-          :description_not_initiated => {
-
-            :de_DE => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-            :en_US => "<p>Beschreibung noch nicht eingeweiht</p>",
-  
-          },
           :description_initiated => {
 
-            :de_DE => "<p>Beschreibung eingeweiht</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
           },
-          :costs => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
             
           },
-          :initiation_time => "3600",
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Artefaktname 3
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 4, 
+          :symbolic_id => :artifact_4,
+          :name        => {
+            
+            :de_DE => "Großer Kristall",
+  
+            :en_US => "Great Kristall",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>Description of artifact 4</p>",
+  
+          },
+
+          :amount      => 'DAYS',
+
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "0.5",
+              },
+
+          ],
+
+          :experience_production => '10*MRANK',
+
+          :description_initiated => {
+
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
+            
+          },
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 5, 
+          :symbolic_id => :artifact_5,
+          :name        => {
+            
+            :de_DE => "Großer Kristall",
+  
+            :en_US => "Great Kristall",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>Description of artifact 5</p>",
+  
+          },
+
+          :amount      => 'DAYS',
+
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "0.5",
+              },
+
+          ],
+
+          :experience_production => '10*MRANK',
+
+          :description_initiated => {
+
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
+            
+          },
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Großer Kristall
+        {               #   Großer Kristall
+          :id          => 6, 
+          :symbolic_id => :artifact_6,
+          :name        => {
+            
+            :de_DE => "Großer Kristall",
+  
+            :en_US => "Great Kristall",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>Description of artifact 6</p>",
+  
+          },
+
+          :amount      => 'DAYS',
+
+          :speedup_queue => [
+            
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "0.75",
+              },
+
+          ],
+
+          :experience_production => '10*MRANK',
+
+          :description_initiated => {
+
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>",
+  
+            :en_US => "<p>Beschreibung eingeweiht</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*MRANK',
+            1 => '1000*MRANK',
+            2 => '1000*MRANK',
+            
+          },
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Großer Kristall
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################

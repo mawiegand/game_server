@@ -49,6 +49,14 @@ rules.artifact_types.each do |artifact_type|
   puts "Checking Artifact Type #{artifact_type[:name][:de_DE]}"
   
   check_formula(artifact_type, artifact_type[:amount], 'DAYS')
+  check_formula(artifact_type, artifact_type[:initiation_time])
+  artifact_type[:initiation_costs].each do |k, v|
+    check_formula(artifact_type, v, 'MRANK')
+  end
+
+  check_formula(artifact_type, artifact_type[:experience_production], 'MRANK')
+
+  check_formula(artifact_type, artifact_type[:amount], 'DAYS')
 end
 
 rules.victory_types.each do |victory_type|

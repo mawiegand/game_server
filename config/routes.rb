@@ -42,7 +42,7 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
-          resource  :artifacts,                                :only => [ :show ] 
+          resource  :artifact,                                 :only => [ :show ]
           resources :settings
           resources :history_events,                           :only => [ :index ]
         end
@@ -59,7 +59,9 @@ GameServer::Application.routes.draw do
         
         resources :alliance_shouts
         resources :artifacts
-        
+        resources :artifact_initiations
+
+
         resources :guilds do
           resources :characters
         end

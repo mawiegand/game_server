@@ -760,25 +760,14 @@ end
 
 
 <xsl:template match="Initiation">
-          :description_not_initiated => {
-<xsl:apply-templates select="DescriptionNotInitiated" />
-          },
           :description_initiated => {
-<xsl:apply-templates select="DescriptionInitiated" />
+<xsl:apply-templates select="Description" />
           },
-          :costs => {
+          :initiation_costs => {
             <xsl:apply-templates select="InitiationCost" />
           },
           :initiation_time => "<xsl:apply-templates select="InitiationTime" />",
 </xsl:template>
-
-<xsl:template match="DescriptionNotInitiated">
-            :<xsl:value-of select="@lang" /> => "<xsl:apply-templates />",
-  </xsl:template>
-
-<xsl:template match="DescriptionInitiated">
-            :<xsl:value-of select="@lang" /> => "<xsl:apply-templates />",
-  </xsl:template>
 
 <xsl:template match="InitiationCost">
             <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
@@ -881,7 +870,7 @@ end
 </xsl:template>
 
 <xsl:template match="UnlockArtifactInitiation">
-            :unlock_artifact_initiation => true,
+            :unlock_artifact_initiation => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="DefenseBonus">

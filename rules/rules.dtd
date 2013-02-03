@@ -111,17 +111,7 @@
 >
 <!ELEMENT ArtifactAmount (#PCDATA)>
 
-<!ELEMENT Initiation (DescriptionNotInitiated+, DescriptionInitiated+, InitiationCost+, InitiationTime)>
-
-<!ELEMENT DescriptionNotInitiated (#PCDATA | p)* >
-<!ATTLIST DescriptionNotInitiated
-  lang IDREF "en_US"
->
-
-<!ELEMENT DescriptionInitiated (#PCDATA | p)* >
-<!ATTLIST DescriptionInitiated
-  lang IDREF "en_US"
->
+<!ELEMENT Initiation (Description+, InitiationCost+, InitiationTime)>
 
 <!ELEMENT InitiationCost (#PCDATA)>
 <!ATTLIST InitiationCost
@@ -193,7 +183,7 @@
 
 <!ELEMENT ArmySizeBonus (#PCDATA)>
 
-<!ELEMENT UnlockArtifactInitiation EMPTY>
+<!ELEMENT UnlockArtifactInitiation (#PCDATA)>
 
 <!--Buildings-->
 

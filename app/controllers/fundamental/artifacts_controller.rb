@@ -7,22 +7,54 @@ class Fundamental::ArtifactsController < ApplicationController
   # GET /fundamental/artifacts
   # GET /fundamental/artifacts.json
   def index
-    @fundamental_artifacts = Fundamental::Artifact.all
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_artifacts }
+    if params.has_key?(:region_id)
+      @map_region = Map::Region.find(params[:region_id])
+      raise NotFoundError.new('Region Not Found') if @map_region.nil?
+      @fundamental_artifacts = @map_region.artifacts.visible
+      #last_modified =  @map_region.artifacts_changed_at
+    elsif params.has_key?(:location_id)
+      @map_location = Map::Location.find(params[:location_id])
+      raise NotFoundError.new('Location Not Found') if @map_location.nil?
+      @fundamental_artifacts = @map_location.artifacts.visible
+      #last_modified =  @map_location.artifacts_changed_at
+    else
+      @asked_for_index = true
+      @fundamental_artifacts = Fundamental::Artifact.all
+    end
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json do
+          raise ForbiddenError.new('Access Forbidden') if @asked_for_index
+          @fundamental_artifacts = [] if @fundamental_artifacts.nil?
+          render(json: @fundamental_artifacts.to_json(:include => :initiation))
+        end
+      end
     end
   end
 
   # GET /fundamental/artifacts/1
   # GET /fundamental/artifacts/1.json
   def show
-    @fundamental_artifact = Fundamental::Artifact.find(params[:id])
+    if params.has_key?(:character_id)
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Page Not Found') if @character.nil?
+      raise ForbiddenError.new('Access Forbidden') unless @character == current_character
+      @fundamental_artifact = @character.artifact
+      # todo -> determine last_modified
+    else
+      @fundamental_artifact = Fundamental::Artifact.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @fundamental_artifact }
+      format.json do
+        logger.debug "----> include?" + @fundamental_artifact.to_json(:include => :initiation).inspect
+        render(json: @fundamental_artifact.to_json(:include => :initiation))
+      end
     end
   end
 

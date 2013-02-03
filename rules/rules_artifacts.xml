@@ -6,7 +6,7 @@
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 0</p>
@@ -18,17 +18,17 @@
       <p>Flavour text of artifact 0</p>
     </Flavour>
     <Initiation>
-      <DescriptionInitiated lang="de_DE">
+      <Description lang="de_DE">
         <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
         <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>
-      </DescriptionInitiated>
-      <DescriptionInitiated>
+      </Description>
+      <Description>
         <p>Beschreibung eingeweiht</p>
-      </DescriptionInitiated>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -38,7 +38,7 @@
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 1</p>
@@ -50,17 +50,17 @@
       <p>Flavour text of artifact 1</p>
     </Flavour>
     <Initiation>
-      <DescriptionInitiated lang="de_DE">
+      <Description lang="de_DE">
         <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
         <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>
-      </DescriptionInitiated>
-      <DescriptionInitiated>
+      </Description>
+      <Description>
         <p>Beschreibung eingeweiht</p>
-      </DescriptionInitiated>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -70,7 +70,7 @@
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 2</p>
@@ -82,16 +82,16 @@
       <p>Flavour text of artifact 2</p>
     </Flavour>
     <Initiation>
-      <DescriptionInitiated lang="de_DE">
+      <Description lang="de_DE">
         <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
         <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>
-      </DescriptionInitiated>
-        <DescriptionInitiated><p>Beschreibung eingeweiht</p>
-        </DescriptionInitiated>
+      </Description>
+        <Description><p>Beschreibung eingeweiht</p>
+        </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -101,7 +101,7 @@
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 3</p>
@@ -113,17 +113,17 @@
       <p>Flavour text of artifact 3</p>
     </Flavour>
     <Initiation>
-      <DescriptionInitiated lang="de_DE">
+      <Description lang="de_DE">
         <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
         <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>
-      </DescriptionInitiated>
-      <DescriptionInitiated>
+      </Description>
+      <Description>
         <p>Beschreibung eingeweiht</p>
-      </DescriptionInitiated>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -133,7 +133,7 @@
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 4</p>
@@ -145,27 +145,27 @@
       <p>Flavour text of artifact 4</p>
     </Flavour>
     <Initiation>
-        <DescriptionInitiated lang="de_DE">
-          <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-          <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>
-        </DescriptionInitiated>
-        <DescriptionInitiated>
-          <p>Beschreibung eingeweiht</p>
-        </DescriptionInitiated>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_artillary" domain="settlement">0.5</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_5">
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 5</p>
@@ -177,27 +177,27 @@
       <p>Flavour text of artifact 5</p>
     </Flavour>
     <Initiation>
-        <DescriptionInitiated lang="de_DE">
-          <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-          <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>
-        </DescriptionInitiated>
-        <DescriptionInitiated>
-          <p>Beschreibung eingeweiht</p>
-        </DescriptionInitiated>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-     <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_6">
     <Name lang="de_DE">Großer Kristall</Name>
     <Name lang="en_US">Great Kristall</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen "Träne der Götter" bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
       <p>Description of artifact 6</p>
@@ -209,20 +209,20 @@
       <p>Flavour text of artifact 6</p>
     </Flavour>
     <Initiation>
-        <DescriptionInitiated lang="de_DE">
-          <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-         <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>
-        </DescriptionInitiated>
-        <DescriptionInitiated>
-          <p>Beschreibung eingeweiht</p>
-        </DescriptionInitiated>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+       <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1);0,5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>DAYS</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-     <SpeedupQueue queue="queue_building" domain="settlement">0.75</SpeedupQueue>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">0.75</SpeedupQueue>
   </Artifact>
   </ArtifactTypes>

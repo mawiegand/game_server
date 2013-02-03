@@ -20,7 +20,7 @@
 	</Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3</Population> 
   <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="7" /> 
+    <Requirement id="building_chief_cottage" min_level="1" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
   <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4))</Cost>
@@ -28,6 +28,6 @@
   <ProductionTime shortenable="false">FLOOR(7*3600+POW(LEVEL,0.7)/50)</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
-    <UnlockArtifactInitiation />
+    <UnlockArtifactInitiation>LEVEL</UnlockArtifactInitiation>
   </Abilities>
 </Building>

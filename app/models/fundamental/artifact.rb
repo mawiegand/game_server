@@ -1,5 +1,8 @@
 class Fundamental::Artifact < ActiveRecord::Base
 
+
+  has_one    :initiation,  :class_name => "Fundamental::ArtifactInitiation", :foreign_key => "artifact_id", :inverse_of => :artifact, :dependent => :destroy
+
   belongs_to :owner,       :class_name => "Fundamental::Character",  :foreign_key => "owner_id",      :inverse_of => :artifact
 
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id", :inverse_of => :artifact
@@ -10,13 +13,19 @@ class Fundamental::Artifact < ActiveRecord::Base
   before_save :update_region
   before_save :update_alliance
 
+  scope :visible, joins(:owner).where(['fundamental_characters.npc = ?', false])
+
+  def artifact_type
+    GameRules::Rules.the_rules.artifact_types[self.type_id]
+  end
+
   def self.create_at_location_with_type(location, type_id)
     Military::Army.create_npc(location, Random.rand(4..6))
     location.create_artifact({
-      owner:    Fundamental::Character.find_by_id(1),
-      region:   location.region,
-      active:   false,
-      type_id:  type_id
+      owner:     Fundamental::Character.find_by_id(1),
+      region:    location.region,
+      initiated: false,
+      type_id:   type_id
     })
   end
 
@@ -54,7 +63,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.owner       = npc
     self.location    = new_location
     self.settlement  = nil
-    self.active      = false
+    self.initiated   = false
     self.save
 
     Military::Army.create_npc(new_location, Random.rand(4..6))
@@ -65,8 +74,28 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.owner       = character
     self.location    = character.home_location
     self.settlement  = character.home_location.settlement
-    self.active      = false
+    self.initiated   = false
     self.save
+  end
+
+  def initiation_duration
+    formula = Util::Formula.parse_from_formula(artifact_type[:initiation_time], 'LEVEL')
+    formula.apply(self.settlement.artifact_initiation_level)
+  end
+
+  def initiation_costs
+    logger.debug "-------> initiation_costs #{self.owner.mundane_rank}"
+    costs = {}
+    return costs if artifact_type[:initiation_costs].nil?
+
+    artifact_type[:initiation_costs].each do |resource_id, formula|
+      f = Util::Formula.parse_from_formula(formula, 'MRANK')
+      costs[resource_id] = f.apply(self.owner.mundane_rank)
+    end
+
+    logger.debug "-------> initiation_costs  " + costs.inspect
+
+    return costs
   end
 
   protected
