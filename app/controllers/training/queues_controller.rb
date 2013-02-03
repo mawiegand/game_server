@@ -35,7 +35,7 @@ class Training::QueuesController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
           
-          render :json => @training_queues
+          render :json => @training_queues, :root => :training_queue
         end
       end
     end
@@ -51,7 +51,7 @@ class Training::QueuesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @training_queue }
+      format.json { render json: @training_queue, :root => :training_queue }
     end
   end
 

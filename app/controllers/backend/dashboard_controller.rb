@@ -18,6 +18,7 @@ class Backend::DashboardController < ApplicationController
       user_group = {}
       user_group[:user_stats] = {
         active_accounts:          Fundamental::Character.non_npc.platinum.count,
+        deleted_accounts:         Fundamental::Character.non_npc.deleted.count,
         total_accounts:           Fundamental::Character.non_npc.count,
         signins_last_hour:        Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 1.hours]).count,
         signins_last_eight_hours: Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 8.hours]).count,
@@ -32,7 +33,7 @@ class Backend::DashboardController < ApplicationController
       
       user_group[:last_character] = Fundamental::Character.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
       user_group[:last_character_signup] = Fundamental::Character.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').first
-      user_group[:new_characters] = Fundamental::Character.non_npc.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
+      user_group[:new_characters] = Fundamental::Character.non_npc.not_deleted.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
       
       @user_groups << user_group
     end

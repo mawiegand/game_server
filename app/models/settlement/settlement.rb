@@ -301,14 +301,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # destroy all slots
     self.slots.destroy_all            unless self.slots.nil?
     
-    # reset location (region doesn't need to be reset)
-    self.location.remove_settlement
-    
     # trigger before_save and after_save handler
     
     self.check_consistency
     self.save
-    
+
+    # reset location (region doesn't need to be reset)
+    self.location.remove_settlement
+
     # destroy settement itself
     self.destroy
     # settlement UNBLOCK

@@ -41,10 +41,10 @@ No players will be deleted in the next 24 hours.
 <% if @report[:removed_settlements].count > 0 %>
 It removed a total of <%= @report[:removed_settlements].count %> inactive npc settlements:
 
-  id     |  settlement name           | last takeover at
---------+----------------------------+---------------------------
+  id     | lid  | path    |  settlement name           | last takeover at
+--------+------+---------+----------------------------+---------------------------
 <% @report[:removed_settlements].each do |settlement| %>
-  <%= settlement.id.to_s.rjust(5) %>  |  <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
+  <%= settlement.id.to_s.rjust(5) %>  | <%= settlement.location.id.to_s.rjust(4) %> | <%= settlement.region.node.path.rjust(7) %> | <%= settlement.name.rjust(24) %>  |  <%= settlement.last_takeover_at %>
 <% end %>
 <% else %>
 No settlements were removed.
