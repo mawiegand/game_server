@@ -5243,14 +5243,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Festung
-        {               #   Heimatstadt
+        {               #   Heimatsiedlung
           :id          => 2, 
           :symbolic_id => :settlement_home_base,
           :name        => {
             
-            :de_DE => "Heimatstadt",
+            :de_DE => "Heimatsiedlung",
   
-            :en_US => "Home Town",
+            :en_US => "Home Settlement",
                 
           },
           :description => {
@@ -5765,7 +5765,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
 
-        },              #   END OF Heimatstadt
+        },              #   END OF Heimatsiedlung
         {               #   Lagerstätte
           :id          => 3, 
           :symbolic_id => :settlement_outpost,
