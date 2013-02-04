@@ -6068,14 +6068,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Großer Kristall
+        {               #   Kristall des Steins
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall des Steins",
   
-            :en_US => "Great Kristall",
+            :en_US => "Christal of stone",
                 
           },
           :description => {
@@ -6115,15 +6115,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall des Steins
+        {               #   Kristall des Holzes
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall des Holzes",
   
-            :en_US => "Great Kristall",
+            :en_US => "Christal of wood",
                 
           },
           :description => {
@@ -6163,15 +6163,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall des Holzes
+        {               #   Kristall des Felles
           :id          => 2, 
           :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall des Felles",
   
-            :en_US => "Great Kristall",
+            :en_US => "christal of fur",
                 
           },
           :description => {
@@ -6211,15 +6211,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall des Felles
+        {               #   Kristall der Ausbildung
           :id          => 3, 
           :symbolic_id => :artifact_3,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall der Ausbildung",
   
-            :en_US => "Great Kristall",
+            :en_US => "Christal of training",
                 
           },
           :description => {
@@ -6260,15 +6260,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall der Ausbildung
+        {               #   Kristall der Präzision
           :id          => 4, 
           :symbolic_id => :artifact_4,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall der Präzision",
   
-            :en_US => "Great Kristall",
+            :en_US => "Christal of precision",
                 
           },
           :description => {
@@ -6309,15 +6309,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall der Präzision
+        {               #   Kristall der Aufzucht
           :id          => 5, 
           :symbolic_id => :artifact_5,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall der Aufzucht",
   
-            :en_US => "Great Kristall",
+            :en_US => "Christal of rearing",
                 
           },
           :description => {
@@ -6358,15 +6358,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
-        {               #   Großer Kristall
+        },              #   END OF Kristall der Aufzucht
+        {               #   Kristall der Konstruktion
           :id          => 6, 
           :symbolic_id => :artifact_6,
           :name        => {
             
-            :de_DE => "Großer Kristall",
+            :de_DE => "Kristall der Konstruktion",
   
-            :en_US => "Great Kristall",
+            :en_US => "Cristal od construction",
                 
           },
           :description => {
@@ -6407,7 +6407,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Großer Kristall
+        },              #   END OF Kristall der Konstruktion
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
