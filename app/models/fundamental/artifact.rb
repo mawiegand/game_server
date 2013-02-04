@@ -66,11 +66,12 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def move_to_base_of_character(character)
-    self.owner       = character
-    self.location    = character.home_location
-    self.settlement  = character.home_location.settlement
-    self.initiated   = false
-    self.visible     = true
+    self.owner            = character
+    self.location         = character.home_location
+    self.settlement       = character.home_location.settlement
+    self.last_captured_at = Time.now
+    self.initiated        = false
+    self.visible          = true
     self.save
   end
 
@@ -93,6 +94,12 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   def make_visible
     self.visible = true
+    self.save
+  end
+
+  def finish_initiation
+    self.last_initiated_at = Time.now
+    self.initiated = true
     self.save
   end
 

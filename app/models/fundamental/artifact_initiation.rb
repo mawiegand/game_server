@@ -13,4 +13,10 @@ class Fundamental::ArtifactInitiation < ActiveRecord::Base
     )
     raise ArgumentError.new('could not create event for artifact initiation') unless self.save
   end
+
+  def finish
+    return if artifact.nil?
+    artifact.finish_initiation
+    self.destroy
+  end
 end
