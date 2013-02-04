@@ -68,6 +68,12 @@ class Military::Battle < ActiveRecord::Base
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
 
+    artifact = battle.location.artifact
+
+    unless artifact.nil?
+      artifact.make_visible
+    end
+
     return battle
   end
 
@@ -354,9 +360,10 @@ class Military::Battle < ActiveRecord::Base
 
     # TODO add function to calculate probalitity
 
-    if Random.rand(1.0) > ratio * 0.1
+    rand = Random.rand(1.0)
+    if rand < ratio * 0.01
       artifact.capture_by_character(artifact_faction.opposing_faction.leader)
-      true
+      " rand < ratio * 0.01 #{rand}, #{ratio * 0.01}"
     else
       false
     end

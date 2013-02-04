@@ -149,7 +149,20 @@ class Ticker::BattleHandler
 
           runloop.say "Check for artifacts"
           artifact = battle.location.artifact
-          artifact.capture_by_character(winner_leader) unless artifact.nil?
+
+          unless artifact.nil?
+            runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
+            if loser_faction.contains_army_of(artifact.owner)
+              runloop.say "Won Battle for Artifact"
+              artifact.capture_by_character(winner_leader) unless artifact.nil?
+            else
+              runloop.say "Lost Battle for Artifact"
+              artifact.jump_to_neighbor_location
+            end
+          else
+            runloop.say "No artifact found"
+          end
+
         end
 
         runloop.say "Calculate XP for both factions"
@@ -183,8 +196,8 @@ class Ticker::BattleHandler
           end
         end
 
-        runloop.say "Check for artifacts stealing"
-        battle.check_for_artifact_stealing
+        stolen_artifact = battle.check_for_artifact_stealing
+        runloop.say "Check for artifacts stealing: #{stolen_artifact}"
 
         #schedule next round
         battle.schedule_next_round

@@ -89,7 +89,7 @@ artifact_types.each do |artifact_type|
   calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
 
   # determine artifact count to create
-   new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
+  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
 
   # create missing artifacts with npc army at same location
   (0...new_artifacts).each do |nr|
