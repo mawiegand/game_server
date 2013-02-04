@@ -3,8 +3,8 @@
 
 <ArtifactTypes>
   <Artifact id="artifact_0">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall des Steins</Name>
+    <Name lang="en_US">Christal of stone</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -35,8 +35,8 @@
     <ProductionBonus id="resource_stone">1.15</ProductionBonus>
   </Artifact>
   <Artifact id="artifact_1">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall des Holzes</Name>
+    <Name lang="en_US">Christal of wood</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -67,8 +67,8 @@
     <ProductionBonus id="resource_wood">1.15</ProductionBonus>
   </Artifact>
   <Artifact id="artifact_2">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall des Felles</Name>
+    <Name lang="en_US">christal of fur</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -98,8 +98,8 @@
     <ProductionBonus id="resource_fur">1.15</ProductionBonus>
   </Artifact>
   <Artifact id="artifact_3">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall der Ausbildung</Name>
+    <Name lang="en_US">Christal of training</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -130,8 +130,8 @@
     <SpeedupQueue queue="queue_infantry" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_4">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall der Präzision</Name>
+    <Name lang="en_US">Christal of precision</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -162,8 +162,8 @@
     <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_5">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall der Aufzucht</Name>
+    <Name lang="en_US">Christal of rearing</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -194,8 +194,8 @@
     <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
   <Artifact id="artifact_6">
-    <Name lang="de_DE">Großer Kristall</Name>
-    <Name lang="en_US">Great Kristall</Name>
+    <Name lang="de_DE">Kristall der Konstruktion</Name>
+    <Name lang="en_US">Cristal od construction</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
