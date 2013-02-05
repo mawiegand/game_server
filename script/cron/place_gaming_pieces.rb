@@ -6,11 +6,10 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'util/formula'
 
-
-Military::Army.where(npc: true, garrison: false).destroy_all
-Fundamental::Artifact.destroy_all
-
-
+# remove for testing
+#
+#Military::Army.where(npc: true, garrison: false).destroy_all
+#Fundamental::Artifact.destroy_all
 
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
@@ -94,9 +93,13 @@ artifact_types.each do |artifact_type|
   # create missing artifacts with npc army at same location
   (0...new_artifacts).each do |nr|
     location = Map::Location.find_empty_without_army
-    puts "create_at_location_with_type  #{location.id} #{artifact_type[:id]}"
-    Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
-    artifact_count += 1
+    unless location.nil?
+      puts "create_at_location_with_type  #{location.id} #{artifact_type[:id]}"
+      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
+      artifact_count += 1
+    else
+      puts "no empty location for artifact found"
+    end
   end
 end
 
