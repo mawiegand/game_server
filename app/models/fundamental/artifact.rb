@@ -20,7 +20,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def self.create_at_location_with_type(location, type_id)
-    Military::Army.create_npc(location, Random.rand(100..106))
+    Military::Army.create_npc(location, Random.rand(50..1000))
     location.create_artifact({
       owner:     Fundamental::Character.find_by_id(1),
       region:    location.region,
