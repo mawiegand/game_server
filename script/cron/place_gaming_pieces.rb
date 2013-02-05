@@ -105,7 +105,7 @@ end
 
 current_artifacts = Fundamental::Artifact.count
 
-if count_npc_placed > 0 || new_artifacts > 0
+if count_npc_placed > 0 || artifact_count > 0
   Rails.logger.info "NPC PLACEMENT: Compile and email report."
 
   @report[:finished_at]       = Time.now
