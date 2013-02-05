@@ -30,7 +30,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <ProductionBonus id="resource_stone">1.15</ProductionBonus>
   </Artifact>
@@ -62,7 +62,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <ProductionBonus id="resource_wood">1.15</ProductionBonus>
   </Artifact>
@@ -93,7 +93,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <ProductionBonus id="resource_fur">1.15</ProductionBonus>
   </Artifact>
@@ -125,7 +125,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <SpeedupQueue queue="queue_infantry" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
@@ -157,7 +157,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
@@ -189,7 +189,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
   </Artifact>
@@ -221,7 +221,7 @@
       <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>DAYS</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
     <SpeedupQueue queue="queue_buildings" domain="settlement">0.75</SpeedupQueue>
   </Artifact>
