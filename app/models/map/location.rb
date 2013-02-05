@@ -8,6 +8,8 @@ class Map::Location < ActiveRecord::Base
   has_many   :battles,    :class_name => "Military::Battle",                                      :inverse_of => :location
   has_one    :settlement, :class_name => "Settlement::Settlement", :foreign_key => 'location_id', :inverse_of => :location
 
+  has_one    :artifact,   :class_name => "Fundamental::Artifact",  :foreign_key => "location_id", :inverse_of => :location
+
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
   scope :empty,                     where("settlement_type_id = ?", 0)
@@ -15,7 +17,12 @@ class Map::Location < ActiveRecord::Base
   def self.find_empty
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end
-  
+
+  def self.find_empty_without_army
+    empty_locations = Map::Location.all - Map::Location.joins(:armies)
+    empty_locations[Random.rand(empty_locations.count)]
+  end
+
   def self.location_for_player_invitation(invitation_code)
     inviting_region = Map::Region.find_by_invitation_code(invitation_code)
     return nil if inviting_region.nil?

@@ -63,7 +63,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   
   def determine_new_leader
     if self.members.count > 0
-      self.leader_id = self.members.first.id
+      self.leader_id = self.members.first.id # TODO choose member who's first in ranking
     else
       self.leader_id = nil
     end

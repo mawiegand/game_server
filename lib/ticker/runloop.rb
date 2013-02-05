@@ -6,6 +6,7 @@ require 'ticker/training_active_job_handler'
 require 'ticker/training_queue_check_handler'
 require 'ticker/trading_carts_action_handler'
 require 'ticker/resource_effect_handler'
+require 'ticker/artifact_initiation_handler'
 require 'exception/http_exceptions'
 
 
@@ -23,14 +24,15 @@ module Ticker
   end
   
   # register handlers that should be used by the runloop
-  Ticker.add_handler_class(Ticker::MovementHandler);
-  Ticker.add_handler_class(Ticker::BattleHandler);
-  Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler);
-  Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler);
-  Ticker.add_handler_class(Ticker::TrainingActiveJobHandler);
-  Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler);
-  Ticker.add_handler_class(Ticker::ResourceEffectHandler);
-  Ticker.add_handler_class(Ticker::TradingCartsActionHandler);
+  Ticker.add_handler_class(Ticker::MovementHandler)
+  Ticker.add_handler_class(Ticker::BattleHandler)
+  Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler)
+  Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler)
+  Ticker.add_handler_class(Ticker::TrainingActiveJobHandler)
+  Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler)
+  Ticker.add_handler_class(Ticker::ResourceEffectHandler)
+  Ticker.add_handler_class(Ticker::TradingCartsActionHandler)
+  Ticker.add_handler_class(Ticker::ArtifactInitiationHandler)
 
   class Runloop
     

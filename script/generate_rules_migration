@@ -36,7 +36,7 @@ hash_of_models = {
   Action::Trading::TradingCartsAction=> [ { :prefix => 'resource_',:postfix => '_amount',                     :type => ':integer' } ],
   Settlement::Settlement     => [ { :prefix => 'settlement_queue', :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
                                   { :prefix => 'settlement_unlock',:postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
-                                  { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } },
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_base_production',            :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_tax_rate',        :type => ':decimal', :options => { :default => 0.0 } }, 

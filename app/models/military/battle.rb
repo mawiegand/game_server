@@ -13,34 +13,34 @@ class Military::Battle < ActiveRecord::Base
 
   belongs_to :initiator,    :class_name => "Fundamental::Character",      :foreign_key => "initiator_id"
   belongs_to :opponent,     :class_name => "Fundamental::Character",      :foreign_key => "opponent_id"
-  
+
   belongs_to :region,       :class_name => "Map::Region",                 :foreign_key => "region_id",      :inverse_of => :battles
   belongs_to :location,     :class_name => "Map::Location",               :foreign_key => "location_id",    :inverse_of => :battles
-  
+
   belongs_to :message,      :class_name => "Messaging::Message",          :foreign_key => "message_id"
-  
+
   after_save :destroy_dependent_models_on_remove
-  
+
   scope :ongoing, where('ended_at IS NULL')
-  
-  # starts a fight between two armies. if one of the armies is already 
+
+  # starts a fight between two armies. if one of the armies is already
   # involved in an ongoing battle, the other is added to the opposing
   # faction.
   def self.start_fight_between(attacker, defender)
     raise ArgumentError.new('armies NOT at same location') unless attacker.location_id == defender.location_id
-    
+
     battle = nil
-    
+
     #remove a runnung movement command from both attacker and defender
     # TODO: this allows spam-attacks on armies. Halt movement, but don't cancel it
     if attacker.moving?
       attacker.delete_movement
     end
-    
+
     if defender.moving?
       defender.delete_movement
     end
-    
+
     if attacker.fighting? && defender.fighting?                  # merge fights
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
@@ -50,12 +50,12 @@ class Military::Battle < ActiveRecord::Base
       battle = attacker.battle
       battle.add_army(defender, battle.other_faction(attacker.battle_participant.faction_id))
       battle.add_settlement_defenders(attacker, defender, true, false)
-      self.send_attack_notification_if_necessary_to(defender, attacker)      
+      self.send_attack_notification_if_necessary_to(defender, attacker)
     elsif defender.fighting?                                     # B) add attacker to defender's battle
       battle = defender.battle
       battle.add_army(attacker, battle.other_faction(defender.battle_participant.faction_id))
       battle.add_settlement_defenders(attacker, defender, false, true)
-    elsif attacker.able_to_overrun?(defender)                    # C) 
+    elsif attacker.able_to_overrun?(defender)                    # C)
       self.overrun(attacker, defender)
       self.send_attack_notification_if_necessary_to(defender, attacker)
     elsif defender.able_to_overrun?(attacker)                    # D)
@@ -67,10 +67,16 @@ class Military::Battle < ActiveRecord::Base
       battle.create_event_for_next_round
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
-    
+
+    artifact = battle.location.artifact
+
+    unless artifact.nil?
+      artifact.make_visible
+    end
+
     return battle
   end
-  
+
   def self.merge_battles(attacker, defender)
     # end current battle of defender
     defender.battle.ended_at = Time.now
@@ -78,38 +84,38 @@ class Military::Battle < ActiveRecord::Base
 
     # send notification messages for participants of ending battle
     # defender.battle.generate_messages_for_battle(nil, defender.battle)
-        
+
     # put participants of defender's faction in defender's battle to the faction of attacker's opponents in attacker's battle
     defender.battle_participant.faction.participants.each do |participant|
-      
+
       logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.opposing_faction.id}"
-      
+
       if participant.army.nil? || participant.army.empty?
         logger.debug "don't add the above army because it is already dead."
       else
         attacker.battle.add_army(participant.army, attacker.battle.other_faction(attacker.battle_participant.faction_id))
       end
     end
-    
+
     # put participants of defender's opposing faction in defender's battle to attacker's faction in attacker's battle
     defender.battle_participant.faction.opposing_faction.participants.each do |participant|
-      
+
       logger.debug "new battle: #{participant.battle.id}, old battle: #{defender.battle.id}, new faction: #{participant.faction.id}, old faction: #{attacker.battle_participant.faction.id}"
-      
+
       if participant.army.nil? || participant.army.empty?
         logger.debug "don't add the above army because it is already dead."
       else
         attacker.battle.add_army(participant.army, attacker.battle_participant.faction)
-      end      
+      end
     end
-    
+
     attacker.battle.save
-    
+
     # cleanup defenders battle
     ## cleanup of the destroyed armies and the battle object
     defender.battle.cleanup
   end
-  
+
   #deletes armies that no longer exists (or marks them as removed)
   def cleanup
     # delete participating armies
@@ -128,7 +134,7 @@ class Military::Battle < ActiveRecord::Base
 
     # destroy appropriate event
     self.event.destroy
-    
+
     # remove battle or set to removed
     if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
       self.removed = true
@@ -139,21 +145,21 @@ class Military::Battle < ActiveRecord::Base
       self.destroy
     end
   end
-  
+
   # add armies with stance 'defending settlement' to garrison fraction of battle
   def add_settlement_defenders(attacker, defender, attacker_fighting, defender_fighting)
     unless attacker.location.empty?                                              # don't add defenders at empty locations
-      if attacker.garrison                                                       # if attacker is garrison army 
+      if attacker.garrison                                                       # if attacker is garrison army
         attacker.location.armies.each do |other_army|                            # add all defending armies
           if (other_army != attacker &&                                          # don't add attacker
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !defender.battle_participant.faction.contains_army_of(other_army.owner) &&   # don't let armies of current character defend his own attack
-              other_army.defending?)                                             # only add armies with appropriate stance            
+              other_army.defending?)                                             # only add armies with appropriate stance
             other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
             self.add_army(other_army, attacker.battle_participant.faction)
           end
-        end                                                                      
+        end
       elsif (defender.garrison ||                                                # if defender is garrison army
              defender.battle_participant.faction.contains_garrison?)             # or a fighting army in garrison faction
         defender.location.armies.each do |other_army|                            # add all defending armies
@@ -161,7 +167,7 @@ class Military::Battle < ActiveRecord::Base
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
-              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison 
+              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison
             other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
@@ -174,7 +180,7 @@ class Military::Battle < ActiveRecord::Base
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
-              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison 
+              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison
             other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
@@ -188,7 +194,7 @@ class Military::Battle < ActiveRecord::Base
       end
     end
   end
-  
+
   def self.overrun(attacker, defender)
     # attacker
     attacker.victories += 1            # add victory
@@ -205,11 +211,11 @@ class Military::Battle < ActiveRecord::Base
 
     # create message for winner and loser
     Messaging::Message.generate_overrun_winner_message(attacker, defender)
-    Messaging::Message.generate_overrun_loser_message(attacker, defender) 
+    Messaging::Message.generate_overrun_loser_message(attacker, defender)
 
     Military::Army.destroy(defender.id)
   end
-  
+
   def self.create_battle_between(attacker, defender)
     rules = GameRules::Rules.the_rules
 
@@ -221,24 +227,24 @@ class Military::Battle < ActiveRecord::Base
       :location_id => attacker.location_id,
       :region_id => attacker.region_id
     )
-    
+
     faction0 = battle.factions.create(
       :faction_num => 0,
       :leader_id => attacker.owner_id,
       :joined_at => DateTime.now)
-      
+
     faction1 = battle.factions.create(
       :faction_num => 1,
       :leader_id => defender.owner_id,
       :joined_at => DateTime.now)
-      
+
     battle.add_army(attacker, faction0)
     battle.add_army(defender, faction1)
-    
+
     #add defenders of garrison, if necessary
     battle
   end
-  
+
   def self.send_attack_notification_if_necessary_to(defender, attacker)
     if !defender.owner.npc? && defender.owner.offline? && defender.owner.platinum_account?
       ip_access = IdentityProvider::Access.new(
@@ -247,7 +253,7 @@ class Military::Battle < ActiveRecord::Base
         scopes:                     ['5dentity'],
       )
       ip_access.deliver_attack_notification(defender.owner, defender, attacker.owner)
-    end    
+    end
   end
 
   #advanced the next_round_at field
@@ -255,7 +261,7 @@ class Military::Battle < ActiveRecord::Base
     rules = GameRules::Rules.the_rules
     self.next_round_at = self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
   end
-  
+
   def create_event_for_next_round
     #create entry for event table
     event = Event::Event.new(
@@ -272,11 +278,11 @@ class Military::Battle < ActiveRecord::Base
   def other_factions(id)
     self.factions.where("id != ?", id)
   end
-  
+
   def other_faction(id)
     other_factions(id).first
   end
-  
+
   def add_army(army, faction)
     logger.debug "Adding army #{army.id}: #{army} to faction #{faction.id}: #{faction}."
     army.battle = self
@@ -292,7 +298,7 @@ class Military::Battle < ActiveRecord::Base
     })
     faction.update_from_participants
   end
-  
+
   def battle_done?
     active_factions = 0
     factions.each do |f|
@@ -313,11 +319,11 @@ class Military::Battle < ActiveRecord::Base
     end
     result
   end
-  
+
   def loser_faction
     other_faction(winner_faction.id)
   end
-  
+
   def xp_for_character_and_faction(character, faction)
     character_result = self.character_results.where(['character_id = ? and faction_id = ?', character.id, faction.id]).first
     character_result.nil? ? 0 : character_result.experience_gained
@@ -332,45 +338,72 @@ class Military::Battle < ActiveRecord::Base
     end
     nil
   end
-  
+
+  def faction_owning_artifact(artifact)
+    self.participants.each do |participant|
+      return participant.faction if participant.character == artifact.owner
+    end
+    nil
+  end
+
+  def check_for_artifact_stealing
+    artifact = self.location.artifact
+    return false if artifact.nil?
+
+    artifact_faction = faction_owning_artifact(artifact)
+    return false if artifact_faction.nil?
+
+    ratio = 1.0 * artifact_faction.strength / (artifact_faction.opposing_faction.strength + artifact_faction.strength)
+
+    # TODO add function to calculate probalitity
+
+    rand = Random.rand(1.0)
+    if rand < ratio * 0.01
+      artifact.capture_by_character(artifact_faction.opposing_faction.leader)
+      " rand < ratio * 0.01 #{rand}, #{ratio * 0.01}"
+    else
+      false
+    end
+  end
+
   ################################################################################
   #
   #  experience points
   #
   ################################################################################
-  
+
   def calculate_character_results
     winner_units_count = 0
     winner_faction.participants.each do |participant|
       winner_units_count += participant.results.first.units_count unless participant.results.empty?
     end
-    
+
     loser_units_count = 0
     loser_faction.participants.each do |participant|
       loser_units_count += participant.results.first.units_count unless participant.results.empty?
     end
-    
+
     return if loser_units_count == 0 || winner_units_count == 0
-    
-    k = 1.0 * loser_units_count / winner_units_count    
-    
+
+    k = 1.0 * loser_units_count / winner_units_count
+
     # logger.debug "---> k: #{k}, winner_units_count: #{winner_units_count}, loser_units_count: #{loser_units_count}, rounds.count: #{rounds.count}"
-    
+
     rounds.each do |round|
       winner_units_count_per_round = 0
       winner_faction.participants.each do |participant|
         round_results = participant.results.where(:round_id => round.id)
         winner_units_count_per_round += round_results.first.units_count unless round_results.empty?
       end
-      
+
       loser_lost_units_count_per_round = 0
       loser_faction.participants.each do |participant|
         round_results = participant.results.where(:round_id => round.id)
         loser_lost_units_count_per_round += round_results.first.lost_units_count unless round_results.empty?
       end
-      
+
       # logger.debug "---> round: #{round.round_num}, winner_units_count_per_round: #{winner_units_count_per_round}, loser_lost_units_count_per_round: #{loser_lost_units_count_per_round}"
-      
+
       # winner faction: calculate winner experience according to new function
       winner_faction.participants.each do |participant|
         participant_round_results = participant.results.where(:round_id => round.id)
@@ -387,30 +420,30 @@ class Military::Battle < ActiveRecord::Base
       end
     end
   end
-  
+
   def propagate_character_results_to_character
     self.character_results.each do |result|
       logger.debug "propagate_character_results_to_character: add #{result.experience_gained} to character id #{result.character.id}"
       result.character.add_experience(result.experience_gained.to_i)
     end
   end
-  
+
   def count_victory_and_defeat
     winner_faction.count_victory
     loser_faction.count_defeat
   end
-  
+
   protected
-    
+
     def destroy_dependent_models
       self.participants.destroy_all
       self.factions.destroy_all
       self.rounds.destroy_all
-      
+
       self.participant_results.destroy_all
-      self.faction_results.destroy_all        
+      self.faction_results.destroy_all
     end
-    
+
     def destroy_dependent_models_on_remove
       if !self.changes[:removed].blank? && self.changes[:removed][1] == true
         logger.debug "Battle #{self.id} was removed. Now starting to destroy dependent models."

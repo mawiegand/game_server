@@ -112,6 +112,7 @@
     <AllianceMaxMembers>80</AllianceMaxMembers>
   </General>
   <xi:include href="rules_victories.xml" />
+  <xi:include href="rules_artifacts.xml" />
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
   <xi:include href="rules_units.xml" />

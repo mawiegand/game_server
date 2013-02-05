@@ -28,6 +28,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
   has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
+
+  has_one  :artifact,          :class_name => "Fundamental::Artifact",      :foreign_key => "owner_id",     :inverse_of => :owner
   
   has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
   belongs_to :last_retention_mail, :class_name => "Fundamental::RetentionMail", :foreign_key => "last_retention_mail_id"
@@ -432,8 +434,7 @@ class Fundamental::Character < ActiveRecord::Base
       false
     end
   end
-    
-  
+
   def is_enemy_of?(opponent)
     return !self.is_neutral? && !opponent.is_neutral? && self.alliance != opponent.alliance  
   end

@@ -42,6 +42,7 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
+          resource  :artifact,                                 :only => [ :show ]
           resources :settings
           resources :history_events,                           :only => [ :index ]
         end
@@ -57,7 +58,10 @@ GameServer::Application.routes.draw do
         resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
-        
+        resources :artifacts
+        resources :artifact_initiations
+
+
         resources :guilds do
           resources :characters
         end
@@ -70,9 +74,11 @@ GameServer::Application.routes.draw do
         resources :retention_mails
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
-      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+                  
+      resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
+      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'            
 
-      
       namespace :messaging do 
         resources :archives do
           resources :entries, :controller => :archive_entries

@@ -134,4 +134,12 @@ class Military::BattleFaction < ActiveRecord::Base
       character.increment!(:defeats, 1)
     end
   end
+
+  def strength
+    strength = 0
+    self.participants.each do |p|
+      strength += p.army.strength unless p.army.nil?
+    end
+    strength
+  end
 end

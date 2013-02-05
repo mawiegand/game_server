@@ -12,7 +12,9 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
   belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
   belongs_to :garrison_army,   :class_name => "Military::Army",  :foreign_key => "garrison_id"
-  
+
+  has_one    :artifact, :class_name => "Fundamental::Artifact",  :foreign_key => "settlement_id",      :inverse_of => :settlement
+
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
@@ -436,9 +438,12 @@ class Settlement::Settlement < ActiveRecord::Base
     building_slots = recalc_building_slots_total
     check_and_apply_building_slots_total(building_slots)
 
+    artifact_initiation_level = recalc_artifact_initiation_level
+    check_and_apply_artifact_initiation_level(artifact_initiation_level)
+
     unlock_prevent_takeover = recalc_unlock_prevent_takeover_count
     check_and_apply_unlock_prevent_takeover_count(unlock_prevent_takeover)
-    
+
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
     
@@ -648,22 +653,36 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end  
 
+    def recalc_artifact_initiation_level
+      pt = 0
+      self.slots.each do |slot|
+        pt += slot.artifact_initiation_level
+      end
+      pt    
+    end
+    
+    def check_and_apply_artifact_initiation_level(total)
+      if (self.artifact_initiation_level != total)
+        logger.warn(">>> ARTIFACT INITIATION LEVEL RECALC DIFFERS. Old: #{self.artifact_initiation_level} Corrected: #{total}.")
+        self.artifact_initiation_level = total
+      end
+    end
+
     def recalc_unlock_prevent_takeover_count
       pt = 0
       self.slots.each do |slot|
         pt += slot.unlock_prevent_takeover
       end
-      pt    
+      pt
     end
-    
+
     def check_and_apply_unlock_prevent_takeover_count(total)
-      if (self.settlement_unlock_prevent_takeover_count != total) 
+      if (self.settlement_unlock_prevent_takeover_count != total)
         logger.warn(">>> UNLOCK PREVENT TAKEOVER COUNT RECALC DIFFERS. Old: #{self.settlement_unlock_prevent_takeover_count} Corrected: #{total}.")
         self.settlement_unlock_prevent_takeover_count = total
       end
-    end  
+    end
 
-    
     def recalc_trading_carts
       tc = 0
       self.slots.each do |slot|

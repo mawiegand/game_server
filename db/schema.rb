@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124152302) do
+ActiveRecord::Schema.define(:version => 20130204152305) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1644,17 +1644,26 @@ ActiveRecord::Schema.define(:version => 20130124152302) do
     t.boolean  "public",      :default => true, :null => false
   end
 
+  create_table "fundamental_artifact_initiations", :force => true do |t|
+    t.integer  "artifact_id"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fundamental_artifacts", :force => true do |t|
     t.integer  "location_id"
     t.integer  "settlement_id"
     t.integer  "owner_id"
-    t.boolean  "active"
-    t.datetime "last_activated_at"
+    t.boolean  "initiated"
+    t.datetime "last_initiated_at"
     t.datetime "last_captured_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "region_id"
     t.integer  "type_id"
+    t.boolean  "visible"
   end
 
   create_table "fundamental_characters", :force => true do |t|
@@ -2380,6 +2389,7 @@ ActiveRecord::Schema.define(:version => 20130124152302) do
     t.decimal  "exp_production_rate",                            :default => 0.0
     t.decimal  "exp_production_rate_buildings",                  :default => 0.0
     t.datetime "last_takeover_at"
+    t.integer  "artifact_initiation_level",                      :default => 0,            :null => false
   end
 
   create_table "settlement_slots", :force => true do |t|
