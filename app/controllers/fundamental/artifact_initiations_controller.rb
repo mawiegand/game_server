@@ -77,8 +77,6 @@ class Fundamental::ArtifactInitiationsController < ApplicationController
     @initiation.started_at = Time.now
     @initiation.finished_at = @initiation.started_at + artifact.initiation_duration
 
-    logger.debug '---->' + @initiation.inspect
-
     @initiation.create_ticker_event
 
     respond_to do |format|
