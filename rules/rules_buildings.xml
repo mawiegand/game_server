@@ -46,7 +46,7 @@
   <xi:include href="buildings/rules_building_haunt.xml" />
 
   <xi:include href="buildings/rules_building_training_cave.xml" />
-  <xi:include href="buildings/rules_building_artifact_stand.xml" />
+  <!-- xi:include href="buildings/rules_building_artifact_stand.xml" / -->
 
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>
