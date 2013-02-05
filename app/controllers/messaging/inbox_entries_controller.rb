@@ -17,7 +17,7 @@ class Messaging::InboxEntriesController < ApplicationController
       raise NotFoundError.new('Inbox not found.') if @inbox.nil?
       role = determine_access_role(@inbox.owner_id, nil)   # no privileged alliance access
       raise ForbiddenError.new('Access to inbox denied.') unless role == :owner || admin? || staff?
-      @messaging_inbox_entries = @inbox.entries || []
+      @messaging_inbox_entries = @inbox.entries.where("created_at >= ?", Time.now - 1209600) || []
       if !if_modified_since_time.nil?
         @messaging_inbox_entries = @messaging_inbox_entries.find_all { |entry| entry.updated_at > if_modified_since_time } 
       end

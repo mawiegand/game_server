@@ -94,7 +94,22 @@ class Messaging::Message < ActiveRecord::Base
     
     return true # need to return true, because otherwise the filter chain would break
   end
-  
+  def move_to_archive
+    if !self.recipient_id.nil?
+      @character = Fundamental::Character.find(self.recipient_id)
+      if !@character.nil? && !@character.archive.nil?
+        @character.archive.entries.create({
+          sender_id:  self.sender_id,
+          owner_id:   @character.id,
+          message_id: self.id,
+          subject:    self.subject,
+        });
+      else
+        logger.error "ERROR: Could not deliver message #{ self.id} to recipient. Failed to create an archive entry."
+      end
+    end
+    return true # need to return true, because otherwise the filter chain would break
+  end
   def notify_offline_recipients
     if self.type_id == ANNOUNCEMENT_TYPE_ID || self.type_id == ALLIANCE_TYPE_ID
       self.inbox_entries.each do |inbox_entry|

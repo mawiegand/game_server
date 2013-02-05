@@ -193,6 +193,9 @@ GameServer::Application.routes.draw do
         namespace :construction do
           resources :finish_job_actions    
         end
+        namespace :messaging do
+          resources :archive_entries_actions#, :only => [ :create]
+        end
         namespace :trading do 
           resources :trading_carts_actions 
         end 
@@ -201,7 +204,8 @@ GameServer::Application.routes.draw do
         end
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ] 
-		  resources :abandon_outpost_actions, :only => [ :create ]
+          resources :abandon_outpost_actions, :only => [ :create ]
+          resources :archive_entries_actions#, :only => [ :create]
         end
         namespace :tutorial do
           resources :check_quest_actions,     :only => [ :create ]    
