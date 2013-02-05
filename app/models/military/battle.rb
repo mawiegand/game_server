@@ -214,9 +214,6 @@ class Military::Battle < ActiveRecord::Base
     Messaging::Message.generate_overrun_loser_message(attacker, defender)
 
     Military::Army.destroy(defender.id)
-
-    logger.debug "-------> artifact? #{!attacker.location.artifact.nil?}"
-    attacker.location.artifact.capture_by_character(attacker.owner) unless attacker.location.artifact.nil?
   end
 
   def self.create_battle_between(attacker, defender)
