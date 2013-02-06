@@ -27,7 +27,7 @@ class Fundamental::CharactersController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
-          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff?) 
+          raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
             @fundamental_characters =  Fundamental::Character.paginate(:order => 'name', :page => params[:page], :per_page => 50)    
             @paginate = true   
@@ -38,10 +38,12 @@ class Fundamental::CharactersController < ApplicationController
             raise ForbiddenError.new('Access Forbidden')        
           end  
           @fundamental_characters = [] if @fundamental_characters.nil?  # necessary? or ok to send 'null' ?
-          render json: @fundamental_characters.map do |character| 
+          sanitized = @fundamental_characters.map do |character| 
             role = determine_access_role(character.id, character.alliance_id)
+            logger.debug "Access with ROLE: #{ role }"
             character.sanitized_hash(role) 
           end
+          render json: sanitized
         end
       end
     end
@@ -108,7 +110,7 @@ class Fundamental::CharactersController < ApplicationController
       
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
-      
+            
       Backend::SignInLogEntry.create({
         direct_referer_url: request.referer,
         referer_url:        external_referer,
@@ -146,8 +148,96 @@ class Fundamental::CharactersController < ApplicationController
       
     elsif !current_character
       raise NotFoundError.new("Could not find user's character.")
-    else
+    elsif current_character.deleted_from_game?
       
+      # set player back to game
+      current_character.deleted_from_game = false
+      
+      identity_provider_access = IdentityProvider::Access.new({
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
+      })
+      
+      response = identity_provider_access.fetch_identity(request_access_token.identifier)
+      identity = {}
+      if response.code == 200
+        identity = response.parsed_response
+      end
+      
+      # set character properties to default values
+      start_resource_modificator = 1.0            
+      
+      # fetch persistent character properties from identity provider  
+      response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
+      properties = {}
+      
+      logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+      
+      if response.code == 200
+        properties = response.parsed_response
+        logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+        unless properties.empty?
+          character_property = properties[0]
+          if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
+            property_value = character_property['data']['start_resource_modificator'].to_f
+            logger.info "START PROPERTY_VALUE #{ property_value }."
+            start_resource_modificator = property_value if property_value > 0
+            logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+          end
+        end
+      end
+
+      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
+      
+      if !current_character.save
+        # raise InternalServerError.new('Could not create new character.') 
+      end
+  
+      current_character.create_resource_pool
+      
+      # raise InternalServerError.new('Could not save the base of the character.')  if !current_character.save
+  
+      current_character.create_ranking({
+        character_name: current_character.name,
+      });
+      
+      location = Map::Location.find_empty
+      if !location || !current_character.claim_location(location)
+        raise InternalServerError.new('Could not claim an empty location.')
+      end
+
+      Settlement::Settlement.create_settlement_at_location(location, 2, current_character)  # 2: home base
+        
+      current_character.base_location_id = location.id              # TODO is this the home_location_id?
+      current_character.base_region_id = location.region_id
+      current_character.base_node_id = location.region.node_id
+      
+      current_character.home_location.settlement.name = "Hauptsiedlung"
+      current_character.home_location.settlement.save
+      
+      current_character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+      
+      current_character.create_tutorial_state
+      current_character.tutorial_state.create_start_quest_state     
+            
+      Backend::SignInLogEntry.create({
+        direct_referer_url: request.referer,
+        referer_url:        external_referer,
+        request_url:        request_url,
+        character_id:       current_character.id,
+        remote_ip:          request.remote_ip,
+      });
+      
+      current_character.last_login_at = DateTime.now
+      current_character.increment(:login_count)
+      
+      current_character.check_consistency
+      current_character.save
+      
+      redirect_to fundamental_character_path(current_character.id)
+    else
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
       current_character.save
@@ -175,14 +265,16 @@ class Fundamental::CharactersController < ApplicationController
       @credit_amount = account_response[:response_data][:amount]
       @shop_credit_transaction = Shop::CreditTransaction.new({partner_user_id: @fundamental_character.identifier})
     end
-
-    respond_to do |format|
-      format.html do
-        raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin)
-      end
-      format.json do
-        logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
-        render json: include_root(@fundamental_character.sanitized_hash(role), :character) 
+    
+    if stale?(:last_modified => @fundamental_character.updated_at.utc, :etag => @fundamental_character)
+      respond_to do |format|
+        format.html do
+          raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
+        end
+        format.json do
+          logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
+          render json: include_root(@fundamental_character.sanitized_hash(role), :character) 
+        end
       end
     end
   end

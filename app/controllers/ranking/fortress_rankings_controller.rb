@@ -7,6 +7,8 @@ class Ranking::FortressRankingsController < ApplicationController
     
     @fortresses = if params[:sort] == 'defense'
       Settlement::Settlement.fortress.highest_defense_bonus
+    elsif params[:sort] == 'name'
+      Settlement::Settlement.fortress.joins(:region).order('map_regions.name asc')
     elsif params[:sort] == 'income'
       Settlement::Settlement.fortress.highest_normalized_income
     else
@@ -23,6 +25,8 @@ class Ranking::FortressRankingsController < ApplicationController
     @fortresses.each do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
+      ranking_entry_hash[:character_id] = ranking_entry.owner_id
+      ranking_entry_hash[:character_name] = ranking_entry.owner.name
       ranking_entry_hash[:region_name] = ranking_entry.region.name unless ranking_entry.region.nil?
       ranking_entry_hash[:resource_production_score] = (ranking_entry.resource_production_score / (ranking_entry.tax_rate * 100)).round
       returned_ranking_entries << ranking_entry_hash

@@ -8,6 +8,8 @@ class Map::Location < ActiveRecord::Base
   has_many   :battles,    :class_name => "Military::Battle",                                      :inverse_of => :location
   has_one    :settlement, :class_name => "Settlement::Settlement", :foreign_key => 'location_id', :inverse_of => :location
 
+  has_one    :artifact,   :class_name => "Fundamental::Artifact",  :foreign_key => "location_id", :inverse_of => :location
+
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
   scope :empty,                     where("settlement_type_id = ?", 0)
@@ -15,7 +17,16 @@ class Map::Location < ActiveRecord::Base
   def self.find_empty
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end
-  
+
+  def self.find_empty_without_army
+    empty_locations = Map::Location.all - Map::Location.joins(:armies)
+    unless empty_locations.empty?
+      empty_locations[Random.rand(empty_locations.count)]
+    else
+      nil
+    end
+  end
+
   def self.location_for_player_invitation(invitation_code)
     inviting_region = Map::Region.find_by_invitation_code(invitation_code)
     return nil if inviting_region.nil?
@@ -76,15 +87,27 @@ class Map::Location < ActiveRecord::Base
   
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
-  def set_owner_and_alliance(new_owner_id, new_alliance_id)
-    if (new_owner_id != self.owner_id)
-      self.owner_id = new_owner_id
+  def set_owner_and_alliance(new_owner, new_alliance)
+    if (new_owner != self.owner)
+      self.owner = new_owner
       self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
-    if (new_alliance_id != self.alliance_id)
-      self.alliance_id = new_alliance_id
+    if (new_alliance != self.alliance)
+      self.alliance = new_alliance
       self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
     end
+  end
+  
+  def remove_settlement
+    self.settlement_type_id = Settlement::Settlement::TYPE_NONE
+    self.settlement_level = nil
+    self.count_armies = nil
+    self.owner_id = nil
+    self.owner_name = nil
+    self.visible = nil
+    self.right_of_way = 0
+    self.settlement_score = 0
+    self.save
   end
 
   def empty?

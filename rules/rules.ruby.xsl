@@ -79,7 +79,10 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula, :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories, :queue_types, :settlement_types, :victory_types, :construction_speedup, :training_speedup, :character_ranks, :alliance_max_members
+  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula,
+    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
+    :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
@@ -97,10 +100,12 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'settlement_types'            => settlement_types,  
+      'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
+      'artifact_count'              => artifact_count,
     }
   end
   
@@ -131,7 +136,7 @@ class GameRules::Rules
     root = include_root_in_json
     root = options[:root]    if options.try(:key?, :root)
     if root
-      root = self.class.model_name.element if root == true
+      root = self.class.model_name.element if root
       options.delete(:root)  if options.try(:key?, :root)
       JSON.pretty_generate({ root => hash }, options)
     else
@@ -167,6 +172,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
         :alliance_max_members => <xsl:value-of select="//General/AllianceMaxMembers" />,
+        :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
@@ -175,6 +181,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
         :character_ranks => {
@@ -311,7 +318,12 @@ end
           },
           :description => {
             <xsl:apply-templates select="Description" />              
-          },          
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
         },              #   END OF <xsl:value-of select="@id"/>
 </xsl:for-each>
       ],                # END OF RESOURCE TYPES
@@ -338,6 +350,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="@hidden">
           :hidden      => <xsl:value-of select="@hidden"/>,
 </xsl:if>
@@ -411,8 +428,6 @@ end
 </xsl:template>
 
 
-
-
 <xsl:template match="TargetList">
               [
                 <xsl:for-each select="Target">
@@ -421,8 +436,10 @@ end
               ],
 </xsl:template>
 
+
 <xsl:template match="UnitCategories">
-  
+# ## UNIT CATEGORIES ##############################################################
+
       :unit_categories => [  # ALL UNIT CATEGORIES
 <xsl:for-each select="UnitCategory">
         {               #   <xsl:value-of select="Name"/>
@@ -435,6 +452,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
@@ -451,9 +473,6 @@ end
 </xsl:for-each>
       ],                # END OF UNIT CATEGORIES
 </xsl:template>
-
-
-
 
 
 <xsl:template match="BuildingTypes">
@@ -475,6 +494,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
           :hidden      => <xsl:value-of select="@hidden"/>,
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
@@ -490,6 +514,8 @@ end
           :buyable     => <xsl:value-of select="@buyable"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
+          :takeover_downgrade_by_levels=> <xsl:value-of select="@takeoverDowngradeByLevels"/>,
+          :takeover_destroy  => <xsl:value-of select="@takeoverDestroy"/>,
           :experience_factor => <xsl:value-of select="@experienceFactor" />,
 <xsl:if test="ExperienceProduction">
           :experience_production => '<xsl:value-of select="ExperienceProduction"/>',
@@ -572,7 +598,8 @@ end
 
 
 <xsl:template match="BuildingCategories">
-  
+# ## BUILDING CATEGORIES ######################################################
+
       :building_categories => [  # ALL BUILDING CATEGORIES
 <xsl:for-each select="BuildingCategory">
         {               #   <xsl:value-of select="Name"/>
@@ -608,6 +635,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
 </xsl:if>
@@ -626,6 +658,7 @@ end
               <xsl:if test="@level">
               :level  => <xsl:value-of select="@level"/>,
               </xsl:if>
+              :takeover_level_factor  => <xsl:value-of select="@takeoverLevelFactor"/>,
               :options   => [
               <xsl:for-each select="BuildingOption">
                 <xsl:value-of select="count(id(@category)/preceding-sibling::*)"/>,
@@ -659,6 +692,11 @@ end
           :description => {
             <xsl:apply-templates select="Description" />              
           },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
 <xsl:apply-templates select="Condition" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
@@ -670,11 +708,70 @@ end
           :condition   => {
 <xsl:if test="RequiredRegionsRatio">
             :required_regions_ratio => '<xsl:value-of select="RequiredRegionsRatio"/>',
-            :duration => <xsl:value-of select="RequiredRegionsRatio/@duration"/>,
 </xsl:if>
+            :duration => <xsl:value-of select="@duration"/>,
           },
 </xsl:template>
 
+
+
+<xsl:template match="ArtifactTypes">
+# ## ARTIFACT TYPES ########################################################
+  
+      :artifact_types => [  # ALL ARTIFACT TYPES
+<xsl:for-each select="Artifact">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
+          :amount      => '<xsl:apply-templates select="ArtifactAmount" />',
+<xsl:if test="count(SpeedupQueue)">
+          :speedup_queue => [
+            <xsl:apply-templates select="SpeedupQueue" />
+          ],
+</xsl:if>
+          :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
+<xsl:if test="count(ProductionBonus)">
+          :production_bonus  => [
+<xsl:for-each select="ProductionBonus">
+            {
+              :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+              :symbolic_id        => :<xsl:value-of select="@id"/>,
+              :formula            => "<xsl:apply-templates />",
+            },
+</xsl:for-each>
+          ],
+</xsl:if>
+<xsl:apply-templates select="Initiation" />
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF ARTIFACT TYPES
+</xsl:template>
+
+
+<xsl:template match="Initiation">
+          :description_initiated => {
+<xsl:apply-templates select="Description" />
+          },
+          :initiation_costs => {
+            <xsl:apply-templates select="InitiationCost" />
+          },
+          :initiation_time => "<xsl:apply-templates select="InitiationTime" />",
+</xsl:template>
+
+<xsl:template match="InitiationCost">
+            <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
+            </xsl:template>
 
 
 
@@ -728,8 +825,9 @@ end
 <xsl:apply-templates select="UnlockBuildingSlots" />    
 <xsl:apply-templates select="PreventTakeover" />    
 <xsl:apply-templates select="GarrisonSizeBonus" />    
-<xsl:apply-templates select="ArmySizeBonus" />    
-<xsl:apply-templates select="UnlockDiplomacy" />    
+<xsl:apply-templates select="ArmySizeBonus" />
+<xsl:apply-templates select="UnlockDiplomacy" />
+<xsl:apply-templates select="UnlockArtifactInitiation" />
           },
 </xsl:template>
 
@@ -769,6 +867,10 @@ end
 <xsl:if test="@foundAllianceLevel">
             :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
 </xsl:if>
+</xsl:template>
+
+<xsl:template match="UnlockArtifactInitiation">
+            :unlock_artifact_initiation => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="DefenseBonus">
@@ -814,6 +916,5 @@ end
             </xsl:template>
 
 </xsl:stylesheet>
-
 
 

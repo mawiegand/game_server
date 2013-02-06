@@ -1,5 +1,5 @@
   
-  <b>Accounts:</b> <%= user_group[:user_stats][:active_accounts]%> / <%= user_group[:user_stats][:total_accounts]%> (platinum / total)<br/> 
+  <b>Accounts:</b> <%= user_group[:user_stats][:active_accounts]%> / <%= user_group[:user_stats][:total_accounts] %> / <%= user_group[:user_stats][:deleted_accounts] %> (platinum / total / deleted)<br/>
   <b>Unique Users:</b> 
     <%= user_group[:user_stats][:signins_last_hour] %> / 
     <%= user_group[:user_stats][:signins_last_eight_hours]  %> /
@@ -16,7 +16,7 @@
 
     <% if user_group[:last_character_signup] %>
       <b>Latest Sign Up</b>: 
-      <%= link_to user_group[:last_character_signup].name, user_group[:last_character] %> (<%= user_group[:last_character_signup].identifier %>),
+      <%= link_to user_group[:last_character_signup].name, user_group[:last_character_signup] %> (<%= user_group[:last_character_signup].identifier %>),
       <b><%= time_ago_in_words user_group[:last_character_signup].created_at %></b> ago<br/>
     <% end %>
   </p>
@@ -89,6 +89,8 @@
       }
     );
     
+    
+<% if @display_gross %>
       var creditsSpentTotal = new Dygraph(
 
         document.getElementById("credits_spent_total"),
@@ -109,6 +111,8 @@
           },
         }
       );
+<% end %>
+
     </script>
   <% end %>
   
@@ -123,22 +127,30 @@
   <tr>
     <th>ID</th>
     <th>Identifier</th>
+<% if @display_gross %>
     <th>Referer</th>
+<% end %>
     <th>Name</th>
     <th>Login</th>
+<% if @display_gross %>
     <th>Activity</th>
     <th>Playtime</th>
+<% end %>
     <th>Solved Quests</th>
     <th>Open Quests</th>
     <th>Conversion</th>
+<% if @display_gross %>
     <th>Gross</th>
+<% end %>
   </tr>
 
 <% user_group[:new_characters].each do |fundamental_character| %>
   <tr>
     <td><%= link_to fundamental_character.id, fundamental_character_path(fundamental_character.id) %></td>
     <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+<% if @display_gross %>
     <td><%= fundamental_character.referer %></td>
+<% end %>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
           | <%= fundamental_character.alliance_tag %>
@@ -150,6 +162,7 @@
           never
         <%end%>
     </td>
+<% if @display_gross %>
     <td><% if !fundamental_character.last_request_at.nil? %>          
           <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
         <%else%>
@@ -157,6 +170,7 @@
         <%end%>
     </td>
     <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+<% end %>
     <td><%= fundamental_character.num_finished_quests %></td>
     <td>
       <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
@@ -164,7 +178,9 @@
       <% end %>
     </td>
     <td><%= fundamental_character.max_conversion_state %></td>
+<% if @display_gross %>
     <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+<% end %>
   </tr>
 <% end %>
 </table>

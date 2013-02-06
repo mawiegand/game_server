@@ -12,12 +12,16 @@ class Map::Region < ActiveRecord::Base
   has_many :settlements,       :class_name => "Settlement::Settlement", :foreign_key => 'region_id',   :inverse_of => :region
   has_many :armies,            :class_name => "Military::Army",         :foreign_key => "region_id",   :inverse_of => :region
   
-  has_many :battles,           :class_name => "Military::Battle", :inverse_of => :region
+  has_many :battles,           :class_name => "Military::Battle",       :inverse_of => :region
+
+  has_many  :artifacts,        :class_name => "Fundamental::Artifact",  :foreign_key => "region_id",   :inverse_of => :region
   
   before_create :add_unique_invitation_code
   
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
+  
+  scope :non_occupied, where(owner_id: 1)
   
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
@@ -34,13 +38,13 @@ class Map::Region < ActiveRecord::Base
 
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
-  def set_owner_and_alliance(new_owner_id, new_alliance_id)
-    if (new_owner_id != self.owner_id)
-      self.owner_id = new_owner_id
+  def set_owner_and_alliance(new_owner, new_alliance)
+    if (new_owner != self.owner)
+      self.owner = new_owner
       self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
-    if (new_alliance_id != self.alliance_id)
-      self.alliance_id = new_alliance_id
+    if (new_alliance != self.alliance)
+      self.alliance = new_alliance
       self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
     end
   end

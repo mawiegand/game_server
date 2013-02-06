@@ -27,7 +27,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     hours = (now - lastUpdate) / 3600.0    # hours since last update (this is a fraction)
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      self[base+'_amount'] = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
+      self[base+'_amount'] = [[self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min, 0.0].max
     end
     self.productionUpdatedAt = now  
   end    
@@ -36,11 +36,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     set_clauses = []
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       base = resource_type[:symbolic_id].to_s()
-      set_clauses << "#{base + '_amount'} = #{ Fundamental::ResourcePool.least_sql_fragment }(#{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')},  CAST(#{base+'_capacity'} AS double precision))"
+      set_clauses << "#{base + '_amount'} = #{ Fundamental::ResourcePool.greatest_sql_fragment }(#{ Fundamental::ResourcePool.least_sql_fragment }(#{base + '_amount'} + #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(base+'_production_rate')},  CAST(#{base+'_capacity'} AS double precision)), 0.0)"
     end  
     set_clauses << "\"productionUpdatedAt\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     set_clauses << "\"updated_at\" = #{ Fundamental::ResourcePool.now_sql_fragment }"
     Fundamental::ResourcePool.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
+  end
+
+  def self.greatest_sql_fragment
+    Rails.env.development? || Rails.env.test? ? 'MAX' : 'GREATEST'
   end
   
   def self.least_sql_fragment
@@ -76,7 +80,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     resources.each do |key, value|
       base = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
       logger.debug "EVAL: #{value} , #{self[base+'_amount']}"
-      present_amount = [self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min
+      present_amount = [[self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min, 0.0].max
       sufficient = false if present_amount < value
     end
     return sufficient
@@ -117,8 +121,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
     "#{ resource_symbol + '_amount' } = \
       #{ Fundamental::ResourcePool.least_sql_fragment }(\
         #{ Fundamental::ResourcePool.least_sql_fragment }(\
-          COALESCE(#{ resource_symbol + '_amount' }, 0) + \
-          #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+          #{ Fundamental::ResourcePool.greatest_sql_fragment }(\
+            COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+            #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+            0\
+          ), \
           CAST(#{ resource_symbol + '_capacity'} AS double precision) \
         ) + ?, \
         CAST(#{ resource_symbol + '_capacity'} AS double precision) \
@@ -127,8 +134,11 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
   def self.modify_resource_sql_where_fragment(resource_symbol)
     "(#{ Fundamental::ResourcePool.least_sql_fragment }(\
-        COALESCE(#{ resource_symbol + '_amount' }, 0) + \
-        #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+        #{ Fundamental::ResourcePool.greatest_sql_fragment }(\
+          COALESCE(#{ resource_symbol + '_amount' }, 0) + \
+          #{ Fundamental::ResourcePool.produced_resource_amount_sql_fragment(resource_symbol+'_production_rate') }, \
+          0\
+        ), \
         CAST(#{ resource_symbol + '_capacity'} AS double precision)) + ? >= 0.0)"
   end
   
@@ -305,8 +315,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
         end
         Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
+        update_resource_amount_atomically                    if changed  # this will completely bypass the rails object (what is necessary, because it needs to use the old production_rates in the update). needs to make sure no amounts are set directly.
         update_resource_in_ranking(weighted_production_rate) if changed
-        update_resource_amount_atomically                    if changed  # this will completely bypass the rails object. needs to make sure no amounts are set directly.
       end    
       true
     end

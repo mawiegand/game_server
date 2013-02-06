@@ -66,7 +66,6 @@ class Military::Army < ActiveRecord::Base
       mode:         MODE_IDLE,
       kills:        0,
       victories:    0,
-      stance:       0,
       size_max:     settlement.garrison_size_max || 1000,   # 1000 is default size
       exp:          0,
       rank:         0,
@@ -131,7 +130,15 @@ class Military::Army < ActiveRecord::Base
     return value if ((!value.nil?) && (value > 0))
     0
   end
-  
+
+  def number_of_units
+    units = 0
+    rules.unit_types.each do |unit_type|
+      units = self.details[unit_type[:db_field]]
+    end
+    units
+  end
+
   def update_ap_if_necessary
     update_ap if needs_ap_update?
   end
@@ -149,6 +156,10 @@ class Military::Army < ActiveRecord::Base
     self.owner_id === character_id
   end
   
+  def owned_by_npc?
+    return self.owner.nil? || self.owner.npc?
+  end
+    
   def moving?
     self.mode === MODE_MOVING # 1 : moving?!
   end

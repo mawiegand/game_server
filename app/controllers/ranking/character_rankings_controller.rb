@@ -1,8 +1,6 @@
 class Ranking::CharacterRankingsController < ApplicationController
   layout "ranking"
   
-  before_filter :authenticate
-  
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
@@ -25,7 +23,12 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "kills"          if params[:sort] == 'kills'
 
     if params[:page].blank? && @marked_character
-      num_before = Ranking::CharacterRanking.where(["#{ sort } > ?", @marked_character.ranking[sort.to_sym]]).count
+      num_before = Ranking::CharacterRanking.where([
+        "#{ sort } > ? or (#{ sort } = ? and id < ?)",
+        @marked_character.ranking[sort.to_sym],
+        @marked_character.ranking[sort.to_sym],
+        @marked_character.id,
+      ]).count
       page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i
@@ -33,7 +36,7 @@ class Ranking::CharacterRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC")
+    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              
@@ -46,7 +49,7 @@ class Ranking::CharacterRankingsController < ApplicationController
                                                                    
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: returned_ranking_entries.as_json }
+      format.json { render json: include_root(returned_ranking_entries, :character_ranking) }
     end
   end
 end

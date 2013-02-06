@@ -41,7 +41,7 @@ count = 0
 Fundamental::Alliance.find(:all).each do |alliance|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+	  sleep(1)
 	end
 	alliance.check_consistency
 end
@@ -64,7 +64,7 @@ count = 0
 Settlement::Settlement.find(:all).each do |settlement|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+	  sleep(1)
 	end
 	settlement.check_consistency
 	count += 1 
@@ -87,7 +87,7 @@ count = 0
 Fundamental::ResourcePool.find(:all).each do |pool|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+	  sleep(1)
 	end
 	pool.check_consistency
 	count += 1 
@@ -110,9 +110,10 @@ count = 0
 Fundamental::Character.find(:all).each do |character|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+	  sleep(1)
 	end
 	character.check_consistency
+	character.ranking.check_consistency unless character.ranking.nil?
 	count += 1 
 end
 puts " done."
@@ -134,7 +135,7 @@ count = 0
 Settlement::Settlement.find(:all).each do |settlement|
 	if count.modulo(step) == 0 
 	  print "." 
-	  sleep (1)
+	  sleep(1)
 	end
 	
 	if settlement.owner_id != settlement.location.owner_id
@@ -187,7 +188,7 @@ count = 0
 Tutorial::State.all.each do |state|
   if count.modulo(step) == 0 
     print "." 
-    sleep (1)
+    sleep(1)
   end
   
   state.check_consistency

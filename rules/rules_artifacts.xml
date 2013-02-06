@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<ArtifactTypes>
+  <Artifact id="artifact_0">
+    <Name lang="de_DE">Kristall des Steins</Name>
+    <Name lang="en_US">Christal of stone</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 0</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour> 
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 0</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_stone">1.15</ProductionBonus>
+  </Artifact>
+  <Artifact id="artifact_1">
+    <Name lang="de_DE">Kristall des Holzes</Name>
+    <Name lang="en_US">Christal of wood</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 1</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 1</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_wood">1.15</ProductionBonus>
+  </Artifact>
+  <Artifact id="artifact_2">
+    <Name lang="de_DE">Kristall des Felles</Name>
+    <Name lang="en_US">christal of fur</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 2</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 2</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>
+      </Description>
+        <Description><p>Beschreibung eingeweiht</p>
+        </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ProductionBonus id="resource_fur">1.15</ProductionBonus>
+  </Artifact>
+  <Artifact id="artifact_3">
+    <Name lang="de_DE">Kristall der Ausbildung</Name>
+    <Name lang="en_US">Christal of training</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 3</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 3</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">0.5</SpeedupQueue>
+  </Artifact>
+  <Artifact id="artifact_4">
+    <Name lang="de_DE">Kristall der Präzision</Name>
+    <Name lang="en_US">Christal of precision</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 4</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 4</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
+  </Artifact>
+  <Artifact id="artifact_5">
+    <Name lang="de_DE">Kristall der Aufzucht</Name>
+    <Name lang="en_US">Christal of rearing</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 5</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 5</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
+  </Artifact>
+  <Artifact id="artifact_6">
+    <Name lang="de_DE">Kristall der Konstruktion</Name>
+    <Name lang="en_US">Cristal od construction</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of artifact 6</p>
+    </Description>
+    <Flavour lang="de_DE">
+      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
+    </Flavour>
+    <Flavour lang="en_US">
+      <p>Flavour text of artifact 6</p>
+    </Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
+       <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>
+      </Description>
+      <Description>
+        <p>Beschreibung eingeweiht</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">0.75</SpeedupQueue>
+  </Artifact>
+  </ArtifactTypes>

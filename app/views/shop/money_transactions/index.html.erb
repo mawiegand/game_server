@@ -26,6 +26,7 @@ end %>
     <th>EBP</th>
     <th>Earnings</th>
     <th>Transaction State</th>
+    <th>ChBack</th>
     <th>Payed</th>
     <th>Payer Firstname</th>
     <th>Payer Lastname</th>
@@ -51,6 +52,7 @@ end %>
     <td><%= money_transaction.ebp.round(3) %></td>
     <td><%= money_transaction.earnings.round(3) %></td>
     <td><%= money_transaction.transaction_state %></td>
+    <td style="text-align: center; color: red;"><b><%= money_transaction.chargeback > 0.5 ? 'X' : '' %></b></td>
     <td><%= money_transaction.transaction_payed %></td>
     <td><%= money_transaction.payer_first_name %></td>
     <td><%= money_transaction.payer_last_name %></td>

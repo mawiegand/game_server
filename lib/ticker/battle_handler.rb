@@ -71,7 +71,6 @@ class Ticker::BattleHandler
         #if there is a winner
         if !winner_faction.nil?
 
-          winner_leader = nil
           winner_faction.set_winner
           winner_faction.update_leader
           winner_leader = winner_faction.leader
@@ -147,6 +146,23 @@ class Ticker::BattleHandler
               end
             end
           end
+
+          runloop.say "Check for artifacts"
+          artifact = battle.location.artifact
+
+          unless artifact.nil?
+            runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
+            if loser_faction.contains_army_of(artifact.owner)
+              runloop.say "Won Battle for Artifact"
+              artifact.capture_by_character(winner_leader) unless artifact.nil?
+            else
+              runloop.say "Lost Battle for Artifact"
+              artifact.jump_to_neighbor_location
+            end
+          else
+            runloop.say "No artifact found"
+          end
+
         end
 
         runloop.say "Calculate XP for both factions"
@@ -179,6 +195,9 @@ class Ticker::BattleHandler
             runloop.say "Failed to update the leader", Logger::ERROR
           end
         end
+
+        stolen_artifact = battle.check_for_artifact_stealing
+        runloop.say "Check for artifacts stealing: #{stolen_artifact}"
 
         #schedule next round
         battle.schedule_next_round

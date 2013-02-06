@@ -13,11 +13,16 @@ class Fundamental::AllianceShoutsController < ApplicationController
       raise NotFoundError.new('Page Not Found') if @alliance.nil?
       @fundamental_alliance_shouts = @alliance.shouts(:order=>'created_at desc')
       last_modified = @fundamental_alliance_shouts[0][:created_at] unless @fundamental_alliance_shouts.empty?
+      
+      raise ForbiddenError.new "Access Fobidden." unless staff? || admin? || current_character.alliance_id == @alliance.id
+      
     elsif params.has_key?(:character_id)  
       @character = Fundamental::Character.find(params[:character_id])
       raise NotFoundError.new('Page Not Found') if @character.nil?
       @fundamental_alliance_shouts = @character.alliance_shouts(:order=>'created_at desc')
       last_modified = @fundamental_alliance_shouts[0][:created_at] unless @fundamental_alliance_shouts.empty?
+      
+      raise ForbiddenError.new "Access Fobidden." unless staff? || admin? || current_character == @character
     else
       @asked_for_index = true
     end   
@@ -25,6 +30,7 @@ class Fundamental::AllianceShoutsController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
+          raise ForbiddenError.new "Access denied. User not authorized."  unless staff? || admin?
           if @fundamental_alliance_shouts.nil?
             @fundamental_alliance_shouts =  Fundamental::AllianceShout.paginate(:page => params[:page], :per_page => 50)    
             @paginate = true   

@@ -1,5 +1,6 @@
 <% content_for :ranking_links do %>
 <ul class="submenue">
+  <li><%= link_to I18n.translate("application.layout.ranking.info"), ranking_ranking_info_path %></li>
   <li><%= link_to I18n.translate("application.layout.ranking.character"), ranking_character_rankings_path %></li>
   <li><%= link_to I18n.translate("application.layout.ranking.alliance"), ranking_alliance_rankings_path %></li>
   <li><%= link_to I18n.translate("application.layout.ranking.fortress"), ranking_fortress_rankings_path %></li>

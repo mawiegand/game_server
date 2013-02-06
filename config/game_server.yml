@@ -41,7 +41,10 @@ defaults: &defaults
   platinum_additional_training_jobs     : 3
   
   chat_host: jabber.wack-a-doo.com
-  
+
+  history_update_interval:   24 #hours
+  player_deletion_interval:  30 #days
+
 development:
   <<: *defaults
 
@@ -55,6 +58,8 @@ development:
   settlement_recalc_probability:    0.5
   character_recalc_probability:     0.5
   resource_pool_recalc_probability: 0.1
+  
+  status_email_recipient: 'p@trick-fox.de'
 
 test:
   <<: *defaults

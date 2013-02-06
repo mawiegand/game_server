@@ -3,19 +3,22 @@ class Backend::DashboardController < ApplicationController
   layout 'backend'
   
   before_filter :authenticate_backend
-  before_filter :authorize_staff
+  before_filter :authorize_developer
   before_filter :deny_api
   
   def show
     @title = "Dashboard"
     @backend_user = current_backend_user
     
+    @display_gross = admin? || staff?
+    
     @user_groups = []
     
-    if @backend_user.staff?
+    if staff? || developer?
       user_group = {}
       user_group[:user_stats] = {
         active_accounts:          Fundamental::Character.non_npc.platinum.count,
+        deleted_accounts:         Fundamental::Character.non_npc.deleted.count,
         total_accounts:           Fundamental::Character.non_npc.count,
         signins_last_hour:        Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 1.hours]).count,
         signins_last_eight_hours: Fundamental::Character.where(['npc != ? AND last_login_at > ?', true, Time.now - 8.hours]).count,
@@ -30,16 +33,26 @@ class Backend::DashboardController < ApplicationController
       
       user_group[:last_character] = Fundamental::Character.where('last_login_at IS NOT NULL').order('last_login_at DESC').first
       user_group[:last_character_signup] = Fundamental::Character.where('fundamental_characters.created_at IS NOT NULL').order('fundamental_characters.created_at DESC').first
-      user_group[:new_characters] = Fundamental::Character.non_npc.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
+      user_group[:new_characters] = Fundamental::Character.non_npc.not_deleted.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
       
       @user_groups << user_group
     end
+    
+    @world_stats = {
+      day: Fundamental::RoundInfo.the_round_info.age,
+      victory: Fundamental::RoundInfo.the_round_info.victory_gained?,
+      empty_locations: Map::Location.empty.count,
+      total_locations: Map::Location.count,
+      non_occupied_regions: Map::Region.non_occupied.count,
+      total_regions: Map::Region.count,
+      battles: Military::Battle.ongoing.count,
+    }
     
     @partner_sites = if @backend_user.admin? || @backend_user.staff?
       Backend::PartnerSite.order('sign_ups_count DESC') 
     elsif @backend_user.partner? 
       @backend_user.partner_sites.order('sign_ups_count DESC')
-    else 
+    else # developer or no role
       []
     end
     

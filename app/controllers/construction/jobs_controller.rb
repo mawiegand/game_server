@@ -13,7 +13,7 @@ class Construction::JobsController < ApplicationController
     if params.has_key?(:queue_id)
       @queue = Construction::Queue.find(params[:queue_id])
       raise NotFoundError.new('Queue not found.') if @queue.nil?
-      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character
+      raise ForbiddenError.new('not owner of queue') unless @queue.settlement.owner == current_character || admin? || staff? || developer?
 
       @construction_jobs = @queue.jobs
       @construction_jobs = [] if @construction_jobs.nil?  # necessary? or ok to send 'null' ?
@@ -37,7 +37,7 @@ class Construction::JobsController < ApplicationController
           # role = determine_access_role(@character.id, @character.alliance_id)
           # logger.debug "Access with role #{role}."
 
-          render :json => @construction_jobs.to_json(:include => :active_job)
+          render :json => @construction_jobs.to_json(:include => :active_job, :root => :construction_job)
         end
       end
     end
@@ -46,13 +46,14 @@ class Construction::JobsController < ApplicationController
   # GET /construction/jobs/1
   # GET /construction/jobs/1.json
   def show
-    @construction_job = Construction::Job.find(params[:id])
-
-    raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character
+    @construction_job = Construction::Job.find_by_id(params[:id])
+    
+    raise NotFoundError.new('not found')         unless @construction_job
+    raise ForbiddenError.new('not owner of job') unless @construction_job.queue.settlement.owner == current_character || admin? || staff? || developer?
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @construction_job }
+      format.json { render json: @construction_job, :include => :active_job, :root => :construction_job }
     end
   end
 

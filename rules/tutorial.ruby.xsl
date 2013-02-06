@@ -181,6 +181,7 @@ end
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
           :tutorial          => <xsl:value-of select="@tutorial"/>,
+          :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
           
           :name => {
             <xsl:apply-templates select="Name" />              
@@ -219,6 +220,9 @@ end
             <xsl:apply-templates select="RewardTests" />
           },          
 </xsl:if>
+<xsl:if test="PlaceNpcs">
+          :place_npcs => <xsl:apply-templates select="PlaceNpcs" />,         
+</xsl:if>
 <xsl:if test="Message">
           :message => {
             <xsl:apply-templates select="Message" />
@@ -247,6 +251,9 @@ end
 </xsl:if>
 <xsl:if test="ExperienceReward">
             :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
+</xsl:if>
+<xsl:if test="ActionPointReward">
+            :action_point_reward => true,
 </xsl:if>
 </xsl:template>
 
@@ -331,6 +338,11 @@ end
 <xsl:if test="SettlementProductionTest">
             :settlement_production_test => {
               :min_resources => <xsl:value-of select="SettlementProductionTest/@min_resources" />,
+            },
+</xsl:if>
+<xsl:if test="BuildingSpeedTest">
+            :building_speed_test => {
+              :min_speed => <xsl:value-of select="BuildingSpeedTest/@min_speed" />,
             },
 </xsl:if>
 </xsl:template>

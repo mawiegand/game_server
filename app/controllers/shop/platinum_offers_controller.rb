@@ -2,7 +2,9 @@ class Shop::PlatinumOffersController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api,        :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
+
 
   # GET /shop/platinum_offers
   # GET /shop/platinum_offers.json
