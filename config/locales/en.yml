@@ -19,6 +19,7 @@ en:
         tutorial_stats: Tutorial Stats
         browser_stats: Browser
         system_message: InGameMessage
+        trade_log: TradeLog
       rules:
         category: Rules
         all: All

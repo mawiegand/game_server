@@ -1,0 +1,55 @@
+<h1>Listing backend_trade_log_entries</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>IP</th>
+    <th>To</th>
+    <th>Target reached at</th>
+    <th>Num carts</th>
+    <th>Event</th>
+    <% Backend::TradeLogEntry.new.attributes.each do |attribute, value| 
+      if attribute.start_with?('resource_') && attribute.end_with?('_amount') %>
+        <th><%= attribute[(attribute.index('_')+1)..(attribute.rindex('_')-1)] %></th>
+    <%end
+    end %>
+  </tr>
+
+<% @backend_trade_log_entries.each do |backend_trade_log_entry| %>
+  <tr>
+    <td>
+      <%= link_to backend_trade_log_entry.sender_name,
+          fundamental_character_path(backend_trade_log_entry.sender_id) %>
+      <%if !backend_trade_log_entry.sender_alliance_id.blank? %>
+        | <%= link_to backend_trade_log_entry.sender_alliance_name,
+              fundamental_alliance_path(backend_trade_log_entry.sender_alliance_id) %>
+      <%end%>
+    </td>
+    <td><%= backend_trade_log_entry.sender_ip %></td>
+    <td>
+      <%= link_to backend_trade_log_entry.recipient_name,
+          fundamental_character_path(backend_trade_log_entry.recipient_id) %>
+      <%if !backend_trade_log_entry.recipient_alliance_id.blank? %>
+        | <%= link_to backend_trade_log_entry.recipient_alliance_name,
+              fundamental_alliance_path(backend_trade_log_entry.recipient_alliance_id) %>
+      <%end%>
+    </td>
+    <td><%= backend_trade_log_entry.target_reached_at %></td>
+    <td><%= backend_trade_log_entry.num_carts %></td>
+    <td><%= if !backend_trade_log_entry.event_id.blank?
+              link_to backend_trade_log_entry.event_id,
+                      event_event_path(backend_trade_log_entry.event_id) 
+            else 
+              "-"
+            end %></td>
+    <% backend_trade_log_entry.attributes.each do |attribute, value| 
+      if attribute.start_with?('resource_') && attribute.end_with?('_amount') %>
+        <td><%= value %></td>
+    <%end
+    end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
