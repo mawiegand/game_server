@@ -5222,7 +5222,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 5,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 7,
+
+            },
+
+            {
+              :symbolic_id => 'building_artifact_stand',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -6209,7 +6231,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "12+0*LEVEL",
+          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall des Felles
         {               #   Kristall der Ausbildung
