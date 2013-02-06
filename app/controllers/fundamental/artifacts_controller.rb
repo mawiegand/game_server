@@ -17,7 +17,11 @@ class Fundamental::ArtifactsController < ApplicationController
     elsif params.has_key?(:location_id)
       @map_location = Map::Location.find(params[:location_id])
       raise NotFoundError.new('Location Not Found') if @map_location.nil?
-      @fundamental_artifacts = @map_location.artifacts.visible
+      if !@map_location.artifact.nil? && @map_location.artifact.visible?
+        @fundamental_artifacts = @map_location.artifact
+      else
+        @fundamental_artifacts = nil
+      end
       #last_modified =  @map_location.artifacts_changed_at
     else
       @asked_for_index = true

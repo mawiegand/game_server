@@ -5175,6 +5175,85 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Trainingshöhle
+        {               #   Artefaktstand
+          :id          => 28, 
+          :symbolic_id => :building_artifact_stand,
+					:category    => 6,
+          :db_field    => :building_artifact_stand,
+          :name        => {
+            
+            :de_DE => "Artefaktstand",
+  
+            :en_US => "Artefact stand",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "<p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p><p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>",
+  
+            :en_US => "<p>Flavor text</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p><p>Der Chef und seine Gelehrten versuchen hier die Geheimnisse der Artefakte zu ergründen.</p>",
+  
+            :en_US => "<p>Description</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3",
+  
+          :buyable     => true,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(10000*POW(LEVEL,0.4))',
+            1 => 'FLOOR(15000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(20000*POW(LEVEL,0.4))',
+            
+          },
+
+          :production_time => 'FLOOR(7*3600+POW(LEVEL,0.7)/50)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :defense_bonus => "0.2*LEVEL",
+
+            :unlock_artifact_initiation => "LEVEL",
+
+          },
+
+        },              #   END OF Artefaktstand
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -6029,9 +6108,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
@@ -6077,9 +6156,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
@@ -6125,12 +6204,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "12+0*LEVEL",
 
         },              #   END OF Kristall des Felles
         {               #   Kristall der Ausbildung
@@ -6174,9 +6253,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
@@ -6223,9 +6302,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
@@ -6272,9 +6351,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
@@ -6321,9 +6400,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
           :initiation_costs => {
-            0 => '1000*MRANK',
-            1 => '1000*MRANK',
-            2 => '1000*MRANK',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
           :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",

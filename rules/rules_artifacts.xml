@@ -25,9 +25,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
@@ -57,9 +57,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
@@ -88,10 +88,10 @@
       </Description>
         <Description><p>Beschreibung eingeweiht</p>
         </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">12+0*LEVEL</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
@@ -120,9 +120,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
@@ -152,9 +152,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
@@ -184,9 +184,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
@@ -216,9 +216,9 @@
       <Description>
         <p>Beschreibung eingeweiht</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">1000*MRANK</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">1000*MRANK</InitiationCost>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>

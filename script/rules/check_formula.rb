@@ -51,7 +51,7 @@ rules.artifact_types.each do |artifact_type|
   check_formula(artifact_type, artifact_type[:amount], 'DAYS')
   check_formula(artifact_type, artifact_type[:initiation_time])
   artifact_type[:initiation_costs].each do |k, v|
-    check_formula(artifact_type, v, 'MRANK')
+    check_formula(artifact_type, v, 'LEVEL')
   end
 
   check_formula(artifact_type, artifact_type[:experience_production], 'MRANK')

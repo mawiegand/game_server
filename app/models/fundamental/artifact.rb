@@ -31,8 +31,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def capture_by_character(character)
-    if false #Random.rand(100) >= 10  # 10% probability
-             #jump
+    if Random.rand(100) >= 10  # 10% probability
       self.jump_to_neighbor_location
     else
       #capture
@@ -44,12 +43,39 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
   end
 
+  # 1. check neighbor nodes for empty locations
+  # 2. if there's no empty location, check the neighbor nodes of the neighbor nodes
+  # 3. if there's still no empty location, check whole map
+  # 4. still no empty location? delete artifact
   def jump_to_neighbor_location
     locations = []
     self.region.node.neighbor_nodes.each do |neighbor_node|
       neighbor_node.region.locations.empty.each do |location|
         locations << location if location.artifact.nil?
       end
+    end
+
+    if locations.empty?
+      self.region.node.neighbor_nodes.each do |first_neighbor_node|
+        first_neighbor_node.neighbor_nodes.each do |second_neighbor_node|
+          if second_neighbor_node != self.region.node
+            second_neighbor_node.region.locations.empty.each do |location|
+              locations << location if location.artifact.nil? && !locations.include?(location)
+            end
+          end
+        end
+      end
+    end
+
+    if locations.empty?
+      Map::Location.empty.each do |location|
+        locations << location if location.artifact.nil?
+      end
+    end
+
+    if locations.empty?
+      self.destroy
+      return
     end
 
     new_location = locations[Random.rand(locations.count)]
@@ -62,7 +88,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.visible     = false
     self.save
 
-    Military::Army.create_npc(new_location, Random.rand(4..6))
+    Military::Army.create_npc(new_location, Random.rand(20..1000))
   end
 
   def move_to_base_of_character(character)
@@ -71,7 +97,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.settlement       = character.home_location.settlement
     self.last_captured_at = Time.now
     self.initiated        = false
-    self.visible          = true
+    self.visible          = !character.npc
     self.save
   end
 
@@ -85,7 +111,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     return costs if artifact_type[:initiation_costs].nil?
 
     artifact_type[:initiation_costs].each do |resource_id, formula|
-      f = Util::Formula.parse_from_formula(formula, 'MRANK')
+      f = Util::Formula.parse_from_formula(formula, 'LEVEL')
       costs[resource_id] = f.apply(self.owner.mundane_rank)
     end
 
@@ -98,6 +124,15 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def finish_initiation
+    # if artifact owner is not settlement owner
+    return false if self.owner != self.settlement.owner
+
+    # if already initiated
+    return false if self.initiated?
+
+    # if there's no artifact stand or appropriate artifact stand level
+    return false if self.settlement.artifact_initiation_level.nil? || settlement.artifact_initiation_level < 1
+
     self.last_initiated_at = Time.now
     self.initiated = true
     self.save

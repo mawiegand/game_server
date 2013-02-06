@@ -111,8 +111,6 @@ class Fundamental::ArtifactInitiationsController < ApplicationController
   def destroy
     @initiation = Fundamental::ArtifactInitiation.find(params[:id])
 
-    raise NotFoundError.new('artifact not found') if @initiation.artifact.nil? || @initiation.artifact.owner != current_character
-
     @initiation.destroy
 
     respond_to do |format|
