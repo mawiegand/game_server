@@ -8,8 +8,8 @@ require 'util/formula'
 
 # remove for testing
 #
-Military::Army.where(npc: true, garrison: false).destroy_all
-Fundamental::Artifact.destroy_all
+#Military::Army.where(npc: true, garrison: false).destroy_all
+#Fundamental::Artifact.destroy_all
 
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
