@@ -565,7 +565,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   # Function for propagating change of alliance membership to redundant fields.
-  # This uses update_all direct querries because the Rails way of looping
+  # This uses update_all direct queries because the Rails way of looping
   # through models (selecting, instantiating, saving) would potentially take
   # too long (there might be several hundreds of settlements, locations and
   # armies involved).
@@ -603,7 +603,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   # Function for propagating change of character name to redundant fields.
-  # This uses update_all direct querries because the Rails way of looping
+  # This uses update_all direct queries because the Rails way of looping
   # through models (selecting, instantiating, saving) would potentially take
   # too long (there might be several hundreds of settlements, locations and
   # armies involved).

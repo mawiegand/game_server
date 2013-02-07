@@ -31,7 +31,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def capture_by_character(character)
-    if Random.rand(100) >= 10  # 10% probability
+    if Random.rand(100) <= 10  # 10% probability
       self.jump_to_neighbor_location
     else
       #capture
