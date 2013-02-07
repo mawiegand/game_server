@@ -8,7 +8,7 @@ require 'util/formula.rb'
 class Tutorial::TutorialsController < ApplicationController
   layout 'tutorial'
   
-  before_filter :authenticate
+#  before_filter :authenticate
   
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
@@ -17,8 +17,7 @@ class Tutorial::TutorialsController < ApplicationController
       respond_to do |format|
         format.html # show.html.erb
         format.json do 
-          options = { root: use_restkit_api? }
-          render :json => @tutorial.to_json(options)
+          render :json => @tutorial.as_json(:root => use_restkit_api?)
         end
       end
     end    
