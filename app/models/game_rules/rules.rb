@@ -6231,7 +6231,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "12",
 
         },              #   END OF Kristall des Felles
         {               #   Kristall der Ausbildung

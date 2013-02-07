@@ -1,3 +1,5 @@
+require 'util/formula'
+
 class Fundamental::Artifact < ActiveRecord::Base
 
 
@@ -12,6 +14,9 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   before_save :update_region
   before_save :update_alliance
+
+  after_save :propagate_changes_to_character
+  after_save :propagate_changes_to_character_on_changed_possession
 
   scope :visible, where(['visible = ?', true])
 
@@ -138,6 +143,11 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.save
   end
 
+  def experience_production(mundane_rank)
+    formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
+    formula.apply(self.owner.mundane_rank)
+  end
+
   protected
 
     def update_region
@@ -149,4 +159,47 @@ class Fundamental::Artifact < ActiveRecord::Base
       #self.alliance_tag  = self.owner.alliance.nil? ? nil : self.owner.alliance.tag
     end
 
+    def propagate_owner_changes
+      if self.owner_id_changed?
+        propagate_changes_to_character_on_changed_possession
+      end
+      true
+    end
+
+    def propagate_changes_to_character_on_changed_possession
+      owner_change = self.changes[:owner_id]
+      unless owner_change.blank?
+        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+
+        # old user had no exp production if artifact is currently not initiated and initiation hasn't changed
+        if !old_owner.nil? && !self.initiated && self.changes['initiated'].nil?
+          old_owner['exp_production_rate'] = (old_owner['exp_production_rate'] || 0) - experience_production(old_owner.mundane_rank)
+          old_owner.save
+        end
+
+        # new user has no exp production in artifact is currently not initiated
+        if !new_owner.nil? && self.initiated
+          new_owner['exp_production_rate'] = (new_owner['exp_production_rate'] || 0) + experience_production(new_owner.mundane_rank)
+          new_owner.save
+        end
+      end
+      true
+    end
+
+    def propagate_changes_to_character
+      owner_change = self.changes[:owner_id]
+      initiated_change = self.changes[:initiated]
+      if !initiated_change.blank? && owner_change.blank?
+
+        # if changed from initiated to not initiated
+        if initiated_change[0]
+          owner.exp_production_rate -= experience_production(owner.mundane_rank)
+        else
+          owner.exp_production_rate += experience_production(owner.mundane_rank)
+        end
+        owner.save
+      end
+      true
+    end
 end

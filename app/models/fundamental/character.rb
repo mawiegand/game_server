@@ -839,11 +839,22 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:exp, points.floor)
     self.save    
   end
+
+  def update_exp_production(old_mundane_rank, new_mundane_rank)
+    if !self.artifact.nil? && self.artifact.initiated
+      self.exp_production_rate -= artifact.experience_production(old_mundane_rank)
+      self.exp_production_rate += artifact.experience_production(new_mundane_rank)
+    end
+  end
   
   def recalc_experience_production_rate
     exp_rate = 0.0
     self.settlements.each do |settlement|
       exp_rate += settlement.exp_production_rate
+    end
+
+    if self.artifact
+      exp_rate += artifact.experience_production
     end
     exp_rate
   end
@@ -1016,7 +1027,10 @@ class Fundamental::Character < ActiveRecord::Base
       character_ranks              = GameRules::Rules.the_rules.character_ranks
       new_rank                     = (self.mundane_rank || 0) + 1
       skill_points_per_rank        = character_ranks[:skill_points_per_mundane_rank] || 0
-      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0    
+      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0
+
+      self.update_exp_production(self.mundane_rank, new_rank)
+
       self.mundane_rank            = new_rank
       self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
       self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points

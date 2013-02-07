@@ -56,13 +56,13 @@ class Settlement::Slot < ActiveRecord::Base
   # experience points. only return the exp value.
   def experience_production
     return 0 if building_id.nil?
-    
+
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
     return 0 if building_type[:experience_production].nil?
-    
+
     formula = Util::Formula.parse_from_formula(building_type[:experience_production])
-    formula.apply(self.level)   
+    formula.apply(self.level)
   end
 
   # returns the number of unlocks this slot provides for the different queue
