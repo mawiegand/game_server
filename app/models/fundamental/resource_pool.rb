@@ -341,16 +341,16 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           GameRules::Rules.the_rules().resource_types.each do |resource_type|
           
             to_check = [{
-                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
-                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
+                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
+                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
               },
               {
-                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
               },
               {
-                attribute:           resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-                attributeSettlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
               }
             ]
             to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
@@ -359,7 +359,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
               self.owner.settlements.each do |settlement|
                 settlement.lock!
                 to_check.each do |bonus|
-                  settlement.increment(bonus[:attributeSettlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])               
+                  settlement.increment(bonus[:attribute_settlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])
                 end
                 settlement.save!
               end
