@@ -38,7 +38,7 @@ puts "done"
 # Data from money transactions
 #
 print "Getting money transactions data..."
-s3 = Shop::MoneyTransaction.select("uid, updateTstamp, user_id, method, country, offer_id, gross, referrer_id, campaign_id, payer_country, partner_user_id").to_yaml
+s3 = Shop::MoneyTransaction.select("uid, updateTstamp, user_id, method, country, offer_id, gross, campaign_id, payer_country, partner_user_id").to_yaml
 
 print "saving results to file..."
 f3 = File.open("f3_" + t.to_s() + ".txt",'w')
