@@ -56,7 +56,6 @@ class Fundamental::ArtifactsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json do
-        logger.debug "----> include?" + @fundamental_artifact.to_json(:include => :initiation).inspect
         render(json: @fundamental_artifact.to_json(:include => :initiation))
       end
     end

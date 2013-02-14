@@ -27,7 +27,8 @@ GameServer::Application.routes.draw do
       end
 
       namespace :effect do 
-        resources :resource_effects 
+        resources :alliance_resource_effects
+        resources :resource_effects
       end
 
       namespace :fundamental do

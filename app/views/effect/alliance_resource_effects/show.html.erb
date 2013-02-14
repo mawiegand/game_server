@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Resource:</b>
+  <%= @effect_alliance_resource_effect.resource_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @effect_alliance_resource_effect.type_id %>
+</p>
+
+<p>
+  <b>Bonus:</b>
+  <%= @effect_alliance_resource_effect.bonus %>
+</p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @effect_alliance_resource_effect.alliance_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_effect_alliance_resource_effect_path(@effect_alliance_resource_effect) %> |
+<%= link_to 'Back', effect_alliance_resource_effects_path %>

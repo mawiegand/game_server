@@ -13,7 +13,7 @@
     </Description>
     <Flavour lang="de_DE">
       <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour> 
+    </Flavour>
     <Flavour lang="en_US">
       <p>Flavour text of artifact 0</p>
     </Flavour>
@@ -28,11 +28,14 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_stone">1.15</ProductionBonus>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="character">0.10</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_1">
     <Name lang="de_DE">Kristall des Holzes</Name>
@@ -60,11 +63,14 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_wood">1.15</ProductionBonus>
+    <Effects>
+      <ProductionBonus id="resource_wood" domain="character">0.10</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_2">
     <Name lang="de_DE">Kristall des Felles</Name>
@@ -91,11 +97,14 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_fur">1.15</ProductionBonus>
+    <Effects>
+      <ProductionBonus id="resource_fur" domain="character">0.10</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_3">
     <Name lang="de_DE">Kristall der Ausbildung</Name>
@@ -123,11 +132,15 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_infantry" domain="settlement">0.5</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.01</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_4">
     <Name lang="de_DE">Kristall der Präzision</Name>
@@ -155,11 +168,15 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.01</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_5">
     <Name lang="de_DE">Kristall der Aufzucht</Name>
@@ -187,11 +204,15 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.01</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_6">
     <Name lang="de_DE">Kristall der Konstruktion</Name>
@@ -219,10 +240,14 @@
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_buildings" domain="settlement">0.75</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.01</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.01</ProductionBonus>
+    </Effects>
   </Artifact>
   </ArtifactTypes>

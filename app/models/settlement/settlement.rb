@@ -1381,10 +1381,10 @@ class Settlement::Settlement < ActiveRecord::Base
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
-        propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
 
-        old_owner.resource_pool.save   unless old_owner.nil?
-        new_owner.resource_pool.save   unless new_owner.nil?
+        old_owner.save   unless old_owner.nil?
+        new_owner.save   unless new_owner.nil?
       end
       true
     end

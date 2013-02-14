@@ -30,7 +30,7 @@ artifact_types.each do |artifact_type|
   new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
 
   # create missing artifacts with npc army at same location
-  (0...new_artifacts).each do |nr|
+  (0...new_artifacts).each do
     location = Map::Location.find_empty_without_army
     unless location.nil?
       Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])

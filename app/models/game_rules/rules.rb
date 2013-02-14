@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula,
+  attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :character_ranks, :alliance_max_members, :artifact_count
@@ -41,6 +41,7 @@ class GameRules::Rules
     { 
       'version'                     => version,
       'battle'                      => battle,
+      'domains'                     => domains,
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
@@ -114,6 +115,26 @@ class GameRules::Rules
             :retreat_probability => 0.6,
             },
         },
+  
+        :domains => [
+
+          {
+            :id          => 0,
+            :symbolic_id => :character,
+          },
+
+          {
+            :id          => 1,
+            :symbolic_id => :settlement,
+          },
+
+          {
+            :id          => 2,
+            :symbolic_id => :alliance,
+          },
+
+        ],
+
         :character_creation => {
           :start_resources => {
             1 => 200,
@@ -5253,13 +5274,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(10000*POW(LEVEL,0.4))',
-            1 => 'FLOOR(15000*POW(LEVEL,0.4))',
-            2 => 'FLOOR(20000*POW(LEVEL,0.4))',
+            0 => 'FLOOR(8000*POW(LEVEL,0.4))',
+            1 => 'FLOOR(10000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(15000*POW(LEVEL,0.4))',
             
           },
 
-          :production_time => 'FLOOR(7*3600+POW(LEVEL,0.7)/50)',
+          :production_time => 'FLOOR(9*3600+3600*POW(LEVEL,0.7)/50)',
           :production  => [
             
           ],
@@ -6115,9 +6136,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :production_bonus  => [
 
             {
-              :id                 => 0,
-              :symbolic_id        => :resource_stone,
-              :formula            => "1.15",
+              :resource_id        => 0,
+              :domain_id          => 0,
+              :bonus              => 0.10,
+            },
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6135,7 +6162,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall des Steins
         {               #   Kristall des Holzes
@@ -6163,9 +6190,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :production_bonus  => [
 
             {
-              :id                 => 1,
-              :symbolic_id        => :resource_wood,
-              :formula            => "1.15",
+              :resource_id        => 1,
+              :domain_id          => 0,
+              :bonus              => 0.10,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6183,7 +6216,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall des Holzes
         {               #   Kristall des Felles
@@ -6211,9 +6244,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :production_bonus  => [
 
             {
-              :id                 => 2,
-              :symbolic_id        => :resource_fur,
-              :formula            => "1.15",
+              :resource_id        => 2,
+              :domain_id          => 0,
+              :bonus              => 0.10,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6231,7 +6270,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall des Felles
         {               #   Kristall der Ausbildung
@@ -6254,18 +6293,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :domain            => :settlement,
-                :speedup_formula   => "0.5",
-              },
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
 
           ],
-
-          :experience_production => '10*MRANK',
 
           :description_initiated => {
 
@@ -6280,7 +6330,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall der Ausbildung
         {               #   Kristall der Präzision
@@ -6303,18 +6353,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
-                :domain            => :settlement,
-                :speedup_formula   => "0.5",
-              },
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
 
           ],
-
-          :experience_production => '10*MRANK',
 
           :description_initiated => {
 
@@ -6329,7 +6390,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall der Präzision
         {               #   Kristall der Aufzucht
@@ -6352,18 +6413,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 4,
-                :queue_type_id_sym => :queue_cavalry,
-                :domain            => :settlement,
-                :speedup_formula   => "0.5",
-              },
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
 
           ],
-
-          :experience_production => '10*MRANK',
 
           :description_initiated => {
 
@@ -6378,7 +6450,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall der Aufzucht
         {               #   Kristall der Konstruktion
@@ -6401,18 +6473,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :speedup_queue => [
-            
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :domain            => :settlement,
-                :speedup_formula   => "0.75",
-              },
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
+            },
 
           ],
-
-          :experience_production => '10*MRANK',
 
           :description_initiated => {
 
@@ -6427,7 +6510,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Kristall der Konstruktion
       ],                # END OF ARTIFACT TYPES
