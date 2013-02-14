@@ -6,17 +6,18 @@ class Fundamental::Artifact < ActiveRecord::Base
   has_one    :initiation,  :class_name => "Fundamental::ArtifactInitiation", :foreign_key => "artifact_id", :inverse_of => :artifact, :dependent => :destroy
 
   belongs_to :owner,       :class_name => "Fundamental::Character",  :foreign_key => "owner_id",      :inverse_of => :artifact
-
+  belongs_to :alliance,    :class_name => "Fundamental::Alliance",   :foreign_key => "alliance_id",   :inverse_of => :artifacts
   belongs_to :settlement,  :class_name => "Settlement::Settlement",  :foreign_key => "settlement_id", :inverse_of => :artifact
 
   belongs_to :location,    :class_name => "Map::Location",           :foreign_key => "location_id",   :inverse_of => :artifact
   belongs_to :region,      :class_name => "Map::Region",             :foreign_key => "region_id",     :inverse_of => :artifacts
 
   before_save :update_region
-  before_save :update_alliance
 
   after_save :propagate_changes_to_character
   after_save :propagate_changes_to_character_on_changed_possession
+
+  after_save :propagate_effect_changes
 
   scope :visible, where(['visible = ?', true])
 
@@ -87,6 +88,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     npc = Fundamental::Character.find_by_id(1)
 
     self.owner       = npc
+    self.alliance    = nil
     self.location    = new_location
     self.settlement  = nil
     self.initiated   = false
@@ -98,6 +100,7 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   def move_to_base_of_character(character)
     self.owner            = character
+    self.alliance         = character.alliance
     self.location         = character.home_location
     self.settlement       = character.home_location.settlement
     self.last_captured_at = Time.now
@@ -145,18 +148,18 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   def experience_production(mundane_rank)
     formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
-    formula.apply(self.owner.mundane_rank)
+    formula.apply(mundane_rank)
+  end
+
+  def check_consistency
+    #TODO compare initiated artifacts with artifact effects
+    true
   end
 
   protected
 
     def update_region
       self.region = self.location.region
-    end
-
-    def update_alliance
-      #self.alliance      = self.owner.alliance.nil? ? nil : self.owner.alliance
-      #self.alliance_tag  = self.owner.alliance.nil? ? nil : self.owner.alliance.tag
     end
 
     def propagate_owner_changes
@@ -201,5 +204,100 @@ class Fundamental::Artifact < ActiveRecord::Base
         owner.save
       end
       true
+    end
+
+    def add_character_resource_effect(owner_id, bonus)
+      owner = Fundamental::Character.find_by_id(owner_id) unless owner_id.nil?
+      owner.resource_pool.resource_effects.create({
+        type_id:      Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT,
+        resource_id:  bonus[:resource_id],
+        bonus:        bonus[:bonus],
+      }) unless owner.nil?
+    end
+
+    def remove_character_resource_effect(owner_id)
+      owner = Fundamental::Character.find_by_id(owner_id) unless owner_id.nil?
+      owner.resource_pool.resource_effects.where('type_id = ?', Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT).destroy_all unless owner.nil?
+    end
+
+    def add_alliance_resource_effect(alliance_id, bonus)
+      alliance = Fundamental::Alliance.find_by_id(alliance_id) unless alliance_id.nil?
+      logger.debug "----------> add_alliance_resource_effect " + alliance.inspect
+      alliance.resource_effects.create({
+        type_id:      Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT,
+        resource_id:  bonus[:resource_id],
+        bonus:        bonus[:bonus],
+      }) unless alliance.nil?
+    end
+
+    def remove_alliance_resource_effect(alliance_id)
+      alliance = Fundamental::Alliance.find_by_id(alliance_id) unless alliance_id.nil?
+      logger.debug "----------> remove_alliance_resource_effect " + alliance.inspect
+      alliance.resource_effects.where('type_id = ?', Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT).destroy_all unless alliance.nil?
+    end
+
+    def propagate_effect_changes
+      owner_change       = self.changes[:owner_id]
+      alliance_change    = self.changes[:alliance_id]
+
+      initiated_change = self.changes[:initiated]
+      initiated_before = initiated_change.nil? ? initiated : !initiated
+      initiated_after  = initiated
+
+      # if owner changed
+      if !owner_change.nil?
+        if initiated_before
+          # effekt beim alten user löschen
+          self.artifact_type[:production_bonus].each do |bonus|
+            remove_character_resource_effect(owner_change[0]) if bonus[:domain_id] == 0
+          end
+        end
+        if initiated_after
+          # effekt beim neuen user eintragen
+          self.artifact_type[:production_bonus].each do |bonus|
+            add_character_resource_effect(owner_change[1], bonus) if bonus[:domain_id] == 0
+          end
+        end
+      end
+
+      # if alliance changed
+      if !alliance_change.nil?
+        logger.debug "----------> artifact alliance_change #{initiated_before} #{initiated_after}" + alliance_change.inspect
+
+        if initiated_before
+          # effekt bei der alten allianz löschen
+          self.artifact_type[:production_bonus].each do |bonus|
+            remove_alliance_resource_effect(alliance_change[0]) if bonus[:domain_id] == 2
+          end
+        end
+        if initiated_after
+          # effekt bei neuer allianz eintragen
+          self.artifact_type[:production_bonus].each do |bonus|
+            add_alliance_resource_effect(alliance_change[1], bonus) if bonus[:domain_id] == 2
+          end
+        end
+      end
+
+      logger.debug "----------> ally " + initiated_change.inspect
+
+      # if only the initiation state changed
+      if owner_change.nil? && alliance_change.nil? && !initiated_change.nil?
+        if initiated_before
+          # effekt beim aktuellen user_loeschen
+          self.artifact_type[:production_bonus].each do |bonus|
+            remove_character_resource_effect(owner_id)    if bonus[:domain_id] == 0
+            remove_alliance_resource_effect(alliance_id)  if bonus[:domain_id] == 2
+          end
+        end
+        if initiated_after
+          # effekt beim aktuellen user eintragen
+          self.artifact_type[:production_bonus].each do |bonus|
+            logger.debug "----------> initiated_after " + bonus.inspect
+            add_character_resource_effect(owner_id, bonus)    if bonus[:domain_id] == 0
+            logger.debug "----------> initiated_after " + bonus.inspect
+            add_alliance_resource_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
+          end
+        end
+      end
     end
 end

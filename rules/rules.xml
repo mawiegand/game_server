@@ -76,6 +76,11 @@
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
     </Languages>
+    <Domains>
+      <Domain id="character"></Domain>
+      <Domain id="settlement"></Domain>
+      <Domain id="alliance"></Domain>
+    </Domains>
     <Battle>
       <Calculation roundTime="30" retreatProbability="0.6" />
     </Battle>

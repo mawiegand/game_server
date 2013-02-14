@@ -155,9 +155,6 @@ class Ticker::BattleHandler
             if loser_faction.contains_army_of(artifact.owner)
               runloop.say "Won Battle for Artifact"
               artifact.capture_by_character(winner_leader) unless artifact.nil?
-            else
-              runloop.say "Lost Battle for Artifact"
-              artifact.jump_to_neighbor_location
             end
           else
             runloop.say "No artifact found"

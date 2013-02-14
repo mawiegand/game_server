@@ -9,7 +9,10 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :shouts,    :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id", :order => "created_at DESC"
   has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
   has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance
-  
+  has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
+
+  has_many   :resource_effects, :class_name => "Effect::AllianceResourceEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
+
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
   
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
@@ -42,7 +45,7 @@ class Fundamental::Alliance < ActiveRecord::Base
       tag:       tag,
       name:      name,
       leader_id: leader.id,
-    }, :as => role);
+    }, :as => role)
     
     raise InternalServerError.new('could not create alliance') unless alliance.save
     alliance.create_ranking({ alliance_tag: tag })
@@ -140,9 +143,65 @@ class Fundamental::Alliance < ActiveRecord::Base
     progress = self.victory_progress_for_type(type)
     progress.apply_victory_progress_for_type(type) unless progress.nil?
   end
-  
+
+  def add_effect_transaction(effect)
+    logger.debug "--------> add_effect_transaction ally" + effect.inspect
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self[attribute] += amount
+      propagate_bonus_changes
+      self.save!
+    end
+  end
+
+  def remove_effect_transaction(effect)
+    logger.debug "--------> remove_effect_transaction ally" + effect.inspect
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self[attribute] -= amount
+      propagate_bonus_changes
+      self.save!
+    end
+  end
+
   private
-  
+
+    def propagate_bonus_changes
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        GameRules::Rules.the_rules.resource_types.each do |resource_type|
+
+          ally_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_effects'
+          pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
+
+          logger.debug "------> propagate_bonus_changes ally " + self.changes[ally_attribute].inspect
+
+          unless self.changes[ally_attribute].nil?
+            self.members.each do |member|
+              logger.debug "------> propagate_bonus_changes ally member " + member.inspect
+              member.resource_pool.lock!
+              member.resource_pool.increment(pool_attribute, self.changes[ally_attribute][1] - self.changes[ally_attribute][0])
+              member.resource_pool.propagate_bonus_changes
+              member.resource_pool.save!
+            end
+          end
+        end
+      end
+
+      true
+    end
+
     def check_and_apply_ranking_fortress_count
       if !self.ranking.nil? && self.ranking.num_fortress != self.fortresses.count
         logger.warn(">>> RANKING FORTRESS COUNT RECALC DIFFERS. Old: #{self.ranking.num_fortress} Corrected: #{self.fortresses.count}.")
