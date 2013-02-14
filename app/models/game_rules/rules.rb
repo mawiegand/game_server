@@ -5274,13 +5274,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(10000*POW(LEVEL,0.4))',
-            1 => 'FLOOR(15000*POW(LEVEL,0.4))',
-            2 => 'FLOOR(20000*POW(LEVEL,0.4))',
+            0 => 'FLOOR(8000*POW(LEVEL,0.4))',
+            1 => 'FLOOR(10000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(15000*POW(LEVEL,0.4))',
             
           },
 
-          :production_time => 'FLOOR(7*3600+POW(LEVEL,0.7)/50)',
+          :production_time => 'FLOOR(9*3600+3600*POW(LEVEL,0.7)/50)',
           :production  => [
             
           ],
@@ -6111,12 +6111,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Kristall des Steins 0
+        {               #   Kristall des Steins
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Kristall des Steins 0",
+            :de_DE => "Kristall des Steins",
   
             :en_US => "Christal of stone",
                 
@@ -6162,24 +6162,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 0
-        {               #   Kristall des Steins 1
+        },              #   END OF Kristall des Steins
+        {               #   Kristall des Holzes
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Kristall des Steins 1",
+            :de_DE => "Kristall des Holzes",
   
-            :en_US => "Christal of stone",
+            :en_US => "Christal of wood",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 1</p>",
   
           },
 
@@ -6190,13 +6190,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :production_bonus  => [
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 0,
               :bonus              => 0.10,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 2,
               :bonus              => 0.05,
             },
@@ -6205,7 +6205,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6216,24 +6216,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 1
-        {               #   Kristall des Steins 2
+        },              #   END OF Kristall des Holzes
+        {               #   Kristall des Felles
           :id          => 2, 
           :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Kristall des Steins 2",
+            :de_DE => "Kristall des Felles",
   
-            :en_US => "Christal of stone",
+            :en_US => "christal of fur",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 2</p>",
   
           },
 
@@ -6244,13 +6244,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :production_bonus  => [
 
             {
-              :resource_id        => 0,
+              :resource_id        => 2,
               :domain_id          => 0,
               :bonus              => 0.10,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 2,
               :domain_id          => 2,
               :bonus              => 0.05,
             },
@@ -6259,7 +6259,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6270,24 +6270,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "12",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 2
-        {               #   Kristall des Steins 3
+        },              #   END OF Kristall des Felles
+        {               #   Kristall der Ausbildung
           :id          => 3, 
           :symbolic_id => :artifact_3,
           :name        => {
             
-            :de_DE => "Kristall des Steins 3",
+            :de_DE => "Kristall der Ausbildung",
   
-            :en_US => "Christal of stone",
+            :en_US => "Christal of training",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 3</p>",
   
           },
 
@@ -6299,21 +6299,27 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             {
               :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.10,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6324,24 +6330,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 3
-        {               #   Kristall des Steins 4
+        },              #   END OF Kristall der Ausbildung
+        {               #   Kristall der Präzision
           :id          => 4, 
           :symbolic_id => :artifact_4,
           :name        => {
             
-            :de_DE => "Kristall des Steins 4",
+            :de_DE => "Kristall der Präzision",
   
-            :en_US => "Christal of stone",
+            :en_US => "Christal of precision",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 4</p>",
   
           },
 
@@ -6353,21 +6359,27 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             {
               :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.10,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6378,24 +6390,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 4
-        {               #   Kristall des Steins 5
+        },              #   END OF Kristall der Präzision
+        {               #   Kristall der Aufzucht
           :id          => 5, 
           :symbolic_id => :artifact_5,
           :name        => {
             
-            :de_DE => "Kristall des Steins 5",
+            :de_DE => "Kristall der Aufzucht",
   
-            :en_US => "Christal of stone",
+            :en_US => "Christal of rearing",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 5</p>",
   
           },
 
@@ -6407,21 +6419,27 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             {
               :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.10,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6432,24 +6450,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 5
-        {               #   Kristall des Steins 6
+        },              #   END OF Kristall der Aufzucht
+        {               #   Kristall der Konstruktion
           :id          => 6, 
           :symbolic_id => :artifact_6,
           :name        => {
             
-            :de_DE => "Kristall des Steins 6",
+            :de_DE => "Kristall der Konstruktion",
   
-            :en_US => "Christal of stone",
+            :en_US => "Cristal od construction",
                 
           },
           :description => {
             
             :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>Description of artifact 6</p>",
   
           },
 
@@ -6461,21 +6479,27 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             {
               :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.10,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
             {
-              :resource_id        => 0,
+              :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.01,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.01,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>",
   
             :en_US => "<p>Beschreibung eingeweiht</p>",
   
@@ -6486,9 +6510,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins 6
+        },              #   END OF Kristall der Konstruktion
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
