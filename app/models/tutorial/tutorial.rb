@@ -49,6 +49,26 @@ class Tutorial::Tutorial
     end
   end
   
+  def as_json(options={})
+    # as_json of rails 3.1.3 does not support option :root; thus, implement
+    # it here for the time being
+    
+    hash = {}    
+    self.attributes.each do |name, value|
+      hash[name] = value
+    end
+    
+    root = include_root_in_json
+    root = options[:root]    if options.try(:key?, :root)
+    if root
+      root = self.class.model_name.element if root
+      options.delete(:root)  if options.try(:key?, :root)
+      JSON.pretty_generate({ root => hash }, options)
+    else
+      JSON.pretty_generate(hash, options)
+    end    
+  end
+  
   # returns the rules-singleton containing all the present rules. Should not
   # be modified by the program. Uses conditional assignment to construct the
   # rules object on first access.

@@ -17,8 +17,7 @@ class Tutorial::TutorialsController < ApplicationController
       respond_to do |format|
         format.html # show.html.erb
         format.json do 
-          options = { root: use_restkit_api? }
-          render :json => @tutorial.to_json(options)
+          render :json => @tutorial.as_json(:root => use_restkit_api?)
         end
       end
     end    

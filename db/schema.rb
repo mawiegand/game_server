@@ -2600,10 +2600,11 @@ ActiveRecord::Schema.define(:version => 20130213041454) do
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",            :default => 0
+    t.integer  "status",              :default => 0
     t.datetime "closed_at"
     t.decimal  "playtime_finished"
     t.decimal  "playtime_started"
+    t.datetime "reward_displayed_at"
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"
