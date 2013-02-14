@@ -2,10 +2,11 @@
 
 <table>
   <tr>
-    <th>Resource</th>
     <th>Type</th>
-    <th>Bonus</th>
+    <th>Origin</th>
     <th>Alliance</th>
+    <th>Bonus</th>
+    <th>Resource</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +14,11 @@
 
 <% @effect_alliance_resource_effects.each do |effect_alliance_resource_effect| %>
   <tr>
-    <td><%= effect_alliance_resource_effect.resource_id %></td>
     <td><%= effect_alliance_resource_effect.type_id %></td>
-    <td><%= effect_alliance_resource_effect.bonus %></td>
+    <td><%= effect_alliance_resource_effect.origin_id %></td>
     <td><%= effect_alliance_resource_effect.alliance_id %></td>
+    <td><%= effect_alliance_resource_effect.bonus %></td>
+    <td><%= effect_alliance_resource_effect.resource_id %></td>
     <td><%= link_to 'Show', effect_alliance_resource_effect %></td>
     <td><%= link_to 'Edit', edit_effect_alliance_resource_effect_path(effect_alliance_resource_effect) %></td>
     <td><%= link_to 'Destroy', effect_alliance_resource_effect, confirm: 'Are you sure?', method: :delete %></td>

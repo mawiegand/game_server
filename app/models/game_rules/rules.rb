@@ -6138,13 +6138,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.10,
+              :bonus              => 0.08,
             },
 
             {
               :resource_id        => 0,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.02,
             },
 
           ],
@@ -6192,13 +6192,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 1,
               :domain_id          => 0,
-              :bonus              => 0.10,
+              :bonus              => 0.08,
             },
 
             {
               :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.02,
             },
 
           ],
@@ -6246,13 +6246,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 2,
               :domain_id          => 0,
-              :bonus              => 0.10,
+              :bonus              => 0.08,
             },
 
             {
               :resource_id        => 2,
               :domain_id          => 2,
-              :bonus              => 0.05,
+              :bonus              => 0.02,
             },
 
           ],
