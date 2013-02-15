@@ -154,7 +154,11 @@ class Ticker::BattleHandler
             runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
             if loser_faction.contains_army_of(artifact.owner)
               runloop.say "Won Battle for Artifact"
-              artifact.capture_by_character(winner_leader) unless artifact.nil?
+              if artifact.capture_by_character(winner_leader)
+                Messaging::Message.generate_artifact_capture_message
+              else
+                Messaging::Message.generate_artifact_jumped_message
+              end
             end
           else
             runloop.say "No artifact found"
@@ -193,8 +197,11 @@ class Ticker::BattleHandler
           end
         end
 
-        stolen_artifact = battle.check_for_artifact_stealing
-        runloop.say "Check for artifacts stealing: #{stolen_artifact}"
+        success = battle.check_for_artifact_stealing
+        runloop.say "Check for artifacts stealing: #{success}"
+        if success
+          Messaging::Message.generate_artifact_stolen_message
+        end
 
         #schedule next round
         battle.schedule_next_round

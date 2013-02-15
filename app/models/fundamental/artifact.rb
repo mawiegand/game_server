@@ -42,12 +42,15 @@ class Fundamental::Artifact < ActiveRecord::Base
   def capture_by_character(character)
     if Random.rand(1.0) < GAME_SERVER_CONFIG['artifact_jump_probability']
       self.jump_to_neighbor_location
+      false
     else
       #capture
       if character.artifact.nil?
         self.move_to_base_of_character(character)
+        true
       else
         self.jump_to_neighbor_location
+        false
       end
     end
   end
