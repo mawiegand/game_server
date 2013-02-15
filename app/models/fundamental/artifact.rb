@@ -12,8 +12,8 @@ class Fundamental::Artifact < ActiveRecord::Base
   belongs_to :location,    :class_name => "Map::Location",           :foreign_key => "location_id",   :inverse_of => :artifact
   belongs_to :region,      :class_name => "Map::Region",             :foreign_key => "region_id",     :inverse_of => :artifacts
 
-  has_many    :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
-  has_many    :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
+  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
+  has_many   :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
 
   before_save :update_region
 
@@ -40,7 +40,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def capture_by_character(character)
-    if Random.rand(100) <= 10  # 10% probability
+    if Random.rand(1.0) < GAME_SERVER_CONFIG['artifact_jump_probability']
       self.jump_to_neighbor_location
     else
       #capture
@@ -155,7 +155,24 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def check_consistency
-    #TODO compare initiated artifacts with artifact effects
+    check_resource_effects
+  end
+
+  def check_resource_effects
+    if self.initiated? && !self.owner.npc?
+      self.artifact_type[:production_bonus].each do |bonus|
+        if bonus[:domain_id] == 0 && self.character_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
+          add_character_resource_effect(self.owner.id, bonus)
+        elsif bonus[:domain_id] == 2 && self.alliance_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
+          add_alliance_resource_effect(self.alliance.id, bonus)
+        end
+      end
+      # TODO remove unnecessary effects aswell
+    end
+    unless self.initiated?
+      self.character_resource_effects.destroy_all
+      self.alliance_resource_effects.destroy_all
+    end
     true
   end
 

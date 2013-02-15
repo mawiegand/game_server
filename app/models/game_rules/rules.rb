@@ -6545,30 +6545,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Herrschaftssieg
-        {               #   Artefaktsieg
-          :id          => 1, 
-          :symbolic_id => :victory_artifact,
-          :name        => {
-            
-            :de_DE => "Artefaktsieg",
-  
-            :en_US => "Artifact Victory",
-                
-          },
-          :description => {
-            
-            :de_DE => "Beschreibung des Artefaktsiegs",
-  
-            :en_US => "Description of artifatc victory",
-                
-          },
-
-          :condition   => {
-
-            :duration => 5,
-          },
-
-        },              #   END OF Artefaktsieg
       ],                # END OF VICTORY TYPES
 
 # ## QUEUE TYPES #############################################################

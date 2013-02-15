@@ -363,7 +363,7 @@ class Military::Battle < ActiveRecord::Base
     # TODO add function to calculate probalitity
 
     rand = Random.rand(1.0)
-    if rand < ratio * 0.01
+    if rand < ratio * GAME_SERVER_CONFIG['artifact_capture_probability_factor']
       artifact.capture_by_character(artifact_faction.opposing_faction.leader)
       " rand < ratio * 0.01 #{rand}, #{ratio * 0.01}"
     else

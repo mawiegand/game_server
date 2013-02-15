@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'util/formula'
+
 class Fundamental::VictoryProgress < ActiveRecord::Base
   
   belongs_to  :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :victory_progresses
@@ -16,7 +18,7 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   def fulfilled_since
     self.first_fulfilled_at.nil? ? nil : ((Time.now - self.first_fulfilled_at)/(3600*24)).to_i
   end
-  
+
   def recalc_fulfillment_count
     case self.victory_type
       when VICTORY_TYPE_DOMINATION

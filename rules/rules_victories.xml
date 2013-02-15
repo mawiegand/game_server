@@ -18,6 +18,6 @@
     <Description lang="en_US">Description of artifatc victory</Description>
     <Condition duration="5">
       <!-- no further condition required -->
-    </Condition>      
+    </Condition>
   </Victory>
 </VictoryTypes>

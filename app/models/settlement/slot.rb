@@ -551,7 +551,7 @@ class Settlement::Slot < ActiveRecord::Base
         propagate_unlock(:settlement_unlock_alliance_creation_count, building_type[:abilities][:unlock_alliance_creation], old_level, new_level)
       end
       if !building_type[:abilities][:unlock_artifact_initiation].blank?
-        propagate_unlock(:settlement_unlock_artifact_initiation_count, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
+        propagate_evaluatable_settlement_ability(:artifact_initiation_level, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
       end
     end
   end

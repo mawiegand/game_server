@@ -54,6 +54,7 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
   before_save :update_experience_production           # recalculates the exp production rates
+  before_save :update_artifact_initiation
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
@@ -966,6 +967,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # up to now there is only the experience production rate of buildings
     def update_experience_production
       self.exp_production_rate = self.exp_production_rate_buildings 
+      true
+    end
+
+    def update_artifact_initiation
+      if !self.artifact.nil? && self.artifact.initiated? && self.artifact_initiation_level == 0
+        self.artifact.initiated = false
+        self.artifact.save
+      end
       true
     end
 
