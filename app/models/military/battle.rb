@@ -41,6 +41,8 @@ class Military::Battle < ActiveRecord::Base
       defender.delete_movement
     end
 
+    location = attacker.location || defender.location            # get valid location
+
     if attacker.fighting? && defender.fighting?                  # merge fights
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
@@ -68,11 +70,8 @@ class Military::Battle < ActiveRecord::Base
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
 
-    artifact = battle.location.artifact
-
-    unless artifact.nil?
-      artifact.make_visible
-    end
+    artifact = location.artifact
+    artifact.make_visible unless artifact.nil?
 
     return battle
   end
@@ -212,6 +211,12 @@ class Military::Battle < ActiveRecord::Base
     # create message for winner and loser
     Messaging::Message.generate_overrun_winner_message(attacker, defender)
     Messaging::Message.generate_overrun_loser_message(attacker, defender)
+
+    # if overrun npc army holds an invisible artifact
+    artifact = attacker.location.artifact
+    if !artifact.nil? && defender.owned_by_npc?
+      artifact.jump_to_neighbor_location
+    end
 
     Military::Army.destroy(defender.id)
   end
