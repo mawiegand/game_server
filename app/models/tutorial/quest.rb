@@ -28,7 +28,7 @@ class Tutorial::Quest < ActiveRecord::Base
     ! self.open?
   end
   
-  def has_beend_displayed?
+  def has_been_displayed?
     !self.displayed_at.nil?
   end
 
