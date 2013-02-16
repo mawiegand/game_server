@@ -17,7 +17,7 @@ class Action::Tutorial::MarkQuestRewardDisplayedActionsController < ApplicationC
     
     quest.mark_reward_displayed
     
-    if !qeust.save
+    if !quest.save
       raise InternalServerError.new('Quest could not be saved after marking reward as displayed')
     end
     
