@@ -20,9 +20,37 @@ class Tutorial::Quest < ActiveRecord::Base
     Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
   end
   
+  def open?
+    self.status < STATE_FINISHED
+  end
+
+  def completed?
+    ! self.open?
+  end
+  
+  def has_beend_displayed?
+    !self.displayed_at.nil?
+  end
+
+  def has_reward_been_displayed?
+    !self.reward_displayed_at.nil?
+  end
+  
   def belongs_to_tutorial?
     !quest.nil? && quest[:tutorial]
   end
+  
+  
+  def mark_displayed
+    self.displayed_at = Time.now        if self.displayed_at.nil?
+    self.status = STATE_DISPLAYED       if self.status < STATE_DISPLAYED
+  end
+  
+  def mark_reward_displayed
+    self.reward_displayed_at = Time.now if self.reward_displayed_at.nil?
+  end  
+  
+  
   
   def check_for_rewards(answer_text)
     logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
