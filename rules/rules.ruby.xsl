@@ -743,6 +743,9 @@ end
           :description => {
             <xsl:apply-templates select="Description" />
           },
+          :flavour => {
+            <xsl:apply-templates select="Flavour" />
+          },
 <xsl:if test="ShortDescription">
           :short_description => {
             <xsl:apply-templates select="ShortDescription" />
