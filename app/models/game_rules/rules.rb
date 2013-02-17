@@ -5210,16 +5210,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :de_DE => "<p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p><p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>",
+            :de_DE => "<p>An sonnigen Tagen werden auch Getränke gereicht und die Hornbläser geben ein Ständchen.</p>",
   
-            :en_US => "<p>Flavor text</p>",
+            :en_US => "<p>On sunnys days there are drinks and music.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p><p>Der Chef und seine Gelehrten versuchen hier die Geheimnisse der Artefakte zu ergründen.</p>",
+            :de_DE => "<p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>",
   
-            :en_US => "<p>Description</p>",
+            :en_US => "<p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>",
                 
           },
 
@@ -5274,9 +5274,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(8000*POW(LEVEL,0.4))',
+            0 => 'FLOOR(7500*POW(LEVEL,0.4))',
             1 => 'FLOOR(10000*POW(LEVEL,0.4))',
-            2 => 'FLOOR(15000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(12500*POW(LEVEL,0.4))',
             
           },
 
@@ -6130,7 +6130,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
+            :de_DE => "Ein großer grauer Kristall. Beeindruckend, aber wahrlich keine Schönheit!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6191,7 +6191,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
+            :de_DE => "Ein großer grüner Kristall. Ich mag grün, solange ich das nicht essen muss!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6252,9 +6252,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer roter Kristall. Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
   
           },
 
@@ -6313,9 +6313,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => ">Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer blauer Kristall. Unglaublich wie blau der ist!",
   
           },
 
@@ -6374,9 +6374,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer gelber Kristall. Jetzt noch plüschig und es würde an ein übergroßes Kücken erinnern.",
   
           },
 
@@ -6435,9 +6435,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
   
           },
 
@@ -6496,9 +6496,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
   
           },
 
@@ -6557,9 +6557,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer goldener Kristall. Wie der funkelt! Nur bei Sonnenschein kann man leider nichts mehr sehen.",
   
           },
 
@@ -6618,9 +6618,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
-  
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer weißer Kristall. Das weiß ist so rein, da spüre ich den Drang eine schöne Höhlenmalerei reinzuschnitzen!",
   
           },
 
