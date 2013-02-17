@@ -325,4 +325,4 @@
       <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
     </Effects>
   </Artifact>
-    </ArtifactTypes>
+</ArtifactTypes>
