@@ -201,6 +201,16 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
+    # destroy all construction jobs
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
+    # destroy all training jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
