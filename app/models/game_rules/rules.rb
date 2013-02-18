@@ -6158,9 +6158,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem grau und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der graue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
   
-            :en_US => "<p>The christal pulsates in bright grey and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6219,9 +6219,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem grün und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
+            :de_DE => "<p>Der grüne Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
   
-            :en_US => "<p>The christal pulsates in bright green and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6252,9 +6252,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
             :de_DE => "Ein großer roter Kristall. Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
           },
 
@@ -6280,9 +6280,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem rot und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der rote Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
   
-            :en_US => "<p>The christal pulsates in bright red and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6313,9 +6313,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
             :de_DE => "Ein großer blauer Kristall. Unglaublich wie blau der ist!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
           },
 
@@ -6341,9 +6341,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem blau und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz das Fällen von Bäumen effizienter durchführen kann.</p>",
+            :de_DE => "<p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz das Fällen von Bäumen effizienter durchführen kann.</p>",
   
-            :en_US => "<p>The christal pulsates in bright blue and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the wood-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the wood-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6402,9 +6402,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem gelb und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
+            :de_DE => "<p>Der gelbe Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
   
-            :en_US => "<p>The christal pulsates in bright yellow and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the fur-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the fur-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6437,7 +6437,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
+            :de_DE => "Ein großer lilafarbener Kristall. Ist lila eigentlich eine Farbe?",
   
           },
 
@@ -6463,9 +6463,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem lila und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz den Abbruch von Steinen beschleunigen kann.</p>",
+            :de_DE => "<p>Der lila farbene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz den Abbruch von Steinen beschleunigen kann.</p>",
   
-            :en_US => "<p>The christal pulsates in bright purple and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the stone-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the stone-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6498,7 +6498,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
-            :de_DE => "Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.",
+            :de_DE => "Ein großer brauner Kristall. Das Braun erinnert mich an meinen Teddy-Bären.",
   
           },
 
@@ -6524,9 +6524,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem braun und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
+            :de_DE => "<p>Der braune Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
   
-            :en_US => "<p>The christal pulsates in bright brown and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the fur-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the fur-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6585,9 +6585,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtend golden und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten im Steinabbruch nutzt.</p>",
+            :de_DE => "<p>Der goldene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten im Steinabbruch nutzt.</p>",
   
-            :en_US => "<p>The christal pulsates in a bright golden colour and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the stone-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the stone-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6620,7 +6620,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
-            :de_DE => "Ein großer weißer Kristall. Das weiß ist so rein, da spüre ich den Drang eine schöne Höhlenmalerei reinzuschnitzen!",
+            :de_DE => "Ein großer weißer Kristall. Das weiß ist so rein, da spüre ich den Drang eine schöne Höhlenmalerei rein zu schnitzen!",
   
           },
 
@@ -6646,9 +6646,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der Kristall pulsiert in leuchtendem weiß und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten in der Holzproduktion nutzt.</p>",
+            :de_DE => "<p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten in der Holzproduktion nutzt.</p>",
   
-            :en_US => "<p>The christal pulsates in bright white and emits an inner warmth.</p><p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the wood-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the wood-production of your alliance.</p>",
   
           },
           :initiation_costs => {
