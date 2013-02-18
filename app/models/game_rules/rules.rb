@@ -150,7 +150,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '2*LEVEL',
         :alliance_max_members => 80,
-        :artifact_count => 9,
+        :artifact_count => 5,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -6123,7 +6123,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
@@ -6145,13 +6145,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.2,
             },
 
             {
               :resource_id        => 0,
               :domain_id          => 2,
-              :bonus              => 0.02,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6184,7 +6184,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
@@ -6206,13 +6206,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 1,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.2,
             },
 
             {
               :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.02,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6245,7 +6245,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
@@ -6267,13 +6267,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 2,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.2,
             },
 
             {
               :resource_id        => 2,
               :domain_id          => 2,
-              :bonus              => 0.02,
+              :bonus              => 0.05,
             },
 
           ],
@@ -6306,7 +6306,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
@@ -6367,7 +6367,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große gelbe Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
@@ -6380,7 +6380,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '1',
+          :amount      => '0',
 
           :experience_production => '10*MRANK',
 
@@ -6389,7 +6389,31 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.02,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.02,
             },
 
             {
@@ -6416,250 +6440,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Gelber Kristall
-        {               #   Lilaner Kristall
-          :id          => 5, 
-          :symbolic_id => :artifact_5,
-          :name        => {
-            
-            :de_DE => "Lilaner Kristall",
-  
-            :en_US => "Purple Christal",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
-  
-          },
-          :flavour => {
-            
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
-            :de_DE => "Ein großer lilafarbener Kristall. Ist lila eigentlich eine Farbe?",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 0,
-              :bonus              => 0.08,
-            },
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Der lila farbene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz den Abbruch von Steinen beschleunigen kann.</p>",
-  
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the stone-production of your alliance.</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Lilaner Kristall
-        {               #   Brauner Kristall
-          :id          => 6, 
-          :symbolic_id => :artifact_6,
-          :name        => {
-            
-            :de_DE => "Brauner Kristall",
-  
-            :en_US => "Brown Christal",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
-  
-          },
-          :flavour => {
-            
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
-            :de_DE => "Ein großer brauner Kristall. Das Braun erinnert mich an meinen Teddy-Bären.",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 0,
-              :bonus              => 0.08,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Der braune Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
-  
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the fur-production of your alliance.</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Brauner Kristall
-        {               #   Goldener Kristall
-          :id          => 7, 
-          :symbolic_id => :artifact_7,
-          :name        => {
-            
-            :de_DE => "Goldener Kristall",
-  
-            :en_US => "Golden Christal",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
-  
-          },
-          :flavour => {
-            
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
-            :de_DE => "Ein großer goldener Kristall. Wie der funkelt! Nur bei Sonnenschein kann man leider nichts mehr sehen.",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 0,
-              :bonus              => 0.08,
-            },
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Der goldene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten im Steinabbruch nutzt.</p>",
-  
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the stone-production of your alliance.</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Goldener Kristall
-        {               #   Weißer Kristall
-          :id          => 8, 
-          :symbolic_id => :artifact_8,
-          :name        => {
-            
-            :de_DE => "Weißer Kristall",
-  
-            :en_US => "White Christal",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
-  
-          },
-          :flavour => {
-            
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
-            :de_DE => "Ein großer weißer Kristall. Das weiß ist so rein, da spüre ich den Drang eine schöne Höhlenmalerei rein zu schnitzen!",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 0,
-              :bonus              => 0.08,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten in der Holzproduktion nutzt.</p>",
-  
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the wood-production of your alliance.</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Weißer Kristall
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
