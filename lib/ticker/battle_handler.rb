@@ -159,6 +159,8 @@ class Ticker::BattleHandler
               else
                 Messaging::Message.generate_artifact_jumped_message
               end
+            else
+              artifact.make_invisible
             end
           else
             runloop.say "No artifact found"

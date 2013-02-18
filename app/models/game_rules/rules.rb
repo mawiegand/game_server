@@ -150,7 +150,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '2*LEVEL',
         :alliance_max_members => 80,
-        :artifact_count => 7,
+        :artifact_count => 5,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -5210,16 +5210,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :de_DE => "<p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p><p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>",
+            :de_DE => "<p>An sonnigen Tagen werden auch Getränke gereicht und die Hornbläser geben ein Ständchen.</p>",
   
-            :en_US => "<p>Flavor text</p>",
+            :en_US => "<p>On sunnys days there are drinks and music.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p><p>Der Chef und seine Gelehrten versuchen hier die Geheimnisse der Artefakte zu ergründen.</p>",
+            :de_DE => "<p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>",
   
-            :en_US => "<p>Description</p>",
+            :en_US => "<p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>",
                 
           },
 
@@ -5274,9 +5274,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(8000*POW(LEVEL,0.4))',
+            0 => 'FLOOR(7500*POW(LEVEL,0.4))',
             1 => 'FLOOR(10000*POW(LEVEL,0.4))',
-            2 => 'FLOOR(15000*POW(LEVEL,0.4))',
+            2 => 'FLOOR(12500*POW(LEVEL,0.4))',
             
           },
 
@@ -6111,21 +6111,28 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Kristall des Steins
+        {               #   Grauer Kristall
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Kristall des Steins",
+            :de_DE => "Grauer Kristall",
   
-            :en_US => "Christal of stone",
+            :en_US => "Grey Christal",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 0</p>",
+            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Ein großer grauer Kristall. Beeindruckend, aber wahrlich keine Schönheit!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
           },
 
@@ -6138,22 +6145,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.2,
             },
 
             {
               :resource_id        => 0,
               :domain_id          => 2,
-              :bonus              => 0.02,
+              :bonus              => 0.05,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der graue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
   
-            :en_US => "<p>Beschreibung eingeweiht</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6164,22 +6171,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Steins
-        {               #   Kristall des Holzes
+        },              #   END OF Grauer Kristall
+        {               #   Grüner Kristall
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Kristall des Holzes",
+            :de_DE => "Grüner Kristall",
   
-            :en_US => "Christal of wood",
+            :en_US => "Green Christal",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 1</p>",
+            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Ein großer grüner Kristall. Ich mag grün, solange ich das nicht essen muss!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
           },
 
@@ -6192,22 +6206,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 1,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.2,
             },
 
             {
               :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.02,
+              :bonus              => 0.05,
             },
 
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
+            :de_DE => "<p>Der grüne Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
   
-            :en_US => "<p>Beschreibung eingeweiht</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6218,22 +6232,29 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall des Holzes
-        {               #   Kristall des Felles
+        },              #   END OF Grüner Kristall
+        {               #   Roter Kristall
           :id          => 2, 
           :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Kristall des Felles",
+            :de_DE => "Roter Kristall",
   
-            :en_US => "christal of fur",
+            :en_US => "Red Christal",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
   
-            :en_US => "<p>Description of artifact 2</p>",
+            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Ein großer roter Kristall. Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
           },
 
@@ -6246,7 +6267,153 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 2,
               :domain_id          => 0,
+              :bonus              => 0.2,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.05,
+            },
+
+          ],
+
+          :description_initiated => {
+
+            :de_DE => "<p>Der rote Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
+  
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
+            
+          },
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Roter Kristall
+        {               #   Blauer Kristall
+          :id          => 3, 
+          :symbolic_id => :artifact_3,
+          :name        => {
+            
+            :de_DE => "Blauer Kristall",
+  
+            :en_US => "Blue Christal",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Ein großer blauer Kristall. Unglaublich wie blau der ist!",
+  
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+          },
+
+          :amount      => '1',
+
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 0,
               :bonus              => 0.08,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.02,
+            },
+
+          ],
+
+          :description_initiated => {
+
+            :de_DE => "<p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz das Fällen von Bäumen effizienter durchführen kann.</p>",
+  
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the wood-production of your alliance.</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
+            
+          },
+          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+
+        },              #   END OF Blauer Kristall
+        {               #   Gelber Kristall
+          :id          => 4, 
+          :symbolic_id => :artifact_4,
+          :name        => {
+            
+            :de_DE => "Gelber Kristall",
+  
+            :en_US => "Yellow Christal",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der große gelbe Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+  
+            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+  
+          },
+          :flavour => {
+            
+            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+  
+            :de_DE => "Ein großer gelber Kristall. Jetzt noch plüschig und es würde an ein übergroßes Kücken erinnern.",
+  
+          },
+
+          :amount      => '0',
+
+          :experience_production => '10*MRANK',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.02,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.02,
             },
 
             {
@@ -6259,69 +6426,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der gelbe Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
   
-            :en_US => "<p>Beschreibung eingeweiht</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Kristall des Felles
-        {               #   Kristall der Ausbildung
-          :id          => 3, 
-          :symbolic_id => :artifact_3,
-          :name        => {
-            
-            :de_DE => "Kristall der Ausbildung",
-  
-            :en_US => "Christal of training",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>Description of artifact 3</p>",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>",
-  
-            :en_US => "<p>Beschreibung eingeweiht</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the fur-production of your alliance.</p>",
   
           },
           :initiation_costs => {
@@ -6332,187 +6439,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Kristall der Ausbildung
-        {               #   Kristall der Präzision
-          :id          => 4, 
-          :symbolic_id => :artifact_4,
-          :name        => {
-            
-            :de_DE => "Kristall der Präzision",
-  
-            :en_US => "Christal of precision",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>Description of artifact 4</p>",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>",
-  
-            :en_US => "<p>Beschreibung eingeweiht</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Kristall der Präzision
-        {               #   Kristall der Aufzucht
-          :id          => 5, 
-          :symbolic_id => :artifact_5,
-          :name        => {
-            
-            :de_DE => "Kristall der Aufzucht",
-  
-            :en_US => "Christal of rearing",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>Description of artifact 5</p>",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>",
-  
-            :en_US => "<p>Beschreibung eingeweiht</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Kristall der Aufzucht
-        {               #   Kristall der Konstruktion
-          :id          => 6, 
-          :symbolic_id => :artifact_6,
-          :name        => {
-            
-            :de_DE => "Kristall der Konstruktion",
-  
-            :en_US => "Cristal od construction",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>Description of artifact 6</p>",
-  
-          },
-
-          :amount      => '1',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.01,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p><p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>",
-  
-            :en_US => "<p>Beschreibung eingeweiht</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Kristall der Konstruktion
+        },              #   END OF Gelber Kristall
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
@@ -6545,6 +6472,30 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Herrschaftssieg
+        {               #   Artefaktsieg
+          :id          => 1, 
+          :symbolic_id => :victory_artifact,
+          :name        => {
+            
+            :de_DE => "Artefaktsieg",
+  
+            :en_US => "Artifact Victory",
+                
+          },
+          :description => {
+            
+            :de_DE => "Beschreibung des Artefaktsiegs",
+  
+            :en_US => "Description of artifatc victory",
+                
+          },
+
+          :condition   => {
+
+            :duration => 5,
+          },
+
+        },              #   END OF Artefaktsieg
       ],                # END OF VICTORY TYPES
 
 # ## QUEUE TYPES #############################################################

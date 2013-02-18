@@ -137,6 +137,11 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.save
   end
 
+  def make_invisible
+    self.visible = false
+    self.save
+  end
+
   def finish_initiation
     # if artifact owner is not settlement owner
     return false if self.owner != self.settlement.owner

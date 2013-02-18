@@ -51,6 +51,7 @@ class Fundamental::ArtifactsController < ApplicationController
       # todo -> determine last_modified
     else
       @fundamental_artifact = Fundamental::Artifact.find(params[:id])
+      raise NotFoundError.new('Artifact Not Found') unless @fundamental_artifact.visible?
     end
 
     respond_to do |format|

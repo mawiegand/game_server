@@ -3,11 +3,11 @@
 one:
   resource_id: 1
   type_id: 1
-  decimal: 
+  bonus: 0.2
   alliance_id: 1
 
 two:
   resource_id: 1
   type_id: 1
-  decimal: 
+  bonus: 0.2
   alliance_id: 1
