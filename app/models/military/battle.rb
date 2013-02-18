@@ -353,10 +353,10 @@ class Military::Battle < ActiveRecord::Base
 
   def check_for_artifact_stealing
     artifact = self.location.artifact
-    return false if artifact.nil?
+    return nil if artifact.nil?
 
     artifact_faction = faction_owning_artifact(artifact)
-    return false if artifact_faction.nil?
+    return nil if artifact_faction.nil?
 
     ratio = 1.0 * artifact_faction.strength / (artifact_faction.opposing_faction.strength + artifact_faction.strength)
 
@@ -366,7 +366,7 @@ class Military::Battle < ActiveRecord::Base
     if rand < ratio * GAME_SERVER_CONFIG['artifact_capture_probability_factor']
       artifact.capture_by_character(artifact_faction.opposing_faction.leader)
     else
-      false
+      nil
     end
   end
 

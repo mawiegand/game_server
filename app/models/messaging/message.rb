@@ -29,7 +29,10 @@ class Messaging::Message < ActiveRecord::Base
   TRADE_MESSAGE_TYPE_ID         = 11
   ANNOUNCEMENT_TYPE_ID          = 12
   ALLIANCE_TYPE_ID              = 13
-  
+  MESSAGE_TYPE_ARTIFACT_CAPTURED  = 14
+  MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
+  MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
+
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
   # creates inbox and outbox entries for the message
@@ -323,13 +326,43 @@ class Messaging::Message < ActiveRecord::Base
     self.body = text
   end
 
-  def self.generate_artifact_capture_message
+  def self.generate_artifact_captured_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_CAPTURED,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Du hast ein Artefakt gewonnen!"
+    message.body = "<p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>\n"
+    message.save
   end
 
-  def self.generate_artifact_jumped_message
+  def self.generate_artifact_jumped_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_JUMPED,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Das Artefakt ist verloren!"
+    message.body = "<p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>\n"
+    message.save
   end
 
-  def self.generate_artifact_stolen_message
+  def self.generate_artifact_stolen_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_STOLEN,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Dein Artefakt wurde geraubt!"
+    message.body = "<p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>\n"
+    message.save
   end
 
   def self.generate_lost_fortress_message(settlement, old_owner, new_owner)

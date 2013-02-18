@@ -152,13 +152,15 @@ class Ticker::BattleHandler
 
           unless artifact.nil?
             runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
-            if loser_faction.contains_army_of(artifact.owner)
+            old_artifact_owner = artifact.owner
+            if loser_faction.contains_army_of(old_artifact_owner)
               runloop.say "Won Battle for Artifact"
               if artifact.capture_by_character(winner_leader)
-                Messaging::Message.generate_artifact_capture_message
+                Messaging::Message.generate_artifact_captured_message(winner_leader)
               else
-                Messaging::Message.generate_artifact_jumped_message
+                Messaging::Message.generate_artifact_jumped_message(winner_leader)
               end
+              Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
             else
               artifact.make_invisible
             end
@@ -199,11 +201,22 @@ class Ticker::BattleHandler
           end
         end
 
-        success = battle.check_for_artifact_stealing
-        runloop.say "Check for artifacts stealing: #{success}"
-        if success
-          Messaging::Message.generate_artifact_stolen_message
+        artifact = battle.location.artifact
+        unless artifact.nil?
+          old_artifact_owner = artifact.owner
+          new_artifact_owner = battle.faction_owning_artifact(artifact).opposing_faction.leader
+
+          success = battle.check_for_artifact_stealing
+          runloop.say "Check for artifacts stealing: #{success}"
+          if success == true
+            Messaging::Message.generate_artifact_captured_message(new_artifact_owner)
+            Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
+          elsif success == false # hack: don't do anything if success is nil
+            Messaging::Message.generate_artifact_jumped_message(new_artifact_owner)
+            Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
+          end
         end
+
 
         #schedule next round
         battle.schedule_next_round
