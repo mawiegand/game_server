@@ -82,7 +82,7 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :character_ranks, :alliance_max_members, :artifact_count
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
@@ -107,6 +107,7 @@ class GameRules::Rules
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
       'artifact_count'              => artifact_count,
+      'artifact_initiation_speedup' => artifact_initiation_speedup,
     }
   end
   
@@ -177,6 +178,7 @@ class GameRules::Rules
         :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
+  <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
@@ -256,6 +258,21 @@ end
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF TRAINING SPEEDUP
+</xsl:template>
+
+
+<xsl:template match="ArtifactInitiationSpeedup">
+# ## ARTIFACT INITIATION SPEEDUP #############################################
+
+      :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
+<xsl:for-each select="SpeedupCost">
+        {               #   less than <xsl:value-of select="@hours"/> hours
+          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+          :amount      => <xsl:value-of select="@amount"/>,
+          :hours     => <xsl:value-of select="@hours"/>,
+        },              #   END OF <xsl:value-of select="@hours"/> hours
+</xsl:for-each>
+      ],                # END OF ARTIFACT INITIATION SPEEDUP
 </xsl:template>
 
 

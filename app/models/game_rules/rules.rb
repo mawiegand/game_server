@@ -35,7 +35,7 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :character_ranks, :alliance_max_members, :artifact_count
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
@@ -60,6 +60,7 @@ class GameRules::Rules
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
       'artifact_count'              => artifact_count,
+      'artifact_initiation_speedup' => artifact_initiation_speedup,
     }
   end
   
@@ -253,6 +254,54 @@ class GameRules::Rules
         },              #   END OF 9999 hours
 
       ],                # END OF TRAINING SPEEDUP
+
+# ## ARTIFACT INITIATION SPEEDUP #############################################
+
+      :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
+
+        {               #   less than 1 hours
+          :resource_id => 3,
+          :amount      => 1,
+          :hours     => 1,
+        },              #   END OF 1 hours
+
+        {               #   less than 3 hours
+          :resource_id => 3,
+          :amount      => 2,
+          :hours     => 3,
+        },              #   END OF 3 hours
+
+        {               #   less than 7 hours
+          :resource_id => 3,
+          :amount      => 4,
+          :hours     => 7,
+        },              #   END OF 7 hours
+
+        {               #   less than 12 hours
+          :resource_id => 3,
+          :amount      => 6,
+          :hours     => 12,
+        },              #   END OF 12 hours
+
+        {               #   less than 18 hours
+          :resource_id => 3,
+          :amount      => 8,
+          :hours     => 18,
+        },              #   END OF 18 hours
+
+        {               #   less than 30 hours
+          :resource_id => 3,
+          :amount      => 12,
+          :hours     => 30,
+        },              #   END OF 30 hours
+
+        {               #   less than 9999 hours
+          :resource_id => 3,
+          :amount      => 20,
+          :hours     => 9999,
+        },              #   END OF 9999 hours
+
+      ],                # END OF ARTIFACT INITIATION SPEEDUP
 
 # ## RESOURCE TYPES ##########################################################
   

@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -338,6 +338,8 @@
 
 <!ELEMENT TrainingSpeedup (SpeedupCost+)>
 <!ELEMENT ConstructionSpeedup (SpeedupCost+)>
+<!ELEMENT ArtifactInitiationSpeedup (SpeedupCost+)>
+
 <!ELEMENT SpeedupCost EMPTY>
 <!ATTLIST SpeedupCost 
 	resource IDREF #REQUIRED
