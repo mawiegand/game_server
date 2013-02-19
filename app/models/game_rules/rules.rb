@@ -6179,7 +6179,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Ein großer grauer Kristall. Beeindruckend, aber wahrlich keine Schönheit!",
+            :de_DE => "Der graue Kristall ist wahrlich beeindruckend, aber keine Schönheit! Vielleicht sollten wir den verhüllen.",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6207,7 +6207,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der graue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der graue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Steine in der direkten Umgebung des Kristalls sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
   
@@ -6240,7 +6240,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Ein großer grüner Kristall. Ich mag grün, solange ich das nicht essen muss!",
+            :de_DE => "Der Kristall ist grün, keine Frage. Ich mag grün, solange ich das nicht essen muss!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6268,7 +6268,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der grüne Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
+            :de_DE => "<p>Der grüne Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristalls wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
   
@@ -6301,7 +6301,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Ein großer roter Kristall. Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
+            :de_DE => "Das Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6329,7 +6329,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der rote Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Der rote Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristalls vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
   
@@ -6362,7 +6362,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Ein großer blauer Kristall. Unglaublich wie blau der ist!",
+            :de_DE => "Unglaublich wie blau der ist!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6414,7 +6414,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>",
+            :de_DE => "<p>Der blaue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>",
   
