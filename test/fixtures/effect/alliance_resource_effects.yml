@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  resource_id: 1
+  type_id: 1
+  bonus: 0.2
+  alliance_id: 1
+
+two:
+  resource_id: 1
+  type_id: 1
+  bonus: 0.2
+  alliance_id: 1

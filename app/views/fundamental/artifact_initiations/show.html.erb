@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Artifact:</b>
+  <%= @fundamental_artifact_initiation.artifact_id %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @fundamental_artifact_initiation.started_at %>
+</p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @fundamental_artifact_initiation.finished_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_artifact_initiation_path(@fundamental_artifact_initiation) %> |
+<%= link_to 'Back', fundamental_artifact_initiations_path %>

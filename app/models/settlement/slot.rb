@@ -56,13 +56,13 @@ class Settlement::Slot < ActiveRecord::Base
   # experience points. only return the exp value.
   def experience_production
     return 0 if building_id.nil?
-    
+
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
     return 0 if building_type[:experience_production].nil?
-    
+
     formula = Util::Formula.parse_from_formula(building_type[:experience_production])
-    formula.apply(self.level)   
+    formula.apply(self.level)
   end
 
   # returns the number of unlocks this slot provides for the different queue
@@ -124,16 +124,26 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:abilities][:unlock_building_slots]).apply(self.level)
   end  
   
-  
-  def unlock_prevent_takeover
+  def artifact_initiation_level
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
     raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
 
-    building_type[:abilities][:unlock_prevent_takeover].blank? || building_type[:abilities][:unlock_prevent_takeover] > self.level ? 0 : 1
+    return 0   if building_type[:abilities][:unlock_artifact_initiation].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:unlock_artifact_initiation]).apply(self.level)
   end    
-    
+
+  def unlock_prevent_takeover
+    return 0   if building_id.nil?
+
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+
+    building_type[:abilities][:unlock_prevent_takeover].blank? || building_type[:abilities][:unlock_prevent_takeover] > self.level ? 0 : 1
+  end
+
   # returns the number of command points the building on this slot provides
   def command_points
     return 0   if building_id.nil?
@@ -539,7 +549,10 @@ class Settlement::Slot < ActiveRecord::Base
       end
       if !building_type[:abilities][:unlock_alliance_creation].blank?
         propagate_unlock(:settlement_unlock_alliance_creation_count, building_type[:abilities][:unlock_alliance_creation], old_level, new_level)
-      end      
+      end
+      if !building_type[:abilities][:unlock_artifact_initiation].blank?
+        propagate_evaluatable_settlement_ability(:artifact_initiation_level, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
+      end
     end
   end
   
@@ -586,9 +599,9 @@ class Settlement::Slot < ActiveRecord::Base
     
     if rule[:domain]    == :settlement
       self.settlement.propagate_speedup_to_queue(:building, queue_type, delta)
-    elsif rule[:domain] == :character 
+    elsif rule[:domain] == :character
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
-    elsif rule[:domain] == :alliance 
+    elsif rule[:domain] == :alliance
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
     else
       logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      

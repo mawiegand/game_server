@@ -12,7 +12,9 @@ class Map::Region < ActiveRecord::Base
   has_many :settlements,       :class_name => "Settlement::Settlement", :foreign_key => 'region_id',   :inverse_of => :region
   has_many :armies,            :class_name => "Military::Army",         :foreign_key => "region_id",   :inverse_of => :region
   
-  has_many :battles,           :class_name => "Military::Battle", :inverse_of => :region
+  has_many :battles,           :class_name => "Military::Battle",       :inverse_of => :region
+
+  has_many  :artifacts,        :class_name => "Fundamental::Artifact",  :foreign_key => "region_id",   :inverse_of => :region
   
   before_create :add_unique_invitation_code
   

@@ -6,16 +6,17 @@ require 'ticker/training_active_job_handler'
 require 'ticker/training_queue_check_handler'
 require 'ticker/trading_carts_action_handler'
 require 'ticker/resource_effect_handler'
+require 'ticker/artifact_initiation_handler'
 require 'exception/http_exceptions'
 
 
 module Ticker
 
-  def self.add_handler_class(handlerClass)
+  def self.add_handler_class(handler_class)
     unless @handler_classes 
       @handler_classes = []
     end
-    @handler_classes.push handlerClass
+    @handler_classes.push handler_class
   end
   
   def self.handler_classes
@@ -23,14 +24,15 @@ module Ticker
   end
   
   # register handlers that should be used by the runloop
-  Ticker.add_handler_class(Ticker::MovementHandler);
-  Ticker.add_handler_class(Ticker::BattleHandler);
-  Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler);
-  Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler);
-  Ticker.add_handler_class(Ticker::TrainingActiveJobHandler);
-  Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler);
-  Ticker.add_handler_class(Ticker::ResourceEffectHandler);
-  Ticker.add_handler_class(Ticker::TradingCartsActionHandler);
+  Ticker.add_handler_class(Ticker::MovementHandler)
+  Ticker.add_handler_class(Ticker::BattleHandler)
+  Ticker.add_handler_class(Ticker::ConstructionActiveJobHandler)
+  Ticker.add_handler_class(Ticker::ConstructionQueueCheckHandler)
+  Ticker.add_handler_class(Ticker::TrainingActiveJobHandler)
+  Ticker.add_handler_class(Ticker::TrainingQueueCheckHandler)
+  Ticker.add_handler_class(Ticker::ResourceEffectHandler)
+  Ticker.add_handler_class(Ticker::TradingCartsActionHandler)
+  Ticker.add_handler_class(Ticker::ArtifactInitiationHandler)
 
   class Runloop
     
@@ -150,8 +152,8 @@ module Ticker
     protected
       
       def lock_next_event
-        next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at DESC').first unless Rails.env.development?
-        next_event = Event::Event.where("locked_at IS NULL AND execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
+        next_event = Event::Event.where('locked_at IS NULL AND execute_at < NOW()').order('execute_at ASC').first unless Rails.env.development?
+        next_event = Event::Event.where("locked_at IS NULL AND execute_at < datetime('now')").order('execute_at ASC').first if Rails.env.development?
     #    next_event = Event::Event.where("execute_at < datetime('now')").order('execute_at DESC').first if Rails.env.development?
         
         if next_event

@@ -1,0 +1,41 @@
+<h1>Listing fundamental_artifacts</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Location</th>
+    <th>Region</th>
+    <th>Settlement</th>
+    <th>Owner</th>
+    <th>Alliance</th>
+    <th>Initiated</th>
+    <th>Visisble</th>
+    <th>Last initiated at</th>
+    <th>Last captured at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_artifacts.each do |fundamental_artifact| %>
+  <tr>
+    <td><%= fundamental_artifact.type_id %></td>
+    <td><%= fundamental_artifact.location_id %></td>
+    <td><%= fundamental_artifact.region_id %></td>
+    <td><%= fundamental_artifact.settlement_id %></td>
+    <td><%= fundamental_artifact.owner_id %></td>
+    <td><%= fundamental_artifact.alliance_id %></td>
+    <td><%= fundamental_artifact.initiated %></td>
+    <td><%= fundamental_artifact.visible %></td>
+    <td><%= fundamental_artifact.last_initiated_at %></td>
+    <td><%= fundamental_artifact.last_captured_at %></td>
+    <td><%= link_to 'Show', fundamental_artifact %></td>
+    <td><%= link_to 'Edit', edit_fundamental_artifact_path(fundamental_artifact) %></td>
+    <td><%= link_to 'Destroy', fundamental_artifact, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Artifact', new_fundamental_artifact_path %>

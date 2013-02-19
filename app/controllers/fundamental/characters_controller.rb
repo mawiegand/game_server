@@ -260,7 +260,7 @@ class Fundamental::CharactersController < ApplicationController
     @fundamental_character = Fundamental::Character.find(params[:id])
     role = determine_access_role(@fundamental_character.id, @fundamental_character.alliance_id) || :default
     
-    if admin?
+    if admin? && backend_request?
       account_response = CreditShop::BytroShop.get_customer_account(@fundamental_character.identifier)
       @credit_amount = account_response[:response_data][:amount]
       @shop_credit_transaction = Shop::CreditTransaction.new({partner_user_id: @fundamental_character.identifier})

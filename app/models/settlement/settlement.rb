@@ -12,7 +12,9 @@ class Settlement::Settlement < ActiveRecord::Base
   belongs_to :location, :class_name => "Map::Location",          :foreign_key => "location_id",        :inverse_of => :settlement  
   belongs_to :region,   :class_name => "Map::Region",            :foreign_key => "region_id",          :inverse_of => :settlements 
   belongs_to :garrison_army,   :class_name => "Military::Army",  :foreign_key => "garrison_id"
-  
+
+  has_one    :artifact, :class_name => "Fundamental::Artifact",  :foreign_key => "settlement_id",      :inverse_of => :settlement
+
   has_many   :slots,    :class_name => "Settlement::Slot",       :foreign_key => "settlement_id",      :inverse_of => :settlement
   has_many   :armies,   :class_name => "Military::Army",         :foreign_key => "home_settlement_id", :inverse_of => :home
   has_many   :queues,   :class_name => "Construction::Queue",    :foreign_key => "settlement_id",      :inverse_of => :settlement
@@ -23,7 +25,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   attr_readable :id, :type_id, :region_id, :tax_rate, :location_id, :node_id, :name, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :settlement_unlock_prevent_takeover_count, :as => :default 
   attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :as => :owner
+  attr_readable *readable_attributes(:ally),    :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :artifact_initiation_level, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
@@ -52,6 +54,7 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
   before_save :update_experience_production           # recalculates the exp production rates
+  before_save :update_artifact_initiation
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
@@ -198,6 +201,16 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
+    # destroy all construction jobs
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
+    # destroy all training jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -436,9 +449,12 @@ class Settlement::Settlement < ActiveRecord::Base
     building_slots = recalc_building_slots_total
     check_and_apply_building_slots_total(building_slots)
 
+    artifact_initiation_level = recalc_artifact_initiation_level
+    check_and_apply_artifact_initiation_level(artifact_initiation_level)
+
     unlock_prevent_takeover = recalc_unlock_prevent_takeover_count
     check_and_apply_unlock_prevent_takeover_count(unlock_prevent_takeover)
-    
+
     n_defense_bonus = recalc_defense_bonus
     check_and_apply_defense_bonus(n_defense_bonus)    
     
@@ -648,22 +664,36 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end  
 
+    def recalc_artifact_initiation_level
+      pt = 0
+      self.slots.each do |slot|
+        pt += slot.artifact_initiation_level
+      end
+      pt    
+    end
+    
+    def check_and_apply_artifact_initiation_level(total)
+      if (self.artifact_initiation_level != total)
+        logger.warn(">>> ARTIFACT INITIATION LEVEL RECALC DIFFERS. Old: #{self.artifact_initiation_level} Corrected: #{total}.")
+        self.artifact_initiation_level = total
+      end
+    end
+
     def recalc_unlock_prevent_takeover_count
       pt = 0
       self.slots.each do |slot|
         pt += slot.unlock_prevent_takeover
       end
-      pt    
+      pt
     end
-    
+
     def check_and_apply_unlock_prevent_takeover_count(total)
-      if (self.settlement_unlock_prevent_takeover_count != total) 
+      if (self.settlement_unlock_prevent_takeover_count != total)
         logger.warn(">>> UNLOCK PREVENT TAKEOVER COUNT RECALC DIFFERS. Old: #{self.settlement_unlock_prevent_takeover_count} Corrected: #{total}.")
         self.settlement_unlock_prevent_takeover_count = total
       end
-    end  
+    end
 
-    
     def recalc_trading_carts
       tc = 0
       self.slots.each do |slot|
@@ -947,6 +977,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # up to now there is only the experience production rate of buildings
     def update_experience_production
       self.exp_production_rate = self.exp_production_rate_buildings 
+      true
+    end
+
+    def update_artifact_initiation
+      if !self.artifact.nil? && self.artifact.initiated? && self.artifact_initiation_level == 0
+        self.artifact.initiated = false
+        self.artifact.save
+      end
       true
     end
 
@@ -1362,10 +1400,10 @@ class Settlement::Settlement < ActiveRecord::Base
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
-        propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
 
-        old_owner.resource_pool.save   unless old_owner.nil?
-        new_owner.resource_pool.save   unless new_owner.nil?
+        old_owner.save   unless old_owner.nil?
+        new_owner.save   unless new_owner.nil?
       end
       true
     end

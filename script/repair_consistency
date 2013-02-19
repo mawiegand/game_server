@@ -38,12 +38,37 @@ step = step > 0 ? step : 1
 
 count = 0
 
-Fundamental::Alliance.find(:all).each do |alliance|
+Fundamental::Alliance.all.each do |alliance|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep(1)
 	end
 	alliance.check_consistency
+end
+puts " done."
+
+
+
+# ############################################################################
+#
+#   ARTIFACTS
+#
+# ############################################################################
+
+
+print "CHECKING Artifacts "
+
+step = Fundamental::Artifact.count / 10
+step = step > 0 ? step : 1
+
+count = 0
+
+Fundamental::Artifact.all.each do |artifact|
+	if count.modulo(step) == 0
+	  print "."
+	  sleep(1)
+	end
+  artifact.check_consistency
 end
 puts " done."
 
@@ -61,7 +86,7 @@ step = Settlement::Settlement.count / 10
 step = step > 0 ? step : 1
 count = 0
 
-Settlement::Settlement.find(:all).each do |settlement|
+Settlement::Settlement.all.each do |settlement|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep(1)
@@ -84,7 +109,7 @@ step = Fundamental::ResourcePool.count / 10
 step = step > 0 ? step : 1
 count = 0
 
-Fundamental::ResourcePool.find(:all).each do |pool|
+Fundamental::ResourcePool.all.each do |pool|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep(1)
@@ -107,7 +132,7 @@ step = Fundamental::Character.count / 10
 step = step > 0 ? step : 1
 count = 0
 
-Fundamental::Character.find(:all).each do |character|
+Fundamental::Character.all.each do |character|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep(1)
@@ -132,7 +157,7 @@ step = step > 0 ? step : 1
 
 count = 0
 
-Settlement::Settlement.find(:all).each do |settlement|
+Settlement::Settlement.all.each do |settlement|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep(1)

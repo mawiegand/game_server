@@ -29,7 +29,8 @@ GameServer::Application.routes.draw do
       end
 
       namespace :effect do 
-        resources :resource_effects 
+        resources :alliance_resource_effects
+        resources :resource_effects
       end
 
       namespace :fundamental do
@@ -44,6 +45,7 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ] 
+          resource  :artifact,                                 :only => [ :show ]
           resources :settings
           resources :history_events,                           :only => [ :index ]
         end
@@ -59,7 +61,10 @@ GameServer::Application.routes.draw do
         resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
-        
+        resources :artifacts
+        resources :artifact_initiations
+
+
         resources :guilds do
           resources :characters
         end
@@ -72,9 +77,11 @@ GameServer::Application.routes.draw do
         resources :retention_mails
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
-      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]            
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+                  
+      resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
+      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'            
 
-      
       namespace :messaging do 
         resources :archives do
           resources :entries, :controller => :archive_entries
@@ -184,15 +191,16 @@ GameServer::Application.routes.draw do
           resources :join_alliance_actions    
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
-          resources :kick_alliance_member_actions,      :only => [ :create ]    
+          resources :kick_alliance_member_actions,           :only => [ :create ]
           resources :change_character_notified_rank_actions, :only => [ :create ]    
-          resources :change_character_name_actions,     :only => [ :create ]    
-          resources :change_character_same_ip_actions,  :only => [ :create ]    
-          resources :change_character_gender_actions,   :only => [ :create ]    
-          resources :change_character_password_actions, :only => [ :create ]    
-          resources :track_character_conversions,       :only => [ :create ]    
-          resources :send_like_actions,                 :only => [ :create ]    
-          resources :send_dislike_actions,              :only => [ :create ]    
+          resources :change_character_name_actions,          :only => [ :create ]
+          resources :change_character_same_ip_actions,       :only => [ :create ]
+          resources :change_character_gender_actions,        :only => [ :create ]
+          resources :change_character_password_actions,      :only => [ :create ]
+          resources :track_character_conversions,            :only => [ :create ]
+          resources :send_like_actions,                      :only => [ :create ]
+          resources :send_dislike_actions,                   :only => [ :create ]
+          resources :speedup_artifact_initiation_actions,    :only => [ :create ]
         end
         namespace :construction do
           resources :finish_job_actions    
@@ -208,8 +216,10 @@ GameServer::Application.routes.draw do
         resources :abandon_outpost_actions, :only => [ :create ]
         end
         namespace :tutorial do
-          resources :check_quest_actions,     :only => [ :create ]    
-          resources :redeem_rewards_actions,  :only => [ :create ]    
+          resources :check_quest_actions,                 :only => [ :create ]    
+          resources :mark_quest_displayed_actions,        :only => [ :create ]    
+          resources :mark_quest_reward_displayed_actions, :only => [ :create ]    
+          resources :redeem_rewards_actions,              :only => [ :create ]    
           resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
       end

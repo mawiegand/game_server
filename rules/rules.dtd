@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, VictoryTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
+<!ELEMENT Rules (General, VictoryTypes?, ArtifactTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
 <!ATTLIST Rules
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -13,7 +13,7 @@
   tag CDATA #IMPLIED
 >
 <!ELEMENT Version EMPTY>
-<!ATTLIST Version 
+<!ATTLIST Version
   major CDATA #REQUIRED
   minor CDATA #REQUIRED
   build CDATA #REQUIRED
@@ -23,6 +23,10 @@
 <!ELEMENT Languages (Language*)>
 <!ELEMENT Language (#PCDATA)>
 <!ATTLIST Language locale ID #REQUIRED>
+
+<!ELEMENT Domains (Domain*)>
+<!ELEMENT Domain EMPTY>
+<!ATTLIST Domain id ID #REQUIRED>
 
 <!--Battle-->
 <!ELEMENT Battle (Calculation)>
@@ -81,7 +85,7 @@
 >
 
 <!--Settlements-->
-<!ELEMENT Settlement (Name+, Description+, BuildingSlot*)>
+<!ELEMENT Settlement (Name+, Description+, ShortDescription*, BuildingSlot*)>
 <!ATTLIST Settlement 
   id ID #REQUIRED
 	conquerable (true | false) "false"
@@ -102,19 +106,43 @@
 	category IDREF #REQUIRED 
 >
 
-<!ELEMENT Victory (Name+, Description+, Condition)>
+
+<!ELEMENT ArtifactTypes (Artifact*)>
+<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, ArtifactAmount, ExperienceProduction?, Effects)>
+
+<!ATTLIST Artifact
+  id ID #REQUIRED
+>
+<!ELEMENT ArtifactAmount (#PCDATA)>
+
+<!ELEMENT Initiation (Description+, InitiationCost+, InitiationTime)>
+
+<!ELEMENT InitiationCost (#PCDATA)>
+<!ATTLIST InitiationCost
+  id IDREF #REQUIRED
+  round (true | false) "true"
+>
+
+<!ELEMENT InitiationTime (#PCDATA)>
+<!ATTLIST InitiationTime
+  shortenable (true | false) "true"
+>
+
+<!ELEMENT Effects (ProductionBonus*, SpeedupQueue*)>
+
+<!ELEMENT Victory (Name+, Description+, ShortDescription*, Condition)>
 <!ATTLIST Victory 
   id ID #REQUIRED
 >
-<!ELEMENT Condition (RequiredRegionsRatio)>
-
-<!ELEMENT RequiredRegionsRatio (#PCDATA)>
-<!ATTLIST RequiredRegionsRatio 
+<!ELEMENT Condition (RequiredRegionsRatio?)>
+<!ATTLIST Condition 
 	duration CDATA #REQUIRED 
 >
 
+<!ELEMENT RequiredRegionsRatio (#PCDATA)>
+
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots? )>
+<!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots?, UnlockArtifactInitiation?)>
 
 <!ELEMENT PreventTakeover EMPTY>
 <!ATTLIST PreventTakeover 
@@ -140,7 +168,7 @@
 <!ELEMENT SpeedupQueue (#PCDATA)>
 <!ATTLIST SpeedupQueue 
   queue IDREF #REQUIRED 
-  domain (settlement | character | alliance) "settlement"
+  domain IDREF "settlement"
 >
 
 <!ELEMENT UnlockDiplomacy EMPTY>
@@ -161,9 +189,11 @@
 
 <!ELEMENT ArmySizeBonus (#PCDATA)>
 
+<!ELEMENT UnlockArtifactInitiation (#PCDATA)>
+
 <!--Buildings-->
 
-<!ELEMENT BuildingCategory (Name+, Description+, Position?)>
+<!ELEMENT BuildingCategory (Name+, Description+, ShortDescription*, Position?)>
 <!ATTLIST BuildingCategory 
   id ID #REQUIRED 
 >
@@ -173,7 +203,7 @@
   id ID #REQUIRED 
 >
 
-<!ELEMENT Building (Name+, Description+, Flavour+, Position?, Population?, RequirementGroup*, Cost*, ProductionTime, Capacity*, Upkeep*, Production*, ExperienceProduction?, ProductionBonus*, Abilities, ConversionOption?)>
+<!ELEMENT Building (Name+, Description+, ShortDescription*, Flavour+, Position?, Population?, RequirementGroup*, Cost*, ProductionTime, Capacity*, Production*, ExperienceProduction?, ProductionBonus*, Abilities, ConversionOption?)>
 
 <!ATTLIST Building 
   id ID #REQUIRED 
@@ -232,15 +262,15 @@
   id ID #REQUIRED
 >
 
-<!ELEMENT Science (Name+, Flavour+, Description+, Position?, Cost*, ProductionTime, MaxDevelopmentLevel, RequirementGroup*)>
+<!ELEMENT Science (Name+, Flavour+, Description+, ShortDescription*, Position?, Cost*, ProductionTime, RequirementGroup*)>
 <!ATTLIST Science id ID #REQUIRED hidden (0 | 1) "0">
 
 <!--Units-->
-<!ELEMENT UnitCategory (Name+, Description+, Position?, Ability*, TargetPriorities?)>
+<!ELEMENT UnitCategory (Name+, Description+, ShortDescription*, Position?, Ability*, TargetPriorities?)>
 <!ATTLIST UnitCategory 
   id ID #REQUIRED 
 >
-<!ELEMENT Unit (Name+, Description+, Flavour+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, RequirementGroup*, CanCreate?)>
+<!ELEMENT Unit (Name+, Description+, ShortDescription*, Flavour+, Position?, Cost*, ProductionTime, Velocity, ActionPoints, Initiative, Attack, CriticalDamage, Armor, Overrunnable, Hitpoints, Effectiveness*, Encumbrance*, RequirementGroup*, CanCreate?)>
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
@@ -278,7 +308,7 @@
 <!ATTLIST Queue 
   id ID #REQUIRED 
   category IDREF #REQUIRED
-	domain (settlement  | character | alliance) "settlement"
+	domain IDREF "settlement"
 	base_threads CDATA #REQUIRED
 	base_slots CDATA #REQUIRED
 >
@@ -308,6 +338,8 @@
 
 <!ELEMENT TrainingSpeedup (SpeedupCost+)>
 <!ELEMENT ConstructionSpeedup (SpeedupCost+)>
+<!ELEMENT ArtifactInitiationSpeedup (SpeedupCost+)>
+
 <!ELEMENT SpeedupCost EMPTY>
 <!ATTLIST SpeedupCost 
 	resource IDREF #REQUIRED
@@ -330,6 +362,7 @@
 <!ELEMENT ProductionBonus (#PCDATA)>
 <!ATTLIST ProductionBonus
 	id IDREF #REQUIRED
+  domain IDREF "character"
 >
 
 <!--Ability-->
@@ -367,6 +400,8 @@
 <!--Common Leafs-->
 <!ELEMENT Description (#PCDATA | p)*>
 <!ATTLIST Description lang IDREF "en_US">
+<!ELEMENT ShortDescription (#PCDATA | p)*>
+<!ATTLIST ShortDescription lang IDREF "en_US">
 <!ELEMENT Name (#PCDATA)>
 <!ATTLIST Name lang IDREF "en_US">
 <!ELEMENT Flavour (#PCDATA | p)*>

@@ -1,6 +1,7 @@
-The NPC placement script was started at <%= @report[:started_at] %> 
+The npc and artifact placement script was started at <%= @report[:started_at] %>
 and finished running at <%= @report[:finished_at] %>.
 
+<% if @report[:num_npcs_placed] > 0 %>
 It placed a total of <%= @report[:num_npcs_placed] %> npc armies.
 
 Min army: <%= @report[:min_size] %> units
@@ -8,6 +9,15 @@ Max army: <%= @report[:max_size] %> units
 
 Now we have a total of <%= @report[:num_npcs] %> npc armies in this wonderful world
 with an average size of <%= number_with_precision(@report[:average_size], :precision => 1) %> units.
+<% else %>
+It did not place any new npc armies.
+<% end %>
+
+<% if @report[:num_artifacts] > 0 %>
+It also placed <%= @report[:num_artifacts] %> new artifacts. The new totat artifact count is <%= @report[:current_artifacts] %>.
+<% else %>
+It did not place any new artifacts.
+<% end %>
 
 Whack On!
 

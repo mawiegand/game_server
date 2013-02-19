@@ -32,19 +32,16 @@ class Shop::BonusOffer < ActiveRecord::Base
         resource_pool_id: character.resource_pool.id,
         resource_id: self.resource_id,
         type_id: Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SHOP,
-        finished_at: Time.now + (self.duration * 3600), 
+        finished_at: Time.now + (self.duration * 3600),
       })
         
       # event for effect
-      event = effect.create_event(
+      effect.create_event(
         character: character,
         execute_at: effect.finished_at,
         event_type: "resource_effect",
         local_event_id: effect.id,
       )
-      
-      # add global effects to resource pool
-      character.resource_pool.add_effect_transaction(effect)
     end
   end
   

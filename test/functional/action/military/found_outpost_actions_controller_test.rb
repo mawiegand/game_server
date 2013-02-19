@@ -20,9 +20,6 @@ class Action::Military::FoundOutpostActionsControllerTest < ActionController::Te
     assert_not_nil founder_field    
     army.details[founder_field] = 2 ## army will NOT be deleted
     
-    puts army.inspect
-    puts army.details.inspect
-    
     assert army.save
     assert_not_nil army.details
     assert !army.frozen?

@@ -16,7 +16,9 @@ class Tutorial::TutorialsController < ApplicationController
     render_not_modified_or(@tutorial.updated_at) do
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render :json => @tutorial.to_json}
+        format.json do 
+          render :json => @tutorial.as_json(:root => use_restkit_api?)
+        end
       end
     end    
   end

@@ -27,8 +27,8 @@
     </BuildingSlot>
   </Settlement>
   <Settlement id="settlement_home_base" conquerable="false" destroyable="false">
-    <Name lang="de_DE">Heimatstadt</Name>
-    <Name lang="en_US">Home Town</Name>
+    <Name lang="de_DE">Heimatsiedlung</Name>
+    <Name lang="en_US">Home Settlement</Name>
     <Description lang="de_DE">Die Hauptsiedlung eines Stammes.</Description>
     <Description lang="en_US">English Description.</Description>
     <BuildingSlot number="0" max-level="10">

@@ -28,6 +28,7 @@ en:
         sciences: Sciences
       ranking:
         category: Ranking
+        info: Ranking Info
         character: Character Ranking
         alliance: Alliance Ranking
         fortress: Fortress Ranking
@@ -43,6 +44,8 @@ en:
         guilds: Guilds
         alliance_shouts: Ally-Shouts
         announcements: Announcements
+        artifacts: Artifacts
+        artifact_initiations: Art. Initiations
         settings: Settings
         retention_mails: Retention Mails
       messaging:
@@ -86,7 +89,8 @@ en:
         jobs: Jobs
         active_jobs: Act. Jobs
       effect:
-        resource_effects: Resource Effects
+        alliance_resource_effects: Alliance Res. Effects
+        resource_effects: Character Res. Effects
         category: Effect
       event:
         category: Event

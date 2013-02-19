@@ -1,0 +1,29 @@
+<h1>Listing fundamental_artifact_initiations</h1>
+
+<table>
+  <tr>
+    <th>Artifact</th>
+    <th>Started at</th>
+    <th>Finished at</th>
+    <th>Hurried</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_artifact_initiations.each do |fundamental_artifact_initiation| %>
+  <tr>
+    <td><%= fundamental_artifact_initiation.artifact_id %></td>
+    <td><%= fundamental_artifact_initiation.started_at %></td>
+    <td><%= fundamental_artifact_initiation.finished_at %></td>
+    <td><%= fundamental_artifact_initiation.hurried %></td>
+    <td><%= link_to 'Show', fundamental_artifact_initiation %></td>
+    <td><%= link_to 'Edit', edit_fundamental_artifact_initiation_path(fundamental_artifact_initiation) %></td>
+    <td><%= link_to 'Destroy', fundamental_artifact_initiation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Artifact initiation', new_fundamental_artifact_initiation_path %>
