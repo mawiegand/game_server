@@ -26,7 +26,7 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
@@ -56,7 +56,7 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
@@ -86,7 +86,7 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
@@ -105,10 +105,10 @@
     <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz das Fällen von Bäumen effizienter durchführen kann.</p>
+        <p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>
       </Description>
       <Description>
-      <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the wood-production of your alliance.</p>
+      <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
@@ -116,13 +116,17 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
-      <ProductionBonus id="resource_stone" domain="character">0.08</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
     </Effects>
   </Artifact>
-  <Artifact id="artifact_4">
+<!--   <Artifact id="artifact_4">
     <Name lang="de_DE">Gelber Kristall</Name>
     <Name lang="en_US">Yellow Christal</Name>
     <Description lang="de_DE">
@@ -156,7 +160,7 @@
       <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
     </Effects>
   </Artifact>
-<!--  <Artifact id="artifact_5">
+ <Artifact id="artifact_5">
     <Name lang="de_DE">Lilaner Kristall</Name>
     <Name lang="en_US">Purple Christal</Name>
     <Description lang="de_DE">

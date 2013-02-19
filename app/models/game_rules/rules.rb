@@ -151,7 +151,7 @@ class GameRules::Rules
         },
         :building_experience_formula => '2*LEVEL',
         :alliance_max_members => 80,
-        :artifact_count => 5,
+        :artifact_count => 4,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -5274,7 +5274,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3",
+	        :population  => "(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5))*4",
   
           :buyable     => true,
           :demolishable=> true,
@@ -5329,7 +5329,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :production_time => 'FLOOR(9*3600+3600*POW(LEVEL,0.7)/50)',
+          :production_time => 'FLOOR(9*3600+3600*POW(LEVEL,0.7))',
           :production  => [
             
           ],
@@ -6187,7 +6187,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*MRANK',
+          :experience_production => '15*(MRANK+1)',
 
           :production_bonus  => [
 
@@ -6248,7 +6248,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*MRANK',
+          :experience_production => '15*(MRANK+1)',
 
           :production_bonus  => [
 
@@ -6309,7 +6309,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*MRANK',
+          :experience_production => '15*(MRANK+1)',
 
           :production_bonus  => [
 
@@ -6370,14 +6370,32 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*MRANK',
+          :experience_production => '15*(MRANK+1)',
 
           :production_bonus  => [
 
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.08,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 0,
+              :bonus              => 0.07,
+            },
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.02,
             },
 
             {
@@ -6386,13 +6404,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :bonus              => 0.02,
             },
 
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.02,
+            },
+
           ],
 
           :description_initiated => {
 
-            :de_DE => "<p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz das Fällen von Bäumen effizienter durchführen kann.</p>",
+            :de_DE => "<p>Der blaue Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>",
   
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the wood-production of your alliance.</p>",
+            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>",
   
           },
           :initiation_costs => {
@@ -6404,91 +6428,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Blauer Kristall
-        {               #   Gelber Kristall
-          :id          => 4, 
-          :symbolic_id => :artifact_4,
-          :name        => {
-            
-            :de_DE => "Gelber Kristall",
-  
-            :en_US => "Yellow Christal",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der große gelbe Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
-  
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
-  
-          },
-          :flavour => {
-            
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
-  
-            :de_DE => "Ein großer gelber Kristall. Jetzt noch plüschig und es würde an ein übergroßes Kücken erinnern.",
-  
-          },
-
-          :amount      => '0',
-
-          :experience_production => '10*MRANK',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
-
-          :description_initiated => {
-
-            :de_DE => "<p>Der gelbe Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>",
-  
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the fur-production of your alliance.</p>",
-  
-          },
-          :initiation_costs => {
-            0 => '1000*LEVEL',
-            1 => '1000*LEVEL',
-            2 => '1000*LEVEL',
-            
-          },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
-
-        },              #   END OF Gelber Kristall
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
