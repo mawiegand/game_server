@@ -249,7 +249,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
     text += "</tr>\n"
     text += "</table>\n"
-    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren.</p>\n"
+    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
     self.body = text
   end
 
@@ -273,7 +273,7 @@ class Messaging::Message < ActiveRecord::Base
   
   def add_overrun_loser_message_body(winner, loser)
     text  = "<h2>Deine Armee ist überrannt worden in " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
-    text += "<p>Deine Armee<b>" + loser.name.to_s + "</b>ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    text += "<p>Deine Armee <b>" + loser.name.to_s + "</b> ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
     text += "</b>ist von einer Armee von<b>" + winner.name.to_s + "</b> von<b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
@@ -321,8 +321,8 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   def add_gained_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + "</h2>\n"
-    text += "<p>Deine Armee in der Region<b>" + settlement.region.name.to_s + "</b>hat den Kampf um eine Siedlung gewonnen<b>" + settlement.name.to_s + "</b>.</p>\n"
+    text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + " erobert.</h2>\n"
+    text += "<p>Juhu! Deine Armeen haben den Kampf in der Region <b>" + settlement.region.name.to_s + "</b> um die Siedlung <b>" + settlement.name.to_s + "</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>\n"
     self.body = text
   end
 
@@ -385,8 +385,8 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   def add_lost_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>Du hast Deine Siedlung verloren in " + settlement.region.name.to_s + "</h2>\n"
-    text += "<p>Deine Garnisonsarmee in Region<b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren <b>" + settlement.name.to_s + "</b>. "
+    text  = "<h2>Du hast Deine Siedlung in der Region " + settlement.region.name.to_s + " verloren </h2>\n"
+    text += "<p>Deine Garnisonsarmee in Region <b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren.<b>" + settlement.name.to_s + "</b>. "
     text += "Der neue Besitzer der Siedlung ist <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
     self.body = text
   end
