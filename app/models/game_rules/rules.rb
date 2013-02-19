@@ -2114,7 +2114,7 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.25*LEVEL",
+            :defense_bonus => "0.5*LEVEL",
 
             :unlock_garrison => 1,            
 
