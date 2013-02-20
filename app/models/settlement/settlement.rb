@@ -221,10 +221,9 @@ class Settlement::Settlement < ActiveRecord::Base
     
     self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
-    
-    # self.location.owner = character
-    # self.location.save
-    # settlement UNBLOCK
+
+    # workaround for errorneous used command points
+    Settlement::Settlement.reset_counters(self.id, :armies)
   end
   
   def abandon_outpost
