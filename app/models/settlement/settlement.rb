@@ -474,7 +474,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     check_and_repair_queues
-    
+    check_and_repair_queues_jobs_count
+
     true      
   end
 
@@ -820,13 +821,13 @@ class Settlement::Settlement < ActiveRecord::Base
           
           # now check, whether there are to many (multiple) queues of the same type (not allowed!!!)
           should_have = unlocks >= 1 ? 1 : 0
-          if (queue_type[:category] == :queue_category_construction)
+          if queue_type[:category] == :queue_category_construction
             number = self.queues.where(type_id: queue_type[:id]).count
          #   logger.warn(">>> con sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
             if number > should_have
               delete_multiple_queues(self.queues.where(type_id: queue_type[:id]), number-should_have)
             end
-          elsif (queue_type[:category] == :queue_category_training)
+          elsif queue_type[:category] == :queue_category_training
             number = self.training_queues.where(type_id: queue_type[:id]).count
         #    logger.warn(">>> train sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
             if number > should_have
@@ -838,6 +839,22 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
       return true
+    end
+
+    def check_and_repair_queues_jobs_count
+      self.queues.each do |queue|
+        if queue.jobs.count != queue.jobs_count
+          logger.warn(">>> CONSTRUCTION JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
+          Construction::Queue.reset_counters(queue.id, :jobs)
+        end
+      end
+
+      self.training_queues.each do |queue|
+        if queue.jobs.count != queue.jobs_count
+          logger.warn(">>> TRAINING JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
+          Construction::Queue.reset_counters(queue.id, :jobs)
+        end
+      end
     end
   
     def manage_queues_as_needed
