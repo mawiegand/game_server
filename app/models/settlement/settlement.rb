@@ -1,7 +1,6 @@
 class Settlement::Settlement < ActiveRecord::Base
 
   TYPE_NONE = 0
-  TYPE_FORTESS = 1    # old typo! replace everywhere
   TYPE_FORTRESS = 1
   TYPE_HOME_BASE = 2
   TYPE_OUTPOST = 3  
