@@ -150,10 +150,13 @@ class Ticker::BattleHandler
           runloop.say "Check for artifacts"
           artifact = battle.location.artifact
 
-          unless artifact.nil?
+          if artifact.nil?
+            runloop.say "No artifact found"
+          else
             runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
             old_artifact_owner = artifact.owner
-            if loser_faction.contains_army_of(old_artifact_owner)
+            if loser_faction.contains_army_of(old_artifact_owner) &&           # prevent stealing of artifact if not attacking
+                (old_artifact_owner.npc? || loser_faction.contains_garrison?)  # garrison army
               runloop.say "Won Battle for Artifact"
               if artifact.capture_by_character(winner_leader)
                 Messaging::Message.generate_artifact_captured_message(winner_leader)
@@ -164,8 +167,6 @@ class Ticker::BattleHandler
             else
               artifact.make_invisible
             end
-          else
-            runloop.say "No artifact found"
           end
 
         end
@@ -202,7 +203,7 @@ class Ticker::BattleHandler
         end
 
         artifact = battle.location.artifact
-        unless artifact.nil?
+        if !artifact.nil? && (artifact.owner.npc? || battle.contains_garrison?)
           old_artifact_owner = artifact.owner
           new_artifact_owner = battle.faction_owning_artifact(artifact).opposing_faction.leader
 

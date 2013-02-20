@@ -214,7 +214,7 @@ class Military::Battle < ActiveRecord::Base
 
     # if overrun npc army holds an invisible artifact
     artifact = attacker.location.artifact
-    if !artifact.nil? && defender.owned_by_npc?
+    if !artifact.nil? && artifact.owner == defender && artifact.owner.npc?
       artifact.jump_to_neighbor_location
     end
 
@@ -349,6 +349,13 @@ class Military::Battle < ActiveRecord::Base
       return participant.faction if participant.character == artifact.owner
     end
     nil
+  end
+
+  def contains_garrison?
+    armies.each do |army|
+      return true if army.garrison?
+    end
+    false
   end
 
   def check_for_artifact_stealing
