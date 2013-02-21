@@ -1,0 +1,37 @@
+<%= form_for(@effect_alliance_resource_effect) do |f| %>
+  <% if @effect_alliance_resource_effect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@effect_alliance_resource_effect.errors.count, "error") %> prohibited this effect_alliance_resource_effect from being saved:</h2>
+
+      <ul>
+      <% @effect_alliance_resource_effect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :resource_id %><br />
+    <%= f.number_field :resource_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :origin_id %><br />
+    <%= f.number_field :origin_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bonus %><br />
+    <%= f.text_field :bonus %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

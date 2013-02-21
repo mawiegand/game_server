@@ -10,6 +10,8 @@ class Map::Location < ActiveRecord::Base
 
   has_one    :artifact,   :class_name => "Fundamental::Artifact",  :foreign_key => "location_id", :inverse_of => :location
 
+  before_save :move_artifact_if_necessary
+
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
   scope :empty,                     where("settlement_type_id = ?", 0)
@@ -125,5 +127,13 @@ class Map::Location < ActiveRecord::Base
   def can_found_outpost_here?
     !fortress? && settlement.nil?
   end
+
+  protected
+
+    def move_artifact_if_necessary
+      if !artifact.nil? && artifact.owner.npc? && !settlement_type_id_change.nil? && settlement_type_id_change[0] == Settlement::Settlement::TYPE_NONE
+        artifact.jump_to_neighbor_location
+      end
+    end
 
 end

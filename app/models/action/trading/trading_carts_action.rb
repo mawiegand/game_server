@@ -2,6 +2,8 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
 
   belongs_to :starting_settlement, :class_name => "Settlement::Settlement", :foreign_key => "starting_settlement_id", :inverse_of => :outgoing_trading_carts
   belongs_to :target_settlement,   :class_name => "Settlement::Settlement", :foreign_key => "target_settlement_id",   :inverse_of => :incoming_trading_carts  
+  belongs_to :sender,              :class_name => "Fundamental::Character", :foreign_key => "sender_id" 
+  belongs_to :recipient,           :class_name => "Fundamental::Character", :foreign_key => "recipient_id" 
 
   has_one    :event,               :class_name => "Event::Event",           :foreign_key => "local_event_id",         :dependent => :destroy, :conditions => "event_type = 'trading_carts_action'"
   

@@ -41,6 +41,8 @@ class Military::Battle < ActiveRecord::Base
       defender.delete_movement
     end
 
+    location = attacker.location || defender.location            # get valid location
+
     if attacker.fighting? && defender.fighting?                  # merge fights
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
@@ -68,11 +70,8 @@ class Military::Battle < ActiveRecord::Base
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
 
-    artifact = battle.location.artifact
-
-    unless artifact.nil?
-      artifact.make_visible
-    end
+    artifact = location.artifact
+    artifact.make_visible unless artifact.nil?
 
     return battle
   end
@@ -213,6 +212,12 @@ class Military::Battle < ActiveRecord::Base
     Messaging::Message.generate_overrun_winner_message(attacker, defender)
     Messaging::Message.generate_overrun_loser_message(attacker, defender)
 
+    # if overrun npc army holds an invisible artifact
+    artifact = attacker.location.artifact
+    if !artifact.nil? && defender.owned_by_npc?
+      artifact.jump_to_neighbor_location
+    end
+
     Military::Army.destroy(defender.id)
   end
 
@@ -348,21 +353,20 @@ class Military::Battle < ActiveRecord::Base
 
   def check_for_artifact_stealing
     artifact = self.location.artifact
-    return false if artifact.nil?
+    return nil if artifact.nil?
 
     artifact_faction = faction_owning_artifact(artifact)
-    return false if artifact_faction.nil?
+    return nil if artifact_faction.nil?
 
     ratio = 1.0 * artifact_faction.strength / (artifact_faction.opposing_faction.strength + artifact_faction.strength)
 
     # TODO add function to calculate probalitity
 
     rand = Random.rand(1.0)
-    if rand < ratio * 0.01
+    if rand < ratio * GAME_SERVER_CONFIG['artifact_capture_probability_factor']
       artifact.capture_by_character(artifact_faction.opposing_faction.leader)
-      " rand < ratio * 0.01 #{rand}, #{ratio * 0.01}"
     else
-      false
+      nil
     end
   end
 

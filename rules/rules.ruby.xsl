@@ -79,15 +79,16 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :character_creation, :building_conversion, :building_experience_formula,
+  attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :character_ranks, :alliance_max_members, :artifact_count
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count
   
   def attributes 
     { 
       'version'                     => version,
       'battle'                      => battle,
+      'domains'                     => domains,
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
@@ -106,6 +107,7 @@ class GameRules::Rules
       'character_ranks'             => character_ranks,
       'alliance_max_members'        => alliance_max_members,
       'artifact_count'              => artifact_count,
+      'artifact_initiation_speedup' => artifact_initiation_speedup,
     }
   end
   
@@ -161,6 +163,7 @@ class GameRules::Rules
             :retreat_probability => <xsl:value-of select="//General/Battle/Calculation/@retreatProbability" />,
             },
         },
+  <xsl:apply-templates select="//General/Domains" />
         :character_creation => {
           :start_resources => {
             <xsl:apply-templates select="//General/CharacterCreation/StartResource" />
@@ -175,6 +178,7 @@ class GameRules::Rules
         :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
+  <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
@@ -230,6 +234,18 @@ end
 <xsl:template match="p">&lt;p&gt;<xsl:apply-templates/>&lt;/p&gt;</xsl:template>
 
 
+<xsl:template match="Domains">
+        :domains => [
+<xsl:for-each select="Domain">
+          {
+            :id          => <xsl:value-of select="position()-1"/>,
+            :symbolic_id => :<xsl:value-of select="@id"/>,
+          },
+</xsl:for-each>
+        ],
+</xsl:template>
+
+
 <xsl:template match="TrainingSpeedup">
 # ## TRAINING SPEEDUP ##########################################################
   
@@ -242,6 +258,21 @@ end
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF TRAINING SPEEDUP
+</xsl:template>
+
+
+<xsl:template match="ArtifactInitiationSpeedup">
+# ## ARTIFACT INITIATION SPEEDUP #############################################
+
+      :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
+<xsl:for-each select="SpeedupCost">
+        {               #   less than <xsl:value-of select="@hours"/> hours
+          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+          :amount      => <xsl:value-of select="@amount"/>,
+          :hours     => <xsl:value-of select="@hours"/>,
+        },              #   END OF <xsl:value-of select="@hours"/> hours
+</xsl:for-each>
+      ],                # END OF ARTIFACT INITIATION SPEEDUP
 </xsl:template>
 
 
@@ -729,6 +760,9 @@ end
           :description => {
             <xsl:apply-templates select="Description" />
           },
+          :flavour => {
+            <xsl:apply-templates select="Flavour" />
+          },
 <xsl:if test="ShortDescription">
           :short_description => {
             <xsl:apply-templates select="ShortDescription" />
@@ -741,13 +775,13 @@ end
           ],
 </xsl:if>
           :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
-<xsl:if test="count(ProductionBonus)">
+<xsl:if test="count(Effects/ProductionBonus)">
           :production_bonus  => [
-<xsl:for-each select="ProductionBonus">
+<xsl:for-each select="Effects/ProductionBonus">
             {
-              :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-              :symbolic_id        => :<xsl:value-of select="@id"/>,
-              :formula            => "<xsl:apply-templates />",
+              :resource_id        => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+              :domain_id          => <xsl:value-of select="count(id(@domain)/preceding-sibling::*)"/>,
+              :bonus              => <xsl:apply-templates />,
             },
 </xsl:for-each>
           ],

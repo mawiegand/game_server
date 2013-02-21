@@ -17,13 +17,13 @@ class Backend::TutorialStatsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create backend_tutorial_stat" do
-    assert_difference('Backend::TutorialStat.count') do
-      post :create, backend_tutorial_stat: @backend_tutorial_stat.attributes
-    end
-
-    assert_redirected_to backend_tutorial_stat_path(assigns(:backend_tutorial_stat))
-  end
+  #test "should create backend_tutorial_stat" do
+  #  assert_difference('Backend::TutorialStat.count') do
+  #    post :create, backend_tutorial_stat: @backend_tutorial_stat.attributes
+  #  end
+  #
+  #  assert_redirected_to backend_tutorial_stat_path(assigns(:backend_tutorial_stat))
+  #end
 
   test "should show backend_tutorial_stat" do
     get :show, id: @backend_tutorial_stat.to_param

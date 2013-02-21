@@ -4,7 +4,6 @@ class Action::Training::SpeedupJobActionsController < ApplicationController
   before_filter :authenticate
 
   def create
-    logger.debug params.inspect
     Training::Job.transaction do
 
       @training_job = Training::Job.lock.find(params[:action_training_speedup_job_actions][:job_id])

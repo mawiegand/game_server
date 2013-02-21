@@ -1,0 +1,2 @@
+module Effect::AllianceResourceEffectsHelper
+end

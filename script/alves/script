@@ -1,0 +1,148 @@
+#!/usr/bin/env ruby
+#
+# Retrieving data 
+#
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'csv'
+
+filename = "geral_output.csv"
+error = File.open("error_log.txt", 'w')
+
+print("Starting general output. . .");
+
+CSV.open(filename, "wb") do |csv|
+	cols = ["id", "num_victories", "num_defeats", "level", "num_armies","b_has_alliance",
+		"aliance_rank","b_aliance_leader", "num_outposts", "num_settlements", "num_fortress", 
+		"num_trades_received", "num_trades_sent"  , "num_log_ins", "num_likes_received", 
+		"num_likes_sent", "num_dislikes_received", "num_dislikes_sent", "num_messages_sent", 
+		"num_messages_received", "time_played", "overlall_ranking", "overlall_score", 
+		"resource_ranking", "resource_score", "power_ranking", "power_score", "kills", 
+		"kills_rank", "victory_ratio", "b_tutorial_completed", "b_bought_platinium", 
+		"days_of_platinium", "bought_resources", "b_speeded_building", 
+		"credit_bought", "credit_spent", "created_at"]
+	csv << cols
+
+	@user = Fundamental::Character.select("id, victories, defeats, lvel, login_count, 
+		send_likes_count, received_likes_count, send_dislikes_count, received_dislikes_count, 
+		credits_spent_total, alliance_id, created_at, playtime");
+
+
+    	@user.each do |u|
+		
+	
+		@rank_char = 
+			Ranking::CharacterRanking.select("num_outposts,num_settlements,num_fortress,
+			overall_rank,overall_score,resource_rank,resource_score,power_rank,power_score,
+			kills,kills_rank,victory_ratio").where(:character_id => u.id).first;
+
+		if @rank_char == nil
+			#Hope it never enters here
+			error.puts("Char " + u.id.to_s + " not ranked.\n")
+			@rank_char = Ranking::CharacterRanking.new(:num_outposts => -1, :num_settlements => -1,
+				:num_fortress => -1, :overall_rank => -1,:overall_score => -1,:resource_rank => -1,
+				:resource_score => -1,:power_rank=> -1,:power_score => -1,:kills => -1, :kills_rank => -1,
+				:victory_ratio => -1)		
+		end
+
+		has_alliance = u.alliance_id != nil;
+		
+		
+		alliance_leader = false
+		if has_alliance
+			alliance_leader = Fundamental::Alliance.select("leader_id").where(:id => u.alliance_id).first.leader_id == u.id
+		end
+
+		value_rank_alliance = 0	
+		v_rank_alliance = nil
+
+		if has_alliance 
+			@rank_alliance = Ranking::AllianceRanking.select("overall_rank").where(:alliance_id => u.alliance_id)
+			v_rank_alliance = @rank_alliance.first.overall_rank
+			if (v_rank_alliance == nil || v_rank_alliance < 1)
+			error.puts("Alliance " + u.alliance_id.to_s + "not ranked!\n")
+			end
+		end
+
+		if v_rank_alliance == nil
+			value_rank_alliance = v_rank_alliance;
+		end
+		
+		
+		
+		number_armies = Military::Army.where(:owner_id => 3, :removed => false).count
+
+		bought_platinum = u.premium_expiration != nil #Doubt this is right
+		
+		trades_sent = Action::Trading::TradingCartsAction.select("id").where(:sender_id => u.id).count
+		trades_recipient = Action::Trading::TradingCartsAction.select("id").where(:recipient_id => u.id).count
+		
+		@tutorial = Tutorial::State.select("tutorial_completed").where(:character_id => u.id).first;
+		tutorial_completed = false;
+		if  @tutorial != nil
+			tutorial_completed = @tutorial.tutorial_completed	
+		end	
+
+		
+		messages_sent = 0
+		@m_s = Messaging::Outbox.select("messages_count").where(:owner_id => u.id).first
+		if @m_s != nil
+			messages_sent = @m_s.messages_count == nil ? 0 : @m_s.messages_count
+			error.puts("Char " + u.id.to_s + " outbox problem!\n")
+		end
+		
+
+
+		messages_received = 0
+		@m_r = Messaging::Inbox.select("messages_count").where(:owner_id => u.id).first
+		if @m_r != nil
+			messages_received = @m_r.messages_count == nil ? 0 : @m_s.messages_count
+			error.puts("Char " + u.id.to_s + " inbox problem!\n")
+		end
+
+		credit_bought = Shop::Transaction.where(:character_id => u.id ).maximum("credit_amount_before")
+
+		created_at= u.created_at;
+		if created_at == nil
+			created_at = "no date"
+		else
+			created_at = created_at.to_date
+		end
+	
+		csv << [u.id,u.victories,u.defeats,u.lvel,number_armies,has_alliance.to_s,value_rank_alliance,
+			alliance_leader,@rank_char.num_outposts,@rank_char.num_settlements,@rank_char.num_fortress,trades_recipient,trades_sent,
+			u.login_count,u.received_likes_count,u.send_likes_count,u.received_dislikes_count,u.send_dislikes_count,messages_sent,
+			messages_received,u.playtime,@rank_char.overall_rank,@rank_char.overall_score, @rank_char.resource_rank, 
+			@rank_char.resource_score,@rank_char.power_rank,@rank_char.power_score, @rank_char.kills,@rank_char.kills_rank,
+			@rank_char.victory_ratio, tutorial_completed.to_s,bought_platinum.to_s,"n/d","n/d","n/d",credit_bought,u.credits_spent_total,
+			created_at]
+    	end
+	
+
+end
+
+print(" done!\n")
+print("Starting transactions output . . .")
+
+
+filename = "transactions_output.csv"
+
+CSV.open(filename, "wb") do |csv|
+	cols = ["id", "date", "value"]
+	csv << cols
+
+	@shop = Shop::MoneyTransaction.select("user_id, tstamp, gross").where("chargeback = 0")
+
+    	@shop.each do |s|
+      		csv << [s.user_id,Time.at(s.tstamp),s.gross]
+    	end
+	
+
+end
+
+error.close()
+
+print(" done!\n")
+
+
+
+

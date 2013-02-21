@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -23,6 +23,10 @@
 <!ELEMENT Languages (Language*)>
 <!ELEMENT Language (#PCDATA)>
 <!ATTLIST Language locale ID #REQUIRED>
+
+<!ELEMENT Domains (Domain*)>
+<!ELEMENT Domain EMPTY>
+<!ATTLIST Domain id ID #REQUIRED>
 
 <!--Battle-->
 <!ELEMENT Battle (Calculation)>
@@ -104,7 +108,7 @@
 
 
 <!ELEMENT ArtifactTypes (Artifact*)>
-<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, ArtifactAmount, ExperienceProduction?, ProductionBonus*, SpeedupQueue*)>
+<!ELEMENT Artifact (Name+, Description+, ShortDescription*, Flavour+, Initiation, ArtifactAmount, ExperienceProduction?, Effects)>
 
 <!ATTLIST Artifact
   id ID #REQUIRED
@@ -123,6 +127,8 @@
 <!ATTLIST InitiationTime
   shortenable (true | false) "true"
 >
+
+<!ELEMENT Effects (ProductionBonus*, SpeedupQueue*)>
 
 <!ELEMENT Victory (Name+, Description+, ShortDescription*, Condition)>
 <!ATTLIST Victory 
@@ -162,7 +168,7 @@
 <!ELEMENT SpeedupQueue (#PCDATA)>
 <!ATTLIST SpeedupQueue 
   queue IDREF #REQUIRED 
-  domain (settlement | character | alliance) "settlement"
+  domain IDREF "settlement"
 >
 
 <!ELEMENT UnlockDiplomacy EMPTY>
@@ -302,7 +308,7 @@
 <!ATTLIST Queue 
   id ID #REQUIRED 
   category IDREF #REQUIRED
-	domain (settlement  | character | alliance) "settlement"
+	domain IDREF "settlement"
 	base_threads CDATA #REQUIRED
 	base_slots CDATA #REQUIRED
 >
@@ -332,6 +338,8 @@
 
 <!ELEMENT TrainingSpeedup (SpeedupCost+)>
 <!ELEMENT ConstructionSpeedup (SpeedupCost+)>
+<!ELEMENT ArtifactInitiationSpeedup (SpeedupCost+)>
+
 <!ELEMENT SpeedupCost EMPTY>
 <!ATTLIST SpeedupCost 
 	resource IDREF #REQUIRED
@@ -354,6 +362,7 @@
 <!ELEMENT ProductionBonus (#PCDATA)>
 <!ATTLIST ProductionBonus
 	id IDREF #REQUIRED
+  domain IDREF "character"
 >
 
 <!--Ability-->

@@ -51,12 +51,12 @@ class Fundamental::ArtifactsController < ApplicationController
       # todo -> determine last_modified
     else
       @fundamental_artifact = Fundamental::Artifact.find(params[:id])
+      raise NotFoundError.new('Artifact Not Found') if !@fundamental_artifact.visible? && api_request?
     end
 
     respond_to do |format|
       format.html # show.html.erb
       format.json do
-        logger.debug "----> include?" + @fundamental_artifact.to_json(:include => :initiation).inspect
         render(json: @fundamental_artifact.to_json(:include => :initiation))
       end
     end

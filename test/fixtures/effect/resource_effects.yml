@@ -2,10 +2,12 @@
 
 one:
   bonus: 9.99
-  resource_id: 1
+  resource_id: 0
   finished_at: 2012-06-27 00:53:41
+  resource_pool_id: 1
 
 two:
   bonus: 9.99
-  resource_id: 1
+  resource_id: 0
   finished_at: 2012-06-27 00:53:41
+  resource_pool_id: 2

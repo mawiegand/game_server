@@ -37,7 +37,7 @@ one:
   locked_by: MyString
   locked_at: 2012-04-09 03:18:52
   skill_points: 1
-  alliance_id: 1
+  alliance_id: 3
   alliance_tag: MyString
   base_location_id: 1
   mundane_rank: 0
@@ -59,7 +59,7 @@ two:
   locked_by: MyString
   locked_at: 2012-04-09 03:18:52
   skill_points: 1
-  alliance_id: 1
+  alliance_id: 3
   alliance_tag: MyString
   base_location_id: 1
   mundane_rank: 1

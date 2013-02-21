@@ -54,6 +54,7 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
   before_save :update_experience_production           # recalculates the exp production rates
+  before_save :update_artifact_initiation
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
@@ -200,6 +201,16 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
+    # destroy all construction jobs
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
+    # destroy all training jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -969,6 +980,14 @@ class Settlement::Settlement < ActiveRecord::Base
       true
     end
 
+    def update_artifact_initiation
+      if !self.artifact.nil? && self.artifact.initiated? && self.artifact_initiation_level == 0
+        self.artifact.initiated = false
+        self.artifact.save
+      end
+      true
+    end
+
     def recalc_tax_income
       resource_types = GameRules::Rules.the_rules().resource_types
       incomes    = Array.new(resource_types.count, 0)
@@ -1381,10 +1400,10 @@ class Settlement::Settlement < ActiveRecord::Base
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
-        propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
 
-        old_owner.resource_pool.save   unless old_owner.nil?
-        new_owner.resource_pool.save   unless new_owner.nil?
+        old_owner.save   unless old_owner.nil?
+        new_owner.save   unless new_owner.nil?
       end
       true
     end

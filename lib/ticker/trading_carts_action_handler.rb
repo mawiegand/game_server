@@ -48,7 +48,6 @@ class Ticker::TradingCartsActionHandler
         action.destroy   # also deletes event and releases trading carts   
       else 
         runloop.say "Process arriving trading carts #{ action.id } at settlement #{ action.target_settlement_id }. Target reached."
-      
         if action.target_settlement.nil? 
           runloop.say "Target settlement is gone: #{ action.inspect }.", Logger::INFO
         elsif action.target_settlement.owner_id != action.recipient_id
@@ -57,6 +56,7 @@ class Ticker::TradingCartsActionHandler
           runloop.say "No resources to unload."
         else
           runloop.say "Unloading resources at target."
+          Backend::TradeLogEntry.create_with_trading_carts_action(action)
           recipient_message = Messaging::Message.generate_trade_recipient_message(action)          
           sender_message = Messaging::Message.generate_trade_sender_message(action)          
           action.unload_resources_at_target

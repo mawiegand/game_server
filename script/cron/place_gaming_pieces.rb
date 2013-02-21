@@ -11,6 +11,37 @@ require 'util/formula'
 #Military::Army.where(npc: true, garrison: false).destroy_all
 #Fundamental::Artifact.destroy_all
 
+Rails.logger.info "NPC PLACEMENT: Start creating artifacts..."
+
+
+artifact_count = 0
+
+artifact_types = GameRules::Rules.the_rules.artifact_types
+artifact_types.each do |artifact_type|
+
+  # determine existing artifact count
+  existing_artifacts = Fundamental::Artifact.where(type_id: artifact_type[:id]).count
+
+  # determine calculated artifact count
+  formula = Util::Formula.parse_from_formula(artifact_type[:amount], 'DAYS')
+  calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
+
+  # determine artifact count to create
+  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
+
+  # create missing artifacts with npc army at same location
+  (0...new_artifacts).each do
+    location = Map::Location.find_empty_without_army
+    unless location.nil?
+      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
+      artifact_count += 1
+    end
+  end
+end
+
+current_artifacts = Fundamental::Artifact.count
+
+
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
 @report = {
@@ -60,7 +91,7 @@ while (num_npcs < desired_number_of_npcs)
   location = Map::Location.find_empty
   raise InternalServerError.new('Could not claim an empty location.') if location.nil?
   
-  #Military::Army.create_npc(location, size)
+  Military::Army.create_npc(location, size)
   
   max_npc_placed = [(max_npc_placed || 0),       size].max
   min_npc_placed = [(min_npc_placed || 9999999), size].min
@@ -75,35 +106,6 @@ end
 Rails.logger.info "NPC PLACEMENT: Placed #{count_npc_placed || "0" } npc armies, smallest with #{ min_npc_placed || "0" } units, largest with #{ max_npc_placed || "0" }."
 
 
-artifact_count = 0
-
-artifact_types = GameRules::Rules.the_rules.artifact_types
-artifact_types.each do |artifact_type|
-
-  # determine existing artifact count
-  existing_artifacts = Fundamental::Artifact.where(type_id: artifact_type[:id]).count
-
-  # determine calculated artifact count
-  formula = Util::Formula.parse_from_formula(artifact_type[:amount], 'DAYS')
-  calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
-
-  # determine artifact count to create
-  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
-
-  # create missing artifacts with npc army at same location
-  (0...new_artifacts).each do |nr|
-    location = Map::Location.find_empty_without_army
-    unless location.nil?
-      puts "create_at_location_with_type  #{location.id} #{artifact_type[:id]}"
-      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
-      artifact_count += 1
-    else
-      puts "no empty location for artifact found"
-    end
-  end
-end
-
-current_artifacts = Fundamental::Artifact.count
 
 if count_npc_placed > 0 || artifact_count > 0
   Rails.logger.info "NPC PLACEMENT: Compile and email report."

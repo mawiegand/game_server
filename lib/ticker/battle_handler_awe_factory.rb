@@ -78,6 +78,8 @@ module Ticker
     def_modifier  = 1.0 
     def_modifier += settlement.defense_bonus    unless settlement.nil?
 
+    runloop.say "Faction ID #{faction.id} has def_modifier #{def_modifier}"
+
     faction.participants.each do |participant|
       unless participant.retreated || participant.disbanded?
         awe_army = Battle::Army.new(participant.army.id)

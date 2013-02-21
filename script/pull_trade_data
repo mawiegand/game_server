@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+#
+# Helper script that runs all consistency checks and repairs inconsistencies
+# on the fly.
+#
+
+require 'csv'
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+puts
+puts "This script pulls the trade log "
+puts
+
+
+exclude = [
+  "sender_name",
+  "sender_alliance_name",
+  "recipient_name",
+  "recipient_alliance_name",
+  "created_at",
+  "updated_at",
+  "resource_cash_amount",
+  "event_id",
+  "num_carts",
+]
+
+time = Time.new
+filename = "wado-" << time.year.to_s << "_" << time.month.to_s << "_" << time.day.to_s << "-" << time.hour.to_s << "_" << time.min.to_s << "_" << time.sec.to_s
+
+
+CSV.open(filename << ".trades", "w") do |csv|
+  
+  header_fields = []
+    
+  Backend::TradeLogEntry.new.attributes.each do |attr, value|
+    if ! exclude.include?(attr)
+      header_fields << attr
+    end
+  end
+
+  csv << header_fields
+
+  Backend::TradeLogEntry.all.each do |entry|
+    data_fields = []
+    
+    entry.attributes.each do |attr, value|
+      if ! exclude.include?(attr)
+        data_fields << (value.nil? ? -1 : value)
+      end
+    end
+    
+    csv << data_fields
+    
+  end
+
+end

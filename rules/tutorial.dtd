@@ -86,7 +86,7 @@
 
 <!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?) | TextboxTest | CustomTest)>
 
-<!ELEMENT BuildingTest (#PCDATA)>
+<!ELEMENT BuildingTest EMPTY>
 <!ATTLIST BuildingTest
   building  CDATA #REQUIRED
   min_level CDATA "1"
@@ -99,7 +99,7 @@
 >
 
 
-<!ELEMENT SettlementTest (#PCDATA)>
+<!ELEMENT SettlementTest EMPTY>
 <!ATTLIST SettlementTest
   type      CDATA #REQUIRED
   min_count CDATA "1"
@@ -111,22 +111,22 @@
   min_count CDATA "1"
 >
 
-<!ELEMENT ConstructionQueueTest (#PCDATA)>
+<!ELEMENT ConstructionQueueTest EMPTY>
 <!ATTLIST ConstructionQueueTest
   building  CDATA #REQUIRED
   min_count CDATA "1"
   min_level CDATA "1"
 >
 
-<!ELEMENT TrainingQueueTest (#PCDATA)>
+<!ELEMENT TrainingQueueTest EMPTY>
 <!ATTLIST TrainingQueueTest
   unit      CDATA #REQUIRED
   min_count CDATA "1"
 >
 
-<!ELEMENT MovementTest (#PCDATA)>
+<!ELEMENT MovementTest EMPTY>
 
-<!ELEMENT AllianceTest (#PCDATA)>
+<!ELEMENT AllianceTest EMPTY>
 
 <!ELEMENT TextboxTest (#PCDATA)>
 <!ATTLIST TextboxTest
@@ -138,17 +138,17 @@
   id        CDATA #REQUIRED
 >
 
-<!ELEMENT KillTest (#PCDATA)>
+<!ELEMENT KillTest EMPTY>
 <!ATTLIST KillTest
   min_units CDATA #REQUIRED
 >
 
-<!ELEMENT ArmyExperienceTest (#PCDATA)>
+<!ELEMENT ArmyExperienceTest EMPTY>
 <!ATTLIST ArmyExperienceTest
   min_experience CDATA #REQUIRED
 >
 
-<!ELEMENT ScoreTest (#PCDATA)>
+<!ELEMENT ScoreTest EMPTY>
 <!ATTLIST ScoreTest
   min_population CDATA #REQUIRED
 >
@@ -158,7 +158,7 @@
   min_speed CDATA #REQUIRED
 >
 
-<!ELEMENT SettlementProductionTest (#PCDATA)>
+<!ELEMENT SettlementProductionTest EMPTY>
 <!ATTLIST SettlementProductionTest
   min_resources CDATA #REQUIRED
 >

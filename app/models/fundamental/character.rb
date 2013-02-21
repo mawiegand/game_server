@@ -46,9 +46,9 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
+  attr_readable :login_count, :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :login_count, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -57,7 +57,11 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_mundane_rank
   
   before_save :update_experience_on_production_rate_changes
-  
+
+  #before_save :update_alliance_leave_to_artifact
+
+  after_save  :propagate_alliance_membership_changes_to_resource_pool
+  after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
@@ -138,7 +142,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def self.find_by_name_case_insensitive(name)  
-    Fundamental::Character.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
+    Fundamental::Character.first(:conditions => [ "lower(name) = ?", name.downcase ])
   end
   
   def self.valid_identifier?(identifier)
@@ -150,14 +154,14 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def self.update_all_conversions
-    Fundamental::Character.find(:all).each do |character|
+    Fundamental::Character.all.each do |character|
       character.update_conversion_state
       character.save
     end
   end
   
   def self.update_all_credits_spent
-    Fundamental::Character.find(:all).each do |character|
+    Fundamental::Character.all.each do |character|
       character.update_credits_spent
       character.update_gross
       character.save
@@ -565,7 +569,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   # Function for propagating change of alliance membership to redundant fields.
-  # This uses update_all direct querries because the Rails way of looping
+  # This uses update_all direct queries because the Rails way of looping
   # through models (selecting, instantiating, saving) would potentially take
   # too long (there might be several hundreds of settlements, locations and
   # armies involved).
@@ -601,9 +605,53 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
-  
+
+  def propagate_alliance_membership_changes_to_resource_pool
+    alliance_change     = self.changes[:alliance_id]
+    unless alliance_change.nil?
+      old_alliance = Fundamental::Alliance.find_by_id(alliance_change[0]) unless alliance_change[0].nil?
+      new_alliance = Fundamental::Alliance.find_by_id(alliance_change[1]) unless alliance_change[1].nil?
+
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        GameRules::Rules.the_rules.resource_types.each do |resource_type|
+
+          old_bonus = old_alliance.nil? ? 0 : old_alliance[resource_type[:symbolic_id].to_s + '_production_bonus_effects']
+          new_bonus = new_alliance.nil? ? 0 : new_alliance[resource_type[:symbolic_id].to_s + '_production_bonus_effects']
+
+          pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
+
+          logger.debug "------> propagate_alliance_membership_changes_to_resource_pool #{old_bonus} #{new_bonus} #{pool_attribute} "
+
+          self.resource_pool.lock!
+          self.resource_pool.increment(pool_attribute, new_bonus - old_bonus)
+          self.resource_pool.propagate_bonus_changes
+          self.resource_pool.save!
+        end
+      end
+    end
+    true
+  end
+
+  def update_alliance_leave_to_artifact
+    #alliance_change     = self.changes[:alliance_id]
+    #if !alliance_change.nil? && alliance_change[1].nil? && !self.artifact.nil?
+    #  logger.debug "-----------> leaving ally #{self.alliance_id}"
+    #  self.artifact.alliance = self.alliance
+    #  self.artifact.save
+    #end
+  end
+
+  def propagate_alliance_membership_changes_to_artifact
+    alliance_change     = self.changes[:alliance_id]
+    if !alliance_change.nil? && !self.artifact.nil?
+      logger.debug "-----------> propagate_alliance_membership_changes_to_artifact #{self.alliance_id}"
+      self.artifact.alliance = self.alliance
+      self.artifact.save
+    end
+  end
+
   # Function for propagating change of character name to redundant fields.
-  # This uses update_all direct querries because the Rails way of looping
+  # This uses update_all direct queries because the Rails way of looping
   # through models (selecting, instantiating, saving) would potentially take
   # too long (there might be several hundreds of settlements, locations and
   # armies involved).
@@ -839,11 +887,22 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:exp, points.floor)
     self.save    
   end
+
+  def update_exp_production(old_mundane_rank, new_mundane_rank)
+    if !self.artifact.nil? && self.artifact.initiated
+      self.exp_production_rate -= artifact.experience_production(old_mundane_rank)
+      self.exp_production_rate += artifact.experience_production(new_mundane_rank)
+    end
+  end
   
   def recalc_experience_production_rate
     exp_rate = 0.0
     self.settlements.each do |settlement|
       exp_rate += settlement.exp_production_rate
+    end
+
+    if self.artifact
+      exp_rate += artifact.experience_production(self.mundane_rank)
     end
     exp_rate
   end
@@ -1016,7 +1075,10 @@ class Fundamental::Character < ActiveRecord::Base
       character_ranks              = GameRules::Rules.the_rules.character_ranks
       new_rank                     = (self.mundane_rank || 0) + 1
       skill_points_per_rank        = character_ranks[:skill_points_per_mundane_rank] || 0
-      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0    
+      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0
+
+      self.update_exp_production(self.mundane_rank, new_rank)
+
       self.mundane_rank            = new_rank
       self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
       self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points
