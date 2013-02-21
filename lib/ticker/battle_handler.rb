@@ -201,13 +201,17 @@ class Ticker::BattleHandler
           end
         end
 
+        runloop.say "Check for artifacts stealing"
+
         artifact = battle.location.artifact
         unless artifact.nil?
           old_artifact_owner = artifact.owner
           new_artifact_owner = battle.faction_owning_artifact(artifact).opposing_faction.leader
 
+          runloop.say "Check for artifacts stealing"
+
           success = battle.check_for_artifact_stealing
-          runloop.say "Check for artifacts stealing: #{success}"
+          runloop.say "Artifacts stealing successful: #{success}"
           if success == true
             Messaging::Message.generate_artifact_captured_message(new_artifact_owner)
             Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
