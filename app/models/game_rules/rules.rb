@@ -259,45 +259,45 @@ class GameRules::Rules
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
 
-        {               #   less than 1 hours
-          :resource_id => 3,
-          :amount      => 1,
-          :hours     => 1,
-        },              #   END OF 1 hours
-
         {               #   less than 3 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 1,
           :hours     => 3,
         },              #   END OF 3 hours
 
-        {               #   less than 7 hours
+        {               #   less than 6 hours
+          :resource_id => 3,
+          :amount      => 2,
+          :hours     => 6,
+        },              #   END OF 6 hours
+
+        {               #   less than 11 hours
           :resource_id => 3,
           :amount      => 4,
-          :hours     => 7,
-        },              #   END OF 7 hours
+          :hours     => 11,
+        },              #   END OF 11 hours
 
-        {               #   less than 12 hours
+        {               #   less than 17 hours
           :resource_id => 3,
           :amount      => 6,
-          :hours     => 12,
-        },              #   END OF 12 hours
+          :hours     => 17,
+        },              #   END OF 17 hours
 
-        {               #   less than 18 hours
+        {               #   less than 36 hours
           :resource_id => 3,
           :amount      => 8,
-          :hours     => 18,
-        },              #   END OF 18 hours
+          :hours     => 36,
+        },              #   END OF 36 hours
 
-        {               #   less than 30 hours
+        {               #   less than 48 hours
           :resource_id => 3,
-          :amount      => 12,
-          :hours     => 30,
-        },              #   END OF 30 hours
+          :amount      => 11,
+          :hours     => 48,
+        },              #   END OF 48 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 12,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -6472,15 +6472,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "Beschreibung des Artefaktsiegs",
+            :de_DE => "Für einen Artefaktsieg muss eine Allianz ein Artefakt von jedem Artefakttyp besitzen und einweihen.",
   
-            :en_US => "Description of artifatc victory",
+            :en_US => "For a artifact victory an alliance has to own and initiate at least one artifact of every artifact type.",
                 
           },
 
           :condition   => {
 
-            :duration => 5,
+            :duration => 6,
           },
 
         },              #   END OF Artefaktsieg

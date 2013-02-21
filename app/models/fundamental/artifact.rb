@@ -12,6 +12,8 @@ class Fundamental::Artifact < ActiveRecord::Base
   belongs_to :location,    :class_name => "Map::Location",           :foreign_key => "location_id",   :inverse_of => :artifact
   belongs_to :region,      :class_name => "Map::Region",             :foreign_key => "region_id",     :inverse_of => :artifacts
 
+  belongs_to :army,        :class_name => "Military::Army",          :foreign_key => "army_id",       :inverse_of => :artifact
+
   has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
   has_many   :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
 
@@ -19,7 +21,7 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   after_save :propagate_changes_to_character
   after_save :propagate_changes_to_character_on_changed_possession
-
+  after_save :propagate_changes_to_victory_progress
   after_save :propagate_effect_changes
 
   scope :visible, where(['visible = ?', true])
@@ -29,13 +31,14 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def self.create_at_location_with_type(location, type_id)
-    Military::Army.create_npc(location, Random.rand(50..1000))
+    army = Military::Army.create_npc(location, Random.rand(50..1000))
     location.create_artifact({
       owner:     Fundamental::Character.find_by_id(1),
       region:    location.region,
+      army:      army,
       initiated: false,
       visible:   false,
-      type_id:   type_id
+      type_id:   type_id,
     })
   end
 
@@ -87,21 +90,20 @@ class Fundamental::Artifact < ActiveRecord::Base
 
     if locations.empty?
       self.destroy
-      return
+    else
+      new_location = locations[Random.rand(locations.count)]
+      npc = Fundamental::Character.find_by_id(1)
+      npc_army = Military::Army.create_npc(new_location, Random.rand(20..1000))
+
+      self.owner       = npc
+      self.alliance    = nil
+      self.location    = new_location
+      self.settlement  = nil
+      self.army        = npc_army
+      self.initiated   = false
+      self.visible     = false
+      self.save
     end
-
-    new_location = locations[Random.rand(locations.count)]
-    npc = Fundamental::Character.find_by_id(1)
-
-    self.owner       = npc
-    self.alliance    = nil
-    self.location    = new_location
-    self.settlement  = nil
-    self.initiated   = false
-    self.visible     = false
-    self.save
-
-    Military::Army.create_npc(new_location, Random.rand(20..1000))
   end
 
   def move_to_base_of_character(character)
@@ -109,6 +111,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     self.alliance         = character.alliance
     self.location         = character.home_location
     self.settlement       = character.home_location.settlement
+    self.army             = character.home_location.settlement.garrison_army
     self.last_captured_at = Time.now
     self.initiated        = false
     self.visible          = !character.npc
@@ -218,6 +221,58 @@ class Fundamental::Artifact < ActiveRecord::Base
       true
     end
 
+    # propagates owner changes or initiation changes to victory progress of appropriate alliances
+    def propagate_changes_to_victory_progress
+      alliance_change  = self.changes[:alliance_id]
+
+      initiated_change = self.changes[:initiated]
+      initiated_before = initiated_change.nil? ? initiated : !initiated
+      initiated_after  = initiated
+
+      # if alliance changed
+      if !alliance_change.nil?
+        old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
+        new_alliance = alliance_change[1].nil? ? nil : Fundamental::Alliance.find(alliance_change[1])
+
+        if initiated_before && !old_alliance.nil?
+          # count bei der alten allianz löschen runterzählen
+          victory_progress = old_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+          unless victory_progress.nil?
+            victory_progress.decrement(:fulfillment_count)
+            victory_progress.save
+          end
+        end
+        if initiated_after && !new_alliance.nil?
+          # count bei der neuen allianz löschen hochzählen
+          victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+          unless victory_progress.nil?
+            victory_progress.increment(:fulfillment_count)
+            victory_progress.save
+          end
+        end
+      end
+
+      # if only the initiation state changed
+      if alliance_change.nil? && !initiated_change.nil?
+        if initiated_before
+          # count bei der aktuellen allianz löschen runterzählen
+          victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+          unless victory_progress.nil?
+            victory_progress.decrement(:fulfillment_count)
+            victory_progress.save
+          end
+        end
+        if initiated_after
+          # count bei der aktuellen allianz löschen hochzählen
+          victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+          unless victory_progress.nil?
+            victory_progress.increment(:fulfillment_count)
+            victory_progress.save
+          end
+        end
+      end
+    end
+
     def propagate_changes_to_character
       owner_change = self.changes[:owner_id]
       initiated_change = self.changes[:initiated]
@@ -246,15 +301,12 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def remove_character_resource_effect(bonus)
-      #owner = Fundamental::Character.find_by_id(owner_id) unless owner_id.nil?
-      #owner.resource_pool.resource_effects.where('type_id = ?', Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT).destroy_all unless owner.nil?
       self.character_resource_effects.where('resource_id = ?', bonus[:resource_id]).destroy_all
     end
 
     def add_alliance_resource_effect(alliance_id, bonus)
       return if alliance_id.nil?
       alliance = Fundamental::Alliance.find_by_id(alliance_id)
-      logger.debug "----------> add_alliance_resource_effect " + alliance.inspect
       alliance.resource_effects.create({
         type_id:      Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT,
         resource_id:  bonus[:resource_id],
@@ -264,15 +316,12 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def remove_alliance_resource_effect(bonus)
-      #alliance = Fundamental::Alliance.find_by_id(alliance_id) unless alliance_id.nil?
-      #logger.debug "----------> remove_alliance_resource_effect " + alliance.inspect
-      #alliance.resource_effects.where('type_id = ?', Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT).destroy_all unless alliance.nil?
       self.alliance_resource_effects.where('resource_id = ?', bonus[:resource_id]).destroy_all
     end
 
     def propagate_effect_changes
-      owner_change       = self.changes[:owner_id]
-      alliance_change    = self.changes[:alliance_id]
+      owner_change     = self.changes[:owner_id]
+      alliance_change  = self.changes[:alliance_id]
 
       initiated_change = self.changes[:initiated]
       initiated_before = initiated_change.nil? ? initiated : !initiated
@@ -296,8 +345,6 @@ class Fundamental::Artifact < ActiveRecord::Base
 
       # if alliance changed
       if !alliance_change.nil?
-        logger.debug "----------> artifact alliance_change #{initiated_before} #{initiated_after}" + alliance_change.inspect
-
         if initiated_before
           # effekt bei der alten allianz löschen
           self.artifact_type[:production_bonus].each do |bonus|
@@ -312,8 +359,6 @@ class Fundamental::Artifact < ActiveRecord::Base
         end
       end
 
-      logger.debug "----------> ally " + initiated_change.inspect
-
       # if only the initiation state changed
       if owner_change.nil? && alliance_change.nil? && !initiated_change.nil?
         if initiated_before
@@ -326,9 +371,7 @@ class Fundamental::Artifact < ActiveRecord::Base
         if initiated_after
           # effekt beim aktuellen user eintragen
           self.artifact_type[:production_bonus].each do |bonus|
-            logger.debug "----------> initiated_after " + bonus.inspect
             add_character_resource_effect(owner_id, bonus)    if bonus[:domain_id] == 0
-            logger.debug "----------> initiated_after " + bonus.inspect
             add_alliance_resource_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
           end
         end

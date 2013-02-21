@@ -41,8 +41,6 @@ class Military::Battle < ActiveRecord::Base
       defender.delete_movement
     end
 
-    location = attacker.location || defender.location            # get valid location
-
     if attacker.fighting? && defender.fighting?                  # merge fights
       raise ArgumentError.new('attacking army is not garrison army')             unless attacker.garrison
       raise ArgumentError.new('armies are already fighting in the same battle')  if attacker.battle == defender.battle
@@ -70,8 +68,8 @@ class Military::Battle < ActiveRecord::Base
       self.send_attack_notification_if_necessary_to(defender, attacker)
     end
 
-    artifact = location.artifact
-    artifact.make_visible unless artifact.nil?
+    artifact = attacker.artifact || defender.artifact
+    artifact.make_visible if !artifact.nil? && !artifact.visible?
 
     return battle
   end
@@ -213,10 +211,8 @@ class Military::Battle < ActiveRecord::Base
     Messaging::Message.generate_overrun_loser_message(attacker, defender)
 
     # if overrun npc army holds an invisible artifact
-    artifact = attacker.location.artifact
-    if !artifact.nil? && artifact.owner == defender && artifact.owner.npc?
-      artifact.jump_to_neighbor_location
-    end
+    artifact = defender.artifact
+    artifact.jump_to_neighbor_location   unless artifact.nil?
 
     Military::Army.destroy(defender.id)
   end
@@ -346,20 +342,26 @@ class Military::Battle < ActiveRecord::Base
 
   def faction_owning_artifact(artifact)
     self.participants.each do |participant|
-      return participant.faction if participant.character == artifact.owner
+      return participant.faction if participant.army == artifact.army
     end
     nil
   end
 
-  def contains_garrison?
-    armies.each do |army|
-      return true if army.garrison?
+  #def contains_garrison?
+  #  armies.each do |army|
+  #    return true if army.garrison?
+  #  end
+  #  false
+  #end
+
+  def artifact
+    self.armies.each do |army|
+      return army.artifact unless army.artifact.nil?
     end
-    false
+    nil
   end
 
-  def check_for_artifact_stealing
-    artifact = self.location.artifact
+  def check_for_artifact_stealing(artifact)
     return nil if artifact.nil?
 
     artifact_faction = faction_owning_artifact(artifact)

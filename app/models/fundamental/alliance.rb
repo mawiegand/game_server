@@ -50,10 +50,10 @@ class Fundamental::Alliance < ActiveRecord::Base
     raise InternalServerError.new('could not create alliance') unless alliance.save
     alliance.create_ranking({ alliance_tag: tag })
 
-    # get victory conditions form rules
-    victory_types = [0]
-    victory_types.each do |type|
-      alliance.victory_progresses.create({ victory_type: type })
+    # create victory progress objects for alliance according to victory types
+
+    GameRules::Rules.the_rules.victory_types.each do |victory_type|
+      alliance.victory_progresses.create({type_id: victory_type[:id]})
     end
     
     cmd = Messaging::JabberCommand.open_room(tag) 
@@ -116,8 +116,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     end while !Fundamental::Alliance.find_by_invitation_code(self.invitation_code).nil?
   end
   
-  def victory_progress_for_type(victory_type)
-    victory_progresses = self.victory_progresses.where(:victory_type => victory_type)
+  def victory_progress_for_type(type_id)
+    victory_progresses = self.victory_progresses.where(:type_id => type_id)
     victory_progresses.empty? ? nil : victory_progresses.first
   end
   
@@ -139,11 +139,6 @@ class Fundamental::Alliance < ActiveRecord::Base
     true      
   end
   
-  def recalc_victory_progress_for_type(type)
-    progress = self.victory_progress_for_type(type)
-    progress.apply_victory_progress_for_type(type) unless progress.nil?
-  end
-
   def add_effect_transaction(effect)
     logger.debug "--------> add_effect_transaction ally" + effect.inspect
     ActiveRecord::Base.transaction(:requires_new => true) do
@@ -217,18 +212,15 @@ class Fundamental::Alliance < ActiveRecord::Base
     end
       
     def check_and_apply_victory_progresses
-      # TODO get victory conditions form rules
-      victory_types = [Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION]
-      
-      victory_types.each do |type|
+      GameRules::Rules.the_rules.victory_types.each do |victory_type|
         # get victory progress of alliance and condition
-        progress = self.victory_progress_for_type(type)
+        progress = self.victory_progress_for_type(victory_type[:id])
         
         # create victory progress for this victory condition if not exists 
         if progress.nil?
-          logger.warn(">>> VICTORY PROGRESS DOESN'T EXIST. Alliance: #{self.id} VictoryType: #{type}.")
+          logger.warn(">>> VICTORY PROGRESS DOESN'T EXIST. Alliance: #{self.id} VictoryType: #{victory_type[:id]}.")
           progress = self.victory_progresses.create({
-            victory_type: type,
+            type_id: victory_type[:id],
           })
         end
 
