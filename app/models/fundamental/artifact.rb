@@ -224,7 +224,6 @@ class Fundamental::Artifact < ActiveRecord::Base
     # propagates owner changes or initiation changes to victory progress of appropriate alliances
     def propagate_changes_to_victory_progress
       alliance_change  = self.changes[:alliance_id]
-
       initiated_change = self.changes[:initiated]
       initiated_before = initiated_change.nil? ? initiated : !initiated
       initiated_after  = initiated
