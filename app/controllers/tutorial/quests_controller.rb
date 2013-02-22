@@ -28,7 +28,7 @@ class Tutorial::QuestsController < ApplicationController
       @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)
     end
     
-    stale?(:last_modified => last_modified, :etag => @tutorial_quests)
+    if stale?(:last_modified => last_modified, :etag => @tutorial_quests)
       respond_to do |format|
         format.html 
         format.json { render json: @tutorial_quests }
