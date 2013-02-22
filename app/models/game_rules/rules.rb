@@ -193,9 +193,27 @@ class GameRules::Rules
           :hours     => 30,
         },              #   END OF 30 hours
 
-        {               #   less than 9999 hours
+        {               #   less than 60 hours
           :resource_id => 3, 
           :amount      => 20,
+          :hours     => 60,
+        },              #   END OF 60 hours
+
+        {               #   less than 100 hours
+          :resource_id => 3, 
+          :amount      => 35,
+          :hours     => 100,
+        },              #   END OF 100 hours
+
+        {               #   less than 150 hours
+          :resource_id => 3, 
+          :amount      => 50,
+          :hours     => 150,
+        },              #   END OF 150 hours
+
+        {               #   less than 9999 hours
+          :resource_id => 3, 
+          :amount      => 75,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -247,9 +265,15 @@ class GameRules::Rules
           :hours     => 96,
         },              #   END OF 96 hours
 
-        {               #   less than 9999 hours
+        {               #   less than 192 hours
           :resource_id => 3, 
           :amount      => 20,
+          :hours     => 192,
+        },              #   END OF 192 hours
+
+        {               #   less than 9999 hours
+          :resource_id => 3, 
+          :amount      => 40,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -259,45 +283,45 @@ class GameRules::Rules
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
 
-        {               #   less than 1 hours
-          :resource_id => 3,
-          :amount      => 1,
-          :hours     => 1,
-        },              #   END OF 1 hours
-
         {               #   less than 3 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 1,
           :hours     => 3,
         },              #   END OF 3 hours
 
-        {               #   less than 7 hours
+        {               #   less than 6 hours
+          :resource_id => 3,
+          :amount      => 2,
+          :hours     => 6,
+        },              #   END OF 6 hours
+
+        {               #   less than 11 hours
           :resource_id => 3,
           :amount      => 4,
-          :hours     => 7,
-        },              #   END OF 7 hours
+          :hours     => 11,
+        },              #   END OF 11 hours
 
-        {               #   less than 12 hours
+        {               #   less than 17 hours
           :resource_id => 3,
           :amount      => 6,
-          :hours     => 12,
-        },              #   END OF 12 hours
+          :hours     => 17,
+        },              #   END OF 17 hours
 
-        {               #   less than 18 hours
+        {               #   less than 36 hours
           :resource_id => 3,
           :amount      => 8,
-          :hours     => 18,
-        },              #   END OF 18 hours
+          :hours     => 36,
+        },              #   END OF 36 hours
 
-        {               #   less than 30 hours
+        {               #   less than 48 hours
           :resource_id => 3,
-          :amount      => 12,
-          :hours     => 30,
-        },              #   END OF 30 hours
+          :amount      => 11,
+          :hours     => 48,
+        },              #   END OF 48 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 12,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -6185,7 +6209,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '1',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6307,7 +6331,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '6',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6472,9 +6496,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "Beschreibung des Artefaktsiegs",
+            :de_DE => "Für einen Artefaktsieg muss eine Allianz mindestens ein Artefakt von jedem Artefakttyp besitzen und einweihen.",
   
-            :en_US => "Description of artifatc victory",
+            :en_US => "For a artifact victory an alliance has to own and initiate at least one artifact of every artifact type.",
                 
           },
 
