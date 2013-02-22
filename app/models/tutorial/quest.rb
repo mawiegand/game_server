@@ -16,6 +16,9 @@ class Tutorial::Quest < ActiveRecord::Base
   STATE_CLOSED = 3
   STATES[STATE_CLOSED] = :closed
   
+  scope        :non_closed,  where(['status < ?', STATE_CLOSED])
+  
+  
   def quest
     Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
   end

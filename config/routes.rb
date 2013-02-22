@@ -78,6 +78,7 @@ GameServer::Application.routes.draw do
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
       resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+      resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
                   
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
       resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'            

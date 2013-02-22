@@ -2,16 +2,32 @@ class Tutorial::QuestsController < ApplicationController
   layout 'tutorial'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:update]    
+  before_filter :deny_api, :except => [:index, :show, :update]    
 
   # GET /tutorial/quests
   # GET /tutorial/quests.json
   def index
-    respond_to do |format|
-      format.html do
-        @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)    
-        @paginate = true   
+
+    if params.has_key?(:character_id)    # request using character_id 
+      
+      state = Tutorial::State.find_by_character_id(params[:character_id])
+      raise NotFoundError.new('No quests found for character id.')  if state.nil?
+      raise ForbiddenError.new('Access forbidden.')                 if state.owner != current_character && !staff? && !admin?
+      
+      @tutorial_quests = if api_request? # send only the relevant quests (those, that have not been finished yet)
+        state.quests.non_closed    
+      else                               # display all quests in backend
+        state.quests.paginate(:page => params[:page], :per_page => 50)                
       end
+      
+    else                                 # request all 
+      raise ForbiddenError.new('Access forbidden.')                 if !staff? && !admin? 
+      @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)
+    end
+        
+    respond_to do |format|
+      format.html 
+      format.json { render json: @tutorial_quests }
     end
   end
 
@@ -19,10 +35,13 @@ class Tutorial::QuestsController < ApplicationController
   # GET /tutorial/quests/1.json
   def show
     @tutorial_quest = Tutorial::Quest.find(params[:id])
+    raise ForbiddenError.new ('Access forbidden.')  unless staff? || admin? || @tutorial_quest.tutorial_state.owner == current_character
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tutorial_quest }
+    if stale?(:last_modified => @tutorial_quest.updated_at.utc, :etag => @tutorial_quest)
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @tutorial_quest }
+      end
     end
   end
 
