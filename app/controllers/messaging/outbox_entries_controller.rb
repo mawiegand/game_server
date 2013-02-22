@@ -4,8 +4,7 @@ class Messaging::OutboxEntriesController < ApplicationController
   layout 'messaging'
 
   before_filter :authenticate
-  before_filter :deny_api,      :except => [:index]
-
+  before_filter :deny_api,      :except => [:index, :show, :destroy]
 
   # GET /messaging/outbox_entries
   # GET /messaging/outbox_entries.json
@@ -46,9 +45,16 @@ class Messaging::OutboxEntriesController < ApplicationController
   def show
     @messaging_outbox_entry = Messaging::OutboxEntry.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @messaging_outbox_entry }
+    role = determine_access_role(@messaging_outbox_entry.owner_id, nil)   # no privileged alliance access
+    raise ForbiddenError.new('Access to outbox denied.') unless role == :owner || admin? || staff?
+
+    last_modified = @messaging_outbox_entry.updated_at
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @messaging_outbox_entry }
+      end
     end
   end
 
@@ -104,11 +110,15 @@ class Messaging::OutboxEntriesController < ApplicationController
   # DELETE /messaging/outbox_entries/1.json
   def destroy
     @messaging_outbox_entry = Messaging::OutboxEntry.find(params[:id])
+
+    role = determine_access_role(@messaging_outbox_entry.owner_id, nil)   # no privileged alliance access
+    raise ForbiddenError.new('Access to outbox denied.') unless role == :owner || admin? || staff?
+
     @messaging_outbox_entry.destroy
 
     respond_to do |format|
-      format.html { redirect_to messaging_outbox_entries_url }
-      format.json { head :ok }
+      format.html { redirect_to messaging_inbox_entries_url }
+      format.json { render json: {}, status: :ok }
     end
   end
 end

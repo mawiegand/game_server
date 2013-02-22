@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218231627) do
+ActiveRecord::Schema.define(:version => 20130222164629) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1702,6 +1702,7 @@ ActiveRecord::Schema.define(:version => 20130218231627) do
     t.integer  "type_id"
     t.boolean  "visible"
     t.integer  "alliance_id"
+    t.integer  "army_id"
   end
 
   create_table "fundamental_characters", :force => true do |t|
@@ -1759,11 +1760,11 @@ ActiveRecord::Schema.define(:version => 20130218231627) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
@@ -1839,10 +1840,11 @@ ActiveRecord::Schema.define(:version => 20130218231627) do
   create_table "fundamental_round_infos", :force => true do |t|
     t.string   "name"
     t.datetime "started_at"
-    t.integer  "regions_count",     :default => 0, :null => false
+    t.integer  "regions_count",      :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
+    t.integer  "winner_alliance_id"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -1853,7 +1855,7 @@ ActiveRecord::Schema.define(:version => 20130218231627) do
   end
 
   create_table "fundamental_victory_progresses", :force => true do |t|
-    t.integer  "victory_type",                      :null => false
+    t.integer  "type_id",                           :null => false
     t.integer  "alliance_id"
     t.datetime "first_fulfilled_at"
     t.integer  "fulfillment_count",  :default => 0, :null => false
@@ -1938,13 +1940,15 @@ ActiveRecord::Schema.define(:version => 20130218231627) do
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
 
   create_table "messaging_archive_entries", :force => true do |t|
-    t.integer  "archivebox_id"
-    t.integer  "owner_id"
+    t.integer  "archive_id"
+    t.integer  "recipient_id"
     t.integer  "message_id"
     t.integer  "sender_id"
     t.string   "subject"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id",      :default => 0, :null => false
+    t.integer  "owner_id"
   end
 
   create_table "messaging_archives", :force => true do |t|

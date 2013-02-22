@@ -4,9 +4,10 @@
 # will be stores in as many copies in the system (To Be Reconsidered later)
 class Messaging::Message < ActiveRecord::Base
 
-  belongs_to :recipient,      :class_name => "Fundamental::Character",   :foreign_key => "recipient_id"
-  belongs_to :sender,         :class_name => "Fundamental::Character",   :foreign_key => "sender_id"
-  
+  belongs_to :recipient,       :class_name => "Fundamental::Character",   :foreign_key => "recipient_id"
+  belongs_to :sender,          :class_name => "Fundamental::Character",   :foreign_key => "sender_id"
+  belongs_to :owner,           :class_name => "Fundamental::Character",   :foreign_key => "owner_id"
+
   has_many   :inbox_entries,   :class_name => "Messaging::InboxEntry",    :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no inbox
   has_many   :archive_entries, :class_name => "Messaging::ArchiveEntry",  :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no archive
   has_one    :outbox_entry,    :class_name => "Messaging::OutboxEntry",   :foreign_key => "message_id",  :dependent => :destroy,  :inverse_of => :message   # can be in one or no outbox 
@@ -45,7 +46,7 @@ class Messaging::Message < ActiveRecord::Base
             owner_id:   character.id,
             message_id: self.id,
             subject:    self.subject,
-          });
+          })
         else
           logger.error "ERROR: Could not deliver newsletter message #{ self.id } to character #{ character.id }. Failed to create an inbox entry."
         end
@@ -66,7 +67,7 @@ class Messaging::Message < ActiveRecord::Base
         logger.error "ERROR: Could not deliver alliance message #{ self.id } to recipients beacause sender is not in an alliance."
       end
     else # standard message
-      if !self.recipient_id.nil?
+      unless self.recipient.nil?
         @character = Fundamental::Character.find(self.recipient_id)
         if !@character.nil? && !@character.inbox.nil?
           @character.inbox.entries.create({
@@ -74,13 +75,13 @@ class Messaging::Message < ActiveRecord::Base
             owner_id:   @character.id,
             message_id: self.id,
             subject:    self.subject,
-          });
+          })
         else
           logger.error "ERROR: Could not deliver message #{ self.id} to recipient. Failed to create an inbox entry."
         end
       end
     
-      if !self.sender_id.nil?
+      unless self.sender.nil?
         @character = Fundamental::Character.find(self.sender_id)
         if !@character.nil? && !@character.outbox.nil?
           @character.outbox.entries.create({
@@ -88,31 +89,37 @@ class Messaging::Message < ActiveRecord::Base
             owner_id:      @character.id,
             message_id:    self.id,
             subject:       self.subject,
-          });
+          })
         else
           logger.error "ERROR: Could not store message #{ self.id} in sender's outbox. Failed to create an outbox entry."
         end
       end    
     end
     
-    return true # need to return true, because otherwise the filter chain would break
+    true # need to return true, because otherwise the filter chain would break
   end
-  def move_to_archive
-    if !self.recipient_id.nil?
-      @character = Fundamental::Character.find(self.recipient_id)
-      if !@character.nil? && !@character.archive.nil?
-        @character.archive.entries.create({
-          sender_id:  self.sender_id,
-          owner_id:   @character.id,
-          message_id: self.id,
-          subject:    self.subject,
-        });
-      else
-        logger.error "ERROR: Could not deliver message #{ self.id} to recipient. Failed to create an archive entry."
-      end
+
+  def move_to_archive_of_character(character)
+    entry = character.archive.entries.new({
+      sender_id:     self.sender_id,
+      recipient_id:  self.recipient_id,
+      owner_id:      character.id,
+      message_id:    self.id,
+      subject:       self.subject,
+      created_at:    self.created_at,
+    })
+
+    if self.sender == character
+      entry.type_id = Messaging::ArchiveEntry::ENTRY_TYPE_SENT
+      entry.save
+      character.outbox.entries.where(:message_id => self.id).destroy_all
+    elsif self.recipient == character
+      entry.type_id = Messaging::ArchiveEntry::ENTRY_TYPE_RECEIVED
+      entry.save
+      character.inbox.entries.where(:message_id => self.id).destroy_all
     end
-    return true # need to return true, because otherwise the filter chain would break
   end
+
   def notify_offline_recipients
     if self.type_id == ANNOUNCEMENT_TYPE_ID || self.type_id == ALLIANCE_TYPE_ID
       self.inbox_entries.each do |inbox_entry|
@@ -132,15 +139,10 @@ class Messaging::Message < ActiveRecord::Base
     end
   end
 
-  ## specialiced messages ####################################
+  ## specialized messages ####################################
 
-  #creates a message that an Army
-  def self.create_army_retreat_message(army)
-    #message = "Your army "+army.
-  end
-  
   def self.create_welcome_message(character)
-    message = Messaging::Message.create({
+    Messaging::Message.create({
       recipient: character,
       type_id:   WELCOME_MESSAGE_TYPE_ID,
       subject:   I18n.translate('application.messaging.welcome_message.subject'),
