@@ -27,8 +27,8 @@ class Tutorial::State < ActiveRecord::Base
   
   def create_start_quest_state
     self.quests.create({
-      quest_id: 0,
-      status: Tutorial::Quest::STATE_NEW,
+      quest_id:     0,
+      status:       Tutorial::Quest::STATE_NEW,
     })
   end
 

@@ -4,6 +4,7 @@ class Tutorial::Quest < ActiveRecord::Base
   belongs_to    :owner,           :class_name => "Fundamental::Character",  :foreign_key => "character_id", :inverse_of => :quests
 
   before_create :set_start_playtime
+  before_create :set_owner
   before_save   :set_finished_playtime
   after_save    :count_completed_tutorial_quests
 
@@ -643,6 +644,12 @@ class Tutorial::Quest < ActiveRecord::Base
       if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED && self.belongs_to_tutorial?
         self.tutorial_state.increment(:tutorial_states_completed)
         self.tutorial_state.save
+      end
+    end
+    
+    def set_owner
+      unless tutorial_state.nil? 
+        self.character_id = tutorial_state.character_id
       end
     end
     
