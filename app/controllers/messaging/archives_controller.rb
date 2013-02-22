@@ -7,24 +7,60 @@ class Messaging::ArchivesController < ApplicationController
   # GET /messaging/archives
   # GET /messaging/archives.json
   def index
-    @messaging_archives = Messaging::Archive.all
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @messaging_archives }
+    role = :default # assume lowest possible role
+
+    if params.has_key?(:character_id)
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Character not found.') if @character.nil?
+      archive = @character.archive
+      last_modified = archive.updated_at unless archive.nil?
+      @messaging_archivees = archive.nil?  ? [] : [ archive ]
+      role = determine_access_role(@character.id, @character.alliance_id)
+    else
+      @asked_for_index = true
+      raise ForbiddenError.new('AccessForbidden') unless admin? || staff?
+    end
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @messaging_archivees.nil?
+            @messaging_archivees = Messaging::Outbox.paginate(:page => params[:page], :per_page => 50)
+            @paginate = true
+          end
+        end
+        format.json do
+          raise ForbiddenError.new('Access Forbidden')    if @asked_for_index
+          render json: @messaging_archivees, :only => Messaging::Archive.readable_attributes(role)
+        end
+      end
     end
   end
+
+
 
   # GET /messaging/archives/1
   # GET /messaging/archives/1.json
   def show
     @messaging_archive = Messaging::Archive.find(params[:id])
+    raise NotFoundError.new('Archive Not Found') if @messaging_archive.nil?
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @messaging_archive }
+    last_modified = @messaging_archive.updated_at
+
+    role = determine_access_role(@messaging_archive.owner_id, nil)  # no alliance access granted
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do
+          render json: @messaging_archive, :only => Messaging::Archive.readable_attributes(role)
+        end
+      end
     end
   end
+
 
   # GET /messaging/archives/new
   # GET /messaging/archives/new.json
