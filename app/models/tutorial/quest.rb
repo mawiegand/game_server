@@ -1,6 +1,7 @@
 class Tutorial::Quest < ActiveRecord::Base
   
-  belongs_to  :tutorial_state,  :class_name => "Tutorial::State",  :foreign_key => "state_id", :inverse_of => :quests, :touch => true
+  belongs_to    :tutorial_state,  :class_name => "Tutorial::State",         :foreign_key => "state_id",     :inverse_of => :quests, :touch => true
+  belongs_to    :owner,           :class_name => "Fundamental::Character",  :foreign_key => "character_id", :inverse_of => :quests
 
   before_create :set_start_playtime
   before_save   :set_finished_playtime

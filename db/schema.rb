@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222164629) do
+ActiveRecord::Schema.define(:version => 20130222221259) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1760,11 +1760,11 @@ ActiveRecord::Schema.define(:version => 20130222164629) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
@@ -2633,6 +2633,7 @@ ActiveRecord::Schema.define(:version => 20130222164629) do
     t.decimal  "playtime_finished"
     t.decimal  "playtime_started"
     t.datetime "reward_displayed_at"
+    t.integer  "character_id"
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"
