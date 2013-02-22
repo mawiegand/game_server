@@ -7,27 +7,32 @@ class Tutorial::QuestsController < ApplicationController
   # GET /tutorial/quests
   # GET /tutorial/quests.json
   def index
+    
+    last_modified = nil
 
-    if params.has_key?(:character_id)    # request using character_id 
+    if params.has_key?(:character_id)      # request using character_id 
       
       state = Tutorial::State.find_by_character_id(params[:character_id])
       raise NotFoundError.new('No quests found for character id.')  if state.nil?
       raise ForbiddenError.new('Access forbidden.')                 if state.owner != current_character && !staff? && !admin?
       
-      @tutorial_quests = if api_request? # send only the relevant quests (those, that have not been finished yet)
+      @tutorial_quests = if api_request?   # send only the relevant quests (those, that have not been finished yet)
         state.quests.non_closed    
-      else                               # display all quests in backend
+      else                                 # display all quests in backend
         state.quests.paginate(:page => params[:page], :per_page => 50)                
       end
+      last_modified = state.updated_at.utc # the state is touched on changed on the quests
       
-    else                                 # request all 
+    else                                   # request all 
       raise ForbiddenError.new('Access forbidden.')                 if !staff? && !admin? 
       @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)
     end
-        
-    respond_to do |format|
-      format.html 
-      format.json { render json: @tutorial_quests }
+    
+    stale?(:last_modified => last_modified, :etag => @tutorial_quests)
+      respond_to do |format|
+        format.html 
+        format.json { render json: @tutorial_quests }
+      end
     end
   end
 
