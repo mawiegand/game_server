@@ -252,7 +252,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       end
 
       # if only the initiation state changed
-      if alliance_change.nil? && !initiated_change.nil?
+      if alliance_change.nil? && !initiated_change.nil? && !alliance.nil?
         if initiated_before
           # count bei der aktuellen allianz löschen runterzählen
           victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
@@ -263,7 +263,7 @@ class Fundamental::Artifact < ActiveRecord::Base
         end
         if initiated_after
           # count bei der aktuellen allianz löschen hochzählen
-          victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+          victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
           unless victory_progress.nil?
             victory_progress.increment(:fulfillment_count)
             victory_progress.save
