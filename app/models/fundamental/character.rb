@@ -135,11 +135,9 @@ class Fundamental::Character < ActiveRecord::Base
   @identifier_regex = /[a-z]{16}/i 
     
   def self.find_by_id_or_identifier(user_identifier)
-    
     identity = Fundamental::Character.find_by_id(user_identifier) if Fundamental::Character.valid_id?(user_identifier)
     identity = Fundamental::Character.find_by_identifier(user_identifier) if identity.nil? && Fundamental::Character.valid_identifier?(user_identifier)
-    
-    return identity
+    identity
   end
   
   def self.find_by_name_case_insensitive(name)  
@@ -275,20 +273,20 @@ class Fundamental::Character < ActiveRecord::Base
       name: name,
       npc:  npc,
     });
-    
-    if !character.save
-      raise InternalServerError.new('Could not create new character.') 
+
+    unless character.save
+      raise InternalServerError.new('Could not create new character.')
     end
 
     character.create_resource_pool
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
-    if !npc
+    unless npc
       character.create_ranking({
         character_name: name,
       });
-      
+
       location = start_location.nil? ? Map::Location.find_empty : start_location
       if !location || !character.claim_location(location)
         character.destroy
@@ -296,20 +294,20 @@ class Fundamental::Character < ActiveRecord::Base
       end
 
       Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
-        
+
       character.base_location_id = location.id              # TODO is this the home_location_id?
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
-      
+
       character.home_location.settlement.name = "Hauptsiedlung"
       character.home_location.settlement.save
-      
+
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
-      
+
       character
     end
     
-    if !character.save
+    unless character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
     
@@ -372,7 +370,7 @@ class Fundamental::Character < ActiveRecord::Base
     self
   end
   
-  def change_gender_transaction(newGender)
+  def change_gender_transaction(new_gender)
     
     free_change = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
     
@@ -380,7 +378,7 @@ class Fundamental::Character < ActiveRecord::Base
       raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
     end
     
-    self.gender = newGender == "female" ? "female" : "male"
+    self.gender = new_gender == "female" ? "female" : "male"
     self.increment(:gender_change_count)  
 
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
@@ -407,7 +405,7 @@ class Fundamental::Character < ActiveRecord::Base
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
     # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
-    return true
+    true
   end
     
   def add_like_for(character)
@@ -1065,6 +1063,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.same_ip = nil?
     
     self.deleted_from_game = true
+    self.last_deleted_at = Time.now
     self.save
     
     check_consistency
