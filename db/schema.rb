@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221134828) do
+ActiveRecord::Schema.define(:version => 20130222234254) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1771,6 +1771,7 @@ ActiveRecord::Schema.define(:version => 20130221134828) do
     t.integer  "received_dislikes_count",                  :default => 0
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
+    t.datetime "last_deleted_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
