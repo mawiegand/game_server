@@ -1,7 +1,6 @@
 class Settlement::Settlement < ActiveRecord::Base
 
   TYPE_NONE = 0
-  TYPE_FORTESS = 1    # old typo! replace everywhere
   TYPE_FORTRESS = 1
   TYPE_HOME_BASE = 2
   TYPE_OUTPOST = 3  
@@ -54,6 +53,7 @@ class Settlement::Settlement < ActiveRecord::Base
   before_save :update_resource_bonus_on_owner_change  # obtains the global boni (alliance, sciences, effects) from the resource pool
   before_save :update_resource_production             # recalculates the production rates on basis of the base_productions and production_bonus
   before_save :update_experience_production           # recalculates the exp production rates
+  before_save :update_artifact_initiation
 
   after_save  :propagate_taxrate                      # if settlement owns the region, propagates new tax rates to settlements in region.
   after_save  :propagate_tax_changes_to_fortress      # propagate changed taxes to fortress' production rate
@@ -200,6 +200,16 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
+    # destroy all construction jobs
+    self.queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
+    # destroy all training jobs
+    self.training_queues.each do |queue|
+      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+    end
+
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
 
@@ -211,10 +221,9 @@ class Settlement::Settlement < ActiveRecord::Base
     
     self.last_takeover_at = Time.now
     self.save                         # triggers before_save and after_save handlers that do all the work
-    
-    # self.location.owner = character
-    # self.location.save
-    # settlement UNBLOCK
+
+    # workaround for errorneous used command points
+    Settlement::Settlement.reset_counters(self.id, :armies)
   end
   
   def abandon_outpost
@@ -465,7 +474,8 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     check_and_repair_queues
-    
+    check_and_repair_queues_jobs_count
+
     true      
   end
 
@@ -811,13 +821,13 @@ class Settlement::Settlement < ActiveRecord::Base
           
           # now check, whether there are to many (multiple) queues of the same type (not allowed!!!)
           should_have = unlocks >= 1 ? 1 : 0
-          if (queue_type[:category] == :queue_category_construction)
+          if queue_type[:category] == :queue_category_construction
             number = self.queues.where(type_id: queue_type[:id]).count
          #   logger.warn(">>> con sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
             if number > should_have
               delete_multiple_queues(self.queues.where(type_id: queue_type[:id]), number-should_have)
             end
-          elsif (queue_type[:category] == :queue_category_training)
+          elsif queue_type[:category] == :queue_category_training
             number = self.training_queues.where(type_id: queue_type[:id]).count
         #    logger.warn(">>> train sh #{ should_have } = #{ number } unlocks: #{ unlocks }")
             if number > should_have
@@ -829,6 +839,22 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
       return true
+    end
+
+    def check_and_repair_queues_jobs_count
+      self.queues.each do |queue|
+        if queue.jobs.count != queue.jobs_count
+          logger.warn(">>> CONSTRUCTION JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
+          Construction::Queue.reset_counters(queue.id, :jobs)
+        end
+      end
+
+      self.training_queues.each do |queue|
+        if queue.jobs.count != queue.jobs_count
+          logger.warn(">>> TRAINING JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
+          Construction::Queue.reset_counters(queue.id, :jobs)
+        end
+      end
     end
   
     def manage_queues_as_needed
@@ -966,6 +992,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # up to now there is only the experience production rate of buildings
     def update_experience_production
       self.exp_production_rate = self.exp_production_rate_buildings 
+      true
+    end
+
+    def update_artifact_initiation
+      if !self.artifact.nil? && self.artifact.initiated? && self.artifact_initiation_level == 0
+        self.artifact.initiated = false
+        self.artifact.save
+      end
       true
     end
 
@@ -1381,10 +1415,10 @@ class Settlement::Settlement < ActiveRecord::Base
         old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
-        propagate_change_of_attribute_to_resource_pool_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
 
-        old_owner.resource_pool.save   unless old_owner.nil?
-        new_owner.resource_pool.save   unless new_owner.nil?
+        old_owner.save   unless old_owner.nil?
+        new_owner.save   unless new_owner.nil?
       end
       true
     end

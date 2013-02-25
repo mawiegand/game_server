@@ -76,6 +76,11 @@
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
     </Languages>
+    <Domains>
+      <Domain id="character"></Domain>
+      <Domain id="settlement"></Domain>
+      <Domain id="alliance"></Domain>
+    </Domains>
     <Battle>
       <Calculation roundTime="30" retreatProbability="0.6" />
     </Battle>
@@ -92,7 +97,12 @@
       <SpeedupCost resource="resource_cash" amount="6"  hours="12" />
       <SpeedupCost resource="resource_cash" amount="8"  hours="18" />
       <SpeedupCost resource="resource_cash" amount="12" hours="30" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="65" />
+      <SpeedupCost resource="resource_cash" amount="30" hours="100" />
+      <SpeedupCost resource="resource_cash" amount="40" hours="140" />
+      <SpeedupCost resource="resource_cash" amount="50" hours="185" />
+      <SpeedupCost resource="resource_cash" amount="60" hours="230" />
+      <SpeedupCost resource="resource_cash" amount="70" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3"  />
@@ -102,8 +112,18 @@
       <SpeedupCost resource="resource_cash" amount="6"  hours="36"  />
       <SpeedupCost resource="resource_cash" amount="8"  hours="56" />
       <SpeedupCost resource="resource_cash" amount="12" hours="96" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="192" />
+      <SpeedupCost resource="resource_cash" amount="40" hours="9999" />
     </TrainingSpeedup>
+    <ArtifactInitiationSpeedup>
+      <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="6" />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="11" />
+      <SpeedupCost resource="resource_cash" amount="6"  hours="17" />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="36" />
+      <SpeedupCost resource="resource_cash" amount="11" hours="48" />
+      <SpeedupCost resource="resource_cash" amount="12" hours="9999" />
+    </ArtifactInitiationSpeedup>
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>

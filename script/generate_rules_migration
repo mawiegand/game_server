@@ -34,6 +34,7 @@ hash_of_models = {
                                             { :prefix => 'unit_',  :postfix => '_damage_inflicted',           :type => ':decimal' },
   ],
   Action::Trading::TradingCartsAction=> [ { :prefix => 'resource_',:postfix => '_amount',                     :type => ':integer' } ],
+  Backend::TradeLogEntry     => [ { :prefix => 'resource_',        :postfix => '_amount',                     :type => ':integer', :options => { :default => 0, :null => false } } ],
   Settlement::Settlement     => [ { :prefix => 'settlement_queue', :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
                                   { :prefix => 'settlement_unlock',:postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } },
@@ -52,6 +53,7 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_effects',   :type => ':decimal', :options => { :default => 0.0 } }, 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_alliance',  :type => ':decimal', :options => { :default => 0.0 } },
   ],
 
   Backend::Stat              => [ { :prefix => 'resource_',        :postfix => '_amount_sum',                 :type => ':decimal', :options => { :default => 0.0 } }, 
@@ -77,6 +79,7 @@ hash_of_models = {
   ],  # add unlock count to characters
   Fundamental::Alliance      => [ { :prefix => 'alliance_queue',   :postfix => '',                                                 :options => { :default => 0   } },
                                   { :prefix => 'alliance_unlock',  :postfix => '',                                                 :options => { :default => 0   } },  # queue unlocks 
+                                  { :prefix => 'resource_',        :postfix => '_production_bonus_effects',   :type => ':decimal', :options => { :default => 0.0 } },
   ],  # add unlock count to alliances
 }
 

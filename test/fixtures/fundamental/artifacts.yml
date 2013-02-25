@@ -1,19 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  type_id: 1
   location_id: 1
   settlement_id: 1
   owner_id: 1
   initiated: false
-  visible: false
+  visible: true
   last_initiated_at: 2013-01-24 15:42:11
   last_captured_at: 2013-01-24 15:42:11
 
 two:
+  type_id: 2
   location_id: 1
   settlement_id: 1
   owner_id: 1
   initiated: false
-  visible: false
+  visible: true
   last_initiated_at: 2013-01-24 15:42:11
   last_captured_at: 2013-01-24 15:42:11

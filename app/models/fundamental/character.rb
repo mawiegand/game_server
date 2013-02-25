@@ -25,7 +25,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id", :inverse_of => :character
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
-  has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTESS]
+  has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTRESS]
   has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
 
@@ -57,7 +57,11 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_mundane_rank
   
   before_save :update_experience_on_production_rate_changes
-  
+
+  #before_save :update_alliance_leave_to_artifact
+
+  after_save  :propagate_alliance_membership_changes_to_resource_pool
+  after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
   after_save  :propagate_score_changes
@@ -130,15 +134,13 @@ class Fundamental::Character < ActiveRecord::Base
   @identifier_regex = /[a-z]{16}/i 
     
   def self.find_by_id_or_identifier(user_identifier)
-    
     identity = Fundamental::Character.find_by_id(user_identifier) if Fundamental::Character.valid_id?(user_identifier)
     identity = Fundamental::Character.find_by_identifier(user_identifier) if identity.nil? && Fundamental::Character.valid_identifier?(user_identifier)
-    
-    return identity
+    identity
   end
   
   def self.find_by_name_case_insensitive(name)  
-    Fundamental::Character.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
+    Fundamental::Character.first(:conditions => [ "lower(name) = ?", name.downcase ])
   end
   
   def self.valid_identifier?(identifier)
@@ -150,14 +152,14 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def self.update_all_conversions
-    Fundamental::Character.find(:all).each do |character|
+    Fundamental::Character.all.each do |character|
       character.update_conversion_state
       character.save
     end
   end
   
   def self.update_all_credits_spent
-    Fundamental::Character.find(:all).each do |character|
+    Fundamental::Character.all.each do |character|
       character.update_credits_spent
       character.update_gross
       character.save
@@ -270,20 +272,20 @@ class Fundamental::Character < ActiveRecord::Base
       name: name,
       npc:  npc,
     });
-    
-    if !character.save
-      raise InternalServerError.new('Could not create new character.') 
+
+    unless character.save
+      raise InternalServerError.new('Could not create new character.')
     end
 
     character.create_resource_pool
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
-    if !npc
+    unless npc
       character.create_ranking({
         character_name: name,
       });
-      
+
       location = start_location.nil? ? Map::Location.find_empty : start_location
       if !location || !character.claim_location(location)
         character.destroy
@@ -291,20 +293,20 @@ class Fundamental::Character < ActiveRecord::Base
       end
 
       Settlement::Settlement.create_settlement_at_location(location, 2, character)  # 2: home base
-        
+
       character.base_location_id = location.id              # TODO is this the home_location_id?
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
-      
+
       character.home_location.settlement.name = "Hauptsiedlung"
       character.home_location.settlement.save
-      
+
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
-      
+
       character
     end
     
-    if !character.save
+    unless character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
     
@@ -367,7 +369,7 @@ class Fundamental::Character < ActiveRecord::Base
     self
   end
   
-  def change_gender_transaction(newGender)
+  def change_gender_transaction(new_gender)
     
     free_change = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
     
@@ -375,7 +377,7 @@ class Fundamental::Character < ActiveRecord::Base
       raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
     end
     
-    self.gender = newGender == "female" ? "female" : "male"
+    self.gender = new_gender == "female" ? "female" : "male"
     self.increment(:gender_change_count)  
 
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
@@ -402,7 +404,7 @@ class Fundamental::Character < ActiveRecord::Base
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
     # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
-    return true
+    true
   end
     
   def add_like_for(character)
@@ -601,7 +603,51 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
-  
+
+  def propagate_alliance_membership_changes_to_resource_pool
+    alliance_change     = self.changes[:alliance_id]
+    unless alliance_change.nil?
+      old_alliance = Fundamental::Alliance.find_by_id(alliance_change[0]) unless alliance_change[0].nil?
+      new_alliance = Fundamental::Alliance.find_by_id(alliance_change[1]) unless alliance_change[1].nil?
+
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        GameRules::Rules.the_rules.resource_types.each do |resource_type|
+
+          old_bonus = old_alliance.nil? ? 0 : old_alliance[resource_type[:symbolic_id].to_s + '_production_bonus_effects']
+          new_bonus = new_alliance.nil? ? 0 : new_alliance[resource_type[:symbolic_id].to_s + '_production_bonus_effects']
+
+          pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
+
+          logger.debug "------> propagate_alliance_membership_changes_to_resource_pool #{old_bonus} #{new_bonus} #{pool_attribute} "
+
+          self.resource_pool.lock!
+          self.resource_pool.increment(pool_attribute, new_bonus - old_bonus)
+          self.resource_pool.propagate_bonus_changes
+          self.resource_pool.save!
+        end
+      end
+    end
+    true
+  end
+
+  def update_alliance_leave_to_artifact
+    #alliance_change     = self.changes[:alliance_id]
+    #if !alliance_change.nil? && alliance_change[1].nil? && !self.artifact.nil?
+    #  logger.debug "-----------> leaving ally #{self.alliance_id}"
+    #  self.artifact.alliance = self.alliance
+    #  self.artifact.save
+    #end
+  end
+
+  def propagate_alliance_membership_changes_to_artifact
+    alliance_change     = self.changes[:alliance_id]
+    if !alliance_change.nil? && !self.artifact.nil?
+      logger.debug "-----------> propagate_alliance_membership_changes_to_artifact #{self.alliance_id}"
+      self.artifact.alliance = self.alliance
+      self.artifact.save
+    end
+  end
+
   # Function for propagating change of character name to redundant fields.
   # This uses update_all direct queries because the Rails way of looping
   # through models (selecting, instantiating, saving) would potentially take
@@ -839,11 +885,22 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:exp, points.floor)
     self.save    
   end
+
+  def update_exp_production(old_mundane_rank, new_mundane_rank)
+    if !self.artifact.nil? && self.artifact.initiated
+      self.exp_production_rate -= artifact.experience_production(old_mundane_rank)
+      self.exp_production_rate += artifact.experience_production(new_mundane_rank)
+    end
+  end
   
   def recalc_experience_production_rate
     exp_rate = 0.0
     self.settlements.each do |settlement|
       exp_rate += settlement.exp_production_rate
+    end
+
+    if self.artifact
+      exp_rate += artifact.experience_production(self.mundane_rank)
     end
     exp_rate
   end
@@ -1005,6 +1062,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.same_ip = nil?
     
     self.deleted_from_game = true
+    self.last_deleted_at = Time.now
     self.save
     
     check_consistency
@@ -1016,7 +1074,10 @@ class Fundamental::Character < ActiveRecord::Base
       character_ranks              = GameRules::Rules.the_rules.character_ranks
       new_rank                     = (self.mundane_rank || 0) + 1
       skill_points_per_rank        = character_ranks[:skill_points_per_mundane_rank] || 0
-      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0    
+      new_settlement_points        = character_ranks[:mundane][new_rank][:settlement_points] || 0
+
+      self.update_exp_production(self.mundane_rank, new_rank)
+
       self.mundane_rank            = new_rank
       self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
       self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points

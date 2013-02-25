@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206162004) do
+ActiveRecord::Schema.define(:version => 20130222234254) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1598,6 +1598,16 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
+  create_table "effect_alliance_resource_effects", :force => true do |t|
+    t.integer  "resource_id"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "alliance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "origin_id"
+  end
+
   create_table "effect_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.datetime "finished_at"
@@ -1606,6 +1616,7 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.integer  "type_id"
     t.decimal  "bonus"
     t.integer  "resource_pool_id"
+    t.integer  "origin_id"
   end
 
   create_table "event_events", :force => true do |t|
@@ -1651,6 +1662,10 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.integer  "alliance_queue_alliance_research_unlock_count", :default => 0
     t.integer  "members_count"
     t.string   "invitation_code"
+    t.decimal  "resource_stone_production_bonus_effects",       :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",        :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",         :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",        :default => 0.0
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1671,6 +1686,7 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "hurried",     :default => false, :null => false
   end
 
   create_table "fundamental_artifacts", :force => true do |t|
@@ -1685,6 +1701,8 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.integer  "region_id"
     t.integer  "type_id"
     t.boolean  "visible"
+    t.integer  "alliance_id"
+    t.integer  "army_id"
   end
 
   create_table "fundamental_characters", :force => true do |t|
@@ -1742,17 +1760,18 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
+    t.datetime "last_deleted_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -1784,25 +1803,29 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "productionUpdatedAt"
-    t.decimal  "resource_wood_amount",                    :default => 0.0
-    t.decimal  "resource_wood_capacity",                  :default => 0.0
-    t.decimal  "resource_wood_production_rate",           :default => 0.0
-    t.decimal  "resource_stone_amount",                   :default => 0.0
-    t.decimal  "resource_stone_capacity",                 :default => 0.0
-    t.decimal  "resource_stone_production_rate",          :default => 0.0
-    t.decimal  "resource_fur_amount",                     :default => 0.0
-    t.decimal  "resource_fur_capacity",                   :default => 0.0
-    t.decimal  "resource_fur_production_rate",            :default => 0.0
-    t.decimal  "resource_cash_amount",                    :default => 0.0
-    t.decimal  "resource_cash_capacity",                  :default => 0.0
-    t.decimal  "resource_cash_production_rate",           :default => 0.0
-    t.decimal  "resource_wood_production_bonus_effects",  :default => 0.0
-    t.decimal  "resource_stone_production_bonus_effects", :default => 0.0
-    t.decimal  "resource_fur_production_bonus_effects",   :default => 0.0
-    t.decimal  "resource_cash_production_bonus_effects",  :default => 0.0
-    t.decimal  "like_amount",                             :default => 0.0
-    t.decimal  "dislike_amount",                          :default => 0.0
+    t.decimal  "resource_wood_amount",                     :default => 0.0
+    t.decimal  "resource_wood_capacity",                   :default => 0.0
+    t.decimal  "resource_wood_production_rate",            :default => 0.0
+    t.decimal  "resource_stone_amount",                    :default => 0.0
+    t.decimal  "resource_stone_capacity",                  :default => 0.0
+    t.decimal  "resource_stone_production_rate",           :default => 0.0
+    t.decimal  "resource_fur_amount",                      :default => 0.0
+    t.decimal  "resource_fur_capacity",                    :default => 0.0
+    t.decimal  "resource_fur_production_rate",             :default => 0.0
+    t.decimal  "resource_cash_amount",                     :default => 0.0
+    t.decimal  "resource_cash_capacity",                   :default => 0.0
+    t.decimal  "resource_cash_production_rate",            :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",   :default => 0.0
+    t.decimal  "resource_stone_production_bonus_effects",  :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",    :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",   :default => 0.0
+    t.decimal  "like_amount",                              :default => 0.0
+    t.decimal  "dislike_amount",                           :default => 0.0
     t.datetime "lazy_production_updated_at"
+    t.decimal  "resource_stone_production_bonus_alliance", :default => 0.0
+    t.decimal  "resource_wood_production_bonus_alliance",  :default => 0.0
+    t.decimal  "resource_fur_production_bonus_alliance",   :default => 0.0
+    t.decimal  "resource_cash_production_bonus_alliance",  :default => 0.0
   end
 
   create_table "fundamental_retention_mails", :force => true do |t|
@@ -1818,10 +1841,11 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
   create_table "fundamental_round_infos", :force => true do |t|
     t.string   "name"
     t.datetime "started_at"
-    t.integer  "regions_count",     :default => 0, :null => false
+    t.integer  "regions_count",      :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
+    t.integer  "winner_alliance_id"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -1832,7 +1856,7 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
   end
 
   create_table "fundamental_victory_progresses", :force => true do |t|
-    t.integer  "victory_type",                      :null => false
+    t.integer  "type_id",                           :null => false
     t.integer  "alliance_id"
     t.datetime "first_fulfilled_at"
     t.integer  "fulfillment_count",  :default => 0, :null => false
@@ -2603,10 +2627,11 @@ ActiveRecord::Schema.define(:version => 20130206162004) do
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",            :default => 0
+    t.integer  "status",              :default => 0
     t.datetime "closed_at"
     t.decimal  "playtime_finished"
     t.decimal  "playtime_started"
+    t.datetime "reward_displayed_at"
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"

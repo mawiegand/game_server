@@ -15,21 +15,24 @@ class Messaging::Message < ActiveRecord::Base
   after_create :deliver_message
 
   # constants for the message.type_id
-  USER_MESSAGE_TYPE_ID          = 0
-  BATTLE_REPORT_TYPE_ID         = 1
-  BATTLE_STARTED_TYPE_ID        = 2
-  ARMY_LOST_TYPE_ID             = 3
-  ARMY_RETREATED_TYPE_ID        = 4
-  OVERRUN_WINNER_REPORT_TYPE_ID = 5
-  OVERRUN_LOSER_REPORT_TYPE_ID  = 6
-  FORTESS_WON_REPORT_TYPE_ID    = 7
-  FORTESS_LOST_REPORT_TYPE_ID   = 8
-  WELCOME_MESSAGE_TYPE_ID       = 9
-  TUTORIAL_MESSAGE_TYPE_ID      = 10
-  TRADE_MESSAGE_TYPE_ID         = 11
-  ANNOUNCEMENT_TYPE_ID          = 12
-  ALLIANCE_TYPE_ID              = 13
-  
+  USER_MESSAGE_TYPE_ID            = 0
+  BATTLE_REPORT_TYPE_ID           = 1
+  BATTLE_STARTED_TYPE_ID          = 2
+  ARMY_LOST_TYPE_ID               = 3
+  ARMY_RETREATED_TYPE_ID          = 4
+  OVERRUN_WINNER_REPORT_TYPE_ID   = 5
+  OVERRUN_LOSER_REPORT_TYPE_ID    = 6
+  FORTESS_WON_REPORT_TYPE_ID      = 7
+  FORTESS_LOST_REPORT_TYPE_ID     = 8
+  WELCOME_MESSAGE_TYPE_ID         = 9
+  TUTORIAL_MESSAGE_TYPE_ID        = 10
+  TRADE_MESSAGE_TYPE_ID           = 11
+  ANNOUNCEMENT_TYPE_ID            = 12
+  ALLIANCE_TYPE_ID                = 13
+  MESSAGE_TYPE_ARTIFACT_CAPTURED  = 14
+  MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
+  MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
+
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
   # creates inbox and outbox entries for the message
@@ -246,7 +249,7 @@ class Messaging::Message < ActiveRecord::Base
     text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
     text += "</tr>\n"
     text += "</table>\n"
-    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren.</p>\n"
+    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
     self.body = text
   end
 
@@ -270,7 +273,7 @@ class Messaging::Message < ActiveRecord::Base
   
   def add_overrun_loser_message_body(winner, loser)
     text  = "<h2>Deine Armee ist überrannt worden in " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
-    text += "<p>Deine Armee<b>" + loser.name.to_s + "</b>ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    text += "<p>Deine Armee <b>" + loser.name.to_s + "</b> ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
     text += "</b>ist von einer Armee von<b>" + winner.name.to_s + "</b> von<b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
@@ -313,41 +316,80 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   
-def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
-  self.subject = "Siedlung gewonnen von " + settlement.region.name.to_s
-end
+  def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
+    self.subject = "Siedlung gewonnen von " + settlement.region.name.to_s
+  end
 
-def add_gained_fortress_message_body(settlement, old_owner, new_owner)
-  text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + "</h2>\n"
-  text += "<p>Deine Armee in der Region<b>" + settlement.region.name.to_s + "</b>hat den Kampf um eine Siedlung gewonnen<b>" + settlement.name.to_s + "</b>.</p>\n"
-  self.body = text
-end
+  def add_gained_fortress_message_body(settlement, old_owner, new_owner)
+    text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + " erobert.</h2>\n"
+    text += "<p>Juhu! Deine Armeen haben den Kampf in der Region <b>" + settlement.region.name.to_s + "</b> um die Siedlung <b>" + settlement.name.to_s + "</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>\n"
+    self.body = text
+  end
 
-def self.generate_lost_fortress_message(settlement, old_owner, new_owner)
-message = Messaging::Message.new({
-                                 recipient: old_owner,
-                                 # message.sender_id = nil
-                                 type_id:   FORTESS_LOST_REPORT_TYPE_ID,
-                                 send_at:   DateTime.now,
-                                 reported:  false,
-                                 flag:      0,
-                                 })
+  def self.generate_artifact_captured_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_CAPTURED,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Du hast ein Artefakt gewonnen!"
+    message.body = "<p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>\n"
+    message.save
+  end
 
-message.add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-message.add_lost_fortress_message_body(settlement, old_owner, new_owner)
-message.save
-end
+  def self.generate_artifact_jumped_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_JUMPED,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Das Artefakt ist verloren!"
+    message.body = "<p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>\n"
+    message.save
+  end
 
-def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-  self.subject = "Siedlung verloren an " + settlement.region.name.to_s
-end
+  def self.generate_artifact_stolen_message(character)
+    message = Messaging::Message.new({
+      recipient: character,
+      type_id:   MESSAGE_TYPE_ARTIFACT_STOLEN,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+    message.subject = "Dein Artefakt wurde geraubt!"
+    message.body = "<p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>\n"
+    message.save
+  end
 
-def add_lost_fortress_message_body(settlement, old_owner, new_owner)
-  text  = "<h2>Du hast Deine Siedlung verloren in " + settlement.region.name.to_s + "</h2>\n"
-  text += "<p>Deine Garnisonsarmee in Region<b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren <b>" + settlement.name.to_s + "</b>. "
-  text += "Der neue Besitzer der Siedlung ist <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
-  self.body = text
-end
+  def self.generate_lost_fortress_message(settlement, old_owner, new_owner)
+    message = Messaging::Message.new({
+      recipient: old_owner,
+      # message.sender_id = nil
+      type_id:   FORTESS_LOST_REPORT_TYPE_ID,
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })
+
+    message.add_lost_fortress_message_subject(settlement, old_owner, new_owner)
+    message.add_lost_fortress_message_body(settlement, old_owner, new_owner)
+    message.save
+  end
+
+  def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
+    self.subject = "Siedlung verloren an " + settlement.region.name.to_s
+  end
+
+  def add_lost_fortress_message_body(settlement, old_owner, new_owner)
+    text  = "<h2>Du hast Deine Siedlung in der Region " + settlement.region.name.to_s + " verloren </h2>\n"
+    text += "<p>Deine Garnisonsarmee in Region <b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren.<b>" + settlement.name.to_s + "</b>. "
+    text += "Der neue Besitzer der Siedlung ist <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
+    self.body = text
+  end
   
   def self.create_tutorial_message(character, subject, boby)
     message = Messaging::Message.create({

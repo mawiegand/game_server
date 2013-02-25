@@ -18,8 +18,8 @@ class Military::Army < ActiveRecord::Base
   
   has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id",                :inverse_of => :army
   has_one    :ranking,            :class_name => "Ranking::CharacterRanking",        :foreign_key => "max_experience_army_id", :inverse_of => :most_experienced_army
+  has_one    :artifact,           :class_name => "Fundamental::Artifact",            :foreign_key => "army_id",                :inverse_of => :army
 
-  
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   before_save    :update_mode  
@@ -466,8 +466,8 @@ class Military::Army < ActiveRecord::Base
       end
     end
 
-    #logger.debug "ARMY #{ army.inspect } : #{ army.details.inspect }"
-    army.save    
+    army.save
+    army
   end
   
   # creates a new army. create_action must contain the home location id and the units of the new army.

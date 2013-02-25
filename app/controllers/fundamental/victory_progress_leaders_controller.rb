@@ -9,7 +9,7 @@ class Fundamental::VictoryProgressLeadersController < ApplicationController
     @fundamental_victory_progress_leaders = []
     
     GameRules::Rules.the_rules.victory_types.each do |type|
-      leaders = Fundamental::VictoryProgress.where(['victory_type = ?', type[:id]]).order('fulfillment_count DESC').includes(:alliance).limit(3)
+      leaders = Fundamental::VictoryProgress.where(['type_id = ?', type[:id]]).order('fulfillment_count DESC').includes(:alliance).limit(3)
       nr = 1
       leaders.each do |leader|
         leader_hash = leader.attributes
@@ -22,7 +22,7 @@ class Fundamental::VictoryProgressLeadersController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @fundamental_victory_progress_leaders.as_json}
+      format.json { render json: @fundamental_victory_progress_leaders.to_json}
     end
   end
 end

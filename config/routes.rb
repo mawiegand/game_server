@@ -1,5 +1,6 @@
 GameServer::Application.routes.draw do
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -24,10 +25,12 @@ GameServer::Application.routes.draw do
         resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
+        resources :trade_log_entries , :only => [ :index ]
       end
 
       namespace :effect do 
-        resources :resource_effects 
+        resources :alliance_resource_effects
+        resources :resource_effects
       end
 
       namespace :fundamental do
@@ -188,16 +191,17 @@ GameServer::Application.routes.draw do
           resources :join_alliance_actions    
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
-          resources :kick_alliance_member_actions,      :only => [ :create ]    
+          resources :kick_alliance_member_actions,           :only => [ :create ]
           resources :change_character_notified_rank_actions, :only => [ :create ]    
-          resources :change_character_name_actions,     :only => [ :create ]    
-          resources :change_character_same_ip_actions,  :only => [ :create ]    
-          resources :change_character_gender_actions,   :only => [ :create ]    
-          resources :change_character_password_actions, :only => [ :create ]    
-          resources :track_character_conversions,       :only => [ :create ]    
-          resources :trade_resources_actions,           :only => [ :create ]    
-          resources :send_like_actions,                 :only => [ :create ]    
-          resources :send_dislike_actions,              :only => [ :create ]    
+          resources :change_character_name_actions,          :only => [ :create ]
+          resources :change_character_same_ip_actions,       :only => [ :create ]
+          resources :change_character_gender_actions,        :only => [ :create ]
+          resources :change_character_password_actions,      :only => [ :create ]
+          resources :track_character_conversions,            :only => [ :create ]
+          resources :trade_resources_actions,                :only => [ :create ]
+          resources :send_like_actions,                      :only => [ :create ]
+          resources :send_dislike_actions,                   :only => [ :create ]
+          resources :speedup_artifact_initiation_actions,    :only => [ :create ]
         end
         namespace :construction do
           resources :finish_job_actions    
@@ -213,8 +217,10 @@ GameServer::Application.routes.draw do
         resources :abandon_outpost_actions, :only => [ :create ]
         end
         namespace :tutorial do
-          resources :check_quest_actions,     :only => [ :create ]    
-          resources :redeem_rewards_actions,  :only => [ :create ]    
+          resources :check_quest_actions,                 :only => [ :create ]    
+          resources :mark_quest_displayed_actions,        :only => [ :create ]    
+          resources :mark_quest_reward_displayed_actions, :only => [ :create ]    
+          resources :redeem_rewards_actions,              :only => [ :create ]    
           resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
       end

@@ -93,11 +93,11 @@ module Util
       end
       
       def and(a,b)
-        not(a) == 0 && not(b) == 0 ? 1 : 0
+        ((not(a) == 0) && (not(b) == 0)) ? 1 : 0
       end
       
       def or(a,b) 
-        not(a) == 0 || not(b) == 0 ? 1 : 0
+        ((not(a) == 0) || (not(b) == 0)) ? 1 : 0
       end
 
   end

@@ -13,6 +13,9 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   
   belongs_to   :owner, :class_name => "Fundamental::Character", :foreign_key => "character_id", :inverse_of => :resource_pool
 
+  has_many     :resource_effects, :class_name => "Effect::ResourceEffect", :foreign_key => "resource_pool_id", :inverse_of => :resource_pool
+
+
   before_save  :update_resources_on_production_rate_changes
   before_save  :update_lazy_production_if_necessary
   
@@ -230,12 +233,15 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   def check_consistency
     logger.info(">>> COMPLETE RECALC of RESOURCE PRODUCTION in resource pool #{self.id} of character #{self.character_id}.")
 
+    effects = recalc_resource_effects
+    check_and_apply_resource_effects(effects)
+
     productions = recalc_resource_productions
     check_and_apply_productions(productions)
 
     capacities = recalc_resource_capacities
     check_and_apply_capacities(capacities)
-    
+
     if self.changed?
       logger.warn(">>> SAVING RESOURCE POOL AFTER DETECTING ERRORS.")
       self.save
@@ -272,6 +278,55 @@ class Fundamental::ResourcePool < ActiveRecord::Base
   def dislike_capacity
     GAME_SERVER_CONFIG['dislike_maximum_amount']
   end
+
+
+  ##########################################################################
+  #
+  #  SPREADING LOCAL CHANGES TO RELATED MODELS
+  #
+  ##########################################################################
+
+  # propagate changes to global effects down to settlements. During this
+  # process, changes at settlements will propagate back to this model
+  # setting the rates to new values (this is quite dangerous...)
+  def propagate_bonus_changes
+
+    ActiveRecord::Base.transaction(:requires_new => true) do
+
+      if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
+        GameRules::Rules.the_rules().resource_types.each do |resource_type|
+
+          to_check = [{
+                          attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
+                          attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
+                      },
+                      {
+                          attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                          attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
+                      },
+                      {
+                          attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                          attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
+                      }
+          ]
+          to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
+
+          if !to_check.nil? && to_check.length > 0
+            self.owner.settlements.each do |settlement|
+              settlement.lock!
+              to_check.each do |bonus|
+                settlement.increment(bonus[:attribute_settlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])
+              end
+              settlement.save!
+            end
+          end
+        end
+      end
+    end
+
+    true
+  end
+
 
   protected
   
@@ -320,57 +375,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       end    
       true
     end
-    
 
-    
-    
-    ##########################################################################
-    #
-    #  SPREADING LOCAL CHANGES TO RELATED MODELS 
-    #
-    ##########################################################################
-    
-    # propagate changes to global effects down to settlements. During this
-    # process, changes at settlements will propagate back to this model
-    # setting the rates to new values (this is quite dangerous...)
-    def propagate_bonus_changes
-      
-      ActiveRecord::Base.transaction(:requires_new => true) do
-
-        if (!self.character_id.nil? && self.character_id > 0)         # only spread, if there's a resource pool
-          GameRules::Rules.the_rules().resource_types.each do |resource_type|
-          
-            to_check = [{
-                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_effects',
-                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_global_effects',
-              },
-              {
-                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_alliance',
-              },
-              {
-                attribute:            resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-                attribute_settlement: resource_type[:symbolic_id].to_s()+'_production_bonus_sciences',
-              }
-            ]
-            to_check = to_check.select { |bonus| !self.changes[bonus[:attribute]].nil? } # filter those, that have changed
-
-            if !to_check.nil? && to_check.length > 0
-              self.owner.settlements.each do |settlement|
-                settlement.lock!
-                to_check.each do |bonus|
-                  settlement.increment(bonus[:attribute_settlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])
-                end
-                settlement.save!
-              end
-            end
-          end
-        end
-      end
-      
-      true
-    end 
-        
     def check_consistency_sometimes
       return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['resource_pool_recalc_probability']       # do the check only seldomly (determined by random event)  
       check_consistency
@@ -425,5 +430,28 @@ class Fundamental::ResourcePool < ActiveRecord::Base
         end
       end    
     end
-    
+
+    def recalc_resource_effects
+      resource_types = GameRules::Rules.the_rules().resource_types
+      effects    = Array.new(resource_types.count, 0.0)
+      self.resource_effects.each do |effect|
+        effects[effect[:resource_id]] += effect[:bonus] || 0.0
+      end
+      return effects
+    end
+
+    def check_and_apply_resource_effects(effects)
+      GameRules::Rules.the_rules().resource_types.each do |resource_type|
+        base = resource_type[:symbolic_id].to_s
+        present = self[base + '_production_bonus_effects']
+        recalc  = effects[resource_type[:id]]
+
+        if (present - recalc).abs > 0.000001
+          logger.warn(">>> PRODUCTION BONUS EFFECT RECALC DIFFERS for #{resource_type[:name][:en_US]}. Old: #{present} Corrected: #{recalc}.")
+          self[base+'_production_bonus_effects'] = recalc
+        end
+      end
+    end
+
+
 end

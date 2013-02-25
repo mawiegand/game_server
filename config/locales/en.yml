@@ -19,6 +19,7 @@ en:
         tutorial_stats: Tutorial Stats
         browser_stats: Browser
         system_message: InGameMessage
+        trade_log: TradeLog
       rules:
         category: Rules
         all: All
@@ -27,6 +28,7 @@ en:
         sciences: Sciences
       ranking:
         category: Ranking
+        info: Ranking Info
         character: Character Ranking
         alliance: Alliance Ranking
         fortress: Fortress Ranking
@@ -87,7 +89,8 @@ en:
         jobs: Jobs
         active_jobs: Act. Jobs
       effect:
-        resource_effects: Resource Effects
+        alliance_resource_effects: Alliance Res. Effects
+        resource_effects: Character Res. Effects
         category: Effect
       event:
         category: Event

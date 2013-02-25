@@ -82,7 +82,7 @@ class Military::BattleFaction < ActiveRecord::Base
     #if there was found a new leader save him
     if !strongest.nil?
       self.leader_id = strongest.army.owner_id
-      return self.save
+      self.save
     else
       true
     end
