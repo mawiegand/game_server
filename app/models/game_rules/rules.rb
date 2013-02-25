@@ -193,39 +193,39 @@ class GameRules::Rules
           :hours     => 30,
         },              #   END OF 30 hours
 
-        {               #   less than 65 hours
+        {               #   less than 70 hours
           :resource_id => 3, 
           :amount      => 20,
-          :hours     => 65,
-        },              #   END OF 65 hours
+          :hours     => 70,
+        },              #   END OF 70 hours
 
-        {               #   less than 100 hours
+        {               #   less than 110 hours
+          :resource_id => 3, 
+          :amount      => 25,
+          :hours     => 110,
+        },              #   END OF 110 hours
+
+        {               #   less than 150 hours
           :resource_id => 3, 
           :amount      => 30,
-          :hours     => 100,
-        },              #   END OF 100 hours
+          :hours     => 150,
+        },              #   END OF 150 hours
 
-        {               #   less than 140 hours
+        {               #   less than 200 hours
           :resource_id => 3, 
           :amount      => 40,
-          :hours     => 140,
-        },              #   END OF 140 hours
+          :hours     => 200,
+        },              #   END OF 200 hours
 
-        {               #   less than 185 hours
+        {               #   less than 275 hours
           :resource_id => 3, 
           :amount      => 50,
-          :hours     => 185,
-        },              #   END OF 185 hours
-
-        {               #   less than 230 hours
-          :resource_id => 3, 
-          :amount      => 60,
-          :hours     => 230,
-        },              #   END OF 230 hours
+          :hours     => 275,
+        },              #   END OF 275 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 70,
+          :amount      => 60,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
