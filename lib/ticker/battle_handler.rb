@@ -163,7 +163,7 @@ class Ticker::BattleHandler
               end
               Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
             else
-              artifact.make_invisible
+              artifact.make_invisible if artifact.owner.npc?
             end
           end
 
