@@ -5,6 +5,7 @@
     <th>Type</th>
     <th>Location</th>
     <th>Region</th>
+    <th>Path</th>
     <th>Settlement</th>
     <th>Owner</th>
     <th>Army</th>
@@ -23,6 +24,7 @@
     <td><%= fundamental_artifact.type_id %></td>
     <td><%= fundamental_artifact.location_id %></td>
     <td><%= fundamental_artifact.region_id %></td>
+    <td><%= fundamental_artifact.region.node.path %></td>
     <td><%= fundamental_artifact.settlement_id %></td>
     <td><%= fundamental_artifact.owner_id %></td>
     <td><%= fundamental_artifact.army_id %></td>
