@@ -193,27 +193,39 @@ class GameRules::Rules
           :hours     => 30,
         },              #   END OF 30 hours
 
-        {               #   less than 60 hours
+        {               #   less than 65 hours
           :resource_id => 3, 
           :amount      => 20,
-          :hours     => 60,
-        },              #   END OF 60 hours
+          :hours     => 65,
+        },              #   END OF 65 hours
 
         {               #   less than 100 hours
           :resource_id => 3, 
-          :amount      => 35,
+          :amount      => 30,
           :hours     => 100,
         },              #   END OF 100 hours
 
-        {               #   less than 150 hours
+        {               #   less than 140 hours
+          :resource_id => 3, 
+          :amount      => 40,
+          :hours     => 140,
+        },              #   END OF 140 hours
+
+        {               #   less than 185 hours
           :resource_id => 3, 
           :amount      => 50,
-          :hours     => 150,
-        },              #   END OF 150 hours
+          :hours     => 185,
+        },              #   END OF 185 hours
+
+        {               #   less than 230 hours
+          :resource_id => 3, 
+          :amount      => 60,
+          :hours     => 230,
+        },              #   END OF 230 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 75,
+          :amount      => 70,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -6209,7 +6221,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '1',
+          :amount      => '3',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6331,7 +6343,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '6',
+          :amount      => '10',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6478,7 +6490,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1+(0.005*(MIN(88-DAYS,0)))',
+            :required_regions_ratio => '1+(0.01*(MIN(116-DAYS,0)))',
 
             :duration => 5,
           },
