@@ -111,7 +111,9 @@ class Tutorial::Quest < ActiveRecord::Base
         reward_tests[:construction_queue_tests].each do |construction_queue_test|
           unless construction_queue_test.nil?
             unless check_construction_queues(construction_queue_test)
-              return false
+              unless check_buildings(construction_queue_test)
+                return false
+              end
             end
           end
         end
