@@ -18,7 +18,7 @@ class Messaging::OutboxEntriesController < ApplicationController
       raise NotFoundError.new('Outbox not found.') if @outbox.nil?
       role = determine_access_role(@outbox.owner_id, nil)   # no privileged alliance access
       raise ForbiddenError.new('Access to outbox denied.') unless role == :owner || admin? || staff?
-      @messaging_outbox_entries = @outbox.entries.where("created_at >= ?", Time.now - 1209600) || []
+      @messaging_outbox_entries = @outbox.entries || []
     else
       @asked_for_index = true
       raise ForbiddenError.new('Access to index of inbox entries forbidden') unless admin? || staff?
