@@ -1941,13 +1941,15 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
 
   create_table "messaging_archive_entries", :force => true do |t|
-    t.integer  "archivebox_id"
-    t.integer  "owner_id"
+    t.integer  "archive_id"
+    t.integer  "recipient_id"
     t.integer  "message_id"
     t.integer  "sender_id"
     t.string   "subject"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id",      :default => 0, :null => false
+    t.integer  "owner_id"
   end
 
   create_table "messaging_archives", :force => true do |t|
