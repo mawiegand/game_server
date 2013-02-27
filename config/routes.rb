@@ -49,11 +49,7 @@ GameServer::Application.routes.draw do
           resources :settings
           resources :history_events,                           :only => [ :index ]
         end
-        
-        resources :resource_pools do
-          resources :resource_effects, :module => "effect"
-        end
-        
+
         resources :alliances do
           resources :characters
           resources :alliance_shouts
@@ -84,7 +80,9 @@ GameServer::Application.routes.draw do
       resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
                   
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
-      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'            
+      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
+
+      resources :resource_effects, :path => "/fundamental/resource_pool/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
 
       namespace :messaging do 
         resources :archives do
