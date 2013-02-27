@@ -17,8 +17,10 @@ class Tutorial::Quest < ActiveRecord::Base
   STATES[STATE_FINISHED] = :finished
   STATE_CLOSED = 3
   STATES[STATE_CLOSED] = :closed
-  
-  scope        :non_closed,  where(['status < ?', STATE_CLOSED])
+
+  scope        :closed,      where(['status >= ?', STATE_CLOSED])  
+  scope        :non_closed,  where(['status <  ?', STATE_CLOSED])
+  scope        :finished,    where(['status >= ?', STATE_FINISHED])
   
   
   def quest
@@ -45,6 +47,9 @@ class Tutorial::Quest < ActiveRecord::Base
     !quest.nil? && quest[:tutorial]
   end
   
+  def rewards
+    (self.quest || {})[:rewards] 
+  end
   
   def mark_displayed
     self.displayed_at = Time.now        if self.displayed_at.nil?
@@ -55,8 +60,20 @@ class Tutorial::Quest < ActiveRecord::Base
     self.reward_displayed_at = Time.now if self.reward_displayed_at.nil?
   end  
   
+  # quest auf beendet setzen
+  def set_finished
+    
+    self.status = if self.rewards.nil?
+      STATE_CLOSED    # close directly, as there is nothing to redeem. client should NOT even show a quest-end dialog
+    else
+      STATE_FINISHED
+    end
+    
+    self.finished_at = Time.now
+    self.save
+  end  
   
-  
+
   def check_for_rewards(answer_text)
     logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
     
@@ -199,12 +216,7 @@ class Tutorial::Quest < ActiveRecord::Base
     true
   end
   
-  def set_finished
-      # quest auf beendet setzen
-    self.status = STATE_FINISHED
-    self.finished_at = Time.now
-    self.save
-  end
+
   
   def place_npcs
     Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
@@ -643,7 +655,7 @@ class Tutorial::Quest < ActiveRecord::Base
   protected
   
     def count_completed_tutorial_quests
-      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED && self.belongs_to_tutorial?
+      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] != STATE_CLOSED) && self.belongs_to_tutorial?
         self.tutorial_state.increment(:tutorial_states_completed)
         self.tutorial_state.save
       end
