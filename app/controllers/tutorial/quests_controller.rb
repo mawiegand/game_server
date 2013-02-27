@@ -87,15 +87,15 @@ class Tutorial::QuestsController < ApplicationController
   def update
     @tutorial_quest = Tutorial::Quest.find(params[:id])
     
-    attributes_send = params[:tutorial_quest]
+    attributes_sent = params[:tutorial_quest]
     attributes_to_update = {}
     
     raise ForbiddenError.new ("Access to quest state forbidden.") unless admin? || staff? || @tutorial_quest.tutorial_state.owner == current_character
     
     if admin? || staff?
-      attributes_to_update = attributes_send
+      attributes_to_update = attributes_sent
     else
-      attributes_to_update[:status] = attibutes_send[:status]  if attributes_send.has_key?(:status)
+      attributes_to_update[:status] = attributes_sent[:status]  if attributes_sent.has_key?(:status)
     end
     
     if attributes_to_update.has_key?(:status) && attributes_to_update[:status] == Tutorial::Quest::STATE_DISPLAYED.to_s
@@ -109,7 +109,7 @@ class Tutorial::QuestsController < ApplicationController
       end
     end
     
-    if attributes_send.has_key?(:reward_displayed)
+    if attributes_sent.has_key?(:reward_displayed)
       attributes_to_update[:reward_displayed_at] = Time.now
     end
 

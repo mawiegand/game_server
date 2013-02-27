@@ -18,17 +18,16 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "likes"          if params[:sort] == 'likes'
     sort = "victories"      if params[:sort] == 'victories'
-    sort = "victory_ratio"  if params[:sort] == 'victory_ratio'
     sort = "max_experience" if params[:sort] == 'experience'
     sort = "kills"          if params[:sort] == 'kills'
 
     if params[:page].blank? && @marked_character
-      num_before = Ranking::CharacterRanking.where([
+      num_before = Ranking::CharacterRanking.where(
         "#{ sort } > ? or (#{ sort } = ? and id < ?)",
         @marked_character.ranking[sort.to_sym],
         @marked_character.ranking[sort.to_sym],
         @marked_character.id,
-      ]).count
+      ).count
       page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i
@@ -43,6 +42,8 @@ class Ranking::CharacterRankingsController < ApplicationController
     @ranking_character_rankings.each do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
+      ranking_entry_hash[:artifact_id]   = ranking_entry.character.artifact.id unless ranking_entry.character.artifact.nil?
+      ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name][:de_DE] unless ranking_entry.character.artifact.nil?
       returned_ranking_entries << ranking_entry_hash
       nr += 1
     end
