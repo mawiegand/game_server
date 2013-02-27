@@ -53,7 +53,6 @@ GameServer::Application.routes.draw do
         resources :alliances do
           resources :characters
           resources :alliance_shouts
-          resources :alliance_resource_effects, :module => "effect"
         end
         
         resources :victory_progresses 
@@ -81,7 +80,8 @@ GameServer::Application.routes.draw do
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
       resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
 
-      resources :resource_effects, :path => "/fundamental/resource_pool/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
+      resources :resource_effects, :path => "/fundamental/resource_pools/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
+      resources :alliance_resource_effects, :path => "/fundamental/alliances/:alliance_id/alliance_resource_effects", :module => 'effect',   :only => [:index]
 
       namespace :messaging do 
         resources :archives do
