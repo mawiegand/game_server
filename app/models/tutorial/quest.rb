@@ -537,8 +537,8 @@ class Tutorial::Quest < ActiveRecord::Base
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
     raise BadRequestError.new('quest not fount in tutorial') if quest.nil?
     
-    rewards = quest[:rewards]
-    raise BadRequestError.new('no rewards found in quest') if rewards.nil?
+    rewards = quest[:rewards] || {}
+    #raise BadRequestError.new('no rewards found in quest') if rewards.nil?
     resource_rewards = rewards[:resource_rewards]
     unit_rewards = rewards[:unit_rewards]
 
