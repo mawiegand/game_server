@@ -35,7 +35,7 @@ class Ranking::AllianceRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, num_members ASC")
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              
