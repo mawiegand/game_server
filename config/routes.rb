@@ -50,6 +50,8 @@ GameServer::Application.routes.draw do
           resources :history_events,                           :only => [ :index ]
         end
 
+        resources :resource_pools
+
         resources :alliances do
           resources :characters
           resources :alliance_shouts
