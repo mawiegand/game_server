@@ -12,6 +12,7 @@ GameServer::Application.routes.draw do
         resources :character_rankings, :only => [ :index ]
         resources :alliance_rankings,  :only => [ :index ]
         resources :fortress_rankings,  :only => [ :index ]
+        resources :artifact_rankings,  :only => [ :index ]
         resource :ranking_info,        :only => [ :show ]
       end
 
