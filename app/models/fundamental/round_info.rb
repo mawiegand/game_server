@@ -16,4 +16,29 @@ class Fundamental::RoundInfo < ActiveRecord::Base
   def age
     ((Time.now - self.started_at)/(3600*24)).to_i
   end
+
+  def set_victory_gained(alliance, victory_time)
+    self.winner_alliance = alliance
+    self.victory_gained_at = victory_time
+    self.save
+
+    # transfer history events for all alliance members to identity provider
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+
+    event = {
+      type:       :won_round,
+      round:      self.number,
+      round_name: self.name,
+    }
+    description = {
+      :de_DE => "Die Runde #{self.number}, '#{self.name}', gewonnen.",
+      :en_US => "Won round #{self.number}, '#{self.name}'.",
+    }
+    winner_identifiers = alliance.members.map { |member| member.member.identifier }
+    identity_provider_access.post_alliance_history_event(winner_identifiers, event, description)
+  end
 end
