@@ -202,11 +202,15 @@ class Settlement::Settlement < ActiveRecord::Base
     
     # destroy all construction jobs
     self.queues.each do |queue|
+      queue.reload
+      queue.jobs.reload
       queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
     end
 
     # destroy all training jobs
     self.training_queues.each do |queue|
+      queue.reload
+      queue.jobs.reload
       queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
     end
 
