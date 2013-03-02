@@ -1,5 +1,9 @@
 <h1>Listing military_battles</h1>
 
+<%= if (@paginate)
+  will_paginate @military_battles
+end %>
+
 <table>
   <tr>
     <th>Started at</th>
@@ -39,6 +43,10 @@
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate)
+  will_paginate @military_battles
+end %>
 
 <br />
 
