@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  victory_type: 1
+  type_id: 1
   alliance_id: 1
   fulfillment_count: 1
 
 two:
-  victory_type: 1
+  type_id: 1
   alliance_id: 1
   fulfillment_count: 1

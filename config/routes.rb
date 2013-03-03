@@ -26,7 +26,7 @@ GameServer::Application.routes.draw do
         resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
-        resources :trade_log_entries , :only => [ :index ]
+        resources :trade_log_entries, :only => [ :index ]
       end
 
       namespace :effect do 
