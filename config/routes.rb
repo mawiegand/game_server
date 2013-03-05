@@ -215,6 +215,7 @@ GameServer::Application.routes.draw do
         end
         namespace :trading do 
           resources :trading_carts_actions 
+          resources :speedup_trading_carts_actions,    :only => [ :create ]
         end 
         namespace :training do
           resources :speedup_job_actions    

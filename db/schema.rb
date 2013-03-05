@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222234254) do
+ActiveRecord::Schema.define(:version => 20130304171040) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+    t.boolean  "send_hurried"
+    t.boolean  "return_hurried"
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -1760,8 +1762,6 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
@@ -1769,6 +1769,8 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
@@ -2246,7 +2248,7 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0, :null => false
+    t.integer  "total_experience_gained",  :default => 0
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
@@ -2420,12 +2422,12 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
     t.integer  "trading_carts",                                  :default => 0,            :null => false
     t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
