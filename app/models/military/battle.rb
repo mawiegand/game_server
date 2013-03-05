@@ -153,8 +153,8 @@ class Military::Battle < ActiveRecord::Base
               !other_army.fighting? &&                                           # only add non fighting armies
               !defender.battle_participant.faction.contains_army_of(other_army.owner) &&   # don't let armies of current character defend his own attack
               other_army.defending? &&                                           # only add armies with appropriate stance
-              (other_army.same_alliance_as?(defender) ||                         # only add armies of same alliance or
-                  other_army.same_owner_as?(defender)) &&                        # same owner
+              (other_army.same_alliance_as?(attacker) ||                         # only add armies of same alliance or
+                  other_army.same_owner_as?(attacker)) &&                        # same owner
               !other_army.protected?                                             # only add armies that are not attack protected
             self.add_army(other_army, attacker.battle_participant.faction)
           end
