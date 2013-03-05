@@ -35,7 +35,8 @@ class Action::Military::CancelMoveArmyActionsController < ApplicationController
     if army.mode === Military::Army::MODE_MOVING  # 1: moving?
       army.mode = Military::Army::MODE_IDLE
     end
-    army.target_reached_at = nil  
+    army.target_reached_at = nil
+    army.attack_protection_ends_at = nil
 
     if !army.save 
       raise BadRequestError.new('could not save the new state of the army')
