@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304204939) do
+ActiveRecord::Schema.define(:version => 20130305185536) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2540,6 +2540,8 @@ ActiveRecord::Schema.define(:version => 20130304204939) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true
 
   create_table "shop_offers", :force => true do |t|
     t.string   "title"
