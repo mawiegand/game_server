@@ -172,6 +172,10 @@ class Military::Army < ActiveRecord::Base
     !self.suspension_ends_at.nil? && self.suspension_ends_at > Time.now
   end
 
+  def protected?
+    !self.attack_protection_ends_at.nil? && self.attack_protection_ends_at > Time.now
+  end
+
   def defending?
     self.stance == Military::Army::STANCE_DEFENDING_FORTRESS
   end
@@ -285,7 +289,7 @@ class Military::Army < ActiveRecord::Base
       end
     end
     
-    return self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
+    self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
   end  
   
   # checks if a change in the army causes a new battle with 
@@ -307,7 +311,7 @@ class Military::Army < ActiveRecord::Base
       end
     end
     
-    return started_battles
+    started_battles
   end
   
   # checks if the current army is in the same existing alliance as the garrison army 

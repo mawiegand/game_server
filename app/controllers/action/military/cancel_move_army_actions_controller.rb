@@ -24,7 +24,7 @@ class Action::Military::CancelMoveArmyActionsController < ApplicationController
     raise ForbiddenError.new('tried to cancel command of foreign army') unless role === :owner || role === :staff || role === :admin
     
     if army.movement_command.event.blank?   # don't crash, a cancel action might be the cure for a missing entry in the event table
-      logger.error 'Could not find an event for movement command #{army.movement_command.id}: ' + army.movement_command.inspect + ' / ' + army.inspect
+      logger.error "Could not find an event for movement command #{army.movement_command.id}: " + army.movement_command.inspect + ' / ' + army.inspect
     else 
       army.movement_command.event.destroy
     end
