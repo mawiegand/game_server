@@ -76,25 +76,25 @@ class Map::Location < ActiveRecord::Base
     target_location
   end  
     
-  
+
+
   def garrison_army
     self.armies.each do |army|
       if army.garrison 
         return army
       end
     end
-    
-    return nil
+    nil
   end
   
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
   def set_owner_and_alliance(new_owner, new_alliance)
-    if (new_owner != self.owner)
+    if new_owner != self.owner
       self.owner = new_owner
       self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
-    if (new_alliance != self.alliance)
+    if new_alliance != self.alliance
       self.alliance = new_alliance
       self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
     end
