@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222234254) do
+ActiveRecord::Schema.define(:version => 20130304204939) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1846,6 +1846,7 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
+    t.integer  "number",             :default => 0, :null => false
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -2061,6 +2062,7 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.boolean  "npc",                             :default => false, :null => false
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
+    t.datetime "attack_protection_ends_at"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
