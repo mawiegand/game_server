@@ -154,8 +154,7 @@ class Military::Battle < ActiveRecord::Base
               !defender.battle_participant.faction.contains_army_of(other_army.owner) &&   # don't let armies of current character defend his own attack
               other_army.defending? &&                                           # only add armies with appropriate stance
               (other_army.same_alliance_as?(attacker) ||                         # only add armies of same alliance or
-                  other_army.same_owner_as?(attacker)) &&                        # same owner
-              !other_army.protected?                                             # only add armies that are not attack protected
+                  other_army.same_owner_as?(attacker))                           # same owner
             self.add_army(other_army, attacker.battle_participant.faction)
           end
         end
@@ -168,8 +167,7 @@ class Military::Battle < ActiveRecord::Base
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
               (other_army.defending? || other_army.garrison) &&                  # only add armies with appropriate stance, always add garrison
               (other_army.same_alliance_as?(defender) ||                         # only add armies of same alliance or
-                  other_army.same_owner_as?(defender)) &&                        # same owner
-              !other_army.protected?                                             # only add armies that are not attack protected
+                  other_army.same_owner_as?(defender))                           # same owner
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
           end
@@ -183,8 +181,7 @@ class Military::Battle < ActiveRecord::Base
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
               (other_army.defending? || other_army.garrison) &&                  # only add armies with appropriate stance, always add garrison
               (other_army.same_alliance_as?(defender) ||                         # only add armies of same alliance or
-                  other_army.same_owner_as?(defender)) &&                        # same owner
-              !other_army.protected?                                             # only add armies that are not attack protected
+                  other_army.same_owner_as?(defender))                           # same owner
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
           elsif other_army != attacker &&                                        # if other army is the garrison army
