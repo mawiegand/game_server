@@ -16,7 +16,7 @@ class Messaging::ArchivesController < ApplicationController
       raise NotFoundError.new('Character not found.') if @character.nil?
       archive = @character.archive
       last_modified = archive.updated_at unless archive.nil?
-      @messaging_archivees = archive.nil?  ? [] : [ archive ]
+      @messaging_archives = archive.nil?  ? [] : [ archive ]
       role = determine_access_role(@character.id, @character.alliance_id)
     else
       @asked_for_index = true
@@ -26,14 +26,14 @@ class Messaging::ArchivesController < ApplicationController
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html do
-          if @messaging_archivees.nil?
-            @messaging_archivees = Messaging::Outbox.paginate(:page => params[:page], :per_page => 50)
+          if @messaging_archives.nil?
+            @messaging_archives = Messaging::Outbox.paginate(:page => params[:page], :per_page => 50)
             @paginate = true
           end
         end
         format.json do
           raise ForbiddenError.new('Access Forbidden')    if @asked_for_index
-          render json: @messaging_archivees, :only => Messaging::Archive.readable_attributes(role)
+          render json: @messaging_archives, :only => Messaging::Archive.readable_attributes(role)
         end
       end
     end

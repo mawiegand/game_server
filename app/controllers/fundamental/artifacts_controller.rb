@@ -30,7 +30,9 @@ class Fundamental::ArtifactsController < ApplicationController
 
     render_not_modified_or(last_modified) do
       respond_to do |format|
-        format.html # index.html.erb
+        format.html do
+          @fundamental_artifacts = Fundamental::Artifact.order('id asc')
+        end
         format.json do
           #raise ForbiddenError.new('Access Forbidden') if @asked_for_index
           @fundamental_artifacts = [] if @fundamental_artifacts.nil?
