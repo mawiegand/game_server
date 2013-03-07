@@ -1481,69 +1481,6 @@ ActiveRecord::Schema.define(:version => 20130305185536) do
     t.decimal  "quest_140_playtime_finished",       :default => 0.0
     t.decimal  "quest_140_playtime_started",        :default => 0.0
     t.decimal  "quest_140_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_141_num_finished_day_1",      :default => 0
-    t.integer  "quest_141_num_started_day_1",       :default => 0
-    t.decimal  "quest_141_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_141_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_141_num_finished",            :default => 0
-    t.integer  "quest_141_num_started",             :default => 0
-    t.decimal  "quest_141_playtime_finished",       :default => 0.0
-    t.decimal  "quest_141_playtime_started",        :default => 0.0
-    t.decimal  "quest_141_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_142_num_finished_day_1",      :default => 0
-    t.integer  "quest_142_num_started_day_1",       :default => 0
-    t.decimal  "quest_142_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_142_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_142_num_finished",            :default => 0
-    t.integer  "quest_142_num_started",             :default => 0
-    t.decimal  "quest_142_playtime_finished",       :default => 0.0
-    t.decimal  "quest_142_playtime_started",        :default => 0.0
-    t.decimal  "quest_142_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_143_num_finished_day_1",      :default => 0
-    t.integer  "quest_143_num_started_day_1",       :default => 0
-    t.decimal  "quest_143_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_143_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_143_num_finished",            :default => 0
-    t.integer  "quest_143_num_started",             :default => 0
-    t.decimal  "quest_143_playtime_finished",       :default => 0.0
-    t.decimal  "quest_143_playtime_started",        :default => 0.0
-    t.decimal  "quest_143_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_144_num_finished_day_1",      :default => 0
-    t.integer  "quest_144_num_started_day_1",       :default => 0
-    t.decimal  "quest_144_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_144_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_144_num_finished",            :default => 0
-    t.integer  "quest_144_num_started",             :default => 0
-    t.decimal  "quest_144_playtime_finished",       :default => 0.0
-    t.decimal  "quest_144_playtime_started",        :default => 0.0
-    t.decimal  "quest_144_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_145_num_finished_day_1",      :default => 0
-    t.integer  "quest_145_num_started_day_1",       :default => 0
-    t.decimal  "quest_145_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_145_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_145_num_finished",            :default => 0
-    t.integer  "quest_145_num_started",             :default => 0
-    t.decimal  "quest_145_playtime_finished",       :default => 0.0
-    t.decimal  "quest_145_playtime_started",        :default => 0.0
-    t.decimal  "quest_145_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_146_num_finished_day_1",      :default => 0
-    t.integer  "quest_146_num_started_day_1",       :default => 0
-    t.decimal  "quest_146_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_146_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_146_num_finished",            :default => 0
-    t.integer  "quest_146_num_started",             :default => 0
-    t.decimal  "quest_146_playtime_finished",       :default => 0.0
-    t.decimal  "quest_146_playtime_started",        :default => 0.0
-    t.decimal  "quest_146_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_147_num_finished_day_1",      :default => 0
-    t.integer  "quest_147_num_started_day_1",       :default => 0
-    t.decimal  "quest_147_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_147_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_147_num_finished",            :default => 0
-    t.integer  "quest_147_num_started",             :default => 0
-    t.decimal  "quest_147_playtime_finished",       :default => 0.0
-    t.decimal  "quest_147_playtime_started",        :default => 0.0
-    t.decimal  "quest_147_retention_rate_week_1",   :default => 0.0
   end
 
   create_table "backend_users", :force => true do |t|
@@ -1846,7 +1783,6 @@ ActiveRecord::Schema.define(:version => 20130305185536) do
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
-    t.integer  "number",             :default => 0, :null => false
   end
 
   create_table "fundamental_settings", :force => true do |t|
