@@ -1,0 +1,2 @@
+module Fundamental::AllianceReservationsHelper
+end

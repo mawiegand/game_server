@@ -1,0 +1,29 @@
+<h1>Listing fundamental_alliance_reservations</h1>
+
+<table>
+  <tr>
+    <th>Alliance</th>
+    <th>Tag</th>
+    <th>Name</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_alliance_reservations.each do |fundamental_alliance_reservation| %>
+  <tr>
+    <td><%= fundamental_alliance_reservation.alliance_id %></td>
+    <td><%= fundamental_alliance_reservation.tag %></td>
+    <td><%= fundamental_alliance_reservation.name %></td>
+    <td><%= fundamental_alliance_reservation.password %></td>
+    <td><%= link_to 'Show', fundamental_alliance_reservation %></td>
+    <td><%= link_to 'Edit', edit_fundamental_alliance_reservation_path(fundamental_alliance_reservation) %></td>
+    <td><%= link_to 'Destroy', fundamental_alliance_reservation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Alliance reservation', new_fundamental_alliance_reservation_path %>

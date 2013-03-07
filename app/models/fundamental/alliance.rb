@@ -14,7 +14,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :resource_effects, :class_name => "Effect::AllianceResourceEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
 
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
-  
+  has_one    :reservation, :class_name => "Fundamental::AllianceReservation", :foreign_key => "alliance_id", :inverse_of => :alliance
+
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
   
@@ -61,7 +62,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     cmd.save
     
     alliance.add_character(leader)
-    return alliance
+    alliance
   end
   
   def determine_new_leader
