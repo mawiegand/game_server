@@ -1,6 +1,5 @@
 GameServer::Application.routes.draw do
 
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -13,7 +12,7 @@ GameServer::Application.routes.draw do
         resources :alliance_rankings,  :only => [ :index ]
         resources :fortress_rankings,  :only => [ :index ]
         resources :artifact_rankings,  :only => [ :index ]
-        resource :ranking_info,        :only => [ :show ]
+        resource  :ranking_info,       :only => [ :show ]
       end
 
 
@@ -56,12 +55,14 @@ GameServer::Application.routes.draw do
         resources :alliances do
           resources :characters
           resources :alliance_shouts
+          resource  :alliance_reservation
         end
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
+        resources :alliance_reservations
         resources :artifacts
         resources :artifact_initiations
 

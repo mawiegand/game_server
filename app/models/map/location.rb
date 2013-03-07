@@ -22,11 +22,8 @@ class Map::Location < ActiveRecord::Base
 
   def self.find_empty_without_army
     empty_locations = Map::Location.all - Map::Location.joins(:armies)
-    unless empty_locations.empty?
-      empty_locations[Random.rand(empty_locations.count)]
-    else
-      nil
-    end
+    return nil if empty_locations.empty?
+    empty_locations[Random.rand(empty_locations.count)]
   end
 
   def self.location_for_player_invitation(invitation_code)
