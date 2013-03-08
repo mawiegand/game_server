@@ -2,13 +2,15 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
   layout 'action'
   before_filter :authenticate
 
-  EXCHANGE_FEE = 3 # 3 gold toads
+  EXCHANGE_FEE = 3 # 3 gold toads, when changed, please change in html_client as well
 
   def create
     raise BadRequestError.new('bad parameter(s)') if (params[:resource_stone].to_f + params[:resource_wood].to_f + params[:resource_fur].to_f) > 1.1
+    raise ForbiddenError.new('negative value(s)') if (params[:resource_stone].to_f < 0.0) || (params[:resource_wood].to_f < 0.0) | (params[:resource_fur].to_f < 0.0)
 
     pool = current_character.resource_pool
-    sum = pool.resource_stone_amount + pool.resource_wood_amount + pool.resource_fur_amount
+    pool.update_resource_amount()
+    sum = pool.resource_stone_amount + pool.resource_wood_amount + pool.resource_fur_amount*2
 
     # check if user has enough cash
     raise ForbiddenError.new('not enough cash') if pool.resource_cash_amount < EXCHANGE_FEE
@@ -21,7 +23,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     pool.resource_wood_amount  = sum*params[:resource_wood].to_f
     pool.resource_fur_amount   = sum*params[:resource_fur].to_f
     pool.resource_cash_amount -= EXCHANGE_FEE
-    
+
     # save new values
     pool.save
     
