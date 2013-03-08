@@ -346,7 +346,7 @@ class GameRules::Rules
 
         {               #   less than 1 hours
           :resource_id => 3,
-          :amount      => 3,
+          :amount      => 1,
           :hours     => 1,
         },              #   END OF 1 hours
 
