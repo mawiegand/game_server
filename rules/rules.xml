@@ -125,7 +125,7 @@
       <SpeedupCost resource="resource_cash" amount="12" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedup>
-      <SpeedupCost resource="resource_cash" amount="3"  hours="1" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
     </TradingSpeedup>
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
