@@ -35,7 +35,7 @@ class Ranking::AllianceRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+    @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, num_members ASC")
     
     nr = (page - 1) * per_page + 1     
     returned_ranking_entries = []                                              
@@ -43,6 +43,7 @@ class Ranking::AllianceRankingsController < ApplicationController
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:regions_per_member] = ranking_entry_hash['num_members'] == 0 ? 0 : (1.0 * (ranking_entry_hash['num_fortress']) / ranking_entry_hash['num_members']).round(1)
+      ranking_entry_hash[:artifacts] = ranking_entry.alliance.artifacts.count
       returned_ranking_entries << ranking_entry_hash
       nr += 1
     end

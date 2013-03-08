@@ -8,7 +8,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   after_save  :propagate_change_to_alliance
     
   def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
-    rankings = Ranking::CharacterRanking.find(:all, :order => "#{sort_field.to_s} DESC, id ASC")
+    rankings = Ranking::CharacterRanking.all.(:order => "#{sort_field.to_s} DESC, id ASC")
     rank = 1
     rankings.each do |entry| 
       entry[rank_field] = rank
@@ -61,7 +61,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   end  
 
   def recalc_likes_count
-    likes_count = character.received_likes_count
+    character.received_likes_count
   end
   
   def check_and_apply_likes_count(likes_count)
@@ -72,7 +72,7 @@ class Ranking::CharacterRanking < ActiveRecord::Base
   end
   
   def recalc_dislikes_count
-    dislikes_count = character.received_dislikes_count
+    character.received_dislikes_count
   end
   
   def check_and_apply_dislikes_count(dislikes_count)
