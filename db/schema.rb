@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304171040) do
+ActiveRecord::Schema.define(:version => 20130306150630) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1638,6 +1638,15 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.integer  "local_event_id"
   end
 
+  create_table "fundamental_alliance_reservations", :force => true do |t|
+    t.integer  "alliance_id"
+    t.string   "tag"
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fundamental_alliance_shouts", :force => true do |t|
     t.integer  "character_id"
     t.integer  "alliance_id"
@@ -1762,6 +1771,8 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
@@ -1769,8 +1780,6 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
@@ -1848,6 +1857,7 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
+    t.integer  "number",             :default => 0, :null => false
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -2063,6 +2073,7 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.boolean  "npc",                             :default => false, :null => false
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
+    t.datetime "attack_protection_ends_at"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2248,7 +2259,7 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0
+    t.integer  "total_experience_gained",  :default => 0, :null => false
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
@@ -2422,12 +2433,12 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
     t.integer  "trading_carts",                                  :default => 0,            :null => false
     t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
@@ -2540,6 +2551,8 @@ ActiveRecord::Schema.define(:version => 20130304171040) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true
 
   create_table "shop_offers", :force => true do |t|
     t.string   "title"

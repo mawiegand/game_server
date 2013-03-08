@@ -77,9 +77,9 @@
       <Language locale="de_DE">Deutsch</Language>
     </Languages>
     <Domains>
-      <Domain id="character"></Domain>
-      <Domain id="settlement"></Domain>
-      <Domain id="alliance"></Domain>
+      <Domain id="character" />
+      <Domain id="settlement" />
+      <Domain id="alliance" />
     </Domains>
     <Battle>
       <Calculation roundTime="30" retreatProbability="0.6" />
@@ -124,6 +124,9 @@
       <SpeedupCost resource="resource_cash" amount="11" hours="48" />
       <SpeedupCost resource="resource_cash" amount="12" hours="9999" />
     </ArtifactInitiationSpeedup>
+    <TradingSpeedup>
+      <SpeedupCost resource="resource_cash" amount="3"  hours="1" />
+    </TradingSpeedup>
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>

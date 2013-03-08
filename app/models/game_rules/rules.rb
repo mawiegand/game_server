@@ -35,7 +35,7 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup
   
   def attributes 
     { 
@@ -45,6 +45,7 @@ class GameRules::Rules
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
+      'trading_speedup'             => trading_speedup,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -338,6 +339,18 @@ class GameRules::Rules
         },              #   END OF 9999 hours
 
       ],                # END OF ARTIFACT INITIATION SPEEDUP
+
+# ## TRADING INITIATION SPEEDUP #############################################
+
+      :trading_speedup => [  # ALL TRADING INITIATION SPEEDUPS
+
+        {               #   less than 1 hours
+          :resource_id => 3,
+          :amount      => 3,
+          :hours     => 1,
+        },              #   END OF 1 hours
+
+      ],                # END OF TRADING INITIATION SPEEDUP
 
 # ## RESOURCE TYPES ##########################################################
   
