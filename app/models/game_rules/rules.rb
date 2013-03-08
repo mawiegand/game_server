@@ -6221,7 +6221,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '5',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6282,7 +6282,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '2',
 
           :experience_production => '10*(MRANK+1)',
 
