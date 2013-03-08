@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+    t.boolean  "send_hurried"
+    t.boolean  "return_hurried"
   end
 
   create_table "backend_browser_stats", :force => true do |t|
