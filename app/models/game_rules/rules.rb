@@ -107,52 +107,52 @@ class GameRules::Rules
   def self.the_rules
     @the_rules ||= GameRules::Rules.new(
   
-        :version => { :major => 0, 
-                      :minor => 0, 
-                      :build => 1, 
-        },
-        :battle => {
-          :calculation => {
-            :round_time => 30,
-            :retreat_probability => 0.6,
-            },
-        },
+      :version => { :major => 0,
+                    :minor => 0,
+                    :build => 1,
+      },
+      :battle => {
+        :calculation => {
+          :round_time => 30,
+          :retreat_probability => 0.6,
+          },
+      },
   
-        :domains => [
+      :domains => [
 
-          {
-            :id          => 0,
-            :symbolic_id => :character,
-          },
+        {
+          :id          => 0,
+          :symbolic_id => :character,
+        },
 
-          {
-            :id          => 1,
-            :symbolic_id => :settlement,
-          },
+        {
+          :id          => 1,
+          :symbolic_id => :settlement,
+        },
 
-          {
-            :id          => 2,
-            :symbolic_id => :alliance,
-          },
+        {
+          :id          => 2,
+          :symbolic_id => :alliance,
+        },
 
-        ],
+      ],
 
-        :character_creation => {
-          :start_resources => {
-            1 => 200,
+      :character_creation => {
+        :start_resources => {
+          1 => 200,
             0 => 200,
             2 => 100,
             3 => 0,
             
-          },
         },
-        :building_conversion => {
-          :cost_factor => 0.3,
-          :time_factor => 0.3,
-        },
-        :building_experience_formula => '2*LEVEL',
-        :alliance_max_members => 80,
-        :artifact_count => 4,
+      },
+      :building_conversion => {
+        :cost_factor => 0.3,
+        :time_factor => 0.3,
+      },
+      :building_experience_formula => '2*LEVEL',
+      :alliance_max_members => 80,
+      :artifact_count => 4,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -6734,8 +6734,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },              #   END OF queue_alliance_research
       ],                # END OF QUEUE TYPES
 
-        :character_ranks => {
-          
+      :character_ranks => {
+        
 # ## MUNDANE CHARACTER RANKS #################################################
       :skill_points_per_mundane_rank => 5,
   
@@ -7303,7 +7303,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
       ],             # END OF SACRED CHARACTER RANKS
 
-        },
+      },
   
     )
   end
