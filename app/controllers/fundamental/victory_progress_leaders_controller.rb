@@ -14,7 +14,7 @@ class Fundamental::VictoryProgressLeadersController < ApplicationController
       leaders.each do |leader|
         leader_hash = leader.attributes
         leader_hash[:pos] = nr
-        #leader_hash[:alliance_tag] = leader.alliance.tag
+        leader_hash[:alliance_tag] = leader.alliance.tag unless leader.alliance.nil?
         @fundamental_victory_progress_leaders << leader_hash
         nr += 1
       end
