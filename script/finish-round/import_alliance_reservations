@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'yaml'
+
+Rails.logger.info "Start initializing alliance reservations."
+puts "Start initializing alliance reservations."
+
+filename = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'rules', 'alliance', 'reservations.yml'))
+reservations = YAML.load_file(filename)
+
+reservations.each do |r|
+  reservation = Fundamental::AllianceReservation.find_or_initialize_by_tag(r[:tag])
+  reservation.name     = r[:name]
+  reservation.password = r[:password]
+  reservation.save
+end
+
+Rails.logger.info "Finished."
+puts "Finished."
