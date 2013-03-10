@@ -275,7 +275,7 @@ class Fundamental::CharactersController < ApplicationController
           #logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
           #render json: include_root(@fundamental_character.sanitized_hash(role), :character)
           logger.debug "RESULT: #{include_root(@fundamental_character.to_json(:role => role), :character)}"
-          render json: include_root(@fundamental_character.to_json(:role => role), :character)
+          render json:@fundamental_character, :role => role
         end
       end
     end
