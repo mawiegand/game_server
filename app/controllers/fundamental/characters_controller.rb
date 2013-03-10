@@ -272,10 +272,10 @@ class Fundamental::CharactersController < ApplicationController
           raise ForbiddenError.new "Unauthorized access. Incident logged." unless signed_in_to_backend? && (role == :staff || role == :admin || role == :developer)
         end
         format.json do
-          #logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
-          #render json: include_root(@fundamental_character.sanitized_hash(role), :character)
-          logger.debug "RESULT: #{include_root(@fundamental_character.to_json(:role => role), :character)}"
-          render json: include_root(@fundamental_character.to_json(:role => role), :character)
+          logger.debug "RESULT: #{include_root(@fundamental_character.sanitized_hash(role), :character)}"
+          render json: include_root(@fundamental_character.sanitized_hash(role), :character)
+          #logger.debug "RESULT: #{include_root(@fundamental_character.to_json(:role => role), :character)}"
+          #render json: include_root(@fundamental_character.to_json(:role => role), :character)
         end
       end
     end
