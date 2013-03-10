@@ -55,6 +55,8 @@ GameServer::Application.routes.draw do
         resources :alliances do
           resources :characters
           resources :alliance_shouts
+          resource  :alliance_reservation
+          resources :victory_progresses
         end
         
         resources :victory_progresses 
