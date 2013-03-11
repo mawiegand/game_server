@@ -38,15 +38,16 @@ class Ranking::CharacterRankingsController < ApplicationController
 
     @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
     
-    nr = (page - 1) * per_page + 1     
-    returned_ranking_entries = []                                              
-    @ranking_character_rankings.each do |ranking_entry|
+    nr = (page - 1) * per_page + 1
+    returned_ranking_entries = @ranking_character_rankings.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
-      returned_ranking_entries << ranking_entry_hash
+      ranking_entry_hash[:artifact_id]   = ranking_entry.character.artifact.id unless ranking_entry.character.artifact.nil?
+      ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name][:de_DE] unless ranking_entry.character.artifact.nil?
       nr += 1
+      ranking_entry_hash
     end
-                                                                   
+
     respond_to do |format|
       format.html    # index.html.erb
       format.json { render json: include_root(returned_ranking_entries, :character_ranking) }

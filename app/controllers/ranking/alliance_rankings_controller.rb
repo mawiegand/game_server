@@ -37,19 +37,19 @@ class Ranking::AllianceRankingsController < ApplicationController
 
     @ranking_alliance_rankings = Ranking::AllianceRanking.non_empty.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
     
-    nr = (page - 1) * per_page + 1     
-    returned_ranking_entries = []                                              
-    @ranking_alliance_rankings.each do |ranking_entry|
+    nr = (page - 1) * per_page + 1
+    returned_ranking_entries = @ranking_alliance_rankings.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:regions_per_member] = ranking_entry_hash['num_members'] == 0 ? 0 : (1.0 * (ranking_entry_hash['num_fortress']) / ranking_entry_hash['num_members']).round(1)
-      returned_ranking_entries << ranking_entry_hash
+      ranking_entry_hash[:artifacts] = ranking_entry.alliance.artifacts.count
       nr += 1
+      ranking_entry_hash
     end
                                                                    
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: returned_ranking_entries.as_json }
+      format.json { render json: include_root(returned_ranking_entries, :alliance_ranking) }
     end
   end
 end
