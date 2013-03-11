@@ -252,6 +252,7 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.num_members = self.members_count
         self.ranking.save
       end
+      true
     end
     
   

@@ -274,6 +274,7 @@ class Fundamental::Artifact < ActiveRecord::Base
           increment_victory_progress(alliance)
         end
       end
+      true
     end
 
     def propagate_changes_to_character
@@ -379,5 +380,6 @@ class Fundamental::Artifact < ActiveRecord::Base
           end
         end
       end
+      true
     end
 end
