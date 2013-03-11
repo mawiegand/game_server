@@ -646,6 +646,7 @@ class Fundamental::Character < ActiveRecord::Base
       self.artifact.alliance = self.alliance
       self.artifact.save
     end
+    true
   end
 
   # Function for propagating change of character name to redundant fields.
