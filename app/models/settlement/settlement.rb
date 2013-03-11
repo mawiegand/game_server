@@ -856,7 +856,7 @@ class Settlement::Settlement < ActiveRecord::Base
       self.training_queues.each do |queue|
         if queue.jobs.count != queue.jobs_count
           logger.warn(">>> TRAINING JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
-          Construction::Queue.reset_counters(queue.id, :jobs)
+          Training::Queue.reset_counters(queue.id, :jobs)
         end
       end
     end
