@@ -20,22 +20,21 @@ class Ranking::FortressRankingsController < ApplicationController
 
     @fortresses = @fortresses.paginate(:page => page, :per_page => per_page)
     
-    nr = (page - 1) * per_page + 1     
-    returned_ranking_entries = []                                              
-    @fortresses.each do |ranking_entry|
+    nr = (page - 1) * per_page + 1
+    returned_ranking_entries = @fortresses.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:character_id] = ranking_entry.owner_id
       ranking_entry_hash[:character_name] = ranking_entry.owner.name
       ranking_entry_hash[:region_name] = ranking_entry.region.name unless ranking_entry.region.nil?
       ranking_entry_hash[:resource_production_score] = (ranking_entry.resource_production_score / (ranking_entry.tax_rate * 100)).round
-      returned_ranking_entries << ranking_entry_hash
       nr += 1
+      ranking_entry_hash
     end
                                                                     
     respond_to do |format|
       format.html    # index.html.erb
-      format.json { render json: returned_ranking_entries.as_json }
+      format.json { render json: include_root(returned_ranking_entries, :fortress_ranking) }
     end
   end
 end
