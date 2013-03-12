@@ -74,7 +74,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
 
       number_armies = u.armies.count
 
-      bought_platinum = u.premium_expiration != nil #Doubt this is right
+      bought_platinum = u.bought_platinum?
 
       trades_sent = Backend::TradeLogEntry.select("id").where(:sender_id => u.id).count
       trades_recipient = Backend::TradeLogEntry.select("id").where(:recipient_id => u.id).count
@@ -102,11 +102,20 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
         error.puts("Char " + u.id.to_s + " inbox problem!\n")
       end
 
-      arr_credit_buys = Shop::Transaction.where(:character_id => u.id).
+      arr_credit_buys = Shop::Transaction.where("character_id = ? and state > 4",u.id).
       select("credit_amount_booked").to_a.map {|a| a.credit_amount_booked}
-      bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
-      bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
+      
+      # Credit Resource = number of credits needed to buy a resource bonus (actually it is 5).
+      times_bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
 
+      times_bought_platinum = 0
+      @platinum_buys = Shop::Transaction.where("character_id = ? and state > 4 and offer like '%Platinum%'",u.id).
+      select("count(character_id) as res").group("character_id").first
+      if @platinum_buys != nil
+        times_bought_platinum = @platinum_buys.res
+      end
+
+      #times_bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
       
       transactions_count = Shop::Transaction.closed.where(:character_id => u.id ).count
 
@@ -134,7 +143,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
         u.login_count,u.received_likes_count,u.send_likes_count,u.received_dislikes_count,u.send_dislikes_count,messages_sent,
         messages_received,u.playtime, @rank_char.overall_score, 
         @rank_char.resource_score,@rank_char.power_score, @rank_char.kills,
-        @rank_char.victory_ratio, tutorial_completed.to_s,bought_platinum.to_s,bought_platinum,bought_resources,"n/d",credit_bought,u.credits_spent_total,
+        @rank_char.victory_ratio, tutorial_completed.to_s,bought_platinum.to_s,times_bought_platinum,times_bought_resources,"n/d",credit_bought,u.credits_spent_total,
         current_wallet, u.gross, transactions_count, u.max_conversion_state,s_referer_list, created_at]
       end
 
