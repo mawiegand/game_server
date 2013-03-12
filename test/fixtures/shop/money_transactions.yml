@@ -47,7 +47,7 @@ one:
   partner_user_id: MyString
 
 two:
-  uid: 1
+  uid: 2
   tstamp: 1
   updatetstamp: MyString
   user_id: 1

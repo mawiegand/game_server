@@ -9,7 +9,38 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
   
   after_destroy  :release_carts
 
-  
+  def speedup
+    unless self.returning?
+      unless self.send_hurried?
+        self.send_hurried = true                                                         # sending is hurried
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= 30.minutes
+        self.target_reached_at -= 30.minutes                                             # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      else
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= (self.target_reached_at - Time.now)
+        self.target_reached_at = Time.now                                                # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      end
+    else
+      unless self.return_hurried?
+        self.return_hurried = true                                                       # sending is hurried
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= 30.minutes                                                   # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      else
+        self.event.destroy                                                               # destroy event
+        self.returned_at = Time.now                                                      # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      end
+    end
+  end
+ 
   def create_event
     #create entry for event table
     new_event = self.build_event(

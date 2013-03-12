@@ -118,7 +118,7 @@ class Fundamental::CharactersController < ApplicationController
         character_id:       character.id,
         remote_ip:          request.remote_ip,
         sign_up:            true,
-      });
+      })
       
       character.last_login_at = DateTime.now
       character.increment(:login_count)
@@ -228,7 +228,7 @@ class Fundamental::CharactersController < ApplicationController
         request_url:        request_url,
         character_id:       current_character.id,
         remote_ip:          request.remote_ip,
-      });
+      })
       
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
@@ -248,7 +248,7 @@ class Fundamental::CharactersController < ApplicationController
         request_url:        request_url,
         character_id:       current_character.id,
         remote_ip:          request.remote_ip,
-      });   
+      })
       
       redirect_to fundamental_character_path(current_character_id)
     end
