@@ -17,7 +17,7 @@ filename = "geral_output.csv"
 error = File.open("error_log.txt", 'w')
 csv_column_separator = ";"
 
-print("Starting general output . . .");
+print("Starting geral output . . .");
 
 CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
   cols = ["id", "num_victories", "num_defeats", "level", "num_armies","b_has_alliance",
@@ -107,7 +107,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
       bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
       bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
 
-      credit_bought = Shop::Transaction.closed.where(:character_id => u.id ).sum("credit_amount_before")
+      
       transactions_count = Shop::Transaction.closed.where(:character_id => u.id ).count
 
       referer_list = Backend::SignInLogEntry.select("referer").where(:character_id => u.id).map{|a| a.referer}.uniq
@@ -119,6 +119,8 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
       if @latest_transaction != nil
         current_wallet = @latest_transaction.credit_amount_after
       end
+      
+      credit_bought = Shop::Transaction.closed.where(:character_id => u.id ).sum("credit_amount_booked") + current_wallet
 
       created_at= u.created_at;
       if created_at == nil
