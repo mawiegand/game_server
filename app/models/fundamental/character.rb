@@ -252,6 +252,10 @@ class Fundamental::Character < ActiveRecord::Base
   def platinum_account?
     !premium_expiration.nil? && premium_expiration > DateTime.now
   end
+
+  def bought_platinum?
+    !self.shop_transactions.where("state > 4 and offer like '%Platinum%'").empty?
+  end
   
   def settlement_point_available?
     (settlement_points_used || 0) < (settlement_points_total || 0)
