@@ -149,6 +149,7 @@ module IdentityProvider
         localized_description: description,
       }
       winner_identifiers.each do |identifier|
+        logger.debug "--->#{'/identities/' + identifier + '/histories'}"
         post('/identities/' + identifier + '/histories', {:resource_history => resource_history})
       end
     end

@@ -25,6 +25,11 @@
   <%= @fundamental_victory_progress.fulfilled_since %>
 </p>
 
+<p>
+  <b>Victory Gained:</b>
+  <%= @fundamental_victory_progress.victory_gained %>
+</p>
+
 
 <%= link_to 'Edit', edit_fundamental_victory_progress_path(@fundamental_victory_progress) %> |
 <%= link_to 'Back', fundamental_victory_progresses_path %>

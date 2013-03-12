@@ -17,9 +17,10 @@ class Fundamental::RoundInfo < ActiveRecord::Base
     ((Time.now - self.started_at)/(3600*24)).to_i
   end
 
-  def set_victory_gained(alliance, victory_time)
-    self.winner_alliance = alliance
+  def set_victory_gained(progress, victory_time)
+    self.winner_alliance = progress.alliance
     self.victory_gained_at = victory_time
+    self.victory_type = progress.type_id
     self.save
 
     # transfer history events for all alliance members to identity provider
@@ -38,7 +39,7 @@ class Fundamental::RoundInfo < ActiveRecord::Base
       :de_DE => "Die Runde #{self.number}, '#{self.name}', gewonnen.",
       :en_US => "Won round #{self.number}, '#{self.name}'.",
     }
-    winner_identifiers = alliance.members.map { |member| member.member.identifier }
-    identity_provider_access.post_alliance_history_event(winner_identifiers, event, description)
+    winner_identifiers = progress.alliance.members.map { |member| member.identifier }
+    #identity_provider_access.post_alliance_history_event(winner_identifiers, event, description)
   end
 end

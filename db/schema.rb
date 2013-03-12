@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228180106) do
+ActiveRecord::Schema.define(:version => 20130312104113) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+    t.boolean  "send_hurried"
+    t.boolean  "return_hurried"
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -1636,6 +1638,15 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.integer  "local_event_id"
   end
 
+  create_table "fundamental_alliance_reservations", :force => true do |t|
+    t.integer  "alliance_id"
+    t.string   "tag"
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fundamental_alliance_shouts", :force => true do |t|
     t.integer  "character_id"
     t.integer  "alliance_id"
@@ -1847,6 +1858,7 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
     t.integer  "number",             :default => 0, :null => false
+    t.integer  "victory_type"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -1863,6 +1875,7 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.integer  "fulfillment_count",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "victory_gained"
   end
 
   create_table "like_system_dislikes", :force => true do |t|
@@ -2062,6 +2075,7 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.boolean  "npc",                             :default => false, :null => false
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
+    t.datetime "attack_protection_ends_at"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2539,6 +2553,8 @@ ActiveRecord::Schema.define(:version => 20130228180106) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true
 
   create_table "shop_offers", :force => true do |t|
     t.string   "title"

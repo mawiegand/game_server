@@ -9,7 +9,8 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   before_save :update_first_fulfilled_at
 
   after_save  :check_for_victory
-  
+  #after_find  :check_for_victory
+
   VICTORY_TYPE_DOMINATION  = 0
   VICTORY_TYPE_ARTIFACTS   = 1
   VICTORY_TYPE_POPULARITY  = 2
@@ -56,25 +57,26 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
     end      
   end
 
-  private
+  protected
+
+    def set_victory_gained(victory_time)
+      logger.debug "Siegbedingung erfüllt!"
+      self.victory_gained = true
+      #self.save
+      Fundamental::RoundInfo.the_round_info.set_victory_gained(self, victory_time)
+    end
   
     # the round is won if a victory condition is fulfilled for a specific amount of days
     def check_for_victory
       return true if self.fulfilled_since.nil?
       return true if self.victory_type[:condition].nil? || self.victory_type[:condition][:duration].nil?
 
-      round_info = Fundamental::RoundInfo.the_round_info
-      return true if round_info.victory_gained?
+      return true if Fundamental::RoundInfo.the_round_info.victory_gained?
 
       victory_time = self.first_fulfilled_at + self.victory_type[:condition][:duration].days
 
-      if victory_time < Time.now
-        logger.debug "Siegbedingung erfüllt!"
-        round_info.set_victory_gained(alliance, victory_time)
-      else
-        logger.debug "Siegbedingung nicht erfüllt!"
-      end
-
+      # set victory gained
+      self.set_victory_gained(victory_time) if victory_time < Time.now
       true
     end
   
