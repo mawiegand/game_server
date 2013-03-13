@@ -28,10 +28,11 @@ group :production do
 	gem 'awe_native_extensions', '>= 0.0.16', :git => "git@github.com:wackadoo/awe_native_extensions.git"
 end
 
-group :ticker_development do
-  gem 'pg'
-	gem 'awe_native_extensions', '>= 0.0.16', :git => "git@github.com:wackadoo/awe_native_extensions.git"
-end
+# who is using this?
+#group :ticker_development do
+#  gem 'pg'
+#	gem 'awe_native_extensions', '>= 0.0.16', :git => "git@github.com:wackadoo/awe_native_extensions.git"
+#end
 
 group :development do
   gem 'rails-erd'
@@ -55,18 +56,7 @@ gem 'jquery-rails'
 # make api requests within rails
 gem 'httparty'
 
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
 gem 'ci_reporter'
-
 
 group :test do
   # Pretty printed test output
