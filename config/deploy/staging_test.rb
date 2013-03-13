@@ -7,3 +7,5 @@ set :port,       22
 set :rails_env,  'staging_test'
 
 set :branch,     'staging-test'
+
+set :deploy_to,  '/var/www/game_server_staging_test'

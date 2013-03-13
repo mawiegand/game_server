@@ -35,7 +35,7 @@ defaults: &defaults
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
   
-  cookie_name: 'gs_remember_token'  
+  cookie_name: 'gs_remember_token'
   
   status_email_recipient: 'cron@5dlab.com'
   
@@ -52,6 +52,7 @@ defaults: &defaults
 
   battle_xp_winner_bonus_factor:         2.0
 
+
 development:
   <<: *defaults
 
@@ -60,7 +61,6 @@ development:
   base_time_factor: 1
   
   identity_provider_base_url: 'https://localhost/identity_provider'
-  payment_provider_base_url:  'https://localhost/payment_provider'
 
   settlement_recalc_probability:    0.5
   character_recalc_probability:     0.5
@@ -68,12 +68,14 @@ development:
   
   status_email_recipient: 'p@trick-fox.de'
 
+
 test:
   <<: *defaults
 
   settlement_recalc_probability:    0
   character_recalc_probability:     0
   resource_pool_recalc_probability: 0
+
 
 staging:
   <<: *defaults
@@ -90,6 +92,7 @@ staging:
   chat_host: jabber.wack-a-doo.com
 
   battle_xp_winner_bonus_factor:         3.0
+
 
 production:
   <<: *defaults
@@ -108,6 +111,9 @@ production:
   chat_host: jabber2.wack-a-doo.com
 
   
-  
-  
-  
+staging_test:
+  <<: *staging
+
+  cookie_name: 'gs_staging_test_remember_token'
+  base_url: 'https://test2.wack-a-doo.de'
+  identity_provider_base_url: 'https://test2.wack-a-doo.de/identity_provider_staging_test'

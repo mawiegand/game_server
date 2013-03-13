@@ -1,0 +1,14 @@
+---
+pid: /var/run/game_server_staging_test.pid
+timeout: 30
+wait: 30
+log: log/thin/game_server_staging_test.log
+max_conns: 1024
+require: []
+
+environment: staging_test
+max_persistent_conns: 512
+servers: 2
+daemonize: true
+chdir: /var/www/game_server_staging_test/current
+socket: /var/run/game_server_staging_test.sock
