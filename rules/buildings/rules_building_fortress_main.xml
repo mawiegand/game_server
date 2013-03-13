@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_fortress_fortification" group="military" category="building_category_fortress_main" buyable="true" destructable="false" demolishable="false" experienceFactor="6">
+<Building id="building_fortress_fortification" group="military" category="building_category_fortress_main" buyable="true" destructable="false" demolishable="false" experienceFactor="8">
   <Name lang="de_DE">Festungsanlagen</Name>
   <Name lang="en_US">Fortress</Name>
   <Description lang="de_DE">
     <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
-    <p>In der Festung werden Krieger ausgebildet, Steuern eingetrieben und sich hinter Verteidigungsanlagen verschanzt.</p>
   </Description>
   <Description lang="en_US">
-    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence. Inside the fortress they train warriors, collect taxes and use avoidance tactics by hiding behind their defensive fortifications.</p> 
+    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
   </Description>
     <Flavour lang="en_US">
     <p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen.</p>
+    <p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>
   </Flavour>  
-  <Population>FLOOR(99*POW(2.71828,0.11*LEVEL))</Population>
-  <Cost id="resource_stone" round="true">(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)</Cost>
-  <Cost id="resource_wood" round="true">(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)</Cost>
-  <Cost id="resource_fur" round="true">(MIN(LEVEL+1,3)-MIN(LEVEL,3))*100+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)*0.5+0.5)</Cost>
-  <Cost id="resource_cash" round="true">MAX(LEVEL-14,0)*2</Cost> 
-  <ProductionTime shortenable="false">58400+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100+1)*25000</ProductionTime>     
+  <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3)</Population>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)</Cost>
+  <ProductionTime shortenable="false">LESS(LEVEL,11)*(GREATER(LEVEL,1)*(58400+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
     <GarrisonSizeBonus>1000</GarrisonSizeBonus>
     <ArmySizeBonus>1000</ArmySizeBonus>
-    <CommandPoints>1</CommandPoints><!-- one for level 1, +1 for level 5, +1 for level 10-->
+    <CommandPoints>LESS(LEVEL,11)*(GREATER(LEVEL,1)*1+GREATER(LEVEL,9)*1)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
     <DefenseBonus>0.5*LEVEL</DefenseBonus>

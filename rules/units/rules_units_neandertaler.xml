@@ -19,7 +19,7 @@
   </Flavour>
   <Cost id="resource_stone" round="true">40</Cost>  
   <Cost id="resource_wood" round="true">20</Cost>    
-  <Cost id="resource_fur" round="true">12</Cost>    
+  <Cost id="resource_fur" round="true">24</Cost>    
   <ProductionTime shortenable="true">1200</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>

@@ -9,202 +9,217 @@
   </MundaneRank>
   <!-- 1 -->
   <MundaneRank exp="2000" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Steinzeitrattenkuschler</Name>
+    <Name lang="de_DE">Springschwanzsucher</Name>
     <Name lang="en_US">Newbie</Name>
   </MundaneRank>
   <!-- 2 -->
   <MundaneRank exp="5000" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Steinzeitrattenkuschler</Name>
+    <Name lang="de_DE">Altameisenanbeter</Name>
     <Name lang="en_US">Feeble Leader</Name>
   </MundaneRank>
   <!-- 3 -->
   <MundaneRank exp="9500" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Steinzeitrattenkuschler</Name>
+    <Name lang="de_DE">Ammonitenanlocker</Name>
     <Name lang="en_US">Junior Leader</Name>
   </MundaneRank>
   <!-- 4 -->
-  <MundaneRank exp="16200" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Steinzeitrattenkuschler</Name>
+  <MundaneRank exp="16250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Feuerunkensammler</Name>
     <Name lang="en_US">Leader</Name>
   </MundaneRank>
   <!-- 5 -->
-  <MundaneRank exp="25750" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Mähnenwolfschmuser</Name>
+  <MundaneRank exp="25500" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Steinzeitrattenkuschler</Name>
     <Name lang="en_US">Known Leader</Name>
   </MundaneRank>
   <!-- 6 -->
-  <MundaneRank exp="38250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Mähnenwolfschmuser</Name>
+  <MundaneRank exp="37500" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Steinzeitrattenkuschler</Name>
     <Name lang="en_US">Great Leader</Name>
   </MundaneRank>
   <!-- 7 -->
-  <MundaneRank exp="54250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Mähnenwolfschmuser</Name>
+  <MundaneRank exp="52750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Hülsenwirblerverwirbler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 8 -->
-  <MundaneRank exp="74250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Mähnenwolfschmuser</Name>
+  <MundaneRank exp="71500" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Hülsenwirblerverwirbler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 9 -->
-  <MundaneRank exp="98750" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Urschweinbesänftiger</Name>
+  <MundaneRank exp="94250" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Erdferkelentdecker</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 10 -->
-  <MundaneRank exp="128250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Urschweinbesänftiger</Name>
+  <MundaneRank exp="121250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Erdferkelentdecker</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 11 -->
-  <MundaneRank exp="163250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Urschweinbesänftiger</Name>
+  <MundaneRank exp="153000" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Dodoherdenhüter</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 12 -->
-  <MundaneRank exp="204250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Urschweinbesänftiger</Name>
+  <MundaneRank exp="189750" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Dodoherdenhüter</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 13 -->
-  <MundaneRank exp="251750" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Wildpferdflüsterer</Name>
+  <MundaneRank exp="232000" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Säbelzahnkatzenbesänftiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 14 -->
-  <MundaneRank exp="306000" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Wildpferdflüsterer</Name>
+  <MundaneRank exp="280000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Säbelzahnkatzenbesänftiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 15 -->
-  <MundaneRank exp="367500" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Wildpferdflüsterer</Name>
+  <MundaneRank exp="334250" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Vielfraßversteher</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 16 -->
-  <MundaneRank exp="436750" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Wildpferdflüsterer</Name>
+  <MundaneRank exp="395000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Vielfraßversteher</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 17 -->
-  <MundaneRank exp="514000" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Wollnashornknuddler</Name>
+  <MundaneRank exp="462500" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Rothundzähmer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 18 -->
-  <MundaneRank exp="599500" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Wollnashornknuddler</Name>
+  <MundaneRank exp="537000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Rothundzähmer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 19 -->
-  <MundaneRank exp="693500" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Wollnashornknuddler</Name>
+  <MundaneRank exp="618750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Mähnenwolfschmuser</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 20 -->
-  <MundaneRank exp="796250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Wollnashornknuddler</Name>
+  <MundaneRank exp="708000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Mähnenwolfschmuser</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 21 -->
-  <MundaneRank exp="907250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Steppenwisentliebkoser</Name>
+  <MundaneRank exp="804750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Urschweinkrauler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 22 -->
-  <MundaneRank exp="1028250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Steppenwisentliebkoser</Name>
+  <MundaneRank exp="909250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Urschweinkrauler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 23 -->
-  <MundaneRank exp="1157750" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Steppenwisentliebkoser</Name>
+  <MundaneRank exp="1021500" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Auerochsenstreichler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 24 -->
-  <MundaneRank exp="1296250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Steppenwisentliebkoser</Name>
+  <MundaneRank exp="1141500" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Auerochsenstreichler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 25 -->
-  <MundaneRank exp="1443500" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Riesenhirschtätschler</Name>
+  <MundaneRank exp="1269250" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Wildpferdflüsterer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 26 -->
-  <MundaneRank exp="1599500" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Riesenhirschtätschler</Name>
+  <MundaneRank exp="1404750" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Wildpferdflüsterer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 27 -->
-  <MundaneRank exp="1764000" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Riesenhirschtätschler</Name>
+  <MundaneRank exp="1547750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Höhlenlöwenschwichtiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 28 -->
-  <MundaneRank exp="1936750" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Riesenhirschtätschler</Name>
+  <MundaneRank exp="1689250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Höhlenlöwenschwichtiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 29 -->
-  <MundaneRank exp="2117250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Säbelzahntigerbändiger</Name>
+  <MundaneRank exp="1856000" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Wollnashornknuddler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 30 -->
-  <MundaneRank exp="2305250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Säbelzahntigerbändiger</Name>
+  <MundaneRank exp="2020750" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Wollnashornknuddler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 31 -->
-  <MundaneRank exp="2500250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Säbelzahntigerbändiger</Name>
+  <MundaneRank exp="2192250" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Steppenwisentliebkoser</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 32 -->
-  <MundaneRank exp="2701750" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Säbelzahntigerbändiger</Name>
+  <MundaneRank exp="2370000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Steppenwisentliebkoser</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 33 -->
-  <MundaneRank exp="2909250" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Mammuttreiber</Name>
+  <MundaneRank exp="2553750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Riesenhirschtätschler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 34 -->
-  <MundaneRank exp="3122250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Mammuttreiber</Name>
+  <MundaneRank exp="2743250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Riesenhirschtätschler</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 35 -->
-  <MundaneRank exp="3340000" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Mammuttreiber</Name>
+  <MundaneRank exp="2938000" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Säbelzahntigerbändiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 36 -->
-  <MundaneRank exp="3562000" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Mammuttreiber</Name>
+  <MundaneRank exp="3137500" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Säbelzahntigerbändiger</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 37 -->
-  <MundaneRank exp="3787500" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Dinosaurierdressierer</Name>
+  <MundaneRank exp="3341250" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Brontotherienbeschützer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 38 -->
-  <MundaneRank exp="4016000" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Unter-Dinosaurierdressierer</Name>
+  <MundaneRank exp="358750" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Brontotherienbeschützer</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 39 -->
-  <MundaneRank exp="4246750" settlementPoints="0" minimumSacredRank="0">
-    <Name lang="de_DE">Unter-Ober-Dinosaurierdressierer</Name>
+  <MundaneRank exp="379500" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Wollmammuttreiber</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
   <!-- 40 -->
-  <MundaneRank exp="4479250" settlementPoints="1" minimumSacredRank="0">
-    <Name lang="de_DE">Ober-Dinosaurierdressierer</Name>
+  <MundaneRank exp="3973000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Wollmammuttreiber</Name>
+    <Name lang="en_US">Fantastic Leader</Name>
+  </MundaneRank>
+  <!-- 41 -->
+  <MundaneRank exp="4188750" settlementPoints="0" minimumSacredRank="0">
+    <Name lang="de_DE">Nachwuchs-Allosaurusabrichter</Name>
+    <Name lang="en_US">Fantastic Leader</Name>
+  </MundaneRank>
+  <!-- 42 -->
+  <MundaneRank exp="4406250" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Allosaurusabrichter</Name>
+    <Name lang="en_US">Fantastic Leader</Name>
+  </MundaneRank>
+  <!-- 43 -->
+  <MundaneRank exp="4625000" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Tyrannosaurustyrann</Name>
     <Name lang="en_US">Fantastic Leader</Name>
   </MundaneRank>
 </MundaneRanks>

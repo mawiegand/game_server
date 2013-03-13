@@ -12,20 +12,20 @@
       <p>In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, the tree-hugger whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too … </p>
     </Description>
     <Flavour lang="en_US">
-      <p>Why bother cutting a branch from a tree and making a club out of it when you can wield the whole tree?</p>
+      <p>Why using a club, when you can wield a whole tree?</p>
     </Flavour>
     <Flavour lang="de_DE">
-      <p>Wozu einen Ast vom Baum schlagen und zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann?</p>
+      <p>Wozu eine Keule nehmen, wenn man einfach einen ganzen Baum schwingen kann?</p>
     </Flavour>
     <Cost id="resource_stone" round="true">140</Cost>  
     <Cost id="resource_wood" round="true">180</Cost>    
-    <Cost id="resource_fur" round="true">240</Cost>    
+    <Cost id="resource_fur" round="true">480</Cost>    
     <ProductionTime shortenable="true">1200</ProductionTime>  
     <Velocity>1</Velocity>
     <ActionPoints>4</ActionPoints>
     <Initiative>16</Initiative>
     <Attack>7</Attack>
-    <CriticalDamage chance="0.02">2</CriticalDamage>
+    <CriticalDamage chance="0.02">3</CriticalDamage>
     <Armor>9</Armor>
     <Overrunnable>true</Overrunnable>
     <Hitpoints>135</Hitpoints>

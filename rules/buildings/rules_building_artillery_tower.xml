@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="4.5">  
+<Building id="building_artillery_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">  
   <Name lang="de_DE">Turm der Ballistik</Name>
   <Name lang="en_US">Artillery Tower</Name>
   <Description lang="de_DE">
-    <p>Von außen betrachtet ist der Turm der Ballistik eine Augenweide. Von innen betrachtet ist der Turm ein Trümmerfeld. Kleine Kieselsteine liegen auf dem ganzen Boden verteilt, Bratspieße, Speere und Pfeile haben sich in sämtliche Stützpfeiler gebohrt und an den Wänden spuren hinterlassen.</p>
     <p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen.</p>
-    <p>Verglichen mit der Ordnung einer Fernkämpfer-Kampfreihe auf dem Schlachtfeld ist das herrschende Chaos überraschend. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>
+    <p>Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>
 	</Description>
   <Description lang="en_US">
-    <p>From the outside, the artillery tower is a feast for the eyes. But inside, it’s a field of rubble. Gravel and stones litter the ground, roasting spits, spears and arrows are lodged in all the upright beams, and the walls are scarred from all the target practice.</p>
     <p>Hardly surprising that helmets are compulsory. Trainers and trainees have bound thick animal skins around their heads so they can at least survive being hit by small stones or gravel.</p>
-    <p>When compared to the order in the ranged combatant ranks in battle, the chaos here is surprising. On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>
+    <p>On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>This is where anything that can be thrown or shot goes flying through the air. You’d better duck! Ranged combatant training is in full swing!</p>
+    <p>You’d better duck! Ranged combatant training is in full swing!</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Hier fliegt alles, was man werfen oder abschießen kann! Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>
+    <p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>
   </Flavour>
-  <Population>2.5*POW(LEVEL,2)-2.5*LEVEL+5</Population>
+  <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))</Population>
   <RequirementGroup>
     <Requirement id="building_fortress_fortification" min_level="5" />  
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)</Cost>    
-  <Cost id="resource_fur" round="true">(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*0.5*1.5*2.5+0.5)</Cost>
-  <Cost id="resource_cash" round="true">MAX(LEVEL-14,0)</Cost> 
-  <ProductionTime shortenable="true">43200+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100.0+1)*9000</ProductionTime>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))</Cost>
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-829)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5-3)))</Cost>
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))</Cost>
+ <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)</Cost>
+  <ProductionTime shortenable="false">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*43200+GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_artillery" />
-    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8</SpeedupQueue>
   </Abilities>  
 </Building>

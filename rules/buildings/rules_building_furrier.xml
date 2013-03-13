@@ -18,8 +18,7 @@
     <Flavour lang="de_DE">
     <p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>
   </Flavour>
-  <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
-  <RequirementGroup>
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population> <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="8" />
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
@@ -29,14 +28,14 @@
   </RequirementGroup>
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)</Cost>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)</Cost>  
-  <Cost id="resource_fur" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5)</Cost>   
+  <Cost id="resource_fur" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)</Cost>   
   <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
 <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)</ProductionTime>             
-  <Production id="resource_fur">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5+0.5)</Production>
+  <Production id="resource_fur">LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5)</Production> 
   <ProductionBonus id="resource_fur">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>
-  <ConversionOption building="building_furrier_2" level="LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)"/>  
+  <ConversionOption building="building_furrier_2" level="GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)"/>  
 </Building>
 
 

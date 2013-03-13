@@ -13,32 +13,32 @@
     <p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>This is where decisions are made! Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>
+    <p>Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Hier werden die Entscheidungen getroffen! Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>  
+    <p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>  
 	</Flavour>
   <Population>1+MIN(MAX(LEVEL-3,0),1)+MIN(MAX(LEVEL-6,0),1)</Population> 
   <RequirementGroup>
     <Requirement id="building_chief_cottage" max_level="0" /> 
     <Requirement id="building_haunt" max_level="0" />   
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-  <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-  <Cost id="resource_fur" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*5+EQUAL(LEVEL,3)*12+EQUAL(LEVEL,4)*50+EQUAL(LEVEL,5)*400+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)</Cost>
-  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*20700+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))</ProductionTime>
+  <Cost id="resource_stone" round="true">EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
+  <Cost id="resource_wood" round="true">EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
+  <Cost id="resource_fur" round="true">EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
+  <ProductionTime shortenable="false">EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))</ProductionTime>
   <Capacity id="resource_stone">1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)</Capacity>
   <Capacity id="resource_wood">1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)</Capacity>
-  <Capacity id="resource_fur">800+50*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)</Capacity>
+  <Capacity id="resource_fur">1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)</Capacity>
   <Capacity id="resource_cash">10000</Capacity>
   <Production id="resource_stone">2</Production>
   <Production id="resource_wood">2</Production>
-  <Production id="resource_fur">1</Production>
+  <Production id="resource_fur">2</Production>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="2" />
     <GarrisonSizeBonus>1000</GarrisonSizeBonus>
     <ArmySizeBonus>1000</ArmySizeBonus>
-    <CommandPoints>MAX(LEVEL+1,2)-MAX(LEVEL,2)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)</CommandPoints>
+    <CommandPoints>GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,11)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
     <UnlockBuildingSlots>MIN(LEVEL,10)*4-1</UnlockBuildingSlots>

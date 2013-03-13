@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="thrower_2" category="unitcategory_artillery">
-      <Name>Accurate Gravel Stone Thrower</Name>
-      <Name lang="de_DE"> Zielsicherer Kieselsteinwerfer</Name>
+      <Name>Targetthrower</Name>
+      <Name lang="de_DE"> Zielwerfer</Name>
       <Description lang="de_DE">
         <p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p>
         <p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>
@@ -15,11 +15,11 @@
         <p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Einen Stein auf fünfzig Meter Entfernung genau auf ein Ziel zu werfen, ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg.</p>
+        <p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>
       </Flavour>
       <Cost id="resource_stone" round="true">45</Cost>  
       <Cost id="resource_wood" round="true">45</Cost>
-      <Cost id="resource_fur" round="true">75</Cost>    
+      <Cost id="resource_fur" round="true">150</Cost>    
       <ProductionTime shortenable="true">900</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
@@ -35,8 +35,8 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
       <Effectiveness category="unitcategory_special">1</Effectiveness>   
       <RequirementGroup>
-        <Requirement id="building_artillery_tower" min_level="7" />
-        <Requirement id="building_fortress_fortification" min_level="6" />
+        <Requirement id="building_artillery_tower" min_level="5" />
+        <Requirement id="building_fortress_fortification" min_level="4" />
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_firing_range" min_level="10" />

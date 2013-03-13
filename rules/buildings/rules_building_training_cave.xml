@@ -18,15 +18,16 @@
     <p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>
     <p>Rumors have it that there is a far reaching cave network, in which mosters dwell beneath the training cave. These monsters are abused for training purposes by the demigod. But no one is brave enough to check for himself.</p>
   </Flavour>
+<Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5)</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="6" />    
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)</Cost>
-  <Cost id="resource_fur" round="true">FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)</Cost>
+  <Cost id="resource_fur" round="true">FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*3+0.5)</Cost>
   <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost> 
-  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)</ProductionTime>             
+  <ProductionTime shortenable="true">FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1600+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)</ProductionTime>             
   <ExperienceProduction>CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)</ExperienceProduction>
   <Abilities> <!-- just for grouping -->
   </Abilities>

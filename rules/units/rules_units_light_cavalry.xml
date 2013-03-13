@@ -2,23 +2,23 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="light_cavalry" category="unitcategory_cavalry">
-      <Name>Two-handed Ostrich Rider</Name>
-      <Name lang="de_DE">Zweihändiger Straußenreiter</Name>
+      <Name>Ostrich Rider</Name>
+      <Name lang="de_DE">Straußenreiter</Name>
       <Description lang="de_DE">
-        <p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug, um an der Infanterie vorbeizukommen, bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn dies meist wenig Unterschied macht.</p> 
+        <p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p> 
       </Description>
       <Description lang="en_US">
-        <p>Ostriches don’t just taste delicious, they’re also really good, speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off, although that doesn’t seem to make much difference.</p>
+        <p>Ostriches don’t just taste delicious, they’re also really good, speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>
       </Description>
       <Flavour lang="en_US">
         <p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>
+        <p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>
       </Flavour>
       <Cost id="resource_stone" round="true">30</Cost>  
       <Cost id="resource_wood" round="true">25</Cost>    
-      <Cost id="resource_fur" round="true">40</Cost>    
+      <Cost id="resource_fur" round="true">80</Cost>    
       <ProductionTime shortenable="true">600</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>

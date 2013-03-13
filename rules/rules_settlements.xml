@@ -13,16 +13,16 @@
     <Name lang="en_US">Fortress</Name>
     <Description lang="de_DE">Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.</Description>
     <Description lang="en_US">English Description.</Description>
-    <BuildingSlot number="0" max-level="15" building="building_fortress_fortification" level="1">
+    <BuildingSlot number="0" max-level="10" building="building_fortress_fortification" level="1">
       <BuildingOption category="building_category_fortress_main" />
     </BuildingSlot>
-    <BuildingSlot number="1" max-level="15">
+    <BuildingSlot number="1" max-level="10">
       <BuildingOption category="building_category_fortress_tower" />
     </BuildingSlot>
-    <BuildingSlot number="2" max-level="15">
+    <BuildingSlot number="2" max-level="10">
       <BuildingOption category="building_category_fortress_tower" />
     </BuildingSlot>
-    <BuildingSlot number="3" max-level="15">
+    <BuildingSlot number="3" max-level="10">
       <BuildingOption category="building_category_fortress_special" />
     </BuildingSlot>
   </Settlement>
@@ -203,7 +203,7 @@
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
-    <BuildingSlot number="1" max-level="20" building="building_haunt" level="1">
+    <BuildingSlot number="1" max-level="10" building="building_haunt" level="1">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>

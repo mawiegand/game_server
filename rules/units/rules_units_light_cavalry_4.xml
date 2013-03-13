@@ -19,13 +19,13 @@
       </Flavour>
       <Cost id="resource_stone" round="true">160</Cost>  
       <Cost id="resource_wood" round="true">140</Cost>    
-      <Cost id="resource_fur" round="true">200</Cost>    
+      <Cost id="resource_fur" round="true">400</Cost>    
       <ProductionTime shortenable="true">1200</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>
       <Attack>10</Attack>
-      <CriticalDamage chance="0.02">1</CriticalDamage>
+      <CriticalDamage chance="0.02">2</CriticalDamage>
       <Armor>6</Armor>
       <Overrunnable>true</Overrunnable>
       <Hitpoints>125</Hitpoints>

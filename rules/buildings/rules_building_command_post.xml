@@ -17,20 +17,22 @@
     <Flavour lang="de_DE">
     <p>Die Koordination von Armeen ist die hohe Kunst des Krieges. Selbst wenn alle Armeen nur in eine Richtung mit dem Auftrag „immer feste druff“ geschickt werden.</p>  
 	</Flavour> 
-  <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>
-    <Requirement id="building_copper_smelter" min_level="5" />
+    <Requirement id="building_copper_smelter" min_level="6" />
     <Requirement id="building_command_post" max_level="0" />
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</Cost>
-  <ProductionTime shortenable="false">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>  
+    <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
+  <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
+    <Cost id="resource_fur" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5</Cost>
+  <Cost id="resource_cash" round="true">EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2</Cost> 
+  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570</ProductionTime>  
   <Abilities> <!-- just for grouping -->
-    <CommandPoints>1+FLOOR(LEVEL/10.0)</CommandPoints>
-    <SpeedupQueue queue="queue_infantry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_artillery" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
+    <CommandPoints>1+GREATER(LEVEL,9)+EQUAL(LEVEL,20)</CommandPoints>
+    <SpeedupQueue queue="queue_infantry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_artillery" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_cavalry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
   </Abilities>
 </Building>
   

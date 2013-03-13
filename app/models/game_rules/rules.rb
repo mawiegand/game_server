@@ -150,7 +150,7 @@ class GameRules::Rules
           :time_factor => 0.3,
         },
         :building_experience_formula => '2*LEVEL',
-        :alliance_max_members => 80,
+        :alliance_max_members => 13,
         :artifact_count => 4,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
@@ -199,29 +199,29 @@ class GameRules::Rules
           :hours     => 70,
         },              #   END OF 70 hours
 
-        {               #   less than 110 hours
+        {               #   less than 120 hours
           :resource_id => 3, 
           :amount      => 25,
-          :hours     => 110,
-        },              #   END OF 110 hours
+          :hours     => 120,
+        },              #   END OF 120 hours
 
-        {               #   less than 150 hours
+        {               #   less than 180 hours
           :resource_id => 3, 
           :amount      => 30,
-          :hours     => 150,
-        },              #   END OF 150 hours
+          :hours     => 180,
+        },              #   END OF 180 hours
 
-        {               #   less than 200 hours
+        {               #   less than 240 hours
           :resource_id => 3, 
           :amount      => 40,
-          :hours     => 200,
-        },              #   END OF 200 hours
+          :hours     => 240,
+        },              #   END OF 240 hours
 
-        {               #   less than 275 hours
+        {               #   less than 300 hours
           :resource_id => 3, 
           :amount      => 50,
-          :hours     => 275,
-        },              #   END OF 275 hours
+          :hours     => 300,
+        },              #   END OF 300 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
@@ -681,9 +681,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Holds a club and is always at the front of battle lines. Clubbers don’t need much for a happy life. Their lives are pretty short anyway.  </p>",
+            :en_US => "<p>Holds a club and is always at the front of battle lines.</p>",
   
-            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz.</p>",
+            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front.</p>",
                 
           },
           :description => {
@@ -726,7 +726,7 @@ class GameRules::Rules
           :costs      => {
             0 => '25',
             1 => '30',
-            2 => '40',
+            2 => '80',
             
           },
 
@@ -741,21 +741,21 @@ class GameRules::Rules
             
             :en_US => "Thick-skinned Clubber",
   
-            :de_DE => "Dickhäutiger Keulenkrieger",
+            :de_DE => "Dicke Keule",
                 
           },
           :flavour     => {
             
-            :en_US => "<p>You can tell battle-hardened clubbers by their thick skin and big clubs, and of course, the things they say. “You two? Ha! Go and fetch three more of you so you can give me a halfway fair fight!”</p>",
+            :en_US => "<p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>",
   
-            :de_DE => "<p>Erfahrene Keulenkrieger erkennt man an ihrer dicken Haut und ihrer großen Keule und natürlich an ihren Ausrufen. „Ihr zwei? Holt euch noch drei dazu, damit es ein halbwegs fairer Kampf wird!“</p>",
+            :de_DE => "<p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die dicke Haut schützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Strauß überrannt wird und die Zeitspanne bis zur Bewusstlosigkeit muss nicht in Schmerzen durchstanden werden.</p>",
+            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
   
-            :en_US => "<p>Their thick skin protects them against blows from others’ clubs, but doesn’t help much against the ranged combatants’ sharp stones. It makes being run over by an ostrich less painful, though – they’re not in so much agony until they pass out.</p>",
+            :en_US => "<p>Their thick skin protects them against blows from others’ clubs, but doesn’t help much against the ranged combatants’ sharp stones. Thanks to their thick skin they are in not so much agony until they pass out.</p>",
                 
           },
 
@@ -791,7 +791,7 @@ class GameRules::Rules
           :costs      => {
             0 => '35',
             1 => '45',
-            2 => '60',
+            2 => '120',
             
           },
 
@@ -804,7 +804,7 @@ class GameRules::Rules
               :id => 1,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 5,
 
             },
 
@@ -813,7 +813,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 4,
 
             },
 
@@ -836,30 +836,30 @@ class GameRules::Rules
 
 
         },              #   END OF Thick-skinned Clubber
-        {               #   Drunken Clubber
+        {               #   Club swinger
           :id          => 2, 
           :symbolic_id => :clubbers_3,
 					:category    => 0,
           :db_field    => :unit_clubbers_3,
           :name        => {
             
-            :en_US => "Drunken Clubber",
+            :en_US => "Club swinger",
   
-            :de_DE => "Betrunkener Keulenkrieger",
+            :de_DE => "Knüppelschwinger",
                 
           },
           :flavour     => {
             
-            :en_US => "<p>Very few clubbers survive their first battles, and almost none of them survive an entire war. Drinking enough beer increases their combat strength and reduces their ability to feel pain. </p>",
+            :en_US => "<p>The art of expressive battle! Here bludgeoners give marks to each other regarding their fighting style.</p>",
   
-            :de_DE => "<p>Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Durch ausreichend Bier erhöht sich die Kampfkraft und verringert sich das Schmerzempfinden.</p>",
+            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppelschwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf. Nichts geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p>",
+            :de_DE => "<p>Die Knüppelschwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
   
-            :en_US => "<p>Some clubbers even show up on the battlefield with a barrel of beer. There’s nothing like a good swig of beer before, during and after a battle. A slightly drunk clubber staggers and weaves, making him a much more difficult target for ranged combatants. But ranged combatants can’t aim anyway, which makes them just as deadly for clubbers. </p>",
+            :en_US => "<p>The bludgeoners unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>",
                 
           },
 
@@ -887,7 +887,7 @@ class GameRules::Rules
 
           :overrunnable => true,
 
-          :critical_hit_damage => 1,
+          :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
           :production_time => '1000',
@@ -895,7 +895,7 @@ class GameRules::Rules
           :costs      => {
             0 => '70',
             1 => '90',
-            2 => '120',
+            2 => '240',
             
           },
 
@@ -908,7 +908,7 @@ class GameRules::Rules
               :id => 1,
               :type => 'building',
 
-              :min_level => 15,
+              :min_level => 10,
 
             },
 
@@ -917,7 +917,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 9,
 
             },
 
@@ -939,7 +939,7 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Drunken Clubber
+        },              #   END OF Club swinger
         {               #   Tree Huggers
           :id          => 3, 
           :symbolic_id => :tree_huggers,
@@ -954,9 +954,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Why bother cutting a branch from a tree and making a club out of it when you can wield the whole tree?</p>",
+            :en_US => "<p>Why using a club, when you can wield a whole tree?</p>",
   
-            :de_DE => "<p>Wozu einen Ast vom Baum schlagen und zu einer Keule verarbeiten, wenn man einfach den ganzen Baum schwingen kann?</p>",
+            :de_DE => "<p>Wozu eine Keule nehmen, wenn man einfach einen ganzen Baum schwingen kann?</p>",
                 
           },
           :description => {
@@ -991,7 +991,7 @@ class GameRules::Rules
 
           :overrunnable => true,
 
-          :critical_hit_damage => 2,
+          :critical_hit_damage => 3,
           :critical_hit_chance => 0.02,
 
           :production_time => '1200',
@@ -999,7 +999,7 @@ class GameRules::Rules
           :costs      => {
             0 => '140',
             1 => '180',
-            2 => '240',
+            2 => '480',
             
           },
 
@@ -1047,7 +1047,7 @@ class GameRules::Rules
             
             :en_US => "<p>These ranged combatants couldn’t hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that’s hard to miss. </p>",
   
-            :de_DE => "<p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>",
+            :de_DE => "<p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>",
                 
           },
           :description => {
@@ -1090,29 +1090,29 @@ class GameRules::Rules
           :costs      => {
             0 => '35',
             1 => '35',
-            2 => '60',
+            2 => '120',
             
           },
 
 
         },              #   END OF Gravel Stone Thrower
-        {               #   Accurate Gravel Stone Thrower
+        {               #   Targetthrower
           :id          => 5, 
           :symbolic_id => :thrower_2,
 					:category    => 2,
           :db_field    => :unit_thrower_2,
           :name        => {
             
-            :en_US => "Accurate Gravel Stone Thrower",
+            :en_US => "Targetthrower",
   
-            :de_DE => " Zielsicherer Kieselsteinwerfer",
+            :de_DE => " Zielwerfer",
                 
           },
           :flavour     => {
             
             :en_US => "<p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>",
   
-            :de_DE => "<p>Einen Stein auf fünfzig Meter Entfernung genau auf ein Ziel zu werfen, ist eine beeindruckende Leistung. Dummerweise stehen die Gegner meistens weiter weg.</p>",
+            :de_DE => "<p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>",
                 
           },
           :description => {
@@ -1155,7 +1155,7 @@ class GameRules::Rules
           :costs      => {
             0 => '45',
             1 => '45',
-            2 => '75',
+            2 => '150',
             
           },
 
@@ -1168,7 +1168,7 @@ class GameRules::Rules
               :id => 2,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 5,
 
             },
 
@@ -1177,7 +1177,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 4,
 
             },
 
@@ -1199,7 +1199,7 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Accurate Gravel Stone Thrower
+        },              #   END OF Targetthrower
         {               #   Stone Thrower
           :id          => 6, 
           :symbolic_id => :thrower_3,
@@ -1214,14 +1214,14 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Aiming is for sissies. The stone throwers‘ motto is: “The further you can throw the stone, the better!” Sometimes they’re right.</p>",
+            :en_US => "<p>The stone throwers‘ motto is: 'The further you can throw the stone, the better!'</p>",
   
-            :de_DE => "<p>Zielen ist was für Anfänger. Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!' Stimmt sogar manchmal.</p>",
+            :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p>",
+            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfer in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
   
             :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn’t always obvious.</p>",
                 
@@ -1259,7 +1259,7 @@ class GameRules::Rules
           :costs      => {
             0 => '90',
             1 => '90',
-            2 => '140',
+            2 => '280',
             
           },
 
@@ -1272,7 +1272,7 @@ class GameRules::Rules
               :id => 2,
               :type => 'building',
 
-              :min_level => 15,
+              :min_level => 10,
 
             },
 
@@ -1281,7 +1281,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 9,
 
             },
 
@@ -1313,14 +1313,14 @@ class GameRules::Rules
             
             :en_US => "Spear Thrower",
   
-            :de_DE => " Speerschleuderer ",
+            :de_DE => " Speerwerfer",
                 
           },
           :flavour     => {
             
             :en_US => "<p>Why anyone would bother to tie a stick to a stone is a mystery – stones are brilliant missiles. But the effect is fantastic, longer range, more accurate and easier to collect. What more could you want?</p>",
   
-            :de_DE => "<p>Wieso jemand einen Stock an einen Stein gebunden hat, ist unverständlich, denn Steine sind doch schon hervorragende Wurfgeschosse. Aber der Effekt ist großartig, größere Reichweite, zielgenauer und einfacher einzusammeln. Was will man mehr?</p>",
+            :de_DE => "<p>Speerschleuderer sind sehr nervig, aber auch tödlich.</p>",
                 
           },
           :description => {
@@ -1363,7 +1363,7 @@ class GameRules::Rules
           :costs      => {
             0 => '180',
             1 => '180',
-            2 => '280',
+            2 => '560',
             
           },
 
@@ -1395,30 +1395,30 @@ class GameRules::Rules
 
 
         },              #   END OF Spear Thrower
-        {               #   Two-handed Ostrich Rider
+        {               #   Ostrich Rider
           :id          => 8, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
           :name        => {
             
-            :en_US => "Two-handed Ostrich Rider",
+            :en_US => "Ostrich Rider",
   
-            :de_DE => "Zweihändiger Straußenreiter",
+            :de_DE => "Straußenreiter",
                 
           },
           :flavour     => {
             
             :en_US => "<p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>",
   
-            :de_DE => "<p>Die zweihändigen Straußenreiter legen ihre ganze Konzentration auf das Führen ihres Reittieres. Selber unbewaffnet stellen sie neben den Schnäbeln und Klauen der Strauße wirklich keine zusätzliche Gefahr dar.</p>",
+            :de_DE => "<p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind die Furcht jedes Fernkämpfers. Schnell genug, um an der Infanterie vorbeizukommen, bleibt ihren Gegnern nur zu hoffen, dass die Sträuße den Kopf in den Sand stecken oder der Reiter von seinem Strauß fällt, auch wenn dies meist wenig Unterschied macht.</p>",
+            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p>",
   
-            :en_US => "<p>Ostriches don’t just taste delicious, they’re also really good, speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off, although that doesn’t seem to make much difference.</p>",
+            :en_US => "<p>Ostriches don’t just taste delicious, they’re also really good, speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>",
                 
           },
 
@@ -1454,36 +1454,36 @@ class GameRules::Rules
           :costs      => {
             0 => '30',
             1 => '25',
-            2 => '40',
+            2 => '80',
             
           },
 
 
-        },              #   END OF Two-handed Ostrich Rider
-        {               #   One-handed Ostrich Rider
+        },              #   END OF Ostrich Rider
+        {               #   Hungry Ostrich
           :id          => 9, 
           :symbolic_id => :light_cavalry_2,
 					:category    => 1,
           :db_field    => :unit_light_cavalry_2,
           :name        => {
             
-            :en_US => "One-handed Ostrich Rider",
+            :en_US => "Hungry Ostrich",
   
-            :de_DE => "Einhändiger Straußenreiter",
+            :de_DE => "Hungriger Strauß",
                 
           },
           :flavour     => {
             
-            :en_US => "<p>Experienced ostrich riders only need one hand to hold on to their mounts, which means they have one hand free to do more practical things. Like picking their noses, for instance, or smashing in the skulls of their enemies.</p>",
+            :en_US => "<p>A hungry ostrich is a dangerous weapon. Espacialy eyes are treats.</p>",
   
-            :de_DE => "<p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zuzuwinken oder seinen Feinden den Schädel einzuhauen.</p>",
+            :de_DE => "<p>Ein hungriger Strauß ist eine gefährliche Waffe. Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Eine handliche Keule in der freien Hand sind einhändige Straußenkrieger der Todfeind aller Fernkämpfer.</p><p>Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen.</p>",
+            :de_DE => "<p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>",
   
-            :en_US => "<p>With a handy little club in his free hand, the one-handed ostrich rider is a deadly enemy for stone throwers. In battle against clubbers, though, they usually come off worse because they only have rather small, light clubs.</p>",
+            :en_US => "<p>The rider sits on a trained and very hungry ostrich. As long as the rider himself will not be bitten, the hungry ostrich stays a wild peckin battle machine, able to destroy unprotected rangers.</p>",
                 
           },
 
@@ -1519,7 +1519,7 @@ class GameRules::Rules
           :costs      => {
             0 => '40',
             1 => '35',
-            2 => '50',
+            2 => '100',
             
           },
 
@@ -1532,7 +1532,7 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 5,
 
             },
 
@@ -1541,7 +1541,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 4,
 
             },
 
@@ -1563,31 +1563,31 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF One-handed Ostrich Rider
-        {               #   Freehand Ostrich Rider
+        },              #   END OF Hungry Ostrich
+        {               #   Frantic Ostrich
           :id          => 10, 
           :symbolic_id => :light_cavalry_3,
 					:category    => 1,
           :db_field    => :unit_light_cavalry_3,
           :name        => {
             
-            :en_US => "Freehand Ostrich Rider",
+            :en_US => "Frantic Ostrich",
   
-            :de_DE => " Freihändiger Straußenreiter ",
+            :de_DE => "Rasender Strauß",
                 
           },
           :flavour     => {
             
-            :en_US => "<p>Very talented riders wield a club in one hand and throw small stones with the other. It looks impressive but their enemies are usually still massacred by the ostriches they are mounted on.</p>",
+            :en_US => "<p>Frantic otrichs brake for nobody!</p>",
   
-            :de_DE => "<p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>",
+            :de_DE => "<p>Rasende Strauße bremsen für niemanden!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine auf ungeschützte Fernkämpfer werfen.</p><p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
+            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
   
-            :en_US => "<p>Specializing in lightning attacks, these riders don’t stick around in one place for long. With both hands free, riders can also turn around while seated on their mounts, and throw well-aimed small stones at unprotected stone throwers. Enemy mounts are spoilsports. They block access to sitting targets that can be picked off easily.</p>",
+            :en_US => "<p>Frantic ostrichs are specialicied in lightning attacks. Enemy mounts block as spoilsports the access to sitting targets that can be picked off easily.</p>",
                 
           },
 
@@ -1623,7 +1623,7 @@ class GameRules::Rules
           :costs      => {
             0 => '80',
             1 => '70',
-            2 => '100',
+            2 => '200',
             
           },
 
@@ -1636,7 +1636,7 @@ class GameRules::Rules
               :id => 3,
               :type => 'building',
 
-              :min_level => 15,
+              :min_level => 10,
 
             },
 
@@ -1645,7 +1645,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 9,
 
             },
 
@@ -1667,7 +1667,7 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Freehand Ostrich Rider
+        },              #   END OF Frantic Ostrich
         {               #   Dinosaur Rider
           :id          => 11, 
           :symbolic_id => :light_cavalry_4,
@@ -1719,7 +1719,7 @@ class GameRules::Rules
 
           :overrunnable => true,
 
-          :critical_hit_damage => 1,
+          :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
           :production_time => '1200',
@@ -1727,7 +1727,7 @@ class GameRules::Rules
           :costs      => {
             0 => '160',
             1 => '140',
-            2 => '200',
+            2 => '400',
             
           },
 
@@ -1818,7 +1818,7 @@ class GameRules::Rules
           :costs      => {
             0 => '40',
             1 => '20',
-            2 => '12',
+            2 => '24',
             
           },
 
@@ -1900,7 +1900,7 @@ class GameRules::Rules
           :costs      => {
             0 => '5000',
             1 => '5000',
-            2 => '2000',
+            2 => '4000',
             
           },
 
@@ -2089,37 +2089,37 @@ class GameRules::Rules
             
             :en_US => "<p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>",
   
-            :de_DE => "<p>Die Festung beherrscht die Region. Dafür werden Truppen aufgestellt, die die Steuern der Siedlungen eintreiben und die Festung vor Angriffen beschützen.</p>",
+            :de_DE => "<p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>In der Festung werden Krieger ausgebildet, Steuern eingetrieben und sich hinter Verteidigungsanlagen verschanzt.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>",
   
-            :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence. Inside the fortress they train warriors, collect taxes and use avoidance tactics by hiding behind their defensive fortifications.</p>",
+            :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(99*POW(2.71828,0.11*LEVEL))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3)",
   
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 6,
+          :experience_factor => 8,
 
           :costs      => {
-            0 => '(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)',
-            1 => '(MIN(LEVEL+1,3)-MIN(LEVEL,3))*2000+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5)',
-            2 => '(MIN(LEVEL+1,3)-MIN(LEVEL,3))*100+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)*0.5+0.5)',
-            3 => 'MAX(LEVEL-14,0)*2',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
             
           },
 
-          :production_time => '58400+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100+1)*25000',
+          :production_time => 'LESS(LEVEL,11)*(GREATER(LEVEL,1)*(58400+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000))',
           :production  => [
             
           ],
@@ -2154,7 +2154,7 @@ class GameRules::Rules
 
             :unlock_garrison => 1,            
 
-            :command_points => "1",
+            :command_points => "LESS(LEVEL,11)*(GREATER(LEVEL,1)*1+GREATER(LEVEL,9)*1)",
 
             :unlock_building_slots => "MIN(LEVEL,1)*2",
 
@@ -2179,29 +2179,29 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>No place for thinkers! Infantry members need strength and stamina, whether they’re armed with a truncheon, a club or a spear.</p>",
+            :en_US => "<p>No place for thinkers! Infantry members need strength and stamina, nothing else.</p>",
   
-            :de_DE => "<p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, egal ob er mit Knüppel, Keule oder Speer bewaffnet ist.</p>",
+            :de_DE => "<p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, sonst nix!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In dem Turm der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin.</p><p>Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen. Wer es zurück schafft, kämpft anschließend mit deutlich größerem Elan.</p>",
+            :de_DE => "<p>In dem Turm der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
   
-            :en_US => "<p>Infantry troops are instructed in the art of fighting in the infantry tower. The extremely sadistic trainer sets great store by obedience and discipline. And if someone doesn’t obey orders or is even more stupid than the others during training, he has to clean the stables in the cavalry tower. Anyone who can survive that usually comes back and fights with noticeably more enthusiasm.</p>",
+            :en_US => "<p>Infantry troops are instructed in the art of fighting in the infantry tower. The extremely sadistic trainer sets great store by obedience and discipline. And if someone doesn’t obey orders or is even more stupid than the others during training, he has to clean the stables in the cavalry tower.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
   
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 4.5,
+          :experience_factor => 6,
 
           :requirementGroups=> [
 
@@ -2221,14 +2221,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => '(MIN(LEVEL+1,2)-MIN(LEVEL,2))*900+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5+0.5)',
-            1 => '(MIN(LEVEL+1,2)-MIN(LEVEL,2))*900+(MIN(LEVEL,2)-MIN(LEVEL,1))*((MIN(LEVEL,2)-MIN(LEVEL,1))*0.5+0.5)*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5+0.5)',
-            2 => '(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*0.5*1.5+0.5)',
-            3 => 'MAX(LEVEL-14,0)',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5+0.5-3)))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5+0.5-2)))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*300+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5+0.5))',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
             
           },
 
-          :production_time => '43200+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100.0+1)*9000',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*43200+GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -2244,7 +2244,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
               },
 
             ],
@@ -2276,29 +2276,29 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>This is where anything that can be thrown or shot goes flying through the air. You’d better duck! Ranged combatant training is in full swing!</p>",
+            :en_US => "<p>You’d better duck! Ranged combatant training is in full swing!</p>",
   
-            :de_DE => "<p>Hier fliegt alles, was man werfen oder abschießen kann! Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>",
+            :de_DE => "<p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Von außen betrachtet ist der Turm der Ballistik eine Augenweide. Von innen betrachtet ist der Turm ein Trümmerfeld. Kleine Kieselsteine liegen auf dem ganzen Boden verteilt, Bratspieße, Speere und Pfeile haben sich in sämtliche Stützpfeiler gebohrt und an den Wänden spuren hinterlassen.</p><p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen.</p><p>Verglichen mit der Ordnung einer Fernkämpfer-Kampfreihe auf dem Schlachtfeld ist das herrschende Chaos überraschend. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen.</p><p>Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
   
-            :en_US => "<p>From the outside, the artillery tower is a feast for the eyes. But inside, it’s a field of rubble. Gravel and stones litter the ground, roasting spits, spears and arrows are lodged in all the upright beams, and the walls are scarred from all the target practice.</p><p>Hardly surprising that helmets are compulsory. Trainers and trainees have bound thick animal skins around their heads so they can at least survive being hit by small stones or gravel.</p><p>When compared to the order in the ranged combatant ranks in battle, the chaos here is surprising. On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>",
+            :en_US => "<p>Hardly surprising that helmets are compulsory. Trainers and trainees have bound thick animal skins around their heads so they can at least survive being hit by small stones or gravel.</p><p>On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
   
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 4.5,
+          :experience_factor => 6,
 
           :requirementGroups=> [
 
@@ -2318,14 +2318,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)',
-            2 => '(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*0.5*1.5*2.5+0.5)',
-            3 => 'MAX(LEVEL-14,0)',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-829)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5-3)))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
             
           },
 
-          :production_time => '43200+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100.0+1)*9000',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*43200+GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -2341,7 +2341,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
               },
 
             ],
@@ -2375,27 +2375,27 @@ class GameRules::Rules
             
             :en_US => "<p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>",
   
-            :de_DE => "<p>Hier sind Unmengen an Tieren und verschwitzten Männern untergebracht. Vorsicht vor Dung und penetrantem Geruch!</p>",
+            :de_DE => "<p>Hier werden die berittenen Einheiten ausgebildet. Vorsicht vor Dung und penetrantem Geruch!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Turm der Reitmeisterei dient der Ausbildung aller berittenen Einheiten. Dabei wird vor allem Wert auf den Umgang mit den Tieren wie auch auf die Reittechnik gelegt.</p><p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein. Zwar beeindruckt das die Mädchen ungemein, aber die Jungs haben keine Zeit mehr sich in der Aufmerksamkeit zu sonnen. Die Tierpfleger entsorgen die blutigen Überreste ohne großes Aufheben.</p>",
+            :de_DE => "<p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein, um die Mädchen zu beeindrucken. Die wenigsten Jungen kommen allerdings noch in den Genuß sich in der Aufmerksamkeit zu sonnen.</p>",
   
-            :en_US => "<p>The cavalry tower is where all mounted units are trained. Great store is set on proper animal handling as well as on riding technique.</p><p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>",
+            :en_US => "<p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "2.5*POW(LEVEL,2)-2.5*LEVEL+5",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
   
           :buyable     => true,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 4.5,
+          :experience_factor => 6,
 
           :requirementGroups=> [
 
@@ -2415,14 +2415,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)',
-            2 => '(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*0.5*1.5*2.5+0.5)',
-            3 => 'MAX(LEVEL-14,0)',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-832)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
             
           },
 
-          :production_time => '43200+(FLOOR(1.88*POW(LEVEL-1,1.8)+0.5)*6/100.0+1)*9000',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*43200+GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -2438,7 +2438,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*0.5+0.5)/100.0",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
               },
 
             ],
@@ -2533,9 +2533,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :en_US => "<p>This is where decisions are made! Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
+            :en_US => "<p>Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
   
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
+            :de_DE => "<p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
                 
           },
           :description => {
@@ -2588,13 +2588,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*5+EQUAL(LEVEL,3)*12+EQUAL(LEVEL,4)*50+EQUAL(LEVEL,5)*400+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            2 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*20700+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
+          :production_time => 'EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
           :production  => [
             
               {
@@ -2612,7 +2612,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "1",
+                :formula            => "2",
               },
             
           ],
@@ -2637,7 +2637,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "800+50*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
@@ -2664,7 +2664,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :unlock_garrison => 2,            
 
-            :command_points => "MAX(LEVEL+1,2)-MAX(LEVEL,2)+MAX(LEVEL+1,6)-MAX(LEVEL,6)+MAX(LEVEL+1,12)-MAX(LEVEL,12)",
+            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,11)",
 
             :unlock_building_slots => "MIN(LEVEL,10)*4-1",
 
@@ -2691,7 +2691,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
   
-            :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Die wahren Schätze aus Sicht des Jägers und Sammlers sind aber Pilze. Vor allem die roten mit den weißen Punkten.</p>",
+            :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Das sind die Schätze des Sammlers.</p>",
                 
           },
           :description => {
@@ -2704,7 +2704,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2768,8 +2768,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
             1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            2 => 'EQUAL(LEVEL,2)*2+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*15+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.16+0.5)',
-            3 => 'MAX(LEVEL-19,0)',
+            2 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
+            3 => 'MAX(LEVEL-18,0)',
             
           },
 
@@ -2779,19 +2779,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)*0.25+0.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)*0.25+0.5)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.125+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.25+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)*0.25+0.5)",
               },
             
               {
@@ -2826,12 +2826,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
   
-            :de_DE => "<p>In den kleinen Hütten leben eure Untertanen. Je mehr Untertanen, desto schneller geht auch der Bau von Gebäuden.</p>",
+            :de_DE => "<p>Ein Dach über dem Kopf. Mehr ist das wirklich nicht!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die kleine Hütte schützt Eure Untertanen gerade mal vor Sonne und Regen. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
+            :de_DE => "<p>In den kleinen Hütten sind schützt Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
   
             :en_US => "<p>A little hut only protects your subjects from sun and rain. The main thing is that they work hard and don’t complain. The more huts, the more subjects you have, the faster they work, and the quicker your settlement is upgraded. If only being the boss was always as simple as this!</p>",
                 
@@ -2839,7 +2839,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+0.5)",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -2881,7 +2881,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 3,
 
             },
 
@@ -2903,7 +2903,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.125*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -2933,7 +2933,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_cottage_2,
-            :target_level_formula  => "LEVEL-(MIN(LEVEL,5)-MIN(LEVEL,4))-(MIN(LEVEL,10)-MIN(LEVEL,9))-(MIN(LEVEL,14)-MIN(LEVEL,13))", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
           },
 
         },              #   END OF Kleine Hütte
@@ -2953,7 +2953,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Looking for a little fight? Haven’t been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>",
   
-            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden? In der Kaserne finden sich alle, die sich gerne mitten ins Getümmel stürzen.</p>",
+            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden?</p>",
                 
           },
           :description => {
@@ -2966,7 +2966,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3008,7 +3008,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 2,
 
             },
 
@@ -3034,7 +3034,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :production_time => '(MIN(LEVEL+1,2)-MIN(LEVEL,2))*20+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production_time => 'EQUAL(LEVEL,1)*15+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+GREATER(LEVEL,3)*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
           :production  => [
             
           ],
@@ -3050,7 +3050,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
             ],
@@ -3084,20 +3084,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
   
-            :de_DE => "<p> Ort diplomatischen Austauschs oder Besprechungen innerhalb der Allianz. Zu einer guten Unterhaltung gehören mindestens zwei, auch wenn oft nur einer redet. Reden, das kann der Kleine Häuptling wie kein zweiter.</p>",
+            :de_DE => "<p>Gutes Essen, leckere Getränke und ein paar Lieder. Ein würdiger Rahmen für Verhandlungen!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Verhandlungen mit Nachbarn oder Allianzen, alles findet bei reichlich Gerstensaft am Lagerfeuer statt.</p><p>Am Lagerfeuer beginnen auch die Karrieren der Kleinen Häuptlinge. Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht und nicht abgerissen werden!</p>",
+            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Am Lagerfeuer beginnen auch die Karrieren der Kleinen Häuptlinge. Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht werden!</p>",
   
-            :en_US => "<p>At the campfire, inhabitants gather in sociable groups, or to make important arrangements. Guests are also either selected to join the campfire group, or arranged round it on stakes.</p><p>Negotiations with neighbours or forging alliances, it all happens – well lubricated by plenty of beer – around the campfire.</p><p>It’s also where the little chiefs’ careers begin. A couple of flattering words here, a bit of scheming there, taking credit for someone else’s bravery and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
+            :en_US => "<p>At the campfire, inhabitants gather in sociable groups, or to make important arrangements. Guests are also either selected to join the campfire group, or arranged round it on stakes.</p><p>It’s also where the little chiefs’ careers begin. A couple of flattering words here, a bit of scheming there, taking credit for someone else’s bravery and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
   
           :buyable     => true,
           :demolishable=> false,
@@ -3135,13 +3135,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            3 => 'MAX(LEVEL-19,0)',
+            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
-          :production_time => '(MIN(LEVEL+1,2)-MIN(LEVEL,2))*20+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5)',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))',
           :production  => [
             
           ],
@@ -3163,7 +3162,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :unlock_diplomacy     => 1,
 
-            :unlock_alliance_creation => 5,
+            :unlock_alliance_creation => 2,
 
           },
 
@@ -3197,7 +3196,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3271,7 +3270,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5)",
               },
             
           ],
@@ -3291,7 +3290,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_logger_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Holzfäller
@@ -3324,7 +3323,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3398,7 +3397,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5)",
               },
             
           ],
@@ -3418,7 +3417,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_quarry_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Steinbruch
@@ -3451,7 +3450,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3515,7 +3514,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -3526,7 +3525,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5+0.5)",
+                :formula            => "LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5)",
               },
             
           ],
@@ -3546,7 +3545,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,2)-GREATER(LEVEL,10)-GREATER(LEVEL,14)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Kürschner
@@ -3579,7 +3578,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3597,42 +3596,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 18,
               :type => 'building',
 
-              :min_level => 3,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 13,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
+              :min_level => 2,
 
             },
 
@@ -3647,7 +3611,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1600+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
           :production  => [
             
           ],
@@ -3663,7 +3627,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
             ],
@@ -3710,7 +3674,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3728,40 +3692,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 18,
               :type => 'building',
 
-              :min_level => 6,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 16,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
+              :min_level => 5,
 
             },
 
@@ -3776,7 +3707,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1600+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
           :production  => [
             
           ],
@@ -3792,7 +3723,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
             ],
@@ -3831,7 +3762,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p><p>Ein Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lager- als auch die Handelsmenge.</p>",
+            :de_DE => "<p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>",
   
             :en_US => "<p>Stone-age logistics centre where raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>",
                 
@@ -3839,7 +3770,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3920,19 +3851,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))",
               },
             
           ],
@@ -3947,7 +3878,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :conversion_option => {
             :building              => :building_storage_2,
-            :target_level_formula  => "LEVEL-(MIN(LEVEL,5)-MIN(LEVEL,4))-(MIN(LEVEL,10)-MIN(LEVEL,9))-(MIN(LEVEL,14)-MIN(LEVEL,13))", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
           },
 
         },              #   END OF Rohstofflager
@@ -3980,7 +3911,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25)*1.1+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4002,41 +3933,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
@@ -4044,7 +3940,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5*8.05+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.125*1.5*8.05+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
             3 => 'MAX(LEVEL-19,0)',
             
           },
@@ -4102,7 +3998,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4120,7 +4016,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 18,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 6,
 
             },
 
@@ -4151,12 +4047,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            0 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            1 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            2 => '(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5',
+            3 => 'EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2',
             
           },
 
-          :production_time => 'FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)',
+          :production_time => 'EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570',
           :production  => [
             
           ],
@@ -4172,26 +4070,26 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
               {
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
               {
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
             ],
 
-            :command_points => "1+FLOOR(LEVEL/10.0)",
+            :command_points => "1+GREATER(LEVEL,9)+EQUAL(LEVEL,20)",
 
           },
 
@@ -4212,12 +4110,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it is smelted. They make the occasional implement out of it too.</p>",
   
-            :de_DE => "<p>Kupfer glitzert zwar auch schon im Rohzustand, aber erst nach dem Schmelzen kann es zu Schmuck verarbeitet werden. Ab und zu stellt man auch hilfreiche Werkzeuge damit her.</p>",
+            :de_DE => "<p>Ah Kupfer, ich mag diesen rot-goldenen Schimmer. Sogar die Werkzeuge und Waffen lass sich damit verbessern, auch wenn mir Schmuck lieber ist.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen.</p><p>Der Kupferschmelzer ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude. Ein Kupferschmelzer kann nur auf einem kleinen Bauplatz gebaut und nicht wieder abgerissen werden.</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Eine Kupferschmelze kann nur auf einem kleinen Bauplatz gebaut werden.</p>",
   
             :en_US => "<p>Copper is THE discovery in the copper-stone age, leading to more attractive jewellery and more deadly weapons, as well as some progress in making implements.</p>",
                 
@@ -4225,7 +4123,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4248,8 +4146,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             },
 
             {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 18,
+              :symbolic_id => 'building_haunt',
+              :id => 26,
               :type => 'building',
 
               :min_level => 0,
@@ -4258,9 +4156,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
+            ],
+
+            [
+              
             {
               :symbolic_id => 'building_haunt',
               :id => 26,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 5,
               :type => 'building',
 
               :min_level => 0,
@@ -4274,14 +4185,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            2 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*2*1.5)',
-            3 => 'MAX(LEVEL-8,0)',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            3 => 'LESS(LEVEL,11)*MAX(LEVEL-8,0)',
             
           },
 
-          :production_time => '43200+3600*MAX(0,LEVEL)',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*43200+GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -4310,7 +4221,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety that field camps offer storage compounds, it’s the field camps that seem to have a magical attraction for enemies.</p>",
   
-            :de_DE => "<p>Feldlager verwandeln Lagerstätten mit größeren und auch einer Armee mehr in militärische Stützpunkte. Durch all das Gerede über die Sicherheit, die Feldlager für die Lagerstätte bieten, ziehen Feldlager Feinde erst recht an.</p>",
+            :de_DE => "<p>Mit dem Feldlager verwandeln wir Lagerstätten in militärische Stützpunkte. Größere Armeen und gleich zwei davon!</p>",
                 
           },
           :description => {
@@ -4323,7 +4234,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => false,
           :demolishable=> true,
@@ -4341,7 +4252,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 6,
 
             },
 
@@ -4363,13 +4274,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+
-	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)',
+          :production_time => 'EQUAL(LEVEL,1)*24*3600+GREATER(LEVEL,1)*(FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)*0.65)',
           :production  => [
             
           ],
@@ -4379,7 +4289,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :abilities   => {
 
-            :command_points => "MAX(LEVEL+1,10)-MAX(LEVEL,10)",
+            :command_points => "GREATER(LEVEL,9)",
 
             :garrison_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
@@ -4417,7 +4327,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4439,60 +4349,25 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 17,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
 
           :costs      => {
-            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
-            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
-            2 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.25)',
-            3 => 'MAX(LEVEL-19,0)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)',
+            2 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)',
+            3 => 'MAX(LEVEL-19,0)*2',
             
           },
 
-          :production_time => 'FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
+          :production_time => 'FLOOR((31130*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
           :production  => [
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*0.5*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
+                :formula            => "(LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5))*2.5",
               },
             
           ],
@@ -4527,7 +4402,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>A man and his copper axe! Although the copper axes always bend, he actually does manage to bring home trees he has felled himself, as well as some brushwood.</p>",
   
-            :de_DE => "<p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er tatsächlich selbst gefällte Bäume und weniger loses Gestrüpp mit.</p>",
+            :de_DE => "<p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>",
                 
           },
           :description => {
@@ -4540,7 +4415,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4562,59 +4437,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 14,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
 
           :costs      => {
-            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*1)',
-            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
-            3 => 'MAX(LEVEL-19,0)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*1)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)',
+            3 => 'MAX(LEVEL-19,0)*2',
             
           },
 
-          :production_time => 'FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
+          :production_time => 'FLOOR((31130*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
           :production  => [
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
+                :formula            => "(LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5))*2.5",
               },
             
           ],
@@ -4649,12 +4489,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>In the copper-stone age, you’d expect workers to have copper pickaxes. But the workers preferred to invest their copper in jewellery for their wives. Apparently a better investment, as the grateful women rewarded them lavishly.</p>",
   
-            :de_DE => "<p>In der Kupferzeit würde man erwarten, kupferne Spitzhacken bei den Arbeitern zu finden. Doch die Arbeiter haben das Kupfer lieber in Schmuck für ihre Frauen investiert. Offensichtlich die bessere Investition, denn die Belohnung der glücklichen Frauen ist umso größer.</p>",
+            :de_DE => "<p>Der Fortschritt ist eindeutig ablesbar. Starke muskulöse Arbeiter im Steinbruch, behangen mit schönstem Kupferschmuck.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab einer gewissen Größe werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
+            :de_DE => "<p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab Level 11 werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
   
             :en_US => "<p>How they managed to excavate so much stone from the quarries in the copper-stone age is a mystery. They were the only ones who didn’t have copper implements. But still, excavation was noticeably faster.</p><p>Workers of a certain size and upwards were even faster, encouraging the workers in other quarries to work faster.</p>",
                 
@@ -4662,7 +4502,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4684,59 +4524,24 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 14,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
 
           :costs      => {
-            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)',
-            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*1)',
-            3 => 'MAX(LEVEL-19,0)',
+            0 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)',
+            1 => 'FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*1)',
+            3 => 'MAX(LEVEL-19,0)*2',
             
           },
 
-          :production_time => 'FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
+          :production_time => 'FLOOR((31130*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)',
           :production  => [
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)",
+                :formula            => "(LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5))*2.5",
               },
             
           ],
@@ -4771,20 +4576,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others’ heads in and leave the poor settlement dwellers in peace.</p>",
   
-            :de_DE => "<p>Krieger aller Art sollten getrennt von der normalen arbeitenden Bevölkerung gehalten werden. In der Garnison können sie sich gegenseitig die Schädel einschlagen und die armen Siedlungsbewohner in Ruhe lassen.</p>",
+            :de_DE => "<p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustösst!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit größere Garnisonen können größere Armeen aufgestellt werden. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>",
+            :de_DE => "<p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>",
   
-            :en_US => "<p>Bigger garrisons lead to … bigger armies. Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p>",
+            :en_US => "<p>Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4833,12 +4638,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)',
+            0 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            1 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            2 => '(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5',
+            3 => 'EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2',
             
           },
 
-          :production_time => 'FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)',
+          :production_time => 'EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570',
           :production  => [
             
           ],
@@ -4855,16 +4662,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Garnisonsgebäude
-        {               #   Rohstofflager mit Kupferkarren
+        {               #   Großes Rohstofflager
           :id          => 24, 
           :symbolic_id => :building_storage_2,
 					:category    => 5,
           :db_field    => :building_storage_2,
           :name        => {
             
-            :de_DE => "Rohstofflager mit Kupferkarren",
+            :de_DE => "Großes Rohstofflager",
   
-            :en_US => "Raw Materials Store with Copper Carts",
+            :en_US => "Great Store",
                 
           },
           :flavour     => {
@@ -4884,7 +4691,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -4902,42 +4709,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 18,
               :type => 'building',
 
-              :min_level => 2,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 12,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
+              :min_level => 3,
 
             },
 
@@ -4965,19 +4737,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)",
               },
             
           ],
@@ -4990,7 +4762,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           },
 
-        },              #   END OF Rohstofflager mit Kupferkarren
+        },              #   END OF Großes Rohstofflager
         {               #   Ritualstein
           :id          => 25, 
           :symbolic_id => :building_altar,
@@ -5020,7 +4792,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => false,
           :demolishable=> true,
@@ -5038,7 +4810,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 26,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 6,
 
             },
 
@@ -5060,14 +4832,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*32*3600+GREATER(LEVEL,1)*FLOOR((EQUAL(LEVEL,2)*1200+
-	(GREATER(LEVEL,2)*GREATER(10,LEVEL))*30*POW(LEVEL+1,3.2)+GREATER(LEVEL,9)*47547*(0.06*(LEVEL+1-10)+0.98))*1.5+0.5)
-',
+          :production_time => 'EQUAL(LEVEL,1)*24*3600+GREATER(LEVEL,1)*(FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)*0.65)',
           :production  => [
             
           ],
@@ -5098,12 +4868,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>This is where all the important people in the compound meet every evening to discuss important issues. Like for instance, how to solve the beer shortage.</p>",
   
-            :de_DE => "<p>Hier treffen sich alle wichtigen Personen der Lagerstätte jeden Abend, um die wichtigen Probleme zu besprechen. Zum Beispiel, wie man die Bierflaute lösen kann.</p>",
+            :de_DE => "<p>Thema für die Versammlung heute: 'Wie lösen wir die Bierflaute?'</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der gründbaren Lagerstätte.</p>",
+            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der durch den Kleinen Häuptling gründbaren Lagerstätte.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. An area by chance left vacant, with enough space for a few raw materials and for the dwellers’ gatherings.</p>",
                 
@@ -5111,7 +4881,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5))",
   
           :buyable     => true,
           :demolishable=> false,
@@ -5151,13 +4921,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*150+EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*600+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,1)*150+EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*600+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => 'EQUAL(LEVEL,1)*40+EQUAL(LEVEL,2)*100+EQUAL(LEVEL,3)*200+EQUAL(LEVEL,4)*300+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
             
           },
 
-          :production_time => '8*3600+4*LEVEL*3600',
+          :production_time => 'LESS(LEVEL,11)*(GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -5181,9 +4951,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :unlock_garrison => 3,            
 
-            :command_points => "MAX(LEVEL+1,3)-MAX(LEVEL,3)",
+            :command_points => "LESS(LEVEL,11)*GREATER(LEVEL,1)",
 
-            :unlock_building_slots => "MIN(LEVEL,1)*7+(MIN(LEVEL,11)-MIN(LEVEL,10))*2+(MIN(LEVEL,20)-MIN(LEVEL,19))*2",
+            :unlock_building_slots => "2+MIN(LEVEL,10)",
 
             :garrison_size_bonus => "200",
 
@@ -5221,7 +4991,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "LEVEL",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5)",
   
           :buyable     => true,
           :demolishable=> true,
@@ -5263,12 +5033,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :costs      => {
             0 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)',
             1 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)',
-            2 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)',
+            2 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*3+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1600+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
           :production  => [
             
           ],
@@ -5310,7 +5080,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5))*4",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*4))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -5359,13 +5129,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'FLOOR(7500*POW(LEVEL,0.4))',
-            1 => 'FLOOR(10000*POW(LEVEL,0.4))',
-            2 => 'FLOOR(12500*POW(LEVEL,0.4))',
+            0 => 'LESS(LEVEL,11)*(FLOOR(7500*POW(LEVEL,0.4)))',
+            1 => 'LESS(LEVEL,11)*(FLOOR(10000*POW(LEVEL,0.4)))',
+            2 => 'LESS(LEVEL,11)*(FLOOR(12500*POW(LEVEL,0.4)))',
             
           },
 
-          :production_time => 'FLOOR(9*3600+3600*POW(LEVEL,0.7))',
+          :production_time => 'LESS(LEVEL,11)*(FLOOR(11*3600+3600*POW(LEVEL,0.7)))',
           :production  => [
             
           ],
@@ -5439,7 +5209,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :building_slots => {
             0 => {
-              :max_level => 15,
+              :max_level => 10,
               
               :building  => 0,
               
@@ -5452,7 +5222,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             1 => {
-              :max_level => 15,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -5463,7 +5233,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             2 => {
-              :max_level => 15,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -5474,7 +5244,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             3 => {
-              :max_level => 15,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -6049,7 +5819,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               ],
             },
             1 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :building  => 26,
               
@@ -6748,7 +6518,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Steinzeitrattenkuschler",
+            :de_DE => "Springschwanzsucher",
   
             :en_US => "Newbie",
                 
@@ -6761,7 +6531,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Steinzeitrattenkuschler",
+            :de_DE => "Altameisenanbeter",
   
             :en_US => "Feeble Leader",
                 
@@ -6774,7 +6544,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Steinzeitrattenkuschler",
+            :de_DE => "Ammonitenanlocker",
   
             :en_US => "Junior Leader",
                 
@@ -6782,12 +6552,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  4
           :id          => 4, 
-          :exp         => 16200,
+          :exp         => 16250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Steinzeitrattenkuschler",
+            :de_DE => "Feuerunkensammler",
   
             :en_US => "Leader",
                 
@@ -6795,12 +6565,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  5
           :id          => 5, 
-          :exp         => 25750,
+          :exp         => 25500,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Mähnenwolfschmuser",
+            :de_DE => "Nachwuchs-Steinzeitrattenkuschler",
   
             :en_US => "Known Leader",
                 
@@ -6808,12 +6578,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  6
           :id          => 6, 
-          :exp         => 38250,
+          :exp         => 37500,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Mähnenwolfschmuser",
+            :de_DE => "Steinzeitrattenkuschler",
   
             :en_US => "Great Leader",
                 
@@ -6821,12 +6591,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  7
           :id          => 7, 
-          :exp         => 54250,
+          :exp         => 52750,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Mähnenwolfschmuser",
+            :de_DE => "Nachwuchs-Hülsenwirblerverwirbler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6834,12 +6604,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  8
           :id          => 8, 
-          :exp         => 74250,
+          :exp         => 71500,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Mähnenwolfschmuser",
+            :de_DE => "Hülsenwirblerverwirbler",
   
             :en_US => "Fantastic Leader",
                 
@@ -6847,12 +6617,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  9
           :id          => 9, 
-          :exp         => 98750,
+          :exp         => 94250,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Urschweinbesänftiger",
+            :de_DE => "Nachwuchs-Erdferkelentdecker",
   
             :en_US => "Fantastic Leader",
                 
@@ -6860,12 +6630,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  10
           :id          => 10, 
-          :exp         => 128250,
+          :exp         => 121250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Urschweinbesänftiger",
+            :de_DE => "Erdferkelentdecker",
   
             :en_US => "Fantastic Leader",
                 
@@ -6873,12 +6643,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  11
           :id          => 11, 
-          :exp         => 163250,
+          :exp         => 153000,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Urschweinbesänftiger",
+            :de_DE => "Nachwuchs-Dodoherdenhüter",
   
             :en_US => "Fantastic Leader",
                 
@@ -6886,12 +6656,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  12
           :id          => 12, 
-          :exp         => 204250,
+          :exp         => 189750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Urschweinbesänftiger",
+            :de_DE => "Dodoherdenhüter",
   
             :en_US => "Fantastic Leader",
                 
@@ -6899,12 +6669,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  13
           :id          => 13, 
-          :exp         => 251750,
+          :exp         => 232000,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Wildpferdflüsterer",
+            :de_DE => "Nachwuchs-Säbelzahnkatzenbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6912,12 +6682,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  14
           :id          => 14, 
-          :exp         => 306000,
+          :exp         => 280000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Wildpferdflüsterer",
+            :de_DE => "Säbelzahnkatzenbesänftiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -6925,12 +6695,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  15
           :id          => 15, 
-          :exp         => 367500,
+          :exp         => 334250,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Wildpferdflüsterer",
+            :de_DE => "Nachwuchs-Vielfraßversteher",
   
             :en_US => "Fantastic Leader",
                 
@@ -6938,12 +6708,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  16
           :id          => 16, 
-          :exp         => 436750,
+          :exp         => 395000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Wildpferdflüsterer",
+            :de_DE => "Vielfraßversteher",
   
             :en_US => "Fantastic Leader",
                 
@@ -6951,12 +6721,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  17
           :id          => 17, 
-          :exp         => 514000,
+          :exp         => 462500,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Wollnashornknuddler",
+            :de_DE => "Nachwuchs-Rothundzähmer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6964,12 +6734,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  18
           :id          => 18, 
-          :exp         => 599500,
+          :exp         => 537000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Wollnashornknuddler",
+            :de_DE => "Rothundzähmer",
   
             :en_US => "Fantastic Leader",
                 
@@ -6977,12 +6747,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  19
           :id          => 19, 
-          :exp         => 693500,
+          :exp         => 618750,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Wollnashornknuddler",
+            :de_DE => "Nachwuchs-Mähnenwolfschmuser",
   
             :en_US => "Fantastic Leader",
                 
@@ -6990,12 +6760,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  20
           :id          => 20, 
-          :exp         => 796250,
+          :exp         => 708000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Wollnashornknuddler",
+            :de_DE => "Mähnenwolfschmuser",
   
             :en_US => "Fantastic Leader",
                 
@@ -7003,12 +6773,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  21
           :id          => 21, 
-          :exp         => 907250,
+          :exp         => 804750,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Steppenwisentliebkoser",
+            :de_DE => "Nachwuchs-Urschweinkrauler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7016,12 +6786,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  22
           :id          => 22, 
-          :exp         => 1028250,
+          :exp         => 909250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Steppenwisentliebkoser",
+            :de_DE => "Urschweinkrauler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7029,12 +6799,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  23
           :id          => 23, 
-          :exp         => 1157750,
+          :exp         => 1021500,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Steppenwisentliebkoser",
+            :de_DE => "Nachwuchs-Auerochsenstreichler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7042,12 +6812,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  24
           :id          => 24, 
-          :exp         => 1296250,
+          :exp         => 1141500,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Steppenwisentliebkoser",
+            :de_DE => "Auerochsenstreichler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7055,12 +6825,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  25
           :id          => 25, 
-          :exp         => 1443500,
+          :exp         => 1269250,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Riesenhirschtätschler",
+            :de_DE => "Nachwuchs-Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -7068,12 +6838,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  26
           :id          => 26, 
-          :exp         => 1599500,
+          :exp         => 1404750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Riesenhirschtätschler",
+            :de_DE => "Wildpferdflüsterer",
   
             :en_US => "Fantastic Leader",
                 
@@ -7081,12 +6851,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  27
           :id          => 27, 
-          :exp         => 1764000,
+          :exp         => 1547750,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Riesenhirschtätschler",
+            :de_DE => "Nachwuchs-Höhlenlöwenschwichtiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -7094,12 +6864,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  28
           :id          => 28, 
-          :exp         => 1936750,
+          :exp         => 1689250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Riesenhirschtätschler",
+            :de_DE => "Höhlenlöwenschwichtiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -7107,12 +6877,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  29
           :id          => 29, 
-          :exp         => 2117250,
+          :exp         => 1856000,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Säbelzahntigerbändiger",
+            :de_DE => "Nachwuchs-Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7120,12 +6890,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  30
           :id          => 30, 
-          :exp         => 2305250,
+          :exp         => 2020750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Säbelzahntigerbändiger",
+            :de_DE => "Wollnashornknuddler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7133,12 +6903,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  31
           :id          => 31, 
-          :exp         => 2500250,
+          :exp         => 2192250,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Säbelzahntigerbändiger",
+            :de_DE => "Nachwuchs-Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -7146,12 +6916,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  32
           :id          => 32, 
-          :exp         => 2701750,
+          :exp         => 2370000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Säbelzahntigerbändiger",
+            :de_DE => "Steppenwisentliebkoser",
   
             :en_US => "Fantastic Leader",
                 
@@ -7159,12 +6929,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  33
           :id          => 33, 
-          :exp         => 2909250,
+          :exp         => 2553750,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Mammuttreiber",
+            :de_DE => "Nachwuchs-Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7172,12 +6942,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  34
           :id          => 34, 
-          :exp         => 3122250,
+          :exp         => 2743250,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Mammuttreiber",
+            :de_DE => "Riesenhirschtätschler",
   
             :en_US => "Fantastic Leader",
                 
@@ -7185,12 +6955,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  35
           :id          => 35, 
-          :exp         => 3340000,
+          :exp         => 2938000,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Mammuttreiber",
+            :de_DE => "Nachwuchs-Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -7198,12 +6968,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  36
           :id          => 36, 
-          :exp         => 3562000,
+          :exp         => 3137500,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Mammuttreiber",
+            :de_DE => "Säbelzahntigerbändiger",
   
             :en_US => "Fantastic Leader",
                 
@@ -7211,12 +6981,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  37
           :id          => 37, 
-          :exp         => 3787500,
+          :exp         => 3341250,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Dinosaurierdressierer",
+            :de_DE => "Nachwuchs-Brontotherienbeschützer",
   
             :en_US => "Fantastic Leader",
                 
@@ -7224,12 +6994,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  38
           :id          => 38, 
-          :exp         => 4016000,
+          :exp         => 358750,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Unter-Dinosaurierdressierer",
+            :de_DE => "Brontotherienbeschützer",
   
             :en_US => "Fantastic Leader",
                 
@@ -7237,12 +7007,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  39
           :id          => 39, 
-          :exp         => 4246750,
+          :exp         => 379500,
           :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Unter-Ober-Dinosaurierdressierer",
+            :de_DE => "Nachwuchs-Wollmammuttreiber",
   
             :en_US => "Fantastic Leader",
                 
@@ -7250,12 +7020,51 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
         {              #  40
           :id          => 40, 
-          :exp         => 4479250,
+          :exp         => 3973000,
           :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
-            :de_DE => "Ober-Dinosaurierdressierer",
+            :de_DE => "Wollmammuttreiber",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  41
+          :id          => 41, 
+          :exp         => 4188750,
+          :settlement_points   => 0,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Nachwuchs-Allosaurusabrichter",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  42
+          :id          => 42, 
+          :exp         => 4406250,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Allosaurusabrichter",
+  
+            :en_US => "Fantastic Leader",
+                
+          },
+        },             #   END OF 
+        {              #  43
+          :id          => 43, 
+          :exp         => 4625000,
+          :settlement_points   => 1,
+          :minimum_sacred_rank => 0,
+          :name        => {
+            
+            :de_DE => "Tyrannosaurustyrann",
   
             :en_US => "Fantastic Leader",
                 
