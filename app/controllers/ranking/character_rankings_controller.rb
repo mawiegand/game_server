@@ -18,17 +18,16 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "resource_score" if params[:sort] == 'resource'
     sort = "likes"          if params[:sort] == 'likes'
     sort = "victories"      if params[:sort] == 'victories'
-    sort = "victory_ratio"  if params[:sort] == 'victory_ratio'
     sort = "max_experience" if params[:sort] == 'experience'
     sort = "kills"          if params[:sort] == 'kills'
 
     if params[:page].blank? && @marked_character
-      num_before = Ranking::CharacterRanking.where([
+      num_before = Ranking::CharacterRanking.where(
         "#{ sort } > ? or (#{ sort } = ? and id < ?)",
         @marked_character.ranking[sort.to_sym],
         @marked_character.ranking[sort.to_sym],
         @marked_character.id,
-      ]).count
+      ).count
       page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i

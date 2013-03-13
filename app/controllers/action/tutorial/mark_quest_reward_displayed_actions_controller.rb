@@ -13,7 +13,7 @@ class Action::Tutorial::MarkQuestRewardDisplayedActionsController < ApplicationC
     raise ForbiddenError.new('Access forbidden.') if quest.tutorial_state.owner != current_character && !admin? && !staff?
 
     raise BadRequestError.new('Quest already has been displayed')  if quest.has_reward_been_displayed?
-    raise BadRequestError.new('Quest is not completed')            if quest.completed?
+    raise BadRequestError.new('Quest is not completed')            unless quest.completed?
     
     quest.mark_reward_displayed
     

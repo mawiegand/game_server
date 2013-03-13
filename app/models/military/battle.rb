@@ -117,10 +117,10 @@ class Military::Battle < ActiveRecord::Base
   def cleanup
     # delete participating armies
     self.armies.each do |army|
-      if (army.empty? && !army.garrison?)
+      if army.empty? && !army.garrison?
         if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
           army.removed = true
-          if !army.save
+          unless army.save
             raise InternalServerError.new('Failed to flag an army as removed')
           end
         else
@@ -135,7 +135,7 @@ class Military::Battle < ActiveRecord::Base
     # remove battle or set to removed
     if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
       self.removed = true
-      if !self.save
+      unless self.save
         raise InternalServerError.new('Failed to flag an battle as removed')
       end
     else
@@ -148,43 +148,46 @@ class Military::Battle < ActiveRecord::Base
     unless attacker.location.empty?                                              # don't add defenders at empty locations
       if attacker.garrison                                                       # if attacker is garrison army
         attacker.location.armies.each do |other_army|                            # add all defending armies
-          if (other_army != attacker &&                                          # don't add attacker
+          if other_army != attacker &&                                           # don't add attacker
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !defender.battle_participant.faction.contains_army_of(other_army.owner) &&   # don't let armies of current character defend his own attack
-              other_army.defending?)                                             # only add armies with appropriate stance
-            other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
+              other_army.defending? &&                                           # only add armies with appropriate stance
+              (other_army.same_alliance_as?(attacker) ||                         # only add armies of same alliance or
+                  other_army.same_owner_as?(attacker))                           # same owner
             self.add_army(other_army, attacker.battle_participant.faction)
           end
         end
-      elsif (defender.garrison ||                                                # if defender is garrison army
-             defender.battle_participant.faction.contains_garrison?)             # or a fighting army in garrison faction
+      elsif defender.garrison ||                                                 # if defender is garrison army
+          defender.battle_participant.faction.contains_garrison?                 # or a fighting army in garrison faction
         defender.location.armies.each do |other_army|                            # add all defending armies
-          if (other_army != attacker &&                                          # don't add attacker
+          if other_army != attacker &&                                           # don't add attacker
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
-              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison
-            other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
+              (other_army.defending? || other_army.garrison) &&                  # only add armies with appropriate stance, always add garrison
+              (other_army.same_alliance_as?(defender) ||                         # only add armies of same alliance or
+                  other_army.same_owner_as?(defender))                           # same owner
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
           end
         end
-      elsif (defender.defending? && !defender_fighting &&                        # if defender is a non fighting defending army
-          defender.same_alliance_as?(defender.location))                         # and if defender is in the same alliance as the fortress garrison army
+      elsif defender.defending? && !defender_fighting &&                         # if defender is a non fighting defending army
+          defender.same_alliance_as?(defender.location.garrison_army)            # and if defender is in the same alliance as the fortress garrison army
         defender.location.armies.each do |other_army|                            # add all defending armies
-          if (other_army != attacker &&                                          # don't add attacker
+          if other_army != attacker &&                                           # don't add attacker
               other_army != defender &&                                          # or defender, they are already involved
               !other_army.fighting? &&                                           # only add non fighting armies
               !attacker.battle_participant.faction.contains_army_of(other_army.owner) &&  # don't let armies of current character defend his own attack
-              (other_army.defending? || other_army.garrison))                    # only add armies with appropriate stance, always add garrison
-            other_army.delete_movement if other_army.moving?                     # delete movement of newly added army
+              (other_army.defending? || other_army.garrison) &&                  # only add armies with appropriate stance, always add garrison
+              (other_army.same_alliance_as?(defender) ||                         # only add armies of same alliance or
+                  other_army.same_owner_as?(defender))                           # same owner
             self.add_army(other_army, defender.battle_participant.faction)
             Military::Battle.send_attack_notification_if_necessary_to(other_army, attacker)
-          elsif (other_army != attacker &&                                       # if other army is the garrison army
+          elsif other_army != attacker &&                                        # if other army is the garrison army
               other_army != defender &&
               other_army.garrison &&
-              other_army.fighting?)                                              # and if it's fighting
+              other_army.fighting?                                               # and if it's fighting
             Military::Battle.merge_battles(attacker, other_army)                 # merge battle with garrison battle
           end
         end
@@ -271,7 +274,7 @@ class Military::Battle < ActiveRecord::Base
         event_type: "military_battle",
         local_event_id: self.id,
     )
-    if !event.save # this is the final step; this makes sure, something is actually executed
+    unless event.save # this is the final step; this makes sure, something is actually executed
       raise ArgumentError.new('could not create event')
     end
   end
@@ -286,8 +289,10 @@ class Military::Battle < ActiveRecord::Base
 
   def add_army(army, faction)
     logger.debug "Adding army #{army.id}: #{army} to faction #{faction.id}: #{faction}."
+    army.delete_movement if army.moving?                     # delete movement of newly added army
     army.battle = self
     army.suspension_ends_at = nil
+    army.attack_protection_ends_at = nil
     army.save
     faction.participants.create({
       battle_id: faction.battle_id,
@@ -306,7 +311,7 @@ class Military::Battle < ActiveRecord::Base
       logger.debug("f.has_units_fighting? = "+f.has_units_fighting?.to_s)
       active_factions += 1 if f.has_units_fighting?
     end
-    return !(active_factions > 1)
+    !(active_factions > 1)
   end
 
   #@pre battle_done? == true
@@ -415,8 +420,6 @@ class Military::Battle < ActiveRecord::Base
         loser_lost_units_count_per_round += round_results.first.lost_units_count unless round_results.empty?
       end
 
-      # logger.debug "---> round: #{round.round_num}, winner_units_count_per_round: #{winner_units_count_per_round}, loser_lost_units_count_per_round: #{loser_lost_units_count_per_round}"
-
       # winner faction: calculate winner experience according to new function
       winner_faction.participants.each do |participant|
         participant_round_results = participant.results.where(:round_id => round.id)
@@ -424,9 +427,7 @@ class Military::Battle < ActiveRecord::Base
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.units_count
-          character_result.experience_gained += k * 2.0 * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
-          # logger.debug "---> character_result.experience_gained #{character_result.experience_gained}"
-          # logger.debug "---> participant_units_per_round: #{participant_units_per_round}, loser_lost_units_count_per_round: #{loser_lost_units_count_per_round}, winner_units_count_per_round: #{winner_units_count_per_round}"
+          character_result.experience_gained += k * GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
           character_result.winner = true
           character_result.save
         end

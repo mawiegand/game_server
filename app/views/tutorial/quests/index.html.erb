@@ -7,6 +7,7 @@ end %>
 <table>
   <tr>
     <th>State</th>
+    <th>Character</th>
     <th>Quest</th>
     <th>Status</th>
     <th>Created at</th>
@@ -21,6 +22,7 @@ end %>
 <% @tutorial_quests.each do |tutorial_quest| %>
   <tr>
     <td><%= tutorial_quest.state_id %></td>
+    <td><%= tutorial_quest.character_id %></td>
     <td><%= tutorial_quest.quest_id %></td>
     <td><%= Tutorial::Quest::STATES[tutorial_quest.status] %></td>
     <td><%= tutorial_quest.created_at %></td>

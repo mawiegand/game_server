@@ -19,6 +19,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :outbox,            :class_name => "Messaging::Outbox",          :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :archive,           :class_name => "Messaging::Archive",         :foreign_key => "owner_id",     :inverse_of => :owner
 
+  has_many :quests,            :class_name => "Tutorial::Quest",            :foreign_key => "state_id",     :inverse_of => :owner
   has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
@@ -250,6 +251,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   def platinum_account?
     !premium_expiration.nil? && premium_expiration > DateTime.now
+  end
+
+  def bought_platinum?
+    !self.shop_transactions.where("state > 4 and offer like '%Platinum%'").empty?
   end
   
   def settlement_point_available?
