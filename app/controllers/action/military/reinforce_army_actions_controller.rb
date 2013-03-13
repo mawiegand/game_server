@@ -41,7 +41,7 @@ class Action::Military::ReinforceArmyActionsController < ApplicationController
       delta = quantity-old_quantity
 
       if delta != 0
-        deltas[unit_type[:db_field] = delta;
+        deltas[unit_type[:db_field]] = delta;
       end
 
       if delta > 0
