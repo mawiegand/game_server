@@ -208,11 +208,11 @@ class Settlement::Settlement < ActiveRecord::Base
     end
 
     # destroy all training jobs
-    #self.training_queues.each do |queue|
-    #  queue.reload
-    #  queue.jobs.reload
-    #  queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
-    #end
+    self.training_queues.each do |queue|
+      unless queue.frozen?
+        queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      end
+    end
 
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
@@ -856,7 +856,7 @@ class Settlement::Settlement < ActiveRecord::Base
       self.training_queues.each do |queue|
         if queue.jobs.count != queue.jobs_count
           logger.warn(">>> TRAINING JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
-          Construction::Queue.reset_counters(queue.id, :jobs)
+          Training::Queue.reset_counters(queue.id, :jobs)
         end
       end
     end

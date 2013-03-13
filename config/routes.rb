@@ -1,6 +1,5 @@
 GameServer::Application.routes.draw do
 
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -13,7 +12,7 @@ GameServer::Application.routes.draw do
         resources :alliance_rankings,  :only => [ :index ]
         resources :fortress_rankings,  :only => [ :index ]
         resources :artifact_rankings,  :only => [ :index ]
-        resource :ranking_info,        :only => [ :show ]
+        resource  :ranking_info,       :only => [ :show ]
       end
 
 
@@ -26,7 +25,7 @@ GameServer::Application.routes.draw do
         resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
-        resources :trade_log_entries , :only => [ :index ]
+        resources :trade_log_entries, :only => [ :index ]
       end
 
       namespace :effect do 
@@ -56,12 +55,15 @@ GameServer::Application.routes.draw do
         resources :alliances do
           resources :characters
           resources :alliance_shouts
+          resource  :alliance_reservation
+          resources :victory_progresses
         end
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
+        resources :alliance_reservations
         resources :artifacts
         resources :artifact_initiations
 
@@ -79,6 +81,7 @@ GameServer::Application.routes.draw do
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
       resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+      resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
                   
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
       resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
@@ -215,6 +218,7 @@ GameServer::Application.routes.draw do
         end
         namespace :trading do 
           resources :trading_carts_actions 
+          resources :speedup_trading_carts_actions,    :only => [ :create ]
         end 
         namespace :training do
           resources :speedup_job_actions    
