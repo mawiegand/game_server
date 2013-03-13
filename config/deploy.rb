@@ -37,10 +37,10 @@ namespace :deploy do
     restart_notification_ticker
   end
 
-#  desc "Reset DB"
+  desc "Reset DB"
   task :reset do
-    # run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
-    # restart
+    run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
+    restart
     exit
   end
 
