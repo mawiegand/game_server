@@ -3,6 +3,8 @@
 # Helper script to generate a stub for a new gamestate class and manager
 # that are derived from the (abstract) entity base class and manager base 
 # class.
+#
+# Example: ./scripts/generate_objectivec_stub Fundamental::Character
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
