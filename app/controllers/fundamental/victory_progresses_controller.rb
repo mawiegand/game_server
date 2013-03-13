@@ -7,7 +7,15 @@ class Fundamental::VictoryProgressesController < ApplicationController
   # GET /fundamental/victory_progresses
   # GET /fundamental/victory_progresses.json
   def index
-    @fundamental_victory_progresses = Fundamental::VictoryProgress.all
+    if params.has_key?(:alliance_id)
+      alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Alliance Not Found')       if alliance.nil?
+      #raise ForbiddenError.new('Not member of alliance')  unless alliance == current_character.alliance
+      @fundamental_victory_progresses = alliance.victory_progresses
+    else
+      raise ForbiddenError.new('Acess denied.') unless staff?
+      @fundamental_victory_progresses = Fundamental::VictoryProgress.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

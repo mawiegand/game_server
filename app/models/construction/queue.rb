@@ -89,7 +89,7 @@ class Construction::Queue < ActiveRecord::Base
     elsif origin_type == :effects
       self.speedup_effects = self.speedup_effects + delta
     else 
-      raise InternalServerError.new('Could not add speedup bonus of type #{origin_type.to_s}.');
+      raise InternalServerError.new("Could not add speedup bonus of type #{origin_type.to_s}.");
     end
   end
   

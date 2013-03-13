@@ -2,9 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  
-  
-  
   application:
     layout:
       signout: Sign Out
@@ -43,6 +40,7 @@ en:
         victory_progress: Victory Progress
         guilds: Guilds
         alliance_shouts: Ally-Shouts
+        alliance_reservations: Ally-Reservations
         announcements: Announcements
         artifacts: Artifacts
         artifact_initiations: Art. Initiations

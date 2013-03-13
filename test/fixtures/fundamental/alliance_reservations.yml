@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alliance_id: 1
+  tag: MyString
+  name: MyString
+  password: MyString
+
+two:
+  alliance_id: 1
+  tag: MyString
+  name: MyString
+  password: MyString
