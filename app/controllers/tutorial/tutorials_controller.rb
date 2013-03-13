@@ -7,9 +7,7 @@ require 'util/formula.rb'
 # to the url. It's also possible to just ask for the version of the rules.
 class Tutorial::TutorialsController < ApplicationController
   layout 'tutorial'
-  
-  before_filter :authenticate
-  
+
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
     
