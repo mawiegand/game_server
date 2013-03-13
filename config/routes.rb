@@ -189,6 +189,7 @@ GameServer::Application.routes.draw do
           resources :move_army_actions          
           resources :create_army_actions         
           resources :change_army_actions         
+          resources :reinforce_army_actions         
           resources :cancel_move_army_actions   
           resources :attack_army_actions       
           resources :retreat_army_actions      

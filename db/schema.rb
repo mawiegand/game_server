@@ -1771,11 +1771,11 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
@@ -1857,7 +1857,6 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
-    t.integer  "number",             :default => 0, :null => false
   end
 
   create_table "fundamental_settings", :force => true do |t|
