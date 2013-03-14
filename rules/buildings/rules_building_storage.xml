@@ -33,7 +33,7 @@
   <Capacity id="resource_wood">FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))</Capacity>
   <Capacity id="resource_fur">FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))</Capacity>
   <Abilities> <!-- just for grouping -->
-    <TradingCarts>10*LEVEL*LEVEL</TradingCarts>
+    <TradingCarts>5*LEVEL*LEVEL</TradingCarts>
     <UnlockP2PTrade level="1" />
   </Abilities>
   <ConversionOption building="building_storage_2" level="LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)"/>   

@@ -337,7 +337,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 5, 11, ],
+          :successor_quests => [4, 5, 10, ],
 
           :rewards => {
             
@@ -345,22 +345,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 100,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 100,
               },
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 100,
 
           },          
 
@@ -619,7 +619,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 150,
+            :experience_reward => 100,
 
           },          
 
@@ -786,29 +786,10 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [17, ],
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 40,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 40,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 60,
-              },
-
-            ],
-
             :experience_reward => 200,
 
           },          
@@ -824,64 +805,64 @@ class Tutorial::Tutorial
           :place_npcs => 2,         
 
         },              #   END OF quest_settlement_button1
-        {               #   quest_army_create
+        {               #   quest_build_1storagelvl1
           :id                => 8, 
-          :symbolic_id       => :quest_army_create,
-          :advisor           => :warrior,
+          :symbolic_id       => :quest_build_1storagelvl1,
+          :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
           
           :name => {
             
-            :en_US => "Your first army",
+            :en_US => "Raw materials store",
   
-            :de_DE => "Deine erste Armee",
+            :de_DE => " Rohstofflager ",
                 
           },
           :task => {
             
-            :en_US => "Assemble an army.",
+            :en_US => "Build a raw materials store.",
   
-            :de_DE => "Stelle eine Armee auf.",
+            :de_DE => "Baue ein Rohstofflager.",
                 
           },
           :flavour => {
             
-            :de_DE => "Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.",
+            :de_DE => "Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.",
   
-            :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.",
+            :en_US => "Doesn’t it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>",
   
-            :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
+            :en_US => "<p>Raw materials stores increase the maximum amount of raw materials you can store. Once you’ve reached the limit, any further production is lost.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Das soll eine Armee sein? Ziemlich klein, oder?",
+            :de_DE => "Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
   
-            :en_US => "Call that an army? Rather small, don’t you think?",
+            :en_US => "That looks great! At last I have enough space for all my shoe…er, things!",
                 
           },
           :reward_text => {
             
-            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.",
+            :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.",
   
-            :en_US => "Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.",
+            :en_US => " The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_settlement_button1',
+            :quest => 'quest_build_chiefcottagelvl4',
 
           },
 
-          :successor_quests => [9, ],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -889,48 +870,43 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 165,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 400,
               },
 
             ],
 
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 10,
-              },
-
-            ],
-
-            :experience_reward => 300,
+            :experience_reward => 100,
 
           },          
 
           :reward_tests => {
             
-            :army_tests => [
+            :building_tests => [
 
               {
-                :type => 'visible',
+                :building => 'building_storage',
+
+                :min_level => 1,
+
                 :min_count => 1,
+
               },
 
             ],
 
           },          
 
-        },              #   END OF quest_army_create
+        },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
           :id                => 9, 
           :symbolic_id       => :quest_army_move,
@@ -988,7 +964,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [10, ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1024,93 +1000,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_army_move
-        {               #   quest_settlement_button2
-          :id                => 10, 
-          :symbolic_id       => :quest_settlement_button2,
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-          :tutorial          => true,
-          :tutorial_end_quest => false,
-          
-          :name => {
-            
-            :en_US => "Back to the settlement",
-  
-            :de_DE => "Zurück in die Siedlung",
-                
-          },
-          :task => {
-            
-            :en_US => "Get yourself back to your settlement.",
-  
-            :de_DE => "Begib Dich zurück in Deine Siedlung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.",
-  
-            :en_US => "Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>",
-  
-            :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Na? Ging doch ganz einfach, oder?",
-  
-            :en_US => "You see? Pretty easy, wasn’t it?!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' drückst.",
-  
-            :en_US => "You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_move',
-
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
-            ],
-
-            :experience_reward => 150,
-
-            :action_point_reward => true,
-
-          },          
-
-          :reward_tests => {
-            
-            :custom_test => {
-              :id => 'test_settlement_button2',
-            },
-
-          },          
-
-        },              #   END OF quest_settlement_button2
         {               #   quest_build_2gathererlvl3
-          :id                => 11, 
+          :id                => 10, 
           :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1211,6 +1102,91 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_2gathererlvl3
+        {               #   quest_settlement_button2
+          :id                => 11, 
+          :symbolic_id       => :quest_settlement_button2,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Back to the settlement",
+  
+            :de_DE => "Zurück in die Siedlung",
+                
+          },
+          :task => {
+            
+            :en_US => "Get yourself back to your settlement.",
+  
+            :de_DE => "Begib Dich zurück in Deine Siedlung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.",
+  
+            :en_US => "Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>",
+  
+            :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Na? Ging doch ganz einfach, oder?",
+  
+            :en_US => "You see? Pretty easy, wasn’t it?!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' drückst.",
+  
+            :en_US => "You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_move',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+            :action_point_reward => true,
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_settlement_button2',
+            },
+
+          },          
+
+        },              #   END OF quest_settlement_button2
         {               #   quest_build_chiefcottagelvl3
           :id                => 12, 
           :symbolic_id       => :quest_build_chiefcottagelvl3,
@@ -1274,22 +1250,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 175,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 175,
               },
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 350,
 
           },          
 
@@ -1330,7 +1306,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a small huts.",
   
-            :de_DE => "Baue zwei kleine Hütten.",
+            :de_DE => "Baue eine kleine Hütte.",
                 
           },
           :flavour => {
@@ -1444,9 +1420,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du solltest zum Erreichen des Ziels 5 oder 6 Jäger und Sammler bauen und einige auf Level 2 oder sogar 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
+            :de_DE => "<p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
   
-            :en_US => "<p>To do this you should build 5 or 6 Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>",
+            :en_US => "<p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>",
                 
           },          
           :reward_flavour => {
@@ -1478,17 +1454,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 125,
               },
 
               {
@@ -1578,7 +1554,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [17, ],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -1586,7 +1562,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 235,
+                :amount => 200,
               },
 
               {
@@ -1710,64 +1686,64 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl4
-        {               #   quest_build_1storagelvl1
+        {               #   quest_army_create
           :id                => 17, 
-          :symbolic_id       => :quest_build_1storagelvl1,
-          :advisor           => :girl,
+          :symbolic_id       => :quest_army_create,
+          :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
           
           :name => {
             
-            :en_US => "Raw materials store",
+            :en_US => "Your first army",
   
-            :de_DE => " Rohstofflager ",
+            :de_DE => "Deine erste Armee",
                 
           },
           :task => {
             
-            :en_US => "Build a raw materials store.",
+            :en_US => "Assemble an army.",
   
-            :de_DE => "Baue ein Rohstofflager.",
+            :de_DE => "Stelle eine Armee auf.",
                 
           },
           :flavour => {
             
-            :de_DE => "Stört es Dich nicht auch, dass der Lagerplatz so gering ist? Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.",
+            :de_DE => "Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.",
   
-            :en_US => "Doesn’t it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!",
+            :en_US => "You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
-            :en_US => "<p>Raw materials stores increase the maximum amount of raw materials you can store. Once you’ve reached the limit, any further production is lost.</p>",
+            :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
+            :de_DE => "Das soll eine Armee sein? Ziemlich klein, oder?",
   
-            :en_US => "That looks great! At last I have enough space for all my shoe…er, things!",
+            :en_US => "Call that an army? Rather small, don’t you think?",
                 
           },
           :reward_text => {
             
-            :de_DE => "Die Handelskarren erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.",
+            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.",
   
-            :en_US => " The tradings carts let you trade with other players. Each trading cart can transport ten resources.",
+            :en_US => "Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
+            :quest => 'quest_settlement_button1',
 
           },
 
-          :successor_quests => [18, ],
+          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -1775,43 +1751,48 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 165,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 400,
+                :amount => 75,
               },
 
             ],
 
-            :experience_reward => 100,
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 300,
 
           },          
 
           :reward_tests => {
             
-            :building_tests => [
+            :army_tests => [
 
               {
-                :building => 'building_storage',
-
-                :min_level => 1,
-
+                :type => 'visible',
                 :min_count => 1,
-
               },
 
             ],
 
           },          
 
-        },              #   END OF quest_build_1storagelvl1
+        },              #   END OF quest_army_create
         {               #   quest_build_1campfirelvl1
           :id                => 18, 
           :symbolic_id       => :quest_build_1campfirelvl1,
@@ -2032,9 +2013,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -2077,6 +2058,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 125,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
@@ -2151,7 +2137,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [22, 23, 24, 50, ],
+          :successor_quests => [22, 23, 24, ],
 
           :rewards => {
             
@@ -2435,9 +2421,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Mit Level 6 der Häuptlingshütte hast Du auch einen 2ten Kommandopunkt erhalten. Du kannst jetzt eine weitere Armee aufstellen.",
   
-            :en_US => "Level 8 of the chieftain’s hut activates the furriers. They’re really important.",
+            :en_US => "Chieftain´s hut Level 6 gives you one more command point. You can now levy another army.Baue Dein Lagerfeuer auf Level 10 aus.",
                 
           },
 
@@ -2447,7 +2433,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 26, 36, 52, 103, ],
+          :successor_quests => [25, 26, ],
 
           :rewards => {
             
@@ -2549,7 +2535,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [27, ],
 
           :rewards => {
             
@@ -2572,7 +2558,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 300,
+            :experience_reward => 500,
 
           },          
 
@@ -2651,7 +2637,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, 28, ],
+          :successor_quests => [28, ],
 
           :rewards => {
             
@@ -2720,41 +2706,41 @@ class Tutorial::Tutorial
             
             :en_US => "Conquer a fortress.",
   
-            :de_DE => "Erobere eine Festung-",
+            :de_DE => "Erobere eine Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.",
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
   
-            :en_US => "What? Only one settlement? You’ve got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.",
+            :en_US => "We need more settlements. A fortress would be the right.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Du kannst nur weitere Siedlungen gründen, wenn Du Erfahrungen sammelst und im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
   
-            :en_US => "<p>To start an encampment you have to train a little chieftain at a campfire and move him together with an army to a free field. But you can only have one encampment per region.</p><p>You can only found new settlements by gathering experience and achieving a higher mundane rank.</p>",
+            :en_US => "<p>You have to attack the fortress. You will need an big army. You can attack the neanderthal as well as other players. The neanderthal might be the better option for the start.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
+            :de_DE => "Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!",
   
-            :en_US => "You’ve started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I’m sick of the sight of you.",
+            :en_US => "You conquered a fortress? That´s great!",
                 
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
   
-            :en_US => "",
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl7',
+            :quest => 'quest_build_training_cave',
 
           },
 
@@ -2832,9 +2818,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Du siehst sie in den drei Feldern ganz oben links. Lass uns einen zweiten Jäger und Sammler bauen, um das zu verbessern.",
+            :de_DE => "Behalte Deine Rohstoffproduktion im Auge. Mehr ist immer besser!",
   
-            :en_US => "Your raw materials production is still very low. Take a look at it in the three fields top left. Let’s build another Hunter Gatherer to give it a boost.",
+            :en_US => "Keep an eye on your raw materials production. More is better!",
                 
           },
           :description => {
@@ -2865,7 +2851,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [30, ],
+          :successor_quests => [29, 30, ],
 
           :rewards => {
             
@@ -2959,6 +2945,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl8',
+
+          },
+
           :successor_quests => [],
 
           :rewards => {
@@ -3016,7 +3008,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade of the chieftain’s hut",
   
-            :de_DE => "Häuptlingshütte Level 9",
+            :de_DE => "Häuptlingshütte Level 9.",
                 
           },
           :task => {
@@ -3028,23 +3020,23 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Rohstoffproduktion ist noch sehr niedrig. Du siehst sie in den drei Feldern ganz oben links. Lass uns einen zweiten Jäger und Sammler bauen, um das zu verbessern.",
+            :de_DE => "Jetzt hast Du bereits 36 Deiner maximal 40 Bauplätze freigeschaltet.",
   
-            :en_US => "Your raw materials production is still very low. Take a look at it in the three fields top left. Let’s build another Hunter Gatherer to give it a boost.",
+            :en_US => "You got 36 of your 40 buildingslots.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit dem nächsten Level hast Du Zugang zum Kürschner und kannst Deine Fellproduktion deutlich verbessern.</p>",
+            :de_DE => "<p>Die Häuptlingshütte ausbauen bringt Dir weitere 4 Bauplätze.</p>",
   
-            :en_US => "<p>With the next level you will achive the furrier, so you cann increase your furproduction massivly.</p>",
+            :en_US => "<p>You will get four more buildingsslots at the next level.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Sehr schön! Endlich hast Du den Kürschner erreicht!",
+            :de_DE => "Wunderbar, selbst der Chef ist fast zufrieden.",
   
-            :en_US => "Cool, you get accesss to the furrier!",
+            :en_US => "Cool, even the chief is pleased.",
                 
           },
           :reward_text => {
@@ -3061,7 +3053,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [31, ],
+          :successor_quests => [31, 32, ],
 
           :rewards => {
             
@@ -3137,9 +3129,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du einen Kleinen Häuptling am Lagerfeuer ausbilden und diesen mit einer Armee zu einem freien Feld bewegen. Du kannst allerdings nur eine Lagerstätte pro Region haben.</p><p>Du kannst nur weitere Siedlungen gründen, wenn Du Erfahrungen sammelst und im Rang aufsteigst.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszu bilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p><p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>",
   
-            :en_US => "<p>To start an encampment you have to train a little chieftain at a campfire and move him together with an army to a free field. But you can only have one encampment per region.</p><p>You can only found new settlements by gathering experience and achieving a higher mundane rank.</p>",
+            :en_US => "<p>To start an encampment you have to train a little chieftain at a campfire levle 10 and move him together with an army to a free field.</p><p>But you can only have one encampment per region, and you need a free settlement point.</p>",
                 
           },          
           :reward_flavour => {
@@ -3204,8 +3196,218 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_outpost
-        {               #   quest_rank
+        {               #   quest_build_chiefcottagelvl10
           :id                => 32, 
+          :symbolic_id       => :quest_build_chiefcottagelvl10,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Upgrade of the chieftain’s hut",
+  
+            :de_DE => "Häuptlingshütte Level 10.",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade of the chieftain’s hut to level 10.",
+  
+            :de_DE => "Erweitere die Häuptlingshütte auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt hat Deine Hauptsiedlung die volle Größe!",
+  
+            :en_US => "You got 36 of your 40 buildingslots.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben. </p>",
+  
+            :en_US => "<p>With level 10 of the chieftain´s hut you have unlocked all 40 buildingslots.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!",
+  
+            :en_US => "It´s about time! Now we have all the space we need!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p> <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+  
+            :en_US => "<p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
+          <p>At Level 12 you will recieve another command point for another army.</p>",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl9',
+
+          },
+
+          :successor_quests => [33, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_chiefcottagelvl10
+        {               #   quest_build_copper_smelter
+          :id                => 33, 
+          :symbolic_id       => :quest_build_copper_smelter,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Copper smelter",
+  
+            :de_DE => "Kupferschmelze",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a coppersmelter.",
+  
+            :de_DE => "Baue eine Kupferschmelze.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.",
+  
+            :en_US => "In the copper age you can build new buildings and improved versions auf already known buildings.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Kupferschmelze ist ein kleines Gebäude für einen kleinen Bauplatz, sie ermöglicht Dir den Bau der Gebäude der Kupferzeit.</p>",
+  
+            :en_US => "<p>The copper smleter is a small building for a small building slot. You will gain access to building out of the copper age.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
+  
+            :en_US => "Wow, a new age! So many opportunities! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Sollen wir die Steinzeit verlassen und in die Kupferzeit fortschreiten?",
+  
+            :en_US => "Should we leave the stone age and move forward to the copper age? ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl10',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_copper_smelter',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_copper_smelter
+        {               #   quest_rank
+          :id                => 34, 
           :symbolic_id       => :quest_rank,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3292,7 +3494,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_rank
         {               #   quest_message
-          :id                => 33, 
+          :id                => 35, 
           :symbolic_id       => :quest_message,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3342,7 +3544,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [34, ],
+          :successor_quests => [36, ],
 
           :rewards => {
             
@@ -3398,7 +3600,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_message
         {               #   quest_encyclopedia
-          :id                => 34, 
+          :id                => 36, 
           :symbolic_id       => :quest_encyclopedia,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3530,204 +3732,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_encyclopedia
-        {               #   quest_build_1cottagelvl1
-          :id                => 35, 
-          :symbolic_id       => :quest_build_1cottagelvl1,
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          
-          :name => {
-            
-            :en_US => "The small hut",
-  
-            :de_DE => "Die kleine Hütte",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a small hut.",
-  
-            :de_DE => "Baue eine kleine Hütte.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Arbeiter haben ja noch keine Unterkunft. Bitte baue ihnen doch eine kleine Hütte. Je besser es Deinen Arbeitern geht, desto schneller bauen sie auch.",
-  
-            :en_US => "Your workers have nowhere to stay yet. Please build them a small hut. The happier your workers, the faster they build!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p> Kleine Hütten verkürzen die Bauzeit von Gebäuden. </p>",
-  
-            :en_US => "<p>Small huts reduce the construction time of buildings. </p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
-  
-            :en_US => "Well done. Your workers are pleased, and they’re building faster. ",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.",
-  
-            :en_US => "If you think your building orders are taking too long you can build more small huts and upgrade them.  ",
-                
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 50,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 70,
-              },
-
-            ],
-
-            :experience_reward => 100,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_cottage',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_1cottagelvl1
-        {               #   quest_build_1campfirelvl10
-          :id                => 36, 
-          :symbolic_id       => :quest_build_1campfirelvl10,
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          
-          :name => {
-            
-            :en_US => "Campfire level 10",
-  
-            :de_DE => "Lagerfeuer Level 10",
-                
-          },
-          :task => {
-            
-            :en_US => "Upgrade your campfire to level 10",
-  
-            :de_DE => "Baue Dein Lagerfeuer auf Level 10 aus.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Ich würde gern eine Lagerstätte gründen, aber dafür brauchen wir zuerst einen Kleinen Häuptling. Der Kleine Häuptling kann nur an einem ausgebauten Lagerfeuer trainiert werden. Baust Du es bitte für mich aus?",
-  
-            :en_US => "I’d love to found an encampment but first we need a little chieftain. A little chieftain can only be trained at an upgraded campfire. Could you upgrade this one for me?",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p></p>",
-  
-            :en_US => "<p></p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Gut. Jetzt kannst Du einen Kleinen Häuptling trainieren. Schau dafür am Lagerfeuer vorbei.",
-  
-            :en_US => "Good. Now you can train a little chieftain. So I’d pay a visit to the campfire if I were you. ",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Kleine Häuptlinge sind teuer und haben eine lange Rekrutierungszeit. Außerdem sind sie trotz ihrer wichtigen Stellung Teil der Nahkampfeinheiten. Versuche sie deswegen nicht in Kämpfe zu verwickeln.",
-  
-            :en_US => "Little chieftains are expensive and have a long recruiting time. They’re also members of the melee fighting unit, despite their important status. So try not to deploy them in battle.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl6',
-
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 240,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 180,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 800,
-              },
-
-            ],
-
-            :experience_reward => 350,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_campfire',
-
-                :min_level => 10,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_1campfirelvl10
         {               #   quest_build_2gathererlvl
           :id                => 37, 
           :symbolic_id       => :quest_build_2gathererlvl,
@@ -5049,12 +5053,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl5',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -5243,12 +5241,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl6',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -5343,7 +5335,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [54, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5437,13 +5429,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl8',
-
-          },
-
-          :successor_quests => [55, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -5535,12 +5521,6 @@ class Tutorial::Tutorial
   
             :en_US => "Building a Hunter Gatherer is always a good idea.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_1gathererlvl9',
-
           },
 
           :successor_quests => [],
@@ -6179,7 +6159,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 10 units.",
   
-            :de_DE => "Besiege 10 Einheiten",
+            :de_DE => "Besiege 10 Einheiten.",
                 
           },
           :flavour => {
@@ -6272,7 +6252,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 100 units.",
   
-            :de_DE => "Besiege 100 Einheiten",
+            :de_DE => "Besiege 100 Einheiten.",
                 
           },
           :flavour => {
@@ -6365,7 +6345,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 500 units.",
   
-            :de_DE => "Besiege 500 Einheiten",
+            :de_DE => "Besiege 500 Einheiten.",
                 
           },
           :flavour => {
@@ -6463,7 +6443,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 1.000 units.",
   
-            :de_DE => "Besiege 1.000 Einheiten",
+            :de_DE => "Besiege 1.000 Einheiten.",
                 
           },
           :flavour => {
@@ -6561,7 +6541,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 5.000 units.",
   
-            :de_DE => "Besiege 5.000 Einheiten",
+            :de_DE => "Besiege 5.000 Einheiten.",
                 
           },
           :flavour => {
@@ -6654,7 +6634,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 10.000 units.",
   
-            :de_DE => "Besiege 10.000 Einheiten",
+            :de_DE => "Besiege 10.000 Einheiten.",
                 
           },
           :flavour => {
@@ -6747,7 +6727,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 20.000 units.",
   
-            :de_DE => "Besiege 20.000 Einheiten",
+            :de_DE => "Besiege 20.000 Einheiten.",
                 
           },
           :flavour => {
@@ -6840,7 +6820,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 25.850 units.",
   
-            :de_DE => "Besiege 25.850 Einheiten",
+            :de_DE => "Besiege 25.850 Einheiten.",
                 
           },
           :flavour => {
@@ -6933,7 +6913,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 32650 units.",
   
-            :de_DE => "Besiege 32650 Einheiten",
+            :de_DE => "Besiege 32650 Einheiten.",
                 
           },
           :flavour => {
@@ -7026,7 +7006,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 40250 units.",
   
-            :de_DE => "Besiege 40250 Einheiten",
+            :de_DE => "Besiege 40250 Einheiten.",
                 
           },
           :flavour => {
@@ -7119,7 +7099,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 48.650 units.",
   
-            :de_DE => "Besiege 48.650 Einheiten",
+            :de_DE => "Besiege 48.650 Einheiten.",
                 
           },
           :flavour => {
@@ -7212,7 +7192,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 57.850 units.",
   
-            :de_DE => "Besiege 57.850 Einheiten",
+            :de_DE => "Besiege 57.850 Einheiten.",
                 
           },
           :flavour => {
@@ -7305,7 +7285,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 67.850 units.",
   
-            :de_DE => "Besiege 67.850 Einheiten",
+            :de_DE => "Besiege 67.850 Einheiten.",
                 
           },
           :flavour => {
@@ -7398,7 +7378,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 78.650 units.",
   
-            :de_DE => "Besiege 78.650 Einheiten",
+            :de_DE => "Besiege 78.650 Einheiten.",
                 
           },
           :flavour => {
@@ -7496,7 +7476,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 90.250 units.",
   
-            :de_DE => "Besiege 90.250 Einheiten",
+            :de_DE => "Besiege 90.250 Einheiten.",
                 
           },
           :flavour => {
@@ -7594,7 +7574,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 102.650 units.",
   
-            :de_DE => "Besiege 102.650 Einheiten",
+            :de_DE => "Besiege 102.650 Einheiten.",
                 
           },
           :flavour => {
@@ -7692,7 +7672,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 115.850 units.",
   
-            :de_DE => "Besiege 115.850 Einheiten",
+            :de_DE => "Besiege 115.850 Einheiten.",
                 
           },
           :flavour => {
@@ -7790,7 +7770,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 129.850 units.",
   
-            :de_DE => "Besiege 129.850 Einheiten",
+            :de_DE => "Besiege 129.850 Einheiten.",
                 
           },
           :flavour => {
@@ -7888,7 +7868,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 144.640 units.",
   
-            :de_DE => "Besiege 144.640 Einheiten",
+            :de_DE => "Besiege 144.640 Einheiten.",
                 
           },
           :flavour => {
@@ -7981,7 +7961,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 160.250 units.",
   
-            :de_DE => "Besiege 160.250 Einheiten",
+            :de_DE => "Besiege 160.250 Einheiten.",
                 
           },
           :flavour => {
@@ -8077,9 +8057,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 10 Army Experience",
+            :en_US => "Fight with an army until it gained 20 Army Experience.",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 20 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -8147,7 +8127,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 10,
+              :min_experience => 20,
             },
 
           },          
@@ -9998,7 +9978,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
+            :quest => 'quest_resourcescore_0_5',
 
           },
 
@@ -11847,9 +11827,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 225 resource points",
+            :en_US => "Increase the resource production of one settlement to 100 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 225 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 100 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -11887,7 +11867,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [124, ],
+          :successor_quests => [103, 124, ],
 
           :rewards => {
             
@@ -11895,12 +11875,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 300,
+                :amount => 200,
               },
 
               {
@@ -11917,7 +11897,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 225,
+              :min_resources => 100,
             },
 
           },          
@@ -11940,9 +11920,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 500 resource points",
+            :en_US => "Increase the resource production of one settlement to 360 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 500 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 360 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -11988,17 +11968,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 300,
               },
 
             ],
@@ -12010,7 +11990,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 500,
+              :min_resources => 360,
             },
 
           },          
@@ -12033,9 +12013,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 740 resource points",
+            :en_US => "Increase the resource production of one settlement to 740 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 740 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 740 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12126,9 +12106,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.140 resource points",
+            :en_US => "Increase the resource production of one settlement to 1.240 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.140 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.240 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12201,7 +12181,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 1140,
+              :min_resources => 1240,
             },
 
           },          
@@ -12224,9 +12204,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.700 resource points",
+            :en_US => "Increase the resource production of one settlement to 1.850 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.700 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.850 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12294,7 +12274,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 1700,
+              :min_resources => 1850,
             },
 
           },          
@@ -12317,9 +12297,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 2.420 resource points",
+            :en_US => "Increase the resource production of one settlement to 2.620 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 2.420 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 2.620 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12387,7 +12367,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 2420,
+              :min_resources => 2820,
             },
 
           },          
@@ -12410,9 +12390,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 3.300 resource points",
+            :en_US => "Increase the resource production of one settlement to 3.500 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 3.300 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 3.500 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12480,7 +12460,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 3300,
+              :min_resources => 3500,
             },
 
           },          
@@ -12503,9 +12483,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 4.340 resource points",
+            :en_US => "Increase the resource production of one settlement to 4.340 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 4.340 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 4.340 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12596,9 +12576,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 5.540 resource points",
+            :en_US => "Increase the resource production of one settlement to 5.540 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 5.540 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 5.540 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12689,9 +12669,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 6.900 resource points",
+            :en_US => "Increase the resource production of one settlement to 6.900 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 6.900 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 6.900 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12787,9 +12767,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 8.420 resource points",
+            :en_US => "Increase the resource production of one settlement to 8.420 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 8.420 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 8.420 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12880,9 +12860,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 10.100 resource points",
+            :en_US => "Increase the resource production of one settlement to 10.100 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 10.100 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 10.100 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -12973,9 +12953,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 11.940 resource points",
+            :en_US => "Increase the resource production of one settlement to 11.940 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 11.940 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 11.940 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13066,9 +13046,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 13.940 resource points",
+            :en_US => "Increase the resource production of one settlement to 13.940 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 13.940 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 13.940 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13159,9 +13139,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 16.100 resource points",
+            :en_US => "Increase the resource production of one settlement to 16.100 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 16.100 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 16.100 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13257,9 +13237,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 18.420 resource points",
+            :en_US => "Increase the resource production of one settlement to 18.420 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 18.420 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 18.420 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13350,9 +13330,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 20.900 resource points",
+            :en_US => "Increase the resource production of one settlement to 20.900 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 20.900 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 20.900 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13448,9 +13428,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 23.540 resource points",
+            :en_US => "Increase the resource production of one settlement to 23.540 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 23.540 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 23.540 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13541,9 +13521,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 26.340 resource points",
+            :en_US => "Increase the resource production of one settlement to 26.340 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 26.340 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 26.340 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13639,9 +13619,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 29.300 resource points",
+            :en_US => "Increase the resource production of one settlement to 29.300 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 29.300 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 29.300 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13732,9 +13712,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 32.420 resource points",
+            :en_US => "Increase the resource production of one settlement to 32.420 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -13825,14 +13805,14 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Gegner dezimieren",
+            :de_DE => "Gegner dezimieren.",
                 
           },
           :task => {
             
             :en_US => "Defeat 500.000 units.",
   
-            :de_DE => "Besiege 500.000 Einheiten",
+            :de_DE => "Besiege 500.000 Einheiten.",
                 
           },
           :flavour => {

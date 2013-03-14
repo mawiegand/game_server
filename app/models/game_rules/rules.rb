@@ -140,7 +140,7 @@ class GameRules::Rules
           :start_resources => {
             1 => 200,
             0 => 200,
-            2 => 100,
+            2 => 200,
             3 => 0,
             
           },
@@ -845,7 +845,7 @@ class GameRules::Rules
             
             :en_US => "Club swinger",
   
-            :de_DE => "Knüppelschwinger",
+            :de_DE => "Knüppel Schwinger",
                 
           },
           :flavour     => {
@@ -6507,7 +6507,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Fellflohdompteur",
   
-            :en_US => "Newbie",
+            :en_US => "Furry-fleatamer",
                 
           },
         },             #   END OF 
@@ -6520,7 +6520,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Springschwanzsucher",
   
-            :en_US => "Newbie",
+            :en_US => "Springtailsearcher",
                 
           },
         },             #   END OF 
@@ -6533,7 +6533,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Altameisenanbeter",
   
-            :en_US => "Feeble Leader",
+            :en_US => "Ancientantworshipper",
                 
           },
         },             #   END OF 
@@ -6546,7 +6546,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Ammonitenanlocker",
   
-            :en_US => "Junior Leader",
+            :en_US => "Ammonitesattractor",
                 
           },
         },             #   END OF 
@@ -6559,7 +6559,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Feuerunkensammler",
   
-            :en_US => "Leader",
+            :en_US => "Firebellytoadcollector",
                 
           },
         },             #   END OF 
@@ -6572,7 +6572,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Steinzeitrattenkuschler",
   
-            :en_US => "Known Leader",
+            :en_US => "Junior-Stoneageratcuddler",
                 
           },
         },             #   END OF 
@@ -6585,7 +6585,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Steinzeitrattenkuschler",
   
-            :en_US => "Great Leader",
+            :en_US => "Stoneageratcuddler",
                 
           },
         },             #   END OF 
@@ -6598,7 +6598,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Hülsenwirblerverwirbler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Shell-whirlerswirler",
                 
           },
         },             #   END OF 
@@ -6611,7 +6611,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Hülsenwirblerverwirbler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Shell-whirlerswirler",
                 
           },
         },             #   END OF 
@@ -6624,7 +6624,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Erdferkelentdecker",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Aardvarkdiscoverer",
                 
           },
         },             #   END OF 
@@ -6637,7 +6637,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Erdferkelentdecker",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Aardvarkdiscoverer",
                 
           },
         },             #   END OF 
@@ -6650,7 +6650,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Dodoherdenhüter",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Dodoherdkeeper",
                 
           },
         },             #   END OF 
@@ -6663,7 +6663,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Dodoherdenhüter",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Dodoherdkeeper",
                 
           },
         },             #   END OF 
@@ -6676,7 +6676,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Säbelzahnkatzenbesänftiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Sabre-toothedcatappeaser",
                 
           },
         },             #   END OF 
@@ -6689,7 +6689,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Säbelzahnkatzenbesänftiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Sabre-toothedcatappeaser",
                 
           },
         },             #   END OF 
@@ -6702,7 +6702,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Vielfraßversteher",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Wolverinewhisperer",
                 
           },
         },             #   END OF 
@@ -6715,7 +6715,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Vielfraßversteher",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Wolverinewhisperer",
                 
           },
         },             #   END OF 
@@ -6728,7 +6728,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Rothundzähmer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Dholetamer",
                 
           },
         },             #   END OF 
@@ -6741,7 +6741,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Rothundzähmer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Dholetamer",
                 
           },
         },             #   END OF 
@@ -6754,7 +6754,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Mähnenwolfschmuser",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Manedwolfsnuggler",
                 
           },
         },             #   END OF 
@@ -6767,7 +6767,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Mähnenwolfschmuser",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Manedwolfsnuggler",
                 
           },
         },             #   END OF 
@@ -6780,7 +6780,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Urschweinkrauler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Primevalpigfondler",
                 
           },
         },             #   END OF 
@@ -6793,7 +6793,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Urschweinkrauler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Primevalpigfondler",
                 
           },
         },             #   END OF 
@@ -6806,7 +6806,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Auerochsenstreichler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Aurochspetter",
                 
           },
         },             #   END OF 
@@ -6819,7 +6819,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Auerochsenstreichler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Aurochspetter",
                 
           },
         },             #   END OF 
@@ -6832,7 +6832,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Wildpferdflüsterer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-wildhorsewhisperer",
                 
           },
         },             #   END OF 
@@ -6845,7 +6845,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Wildpferdflüsterer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Wildhorsewhisperer",
                 
           },
         },             #   END OF 
@@ -6858,7 +6858,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Höhlenlöwenschwichtiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Cavelionappeaser",
                 
           },
         },             #   END OF 
@@ -6871,7 +6871,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Höhlenlöwenschwichtiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Cavelionappeaser",
                 
           },
         },             #   END OF 
@@ -6884,7 +6884,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Wollnashornknuddler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Woollyrhinocuddle",
                 
           },
         },             #   END OF 
@@ -6897,7 +6897,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Wollnashornknuddler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Woollyrhinocuddle",
                 
           },
         },             #   END OF 
@@ -6910,7 +6910,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Steppenwisentliebkoser",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Steppewisentcaresser",
                 
           },
         },             #   END OF 
@@ -6923,7 +6923,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Steppenwisentliebkoser",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Steppewisentcaresser",
                 
           },
         },             #   END OF 
@@ -6936,7 +6936,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Riesenhirschtätschler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Megalocerospatter",
                 
           },
         },             #   END OF 
@@ -6949,7 +6949,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Riesenhirschtätschler",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Megalocerospatter",
                 
           },
         },             #   END OF 
@@ -6962,7 +6962,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Säbelzahntigerbändiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Sabre-toothedtigertamer",
                 
           },
         },             #   END OF 
@@ -6975,7 +6975,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Säbelzahntigerbändiger",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Sabre-toothedtigertamer",
                 
           },
         },             #   END OF 
@@ -6988,7 +6988,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Brontotherienbeschützer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Brontotheresguardian",
                 
           },
         },             #   END OF 
@@ -7001,7 +7001,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Brontotherienbeschützer",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Brontotheresguardian",
                 
           },
         },             #   END OF 
@@ -7014,7 +7014,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Wollmammuttreiber",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Woollymammothdriver",
                 
           },
         },             #   END OF 
@@ -7027,7 +7027,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Wollmammuttreiber",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Woollymammothdriver",
                 
           },
         },             #   END OF 
@@ -7040,7 +7040,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Nachwuchs-Allosaurusabrichter",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Junior-Allosaurustrainer",
                 
           },
         },             #   END OF 
@@ -7053,7 +7053,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Allosaurusabrichter",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Allosaurustrainer",
                 
           },
         },             #   END OF 
@@ -7066,7 +7066,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Tyrannosaurustyrann",
   
-            :en_US => "Fantastic Leader",
+            :en_US => "Tyrannosaurstyrant",
                 
           },
         },             #   END OF 

@@ -28,7 +28,7 @@
   <Capacity id="resource_wood">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
   <Capacity id="resource_fur">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
   <Abilities> <!-- just for grouping -->
-    <TradingCarts>FLOOR(10*LEVEL*LEVEL*1.75+0.5)</TradingCarts>
+    <TradingCarts>FLOOR(5*LEVEL*LEVEL*2)</TradingCarts>
     <UnlockP2PTrade level="1" />
   </Abilities>
 </Building>
