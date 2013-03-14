@@ -8,8 +8,7 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   
   before_save :update_first_fulfilled_at
 
-  after_save  :check_for_victory
-  #after_find  :check_for_victory
+  after_find  :check_for_victory
 
   VICTORY_TYPE_DOMINATION  = 0
   VICTORY_TYPE_ARTIFACTS   = 1
@@ -62,7 +61,7 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
     def set_victory_gained(victory_time)
       logger.debug "Siegbedingung erfüllt!"
       self.victory_gained = true
-      #self.save
+      self.save
       Fundamental::RoundInfo.the_round_info.set_victory_gained(self, victory_time)
     end
   

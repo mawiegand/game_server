@@ -1,3 +1,5 @@
+require 'identity_provider/access'
+
 class Fundamental::RoundInfo < ActiveRecord::Base
 
   belongs_to  :winner_alliance, :class_name => 'Fundamental::Alliance', :foreign_key => 'winner_alliance_id'
@@ -23,6 +25,8 @@ class Fundamental::RoundInfo < ActiveRecord::Base
     self.victory_type = progress.type_id
     self.save
 
+    winner_identifiers = progress.alliance.members.map { |member| member.identifier }
+
     # transfer history events for all alliance members to identity provider
     identity_provider_access = IdentityProvider::Access.new({
       identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
@@ -31,15 +35,19 @@ class Fundamental::RoundInfo < ActiveRecord::Base
     })
 
     event = {
-      type:       :won_round,
+      type:       "won_round",
       round:      self.number,
       round_name: self.name,
     }
     description = {
-      :de_DE => "Die Runde #{self.number}, '#{self.name}', gewonnen.",
-      :en_US => "Won round #{self.number}, '#{self.name}'.",
+      de_DE: "Die Runde #{self.number}, '#{self.name}', gewonnen.",
+      en_US: "Won round #{self.number}, '#{self.name}'.",
     }
-    winner_identifiers = progress.alliance.members.map { |member| member.identifier }
-    #identity_provider_access.post_alliance_history_event(winner_identifiers, event, description)
+    identity_provider_access.post_winner_alliance_history_event(winner_identifiers, event, description)
+
+    property = {
+      start_resource_bonus: [{resource_type_id: 3, amount: 10}]
+    }
+    identity_provider_access.post_winner_alliance_character_property(winner_identifiers, property)
   end
 end

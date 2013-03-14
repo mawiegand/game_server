@@ -142,37 +142,45 @@ module IdentityProvider
       post('/identities/' + identifier + '/histories', {:resource_history => resource_history})
     end
 
-    def post_alliance_history_event(winner_identifiers, data_object, description)
+    def post_winner_alliance_history_event(winner_identifiers, data_object, description)
       return if winner_identifiers.blank?
       resource_history = {
         data:                  data_object,
         localized_description: description,
       }
       winner_identifiers.each do |identifier|
-        logger.debug "--->#{'/identities/' + identifier + '/histories'}"
-        post('/identities/' + identifier + '/histories', {:resource_history => resource_history})
+        post("/identities/#{identifier}/histories", {:resource_history => resource_history})
+      end
+    end
+
+    def post_winner_alliance_character_property(winner_identifiers, property)
+      return if winner_identifiers.blank?
+      resource_character_property = {
+        data: property,
+      }
+      winner_identifiers.each do |identifier|
+        post("/identities/#{identifier}/character_properties", {:resource_character_property => resource_character_property})
       end
     end
 
     protected
       
       def post(path, body = {})
-        Rails.logger.debug "POST BODY #{ body }."
         add_auth_token(body)
         HTTParty.post(@attributes[:identity_provider_base_url] + path,
-                      :body => body,  :headers => { :Accept => 'application/json'})
+                      :body => body, :headers => { 'Accept' => 'application/json'})
       end
   
       def put(path, body = {})
         add_auth_token(body)
         HTTParty.put(@attributes[:identity_provider_base_url] + path,
-                     :body => body,   :headers => { :Accept => 'application/json'})
+                     :body => body, :headers => { 'Accept' => 'application/json'})
       end
   
       def get(path, query = {})
         add_auth_token(query)
         HTTParty.get(@attributes[:identity_provider_base_url] + path,
-                     :query => query, :headers => { :Accept => 'application/json'})
+                     :query => query, :headers => { 'Accept' => 'application/json'})
       end
       
       def add_auth_token(query)
