@@ -131,12 +131,12 @@ class Settlement::Settlement < ActiveRecord::Base
       slot = self.slots.create({
         :slot_num => number,
       })
-    
+
       if !details[:building].blank?
-        slot.create_building(details[:building]);
+        slot.create_building(details[:building])
         logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
-      
-        if !details[:level].blank? 
+
+        if !details[:level].blank?
           while slot.level < details[:level]
             slot.upgrade_building
           end
@@ -182,7 +182,7 @@ class Settlement::Settlement < ActiveRecord::Base
   ############################################################################   
 
   def owned_by_npc?
-    return self.owner.nil? || self.owner.npc?
+    self.owner.nil? || self.owner.npc?
   end
   
   def new_owner_transaction(character)
@@ -202,12 +202,16 @@ class Settlement::Settlement < ActiveRecord::Base
     
     # destroy all construction jobs
     self.queues.each do |queue|
+      queue.reload
+      queue.jobs.reload
       queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
     end
 
     # destroy all training jobs
     self.training_queues.each do |queue|
-      queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      unless queue.frozen?
+        queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      end
     end
 
     self.garrison_army.destroy        unless self.garrison_army.nil?
@@ -852,7 +856,7 @@ class Settlement::Settlement < ActiveRecord::Base
       self.training_queues.each do |queue|
         if queue.jobs.count != queue.jobs_count
           logger.warn(">>> TRAINING JOBS COUNT RECALC DIFFERS. Old: #{queue.jobs_count} Corrected: #{queue.jobs.count}.")
-          Construction::Queue.reset_counters(queue.id, :jobs)
+          Training::Queue.reset_counters(queue.id, :jobs)
         end
       end
     end

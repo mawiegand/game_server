@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222234254) do
+ActiveRecord::Schema.define(:version => 20130306150630) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.integer  "resource_wood_amount"
     t.integer  "resource_fur_amount"
     t.integer  "resource_cash_amount"
+    t.boolean  "send_hurried"
+    t.boolean  "return_hurried"
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -1481,69 +1483,6 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.decimal  "quest_140_playtime_finished",       :default => 0.0
     t.decimal  "quest_140_playtime_started",        :default => 0.0
     t.decimal  "quest_140_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_141_num_finished_day_1",      :default => 0
-    t.integer  "quest_141_num_started_day_1",       :default => 0
-    t.decimal  "quest_141_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_141_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_141_num_finished",            :default => 0
-    t.integer  "quest_141_num_started",             :default => 0
-    t.decimal  "quest_141_playtime_finished",       :default => 0.0
-    t.decimal  "quest_141_playtime_started",        :default => 0.0
-    t.decimal  "quest_141_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_142_num_finished_day_1",      :default => 0
-    t.integer  "quest_142_num_started_day_1",       :default => 0
-    t.decimal  "quest_142_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_142_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_142_num_finished",            :default => 0
-    t.integer  "quest_142_num_started",             :default => 0
-    t.decimal  "quest_142_playtime_finished",       :default => 0.0
-    t.decimal  "quest_142_playtime_started",        :default => 0.0
-    t.decimal  "quest_142_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_143_num_finished_day_1",      :default => 0
-    t.integer  "quest_143_num_started_day_1",       :default => 0
-    t.decimal  "quest_143_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_143_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_143_num_finished",            :default => 0
-    t.integer  "quest_143_num_started",             :default => 0
-    t.decimal  "quest_143_playtime_finished",       :default => 0.0
-    t.decimal  "quest_143_playtime_started",        :default => 0.0
-    t.decimal  "quest_143_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_144_num_finished_day_1",      :default => 0
-    t.integer  "quest_144_num_started_day_1",       :default => 0
-    t.decimal  "quest_144_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_144_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_144_num_finished",            :default => 0
-    t.integer  "quest_144_num_started",             :default => 0
-    t.decimal  "quest_144_playtime_finished",       :default => 0.0
-    t.decimal  "quest_144_playtime_started",        :default => 0.0
-    t.decimal  "quest_144_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_145_num_finished_day_1",      :default => 0
-    t.integer  "quest_145_num_started_day_1",       :default => 0
-    t.decimal  "quest_145_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_145_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_145_num_finished",            :default => 0
-    t.integer  "quest_145_num_started",             :default => 0
-    t.decimal  "quest_145_playtime_finished",       :default => 0.0
-    t.decimal  "quest_145_playtime_started",        :default => 0.0
-    t.decimal  "quest_145_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_146_num_finished_day_1",      :default => 0
-    t.integer  "quest_146_num_started_day_1",       :default => 0
-    t.decimal  "quest_146_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_146_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_146_num_finished",            :default => 0
-    t.integer  "quest_146_num_started",             :default => 0
-    t.decimal  "quest_146_playtime_finished",       :default => 0.0
-    t.decimal  "quest_146_playtime_started",        :default => 0.0
-    t.decimal  "quest_146_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_147_num_finished_day_1",      :default => 0
-    t.integer  "quest_147_num_started_day_1",       :default => 0
-    t.decimal  "quest_147_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_147_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_147_num_finished",            :default => 0
-    t.integer  "quest_147_num_started",             :default => 0
-    t.decimal  "quest_147_playtime_finished",       :default => 0.0
-    t.decimal  "quest_147_playtime_started",        :default => 0.0
-    t.decimal  "quest_147_retention_rate_week_1",   :default => 0.0
   end
 
   create_table "backend_users", :force => true do |t|
@@ -1634,6 +1573,15 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "local_event_id"
+  end
+
+  create_table "fundamental_alliance_reservations", :force => true do |t|
+    t.integer  "alliance_id"
+    t.string   "tag"
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "fundamental_alliance_shouts", :force => true do |t|
@@ -2061,6 +2009,7 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.boolean  "npc",                             :default => false, :null => false
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
+    t.datetime "attack_protection_ends_at"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2538,6 +2487,8 @@ ActiveRecord::Schema.define(:version => 20130222234254) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true
 
   create_table "shop_offers", :force => true do |t|
     t.string   "title"

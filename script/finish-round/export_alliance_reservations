@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'yaml'
+
+Rails.logger.info "Start dumping alliance reservations."
+puts "Start dumping alliance reservations."
+
+reservations = []
+
+Fundamental::AllianceReservation.all.each do |reservation|
+  reservations << {
+    tag:       reservation.tag,
+    name:      reservation.name,
+    password:  reservation.password,
+  }
+end
+
+output_filename = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'rules', 'alliance', 'reservations.yml'))
+
+File.open(output_filename, 'w') do |out|
+  YAML.dump reservations, out
+end
+
+Rails.logger.info "Finished."
+puts "Finished."

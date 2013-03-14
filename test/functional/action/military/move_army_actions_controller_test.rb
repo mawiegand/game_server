@@ -13,11 +13,6 @@ class Action::Military::MoveArmyActionsControllerTest < ActionController::TestCa
     assert_not_nil assigns(:action_military_move_army_actions)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
 #  test "should create action_military_move_army_action" do
 #    assert_difference('Action::Military::MoveArmyAction.count') do
 #      post :create, action_military_move_army_action: @action_military_move_army_action.attributes
@@ -29,23 +24,5 @@ class Action::Military::MoveArmyActionsControllerTest < ActionController::TestCa
   test "should show action_military_move_army_action" do
     get :show, id: @action_military_move_army_action.to_param
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @action_military_move_army_action.to_param
-    assert_response :success
-  end
-
-  test "should update action_military_move_army_action" do
-    put :update, id: @action_military_move_army_action.to_param, action_military_move_army_action: @action_military_move_army_action.attributes
-    assert_redirected_to action_military_move_army_action_path(assigns(:action_military_move_army_action))
-  end
-
-  test "should destroy action_military_move_army_action" do
-    assert_difference('Action::Military::MoveArmyAction.count', -1) do
-      delete :destroy, id: @action_military_move_army_action.to_param
-    end
-
-    assert_redirected_to action_military_move_army_actions_path
   end
 end

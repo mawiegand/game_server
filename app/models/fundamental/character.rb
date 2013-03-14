@@ -47,7 +47,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :login_count, :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
   attr_readable *readable_attributes(:default),                                                                                :as => :ally 
   attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
@@ -132,8 +132,8 @@ class Fundamental::Character < ActiveRecord::Base
     145, 144   # 145h ago > last login > 144h (6 days) ago 
   ])
 
-  @identifier_regex = /[a-z]{16}/i 
-    
+  @identifier_regex = /[a-z]{16}/i
+
   def self.find_by_id_or_identifier(user_identifier)
     identity = Fundamental::Character.find_by_id(user_identifier) if Fundamental::Character.valid_id?(user_identifier)
     identity = Fundamental::Character.find_by_identifier(user_identifier) if identity.nil? && Fundamental::Character.valid_identifier?(user_identifier)
@@ -251,6 +251,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   def platinum_account?
     !premium_expiration.nil? && premium_expiration > DateTime.now
+  end
+
+  def bought_platinum?
+    !self.shop_transactions.where("state > 4 and offer like '%Platinum%'").empty?
   end
   
   def settlement_point_available?
@@ -647,6 +651,7 @@ class Fundamental::Character < ActiveRecord::Base
       self.artifact.alliance = self.alliance
       self.artifact.save
     end
+    true
   end
 
   # Function for propagating change of character name to redundant fields.
@@ -1067,6 +1072,24 @@ class Fundamental::Character < ActiveRecord::Base
     self.save
     
     check_consistency
+  end
+
+  def beginner
+    login_count <= 1
+  end
+
+  def open_chat_pane
+    login_count <= 3
+  end
+
+  def show_base_marker
+    login_count < 10
+  end
+
+  def as_json(options={})
+    options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
+    options[:methods] = ['beginner', 'open_chat_pane', 'show_base_marker']
+    super(options)
   end
   
   protected
