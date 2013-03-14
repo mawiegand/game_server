@@ -91,12 +91,16 @@ namespace :deploy do
 
   desc "Start Notification Ticker"
   task :start_notification_ticker do
-    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+    if stage != 'staging_test'
+      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+    end
   end
 
   desc "Stop Notification Ticker"
   task :stop_notification_ticker do
-    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
+    if stage != 'staging_test'
+      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
+    end
   end
   
   desc "Check Consistency"
