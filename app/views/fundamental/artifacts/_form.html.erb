@@ -32,8 +32,20 @@
     <%= f.number_field :owner_id %>
   </div>
   <div class="field">
+    <%= f.label :army_id %><br />
+    <%= f.number_field :army_id %>
+  </div>
+  <div class="field">
+    <%= f.label :alliance_id %><br />
+    <%= f.number_field :alliance_id %>
+  </div>
+  <div class="field">
     <%= f.label :initiated %><br />
     <%= f.check_box :initiated %>
+  </div>
+  <div class="field">
+    <%= f.label :visible %><br />
+    <%= f.check_box :visible %>
   </div>
   <div class="field">
     <%= f.label :last_initiated_at %><br />

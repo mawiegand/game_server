@@ -3,6 +3,10 @@
 # Script for placing npc armies and artifacts
 #
 
+@report = {
+    :started_at => Time.now
+}
+
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'util/formula'
 
@@ -12,7 +16,6 @@ require 'util/formula'
 #Fundamental::Artifact.destroy_all
 
 Rails.logger.info "NPC PLACEMENT: Start creating artifacts..."
-
 
 artifact_count = 0
 
@@ -30,7 +33,7 @@ artifact_types.each do |artifact_type|
   new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
 
   # create missing artifacts with npc army at same location
-  (0...new_artifacts).each do |nr|
+  (0...new_artifacts).each do
     location = Map::Location.find_empty_without_army
     unless location.nil?
       Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
@@ -43,10 +46,6 @@ current_artifacts = Fundamental::Artifact.count
 
 
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
-
-@report = {
-  :started_at => Time.now
-}
 
 region_factor     = 1.00   # at least num_regions * region_factor npc armies
 max_region_factor = 1.25   # controlls the number of npcs in the case where there are more armies than regions*region_factor
@@ -79,10 +78,9 @@ else
 end
 
 total_size = num_npcs * avg_size_npcs  
-while (num_npcs < desired_number_of_npcs)
-  size = avg_size_armies
-  
-  if (avg_size_npcs < avg_size_armies)
+while num_npcs < desired_number_of_npcs
+
+  if avg_size_npcs < avg_size_armies
     size = Random.rand(avg_size_armies.floor..max_size_armies.ceil)
   else
     size = Random.rand(1..avg_size_armies.ceil)    

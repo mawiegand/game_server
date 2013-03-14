@@ -40,7 +40,8 @@ class Backend::DashboardController < ApplicationController
     
     @world_stats = {
       day: Fundamental::RoundInfo.the_round_info.age,
-      victory: Fundamental::RoundInfo.the_round_info.victory_gained?,
+      winner: Fundamental::RoundInfo.the_round_info.winner_alliance,
+      victory: Fundamental::RoundInfo.the_round_info.victory_gained_at,
       empty_locations: Map::Location.empty.count,
       total_locations: Map::Location.count,
       non_occupied_regions: Map::Region.non_occupied.count,

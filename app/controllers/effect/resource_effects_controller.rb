@@ -2,17 +2,37 @@ class Effect::ResourceEffectsController < ApplicationController
   layout 'effect'
   
   before_filter :authenticate
+  before_filter :deny_api, :except => [:index]
 
-  
   # GET /effect/resource_effects
   # GET /effect/resource_effects.json
   def index
-    @effect_resource_effects = Effect::ResourceEffect.all
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @effect_resource_effects }
+    if params.has_key?(:resource_pool_id)
+      pool = Fundamental::ResourcePool.find(params[:resource_pool_id])
+      raise NotFoundError.new('Page Not Found') if pool.nil?
+      raise ForbiddenError.new('Access Forbidden') if pool.owner != current_character
+      @effect_resource_effects = pool.resource_effects
+      #last_modified = pool.updated_at
+    else
+      @asked_for_index = true
     end
+
+    #render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @effect_resource_effects.nil?
+            @effect_resource_effects = Effect::ResourceEffect.paginate(:page => params[:page], :per_page => 50)
+            @paginate = true
+          end
+        end
+        format.json do
+          raise ForbiddenError.new('Access Forbidden') if @asked_for_index
+          render json: @effect_resource_effects
+        end
+      end
+    #end
   end
 
   # GET /effect/resource_effects/1

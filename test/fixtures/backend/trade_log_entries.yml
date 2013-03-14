@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sender_id: 1
+  sender_name: MyString
+  sender_alliance_id: 1
+  sender_alliance_name: MyString
+  recipient_id: 1
+  recipient_name: MyString
+  recipient_alliance_id: 1
+  recipient_alliance_name: MyString
+  target_reached_at: 2013-02-06 16:14:36
+  num_carts: 1
+  event_id: 1
+  sender_ip: MyString
+
+two:
+  sender_id: 1
+  sender_name: MyString
+  sender_alliance_id: 1
+  sender_alliance_name: MyString
+  recipient_id: 1
+  recipient_name: MyString
+  recipient_alliance_id: 1
+  recipient_alliance_name: MyString
+  target_reached_at: 2013-02-06 16:14:36
+  num_carts: 1
+  event_id: 1
+  sender_ip: MyString

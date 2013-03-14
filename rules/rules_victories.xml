@@ -8,16 +8,16 @@
     <Description lang="de_DE">Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.</Description>
     <Description lang="en_US">For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.</Description>
     <Condition duration="5">    
-      <RequiredRegionsRatio>1+(0.005*(MIN(88-DAYS,0)))</RequiredRegionsRatio>
+      <RequiredRegionsRatio>1+(0.01*(MIN(116-DAYS,0)))</RequiredRegionsRatio>
     </Condition>    
   </Victory>
   <Victory id="victory_artifact">
     <Name lang="de_DE">Artefaktsieg</Name>
     <Name lang="en_US">Artifact Victory</Name>
-    <Description lang="de_DE">Beschreibung des Artefaktsiegs</Description>
-    <Description lang="en_US">Description of artifatc victory</Description>
+    <Description lang="de_DE">Für einen Artefaktsieg muss eine Allianz mindestens ein Artefakt von jedem Artefakttyp besitzen und einweihen.</Description>
+    <Description lang="en_US">For a artifact victory an alliance has to own and initiate at least one artifact of every artifact type.</Description>
     <Condition duration="5">
       <!-- no further condition required -->
-    </Condition>      
+    </Condition>
   </Victory>
 </VictoryTypes>

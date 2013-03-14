@@ -1,8 +1,10 @@
 class Tutorial::Quest < ActiveRecord::Base
   
-  belongs_to  :tutorial_state,  :class_name => "Tutorial::State",  :foreign_key => "state_id", :inverse_of => :quests, :touch => true
+  belongs_to    :tutorial_state,  :class_name => "Tutorial::State",         :foreign_key => "state_id",     :inverse_of => :quests, :touch => true
+  belongs_to    :owner,           :class_name => "Fundamental::Character",  :foreign_key => "character_id", :inverse_of => :quests
 
   before_create :set_start_playtime
+  before_create :set_owner
   before_save   :set_finished_playtime
   after_save    :count_completed_tutorial_quests
 
@@ -15,15 +17,63 @@ class Tutorial::Quest < ActiveRecord::Base
   STATES[STATE_FINISHED] = :finished
   STATE_CLOSED = 3
   STATES[STATE_CLOSED] = :closed
+
+  scope        :closed,      where(['status >= ?', STATE_CLOSED])  
+  scope        :non_closed,  where(['status <  ?', STATE_CLOSED])
+  scope        :finished,    where(['status >= ?', STATE_FINISHED])
+  
   
   def quest
     Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
+  end
+  
+  def open?
+    self.status < STATE_FINISHED
+  end
+
+  def completed?
+    ! self.open?
+  end
+  
+  def has_been_displayed?
+    !self.displayed_at.nil?
+  end
+
+  def has_reward_been_displayed?
+    !self.reward_displayed_at.nil?
   end
   
   def belongs_to_tutorial?
     !quest.nil? && quest[:tutorial]
   end
   
+  def rewards
+    (self.quest || {})[:rewards] 
+  end
+  
+  def mark_displayed
+    self.displayed_at = Time.now        if self.displayed_at.nil?
+    self.status = STATE_DISPLAYED       if self.status < STATE_DISPLAYED
+  end
+  
+  def mark_reward_displayed
+    self.reward_displayed_at = Time.now if self.reward_displayed_at.nil?
+  end  
+  
+  # quest auf beendet setzen
+  def set_finished
+    
+    self.status = if self.rewards.nil?
+      STATE_CLOSED    # close directly, as there is nothing to redeem. client should NOT even show a quest-end dialog
+    else
+      STATE_FINISHED
+    end
+    
+    self.finished_at = Time.now
+    self.save
+  end  
+  
+
   def check_for_rewards(answer_text)
     logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
     
@@ -78,7 +128,9 @@ class Tutorial::Quest < ActiveRecord::Base
         reward_tests[:construction_queue_tests].each do |construction_queue_test|
           unless construction_queue_test.nil?
             unless check_construction_queues(construction_queue_test)
-              return false
+              unless check_buildings(construction_queue_test)
+                return false
+              end
             end
           end
         end
@@ -164,12 +216,7 @@ class Tutorial::Quest < ActiveRecord::Base
     true
   end
   
-  def set_finished
-      # quest auf beendet setzen
-    self.status = STATE_FINISHED
-    self.finished_at = Time.now
-    self.save
-  end
+
   
   def place_npcs
     Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
@@ -502,8 +549,8 @@ class Tutorial::Quest < ActiveRecord::Base
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
     raise BadRequestError.new('quest not fount in tutorial') if quest.nil?
     
-    rewards = quest[:rewards]
-    raise BadRequestError.new('no rewards found in quest') if rewards.nil?
+    rewards = quest[:rewards] || {}
+    #raise BadRequestError.new('no rewards found in quest') if rewards.nil?
     resource_rewards = rewards[:resource_rewards]
     unit_rewards = rewards[:unit_rewards]
 
@@ -608,9 +655,15 @@ class Tutorial::Quest < ActiveRecord::Base
   protected
   
     def count_completed_tutorial_quests
-      if self.status_changed? && !self.status.nil? && self.status == STATE_FINISHED && self.belongs_to_tutorial?
+      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] != STATE_CLOSED) && self.belongs_to_tutorial?
         self.tutorial_state.increment(:tutorial_states_completed)
         self.tutorial_state.save
+      end
+    end
+    
+    def set_owner
+      unless tutorial_state.nil? 
+        self.character_id = tutorial_state.character_id
       end
     end
     

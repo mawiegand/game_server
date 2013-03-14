@@ -8,7 +8,8 @@ class Military::BattlesController < ApplicationController
   # GET /military/battles
   # GET /military/battles.json
   def index
-    @military_battles = Military::Battle.order('created_at DESC')
+    @military_battles = Military::Battle.order('next_round_at DESC').paginate(:page => params[:page], :per_page => 50)
+    @paginate = true
 
     respond_to do |format|
       format.html # index.html.erb

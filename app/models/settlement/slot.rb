@@ -13,7 +13,7 @@ class Settlement::Slot < ActiveRecord::Base
   scope :occupied, where(['(level IS NOT NULL AND level > ?) OR building_id IS NOT NULL', 0])
 
   def empty?
-    return self.level == 0 || self.level.nil?
+    self.level == 0 || self.level.nil?
   end
 
   # calculates the storage capacity provided by this slot for all
@@ -23,7 +23,7 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     
     eval_resource_dependent_formulas(building_type[:capacity], self.level, result)
   end
@@ -35,7 +35,7 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     
     eval_resource_dependent_formulas(building_type[:production], self.level, result)
   end
@@ -47,7 +47,7 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     
     eval_resource_dependent_formulas(building_type[:production_bonus], self.level, result)
   end
@@ -56,13 +56,13 @@ class Settlement::Slot < ActiveRecord::Base
   # experience points. only return the exp value.
   def experience_production
     return 0 if building_id.nil?
-    
+
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     return 0 if building_type[:experience_production].nil?
-    
+
     formula = Util::Formula.parse_from_formula(building_type[:experience_production])
-    formula.apply(self.level)   
+    formula.apply(self.level)
   end
 
   # returns the number of unlocks this slot provides for the different queue
@@ -72,7 +72,7 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     
     return    if building_type[:abilities].nil? || building_type[:abilities][:unlock_queue].nil?
     
@@ -90,7 +90,7 @@ class Settlement::Slot < ActiveRecord::Base
     return    if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[self.building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     
     return    if building_type[:abilities].nil? || building_type[:abilities][:speedup_queue].nil?
     
@@ -106,7 +106,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:trading_carts].blank?
 
@@ -117,7 +117,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:unlock_building_slots].blank?
 
@@ -128,7 +128,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:unlock_artifact_initiation].blank?
 
@@ -139,7 +139,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
 
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     building_type[:abilities][:unlock_prevent_takeover].blank? || building_type[:abilities][:unlock_prevent_takeover] > self.level ? 0 : 1
   end
@@ -149,7 +149,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:command_points].blank?
 
@@ -161,7 +161,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:defense_bonus].blank?
 
@@ -173,7 +173,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:population].blank?
 
@@ -185,7 +185,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:army_size_bonus].blank?
 
@@ -197,7 +197,7 @@ class Settlement::Slot < ActiveRecord::Base
     return 0   if building_id.nil?
     
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
 
     return 0   if building_type[:abilities][:garrison_size_bonus].blank?
 
@@ -400,7 +400,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def propagate_resource_production(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     if building_type[:production]
       building_type[:production].each do |product|
         update_resource_production_for(product, old_level, new_level)
@@ -428,7 +428,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def propagate_experience_production(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     if building_type[:experience_production]
       attribute = 'exp_production_rate_buildings'
       
@@ -449,7 +449,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def propagate_resource_production_bonus(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     if building_type[:production_bonus]
       building_type[:production_bonus].each do |bonus|
         update_resource_production_bonus_for(bonus, old_level, new_level)
@@ -476,7 +476,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def propagate_resource_capacity(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     if building_type[:capacity]
       building_type[:capacity].each do |capacity|
         update_resource_capacity_for(capacity, old_level, new_level)
@@ -505,7 +505,7 @@ class Settlement::Slot < ActiveRecord::Base
   # possible improvement: save domain once, after applying all changes.  
   def propagate_abilities(building_id, old_level, new_level)
     building_type = GameRules::Rules.the_rules().building_types[building_id]
-    raise InternalServerError.new('did not find building id #{building_id} in rules.') if building_type.nil?
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
     if building_type[:abilities]
       if building_type[:abilities][:unlock_queue]
         building_type[:abilities][:unlock_queue].each do |rule| 
@@ -551,7 +551,7 @@ class Settlement::Slot < ActiveRecord::Base
         propagate_unlock(:settlement_unlock_alliance_creation_count, building_type[:abilities][:unlock_alliance_creation], old_level, new_level)
       end
       if !building_type[:abilities][:unlock_artifact_initiation].blank?
-        propagate_unlock(:settlement_unlock_artifact_initiation_count, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
+        propagate_evaluatable_settlement_ability(:artifact_initiation_level, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
       end
     end
   end
@@ -599,9 +599,9 @@ class Settlement::Slot < ActiveRecord::Base
     
     if rule[:domain]    == :settlement
       self.settlement.propagate_speedup_to_queue(:building, queue_type, delta)
-    elsif rule[:domain] == :character 
+    elsif rule[:domain] == :character
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
-    elsif rule[:domain] == :alliance 
+    elsif rule[:domain] == :alliance
       logger.error "Propagation of queue speedup for domain #{ rule[:domain] } not yet implemented."
     else
       logger.error "Tried to propagate queue speedup to unkonwn domain #{ rule[:domain] }."      

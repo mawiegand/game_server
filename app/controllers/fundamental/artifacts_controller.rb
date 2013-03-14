@@ -25,16 +25,22 @@ class Fundamental::ArtifactsController < ApplicationController
       #last_modified =  @map_location.artifacts_changed_at
     else
       @asked_for_index = true
-      @fundamental_artifacts = Fundamental::Artifact.all
+      @fundamental_artifacts = Fundamental::Artifact.visible.order('id asc')
     end
 
     render_not_modified_or(last_modified) do
       respond_to do |format|
-        format.html # index.html.erb
+        format.html do
+          @fundamental_artifacts = Fundamental::Artifact.order('id asc')
+        end
         format.json do
-          raise ForbiddenError.new('Access Forbidden') if @asked_for_index
+          #raise ForbiddenError.new('Access Forbidden') if @asked_for_index
           @fundamental_artifacts = [] if @fundamental_artifacts.nil?
-          render(json: @fundamental_artifacts.to_json(:include => :initiation))
+          if @asked_for_index
+            render(json: @fundamental_artifacts)
+          else
+            render(json: @fundamental_artifacts.to_json(:include => :initiation))
+          end
         end
       end
     end
@@ -51,12 +57,12 @@ class Fundamental::ArtifactsController < ApplicationController
       # todo -> determine last_modified
     else
       @fundamental_artifact = Fundamental::Artifact.find(params[:id])
+      raise NotFoundError.new('Artifact Not Found') if !@fundamental_artifact.visible? && api_request?
     end
 
     respond_to do |format|
       format.html # show.html.erb
       format.json do
-        logger.debug "----> include?" + @fundamental_artifact.to_json(:include => :initiation).inspect
         render(json: @fundamental_artifact.to_json(:include => :initiation))
       end
     end

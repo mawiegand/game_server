@@ -3,226 +3,281 @@
 
 <ArtifactTypes>
   <Artifact id="artifact_0">
-    <Name lang="de_DE">Kristall des Steins</Name>
-    <Name lang="en_US">Christal of stone</Name>
+    <Name lang="de_DE">Grauer Kristall</Name>
+    <Name lang="en_US">Grey Christal</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 0</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour> 
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 0</p>
-    </Flavour>
+    <Flavour lang="de_DE">Der graue Kristall ist wahrlich beeindruckend, aber keine Schönheit! Vielleicht sollten wir den verhüllen.</Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Steine in der direkten Umgebung des Kristall sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>
+        <p>Der graue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Steine in der direkten Umgebung des Kristalls sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_stone">1.15</ProductionBonus>
+    <ArtifactAmount>5</ArtifactAmount>
+    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_1">
-    <Name lang="de_DE">Kristall des Holzes</Name>
-    <Name lang="en_US">Christal of wood</Name>
+    <Name lang="de_DE">Grüner Kristall</Name>
+    <Name lang="en_US">Green Christal</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 1</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 1</p>
-    </Flavour>
+    <Flavour lang="de_DE">Der Kristall ist grün, keine Frage. Ich mag grün, solange ich das nicht essen muss!</Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristall wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>
+        <p>Der grüne Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristalls wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_wood">1.15</ProductionBonus>
+    <ArtifactAmount>2</ArtifactAmount>
+    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_2">
-    <Name lang="de_DE">Kristall des Felles</Name>
-    <Name lang="en_US">christal of fur</Name>
+    <Name lang="de_DE">Roter Kristall</Name>
+    <Name lang="en_US">Red Christal</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 2</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 2</p>
-    </Flavour>
+    <Flavour lang="de_DE">Das Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!</Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristall vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>
+        <p>Der rote Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristalls vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>
       </Description>
-        <Description><p>Beschreibung eingeweiht</p>
+      <Description>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>
         </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <ProductionBonus id="resource_fur">1.15</ProductionBonus>
+    <ArtifactAmount>10</ArtifactAmount>
+    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_3">
-    <Name lang="de_DE">Kristall der Ausbildung</Name>
-    <Name lang="en_US">Christal of training</Name>
+    <Name lang="de_DE">Blauer Kristall</Name>
+    <Name lang="en_US">Blue Christal</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 3</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 3</p>
-    </Flavour>
+    <Flavour lang="de_DE">Unglaublich wie blau der ist!</Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Nahkampfeinheiten immens.</p>
+        <p>Der blaue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+      <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_infantry" domain="settlement">0.5</SpeedupQueue>
+    <ArtifactAmount>0</ArtifactAmount>
+    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
+    </Effects>
   </Artifact>
-  <Artifact id="artifact_4">
-    <Name lang="de_DE">Kristall der Präzision</Name>
-    <Name lang="en_US">Christal of precision</Name>
+<!--   <Artifact id="artifact_4">
+    <Name lang="de_DE">Gelber Kristall</Name>
+    <Name lang="en_US">Yellow Christal</Name>
     <Description lang="de_DE">
-      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+      <p>Der große gelbe Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 4</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 4</p>
-    </Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="de_DE">Ein großer gelber Kristall. Jetzt noch plüschig und es würde an ein übergroßes Kücken erinnern.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und beschleunigen mit den neuen Techniken die Ausbildung der Fernkampfeinheiten immens.</p>
+        <p>Der gelbe Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Steinmetzerei, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+      <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the fur-production of your alliance.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>0</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_artillery" domain="settlement">0.5</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.07</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
+    </Effects>
   </Artifact>
-  <Artifact id="artifact_5">
-    <Name lang="de_DE">Kristall der Aufzucht</Name>
-    <Name lang="en_US">Christal of rearing</Name>
+ <Artifact id="artifact_5">
+    <Name lang="de_DE">Lilaner Kristall</Name>
+    <Name lang="en_US">Purple Christal</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 5</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 5</p>
-    </Flavour>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="de_DE">Ein großer lilafarbener Kristall. Ist lila eigentlich eine Farbe?</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-        <p>Der Kristall ermutigt ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine Ausbilder testen neue Möglichkeiten des Training und der Tieraufzucht und beschleunigen mit den neuen Techniken die Ausbildung der Berittenen Einheiten immens.</p>
+        <p>Der lila farbene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz den Abbruch von Steinen beschleunigen kann.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the stone-production of your alliance.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_cavalry" domain="settlement">0.5</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_wood" domain="character">0.08</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
+    </Effects>
   </Artifact>
   <Artifact id="artifact_6">
-    <Name lang="de_DE">Kristall der Konstruktion</Name>
-    <Name lang="en_US">Cristal od construction</Name>
+    <Name lang="de_DE">Brauner Kristall</Name>
+    <Name lang="en_US">Brown Christal</Name>
     <Description lang="de_DE">
       <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of artifact 6</p>
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
     </Description>
-    <Flavour lang="de_DE">
-      <p>Der Kristall ist kalt und grau, beeindruckt aber durch seine einen Menschen überragende Größe. Obwohl der Kristall keine sichtbaren Anzeichen hat, geht von ihm doch eine erhabene Aura aus. Die unzähligen in Ehrfurcht vor dem Kristall knienenden Menschen sorgen mit ihrem monotonen Gesang für eine unheimliche Atmosphäre rund um den Kristall.</p>
-    </Flavour>
-    <Flavour lang="en_US">
-      <p>Flavour text of artifact 6</p>
-    </Flavour>
-    <Initiation>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="de_DE">Ein großer brauner Kristall. Das Braun erinnert mich an meinen Teddy-Bären.</Flavour>
+          <Initiation>
       <Description lang="de_DE">
-        <p>Ihr habt den Kristall mit einem Ritual aktiviert. Der Kristall pulsiert und verströmt eine innere Wärme, die jedem Betrachter das Herz öffnet.</p>
-       <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Beflügelt durch den Kristall entwickeln Deine Baumeister neue Bautechniken und beschleunigen auf diese Weise den Ausbau von Gebäuden deutlich.</p>
+        <p>Der braune Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Du erhälst tiefe Einblicke in die Forstwirschaft, während Deine Allianz die Fellproduktion durch gezielte Aufzucht erhöhen kann.</p>
       </Description>
       <Description>
-        <p>Beschreibung eingeweiht</p>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood production and the fur-production of your alliance.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR(36*3600-8*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>10*MRANK</ExperienceProduction>
-    <SpeedupQueue queue="queue_buildings" domain="settlement">0.75</SpeedupQueue>
+    <Effects>
+      <ProductionBonus id="resource_wood" domain="character">0.08</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
+    </Effects>
   </Artifact>
-  </ArtifactTypes>
+  <Artifact id="artifact_7">
+    <Name lang="de_DE">Goldener Kristall</Name>
+    <Name lang="en_US">Golden Christal</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+    </Description>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="de_DE">Ein großer goldener Kristall. Wie der funkelt! Nur bei Sonnenschein kann man leider nichts mehr sehen.</Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Der goldene Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten im Steinabbruch nutzt.</p>
+      </Description>
+      <Description>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the stone-production of your alliance.</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_fur" domain="character">0.08</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
+    </Effects>
+  </Artifact>
+  <Artifact id="artifact_8">
+    <Name lang="de_DE">Weißer Kristall</Name>
+    <Name lang="en_US">White Christal</Name>
+    <Description lang="de_DE">
+      <p>Der große Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
+    </Description>
+    <Description lang="en_US">
+       <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+    </Description>
+    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="de_DE">Ein großer weißer Kristall. Das weiß ist so rein, da spüre ich den Drang eine schöne Höhlenmalerei rein zu schnitzen!</Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Der Kristall ermutigt Deine Untertanen neue Erkenntnisse über die Umgebung zu sammeln und beschert Dir laufend Erfahrung. Deine gezielte Aufzucht von pelzigen Tieren erhöht Deine Fellproduktion, während Deine Allianz die neuen Erkenntnisse zu Fortschritten in der Holzproduktion nutzt.</p>
+      </Description>
+      <Description>
+        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur production and the wood-production of your alliance.</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>1</ArtifactAmount>
+    <ExperienceProduction>10*MRANK</ExperienceProduction>
+    <Effects>
+      <ProductionBonus id="resource_fur" domain="character">0.08</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
+    </Effects>
+  </Artifact> -->
+</ArtifactTypes>

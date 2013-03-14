@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Inbox</th>
+    <th>Archive</th>
     <th>Owner</th>
     <th>Message</th>
     <th>Sender</th>
@@ -14,7 +14,7 @@
 
 <% @messaging_archive_entries.each do |messaging_archive_entry| %>
   <tr>
-    <td><%= messaging_archive_entry.inbox_id %></td>
+    <td><%= messaging_archive_entry.archive_id %></td>
     <td><%= messaging_archive_entry.owner_id %></td>
     <td><%= messaging_archive_entry.message_id %></td>
     <td><%= messaging_archive_entry.sender_id %></td>

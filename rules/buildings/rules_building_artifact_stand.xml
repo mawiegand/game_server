@@ -5,29 +5,27 @@
   <Name lang="de_DE">Artefaktstand</Name>
   <Name lang="en_US">Artefact stand</Name>
   <Description lang="de_DE">
-    <p>Der Artefaktstand dient als Ort der Zuschaustellung eines Artefaktes. Durch den Artefaktstand steigt die Bewohnerzahl und auch die Kampfkraft der Siedlung.</p>
-    <p>Der Chef und seine Gelehrten versuchen hier die Geheimnisse der Artefakte zu ergründen.</p>
+    <p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>
   </Description>
   <Description lang="en_US">
-    <p>Description</p> 
+    <p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>
   </Description>
   <Flavour lang="de_DE">
-    <p>Ein freier Platz in der Siedlung, auf dem ein erbeutetes Artefakt zur Schau gestellt werden kann. Ein Steinkreis markiert eine Begrenzung, die nur der Chef und einige wenige Vertraute überschreiten dürfen. Außen herum reich verzierte mit flauschigem Fell überzogene Holzbänke.</p>
-    <p>Auch ohne Besitz eines Artefaktes ist dies ein gern besuchter Ort, um sich von den Strapazen der Steinzeit zu erholen. An sonnigen Tagen werden auch Getränke gereicht.</p>
+    <p>An sonnigen Tagen werden auch Getränke gereicht und die Hornbläser geben ein Ständchen.</p>
   </Flavour>
   <Flavour lang="en_US">
-    <p>Flavor text</p>
+    <p>On sunnys days there are drinks and music.</p>
 	</Flavour>
-  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5)*3</Population> 
+  <Population>(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5))*4</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" />
     <Requirement id="building_artifact_stand" max_level="0" /> 
     <Requirement id="building_haunt" max_level="0" /> 
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
-  <Cost id="resource_wood" round="true">FLOOR(15000*POW(LEVEL,0.4))</Cost>
-  <Cost id="resource_fur" round="true">FLOOR(20000*POW(LEVEL,0.4))</Cost>
-  <ProductionTime shortenable="false">FLOOR(7*3600+POW(LEVEL,0.7)/50)</ProductionTime>
+  <Cost id="resource_stone" round="true">FLOOR(7500*POW(LEVEL,0.4))</Cost>
+  <Cost id="resource_wood" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
+  <Cost id="resource_fur" round="true">FLOOR(12500*POW(LEVEL,0.4))</Cost>
+  <ProductionTime shortenable="true">FLOOR(9*3600+3600*POW(LEVEL,0.7))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockArtifactInitiation>LEVEL</UnlockArtifactInitiation>

@@ -18,8 +18,8 @@ class Military::Army < ActiveRecord::Base
   
   has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id",                :inverse_of => :army
   has_one    :ranking,            :class_name => "Ranking::CharacterRanking",        :foreign_key => "max_experience_army_id", :inverse_of => :most_experienced_army
+  has_one    :artifact,           :class_name => "Fundamental::Artifact",            :foreign_key => "army_id",                :inverse_of => :army
 
-  
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
   before_save    :update_mode  
@@ -172,6 +172,10 @@ class Military::Army < ActiveRecord::Base
     !self.suspension_ends_at.nil? && self.suspension_ends_at > Time.now
   end
 
+  def protected?
+    !self.attack_protection_ends_at.nil? && self.attack_protection_ends_at > Time.now
+  end
+
   def defending?
     self.stance == Military::Army::STANCE_DEFENDING_FORTRESS
   end
@@ -285,7 +289,7 @@ class Military::Army < ActiveRecord::Base
       end
     end
     
-    return self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
+    self.size_present > GAME_SERVER_CONFIG['overrunnable_threshold'] * defender.size_present
   end  
   
   # checks if a change in the army causes a new battle with 
@@ -307,15 +311,19 @@ class Military::Army < ActiveRecord::Base
       end
     end
     
-    return started_battles
+    started_battles
   end
   
-  # checks if the current army is in the same existing alliance as the garrison army 
-  # of the given location
-  def same_alliance_as?(location)
-    !self.alliance.nil? && !location.alliance.nil? && self.alliance == location.alliance
+  # checks if the current army is in the same existing alliance as other_army
+  def same_alliance_as?(other_army)
+    !self.alliance.nil? && !other_army.alliance.nil? && self.alliance == other_army.alliance
   end       
   
+  # checks if the current army has the same owner as other_army
+  def same_owner_as?(other_army)
+    !self.owner.nil? && !other_army.owner.nil? && self.owner == owner.alliance
+  end
+
   # implement an arbitrary formula calculating the unit's strength here. is
   # used to caclulate the army's strength and the strength of particular
   # troop categories (infantry, artillery, etc.)
@@ -466,8 +474,8 @@ class Military::Army < ActiveRecord::Base
       end
     end
 
-    #logger.debug "ARMY #{ army.inspect } : #{ army.details.inspect }"
-    army.save    
+    army.save
+    army
   end
   
   # creates a new army. create_action must contain the home location id and the units of the new army.
@@ -573,7 +581,7 @@ class Military::Army < ActiveRecord::Base
     # changed.
     def update_mode
       battle_id_change = self.changes[:battle_id]
-      if !battle_id_change.nil?
+      unless battle_id_change.nil?
         self.mode = battle_id_change[1].nil? ? MODE_IDLE : MODE_FIGHTING
       end
       true

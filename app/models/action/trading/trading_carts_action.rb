@@ -2,12 +2,45 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
 
   belongs_to :starting_settlement, :class_name => "Settlement::Settlement", :foreign_key => "starting_settlement_id", :inverse_of => :outgoing_trading_carts
   belongs_to :target_settlement,   :class_name => "Settlement::Settlement", :foreign_key => "target_settlement_id",   :inverse_of => :incoming_trading_carts  
+  belongs_to :sender,              :class_name => "Fundamental::Character", :foreign_key => "sender_id" 
+  belongs_to :recipient,           :class_name => "Fundamental::Character", :foreign_key => "recipient_id" 
 
   has_one    :event,               :class_name => "Event::Event",           :foreign_key => "local_event_id",         :dependent => :destroy, :conditions => "event_type = 'trading_carts_action'"
   
   after_destroy  :release_carts
 
-  
+  def speedup
+    unless self.returning?
+      unless self.send_hurried?
+        self.send_hurried = true                                                         # sending is hurried
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= 30.minutes
+        self.target_reached_at -= 30.minutes                                             # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      else
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= (self.target_reached_at - Time.now)
+        self.target_reached_at = Time.now                                                # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      end
+    else
+      unless self.return_hurried?
+        self.return_hurried = true                                                       # sending is hurried
+        self.event.destroy                                                               # destroy event
+        self.returned_at -= 30.minutes                                                   # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      else
+        self.event.destroy                                                               # destroy event
+        self.returned_at = Time.now                                                      # reduce time
+        self.create_event                                                                # create new ticker event
+        self.save
+      end
+    end
+  end
+ 
   def create_event
     #create entry for event table
     new_event = self.build_event(

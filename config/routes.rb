@@ -11,7 +11,8 @@ GameServer::Application.routes.draw do
         resources :character_rankings, :only => [ :index ]
         resources :alliance_rankings,  :only => [ :index ]
         resources :fortress_rankings,  :only => [ :index ]
-        resource :ranking_info,        :only => [ :show ]
+        resources :artifact_rankings,  :only => [ :index ]
+        resource  :ranking_info,       :only => [ :show ]
       end
 
 
@@ -24,10 +25,12 @@ GameServer::Application.routes.draw do
         resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
+        resources :trade_log_entries, :only => [ :index ]
       end
 
       namespace :effect do 
-        resources :resource_effects 
+        resources :alliance_resource_effects
+        resources :resource_effects
       end
 
       namespace :fundamental do
@@ -46,18 +49,21 @@ GameServer::Application.routes.draw do
           resources :settings
           resources :history_events,                           :only => [ :index ]
         end
-        
-        resources :resource_pools 
-        
+
+        resources :resource_pools
+
         resources :alliances do
           resources :characters
           resources :alliance_shouts
+          resource  :alliance_reservation
+          resources :victory_progresses
         end
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]
         
         resources :alliance_shouts
+        resources :alliance_reservations
         resources :artifacts
         resources :artifact_initiations
 
@@ -75,9 +81,13 @@ GameServer::Application.routes.draw do
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
       resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+      resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
                   
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'            
-      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'            
+      resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
+
+      resources :resource_effects, :path => "/fundamental/resource_pools/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
+      resources :alliance_resource_effects, :path => "/fundamental/alliances/:alliance_id/alliance_resource_effects", :module => 'effect',   :only => [:index]
 
       namespace :messaging do 
         resources :archives do
@@ -188,33 +198,41 @@ GameServer::Application.routes.draw do
           resources :join_alliance_actions    
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
-          resources :kick_alliance_member_actions,      :only => [ :create ]    
+          resources :kick_alliance_member_actions,           :only => [ :create ]
           resources :change_character_notified_rank_actions, :only => [ :create ]    
-          resources :change_character_name_actions,     :only => [ :create ]    
-          resources :change_character_same_ip_actions,  :only => [ :create ]    
-          resources :change_character_gender_actions,   :only => [ :create ]    
-          resources :change_character_password_actions, :only => [ :create ]    
-          resources :track_character_conversions,       :only => [ :create ]    
-          resources :trade_resources_actions,           :only => [ :create ]    
-          resources :send_like_actions,                 :only => [ :create ]    
-          resources :send_dislike_actions,              :only => [ :create ]    
+          resources :change_character_name_actions,          :only => [ :create ]
+          resources :change_character_same_ip_actions,       :only => [ :create ]
+          resources :change_character_gender_actions,        :only => [ :create ]
+          resources :change_character_password_actions,      :only => [ :create ]
+          resources :track_character_conversions,            :only => [ :create ]
+          resources :trade_resources_actions,                :only => [ :create ]
+          resources :send_like_actions,                      :only => [ :create ]
+          resources :send_dislike_actions,                   :only => [ :create ]
+          resources :speedup_artifact_initiation_actions,    :only => [ :create ]
         end
         namespace :construction do
           resources :finish_job_actions    
         end
+        namespace :messaging do
+          resources :archive_entries_actions#, :only => [ :create]
+        end
         namespace :trading do 
           resources :trading_carts_actions 
+          resources :speedup_trading_carts_actions,    :only => [ :create ]
         end 
         namespace :training do
           resources :speedup_job_actions    
         end
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ] 
-        resources :abandon_outpost_actions, :only => [ :create ]
+          resources :abandon_outpost_actions, :only => [ :create ]
+          #resources :archive_entries_actions#, :only => [ :create]
         end
         namespace :tutorial do
-          resources :check_quest_actions,     :only => [ :create ]    
-          resources :redeem_rewards_actions,  :only => [ :create ]    
+          resources :check_quest_actions,                 :only => [ :create ]    
+          resources :mark_quest_displayed_actions,        :only => [ :create ]    
+          resources :mark_quest_reward_displayed_actions, :only => [ :create ]    
+          resources :redeem_rewards_actions,              :only => [ :create ]    
           resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
       end
@@ -268,61 +286,4 @@ GameServer::Application.routes.draw do
       match '/signout', :to => 'auth/sessions#destroy'
     end    
   end
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
 end

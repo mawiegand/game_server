@@ -71,7 +71,7 @@ puts "DELETE PLAYERS: finished removing unused npc settlements"
 
 
 # send out status mail if necessary
-if true || @report[:deleted_players].count > 0 or @report[:shortly_before_deletable_players].count > 0 or @report[:removed_settlements].count > 0
+if @report[:deleted_players].count > 0 or @report[:shortly_before_deletable_players].count > 0 or @report[:removed_settlements].count > 0
   puts "DELETE PLAYERS: mail report"
   @report[:finished_at] = now
   Backend::PlayerDeletionMailer.player_deletion_report(@report).deliver

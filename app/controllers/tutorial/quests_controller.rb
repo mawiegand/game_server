@@ -2,15 +2,36 @@ class Tutorial::QuestsController < ApplicationController
   layout 'tutorial'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:update]    
+  before_filter :deny_api, :except => [:index, :show, :update]    
 
   # GET /tutorial/quests
   # GET /tutorial/quests.json
   def index
-    respond_to do |format|
-      format.html do
-        @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)    
-        @paginate = true   
+    
+    last_modified = nil
+
+    if params.has_key?(:character_id)      # request using character_id 
+      
+      state = Tutorial::State.find_by_character_id(params[:character_id])
+      raise NotFoundError.new('No quests found for character id.')  if state.nil?
+      raise ForbiddenError.new('Access forbidden.')                 if state.owner != current_character && !staff? && !admin?
+      
+      @tutorial_quests = if api_request?   # send only the relevant quests (those, that have not been finished yet)
+        state.quests.non_closed    
+      else                                 # display all quests in backend
+        state.quests.paginate(:page => params[:page], :per_page => 50)                
+      end
+      last_modified = state.updated_at.utc # the state is touched on changed on the quests
+      
+    else                                   # request all 
+      raise ForbiddenError.new('Access forbidden.')                 if !staff? && !admin? 
+      @tutorial_quests = Tutorial::Quest.paginate(:page => params[:page], :per_page => 50)
+    end
+    
+    if stale?(:last_modified => last_modified, :etag => @tutorial_quests)
+      respond_to do |format|
+        format.html 
+        format.json { render json: @tutorial_quests }
       end
     end
   end
@@ -19,10 +40,13 @@ class Tutorial::QuestsController < ApplicationController
   # GET /tutorial/quests/1.json
   def show
     @tutorial_quest = Tutorial::Quest.find(params[:id])
+    raise ForbiddenError.new ('Access forbidden.')  unless staff? || admin? || @tutorial_quest.tutorial_state.owner == current_character
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tutorial_quest }
+    if stale?(:last_modified => @tutorial_quest.updated_at.utc, :etag => @tutorial_quest)
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @tutorial_quest }
+      end
     end
   end
 
@@ -63,9 +87,19 @@ class Tutorial::QuestsController < ApplicationController
   def update
     @tutorial_quest = Tutorial::Quest.find(params[:id])
     
-    attributes = params[:tutorial_quest]
-    if attributes.has_key?(:status) && attributes[:status] == Tutorial::Quest::STATE_DISPLAYED.to_s
-      attributes[:displayed_at] = Time.now
+    attributes_sent = params[:tutorial_quest]
+    attributes_to_update = {}
+    
+    raise ForbiddenError.new ("Access to quest state forbidden.") unless admin? || staff? || @tutorial_quest.tutorial_state.owner == current_character
+    
+    if admin? || staff?
+      attributes_to_update = attributes_sent
+    else
+      attributes_to_update[:status] = attributes_sent[:status]  if attributes_sent.has_key?(:status)
+    end
+    
+    if attributes_to_update.has_key?(:status) && attributes_to_update[:status] == Tutorial::Quest::STATE_DISPLAYED.to_s
+      attributes_to_update[:displayed_at] = Time.now
 
       # Send Mail if required
       quest_message = @tutorial_quest.quest[:message]
@@ -74,9 +108,13 @@ class Tutorial::QuestsController < ApplicationController
         Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body])
       end
     end
+    
+    if attributes_sent.has_key?(:reward_displayed)
+      attributes_to_update[:reward_displayed_at] = Time.now
+    end
 
     respond_to do |format|
-      if @tutorial_quest.update_attributes(attributes)
+      if @tutorial_quest.update_attributes(attributes_to_update)
         format.html { redirect_to @tutorial_quest, notice: 'Quest was successfully updated.' }
         format.json { render json: {}, status: :ok }
       else

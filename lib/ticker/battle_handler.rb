@@ -119,8 +119,8 @@ class Ticker::BattleHandler
                   runloop.say "Send takeover messages."
 
                   #message for old and new owner
-                  Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, winner_leader) unless old_owner.nil? || old_owner.npc?
-                  Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, winner_leader) unless winner_leader.nil? || winner_leader.npc?
+                  Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, new_owner) unless old_owner.nil? || old_owner.npc?
+                  Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, new_owner) unless new_owner.nil? || new_owner.npc?
 
                   runloop.say "Takeover finished."
                 else
@@ -148,19 +148,23 @@ class Ticker::BattleHandler
           end
 
           runloop.say "Check for artifacts"
-          artifact = battle.location.artifact
-
-          unless artifact.nil?
-            runloop.say "Check for artifact capturing on artifact id #{artifact.id}"
-            if loser_faction.contains_army_of(artifact.owner)
-              runloop.say "Won Battle for Artifact"
-              artifact.capture_by_character(winner_leader) unless artifact.nil?
-            else
-              runloop.say "Lost Battle for Artifact"
-              artifact.jump_to_neighbor_location
-            end
+          artifact = battle.artifact
+          if artifact.nil?
+            runloop.say "No artifact available"
           else
-            runloop.say "No artifact found"
+            runloop.say "Artifact available: check for capturing artifact id #{artifact.id}"
+            old_artifact_owner = artifact.owner
+            if !artifact.army.nil? && !artifact.army.battle_participant.nil? && artifact.army.battle_participant.faction == loser_faction
+              runloop.say "Won Battle for Artifact"
+              if artifact.capture_by_character(winner_leader)
+                Messaging::Message.generate_artifact_captured_message(winner_leader)
+              else
+                Messaging::Message.generate_artifact_jumped_message(winner_leader)
+              end
+              Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
+            else
+              artifact.make_invisible if artifact.owner.npc?
+            end
           end
 
         end
@@ -181,13 +185,9 @@ class Ticker::BattleHandler
 
         runloop.say "Cleanup armies and battle"
 
-        ## cleanup of the destroyed armies
+        ## cleanup of the destroyed armies and battle object
         cleanup_armies(battle)
-        ## cleanup of the battle object
         cleanup_battle(battle)
-        
-        # TODO: now run handler that checks for the start of another automatic battle due to stances. IMPORTANT: run this AFTER cleanup battle, otherwise the army will still be participant of the old battle.
-        
       else
         #update the leaders
         battle.factions.each do |faction|
@@ -196,8 +196,31 @@ class Ticker::BattleHandler
           end
         end
 
-        stolen_artifact = battle.check_for_artifact_stealing
-        runloop.say "Check for artifacts stealing: #{stolen_artifact}"
+        runloop.say "Check for artifacts"
+        artifact = battle.artifact
+        unless artifact.nil?
+          runloop.say "Artifact available: check for stealing artifact id #{artifact.id}"
+          old_artifact_owner = artifact.owner
+
+          if !battle.faction_owning_artifact(artifact).nil? && !battle.faction_owning_artifact(artifact).opposing_faction.nil?
+            new_artifact_owner = battle.faction_owning_artifact(artifact).opposing_faction.leader
+          end
+
+          unless new_artifact_owner.nil?
+            success = battle.check_for_artifact_stealing(artifact)
+            runloop.say "Check for artifacts stealing: #{success}"
+            if success == true
+              Messaging::Message.generate_artifact_captured_message(new_artifact_owner)
+              Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
+            elsif success == false # hack: don't do anything if success is nil
+              Messaging::Message.generate_artifact_jumped_message(new_artifact_owner)
+              Messaging::Message.generate_artifact_stolen_message(old_artifact_owner) unless old_artifact_owner.npc?
+            end
+          end
+        else
+          runloop.say "---> During Battle: Artifact not available"
+        end
+
 
         #schedule next round
         battle.schedule_next_round
@@ -227,22 +250,17 @@ class Ticker::BattleHandler
   #deletes armies that no longer exists (or marks them as removed)
   def cleanup_armies(battle)
     battle.armies.each do |army|
-      if (army.empty? && !army.garrison?)
+      if army.empty? && !army.garrison?
         if GAME_SERVER_CONFIG['military_only_flag_destroyed_armies']
           army.removed = true
-          if !army.save
-            raise InternalServerError.new('Failed to flag an army as removed')
-          end
+          raise InternalServerError.new('Failed to flag an army as removed') unless army.save
         else
           army.destroy
         end
       else
         #remove battle id  !!! battle_id must be set to nil for removing army from battle
         army.battle = nil
-        
-        if !army.save
-          raise InternalServerError.new('Failed to set the battle id in the army to null')
-        end
+        raise InternalServerError.new('Failed to set the battle id in the army to null') unless army.save
       end
     end
 
@@ -258,9 +276,7 @@ class Ticker::BattleHandler
   def cleanup_battle(battle)
     if GAME_SERVER_CONFIG['military_only_flag_destroyed_battles']
       battle.removed = true
-      if !battle.save
-        raise InternalServerError.new('Failed to flag an battle as removed')
-      end
+      raise InternalServerError.new('Failed to flag an battle as removed') unless battle.save
       runloop.say "Flaged destroyed battle as 'removed'"
     else
       battle.destroy

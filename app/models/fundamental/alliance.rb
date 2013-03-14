@@ -8,10 +8,14 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :regions,   :class_name => "Map::Region",                :foreign_key => "alliance_id"
   has_many   :shouts,    :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id", :order => "created_at DESC"
   has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
-  has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance
-  
+  has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
+  has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
+
+  has_many   :resource_effects, :class_name => "Effect::AllianceResourceEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
+
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
-  
+  has_one    :reservation, :class_name => "Fundamental::AllianceReservation", :foreign_key => "alliance_id", :inverse_of => :alliance
+
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
   
@@ -20,8 +24,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :created_at, :updated_at,       :as => :default 
-  attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :victory_progresses, :as => :ally 
+  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :created_at, :updated_at,       :as => :default
+  attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
   attr_readable *readable_attributes(:staff),                                                        :as => :admin
@@ -42,15 +46,15 @@ class Fundamental::Alliance < ActiveRecord::Base
       tag:       tag,
       name:      name,
       leader_id: leader.id,
-    }, :as => role);
+    }, :as => role)
     
     raise InternalServerError.new('could not create alliance') unless alliance.save
     alliance.create_ranking({ alliance_tag: tag })
 
-    # get victory conditions form rules
-    victory_types = [0]
-    victory_types.each do |type|
-      alliance.victory_progresses.create({ victory_type: type })
+    # create victory progress objects for alliance according to victory types
+
+    GameRules::Rules.the_rules.victory_types.each do |victory_type|
+      alliance.victory_progresses.create({type_id: victory_type[:id]})
     end
     
     cmd = Messaging::JabberCommand.open_room(tag) 
@@ -58,7 +62,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     cmd.save
     
     alliance.add_character(leader)
-    return alliance
+    alliance
   end
   
   def determine_new_leader
@@ -113,8 +117,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     end while !Fundamental::Alliance.find_by_invitation_code(self.invitation_code).nil?
   end
   
-  def victory_progress_for_type(victory_type)
-    victory_progresses = self.victory_progresses.where(:victory_type => victory_type)
+  def victory_progress_for_type(type_id)
+    victory_progresses = self.victory_progresses.where(:type_id => type_id)
     victory_progresses.empty? ? nil : victory_progresses.first
   end
   
@@ -136,13 +140,64 @@ class Fundamental::Alliance < ActiveRecord::Base
     true      
   end
   
-  def recalc_victory_progress_for_type(type)
-    progress = self.victory_progress_for_type(type)
-    progress.apply_victory_progress_for_type(type) unless progress.nil?
+  def add_effect_transaction(effect)
+    logger.debug "--------> add_effect_transaction ally" + effect.inspect
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("could not find effect field when adding effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self[attribute] += amount
+      propagate_bonus_changes
+      self.save!
+    end
   end
-  
+
+  def remove_effect_transaction(effect)
+    logger.debug "--------> remove_effect_transaction ally" + effect.inspect
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("could not find effect field when removing effect") unless self.has_attribute?(attribute)
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self[attribute] -= amount
+      propagate_bonus_changes
+      self.save!
+    end
+  end
+
   private
-  
+
+    def propagate_bonus_changes
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        GameRules::Rules.the_rules.resource_types.each do |resource_type|
+
+          ally_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_effects'
+          pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
+
+          logger.debug "------> propagate_bonus_changes ally " + self.changes[ally_attribute].inspect
+
+          unless self.changes[ally_attribute].nil?
+            self.members.each do |member|
+              logger.debug "------> propagate_bonus_changes ally member " + member.inspect
+              member.resource_pool.lock!
+              member.resource_pool.increment(pool_attribute, self.changes[ally_attribute][1] - self.changes[ally_attribute][0])
+              member.resource_pool.propagate_bonus_changes
+              member.resource_pool.save!
+            end
+          end
+        end
+      end
+
+      true
+    end
+
     def check_and_apply_ranking_fortress_count
       if !self.ranking.nil? && self.ranking.num_fortress != self.fortresses.count
         logger.warn(">>> RANKING FORTRESS COUNT RECALC DIFFERS. Old: #{self.ranking.num_fortress} Corrected: #{self.fortresses.count}.")
@@ -158,18 +213,15 @@ class Fundamental::Alliance < ActiveRecord::Base
     end
       
     def check_and_apply_victory_progresses
-      # TODO get victory conditions form rules
-      victory_types = [Fundamental::VictoryProgress::VICTORY_TYPE_DOMINATION]
-      
-      victory_types.each do |type|
+      GameRules::Rules.the_rules.victory_types.each do |victory_type|
         # get victory progress of alliance and condition
-        progress = self.victory_progress_for_type(type)
+        progress = self.victory_progress_for_type(victory_type[:id])
         
         # create victory progress for this victory condition if not exists 
         if progress.nil?
-          logger.warn(">>> VICTORY PROGRESS DOESN'T EXIST. Alliance: #{self.id} VictoryType: #{type}.")
+          logger.warn(">>> VICTORY PROGRESS DOESN'T EXIST. Alliance: #{self.id} VictoryType: #{victory_type[:id]}.")
           progress = self.victory_progresses.create({
-            victory_type: type,
+            type_id: victory_type[:id],
           })
         end
 
@@ -200,6 +252,7 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.num_members = self.members_count
         self.ranking.save
       end
+      true
     end
     
   

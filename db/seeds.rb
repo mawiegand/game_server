@@ -16,7 +16,7 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 3
+NUM_FULL_LEVELS   = 1
 NUM_SPARSE_LEVELS = 1
 
 
@@ -149,11 +149,11 @@ def check_split_neighbours node
   if tms[:x] < 4**node.level-1
     nodes += check_neighbour({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, node.level);
   end
-  return nodes
+  nodes
 end
 
 def split_all_nodes(nodes, randmax=1, randtrue=1)
-    while !nodes.empty?
+  while !nodes.empty?
     node = nodes.pop
     node.reload
     if node.leaf && rand(randmax) < randtrue     # only split nodes that haven't been split before  #-3
@@ -194,29 +194,29 @@ end
 while !nodes.empty?
   node   = nodes.pop
   region = node.create_region
-  
-  for pos in 0..8
-    location = region.locations.build
-    location.slot = pos
-    location.right_of_way = 0
-    location.settlement_type_id = 0 # 0: empty   
+
+  (0..8).each do |pos|
+    location                    = region.locations.build
+    location.slot               = pos
+    location.right_of_way       = 0
+    location.settlement_type_id = 0 # 0: empty
     location.save
 
-    if (pos == 0)  # slot 0: fortress
+    if pos == 0 # slot 0: fortress
       region.fortress_id = location.id
       create_fortress(location)
-    end 
+    end
   end
-  
+
   region.terrain_id = rand(4)
   # hack for missing terrain tiles
   if region.terrain_id != 3
     region.terrain_id = 0    # everything not a desert is a plain
   end
-  
+
   new_name = region_names[region.terrain_id].sample
   region_names[region.terrain_id].delete(new_name)
-  
+
   region.name = new_name.chomp
   region.fortress.name = new_name.chomp
   region.fortress.save

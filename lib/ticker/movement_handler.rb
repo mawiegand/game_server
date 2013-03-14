@@ -36,6 +36,7 @@ class Ticker::MovementHandler
       action.army.target_location = nil
       action.army.target_region = nil
       action.army.target_reached_at = nil
+      action.army.attack_protection_ends_at = Time.now.advance(:seconds => GAME_SERVER_CONFIG['attack_protection_duration'])
       action.army.mode = 0
       
       if !action.army.save

@@ -22,7 +22,7 @@ class GameRules::RulesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json do
-        options = { root: use_restkit_api? }
+        options = { root: (use_restkit_api?() || params.has_key?(:inc_root)) }
         render :json => @rules.as_json(options) 
       end
     end    
