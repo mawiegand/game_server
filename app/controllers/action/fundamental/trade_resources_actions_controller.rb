@@ -25,7 +25,6 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     new_stone_value = sum*params[:resource_stone].to_f
     new_wood_value  = sum*params[:resource_wood].to_f
     new_fur_value   = sum*params[:resource_fur].to_f
-    max_inaccuracy  = (MAX_OVERFLOW*100 - 100).to_f
 
     raise ForbiddenError.new("#{sum} #{params[:resource_stone].to_f} #{params[:resource_wood].to_f} #{params[:resource_fur].to_f}")
 
@@ -35,7 +34,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     #
     # TODO: refactor here. 3 times the same step only with 1 difference.
     if new_stone_value > pool.resource_stone_capacity
-      if (new_stone_value-max_inaccuracy) > pool.resource_stone_capacity
+      if new_stone_value > pool.resource_stone_capacity*MAX_OVERFLOW
         raise ForbiddenError.new('stone capacity exceeded')
       else
         new_stone_value = pool.resource_stone_capacity
@@ -51,7 +50,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     end
 
     if new_fur_value > pool.resource_fur_capacity
-      if (new_fur_value-max_inaccuracy) > pool.resource_fur_capacity
+      if new_fur_value > pool.resource_fur_capacity*MAX_OVERFLOW
         raise ForbiddenError.new('fur capacity exceeded')
       else
         new_fur_value = pool.resource_fur_capacity
