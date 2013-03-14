@@ -126,5 +126,5 @@ staging_test:
   battle_xp_winner_bonus_factor:         3.0
 
   cookie_name: 'gs_staging_test_remember_token'
-  base_url: 'https://test2.wack-a-doo.de'
-  identity_provider_base_url: 'https://test2.wack-a-doo.de/identity_provider_staging_test'
+  base_url: 'https://staging-test.wack-a-doo.de'
+  identity_provider_base_url: 'https://staging-test.wack-a-doo.de/identity_provider'
