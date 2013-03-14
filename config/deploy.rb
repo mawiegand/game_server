@@ -54,10 +54,23 @@ namespace :deploy do
     run "cd #{current_path}; bundle exec thin -C config/thin_#{stage}.yml stop"
   end
 
+  desc "Start Thin and Tickers"
+  task :start_all do
+    run "cd #{current_path}; bundle exec thin -C config/thin_#{stage}.yml start"
+  end
+
+  desc "Stop Thin and Tickers"
+  task :stop_all do
+    stop
+    stop_ticker
+    stop_notification_ticker
+  end
+
   desc "Restart Ticker"
   task :restart_ticker do
-    stop_ticker
+    start
     start_ticker
+    start_notification_ticker
   end
 
   desc "Start Ticker"
