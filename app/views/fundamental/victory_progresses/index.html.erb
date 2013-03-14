@@ -7,7 +7,7 @@
     <th>Fulfillment Count</th>
     <th>First Fulfilled</th>
     <th>Days</th>
-    <th></th>
+    <th>Victory Gained</th>
     <th></th>
     <th></th>
   </tr>
@@ -19,6 +19,7 @@
     <td><%= fundamental_victory_progress.fulfillment_count %></td>
     <td><%= fundamental_victory_progress.first_fulfilled_at %></td>
     <td><%= fundamental_victory_progress.fulfilled_since %></td>
+    <td><%= fundamental_victory_progress.victory_gained %></td>
     <td><%= link_to 'Show', fundamental_victory_progress %></td>
     <td><%= link_to 'Edit', edit_fundamental_victory_progress_path(fundamental_victory_progress) %></td>
     <td><%= link_to 'Destroy', fundamental_victory_progress, confirm: 'Are you sure?', method: :delete %></td>

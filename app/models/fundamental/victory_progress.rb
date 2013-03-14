@@ -7,8 +7,9 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   belongs_to  :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :victory_progresses
   
   before_save :update_first_fulfilled_at
-  after_save  :propagate_victory
-  
+
+  after_find  :check_for_victory
+
   VICTORY_TYPE_DOMINATION  = 0
   VICTORY_TYPE_ARTIFACTS   = 1
   VICTORY_TYPE_POPULARITY  = 2
@@ -26,64 +27,55 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   def recalc_fulfillment_count
     case self.type_id
       when VICTORY_TYPE_DOMINATION                                # count fortresses of alliance
-        return self.alliance.fortresses.count
+        self.alliance.fortresses.count
 
       when VICTORY_TYPE_ARTIFACTS                                 # count distinct initiated artifact types of alliance
-        return self.alliance.artifacts.where('initiated = ?', true).select('distinct type_id').count
+        self.alliance.artifacts.where('initiated = ?', true).select('distinct type_id').count
         
-      when VICTORY_TYPE_POPULARITY
-        return 0
-
-      when VICTORY_TYPE_SCIENCE
-        return 0
-
-    end      
+      else
+        0
+    end
   end
 
   # gets  victory conditions from rules and current settings from round info to check
   # if alliance has already reached the victory
   def fulfilled?
-
     case self.type_id
       when VICTORY_TYPE_DOMINATION
         round_info = Fundamental::RoundInfo.the_round_info
         # evaluate required_regions_ratio as formula
         formula = Util::Formula.parse_from_formula(self.victory_type[:condition][:required_regions_ratio], 'DAYS')
         required_regions_ratio = formula.apply(round_info.age)   
-        return self.fulfillment_count > round_info.regions_count * required_regions_ratio
+        self.fulfillment_count > round_info.regions_count * required_regions_ratio
 
       when VICTORY_TYPE_ARTIFACTS
-        return self.fulfillment_count >= GameRules::Rules.the_rules.artifact_count
+        self.fulfillment_count >= GameRules::Rules.the_rules.artifact_count
 
-      when VICTORY_TYPE_POPULARITY
-        return false
-
-      when VICTORY_TYPE_SCIENCE
-        return false
+      else
+        false
     end      
   end
 
-  private
+  protected
+
+    def set_victory_gained(victory_time)
+      logger.debug "Siegbedingung erfüllt!"
+      self.victory_gained = true
+      self.save
+      Fundamental::RoundInfo.the_round_info.set_victory_gained(self, victory_time)
+    end
   
     # the round is won if a victory condition is fulfilled for a specific amount of days
-    def propagate_victory
+    def check_for_victory
       return true if self.fulfilled_since.nil?
       return true if self.victory_type[:condition].nil? || self.victory_type[:condition][:duration].nil?
 
-      round_info = Fundamental::RoundInfo.the_round_info
+      return true if Fundamental::RoundInfo.the_round_info.victory_gained?
 
-      return true if round_info.victory_gained?
+      victory_time = self.first_fulfilled_at + self.victory_type[:condition][:duration].days
 
-      if self.first_fulfilled_at + self.victory_type[:condition][:duration].days < Time.now
-        logger.debug "Siegbedingung erfüllt!"
-
-        round_info.winner_alliance = alliance
-        round_info.victory_gained_at = self.first_fulfilled_at + self.victory_type[:condition][:duration].days
-        round_info.save
-      else
-        logger.debug "Siegbedingung nicht erfüllt!"
-      end
-
+      # set victory gained
+      self.set_victory_gained(victory_time) if victory_time < Time.now
       true
     end
   
