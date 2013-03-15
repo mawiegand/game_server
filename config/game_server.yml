@@ -81,7 +81,7 @@ staging:
   
   base_url: 'https://test1.wack-a-doo.de'
   
-  scope: 'wackadoo'
+  scope: 'wackadoo-testround2'
   
   ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
 
