@@ -16,8 +16,11 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 1
+NUM_FULL_LEVELS   = 2
 NUM_SPARSE_LEVELS = 2
+
+ROUND_NAME   = "Schnelltest"
+ROUND_NUMBER =  2
 
 
 
@@ -52,7 +55,8 @@ end
 
 Fundamental::RoundInfo.create({
   id: 1,
-  name: "Rundenname",
+  name: ROUND_NAME,
+  number: ROUND_NUMBER,
   started_at: Time.now,
 })
 
