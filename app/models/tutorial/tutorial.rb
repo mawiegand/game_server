@@ -1075,12 +1075,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 30,
+                :amount => 45,
               },
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 50,
 
           },          
 
@@ -1172,7 +1172,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 150,
 
             :action_point_reward => true,
 
@@ -1763,7 +1763,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 75,
+                :amount => 150,
               },
 
             ],
@@ -1861,7 +1861,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 80,
+                :amount => 75,
               },
 
               {
@@ -1871,7 +1871,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 120,
               },
 
               {
