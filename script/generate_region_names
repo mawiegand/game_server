@@ -27,20 +27,30 @@ terrains.each do |terrain|
   terrain_names   = File.open(terrain_filename).readlines
   prefixes        = File.open(prefixes_filename).readlines
   modifiers       = File.open(modifiers_filename).readlines
-  
-  output = File.open(output_filename, 'w')
 
-  terrain_names.each do |name|    
+  output_names = []
+
+  terrain_names.each do |name|
     if name.chomp.length > 1
       stem, gender = name.split
       prefixes.each do |prefix|
         modifiers.each do |modifier|
-          output.puts (modifier.chomp+prefix.chomp+stem.chomp).capitalize
+          output_names << (modifier.chomp + prefix.chomp + stem.chomp).capitalize
         end
       end
     end
   end
-  
+
+  output_names.sort!
+
+  #dup = output_names.select{|element| output_names.count(element) > 1 }
+  #puts dup.inspect
+
+  output = File.open(output_filename, 'w')
+  output_names.each do |name|
+    output.puts name
+  end
+
   output.close
 end
 

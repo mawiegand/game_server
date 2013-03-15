@@ -35,7 +35,7 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup
   
   def attributes 
     { 
@@ -45,6 +45,7 @@ class GameRules::Rules
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
+      'trading_speedup'             => trading_speedup,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -106,52 +107,52 @@ class GameRules::Rules
   def self.the_rules
     @the_rules ||= GameRules::Rules.new(
   
-        :version => { :major => 0, 
-                      :minor => 0, 
-                      :build => 1, 
-        },
-        :battle => {
-          :calculation => {
-            :round_time => 30,
-            :retreat_probability => 0.6,
-            },
-        },
+      :version => { :major => 0,
+                    :minor => 0,
+                    :build => 1,
+      },
+      :battle => {
+        :calculation => {
+          :round_time => 30,
+          :retreat_probability => 0.6,
+          },
+      },
   
-        :domains => [
+      :domains => [
 
-          {
-            :id          => 0,
-            :symbolic_id => :character,
-          },
+        {
+          :id          => 0,
+          :symbolic_id => :character,
+        },
 
-          {
-            :id          => 1,
-            :symbolic_id => :settlement,
-          },
+        {
+          :id          => 1,
+          :symbolic_id => :settlement,
+        },
 
-          {
-            :id          => 2,
-            :symbolic_id => :alliance,
-          },
+        {
+          :id          => 2,
+          :symbolic_id => :alliance,
+        },
 
-        ],
+      ],
 
-        :character_creation => {
-          :start_resources => {
-            1 => 200,
+      :character_creation => {
+        :start_resources => {
+          1 => 200,
             0 => 200,
             2 => 100,
             3 => 0,
             
-          },
         },
-        :building_conversion => {
-          :cost_factor => 0.3,
-          :time_factor => 0.3,
-        },
-        :building_experience_formula => '2*LEVEL',
-        :alliance_max_members => 13,
-        :artifact_count => 4,
+      },
+      :building_conversion => {
+        :cost_factor => 0.3,
+        :time_factor => 0.3,
+      },
+      :building_experience_formula => '2*LEVEL',
+      :alliance_max_members => 13,
+      :artifact_count => 4,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
   
@@ -338,6 +339,18 @@ class GameRules::Rules
         },              #   END OF 9999 hours
 
       ],                # END OF ARTIFACT INITIATION SPEEDUP
+
+# ## TRADING INITIATION SPEEDUP #############################################
+
+      :trading_speedup => [  # ALL TRADING INITIATION SPEEDUPS
+
+        {               #   less than 1 hours
+          :resource_id => 3,
+          :amount      => 1,
+          :hours     => 1,
+        },              #   END OF 1 hours
+
+      ],                # END OF TRADING INITIATION SPEEDUP
 
 # ## RESOURCE TYPES ##########################################################
   
@@ -5991,7 +6004,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '5',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6052,7 +6065,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '2',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6491,8 +6504,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },              #   END OF queue_alliance_research
       ],                # END OF QUEUE TYPES
 
-        :character_ranks => {
-          
+      :character_ranks => {
+        
 # ## MUNDANE CHARACTER RANKS #################################################
       :skill_points_per_mundane_rank => 5,
   
@@ -7099,7 +7112,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         },             #   END OF 
       ],             # END OF SACRED CHARACTER RANKS
 
-        },
+      },
   
     )
   end

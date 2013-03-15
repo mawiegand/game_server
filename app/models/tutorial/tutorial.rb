@@ -3685,9 +3685,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade two quarries and logging camps to level 3",
+            :en_US => "Upgrade two quarries and logging camps to level 3.",
   
-            :de_DE => "Je zwei Steinbrüche und Holzfäller auf Level 3 ausbauen",
+            :de_DE => "Je zwei Steinbrüche und Holzfäller auf Level 3 ausbauen.",
                 
           },
           :flavour => {
