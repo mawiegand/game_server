@@ -5,20 +5,20 @@
       <Name>Stone Thrower</Name>
       <Name lang="de_DE">Steinschleuderer</Name>
       <Description lang="de_DE">
-        <p>Mit der Schleuder können größere Steine weiter geworfen werden. So trifft der Steinschleuderer oft die unvorbereiteten Kämpfer in der zweiten Reihe wodurch insgesamt deutlich mehr Opfer zu beklagen bzw. zu bejubeln sind. Je nach der Seite des Kampfes auf der man gerade steht. Was durchaus nicht immer eindeutig ist.</p> 
+        <p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfer in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p> 
       </Description>
       <Description lang="en_US">
         <p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn’t always obvious.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>Aiming is for sissies. The stone throwers‘ motto is: “The further you can throw the stone, the better!” Sometimes they’re right.</p>
+        <p>The stone throwers‘ motto is: 'The further you can throw the stone, the better!'</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Zielen ist was für Anfänger. Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!' Stimmt sogar manchmal.</p>
+        <p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>
       </Flavour>
       <Cost id="resource_stone" round="true">90</Cost>  
       <Cost id="resource_wood" round="true">90</Cost>
-      <Cost id="resource_fur" round="true">140</Cost>    
+      <Cost id="resource_fur" round="true">280</Cost>    
       <ProductionTime shortenable="true">1050</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
@@ -34,8 +34,8 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>  
       <Effectiveness category="unitcategory_special">1</Effectiveness>   
       <RequirementGroup>
-        <Requirement id="building_artillery_tower" min_level="15" />
-        <Requirement id="building_fortress_fortification" min_level="14" />
+        <Requirement id="building_artillery_tower" min_level="10" />
+        <Requirement id="building_fortress_fortification" min_level="9" />
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_firing_range" min_level="15" />

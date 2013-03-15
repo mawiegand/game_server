@@ -2,24 +2,23 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="light_cavalry_2" category="unitcategory_cavalry">
-      <Name>One-handed Ostrich Rider</Name>
-      <Name lang="de_DE">Einhändiger Straußenreiter</Name>
+      <Name>Hungry Ostrich</Name>
+      <Name lang="de_DE">Hungriger Strauß</Name>
       <Description lang="de_DE">
-        <p>Eine handliche Keule in der freien Hand sind einhändige Straußenkrieger der Todfeind aller Fernkämpfer.</p>
-        <p>Im Kampf gegen Keulenkrieger ziehen sie allerdings den Kürzeren, da sie nur eine kleine, nicht so schwere Keule bei sich führen.</p>
+        <p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>
       </Description>
       <Description lang="en_US">
-        <p>With a handy little club in his free hand, the one-handed ostrich rider is a deadly enemy for stone throwers. In battle against clubbers, though, they usually come off worse because they only have rather small, light clubs.</p>
+        <p>The rider sits on a trained and very hungry ostrich. As long as the rider himself will not be bitten, the hungry ostrich stays a wild peckin battle machine, able to destroy unprotected rangers.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>Experienced ostrich riders only need one hand to hold on to their mounts, which means they have one hand free to do more practical things. Like picking their noses, for instance, or smashing in the skulls of their enemies.</p>
+        <p>A hungry ostrich is a dangerous weapon. Espacialy eyes are treats.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Mit ausreichend Erfahrung braucht der Reiter nur noch eine Hand zum Festhalten und hat so die andere Hand für sinnvollere Tätigkeiten frei. Zum Beispiel um den Mädels zuzuwinken oder seinen Feinden den Schädel einzuhauen.</p>
+        <p>Ein hungriger Strauß ist eine gefährliche Waffe. Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>
       </Flavour>
       <Cost id="resource_stone" round="true">40</Cost>  
       <Cost id="resource_wood" round="true">35</Cost>    
-      <Cost id="resource_fur" round="true">50</Cost>    
+      <Cost id="resource_fur" round="true">100</Cost>    
       <ProductionTime shortenable="true">800</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
@@ -35,8 +34,8 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
       <Effectiveness category="unitcategory_special">1</Effectiveness>
       <RequirementGroup>
-        <Requirement id="building_cavalry_tower" min_level="7" />
-        <Requirement id="building_fortress_fortification" min_level="6" />  
+        <Requirement id="building_cavalry_tower" min_level="5" />
+        <Requirement id="building_fortress_fortification" min_level="4" />  
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="10" />  

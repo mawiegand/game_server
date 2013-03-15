@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_storage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">  
-  <Name lang="de_DE">Rohstofflager mit Kupferkarren</Name>
-  <Name lang="en_US">Raw Materials Store with Copper Carts</Name>
+  <Name lang="de_DE">Großes Rohstofflager</Name>
+  <Name lang="en_US">Great Store</Name>
   <Description lang="de_DE">
     <p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>
    </Description>
@@ -16,22 +16,17 @@
   <Flavour lang="de_DE">
     <p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>
   </Flavour>
-  <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>
   <RequirementGroup>
-    <Requirement id="building_copper_smelter" min_level="2" />
-    <Requirement id="building_haunt" max_level="0" />
-  </RequirementGroup>
-  <RequirementGroup>
-   <Requirement id="building_haunt" min_level="12" />
-    <Requirement id="building_chief_cottage" max_level="0" />
+    <Requirement id="building_copper_smelter" min_level="3" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*8.05+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5*8.05+0.5)</Cost>
     <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
   <ProductionTime shortenable="true">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)</ProductionTime>             
-  <Capacity id="resource_stone">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
-  <Capacity id="resource_wood">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
-  <Capacity id="resource_fur">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*1.75*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
+  <Capacity id="resource_stone">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
+  <Capacity id="resource_wood">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
+  <Capacity id="resource_fur">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
   <Abilities> <!-- just for grouping -->
     <TradingCarts>FLOOR(10*LEVEL*LEVEL*1.75+0.5)</TradingCarts>
     <UnlockP2PTrade level="1" />

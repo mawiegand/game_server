@@ -14,22 +14,17 @@
     <p>A man and his copper axe! Although the copper axes always bend, he actually does manage to bring home trees he has felled himself, as well as some brushwood.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Mann und seine Kupferaxt! Obwohl die Kupferaxt ständig verbiegt, bringt er tatsächlich selbst gefällte Bäume und weniger loses Gestrüpp mit.</p>
+    <p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>
   </Flavour>
-  <Population>FLOOR(((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17)*1.1+0.5)</Population>
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="4" />
-    <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
-  <RequirementGroup>
-   <Requirement id="building_haunt" min_level="14" />
-    <Requirement id="building_chief_cottage" max_level="0" />
-  </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*1)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-250*POW(LEVEL,2)+6130*LEVEL+28626))*0.5)</Cost>    
-  <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
-  <ProductionTime shortenable="true">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)</ProductionTime>             
-  <Production id="resource_wood">FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)*MIN(2.25,MAX(1.5,1.5+0.25*(LEVEL-7)))+0.5)</Production>  
+  <Cost id="resource_stone" round="true">FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*1)</Cost> 
+  <Cost id="resource_wood" round="true">FLOOR((LESS(LEVEL,7)*(41.4*POW(2.7,0.55*LEVEL))+GREATER(LEVEL,6)*LESS(LEVEL,11)*(3237.5*POW(LEVEL-6,2)-6572.5*(LEVEL-6)+5512.5)+GREATER(LEVEL,10)*(-85*POW(LEVEL,2)+4750*LEVEL+GREATER(LEVEL,10)*9000))*0.5)</Cost>    
+  <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)*2</Cost> 
+  <ProductionTime shortenable="true">FLOOR((31130*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*1)</ProductionTime>            
+  <Production id="resource_wood">(LESS(LEVEL,11)*FLOOR((0.0079*POW(LEVEL,4)+0.1167*POW(LEVEL,3)-1.025*POW(LEVEL,2)+6.959*LEVEL-2.3333)+0.5)+GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL,3.52)+0.11*POW(LEVEL,3)-1.1*POW(LEVEL,2)+13*LEVEL-2.3333)+0.5))*2.5</Production>   
   <ProductionBonus id="resource_wood">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>

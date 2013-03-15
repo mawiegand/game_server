@@ -97,12 +97,12 @@
       <SpeedupCost resource="resource_cash" amount="6"  hours="12" />
       <SpeedupCost resource="resource_cash" amount="8"  hours="18" />
       <SpeedupCost resource="resource_cash" amount="12" hours="30" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="65" />
-      <SpeedupCost resource="resource_cash" amount="30" hours="100" />
-      <SpeedupCost resource="resource_cash" amount="40" hours="140" />
-      <SpeedupCost resource="resource_cash" amount="50" hours="185" />
-      <SpeedupCost resource="resource_cash" amount="60" hours="230" />
-      <SpeedupCost resource="resource_cash" amount="70" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="70" />
+      <SpeedupCost resource="resource_cash" amount="25" hours="120" />
+      <SpeedupCost resource="resource_cash" amount="30" hours="180" />
+      <SpeedupCost resource="resource_cash" amount="40" hours="240" />
+      <SpeedupCost resource="resource_cash" amount="50" hours="300" />
+      <SpeedupCost resource="resource_cash" amount="60" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3"  />
@@ -132,7 +132,7 @@
       <TimeFactor>0.3</TimeFactor>
     </BuildingConversion>  
     <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
-    <AllianceMaxMembers>80</AllianceMaxMembers>
+    <AllianceMaxMembers>13</AllianceMaxMembers>
   </General>
   <xi:include href="rules_victories.xml" />
   <xi:include href="rules_artifacts.xml" />

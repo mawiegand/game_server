@@ -16,16 +16,16 @@
   <Flavour lang="en_US">
     <p>On sunnys days there are drinks and music.</p>
 	</Flavour>
-  <Population>(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25))*1.1+0.5))*4</Population>
+<Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*4))</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" />
     <Requirement id="building_artifact_stand" max_level="0" /> 
     <Requirement id="building_haunt" max_level="0" /> 
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(7500*POW(LEVEL,0.4))</Cost>
-  <Cost id="resource_wood" round="true">FLOOR(10000*POW(LEVEL,0.4))</Cost>
-  <Cost id="resource_fur" round="true">FLOOR(12500*POW(LEVEL,0.4))</Cost>
-  <ProductionTime shortenable="true">FLOOR(9*3600+3600*POW(LEVEL,0.7))</ProductionTime>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(FLOOR(7500*POW(LEVEL,0.4)))</Cost>
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(FLOOR(10000*POW(LEVEL,0.4)))</Cost>
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(FLOOR(12500*POW(LEVEL,0.4)))</Cost>
+  <ProductionTime shortenable="true">LESS(LEVEL,11)*(FLOOR(11*3600+3600*POW(LEVEL,0.7)))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockArtifactInitiation>LEVEL</UnlockArtifactInitiation>

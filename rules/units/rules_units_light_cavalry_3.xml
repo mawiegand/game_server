@@ -2,24 +2,23 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="light_cavalry_3" category="unitcategory_cavalry">
-      <Name>Freehand Ostrich Rider</Name>
-      <Name lang="de_DE"> Freihändiger Straußenreiter </Name>
+      <Name>Frantic Ostrich</Name>
+      <Name lang="de_DE">Rasender Strauß</Name>
       <Description lang="de_DE">
-        <p>Auf blitzschnelle Angriffe spezialisiert, bleiben diese Reiter nie lange auf einem Fleck. Freihändig können die Reiter auch auf ihren Reittiere manövrieren und gezielt kleine Steine auf ungeschützte Fernkämpfer werfen.</p>
-        <p>Gegnerische Reittiere gelten als Spielverderber. Sie blockieren den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p> 
+        <p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p> 
       </Description>
       <Description lang="en_US">
-        <p>Specializing in lightning attacks, these riders don’t stick around in one place for long. With both hands free, riders can also turn around while seated on their mounts, and throw well-aimed small stones at unprotected stone throwers. Enemy mounts are spoilsports. They block access to sitting targets that can be picked off easily.</p>
+        <p>Frantic ostrichs are specialicied in lightning attacks. Enemy mounts block as spoilsports the access to sitting targets that can be picked off easily.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>Very talented riders wield a club in one hand and throw small stones with the other. It looks impressive but their enemies are usually still massacred by the ostriches they are mounted on.</p>
+        <p>Frantic otrichs brake for nobody!</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Besonders talentierte Reiter halten in einer Hand eine Keule und werfen mit der anderen Hand kleine Steine. Sieht beeindruckend aus, aber die meisten Gegner metzelt weiterhin der Strauß nieder.</p>
+        <p>Rasende Strauße bremsen für niemanden!</p>
       </Flavour>
       <Cost id="resource_stone" round="true">80</Cost>  
       <Cost id="resource_wood" round="true">70</Cost>    
-      <Cost id="resource_fur" round="true">100</Cost>    
+      <Cost id="resource_fur" round="true">200</Cost>    
       <ProductionTime shortenable="true">1000</ProductionTime>  
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
@@ -35,8 +34,8 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
       <Effectiveness category="unitcategory_special">1</Effectiveness>
       <RequirementGroup>
-        <Requirement id="building_cavalry_tower" min_level="15" />
-        <Requirement id="building_fortress_fortification" min_level="14" />  
+        <Requirement id="building_cavalry_tower" min_level="10" />
+        <Requirement id="building_fortress_fortification" min_level="9" />  
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="15" />  

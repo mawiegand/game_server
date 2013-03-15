@@ -3,23 +3,22 @@
 
 <Unit id="clubbers_2" category="unitcategory_infantry">
   <Name>Thick-skinned Clubber</Name>
-  <Name lang="de_DE">Dickhäutiger Keulenkrieger</Name>
-  
+  <Name lang="de_DE">Dicke Keule</Name>
   <Description lang="de_DE">
-    <p>Die dicke Haut schützt sie zwar vor Keulenschlägen, aber die spitzen Steine der Fernkämpfer hält sie nicht ab. Dafür tut es weniger weh, wenn man von einem Strauß überrannt wird und die Zeitspanne bis zur Bewusstlosigkeit muss nicht in Schmerzen durchstanden werden.</p>		
+    <p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Their thick skin protects them against blows from others’ clubs, but doesn’t help much against the ranged combatants’ sharp stones. It makes being run over by an ostrich less painful, though – they’re not in so much agony until they pass out.</p>
+    <p>Their thick skin protects them against blows from others’ clubs, but doesn’t help much against the ranged combatants’ sharp stones. Thanks to their thick skin they are in not so much agony until they pass out.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>You can tell battle-hardened clubbers by their thick skin and big clubs, and of course, the things they say. “You two? Ha! Go and fetch three more of you so you can give me a halfway fair fight!”</p>
+    <p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Erfahrene Keulenkrieger erkennt man an ihrer dicken Haut und ihrer großen Keule und natürlich an ihren Ausrufen. „Ihr zwei? Holt euch noch drei dazu, damit es ein halbwegs fairer Kampf wird!“</p>
+    <p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>
   </Flavour>
   <Cost id="resource_stone" round="true">35</Cost>  
   <Cost id="resource_wood" round="true">45</Cost>    
-  <Cost id="resource_fur" round="true">60</Cost>    
+  <Cost id="resource_fur" round="true">120</Cost>    
   <ProductionTime shortenable="true">800</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
@@ -35,8 +34,8 @@
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
   <RequirementGroup>
-    <Requirement id="building_infantry_tower" min_level="7" />
-    <Requirement id="building_fortress_fortification" min_level="6" />
+    <Requirement id="building_infantry_tower" min_level="5" />
+    <Requirement id="building_fortress_fortification" min_level="4" />
   </RequirementGroup>
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="10" />

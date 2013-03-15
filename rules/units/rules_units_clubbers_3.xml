@@ -2,30 +2,30 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Unit id="clubbers_3" category="unitcategory_infantry">
-  <Name>Drunken Clubber</Name>
-  <Name lang="de_DE">Betrunkener Keulenkrieger</Name>
+  <Name>Club swinger</Name>
+  <Name lang="de_DE">Knüppelschwinger</Name>
   
   <Description lang="de_DE">
-    <p>Manche Keulenkrieger tauchen sogar mit ihrem Bierfaß auf dem Schlachtfeld auf. Nichts geht über einen guten Schluck vor, nach und während der Schlacht. Leicht wankend gibt der betrunkene Keulenkrieger auch ein schwierigeres Ziel für die Fernkämpfer ab. Nur leider zielen diese sowieso nicht, so dass sie weiterhin sehr tödlich für die Keulenkrieger sind.</p>		
+    <p>Die Knüppelschwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Some clubbers even show up on the battlefield with a barrel of beer. There’s nothing like a good swig of beer before, during and after a battle. A slightly drunk clubber staggers and weaves, making him a much more difficult target for ranged combatants. But ranged combatants can’t aim anyway, which makes them just as deadly for clubbers. </p>
+    <p>The bludgeoners unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Very few clubbers survive their first battles, and almost none of them survive an entire war. Drinking enough beer increases their combat strength and reduces their ability to feel pain. </p>
+    <p>The art of expressive battle! Here bludgeoners give marks to each other regarding their fighting style.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Sehr wenige Keulenkrieger überleben ihre ersten Schlachten, fast keiner überlebt einen Krieg. Durch ausreichend Bier erhöht sich die Kampfkraft und verringert sich das Schmerzempfinden.</p>
+    <p>Die Kunst des Ausdruckkampfes! Knüppelschwinger geben sich untereinander Noten für ihre Kampfstil.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">70</Cost>  
   <Cost id="resource_wood" round="true">90</Cost>    
-  <Cost id="resource_fur" round="true">120</Cost>    
+  <Cost id="resource_fur" round="true">240</Cost>    
   <ProductionTime shortenable="true">1000</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>
   <Attack>6</Attack>
-  <CriticalDamage chance="0.01">1</CriticalDamage>
+  <CriticalDamage chance="0.01">2</CriticalDamage>
   <Armor>7</Armor>
   <Overrunnable>true</Overrunnable>
   <Hitpoints>110</Hitpoints>
@@ -35,8 +35,8 @@
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
   <RequirementGroup>
-    <Requirement id="building_infantry_tower" min_level="15" />
-    <Requirement id="building_fortress_fortification" min_level="14" />
+    <Requirement id="building_infantry_tower" min_level="10" />
+    <Requirement id="building_fortress_fortification" min_level="9" />
   </RequirementGroup>
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="15" />

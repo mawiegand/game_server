@@ -5,26 +5,28 @@
   <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
-    <p>Mit größere Garnisonen können größere Armeen aufgestellt werden. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p> 
+    <p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p> 
   </Description>
   <Description lang="en_US">
-    <p>Bigger garrisons lead to … bigger armies. Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p> 
+    <p>Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p> 
   </Description>
   <Flavour lang="en_US">
     <p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others’ heads in and leave the poor settlement dwellers in peace.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Krieger aller Art sollten getrennt von der normalen arbeitenden Bevölkerung gehalten werden. In der Garnison können sie sich gegenseitig die Schädel einschlagen und die armen Siedlungsbewohner in Ruhe lassen.</p>  
+    <p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustösst!</p>  
   </Flavour> 
-  <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
+<Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>
     <Requirement id="building_copper_smelter" min_level="8" />
     <Requirement id="building_garrison" max_level="0" />
     <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</Cost>  
-  <Cost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*4*1.5)</Cost> 
-  <ProductionTime shortenable="false">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)</ProductionTime>     
+    <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
+  <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
+    <Cost id="resource_fur" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5</Cost>
+  <Cost id="resource_cash" round="true">EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2</Cost> 
+  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570</ProductionTime>  
   <Abilities> <!-- just for grouping -->
     <GarrisonSizeBonus>25*LEVEL</GarrisonSizeBonus>
     <ArmySizeBonus>25*LEVEL</ArmySizeBonus>

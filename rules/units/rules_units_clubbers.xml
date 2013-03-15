@@ -12,14 +12,14 @@
     <p>Clubbers are the basic unit of any army. They are on the front line and protect the ranged combatants from the cavalry. Clubbers are tough fellows and difficult to beat, but they all too often they get knocked off by enemy ranged combatants.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Holds a club and is always at the front of battle lines. Clubbers don’t need much for a happy life. Their lives are pretty short anyway.  </p>
+    <p>Holds a club and is always at the front of battle lines.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Eine Keule in der Hand und immer an vorderster Front. Keulenkrieger brauchen nicht viel für ein glückliches Leben. Zudem ist dieses meist sehr kurz.</p>
+    <p>Eine Keule in der Hand und immer an vorderster Front.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">25</Cost>  
   <Cost id="resource_wood" round="true">30</Cost>    
-  <Cost id="resource_fur" round="true">40</Cost>    
+  <Cost id="resource_fur" round="true">80</Cost>    
   <ProductionTime shortenable="true">600</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>

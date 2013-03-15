@@ -15,11 +15,11 @@
       <p>These ranged combatants couldn’t hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that’s hard to miss. </p>
     </Flavour>
     <Flavour lang="de_DE">
-      <p>Diese Fernkämpfer könnten zwar eine Zielscheibe nicht aus zehn Meter Entfernung treffen, aber zum Glück sind Schlachtreihen meist viel größer als Zielscheiben.</p>
+      <p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>
     </Flavour>
     <Cost id="resource_stone" round="true">35</Cost>  
     <Cost id="resource_wood" round="true">35</Cost>
-    <Cost id="resource_fur" round="true">60</Cost>    
+    <Cost id="resource_fur" round="true">120</Cost>    
     <ProductionTime shortenable="true">750</ProductionTime>  
     <Velocity>1</Velocity>
     <ActionPoints>4</ActionPoints>

@@ -5,8 +5,7 @@
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Raw Materials Store</Name>
   <Description lang="de_DE">
-        <p>Steinzeitliches Logistikzentrum zum Lagern und Versenden von Rohstoffen. Je größer das Lager, desto mehr Karren können versendet werden.</p>
-            <p>Ein Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lager- als auch die Handelsmenge.</p>
+        <p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>
    </Description>
   <Description lang="en_US">
     <p>Stone-age logistics centre where raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>
@@ -17,7 +16,7 @@
   <Flavour lang="de_DE">
     <p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>
   </Flavour> 
-  <Population>FLOOR((MIN(LEVEL+1,8)-MIN(LEVEL,8))*(0.6245*POW(LEVEL,2.2))+(MIN(LEVEL,8)-MIN(LEVEL,7))*(5*POW((LEVEL-7),2)+10*(LEVEL-7)+50)+(MIN(LEVEL,11)-MIN(LEVEL,10))*17+0.5)</Population>
+  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population>  
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="4" />
     <Requirement id="building_haunt" max_level="0" />
@@ -30,13 +29,13 @@
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)</Cost>
     <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
 <ProductionTime shortenable="true">(MIN(LEVEL+1,2)-MIN(LEVEL,2))*15+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1*1.5+0.5)</ProductionTime>         
-  <Capacity id="resource_stone">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
-  <Capacity id="resource_wood">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*1*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
-  <Capacity id="resource_fur">FLOOR(((MIN(LEVEL, 1)-MIN(LEVEL-1,1))*20 + POW(LEVEL,2) * 80)*0.5*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.05)))</Capacity>
+  <Capacity id="resource_stone">FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))</Capacity>
+  <Capacity id="resource_wood">FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))</Capacity>
+  <Capacity id="resource_fur">FLOOR(EQUAL(LEVEL,1)*80+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03)))</Capacity>
   <Abilities> <!-- just for grouping -->
     <TradingCarts>10*LEVEL*LEVEL</TradingCarts>
     <UnlockP2PTrade level="1" />
   </Abilities>
-  <ConversionOption building="building_storage_2" level="LEVEL-(MIN(LEVEL,5)-MIN(LEVEL,4))-(MIN(LEVEL,10)-MIN(LEVEL,9))-(MIN(LEVEL,14)-MIN(LEVEL,13))"/>  
+  <ConversionOption building="building_storage_2" level="LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)"/>   
 </Building>
 
