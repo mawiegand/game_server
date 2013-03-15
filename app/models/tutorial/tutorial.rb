@@ -1530,7 +1530,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'hurtig!'. Probiere es doch einmal aus.</p>",
+            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'Hurtig!'. Probiere es doch einmal aus.</p>",
   
             :en_US => "<p>You can speed up the chieftain‘s hut upgrade with golden frogs. Click on ’Hurry!’. Why not try it out?</p>",
                 
