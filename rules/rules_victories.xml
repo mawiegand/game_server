@@ -9,7 +9,7 @@
     <Description lang="en_US">For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.</Description>
     <Condition duration="5">    
       <RequiredRegionsRatio>1-(0.1*(MAX(DAYS,0)))</RequiredRegionsRatio>
-    </Condition>    
+    </Condition>
   </Victory>
   <Victory id="victory_artifact">
     <Name lang="de_DE">Artefaktsieg</Name>
