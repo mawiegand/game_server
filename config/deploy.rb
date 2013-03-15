@@ -54,6 +54,20 @@ namespace :deploy do
     run "cd #{current_path}; bundle exec thin -C config/thin_#{stage}.yml stop"
   end
 
+  desc "Start Thin and Tickers"
+  task :start_all do
+    start
+    start_ticker
+    start_notification_ticker
+  end
+
+  desc "Stop Thin and Tickers"
+  task :stop_all do
+    stop
+    stop_ticker
+    stop_notification_ticker
+  end
+
   desc "Restart Ticker"
   task :restart_ticker do
     stop_ticker
@@ -78,12 +92,16 @@ namespace :deploy do
 
   desc "Start Notification Ticker"
   task :start_notification_ticker do
-    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+    if stage != 'staging_test'
+      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+    end
   end
 
   desc "Stop Notification Ticker"
   task :stop_notification_ticker do
-    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
+    if stage != 'staging_test'
+      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
+    end
   end
   
   desc "Check Consistency"

@@ -2,7 +2,7 @@
 
 <p>
   <b>Name:</b>
-  <%= @fundamental_round_info.name %>
+  <%= @fundamental_round_info.name %> (Round <%= @fundamental_round_info.number %>)
 </p>
 
 <p>
@@ -18,6 +18,21 @@
 <p>
   <b>Regions count:</b>
   <%= @fundamental_round_info.regions_count %>
+</p>
+
+<p>
+  <b>Victory gained at:</b>
+  <%= @fundamental_round_info.victory_gained_at %>
+</p>
+
+<p>
+  <b>Winning Alliance:</b>
+  <%= @fundamental_round_info.winner_alliance_id %>
+</p>
+
+<p>
+  <b>Victory Type:</b>
+  <%= @fundamental_round_info.victory_type %>
 </p>
 
 

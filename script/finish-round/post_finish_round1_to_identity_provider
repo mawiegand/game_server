@@ -39,7 +39,7 @@ Fundamental::Character.all.each do |character|
 	    :de_DE => "Die Runde 1, 'Light', überlebt.",
 	    :en_US => "Survived until the end of round 1, 'Light'.",
 	  }
-    identity_provider_access.post_history_event(character.identifier, event, description)
+    identity_provider_access.post_character_history_event(character.identifier, event, description)
   end
 end
 

@@ -427,7 +427,7 @@ class Military::Battle < ActiveRecord::Base
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.units_count
-          character_result.experience_gained += k * 2.0 * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
+          character_result.experience_gained += k * GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
           character_result.winner = true
           character_result.save
         end
