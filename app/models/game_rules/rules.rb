@@ -858,19 +858,19 @@ class GameRules::Rules
             
             :en_US => "Club swinger",
   
-            :de_DE => "Knüppel Schwinger",
+            :de_DE => "Knüppel-Schwinger",
                 
           },
           :flavour     => {
             
             :en_US => "<p>The art of expressive battle! Here bludgeoners give marks to each other regarding their fighting style.</p>",
   
-            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppelschwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
+            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Knüppelschwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
+            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
   
             :en_US => "<p>The bludgeoners unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>",
                 
@@ -6004,7 +6004,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '5',
+          :amount      => '1',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6065,7 +6065,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '2',
+          :amount      => '1',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6126,7 +6126,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '10',
+          :amount      => '1',
 
           :experience_production => '10*(MRANK+1)',
 
@@ -6273,7 +6273,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1+(0.01*(MIN(116-DAYS,0)))',
+            :required_regions_ratio => '1-(0.1*(MAX(DAYS,0)))',
 
             :duration => 5,
           },
