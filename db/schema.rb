@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306150630) do
+ActiveRecord::Schema.define(:version => 20130312104113) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1771,11 +1771,11 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.integer  "send_likes_count",                         :default => 0
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
@@ -1857,6 +1857,8 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
+    t.integer  "number",             :default => 0, :null => false
+    t.integer  "victory_type"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -1873,6 +1875,7 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.integer  "fulfillment_count",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "victory_gained"
   end
 
   create_table "like_system_dislikes", :force => true do |t|
