@@ -16,8 +16,8 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 3
-NUM_SPARSE_LEVELS = 2
+NUM_FULL_LEVELS   = 2
+NUM_SPARSE_LEVELS = 3
 
 ROUND_NAME   = "Schnelltest"
 ROUND_NUMBER =  2
