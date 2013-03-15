@@ -17,7 +17,7 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   = 1
-NUM_SPARSE_LEVELS = 1
+NUM_SPARSE_LEVELS = 2
 
 
 
