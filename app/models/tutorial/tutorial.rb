@@ -5947,9 +5947,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_queue_chiefcottagelvl2_V2
-        {               #   quest_build_1cottagelvl2
+        {               #   quest_resourcescore_075
           :id                => 61, 
-          :symbolic_id       => :quest_build_1cottagelvl2,
+          :symbolic_id       => :quest_resourcescore_075,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
@@ -5957,48 +5957,54 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Small huts, big stuff!",
+            :en_US => "Resource Production",
   
-            :de_DE => "Kleine Hütten, ganz groß!",
+            :de_DE => "Rohstoffproduktion",
                 
           },
           :task => {
             
-            :en_US => "Upgrade a small hut to level 2.",
+            :en_US => "Increase the resource production of one settlement to 180 resource points.",
   
-            :de_DE => "Baue eine kleine Hütte auf Level 2.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunkte.",
                 
           },
           :flavour => {
             
-            :de_DE => "Die Kleine Hütte ist ganz toll. Nur leider jetzt schon zu klein! Baue die Hütte weiter aus, es warten schon weitere zukünftige Bewohner vor den Toren Deiner Siedlung.",
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => "The small hut is great. But it’s already too small! Upgrade the hut again, there are more future inhabitants waiting outside the gates of your settlement.",
+            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die ersten Bewohner sind in die Hütten gezogen, doch schon wird der Platz knapp. Erweitere die Kleinen Hütten auf Level 2.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>The first inhabitants have moved in to the huts, but they’re running out of space already. Upgrade the small huts to level 2.</p>",
+            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Klasse! Schon kommen neue Bewohner, die Dich beim Ausbau unterstützen werden.",
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
   
-            :en_US => "Great! You already have new inhabitants coming to help you upgrade.",
+            :en_US => "Nice, your settlement is producing more resources and growing more rapidly.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Wann immer Dir die Fertigstellung der Bauaufträge zu lange dauert, kannst Du mehr kleine Hütten bauen oder bestehende auf höhere Stufen ausbauen. Jede weitere Stuffe beschleunigt die Arbeiten.",
+            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
   
-            :en_US => "If the building contracts are taking too long for you, you can build more small huts and then upgrade them.",
+            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_0_5',
+
+          },
+
+          :successor_quests => [124, ],
 
           :rewards => {
             
@@ -6006,43 +6012,34 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 95,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 75,
+                :amount => 180,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 100,
+                :amount => 180,
               },
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 60,
 
           },          
 
           :reward_tests => {
             
-            :building_tests => [
-
-              {
-                :building => 'building_cottage',
-
-                :min_level => 2,
-
-                :min_count => 1,
-
-              },
-
-            ],
+            :settlement_production_test => {
+              :min_resources => 180,
+            },
 
           },          
 
-        },              #   END OF quest_build_1cottagelvl2
+        },              #   END OF quest_resourcescore_075
         {               #   quest_army_reinforce
           :id                => 62, 
           :symbolic_id       => :quest_army_reinforce,
@@ -11871,7 +11868,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [124, ],
+          :successor_quests => [61, ],
 
           :rewards => {
             
@@ -11960,7 +11957,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0_5',
+            :quest => 'quest_resourcescore_075',
 
           },
 
@@ -11972,12 +11969,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 400,
+                :amount => 360,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 400,
+                :amount => 360,
               },
 
               {
@@ -11994,7 +11991,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 350,
+              :min_resources => 360,
             },
 
           },          
