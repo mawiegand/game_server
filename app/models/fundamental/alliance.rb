@@ -8,13 +8,14 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :regions,   :class_name => "Map::Region",                :foreign_key => "alliance_id"
   has_many   :shouts,    :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id", :order => "created_at DESC"
   has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
-  has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
   has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
 
   has_many   :resource_effects, :class_name => "Effect::AllianceResourceEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
 
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
-  
+  has_one    :reservation, :class_name => "Fundamental::AllianceReservation", :foreign_key => "alliance_id", :inverse_of => :alliance
+
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
   
@@ -23,8 +24,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :created_at, :updated_at,       :as => :default 
-  attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :victory_progresses, :as => :ally 
+  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :created_at, :updated_at,       :as => :default
+  attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
   attr_readable *readable_attributes(:staff),                                                        :as => :admin
@@ -61,7 +62,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     cmd.save
     
     alliance.add_character(leader)
-    return alliance
+    alliance
   end
   
   def determine_new_leader
@@ -251,6 +252,7 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.num_members = self.members_count
         self.ranking.save
       end
+      true
     end
     
   

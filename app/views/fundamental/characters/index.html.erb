@@ -24,6 +24,7 @@
     <th>SP</th>
     <th>Banned</th>
     <th>Base</th>
+    <th>Ally</th>
 <% if staff? || admin? %>
     <th>Referrer</th>
 <% end %>
@@ -78,6 +79,7 @@
         <%= fundamental_character.settlement_points_total %></td>
     <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
     <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
+    <td><%= fundamental_character.alliance_id %></td>
     <% if staff? || admin? %>
     <td><%= fundamental_character.referer %></td>
     <% end %>

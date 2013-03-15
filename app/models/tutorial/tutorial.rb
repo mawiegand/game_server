@@ -231,7 +231,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [2, 3, ],
+          :successor_quests => [2, ],
 
           :rewards => {
             
@@ -337,7 +337,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 5, 10, ],
+          :successor_quests => [3, 5, 10, ],
 
           :rewards => {
             
@@ -435,11 +435,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1gathererlvl2',
+            :quest => 'quest_build_chiefcottagelvl2',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -514,7 +514,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -522,7 +522,7 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :experience_reward => 200,
+            :experience_reward => 150,
 
           },          
 
@@ -711,7 +711,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 200,
+            :experience_reward => 150,
 
           },          
 
@@ -870,17 +870,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 350,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 350,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 400,
+                :amount => 250,
               },
 
             ],
@@ -982,7 +982,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 110,
               },
 
             ],
@@ -1172,7 +1172,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 150,
+            :experience_reward => 100,
 
             :action_point_reward => true,
 
@@ -1220,19 +1220,21 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
   
-            :en_US => "<p>By upgrading your chieftain’s hut you can build more and different buildings.  </p>",
+            :en_US => "<p>By upgrading your chieftain’s hut you can build more and different buildings.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll. Wenn Du willst, kannst Du Dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst Du Gebäude viel weiter ausbauen, als auf kleinen.",
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hätte kannst Du jetzt auch bauen.",
   
-            :en_US => "At the moment you should build yout building at the small building slots.",
+            :en_US => "Great! Some more building slots and you can build a small hut now.",
                 
           },
           :reward_text => {
             
             :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
+  
+            :en_US => "At the moment you should build your building at the small building slots.",
                 
           },
 
@@ -1265,7 +1267,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 350,
+            :experience_reward => 175,
 
           },          
 
@@ -1304,7 +1306,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a small huts.",
+            :en_US => "Build a small hut.",
   
             :de_DE => "Baue eine kleine Hütte.",
                 
@@ -1971,7 +1973,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 300,
+            :experience_reward => 350,
 
           },          
 
@@ -2047,12 +2049,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 225,
+                :amount => 125,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 225,
+                :amount => 125,
               },
 
               {
@@ -2145,17 +2147,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 520,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 520,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 520,
+                :amount => 500,
               },
 
             ],
@@ -2257,7 +2259,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 125,
 
           },          
 
@@ -2456,7 +2458,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 300,
+            :experience_reward => 350,
 
           },          
 
@@ -2558,7 +2560,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 500,
+            :experience_reward => 600,
 
           },          
 
@@ -2697,9 +2699,9 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Fortress",
+            :en_US => "Fortress ",
   
-            :de_DE => "Festung",
+            :de_DE => "Festung erobern",
                 
           },
           :task => {
@@ -2873,6 +2875,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 500,
 
           },          
 
@@ -3178,7 +3182,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 500,
+            :experience_reward => 750,
 
           },          
 
@@ -3277,7 +3281,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 500,
 
           },          
 
@@ -9978,7 +9982,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_0_5',
+            :quest => 'quest_resourcescore_1',
 
           },
 
@@ -11867,7 +11871,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [103, 124, ],
+          :successor_quests => [124, ],
 
           :rewards => {
             
@@ -11960,7 +11964,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [125, ],
+          :successor_quests => [103, 125, ],
 
           :rewards => {
             
@@ -11978,7 +11982,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 300,
+                :amount => 360,
               },
 
             ],
@@ -11990,7 +11994,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 360,
+              :min_resources => 350,
             },
 
           },          

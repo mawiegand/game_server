@@ -3,6 +3,7 @@
 one:
   type_id: 1
   location_id: 1
+  region_id: 1
   settlement_id: 1
   owner_id: 1
   initiated: false
@@ -12,6 +13,7 @@ one:
 
 two:
   type_id: 2
+  region_id: 1
   location_id: 1
   settlement_id: 1
   owner_id: 1

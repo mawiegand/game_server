@@ -119,8 +119,8 @@ class Ticker::BattleHandler
                   runloop.say "Send takeover messages."
 
                   #message for old and new owner
-                  Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, winner_leader) unless old_owner.nil? || old_owner.npc?
-                  Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, winner_leader) unless winner_leader.nil? || winner_leader.npc?
+                  Messaging::Message.generate_lost_fortress_message(target_settlement, old_owner, new_owner) unless old_owner.nil? || old_owner.npc?
+                  Messaging::Message.generate_gained_fortress_message(target_settlement, old_owner, new_owner) unless new_owner.nil? || new_owner.npc?
 
                   runloop.say "Takeover finished."
                 else

@@ -1,19 +1,38 @@
 class Effect::AllianceResourceEffectsController < ApplicationController
-
   layout 'effect'
 
   before_filter :authenticate
-  before_filter :deny_api
+  before_filter :deny_api, :except => [:index]
 
   # GET /effect/alliance_resource_effects
   # GET /effect/alliance_resource_effects.json
   def index
-    @effect_alliance_resource_effects = Effect::AllianceResourceEffect.all
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @effect_alliance_resource_effects }
+    if params.has_key?(:alliance_id)
+      alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Page Not Found') if alliance.nil?
+      raise ForbiddenError.new('Access Forbidden') if alliance != current_character.alliance
+      @effect_alliance_resource_effects = alliance.resource_effects
+      #last_modified = pool.updated_at
+    else
+      @asked_for_index = true
     end
+
+    #render_not_modified_or(last_modified) do
+    respond_to do |format|
+      format.html do
+        if @effect_alliance_resource_effects.nil?
+          @effect_alliance_resource_effects = Effect::AllianceResourceEffect.paginate(:page => params[:page], :per_page => 50)
+          @paginate = true
+        end
+      end
+      format.json do
+        raise ForbiddenError.new('Access Forbidden') if @asked_for_index
+        render json: @effect_alliance_resource_effects
+      end
+    end
+    #end
   end
 
   # GET /effect/alliance_resource_effects/1

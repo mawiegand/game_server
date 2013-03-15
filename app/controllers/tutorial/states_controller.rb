@@ -29,14 +29,15 @@ class Tutorial::StatesController < ApplicationController
     end
     raise NotFoundError.new('Not Found.')        if @tutorial_state.nil?   
     raise ForbiddenError.new('Access Forbidden') if @tutorial_state.owner != current_character && !staff?  
-    last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at
+    last_modified =  @tutorial_state.nil? ? nil : @tutorial_state.updated_at.utc
     
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html
-        format.json { 
-          render json: @tutorial_state.to_json(:include => :quests)
-        }
+        format.json do
+          # \todo : REMOVE OLD API with nested quests
+          render json:  use_restkit_api? ? @tutorial_state : @tutorial_state.to_json(:include => :quests) # old api directly includes quests.
+        end
       end
     end
   end

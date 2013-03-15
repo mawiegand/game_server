@@ -138,7 +138,7 @@
     <RewardText locale="en_US">Take a look at the quest overview regularly, then you won’t lose track of them.  </RewardText>
     <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
     <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
-    <Requirement quest="quest_build_1gathererlvl2" />
+    <Requirement quest="quest_build_chiefcottagelvl2" />
     <Rewards>
       <ExperienceReward>50</ExperienceReward>
     </Rewards>
@@ -170,9 +170,9 @@
     </RewardFlavor>
     <RewardFlavor locale="en_US">Thanks. I think we’re going to have loads of fun together!
     </RewardFlavor>
-    <Requirement quest="quest_build_chiefcottagelvl2" />
+    <Requirement quest="quest_quest_button" />
     <Rewards>
-      <ExperienceReward>200</ExperienceReward>
+      <ExperienceReward>150</ExperienceReward>
     </Rewards>
     <RewardTests>
       <CustomTest id="test_profile">change profile text</CustomTest>
@@ -234,7 +234,7 @@
     <Requirement quest="quest_build_1barrackslvl1" />
     <Rewards>
       <UnitReward unit="unit_clubbers">5</UnitReward>
-      <ExperienceReward>200</ExperienceReward>
+      <ExperienceReward>150</ExperienceReward>
     </Rewards>
     <RewardTests>
       <TrainingQueueTest unit="unit_clubbers" min_count="1" />
@@ -292,9 +292,9 @@
       <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">500</ResourceReward>  
-        <ResourceReward resource="resource_wood">500</ResourceReward>    
-        <ResourceReward resource="resource_fur">400</ResourceReward>
+        <ResourceReward resource="resource_stone">350</ResourceReward>  
+        <ResourceReward resource="resource_wood">350</ResourceReward>    
+        <ResourceReward resource="resource_fur">250</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -324,7 +324,7 @@
     <Rewards>
       <ResourceReward resource="resource_stone">110</ResourceReward>  
       <ResourceReward resource="resource_wood">110</ResourceReward>    
-      <ResourceReward resource="resource_fur">200</ResourceReward>
+      <ResourceReward resource="resource_fur">110</ResourceReward>
       <ExperienceReward>200</ExperienceReward>
       <ActionPointReward></ActionPointReward>
     </Rewards>
@@ -355,8 +355,8 @@
       <Rewards>
         <ResourceReward resource="resource_stone">90</ResourceReward>  
         <ResourceReward resource="resource_wood">60</ResourceReward>    
-        <ResourceReward resource="resource_fur">30</ResourceReward>
-        <ExperienceReward>100</ExperienceReward>
+        <ResourceReward resource="resource_fur">45</ResourceReward>
+        <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
@@ -402,19 +402,20 @@
       <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
     </Description>
     <Description locale="en_US">
-      <p>By upgrading your chieftain’s hut you can build more and different buildings.  </p>
+      <p>By upgrading your chieftain’s hut you can build more and different buildings.</p>
     </Description>
     <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
     <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain’s hut in order to make some progress.</Flavor>
     <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.</RewardText>
-    <RewardFlavor locale="de_DE">Toll. Wenn Du willst, kannst Du Dein nächstes Gebäude auf einen großen Bauplatz stellen. Auf diesen Bauplätzen kannst Du Gebäude viel weiter ausbauen, als auf kleinen.</RewardFlavor>
-    <RewardFlavor locale="en_US">At the moment you should build yout building at the small building slots.</RewardFlavor>
+    <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
+    <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hätte kannst Du jetzt auch bauen.</RewardFlavor>
+    <RewardFlavor locale="en_US">Great! Some more building slots and you can build a small hut now.</RewardFlavor>
     <Requirement quest="quest_build_2gathererlvl3" />
     <Rewards>
       <ResourceReward resource="resource_stone">175</ResourceReward>  
       <ResourceReward resource="resource_wood">175</ResourceReward>    
       <ResourceReward resource="resource_fur">175</ResourceReward>
-      <ExperienceReward>350</ExperienceReward>
+      <ExperienceReward>175</ExperienceReward>
     </Rewards>
     <RewardTests>
       <BuildingTest building="building_chief_cottage" min_level="3" />
@@ -425,7 +426,7 @@
   <Quest id="quest_build_cottagelvl1" advisor="girl" tutorial="true">
     <Name>The small huts</Name>
     <Name locale="de_DE">Die kleinen Hütten</Name>
-    <Task>Build a small huts.</Task>
+    <Task>Build a small hut.</Task>
     <Task locale="de_DE">Baue eine kleine Hütte.</Task>
     <Description locale="de_DE">
       <p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>
@@ -564,7 +565,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>  
         <ResourceReward resource="resource_wood">150</ResourceReward>    
-        <ResourceReward resource="resource_fur">75</ResourceReward>
+        <ResourceReward resource="resource_fur">150</ResourceReward>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
@@ -594,9 +595,9 @@
     <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
     <Requirement quest="quest_build_1storagelvl1" />
     <Rewards>
-      <ResourceReward resource="resource_stone">80</ResourceReward>  
+      <ResourceReward resource="resource_stone">75</ResourceReward>  
       <ResourceReward resource="resource_wood">75</ResourceReward>    
-      <ResourceReward resource="resource_fur">100</ResourceReward>
+      <ResourceReward resource="resource_fur">120</ResourceReward>
       <ResourceReward resource="resource_cash">1</ResourceReward>  
       <ExperienceReward>150</ExperienceReward>
     </Rewards>
@@ -628,7 +629,7 @@
     <Requirement quest="quest_build_1campfirelvl1" />
     <Rewards>
       <UnitReward unit="unit_clubbers">15</UnitReward>
-      <ExperienceReward>300</ExperienceReward>
+      <ExperienceReward>350</ExperienceReward>
     </Rewards>
     <RewardTests>
       <AllianceTest />
@@ -655,8 +656,8 @@
     <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
     <Requirement quest="quest_build_1campfirelvl1" />
     <Rewards>
-      <ResourceReward resource="resource_stone">225</ResourceReward>
-      <ResourceReward resource="resource_wood">225</ResourceReward>
+      <ResourceReward resource="resource_stone">125</ResourceReward>
+      <ResourceReward resource="resource_wood">125</ResourceReward>
       <ResourceReward resource="resource_fur">125</ResourceReward>
       <ResourceReward resource="resource_cash">1</ResourceReward>
       <ExperienceReward>50</ExperienceReward>
@@ -686,9 +687,9 @@
       <RewardFlavor locale="en_US">Your progress so far is terrific! Keep it up!</RewardFlavor>
       <Requirement quest="quest_resourcescore_0" />
       <Rewards>
-        <ResourceReward resource="resource_stone">620</ResourceReward>
-        <ResourceReward resource="resource_wood">620</ResourceReward>
-        <ResourceReward resource="resource_fur">620</ResourceReward>
+        <ResourceReward resource="resource_stone">500</ResourceReward>
+        <ResourceReward resource="resource_wood">500</ResourceReward>
+        <ResourceReward resource="resource_fur">500</ResourceReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -718,7 +719,7 @@
     <Rewards>
       <ResourceReward resource="resource_stone">137</ResourceReward>
       <ResourceReward resource="resource_wood">274</ResourceReward>
-      <ExperienceReward>100</ExperienceReward>
+      <ExperienceReward>125</ExperienceReward>
     </Rewards>
     <RewardTests>
       <BuildingTest building="building_quarry" min_level="2" />
@@ -777,7 +778,7 @@
       <ResourceReward resource="resource_stone">900</ResourceReward>  
       <ResourceReward resource="resource_wood">900</ResourceReward>    
       <ResourceReward resource="resource_fur">900</ResourceReward>
-      <ExperienceReward>300</ExperienceReward>
+      <ExperienceReward>350</ExperienceReward>
     </Rewards>
     <RewardTests>
       <BuildingTest building="building_chief_cottage" min_level="6" />
@@ -807,7 +808,7 @@
       <ResourceReward resource="resource_stone">360</ResourceReward>  
       <ResourceReward resource="resource_wood">360</ResourceReward>    
       <ResourceReward resource="resource_fur">720</ResourceReward>
-      <ExperienceReward>500</ExperienceReward>
+      <ExperienceReward>600</ExperienceReward>
     </Rewards>
     <RewardTests>
       <BuildingTest building="building_training_cave" min_count="1" />
@@ -899,6 +900,7 @@
       <ResourceReward resource="resource_stone">2500</ResourceReward>  
       <ResourceReward resource="resource_wood">2500</ResourceReward>    
       <ResourceReward resource="resource_fur">2500</ResourceReward>
+      <ExperienceReward>500</ExperienceReward>
     </Rewards>
     <RewardTests>
       <BuildingTest building="building_chief_cottage" min_level="8" />
@@ -990,7 +992,7 @@
       <ResourceReward resource="resource_stone">500</ResourceReward>  
       <ResourceReward resource="resource_wood">500</ResourceReward>    
       <ResourceReward resource="resource_fur">500</ResourceReward>
-      <ExperienceReward>500</ExperienceReward>
+      <ExperienceReward>750</ExperienceReward>
     </Rewards>
     <RewardTests>
       <SettlementTest type="settlement_outpost" min_count="1" />
@@ -1021,7 +1023,7 @@
             <ResourceReward resource="resource_stone">4000</ResourceReward>  
             <ResourceReward resource="resource_wood">4000</ResourceReward>    
             <ResourceReward resource="resource_fur">4000</ResourceReward>
-          <ExperienceReward>250</ExperienceReward>
+          <ExperienceReward>500</ExperienceReward>
           </Rewards>
           <RewardTests>
             <BuildingTest building="building_chief_cottage" min_level="10" />

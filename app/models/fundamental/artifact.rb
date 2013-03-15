@@ -132,7 +132,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       costs[resource_id] = f.apply(self.owner.mundane_rank)
     end
 
-    return costs
+    costs
   end
 
   def make_visible
@@ -221,6 +221,26 @@ class Fundamental::Artifact < ActiveRecord::Base
       true
     end
 
+    def increment_victory_progress(alliance)
+      if alliance.artifacts.where('type_id = ? AND initiated = ?', self.type_id, true).count == 1
+        victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+        unless victory_progress.nil?
+          victory_progress.increment(:fulfillment_count)
+          victory_progress.save
+        end
+      end
+    end
+
+    def decrement_victory_progress(alliance)
+      if alliance.artifacts.where('type_id = ? AND initiated = ?', self.type_id, true).count == 0
+        victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
+        unless victory_progress.nil?
+          victory_progress.decrement(:fulfillment_count)
+          victory_progress.save
+        end
+      end
+    end
+
     # propagates owner changes or initiation changes to victory progress of appropriate alliances
     def propagate_changes_to_victory_progress
       alliance_change  = self.changes[:alliance_id]
@@ -229,47 +249,32 @@ class Fundamental::Artifact < ActiveRecord::Base
       initiated_after  = initiated
 
       # if alliance changed
-      if !alliance_change.nil?
+      unless alliance_change.nil?
         old_alliance = alliance_change[0].nil? ? nil : Fundamental::Alliance.find(alliance_change[0])
         new_alliance = alliance_change[1].nil? ? nil : Fundamental::Alliance.find(alliance_change[1])
 
         if initiated_before && !old_alliance.nil?
-          # count bei der alten allianz löschen runterzählen
-          victory_progress = old_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
-          unless victory_progress.nil?
-            victory_progress.decrement(:fulfillment_count)
-            victory_progress.save
-          end
+          # count bei der alten allianz runterzählen
+          decrement_victory_progress(old_alliance)
         end
         if initiated_after && !new_alliance.nil?
-          # count bei der neuen allianz löschen hochzählen
-          victory_progress = new_alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
-          unless victory_progress.nil?
-            victory_progress.increment(:fulfillment_count)
-            victory_progress.save
-          end
+          # count bei der neuen allianz hochzählen
+          increment_victory_progress(new_alliance)
         end
       end
 
       # if only the initiation state changed
       if alliance_change.nil? && !initiated_change.nil? && !alliance.nil?
         if initiated_before
-          # count bei der aktuellen allianz löschen runterzählen
-          victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
-          unless victory_progress.nil?
-            victory_progress.decrement(:fulfillment_count)
-            victory_progress.save
-          end
+          # count bei der aktuellen allianz runterzählen
+          decrement_victory_progress(alliance)
         end
         if initiated_after
-          # count bei der aktuellen allianz löschen hochzählen
-          victory_progress = alliance.victory_progress_for_type(Fundamental::VictoryProgress::VICTORY_TYPE_ARTIFACTS)
-          unless victory_progress.nil?
-            victory_progress.increment(:fulfillment_count)
-            victory_progress.save
-          end
+          # count bei der aktuellen allianz hochzählen
+          increment_victory_progress(alliance)
         end
       end
+      true
     end
 
     def propagate_changes_to_character
@@ -327,7 +332,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       initiated_after  = initiated
 
       # if owner changed
-      if !owner_change.nil?
+      unless owner_change.nil?
         if initiated_before
           # effekt beim alten user löschen
           self.artifact_type[:production_bonus].each do |bonus|
@@ -343,7 +348,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       end
 
       # if alliance changed
-      if !alliance_change.nil?
+      unless alliance_change.nil?
         if initiated_before
           # effekt bei der alten allianz löschen
           self.artifact_type[:production_bonus].each do |bonus|
@@ -375,5 +380,6 @@ class Fundamental::Artifact < ActiveRecord::Base
           end
         end
       end
+      true
     end
 end
