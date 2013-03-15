@@ -176,7 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   awe_native_extensions (>= 0.0.16)!
-  capistrano (>= 2.12.0)
+  capistrano (~> 2.14.0)
   ci_reporter
   coffee-rails (~> 3.1.1)
   gravatar_image_tag
