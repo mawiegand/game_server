@@ -129,7 +129,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler.</p>",
+            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und wähle dort den Jäger und Sammler.</p>",
   
             :en_US => "<p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there.</p>",
                 
@@ -1133,7 +1133,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>",
+            :de_DE => "<p>Drücke oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>",
   
             :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
                 
@@ -2017,7 +2017,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>",
   
-            :en_US => "<p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -5980,7 +5980,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -11844,7 +11844,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -11937,7 +11937,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12030,7 +12030,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur worth are one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12123,7 +12123,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12221,7 +12221,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12314,7 +12314,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12407,7 +12407,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12500,7 +12500,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12593,7 +12593,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12686,7 +12686,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12784,7 +12784,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12877,7 +12877,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -12970,7 +12970,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13063,7 +13063,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13156,7 +13156,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13254,7 +13254,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13347,7 +13347,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13445,7 +13445,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13538,7 +13538,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13636,7 +13636,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -13729,7 +13729,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
@@ -14317,7 +14317,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
                 
           },          
           :reward_flavour => {
