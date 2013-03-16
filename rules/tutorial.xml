@@ -35,7 +35,7 @@
     <Task>Order a Hunter Gatherer Level 1.</Task>
     <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
     <Description locale="de_DE">
-      <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und klicke dort auf Jäger und Sammler.</p>
+      <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz, und wähle dort den Jäger und Sammler.</p>
     </Description>
     <Description locale="en_US">
       <p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there.</p>
@@ -370,7 +370,7 @@
         <Task>Get yourself back to your settlement.</Task>
         <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
         <Description locale="de_DE">
-          <p>Benutze den Siedlungsknopf, um die Karte über Deiner Siedlung zu zentrieren. Gehe dann in die Siedlung. Drücke dazu oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>
+          <p>Drücke oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>
         </Description>
         <Description locale="en_US">
           <p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>
@@ -646,7 +646,7 @@
           <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
     </Description>
     <Description locale="en_US">
-      <p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur worth one resource point.</p>
+      <p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur are worth one resource point.</p>
     </Description>
     <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
     <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -1889,7 +1889,7 @@
     <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3778,7 +3778,7 @@
           <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
     </Description>
     <Description locale="en_US">
-      <p>All three resources stone, wood and fur worth one resource point.</p>
+      <p>All three resources stone, wood and fur are worth one resource point.</p>
     </Description>
     <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
     <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3808,7 +3808,7 @@
     <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3838,7 +3838,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur worth are one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3868,7 +3868,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3899,7 +3899,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3929,7 +3929,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3959,7 +3959,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -3989,7 +3989,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4019,7 +4019,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4049,7 +4049,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4080,7 +4080,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4110,7 +4110,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4140,7 +4140,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4170,7 +4170,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4200,7 +4200,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4231,7 +4231,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4261,7 +4261,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4292,7 +4292,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4322,7 +4322,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4353,7 +4353,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4383,7 +4383,7 @@
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
@@ -4569,7 +4569,7 @@
             <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
       </Description>
       <Description locale="en_US">
-        <p>All three resources stone, wood and fur worth one resource point.</p>
+        <p>All three resources stone, wood and fur are worth one resource point.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
