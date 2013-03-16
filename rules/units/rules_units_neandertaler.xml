@@ -15,7 +15,7 @@
     <p>Neanderthals don’t talk, they act – er, hit.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Neandertaler reden nicht, sie handeln äh, schlagen.</p>
+    <p>Neandertaler reden nicht, sie handeln äh - schlagen.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">40</Cost>  
   <Cost id="resource_wood" round="true">20</Cost>    
