@@ -217,7 +217,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du solltest weitere Jäger und Sammler um Deine Rohstoffproduktion zu verbessern.
+            :de_DE => "Du solltest weitere Jäger und Sammler bauen um Deine Rohstoffproduktion zu verbessern.
             ",
   
             :en_US => "You should build more Hunter Gatherers to improve your raw material production.
@@ -420,7 +420,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Klasse, jetzt hast Du alle Quests auf einem Blick. ",
+            :de_DE => "Klasse, jetzt hast Du alle Quests auf einen Blick. ",
   
             :en_US => "Great – now you can see all your quests at a glance.",
                 
@@ -760,7 +760,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
+            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
   
             :en_US => "<p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p><p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>",
                 
@@ -952,9 +952,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.",
+            :de_DE => "Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.",
   
-            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
+            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. The armys regenerate a actionpoint in 3 hours.",
                 
           },
 
@@ -1147,7 +1147,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' drückst.",
+            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' klickst.",
   
             :en_US => "You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.",
                 
@@ -1225,7 +1225,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hätte kannst Du jetzt auch bauen.",
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
   
             :en_US => "Great! Some more building slots and you can build a small hut now.",
                 
@@ -2229,7 +2229,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Steinbruch und Holzfäller sind sehr effektiv. Liefern aber leider kein Fell!",
+            :de_DE => "Steinbruch und Holzfäller sind sehr effektiv. Zur Steigerung der Fellproduktion kannst Du später den Kürschner bauen.",
   
             :en_US => "Quarries are very effective. But keep an eye on your fur production!",
                 
@@ -6554,7 +6554,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+            :de_DE => "<p>In der Rangliste (oben links im Menü der Knopf mit dem Pokal) kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
   
             :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
                 
@@ -8072,7 +8072,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Erfahrung bekommt die Armee für jede Einheit, die sie verliert.</p>",
+            :de_DE => "<p>Erfahrung bekommt die Armee für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>",
   
             :en_US => "<p>An army gains experience for each unit it looses.</p>",
                 
@@ -8165,7 +8165,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>",
   
             :en_US => "<p>An army gains experience for each unit it looses.</p>",
                 
@@ -8258,7 +8258,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>",
   
             :en_US => "<p>An army gains experience for each unit it looses.</p>",
                 
@@ -8351,7 +8351,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>",
+            :de_DE => "<p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>",
   
             :en_US => "<p>An army gains experience for each unit it looses.</p>",
                 

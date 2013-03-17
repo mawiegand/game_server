@@ -1695,16 +1695,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>The dream of every novice rider is to ride a dinosaur. But once they’ve finally done it, they usually wish they’d become stone throwers instead. Dinosaurs stink! And after a battle, it can take days to get the smell out of your clothes.</p>",
+            :en_US => "<p>Dinosaurs stink! And after a battle, it can take days to get the smell out of your clothes.</p>",
   
-            :de_DE => "<p>Der Traum eines jeden neuen Reiters. Einen Dino reiten. Wenn man es endlich geschafft hat wünscht man sich, doch lieber Fernkämpfer geworden zu sein. Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>",
+            :de_DE => "<p>Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p><p>Kein Wunder, gibt es zu Hause doch nichts zu fressen.</p>",
+            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p>",
   
-            :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it’s broken through enemy ranks. The hapless enemy is mowed down by the dinosaur’s feet, tail and teeth. No wonder – there’s nothing to eat at home.</p>",
+            :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it’s broken through enemy ranks. The hapless enemy is mowed down by the dinosaur’s feet, tail and teeth.</p>",
                 
           },
 
@@ -1788,7 +1788,7 @@ class GameRules::Rules
             
             :en_US => "<p>Neanderthals don’t talk, they act – er, hit.</p>",
   
-            :de_DE => "<p>Neandertaler reden nicht, sie handeln äh, schlagen.</p>",
+            :de_DE => "<p>Neandertaler reden nicht, sie handeln äh - schlagen.</p>",
                 
           },
           :description => {
@@ -1868,14 +1868,14 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>A little chief is allowed to set up an encampment in the name of the actual chieftain. But in fact, it’s the easiest way to get him out of the settlement. The new camp is more like a bonus.</p>",
+            :en_US => "<p>A little chief is allowed to set up an encampment in the name of the actual chieftain.</p>",
   
-            :de_DE => "<p>Ein Kleiner Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen. Tatsächlich ist das nur die einfachste Möglichkeit ihn aus der Siedlung zu bekommen. Eine Neugründung wäre ein Bonus.</p>",
+            :de_DE => "<p>Der kleine Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein Kleiner Häuptling ist ungefähr so beliebt wie die Begegnung mit einem hungrigen Dinosaurier. Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
+            :de_DE => "<p>Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
   
             :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
                 
