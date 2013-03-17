@@ -66,7 +66,7 @@
           <Flavor locale="de_DE">Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.
             </Flavor>
           <Flavor locale="en_US">Do you think you could upgrade a Hunter Gatherer to level 2? He’d feel better and give you more resources. </Flavor>
-          <RewardText locale="de_DE">Du solltest weitere Jäger und Sammler um Deine Rohstoffproduktion zu verbessern.
+          <RewardText locale="de_DE">Du solltest weitere Jäger und Sammler bauen um Deine Rohstoffproduktion zu verbessern.
             </RewardText>
           <RewardText locale="en_US">You should build more Hunter Gatherers to improve your raw material production.
           </RewardText>
@@ -136,7 +136,7 @@
     <Flavor locale="en_US">By the way, you can also see all your current quests in the quest overview whenever you like.</Flavor>
     <RewardText locale="de_DE">Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.</RewardText>
     <RewardText locale="en_US">Take a look at the quest overview regularly, then you won’t lose track of them.  </RewardText>
-    <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einem Blick. </RewardFlavor>
+    <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
     <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
     <Requirement quest="quest_build_chiefcottagelvl2" />
     <Rewards>
@@ -249,7 +249,7 @@
     <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
     <Description locale="de_DE">
       <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
-      <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist.</p>
+      <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p>
       <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
     </Description>
     <Description locale="en_US">
@@ -316,8 +316,8 @@
     </Description>
     <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
     <Flavor locale="en_US">An army can do more than just stand around. It’s there to destroy the enemies of the tribe! </Flavor>
-    <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Über Zeit regenerieren Armeen ihre Aktionspunkte wieder.</RewardText>
-    <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
+    <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.</RewardText>
+    <RewardText locale="en_US">Under your army you’ll see the available action points. Every movement and every attack costs you an action point. The armys regenerate a actionpoint in 3 hours.</RewardText>
     <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
     <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you.</RewardFlavor>
     <Requirement quest="quest_army_create" />
@@ -377,7 +377,7 @@
         </Description>
         <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
         <Flavor locale="en_US">Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.</Flavor>
-        <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' drückst.</RewardText>
+        <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' klickst.</RewardText>
         <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
         <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
         <RewardFlavor locale="en_US">You see? Pretty easy, wasn’t it?!</RewardFlavor>
@@ -408,7 +408,7 @@
     <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain’s hut in order to make some progress.</Flavor>
     <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.</RewardText>
     <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
-    <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hätte kannst Du jetzt auch bauen.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
     <RewardFlavor locale="en_US">Great! Some more building slots and you can build a small hut now.</RewardFlavor>
     <Requirement quest="quest_build_2gathererlvl3" />
     <Rewards>
@@ -711,7 +711,7 @@
     </Description>
     <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
     <Flavor locale="en_US">Cool, you can build quarries.</Flavor>
-    <RewardText locale="de_DE">Steinbruch und Holzfäller sind sehr effektiv. Liefern aber leider kein Fell!</RewardText>
+    <RewardText locale="de_DE">Steinbruch und Holzfäller sind sehr effektiv. Zur Steigerung der Fellproduktion kannst Du später den Kürschner bauen.</RewardText>
     <RewardText locale="en_US">Quarries are very effective. But keep an eye on your fur production!</RewardText>
     <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
     <RewardFlavor locale="en_US">Wow – that’s a lot of stone. Fantastic!</RewardFlavor>
@@ -2072,7 +2072,7 @@
   <Task>Defeat 5.000 units.</Task>
   <Task locale="de_DE">Besiege 5.000 Einheiten.</Task>
   <Description locale="de_DE">
-    <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+    <p>In der Rangliste (oben links im Menü der Knopf mit dem Pokal) kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
   </Description>
   <Description locale="en_US">
     <p>You can check how many Units you have already killed by visiting the Ranking.</p>
@@ -2561,7 +2561,7 @@
   <Task>Fight with an army until it gained 20 Army Experience.</Task>
   <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 20 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
-    <p>Erfahrung bekommt die Armee für jede Einheit, die sie verliert.</p>
+    <p>Erfahrung bekommt die Armee für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
   </Description>
   <Description locale="en_US">
     <p>An army gains experience for each unit it looses.</p>
@@ -2591,7 +2591,7 @@
   <Task>Fight with an army until it gained 100 Army Experience</Task>
   <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
-    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
+    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
   </Description>
   <Description locale="en_US">
     <p>An army gains experience for each unit it looses.</p>
@@ -2621,7 +2621,7 @@
   <Task>Fight with an army until it gained 250 Army Experience</Task>
   <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 250 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
-    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
+    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
   </Description>
   <Description locale="en_US">
     <p>An army gains experience for each unit it looses.</p>
@@ -2651,7 +2651,7 @@
   <Task>Fight with an army until it gained 500 Army Experience</Task>
   <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 500 Armee Erfahrung erlangt.</Task>
   <Description locale="de_DE">
-    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
+    <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
   </Description>
   <Description locale="en_US">
     <p>An army gains experience for each unit it looses.</p>
