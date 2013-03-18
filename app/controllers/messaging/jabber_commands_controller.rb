@@ -8,7 +8,8 @@ class Messaging::JabberCommandsController < ApplicationController
   # GET /messaging/jabber_commands
   # GET /messaging/jabber_commands.json
   def index
-    @messaging_jabber_commands = Messaging::JabberCommand.all
+    @messaging_jabber_commands = Messaging::JabberCommand.order('created_at DESC').paginate(:page => params[:page], :per_page => 50)
+    @paginate = true
 
     respond_to do |format|
       format.html # index.html.erb

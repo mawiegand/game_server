@@ -1,5 +1,9 @@
 <h1>Listing messaging_jabber_commands</h1>
 
+<%= if (@paginate)
+  will_paginate @messaging_jabber_commands
+end %>
+
 <table>
   <tr>
     <th>Character</th>
@@ -29,6 +33,10 @@
   </tr>
 <% end %>
 </table>
+
+<%= if (@paginate)
+  will_paginate @messaging_jabber_commands
+end %>
 
 <br />
 
