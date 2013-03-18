@@ -25,21 +25,21 @@ class BotMailer < ActionMailer::Base
   default from: Rails.env.production? ?  "watchguard@gs02.wack-a-doo.de" : "watchguard@test1.wack-a-doo.de"
   
   def breach_report(uid, domain, nickname, presence)
-    mail(:to => 'sascha@5dlab.com', 
+    mail(:to => 'cron@5dlab.com',
          :subject => "CHAT BOT: possible security breach by #{uid}.",
          :body => "#{uid}@#{domain} tried to access the chat as #{nickname}.\n\n#{presence}"
         )
   end
   
   def missing_report(presence)
-    mail(:to => 'sascha@5dlab.com', 
+    mail(:to => 'cron@5dlab.com',
          :subject => "CHAT BOT: missing user item.",
          :body => "Original Presence: #{presence}"
         )
   end
 
   def exception_report(presence, e)
-    mail(:to => 'sascha@5dlab.com', 
+    mail(:to => 'cron@5dlab.com',
          :subject => "CHAT BOT: exception.",
          :body => "Original Presence: #{presence}\nException #{e.message}, #{e.backtrace.inspect}"
         )
