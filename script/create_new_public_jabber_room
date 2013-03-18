@@ -15,7 +15,7 @@ puts "This script recreates all jabber commands for the public channel #{ ROOM }
 Messaging::JabberCommand.open_room(ROOM).save
 
 
-Fundamental::Character.find(:all).each do |character|
+Fundamental::Character.all.each do |character|
   unless character.npc?
     cmd = Messaging::JabberCommand.grant_access(character, ROOM) 
     cmd.character_id = character.id

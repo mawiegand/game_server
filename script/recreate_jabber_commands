@@ -14,7 +14,7 @@ puts "This script recreates all jabber commands."
 Messaging::JabberCommand.open_room('global').save
 
 
-Fundamental::Character.find(:all).each do |character|
+Fundamental::Character.all.each do |character|
   unless character.npc?
     cmd = Messaging::JabberCommand.grant_access(character, 'global') 
     cmd.character_id = character.id
@@ -23,7 +23,7 @@ Fundamental::Character.find(:all).each do |character|
 end  
 
 
-Fundamental::Alliance.find(:all).each do |alliance|
+Fundamental::Alliance.all.each do |alliance|
   
   if alliance.members.count > 0
     cmd = Messaging::JabberCommand.open_room(alliance.tag) 
@@ -39,9 +39,5 @@ Fundamental::Alliance.find(:all).each do |alliance|
     
 end
 
-
-
-
-
-puts
+puts "Finished."
 

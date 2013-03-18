@@ -68,7 +68,7 @@ source += "      @\"updated_at\" : @\"updatedAt\",\n"
 
 model.attribute_names.sort.each do |attribute|
   
-  if (attribute != 'id' && attribute != 'created_at' && attribute != 'updated_at')
+  if attribute != 'id' && attribute != 'created_at' && attribute != 'updated_at'
   
     type = model.columns_hash[attribute].type
     type_name = type_mapping.has_key?(type) ? type_mapping[type] : type

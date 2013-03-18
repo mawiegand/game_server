@@ -28,7 +28,7 @@ end
 
 puts "changing #{Map::Region.count} region names..."
 
-Map::Region.find(:all).each do |region|
+Map::Region.all.each do |region|
   old_name = region.name
   new_name = names[region.terrain_id].sample.chomp
   names[region.terrain_id].delete(new_name)
