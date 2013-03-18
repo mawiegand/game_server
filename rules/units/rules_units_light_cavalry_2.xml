@@ -14,7 +14,7 @@
         <p>A hungry ostrich is a dangerous weapon. Espacialy eyes are treats.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Ein hungriger Strauß ist eine gefährliche Waffe. Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>
+        <p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>
       </Flavour>
       <Cost id="resource_stone" round="true">40</Cost>  
       <Cost id="resource_wood" round="true">35</Cost>    

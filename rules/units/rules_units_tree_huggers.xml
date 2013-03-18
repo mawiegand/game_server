@@ -15,7 +15,7 @@
       <p>Why using a club, when you can wield a whole tree?</p>
     </Flavour>
     <Flavour lang="de_DE">
-      <p>Wozu eine Keule nehmen, wenn man einfach einen ganzen Baum schwingen kann?</p>
+      <p>Wozu eine Keule nehmen, wenn man einen ganzen Baum schwingen kann?</p>
     </Flavour>
     <Cost id="resource_stone" round="true">140</Cost>  
     <Cost id="resource_wood" round="true">180</Cost>    

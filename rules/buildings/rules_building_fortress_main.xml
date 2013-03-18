@@ -5,10 +5,10 @@
   <Name lang="de_DE">Festungsanlagen</Name>
   <Name lang="en_US">Fortress</Name>
   <Description lang="de_DE">
-    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
+    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
   </Description>
   <Description lang="en_US">
-    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
+    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
   </Description>
     <Flavour lang="en_US">
     <p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>
