@@ -765,7 +765,7 @@
       <p>Der Ausbau der Häuptlingshütte schaltet nicht nur vier neue Baugelände frei, mit Level 6 steht Dir auch die Trainingshöhle zur Verfügung. Speziell für Halbgötter!</p>
     </Description>
     <Description locale="en_US">
-      <p>The chieftain´s hut gives you four new buildingslots. At Level 6 you get access to the trainibg cave, espacially for demi-gods!</p>
+      <p>The chieftain´s hut gives you four new buildingslots. At Level 6 you get access to the training cave, espacially for demi-gods!</p>
     </Description>
     <Flavor locale="de_DE">Ich brauche Raum für mein Ego!</Flavor>
     <Flavor locale="en_US">I need romm for my ego!</Flavor>
@@ -887,7 +887,7 @@
       <p>Mit dem nächsten Level hast Du Zugang zum Kürschner und kannst Deine Fellproduktion deutlich verbessern.</p>
     </Description>
     <Description locale="en_US">
-      <p>With the next level you will achive the furrier, so you cann increase your furproduction massivly.</p>
+      <p>With the next level you will achive the furrier, so you can increase your furproduction massivly.</p>
     </Description>
     <Flavor locale="de_DE">Behalte Deine Rohstoffproduktion im Auge. Mehr ist immer besser!</Flavor>
     <Flavor locale="en_US">Keep an eye on your raw materials production. More is better!</Flavor>
@@ -3772,18 +3772,18 @@
   <Quest id="quest_resourcescore_0_5" advisor="girl">
     <Name>Resource Production</Name>
     <Name locale="de_DE">Rohstoffproduktion</Name>
-    <Task>Increase the resource production of one settlement to 100 resource points.</Task>
-    <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 100 Rohstoffpunkte.</Task>
+    <Task>Increase the resource production of one settlement to 100 resource points after taxes.</Task>
+    <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 100 Rohstoffpunkte nach Steuern.</Task>
     <Description locale="de_DE">
-          <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+      <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
     </Description>
     <Description locale="en_US">
-      <p>All three resources stone, wood and fur are worth one resource point.</p>
+      <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
     </Description>
     <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
     <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-    <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-    <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+    <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+    <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
     <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
     <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
     <Requirement quest="quest_resourcescore_0" />
@@ -3802,18 +3802,18 @@
 <Quest id="quest_resourcescore_1" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 360 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 360 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 360 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 360 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_075" />
@@ -3832,18 +3832,18 @@
 <Quest id="quest_resourcescore_2" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 740 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 740 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 740 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 740 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur worth are one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_1" />
@@ -3862,18 +3862,18 @@
 <Quest id="quest_resourcescore_3" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 1.240 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 1.240 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 1.240 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 1.240 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_2" />
@@ -3893,18 +3893,18 @@
 <Quest id="quest_resourcescore_4" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 1.850 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 1.850 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 1.850 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 1.850 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_3" />
@@ -3923,18 +3923,18 @@
 <Quest id="quest_resourcescore_5" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 2.620 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 2.620 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 2.620 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 2.620 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_4" />
@@ -3953,18 +3953,18 @@
 <Quest id="quest_resourcescore_6" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 3.500 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 3.500 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 3.500 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 3.500 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_5" />
@@ -3983,18 +3983,18 @@
 <Quest id="quest_resourcescore_7" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 4.340 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 4.340 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 4.340 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 4.340 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_6" />
@@ -4013,18 +4013,18 @@
 <Quest id="quest_resourcescore_8" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 5.540 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 5.540 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 5.540 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 5.540 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_7" />
@@ -4043,18 +4043,18 @@
 <Quest id="quest_resourcescore_9" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 6.900 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 6.900 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 6.900 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 6.900 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+<RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+<RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_8" />
@@ -4074,18 +4074,18 @@
 <Quest id="quest_resourcescore_10" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 8.420 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 8.420 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 8.420 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 8.420 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_9" />
@@ -4104,18 +4104,18 @@
 <Quest id="quest_resourcescore_11" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 10.100 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 10.100 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 10.100 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 10.100 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_10" />
@@ -4134,18 +4134,18 @@
 <Quest id="quest_resourcescore_12" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 11.940 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 11.940 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 11.940 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 11.940 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_11" />
@@ -4164,18 +4164,18 @@
 <Quest id="quest_resourcescore_13" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 13.940 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 13.940 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 13.940 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 13.940 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_12" />
@@ -4194,18 +4194,18 @@
 <Quest id="quest_resourcescore_14" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 16.100 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 16.100 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 16.100 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 16.100 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_13" />
@@ -4225,18 +4225,18 @@
 <Quest id="quest_resourcescore_15" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 18.420 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 18.420 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 18.420 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 18.420 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_14" />
@@ -4255,18 +4255,18 @@
 <Quest id="quest_resourcescore_16" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 20.900 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 20.900 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 20.900 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 20.900 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_15" />
@@ -4286,18 +4286,18 @@
 <Quest id="quest_resourcescore_17" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 23.540 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 23.540 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 23.540 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 23.540 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_16" />
@@ -4316,18 +4316,18 @@
 <Quest id="quest_resourcescore_18" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 26.340 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 26.340 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 26.340 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 26.340 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_17" />
@@ -4347,18 +4347,18 @@
 <Quest id="quest_resourcescore_19" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 29.300 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 29.300 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 29.300 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 29.300 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_18" />
@@ -4377,18 +4377,18 @@
 <Quest id="quest_resourcescore_20" advisor="girl">
   <Name>Resource Production</Name>
   <Name locale="de_DE">Rohstoffproduktion</Name>
-  <Task>Increase the resource production of one settlement to 32.420 resource points.</Task>
-  <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte.</Task>
+  <Task>Increase the resource production of one settlement to 32.420 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 32.420 Rohstoffpunkte nach Steuern.</Task>
   <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
+    <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
   </Description>
   <Description locale="en_US">
-    <p>All three resources stone, wood and fur are worth one resource point.</p>
+    <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-  <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
-  <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
   <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
   <Requirement quest="quest_resourcescore_19" />
@@ -4404,36 +4404,36 @@
   </RewardTests>
 </Quest>
       
-      <!-- 139 -->
-      <Quest id="quest_charkills_21" advisor="warrior">
-          <Name>Decimate enemy units</Name>
-          <Name locale="de_DE">Gegner dezimieren.</Name>
-          <Task>Defeat 500.000 units.</Task>
-          <Task locale="de_DE">Besiege 500.000 Einheiten.</Task>
-          <Description locale="de_DE">
-              <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
-          </Description>
-          <Description locale="en_US">
-              <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-          </Description>
-          <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-          <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
-          <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
-          <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
-          <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-          <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
-          <Requirement quest="quest_charkills_20" />
-          <Rewards>
-              <ResourceReward resource="resource_stone">15000</ResourceReward>
-              <ResourceReward resource="resource_wood">15000</ResourceReward>
-              <ResourceReward resource="resource_fur">7500</ResourceReward>
-              <ResourceReward resource="resource_cash">10</ResourceReward>
-              <ExperienceReward>15000</ExperienceReward>
-          </Rewards>
-          <RewardTests>
-              <KillTest min_units="500000" />
-          </RewardTests>
-      </Quest>
+<!-- 139 -->
+  <Quest id="quest_charkills_21" advisor="warrior">
+    <Name>Decimate enemy units</Name>
+    <Name locale="de_DE">Gegner dezimieren.</Name>
+    <Task>Defeat 500.000 units.</Task>
+    <Task locale="de_DE">Besiege 500.000 Einheiten.</Task>
+      <Description locale="de_DE">
+          <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+      </Description>
+    <Description locale="en_US">
+      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+    </Description>
+      <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
+      <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+      <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+      <RewardFlavor locale="en_US">Yes, this is delighting. Your enemies count their losses and cower in fear when someone mentions your name.</RewardFlavor>
+      <Requirement quest="quest_charkills_20" />
+        <Rewards>
+            <ResourceReward resource="resource_stone">15000</ResourceReward>
+            <ResourceReward resource="resource_wood">15000</ResourceReward>
+            <ResourceReward resource="resource_fur">7500</ResourceReward>
+            <ResourceReward resource="resource_cash">10</ResourceReward>
+            <ExperienceReward>15000</ExperienceReward>
+        </Rewards>
+      <RewardTests>
+        <KillTest min_units="500000" />
+      </RewardTests>
+    </Quest>
     
     <!-- 140 -->
     <Quest id="quest_armyXP_21" advisor="warrior">

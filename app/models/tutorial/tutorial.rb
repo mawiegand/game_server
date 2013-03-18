@@ -2411,7 +2411,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Der Ausbau der Häuptlingshütte schaltet nicht nur vier neue Baugelände frei, mit Level 6 steht Dir auch die Trainingshöhle zur Verfügung. Speziell für Halbgötter!</p>",
   
-            :en_US => "<p>The chieftain´s hut gives you four new buildingslots. At Level 6 you get access to the trainibg cave, espacially for demi-gods!</p>",
+            :en_US => "<p>The chieftain´s hut gives you four new buildingslots. At Level 6 you get access to the training cave, espacially for demi-gods!</p>",
                 
           },          
           :reward_flavour => {
@@ -2829,7 +2829,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Mit dem nächsten Level hast Du Zugang zum Kürschner und kannst Deine Fellproduktion deutlich verbessern.</p>",
   
-            :en_US => "<p>With the next level you will achive the furrier, so you cann increase your furproduction massivly.</p>",
+            :en_US => "<p>With the next level you will achive the furrier, so you can increase your furproduction massivly.</p>",
                 
           },          
           :reward_flavour => {
@@ -11828,9 +11828,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 100 resource points.",
+            :en_US => "Increase the resource production of one settlement to 100 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 100 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 100 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -11842,9 +11842,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -11856,9 +11856,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -11921,9 +11921,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 360 resource points.",
+            :en_US => "Increase the resource production of one settlement to 360 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 360 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 360 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -11935,9 +11935,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -11949,9 +11949,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12014,9 +12014,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 740 resource points.",
+            :en_US => "Increase the resource production of one settlement to 740 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 740 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 740 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12028,9 +12028,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur worth are one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12042,9 +12042,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12107,9 +12107,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.240 resource points.",
+            :en_US => "Increase the resource production of one settlement to 1.240 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.240 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1.240 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12121,9 +12121,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12135,9 +12135,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12205,9 +12205,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.850 resource points.",
+            :en_US => "Increase the resource production of one settlement to 1.850 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 1.850 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1.850 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12219,9 +12219,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12233,9 +12233,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12298,9 +12298,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 2.620 resource points.",
+            :en_US => "Increase the resource production of one settlement to 2.620 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 2.620 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 2.620 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12312,9 +12312,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12326,9 +12326,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12391,9 +12391,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 3.500 resource points.",
+            :en_US => "Increase the resource production of one settlement to 3.500 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 3.500 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 3.500 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12405,9 +12405,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12419,9 +12419,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12484,9 +12484,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 4.340 resource points.",
+            :en_US => "Increase the resource production of one settlement to 4.340 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 4.340 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 4.340 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12498,9 +12498,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12512,9 +12512,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12577,9 +12577,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 5.540 resource points.",
+            :en_US => "Increase the resource production of one settlement to 5.540 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 5.540 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 5.540 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12591,9 +12591,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12605,9 +12605,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12670,9 +12670,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 6.900 resource points.",
+            :en_US => "Increase the resource production of one settlement to 6.900 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 6.900 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 6.900 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12684,9 +12684,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12698,9 +12698,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12768,9 +12768,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 8.420 resource points.",
+            :en_US => "Increase the resource production of one settlement to 8.420 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 8.420 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 8.420 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12782,9 +12782,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12796,9 +12796,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12861,9 +12861,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 10.100 resource points.",
+            :en_US => "Increase the resource production of one settlement to 10.100 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 10.100 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 10.100 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12875,9 +12875,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12889,9 +12889,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -12954,9 +12954,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 11.940 resource points.",
+            :en_US => "Increase the resource production of one settlement to 11.940 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 11.940 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 11.940 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -12968,9 +12968,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -12982,9 +12982,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13047,9 +13047,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 13.940 resource points.",
+            :en_US => "Increase the resource production of one settlement to 13.940 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 13.940 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 13.940 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13061,9 +13061,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13075,9 +13075,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13140,9 +13140,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 16.100 resource points.",
+            :en_US => "Increase the resource production of one settlement to 16.100 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 16.100 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 16.100 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13154,9 +13154,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13168,9 +13168,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13238,9 +13238,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 18.420 resource points.",
+            :en_US => "Increase the resource production of one settlement to 18.420 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 18.420 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 18.420 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13252,9 +13252,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13266,9 +13266,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13331,9 +13331,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 20.900 resource points.",
+            :en_US => "Increase the resource production of one settlement to 20.900 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 20.900 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 20.900 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13345,9 +13345,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13359,9 +13359,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13429,9 +13429,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 23.540 resource points.",
+            :en_US => "Increase the resource production of one settlement to 23.540 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 23.540 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 23.540 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13443,9 +13443,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13457,9 +13457,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13522,9 +13522,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 26.340 resource points.",
+            :en_US => "Increase the resource production of one settlement to 26.340 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 26.340 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 26.340 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13536,9 +13536,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13550,9 +13550,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13620,9 +13620,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 29.300 resource points.",
+            :en_US => "Increase the resource production of one settlement to 29.300 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 29.300 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 29.300 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13634,9 +13634,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13648,9 +13648,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 
@@ -13713,9 +13713,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 32.420 resource points.",
+            :en_US => "Increase the resource production of one settlement to 32.420 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 32.420 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -13727,9 +13727,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
@@ -13741,9 +13741,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
   
-            :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
+            :en_US => "Are you still paying taxes? Why?",
                 
           },
 

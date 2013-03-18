@@ -13,10 +13,10 @@
     <p>A really large quarry stimulates competition among the quarry men, which speeds up the quarrying quite a bit – even in other quarries.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools. Just what you’d expect in a quarry.</p>
+    <p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge. Genau, was man von einem Steinbruch erwartet.</p>
+    <p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>
   </Flavour>
  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population> <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="5" />

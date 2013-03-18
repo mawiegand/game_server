@@ -3,12 +3,12 @@
 
 <Building id="building_fortress_fortification" group="military" category="building_category_fortress_main" buyable="true" destructable="false" demolishable="false" experienceFactor="8">
   <Name lang="de_DE">Festungsanlagen</Name>
-  <Name lang="en_US">Fortress</Name>
+  <Name lang="en_US">Fortification</Name>
   <Description lang="de_DE">
-    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
+    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
   </Description>
   <Description lang="en_US">
-    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
+    <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
   </Description>
     <Flavour lang="en_US">
     <p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>
@@ -20,7 +20,7 @@
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
-  <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)</Cost>
+  <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)</Cost>
   <ProductionTime shortenable="false">LESS(LEVEL,11)*(GREATER(LEVEL,1)*(58400+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />

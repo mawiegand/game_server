@@ -197,39 +197,15 @@ class GameRules::Rules
           :hours     => 30,
         },              #   END OF 30 hours
 
-        {               #   less than 70 hours
+        {               #   less than 150 hours
           :resource_id => 3, 
           :amount      => 20,
-          :hours     => 70,
-        },              #   END OF 70 hours
-
-        {               #   less than 120 hours
-          :resource_id => 3, 
-          :amount      => 25,
-          :hours     => 120,
-        },              #   END OF 120 hours
-
-        {               #   less than 180 hours
-          :resource_id => 3, 
-          :amount      => 30,
-          :hours     => 180,
-        },              #   END OF 180 hours
-
-        {               #   less than 240 hours
-          :resource_id => 3, 
-          :amount      => 40,
-          :hours     => 240,
-        },              #   END OF 240 hours
-
-        {               #   less than 300 hours
-          :resource_id => 3, 
-          :amount      => 50,
-          :hours     => 300,
-        },              #   END OF 300 hours
+          :hours     => 150,
+        },              #   END OF 150 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 60,
+          :amount      => 30,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -363,7 +339,7 @@ class GameRules::Rules
         :amount       => 20,
       },
 
-# ## CHANGE CHARACTER NAME ###################################################
+# ## CHANGE SETTLEMENT NAME ###################################################
 
       :change_settlement_name => {
         :free_changes => 1,
@@ -988,7 +964,7 @@ class GameRules::Rules
             
             :en_US => "<p>Why using a club, when you can wield a whole tree?</p>",
   
-            :de_DE => "<p>Wozu eine Keule nehmen, wenn man einfach einen ganzen Baum schwingen kann?</p>",
+            :de_DE => "<p>Wozu eine Keule nehmen, wenn man einen ganzen Baum schwingen kann?</p>",
                 
           },
           :description => {
@@ -1508,7 +1484,7 @@ class GameRules::Rules
             
             :en_US => "<p>A hungry ostrich is a dangerous weapon. Espacialy eyes are treats.</p>",
   
-            :de_DE => "<p>Ein hungriger Strauß ist eine gefährliche Waffe. Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
+            :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
                 
           },
           :description => {
@@ -2126,7 +2102,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Allein an ihrer Größe lässt sich der Fortschritt der Siedlung ablesen. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Selbstverständlich hat der Häuptling in seiner Hütte auch ein kleines Lager für schwere Zeiten.</p><p>Eine prunkvolle, mit Trophäen gefallener Feinde geschmückte Hütte sieht nicht nur schick aus, sondern erhöht auch die Moral der Verteidiger.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>",
   
             :en_US => "<p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Its size alone will tell you how the settlement is progressing. The bigger the chieftain’s hut, the more – and better – the buildings and the more armies the settlement can have. Of course, the chieftain has a little store in his hut for when times get tough.</p><p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>",
                 
@@ -2177,6 +2153,7 @@ class GameRules::Rules
             0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             2 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            3 => 'MAX(LEVEL-19,0)',
             
           },
 
@@ -2250,7 +2227,7 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,11)",
+            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,11)+EQUAL(LEVEL,20)",
 
             :unlock_building_slots => "MIN(LEVEL,10)*4-1",
 
@@ -2417,7 +2394,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Große Keule, Bratspieß oder doch die bloßen Fäuste, alles ist erlaubt.</p><p>In zahlreichen Wettbewerben messen sich die kommenden Krieger, um sich im Zweikampf zu stählen. Einmal im Mondumlauf wird ein öffentliches Turnier veranstaltet. Der Sieger bekommt alles. Ruhm, Essen, einen Tag frei und Männer soviel sie wollen. Ja Männer! Denn zumeist gewinnt eine Frau dieses Turnier. Wie? Mit den tödlichen Waffen einer Frau natürlich!</p>",
+            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Der Ausbau beschleunigt die Ausbildung und ermöglicht die Rekrutierung höherwertiger Kämpfer. Mehrere Ausbildungsgelände beschleunigen die Rekrutierung zusätzlich.</p>",
   
             :en_US => "<p>These are the training grounds where all kinds of close combat fighters are trained. Big clubs, roasting spits, or bare fists – anything goes.</p><p>Would-be combatants compete in numerous contests to toughen themselves up for duelling. Once in a moon a public tournament is held. The winner gets the lot: Glory, food, a day off and as many men as they want. Yes, that’s right: men! Because the tournaments are usually won by women. How? With a woman’s deadliest weapons, of course!</p>",
                 
@@ -2816,7 +2793,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Am Lagerfeuer beginnen auch die Karrieren der Kleinen Häuptlinge. Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht werden!</p>",
+            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht werden!</p>",
   
             :en_US => "<p>At the campfire, inhabitants gather in sociable groups, or to make important arrangements. Guests are also either selected to join the campfire group, or arranged round it on stakes.</p><p>It’s also where the little chiefs’ careers begin. A couple of flattering words here, a bit of scheming there, taking credit for someone else’s bravery and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
                 
@@ -2908,9 +2885,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools. Just what you’d expect in a quarry.</p>",
+            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
   
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge. Genau, was man von einem Steinbruch erwartet.</p>",
+            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>",
                 
           },
           :description => {
@@ -3162,9 +3139,9 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p><p>Gerüchte über ein weitreichendes Höhlennetzwerk, in dem Monster hausen, die vom Halbgott zu Trainingszwecken missbraucht werden, gehen um. Aber keiner der Siedlungsbewohner traute sich bisher selber nachzuschauen.</p>",
+            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
   
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p><p>Rumors have it that there is a far reaching cave network, in which mosters dwell beneath the training cave. These monsters are abused for training purposes by the demigod. But no one is brave enough to check for himself.</p>",
+            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
                 
           },
           :description => {
@@ -3354,12 +3331,12 @@ class GameRules::Rules
             
             :en_US => "<p>TheA furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there’s usually something tasty roasting over the fire too.</p>",
   
-            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>",
+            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Und wenn tatsächlich mal ein Säbelzahntiger erlegt wird, dann zaubert er auch etwas für die Dame von Welt im Angebot.</p><p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet und erhöht damit die Fellproduktion deutlich.</p>",
+            :de_DE => "<p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Wenn ein Säbelzahntiger erlegt wird, dann zaubert der Kürschner etwas für die Dame von Welt.</p>",
   
             :en_US => "<p>The furrier turns skins into leather – he can make a useful hide out of even the smallest rodent. And if a sabre-toothed tiger should actually be killed, he can also conjure up something for a sophisticated lady.</p><p>The waste from larger furriers’ businesses is processed by smaller furriers with lower overheads, giving a noticeable boost to fur production.</p>",
                 
@@ -3598,7 +3575,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p><p>Ein größerer Aufbau sorgt für eine beschleunigte Ausbildung und sogar für die Entwicklung völlig neuer Techniken, auf deren Basis neue Einheiten ausgebildet werden können.</p>",
+            :de_DE => "<p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p>",
   
             :en_US => "<p>Stones, spears and anything else that can be thrown or shot flies through the air at the long-range combat training ground.</p><p>The larger the grounds, the faster the training – as well as the development of completely new techniques which in turn, form the basis of the training of new units.</p>",
                 
@@ -4152,7 +4129,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Kupfermesser waren ein Geschenk der Götter. Zumindest glauben das die Kürschner, die mit den Kupfermessern herausragende Mode entwerfen. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p><p>Genau deswegen sind die verrückten Kürschner natürlich große Vorbilder für andere Kürschner.</p>",
+            :de_DE => "<p>Die Kupfermesser waren ein Geschenk der Götter und macht den Kürschner zu Künstlern. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
   
             :en_US => "<p>The copper knife was a gift from the gods. At least, that’s what the furriers believe who use their copper knives to create gorgeous fashions. Sadly, they suffer from the usual unfortunate side-effects: vigorous fanning, a high-pitched nasal voice and other limp-wristed craziness. This is why crazy furriers set such a good example for other furriers.</p>",
                 
@@ -4235,12 +4212,12 @@ class GameRules::Rules
             
             :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit ‘em hard”.</p>",
   
-            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges. Selbst wenn alle Armeen nur in eine Richtung mit dem Auftrag „immer feste druff“ geschickt werden.</p>",
+            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein paar Äste zwischen drei Bäume gespannt, darauf Rinde und Blätter und fertig ist das Sonnensegel. Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Hier wird die Taktik bestimmt und Befehle erteilt. Meist immer derselbe: Haut sie feste!</p><p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
+            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
   
             :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there’s your awning. A nice big seat for the chief, and hey presto, you’ve got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit ‘em hard!” The command post increases a settlement’s command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>",
                 
@@ -4467,7 +4444,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Ausbau des Versammlungsplatzes ermöglicht den Bau von zusätzlichen Gebäuden in der durch den Kleinen Häuptling gründbaren Lagerstätte.</p>",
+            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. An area by chance left vacant, with enough space for a few raw materials and for the dwellers’ gatherings.</p>",
                 
@@ -4475,7 +4452,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5))",
+	        :population  => "(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5))",
   
           :buyable     => true,
           :demolishable=> false,
@@ -4515,13 +4492,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
-            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
-            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
+            0 => '(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
+            1 => '(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
+            2 => '(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
+          :production_time => '(GREATER(LEVEL,1)*(72800+(FLOOR(1.88*POW(LEVEL-1,1.9)+0.5)*6/100+1)*25000)*0.5)',
           :production  => [
             
           ],
@@ -4541,11 +4518,11 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.25*LEVEL",
+            :defense_bonus => "0.15*LEVEL",
 
             :unlock_garrison => 3,            
 
-            :command_points => "LESS(LEVEL,11)*GREATER(LEVEL,1)",
+            :command_points => "GREATER(LEVEL,1)+EQUAL(LEVEL,20)*1",
 
             :unlock_building_slots => "2+MIN(LEVEL,10)",
 
@@ -4577,7 +4554,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20.</p><p>Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>",
   
             :en_US => "<p>Once a field camp is built, the message is clear: „We’re here to fight, not have fun!”</p><p>A field camp means more fighters can be deployed, 300 plus 50 per level at levels 1-10 and 20 per level at levels 11-20.</p><p>At level 10 it increases a settlement’s command points by one.</p>",
                 
@@ -4665,12 +4642,12 @@ class GameRules::Rules
             
             :en_US => "<p>The ceremonies and regular sacrifices carried out on the altar are intended to appease the gods. An encampment blessed by the gods cannot be conquered by enemies.</p>",
   
-            :de_DE => "<p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter. Eine derart von den Göttern gesegnete Lagerstätte kann von Feinden nicht erobert werden.</p>",
+            :de_DE => "<p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter, so dass eine Lagerstätte nicht von Feinden erobert werden kann.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der  Götter ist!</p>",
+            :de_DE => "<p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der Götter ist!</p>",
   
             :en_US => "<p>The altar is a stone table surrounded by torches, smeared with blood from sacrificial offerings and decorated with gifts of the field and the heads of enemies. This stone table also impresses the gods. At least, an encampment with an altar is safe from being conquered by enemies. If that isn’t a sign from the gods, then what is?</p>",
                 
@@ -4696,7 +4673,7 @@ class GameRules::Rules
               :id => 21,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 3,
 
             },
 
@@ -4723,7 +4700,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*24*3600+GREATER(LEVEL,1)*(FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)*0.65)',
+          :production_time => 'EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)*0.65)',
           :production  => [
             
           ],
@@ -4747,7 +4724,7 @@ class GameRules::Rules
             
             :de_DE => "Festungsanlagen",
   
-            :en_US => "Fortress",
+            :en_US => "Fortification",
                 
           },
           :flavour     => {
@@ -4759,9 +4736,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Fertig ist die Festung. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>",
   
-            :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate – and there’s your fortress. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
+            :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
           },
 
@@ -4780,7 +4757,7 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -4889,7 +4866,7 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5+0.5-3)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5+0.5-2)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*300+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -4948,7 +4925,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Nicht weiter verwunderlich ist da die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen.</p><p>Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Nicht weiter verwunderlich ist die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
   
             :en_US => "<p>Hardly surprising that helmets are compulsory. Trainers and trainees have bound thick animal skins around their heads so they can at least survive being hit by small stones or gravel.</p><p>On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>",
                 
@@ -4986,7 +4963,7 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-829)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5-3)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -5083,7 +5060,7 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-832)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*2)',
+            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -5121,16 +5098,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Turm der Reitmeisterei
-        {               #   Garnison
+        {               #   Festungsgarnison
           :id          => 28, 
           :symbolic_id => :building_fortress_garrison,
 					:category    => 2,
           :db_field    => :building_fortress_garrison,
           :name        => {
             
-            :de_DE => "Garnison",
+            :de_DE => "Festungsgarnison",
   
-            :en_US => "Garrison",
+            :en_US => "Fortressgarrison",
                 
           },
           :flavour     => {
@@ -5183,7 +5160,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           },
 
-        },              #   END OF Garnison
+        },              #   END OF Festungsgarnison
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -5998,14 +5975,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Grauer Kristall
+        {               #   Lochscheibe
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Grauer Kristall",
+            :de_DE => "Lochscheibe",
   
-            :en_US => "Grey Christal",
+            :en_US => "Punched disc",
                 
           },
           :description => {
@@ -6025,7 +6002,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*(MRANK+1)',
+          :experience_production => '',
 
           :production_bonus  => [
 
@@ -6058,15 +6035,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Grauer Kristall
-        {               #   Grüner Kristall
+        },              #   END OF Lochscheibe
+        {               #   Abrissbirne
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Grüner Kristall",
+            :de_DE => "Abrissbirne",
   
-            :en_US => "Green Christal",
+            :en_US => "Demolition ball",
                 
           },
           :description => {
@@ -6119,15 +6096,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Grüner Kristall
-        {               #   Roter Kristall
+        },              #   END OF Abrissbirne
+        {               #   Wäscheleinenständer
           :id          => 2, 
           :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Roter Kristall",
+            :de_DE => "Wäscheleinenständer",
   
-            :en_US => "Red Christal",
+            :en_US => "Clothing horse",
                 
           },
           :description => {
@@ -6147,7 +6124,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '1',
 
-          :experience_production => '10*(MRANK+1)',
+          :experience_production => '',
 
           :production_bonus  => [
 
@@ -6180,15 +6157,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Roter Kristall
-        {               #   Blauer Kristall
+        },              #   END OF Wäscheleinenständer
+        {               #   Schwarzer Monolith
           :id          => 3, 
           :symbolic_id => :artifact_3,
           :name        => {
             
-            :de_DE => "Blauer Kristall",
+            :de_DE => "Schwarzer Monolith",
   
-            :en_US => "Blue Christal",
+            :en_US => "Black monolith",
                 
           },
           :description => {
@@ -6208,47 +6185,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :amount      => '0',
 
-          :experience_production => '10*(MRANK+1)',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 0,
-              :bonus              => 0.07,
-            },
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.02,
-            },
-
-          ],
+          :experience_production => '15*(MRANK+1)',
 
           :description_initiated => {
 
@@ -6265,7 +6202,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Blauer Kristall
+        },              #   END OF Schwarzer Monolith
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################

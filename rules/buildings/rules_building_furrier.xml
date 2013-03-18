@@ -5,8 +5,7 @@
   <Name lang="de_DE">Kürschner</Name>
   <Name lang="en_US">Furrier</Name>
   <Description lang="de_DE">
-    <p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Und wenn tatsächlich mal ein Säbelzahntiger erlegt wird, dann zaubert er auch etwas für die Dame von Welt im Angebot.</p>
-    <p>Die Abfälle von großen Kürschnereien werden von kleineren Kürschnereien mit geringem Aufwand weiterverarbeitet und erhöht damit die Fellproduktion deutlich.</p>
+    <p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Wenn ein Säbelzahntiger erlegt wird, dann zaubert der Kürschner etwas für die Dame von Welt.</p>
   </Description>
   <Description lang="en_US">
     <p>The furrier turns skins into leather – he can make a useful hide out of even the smallest rodent. And if a sabre-toothed tiger should actually be killed, he can also conjure up something for a sophisticated lady.</p>
@@ -16,7 +15,7 @@
 	<p>TheA furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there’s usually something tasty roasting over the fire too.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt, dazu immer mal ein leckeres Tier auf dem Feuer.</p>
+    <p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt.</p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population> <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="8" />

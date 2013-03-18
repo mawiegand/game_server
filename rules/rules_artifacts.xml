@@ -3,8 +3,8 @@
 
 <ArtifactTypes>
   <Artifact id="artifact_0">
-    <Name lang="de_DE">Grauer Kristall</Name>
-    <Name lang="en_US">Grey Christal</Name>
+    <Name lang="de_DE">Lochscheibe</Name>
+    <Name lang="en_US">Punched disc</Name>
     <Description lang="de_DE">
       <p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -26,15 +26,14 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
   <Artifact id="artifact_1">
-    <Name lang="de_DE">Grüner Kristall</Name>
-    <Name lang="en_US">Green Christal</Name>
+    <Name lang="de_DE">Abrissbirne</Name>
+    <Name lang="en_US">Demolition ball</Name>
     <Description lang="de_DE">
       <p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -63,8 +62,8 @@
     </Effects>
   </Artifact>
   <Artifact id="artifact_2">
-    <Name lang="de_DE">Roter Kristall</Name>
-    <Name lang="en_US">Red Christal</Name>
+    <Name lang="de_DE">Wäscheleinenständer</Name>
+    <Name lang="en_US">Clothing horse</Name>
     <Description lang="de_DE">
       <p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -86,15 +85,14 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
   <Artifact id="artifact_3">
-    <Name lang="de_DE">Blauer Kristall</Name>
-    <Name lang="en_US">Blue Christal</Name>
+    <Name lang="de_DE">Schwarzer Monolith</Name>
+    <Name lang="en_US">Black monolith</Name>
     <Description lang="de_DE">
       <p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -116,14 +114,8 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>0</ArtifactAmount>
-    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
+    <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
-      <ProductionBonus id="resource_stone" domain="character">0.07</ProductionBonus>
-      <ProductionBonus id="resource_wood" domain="character">0.07</ProductionBonus>
-      <ProductionBonus id="resource_fur" domain="character">0.07</ProductionBonus>
-      <ProductionBonus id="resource_stone" domain="alliance">0.02</ProductionBonus>
-      <ProductionBonus id="resource_wood" domain="alliance">0.02</ProductionBonus>
-      <ProductionBonus id="resource_fur" domain="alliance">0.02</ProductionBonus>
     </Effects>
   </Artifact>
 <!--   <Artifact id="artifact_4">
