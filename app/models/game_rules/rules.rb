@@ -35,7 +35,8 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
+    :change_character_name, :change_settlement_name
   
   def attributes 
     { 
@@ -46,6 +47,8 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'change_character_name'       => change_character_name,
+      'change_settlement_name'      => change_settlement_name,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -351,6 +354,22 @@ class GameRules::Rules
         },              #   END OF 1 hours
 
       ],                # END OF TRADING INITIATION SPEEDUP
+
+# ## CHANGE CHARACTER NAME ###################################################
+
+      :change_character_name => {
+        :free_changes => 2,
+        :resource_id  => 3,
+        :amount       => 20,
+      },
+
+# ## CHANGE CHARACTER NAME ###################################################
+
+      :change_settlement_name => {
+        :free_changes => 1,
+        :resource_id  => 3,
+        :amount       => 3,
+      },
 
 # ## RESOURCE TYPES ##########################################################
   
