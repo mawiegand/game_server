@@ -3,7 +3,7 @@
 
 <Building id="building_fortress_fortification" group="military" category="building_category_fortress_main" buyable="true" destructable="false" demolishable="false" experienceFactor="8">
   <Name lang="de_DE">Festungsanlagen</Name>
-  <Name lang="en_US">Fortress</Name>
+  <Name lang="en_US">Fortification</Name>
   <Description lang="de_DE">
     <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
   </Description>
