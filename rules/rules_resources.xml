@@ -26,7 +26,7 @@
       <p>Even in the stone age, wood was available in all its varieties: softwood, hardwood, squared timber and, of course, boards. As a raw material, wood was really important in the construction of buildings and siege weapons.</p>
     </Description>
   </Resource>
-  <Resource id="resource_fur" stealable="false" ratingValue="2.0">  
+  <Resource id="resource_fur" stealable="false">
     <Name lang="de_DE">Fell</Name>
     <Name lang="en_US">Fur</Name>
     <Flavour lang="de_DE">In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!</Flavour>

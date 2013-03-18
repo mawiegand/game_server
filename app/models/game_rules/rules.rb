@@ -422,7 +422,7 @@ class GameRules::Rules
           :stealable   => false,
           :taxable     => true,
           :tradable    => true,
-          :rating_value=> 2.0,
+          :rating_value=> 1,
           :name        => {
             
             :de_DE => "Fell",
