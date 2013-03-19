@@ -36,7 +36,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_settlement_name
+    :change_character_name, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -49,6 +49,7 @@ class GameRules::Rules
       'trading_speedup'             => trading_speedup,
       'change_character_name'       => change_character_name,
       'change_settlement_name'      => change_settlement_name,
+      'resource_exchange'           => resource_exchange,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -343,6 +344,13 @@ class GameRules::Rules
 
       :change_settlement_name => {
         :free_changes => 1,
+        :resource_id  => 3,
+        :amount       => 3,
+      },
+
+# ## RESOURCE EXCHANGE ###################################################
+
+      :resource_exchange => {
         :resource_id  => 3,
         :amount       => 3,
       },

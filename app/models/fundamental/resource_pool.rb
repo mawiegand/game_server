@@ -349,9 +349,9 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       true
     end
   
-    def update_resource_in_ranking(totalProductionRate)
+    def update_resource_in_ranking(total_production_rate)
       return   if self.owner.nil? || self.owner.ranking.nil?     # NPCs might not have a ranking entry
-      self.owner.ranking.resource_score = totalProductionRate
+      self.owner.ranking.resource_score = total_production_rate
       self.owner.ranking.save
     end
   
@@ -367,7 +367,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
           if self.send resource_type[:symbolic_id].to_s()+'_production_rate_changed?'
             changed = true
           end
-          amount_changed = true     if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
+          amount_changed = true if self.send resource_type[:symbolic_id].to_s()+'_amount_changed?'
         end
         Rails.logger.error("ERROR : amounts were manually changed in resource pool at the same time as production rates change. THIS MUST BE PREVENTED SINCE IT CAUSES IMMEDIATE RESOURCE LOSSES.") if changed && amount_changed
         update_resource_amount_atomically                    if changed  # this will completely bypass the rails object (what is necessary, because it needs to use the old production_rates in the update). needs to make sure no amounts are set directly.
