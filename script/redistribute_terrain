@@ -36,7 +36,7 @@ puts "using terrain type id sample list: #{ lookup.inspect }."
 
 puts "changing #{Map::Region.count} region terrains and names..."
 
-Map::Region.find(:all).each do |region|
+Map::Region.all.each do |region|
   region.terrain_id = lookup.sample
   weights = 0 
   

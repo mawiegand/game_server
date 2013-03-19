@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedup, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedup, ChangeCharacterName, ChangeSettlementName, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -40,10 +40,25 @@
 
 <!ELEMENT AllianceMaxMembers (#PCDATA)>
 
+<!ELEMENT ChangeCharacterName (ChangeCost+)>
+<!ATTLIST ChangeCharacterName
+  freeChanges CDATA #REQUIRED
+>
+<!ELEMENT ChangeSettlementName (ChangeCost+)>
+<!ATTLIST ChangeSettlementName
+  freeChanges CDATA #REQUIRED
+>
+<!ELEMENT ResourceExchange (ChangeCost+)>
+<!ELEMENT ChangeCost EMPTY>
+<!ATTLIST ChangeCost
+  resource IDREF #REQUIRED
+  amount CDATA #REQUIRED
+>
+
 <!--CharacterCreation-->
 <!ELEMENT CharacterCreation (StartResource*)>
 <!ELEMENT StartResource (#PCDATA)>
-<!ATTLIST StartResource 
+<!ATTLIST StartResource
   id IDREF #REQUIRED
 >
 

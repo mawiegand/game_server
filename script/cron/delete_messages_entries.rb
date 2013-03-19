@@ -19,7 +19,7 @@ message_deletion_intervall = GAME_SERVER_CONFIG['message_deletion_intervall'].da
 
 Rails.logger.info "DELETE MSG ENTRIES: Start deleting inbox entries..."
 
-@inbox_entries = Messaging::InboxEntry.find(:all, :conditions => ["read = ? AND created_at <= ?", true, message_deletion_intervall])
+@inbox_entries = Messaging::InboxEntry.where("read = ? AND created_at <= ?", true, message_deletion_intervall)
 @inbox_entries.each do |inbox_entry|
     puts inbox_entry.inspect
     @report[:deleted_inbox_entries] << inbox_entry
@@ -29,7 +29,7 @@ end
 Rails.logger.info "DELETE MSG ENTRIES: Deleted #{@report[:deleted_inbox_entries].count} inbox entries..."
 Rails.logger.info "DELETE MSG ENTRIES: Start deleting outbox entries..."
 
-@outbox_entries = Messaging::OutboxEntry.find(:all, :conditions => ["created_at <= ?", message_deletion_intervall])
+@outbox_entries = Messaging::OutboxEntry.where("created_at <= ?", message_deletion_intervall)
 @outbox_entries.each do |outbox_entry|
     puts outbox_entry.inspect
     @report[:deleted_outbox_entries] << outbox_entry

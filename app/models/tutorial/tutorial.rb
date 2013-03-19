@@ -802,7 +802,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :place_npcs => 2,         
+          :place_npcs => 1,         
 
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1

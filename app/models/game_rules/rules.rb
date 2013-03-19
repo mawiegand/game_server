@@ -35,7 +35,8 @@ class GameRules::Rules
   attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
+    :change_character_name, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -46,6 +47,9 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'change_character_name'       => change_character_name,
+      'change_settlement_name'      => change_settlement_name,
+      'resource_exchange'           => resource_exchange,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -328,6 +332,29 @@ class GameRules::Rules
 
       ],                # END OF TRADING INITIATION SPEEDUP
 
+# ## CHANGE CHARACTER NAME ###################################################
+
+      :change_character_name => {
+        :free_changes => 2,
+        :resource_id  => 3,
+        :amount       => 20,
+      },
+
+# ## CHANGE SETTLEMENT NAME ###################################################
+
+      :change_settlement_name => {
+        :free_changes => 1,
+        :resource_id  => 3,
+        :amount       => 3,
+      },
+
+# ## RESOURCE EXCHANGE ###################################################
+
+      :resource_exchange => {
+        :resource_id  => 3,
+        :amount       => 3,
+      },
+
 # ## RESOURCE TYPES ##########################################################
   
       :resource_types => [  # ALL RESOURCE TYPES
@@ -398,7 +425,7 @@ class GameRules::Rules
           :stealable   => false,
           :taxable     => true,
           :tradable    => true,
-          :rating_value=> 2.0,
+          :rating_value=> 1,
           :name        => {
             
             :de_DE => "Fell",
@@ -6020,7 +6047,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '5',
+          :amount      => '1',
 
           :experience_production => '',
 
@@ -6081,9 +6108,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '2',
+          :amount      => '1',
 
-          :experience_production => '',
+          :experience_production => '10*(MRANK+1)',
 
           :production_bonus  => [
 
@@ -6142,7 +6169,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '10',
+          :amount      => '1',
 
           :experience_production => '',
 
@@ -6249,7 +6276,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1+(0.005*(MAX(DAYS,0)))',
+            :required_regions_ratio => '1-(0.1*(MAX(DAYS,0)))',
 
             :duration => 5,
           },

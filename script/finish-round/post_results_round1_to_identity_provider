@@ -28,7 +28,7 @@ step = step > 0 ? step : 1
 
 count = 0
 
-winner_ally = Ranking::AllianceRanking.find(:all, :order => "num_fortress DESC").first
+winner_ally = Ranking::AllianceRanking.all.order("num_fortress DESC").first
 
 Fundamental::Character.all.each do |character|
 	if count.modulo(step) == 0 

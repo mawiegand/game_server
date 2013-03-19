@@ -4,6 +4,6 @@ class Backend::MessageDeletionMailer < ActionMailer::Base
   def message_deletion_report(report)
     @report = report
     
-   mail(:to => 'marcel@5dlab.com', :subject => "[#{Rails.env}] #{@report[:deleted_inbox_entries].count} inbox entries and #{@report[:deleted_outbox_entries].count} outbox entries have been deleted.")
+   mail(:to => 'cron@5dlab.com', :subject => "[#{Rails.env}] #{@report[:deleted_inbox_entries].count} inbox entries and #{@report[:deleted_outbox_entries].count} outbox entries have been deleted.")
   end
 end
