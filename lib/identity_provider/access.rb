@@ -26,8 +26,8 @@ module IdentityProvider
       body    = "Wir haben Dir als Start-Bonus die folgenden Extra-Ressourcen gutgeschrieben:\n\n"
                 
       resource_gifts.each do |resource_gift|
-        resourceType = GameRules::Rules.the_rules().resource_types[resource_gift['resource_type_id'].to_i]
-        body += "  #{resourceType[:name][:de_DE]}: #{resource_gift['amount']}\n"
+        resource_type = GameRules::Rules.the_rules().resource_types[resource_gift['resource_type_id'].to_i]
+        body += "  #{resource_type[:name][:de_DE]}: #{resource_gift['amount']}\n"
       end
                       
       body   += "\nViel Spass mit Wack-A-Doo!\n\nDein Wack-A-Doo Team"
@@ -113,7 +113,7 @@ module IdentityProvider
     end
 
     def post_result(character, round_number, round_name, won = false)
-      return                            if character.ranking.nil?
+      return if character.ranking.nil?
       resource_result = {
         round_number:    round_number,
         round_name:      round_name,
@@ -121,7 +121,7 @@ module IdentityProvider
         character_name:  character.name,
         won:             won,
       }
-      if !character.alliance.nil? 
+      unless character.alliance.nil?
         resource_result[:alliance_tag]  = character.alliance.tag
         resource_result[:alliance_name] = character.alliance.name
         resource_result[:alliance_rank] = character.alliance.ranking.overall_rank
@@ -133,8 +133,8 @@ module IdentityProvider
       get('/identities/'  + identifier + '/histories')
     end
     
-    def post_history_event(identifier, data_object, description = "an awe history event")
-      return                            if identifier.nil?
+    def post_character_history_event(identifier, data_object, description)
+      return if identifier.nil?
       resource_history = {
         data:                  data_object,
         localized_description: description,
@@ -142,24 +142,44 @@ module IdentityProvider
       post('/identities/' + identifier + '/histories', {:resource_history => resource_history})
     end
 
+    def post_winner_alliance_history_event(winner_identifiers, data_object, description)
+      return if winner_identifiers.blank?
+      resource_history = {
+        data:                  data_object,
+        localized_description: description,
+      }
+      winner_identifiers.each do |identifier|
+        post("/identities/#{identifier}/histories", {:resource_history => resource_history})
+      end
+    end
+
+    def post_winner_alliance_character_property(winner_identifiers, property)
+      return if winner_identifiers.blank?
+      resource_character_property = {
+        data: property,
+      }
+      winner_identifiers.each do |identifier|
+        post("/identities/#{identifier}/character_properties", {:resource_character_property => resource_character_property})
+      end
+    end
+
     protected
       
       def post(path, body = {})
-        Rails.logger.debug "POST BODY #{ body }."
         add_auth_token(body)
-        HTTParty.post(@attributes[:identity_provider_base_url] + path, 
-                      :body => body,  :headers => { 'Accept' => 'application/json'})
+        HTTParty.post(@attributes[:identity_provider_base_url] + path,
+                      :body => body, :headers => { 'Accept' => 'application/json'})
       end
   
       def put(path, body = {})
         add_auth_token(body)
-        HTTParty.put(@attributes[:identity_provider_base_url] + path, 
-                     :body => body,   :headers => { 'Accept' => 'application/json'})
+        HTTParty.put(@attributes[:identity_provider_base_url] + path,
+                     :body => body, :headers => { 'Accept' => 'application/json'})
       end
   
       def get(path, query = {})
         add_auth_token(query)
-        HTTParty.get(@attributes[:identity_provider_base_url] + path, 
+        HTTParty.get(@attributes[:identity_provider_base_url] + path,
                      :query => query, :headers => { 'Accept' => 'application/json'})
       end
       

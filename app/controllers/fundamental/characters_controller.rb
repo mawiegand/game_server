@@ -76,12 +76,11 @@ class Fundamental::CharactersController < ApplicationController
       character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'    
 
       # set character properties to default values
-      start_resource_modificator = 1.0            
+      start_resource_modificator = 1.0
+      startup_gifts = []
       
       # fetch persistent character properties from identity provider  
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
-      properties = {}
-      
       logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       
       if response.code == 200
@@ -89,12 +88,19 @@ class Fundamental::CharactersController < ApplicationController
         logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
 
         unless properties.empty?
-          character_property = properties[0]
-          if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
-            property_value = character_property['data']['start_resource_modificator'].to_f
-            logger.info "START PROPERTY_VALUE #{ property_value }."
-            start_resource_modificator = property_value if property_value > 0
-            logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+          properties.each do |character_property|
+            if !character_property.nil? && !character_property['data'].blank?
+              unless character_property['data']['start_resource_modificator'].blank?
+                property_value = character_property['data']['start_resource_modificator'].to_f
+                logger.info "START PROPERTY_VALUE #{ property_value }."
+                start_resource_modificator = property_value if property_value > 0
+                logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+              end
+              unless character_property['data']['start_resource_bonus'].blank?
+                startup_gifts << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START RESOURCE BONUS #{ startup_gifts.inspect }."
+              end
+            end
           end
         end
       end
@@ -125,9 +131,7 @@ class Fundamental::CharactersController < ApplicationController
       character.save
       
       if params.has_key?(:client_id)   # fetch gift
-        
         response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, params[:client_id])
-      
         logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       
         if response.code == 200
@@ -140,10 +144,13 @@ class Fundamental::CharactersController < ApplicationController
               character.redeem_startup_gift(signup_gift['data'])
             end
           end
-        end        
-        
-      end  
-       
+        end
+      end
+
+      startup_gifts.each do |startup_gift|
+        character.redeem_startup_gift(startup_gift)
+      end
+
       redirect_to fundamental_character_path(character.id)
       
     elsif !current_character
@@ -159,19 +166,12 @@ class Fundamental::CharactersController < ApplicationController
         scopes:                     ['5dentity'],
       })
       
-      response = identity_provider_access.fetch_identity(request_access_token.identifier)
-      identity = {}
-      if response.code == 200
-        identity = response.parsed_response
-      end
-      
       # set character properties to default values
-      start_resource_modificator = 1.0            
-      
-      # fetch persistent character properties from identity provider  
+      start_resource_modificator = 1.0
+      startup_gifts = []
+
+      # fetch persistent character properties from identity provider
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
-      properties = {}
-      
       logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       
       if response.code == 200
@@ -179,12 +179,19 @@ class Fundamental::CharactersController < ApplicationController
         logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
 
         unless properties.empty?
-          character_property = properties[0]
-          if !character_property.nil? && !character_property['data'].blank? && !character_property['data']['start_resource_modificator'].blank?
-            property_value = character_property['data']['start_resource_modificator'].to_f
-            logger.info "START PROPERTY_VALUE #{ property_value }."
-            start_resource_modificator = property_value if property_value > 0
-            logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+          properties.each do |character_property|
+            if !character_property.nil? && !character_property['data'].blank?
+              unless character_property['data']['start_resource_modificator'].blank?
+                property_value = character_property['data']['start_resource_modificator'].to_f
+                logger.info "START PROPERTY_VALUE #{ property_value }."
+                start_resource_modificator = property_value if property_value > 0
+                logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
+              end
+              unless character_property['data']['start_resource_bonus'].blank?
+                startup_gifts << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START RESOURCE BONUS #{ startup_gifts.inspect }."
+              end
+            end
           end
         end
       end

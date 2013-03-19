@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306150630) do
+ActiveRecord::Schema.define(:version => 20130312104113) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1858,6 +1858,7 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
     t.integer  "number",             :default => 0, :null => false
+    t.integer  "victory_type"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -1874,6 +1875,7 @@ ActiveRecord::Schema.define(:version => 20130306150630) do
     t.integer  "fulfillment_count",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "victory_gained"
   end
 
   create_table "like_system_dislikes", :force => true do |t|
