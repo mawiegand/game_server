@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_haunt" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6" takeoverDowngradeByLevels="0">
+<Building id="building_haunt" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6" takeoverDowngradeByLevels="1">
   <Name lang="de_DE">Versammlungsplatz</Name>
   <Name lang="en_US">Meeting Place</Name>
   <Description lang="de_DE">
