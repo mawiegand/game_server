@@ -83,7 +83,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_settlement_name
+    :change_character_name, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -96,6 +96,7 @@ class GameRules::Rules
       'trading_speedup'             => trading_speedup,
       'change_character_name'       => change_character_name,
       'change_settlement_name'      => change_settlement_name,
+      'resource_exchange'           => resource_exchange,
       'building_conversion'         => building_conversion,
       'building_experience_formula' => building_experience_formula,
       'unit_categories'             => unit_categories,
@@ -186,6 +187,7 @@ class GameRules::Rules
   <xsl:apply-templates select="//General/TradingSpeedup" />
   <xsl:apply-templates select="//General/ChangeCharacterName" />
   <xsl:apply-templates select="//General/ChangeSettlementName" />
+  <xsl:apply-templates select="//General/ResourceExchange" />
   <xsl:apply-templates select="ResourceTypes" />
   <xsl:apply-templates select="UnitCategories" />
   <xsl:apply-templates select="UnitTypes" />
@@ -337,6 +339,16 @@ end
 
       :change_settlement_name => {
         :free_changes => <xsl:value-of select="@freeChanges" />,
+        :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
+        :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
+      },
+</xsl:template>
+
+
+<xsl:template match="ResourceExchange">
+# ## RESOURCE EXCHANGE ###################################################
+
+      :resource_exchange => {
         :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
         :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
       },

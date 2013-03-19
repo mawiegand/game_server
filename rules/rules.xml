@@ -129,6 +129,9 @@
     <ChangeSettlementName freeChanges="1">
       <ChangeCost resource="resource_cash" amount="3" />
     </ChangeSettlementName>
+    <ResourceExchange>
+      <ChangeCost resource="resource_cash" amount="3" />
+    </ResourceExchange>
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>
