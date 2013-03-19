@@ -198,8 +198,8 @@
   <Settlement id="settlement_outpost" conquerable="true" destroyable="true">
     <Name lang="de_DE">Lagerstätte</Name>
     <Name lang="en_US">Camp</Name>
-    <Description lang="de_DE">Außenlager eines Stammes.</Description>
-    <Description lang="en_US">a small encampment of a tribe.</Description>
+    <Description lang="de_DE">Lagerstätte eines Stammes.</Description>
+    <Description lang="en_US">A small encampment of a tribe.</Description>
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
@@ -213,33 +213,43 @@
     </BuildingSlot>
     <BuildingSlot number="3" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="4" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="5" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="6" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="7" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="8" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="9" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="10" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="11" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="12" max-level="10">
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
   </Settlement>
 </SettlementTypes>

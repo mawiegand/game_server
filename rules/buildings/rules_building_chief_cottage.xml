@@ -5,11 +5,12 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain‘s Hut</Name>
   <Description lang="de_DE">
-    <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p> 
+    <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>
+    <p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 12 und 20.</p>
   </Description>
   <Description lang="en_US">
-    <p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Its size alone will tell you how the settlement is progressing. The bigger the chieftain’s hut, the more – and better – the buildings and the more armies the settlement can have. Of course, the chieftain has a little store in his hut for when times get tough.</p>
-    <p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>
+    <p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Of course, the chieftain has a little store in his hut for when times get tough.</p>
+    <p>The chieftain’s hut gives a command point at level 2, 6, 12 and 20.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Show me your chieftain’s hut and I’ll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>

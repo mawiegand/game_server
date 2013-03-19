@@ -6,6 +6,7 @@
   <Name lang="en_US">Meeting Place</Name>
   <Description lang="de_DE">
     <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p>
+    <p>Der Versammlungsplatz liefert jeweils einen Kommandopunkt auf Level 2 und 20.</p>
   </Description>
   <Description lang="en_US">
     <p>The meeting place is in the middle of the compound. An area by chance left vacant, with enough space for a few raw materials and for the dwellers’ gatherings.</p>
@@ -29,9 +30,9 @@
     <UnlockGarrison level="3" />
     <GarrisonSizeBonus>200</GarrisonSizeBonus>
     <ArmySizeBonus>200</ArmySizeBonus>
-    <CommandPoints>GREATER(LEVEL,1)+EQUAL(LEVEL,20)*1</CommandPoints>
+    <CommandPoints>GREATER(LEVEL,1)+EQUAL(LEVEL,20)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
-    <DefenseBonus>0.15*LEVEL</DefenseBonus>
+    <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockBuildingSlots>2+MIN(LEVEL,10)</UnlockBuildingSlots>
   </Abilities>
 </Building>

@@ -194,39 +194,15 @@ class GameRules::Rules
           :hours     => 30,
         },              #   END OF 30 hours
 
-        {               #   less than 70 hours
+        {               #   less than 150 hours
           :resource_id => 3, 
           :amount      => 20,
-          :hours     => 70,
-        },              #   END OF 70 hours
-
-        {               #   less than 120 hours
-          :resource_id => 3, 
-          :amount      => 25,
-          :hours     => 120,
-        },              #   END OF 120 hours
-
-        {               #   less than 180 hours
-          :resource_id => 3, 
-          :amount      => 30,
-          :hours     => 180,
-        },              #   END OF 180 hours
-
-        {               #   less than 240 hours
-          :resource_id => 3, 
-          :amount      => 40,
-          :hours     => 240,
-        },              #   END OF 240 hours
-
-        {               #   less than 300 hours
-          :resource_id => 3, 
-          :amount      => 50,
-          :hours     => 300,
-        },              #   END OF 300 hours
+          :hours     => 150,
+        },              #   END OF 150 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 60,
+          :amount      => 30,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -286,7 +262,7 @@ class GameRules::Rules
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 40,
+          :amount      => 30,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -2107,9 +2083,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Je größer die Häuptlingshütte, desto mehr und bessere Gebäude und desto mehr Armeen kann eine Siedlung haben. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 12 und 20.</p>",
   
-            :en_US => "<p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Its size alone will tell you how the settlement is progressing. The bigger the chieftain’s hut, the more – and better – the buildings and the more armies the settlement can have. Of course, the chieftain has a little store in his hut for when times get tough.</p><p>A magnificent hut, decorated with trophies taken from fallen enemies not only looks smart, it boosts the morale of the defending troops.</p>",
+            :en_US => "<p>The chieftain’s hut has long been the only building in the settlement even halfway fortified. Of course, the chieftain has a little store in his hut for when times get tough.</p><p>The chieftain’s hut gives a command point at level 2, 6, 12 and 20.</p>",
                 
           },
 
@@ -2839,6 +2815,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -3500,6 +3487,15 @@ class GameRules::Rules
             },
 
             {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 0,
+
+            },
+
+            {
               :symbolic_id => 'building_haunt',
               :id => 21,
               :type => 'building',
@@ -3520,6 +3516,15 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 0,
 
             },
 
@@ -3606,7 +3611,7 @@ class GameRules::Rules
               :id => 11,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 1,
 
             },
 
@@ -3702,7 +3707,7 @@ class GameRules::Rules
               :id => 11,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 2,
 
             },
 
@@ -4449,7 +4454,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p>",
+            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Versammlungsplatz liefert jeweils einen Kommandopunkt auf Level 2 und 20.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. An area by chance left vacant, with enough space for a few raw materials and for the dwellers’ gatherings.</p>",
                 
@@ -4523,11 +4528,11 @@ class GameRules::Rules
 
             ],
 
-            :defense_bonus => "0.15*LEVEL",
+            :defense_bonus => "0.2*LEVEL",
 
             :unlock_garrison => 3,            
 
-            :command_points => "GREATER(LEVEL,1)+EQUAL(LEVEL,20)*1",
+            :command_points => "GREATER(LEVEL,1)+EQUAL(LEVEL,20)",
 
             :unlock_building_slots => "2+MIN(LEVEL,10)",
 
@@ -4741,7 +4746,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen Kommandopunkt auf Level 2 und 10.</p>",
   
             :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
@@ -5809,9 +5814,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "Außenlager eines Stammes.",
+            :de_DE => "Lagerstätte eines Stammes.",
   
-            :en_US => "a small encampment of a tribe.",
+            :en_US => "A small encampment of a tribe.",
                 
           },
 
@@ -5866,6 +5871,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5877,6 +5883,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5888,6 +5895,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5899,6 +5907,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5910,6 +5919,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5921,6 +5931,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5932,6 +5943,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5943,6 +5955,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5954,6 +5967,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -5965,6 +5979,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6188,7 +6203,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '2',
 
           :experience_production => '15*(MRANK+1)',
 
