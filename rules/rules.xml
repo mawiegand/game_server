@@ -109,7 +109,7 @@
       <SpeedupCost resource="resource_cash" amount="8"  hours="56" />
       <SpeedupCost resource="resource_cash" amount="12" hours="96" />
       <SpeedupCost resource="resource_cash" amount="20" hours="192" />
-      <SpeedupCost resource="resource_cash" amount="40" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="30" hours="9999" />
     </TrainingSpeedup>
     <ArtifactInitiationSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
