@@ -4494,7 +4494,7 @@ class GameRules::Rules
           :buyable     => true,
           :demolishable=> false,
           :destructable=> false,
-          :takeover_downgrade_by_levels=> 0,
+          :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
           :experience_factor => 6,
 
