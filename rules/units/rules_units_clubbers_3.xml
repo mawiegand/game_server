@@ -2,17 +2,17 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Unit id="clubbers_3" category="unitcategory_infantry">
-  <Name>Club swinger</Name>
+  <Name>Club haymaker</Name>
   <Name lang="de_DE">Knüppel-Schwinger</Name>
   
   <Description lang="de_DE">
     <p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>		
   </Description>
   <Description lang="en_US">
-    <p>The bludgeoners unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>
+    <p>The haymaker unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>The art of expressive battle! Here bludgeoners give marks to each other regarding their fighting style.</p>
+    <p>The art of expressive battle! Here haymaker give marks to each other regarding their fighting style.</p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>
@@ -29,9 +29,9 @@
   <Armor>7</Armor>
   <Overrunnable>true</Overrunnable>
   <Hitpoints>110</Hitpoints>
-  <Effectiveness category="unitcategory_infantry">0.75</Effectiveness>
+  <Effectiveness category="unitcategory_infantry">1</Effectiveness>
   <Effectiveness category="unitcategory_cavalry">1.5</Effectiveness>
-  <Effectiveness category="unitcategory_artillery">1</Effectiveness>
+  <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
   <Effectiveness category="unitcategory_siege">0.8</Effectiveness>    
   <Effectiveness category="unitcategory_special">1</Effectiveness>
   <RequirementGroup>

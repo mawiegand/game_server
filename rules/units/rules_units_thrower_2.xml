@@ -31,7 +31,7 @@
       <Hitpoints>50</Hitpoints>
       <Effectiveness category="unitcategory_infantry">1.5</Effectiveness>
       <Effectiveness category="unitcategory_cavalry">0.75</Effectiveness>
-      <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>
+      <Effectiveness category="unitcategory_artillery">1</Effectiveness>
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
       <Effectiveness category="unitcategory_special">1</Effectiveness>   
       <RequirementGroup>
