@@ -2885,7 +2885,7 @@ class GameRules::Rules
 
             :unlock_diplomacy     => 1,
 
-            :unlock_alliance_creation => 2,
+            :unlock_alliance_creation => 1,
 
           },
 
