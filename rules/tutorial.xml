@@ -4585,7 +4585,7 @@
     </Quest>
 
   <!-- NOT IN
-    <!-- 147 --> <!-- not in -->
+    < !- - 147 - - > < !- - not in - - >
     <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
@@ -4614,7 +4614,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- Quest id="quest_change_settlementname" advisor="girl">
+    <Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>
       <Task></Task>
