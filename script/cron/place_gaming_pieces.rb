@@ -16,12 +16,12 @@ Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 region_factor     = 1.00   # at least num_regions * region_factor npc armies
 max_region_factor = 1.25   # controlls the number of npcs in the case where there are more armies than regions*region_factor
 
-num_armies        = Military::Army.where(npc: false, garrison: false).count
-avg_size_armies   = Military::Army.where(npc: false, garrison: false).average(:size_present)  || 1.0
-max_size_armies   = Military::Army.where(npc: false, garrison: false).maximum(:size_present)  || 1
+num_armies        = Military::Army.non_npc.non_garrison.count
+avg_size_armies   = Military::Army.non_npc.non_garrison.average(:size_present)  || 1.0
+max_size_armies   = Military::Army.non_npc.non_garrison.maximum(:size_present)  || 1
 
-num_npcs          = Military::Army.where(npc: true,  garrison: false).count
-avg_size_npcs     = Military::Army.where(npc: true,  garrison: false).average(:size_present)  || 0.0
+num_npcs          = Military::Army.npc.non_garrison.count
+avg_size_npcs     = Military::Army.non.non_garrison.average(:size_present)  || 0.0
 
 num_characters    = Fundamental::Character.count || 1
 num_regions       = Map::Region.count || 1
