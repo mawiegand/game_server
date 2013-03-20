@@ -298,7 +298,10 @@ class Settlement::Settlement < ActiveRecord::Base
     # destroy all armies
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?
-    
+
+    #destroy all npc armies at settlement location
+    self.location.armies.npc.destroy_all
+
     # destroy all construction queues and containing jobs  (destroy => true an die assoziation?)
     self.queues.each do |queue|
       queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing

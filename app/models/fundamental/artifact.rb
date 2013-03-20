@@ -30,8 +30,8 @@ class Fundamental::Artifact < ActiveRecord::Base
     GameRules::Rules.the_rules.artifact_types[self.type_id]
   end
 
-  def self.create_at_location_with_type(location, type_id)
-    army = Military::Army.create_npc(location, Random.rand(50..1000))
+  def self.create_at_location_with_type(location, type_id, npc_size_min, npc_size_max)
+    army = Military::Army.create_npc(location, Random.rand(npc_size_min..npc_size_max))
     location.create_artifact({
       owner:     Fundamental::Character.find_by_id(1),
       region:    location.region,

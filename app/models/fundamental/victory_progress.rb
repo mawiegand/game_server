@@ -59,10 +59,13 @@ class Fundamental::VictoryProgress < ActiveRecord::Base
   protected
 
     def set_victory_gained(victory_time)
-      logger.debug "Siegbedingung erfüllt!"
-      self.victory_gained = true
-      self.save
-      Fundamental::RoundInfo.the_round_info.set_victory_gained(self, victory_time)
+      self.transaction do
+        logger.debug "Siegbedingung erfüllt!"
+        self.victory_gained = true
+        self.save
+        round_info = Fundamental::RoundInfo.the_round_info.lock!
+        round_info.set_victory_gained(self, victory_time)
+      end
     end
   
     # the round is won if a victory condition is fulfilled for a specific amount of days

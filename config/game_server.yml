@@ -46,7 +46,7 @@ defaults: &defaults
 
   history_update_interval:    24 #hours
   player_deletion_interval:   30 #days
-  message_deletion_intervall: 14 #days
+  message_deletion_intervall:  4 #days
 
   artifact_jump_probability:             0.1     # probability of artifact to jump after a won battle
   artifact_capture_probability_factor:   0.05    # probability factor of artifact to be captured by attacker after every battle round

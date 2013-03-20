@@ -7,36 +7,30 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config',
 
 Rails.logger.info "DELETE MSG ENTRIES: Start deleting old message entries..."
 
-message_deletion_intervall = GAME_SERVER_CONFIG['message_deletion_intervall'].days.ago
+oldest_message = GAME_SERVER_CONFIG['message_deletion_intervall'].days.ago
 
 @report = {
   started_at:   Time.now,
   finished_at:  nil,
-  
-  deleted_inbox_entries: [],
-  deleted_outbox_entries: [],
+
+  deleted_inbox_entry_count: [],
+  deleted_outbox_entry_count: [],
 }
 
 Rails.logger.info "DELETE MSG ENTRIES: Start deleting inbox entries..."
 
-@inbox_entries = Messaging::InboxEntry.where("read = ? AND created_at <= ?", true, message_deletion_intervall)
-@inbox_entries.each do |inbox_entry|
-    puts inbox_entry.inspect
-    @report[:deleted_inbox_entries] << inbox_entry
-    inbox_entry.destroy
-end
+@inbox_entries = Messaging::InboxEntry.where("read = ? AND created_at <= ?", true, oldest_message)
+@report[:deleted_inbox_entry_count] = @inbox_entries.count
+@inbox_entries.destroy_all
 
-Rails.logger.info "DELETE MSG ENTRIES: Deleted #{@report[:deleted_inbox_entries].count} inbox entries..."
+Rails.logger.info "DELETE MSG ENTRIES: Deleted #{@report[:deleted_inbox_entry_count]} inbox entries..."
 Rails.logger.info "DELETE MSG ENTRIES: Start deleting outbox entries..."
 
-@outbox_entries = Messaging::OutboxEntry.where("created_at <= ?", message_deletion_intervall)
-@outbox_entries.each do |outbox_entry|
-    puts outbox_entry.inspect
-    @report[:deleted_outbox_entries] << outbox_entry
-    outbox_entry.destroy
-end
+@outbox_entries = Messaging::OutboxEntry.where("created_at <= ?", oldest_message)
+@report[:deleted_outbox_entry_count] = @outbox_entries.count
+@outbox_entries.destroy_all
 
-Rails.logger.info "DELETE MSG ENTRIES: Deleted #{@report[:deleted_outbox_entries].count} outbox entries..."
+Rails.logger.info "DELETE MSG ENTRIES: Deleted #{@report[:deleted_outbox_entry_count]} outbox entries..."
 Rails.logger.info "DELETE MSG ENTRIES: Email report."
 
 @report[:finished_at]       = Time.now

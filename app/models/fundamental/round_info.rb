@@ -21,6 +21,7 @@ class Fundamental::RoundInfo < ActiveRecord::Base
 
   def set_victory_gained(progress, victory_time)
     self.winner_alliance = progress.alliance
+    self.winner_alliance_tag = progress.alliance.tag
     self.victory_gained_at = victory_time
     self.victory_type = progress.type_id
     self.save
