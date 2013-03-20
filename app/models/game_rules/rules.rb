@@ -3233,16 +3233,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Trainingshöhle
-        {               #   Artefaktstand
+        {               #   Wacky-Lab
           :id          => 9, 
           :symbolic_id => :building_artifact_stand,
 					:category    => 6,
           :db_field    => :building_artifact_stand,
           :name        => {
             
-            :de_DE => "Artefaktstand",
+            :de_DE => "Wacky-Lab",
   
-            :en_US => "Artefact stand",
+            :en_US => "Wacky-Lab",
                 
           },
           :flavour     => {
@@ -3333,7 +3333,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Artefaktstand
+        },              #   END OF Wacky-Lab
         {               #   Kürschner
           :id          => 10, 
           :symbolic_id => :building_furrier,

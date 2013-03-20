@@ -177,8 +177,43 @@
     <RewardTests>
       <CustomTest id="test_profile">change profile text</CustomTest>
     </RewardTests>
-  </Quest>         
-                  
+    <Message>
+      <Subject>Welcome to Wack-a-Doo.</Subject>
+      <Body><![CDATA[<h2>Welcome to the open Beta version.</h2>
+        <p>Our game, ‘Wack-a-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
+        <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
+        <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+        <p>There you’ll find all the main menu functions as screen shots.</p>
+        <p>’d really like your feedback and we’d also like you to report any errors or malfunctions. There’s a forum area that’s been set up for us by Shadow-Dragon in the Uga-Agga forum:</p>
+        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
+        <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
+        <p>’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+        <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-a-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
+        <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
+        <p>Your Wack-a-Doo team</p>]]></Body>
+    </Message>
+    <Message lang="de">
+      <Subject>Willkommen bei Wack-a-Doo</Subject>
+      <Body><![CDATA[<h2>Willkommen in Runde 3.</h2>
+        <p>Unser Spiel 'Wack-a-doo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wack-a-doo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>
+        <p>Im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
+        <p>Zur besseren Orientierung empfehlen wir Dir die Übersichten in der Enzyklopädie und die Erklärungen zur Benutzeroberfläche anzuschauen:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+        <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>
+        <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
+        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
+        <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
+        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzykloädie und in unserem Wiki zusammengefasst:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>http://wiki.wack-a-doo.de/Gebäudegraph</a></p>
+        <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>
+        <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>
+        <p>Das Wack-a-Doo Team</p>]]></Body>
+    </Message>
+  </Quest>
+  
 <!-- 5 -->  <!-- Tutorial 6 -->
   <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
     <Name>Training Grounds</Name>
@@ -1176,7 +1211,7 @@
       </Message>
       <Message lang="de">
         <Subject>Willkommen bei Wack-a-Doo</Subject>
-        <Body><![CDATA[<h2>Willkommen in der öffentlichen Betarunde.</h2>
+        <Body><![CDATA[<h2>Willkommen in Runde 3.</h2>
                 <p>Unser Spiel 'Wack-a-doo' befindet sich mitten in der Entwicklung. In der jetzigen Form ist Wack-a-doo bereits als vollständiges Spiel spielbar und hat im Rahmen der ersten Tests sehr viel Spass gemacht.</p>  
                 <p>Im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
                 <p>Zur besseren Orientierung empfehlen wir Dir die Übersichten in der Enzyklopädie und die Erklärungen zur Benutzeroberfläche anzuschauen:</p>

@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_artifact_stand" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="12">
-  <Name lang="de_DE">Artefaktstand</Name>
-  <Name lang="en_US">Artefact stand</Name>
+  <Name lang="de_DE">Wacky-Lab</Name>
+  <Name lang="en_US">Wacky-Lab</Name>
   <Description lang="de_DE">
     <p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>
   </Description>
