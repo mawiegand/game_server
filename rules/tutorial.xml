@@ -4584,9 +4584,8 @@
       </RewardTests>
     </Quest>
 
-  <!-- NOT IN
-    < !- - 147 - - > < !- - not in - - >
-    <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
+    <!-- 147 --> 
+    <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time and defeat at least two units!</Task>
