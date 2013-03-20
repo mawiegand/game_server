@@ -21,7 +21,7 @@ avg_size_armies   = Military::Army.non_npc.non_garrison.average(:size_present)  
 max_size_armies   = Military::Army.non_npc.non_garrison.maximum(:size_present)  || 1
 
 num_npcs          = Military::Army.npc.non_garrison.count
-avg_size_npcs     = Military::Army.non.non_garrison.average(:size_present)  || 0.0
+avg_size_npcs     = Military::Army.npc.non_garrison.average(:size_present)  || 0.0
 
 num_characters    = Fundamental::Character.count || 1
 num_regions       = Map::Region.count || 1
