@@ -337,7 +337,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, 5, 10, ],
+          :successor_quests => [5, 10, ],
 
           :rewards => {
             
@@ -435,7 +435,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -1057,7 +1057,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [12, ],
+          :successor_quests => [3, 12, ],
 
           :rewards => {
             
@@ -1564,17 +1564,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 250,
               },
 
             ],
@@ -2443,17 +2443,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 900,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 900,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 900,
+                :amount => 800,
               },
 
             ],
@@ -2647,17 +2647,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
@@ -2861,17 +2861,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 2000,
               },
 
             ],
@@ -3065,17 +3065,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 3000,
               },
 
             ],

@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Unit id="clubbers_3" category="unitcategory_infantry">
-  <Name>Club haymaker</Name>
+  <Name>Haymaker</Name>
   <Name lang="de_DE">Knüppel-Schwinger</Name>
   
   <Description lang="de_DE">
