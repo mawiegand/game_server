@@ -4584,7 +4584,6 @@
       </RewardTests>
     </Quest>
 
-  <!-- NOT IN
     <!-- 147 --> <!-- not in -->
     <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
       <Name>First battle</Name>

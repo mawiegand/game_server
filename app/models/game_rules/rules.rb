@@ -717,11 +717,11 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.75,
+            :unitcategory_infantry => 1,
   
             :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
   
@@ -782,11 +782,11 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.75,
+            :unitcategory_infantry => 1,
   
             :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
   
@@ -852,21 +852,21 @@ class GameRules::Rules
 
 
         },              #   END OF Thick-skinned Clubber
-        {               #   Club swinger
+        {               #   Haymaker
           :id          => 2, 
           :symbolic_id => :clubbers_3,
 					:category    => 0,
           :db_field    => :unit_clubbers_3,
           :name        => {
             
-            :en_US => "Club swinger",
+            :en_US => "Haymaker",
   
             :de_DE => "Knüppel-Schwinger",
                 
           },
           :flavour     => {
             
-            :en_US => "<p>The art of expressive battle! Here bludgeoners give marks to each other regarding their fighting style.</p>",
+            :en_US => "<p>The art of expressive battle! Here haymaker give marks to each other regarding their fighting style.</p>",
   
             :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
                 
@@ -875,7 +875,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
   
-            :en_US => "<p>The bludgeoners unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>",
+            :en_US => "<p>The haymaker unite lethal arts of fighting with good looks and charisma. Everything from the carved bludgeon to the position of one's left toe when striking someone hard will receive ratings and nothing will be left to chance. The greatest danger here is not the enemy, but their own vanity.</p>",
                 
           },
 
@@ -886,11 +886,11 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.75,
+            :unitcategory_infantry => 1,
   
             :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
   
@@ -955,7 +955,7 @@ class GameRules::Rules
           ],          
 
 
-        },              #   END OF Club swinger
+        },              #   END OF Haymaker
         {               #   Tree Huggers
           :id          => 3, 
           :symbolic_id => :tree_huggers,
@@ -990,11 +990,11 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.75,
+            :unitcategory_infantry => 1,
   
             :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
   
@@ -1037,7 +1037,7 @@ class GameRules::Rules
               :id => 11,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 10,
 
             },
 
@@ -1085,7 +1085,7 @@ class GameRules::Rules
   
             :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
   
@@ -1150,7 +1150,7 @@ class GameRules::Rules
   
             :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
   
@@ -1254,7 +1254,7 @@ class GameRules::Rules
   
             :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
   
@@ -1358,7 +1358,7 @@ class GameRules::Rules
   
             :unitcategory_cavalry => 0.75,
   
-            :unitcategory_artillery => 0.75,
+            :unitcategory_artillery => 1,
   
             :unitcategory_siege => 0.8,
   
@@ -1401,7 +1401,7 @@ class GameRules::Rules
               :id => 11,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 10,
 
             },
 
@@ -1765,7 +1765,7 @@ class GameRules::Rules
               :id => 11,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 10,
 
             },
 
@@ -1809,11 +1809,11 @@ class GameRules::Rules
           :initiative  => 16,
           :effectiveness => {
             
-            :unitcategory_infantry => 0.75,
+            :unitcategory_infantry => 1,
   
             :unitcategory_cavalry => 1.5,
   
-            :unitcategory_artillery => 1,
+            :unitcategory_artillery => 0.75,
   
             :unitcategory_siege => 0.8,
   
@@ -2626,7 +2626,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*1.5+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3)/100.0+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3)/100.0",
               },
 
             ],
@@ -3766,7 +3766,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "FLOOR(1.88*POW(LEVEL,1.425)*1.5*1.75+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(((1.25*POW(LEVEL,1.3)+0.5)*3*1.75)/100.0+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75)/100.0)",
               },
 
             ],
@@ -6144,12 +6144,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
         },              #   END OF Abrissbirne
-        {               #   Wäscheleinenständer
+        {               #   Wäscheleine
           :id          => 2, 
           :symbolic_id => :artifact_2,
           :name        => {
             
-            :de_DE => "Wäscheleinenständer",
+            :de_DE => "Wäscheleine",
   
             :en_US => "Clothing horse",
                 
@@ -6204,7 +6204,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Wäscheleinenständer
+        },              #   END OF Wäscheleine
         {               #   Schwarzer Monolith
           :id          => 3, 
           :symbolic_id => :artifact_3,

@@ -6221,7 +6221,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 20,
+            :experience_reward => 25,
 
           },          
 
@@ -6314,7 +6314,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 80,
+            :experience_reward => 100,
 
           },          
 
@@ -10006,7 +10006,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 20,
+            :experience_reward => 40,
 
           },          
 
@@ -10084,17 +10084,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 400,
               },
 
             ],
@@ -10187,7 +10187,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 750,
               },
 
             ],
@@ -10280,7 +10280,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1000,
               },
 
             ],
@@ -10373,7 +10373,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1250,
               },
 
               {
@@ -10471,7 +10471,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1750,
               },
 
             ],
@@ -10564,7 +10564,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 2000,
               },
 
             ],
@@ -10657,7 +10657,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 2250,
               },
 
             ],
@@ -10750,7 +10750,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 2500,
               },
 
             ],
@@ -10843,7 +10843,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 3000,
               },
 
               {
@@ -10941,7 +10941,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 3250,
               },
 
             ],
@@ -11034,7 +11034,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 3500,
               },
 
             ],
@@ -11127,7 +11127,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 3750,
               },
 
             ],
@@ -11220,7 +11220,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 4000,
               },
 
             ],
@@ -11313,7 +11313,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 4250,
               },
 
               {
@@ -11411,7 +11411,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 5000,
               },
 
             ],
@@ -11504,7 +11504,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 5500,
               },
 
               {
@@ -11602,7 +11602,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 5750,
               },
 
             ],
@@ -11695,7 +11695,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 6250,
               },
 
               {
@@ -11793,7 +11793,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 7000,
               },
 
             ],
@@ -12062,17 +12062,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 740,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 740,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 740,
               },
 
             ],
@@ -12165,7 +12165,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1000,
               },
 
               {
@@ -12263,7 +12263,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 1250,
               },
 
             ],
@@ -12356,7 +12356,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 1500,
               },
 
             ],
@@ -12449,7 +12449,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 2000,
               },
 
             ],
@@ -12542,7 +12542,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 2250,
               },
 
             ],
@@ -12635,7 +12635,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 2750,
               },
 
             ],
@@ -12728,7 +12728,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 3000,
               },
 
               {
@@ -12826,7 +12826,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 3750,
               },
 
             ],
@@ -12919,7 +12919,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 4000,
               },
 
             ],
@@ -13012,7 +13012,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 4500,
               },
 
             ],
@@ -13105,7 +13105,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 5000,
               },
 
             ],
@@ -13198,7 +13198,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 5500,
               },
 
               {
@@ -13296,7 +13296,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 6000,
               },
 
             ],
@@ -13389,7 +13389,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 6500,
               },
 
               {
@@ -13487,7 +13487,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 7000,
               },
 
             ],
@@ -13580,7 +13580,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 7500,
               },
 
               {
@@ -13678,7 +13678,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 8000,
               },
 
             ],
@@ -13771,7 +13771,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 8500,
               },
 
               {
@@ -13869,7 +13869,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 9000,
               },
 
               {
@@ -13967,7 +13967,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6000,
+                :amount => 9000,
               },
 
               {
@@ -14065,7 +14065,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 10000,
               },
 
               {
@@ -14163,7 +14163,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6000,
+                :amount => 10000,
               },
 
               {
@@ -14261,7 +14261,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 12000,
               },
 
               {
@@ -14359,7 +14359,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 10000,
               },
 
               {
