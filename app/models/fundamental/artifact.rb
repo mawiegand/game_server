@@ -161,7 +161,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def experience_production(mundane_rank)
-    unless self.artifact_type[:experience_production].nil
+    unless self.artifact_type[:experience_production].nil?
       formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
       formula.apply(mundane_rank)
     else
@@ -205,7 +205,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def propagate_changes_to_character_on_changed_possession
-      unless self.artifact_type[:experience_production].nil
+      unless self.artifact_type[:experience_production].nil?
         owner_change = self.changes[:owner_id]
         unless owner_change.blank?
           old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
@@ -284,7 +284,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def propagate_changes_to_character
-      unless self.artifact_type[:experience_production].nil
+      unless self.artifact_type[:experience_production].nil?
         owner_change = self.changes[:owner_id]
         initiated_change = self.changes[:initiated]
         if !initiated_change.blank? && owner_change.blank?
