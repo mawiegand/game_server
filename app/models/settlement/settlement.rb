@@ -24,7 +24,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   attr_readable :id, :type_id, :region_id, :tax_rate, :location_id, :node_id, :name, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :settlement_unlock_prevent_takeover_count, :as => :default 
   attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
-  attr_readable *readable_attributes(:ally),    :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :artifact_initiation_level, :as => :owner
+  attr_readable *readable_attributes(:ally),    :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :artifact_initiation_level, :name_change_count, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
   attr_readable *readable_attributes(:staff),                                                          :as => :admin
 
@@ -173,6 +173,25 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def building_slots_available?
     available_building_slots > 0
+  end
+  
+  def change_name_transaction(name)
+    free_change = (self.name_change_count || 0) < 1
+    character = Fundamental::Character.find_by_id(self.owner)
+    if !free_change && !character.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
+      raise ForbiddenError.new "character does not have enough resources to pay for the settlement name change."
+    end
+    
+    self.name = name
+    self.increment(:name_change_count)  
+
+    raise InternalServerError.new 'Could not save new name.' unless self.save 
+    
+    if (self.name_change_count || 0) > 1 # test for 1, count was already incremented!  -> one change is free!
+        character.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
+    end
+  
+    self
   end
 
   ############################################################################
