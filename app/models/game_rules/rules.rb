@@ -529,7 +529,7 @@ class GameRules::Rules
             
             :en_US => "Riders",
   
-            :de_DE => "Reiter",
+            :de_DE => "Berittene",
                 
           },
           :description => {
@@ -2885,7 +2885,7 @@ class GameRules::Rules
 
             :unlock_diplomacy     => 1,
 
-            :unlock_alliance_creation => 1,
+            :unlock_alliance_creation => 2,
 
           },
 
@@ -6023,14 +6023,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Lochscheibe
+        {               #   Abrissbirne
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Lochscheibe",
+            :de_DE => "Abrissbirne",
   
-            :en_US => "Punched disc",
+            :en_US => "Demolition ball",
                 
           },
           :description => {
@@ -6083,15 +6083,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Lochscheibe
-        {               #   Abrissbirne
+        },              #   END OF Abrissbirne
+        {               #   Lochscheibe
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Abrissbirne",
+            :de_DE => "Lochscheibe",
   
-            :en_US => "Demolition ball",
+            :en_US => "Punched disc",
                 
           },
           :description => {
@@ -6144,7 +6144,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Abrissbirne
+        },              #   END OF Lochscheibe
         {               #   Wäscheleine
           :id          => 2, 
           :symbolic_id => :artifact_2,
