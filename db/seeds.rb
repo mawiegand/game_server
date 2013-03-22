@@ -69,7 +69,7 @@ Fundamental::RoundInfo.create({
 #
 # ############################################################################
 
-npcs = [
+@npc = [
   Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
 ]
 
@@ -188,7 +188,7 @@ puts "INFO: creating regions and locations."
 nodes = Map::Node.find_all_by_leaf true
 
 def create_fortress(location)
-  owner = npcs[rand(npcs.length)] # TODO: NPCs
+  owner = @npc[rand(@npc.length)] # TODO: NPCs
   Settlement::Settlement.create_settlement_at_location(location, 1, owner)   # 1: fortress
   
   details = location.settlement.garrison_army.details
