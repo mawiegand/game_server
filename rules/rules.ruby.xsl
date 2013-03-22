@@ -841,7 +841,9 @@ end
             <xsl:apply-templates select="SpeedupQueue" />
           ],
 </xsl:if>
+<xsl:if test="ExperienceProduction">
           :experience_production => '<xsl:apply-templates select="ExperienceProduction" />',
+</xsl:if>
 <xsl:if test="count(Effects/ProductionBonus)">
           :production_bonus  => [
 <xsl:for-each select="Effects/ProductionBonus">

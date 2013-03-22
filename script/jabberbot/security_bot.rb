@@ -22,8 +22,8 @@ APP_CONFIG = YAML.load(raw_config)
 #Jabber::debug = true
 
 class BotMailer < ActionMailer::Base
-  default from: Rails.env.production? ?  "watchguard@gs02.wack-a-doo.de" : "watchguard@test1.wack-a-doo.de"
-  
+  default from: Rails.env.production? ?  "watchguard@gs02.wack-a-doo.com" : "watchguard@test1.wack-a-doo.com"
+
   def breach_report(uid, domain, nickname, presence)
     mail(:to => 'cron@5dlab.com',
          :subject => "CHAT BOT: possible security breach by #{uid}.",

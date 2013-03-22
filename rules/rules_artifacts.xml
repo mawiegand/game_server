@@ -55,7 +55,6 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>

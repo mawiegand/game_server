@@ -24,7 +24,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   after_save :propagate_changes_to_victory_progress
   after_save :propagate_effect_changes
 
-  scope :visible, where(['visible = ?', true])
+  scope :visible, where('visible = ?', true)
 
   def artifact_type
     GameRules::Rules.the_rules.artifact_types[self.type_id]
@@ -161,8 +161,12 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def experience_production(mundane_rank)
-    formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
-    formula.apply(mundane_rank)
+    unless self.artifact_type[:experience_production].nil?
+      formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
+      formula.apply(mundane_rank)
+    else
+      0
+    end
   end
 
   def check_consistency
@@ -201,21 +205,23 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def propagate_changes_to_character_on_changed_possession
-      owner_change = self.changes[:owner_id]
-      unless owner_change.blank?
-        old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
-        new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
+      unless self.artifact_type[:experience_production].nil?
+        owner_change = self.changes[:owner_id]
+        unless owner_change.blank?
+          old_owner = owner_change[0].nil? ? nil : Fundamental::Character.find_by_id(owner_change[0])
+          new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
-        # old user had no exp production if artifact is currently not initiated and initiation hasn't changed
-        if !old_owner.nil? && !self.initiated && self.changes['initiated'].nil?
-          old_owner['exp_production_rate'] = (old_owner['exp_production_rate'] || 0) - experience_production(old_owner.mundane_rank)
-          old_owner.save
-        end
+          # old user had no exp production if artifact is currently not initiated and initiation hasn't changed
+          if !old_owner.nil? && !self.initiated && self.changes['initiated'].nil?
+            old_owner['exp_production_rate'] = (old_owner['exp_production_rate'] || 0) - experience_production(old_owner.mundane_rank)
+            old_owner.save
+          end
 
-        # new user has no exp production in artifact is currently not initiated
-        if !new_owner.nil? && self.initiated
-          new_owner['exp_production_rate'] = (new_owner['exp_production_rate'] || 0) + experience_production(new_owner.mundane_rank)
-          new_owner.save
+          # new user has no exp production in artifact is currently not initiated
+          if !new_owner.nil? && self.initiated
+            new_owner['exp_production_rate'] = (new_owner['exp_production_rate'] || 0) + experience_production(new_owner.mundane_rank)
+            new_owner.save
+          end
         end
       end
       true
@@ -278,19 +284,21 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def propagate_changes_to_character
-      owner_change = self.changes[:owner_id]
-      initiated_change = self.changes[:initiated]
-      if !initiated_change.blank? && owner_change.blank?
+      unless self.artifact_type[:experience_production].nil?
+        owner_change = self.changes[:owner_id]
+        initiated_change = self.changes[:initiated]
+        if !initiated_change.blank? && owner_change.blank?
 
-        # if changed from initiated to not initiated
-        if initiated_change[0]
-          owner.exp_production_rate -= experience_production(owner.mundane_rank)
-        else
-          owner.exp_production_rate += experience_production(owner.mundane_rank)
+          # if changed from initiated to not initiated
+          if initiated_change[0]
+            owner.exp_production_rate -= experience_production(owner.mundane_rank)
+          else
+            owner.exp_production_rate += experience_production(owner.mundane_rank)
+          end
+          owner.save
         end
-        owner.save
+        true
       end
-      true
     end
 
     def add_character_resource_effect(owner_id, bonus)

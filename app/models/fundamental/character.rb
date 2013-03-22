@@ -289,7 +289,7 @@ class Fundamental::Character < ActiveRecord::Base
     unless npc
       character.create_ranking({
         character_name: name,
-      });
+      })
 
       location = start_location.nil? ? Map::Location.find_empty : start_location
       if !location || !character.claim_location(location)
@@ -314,28 +314,28 @@ class Fundamental::Character < ActiveRecord::Base
     unless character.save
       raise InternalServerError.new('Could not save the base of the character.')
     end
-    
-    if !npc
+
+    unless npc
       character.create_inbox
       character.create_outbox
       character.create_archive
-      
+
       # sending of welcome message is now triggered by a tutorial quest
       # Messaging::Message.create_welcome_message(character)
-      
+
       character.create_tutorial_state
-      character.tutorial_state.create_start_quest_state     
-      
-      cmd = Messaging::JabberCommand.grant_access(character, 'global') 
+      character.tutorial_state.create_start_quest_state
+
+      cmd = Messaging::JabberCommand.grant_access(character, 'global')
       cmd.character_id = character.id
       cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'handel') 
+      cmd = Messaging::JabberCommand.grant_access(character, 'handel')
       cmd.character_id = character.id
       cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle') 
+      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle')
       cmd.character_id = character.id
       cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'help') 
+      cmd = Messaging::JabberCommand.grant_access(character, 'help')
       cmd.character_id = character.id
       cmd.save
     end
