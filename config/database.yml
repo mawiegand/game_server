@@ -33,4 +33,11 @@ production:   # use the postgres on the database server
   host: gs02.wack-a-doo.de
   port: 5432
   username: run-gs
-# password: 
+# password:
+
+testround2:      # use the local postgres db
+  adapter: postgresql
+  encoding: UTF8
+  database: game_server_testround2
+  port: 5686
+  username: run-gs
