@@ -69,7 +69,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
       pool.resource_cash_amount -= cost[:amount]
 
       # save new values
-      #pool.save
+      pool.save
     end
     
     respond_to do |format|
