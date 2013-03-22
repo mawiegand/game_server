@@ -19,8 +19,8 @@ user.save
 NUM_FULL_LEVELS   = 2
 NUM_SPARSE_LEVELS = 2
 
-ROUND_NAME   = "Schnelltest"
-ROUND_NUMBER =  2
+ROUND_NAME   = "Testrunde 3"
+ROUND_NUMBER =  3
 
 NPC_MIN_UNITS = 60
 NPC_MAX_UNITS = 120

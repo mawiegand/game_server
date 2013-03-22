@@ -81,14 +81,14 @@ staging:
   
   base_url: 'https://test1.wack-a-doo.com'
   
-  scope: 'wackadoo-testround2'
+  scope: 'wackadoo-testround3'
   
   ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
 
   platinum_additional_construction_jobs : 3
   platinum_additional_training_jobs     : 3
 
-  chat_host: jabber.wack-a-doo.com
+  chat_host: jabber3.wack-a-doo.com
 
   battle_xp_winner_bonus_factor:         3.0
 
