@@ -346,9 +346,11 @@ class Fundamental::Character < ActiveRecord::Base
   def change_name_transaction(name)
     raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
     
-    free_change = (self.name_change_count || 0) < 2 
+    change_character_name_rules = GameRules::Rules.the_rules.change_character_name
     
-    if !free_change && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    free_change = (self.name_change_count || 0) < change_character_name_rules[:free_changes]
+    
+    if !free_change && !self.resource_pool.have_at_least_resources({change_character_name_rules[:resource_id] => change_character_name_rules[:amount]})
       raise ForbiddenError.new "character does not have enough resources to pay for the name change."
     end
 
@@ -367,8 +369,8 @@ class Fundamental::Character < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > 2 # test for 2, count was already incremented!  -> two changes are free!
-        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    if (self.name_change_count || 0) > change_character_name_rules[:free_changes] # test for free changes
+        self.resource_pool.remove_resources_transaction({change_character_name_rules[:resource_id] => change_character_name_rules[:amount]})
     end
   
     self
