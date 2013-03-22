@@ -350,6 +350,11 @@ class Tutorial::Tutorial
                 :amount => 100,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :experience_reward => 100,
@@ -376,36 +381,33 @@ class Tutorial::Tutorial
           :message => {
             
             :en => {
-              :subject => 'Welcome to Wack-A-Doo.',
-              :body => "<h2>Welcome to the open Beta version.</h2>
-        <p>Our game, ‘Wack-A-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
-        <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
-        <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
-        <p>There you’ll find all the main menu functions as screen shots.</p>
-        <p>You’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a></p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
-        <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-A-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
-        <p>’d really like your feedback and we’d also like you to report any errors or malfunctions. There’s a forum area that’s been set up for us by Shadow-Dragon in the Uga-Agga forum:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
-        <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
-        <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
-        <p>Your Wack-A-Doo team</p>",
+              :subject => 'Welcome to Wack-A-Doo',
+              :body => "<h2>Welcome to round 3 of Wack-A-Doo‘s public Beta.</h2>
+        <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
+        As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+        Prepare to be surprised!</p>
+        <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
+        <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Unit Overview</a></p>
+        <p>We invite you to register and help keep our Wiki up to date.</p>
+        <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
+        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
+        <p>We hope you have lots of fun with Wack-A-Doo.</p>
+        <p>The Wack-A-Doo Team</p>",
             },
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
               :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
         <p>Unser Spiel 'Wack-A-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
-        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
+        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern.<br/>
+        Lass Dich überraschen!</p>
         <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
         <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a>; ><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)>; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
         <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet: <a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
+        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
+        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
         <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
         <p>Das Wack-A-Doo Team</p>",
             },
@@ -529,7 +531,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
   
-            :en_US => "Thanks. We will have .",
+            :en_US => "Thanks. I think we’re going to have loads of fun together!",
                 
           },
           :reward_text => {
@@ -1904,7 +1906,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 3,
               },
 
             ],
@@ -2069,7 +2071,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 99, ],
+          :successor_quests => [21, 103, ],
 
           :rewards => {
             
@@ -2167,7 +2169,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [22, 23, 24, ],
+          :successor_quests => [22, 23, 24, 80, ],
 
           :rewards => {
             
@@ -2269,7 +2271,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [34, ],
+          :successor_quests => [37, ],
 
           :rewards => {
             
@@ -2366,7 +2368,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [55, ],
+          :successor_quests => [58, ],
 
           :rewards => {
             
@@ -2667,7 +2669,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, 28, ],
+          :successor_quests => [27, 29, ],
 
           :rewards => {
             
@@ -2774,7 +2776,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [28, ],
 
           :rewards => {
             
@@ -2824,8 +2826,114 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_fortress
-        {               #   quest_build_chiefcottagelvl8
+        {               #   quest_build_1barrackslvl10
           :id                => 28, 
+          :symbolic_id       => :quest_build_1barrackslvl10,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Training Grounds level 10",
+  
+            :de_DE => "Ausbildungsgelände Level 10",
+                
+          },
+          :task => {
+            
+            :en_US => " Upgrade a training grounds to level 10.",
+  
+            :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+  
+            :en_US => "We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>",
+  
+            :en_US => "<p>At level 10, new units can be trained in the training grounds.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.",
+  
+            :en_US => "Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+  
+            :en_US => "The thick-skinned clubber! Reinforcement for your melee fighters.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers_2,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_barracks',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1barrackslvl10
+        {               #   quest_build_chiefcottagelvl8
+          :id                => 29, 
           :symbolic_id       => :quest_build_chiefcottagelvl8,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2881,7 +2989,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 30, ],
+          :successor_quests => [30, 31, ],
 
           :rewards => {
             
@@ -2927,7 +3035,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_1furrierlvl2
-          :id                => 29, 
+          :id                => 30, 
           :symbolic_id       => :quest_build_1furrierlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3029,7 +3137,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1furrierlvl2
         {               #   quest_build_chiefcottagelvl9
-          :id                => 30, 
+          :id                => 31, 
           :symbolic_id       => :quest_build_chiefcottagelvl9,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3052,9 +3160,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Jetzt hast Du bereits 36 Deiner maximal 40 Bauplätze freigeschaltet.",
+            :de_DE => "Jetzt hast Du bereits 32 Deiner maximal 40 Bauplätze freigeschaltet.",
   
-            :en_US => "You got 36 of your 40 buildingslots.",
+            :en_US => "You got 32 of your 40 buildingslots.",
                 
           },
           :description => {
@@ -3085,7 +3193,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [31, 32, ],
+          :successor_quests => [32, 33, ],
 
           :rewards => {
             
@@ -3131,7 +3239,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl9
         {               #   quest_outpost
-          :id                => 31, 
+          :id                => 32, 
           :symbolic_id       => :quest_outpost,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3229,7 +3337,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_outpost
         {               #   quest_build_chiefcottagelvl10
-          :id                => 32, 
+          :id                => 33, 
           :symbolic_id       => :quest_build_chiefcottagelvl10,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3254,7 +3362,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Jetzt hat Deine Hauptsiedlung die volle Größe!",
   
-            :en_US => "You got 36 of your 40 buildingslots.",
+            :en_US => "You got all of your 40 buildingslots.",
                 
           },
           :description => {
@@ -3286,7 +3394,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [33, ],
+          :successor_quests => [34, ],
 
           :rewards => {
             
@@ -3332,7 +3440,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl10
         {               #   quest_build_copper_smelter
-          :id                => 33, 
+          :id                => 34, 
           :symbolic_id       => :quest_build_copper_smelter,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3388,7 +3496,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [35, ],
 
           :rewards => {
             
@@ -3438,8 +3546,220 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_copper_smelter
+        {               #   quest_build_firing_range
+          :id                => 35, 
+          :symbolic_id       => :quest_build_firing_range,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Firing Range",
+  
+            :de_DE => "Schießstand",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a firing range.",
+  
+            :de_DE => "Baue einen Schießstand.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Die Nahkämpfer brauchen Unterstützung! Wir brauchen einen Schießstand um Fernkämpfer auszubilden.",
+  
+            :en_US => "The melee need support. We need a firing range to recruit thrower.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Dir steht jetzt der Schießstand zur Verfügung. Baue einen um Fernkämpfer ausbilden zu können.</p>",
+  
+            :en_US => "<p>You have unlocked the firing range. Build a firing range and recruit thrower.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Wunderbar, dann werde ich gleich mal ein paar Rekruten anschreien.",
+  
+            :en_US => "Wonderful! And now they get to know their drill-instructor.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit den Fernkämpfer wird Deine Armee deutlich stärker. Doch hüte Dich vor berittenen Einheiten.",
+  
+            :en_US => "Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is definitely worth it, though.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_copper_smelter',
+
+          },
+
+          :successor_quests => [36, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 4000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_thrower,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_stud',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_firing_range
+        {               #   quest_build_stud
+          :id                => 36, 
+          :symbolic_id       => :quest_build_stud,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Smelly barn",
+  
+            :de_DE => "Stinkender Stall",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a smelly barn.",
+  
+            :de_DE => "Baue einen Stinkenden Stall.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
+  
+            :en_US => "We need the cavalry against the thrower.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+  
+            :en_US => "<p>Keep upgrading the copper smelter. At level 5 you can unlock the smelly barn.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Muhaha, auch wenn ich den Gestank nicht mag, aber Reiter sind die Krönung unser Armee.",
+  
+            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Berittene Einheiten können mit Flankenangriffen die gegnerischen Nahkämpfer umgehen und Fernkämpfer direkt angreifen. Zudem sind sie als Reiterarmee schneller als normalen Kämpfer.",
+  
+            :en_US => "With cavalry you can flank the melee and attack the throwser directly. A rider-army ist quicker than the normal warriors.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_firing_range',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_cavalry,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'quest_build_firing_range',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_stud
         {               #   quest_charkills_1
-          :id                => 34, 
+          :id                => 37, 
           :symbolic_id       => :quest_charkills_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3495,7 +3815,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [35, ],
+          :successor_quests => [38, ],
 
           :rewards => {
             
@@ -3532,7 +3852,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 35, 
+          :id                => 38, 
           :symbolic_id       => :quest_charkills_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3588,7 +3908,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [36, ],
+          :successor_quests => [39, ],
 
           :rewards => {
             
@@ -3625,7 +3945,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 36, 
+          :id                => 39, 
           :symbolic_id       => :quest_charkills_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3681,7 +4001,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [37, ],
+          :successor_quests => [40, ],
 
           :rewards => {
             
@@ -3689,17 +4009,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1000,
               },
 
               {
@@ -3723,7 +4043,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 37, 
+          :id                => 40, 
           :symbolic_id       => :quest_charkills_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3779,7 +4099,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [38, ],
+          :successor_quests => [41, ],
 
           :rewards => {
             
@@ -3787,17 +4107,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
@@ -3821,7 +4141,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_4
         {               #   quest_charkills_5
-          :id                => 38, 
+          :id                => 41, 
           :symbolic_id       => :quest_charkills_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3877,7 +4197,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [39, ],
+          :successor_quests => [42, ],
 
           :rewards => {
             
@@ -3885,17 +4205,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 2000,
               },
 
             ],
@@ -3914,7 +4234,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_5
         {               #   quest_charkills_6
-          :id                => 39, 
+          :id                => 42, 
           :symbolic_id       => :quest_charkills_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3970,7 +4290,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [40, ],
+          :successor_quests => [43, ],
 
           :rewards => {
             
@@ -3978,17 +4298,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 2500,
               },
 
             ],
@@ -4007,7 +4327,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_6
         {               #   quest_charkills_7
-          :id                => 40, 
+          :id                => 43, 
           :symbolic_id       => :quest_charkills_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4063,7 +4383,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [41, ],
+          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -4071,17 +4391,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3500,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 3000,
               },
 
             ],
@@ -4100,7 +4420,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_7
         {               #   quest_charkills_8
-          :id                => 41, 
+          :id                => 44, 
           :symbolic_id       => :quest_charkills_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4156,7 +4476,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [42, ],
+          :successor_quests => [45, ],
 
           :rewards => {
             
@@ -4164,17 +4484,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 3750,
               },
 
             ],
@@ -4193,7 +4513,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_8
         {               #   quest_charkills_9
-          :id                => 42, 
+          :id                => 45, 
           :symbolic_id       => :quest_charkills_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4249,7 +4569,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [43, ],
+          :successor_quests => [46, ],
 
           :rewards => {
             
@@ -4257,17 +4577,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4500,
+                :amount => 4250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4500,
+                :amount => 4250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 4250,
               },
 
             ],
@@ -4286,7 +4606,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_9
         {               #   quest_charkills_10
-          :id                => 43, 
+          :id                => 46, 
           :symbolic_id       => :quest_charkills_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4342,7 +4662,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [44, ],
+          :successor_quests => [47, ],
 
           :rewards => {
             
@@ -4379,7 +4699,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_10
         {               #   quest_charkills_11
-          :id                => 44, 
+          :id                => 47, 
           :symbolic_id       => :quest_charkills_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4435,7 +4755,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [45, ],
+          :successor_quests => [48, ],
 
           :rewards => {
             
@@ -4453,7 +4773,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 5500,
               },
 
             ],
@@ -4472,7 +4792,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_11
         {               #   quest_charkills_12
-          :id                => 45, 
+          :id                => 48, 
           :symbolic_id       => :quest_charkills_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4528,7 +4848,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [46, ],
+          :successor_quests => [49, ],
 
           :rewards => {
             
@@ -4546,7 +4866,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 6000,
               },
 
             ],
@@ -4565,7 +4885,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_12
         {               #   quest_charkills_13
-          :id                => 46, 
+          :id                => 49, 
           :symbolic_id       => :quest_charkills_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4621,7 +4941,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [47, ],
+          :successor_quests => [50, ],
 
           :rewards => {
             
@@ -4639,7 +4959,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 6500,
               },
 
             ],
@@ -4658,7 +4978,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_13
         {               #   quest_charkills_14
-          :id                => 47, 
+          :id                => 50, 
           :symbolic_id       => :quest_charkills_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4714,7 +5034,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [48, ],
+          :successor_quests => [51, ],
 
           :rewards => {
             
@@ -4732,7 +5052,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 7000,
               },
 
               {
@@ -4756,7 +5076,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_14
         {               #   quest_charkills_15
-          :id                => 48, 
+          :id                => 51, 
           :symbolic_id       => :quest_charkills_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4812,7 +5132,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [49, ],
+          :successor_quests => [52, ],
 
           :rewards => {
             
@@ -4830,7 +5150,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 7500,
               },
 
               {
@@ -4854,7 +5174,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_15
         {               #   quest_charkills_16
-          :id                => 49, 
+          :id                => 52, 
           :symbolic_id       => :quest_charkills_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4910,7 +5230,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [50, ],
+          :successor_quests => [53, ],
 
           :rewards => {
             
@@ -4928,7 +5248,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 8000,
               },
 
               {
@@ -4952,7 +5272,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_16
         {               #   quest_charkills_17
-          :id                => 50, 
+          :id                => 53, 
           :symbolic_id       => :quest_charkills_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5008,7 +5328,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [51, ],
+          :successor_quests => [54, ],
 
           :rewards => {
             
@@ -5026,7 +5346,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 8500,
               },
 
               {
@@ -5050,7 +5370,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_17
         {               #   quest_charkills_18
-          :id                => 51, 
+          :id                => 54, 
           :symbolic_id       => :quest_charkills_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5106,7 +5426,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [52, ],
+          :successor_quests => [55, ],
 
           :rewards => {
             
@@ -5124,7 +5444,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 9000,
               },
 
               {
@@ -5148,7 +5468,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_18
         {               #   quest_charkills_19
-          :id                => 52, 
+          :id                => 55, 
           :symbolic_id       => :quest_charkills_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5204,7 +5524,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [53, ],
+          :successor_quests => [56, ],
 
           :rewards => {
             
@@ -5222,7 +5542,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 9500,
               },
 
             ],
@@ -5241,7 +5561,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_19
         {               #   quest_charkills_20
-          :id                => 53, 
+          :id                => 56, 
           :symbolic_id       => :quest_charkills_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5297,7 +5617,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [54, ],
+          :successor_quests => [57, ],
 
           :rewards => {
             
@@ -5310,12 +5630,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 10000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 10000,
               },
 
               {
@@ -5339,7 +5659,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_20
         {               #   quest_charkills_21
-          :id                => 54, 
+          :id                => 57, 
           :symbolic_id       => :quest_charkills_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5413,7 +5733,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 9000,
+                :amount => 15000,
               },
 
               {
@@ -5437,7 +5757,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_21
         {               #   quest_armyXP_1
-          :id                => 55, 
+          :id                => 58, 
           :symbolic_id       => :quest_armyXP_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5493,7 +5813,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [56, ],
+          :successor_quests => [59, ],
 
           :rewards => {
             
@@ -5530,7 +5850,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_1
         {               #   quest_armyXP_2
-          :id                => 56, 
+          :id                => 59, 
           :symbolic_id       => :quest_armyXP_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5586,7 +5906,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [57, ],
+          :successor_quests => [60, ],
 
           :rewards => {
             
@@ -5623,7 +5943,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_2
         {               #   quest_armyXP_3
-          :id                => 57, 
+          :id                => 60, 
           :symbolic_id       => :quest_armyXP_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5679,7 +5999,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [58, ],
+          :successor_quests => [61, ],
 
           :rewards => {
             
@@ -5716,7 +6036,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_3
         {               #   quest_armyXP_4
-          :id                => 58, 
+          :id                => 61, 
           :symbolic_id       => :quest_armyXP_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5772,7 +6092,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, ],
+          :successor_quests => [62, ],
 
           :rewards => {
             
@@ -5790,7 +6110,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1500,
               },
 
               {
@@ -5814,7 +6134,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_4
         {               #   quest_armyXP_5
-          :id                => 59, 
+          :id                => 62, 
           :symbolic_id       => :quest_armyXP_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5870,7 +6190,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [60, ],
+          :successor_quests => [63, ],
 
           :rewards => {
             
@@ -5888,7 +6208,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 2000,
               },
 
             ],
@@ -5907,7 +6227,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_5
         {               #   quest_armyXP_6
-          :id                => 60, 
+          :id                => 63, 
           :symbolic_id       => :quest_armyXP_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5963,7 +6283,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [61, ],
+          :successor_quests => [64, ],
 
           :rewards => {
             
@@ -5981,7 +6301,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 2500,
               },
 
             ],
@@ -6000,7 +6320,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_6
         {               #   quest_armyXP_7
-          :id                => 61, 
+          :id                => 64, 
           :symbolic_id       => :quest_armyXP_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6056,7 +6376,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [62, ],
+          :successor_quests => [65, ],
 
           :rewards => {
             
@@ -6074,7 +6394,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 3000,
               },
 
             ],
@@ -6093,7 +6413,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_7
         {               #   quest_armyXP_8
-          :id                => 62, 
+          :id                => 65, 
           :symbolic_id       => :quest_armyXP_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6149,7 +6469,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [63, ],
+          :successor_quests => [66, ],
 
           :rewards => {
             
@@ -6167,7 +6487,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 3500,
               },
 
             ],
@@ -6186,7 +6506,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_8
         {               #   quest_armyXP_9
-          :id                => 63, 
+          :id                => 66, 
           :symbolic_id       => :quest_armyXP_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6242,7 +6562,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [64, ],
+          :successor_quests => [67, ],
 
           :rewards => {
             
@@ -6260,7 +6580,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 4000,
               },
 
             ],
@@ -6279,7 +6599,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_9
         {               #   quest_armyXP_10
-          :id                => 64, 
+          :id                => 67, 
           :symbolic_id       => :quest_armyXP_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6335,7 +6655,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [65, ],
+          :successor_quests => [68, ],
 
           :rewards => {
             
@@ -6353,7 +6673,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 4500,
               },
 
               {
@@ -6377,7 +6697,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_10
         {               #   quest_armyXP_11
-          :id                => 65, 
+          :id                => 68, 
           :symbolic_id       => :quest_armyXP_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6433,7 +6753,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [66, ],
+          :successor_quests => [69, ],
 
           :rewards => {
             
@@ -6451,7 +6771,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 5500,
               },
 
             ],
@@ -6470,7 +6790,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_11
         {               #   quest_armyXP_12
-          :id                => 66, 
+          :id                => 69, 
           :symbolic_id       => :quest_armyXP_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6526,7 +6846,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [67, ],
+          :successor_quests => [70, ],
 
           :rewards => {
             
@@ -6544,7 +6864,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 6000,
               },
 
             ],
@@ -6563,7 +6883,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_12
         {               #   quest_armyXP_13
-          :id                => 67, 
+          :id                => 70, 
           :symbolic_id       => :quest_armyXP_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6619,7 +6939,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [68, ],
+          :successor_quests => [71, ],
 
           :rewards => {
             
@@ -6637,7 +6957,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 6500,
               },
 
             ],
@@ -6656,7 +6976,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_13
         {               #   quest_armyXP_14
-          :id                => 68, 
+          :id                => 71, 
           :symbolic_id       => :quest_armyXP_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6712,7 +7032,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [69, ],
+          :successor_quests => [72, ],
 
           :rewards => {
             
@@ -6730,7 +7050,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 7000,
               },
 
             ],
@@ -6749,7 +7069,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_14
         {               #   quest_armyXP_15
-          :id                => 69, 
+          :id                => 72, 
           :symbolic_id       => :quest_armyXP_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6805,7 +7125,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [70, ],
+          :successor_quests => [73, ],
 
           :rewards => {
             
@@ -6823,7 +7143,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 7500,
               },
 
               {
@@ -6847,7 +7167,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_15
         {               #   quest_armyXP_16
-          :id                => 70, 
+          :id                => 73, 
           :symbolic_id       => :quest_armyXP_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6903,7 +7223,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [71, ],
+          :successor_quests => [74, ],
 
           :rewards => {
             
@@ -6921,7 +7241,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 8000,
               },
 
             ],
@@ -6940,7 +7260,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_16
         {               #   quest_armyXP_17
-          :id                => 71, 
+          :id                => 74, 
           :symbolic_id       => :quest_armyXP_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6996,7 +7316,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [72, ],
+          :successor_quests => [75, ],
 
           :rewards => {
             
@@ -7014,7 +7334,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 8500,
               },
 
               {
@@ -7038,7 +7358,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_17
         {               #   quest_armyXP_18
-          :id                => 72, 
+          :id                => 75, 
           :symbolic_id       => :quest_armyXP_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7094,7 +7414,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [73, ],
+          :successor_quests => [76, ],
 
           :rewards => {
             
@@ -7112,7 +7432,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 9000,
               },
 
             ],
@@ -7131,7 +7451,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_18
         {               #   quest_armyXP_19
-          :id                => 73, 
+          :id                => 76, 
           :symbolic_id       => :quest_armyXP_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7187,7 +7507,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [74, ],
+          :successor_quests => [77, ],
 
           :rewards => {
             
@@ -7205,7 +7525,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 9500,
               },
 
               {
@@ -7229,7 +7549,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_19
         {               #   quest_armyXP_20
-          :id                => 74, 
+          :id                => 77, 
           :symbolic_id       => :quest_armyXP_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7285,7 +7605,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [75, ],
+          :successor_quests => [78, ],
 
           :rewards => {
             
@@ -7303,7 +7623,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 10000,
               },
 
             ],
@@ -7322,7 +7642,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_20
         {               #   quest_armyXP_21
-          :id                => 75, 
+          :id                => 78, 
           :symbolic_id       => :quest_armyXP_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7378,7 +7698,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [76, ],
+          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -7396,7 +7716,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 9000,
+                :amount => 12000,
               },
 
               {
@@ -7420,7 +7740,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_21
         {               #   quest_armyXP_22
-          :id                => 76, 
+          :id                => 79, 
           :symbolic_id       => :quest_armyXP_22,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7494,7 +7814,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 10000,
+                :amount => 15000,
               },
 
               {
@@ -7517,8 +7837,101 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_armyXP_22
+        {               #   quest_score_0
+          :id                => 80, 
+          :symbolic_id       => :quest_score_0,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Population",
+  
+            :de_DE => " Einwohner ",
+                
+          },
+          :task => {
+            
+            :en_US => "Reach a Population of 200",
+  
+            :de_DE => "Erreiche 200 Einwohner",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
+  
+            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Einwohner kommen hinzu, wenn Du neue Gebäude baust oder ausbaust.</p>",
+  
+            :en_US => "<p>You gain additional population for each building you build or upgrade.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
+  
+            :en_US => "Yes, yes your tribe has grown a bit, take your reward. But you are not done yet.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Rangliste ist standardmäßig nach Bewohnern sortiert.",
+  
+            :en_US => "The ranking is sorted by population by default.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_chiefcottagelvl5',
+
+          },
+
+          :successor_quests => [81, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 100,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 100,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 20,
+
+          },          
+
+          :reward_tests => {
+            
+            :score_test => {
+              :min_population => 400,
+            },
+
+          },          
+
+        },              #   END OF quest_score_0
         {               #   quest_score_1
-          :id                => 77, 
+          :id                => 81, 
           :symbolic_id       => :quest_score_1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7570,11 +7983,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_resourcescore_3',
+            :quest => 'quest_score_0',
 
           },
 
-          :successor_quests => [78, ],
+          :successor_quests => [82, ],
 
           :rewards => {
             
@@ -7611,7 +8024,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_1
         {               #   quest_score_2
-          :id                => 78, 
+          :id                => 82, 
           :symbolic_id       => :quest_score_2,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7667,7 +8080,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [79, ],
+          :successor_quests => [83, ],
 
           :rewards => {
             
@@ -7704,7 +8117,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_2
         {               #   quest_score_3
-          :id                => 79, 
+          :id                => 83, 
           :symbolic_id       => :quest_score_3,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7760,7 +8173,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [80, ],
+          :successor_quests => [84, ],
 
           :rewards => {
             
@@ -7778,7 +8191,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1000,
               },
 
             ],
@@ -7797,7 +8210,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_3
         {               #   quest_score_4
-          :id                => 80, 
+          :id                => 84, 
           :symbolic_id       => :quest_score_4,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7853,7 +8266,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [81, ],
+          :successor_quests => [85, ],
 
           :rewards => {
             
@@ -7871,7 +8284,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 1500,
               },
 
             ],
@@ -7890,7 +8303,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_4
         {               #   quest_score_5
-          :id                => 81, 
+          :id                => 85, 
           :symbolic_id       => :quest_score_5,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7946,7 +8359,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [82, ],
+          :successor_quests => [86, ],
 
           :rewards => {
             
@@ -7964,7 +8377,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 2000,
               },
 
               {
@@ -7988,7 +8401,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_5
         {               #   quest_score_6
-          :id                => 82, 
+          :id                => 86, 
           :symbolic_id       => :quest_score_6,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8044,7 +8457,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [83, ],
+          :successor_quests => [87, ],
 
           :rewards => {
             
@@ -8062,7 +8475,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 3000,
               },
 
             ],
@@ -8081,7 +8494,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_6
         {               #   quest_score_7
-          :id                => 83, 
+          :id                => 87, 
           :symbolic_id       => :quest_score_7,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8137,7 +8550,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [84, ],
+          :successor_quests => [88, ],
 
           :rewards => {
             
@@ -8155,7 +8568,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 3500,
               },
 
             ],
@@ -8174,7 +8587,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_7
         {               #   quest_score_8
-          :id                => 84, 
+          :id                => 88, 
           :symbolic_id       => :quest_score_8,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8230,7 +8643,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [85, ],
+          :successor_quests => [89, ],
 
           :rewards => {
             
@@ -8248,7 +8661,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 4000,
               },
 
             ],
@@ -8267,7 +8680,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_8
         {               #   quest_score_9
-          :id                => 85, 
+          :id                => 89, 
           :symbolic_id       => :quest_score_9,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8323,7 +8736,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [86, ],
+          :successor_quests => [90, ],
 
           :rewards => {
             
@@ -8341,7 +8754,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 4500,
               },
 
             ],
@@ -8360,7 +8773,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_9
         {               #   quest_score_10
-          :id                => 86, 
+          :id                => 90, 
           :symbolic_id       => :quest_score_10,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8416,7 +8829,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [87, ],
+          :successor_quests => [91, ],
 
           :rewards => {
             
@@ -8434,7 +8847,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 5000,
               },
 
               {
@@ -8458,7 +8871,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_10
         {               #   quest_score_11
-          :id                => 87, 
+          :id                => 91, 
           :symbolic_id       => :quest_score_11,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8514,7 +8927,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [88, ],
+          :successor_quests => [92, ],
 
           :rewards => {
             
@@ -8532,7 +8945,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 5500,
               },
 
             ],
@@ -8551,7 +8964,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_11
         {               #   quest_score_12
-          :id                => 88, 
+          :id                => 92, 
           :symbolic_id       => :quest_score_12,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8607,7 +9020,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [89, ],
+          :successor_quests => [93, ],
 
           :rewards => {
             
@@ -8625,7 +9038,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 6000,
               },
 
             ],
@@ -8644,7 +9057,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_12
         {               #   quest_score_13
-          :id                => 89, 
+          :id                => 93, 
           :symbolic_id       => :quest_score_13,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8700,7 +9113,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [90, ],
+          :successor_quests => [94, ],
 
           :rewards => {
             
@@ -8718,7 +9131,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 6500,
               },
 
             ],
@@ -8737,7 +9150,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_13
         {               #   quest_score_14
-          :id                => 90, 
+          :id                => 94, 
           :symbolic_id       => :quest_score_14,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8793,7 +9206,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [91, ],
+          :successor_quests => [95, ],
 
           :rewards => {
             
@@ -8811,7 +9224,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 7000,
               },
 
             ],
@@ -8830,7 +9243,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_14
         {               #   quest_score_15
-          :id                => 91, 
+          :id                => 95, 
           :symbolic_id       => :quest_score_15,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8886,7 +9299,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [92, ],
+          :successor_quests => [96, ],
 
           :rewards => {
             
@@ -8904,7 +9317,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 7500,
               },
 
               {
@@ -8928,7 +9341,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_15
         {               #   quest_score_16
-          :id                => 92, 
+          :id                => 96, 
           :symbolic_id       => :quest_score_16,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8984,7 +9397,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [93, ],
+          :successor_quests => [97, ],
 
           :rewards => {
             
@@ -9002,7 +9415,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 8000,
               },
 
             ],
@@ -9021,7 +9434,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_16
         {               #   quest_score_17
-          :id                => 93, 
+          :id                => 97, 
           :symbolic_id       => :quest_score_17,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9077,7 +9490,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [94, ],
+          :successor_quests => [98, ],
 
           :rewards => {
             
@@ -9095,7 +9508,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5500,
+                :amount => 8500,
               },
 
               {
@@ -9119,7 +9532,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_17
         {               #   quest_score_18
-          :id                => 94, 
+          :id                => 98, 
           :symbolic_id       => :quest_score_18,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9175,7 +9588,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [95, ],
+          :successor_quests => [99, ],
 
           :rewards => {
             
@@ -9193,7 +9606,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5750,
+                :amount => 9000,
               },
 
             ],
@@ -9212,7 +9625,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_18
         {               #   quest_score_19
-          :id                => 95, 
+          :id                => 99, 
           :symbolic_id       => :quest_score_19,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9268,7 +9681,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [96, ],
+          :successor_quests => [100, ],
 
           :rewards => {
             
@@ -9286,7 +9699,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6250,
+                :amount => 9500,
               },
 
               {
@@ -9310,7 +9723,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_19
         {               #   quest_score_20
-          :id                => 96, 
+          :id                => 100, 
           :symbolic_id       => :quest_score_20,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9366,7 +9779,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [97, ],
+          :successor_quests => [101, ],
 
           :rewards => {
             
@@ -9384,7 +9797,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7000,
+                :amount => 10000,
               },
 
             ],
@@ -9403,7 +9816,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_20
         {               #   quest_score_21
-          :id                => 97, 
+          :id                => 101, 
           :symbolic_id       => :quest_score_21,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9459,7 +9872,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [98, ],
+          :successor_quests => [102, ],
 
           :rewards => {
             
@@ -9477,7 +9890,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 10000,
+                :amount => 12000,
               },
 
               {
@@ -9501,7 +9914,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_21
         {               #   quest_score_22
-          :id                => 98, 
+          :id                => 102, 
           :symbolic_id       => :quest_score_22,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9575,7 +9988,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 12000,
+                :amount => 15000,
               },
 
               {
@@ -9599,7 +10012,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_22
         {               #   quest_resourcescore_1
-          :id                => 99, 
+          :id                => 103, 
           :symbolic_id       => :quest_resourcescore_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -9655,7 +10068,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [100, ],
+          :successor_quests => [104, ],
 
           :rewards => {
             
@@ -9663,22 +10076,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 120,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 120,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 150,
+                :amount => 120,
               },
 
             ],
 
-            :experience_reward => 75,
+            :experience_reward => 50,
 
           },          
 
@@ -9692,7 +10105,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_resourcescore_2
-          :id                => 100, 
+          :id                => 104, 
           :symbolic_id       => :quest_resourcescore_2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -9748,7 +10161,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [101, ],
+          :successor_quests => [105, ],
 
           :rewards => {
             
@@ -9785,7 +10198,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_2
         {               #   quest_resourcescore_3
-          :id                => 101, 
+          :id                => 105, 
           :symbolic_id       => :quest_resourcescore_3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -9841,7 +10254,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [77, 102, ],
+          :successor_quests => [106, ],
 
           :rewards => {
             
@@ -9878,7 +10291,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_3
         {               #   quest_resourcescore_4
-          :id                => 102, 
+          :id                => 106, 
           :symbolic_id       => :quest_resourcescore_4,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -9934,7 +10347,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [103, ],
+          :successor_quests => [107, ],
 
           :rewards => {
             
@@ -9971,7 +10384,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_4
         {               #   quest_resourcescore_5
-          :id                => 103, 
+          :id                => 107, 
           :symbolic_id       => :quest_resourcescore_5,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10027,7 +10440,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [104, ],
+          :successor_quests => [108, ],
 
           :rewards => {
             
@@ -10045,7 +10458,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 1500,
               },
 
               {
@@ -10069,7 +10482,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_5
         {               #   quest_resourcescore_6
-          :id                => 104, 
+          :id                => 108, 
           :symbolic_id       => :quest_resourcescore_6,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10125,7 +10538,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [105, ],
+          :successor_quests => [109, ],
 
           :rewards => {
             
@@ -10143,7 +10556,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 2000,
               },
 
             ],
@@ -10162,7 +10575,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_6
         {               #   quest_resourcescore_7
-          :id                => 105, 
+          :id                => 109, 
           :symbolic_id       => :quest_resourcescore_7,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10218,7 +10631,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [106, ],
+          :successor_quests => [110, ],
 
           :rewards => {
             
@@ -10236,7 +10649,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 2500,
               },
 
             ],
@@ -10255,7 +10668,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_7
         {               #   quest_resourcescore_8
-          :id                => 106, 
+          :id                => 110, 
           :symbolic_id       => :quest_resourcescore_8,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10311,7 +10724,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [107, ],
+          :successor_quests => [111, ],
 
           :rewards => {
             
@@ -10329,7 +10742,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 3000,
               },
 
             ],
@@ -10348,7 +10761,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_8
         {               #   quest_resourcescore_9
-          :id                => 107, 
+          :id                => 111, 
           :symbolic_id       => :quest_resourcescore_9,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10404,7 +10817,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [108, ],
+          :successor_quests => [112, ],
 
           :rewards => {
             
@@ -10422,7 +10835,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 3500,
               },
 
             ],
@@ -10441,7 +10854,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_9
         {               #   quest_resourcescore_10
-          :id                => 108, 
+          :id                => 112, 
           :symbolic_id       => :quest_resourcescore_10,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10497,7 +10910,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [109, ],
+          :successor_quests => [113, ],
 
           :rewards => {
             
@@ -10515,7 +10928,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 4000,
               },
 
             ],
@@ -10534,7 +10947,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_10
         {               #   quest_resourcescore_11
-          :id                => 109, 
+          :id                => 113, 
           :symbolic_id       => :quest_resourcescore_11,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10590,7 +11003,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [110, ],
+          :successor_quests => [114, ],
 
           :rewards => {
             
@@ -10608,7 +11021,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 4500,
               },
 
               {
@@ -10632,7 +11045,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_11
         {               #   quest_resourcescore_12
-          :id                => 110, 
+          :id                => 114, 
           :symbolic_id       => :quest_resourcescore_12,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10688,7 +11101,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [111, ],
+          :successor_quests => [115, ],
 
           :rewards => {
             
@@ -10706,7 +11119,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 5000,
               },
 
             ],
@@ -10725,7 +11138,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_12
         {               #   quest_resourcescore_13
-          :id                => 111, 
+          :id                => 115, 
           :symbolic_id       => :quest_resourcescore_13,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10781,7 +11194,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [112, ],
+          :successor_quests => [116, ],
 
           :rewards => {
             
@@ -10799,7 +11212,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 5500,
               },
 
             ],
@@ -10818,7 +11231,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_13
         {               #   quest_resourcescore_14
-          :id                => 112, 
+          :id                => 116, 
           :symbolic_id       => :quest_resourcescore_14,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10874,7 +11287,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [113, ],
+          :successor_quests => [117, ],
 
           :rewards => {
             
@@ -10892,7 +11305,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 6000,
               },
 
             ],
@@ -10911,7 +11324,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_14
         {               #   quest_resourcescore_15
-          :id                => 113, 
+          :id                => 117, 
           :symbolic_id       => :quest_resourcescore_15,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10967,7 +11380,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [114, ],
+          :successor_quests => [118, ],
 
           :rewards => {
             
@@ -10985,7 +11398,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 6500,
               },
 
             ],
@@ -11004,7 +11417,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_15
         {               #   quest_resourcescore_16
-          :id                => 114, 
+          :id                => 118, 
           :symbolic_id       => :quest_resourcescore_16,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11060,7 +11473,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [115, ],
+          :successor_quests => [119, ],
 
           :rewards => {
             
@@ -11078,7 +11491,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5500,
+                :amount => 7000,
               },
 
               {
@@ -11102,7 +11515,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_16
         {               #   quest_resourcescore_17
-          :id                => 115, 
+          :id                => 119, 
           :symbolic_id       => :quest_resourcescore_17,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11158,7 +11571,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [116, ],
+          :successor_quests => [120, ],
 
           :rewards => {
             
@@ -11176,7 +11589,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6000,
+                :amount => 7500,
               },
 
             ],
@@ -11195,7 +11608,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_17
         {               #   quest_resourcescore_18
-          :id                => 116, 
+          :id                => 120, 
           :symbolic_id       => :quest_resourcescore_18,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11251,7 +11664,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [117, ],
+          :successor_quests => [121, ],
 
           :rewards => {
             
@@ -11269,7 +11682,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6500,
+                :amount => 8000,
               },
 
               {
@@ -11293,7 +11706,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_18
         {               #   quest_resourcescore_19
-          :id                => 117, 
+          :id                => 121, 
           :symbolic_id       => :quest_resourcescore_19,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11349,7 +11762,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [118, ],
+          :successor_quests => [122, ],
 
           :rewards => {
             
@@ -11386,7 +11799,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_19
         {               #   quest_resourcescore_20
-          :id                => 118, 
+          :id                => 122, 
           :symbolic_id       => :quest_resourcescore_20,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11442,7 +11855,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [119, ],
+          :successor_quests => [123, ],
 
           :rewards => {
             
@@ -11460,7 +11873,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 9000,
               },
 
               {
@@ -11484,7 +11897,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_20
         {               #   quest_resourcescore_21
-          :id                => 119, 
+          :id                => 123, 
           :symbolic_id       => :quest_resourcescore_21,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11540,7 +11953,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [120, ],
+          :successor_quests => [124, ],
 
           :rewards => {
             
@@ -11558,7 +11971,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 8000,
+                :amount => 9500,
               },
 
             ],
@@ -11577,7 +11990,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_21
         {               #   quest_resourcescore_22
-          :id                => 120, 
+          :id                => 124, 
           :symbolic_id       => :quest_resourcescore_22,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11633,7 +12046,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [121, ],
+          :successor_quests => [125, ],
 
           :rewards => {
             
@@ -11651,7 +12064,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 8500,
+                :amount => 10000,
               },
 
               {
@@ -11675,7 +12088,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_22
         {               #   quest_resourcescore_23
-          :id                => 121, 
+          :id                => 125, 
           :symbolic_id       => :quest_resourcescore_23,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11749,7 +12162,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 10000,
+                :amount => 12000,
               },
 
               {
