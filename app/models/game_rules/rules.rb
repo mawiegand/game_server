@@ -529,7 +529,7 @@ class GameRules::Rules
             
             :en_US => "Riders",
   
-            :de_DE => "Reiter",
+            :de_DE => "Berittene",
                 
           },
           :description => {
@@ -737,7 +737,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
-          :production_time => '600',
+          :production_time => '900',
 
           :costs      => {
             0 => '25',
@@ -802,7 +802,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.01,
 
-          :production_time => '800',
+          :production_time => '1200',
 
           :costs      => {
             0 => '35',
@@ -906,7 +906,7 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.01,
 
-          :production_time => '1000',
+          :production_time => '1500',
 
           :costs      => {
             0 => '70',
@@ -1010,7 +1010,7 @@ class GameRules::Rules
           :critical_hit_damage => 3,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1200',
+          :production_time => '1800',
 
           :costs      => {
             0 => '140',
@@ -1101,7 +1101,7 @@ class GameRules::Rules
           :critical_hit_damage => 5,
           :critical_hit_chance => 0.05,
 
-          :production_time => '750',
+          :production_time => '1200',
 
           :costs      => {
             0 => '35',
@@ -1166,7 +1166,7 @@ class GameRules::Rules
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.05,
 
-          :production_time => '900',
+          :production_time => '1500',
 
           :costs      => {
             0 => '45',
@@ -1270,7 +1270,7 @@ class GameRules::Rules
           :critical_hit_damage => 7,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1050',
+          :production_time => '1800',
 
           :costs      => {
             0 => '90',
@@ -1374,7 +1374,7 @@ class GameRules::Rules
           :critical_hit_damage => 8,
           :critical_hit_chance => 0.1,
 
-          :production_time => '1300',
+          :production_time => '2250',
 
           :costs      => {
             0 => '180',
@@ -1465,7 +1465,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '600',
+          :production_time => '900',
 
           :costs      => {
             0 => '30',
@@ -1530,7 +1530,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '800',
+          :production_time => '1200',
 
           :costs      => {
             0 => '40',
@@ -1634,7 +1634,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1000',
+          :production_time => '1500',
 
           :costs      => {
             0 => '80',
@@ -1738,7 +1738,7 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1200',
+          :production_time => '1800',
 
           :costs      => {
             0 => '160',
@@ -2885,7 +2885,7 @@ class GameRules::Rules
 
             :unlock_diplomacy     => 1,
 
-            :unlock_alliance_creation => 1,
+            :unlock_alliance_creation => 2,
 
           },
 
@@ -3233,16 +3233,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Trainingshöhle
-        {               #   Artefaktstand
+        {               #   Wacky-Lab
           :id          => 9, 
           :symbolic_id => :building_artifact_stand,
 					:category    => 6,
           :db_field    => :building_artifact_stand,
           :name        => {
             
-            :de_DE => "Artefaktstand",
+            :de_DE => "Wacky-Lab",
   
-            :en_US => "Artefact stand",
+            :en_US => "Wacky-Lab",
                 
           },
           :flavour     => {
@@ -3333,7 +3333,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Artefaktstand
+        },              #   END OF Wacky-Lab
         {               #   Kürschner
           :id          => 10, 
           :symbolic_id => :building_furrier,
@@ -4924,7 +4924,7 @@ class GameRules::Rules
                 :queue_type_id     => 2,
                 :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*4",
               },
 
             ],
@@ -5021,7 +5021,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*4",
               },
 
             ],
@@ -5118,7 +5118,7 @@ class GameRules::Rules
                 :queue_type_id     => 4,
                 :queue_type_id_sym => :queue_cavalry,
                 :domain            => :settlement,
-                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*8",
+                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*4",
               },
 
             ],
@@ -6023,14 +6023,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :artifact_types => [  # ALL ARTIFACT TYPES
 
-        {               #   Lochscheibe
+        {               #   Abrissbirne
           :id          => 0, 
           :symbolic_id => :artifact_0,
           :name        => {
             
-            :de_DE => "Lochscheibe",
+            :de_DE => "Abrissbirne",
   
-            :en_US => "Punched disc",
+            :en_US => "Demolition ball",
                 
           },
           :description => {
@@ -6081,15 +6081,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Lochscheibe
-        {               #   Abrissbirne
+        },              #   END OF Abrissbirne
+        {               #   Lochscheibe
           :id          => 1, 
           :symbolic_id => :artifact_1,
           :name        => {
             
-            :de_DE => "Abrissbirne",
+            :de_DE => "Lochscheibe",
   
-            :en_US => "Demolition ball",
+            :en_US => "Punched disc",
                 
           },
           :description => {
@@ -6140,7 +6140,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
 
-        },              #   END OF Abrissbirne
+        },              #   END OF Lochscheibe
         {               #   Wäscheleine
           :id          => 2, 
           :symbolic_id => :artifact_2,

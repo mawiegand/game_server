@@ -24,7 +24,7 @@
     </UnitCategory>
     <UnitCategory id="unitcategory_cavalry">
       <Name>Riders</Name>
-      <Name lang="de_DE">Reiter</Name>
+      <Name lang="de_DE">Berittene</Name>
       <Description>
         <p>Mounted units move fast across the battlefield and are the only ones able to avoid enemy infantry and mount a direct attack on enemy throwers (flank attack).</p>
       </Description>

@@ -3,8 +3,8 @@
 
 <ArtifactTypes>
   <Artifact id="artifact_0">
-    <Name lang="de_DE">Lochscheibe</Name>
-    <Name lang="en_US">Punched disc</Name>
+    <Name lang="de_DE">Abrissbirne</Name>
+    <Name lang="en_US">Demolition ball</Name>
     <Description lang="de_DE">
       <p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
@@ -32,8 +32,8 @@
     </Effects>
   </Artifact>
   <Artifact id="artifact_1">
-    <Name lang="de_DE">Abrissbirne</Name>
-    <Name lang="en_US">Demolition ball</Name>
+    <Name lang="de_DE">Lochscheibe</Name>
+    <Name lang="en_US">Punched disc</Name>
     <Description lang="de_DE">
       <p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>
     </Description>
