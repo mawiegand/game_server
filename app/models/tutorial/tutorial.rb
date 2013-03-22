@@ -309,8 +309,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?
-    ",
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Lies lieber die Nachricht, die ich Dir hinterlassen habe.",
   
             :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
     ",
@@ -318,9 +317,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
+            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst. Im Postkasten oben rechts hast Du eine Nachricht mit vielen Informationen erhalten.",
   
-            :en_US => "At the moment you should build your building at the small building slots.",
+            :en_US => "At the moment you should build your building at the small building slots. You got a mail in your mailbox with further information about the game.",
                 
           },
 
@@ -371,6 +370,45 @@ class Tutorial::Tutorial
               },
 
             ],
+
+          },          
+
+          :message => {
+            
+            :en => {
+              :subject => 'Welcome to Wack-A-Doo.',
+              :body => "<h2>Welcome to the open Beta version.</h2>
+        <p>Our game, ‘Wack-A-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
+        <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
+        <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+        <p>There you’ll find all the main menu functions as screen shots.</p>
+        <p>You’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
+        <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-A-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
+        <p>’d really like your feedback and we’d also like you to report any errors or malfunctions. There’s a forum area that’s been set up for us by Shadow-Dragon in the Uga-Agga forum:</p>
+        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
+        <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
+        <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
+        <p>Your Wack-A-Doo team</p>",
+            },
+
+            :de => {
+              :subject => 'Willkommen bei Wack-A-Doo',
+              :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
+        <p>Unser Spiel 'Wack-A-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
+        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
+        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
+        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a>; ><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)>; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
+        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Dafür ist eine Anmeldung erforderlich.</p>
+        <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet: <a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
+        <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
+        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
+        <p>Das Wack-A-Doo Team</p>",
+            },
 
           },          
 
@@ -489,19 +527,16 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Ich denke wir werden viel Spass miteinander haben.
-    ",
+            :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
   
-            :en_US => "Thanks. I think we’re going to have loads of fun together!
-    ",
+            :en_US => "Thanks. We will have .",
                 
           },
           :reward_text => {
             
-            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.",
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen. ",
   
-            :en_US => "In your profile you can see your progress and make other changes.
-    ",
+            :en_US => "In your profile you can see your progress and make other changes.",
                 
           },
 
@@ -523,45 +558,6 @@ class Tutorial::Tutorial
             
             :custom_test => {
               :id => 'test_profile',
-            },
-
-          },          
-
-          :message => {
-            
-            :en => {
-              :subject => 'Welcome to Wack-A-Doo.',
-              :body => "<h2>Welcome to the open Beta version.</h2>
-        <p>Our game, ‘Wack-A-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
-        <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
-        <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
-        <p>There you’ll find all the main menu functions as screen shots.</p>
-        <p>’d really like your feedback and we’d also like you to report any errors or malfunctions. There’s a forum area that’s been set up for us by Shadow-Dragon in the Uga-Agga forum:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
-        <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
-        <p>You’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a></p>
-        <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-a-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
-        <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
-        <p>Your Wack-A-Doo team</p>",
-            },
-
-            :de => {
-              :subject => 'Willkommen bei Wack-A-Doo',
-              :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
-        <p>Unser Spiel 'Wack-a-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
-        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
-        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a></p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a></p>
-        <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
-        <p>Wir wünschen Dir viel Spass an Wack-A-Doo.</p>
-        <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -2096,7 +2092,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -2569,7 +2565,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [27, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2671,7 +2667,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [28, ],
+          :successor_quests => [27, 28, ],
 
           :rewards => {
             
@@ -2774,7 +2770,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_training_cave',
+            :quest => 'quest_build_chiefcottagelvl7',
 
           },
 
@@ -2796,7 +2792,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 600,
               },
 
             ],
