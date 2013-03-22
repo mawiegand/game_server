@@ -95,13 +95,11 @@
     </Description>
     <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
     <Flavor locale="en_US">Demigod? And what’s that supposed to be? My chieftain’s hut? You think I’m going to live in that? Ha! Change it immediately!</Flavor>
-    <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.
-    </RewardText>
-    <RewardText locale="en_US">Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.
-    </RewardText>
+    <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.</RewardText>
+    <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
     <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?
     </RewardFlavor>
-    <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
+    <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
     </RewardFlavor>
     <Requirement quest="quest_build_1gathererlvl2" />
     <Rewards>
@@ -173,9 +171,9 @@
       <CustomTest id="test_profile">change profile text</CustomTest>
     </RewardTests>
     <Message>
-      <Subject>Welcome to Wack-a-Doo.</Subject>
+      <Subject>Welcome to Wack-A-Doo.</Subject>
       <Body><![CDATA[<h2>Welcome to the open Beta version.</h2>
-        <p>Our game, ‘Wack-a-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
+        <p>Our game, ‘Wack-A-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
         <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
         <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
@@ -184,17 +182,17 @@
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
         <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
         <p>You’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a></p>
         <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-a-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
         <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
-        <p>Your Wack-a-Doo team</p>]]></Body>
+        <p>Your Wack-A-Doo team</p>]]></Body>
     </Message>
     <Message lang="de">
       <Subject>Willkommen bei Wack-A-Doo</Subject>
       <Body><![CDATA[<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
         <p>Unser Spiel 'Wack-a-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
         Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworen andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
+        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
         <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a></p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a></p>
@@ -202,8 +200,8 @@
         <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
         <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
-        <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>
-        <p>Das Wack-a-Doo Team</p>]]></Body>
+        <p>Wir wünschen Dir viel Spass an Wack-A-Doo.</p>
+        <p>Das Wack-A-Doo Team</p>]]></Body>
           </Message>
   </Quest>
   
@@ -434,8 +432,8 @@
     </Description>
     <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
     <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain’s hut in order to make some progress.</Flavor>
-    <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.</RewardText>
-    <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
+    <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
+    <RewardText locale="en_US">Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.</RewardText>
     <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
     <RewardFlavor locale="en_US">Great! Some more building slots and you can build a small hut now.</RewardFlavor>
     <Requirement quest="quest_build_2gathererlvl3" />
@@ -490,7 +488,7 @@
       <p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
     </Description>
     <Description locale="en_US">
-      <p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>
+      <p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or 3. You can see your current production at raw materials display at the top.</p>
     </Description>
     <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
     <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
@@ -519,10 +517,10 @@
     <Task>Upgrade your chieftain’s hut to level 4.</Task>
     <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
     <Description locale="de_DE">
-      <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'Hurtig!'. Probiere es doch einmal aus.</p>
+      <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>
     </Description>
     <Description locale="en_US">
-      <p>You can speed up the chieftain‘s hut upgrade with golden frogs. Click on ’Hurry!’. Why not try it out?</p>
+      <p>You can speed up the chieftain‘s hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>
     </Description>
     <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
     <Flavor locale="en_US">I think it’s time to build another big chieftain’s hut. Upgrade this one and then we’ll have more space.</Flavor>
@@ -557,7 +555,7 @@
     <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
     <Flavor locale="en_US">I think it’s time for a bigger chieftain’s hut. Why not order an upgrade. </Flavor>
     <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
-    <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building quene.</RewardText>
+    <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
     <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
     <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
     <Requirement quest="quest_improve_production_1" />
@@ -585,8 +583,8 @@
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.</Flavor>
-      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.</RewardText>
-      <RewardText locale="en_US">Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.</RewardText>
+      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird und kann auch nur an ihrer Heimatsiedlung verstärkt werden.</RewardText>
+      <RewardText locale="en_US">Every army needs a command point in the settlement where they are commanded from. You can only reinforce your army at their home settlement.</RewardText>
       <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">Call that an army? Rather small, don’t you think?</RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
@@ -642,7 +640,7 @@
     <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
     <Description locale="de_DE">
       <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
-      <p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 2 gründen.</p>
+      <p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>
     </Description>
     <Description locale="en_US">
       <p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other’s defences and coordinate attacks. Only an alliance can hold a large territory. If you think you’re ready for it, why not enter an alliance?</p>
@@ -652,7 +650,7 @@
     <Flavor locale="en_US">Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.</Flavor>
     <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
     <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
-    <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
     <RewardFlavor locale="en_US">Wow, that’s some alliance! I’m sure they’re going to go far. </RewardFlavor>
     <Requirement quest="quest_build_1campfirelvl1" />
     <Rewards>
@@ -4509,7 +4507,7 @@
    <RewardText locale="de_DE">Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
    <RewardText locale="en_US">Higher levels of the chieftain’s hut let you construct more buildings.</RewardText>
    <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?</RewardFlavor>
-   <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?</RewardFlavor>
+   <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?</RewardFlavor>
    <Rewards>
    <ExperienceReward>100</ExperienceReward>
    </Rewards>
@@ -4534,7 +4532,7 @@
    <RewardText locale="de_DE">Zusätzliche Level der Häuptlingshütte lassen Dich mehr Gebäude bauen.</RewardText>
    <RewardText locale="en_US">Higher levels of the chieftain’s hut let you construct more buildings.</RewardText>
    <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?</RewardFlavor>
-   <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?</RewardFlavor>
+   <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?</RewardFlavor>
    <Rewards>
    <ResourceReward resource="resource_stone">150</ResourceReward>
    <ResourceReward resource="resource_wood">150</ResourceReward>

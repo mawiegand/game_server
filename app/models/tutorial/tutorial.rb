@@ -312,17 +312,15 @@ class Tutorial::Tutorial
             :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Wofür? Reicht es Dir nicht, dass Deine Siedlung größer ist und Du ein neues Gebäude bauen kannst?
     ",
   
-            :en_US => "Finished at last, eh? That took you long enough. What do mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
+            :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
     ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.
-    ",
+            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
   
-            :en_US => "Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.
-    ",
+            :en_US => "At the moment you should build your building at the small building slots.",
                 
           },
 
@@ -532,9 +530,9 @@ class Tutorial::Tutorial
           :message => {
             
             :en => {
-              :subject => 'Welcome to Wack-a-Doo.',
+              :subject => 'Welcome to Wack-A-Doo.',
               :body => "<h2>Welcome to the open Beta version.</h2>
-        <p>Our game, ‘Wack-a-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
+        <p>Our game, ‘Wack-A-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
         <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
         <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
@@ -543,10 +541,10 @@ class Tutorial::Tutorial
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
         <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
         <p>You’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a></p>
         <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-a-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
         <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
-        <p>Your Wack-a-Doo team</p>",
+        <p>Your Wack-A-Doo team</p>",
             },
 
             :de => {
@@ -554,7 +552,7 @@ class Tutorial::Tutorial
               :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
         <p>Unser Spiel 'Wack-a-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
         Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern. Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworen andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
+        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
         <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a></p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a></p>
@@ -562,8 +560,8 @@ class Tutorial::Tutorial
         <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
         <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>
-        <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>
-        <p>Das Wack-a-Doo Team</p>",
+        <p>Wir wünschen Dir viel Spass an Wack-A-Doo.</p>
+        <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -1266,9 +1264,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
   
-            :en_US => "At the moment you should build your building at the small building slots.",
+            :en_US => "Upgrading the chieftain’s hut gives access to new buildings, so you can construct more buildings.",
                 
           },
 
@@ -1458,7 +1456,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
   
-            :en_US => "<p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or three. You can see your current production at raw materials display at the top.</p>",
+            :en_US => "<p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or 3. You can see your current production at raw materials display at the top.</p>",
                 
           },          
           :reward_flavour => {
@@ -1564,9 +1562,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du Kröten einsetzt. Drücke dazu auf 'Hurtig!'. Probiere es doch einmal aus.</p>",
+            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>",
   
-            :en_US => "<p>You can speed up the chieftain‘s hut upgrade with golden frogs. Click on ’Hurry!’. Why not try it out?</p>",
+            :en_US => "<p>You can speed up the chieftain‘s hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>",
                 
           },          
           :reward_flavour => {
@@ -1682,7 +1680,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
   
-            :en_US => "Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building quene.",
+            :en_US => "Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.",
                 
           },
 
@@ -1767,9 +1765,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. Außerdem hat sie ein Einheitenlimit.",
+            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird und kann auch nur an ihrer Heimatsiedlung verstärkt werden.",
   
-            :en_US => "Every army needs a command point in the settlement where they are commanded from. And there’s a limit to the number of units it can have.",
+            :en_US => "Every army needs a command point in the settlement where they are commanded from. You can only reinforce your army at their home settlement.",
                 
           },
 
@@ -1968,14 +1966,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du erst mit Lagerfeuer Level 2 gründen.</p>",
+            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>",
   
             :en_US => "<p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other’s defences and coordinate attacks. Only an alliance can hold a large territory. If you think you’re ready for it, why not enter an alliance?</p><p>You can only start your own alliance once you’ve reached campfire level 2. </p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass ihr sehr weit kommen werdet.",
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
   
             :en_US => "Wow, that’s some alliance! I’m sure they’re going to go far. ",
                 
