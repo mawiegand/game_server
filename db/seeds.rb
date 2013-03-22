@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'mapping/global_mercator'
 
 exit(1)  if Rails.env.production?
@@ -84,6 +86,24 @@ puts "add command to create clobal chat room."
 Messaging::JabberCommand.create({
   command:   'muc_create',
   room:      'global',
+  processed: false,
+})
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'help',
+  processed: false,
+})
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'plauderhöhle',
+  processed: false,
+})
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'handel',
   processed: false,
 })
 

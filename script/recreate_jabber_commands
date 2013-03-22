@@ -12,6 +12,9 @@ puts
 puts "This script recreates all jabber commands."
 
 Messaging::JabberCommand.open_room('global').save
+Messaging::JabberCommand.open_room('plauderhöhle').save
+Messaging::JabberCommand.open_room('handel').save
+Messaging::JabberCommand.open_room('global').save
 
 
 Fundamental::Character.all.each do |character|
