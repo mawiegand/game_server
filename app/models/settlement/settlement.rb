@@ -176,9 +176,10 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
-    free_change = (self.name_change_count || 0) < 1
+    change_settlement_name_rules = GameRules::Rules.the_rules.change_settlement_name
+    free_change = (self.name_change_count || 0) < change_settlement_name_rules[:free_changes]
     character = Fundamental::Character.find_by_id(self.owner)
-    if !free_change && !character.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
+    if !free_change && !character.resource_pool.have_at_least_resources({change_settlement_name_rules[:resource_id] => change_settlement_name_rules[:amount]})
       raise ForbiddenError.new "character does not have enough resources to pay for the settlement name change."
     end
     
@@ -187,8 +188,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > 1 # test for 1, count was already incremented!  -> one change is free!
-        character.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 1})
+    if (self.name_change_count || 0) > change_settlement_name_rules[:free_changes] # test for free changes
+        character.resource_pool.remove_resources_transaction({change_settlement_name_rules[:resource_id] => change_settlement_name_rules[:amount]})
     end
   
     self
