@@ -13,6 +13,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     Fundamental::ResourcePool.transaction do
       pool = current_character.resource_pool.lock!
       pool.update_resource_amount_atomically
+      pool.reload
       sum = pool.resource_stone_amount + pool.resource_wood_amount + pool.resource_fur_amount
       remaining = sum - (p_stone + p_wood + p_fur)
 
