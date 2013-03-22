@@ -24,7 +24,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   after_save :propagate_changes_to_victory_progress
   after_save :propagate_effect_changes
 
-  scope :visible, where(['visible = ?', true])
+  scope :visible, where('visible = ?', true)
 
   def artifact_type
     GameRules::Rules.the_rules.artifact_types[self.type_id]
