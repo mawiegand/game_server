@@ -2506,7 +2506,7 @@
         <ExperienceReward>20</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ScoreTest min_population="400" />
+        <ScoreTest min_population="200" />
       </RewardTests>
     </Quest>
 
