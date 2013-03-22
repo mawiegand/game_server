@@ -7934,7 +7934,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :score_test => {
-              :min_population => 400,
+              :min_population => 200,
             },
 
           },          
