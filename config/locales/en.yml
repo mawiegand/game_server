@@ -119,12 +119,12 @@ en:
         body: "<h2>Welcome to the half-offical testround of Wack-a-Doo</h2>\n
           <p>With this round we will be testing our software and our servers. Nevertheless, we hope you'll enjoy playing Wack-a-Doo.</p>\n
           <p>Presently, there's no tutorial. To get started, please have a look at these screenshots explaining the interface:</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>\n
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/User_Interface' target='_blank'>http://wiki.wack-a-doo.de/User_Interface</a></p>\n
           <p>Wack-a-Doo is still under construction. In this testround we will fix bugs on the fly, and also introduce new features while you're playing. So please expect changes and more interesting stuff to come.</p>\n
           <p>We would be pleased to get your feedback, either via email or by posting in the forum (German):</p>\n
           <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>\n
           <p>A more detailed description of game mechanics and attributes of buildings and units can be found in our wiki (presently only in German):</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>\n
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com' target='_blank'>http://wiki.wack-a-doo.com</a></p>\n
           <p>We wish you a pleasent time in Wack-a-Doo.</p>\n
           <p>The Wack-a-Doo Team</p>\n"
       battle_report:

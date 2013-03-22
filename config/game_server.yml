@@ -29,7 +29,7 @@ defaults: &defaults
 
   default_character_name: 'WackyUser'
   
-  identity_provider_base_url: 'https://test1.wack-a-doo.de/identity_provider'
+  identity_provider_base_url: 'https://test1.wack-a-doo.com/identity_provider'
   
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
@@ -46,7 +46,7 @@ defaults: &defaults
 
   history_update_interval:    24 #hours
   player_deletion_interval:   30 #days
-  message_deletion_intervall: 14 #days
+  message_deletion_intervall:  4 #days
 
   artifact_jump_probability:             0.1     # probability of artifact to jump after a won battle
   artifact_capture_probability_factor:   0.05    # probability factor of artifact to be captured by attacker after every battle round
@@ -79,7 +79,7 @@ test:
 staging:
   <<: *defaults
   
-  base_url: 'https://test1.wack-a-doo.de'
+  base_url: 'https://test1.wack-a-doo.com'
   
   scope: 'wackadoo-testround2'
   

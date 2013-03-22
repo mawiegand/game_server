@@ -45,7 +45,12 @@ class Military::Army < ActiveRecord::Base
   
   STANCE_DEFENDING_NONE = 0
   STANCE_DEFENDING_FORTRESS = 1
-  
+
+  scope :npc,           where('(npc = ?)', true)
+  scope :non_npc,       where('(npc is null OR npc = ?)', false)
+  scope :garrison,      where('(garrison = ?)', true)
+  scope :non_garrison,  where('(garrison is null OR garrison = ?)', false)
+
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
     

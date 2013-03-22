@@ -10,52 +10,18 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'util/formula'
 
-# remove for testing
-#
-#Military::Army.where(npc: true, garrison: false).destroy_all
-#Fundamental::Artifact.destroy_all
-
-Rails.logger.info "NPC PLACEMENT: Start creating artifacts..."
-
-artifact_count = 0
-
-artifact_types = GameRules::Rules.the_rules.artifact_types
-artifact_types.each do |artifact_type|
-
-  # determine existing artifact count
-  existing_artifacts = Fundamental::Artifact.where(type_id: artifact_type[:id]).count
-
-  # determine calculated artifact count
-  formula = Util::Formula.parse_from_formula(artifact_type[:amount], 'DAYS')
-  calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
-
-  # determine artifact count to create
-  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
-
-  # create missing artifacts with npc army at same location
-  (0...new_artifacts).each do
-    location = Map::Location.find_empty_without_army
-    unless location.nil?
-      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id])
-      artifact_count += 1
-    end
-  end
-end
-
-current_artifacts = Fundamental::Artifact.count
-
 
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
 region_factor     = 1.00   # at least num_regions * region_factor npc armies
 max_region_factor = 1.25   # controlls the number of npcs in the case where there are more armies than regions*region_factor
 
-num_armies        = Military::Army.where(npc: false, garrison: false).count
-avg_size_armies   = Military::Army.where(npc: false, garrison: false).average(:size_present)  || 1.0
-max_size_armies   = Military::Army.where(npc: false, garrison: false).maximum(:size_present)  || 1
+num_armies        = Military::Army.non_npc.non_garrison.count
+avg_size_armies   = Military::Army.non_npc.non_garrison.average(:size_present)  || 1.0
+max_size_armies   = Military::Army.non_npc.non_garrison.maximum(:size_present)  || 1
 
-num_npcs          = Military::Army.where(npc: true,  garrison: false).count
-avg_size_npcs     = Military::Army.where(npc: true,  garrison: false).average(:size_present)  || 0.0
+num_npcs          = Military::Army.npc.non_garrison.count
+avg_size_npcs     = Military::Army.npc.non_garrison.average(:size_present)  || 0.0
 
 num_characters    = Fundamental::Character.count || 1
 num_regions       = Map::Region.count || 1
@@ -102,6 +68,36 @@ while num_npcs < desired_number_of_npcs
 end
 
 Rails.logger.info "NPC PLACEMENT: Placed #{count_npc_placed || "0" } npc armies, smallest with #{ min_npc_placed || "0" } units, largest with #{ max_npc_placed || "0" }."
+
+
+Rails.logger.info "NPC PLACEMENT: Start creating artifacts..."
+
+artifact_count = 0
+
+artifact_types = GameRules::Rules.the_rules.artifact_types
+artifact_types.each do |artifact_type|
+
+  # determine existing artifact count
+  existing_artifacts = Fundamental::Artifact.where(type_id: artifact_type[:id]).count
+
+  # determine calculated artifact count
+  formula = Util::Formula.parse_from_formula(artifact_type[:amount], 'DAYS')
+  calculated_artifacts = formula.apply(Fundamental::RoundInfo.the_round_info.age)
+
+  # determine artifact count to create
+  new_artifacts = calculated_artifacts > existing_artifacts ? calculated_artifacts - existing_artifacts : 0
+
+  # create missing artifacts with npc army at same location
+  (0...new_artifacts).each do
+    location = Map::Location.find_empty_without_army
+    unless location.nil?
+      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id], avg_size_armies, max_size_armies)
+      artifact_count += 1
+    end
+  end
+end
+
+current_artifacts = Fundamental::Artifact.count
 
 
 

@@ -22,6 +22,9 @@ NUM_SPARSE_LEVELS = 2
 ROUND_NAME   = "Schnelltest"
 ROUND_NUMBER =  2
 
+NPC_MIN_UNITS = 60
+NPC_MAX_UNITS = 120
+
 
 
 # ############################################################################
@@ -66,7 +69,7 @@ Fundamental::RoundInfo.create({
 #
 # ############################################################################
 
-@npcs = [
+npcs = [
   Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
 ]
 
@@ -126,15 +129,15 @@ def check_neighbour(tms, level)
   end
   if node.blank?
     puts "ERROR: did not find a node for #{ path } and #{ path[0, path.length-1] }."
-    return []
+    []
   elsif node.level < level
-    if !node.leaf
+    unless node.leaf
       puts "ERROR: this node was expected to be a leaf node!"
       return []
     end
-    return [ node ]
+    [node]
   else
-    return []
+    []
   end
 end
 
@@ -185,12 +188,12 @@ puts "INFO: creating regions and locations."
 nodes = Map::Node.find_all_by_leaf true
 
 def create_fortress(location)
-  owner = @npcs[rand(@npcs.length)] # TODO: NPCs
+  owner = npcs[rand(npcs.length)] # TODO: NPCs
   Settlement::Settlement.create_settlement_at_location(location, 1, owner)   # 1: fortress
   
   details = location.settlement.garrison_army.details
   if details.has_attribute? 'unit_neanderthal'
-    details.increment('unit_neanderthal', 60 + rand(60))
+    details.increment('unit_neanderthal', NPC_MIN_UNITS + rand(NPC_MAX_UNITS - NPC_MIN_UNITS))
   end
   details.save  
 end

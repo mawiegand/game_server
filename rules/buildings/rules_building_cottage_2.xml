@@ -26,6 +26,6 @@
   <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
   <ProductionTime shortenable="true">FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*0.7)</ProductionTime>             
   <Abilities> <!-- just for grouping -->
-    <SpeedupQueue queue="queue_buildings" domain="settlement">FLOOR(1.88*POW(LEVEL,1.425)*1.5*1.75+0.5)/100.0</SpeedupQueue>
+    <SpeedupQueue queue="queue_buildings" domain="settlement">LESS(LEVEL,11)*FLOOR(((1.25*POW(LEVEL,1.3)+0.5)*3*1.75)/100.0+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75)/100.0)</SpeedupQueue>
   </Abilities>
 </Building>

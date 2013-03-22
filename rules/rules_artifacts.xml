@@ -55,14 +55,13 @@
       <InitiationTime shortenable="true">FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
-    <ExperienceProduction>10*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
   <Artifact id="artifact_2">
-    <Name lang="de_DE">Wäscheleinenständer</Name>
+    <Name lang="de_DE">Wäscheleine</Name>
     <Name lang="en_US">Clothing horse</Name>
     <Description lang="de_DE">
       <p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>

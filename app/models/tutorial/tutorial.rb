@@ -337,7 +337,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, 5, 10, ],
+          :successor_quests => [5, 10, ],
 
           :rewards => {
             
@@ -435,7 +435,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
+            :quest => 'quest_build_2gathererlvl3',
 
           },
 
@@ -1057,7 +1057,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [12, ],
+          :successor_quests => [3, 12, ],
 
           :rewards => {
             
@@ -1564,17 +1564,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 200,
+                :amount => 250,
               },
 
             ],
@@ -2443,17 +2443,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 900,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 900,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 900,
+                :amount => 800,
               },
 
             ],
@@ -2647,17 +2647,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 1500,
               },
 
               {
@@ -2861,17 +2861,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 2000,
               },
 
             ],
@@ -3065,17 +3065,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 4000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 4000,
+                :amount => 3000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 3000,
               },
 
             ],
@@ -3703,13 +3703,13 @@ class Tutorial::Tutorial
                 <p>Our game, ‘Wack-a-Doo’ is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it’s lots of fun.</p>
                <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You’re in for a surprise!</p>
                 <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
-                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/User_Interface' target='_blank'>http://wiki.wack-a-doo.com/User_Interface</a></p>
                 <p>There you’ll find all the main menu functions as screen shots.</p>
                 <p>’d really like your feedback and we’d also like you to report any errors or malfunctions. There’s a forum area that’s been set up for us by Shadow-Dragon in the Uga-Agga forum:</p>
                 <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>
                 <p>Please report any glitches or errors so we can respond quickly. We look forward to you giving us your feedback, ideas and constructive opinions there too.</p>
                 <p>’ll find a summary of the basic game mechanics, overviews and explanations in the encyclopaedia and in our wiki:</p>
-                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>
+                <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com' target='_blank'>http://wiki.wack-a-doo.com</a></p>
                 <p>The wiki is by no means complete – it’s still in the development stage, like everything else in Wack-a-Doo! We invite you to support us by contributing to the wiki, and keeping it up to date. At the moment, you can enter or change content without registering first.</p>
                 <p>We hope you enjoy playing Wack-a-Doo as much as we enjoy creating it!</p>
                 <p>Your Wack-a-Doo team</p>",
@@ -6221,7 +6221,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 20,
+            :experience_reward => 25,
 
           },          
 
@@ -6314,7 +6314,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 80,
+            :experience_reward => 100,
 
           },          
 
@@ -10006,7 +10006,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 20,
+            :experience_reward => 40,
 
           },          
 
@@ -10084,17 +10084,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 500,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 400,
               },
 
             ],
@@ -10187,7 +10187,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 750,
               },
 
             ],
@@ -10280,7 +10280,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1000,
               },
 
             ],
@@ -10373,7 +10373,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1250,
               },
 
               {
@@ -10471,7 +10471,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1750,
               },
 
             ],
@@ -10564,7 +10564,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 2000,
               },
 
             ],
@@ -10657,7 +10657,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 2250,
               },
 
             ],
@@ -10750,7 +10750,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 2500,
               },
 
             ],
@@ -10843,7 +10843,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 3000,
               },
 
               {
@@ -10941,7 +10941,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 3250,
               },
 
             ],
@@ -11034,7 +11034,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 3500,
               },
 
             ],
@@ -11127,7 +11127,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 3750,
               },
 
             ],
@@ -11220,7 +11220,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 4000,
               },
 
             ],
@@ -11313,7 +11313,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 4250,
               },
 
               {
@@ -11411,7 +11411,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 5000,
               },
 
             ],
@@ -11504,7 +11504,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 5500,
               },
 
               {
@@ -11602,7 +11602,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 5750,
               },
 
             ],
@@ -11695,7 +11695,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 6250,
               },
 
               {
@@ -11793,7 +11793,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 7000,
               },
 
             ],
@@ -12062,17 +12062,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1000,
+                :amount => 740,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1000,
+                :amount => 740,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 740,
               },
 
             ],
@@ -12165,7 +12165,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 750,
+                :amount => 1000,
               },
 
               {
@@ -12263,7 +12263,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 1250,
               },
 
             ],
@@ -12356,7 +12356,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1250,
+                :amount => 1500,
               },
 
             ],
@@ -12449,7 +12449,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 2000,
               },
 
             ],
@@ -12542,7 +12542,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 2250,
               },
 
             ],
@@ -12635,7 +12635,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 2750,
               },
 
             ],
@@ -12728,7 +12728,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2250,
+                :amount => 3000,
               },
 
               {
@@ -12826,7 +12826,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 3750,
               },
 
             ],
@@ -12919,7 +12919,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 2750,
+                :amount => 4000,
               },
 
             ],
@@ -13012,7 +13012,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
+                :amount => 4500,
               },
 
             ],
@@ -13105,7 +13105,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3250,
+                :amount => 5000,
               },
 
             ],
@@ -13198,7 +13198,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3500,
+                :amount => 5500,
               },
 
               {
@@ -13296,7 +13296,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 3750,
+                :amount => 6000,
               },
 
             ],
@@ -13389,7 +13389,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4000,
+                :amount => 6500,
               },
 
               {
@@ -13487,7 +13487,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4250,
+                :amount => 7000,
               },
 
             ],
@@ -13580,7 +13580,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4500,
+                :amount => 7500,
               },
 
               {
@@ -13678,7 +13678,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 4750,
+                :amount => 8000,
               },
 
             ],
@@ -13771,7 +13771,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 5000,
+                :amount => 8500,
               },
 
               {
@@ -13869,7 +13869,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 9000,
               },
 
               {
@@ -13967,7 +13967,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6000,
+                :amount => 9000,
               },
 
               {
@@ -14065,7 +14065,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 10000,
               },
 
               {
@@ -14163,7 +14163,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 6000,
+                :amount => 10000,
               },
 
               {
@@ -14261,7 +14261,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 12000,
               },
 
               {
@@ -14359,7 +14359,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7500,
+                :amount => 10000,
               },
 
               {
@@ -14382,85 +14382,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_21
-        {               #   quest_npc_battle
-          :id                => 150, 
-          :symbolic_id       => :quest_npc_battle,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          
-          :name => {
-            
-            :en_US => "First battle",
-  
-            :de_DE => "Der erste Kampf",
-                
-          },
-          :task => {
-            
-            :en_US => "Fight for the first time and defeat at least two units!",
-  
-            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens zwei Einheiten!",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
-  
-            :en_US => "An army can do more than just stand around. It’s there to destroy the enemies of the tribe! Of course, an attack shouldn’t precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>",
-  
-            :en_US => "<p>When you’re ready, select your army, click on ‘move’ and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
-  
-            :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
-  
-            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
-                
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 10,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
-            :action_point_reward => true,
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 2,
-            },
-
-          },          
-
-        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )
