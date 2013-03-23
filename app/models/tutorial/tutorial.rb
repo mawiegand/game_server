@@ -1998,7 +1998,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_clubbers,
-                :amount => 15,
+                :amount => 10,
               },
 
             ],
@@ -2212,6 +2212,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 25,         
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl2
@@ -3032,6 +3034,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :place_npcs => 100,         
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_1furrierlvl2
@@ -10131,9 +10135,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 180 resource points.",
+            :en_US => "Increase the resource production of one settlement to 180 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunktenach Steuern. ",
                 
           },
           :flavour => {
@@ -10145,9 +10149,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
+            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
-            :en_US => "<p>All three resources stone, wood and fur are worth one resource point.</p>",
+            :en_US => "<p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
           },          
           :reward_flavour => {
