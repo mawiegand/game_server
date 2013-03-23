@@ -91,7 +91,7 @@ artifact_types.each do |artifact_type|
   (0...new_artifacts).each do
     location = Map::Location.find_empty_without_army
     unless location.nil?
-      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id], avg_size_armies, max_size_armies)
+      Fundamental::Artifact.create_at_location_with_type(location, artifact_type[:id], avg_size_armies, 2 * max_size_armies)
       artifact_count += 1
     end
   end
