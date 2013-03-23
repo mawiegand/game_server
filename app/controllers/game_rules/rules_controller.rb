@@ -19,11 +19,24 @@ class GameRules::RulesController < ApplicationController
 
     @rules = GameRules::Rules.the_rules
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json do
-        options = { root: (use_restkit_api?() || params.has_key?(:inc_root)) }
-        render :json => @rules.as_json(options) 
+    fresh = false
+    if params.key?(:build) && params.key?(:minor) && params.key?(:major)
+      fresh = Gem::Version.new("#{params[:major]}.#{params[:minor]}.#{params[:build]}") >= Gem::Version.new("#{@rules.version[:major]}.#{@rules.version[:minor]}.#{@rules.version[:build]}")
+    elsif params.key?(:minor) && params.key?(:major)
+      fresh = Gem::Version.new("#{params[:major]}.#{params[:minor]}") >= Gem::Version.new("#{@rules.version[:major]}.#{@rules.version[:minor]}")
+    elsif params.key?(:major)
+      fresh = Gem::Version.new("#{params[:major]}") >= Gem::Version.new("#{@rules.version[:major]}")
+    end
+          
+    if fresh 
+      render :nothing => true, :status => '304 Not Modified'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do
+          options = { root: (use_restkit_api?() || params.has_key?(:inc_root)) }
+          render :json => @rules.as_json(options) 
+        end
       end
     end    
   end
