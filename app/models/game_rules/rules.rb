@@ -729,7 +729,7 @@ class GameRules::Rules
                 
           },
           :attack      => 6,
-          :armor       => 5,
+          :armor       => 4,
           :hitpoints   => 90,
 
           :overrunnable => true,
@@ -740,9 +740,9 @@ class GameRules::Rules
           :production_time => '900',
 
           :costs      => {
-            0 => '25',
+            0 => '20',
             1 => '30',
-            2 => '80',
+            2 => '70',
             
           },
 
@@ -805,9 +805,9 @@ class GameRules::Rules
           :production_time => '1200',
 
           :costs      => {
-            0 => '35',
-            1 => '45',
-            2 => '120',
+            0 => '40',
+            1 => '60',
+            2 => '140',
             
           },
 
@@ -909,9 +909,9 @@ class GameRules::Rules
           :production_time => '1500',
 
           :costs      => {
-            0 => '70',
+            0 => '60',
             1 => '90',
-            2 => '240',
+            2 => '210',
             
           },
 
@@ -1013,9 +1013,9 @@ class GameRules::Rules
           :production_time => '1800',
 
           :costs      => {
-            0 => '140',
-            1 => '180',
-            2 => '480',
+            0 => '90',
+            1 => '135',
+            2 => '315',
             
           },
 
@@ -1101,12 +1101,12 @@ class GameRules::Rules
           :critical_hit_damage => 5,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1200',
+          :production_time => '1500',
 
           :costs      => {
-            0 => '35',
-            1 => '35',
-            2 => '120',
+            0 => '75',
+            1 => '75',
+            2 => '210',
             
           },
 
@@ -1166,12 +1166,12 @@ class GameRules::Rules
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1500',
+          :production_time => '1800',
 
           :costs      => {
-            0 => '45',
-            1 => '45',
-            2 => '150',
+            0 => '112',
+            1 => '112',
+            2 => '316',
             
           },
 
@@ -1270,12 +1270,12 @@ class GameRules::Rules
           :critical_hit_damage => 7,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1800',
+          :production_time => '2100',
 
           :costs      => {
-            0 => '90',
-            1 => '90',
-            2 => '280',
+            0 => '168',
+            1 => '168',
+            2 => '474',
             
           },
 
@@ -1374,12 +1374,12 @@ class GameRules::Rules
           :critical_hit_damage => 8,
           :critical_hit_chance => 0.1,
 
-          :production_time => '2250',
+          :production_time => '2400',
 
           :costs      => {
-            0 => '180',
-            1 => '180',
-            2 => '560',
+            0 => '250',
+            1 => '250',
+            2 => '712',
             
           },
 
@@ -1465,12 +1465,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '900',
+          :production_time => '1200',
 
           :costs      => {
-            0 => '30',
-            1 => '25',
-            2 => '80',
+            0 => '60',
+            1 => '40',
+            2 => '140',
             
           },
 
@@ -1530,12 +1530,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1200',
+          :production_time => '1500',
 
           :costs      => {
-            0 => '40',
-            1 => '35',
-            2 => '100',
+            0 => '90',
+            1 => '60',
+            2 => '210',
             
           },
 
@@ -1634,12 +1634,12 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1500',
+          :production_time => '1800',
 
           :costs      => {
-            0 => '80',
-            1 => '70',
-            2 => '200',
+            0 => '135',
+            1 => '90',
+            2 => '315',
             
           },
 
@@ -1738,12 +1738,12 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1800',
+          :production_time => '2100',
 
           :costs      => {
-            0 => '160',
-            1 => '140',
-            2 => '400',
+            0 => '200',
+            1 => '135',
+            2 => '475',
             
           },
 

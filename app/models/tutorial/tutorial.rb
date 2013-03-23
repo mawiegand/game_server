@@ -399,14 +399,14 @@ class Tutorial::Tutorial
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
               :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
-        <p>Unser Spiel 'Wack-A-doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin mitten in der Entwicklung.<br/>
+        <p>Unser Spiel 'Wack-A-Doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin in der Entwicklung.<br/>
         Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern.<br/>
         Lass Dich überraschen!</p>
         <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
         <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
         <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
-        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>
+        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
+        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
         <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
         <p>Das Wack-A-Doo Team</p>",
@@ -984,7 +984,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.",
   
-            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. The armys regenerate a actionpoint in 3 hours.",
+            :en_US => "Under your army you’ll see the available action points. Every movement and every attack costs you an action point. Your armys regenerate one actionpoint in 3 hours.",
                 
           },
 
