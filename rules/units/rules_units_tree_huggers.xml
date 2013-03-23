@@ -17,9 +17,9 @@
     <Flavour lang="de_DE">
       <p>Wozu eine Keule nehmen, wenn man einen ganzen Baum schwingen kann?</p>
     </Flavour>
-    <Cost id="resource_stone" round="true">140</Cost>  
-    <Cost id="resource_wood" round="true">180</Cost>    
-    <Cost id="resource_fur" round="true">480</Cost>    
+    <Cost id="resource_stone" round="true">90</Cost>
+    <Cost id="resource_wood" round="true">135</Cost>
+    <Cost id="resource_fur" round="true">315</Cost>
     <ProductionTime shortenable="true">1800</ProductionTime>
     <Velocity>1</Velocity>
     <ActionPoints>4</ActionPoints>

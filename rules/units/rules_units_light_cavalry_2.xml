@@ -16,10 +16,10 @@
       <Flavour lang="de_DE">
         <p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>
       </Flavour>
-      <Cost id="resource_stone" round="true">40</Cost>  
-      <Cost id="resource_wood" round="true">35</Cost>    
-      <Cost id="resource_fur" round="true">100</Cost>    
-      <ProductionTime shortenable="true">1200</ProductionTime>
+      <Cost id="resource_stone" round="true">90</Cost>
+      <Cost id="resource_wood" round="true">60</Cost>
+      <Cost id="resource_fur" round="true">210</Cost>
+      <ProductionTime shortenable="true">1500</ProductionTime>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>

@@ -16,10 +16,10 @@
       <Flavour lang="de_DE">
         <p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>
       </Flavour>
-      <Cost id="resource_stone" round="true">30</Cost>  
-      <Cost id="resource_wood" round="true">25</Cost>    
-      <Cost id="resource_fur" round="true">80</Cost>    
-      <ProductionTime shortenable="true">900</ProductionTime>
+      <Cost id="resource_stone" round="true">60</Cost>
+      <Cost id="resource_wood" round="true">40</Cost>
+      <Cost id="resource_fur" round="true">140</Cost>
+      <ProductionTime shortenable="true">1200</ProductionTime>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>

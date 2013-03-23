@@ -16,9 +16,9 @@
   <Flavour lang="de_DE">
     <p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>
   </Flavour>
-  <Cost id="resource_stone" round="true">35</Cost>  
-  <Cost id="resource_wood" round="true">45</Cost>    
-  <Cost id="resource_fur" round="true">120</Cost>    
+  <Cost id="resource_stone" round="true">40</Cost>
+  <Cost id="resource_wood" round="true">60</Cost>
+  <Cost id="resource_fur" round="true">140</Cost>
   <ProductionTime shortenable="true">1200</ProductionTime>
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
