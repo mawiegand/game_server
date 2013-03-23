@@ -5,12 +5,24 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'csv'
 
+#If the last csv should be created
+no_referal = FALSE;
+
+#Parameters
+if ARGV.length > 0
+  print(ARGV[0])
+  no_referal = ARGV[0] == "no_referal"
+end
+
+
 #This is not the most correct way
 #Should improve this or at least
 #Pay attention to changes in shop prices
 #Says the ammount of credits each shop offer costs.
-CREDIT_PLATINUM = 10
 CREDIT_RESOURCE = 5
+print("Assuming the resource bonus cost ")
+print(CREDIT_RESOURCE)
+print(" credits.\n")
 
 
 filename = "geral_output.csv"
@@ -71,7 +83,6 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
         end
       end
 
-
       number_armies = u.armies.count
 
       bought_platinum = u.bought_platinum?
@@ -85,15 +96,11 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
         tutorial_completed = @tutorial.tutorial_completed	
       end	
 
-
       messages_sent = 0
       @m_s = Messaging::Outbox.select("messages_count").where(:owner_id => u.id).first
       if @m_s != nil
         messages_sent = @m_s.messages_count == nil ? 0 : @m_s.messages_count
-        error.puts("Char " + u.id.to_s + " outbox problem!\n")
       end
-
-
 
       messages_received = 0
       @m_r = Messaging::Inbox.select("messages_count").where(:owner_id => u.id).first
@@ -104,7 +111,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
 
       arr_credit_buys = Shop::Transaction.where("character_id = ? and state > 4",u.id).
       select("credit_amount_booked").to_a.map {|a| a.credit_amount_booked}
-      
+
       # Credit Resource = number of credits needed to buy a resource bonus (actually it is 5).
       times_bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
 
@@ -116,7 +123,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
       end
 
       #times_bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
-      
+
       transactions_count = Shop::Transaction.closed.where(:character_id => u.id ).count
 
       referer_list = Backend::SignInLogEntry.select("referer").where(:character_id => u.id).map{|a| a.referer}.uniq
@@ -128,7 +135,7 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
       if @latest_transaction != nil
         current_wallet = @latest_transaction.credit_amount_after
       end
-      
+
       credit_bought = Shop::Transaction.closed.where(:character_id => u.id ).sum("credit_amount_booked") + current_wallet
 
       created_at= u.created_at;
@@ -172,19 +179,21 @@ CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
 
     print(" done!\n")
 
-    print("Starting referal players output . . .")
+    if NO_REFERAL == FALSE
+      print("Starting referal players output . . .")
 
-    filename = "referal_output.csv"
-    CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
-      cols = ["id", "last_deleted_at", "value"]
-      csv << cols
+      filename = "referal_output.csv"
+      CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
+        cols = ["id", "referal", "number"]
+        csv << cols
 
-      @char_referer = Backend::SignInLogEntry.select("character_id, referer").where("referer IS NOT null").uniq
-      @char_referer.each do |cr|
-        csv << [cr.character_id, cr.referer]
+        @char_referer = Backend::SignInLogEntry.select("character_id, referer, count(referer) as ct").where("referer IS NOT null").group("referer")
+        @char_referer.each do |cr|
+          csv << [cr.character_id, cr.referer,cr.ct]
+        end
+
       end
+      error.close()
 
+      print(" done!\n")
     end
-    error.close()
-
-    print(" done!\n")
