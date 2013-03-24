@@ -83,7 +83,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_settlement_name, :resource_exchange
+    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -95,6 +95,7 @@ class GameRules::Rules
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
       'change_character_name'       => change_character_name,
+      'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
       'resource_exchange'           => resource_exchange,
       'building_conversion'         => building_conversion,
@@ -184,8 +185,9 @@ class GameRules::Rules
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
-  <xsl:apply-templates select="//General/TradingSpeedup" />
+  <xsl:apply-templates select="//General/TradingSpeedupCost" />
   <xsl:apply-templates select="//General/ChangeCharacterName" />
+  <xsl:apply-templates select="//General/ChangeCharacterGender" />
   <xsl:apply-templates select="//General/ChangeSettlementName" />
   <xsl:apply-templates select="//General/ResourceExchange" />
   <xsl:apply-templates select="ResourceTypes" />
@@ -263,7 +265,7 @@ end
         {               #   less than <xsl:value-of select="@hours"/> hours
           :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>, 
           :amount      => <xsl:value-of select="@amount"/>,
-          :hours     => <xsl:value-of select="@hours"/>,
+          :hours       => <xsl:value-of select="@hours"/>,
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF TRAINING SPEEDUP
@@ -278,37 +280,22 @@ end
         {               #   less than <xsl:value-of select="@hours"/> hours
           :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
           :amount      => <xsl:value-of select="@amount"/>,
-          :hours     => <xsl:value-of select="@hours"/>,
+          :hours       => <xsl:value-of select="@hours"/>,
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF ARTIFACT INITIATION SPEEDUP
 </xsl:template>
 
 
-<xsl:template match="TradingSpeedup">
-# ## TRADING INITIATION SPEEDUP #############################################
+<xsl:template match="ConstructionSpeedup">
+# ## CONSTRUCTION SPEEDUP ####################################################
 
-      :trading_speedup => [  # ALL TRADING INITIATION SPEEDUPS
+      :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 <xsl:for-each select="SpeedupCost">
         {               #   less than <xsl:value-of select="@hours"/> hours
           :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
           :amount      => <xsl:value-of select="@amount"/>,
-          :hours     => <xsl:value-of select="@hours"/>,
-        },              #   END OF <xsl:value-of select="@hours"/> hours
-</xsl:for-each>
-      ],                # END OF TRADING INITIATION SPEEDUP
-</xsl:template>
-
-
-<xsl:template match="ConstructionSpeedup">
-# ## CONSTRUCTION SPEEDUP ####################################################
-  
-      :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
-<xsl:for-each select="SpeedupCost">
-        {               #   less than <xsl:value-of select="@hours"/> hours
-          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>, 
-          :amount      => <xsl:value-of select="@amount"/>,
-          :hours     => <xsl:value-of select="@hours"/>,
+          :hours       => <xsl:value-of select="@hours"/>,
         },              #   END OF <xsl:value-of select="@hours"/> hours
 </xsl:for-each>
       ],                # END OF CONSTRUCTION SPEEDUP
@@ -321,14 +308,36 @@ end
 
 
 
+<xsl:template match="TradingSpeedupCost">
+# ## TRADING INITIATION SPEEDUP #############################################
+
+      :trading_speedup => {
+        :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+        :amount      => <xsl:value-of select="@amount"/>,
+      },
+</xsl:template>
+
+
 
 <xsl:template match="ChangeCharacterName">
 # ## CHANGE CHARACTER NAME ###################################################
 
       :change_character_name => {
         :free_changes => <xsl:value-of select="@freeChanges" />,
-        :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
-        :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
+        :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+        :amount       => <xsl:value-of select="@amount"/>,
+      },
+</xsl:template>
+
+
+
+<xsl:template match="ChangeCharacterGender">
+# ## CHANGE CHARACTER GENDER ###################################################
+
+      :change_character_gender => {
+        :free_changes => <xsl:value-of select="@freeChanges" />,
+        :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+        :amount       => <xsl:value-of select="@amount"/>,
       },
 </xsl:template>
 
@@ -339,8 +348,8 @@ end
 
       :change_settlement_name => {
         :free_changes => <xsl:value-of select="@freeChanges" />,
-        :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
-        :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
+        :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+        :amount       => <xsl:value-of select="@amount"/>,
       },
 </xsl:template>
 
@@ -349,8 +358,8 @@ end
 # ## RESOURCE EXCHANGE ###################################################
 
       :resource_exchange => {
-        :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
-        :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
+        :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+        :amount       => <xsl:value-of select="@amount"/>,
       },
 </xsl:template>
 

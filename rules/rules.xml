@@ -71,7 +71,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="4" />
+    <Version major="0" minor="0" build="6" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
@@ -82,7 +82,7 @@
       <Domain id="alliance" />
     </Domains>
     <Battle>
-      <Calculation roundTime="30" retreatProbability="0.6" />
+      <Calculation roundTime="30" retreatProbability="0.5" />
     </Battle>
     <CharacterCreation>
       <StartResource id="resource_wood">200</StartResource>
@@ -117,23 +117,16 @@
       <SpeedupCost resource="resource_cash" amount="3"  hours="18" />
       <SpeedupCost resource="resource_cash" amount="4"  hours="24" />
       <SpeedupCost resource="resource_cash" amount="6"  hours="36" />
-      <SpeedupCost resource="resource_cash" amount="8" hours="48" />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="48" />
       <SpeedupCost resource="resource_cash" amount="10" hours="72" />
       <SpeedupCost resource="resource_cash" amount="15" hours="96" />
       <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
     </ArtifactInitiationSpeedup>
-    <TradingSpeedup>
-      <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
-    </TradingSpeedup>
-    <ChangeCharacterName freeChanges="2">
-      <ChangeCost resource="resource_cash" amount="20" />
-    </ChangeCharacterName>
-    <ChangeSettlementName freeChanges="1">
-      <ChangeCost resource="resource_cash" amount="3" />
-    </ChangeSettlementName>
-    <ResourceExchange>
-      <ChangeCost resource="resource_cash" amount="3" />
-    </ResourceExchange>
+    <TradingSpeedupCost resource="resource_cash" amount="1" />
+    <ChangeCharacterName freeChanges="2" resource="resource_cash" amount="20" />
+    <ChangeCharacterGender freeChanges="2" resource="resource_cash" amount="20" />
+    <ChangeSettlementName freeChanges="1" resource="resource_cash" amount="3" />
+    <ResourceExchange resource="resource_cash" amount="3" />
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>

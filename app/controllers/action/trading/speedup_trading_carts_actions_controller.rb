@@ -8,9 +8,9 @@ class Action::Trading::SpeedupTradingCartsActionsController < ApplicationControl
       @tradingcartsaction = Action::Trading::TradingCartsAction.lock.find(params[:action_trading_speedup_trading_carts][:trading_carts_action_id])
       raise ForbiddenError.new('not sender or recipient of trading cart action') unless (@tradingcartsaction.sender == current_character or @tradingcartsaction.recipient == current_character)
 
-      cost = GameRules::Rules.the_rules.trading_speedup[0]
+      cost = GameRules::Rules.the_rules.trading_speedup
       price = { cost[:resource_id] => cost[:amount] }
-      
+
       unless current_character.resource_pool.have_at_least_resources(price)
         raise ForbiddenError.new('not enough resources to pay for finishing job')
       end

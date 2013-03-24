@@ -368,19 +368,20 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:name_change_count)  
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
-    
-    if (self.name_change_count || 0) > change_character_name_rules[:free_changes] # test for free changes
-        self.resource_pool.remove_resources_transaction({change_character_name_rules[:resource_id] => change_character_name_rules[:amount]})
+
+    unless free_change
+      self.resource_pool.remove_resources_transaction({change_character_name_rules[:resource_id] => change_character_name_rules[:amount]})
     end
   
     self
   end
   
   def change_gender_transaction(new_gender)
-    
-    free_change = (self.gender_change_count || 0) < 2  # ->  two changes are free! 
-    
-    if !free_change && !self.resource_pool.have_at_least_resources({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    change_character_gender_rules = GameRules::Rules.the_rules.change_character_gender
+
+    free_change = (self.gender_change_count || 0) < change_character_gender_rules[:free_changes]
+
+    if !free_change && !self.resource_pool.have_at_least_resources({change_character_gender_rules[:resource_id] => change_character_gender_rules[:amount]})
       raise ForbiddenError.new "character does not have enough resources to pay for the gender change."
     end
     
@@ -389,8 +390,8 @@ class Fundamental::Character < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
     
-    if (self.gender_change_count || 0) > 2  #  test for 2, count was already incremented!  -> two changes are free
-        self.resource_pool.remove_resources_transaction({Fundamental::ResourcePool::RESOURCE_ID_CASH => 20})
+    unless free_change
+      self.resource_pool.remove_resources_transaction({change_character_gender_rules[:resource_id] => change_character_gender_rules[:amount]})
     end
   
     self

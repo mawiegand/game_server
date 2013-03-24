@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.4
+# Version: 0.0.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -36,7 +36,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_settlement_name, :resource_exchange
+    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -48,6 +48,7 @@ class GameRules::Rules
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
       'change_character_name'       => change_character_name,
+      'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
       'resource_exchange'           => resource_exchange,
       'building_conversion'         => building_conversion,
@@ -113,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 0,
-                    :build => 4,
+                    :build => 6,
       },
       :battle => {
         :calculation => {
@@ -159,55 +160,55 @@ class GameRules::Rules
       :artifact_count => 4,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
-  
+
       :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 
         {               #   less than 1 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 1,
-          :hours     => 1,
+          :hours       => 1,
         },              #   END OF 1 hours
 
         {               #   less than 3 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 2,
-          :hours     => 3,
+          :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 7 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 4,
-          :hours     => 7,
+          :hours       => 7,
         },              #   END OF 7 hours
 
         {               #   less than 12 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 6,
-          :hours     => 12,
+          :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 8,
-          :hours     => 18,
+          :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 30 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 12,
-          :hours     => 30,
+          :hours       => 30,
         },              #   END OF 30 hours
 
         {               #   less than 150 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 20,
-          :hours     => 150,
+          :hours       => 150,
         },              #   END OF 150 hours
 
         {               #   less than 9999 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 30,
-          :hours     => 9999,
+          :hours       => 9999,
         },              #   END OF 9999 hours
 
       ],                # END OF CONSTRUCTION SPEEDUP
@@ -219,55 +220,55 @@ class GameRules::Rules
         {               #   less than 3 hours
           :resource_id => 3, 
           :amount      => 1,
-          :hours     => 3,
+          :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 6 hours
           :resource_id => 3, 
           :amount      => 2,
-          :hours     => 6,
+          :hours       => 6,
         },              #   END OF 6 hours
 
         {               #   less than 11 hours
           :resource_id => 3, 
           :amount      => 3,
-          :hours     => 11,
+          :hours       => 11,
         },              #   END OF 11 hours
 
         {               #   less than 17 hours
           :resource_id => 3, 
           :amount      => 4,
-          :hours     => 17,
+          :hours       => 17,
         },              #   END OF 17 hours
 
         {               #   less than 36 hours
           :resource_id => 3, 
           :amount      => 6,
-          :hours     => 36,
+          :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 56 hours
           :resource_id => 3, 
           :amount      => 8,
-          :hours     => 56,
+          :hours       => 56,
         },              #   END OF 56 hours
 
         {               #   less than 96 hours
           :resource_id => 3, 
           :amount      => 12,
-          :hours     => 96,
+          :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 192 hours
           :resource_id => 3, 
           :amount      => 20,
-          :hours     => 192,
+          :hours       => 192,
         },              #   END OF 192 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
           :amount      => 30,
-          :hours     => 9999,
+          :hours       => 9999,
         },              #   END OF 9999 hours
 
       ],                # END OF TRAINING SPEEDUP
@@ -279,74 +280,77 @@ class GameRules::Rules
         {               #   less than 6 hours
           :resource_id => 3,
           :amount      => 1,
-          :hours     => 6,
+          :hours       => 6,
         },              #   END OF 6 hours
 
         {               #   less than 12 hours
           :resource_id => 3,
           :amount      => 2,
-          :hours     => 12,
+          :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
           :resource_id => 3,
           :amount      => 3,
-          :hours     => 18,
+          :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 24 hours
           :resource_id => 3,
           :amount      => 4,
-          :hours     => 24,
+          :hours       => 24,
         },              #   END OF 24 hours
 
         {               #   less than 36 hours
           :resource_id => 3,
           :amount      => 6,
-          :hours     => 36,
+          :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 48 hours
           :resource_id => 3,
           :amount      => 8,
-          :hours     => 48,
+          :hours       => 48,
         },              #   END OF 48 hours
 
         {               #   less than 72 hours
           :resource_id => 3,
           :amount      => 10,
-          :hours     => 72,
+          :hours       => 72,
         },              #   END OF 72 hours
 
         {               #   less than 96 hours
           :resource_id => 3,
           :amount      => 15,
-          :hours     => 96,
+          :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
           :amount      => 20,
-          :hours     => 9999,
+          :hours       => 9999,
         },              #   END OF 9999 hours
 
       ],                # END OF ARTIFACT INITIATION SPEEDUP
 
 # ## TRADING INITIATION SPEEDUP #############################################
 
-      :trading_speedup => [  # ALL TRADING INITIATION SPEEDUPS
-
-        {               #   less than 1 hours
-          :resource_id => 3,
-          :amount      => 1,
-          :hours     => 1,
-        },              #   END OF 1 hours
-
-      ],                # END OF TRADING INITIATION SPEEDUP
+      :trading_speedup => {
+        :resource_id => 3,
+        :amount      => 1,
+      },
 
 # ## CHANGE CHARACTER NAME ###################################################
 
       :change_character_name => {
+        :free_changes => 2,
+        :resource_id  => 3,
+        :amount       => 20,
+      },
+
+# ## CHANGE CHARACTER GENDER ###################################################
+
+      :change_character_gender => {
         :free_changes => 2,
         :resource_id  => 3,
         :amount       => 20,
