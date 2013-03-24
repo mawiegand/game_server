@@ -1184,13 +1184,14 @@ class Settlement::Settlement < ActiveRecord::Base
     # propagates local changes to the region, where some fields are mirrored
     # for performance reasons.
     def propagate_information_to_region
-      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed?) && self.owns_region? && !self.region.nil?
+      if (self.owner_id_changed? || self.alliance_id_changed? || self.level_changed? || self.type_id_changed? || self.name_changed?) && self.owns_region? && !self.region.nil?
         self.region.set_owner_and_alliance(owner, alliance)
 
         # hotfix for issue #362 ->  (self.score || 0)
         self.region.settlement_score   = (self.score || 0)    if (self.region.settlement_score   != self.score)
         self.region.settlement_level   = (self.level || 0)    if (self.region.settlement_level   != self.level)
-        self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id) 
+        self.region.settlement_type_id = self.type_id   if (self.region.settlement_type_id != self.type_id)
+        self.region.name = self.name
         self.region.save
       end
       return true
@@ -1291,10 +1292,11 @@ class Settlement::Settlement < ActiveRecord::Base
     end
     
     def propagate_information_to_armies
-      if self.army_size_max_changed?
+      if self.army_size_max_changed? ||self.name_changed?
         self.armies.each do |army|
           if !army.garrison
             army.size_max = self.army_size_max
+            army.home_settlement_name = self.name
             army.save
           end
         end
