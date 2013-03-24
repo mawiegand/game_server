@@ -638,19 +638,9 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
 
-  def update_alliance_leave_to_artifact
-    #alliance_change     = self.changes[:alliance_id]
-    #if !alliance_change.nil? && alliance_change[1].nil? && !self.artifact.nil?
-    #  logger.debug "-----------> leaving ally #{self.alliance_id}"
-    #  self.artifact.alliance = self.alliance
-    #  self.artifact.save
-    #end
-  end
-
   def propagate_alliance_membership_changes_to_artifact
     alliance_change     = self.changes[:alliance_id]
     if !alliance_change.nil? && !self.artifact.nil?
-      logger.debug "-----------> propagate_alliance_membership_changes_to_artifact #{self.alliance_id}"
       self.artifact.alliance = self.alliance
       self.artifact.save
     end
