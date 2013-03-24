@@ -3,6 +3,7 @@ class Event::EventsController < ApplicationController
   
   before_filter :authenticate
   before_filter :deny_api
+  before_filter :authorize_staff
   
   # GET /events/events
   # GET /events/events.json
