@@ -276,45 +276,57 @@ class GameRules::Rules
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
 
-        {               #   less than 3 hours
-          :resource_id => 3,
-          :amount      => 1,
-          :hours     => 3,
-        },              #   END OF 3 hours
-
         {               #   less than 6 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 1,
           :hours     => 6,
         },              #   END OF 6 hours
 
-        {               #   less than 11 hours
+        {               #   less than 12 hours
+          :resource_id => 3,
+          :amount      => 2,
+          :hours     => 12,
+        },              #   END OF 12 hours
+
+        {               #   less than 18 hours
+          :resource_id => 3,
+          :amount      => 3,
+          :hours     => 18,
+        },              #   END OF 18 hours
+
+        {               #   less than 24 hours
           :resource_id => 3,
           :amount      => 4,
-          :hours     => 11,
-        },              #   END OF 11 hours
-
-        {               #   less than 17 hours
-          :resource_id => 3,
-          :amount      => 6,
-          :hours     => 17,
-        },              #   END OF 17 hours
+          :hours     => 24,
+        },              #   END OF 24 hours
 
         {               #   less than 36 hours
           :resource_id => 3,
-          :amount      => 8,
+          :amount      => 6,
           :hours     => 36,
         },              #   END OF 36 hours
 
         {               #   less than 48 hours
           :resource_id => 3,
-          :amount      => 11,
+          :amount      => 8,
           :hours     => 48,
         },              #   END OF 48 hours
 
+        {               #   less than 72 hours
+          :resource_id => 3,
+          :amount      => 10,
+          :hours     => 72,
+        },              #   END OF 72 hours
+
+        {               #   less than 96 hours
+          :resource_id => 3,
+          :amount      => 15,
+          :hours     => 96,
+        },              #   END OF 96 hours
+
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 12,
+          :amount      => 20,
           :hours     => 9999,
         },              #   END OF 9999 hours
 
@@ -6035,14 +6047,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große graue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf ins Wacky-Lab!'</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
           },
           :flavour => {
             
-            :de_DE => "Der graue Kristall ist wahrlich beeindruckend, aber keine Schönheit! Vielleicht sollten wir den verhüllen.",
+            :de_DE => "Haben die Götter diese Kugel verloren? Ich liebe Rätsel!",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6068,7 +6080,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der graue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Steine in der direkten Umgebung des Kristalls sind stabiler, so dass ihr zusammen mit neuen Erkenntnissen bei Abbau und Verarbeitung Deine Steinproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Die Tüftler im Wackylab haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
   
@@ -6079,7 +6091,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Abrissbirne
         {               #   Lochscheibe
@@ -6094,14 +6106,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große grüne Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf ins Wacky-Lab!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
           },
           :flavour => {
             
-            :de_DE => "Der Kristall ist grün, keine Frage. Ich mag grün, solange ich das nicht essen muss!",
+            :de_DE => "Ein Stein mit einem Loch! Das ist doch nun wirklich nichts neues.",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6127,7 +6139,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der grüne Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Bäume in der direkten Umgebung des Kristalls wachsen schneller, so dass ihr zusammen mit neuen Erkenntnissen der Verarbeitung Deine Holzproduktion erhöhen könnt.</p>",
+            :de_DE => "<p>Die Tüftler des 'Wacky-Lab' haben eine geniale Idee zur Verwertung des Lochsteins gehabt. Das dreickige Rad revolutiniert den Transport von Holz durch neuartige Holzkarren. Sowohl die eigen als auch die Allianz-Holzproduktion profitiert von dieser Entdeckung.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
   
@@ -6138,7 +6150,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Lochscheibe
         {               #   Wäscheleine
@@ -6153,14 +6165,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große rote Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf ins Wacky-Lab!'.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
           },
           :flavour => {
             
-            :de_DE => "Das Rot erinnert mich immer an die Farbe meiner Gegner...nach dem Kampf!",
+            :de_DE => "Hmm, was ist das? Eine Waffe oder ein Werkzeug kann das nicht sein, oder?",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6186,7 +6198,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der rote Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Die Tiere in der direkten Umgebung des Kristalls vermehren sich rasant und tragen dichtere Felle, so dass ihr zusammen mit neuen Erkenntnissen bei der Jagd und der Verarbeitung Deine Fellproduktion erhöhen konntet.</p>",
+            :de_DE => "<p>Auf eine Wäscheleine hätten sie auch ohne das unbekannte Artefakt kommen sollen, sagten sich die Tütfler des 'Wacky-Lab'. Die Wäscheleine beschleunigt neben der eigenen auch die Fellproduktion der Allianz.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
   
@@ -6197,7 +6209,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Wäscheleine
         {               #   Schwarzer Monolith
@@ -6212,14 +6224,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
           },
           :flavour => {
             
-            :de_DE => "Unglaublich wie blau der ist!",
+            :de_DE => "Der schwarze Monolith ist toll. Er ist so groß und nunja schwarz eben.",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6231,7 +6243,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der blaue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>",
+            :de_DE => "<p>Mit dem schwarzen Monolithen kamen die Tütfler aus dem 'Wacky-Lab' nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>",
   
@@ -6242,7 +6254,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR(24*3600-6*3600*(POW((LEVEL-1),0.5)))",
+          :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Schwarzer Monolith
       ],                # END OF ARTIFACT TYPES
