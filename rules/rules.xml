@@ -112,13 +112,15 @@
       <SpeedupCost resource="resource_cash" amount="30" hours="9999" />
     </TrainingSpeedup>
     <ArtifactInitiationSpeedup>
-      <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
-      <SpeedupCost resource="resource_cash" amount="2"  hours="6" />
-      <SpeedupCost resource="resource_cash" amount="4"  hours="11" />
-      <SpeedupCost resource="resource_cash" amount="6"  hours="17" />
-      <SpeedupCost resource="resource_cash" amount="8"  hours="36" />
-      <SpeedupCost resource="resource_cash" amount="11" hours="48" />
-      <SpeedupCost resource="resource_cash" amount="12" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="6" />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="12" />
+      <SpeedupCost resource="resource_cash" amount="3"  hours="18" />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="24" />
+      <SpeedupCost resource="resource_cash" amount="6"  hours="36" />
+      <SpeedupCost resource="resource_cash" amount="8" hours="48" />
+      <SpeedupCost resource="resource_cash" amount="10" hours="72" />
+      <SpeedupCost resource="resource_cash" amount="15" hours="96" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
