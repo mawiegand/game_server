@@ -430,13 +430,18 @@ class Military::Army < ActiveRecord::Base
   end
   
   def self.experience_value_of(units)
-    value = 0
+    sum = 0
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
-      unless units[unit_type[:db_field]].nil?
-        value += units[unit_type[:db_field]].to_i.abs * 10
+      unit = units[unit_type[:db_field]]
+      if !unit_type[:costs].blank? && unit.nil?
+        costs = 0
+        unit_type[:costs].each do |unit_type_id, cost|
+          costs += cost
+        end
+        sum += (unit * costs * 0.05).floor
       end
     end
-    value
+    sum
   end
   
   def self.create_npc(location, size)

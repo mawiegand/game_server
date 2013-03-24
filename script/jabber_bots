@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'jabber_bots/command'
+require 'jabber_bots'
+
+JabberBots::Command.new(ARGV).daemonize
+

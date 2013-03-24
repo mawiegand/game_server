@@ -111,4 +111,20 @@ namespace :deploy do
   task :check_consistency do
     run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/repair_consistency"
   end
+
+  desc "Start Jabber Bots"
+  task :start_jabber_bots do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/jabber_bots start"
+  end
+
+  desc "Stop Jabber Bots"
+  task :stop_jabber_bots do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/jabber_bots stop"
+  end
+
+  desc "Restart Jabber Bots"
+  task :restart_jabber_bots do
+    stop_jabber_bots
+    start_jabber_bots
+  end
 end
