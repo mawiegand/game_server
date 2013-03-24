@@ -20,6 +20,9 @@ de:
       map_regions: Regionen
     military:
       new_army: Neue Armee
+      neanderthal: Neandertaler
+    settlement:
+      neanderthal: Neandertal
     messaging:
       welcome_message:
         subject: Willkommen bei Wack-a-Doo

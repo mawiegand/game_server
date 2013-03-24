@@ -448,10 +448,8 @@ class Military::Army < ActiveRecord::Base
     raise BadRequestError.new('No location for army creation!') if location.nil?
     npc = Fundamental::Character.find_by_id(1)
     
-    army_name = 'Neanderthal'
-
     army = Military::Army.new({
-      name: army_name,
+      name: I18n.translate('application.military.neanderthal'),
       ap_max: 4,
       ap_present: 4,
       ap_seconds_per_point: Military::Army.regeneration_duration,
@@ -465,6 +463,7 @@ class Military::Army < ActiveRecord::Base
       kills: 0,
       victories: 0,
       npc: true,
+      home_settlement_name: I18n.translate('application.settlement.neanderthal')
     })
     
     army.location = location

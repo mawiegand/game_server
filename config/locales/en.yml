@@ -112,7 +112,10 @@ en:
         likes: Likes
         dislikes: Dislikes
     military:
-      new_army: New Army    
+      new_army: New Army
+      neanderthal: Neanderthal
+    settlement:
+      neanderthal: Neanderthal
     messaging:
       welcome_message:
         subject: Welcome to Wack-a-Doo

@@ -10,7 +10,7 @@ class Military::ArmiesController < ApplicationController
     [ :id, :name, :region_id, :location_id, :owner_id, :owner_name, :npc, :garrison,
       'unitcategory_',
       :alliance_id, :alliance_tag, :ap_present, :ap_max, :ap_next, :mode, :stance, :size_present, :size_max, 
-      :strength, :battle_id, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at, :suspension_ends_at, :attack_protection_ends_at]
+      :strength, :battle_id, :rank, :target_region_id, :target_location_id, :target_reached_at, :updated_at, :suspension_ends_at, :attack_protection_ends_at, :home_settlement_name]
   )
   @@aggregate_fields = [:id, :garrison, :owner_id, :alliance_id, :npc, :stance, :mode, :battle_id, :strength, :updated_at, :suspension_ends_at, :attack_protection_ends_at]
  
