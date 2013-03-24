@@ -54,7 +54,27 @@ class Map::Region < ActiveRecord::Base
       self.invitation_code = Util.make_random_string(16, true)
     end while !Map::Region.find_by_invitation_code(self.invitation_code).nil?
   end
-  
+
+  def check_and_repair_name
+    if self.fortress.name != self.name
+      logger.warn(">>>ARMY NAME DIFFERS. Old: #{self.name} Corrected: #{self.fortress.name}.")
+      self.name = self.fortress.name
+    end
+  end
+
+  def check_consistency
+    check_and_repair_name
+
+    if self.changed?
+      logger.info(">>> SAVING REGION AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> REGION OK.")
+    end
+
+    true
+  end
+
   private
   
     def propagate_regions_count_to_round_info

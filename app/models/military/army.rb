@@ -584,7 +584,27 @@ class Military::Army < ActiveRecord::Base
       super(options)
     end
   end
-  
+
+  def check_and_repair_name
+    if self.home.name != self.home_settlement_name
+      logger.warn(">>>ARMY NAME DIFFERS. Old: #{self.home_settlement_name} Corrected: #{self.home.name}.")
+      self.home_settlement_name = self.home.name
+    end
+  end
+
+  def check_consistency
+    check_and_repair_name
+
+    if self.changed?
+      logger.info(">>> SAVING ARMY AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> ARMY OK.")
+    end
+
+    true
+  end
+
   private
   
     # before safe handler setting the correct mode in case the battle id has
