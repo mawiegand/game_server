@@ -5787,9 +5787,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 20 Army Experience.",
+            :en_US => "Fight with an army until it gained 10 Army Experience.",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 20 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -5857,7 +5857,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 20,
+              :min_experience => 10,
             },
 
           },          
@@ -5880,9 +5880,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 100 Army Experience",
+            :en_US => "Fight with an army until it gained 80 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 80 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -5950,7 +5950,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 100,
+              :min_experience => 80,
             },
 
           },          
@@ -5973,9 +5973,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 250 Army Experience",
+            :en_US => "Fight with an army until it gained 200 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 250 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -6043,7 +6043,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 250,
+              :min_experience => 200,
             },
 
           },          

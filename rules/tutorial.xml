@@ -1816,8 +1816,8 @@
     <Quest id="quest_armyXP_1" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 20 Army Experience.</Task>
-      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 20 Armee Erfahrung erlangt.</Task>
+      <Task>Fight with an army until it gained 10 Army Experience.</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
       </Description>
@@ -1838,7 +1838,7 @@
         <ExperienceReward>20</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ArmyExperienceTest min_experience="20" />
+        <ArmyExperienceTest min_experience="10" />
       </RewardTests>
     </Quest>
 
@@ -1846,8 +1846,8 @@
     <Quest id="quest_armyXP_2" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 100 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 100 Armee Erfahrung erlangt.</Task>
+      <Task>Fight with an army until it gained 80 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 80 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
       </Description>
@@ -1868,7 +1868,7 @@
         <ExperienceReward>80</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ArmyExperienceTest min_experience="100" />
+        <ArmyExperienceTest min_experience="80" />
       </RewardTests>
     </Quest>
 
@@ -1876,8 +1876,8 @@
     <Quest id="quest_armyXP_3" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 250 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 250 Armee Erfahrung erlangt.</Task>
+      <Task>Fight with an army until it gained 200 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 200 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert. Du kannst die Erfahrung Deiner Armeen in der Armee-Info ablesen.</p>
       </Description>
@@ -1898,7 +1898,7 @@
         <ExperienceReward>180</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ArmyExperienceTest min_experience="250" />
+        <ArmyExperienceTest min_experience="200" />
       </RewardTests>
     </Quest>
 

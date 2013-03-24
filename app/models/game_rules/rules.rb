@@ -6224,14 +6224,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der große blaue Kristall wurde bei einem Kampf gegen die wilden Neandertaler entdeckt. Der Kristall strahlt eine Aura der Macht aus und wurde sogleich mit dem Beinamen 'Träne der Götter' bedacht. Die Weisen Männer und Frauen sind sich einig, dass der Kristall große Kräfte in sich birgt.</p>",
+            :de_DE => "<p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>",
   
             :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
   
           },
           :flavour => {
             
-            :de_DE => "Unglaublich wie blau der ist!",
+            :de_DE => "Der schwarze Monolith ist toll. Er ist so groß und nunja schwarz eben.",
   
             :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
   
@@ -6243,7 +6243,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Der blaue Kristall ermöglicht neue Erkenntnisse und liefert laufend Erfahrung. Das neue Wissen ermöglicht Dir und Deiner Allianz immense Fortschritte in der Rohstoffproduktion.</p>",
+            :de_DE => "<p>Mit dem schwarzen Monolithen kamen die Tütfler aus dem 'Wacky-Lab' nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>",
   
             :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>",
   
