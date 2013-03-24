@@ -433,17 +433,17 @@ class Military::Army < ActiveRecord::Base
     sum = 0
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       unit = units[unit_type[:db_field]]
-      if !unit_type[:costs].blank? && unit.nil?
+      if !unit_type[:costs].blank? && !unit.nil?
         costs = 0
         unit_type[:costs].each do |unit_type_id, cost|
-          costs += cost
+          costs += cost.to_i
         end
-        sum += (unit * costs * 0.05).floor
+        sum += unit * (costs * 0.05).floor
       end
     end
     sum
   end
-  
+
   def self.create_npc(location, size)
     raise BadRequestError.new('No location for army creation!') if location.nil?
     npc = Fundamental::Character.find_by_id(1)
@@ -453,7 +453,7 @@ class Military::Army < ActiveRecord::Base
     army = Military::Army.new({
       name: army_name,
       ap_max: 4,
-      ap_present: 0,
+      ap_present: 4,
       ap_seconds_per_point: Military::Army.regeneration_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
