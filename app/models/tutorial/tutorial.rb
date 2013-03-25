@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.5
+# Version: 0.0.6
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 5, 
+        :build => 6, 
       },
       
       :production_test_weights => {
@@ -690,7 +690,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a clubber.",
   
-            :de_DE => "Baue einen Keulenkrieger.",
+            :de_DE => "Baue einen Krieger..",
                 
           },
           :flavour => {
@@ -702,14 +702,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Keulenkrieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
   
             :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”. The recruited units land up in the settlement’s garrison.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Keulenkrieger zur Verfügung.",
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
   
             :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my clubbers.",
                 
@@ -735,7 +735,7 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_clubbers,
+                :unit => :unit_warrior,
                 :amount => 5,
               },
 
@@ -750,7 +750,7 @@ class Tutorial::Tutorial
             :training_queue_tests => [
 
               {
-                :unit => 'unit_clubbers',
+                :unit => 'unit_warrior',
                 :min_count => 1,
               },
 
@@ -1438,9 +1438,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 10 units per hour",
+            :en_US => "Improve your stone and wood production to at least 15 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 15 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -1516,12 +1516,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 10,
+                :minimum  => 15,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 10,
+                :minimum  => 15,
               },
 
             ],
@@ -1801,7 +1801,7 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_clubbers,
+                :unit => :unit_warrior,
                 :amount => 10,
               },
 
@@ -2031,9 +2031,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 60 resource points.",
+            :en_US => "Increase the resource production of one settlement to 90 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 60 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2106,7 +2106,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 60,
+              :min_resources => 90,
             },
 
           },          
@@ -2852,7 +2852,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+            :de_DE => "Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
   
             :en_US => "We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
                 
@@ -10042,9 +10042,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 100 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 150 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 100 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10112,7 +10112,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 100,
+              :min_resources => 150,
             },
 
           },          
@@ -10135,9 +10135,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 180 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 240 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunktenach Steuern. ",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunktenach Steuern. ",
                 
           },
           :flavour => {
@@ -10205,7 +10205,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 180,
+              :min_resources => 240,
             },
 
           },          
@@ -10228,9 +10228,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 360 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 420 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 360 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 420 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10298,7 +10298,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 360,
+              :min_resources => 420,
             },
 
           },          
@@ -10321,9 +10321,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 740 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 750 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 740 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 750 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10369,17 +10369,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 740,
+                :amount => 720,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 740,
+                :amount => 720,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 740,
+                :amount => 7520,
               },
 
             ],
@@ -10391,7 +10391,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 740,
+              :min_resources => 750,
             },
 
           },          
