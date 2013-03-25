@@ -126,7 +126,7 @@
     <ChangeCharacterName freeChanges="2" resource="resource_cash" amount="20" />
     <ChangeCharacterGender freeChanges="2" resource="resource_cash" amount="20" />
     <ChangeSettlementName freeChanges="1" resource="resource_cash" amount="3" />
-    <ResourceExchange resource="resource_cash" amount="3" />
+    <ResourceExchange resource="resource_cash" amount="2" />
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>
       <TimeFactor>0.3</TimeFactor>

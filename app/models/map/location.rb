@@ -46,7 +46,7 @@ class Map::Location < ActiveRecord::Base
     inviting_alliance = Fundamental::Alliance.find_by_invitation_code(invitation_code)
     return nil if inviting_alliance.nil?
 
-    max_home_bases = 4
+    max_home_bases = 3
     regions = []
 
     # select from owned regions, if any free location

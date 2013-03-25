@@ -438,7 +438,7 @@ class Military::Army < ActiveRecord::Base
         unit_type[:costs].each do |unit_type_id, cost|
           costs += cost.to_i
         end
-        sum += unit * (costs * 0.05).floor
+        sum += unit * (costs * 0.08).floor
       end
     end
     sum
