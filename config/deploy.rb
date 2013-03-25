@@ -33,7 +33,7 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     stop
     start
-    restart_ticker
+    #restart_ticker
   end
 
   desc "Reset DB"
