@@ -91,23 +91,19 @@ staging:
 
   battle_xp_winner_bonus_factor:         3.0
 
-production:
+
+round2:
   <<: *defaults
   
   scope: 'wackadoo-round2'
 
   default_character_name: 'WackyUser'
-  identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
+  identity_provider_base_url: 'https://backup-round2.wack-a-doo.de/identity_provider'
   
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
   
-  cookie_name: 'wackadoo_r2_remember_token'  
+  cookie_name: 'gs_round2_remember_token'
   
-  chat_host: jabber2.wack-a-doo.com
-
-  
-  
-  
-  
+  chat_host: jabber.wack-a-doo.com
