@@ -3210,7 +3210,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_quarry_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,2)-GREATER(LEVEL,8)-GREATER(LEVEL,11)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Steinbruch
@@ -3337,7 +3337,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_logger_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,2)-GREATER(LEVEL,8)-GREATER(LEVEL,11)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Holzfäller
@@ -3653,7 +3653,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,10)-GREATER(LEVEL,12)-GREATER(LEVEL,17)", 
+            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,2)-GREATER(LEVEL,8)-GREATER(LEVEL,11)-GREATER(LEVEL,17)", 
           },
 
         },              #   END OF Kürschner
@@ -5450,7 +5450,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :change_name_cost => {
             :free_changes => 1,
             :resource_id  => 3,
-            :amount       => 3,
+            :amount       => 10,
           },
 
           :building_slots => {
@@ -5531,7 +5531,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :change_name_cost => {
             :free_changes => 1,
             :resource_id  => 3,
-            :amount       => 2,
+            :amount       => 1,
           },
 
           :building_slots => {
