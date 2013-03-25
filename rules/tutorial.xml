@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="6" />
+    <Version major="0" minor="0" build="7" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -243,14 +243,14 @@
         <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”. The recruited units land up in the settlement’s garrison.</p>
+        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Warrior”. The recruited units land up in the settlement’s garrison.</p>
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
       <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.</RewardText>
       <RewardText locale="en_US">You can train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’.</RewardText>
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
-      <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my clubbers.</RewardFlavor>
+      <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my warriors.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
         <UnitReward unit="unit_warrior">5</UnitReward>
@@ -476,8 +476,8 @@
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
-      <Task>Improve your stone and wood production to at least 15 units per hour</Task>
-      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 15 Rohstoffeinheiten pro Stunde.</Task>
+      <Task>Improve your stone and wood production to at least 18 units per hour</Task>
+      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 18 Rohstoffeinheiten pro Stunde.</Task>
       <Description locale="de_DE">
         <p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
       </Description>
@@ -499,8 +499,8 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ResourceProductionTest resource="resource_wood">15</ResourceProductionTest>
-        <ResourceProductionTest resource="resource_stone">15</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_wood">18</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_stone">18</ResourceProductionTest>
       </RewardTests>
     </Quest>
 
@@ -569,11 +569,11 @@
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
         <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
-        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p>
+        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Krieger in die Armee verschieben.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
+        <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.</Flavor>
@@ -899,32 +899,32 @@
     </Quest>
 
     <!-- 28 -->
-    <Quest id="quest_build_1barrackslvl10" advisor="warrior">
-      <Name>Training Grounds level 10</Name>
-      <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
-      <Task> Upgrade a training grounds to level 10.</Task>
-      <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 10.</Task>
+    <Quest id="quest_build_1barrackslvl5" advisor="warrior">
+      <Name>Training Grounds level 5</Name>
+      <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
+      <Task> Upgrade a training grounds to level 5.</Task>
+      <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 5.</Task>
       <Description locale="de_DE">
-        <p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>
+        <p>Auf Level 10 können im Ausbildungsgelände die Dicken Keulen ausgebildet werden.</p>
       </Description>
       <Description locale="en_US">
-        <p>At level 10, new units can be trained in the training grounds.</p>
+        <p>At level 10, thick-skinned clubber can be trained in the training grounds.</p>
       </Description>
-      <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
-      <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
-      <RewardText locale="de_DE">Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
-      <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
-      <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.</RewardFlavor>
-      <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
+      <Flavor locale="de_DE">Nur mit Kriegern können wir uns nicht behaupten! Wir brauchen auch die Keulenkrieger. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
+      <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
+      <RewardText locale="de_DE">Der Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
+      <RewardText locale="en_US">The clubber! Reinforcement for your melee fighters.</RewardText>
+      <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Keulenkrieger wirklich.</RewardFlavor>
+      <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
       <Requirement quest="quest_fortress" />
       <Rewards>
-        <ResourceReward resource="resource_stone">6000</ResourceReward>
-        <ResourceReward resource="resource_wood">3000</ResourceReward>
+        <ResourceReward resource="resource_stone">800</ResourceReward>
+        <ResourceReward resource="resource_wood">400</ResourceReward>
         <UnitReward unit="unit_clubbers_2">20</UnitReward>
-        <ExperienceReward>750</ExperienceReward>
+        <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_barracks" min_level="10" />
+        <BuildingTest building="building_barracks" min_level="5" />
       </RewardTests>
     </Quest>
 
@@ -3878,6 +3878,36 @@
       </RewardTests>
     </Quest>
 
+    <!-- 500 -->
+    <Quest id="quest_build_1barrackslvl10" advisor="warrior">
+      <Name>Training Grounds level 10</Name>
+      <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
+      <Task> Upgrade a training grounds to level 10.</Task>
+      <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 10.</Task>
+      <Description locale="de_DE">
+        <p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>At level 10, new units can be trained in the training grounds.</p>
+      </Description>
+      <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
+      <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
+      <RewardText locale="de_DE">Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
+      <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
+      <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.</RewardFlavor>
+      <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
+      <Requirement quest="quest_build_1barrackslvl5" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">6000</ResourceReward>
+        <ResourceReward resource="resource_wood">3000</ResourceReward>
+        <UnitReward unit="unit_clubbers_2">20</UnitReward>
+        <ExperienceReward>750</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_barracks" min_level="10" />
+      </RewardTests>
+    </Quest>
+    
     <!-- NOT IN
    <Quest id="quest_rank" advisor="chef">
    <Name>Rank</Name>
