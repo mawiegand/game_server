@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312104113) do
+ActiveRecord::Schema.define(:version => 20130321181547) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1852,13 +1852,14 @@ ActiveRecord::Schema.define(:version => 20130312104113) do
   create_table "fundamental_round_infos", :force => true do |t|
     t.string   "name"
     t.datetime "started_at"
-    t.integer  "regions_count",      :default => 0, :null => false
+    t.integer  "regions_count",       :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "victory_gained_at"
     t.integer  "winner_alliance_id"
-    t.integer  "number",             :default => 0, :null => false
+    t.integer  "number",              :default => 0, :null => false
     t.integer  "victory_type"
+    t.string   "winner_alliance_tag"
   end
 
   create_table "fundamental_settings", :force => true do |t|
@@ -2452,6 +2453,7 @@ ActiveRecord::Schema.define(:version => 20130312104113) do
     t.decimal  "exp_production_rate_buildings",                  :default => 0.0
     t.datetime "last_takeover_at"
     t.integer  "artifact_initiation_level",                      :default => 0,            :null => false
+    t.integer  "name_change_count",                              :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|
