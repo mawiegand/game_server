@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="6" />
+    <Version major="0" minor="0" build="7" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -905,10 +905,10 @@
       <Task> Upgrade a training grounds to level 5.</Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 5.</Task>
       <Description locale="de_DE">
-        <p>Auf Level 10 können im Ausbildungsgelände die Dicken Keulen ausgebildet werden.</p>
+        <p>Auf Level 5 können im Ausbildungsgelände die Keulenkrieger ausgebildet werden.</p>
       </Description>
       <Description locale="en_US">
-        <p>At level 10, thick-skinned clubber can be trained in the training grounds.</p>
+        <p>At level 5, clubber can be trained in the training grounds.</p>
       </Description>
       <Flavor locale="de_DE">Nur mit Kriegern können wir uns nicht behaupten! Wir brauchen auch die Keulenkrieger. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
       <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
