@@ -34,8 +34,8 @@ namespace :deploy do
     stop
     start
     restart_ticker
-    restart_jabber_bots          if Rails.env.production? || Rails.env.staging?
-    restart_notification_ticker  if Rails.env.production? || Rails.env.staging?
+    restart_jabber_bots
+    restart_notification_ticker
   end
 
   desc "Reset DB"
