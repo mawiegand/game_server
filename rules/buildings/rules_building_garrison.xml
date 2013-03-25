@@ -5,7 +5,8 @@
   <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
-    <p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p> 
+    <p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen.</p>
+    <p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>
   </Description>
   <Description lang="en_US">
     <p>Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p> 

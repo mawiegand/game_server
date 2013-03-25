@@ -4,19 +4,11 @@
 <Building id="building_artifact_stand" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="12">
   <Name lang="de_DE">Wacky-Lab</Name>
   <Name lang="en_US">Wacky-Lab</Name>
-  <Description lang="de_DE">
-    <p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>
-  </Description>
-  <Description lang="en_US">
-    <p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>
-  </Description>
-  <Flavour lang="de_DE">
-    <p>An sonnigen Tagen werden auch Getränke gereicht und die Hornbläser geben ein Ständchen.</p>
-  </Flavour>
-  <Flavour lang="en_US">
-    <p>On sunnys days there are drinks and music.</p>
-	</Flavour>
-<Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*4))</Population>
+  <Description lang="de_DE"><p>Im Wacky-Lab vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p></Description>
+  <Description lang="en_US"><p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p></Description>
+  <Flavour lang="de_DE"><p>Die Tüftler sind allesamt verrückt! Betreten auf eigene Gefahr.</p></Flavour>
+  <Flavour lang="en_US"><p>On sunnys days there are drinks and music.</p></Flavour>
+<Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5))</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" />
     <Requirement id="building_artifact_stand" max_level="0" /> 
@@ -27,7 +19,6 @@
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(FLOOR(12500*POW(LEVEL,0.4)))</Cost>
   <ProductionTime shortenable="true">LESS(LEVEL,11)*(FLOOR(11*3600+3600*POW(LEVEL,0.7)))</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <DefenseBonus>0.2*LEVEL</DefenseBonus>
     <UnlockArtifactInitiation>LEVEL</UnlockArtifactInitiation>
   </Abilities>
 </Building>

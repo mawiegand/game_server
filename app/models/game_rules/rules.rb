@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.6
+# Version: 0.0.7
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,12 +114,12 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 0,
-                    :build => 6,
+                    :build => 7,
       },
       :battle => {
         :calculation => {
           :round_time => 30,
-          :retreat_probability => 0.6,
+          :retreat_probability => 0.5,
           },
       },
   
@@ -966,6 +966,15 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
             ],
 
           ],          
@@ -1026,7 +1035,7 @@ class GameRules::Rules
           :critical_hit_damage => 3,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1800',
+          :production_time => '2100',
 
           :costs      => {
             0 => '90',
@@ -1054,6 +1063,17 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -1182,7 +1202,7 @@ class GameRules::Rules
           :critical_hit_damage => 6,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1800',
+          :production_time => '2100',
 
           :costs      => {
             0 => '112',
@@ -1286,7 +1306,7 @@ class GameRules::Rules
           :critical_hit_damage => 7,
           :critical_hit_chance => 0.05,
 
-          :production_time => '2100',
+          :production_time => '3000',
 
           :costs      => {
             0 => '168',
@@ -1327,6 +1347,15 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 1,
 
             },
 
@@ -1390,7 +1419,7 @@ class GameRules::Rules
           :critical_hit_damage => 8,
           :critical_hit_chance => 0.1,
 
-          :production_time => '2400',
+          :production_time => '4200',
 
           :costs      => {
             0 => '250',
@@ -1418,6 +1447,17 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -1650,7 +1690,7 @@ class GameRules::Rules
           :critical_hit_damage => 1,
           :critical_hit_chance => 0.02,
 
-          :production_time => '1800',
+          :production_time => '2100',
 
           :costs      => {
             0 => '135',
@@ -1691,6 +1731,15 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 1,
 
             },
 
@@ -1754,7 +1803,7 @@ class GameRules::Rules
           :critical_hit_damage => 2,
           :critical_hit_chance => 0.02,
 
-          :production_time => '2100',
+          :production_time => '3000',
 
           :costs      => {
             0 => '200',
@@ -1782,6 +1831,17 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -1927,7 +1987,7 @@ class GameRules::Rules
           :critical_hit_damage => 0,
           :critical_hit_chance => 0.01,
 
-          :production_time => '28800',
+          :production_time => '36000',
 
           :costs      => {
             0 => '5000',
@@ -1992,7 +2052,7 @@ class GameRules::Rules
             
             :en_US => "Towers",
   
-            :de_DE => "Türme",
+            :de_DE => "Festungsturm",
                 
           },
           :description => {
@@ -2283,9 +2343,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Um sein Gebiet im Auge zu behalten, schläft er niemals in einer Hütte, sondern davor, oder auch oben drauf. Alle seine Schätze werden fein säuberlich auf seinem Gelände zur Schau gestellt.</p><p>Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt.Neben vielen völlig unbrauchbaren Sachen finden die Bewohner alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
   
-            :en_US => "<p>The most primitive of all stone-age folk. So he can keep an eye on his territory, he never sleeps inside a hut, but in front of it or even on the roof. All his treasures are set out neatly on display in his compound. He hunts and gathers anything that comes into his sights – er… into reach of his slingshot.</p><p>Apart from all kinds of useless stuff, inhabitants find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
+            :en_US => "<p>The most primitive of all stone-age folk. All his treasures are set out neatly on display in his compound. He hunts and gathers anything that comes into his sights – er… into reach of his slingshot.</p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
                 
           },
 
@@ -2676,7 +2736,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und  erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>",
+            :de_DE => "<p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>",
   
             :en_US => "<p>Stone-age logistics centre where raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>",
                 
@@ -2817,7 +2877,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Vorsicht: Ein Lagerfeuer kann nur auf einem kleinen Bauplatz erreicht werden!</p>",
+            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p>",
   
             :en_US => "<p>At the campfire, inhabitants gather in sociable groups, or to make important arrangements. Guests are also either selected to join the campfire group, or arranged round it on stakes.</p><p>It’s also where the little chiefs’ careers begin. A couple of flattering words here, a bit of scheming there, taking credit for someone else’s bravery and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
                 
@@ -3263,14 +3323,14 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :de_DE => "<p>An sonnigen Tagen werden auch Getränke gereicht und die Hornbläser geben ein Ständchen.</p>",
+            :de_DE => "<p>Die Tüftler sind allesamt verrückt! Betreten auf eigene Gefahr.</p>",
   
             :en_US => "<p>On sunnys days there are drinks and music.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Während die Gelehrten am Artefakt-Stand die Geheimnisse der Artefakte ergründen, steigt durch den Artefakt-Stand die Zahl der Bewohner und die Kampfkraft der Siedlung.</p>",
+            :de_DE => "<p>Im Wacky-Lab vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>",
   
             :en_US => "<p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>",
                 
@@ -3278,7 +3338,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*4))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3342,8 +3402,6 @@ class GameRules::Rules
           ],          
 
           :abilities   => {
-
-            :defense_bonus => "0.2*LEVEL",
 
             :unlock_artifact_initiation => "LEVEL",
 
@@ -4086,7 +4144,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten.</p><p>Vorrangig werden die Tiere dressiert und den Reitern der richtige Umgang beigebracht. Die wenigsten Reiter führen im Kampf selber Waffen, um sich ganz auf das Reiten zu konzentrieren. Das Reittier ist die Waffe!</p><p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>",
+            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten. Die Ausbildung der Reiter umfasst nur den Umgang mit den Tieren. Waffen führen die Reiter nicht, sie reiten auf einer!</p><p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>",
   
             :en_US => "<p>The barn smells like no other building in the settlement. Not surprisingly, it’s where ostriches, sabre-toothed tigers and little dinosaurs are kept – as well as a kitty cat as mascot.</p><p>The animals are trained and the riders are taught how to handle them. Very few riders carry weapons into battle, as they have to concentrate on riding. Their mount is their weapon!</p><p>Big barns smell even worse, but that speeds up the training and they can drill bigger animals.</p>",
                 
@@ -4182,7 +4240,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Kupfermesser waren ein Geschenk der Götter und macht den Kürschner zu Künstlern. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+            :de_DE => "<p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
   
             :en_US => "<p>The copper knife was a gift from the gods. At least, that’s what the furriers believe who use their copper knives to create gorgeous fashions. Sadly, they suffer from the usual unfortunate side-effects: vigorous fanning, a high-pitched nasal voice and other limp-wristed craziness. This is why crazy furriers set such a good example for other furriers.</p>",
                 
@@ -4395,7 +4453,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>",
+            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen.</p><p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>",
   
             :en_US => "<p>Well, who would have thought it?! Field armies also benefit from the increased discipline. And mean that bigger armies can be deployed in the field.</p>",
                 
@@ -4861,14 +4919,14 @@ class GameRules::Rules
           },
 
         },              #   END OF Festungsanlagen
-        {               #   Truppenunterkunft
+        {               #   Turm der Knüppelei
           :id          => 25, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
           :name        => {
             
-            :de_DE => "Truppenunterkunft",
+            :de_DE => "Turm der Knüppelei",
   
             :en_US => "Infantry Tower",
                 
@@ -4882,7 +4940,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In dem Turm der Truppenunterkunft werden die Nahkämpfer in der Kunst des Kampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
+            :de_DE => "<p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
   
             :en_US => "<p>Infantry troops are instructed in the art of fighting in the infantry tower. The extremely sadistic trainer sets great store by obedience and discipline. And if someone doesn’t obey orders or is even more stupid than the others during training, he has to clean the stables in the cavalry tower.</p>",
                 
@@ -4957,7 +5015,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Truppenunterkunft
+        },              #   END OF Turm der Knüppelei
         {               #   Turm der Ballistik
           :id          => 26, 
           :symbolic_id => :building_artillery_tower,
@@ -4979,7 +5037,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Nicht weiter verwunderlich ist die Helmpflicht. Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Achtung Helmpflicht! Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
   
             :en_US => "<p>Hardly surprising that helmets are compulsory. Trainers and trainees have bound thick animal skins around their heads so they can at least survive being hit by small stones or gravel.</p><p>On command, all kinds of missiles are sent flying through the air. Unfortunately, no-one really knows which command they should obey.</p>",
                 

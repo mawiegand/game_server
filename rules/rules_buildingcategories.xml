@@ -14,7 +14,7 @@
   </BuildingCategory>
   <BuildingCategory id="building_category_fortress_tower">
     <Name>Towers</Name>
-    <Name lang="de_DE">Türme</Name>
+    <Name lang="de_DE">Festungsturm</Name>
     <Description lang="de_DE">
       <p>In Türmen untergebrachte militärische Verbesserungen von Festungen.</p> 
     </Description>

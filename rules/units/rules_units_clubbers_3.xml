@@ -39,5 +39,6 @@
   </RequirementGroup>
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="15" />
+    <Requirement id="building_copper_smelter" min_level="1" />
   </RequirementGroup>
 </Unit>

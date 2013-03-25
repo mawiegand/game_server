@@ -19,7 +19,7 @@
       <Cost id="resource_stone" round="true">200</Cost>
       <Cost id="resource_wood" round="true">135</Cost>
       <Cost id="resource_fur" round="true">475</Cost>
-      <ProductionTime shortenable="true">2100</ProductionTime>
+      <ProductionTime shortenable="true">3000</ProductionTime>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>
@@ -36,5 +36,6 @@
       <RequirementGroup>
         <Requirement id="building_stud" min_level="20" />
         <Requirement id="building_copper_smelter" min_level="10" />
+        <Requirement id="building_haunt" max_level="0" />
       </RequirementGroup>
     </Unit>
