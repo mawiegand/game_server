@@ -796,9 +796,9 @@
       <RewardFlavor locale="en_US">At least, more room for my great personality.</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
       <Rewards>
-        <ResourceReward resource="resource_stone">800</ResourceReward>
-        <ResourceReward resource="resource_wood">800</ResourceReward>
-        <ResourceReward resource="resource_fur">800</ResourceReward>
+        <ResourceReward resource="resource_stone">900</ResourceReward>
+        <ResourceReward resource="resource_wood">900</ResourceReward>
+        <ResourceReward resource="resource_fur">900</ResourceReward>
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -856,9 +856,9 @@
       <RewardFlavor locale="en_US">Äh? That small? It´s impossible to seat alle our guests in here. The neighbours are at least twenty...</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">1500</ResourceReward>
-        <ResourceReward resource="resource_wood">1500</ResourceReward>
-        <ResourceReward resource="resource_fur">1500</ResourceReward>
+        <ResourceReward resource="resource_stone">1750</ResourceReward>
+        <ResourceReward resource="resource_wood">1750</ResourceReward>
+        <ResourceReward resource="resource_fur">1750</ResourceReward>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>400</ExperienceReward>
       </Rewards>
@@ -948,9 +948,9 @@
       <RewardFlavor locale="en_US">Cool, you get accesss to the furrier!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl7" />
       <Rewards>
-        <ResourceReward resource="resource_stone">2000</ResourceReward>
-        <ResourceReward resource="resource_wood">2000</ResourceReward>
-        <ResourceReward resource="resource_fur">2000</ResourceReward>
+        <ResourceReward resource="resource_stone">2500</ResourceReward>
+        <ResourceReward resource="resource_wood">2500</ResourceReward>
+        <ResourceReward resource="resource_fur">2500</ResourceReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>

@@ -2475,17 +2475,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 800,
+                :amount => 900,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 800,
+                :amount => 900,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 800,
+                :amount => 900,
               },
 
             ],
@@ -2679,17 +2679,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1500,
+                :amount => 1750,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1500,
+                :amount => 1750,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1500,
+                :amount => 1750,
               },
 
               {
@@ -2999,17 +2999,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 2500,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
+                :amount => 2500,
               },
 
             ],

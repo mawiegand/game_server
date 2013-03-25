@@ -745,7 +745,7 @@ class GameRules::Rules
                 
           },
           :attack      => 6,
-          :armor       => 4,
+          :armor       => 5,
           :hitpoints   => 90,
 
           :overrunnable => true,
@@ -758,9 +758,39 @@ class GameRules::Rules
           :costs      => {
             0 => '20',
             1 => '30',
-            2 => '70',
+            2 => '75',
             
           },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 25,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+          ],          
 
 
         },              #   END OF Club Warrior
@@ -821,9 +851,9 @@ class GameRules::Rules
           :production_time => '1200',
 
           :costs      => {
-            0 => '40',
-            1 => '60',
-            2 => '140',
+            0 => '30',
+            1 => '40',
+            2 => '113',
             
           },
 
@@ -925,9 +955,9 @@ class GameRules::Rules
           :production_time => '1500',
 
           :costs      => {
-            0 => '60',
-            1 => '90',
-            2 => '210',
+            0 => '45',
+            1 => '68',
+            2 => '170',
             
           },
 
@@ -1038,9 +1068,9 @@ class GameRules::Rules
           :production_time => '2100',
 
           :costs      => {
-            0 => '90',
-            1 => '135',
-            2 => '315',
+            0 => '68',
+            1 => '102',
+            2 => '255',
             
           },
 
@@ -1142,7 +1172,7 @@ class GameRules::Rules
           :costs      => {
             0 => '75',
             1 => '75',
-            2 => '210',
+            2 => '225',
             
           },
 
@@ -1207,7 +1237,7 @@ class GameRules::Rules
           :costs      => {
             0 => '112',
             1 => '112',
-            2 => '316',
+            2 => '320',
             
           },
 
@@ -1311,7 +1341,7 @@ class GameRules::Rules
           :costs      => {
             0 => '168',
             1 => '168',
-            2 => '474',
+            2 => '480',
             
           },
 
@@ -1526,7 +1556,7 @@ class GameRules::Rules
           :costs      => {
             0 => '60',
             1 => '40',
-            2 => '140',
+            2 => '150',
             
           },
 
@@ -1591,7 +1621,7 @@ class GameRules::Rules
           :costs      => {
             0 => '90',
             1 => '60',
-            2 => '210',
+            2 => '225',
             
           },
 
@@ -1695,7 +1725,7 @@ class GameRules::Rules
           :costs      => {
             0 => '135',
             1 => '90',
-            2 => '315',
+            2 => '335',
             
           },
 
@@ -1808,7 +1838,7 @@ class GameRules::Rules
           :costs      => {
             0 => '200',
             1 => '135',
-            2 => '475',
+            2 => '505',
             
           },
 
@@ -6586,7 +6616,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  0
           :id          => 0, 
           :exp         => 0,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
