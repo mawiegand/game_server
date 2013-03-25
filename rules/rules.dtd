@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, ChangeCharacterName, ChangeCharacterGender, ChangeSettlementName, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -42,21 +42,15 @@
 
 <!ELEMENT ChangeCharacterName EMPTY>
 <!ATTLIST ChangeCharacterName
-  freeChanges CDATA #REQUIRED
-  resource    IDREF #REQUIRED
-  amount      CDATA #REQUIRED
+  free_changes CDATA #REQUIRED
+  resource     IDREF #REQUIRED
+  amount       CDATA #REQUIRED
 >
 <!ELEMENT ChangeCharacterGender EMPTY>
 <!ATTLIST ChangeCharacterGender
-  freeChanges CDATA #REQUIRED
-  resource    IDREF #REQUIRED
-  amount      CDATA #REQUIRED
->
-<!ELEMENT ChangeSettlementName EMPTY>
-<!ATTLIST ChangeSettlementName
-  freeChanges CDATA #REQUIRED
-  resource    IDREF #REQUIRED
-  amount      CDATA #REQUIRED
+  free_changes CDATA #REQUIRED
+  resource     IDREF #REQUIRED
+  amount       CDATA #REQUIRED
 >
 <!ELEMENT ResourceExchange EMPTY>
 <!ATTLIST ResourceExchange
@@ -109,14 +103,22 @@
 >
 
 <!--Settlements-->
-<!ELEMENT Settlement (Name+, Description+, ShortDescription*, BuildingSlot*)>
+<!ELEMENT Settlement (Name+, Description+, ShortDescription*, ChangeCost?, BuildingSlot*)>
 <!ATTLIST Settlement 
   id ID #REQUIRED
 	conquerable (true | false) "false"
 	destroyable (true | false) "false"
 >
 
-<!ELEMENT BuildingSlot (BuildingOption+)>
+<!ELEMENT ChangeCost EMPTY>
+<!ATTLIST ChangeCost
+  free_changes    CDATA #REQUIRED
+  resource        IDREF #REQUIRED
+  amount          CDATA #REQUIRED
+>
+
+
+    <!ELEMENT BuildingSlot (BuildingOption+)>
 <!ATTLIST BuildingSlot 
 	number CDATA #REQUIRED
 	max-level CDATA #REQUIRED 

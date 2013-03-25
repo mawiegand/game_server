@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.8
+# Version: 0.0.9
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 0,
-                    :build => 8,
+                    :build => 9,
       },
       :battle => {
         :calculation => {
@@ -354,14 +354,6 @@ class GameRules::Rules
         :free_changes => 2,
         :resource_id  => 3,
         :amount       => 20,
-      },
-
-# ## CHANGE SETTLEMENT NAME ###################################################
-
-      :change_settlement_name => {
-        :free_changes => 1,
-        :resource_id  => 3,
-        :amount       => 3,
       },
 
 # ## RESOURCE EXCHANGE ###################################################
@@ -5333,7 +5325,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
 
-
         },              #   END OF Unbesiedelt
         {               #   Festung
           :id          => 1, 
@@ -5357,6 +5348,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :destroyable => false,
 
 
+          :change_name_cost => {
+            :free_changes => 1,
+            :resource_id  => 3,
+            :amount       => 3,
+          },
 
           :building_slots => {
             0 => {
@@ -5433,6 +5429,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :destroyable => false,
 
 
+          :change_name_cost => {
+            :free_changes => 1,
+            :resource_id  => 3,
+            :amount       => 2,
+          },
 
           :building_slots => {
             0 => {
@@ -5956,6 +5957,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :destroyable => true,
 
 
+          :change_name_cost => {
+            :free_changes => 1,
+            :resource_id  => 3,
+            :amount       => 1,
+          },
 
           :building_slots => {
             0 => {

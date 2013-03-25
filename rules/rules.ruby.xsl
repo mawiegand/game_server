@@ -323,7 +323,7 @@ end
 # ## CHANGE CHARACTER NAME ###################################################
 
       :change_character_name => {
-        :free_changes => <xsl:value-of select="@freeChanges" />,
+        :free_changes => <xsl:value-of select="@free_changes" />,
         :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
         :amount       => <xsl:value-of select="@amount"/>,
       },
@@ -335,19 +335,7 @@ end
 # ## CHANGE CHARACTER GENDER ###################################################
 
       :change_character_gender => {
-        :free_changes => <xsl:value-of select="@freeChanges" />,
-        :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
-        :amount       => <xsl:value-of select="@amount"/>,
-      },
-</xsl:template>
-
-
-
-<xsl:template match="ChangeSettlementName">
-# ## CHANGE SETTLEMENT NAME ###################################################
-
-      :change_settlement_name => {
-        :free_changes => <xsl:value-of select="@freeChanges" />,
+        :free_changes => <xsl:value-of select="@free_changes" />,
         :resource_id  => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
         :amount       => <xsl:value-of select="@amount"/>,
       },
@@ -752,6 +740,14 @@ end
 </xsl:if>
 	        :conquerable => <xsl:value-of select="@conquerable"/>,
 	        :destroyable => <xsl:value-of select="@destroyable"/>,
+
+<xsl:if test="ChangeCost">
+          :change_name_cost => {
+            :free_changes => <xsl:value-of select="ChangeCost/@free_changes" />,
+            :resource_id  => <xsl:value-of select="count(id(ChangeCost/@resource)/preceding-sibling::*)"/>,
+            :amount       => <xsl:value-of select="ChangeCost/@amount"/>,
+          },
+</xsl:if>
 
 
 <xsl:if test="count(BuildingSlot)">

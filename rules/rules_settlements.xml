@@ -13,6 +13,7 @@
     <Name lang="en_US">Fortress</Name>
     <Description lang="de_DE">Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.</Description>
     <Description lang="en_US">English Description.</Description>
+    <ChangeCost free_changes="1" resource="resource_cash" amount="3" />
     <BuildingSlot number="0" max-level="10" building="building_fortress_fortification" level="1">
       <BuildingOption category="building_category_fortress_main" />
     </BuildingSlot>
@@ -31,6 +32,7 @@
     <Name lang="en_US">Home Settlement</Name>
     <Description lang="de_DE">Die Hauptsiedlung eines Stammes.</Description>
     <Description lang="en_US">English Description.</Description>
+    <ChangeCost free_changes="1" resource="resource_cash" amount="2" />
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
@@ -45,11 +47,11 @@
     <BuildingSlot number="3" max-level="20">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
-    </BuildingSlot> 
+    </BuildingSlot>
     <BuildingSlot number="4" max-level="20">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
-    </BuildingSlot>    
+    </BuildingSlot>
     <BuildingSlot number="5" max-level="10">
       <BuildingOption category="building_category_small_building" />
       <BuildingOption category="building_category_special_building" />
@@ -200,6 +202,7 @@
     <Name lang="en_US">Camp</Name>
     <Description lang="de_DE">Lagerstätte eines Stammes.</Description>
     <Description lang="en_US">A small encampment of a tribe.</Description>
+    <ChangeCost free_changes="1" resource="resource_cash" amount="1" />
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>

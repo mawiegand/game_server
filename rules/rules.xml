@@ -71,7 +71,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="8" />
+    <Version major="0" minor="0" build="9" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
@@ -123,9 +123,8 @@
       <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedupCost resource="resource_cash" amount="1" />
-    <ChangeCharacterName freeChanges="2" resource="resource_cash" amount="20" />
-    <ChangeCharacterGender freeChanges="2" resource="resource_cash" amount="20" />
-    <ChangeSettlementName freeChanges="1" resource="resource_cash" amount="3" />
+    <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
+    <ChangeCharacterGender free_changes="2" resource="resource_cash" amount="20" />
     <ResourceExchange resource="resource_cash" amount="2" />
     <BuildingConversion>
       <CostFactor>0.3</CostFactor>

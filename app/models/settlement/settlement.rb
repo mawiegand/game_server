@@ -81,7 +81,11 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def alliance_unlock_fields 
     []
-  end  
+  end
+
+  def settlement_type
+    GameRules::Rules.the_rules.settlement_types[self.type_id]
+  end
 
   def fortress?
     self.type_id == TYPE_FORTRESS
@@ -185,7 +189,7 @@ class Settlement::Settlement < ActiveRecord::Base
       raise ConflictError.new("this name is already used in game")
     end
 
-    change_settlement_name_rules = GameRules::Rules.the_rules.change_settlement_name
+    change_settlement_name_rules = self.settlement_type[:change_name_cost]
     free_change = (self.name_change_count || 0) < change_settlement_name_rules[:free_changes]
     character = Fundamental::Character.find_by_id(self.owner)
     if !free_change && !character.resource_pool.have_at_least_resources({change_settlement_name_rules[:resource_id] => change_settlement_name_rules[:amount]})
