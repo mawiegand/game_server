@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="5" />
+    <Version major="0" minor="0" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -238,9 +238,9 @@
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a clubber.</Task>
-      <Task locale="de_DE">Baue einen Keulenkrieger.</Task>
+      <Task locale="de_DE">Baue einen Krieger..</Task>
       <Description locale="de_DE">
-        <p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Keulenkrieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
+        <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”. The recruited units land up in the settlement’s garrison.</p>
@@ -249,15 +249,15 @@
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
       <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.</RewardText>
       <RewardText locale="en_US">You can train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’.</RewardText>
-      <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Keulenkrieger zur Verfügung.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my clubbers.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <UnitReward unit="unit_clubbers">5</UnitReward>
+        <UnitReward unit="unit_warrior">5</UnitReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <TrainingQueueTest unit="unit_clubbers" min_count="1" />
+        <TrainingQueueTest unit="unit_warrior" min_count="1" />
       </RewardTests>
     </Quest>
 
@@ -476,8 +476,8 @@
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
-      <Task>Improve your stone and wood production to at least 10 units per hour</Task>
-      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.</Task>
+      <Task>Improve your stone and wood production to at least 15 units per hour</Task>
+      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 15 Rohstoffeinheiten pro Stunde.</Task>
       <Description locale="de_DE">
         <p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
       </Description>
@@ -499,8 +499,8 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ResourceProductionTest resource="resource_wood">10</ResourceProductionTest>
-        <ResourceProductionTest resource="resource_stone">10</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_wood">15</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_stone">15</ResourceProductionTest>
       </RewardTests>
     </Quest>
 
@@ -586,7 +586,7 @@
         <ResourceReward resource="resource_stone">165</ResourceReward>
         <ResourceReward resource="resource_wood">150</ResourceReward>
         <ResourceReward resource="resource_fur">150</ResourceReward>
-        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -660,8 +660,8 @@
     <Quest id="quest_resourcescore_0" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 60 resource points.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 60 Rohstoffpunkte.</Task>
+      <Task>Increase the resource production of one settlement to 90 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
         <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
       </Description>
@@ -683,7 +683,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="60" />
+        <SettlementProductionTest min_resources="90" />
       </RewardTests>
     </Quest>
 
@@ -910,7 +910,7 @@
       <Description locale="en_US">
         <p>At level 10, new units can be trained in the training grounds.</p>
       </Description>
-      <Flavor locale="de_DE">Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
+      <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
       <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
       <RewardText locale="de_DE">Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
       <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
@@ -3185,8 +3185,8 @@
     <Quest id="quest_resourcescore_1" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 100 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 100 Rohstoffpunkte nach Steuern.</Task>
+      <Task>Increase the resource production of one settlement to 150 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3207,7 +3207,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="100" />
+        <SettlementProductionTest min_resources="150" />
       </RewardTests>
     </Quest>
 
@@ -3215,8 +3215,8 @@
     <Quest id="quest_resourcescore_2" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name> 
-      <Task>Increase the resource production of one settlement to 180 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunktenach Steuern. </Task>
+      <Task>Increase the resource production of one settlement to 240 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunktenach Steuern. </Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3237,7 +3237,7 @@
         <ExperienceReward>60</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="180" />
+        <SettlementProductionTest min_resources="240" />
       </RewardTests>
     </Quest>
 
@@ -3245,8 +3245,8 @@
     <Quest id="quest_resourcescore_3" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 360 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 360 Rohstoffpunkte nach Steuern.</Task>
+      <Task>Increase the resource production of one settlement to 420 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 420 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3267,7 +3267,7 @@
         <ExperienceReward>80</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="360" />
+        <SettlementProductionTest min_resources="420" />
       </RewardTests>
     </Quest>
 
@@ -3275,8 +3275,8 @@
     <Quest id="quest_resourcescore_4" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 740 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 740 Rohstoffpunkte nach Steuern.</Task>
+      <Task>Increase the resource production of one settlement to 750 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 750 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3291,13 +3291,13 @@
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
       <Requirement quest="quest_resourcescore_3" />
       <Rewards>
-        <ResourceReward resource="resource_stone">740</ResourceReward>
-        <ResourceReward resource="resource_wood">740</ResourceReward>
-        <ResourceReward resource="resource_fur">740</ResourceReward>
+        <ResourceReward resource="resource_stone">720</ResourceReward>
+        <ResourceReward resource="resource_wood">720</ResourceReward>
+        <ResourceReward resource="resource_fur">7520</ResourceReward>
         <ExperienceReward>180</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="740" />
+        <SettlementProductionTest min_resources="750" />
       </RewardTests>
     </Quest>
 
