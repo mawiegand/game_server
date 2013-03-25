@@ -8,7 +8,6 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
     p_fur   = params[:resource_fur].to_f
     
     raise ForbiddenError.new('negative value(s)') if p_stone < 0.0 || p_wood < 0.0 || p_fur < 0.0
-    raise ForbiddenError.new('is this user dumb?! Why would anybody want to get 0 ressources?!') if p_stone == 0.0 && p_wood == 0.0 && p_fur == 0.0
 
     Fundamental::ResourcePool.transaction do
       pool = current_character.resource_pool.lock!
@@ -21,7 +20,7 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
       price = { cost[:resource_id] => cost[:amount] }
 
       # check if user has enough cash
-      raise ForbiddenError.new('not enough cash') unless pool.have_at_least_resources(price)
+      raise ConflictError.new('not enough cash') unless pool.have_at_least_resources(price)
 
       # check if transmitted sum is bigger than the sum of the resource pool
       raise ForbiddenError.new('sum is greater than sum from respool') if remaining < 0 
