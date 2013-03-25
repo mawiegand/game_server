@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.7
+# Version: 0.1.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -113,8 +113,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 0,
-                    :build => 7,
+                    :minor => 1,
+                    :build => 0,
       },
       :battle => {
         :calculation => {
@@ -1928,7 +1928,7 @@ class GameRules::Rules
           },
           :attack      => 5,
           :armor       => 3,
-          :hitpoints   => 80,
+          :hitpoints   => 70,
 
           :overrunnable => true,
 
@@ -1938,9 +1938,9 @@ class GameRules::Rules
           :production_time => '1200',
 
           :costs      => {
-            0 => '40',
-            1 => '20',
-            2 => '24',
+            0 => '20',
+            1 => '10',
+            2 => '60',
             
           },
 
@@ -2050,6 +2050,105 @@ class GameRules::Rules
 
 
         },              #   END OF Little Chief
+        {               #   Warrior
+          :id          => 14, 
+          :symbolic_id => :warriror,
+					:category    => 0,
+          :db_field    => :unit_warriror,
+          :name        => {
+            
+            :en_US => "Warrior",
+  
+            :de_DE => "Krieger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Affordable unarmed warrior for hunting down neanderthal and other players weakest units.</p>",
+  
+            :de_DE => "<p>Günstiger unbewaffneter Krieger zur Abwehr von Neandertalern und schwachen Gegnern.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
+  
+            :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least try for a while.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 0.5,
+  
+            :unitcategory_artillery => 0.5,
+  
+            :unitcategory_siege => 0.5,
+  
+            :unitcategory_special => 0.5,
+                
+          },
+          :attack      => 5,
+          :armor       => 4,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1200',
+
+          :costs      => {
+            0 => '5',
+            1 => '5',
+            2 => '50',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 25,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 1,
+
+              :max_level => 4,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Warrior
       ],                # END OF UNIT TYPES
 
 # ## BUILDING CATEGORIES ######################################################
