@@ -34,10 +34,10 @@ namespace :deploy do
     stop
     start
     restart_ticker
-    restart_notification_ticker
+    restart_notification_ticker  if Rails.env.production? || Rails.env.staging?
   end
 
-#  desc "Reset DB"
+  desc "Reset DB"
   task :reset do
     # run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
     # restart
