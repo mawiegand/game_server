@@ -34,7 +34,6 @@ namespace :deploy do
     stop
     start
     restart_ticker
-    restart_notification_ticker  if Rails.env.production? || Rails.env.staging?
   end
 
   desc "Reset DB"
