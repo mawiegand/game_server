@@ -7,3 +7,4 @@ set :port, 5775                                          # until 5775 is working
 
 set :branch,    "backup-round2"
 
+set :deploy_to, "/var/www/game_server_round2"
