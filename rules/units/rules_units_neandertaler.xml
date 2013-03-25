@@ -17,9 +17,9 @@
   <Flavour lang="de_DE">
     <p>Neandertaler reden nicht, sie handeln äh - schlagen.</p>
   </Flavour>
-  <Cost id="resource_stone" round="true">40</Cost>  
-  <Cost id="resource_wood" round="true">20</Cost>    
-  <Cost id="resource_fur" round="true">24</Cost>    
+  <Cost id="resource_stone" round="true">20</Cost>  
+  <Cost id="resource_wood" round="true">10</Cost>    
+  <Cost id="resource_fur" round="true">60</Cost>    
   <ProductionTime shortenable="true">1200</ProductionTime>  
   <Velocity>1</Velocity>
   <ActionPoints>4</ActionPoints>
@@ -28,7 +28,7 @@
   <CriticalDamage chance="0.01">1</CriticalDamage>
   <Armor>3</Armor>
   <Overrunnable>true</Overrunnable>
-  <Hitpoints>80</Hitpoints>
+  <Hitpoints>70</Hitpoints>
   <Effectiveness category="unitcategory_infantry">1</Effectiveness>
   <Effectiveness category="unitcategory_cavalry">1.5</Effectiveness>
   <Effectiveness category="unitcategory_artillery">0.75</Effectiveness>

@@ -28,5 +28,6 @@
   <xi:include href="units/rules_units_neandertaler.xml" />  <!-- npc unit -->
    
   <xi:include href="units/rules_units_little_chief.xml" /> 
+  <xi:include href="units/rules_units_warrior.xml" /> 
   <!-- ADD NEW units DIRECTLY ABOVE THIS LINE -->
 </UnitTypes>

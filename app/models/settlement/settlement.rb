@@ -69,6 +69,10 @@ class Settlement::Settlement < ActiveRecord::Base
   after_save  :propagate_information_to_garrison
 
 
+  def self.find_fortress_by_name_case_insensitive(name)
+    Settlement::Settlement.fortress.where('lower(name) = ?', name.downcase).first
+  end
+
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
       { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },
@@ -177,6 +181,10 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
+    if self.fortress? && !Settlement::Settlement.find_fortress_by_name_case_insensitive(name).nil?
+      raise ConflictError.new("this name is already used in game")
+    end
+
     change_settlement_name_rules = GameRules::Rules.the_rules.change_settlement_name
     free_change = (self.name_change_count || 0) < change_settlement_name_rules[:free_changes]
     character = Fundamental::Character.find_by_id(self.owner)
@@ -189,8 +197,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
     raise InternalServerError.new 'Could not save new name.' unless self.save 
     
-    if (self.name_change_count || 0) > change_settlement_name_rules[:free_changes] # test for free changes
-        character.resource_pool.remove_resources_transaction({change_settlement_name_rules[:resource_id] => change_settlement_name_rules[:amount]})
+    unless free_change
+      character.resource_pool.remove_resources_transaction({change_settlement_name_rules[:resource_id] => change_settlement_name_rules[:amount]})
     end
   
     self

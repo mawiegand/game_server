@@ -344,8 +344,9 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def change_name_transaction(name)
+    raise InternalServerError.new("this name contains invalid characters") if name.include?('|')
     raise ConflictError.new("this name is already used in game") unless Fundamental::Character.find_by_name_case_insensitive(name).nil?
-    
+
     change_character_name_rules = GameRules::Rules.the_rules.change_character_name
     
     free_change = (self.name_change_count || 0) < change_character_name_rules[:free_changes]
