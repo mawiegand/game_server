@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.6
+# Version: 0.0.7
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 6, 
+        :build => 7, 
       },
       
       :production_test_weights => {
@@ -2679,17 +2679,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 1750,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 1750,
+                :amount => 2000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 1750,
+                :amount => 2000,
               },
 
               {
@@ -2859,9 +2859,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände die Dicken Keulen ausgebildet werden.</p>",
+            :de_DE => "<p>Auf Level 5 können im Ausbildungsgelände die Keulenkrieger ausgebildet werden.</p>",
   
-            :en_US => "<p>At level 10, thick-skinned clubber can be trained in the training grounds.</p>",
+            :en_US => "<p>At level 5, clubber can be trained in the training grounds.</p>",
                 
           },          
           :reward_flavour => {
@@ -10137,7 +10137,7 @@ class Tutorial::Tutorial
             
             :en_US => "Increase the resource production of one settlement to 240 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunktenach Steuern. ",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunkte nach Steuern. ",
                 
           },
           :flavour => {
@@ -10414,9 +10414,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.240 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 1.300 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 1.240 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1.300 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10489,7 +10489,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 1240,
+              :min_resources => 1300,
             },
 
           },          
@@ -10512,9 +10512,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 1.850 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 1.900 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 1.850 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1.900 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10582,7 +10582,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 1850,
+              :min_resources => 1900,
             },
 
           },          
