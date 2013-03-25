@@ -304,6 +304,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     def add_character_resource_effect(owner_id, bonus)
       return if owner_id.nil?
       owner = Fundamental::Character.find_by_id(owner_id)
+      return if owner.npc?
       owner.resource_pool.resource_effects.create({
         type_id:      Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT,
         resource_id:  bonus[:resource_id],
@@ -332,59 +333,61 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def propagate_effect_changes
-      owner_change     = self.changes[:owner_id]
-      alliance_change  = self.changes[:alliance_id]
+      unless self.artifact_type[:production_bonus].nil?
+        owner_change     = self.changes[:owner_id]
+        alliance_change  = self.changes[:alliance_id]
 
-      initiated_change = self.changes[:initiated]
-      initiated_before = initiated_change.nil? ? initiated : !initiated
-      initiated_after  = initiated
+        initiated_change = self.changes[:initiated]
+        initiated_before = initiated_change.nil? ? initiated : !initiated
+        initiated_after  = initiated
 
-      # if owner changed
-      unless owner_change.nil?
-        if initiated_before
-          # effekt beim alten user löschen
-          self.artifact_type[:production_bonus].each do |bonus|
-            remove_character_resource_effect(bonus) if bonus[:domain_id] == 0
+        # if owner changed
+        unless owner_change.nil?
+          if initiated_before
+            # effekt beim alten user löschen
+            self.artifact_type[:production_bonus].each do |bonus|
+              remove_character_resource_effect(bonus) if bonus[:domain_id] == 0
+            end
+          end
+          if initiated_after
+            # effekt beim neuen user eintragen
+            self.artifact_type[:production_bonus].each do |bonus|
+              add_character_resource_effect(owner_change[1], bonus) if bonus[:domain_id] == 0
+            end
           end
         end
-        if initiated_after
-          # effekt beim neuen user eintragen
-          self.artifact_type[:production_bonus].each do |bonus|
-            add_character_resource_effect(owner_change[1], bonus) if bonus[:domain_id] == 0
-          end
-        end
-      end
 
-      # if alliance changed
-      unless alliance_change.nil?
-        if initiated_before
-          # effekt bei der alten allianz löschen
-          self.artifact_type[:production_bonus].each do |bonus|
-            remove_alliance_resource_effect(bonus) if bonus[:domain_id] == 2
+        # if alliance changed
+        unless alliance_change.nil?
+          if initiated_before
+            # effekt bei der alten allianz löschen
+            self.artifact_type[:production_bonus].each do |bonus|
+              remove_alliance_resource_effect(bonus) if bonus[:domain_id] == 2
+            end
+          end
+          if initiated_after
+            # effekt bei neuer allianz eintragen
+            self.artifact_type[:production_bonus].each do |bonus|
+              add_alliance_resource_effect(alliance_change[1], bonus) if bonus[:domain_id] == 2
+            end
           end
         end
-        if initiated_after
-          # effekt bei neuer allianz eintragen
-          self.artifact_type[:production_bonus].each do |bonus|
-            add_alliance_resource_effect(alliance_change[1], bonus) if bonus[:domain_id] == 2
-          end
-        end
-      end
 
-      # if only the initiation state changed
-      if owner_change.nil? && alliance_change.nil? && !initiated_change.nil?
-        if initiated_before
-          # effekt beim aktuellen user_loeschen
-          self.artifact_type[:production_bonus].each do |bonus|
-            remove_character_resource_effect(bonus) if bonus[:domain_id] == 0
-            remove_alliance_resource_effect(bonus)  if bonus[:domain_id] == 2
+        # if only the initiation state changed
+        if owner_change.nil? && alliance_change.nil? && !initiated_change.nil?
+          if initiated_before
+            # effekt beim aktuellen user_loeschen
+            self.artifact_type[:production_bonus].each do |bonus|
+              remove_character_resource_effect(bonus) if bonus[:domain_id] == 0
+              remove_alliance_resource_effect(bonus)  if bonus[:domain_id] == 2
+            end
           end
-        end
-        if initiated_after
-          # effekt beim aktuellen user eintragen
-          self.artifact_type[:production_bonus].each do |bonus|
-            add_character_resource_effect(owner_id, bonus)    if bonus[:domain_id] == 0
-            add_alliance_resource_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
+          if initiated_after
+            # effekt beim aktuellen user eintragen
+            self.artifact_type[:production_bonus].each do |bonus|
+              add_character_resource_effect(owner_id, bonus)    if bonus[:domain_id] == 0
+              add_alliance_resource_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
+            end
           end
         end
       end
