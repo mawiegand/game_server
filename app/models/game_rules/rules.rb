@@ -6721,7 +6721,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  0
           :id          => 0, 
           :exp         => 0,
-          :settlement_points   => 0,
+          :settlement_points   => 1,
           :minimum_sacred_rank => 0,
           :name        => {
             
@@ -6734,7 +6734,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #  1
           :id          => 1, 
           :exp         => 2000,
-          :settlement_points   => 1,
+          :settlement_points   => 0,
           :minimum_sacred_rank => 0,
           :name        => {
             
