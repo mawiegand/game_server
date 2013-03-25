@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.7
+# Version: 0.0.8
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 0,
-                    :build => 7,
+                    :build => 8,
       },
       :battle => {
         :calculation => {
@@ -368,7 +368,7 @@ class GameRules::Rules
 
       :resource_exchange => {
         :resource_id  => 3,
-        :amount       => 3,
+        :amount       => 2,
       },
 
 # ## RESOURCE TYPES ##########################################################
