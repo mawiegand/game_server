@@ -12,7 +12,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :ranking,           :class_name => "Ranking::CharacterRanking",  :foreign_key => "character_id", :inverse_of => :character
   has_one  :home_location,     :class_name => "Map::Location",              :foreign_key => "owner_id",     :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   has_one  :tutorial_state,    :class_name => "Tutorial::State",            :foreign_key => "character_id", :inverse_of => :owner
-  has_many :history_events,    :class_name => "Fundemental::HistoryEvent",  :foreign_key => "character_id", :inverse_of => :character
+  has_many :history_events,    :class_name => "Fundamental::HistoryEvent",  :foreign_key => "character_id", :inverse_of => :character
   has_one  :settings,          :class_name => "Fundamental::Setting",       :foreign_key => "character_id", :inverse_of => :owner
   
   has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
@@ -207,8 +207,11 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def locale
-    #TODO set language local
-    :de_DE
+    if I18n.locale == :de
+      :de_DE
+    else
+      :en_US
+    end
   end  
   
   def can_create_alliance?
@@ -302,9 +305,6 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_location_id = location.id              # TODO is this the home_location_id?
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
-
-      character.home_location.settlement.name = "Hauptsiedlung"
-      character.home_location.settlement.save
 
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
 
@@ -638,19 +638,9 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
 
-  def update_alliance_leave_to_artifact
-    #alliance_change     = self.changes[:alliance_id]
-    #if !alliance_change.nil? && alliance_change[1].nil? && !self.artifact.nil?
-    #  logger.debug "-----------> leaving ally #{self.alliance_id}"
-    #  self.artifact.alliance = self.alliance
-    #  self.artifact.save
-    #end
-  end
-
   def propagate_alliance_membership_changes_to_artifact
     alliance_change     = self.changes[:alliance_id]
     if !alliance_change.nil? && !self.artifact.nil?
-      logger.debug "-----------> propagate_alliance_membership_changes_to_artifact #{self.alliance_id}"
       self.artifact.alliance = self.alliance
       self.artifact.save
     end

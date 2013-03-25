@@ -220,10 +220,7 @@ class Fundamental::CharactersController < ApplicationController
       current_character.base_location_id = location.id              # TODO is this the home_location_id?
       current_character.base_region_id = location.region_id
       current_character.base_node_id = location.region.node_id
-      
-      current_character.home_location.settlement.name = "Hauptsiedlung"
-      current_character.home_location.settlement.save
-      
+
       current_character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
       
       current_character.create_tutorial_state

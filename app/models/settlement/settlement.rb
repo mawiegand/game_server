@@ -102,7 +102,7 @@ class Settlement::Settlement < ActiveRecord::Base
         army.destroy
       end
     end
-    
+
     settlement = location.create_settlement({
       :region_id   => location.region_id,
       :node_id     => location.region.node_id,
@@ -116,6 +116,7 @@ class Settlement::Settlement < ActiveRecord::Base
       :owns_region => type_id == 1,               # fortress?
       :tax_rate    => tax_rate,
       :taxable     => type_id != 1,               # everything but fortresses are taxable
+      :name        => GameRules::Rules.the_rules.settlement_types[type_id][:name][owner.locale] || "Siedlung"
     })
     Military::Army.create_garrison_at(settlement)
     settlement.create_building_slots_according_to(GameRules::Rules.the_rules.settlement_types[type_id][:building_slots]) 
