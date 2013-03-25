@@ -96,9 +96,16 @@ de:
           title:
             Schnellere Regeneration vergebener Likes / Dislikes
           description:
-            Likes und Disklikes, die Du an andere Spieler vergeben hast, regenerieren sich doppelt so schnell,
+            Likes und Dislikes, die Du an andere Spieler vergeben hast, regenerieren sich doppelt so schnell,
             sobald der Platinum Account aktiviert ist. Du kannst also mehr Spielern pro Tag Deine Zu- oder
             Abneigung ausdrücken.
+        message_archive:
+          title:
+            Nachrichten-Archiv
+          description:
+            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit
+            dem Platinum erhälst Du zusätzlich eine Archivbox, in die Du wichtige Nachrichten verschieben kannst, damit
+            sie dauerhaft gespeichert werden.
         footer:
           Wir werden den Platinum Account noch ausbauen. Es werden mit der Zeit weitere Komfortfunktionen
           folgen, die wir Dir dann natürlich direkt zusätzlich freischalten werden.

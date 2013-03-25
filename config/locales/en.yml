@@ -172,6 +172,13 @@ en:
             Combat Notifications per E-Mail
           description:
             With an enabled platinum account you will be immediately notified of attacks on your colonies, fortresses, or armies per e-mail when you are not in the game at the moment. So even if you are not currently playing, you can immediately react to your opponents. You can send for further armies to assist you in the secene or request your alliance for help.
+        message_archive:
+          title:
+            Message Archive
+          description:
+            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit dem
+            Platinum erhälst Du zusätzlich eine Archivbox, in die Du Nachrichten verschieben und dauerhaft speichern
+            kannst.
         like_regeneration:
           title:
             Faster Regeneration of the given Likes / Dislikes
