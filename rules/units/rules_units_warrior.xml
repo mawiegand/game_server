@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="warriror" category="unitcategory_infantry">
+<Unit id="warrior" category="unitcategory_infantry">
   <Name>Warrior</Name>
   <Name lang="de_DE">Krieger</Name>
   
