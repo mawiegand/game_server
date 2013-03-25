@@ -63,13 +63,15 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
       end
 
       # assign new resource values
-      pool.resource_stone_amount = p_stone.ceil
-      pool.resource_wood_amount  = p_wood.ceil
-      pool.resource_fur_amount   = p_fur.ceil
-      pool.resource_cash_amount -= cost[:amount]
+      if pool.resource_stone_amount > p_stone.ceil || pool.resource_wood_amount > p_wood.ceil || pool.resource_fur_amount > p_fur.ceil
+        pool.resource_stone_amount = p_stone.ceil
+        pool.resource_wood_amount  = p_wood.ceil
+        pool.resource_fur_amount   = p_fur.ceil
+        pool.resource_cash_amount -= cost[:amount]
 
-      # save new values
-      pool.save
+        # save new values
+        pool.save
+      end
     end
     
     respond_to do |format|
