@@ -2467,7 +2467,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 26, ],
+          :successor_quests => [25, 26, 28, ],
 
           :rewards => {
             
@@ -2778,7 +2778,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [28, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2866,7 +2866,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Keulenkrieger wirklich.",
+            :de_DE => "Sehr gut. Jetzt sind wir endlcih die Möchtegern-Krieger los.",
   
             :en_US => "Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! ",
                 
@@ -2881,7 +2881,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_fortress',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 

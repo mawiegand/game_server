@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="7" />
+    <Version major="0" minor="0" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -914,9 +914,9 @@
       <Flavor locale="en_US">We can’t stand our ground with clubbers alone! We need clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
       <RewardText locale="de_DE">Der Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
       <RewardText locale="en_US">The clubber! Reinforcement for your melee fighters.</RewardText>
-      <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Keulenkrieger wirklich.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Sehr gut. Jetzt sind wir endlcih die Möchtegern-Krieger los.</RewardFlavor>
       <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
-      <Requirement quest="quest_fortress" />
+      <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
         <ResourceReward resource="resource_stone">800</ResourceReward>
         <ResourceReward resource="resource_wood">400</ResourceReward>
