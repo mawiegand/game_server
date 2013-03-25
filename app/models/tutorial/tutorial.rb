@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.5
+# Version: 0.0.6
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 5, 
+        :build => 6, 
       },
       
       :production_test_weights => {
@@ -690,7 +690,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a clubber.",
   
-            :de_DE => "Baue einen Keulenkrieger.",
+            :de_DE => "Baue einen Krieger..",
                 
           },
           :flavour => {
@@ -702,16 +702,16 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Keulenkrieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Keulenkrieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
   
-            :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Clubber”. The recruited units land up in the settlement’s garrison.</p>",
+            :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Warrior”. The recruited units land up in the settlement’s garrison.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Keulenkrieger zur Verfügung.",
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
   
-            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my clubbers.",
+            :en_US => "Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my warriors.",
                 
           },
           :reward_text => {
@@ -735,7 +735,7 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_clubbers,
+                :unit => :unit_warrior,
                 :amount => 5,
               },
 
@@ -750,7 +750,7 @@ class Tutorial::Tutorial
             :training_queue_tests => [
 
               {
-                :unit => 'unit_clubbers',
+                :unit => 'unit_warrior',
                 :min_count => 1,
               },
 
@@ -1438,9 +1438,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 10 units per hour",
+            :en_US => "Improve your stone and wood production to at least 18 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 10 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 18 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -1516,12 +1516,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 10,
+                :minimum  => 18,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 10,
+                :minimum  => 18,
               },
 
             ],
@@ -1749,9 +1749,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Einheiten in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
-            :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the units in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
+            :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
           },          
           :reward_flavour => {
@@ -1801,7 +1801,7 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_clubbers,
+                :unit => :unit_warrior,
                 :amount => 10,
               },
 
@@ -2031,9 +2031,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 60 resource points.",
+            :en_US => "Increase the resource production of one settlement to 90 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 60 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2106,7 +2106,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 60,
+              :min_resources => 90,
             },
 
           },          
@@ -2467,7 +2467,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 26, ],
+          :successor_quests => [25, 26, 28, ],
 
           :rewards => {
             
@@ -2778,7 +2778,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [28, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -2828,9 +2828,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_fortress
-        {               #   quest_build_1barrackslvl10
+        {               #   quest_build_1barrackslvl5
           :id                => 28, 
-          :symbolic_id       => :quest_build_1barrackslvl10,
+          :symbolic_id       => :quest_build_1barrackslvl5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
@@ -2838,54 +2838,54 @@ class Tutorial::Tutorial
           
           :name => {
             
-            :en_US => "Training Grounds level 10",
+            :en_US => "Training Grounds level 5",
   
-            :de_DE => "Ausbildungsgelände Level 10",
+            :de_DE => "Ausbildungsgelände Level 5",
                 
           },
           :task => {
             
-            :en_US => " Upgrade a training grounds to level 10.",
+            :en_US => " Upgrade a training grounds to level 5.",
   
-            :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
+            :de_DE => "Baue ein Ausbildungsgelände auf Level 5.",
                 
           },
           :flavour => {
             
-            :de_DE => "Nur mit Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+            :de_DE => "Nur mit Kriegern können wir uns nicht behaupten! Wir brauchen auch die Keulenkrieger. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
   
-            :en_US => "We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
+            :en_US => "We can’t stand our ground with clubbers alone! We need clubbers too. It might take a while, but make sure you upgrade the training grounds.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>",
+            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände die Dicken Keulen ausgebildet werden.</p>",
   
-            :en_US => "<p>At level 10, new units can be trained in the training grounds.</p>",
+            :en_US => "<p>At level 10, thick-skinned clubber can be trained in the training grounds.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.",
+            :de_DE => "Sehr gut. Jetzt sind wir endlcih die Möchtegern-Krieger los.",
   
-            :en_US => "Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! ",
+            :en_US => "Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+            :de_DE => "Der Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
   
-            :en_US => "The thick-skinned clubber! Reinforcement for your melee fighters.",
+            :en_US => "The clubber! Reinforcement for your melee fighters.",
                 
           },
 
           :requirement => {
             
-            :quest => 'quest_fortress',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [126, ],
 
           :rewards => {
             
@@ -2893,12 +2893,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 6000,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 400,
               },
 
             ],
@@ -2912,7 +2912,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 750,
+            :experience_reward => 300,
 
           },          
 
@@ -2923,7 +2923,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_barracks',
 
-                :min_level => 10,
+                :min_level => 5,
 
                 :min_count => 1,
 
@@ -2933,7 +2933,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_1barrackslvl10
+        },              #   END OF quest_build_1barrackslvl5
         {               #   quest_build_chiefcottagelvl8
           :id                => 29, 
           :symbolic_id       => :quest_build_chiefcottagelvl8,
@@ -10042,9 +10042,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 100 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 150 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 100 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10112,7 +10112,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 100,
+              :min_resources => 150,
             },
 
           },          
@@ -10135,9 +10135,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 180 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 240 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 180 Rohstoffpunktenach Steuern. ",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunktenach Steuern. ",
                 
           },
           :flavour => {
@@ -10205,7 +10205,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 180,
+              :min_resources => 240,
             },
 
           },          
@@ -10228,9 +10228,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 360 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 420 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 360 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 420 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10298,7 +10298,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 360,
+              :min_resources => 420,
             },
 
           },          
@@ -10321,9 +10321,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 740 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 750 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 740 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 750 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10369,17 +10369,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 740,
+                :amount => 720,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 740,
+                :amount => 720,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 740,
+                :amount => 7520,
               },
 
             ],
@@ -10391,7 +10391,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 740,
+              :min_resources => 750,
             },
 
           },          
@@ -12199,6 +12199,112 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_resourcescore_23
+        {               #   quest_build_1barrackslvl10
+          :id                => 126, 
+          :symbolic_id       => :quest_build_1barrackslvl10,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Training Grounds level 10",
+  
+            :de_DE => "Ausbildungsgelände Level 10",
+                
+          },
+          :task => {
+            
+            :en_US => " Upgrade a training grounds to level 10.",
+  
+            :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+  
+            :en_US => "We can’t stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>",
+  
+            :en_US => "<p>At level 10, new units can be trained in the training grounds.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.",
+  
+            :en_US => "Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+  
+            :en_US => "The thick-skinned clubber! Reinforcement for your melee fighters.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_1barrackslvl5',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers_2,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_barracks',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1barrackslvl10
       ],                # END OF QUESTS
 
     )

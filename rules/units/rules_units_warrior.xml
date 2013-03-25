@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Unit id="warrior" category="unitcategory_infantry">
+  <Name>Warrior</Name>
+  <Name lang="de_DE">Krieger</Name>
+  
+  <Description lang="de_DE">
+    <p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p>
+    <p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>		
+  </Description>
+  <Description lang="en_US">
+    <p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least try for a while.</p>
+    <p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Affordable unarmed warrior for hunting down neanderthal and other players weakest units.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Günstiger unbewaffneter Krieger zur Abwehr von Neandertalern und schwachen Gegnern.</p>
+  </Flavour>
+  <Cost id="resource_stone" round="true">5</Cost>
+  <Cost id="resource_wood" round="true">5</Cost>    
+  <Cost id="resource_fur" round="true">50</Cost>
+  <ProductionTime shortenable="true">1200</ProductionTime>
+  <Velocity>1</Velocity>
+  <ActionPoints>4</ActionPoints>
+  <Initiative>16</Initiative>
+  <Attack>5</Attack>
+  <CriticalDamage chance="0.01">1</CriticalDamage>
+  <Armor>4</Armor>
+  <Overrunnable>true</Overrunnable>
+  <Hitpoints>90</Hitpoints>
+  <Effectiveness category="unitcategory_infantry">1</Effectiveness>
+  <Effectiveness category="unitcategory_cavalry">0.5</Effectiveness>
+  <Effectiveness category="unitcategory_artillery">0.5</Effectiveness>
+  <Effectiveness category="unitcategory_siege">0.5</Effectiveness>    
+  <Effectiveness category="unitcategory_special">0.5</Effectiveness>
+  <RequirementGroup>
+    <Requirement id="building_infantry_tower" max_level="0" />
+  </RequirementGroup>
+  <RequirementGroup>
+    <Requirement id="building_barracks" min_level="1" max_level="4" />
+  </RequirementGroup>
+  
+</Unit>
