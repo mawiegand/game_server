@@ -4132,7 +4132,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)*1.75)',
+          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*1.75)',
           :production  => [
             
               {
@@ -4219,7 +4219,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)*1.75)',
+          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*1.75)',
           :production  => [
             
               {
@@ -4403,7 +4403,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)*1.75)',
+          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*1.75)',
           :production  => [
             
               {
