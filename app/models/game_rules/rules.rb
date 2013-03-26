@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.10
+# Version: 0.1.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 10,
+                    :build => 11,
       },
       :battle => {
         :calculation => {
@@ -3035,17 +3035,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
@@ -3488,17 +3477,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
@@ -3711,48 +3689,6 @@ class GameRules::Rules
 
               :min_level => 0,
 
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
               :max_level => 0,
 
             },
@@ -3830,6 +3766,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 11,
 
             },
 
@@ -3931,6 +3880,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 12,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4013,6 +3975,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 3,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 13,
 
             },
 
@@ -4119,6 +4094,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 14,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4206,6 +4194,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 14,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4288,6 +4289,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 5,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 15,
 
             },
 
@@ -4384,6 +4398,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 7,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 17,
 
             },
 
@@ -6104,7 +6131,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6116,7 +6142,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6128,7 +6153,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6140,7 +6164,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6152,7 +6175,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6164,7 +6186,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6176,7 +6197,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6188,7 +6208,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6200,7 +6219,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6212,7 +6230,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },

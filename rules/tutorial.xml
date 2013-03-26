@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="10" />
+    <Version major="0" minor="0" build="11" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -46,6 +46,12 @@
       <RewardText locale="en_US">The Hunter Gatherer gathers small quantities of all kinds of raw materials: stone, wood and fur. </RewardText>
       <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don’t you think? </RewardFlavor>
+      <Rewards>
+        <ResourceReward resource="resource_stone">25</ResourceReward>
+        <ResourceReward resource="resource_wood">25</ResourceReward>
+        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>25</ExperienceReward>
+      </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
@@ -312,9 +318,9 @@
       <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">350</ResourceReward>
-        <ResourceReward resource="resource_wood">350</ResourceReward>
-        <ResourceReward resource="resource_fur">250</ResourceReward>
+        <ResourceReward resource="resource_stone">325</ResourceReward>
+        <ResourceReward resource="resource_wood">325</ResourceReward>
+        <ResourceReward resource="resource_fur">225</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
