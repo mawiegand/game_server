@@ -73,10 +73,10 @@ class JabberBots::SecurityBot
       @client.send(Jabber::Presence.new.set_show(:away))
 
       public_room_jids = [
-        "global@conference.jabber3.wack-a-doo.com/Wächter | 5D",
-        "plauderhöhle@conference.jabber3.wack-a-doo.com/Wächter | 5D",
-        "help@conference.jabber3.wack-a-doo.com/Wächter | 5D",
-        "handel@conference.jabber3.wack-a-doo.com/Wächter | 5D",
+              "global@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+        "plauderhöhle@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+                "help@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+              "handel@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
       ]
       runloop.say "6"
 

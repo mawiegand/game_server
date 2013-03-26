@@ -4,12 +4,12 @@ defaults: &defaults
 
   jabber:
     debug:     true
-    host:      jabber4.wack-a-doo.com
-    muc:       conference.jabber4.wack-a-doo.com
-    bot_jid:   service@jabber4.wack-a-doo.com
+    host:      jabber3.wack-a-doo.com
+    muc:       conference.jabber3.wack-a-doo.com
+    bot_jid:   service@jabber3.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber4.wack-a-doo.com
+    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
   
   base_time_factor:                         60 # duration of a minute in seconds; can be used to speed-up all operations
   movement_duration:                        15 # base-time of a movement in minutes 
@@ -51,8 +51,6 @@ defaults: &defaults
   platinum_additional_construction_jobs : 3
   platinum_additional_training_jobs     : 3
   
-  chat_host: jabber.wack-a-doo.com
-
   history_update_interval:    24 #hours
   player_deletion_interval:   30 #days
   message_deletion_intervall: 14 #days
@@ -69,12 +67,12 @@ development:
   
   jabber:
     debug:     true
-    host:      jabber4.wack-a-doo.com
-    muc:       conference.jabber4.wack-a-doo.com
-    bot_jid:   service@jabber4.wack-a-doo.com
+    host:      jabber3.wack-a-doo.com
+    muc:       conference.jabber3.wack-a-doo.com
+    bot_jid:   service@jabber3.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber4.wack-a-doo.com
+    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
 
   base_time_factor: 1
 
@@ -99,12 +97,12 @@ staging:
 
   jabber:
     debug:     true
-    host:      jabber4.wack-a-doo.com
-    muc:       conference.jabber4.wack-a-doo.com
-    bot_jid:   service@jabber4.wack-a-doo.com
+    host:      jabber3.wack-a-doo.com
+    muc:       conference.jabber3.wack-a-doo.com
+    bot_jid:   service@jabber3.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber4.wack-a-doo.com
+    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
   
   base_url: 'https://test1.wack-a-doo.com'
   
@@ -114,8 +112,6 @@ staging:
 
   platinum_additional_construction_jobs : 3
   platinum_additional_training_jobs     : 3
-
-  chat_host: jabber3.wack-a-doo.com
 
   battle_xp_winner_bonus_factor:         3.0
 
@@ -141,8 +137,6 @@ production:
   character_recalc_probability:     0.2
   
   cookie_name: 'wackadoo_r2_remember_token'  
-  
-  chat_host: jabber2.wack-a-doo.com
 
   
   
