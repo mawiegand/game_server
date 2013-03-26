@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="11" />
+    <Version major="0" minor="0" build="12" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -832,10 +832,10 @@
       <RewardFlavor locale="en_US">One and two, one and two, come on thats fun!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">360</ResourceReward>
-        <ResourceReward resource="resource_wood">360</ResourceReward>
-        <ResourceReward resource="resource_fur">720</ResourceReward>
-        <ExperienceReward>600</ExperienceReward>
+        <ResourceReward resource="resource_stone">58</ResourceReward>
+        <ResourceReward resource="resource_wood">58</ResourceReward>
+        <ResourceReward resource="resource_fur">116</ResourceReward>
+        <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_training_cave" min_count="1" />
@@ -927,7 +927,7 @@
         <ResourceReward resource="resource_stone">800</ResourceReward>
         <ResourceReward resource="resource_wood">400</ResourceReward>
         <UnitReward unit="unit_clubbers">20</UnitReward>
-        <ExperienceReward>300</ExperienceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="5" />
