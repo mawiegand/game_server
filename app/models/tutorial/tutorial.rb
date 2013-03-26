@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.10
+# Version: 0.0.11
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 10, 
+        :build => 11, 
       },
       
       :production_test_weights => {
@@ -5789,7 +5789,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 10 Army Experience.",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 10 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 10 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -5882,7 +5882,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 80 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 80 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 80 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -5975,7 +5975,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 200 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 200 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 200 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6068,7 +6068,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 500 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6166,7 +6166,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 1.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 1.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 1.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6259,7 +6259,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 2.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 2.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 2.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6352,7 +6352,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 4.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 4.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 4.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6445,7 +6445,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 6.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 6.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 6.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6538,7 +6538,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 10.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 10.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 10.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6631,7 +6631,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 15.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 15.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 15.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6729,7 +6729,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 22.500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 22.500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 22.500 Armee Erfahrung erlangst..",
                 
           },
           :flavour => {
@@ -6822,7 +6822,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 30.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 30.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 30.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -6915,7 +6915,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 40.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 40.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 40.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7008,7 +7008,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 50.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 50.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 50.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7101,7 +7101,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 60.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 60.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 60.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7199,7 +7199,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 72.500 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 72.500 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 72.500 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7292,7 +7292,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 85.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 85.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 85.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7390,7 +7390,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 100.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 100.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 100.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7483,7 +7483,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 150.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 150.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 150.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7581,7 +7581,7 @@ class Tutorial::Tutorial
             
             :en_US => "Fight with an army until it gained 250.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 250.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 250.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7672,9 +7672,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 250.000 Army Experience",
+            :en_US => "Fight with an army until it gained 300.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 250.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe bis Du 300.000 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7747,7 +7747,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 250000,
+              :min_experience => 300000,
             },
 
           },          

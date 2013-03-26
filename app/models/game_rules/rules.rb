@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.10
+# Version: 0.1.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 10,
+                    :build => 11,
       },
       :battle => {
         :calculation => {
@@ -3440,7 +3440,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :de_DE => "<p>Die Tüftler sind allesamt verrückt! Betreten auf eigene Gefahr.</p>",
+            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
   
             :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
                 
