@@ -18,10 +18,10 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 2
+NUM_FULL_LEVELS   = 4
 NUM_SPARSE_LEVELS = 2
 
-ROUND_NAME   = "Testrunde 3"
+ROUND_NAME   = "Earth"
 ROUND_NUMBER =  3
 
 NPC_MIN_UNITS = 60
@@ -35,7 +35,10 @@ NPC_MAX_UNITS = 120
 #
 # ############################################################################
 
-terrains = ['plain', 'forest', 'mountain', 'desert']
+terrains     = ['plain', 'forest', 'mountain', 'desert', 'swamp']
+weights      = [ 16, 16, 1, 4, 4 ]   # non-negative integers controlling the frequency of terrain types: p(x) = weight_of_x / total_sum_of_weights
+lookup = []
+weights.each_index { |i| weights[i].times { lookup.push i } }
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 
@@ -48,7 +51,7 @@ terrains.each do |terrain|
   filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}.txt"))
   region_names << File.open(filename).readlines
   
-  puts "found #{ region_names.last.count } names to chose from." 
+  puts "found #{ region_names.last.count } names to chose from."
 end
 
 
@@ -81,7 +84,7 @@ Fundamental::RoundInfo.create({
 #
 # ############################################################################
 
-puts "add command to create clobal chat room." 
+puts "add command to create clobal chat rooms."
 
 Messaging::JabberCommand.create({
   command:   'muc_create',
@@ -161,20 +164,20 @@ def check_neighbour(tms, level)
   end
 end
 
-def check_split_neighbours node
+def check_split_neighbours(node)
   nodes = []
   tms = Mapping::GlobalMercator.quad_tree_to_tms_tile_code(node.path)
   if tms[:x] > 0 
-    nodes += check_neighbour({ x: tms[:x]-1, y: tms[:y], zoom:tms[:zoom] }, node.level);
+    nodes += check_neighbour({ x: tms[:x]-1, y: tms[:y], zoom:tms[:zoom] }, node.level)
   end
   if tms[:y] > 0 
-    nodes += check_neighbour({ x: tms[:x], y: tms[:y]-1, zoom:tms[:zoom] }, node.level); 
+    nodes += check_neighbour({ x: tms[:x], y: tms[:y]-1, zoom:tms[:zoom] }, node.level)
   end
   if tms[:y] < 4**node.level-1
-    nodes += check_neighbour({ x: tms[:x], y: tms[:y]+1, zoom:tms[:zoom] }, node.level); 
+    nodes += check_neighbour({ x: tms[:x], y: tms[:y]+1, zoom:tms[:zoom] }, node.level)
   end
   if tms[:x] < 4**node.level-1
-    nodes += check_neighbour({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, node.level);
+    nodes += check_neighbour({ x: tms[:x]+1, y: tms[:y], zoom:tms[:zoom] }, node.level)
   end
   nodes
 end
@@ -193,10 +196,10 @@ def split_all_nodes(nodes, randmax=1, randtrue=1)
   end
 end
 
-for i in (NUM_FULL_LEVELS..(NUM_FULL_LEVELS+NUM_SPARSE_LEVELS))
+(NUM_FULL_LEVELS..(NUM_FULL_LEVELS + NUM_SPARSE_LEVELS)).each do |i|
   nodes = Map::Node.find_all_by_level i
   puts "INFO: working on level #{i}."
-  split_all_nodes(nodes, i-NUM_FULL_LEVELS+4, 1)     # i-3 (when starting with level 5)
+  split_all_nodes(nodes, i - NUM_FULL_LEVELS + 4, 1)     # i-3 (when starting with level 5)
 end
 
 puts "Created #{ Map::Node.where(leaf: true).count} leaf nodes."
@@ -218,6 +221,8 @@ def create_fortress(location)
   details.save  
 end
 
+puts "INFO: using terrain type id sample list: #{ lookup.inspect }."
+
 while !nodes.empty?
   node   = nodes.pop
   region = node.create_region
@@ -235,17 +240,13 @@ while !nodes.empty?
     end
   end
 
-  region.terrain_id = rand(4)
-  # hack for missing terrain tiles
-  if region.terrain_id != 3
-    region.terrain_id = 0    # everything not a desert is a plain
-  end
+  region.terrain_id = lookup.sample
 
   new_name = region_names[region.terrain_id].sample
   region_names[region.terrain_id].delete(new_name)
 
   region.name = new_name.chomp
-  region.fortress.name = new_name.chomp
+  region.fortress.name = "Festung " + new_name.chomp
   region.fortress.save
   region.save
 end
