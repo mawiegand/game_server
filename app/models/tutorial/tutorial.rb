@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.7
+# Version: 0.0.10
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 7, 
+        :build => 10, 
       },
       
       :production_test_weights => {
@@ -388,7 +388,7 @@ class Tutorial::Tutorial
         Prepare to be surprised!</p>
         <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
         <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Unit Overview</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree='_blank'>Unit Overview</a></p>
         <p>We invite you to register and help keep our Wiki up to date.</p>
         <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
@@ -2906,7 +2906,7 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_clubbers_2,
+                :unit => :unit_clubbers,
                 :amount => 20,
               },
 
@@ -10605,9 +10605,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 2.620 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 2.720 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 2.620 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 2.720 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10675,7 +10675,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 2820,
+              :min_resources => 2720,
             },
 
           },          

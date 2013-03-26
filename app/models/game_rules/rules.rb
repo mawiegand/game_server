@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.4
+# Version: 0.1.10
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 4,
+                    :build => 10,
       },
       :battle => {
         :calculation => {
@@ -392,7 +392,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Steine -- in der STEINzeit DER Rohstoff schlechthin. Kann gesammelt, gestapelt, geschärft und geworfen werden. Mehr muss man nicht sagen.</p>",
   
-            :en_US => "<p>Stones – in the STONE age THE most vital raw material. Can be gathered, stacked, sharpened and thrown. Not much more to say, really.</p>",
+            :en_US => "<p>Stones – in the STONE age are THE most vital raw material. Can be gathered, stacked, sharpened and thrown. Not much more to say, really.</p>",
                 
           },
 
@@ -714,7 +714,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Keulenkrieger sind der Grundbestandteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindliche Fernkämpfer.</p>",
   
-            :en_US => "<p>Clubbers are the basic unit of any army. They are on the front line and protect the ranged combatants from the cavalry. Clubbers are tough fellows and difficult to beat, but they all too often they get knocked off by enemy ranged combatants.</p>",
+            :en_US => "<p>Club warrior are the basic unit of any army. They are on the front line and protect the ranged combatants from the cavalry. Club warrior are tough fellows and difficult to beat, but they all too often they get knocked off by enemy ranged combatants.</p>",
                 
           },
 
@@ -1568,7 +1568,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>A hungry ostrich is a dangerous weapon. Espacialy eyes are treats.</p>",
+            :en_US => "<p>A hungry ostrich is a dangerous weapon. Especialy eyes are treats.</p>",
   
             :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
                 
@@ -2120,10 +2120,6 @@ class GameRules::Rules
 
             },
 
-            ],
-
-            [
-              
             {
               :symbolic_id => 'building_barracks',
               :id => 2,
@@ -3430,36 +3426,36 @@ class GameRules::Rules
           },
 
         },              #   END OF Trainingshöhle
-        {               #   Wacky-Lab
+        {               #   Tüftler-Werkstatt
           :id          => 9, 
           :symbolic_id => :building_artifact_stand,
 					:category    => 6,
           :db_field    => :building_artifact_stand,
           :name        => {
             
-            :de_DE => "Wacky-Lab",
+            :de_DE => "Tüftler-Werkstatt",
   
-            :en_US => "Wacky-Lab",
+            :en_US => "Workshop",
                 
           },
           :flavour     => {
             
             :de_DE => "<p>Die Tüftler sind allesamt verrückt! Betreten auf eigene Gefahr.</p>",
   
-            :en_US => "<p>On sunnys days there are drinks and music.</p>",
+            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Im Wacky-Lab vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>",
+            :de_DE => "<p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>",
   
-            :en_US => "<p>While the wise exam the artefact, the artefact stand raises the population and combat power of the settlement.</p>",
+            :en_US => "<p>At the workshop all kinds of Thinkers and Tinkers get together. Here they examine all unknown materials -or artifacts, as the simple minded call them- and attempt to bring about a technological revolution</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3528,7 +3524,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Wacky-Lab
+        },              #   END OF Tüftler-Werkstatt
         {               #   Kürschner
           :id          => 10, 
           :symbolic_id => :building_furrier,
@@ -3543,7 +3539,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>TheA furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there’s usually something tasty roasting over the fire too.</p>",
+            :en_US => "<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there’s usually something tasty roasting over the fire too.</p>",
   
             :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren. Hier gibt es schöne Felle und hochwertige Lederwaren für die Dame von Welt.</p>",
                 
@@ -5439,7 +5435,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.",
   
-            :en_US => "English Description.",
+            :en_US => "The fortress dcontrols the region with all population. The fortress can collect taxes.",
                 
           },
 
@@ -5520,7 +5516,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Die Hauptsiedlung eines Stammes.",
   
-            :en_US => "English Description.",
+            :en_US => "Main settlement of a tribe.",
                 
           },
 
@@ -6244,16 +6240,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf ins Wacky-Lab!'</p>",
+            :de_DE => "<p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>",
   
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+            :en_US => "<p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>",
   
           },
           :flavour => {
             
             :de_DE => "Haben die Götter diese Kugel verloren? Ich liebe Rätsel!",
   
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+            :en_US => "Harder than stone and what are those strange red signs painted on it? It's a mystery.",
   
           },
 
@@ -6277,9 +6273,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Die Tüftler im Wackylab haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>",
+            :de_DE => "<p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>",
   
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>",
+            :en_US => "<p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>",
   
           },
           :initiation_costs => {
@@ -6303,16 +6299,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf ins Wacky-Lab!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>",
+            :de_DE => "<p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf zur Tüftler-Werkstatt!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>",
   
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+            :en_US => "<p>The punched disc was found in the wake of a great battle with the neandertals. But since noone knew what to do with it they deceided to just give it to the workshop.</p>",
   
           },
           :flavour => {
             
             :de_DE => "Ein Stein mit einem Loch! Das ist doch nun wirklich nichts neues.",
   
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+            :en_US => "A stone with a hole? Now i've seen everything.'",
   
           },
 
@@ -6336,9 +6332,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Die Tüftler des 'Wacky-Lab' haben eine geniale Idee zur Verwertung des Lochsteins gehabt. Das dreickige Rad revolutiniert den Transport von Holz durch neuartige Holzkarren. Sowohl die eigen als auch die Allianz-Holzproduktion profitiert von dieser Entdeckung.</p>",
+            :de_DE => "<p>Die Tüftler der Werkstatt haben eine geniale Idee zur Verwertung des Lochsteins gehabt. Das dreickige Rad revolutiniert den Transport von Holz durch neuartige Holzkarren. Sowohl die eigen als auch die Allianz-Holzproduktion profitiert von dieser Entdeckung.</p>",
   
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>",
+            :en_US => "<p>After a while the Tinkers finally found a use for the damn thing. They figured, that they could use it to transport wood with astonishing speed and shared this knowledge with their allies as well. Unfortunately the discs round form wasnt aesthetically pleasing to the Tinkers, but they managed to fix that too.</p>",
   
           },
           :initiation_costs => {
@@ -6362,16 +6358,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf ins Wacky-Lab!'.</p>",
+            :de_DE => "<p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf zur Tüftler-Werkstatt!'.</p>",
   
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+            :en_US => "<p>When the clothing horse was first discovered the strange material of its stand frightened a lot of people. The only ones brave enough to take a good look at it were the Tinkers in the workshop.</p>",
   
           },
           :flavour => {
             
             :de_DE => "Hmm, was ist das? Eine Waffe oder ein Werkzeug kann das nicht sein, oder?",
   
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+            :en_US => "Well this surely couldnt be some sort of tool or weapon.",
   
           },
 
@@ -6395,9 +6391,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Auf eine Wäscheleine hätten sie auch ohne das unbekannte Artefakt kommen sollen, sagten sich die Tütfler des 'Wacky-Lab'. Die Wäscheleine beschleunigt neben der eigenen auch die Fellproduktion der Allianz.</p>",
+            :de_DE => "<p>Auf eine Wäscheleine hätten sie auch ohne das unbekannte Artefakt kommen sollen, sagten sich die Tütfler. Die Wäscheleine beschleunigt neben der eigenen auch die Fellproduktion der Allianz.</p>",
   
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>",
+            :en_US => "<p>To be honest, they should have come up with this a lot earlier. But nevertheless, thanks to this new clothing horse furriers everywere began to work more efficiently.</p>",
   
           },
           :initiation_costs => {
@@ -6423,14 +6419,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "<p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>",
   
-            :en_US => "<p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>",
+            :en_US => "<p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>",
   
           },
           :flavour => {
             
             :de_DE => "Der schwarze Monolith ist toll. Er ist so groß und nunja schwarz eben.",
   
-            :en_US => "The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.",
+            :en_US => "The monolith is great and black and .... yeah.",
   
           },
 
@@ -6440,9 +6436,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Mit dem schwarzen Monolithen kamen die Tütfler aus dem 'Wacky-Lab' nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>",
+            :de_DE => "<p>Mit dem schwarzen Monolithen kamen die Tütfler aus der Werkstatt nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>",
   
-            :en_US => "<p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>",
+            :en_US => "<p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>",
   
           },
           :initiation_costs => {

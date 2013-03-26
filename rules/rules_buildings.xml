@@ -32,7 +32,7 @@
   <xi:include href="buildings/rules_building_storage_2.xml" />  
   <xi:include href="buildings/rules_building_quarry_2.xml" />
   <xi:include href="buildings/rules_building_logger_2.xml" />
-  <xi:include href="buildings/rules_building_stud.xml" />     
+  <xi:include href="buildings/rules_building_stud.xml" />
   <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_command_post.xml" />
   <xi:include href="buildings/rules_building_garrison.xml" />
