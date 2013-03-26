@@ -38,8 +38,6 @@
   <Effectiveness category="unitcategory_special">0.5</Effectiveness>
   <RequirementGroup>
     <Requirement id="building_infantry_tower" max_level="0" />
-  </RequirementGroup>
-  <RequirementGroup>
     <Requirement id="building_barracks" min_level="1" max_level="4" />
   </RequirementGroup>
   
