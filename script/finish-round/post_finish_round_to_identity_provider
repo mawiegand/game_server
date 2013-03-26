@@ -41,6 +41,8 @@ Fundamental::Character.not_deleted.non_npc.each do |character|
     :en_US => "Survived until the end of round #{info.number}, '#{info.name}'.",
   }
   identity_provider_access.post_character_history_event(character.identifier, event, description)
+
+  count += 1
 end
 
 puts "finished."
