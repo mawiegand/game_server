@@ -4,12 +4,12 @@ defaults: &defaults
 
   jabber:
     debug:     true
-    host:      jabber3.wack-a-doo.com
-    muc:       conference.jabber3.wack-a-doo.com
-    bot_jid:   service@jabber3.wack-a-doo.com
+    host:      jabber4.wack-a-doo.com
+    muc:       conference.jabber4.wack-a-doo.com
+    bot_jid:   service@jabber4.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
+    admin_jid: shadow-dragon@jabber4.wack-a-doo.com
   
   base_time_factor:                         60 # duration of a minute in seconds; can be used to speed-up all operations
   movement_duration:                        15 # base-time of a movement in minutes 
