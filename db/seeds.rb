@@ -246,7 +246,7 @@ while !nodes.empty?
   region_names[region.terrain_id].delete(new_name)
 
   region.name = new_name.chomp
-  region.fortress.name = "Festung " + new_name.chomp
+  region.fortress.name = new_name.chomp
   region.fortress.save
   region.save
 end
