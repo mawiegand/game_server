@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="12" />
+    <Version major="0" minor="0" build="13" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -3299,7 +3299,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">720</ResourceReward>
         <ResourceReward resource="resource_wood">720</ResourceReward>
-        <ResourceReward resource="resource_fur">7520</ResourceReward>
+        <ResourceReward resource="resource_fur">720</ResourceReward>
         <ExperienceReward>180</ExperienceReward>
       </Rewards>
       <RewardTests>
