@@ -113,6 +113,7 @@ module IdentityProvider
     end
 
     def post_result(character, round_number, round_name, won = false)
+      round_info = Fundamental::RoundInfo.the_round_info
       return if character.ranking.nil?
       resource_result = {
         round_number:    round_number,
@@ -125,6 +126,7 @@ module IdentityProvider
         resource_result[:alliance_tag]  = character.alliance.tag
         resource_result[:alliance_name] = character.alliance.name
         resource_result[:alliance_rank] = character.alliance.ranking.overall_rank
+        resource_result[:won]           = character.alliance == round_info.winner_alliance
       end
       post('/identities/' + character.identifier + '/results', {:resource_result => resource_result})
     end
