@@ -37,6 +37,8 @@ Fundamental::Character.non_npc.each do |character|
 	end
 	
   identity_provider_access.post_result(character, round_info.number, round_info.name)
+
+  count += 1
 end
 
 puts "finished."
