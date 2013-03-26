@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.13
+# Version: 0.0.14
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 13, 
+        :build => 14, 
       },
       
       :production_test_weights => {
@@ -7604,9 +7604,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 250.000 Army Experience",
+            :en_US => "Fight with an army until it gained 200.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 250.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 200.000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7674,7 +7674,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 250000,
+              :min_experience => 200000,
             },
 
           },          
@@ -7697,9 +7697,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight with an army until it gained 250.000 Army Experience",
+            :en_US => "Fight with an army until it gained 300.000 Army Experience",
   
-            :de_DE => "Kämpfe mit einer Armee, bis sie 250.000 Armee Erfahrung erlangt.",
+            :de_DE => "Kämpfe mit einer Armee, bis sie 300.000 Armee Erfahrung erlangt.",
                 
           },
           :flavour => {
@@ -7772,7 +7772,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :army_experience_test => {
-              :min_experience => 250000,
+              :min_experience => 300000,
             },
 
           },          
