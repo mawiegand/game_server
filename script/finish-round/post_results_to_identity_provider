@@ -30,7 +30,7 @@ count = 0
 
 round_info = Fundamental::RoundInfo.the_round_info
 
-Fundamental::Character.non_npc.each do |character|
+Fundamental::Character.not_deleted.non_npc.each do |character|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep (1)
