@@ -38,13 +38,11 @@ puts "changing #{Map::Region.count} region terrains and names..."
 
 Map::Region.all.each do |region|
   region.terrain_id = lookup.sample
-  weights = 0 
-  
-  old_name = region.name
-  new_name = names[region.terrain_id].sample.chomp
+
+  new_name = names[region.terrain_id].sample
   names[region.terrain_id].delete(new_name)
-  region.name = new_name
-  region.fortress.name = "Festung #{ new_name }"
+  region.name = new_name.chomp
+  region.fortress.name = "Festung #{ new_name.chomp }"  # by now, the fortress name will be propagated to region name
   #puts "Festung #{ region.fortress.inspect} #{ region.fortress.name }."
   region.fortress.save
   region.save
