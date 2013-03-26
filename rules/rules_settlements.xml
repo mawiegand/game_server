@@ -12,7 +12,7 @@
     <Name lang="de_DE">Festung</Name>
     <Name lang="en_US">Fortress</Name>
     <Description lang="de_DE">Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.</Description>
-    <Description lang="en_US">English Description.</Description>
+    <Description lang="en_US">The fortress dcontrols the region with all population. The fortress can collect taxes.</Description>
     <ChangeCost free_changes="1" resource="resource_cash" amount="10" />
     <BuildingSlot number="0" max-level="10" building="building_fortress_fortification" level="1">
       <BuildingOption category="building_category_fortress_main" />
@@ -31,7 +31,7 @@
     <Name lang="de_DE">Heimatsiedlung</Name>
     <Name lang="en_US">Home Settlement</Name>
     <Description lang="de_DE">Die Hauptsiedlung eines Stammes.</Description>
-    <Description lang="en_US">English Description.</Description>
+    <Description lang="en_US">Main settlement of a tribe.</Description>
     <ChangeCost free_changes="1" resource="resource_cash" amount="1" />
     <BuildingSlot number="0" max-level="10">
       <BuildingOption category="building_category_wall" />

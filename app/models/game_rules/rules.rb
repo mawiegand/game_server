@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.4
+# Version: 0.1.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 4,
+                    :build => 6,
       },
       :battle => {
         :calculation => {
@@ -691,8 +691,107 @@ class GameRules::Rules
 
       :unit_types => [  # ALL UNIT TYPES
 
-        {               #   Club Warrior
+        {               #   Warrior
           :id          => 0, 
+          :symbolic_id => :warrior,
+					:category    => 0,
+          :db_field    => :unit_warrior,
+          :name        => {
+            
+            :en_US => "Warrior",
+  
+            :de_DE => "Krieger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Affordable unarmed warrior for hunting down neanderthal and other players weakest units.</p>",
+  
+            :de_DE => "<p>Günstiger unbewaffneter Krieger zur Abwehr von Neandertalern und schwachen Gegnern.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
+  
+            :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least try for a while.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
+                
+          },
+
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 0.5,
+  
+            :unitcategory_artillery => 0.5,
+  
+            :unitcategory_siege => 0.5,
+  
+            :unitcategory_special => 0.5,
+                
+          },
+          :attack      => 5,
+          :armor       => 4,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1200',
+
+          :costs      => {
+            0 => '5',
+            1 => '5',
+            2 => '50',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 25,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 1,
+
+              :max_level => 4,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Warrior
+        {               #   Club Warrior
+          :id          => 1, 
           :symbolic_id => :clubbers,
 					:category    => 0,
           :db_field    => :unit_clubbers,
@@ -787,7 +886,7 @@ class GameRules::Rules
 
         },              #   END OF Club Warrior
         {               #   Thick-skinned Clubber
-          :id          => 1, 
+          :id          => 2, 
           :symbolic_id => :clubbers_2,
 					:category    => 0,
           :db_field    => :unit_clubbers_2,
@@ -891,7 +990,7 @@ class GameRules::Rules
 
         },              #   END OF Thick-skinned Clubber
         {               #   Haymaker
-          :id          => 2, 
+          :id          => 3, 
           :symbolic_id => :clubbers_3,
 					:category    => 0,
           :db_field    => :unit_clubbers_3,
@@ -1004,7 +1103,7 @@ class GameRules::Rules
 
         },              #   END OF Haymaker
         {               #   Tree Huggers
-          :id          => 3, 
+          :id          => 4, 
           :symbolic_id => :tree_huggers,
 					:category    => 0,
           :db_field    => :unit_tree_huggers,
@@ -1106,7 +1205,7 @@ class GameRules::Rules
 
         },              #   END OF Tree Huggers
         {               #   Gravel Stone Thrower
-          :id          => 4, 
+          :id          => 5, 
           :symbolic_id => :thrower,
 					:category    => 2,
           :db_field    => :unit_thrower,
@@ -1171,7 +1270,7 @@ class GameRules::Rules
 
         },              #   END OF Gravel Stone Thrower
         {               #   Targetthrower
-          :id          => 5, 
+          :id          => 6, 
           :symbolic_id => :thrower_2,
 					:category    => 2,
           :db_field    => :unit_thrower_2,
@@ -1275,7 +1374,7 @@ class GameRules::Rules
 
         },              #   END OF Targetthrower
         {               #   Stone Thrower
-          :id          => 6, 
+          :id          => 7, 
           :symbolic_id => :thrower_3,
 					:category    => 2,
           :db_field    => :unit_thrower_3,
@@ -1388,7 +1487,7 @@ class GameRules::Rules
 
         },              #   END OF Stone Thrower
         {               #   Spear Thrower
-          :id          => 7, 
+          :id          => 8, 
           :symbolic_id => :thrower_4,
 					:category    => 2,
           :db_field    => :unit_thrower_4,
@@ -1490,7 +1589,7 @@ class GameRules::Rules
 
         },              #   END OF Spear Thrower
         {               #   Ostrich Rider
-          :id          => 8, 
+          :id          => 9, 
           :symbolic_id => :light_cavalry,
 					:category    => 1,
           :db_field    => :unit_light_cavalry,
@@ -1555,7 +1654,7 @@ class GameRules::Rules
 
         },              #   END OF Ostrich Rider
         {               #   Hungry Ostrich
-          :id          => 9, 
+          :id          => 10, 
           :symbolic_id => :light_cavalry_2,
 					:category    => 1,
           :db_field    => :unit_light_cavalry_2,
@@ -1659,7 +1758,7 @@ class GameRules::Rules
 
         },              #   END OF Hungry Ostrich
         {               #   Frantic Ostrich
-          :id          => 10, 
+          :id          => 11, 
           :symbolic_id => :light_cavalry_3,
 					:category    => 1,
           :db_field    => :unit_light_cavalry_3,
@@ -1772,7 +1871,7 @@ class GameRules::Rules
 
         },              #   END OF Frantic Ostrich
         {               #   Dinosaur Rider
-          :id          => 11, 
+          :id          => 12, 
           :symbolic_id => :light_cavalry_4,
 					:category    => 1,
           :db_field    => :unit_light_cavalry_4,
@@ -1874,7 +1973,7 @@ class GameRules::Rules
 
         },              #   END OF Dinosaur Rider
         {               #   Neanderthals
-          :id          => 12, 
+          :id          => 13, 
           :symbolic_id => :neanderthal,
 					:category    => 0,
           :db_field    => :unit_neanderthal,
@@ -1956,7 +2055,7 @@ class GameRules::Rules
 
         },              #   END OF Neanderthals
         {               #   Little Chief
-          :id          => 13, 
+          :id          => 14, 
           :symbolic_id => :little_chief,
 					:category    => 4,
           :db_field    => :unit_little_chief,
@@ -2042,105 +2141,6 @@ class GameRules::Rules
 
 
         },              #   END OF Little Chief
-        {               #   Warrior
-          :id          => 14, 
-          :symbolic_id => :warrior,
-					:category    => 0,
-          :db_field    => :unit_warrior,
-          :name        => {
-            
-            :en_US => "Warrior",
-  
-            :de_DE => "Krieger",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Affordable unarmed warrior for hunting down neanderthal and other players weakest units.</p>",
-  
-            :de_DE => "<p>Günstiger unbewaffneter Krieger zur Abwehr von Neandertalern und schwachen Gegnern.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
-  
-            :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least try for a while.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
-                
-          },
-
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 0.5,
-  
-            :unitcategory_artillery => 0.5,
-  
-            :unitcategory_siege => 0.5,
-  
-            :unitcategory_special => 0.5,
-                
-          },
-          :attack      => 5,
-          :armor       => 4,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '1200',
-
-          :costs      => {
-            0 => '5',
-            1 => '5',
-            2 => '50',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_infantry_tower',
-              :id => 25,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_barracks',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 1,
-
-              :max_level => 4,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Warrior
       ],                # END OF UNIT TYPES
 
 # ## BUILDING CATEGORIES ######################################################
@@ -4340,8 +4340,133 @@ class GameRules::Rules
           },
 
         },              #   END OF Stinkender Stall
-        {               #   Verrückter Kürschner
+        {               #   Kommandozentrale
           :id          => 18, 
+          :symbolic_id => :building_command_post,
+					:category    => 4,
+          :db_field    => :building_command_post,
+          :name        => {
+            
+            :de_DE => "Kommandozentrale",
+  
+            :en_US => "Central Command Post",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit ‘em hard”.</p>",
+  
+            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
+  
+            :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there’s your awning. A nice big seat for the chief, and hey presto, you’ve got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit ‘em hard!” The command post increases a settlement’s command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 10,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 6,
+
+            },
+
+            {
+              :symbolic_id => 'building_command_post',
+              :id => 18,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            1 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
+            2 => '(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5',
+            3 => 'EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :command_points => "1+GREATER(LEVEL,9)+EQUAL(LEVEL,20)",
+
+          },
+
+        },              #   END OF Kommandozentrale
+        {               #   Verrückter Kürschner
+          :id          => 19, 
           :symbolic_id => :building_furrier_2,
 					:category    => 5,
           :db_field    => :building_furrier_2,
@@ -4428,131 +4553,6 @@ class GameRules::Rules
           },
 
         },              #   END OF Verrückter Kürschner
-        {               #   Kommandozentrale
-          :id          => 19, 
-          :symbolic_id => :building_command_post,
-					:category    => 4,
-          :db_field    => :building_command_post,
-          :name        => {
-            
-            :de_DE => "Kommandozentrale",
-  
-            :en_US => "Central Command Post",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit ‘em hard”.</p>",
-  
-            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
-  
-            :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there’s your awning. A nice big seat for the chief, and hey presto, you’ve got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit ‘em hard!” The command post increases a settlement’s command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
-  
-          :buyable     => true,
-          :demolishable=> false,
-          :destructable=> false,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 10,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 6,
-
-            },
-
-            {
-              :symbolic_id => 'building_command_post',
-              :id => 19,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
-            1 => 'EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL',
-            2 => '(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5',
-            3 => 'EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2',
-            
-          },
-
-          :production_time => 'EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],          
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-              {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-              {
-                :queue_type_id     => 4,
-                :queue_type_id_sym => :queue_cavalry,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-            ],
-
-            :command_points => "1+GREATER(LEVEL,9)+EQUAL(LEVEL,20)",
-
-          },
-
-        },              #   END OF Kommandozentrale
         {               #   Garnisonsgebäude
           :id          => 20, 
           :symbolic_id => :building_garrison,
@@ -5439,7 +5439,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Beherrscht eine Region mit allen Einwohnern, erlaubt es Steuern zu erheben und den Gebietszugang zu reglementieren.",
   
-            :en_US => "English Description.",
+            :en_US => "The fortress dcontrols the region with all population. The fortress can collect taxes.",
                 
           },
 
@@ -5520,7 +5520,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Die Hauptsiedlung eines Stammes.",
   
-            :en_US => "English Description.",
+            :en_US => "Main settlement of a tribe.",
                 
           },
 

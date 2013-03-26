@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="7" />
+    <Version major="0" minor="0" build="8" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -920,7 +920,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">800</ResourceReward>
         <ResourceReward resource="resource_wood">400</ResourceReward>
-        <UnitReward unit="unit_clubbers_2">20</UnitReward>
+        <UnitReward unit="unit_clubbers">20</UnitReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
       <RewardTests>
