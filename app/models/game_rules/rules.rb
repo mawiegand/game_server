@@ -6430,7 +6430,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '3',
 
           :experience_production => '15*(MRANK+1)',
 
