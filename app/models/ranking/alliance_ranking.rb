@@ -5,7 +5,7 @@ class Ranking::AllianceRanking < ActiveRecord::Base
   scope :non_empty, where('num_members > 0')
 
   def self.update_ranks(sort_field=:overall_score, rank_field=:overall_rank)
-    rankings = Ranking::AllianceRanking.find(:all, :order => "#{sort_field.to_s} DESC")
+    rankings = Ranking::AllianceRanking.order("#{sort_field.to_s} DESC")
     rank = 1
     rankings.each do |entry| 
       entry[rank_field] = rank
