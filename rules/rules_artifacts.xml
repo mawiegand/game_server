@@ -6,19 +6,19 @@
     <Name lang="de_DE">Abrissbirne</Name>
     <Name lang="en_US">Demolition ball</Name>
     <Description lang="de_DE">
-      <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf ins Wacky-Lab!'</p>
+      <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
     </Description>
     <Description lang="en_US">
-      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+      <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
     </Description>
     <Flavour lang="de_DE">Haben die Götter diese Kugel verloren? Ich liebe Rätsel!</Flavour>
-    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Die Tüftler im Wackylab haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
+        <p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
       </Description>
       <Description>
-        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your stone production and the stone-production of your alliance.</p>
+        <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
@@ -35,19 +35,19 @@
     <Name lang="de_DE">Lochscheibe</Name>
     <Name lang="en_US">Punched disc</Name>
     <Description lang="de_DE">
-      <p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf ins Wacky-Lab!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>
+      <p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf zur Tüftler-Werkstatt!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>
     </Description>
     <Description lang="en_US">
-      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+      <p>The punched disc was found in the wake of a great battle with the neandertals. But since noone knew what to do with it they deceided to just give it to the workshop.</p>
     </Description>
     <Flavour lang="de_DE">Ein Stein mit einem Loch! Das ist doch nun wirklich nichts neues.</Flavour>
-    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="en_US">A stone with a hole? Now i've seen everything.'</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Die Tüftler des 'Wacky-Lab' haben eine geniale Idee zur Verwertung des Lochsteins gehabt. Das dreickige Rad revolutiniert den Transport von Holz durch neuartige Holzkarren. Sowohl die eigen als auch die Allianz-Holzproduktion profitiert von dieser Entdeckung.</p>
+        <p>Die Tüftler der Werkstatt haben eine geniale Idee zur Verwertung des Lochsteins gehabt. Das dreickige Rad revolutiniert den Transport von Holz durch neuartige Holzkarren. Sowohl die eigen als auch die Allianz-Holzproduktion profitiert von dieser Entdeckung.</p>
       </Description>
       <Description>
-        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your wood-production and the wood-production of your alliance.</p>
+        <p>After a while the Tinkers finally found a use for the damn thing. They figured, that they could use it to transport wood with astonishing speed and shared this knowledge with their allies as well. Unfortunately the discs round form wasnt aesthetically pleasing to the Tinkers, but they managed to fix that too.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
@@ -64,19 +64,19 @@
     <Name lang="de_DE">Wäscheleine</Name>
     <Name lang="en_US">Clothing horse</Name>
     <Description lang="de_DE">
-      <p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf ins Wacky-Lab!'.</p>
+      <p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf zur Tüftler-Werkstatt!'.</p>
     </Description>
     <Description lang="en_US">
-      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+      <p>When the clothing horse was first discovered the strange material of its stand frightened a lot of people. The only ones brave enough to take a good look at it were the Tinkers in the workshop.</p>
     </Description>
     <Flavour lang="de_DE">Hmm, was ist das? Eine Waffe oder ein Werkzeug kann das nicht sein, oder?</Flavour>
-    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="en_US">Well this surely couldnt be some sort of tool or weapon.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Auf eine Wäscheleine hätten sie auch ohne das unbekannte Artefakt kommen sollen, sagten sich die Tütfler des 'Wacky-Lab'. Die Wäscheleine beschleunigt neben der eigenen auch die Fellproduktion der Allianz.</p>
+        <p>Auf eine Wäscheleine hätten sie auch ohne das unbekannte Artefakt kommen sollen, sagten sich die Tütfler. Die Wäscheleine beschleunigt neben der eigenen auch die Fellproduktion der Allianz.</p>
       </Description>
       <Description>
-        <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. This christall raises your fur-production and the fur-production of your alliance.</p>
+        <p>To be honest, they should have come up with this a lot earlier. But nevertheless, thanks to this new clothing horse furriers everywere began to work more efficiently.</p>
         </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
@@ -96,16 +96,16 @@
       <p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>
     </Description>
     <Description lang="en_US">
-      <p>The great christall was dicovered by a fight against the wild neandertaler. The christall emits a powerful aura, and was called 'Tear of gods'.</p>
+      <p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>
     </Description>
     <Flavour lang="de_DE">Der schwarze Monolith ist toll. Er ist so groß und nunja schwarz eben.</Flavour>
-    <Flavour lang="en_US">The christall is cold and grey with an impressive size. Althogh there is no visual indicator, the christall emits a noble aura. The many people kneeing an praying around the christal create a scary atmosphere.</Flavour>
+    <Flavour lang="en_US">The monolith is great and black and .... yeah.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Mit dem schwarzen Monolithen kamen die Tütfler aus dem 'Wacky-Lab' nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>
+        <p>Mit dem schwarzen Monolithen kamen die Tütfler aus der Werkstatt nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>
       </Description>
       <Description>
-      <p>The christall encourage your people to new  insights aboz thier envoirement and gives you ongoing experience. The new knowledge enables you an your alliance to get some breakthroughs in your raw material production.</p>
+      <p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
