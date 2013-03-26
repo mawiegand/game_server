@@ -3880,7 +3880,7 @@
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="32420" />
+        <SettlementProductionTest min_resources="35420" />
       </RewardTests>
     </Quest>
 

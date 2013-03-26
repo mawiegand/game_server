@@ -12218,7 +12218,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 32420,
+              :min_resources => 35420,
             },
 
           },          
