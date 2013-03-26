@@ -6476,7 +6476,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1-(0.1*(MAX(DAYS,0)))',
+            :required_regions_ratio => '1',
 
             :duration => 5,
           },
