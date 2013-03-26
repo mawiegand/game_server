@@ -5,7 +5,7 @@
 # Script for copying ranking results to identity provider
 #
 
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'identity_provider/access'
 
 
@@ -23,24 +23,24 @@ step = step > 0 ? step : 1
 
 count = 0
 
-Fundamental::Character.all.each do |character|
+info = Fundamental::RoundInfo.the_round_info
+
+Fundamental::Character.not_deleted.non_npc.each do |character|
 	if count.modulo(step) == 0 
 	  print "." 
 	  sleep (1)
 	end
 	
-	if !character.npc?
-	  event = {
-	    type:       :finished_round,
-	    round:      0,
-	    round_name: 'Darkness',
-	  }
-	  description = {
-	    :de_DE => "Die Runde 0, 'Darkness', überlebt.",
-	    :en_US => "Survived until the end of round 0, 'Darkness'.",
-	  }
-    identity_provider_access.post_character_history_event(character.identifier, event, description)
-  end
+  event = {
+    type:       :finished_round,
+    round:      info.number,
+    round_name: info.name,
+  }
+  description = {
+    :de_DE => "Die Runde #{info.number}, '#{info.name}', überlebt.",
+    :en_US => "Survived until the end of round #{info.number}, '#{info.name}'.",
+  }
+  identity_provider_access.post_character_history_event(character.identifier, event, description)
 end
 
 puts "finished."
