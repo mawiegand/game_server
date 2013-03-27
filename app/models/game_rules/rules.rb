@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.14
+# Version: 0.1.15
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 14,
+                    :build => 15,
       },
       :battle => {
         :calculation => {
@@ -6326,7 +6326,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "<p>Interessant was die Neandertaler so horten. Die Tüftlerwerkstatt wird sich über den neuen Fund freuen. Vielleicht ergründen sie sogar die Ursache der bunten Farbe oder gar den Inhalt des Ei. Oder sie denken sich eine absurde Erklärung aus.</p>",
   
-            :en_US => "<p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>",
+            :en_US => "<p>You can find the strangest things if you look around enough. Atleast the Tinkers will be happy with this one. Maybe they can figure out what sort of animal would lay such a strangely colored egg?</p>",
   
           },
           :flavour => {
@@ -6345,7 +6345,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :de_DE => "<p>Die Tüftler haben diverse Waffen und schwere Gegenstände eingesetzt, aber das Ei war nicht zu knacken. Auch zur Farbe hatten sie keine Eingebung. So wurde verkündet, dass das Ei schön aussieht. Auch nett.</p>",
   
-            :en_US => "<p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>",
+            :en_US => "<p>After days of trying to break the egg open the Tinkers finally came to a conclusion. It's very pretty.</p>",
   
           },
           :initiation_costs => {
