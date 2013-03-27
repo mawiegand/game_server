@@ -93,7 +93,11 @@ class Fundamental::Artifact < ActiveRecord::Base
     else
       new_location = locations[Random.rand(locations.count)]
       npc = Fundamental::Character.find_by_id(1)
-      npc_army = Military::Army.create_npc(new_location, Random.rand(20..1000))
+
+      avg_size_armies = Military::Army.non_npc.non_garrison.average(:size_present) || 20
+      max_size_armies = Military::Army.non_npc.non_garrison.maximum(:size_present) || 400
+
+      npc_army = Military::Army.create_npc(new_location, Random.rand(avg_size_armies..(2 * max_size_armies)))
 
       self.owner       = npc
       self.alliance    = nil
