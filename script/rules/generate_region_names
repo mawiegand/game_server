@@ -10,7 +10,7 @@ puts "Starting..."
 
 terrains = ['plain', 'forest', 'mountain', 'desert', 'swamp']
 
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 
 STDOUT.sync = true
 
@@ -19,10 +19,10 @@ terrains.each do |terrain|
   puts "working on names for terrain #{terrain}..."  
   
   # construct filenames
-  terrain_filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_names.txt"))
-  prefixes_filename  = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_prefixes.txt"))
-  modifiers_filename = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}_modifiers.txt")) 
-  output_filename    = File.expand_path(File.join(File.dirname(__FILE__), "..", "rules", "region_names", "#{terrain}.txt"))  
+  terrain_filename   = File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "rules", "region_names", "#{terrain}_names.txt"))
+  prefixes_filename  = File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "rules", "region_names", "#{terrain}_prefixes.txt"))
+  modifiers_filename = File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "rules", "region_names", "#{terrain}_modifiers.txt"))
+  output_filename    = File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "rules", "region_names", "#{terrain}.txt"))
   
   terrain_names   = File.open(terrain_filename).readlines
   prefixes        = File.open(prefixes_filename).readlines
