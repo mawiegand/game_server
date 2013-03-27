@@ -481,7 +481,12 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def recalc_gross
-    Shop::MoneyTransaction.where(partner_user_id: self.identifier).sum(:gross)
+    round_started_at = Fundamental::RoundInfo.first.started_at
+    if round_started_at.nil?
+      Shop::MoneyTransaction.where(partner_user_id: self.identifier).no_charge_back.completed.sum(:gross)
+    else
+      Shop::MoneyTransaction.where(partner_user_id: self.identifier).since_date(round_started_at).no_charge_back.completed.sum(:gross)
+    end
   end
   
   def update_gross
