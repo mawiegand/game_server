@@ -18,6 +18,7 @@ class Shop::MoneyTransactionsController < ApplicationController
     last_transaction = Shop::MoneyTransaction.order('uid desc').first
     
     @last_update = last_transaction.nil? ? '-' : last_transaction.updated_at
+    @round_started_at = Fundamental::RoundInfo.first.started_at
 
     respond_to do |format|
       format.html # index.html.erb
