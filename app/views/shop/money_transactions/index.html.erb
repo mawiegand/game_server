@@ -183,6 +183,31 @@ end %>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(366).sum(:gross), :unit => "EUR" %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(366).sum(:earnings), :unit => "EUR" %></td>
 </tr>
+<tr style="text-align: right;">
+  <td>367</td>
+  <td>13 5D-Credits</td>
+  <td><%= if !Shop::MoneyTransaction.offer(367).first.nil?
+            Shop::MoneyTransaction.offer(367).first.gross
+          else
+            "-"
+          end %></td>
+  <td><%= Shop::MoneyTransaction.offer(367).count %></td>
+  <td><%= number_to_currency Shop::MoneyTransaction.offer(367).sum(:gross), :unit => "EUR" %></td>
+  <td><%= number_to_currency Shop::MoneyTransaction.offer(367).sum(:earnings), :unit => "EUR" %></td>
+</tr>
+<tr style="text-align: right;">
+  <td>402</td>
+  <td>4000 5D-Credits</td>
+  <td><%= if !Shop::MoneyTransaction.offer(402).first.nil?
+            Shop::MoneyTransaction.offer(402).first.gross
+          else
+            "-"
+          end %></td>
+  <td><%= Shop::MoneyTransaction.offer(402).count %></td>
+  <td><%= number_to_currency Shop::MoneyTransaction.offer(402).sum(:gross), :unit => "EUR" %></td>
+  <td><%= number_to_currency Shop::MoneyTransaction.offer(402).sum(:earnings), :unit => "EUR" %></td>
+</tr>
+
 </table>
 
 <br />

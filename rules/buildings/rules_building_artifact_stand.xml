@@ -12,7 +12,6 @@
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" />
     <Requirement id="building_artifact_stand" max_level="0" /> 
-    <Requirement id="building_haunt" max_level="0" /> 
   </RequirementGroup>
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(FLOOR(7500*POW(LEVEL,0.4)))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(FLOOR(10000*POW(LEVEL,0.4)))</Cost>

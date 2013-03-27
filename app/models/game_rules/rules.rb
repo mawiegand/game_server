@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.11
+# Version: 0.1.12
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 11,
+                    :build => 12,
       },
       :battle => {
         :calculation => {
@@ -2490,32 +2490,10 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
               
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             {
               :symbolic_id => 'building_haunt',
               :id => 21,
@@ -2625,17 +2603,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -2646,17 +2613,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 2,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -2756,17 +2712,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -2777,17 +2722,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 3,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -2883,17 +2817,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -2904,17 +2827,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 4,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -3035,17 +2947,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
           ],          
@@ -3134,17 +3035,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -3155,17 +3045,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 5,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -3261,17 +3140,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -3282,17 +3150,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 5,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -3340,7 +3197,7 @@ class GameRules::Rules
         {               #   Trainingshöhle
           :id          => 8, 
           :symbolic_id => :building_training_cave,
-					:category    => 5,
+					:category    => 6,
           :db_field    => :building_training_cave,
           :name        => {
             
@@ -3366,7 +3223,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5)",
+	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -3375,7 +3232,7 @@ class GameRules::Rules
           :takeover_destroy  => false,
           :experience_factor => 8,
 
-          :experience_production => 'CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)',
+          :experience_production => 'LESS(LEVEL,11)*(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))',
 
           :requirementGroups=> [
 
@@ -3406,14 +3263,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)',
-            1 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*1.5+0.5)',
-            2 => 'FLOOR(CEIL((LESS(LEVEL,11)*CEIL((LEVEL+1)*LEVEL*5)+GREATER(LEVEL,10)*CEIL((LEVEL-10)*(LEVEL-10)*25+550))/24.0)*10*24*3+0.5)',
-            3 => '2*MAX(LEVEL-19,0)',
+            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            2 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2.25*1.5+0.5)',
             
           },
 
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1600+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)',
+          :production_time => 'LESS(LEVEL,11)*FLOOR((((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*3)',
           :production  => [
             
           ],
@@ -3480,17 +3336,6 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_artifact_stand',
               :id => 9,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
               :type => 'building',
 
               :min_level => 0,
@@ -3576,17 +3421,6 @@ class GameRules::Rules
 
             },
 
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
             ],
 
             [
@@ -3597,17 +3431,6 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 8,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
 
             },
 
@@ -3711,48 +3534,6 @@ class GameRules::Rules
 
               :min_level => 0,
 
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 0,
-
               :max_level => 0,
 
             },
@@ -3830,6 +3611,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 11,
 
             },
 
@@ -3931,6 +3725,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 12,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4013,6 +3820,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 3,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 13,
 
             },
 
@@ -4119,6 +3939,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 14,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4206,6 +4039,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 14,
+
+            },
+
+            ],
+
           ],          
 
           :costs      => {
@@ -4288,6 +4134,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 5,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 15,
 
             },
 
@@ -4384,6 +4243,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 7,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 21,
+              :type => 'building',
+
+              :min_level => 17,
 
             },
 
@@ -6104,7 +5976,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6116,7 +5987,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6128,7 +5998,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6140,7 +6009,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6152,7 +6020,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6164,7 +6031,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6176,7 +6042,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6188,7 +6053,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6200,7 +6064,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },
@@ -6212,7 +6075,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :takeover_level_factor  => 1,
               :options   => [
               5,
-              6,
               
               ],
             },

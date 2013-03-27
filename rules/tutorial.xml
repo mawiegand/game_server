@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="12" />
+    <Version major="0" minor="0" build="14" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -46,6 +46,12 @@
       <RewardText locale="en_US">The Hunter Gatherer gathers small quantities of all kinds of raw materials: stone, wood and fur. </RewardText>
       <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don’t you think? </RewardFlavor>
+      <Rewards>
+        <ResourceReward resource="resource_stone">25</ResourceReward>
+        <ResourceReward resource="resource_wood">25</ResourceReward>
+        <ResourceReward resource="resource_fur">25</ResourceReward>
+        <ExperienceReward>25</ExperienceReward>
+      </Rewards>
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
@@ -312,9 +318,9 @@
       <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
-        <ResourceReward resource="resource_stone">350</ResourceReward>
-        <ResourceReward resource="resource_wood">350</ResourceReward>
-        <ResourceReward resource="resource_fur">250</ResourceReward>
+        <ResourceReward resource="resource_stone">325</ResourceReward>
+        <ResourceReward resource="resource_wood">325</ResourceReward>
+        <ResourceReward resource="resource_fur">225</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -826,10 +832,10 @@
       <RewardFlavor locale="en_US">One and two, one and two, come on thats fun!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">360</ResourceReward>
-        <ResourceReward resource="resource_wood">360</ResourceReward>
-        <ResourceReward resource="resource_fur">720</ResourceReward>
-        <ExperienceReward>600</ExperienceReward>
+        <ResourceReward resource="resource_stone">58</ResourceReward>
+        <ResourceReward resource="resource_wood">58</ResourceReward>
+        <ResourceReward resource="resource_fur">116</ResourceReward>
+        <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_training_cave" min_count="1" />
@@ -921,7 +927,7 @@
         <ResourceReward resource="resource_stone">800</ResourceReward>
         <ResourceReward resource="resource_wood">400</ResourceReward>
         <UnitReward unit="unit_clubbers">20</UnitReward>
-        <ExperienceReward>300</ExperienceReward>
+        <ExperienceReward>400</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="5" />
@@ -2391,8 +2397,8 @@
     <Quest id="quest_armyXP_20" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>Fight with an army until it gained 250.000 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe bis Du 250.000 Armee Erfahrung erlangst.</Task>
+      <Task>Fight with an army until it gained 200.000 Army Experience</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 200.000 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
       </Description>
@@ -2413,7 +2419,7 @@
         <ExperienceReward>8000</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ArmyExperienceTest min_experience="250000" />
+        <ArmyExperienceTest min_experience="200000" />
       </RewardTests>
     </Quest>
 
@@ -2422,7 +2428,7 @@
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it gained 300.000 Army Experience</Task>
-      <Task locale="de_DE">Kämpfe bis Du 300.000 Armee Erfahrung erlangst.</Task>
+      <Task locale="de_DE">Kämpfe mit einer Armee, bis sie 300.000 Armee Erfahrung erlangt.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
       </Description>
@@ -3874,7 +3880,7 @@
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="32420" />
+        <SettlementProductionTest min_resources="35420" />
       </RewardTests>
     </Quest>
 
