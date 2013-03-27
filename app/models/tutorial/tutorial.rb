@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.14
+# Version: 0.0.16
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 14,
+        :build => 16, 
       },
       
       :production_test_weights => {
@@ -2238,7 +2238,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :place_npcs => 25,         
+          :place_npcs => 20,         
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl2
@@ -7607,7 +7607,7 @@ class Tutorial::Tutorial
             :en_US => "Fight with an army until it gained 200.000 Army Experience",
   
             :de_DE => "Kämpfe mit einer Armee, bis sie 200.000 Armee Erfahrung erlangt.",
-
+                
           },
           :flavour => {
             
@@ -7700,7 +7700,7 @@ class Tutorial::Tutorial
             :en_US => "Fight with an army until it gained 300.000 Army Experience",
   
             :de_DE => "Kämpfe mit einer Armee, bis sie 300.000 Armee Erfahrung erlangt.",
-
+                
           },
           :flavour => {
             
