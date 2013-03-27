@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.12
+# Version: 0.1.13
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 12,
+                    :build => 13,
       },
       :battle => {
         :calculation => {
@@ -2009,7 +2009,7 @@ class GameRules::Rules
           :critical_hit_damage => 0,
           :critical_hit_chance => 0.01,
 
-          :production_time => '36000',
+          :production_time => '43200',
 
           :costs      => {
             0 => '5000',
