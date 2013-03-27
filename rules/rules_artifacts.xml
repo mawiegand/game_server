@@ -117,4 +117,32 @@
     <Effects>
     </Effects>
   </Artifact>
+  <Artifact id="artifact_4">
+    <Name lang="de_DE">Dino-Osterei</Name>
+    <Name lang="en_US">Dino-Easteregg</Name>
+    <Description lang="de_DE">
+      <p>Interessant was die Neandertaler so horten. Die Tüftlerwerkstatt wird sich über den neuen Fund freuen. Vielleicht ergründen sie sogar die Ursache der bunten Farbe oder gar den Inhalt des Ei. Oder sie denken sich eine absurde Erklärung aus.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>
+    </Description>
+    <Flavour lang="de_DE">Ein großes buntes Ei? Was mag da drin sein?</Flavour>
+    <Flavour lang="en_US">A great colourful egg? Good or bad?</Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Die Tüftler haben diverse Waffen und schwere Gegenstände eingesetzt, aber das Ei war nicht zu knacken. Auch zur Farbe hatten sie keine Eingebung. So wurde verkündet, dass das Ei schön aussieht. Auch nett.</p>
+      </Description>
+      <Description>
+        <p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">250*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">250*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>20</ArtifactAmount>
+    <ExperienceProduction>MRANK</ExperienceProduction>
+    <Effects>
+    </Effects>
+  </Artifact>
 </ArtifactTypes>

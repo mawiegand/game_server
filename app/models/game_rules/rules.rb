@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.13
+# Version: 0.1.14
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 13,
+                    :build => 14,
       },
       :battle => {
         :calculation => {
@@ -157,7 +157,7 @@ class GameRules::Rules
       },
       :building_experience_formula => '2*LEVEL',
       :alliance_max_members => 13,
-      :artifact_count => 4,
+      :artifact_count => 5,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
 
@@ -6312,6 +6312,51 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Schwarzer Monolith
+        {               #   Dino-Osterei
+          :id          => 4, 
+          :symbolic_id => :artifact_4,
+          :name        => {
+            
+            :de_DE => "Dino-Osterei",
+  
+            :en_US => "Dino-Easteregg",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Interessant was die Neandertaler so horten. Die Tüftlerwerkstatt wird sich über den neuen Fund freuen. Vielleicht ergründen sie sogar die Ursache der bunten Farbe oder gar den Inhalt des Ei. Oder sie denken sich eine absurde Erklärung aus.</p>",
+  
+            :en_US => "<p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Ein großes buntes Ei? Was mag da drin sein?",
+  
+            :en_US => "A great colourful egg? Good or bad?",
+  
+          },
+
+          :amount      => '20',
+
+          :experience_production => 'MRANK',
+
+          :description_initiated => {
+
+            :de_DE => "<p>Die Tüftler haben diverse Waffen und schwere Gegenstände eingesetzt, aber das Ei war nicht zu knacken. Auch zur Farbe hatten sie keine Eingebung. So wurde verkündet, dass das Ei schön aussieht. Auch nett.</p>",
+  
+            :en_US => "<p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '250*LEVEL',
+            1 => '250*LEVEL',
+            2 => '250*LEVEL',
+            
+          },
+          :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
+
+        },              #   END OF Dino-Osterei
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
