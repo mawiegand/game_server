@@ -85,7 +85,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(367).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(367).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(367).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR" %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(367).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR" %></td>
     <td><%= number_to_currency Shop::MoneyTransaction.offer(367).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -101,7 +101,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(359).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(359).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(359).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(359).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(359).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -115,7 +115,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(360).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(360).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(360).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(360).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(360).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -128,7 +128,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(361).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(361).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(361).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(361).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(361).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -141,7 +141,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(362).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(362).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(362).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(362).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(362).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -169,7 +169,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(402).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(402).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(402).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR" %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(402).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR" %></td>
     <td><%= number_to_currency Shop::MoneyTransaction.offer(402).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -183,7 +183,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(363).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(363).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(363).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(363).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(363).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -196,7 +196,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(364).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(364).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(364).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(364).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(364).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -209,7 +209,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(365).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(365).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(365).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(365).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
     <td><%= number_to_currency Shop::MoneyTransaction.offer(365).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
@@ -222,7 +222,7 @@ end %>
           else
             "-"
           end %></td>
-  <td><%= Shop::MoneyTransaction.offer(366).count %></td>
+  <td><%= Shop::MoneyTransaction.offer(366).since_date(@round_started_at).no_charge_back.completed.count %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(366).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR" %></td>
   <td><%= number_to_currency Shop::MoneyTransaction.offer(366).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR" %></td>
     <td><%= number_to_currency Shop::MoneyTransaction.offer(366).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
