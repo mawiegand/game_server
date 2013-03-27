@@ -57,15 +57,15 @@ class Backend::Stat < ActiveRecord::Base
 
   
   def self.gross_last_day
-    Shop::MoneyTransaction.where(['created_at > ?', Time.now - 1.days]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
+    Shop::MoneyTransaction.where(['updatetstamp > ?', Time.now - 1.days]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
   end
   
   def self.gross_last_week
-    Shop::MoneyTransaction.where(['created_at > ?', Time.now - 1.weeks]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
+    Shop::MoneyTransaction.where(['updatetstamp > ?', Time.now - 1.weeks]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
   end
   
   def self.gross_last_month
-    Shop::MoneyTransaction.where(['created_at > ?', Time.now - 1.months]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
+    Shop::MoneyTransaction.where(['updatetstamp > ?', Time.now - 1.months]).since_date(round_started_at).no_charge_back.completed.sum(:gross)
   end 
   
   
