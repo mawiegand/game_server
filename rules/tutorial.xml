@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="14" />
+    <Version major="0" minor="0" build="15" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -721,7 +721,7 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="5" />
       </RewardTests>
-      <PlaceNpcs>25</PlaceNpcs>
+      <PlaceNpcs>20</PlaceNpcs>
     </Quest>
 
     <!-- 22 -->
