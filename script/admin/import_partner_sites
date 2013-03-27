@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+def info(string)
+  Rails.logger.info string
+  puts string
+end
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'yaml'
+
+info "Start initializing partner sites and users."
+
+input_filename = File.expand_path(File.join(File.dirname(__FILE__),  '..', '..', 'partner_sites.yml'))
+partner_sites = YAML.load_file(input_filename)
+
+partner_sites[:sites].each do |partner_site|
+  Backend::PartnerSite.create({
+    backend_user_id: partner_site[:backend_user_id],
+    description:     partner_site[:description],
+    referer:         partner_site[:referer],
+    r:               partner_site[:r],
+  })
+end
+
+partner_sites[:users].each do |partner_user|
+  backend_user = Backend::User.new
+  backend_user.assign_attributes(partner_user, :without_protection => true)
+  backend_user.save(:validate => false)
+  backend_user.reload
+  backend_user.salt = partner_user['salt']
+  backend_user.save
+end
+
+info "Finished."

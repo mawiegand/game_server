@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+def info(string)
+  Rails.logger.info string
+  puts string
+end
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'yaml'
+
+info "Start dumping partner sites."
+
+partner_sites = {
+  sites: [],
+  users: [],
+}
+
+partner_user_ids = []
+
+partner_sites[:sites] = Backend::PartnerSite.all.map do |partner_site|
+  partner_user_ids << partner_site.backend_user_id unless partner_user_ids.include?(partner_site.backend_user_id)
+  {
+    backend_user_id: partner_site.backend_user_id,
+    description:     partner_site.description,
+    referer:         partner_site.referer,
+    r:               partner_site.r,
+  }
+end
+
+partner_user_ids.each do |partner_user_id|
+  partner_sites[:users] << Backend::User.find_by_id(partner_user_id).attributes
+end
+
+
+output_filename = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'partner_sites.yml'))
+
+File.open(output_filename, 'w') do |out|
+  YAML.dump partner_sites, out
+end
+
+info "Finished."
