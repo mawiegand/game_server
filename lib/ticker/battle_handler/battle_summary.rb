@@ -131,7 +131,7 @@ class Ticker::BattleHandler::BattleSummary
 		if (character.locale.to_s[0,2] == "de")
 			I18n.locale = :de
 		else
-			I18n.locale = :en
+			I18n.locale = :de
 		end
 
 		#army summary
