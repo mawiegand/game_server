@@ -4,7 +4,7 @@ class Backend::StatusMailer < ActionMailer::Base
   def sent_chargeback_alert(transaction)
     @transaction = transaction
 
-    mail(:to      => GAME_SERVER_CONFIG['status_email_recipient'],
-         :subject => "[#{Rails.env}] Chargeback found in transactions.")
+    mail(:to      => GAME_SERVER_CONFIG['chargeback_email_recipient'],
+         :subject => "[#{Rails.env}] Transaktion mit Chargeback-Status gefunden.")
   end
 end
