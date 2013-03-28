@@ -27,16 +27,16 @@ module CreditShop
       query = add_hash(query)
       http_response = HTTParty.post(URL_BASE, :query => query)
       
-      if (http_response.code === 200)
+      if http_response.code === 200
         api_response = JSON.parse(http_response.parsed_response)
-        if (api_response['resultCode'] === 0)
+        if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
             response_data: {
               amount: api_response['result']['amount'],
             }
           }
-        elsif (api_response['resultCode'] === -1)
+        elsif api_response['resultCode'] === -1
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
             response_data: {
@@ -76,16 +76,16 @@ module CreditShop
       query = add_hash(query)
       http_response = HTTParty.post(URL_BASE, :query => query)
       
-      if (http_response.code === 200)
+      if http_response.code === 200
         api_response = JSON.parse(http_response.parsed_response)
-        if (api_response['resultCode'] === 0)
+        if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
             response_data: {
               amount: api_response['result']['amount'],
             }
           }
-        elsif (api_response['resultCode'] === -1)
+        elsif api_response['resultCode'] === -1
           return {response_code: Shop::Transaction::API_RESPONSE_USER_NOT_FOUND}
         end
       end
@@ -109,9 +109,9 @@ module CreditShop
       query = add_hash(query)
       http_response = HTTParty.post(URL_BASE, :query => query)
       
-      if (http_response.code === 200)
+      if http_response.code === 200
         api_response = JSON.parse(http_response.parsed_response)
-        if (api_response['resultCode'] === 0)
+        if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
             response_data: {
@@ -182,9 +182,10 @@ module CreditShop
             money_transaction.partner_user_id = transaction['partnerUserID']
       
             # update timestamp even if transaction is unchanged
-            money_transaction.touch      
-            
+            money_transaction.touch
             money_transaction.save
+
+            money_transaction.send_chargeback_alert if money_transaction.unsent_chargeback_alert?
           end
         end
       end
@@ -206,9 +207,9 @@ module CreditShop
       query = add_hash(query)
       http_response = HTTParty.post(URL_BASE, :query => query)
       
-      if (http_response.code === 200)
+      if http_response.code === 200
         api_response = JSON.parse(http_response.parsed_response)
-        if (api_response['resultCode'] === 0)
+        if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
             response_data: {
