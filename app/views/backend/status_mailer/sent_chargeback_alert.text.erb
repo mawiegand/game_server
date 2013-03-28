@@ -1,0 +1,12 @@
+Das Update-Skript hat eine Buchung gefunden, die erstmal mit "chargeback" markiert ist:
+
+  Buchungsdatum: <%= DateTime.parse(@transaction.updatetstamp).to_time.to_s(:human) %>
+  Betrag:        <%= @transaction.gross %>
+  Identifier:    <%= @transaction.partner_user_id %> <%= GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{@transaction.partner_user_id}" %>
+  Name:          <%= @transaction.payer_first_name.blank? ? "" : @transaction.payer_first_name + " "%><%= @transaction.payer_last_name %>
+  E-Mailadresse: <%= @transaction.payer_mail %>
+  Invoice ID:    <%= @transaction.invoice_id %>
+
+Whack On!
+
+- cron
