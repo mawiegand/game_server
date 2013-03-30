@@ -294,7 +294,7 @@ class Fundamental::Character < ActiveRecord::Base
         character_name: name,
       })
 
-      location = start_location.nil? ? Map::Location.find_empty : start_location
+      location = start_location.nil? ? Map::Location.find_empty_with_neighbors : start_location
       if !location || !character.claim_location(location)
         character.destroy
         raise InternalServerError.new('Could not claim an empty location.')

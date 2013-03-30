@@ -21,6 +21,27 @@ class Map::Location < ActiveRecord::Base
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end
 
+  def self.find_empty_with_neighbors
+    # get all home_base locations
+    home_bases = Map::Location.home_bases
+    # if map is empty home_bases is empty as well. choose any location
+    return Map::Location.find_empty if home_bases.empty?
+    # pick one randomly
+    home_base = home_bases.offset(Random.rand(home_bases.count)).first
+    # get neighbor nodes of picked location
+    neighbor_nodes = home_base.region.node.neighbor_nodes
+    # sort them by settlement count
+    neighbor_nodes.sort! { |a,b| a.region.settlements.count <=> b.region.settlements.count }
+    # first neighbor node now contains region with fewest settlements
+    target_region = neighbor_nodes.first.region
+    # count empty locations of this region
+    free_locations = target_region.locations.empty.count
+    # if no locations available choose any other from whole map
+    return Map::Location.find_empty if free_locations == 0
+    # return randomly chosen empty location of neighbor region
+    target_region.locations.empty.offset(Random.rand(free_locations)).first
+  end
+
   def self.find_empty_without_army
     empty_locations = Map::Location.all - Map::Location.joins(:armies)
     return nil if empty_locations.empty?
