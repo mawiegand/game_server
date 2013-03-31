@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.17
+# Version: 0.1.18
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 17,
+                    :build => 18,
       },
       :battle => {
         :calculation => {
@@ -1168,6 +1168,36 @@ class GameRules::Rules
             
           },
 
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 12,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
 
         },              #   END OF Gravel Stone Thrower
         {               #   Targetthrower
@@ -1551,6 +1581,36 @@ class GameRules::Rules
             2 => '150',
             
           },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 17,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
 
 
         },              #   END OF Ostrich Rider
