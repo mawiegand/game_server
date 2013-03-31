@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.18
+# Version: 0.1.19
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 18,
+                    :build => 19,
       },
       :battle => {
         :calculation => {
@@ -3145,7 +3145,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_quarry_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
           },
 
         },              #   END OF Steinbruch
@@ -3250,7 +3250,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_logger_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
           },
 
         },              #   END OF Holzfäller
@@ -3543,7 +3543,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
           },
 
         },              #   END OF Kürschner
