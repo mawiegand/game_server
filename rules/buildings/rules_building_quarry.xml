@@ -32,7 +32,7 @@
   <ProductionBonus id="resource_stone">MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05</ProductionBonus>
   <Abilities> <!-- just for grouping -->
   </Abilities>
-  <ConversionOption building="building_quarry_2" level="GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)"/> 
+  <ConversionOption building="building_quarry_2" level="LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)"/>
 </Building>
 
 
