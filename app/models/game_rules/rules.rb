@@ -2813,7 +2813,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3)/100.0+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3)/100.0",
               },
 
             ],
@@ -3835,7 +3835,7 @@ class GameRules::Rules
                 :queue_type_id     => 0,
                 :queue_type_id_sym => :queue_buildings,
                 :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(((1.25*POW(LEVEL,1.3)+0.5)*3*1.75)/100.0+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75)/100.0)",
+                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3*1.75)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75)/100.0",
               },
 
             ],
