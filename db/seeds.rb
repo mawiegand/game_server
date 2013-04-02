@@ -18,8 +18,8 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 4
-NUM_SPARSE_LEVELS = 2
+NUM_FULL_LEVELS   = 2
+NUM_SPARSE_LEVELS = 1
 
 ROUND_NAME   = "Earth"
 ROUND_NUMBER =  3
@@ -200,6 +200,26 @@ end
   nodes = Map::Node.find_all_by_level i
   puts "INFO: working on level #{i}."
   split_all_nodes(nodes, i - NUM_FULL_LEVELS + 4, 1)     # i-3 (when starting with level 5)
+end
+
+# further split germany
+
+puts "INFO: now splitting germany"
+
+node = Map::Node.root
+path = "12020133333333"
+
+while !node.leaf? && path.length > 0
+  c = path[0].to_i
+  node = node.children[c]
+  path = path[1..-1]
+end
+
+while path.length > 0 && node.leaf?
+  split_all_nodes([ node ])
+  c = path[0].to_i
+  node = node.children[c]
+  path = path[1..-1]
 end
 
 puts "Created #{ Map::Node.where(leaf: true).count} leaf nodes."
