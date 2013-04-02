@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="17" />
+    <Version major="0" minor="0" build="18" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1169,7 +1169,7 @@
         <ExperienceReward>1000</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="quest_build_firing_range" min_level="1"/>
+        <BuildingTest building="building_firing_stud" min_level="1"/>
       </RewardTests>
     </Quest>
 

@@ -23,11 +23,13 @@ class Map::Location < ActiveRecord::Base
 
   def self.find_empty_with_neighbors
     # get all home_base locations
-    home_bases = Map::Location.home_bases
+    home_bases = Map::Location.home_bases.select { |base| !base.owner_name.include?('Wacky')  }
     # if map is empty home_bases is empty as well. choose any location
     return Map::Location.find_empty if home_bases.empty?
+    # to avoid a single cluster, distribute first 100 users over the whole map
+    return Map::Location.find_empty if home_bases.count < 100
     # pick one randomly
-    home_base = home_bases.offset(Random.rand(home_bases.count)).first
+    home_base = home_bases[Random.rand(home_bases.count)]
     # get neighbor nodes of picked location
     neighbor_nodes = home_base.region.node.neighbor_nodes
     # sort them by settlement count
