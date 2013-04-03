@@ -249,7 +249,7 @@ GameServer::Application.routes.draw do
         resources :transactions
         resources :money_transactions
         resources :credit_transactions
-        resource :account, :only => [ :show ]
+        resources :accounts, :only => [ :show ]
         resource :info, :controller => 'info', :only => [:show]
       end
       
