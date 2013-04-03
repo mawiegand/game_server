@@ -83,7 +83,7 @@ GameServer::Application.routes.draw do
       resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
       resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
 
-      resources :shop_account,    :path => "/fundamental/characters/:character_id/shop_account",    :module => 'shop',       :controller => 'accounts', :only => [:show]
+      resource  :shop_account,    :path => "/fundamental/characters/:character_id/shop_account",    :module => 'shop',       :controller => 'accounts', :only => [:show]
 
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'
       resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
