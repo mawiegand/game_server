@@ -10,6 +10,7 @@ class Shop::AccountsController < ApplicationController
     raise NotFoundError.new("User not found in Shop") if (account_response[:response_code] === Shop::Transaction::API_RESPONSE_USER_NOT_FOUND)
     shop_account = {
       id:            current_character.id,
+      character_id:  current_character.id,
       created_at:    Time.now,
       updated_at:    Time.now,
       credit_amount: account_response[:response_data][:amount]
