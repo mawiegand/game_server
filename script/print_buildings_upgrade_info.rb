@@ -1,13 +1,15 @@
 #!/usr/bin/env ruby
 
-# Reads rules model and prints a wiki compatible
-# table with building costs
+# Reads rules model and prints a wiki friendly
+# table with building costs in German
 #
 # run in game_server root folder by:
 #    rails r script/print_buildings_upgrade_info.rb
 # otherwise it won't be able to read the model properly
 
 require 'util/formula'
+
+include ActionView::Helpers::NumberHelper
 
 rules = GameRules::Rules.the_rules
 
@@ -23,7 +25,7 @@ categories.each do |category|
       puts "== #{building[:name][:de_DE]} ==" 
 
       # table head
-      puts "{| class=\"wikitable\""
+      puts "{| class=\"wikitable\" style=\"text-align:right\""
       puts "!Level"
 
       # print resource names required by building
@@ -39,7 +41,7 @@ categories.each do |category|
         print "|#{level}"
           costs.each do |resource_id, formula|
           f = Util::Formula.parse_from_formula(formula)
-          print "||#{f.apply(level)}"
+          print "||#{number_with_delimiter(f.apply(level).to_i, :delimiter => '.')}"
         end
         puts "\n|-"
       end
@@ -47,4 +49,3 @@ categories.each do |category|
     end
   end
 end
-
