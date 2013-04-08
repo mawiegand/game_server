@@ -6186,7 +6186,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '1',
 
           :production_bonus  => [
 
@@ -6245,7 +6245,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '1',
 
           :production_bonus  => [
 
@@ -6304,7 +6304,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '3',
+          :amount      => '1',
 
           :production_bonus  => [
 
