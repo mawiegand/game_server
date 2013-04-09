@@ -32,9 +32,9 @@
     <GarrisonSizeBonus>200</GarrisonSizeBonus>
     <ArmySizeBonus>200</ArmySizeBonus>
     <CommandPoints>GREATER(LEVEL,1)+EQUAL(LEVEL,20)</CommandPoints>
-    <UnlockQueue  queue="queue_buildings" />
+    <UnlockQueue queue="queue_buildings" />
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>2+MIN(LEVEL,10)</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(2+MIN(LEVEL,10),12)</UnlockBuildingSlots>
   </Abilities>
 </Building>
 
