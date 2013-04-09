@@ -178,7 +178,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def check_resource_effects
-    if self.initiated? && !self.owner.npc?
+    if self.initiated? && !self.owner.npc? && !self.artifact_type[:experience_production].nil?
       self.artifact_type[:production_bonus].each do |bonus|
         if bonus[:domain_id] == 0 && self.character_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
           add_character_resource_effect(self.owner.id, bonus)
