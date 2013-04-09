@@ -165,7 +165,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def experience_production(mundane_rank)
-    unless self.artifact_type[:experience_production].nil?
+    if self.initiated? && !self.artifact_type[:experience_production].nil?
       formula = Util::Formula.parse_from_formula(artifact_type[:experience_production], 'MRANK')
       formula.apply(mundane_rank)
     else
