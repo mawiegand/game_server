@@ -25,7 +25,7 @@ class Fundamental::AlliancesController < ApplicationController
       format.html # show.html.erb
       format.json do
         role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)
-        render(json: @fundamental_alliance.sanitized_hash(role).to_json)
+        render json: include_root(@fundamental_alliance.sanitized_hash(role), :alliance)
       end
     end
   end
