@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="20" />
+    <Version major="0" minor="0" build="21" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1165,7 +1165,7 @@
         <ResourceReward resource="resource_stone">4000</ResourceReward>
         <ResourceReward resource="resource_wood">2000</ResourceReward>
         <ResourceReward resource="resource_cash">2</ResourceReward>
-        <UnitReward unit="unit_cavalry">20</UnitReward>
+        <UnitReward unit="unit_light_cavalry">20</UnitReward>
         <ExperienceReward>1000</ExperienceReward>
       </Rewards>
       <RewardTests>
