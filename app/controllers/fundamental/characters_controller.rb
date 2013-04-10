@@ -41,7 +41,7 @@ class Fundamental::CharactersController < ApplicationController
           sanitized = @fundamental_characters.map do |character| 
             role = determine_access_role(character.id, character.alliance_id)
             logger.debug "Access with ROLE: #{ role }"
-            character.sanitized_hash(role) 
+            include_root(character.sanitized_hash(role), :character)
           end
           render json: sanitized
         end
