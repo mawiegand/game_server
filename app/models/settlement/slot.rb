@@ -252,6 +252,7 @@ class Settlement::Slot < ActiveRecord::Base
     self.building_id = building_id_to_build
     self.level = 1
     propagate_change(building_id_to_build, 0, 1)
+    propagate_experience(building_id_to_build, building_id_to_build, 0, 1)
     self.save    
   end
 
@@ -267,7 +268,8 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
-    propagate_change(self.building_id, self.level-1, self.level)
+    propagate_change(self.building_id, self.level - 1, self.level)
+    propagate_experience(self.building_id, self.building_id, self.level - 1, self.level)
     self.save
     # TODO: propagation of other depending values needs to be implemented
   end
@@ -379,7 +381,8 @@ class Settlement::Slot < ActiveRecord::Base
       # änderungen propagieren 
       propagate_change(old_building_id, old_level, 0)
       propagate_change(new_building_id, 0, new_level)
-      
+      propagate_experience(old_building_id, new_building_id, old_level, new_level)
+
       self.save
     end
   end
@@ -420,6 +423,52 @@ class Settlement::Slot < ActiveRecord::Base
   end
   
   
+  ############################################################################
+  #
+  #  EXPERIENCE CHANGES
+  #
+  ############################################################################
+
+  def propagate_experience(building_id_old, building_id_new, old_level, new_level)
+    formula = Util::Formula.parse_from_formula(GameRules::Rules.the_rules.building_experience_formula)
+    experience = 0
+
+    if building_id_old == building_id_new && new_level > old_level
+      building_type = GameRules::Rules.the_rules.building_types[building_id_new]
+      sum = 0
+      (old_level + 1 .. new_level).each do |level|
+        sum += formula.apply(level)
+      end
+
+      experience = (sum.to_f * (building_type[:experience_factor] || 1)).floor
+      logger.debug "AAAAAA 1 #{building_id_old} #{building_id_new} #{old_level} #{new_level} #{experience}"
+    elsif building_id_old != building_id_new
+      building_type_old = GameRules::Rules.the_rules.building_types[building_id_old]
+      sum_old = 0
+      (1 .. old_level).each do |level|
+        sum_old += formula.apply(level)
+      end
+      exp_old = (sum_old.to_f * (building_type_old[:experience_factor] || 1)).floor
+
+      building_type_new = GameRules::Rules.the_rules.building_types[building_id_new]
+      sum_new = 0
+      (1 .. new_level).each do |level|
+        sum_new += formula.apply(level)
+      end
+      exp_new = (sum_new.to_f * (building_type_new[:experience_factor] || 1)).floor
+
+      experience = exp_new - exp_old if exp_new > exp_old
+
+      logger.debug "AAAAAA 2 #{building_id_old} #{building_id_new} #{old_level} #{new_level} #{experience}"
+    end
+
+    if experience > 0
+      self.settlement.owner.exp += experience
+      self.settlement.owner.save
+    end
+  end
+
+
   ############################################################################
   #
   #  EXPERIENCE PRODUCTION CHANGES
