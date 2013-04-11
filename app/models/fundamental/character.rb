@@ -279,7 +279,8 @@ class Fundamental::Character < ActiveRecord::Base
       identifier: identifier,
       name: name,
       npc:  npc,
-    });
+      exp:  0,
+    })
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')

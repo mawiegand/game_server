@@ -463,7 +463,7 @@ class Settlement::Slot < ActiveRecord::Base
     end
 
     if experience > 0
-      self.settlement.owner.exp += experience
+      self.settlement.owner.exp = (self.settlement.owner.exp || 0) + experience
       self.settlement.owner.save
     end
   end
