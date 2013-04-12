@@ -47,6 +47,10 @@ class Tutorial::Quest < ActiveRecord::Base
     !quest.nil? && quest[:tutorial]
   end
   
+  def tutorial_end_quest?
+    !quest.nil? && !quest[:tutorial_end_quest].nil? && quest[:tutorial_end_quest] == true
+  end
+  
   def rewards
     (self.quest || {})[:rewards] 
   end
@@ -610,11 +614,26 @@ class Tutorial::Quest < ActiveRecord::Base
     raise ConflictError.new("too many units") unless garrison_army.can_receive?(total_unit_amount)
 
     Tutorial::Quest.transaction do
+      # TODO: this useses a lock and transaction but does NOT use x.save!  -> thus, the
+      #       transaction is NOT roled back in case a save fails, right?!  
+      #       I assume this needs to be changed and the ordering of actions needs to be
+      #       reconsidered.
+      #
+      # FURTHERMORE: I assume the lock must be fetched MUCH earlier; actually before the resource
+      #              and army calculations and checks are started. As is, the prerequisits may
+      #              change during this method, e.g. due to another parallel close-quest action on
+      #              the same quest id. So, the transaction and lock must be obtained in the controller?
+      
       # close quest
       self.lock!
       self.status = STATE_CLOSED
       self.closed_at = Time.now
       self.save
+      
+      if self.tutorial_end_quest?
+        self.tutorial_state.tutorial_finished = true
+        self.tutorial_state.save
+      end
   
       # reward resources, units, experience and action points
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
