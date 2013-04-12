@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.21
+# Version: 0.1.24
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,7 +114,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 1,
-                    :build => 21,
+                    :build => 24,
       },
       :battle => {
         :calculation => {
@@ -4696,7 +4696,7 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,1)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "2+MIN(LEVEL,10)",
+            :unlock_building_slots => "MIN(2+MIN(LEVEL,10),11)",
 
             :garrison_size_bonus => "200",
 

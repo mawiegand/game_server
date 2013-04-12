@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
     end
     
     def use_restkit_api?
-      !request.headers['X-RESTKIT-API'].blank?     
+      !request.headers['X-RESTKIT-API'].blank?   
     end
     
     def include_root(hash, root) 

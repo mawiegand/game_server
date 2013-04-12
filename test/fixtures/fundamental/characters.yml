@@ -5,6 +5,7 @@ owner:
   alliance_id: 1
   name: Owner
   mundane_rank: 0
+  exp: 1
 
 ally:
   id: 2
