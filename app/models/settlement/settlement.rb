@@ -238,6 +238,14 @@ class Settlement::Settlement < ActiveRecord::Base
       queue.reload
       queue.jobs.reload
       queue.jobs.destroy_all          unless queue.jobs.nil? # will remove also active job and event if existing
+      # TODO: jobs MUST have an after-destroy handler that resets building_id to nil on slots of construction jobs.
+    end
+
+    self.slots.each do |slot|
+      if !slot.building_id.nil? && slot.level = 0
+        slot.building_id = nil
+        slot.save
+      end
     end
 
     # destroy all training jobs
