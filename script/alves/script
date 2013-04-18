@@ -5,6 +5,11 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'csv'
 
+log_directory = "/var/www/game_server/current/log"
+date =  Time.now.strftime("%d%m%Y")
+csv_column_separator = ";"
+
+
 #If the last csv should be created
 no_referal = FALSE;
 
@@ -25,175 +30,175 @@ print(CREDIT_RESOURCE)
 print(" credits.\n")
 
 
-filename = "geral_output.csv"
+filename = log_directory + "geral_output_" + date + ".csv"
 error = File.open("error_log.txt", 'w')
-csv_column_separator = ";"
+
 
 print("Starting geral output . . .");
 
 CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
   cols = ["id", "num_victories", "num_defeats", "level", "num_armies","b_has_alliance",
-    "aliance_overall_score","b_aliance_leader", "num_outposts", "num_settlements", "num_fortress", 
-    "num_trades_received", "num_trades_sent"  , "num_log_ins", "num_likes_received", 
-    "num_likes_sent", "num_dislikes_received", "num_dislikes_sent", "num_messages_sent", 
-    "num_messages_received", "time_played", "overlall_score",
-    "resource_score", "power_score", "kills", "victory_ratio", "b_tutorial_completed", "b_bought_platinium", 
-    "bought_platinium", "bought_resources", "b_speeded_building", 
-    "credit_bought", "credit_spent", "current_wallet", "player_gross",
-    "transactions_count", "conversion_state" , "set_referals","created_at"]
-    csv << cols
+          "aliance_overall_score","b_aliance_leader", "num_outposts", "num_settlements", "num_fortress",
+          "num_trades_received", "num_trades_sent"  , "num_log_ins", "num_likes_received",
+          "num_likes_sent", "num_dislikes_received", "num_dislikes_sent", "num_messages_sent",
+          "num_messages_received", "time_played", "overlall_score",
+          "resource_score", "power_score", "kills", "victory_ratio", "b_tutorial_completed", "b_bought_platinium",
+          "bought_platinium", "bought_resources", "b_speeded_building",
+          "credit_bought", "credit_spent", "current_wallet", "player_gross",
+          "transactions_count", "conversion_state" , "set_referals","created_at"]
+  csv << cols
 
-    @user = Fundamental::Character.not_deleted.all
-
-
-    @user.each do |u|
+  @user = Fundamental::Character.not_deleted.all
 
 
-      @rank_char = 
-      Ranking::CharacterRanking.select("overall_score,resource_score,power_score,kills,
+  @user.each do |u|
+
+
+    @rank_char =
+        Ranking::CharacterRanking.select("overall_score,resource_score,power_score,kills,
       victory_ratio").where(:character_id => u.id).first;
 
-      if @rank_char == nil
-        #Hope it never enters here
-        error.puts("Char " + u.id.to_s + " not ranked.\n")
-        @rank_char = Ranking::CharacterRanking.new(:num_outposts => -1, :num_settlements => -1,
-        :num_fortress => -1, :overall_rank => -1,:overall_score => -1,:resource_rank => -1,
-        :resource_score => -1,:power_rank=> -1,:power_score => -1,:kills => -1, :kills_rank => -1,
-        :victory_ratio => -1)		
-      end
+    if @rank_char == nil
+      #Hope it never enters here
+      error.puts("Char " + u.id.to_s + " not ranked.\n")
+      @rank_char = Ranking::CharacterRanking.new(:num_outposts => -1, :num_settlements => -1,
+                                                 :num_fortress => -1, :overall_rank => -1,:overall_score => -1,:resource_rank => -1,
+                                                 :resource_score => -1,:power_rank=> -1,:power_score => -1,:kills => -1, :kills_rank => -1,
+                                                 :victory_ratio => -1)
+    end
 
-      has_alliance = u.alliance_id != nil;
+    has_alliance = u.alliance_id != nil;
 
 
-      alliance_leader = false
-      if has_alliance
-        alliance_leader = Fundamental::Alliance.select("leader_id").where(:id => u.alliance_id).first.leader_id == u.id
-      end
+    alliance_leader = false
+    if has_alliance
+      alliance_leader = Fundamental::Alliance.select("leader_id").where(:id => u.alliance_id).first.leader_id == u.id
+    end
 
-      value_score_alliance = -1	
-      v_score_alliance = nil
+    value_score_alliance = -1
+    v_score_alliance = nil
 
-      if has_alliance 
-        @rank_alliance = Ranking::AllianceRanking.select("overall_score").where(:alliance_id => u.alliance_id)
-        v_score_alliance = @rank_alliance.first.overall_score
-        if (v_score_alliance == nil || v_score_alliance < 1)
-          error.puts("Alliance " + u.alliance_id.to_s + " not scored!\n")
-        else
-          value_score_alliance = v_score_alliance;
-        end
-      end
-
-      number_armies = u.armies.count
-
-      bought_platinum = u.bought_platinum?
-
-      trades_sent = Backend::TradeLogEntry.select("id").where(:sender_id => u.id).count
-      trades_recipient = Backend::TradeLogEntry.select("id").where(:recipient_id => u.id).count
-
-      @tutorial = Tutorial::State.select("tutorial_completed").where(:character_id => u.id).first;
-      tutorial_completed = false;
-      if  @tutorial != nil
-        tutorial_completed = @tutorial.tutorial_completed	
-      end	
-
-      messages_sent = 0
-      @m_s = Messaging::Outbox.select("messages_count").where(:owner_id => u.id).first
-      if @m_s != nil
-        messages_sent = @m_s.messages_count == nil ? 0 : @m_s.messages_count
-      end
-
-      messages_received = 0
-      @m_r = Messaging::Inbox.select("messages_count").where(:owner_id => u.id).first
-      if @m_r != nil
-        messages_received = @m_r.messages_count == nil ? 0 : @m_s.messages_count
-        error.puts("Char " + u.id.to_s + " inbox problem!\n")
-      end
-
-      arr_credit_buys = Shop::Transaction.where("character_id = ? and state > 4",u.id).
-      select("credit_amount_booked").to_a.map {|a| a.credit_amount_booked}
-
-      # Credit Resource = number of credits needed to buy a resource bonus (actually it is 5).
-      times_bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
-
-      times_bought_platinum = 0
-      @platinum_buys = Shop::Transaction.where("character_id = ? and state > 4 and offer like '%Platinum%'",u.id).
-      select("count(character_id) as res").group("character_id").first
-      if @platinum_buys != nil
-        times_bought_platinum = @platinum_buys.res
-      end
-
-      #times_bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
-
-      transactions_count = Shop::Transaction.closed.where(:character_id => u.id ).count
-
-      referer_list = Backend::SignInLogEntry.select("referer").where(:character_id => u.id).map{|a| a.referer}.uniq
-      referer_list.delete(nil)
-      s_referer_list = referer_list.to_s
-
-      @latest_transaction = Shop::Transaction.closed.where(:character_id => u.id ).order("created_at desc").select("credit_amount_after").first
-      current_wallet = 0
-      if @latest_transaction != nil
-        current_wallet = @latest_transaction.credit_amount_after
-      end
-
-      credit_bought = Shop::Transaction.closed.where(:character_id => u.id ).sum("credit_amount_booked") + current_wallet
-
-      created_at= u.created_at;
-      if created_at == nil
-        created_at = "no date"
+    if has_alliance
+      @rank_alliance = Ranking::AllianceRanking.select("overall_score").where(:alliance_id => u.alliance_id)
+      v_score_alliance = @rank_alliance.first.overall_score
+      if (v_score_alliance == nil || v_score_alliance < 1)
+        error.puts("Alliance " + u.alliance_id.to_s + " not scored!\n")
       else
-        created_at = created_at.to_date
+        value_score_alliance = v_score_alliance;
       end
-
-      csv << [u.id,u.victories,u.defeats,"n/i",number_armies,has_alliance.to_s,value_score_alliance,
-        alliance_leader,u.outposts.count,u.settlements.count,u.fortresses.count,trades_recipient,trades_sent,
-        u.login_count,u.received_likes_count,u.send_likes_count,u.received_dislikes_count,u.send_dislikes_count,messages_sent,
-        messages_received,u.playtime, @rank_char.overall_score, 
-        @rank_char.resource_score,@rank_char.power_score, @rank_char.kills,
-        @rank_char.victory_ratio, tutorial_completed.to_s,bought_platinum.to_s,times_bought_platinum,times_bought_resources,"n/d",credit_bought,u.credits_spent_total,
-        current_wallet, u.gross, transactions_count, u.max_conversion_state,s_referer_list, created_at]
-      end
-
-
     end
 
-    print(" done!\n")
-    print("Starting deleted players output . . .")
+    number_armies = u.armies.count
 
+    bought_platinum = u.bought_platinum?
 
-    filename = "deleted_output.csv"
+    trades_sent = Backend::TradeLogEntry.select("id").where(:sender_id => u.id).count
+    trades_recipient = Backend::TradeLogEntry.select("id").where(:recipient_id => u.id).count
 
-    CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
-      cols = ["id", "last_deleted_at", "value"]
-      csv << cols
-
-      @deleted = Fundamental::Character.deleted
-
-      @deleted.each do |d|
-        csv << [d.id,d.last_deleted_at,d.gross]
-      end
-
-
+    @tutorial = Tutorial::State.select("tutorial_completed").where(:character_id => u.id).first;
+    tutorial_completed = false;
+    if  @tutorial != nil
+      tutorial_completed = @tutorial.tutorial_completed
     end
 
-
-    print(" done!\n")
-
-    if NO_REFERAL == FALSE
-      print("Starting referal players output . . .")
-
-      filename = "referal_output.csv"
-      CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
-        cols = ["id", "referal", "number"]
-        csv << cols
-
-        @char_referer = Backend::SignInLogEntry.select("character_id, referer, count(referer) as ct").where("referer IS NOT null").group("referer")
-        @char_referer.each do |cr|
-          csv << [cr.character_id, cr.referer,cr.ct]
-        end
-
-      end
-      error.close()
-
-      print(" done!\n")
+    messages_sent = 0
+    @m_s = Messaging::Outbox.select("messages_count").where(:owner_id => u.id).first
+    if @m_s != nil
+      messages_sent = @m_s.messages_count == nil ? 0 : @m_s.messages_count
     end
+
+    messages_received = 0
+    @m_r = Messaging::Inbox.select("messages_count").where(:owner_id => u.id).first
+    if @m_r != nil
+      messages_received = @m_r.messages_count == nil ? 0 : @m_s.messages_count
+      error.puts("Char " + u.id.to_s + " inbox problem!\n")
+    end
+
+    arr_credit_buys = Shop::Transaction.where("character_id = ? and state > 4",u.id).
+        select("credit_amount_booked").to_a.map {|a| a.credit_amount_booked}
+
+    # Credit Resource = number of credits needed to buy a resource bonus (actually it is 5).
+    times_bought_resources = arr_credit_buys.keep_if{|a| a == CREDIT_RESOURCE }.count
+
+    times_bought_platinum = 0
+    @platinum_buys = Shop::Transaction.where("character_id = ? and state > 4 and offer like '%Platinum%'",u.id).
+        select("count(character_id) as res").group("character_id").first
+    if @platinum_buys != nil
+      times_bought_platinum = @platinum_buys.res
+    end
+
+    #times_bought_platinum = arr_credit_buys.keep_if{|a| a == CREDIT_PLATINUM }.count
+
+    transactions_count = Shop::Transaction.closed.where(:character_id => u.id ).count
+
+    referer_list = Backend::SignInLogEntry.select("referer").where(:character_id => u.id).map{|a| a.referer}.uniq
+    referer_list.delete(nil)
+    s_referer_list = referer_list.to_s
+
+    @latest_transaction = Shop::Transaction.closed.where(:character_id => u.id ).order("created_at desc").select("credit_amount_after").first
+    current_wallet = 0
+    if @latest_transaction != nil
+      current_wallet = @latest_transaction.credit_amount_after
+    end
+
+    credit_bought = Shop::Transaction.closed.where(:character_id => u.id ).sum("credit_amount_booked") + current_wallet
+
+    created_at= u.created_at;
+    if created_at == nil
+      created_at = "no date"
+    else
+      created_at = created_at.to_date
+    end
+
+    csv << [u.id,u.victories,u.defeats,"n/i",number_armies,has_alliance.to_s,value_score_alliance,
+            alliance_leader,u.outposts.count,u.settlements.count,u.fortresses.count,trades_recipient,trades_sent,
+            u.login_count,u.received_likes_count,u.send_likes_count,u.received_dislikes_count,u.send_dislikes_count,messages_sent,
+            messages_received,u.playtime, @rank_char.overall_score,
+            @rank_char.resource_score,@rank_char.power_score, @rank_char.kills,
+            @rank_char.victory_ratio, tutorial_completed.to_s,bought_platinum.to_s,times_bought_platinum,times_bought_resources,"n/d",credit_bought,u.credits_spent_total,
+            current_wallet, u.gross, transactions_count, u.max_conversion_state,s_referer_list, created_at]
+  end
+
+
+end
+
+print(" done!\n")
+print("Starting deleted players output . . .")
+
+
+filename = log_directory + "deleted_output_" + date +".csv"
+
+CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
+  cols = ["id", "last_deleted_at", "value"]
+  csv << cols
+
+  @deleted = Fundamental::Character.deleted
+
+  @deleted.each do |d|
+    csv << [d.id,d.last_deleted_at,d.gross]
+  end
+
+
+end
+
+
+print(" done!\n")
+
+if no_referal == FALSE
+  print("Starting referal players output . . .")
+
+  filename = log_directory + "referal_output_" + date +".csv"
+  CSV.open(filename, "wb", {:col_sep => csv_column_separator}) do |csv|
+    cols = ["id", "referal", "number"]
+    csv << cols
+
+    @char_referer = Backend::SignInLogEntry.select("character_id, referer, count(referer) as ct").where("referer IS NOT null").group("referer")
+    @char_referer.each do |cr|
+      csv << [cr.character_id, cr.referer,cr.ct]
+    end
+
+  end
+  error.close()
+
+  print(" done!\n")
+end
