@@ -1,7 +1,7 @@
 class Backend::TutorialStat < ActiveRecord::Base 
   
   def self.update_all_cohorts
-    Backend::TutorialStat.find(:all).each do |stat|
+    Backend::TutorialStat.all.each do |stat|
       stat.recalc_stats
       stat.save
     end
@@ -31,19 +31,19 @@ class Backend::TutorialStat < ActiveRecord::Base
           if !quest.finished_at.nil?  && !self["quest_#{quest.quest_id}_num_finished".to_s].nil? # check whether database field already exists. may be not the case for newly created quests
             if quest.finished_at < character.created_at + 1.days
               self["quest_#{quest.quest_id}_num_finished_day_1".to_s] += 1
-              self["quest_#{quest.quest_id}_playtime_finished_day_1".to_s] += (quest.playtime_finished || 0)
+              self["quest_#{quest.quest_id}_playtime_finished_day_1".to_s] += (quest.playtime_finished || 0).round(3)
             end
             self["quest_#{quest.quest_id}_num_finished".to_s] += 1
-            self["quest_#{quest.quest_id}_playtime_finished".to_s] += (quest.playtime_finished || 0)
+            self["quest_#{quest.quest_id}_playtime_finished".to_s] += (quest.playtime_finished || 0).round(3)
           end
         
           if !quest.created_at.nil? && !self["quest_#{quest.quest_id}_num_started".to_s].nil?
             if quest.created_at < character.created_at + 1.days
               self["quest_#{quest.quest_id}_num_started_day_1".to_s] += 1
-              self["quest_#{quest.quest_id}_playtime_started_day_1".to_s] += (quest.playtime_started || 0.0)
+              self["quest_#{quest.quest_id}_playtime_started_day_1".to_s] += (quest.playtime_started || 0.0).round(3)
             end
             self["quest_#{quest.quest_id}_num_started".to_s] += 1
-            self["quest_#{quest.quest_id}_playtime_started".to_s] += (quest.playtime_started || 0.0)
+            self["quest_#{quest.quest_id}_playtime_started".to_s] += (quest.playtime_started || 0.0).round(3)
           end        
         end
       end
@@ -55,7 +55,7 @@ class Backend::TutorialStat < ActiveRecord::Base
       if !prev_quest.nil?
         quest_finished      = Tutorial::Quest.where( quest_id:      quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.created_at, self.created_at - 1.weeks ]).count
         prev_quest_finished = Tutorial::Quest.where( quest_id: prev_quest[:id] ).where(["state_id > ?", Tutorial::Quest::STATE_FINISHED]).where([ 'updated_at <= ? AND updated_at > ?', self.created_at, self.created_at - 1.weeks ]).count
-        self["quest_#{quest[:id]}_retention_rate_week_1".to_s] = (quest_finished || 0).to_f / ([prev_quest_finished || 1, 1].max).to_f
+        self["quest_#{quest[:id]}_retention_rate_week_1".to_s] = ((quest_finished || 0).to_f / ([prev_quest_finished || 1, 1].max).to_f).round(3)
       end
     end    
   end  
