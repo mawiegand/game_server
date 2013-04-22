@@ -6688,610 +6688,610 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
       :character_ranks => {
         
 # ## MUNDANE CHARACTER RANKS #################################################
-      :skill_points_per_mundane_rank => 5,
+        :skill_points_per_mundane_rank => 5,
   
-      :mundane => [  # ALL MUNDANE CHARACTER RANKS
+        :mundane => [  # ALL MUNDANE CHARACTER RANKS
 
-        {              #  0
-          :id          => 0, 
-          :exp         => 0,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+          {              #  0
+            :id          => 0,
+            :exp         => 0,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Fellflohdompteur",
   
             :en_US => "Furry-fleatamer",
-                
-          },
-        },             #   END OF 
-        {              #  1
-          :id          => 1, 
-          :exp         => 2000,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  1
+            :id          => 1,
+            :exp         => 2000,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Springschwanzsucher",
   
             :en_US => "Springtailsearcher",
-                
-          },
-        },             #   END OF 
-        {              #  2
-          :id          => 2, 
-          :exp         => 5000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  2
+            :id          => 2,
+            :exp         => 5000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Altameisenanbeter",
   
             :en_US => "Ancientantworshipper",
-                
-          },
-        },             #   END OF 
-        {              #  3
-          :id          => 3, 
-          :exp         => 9500,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  3
+            :id          => 3,
+            :exp         => 9500,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Ammonitenanlocker",
   
             :en_US => "Ammonitesattractor",
-                
-          },
-        },             #   END OF 
-        {              #  4
-          :id          => 4, 
-          :exp         => 16250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  4
+            :id          => 4,
+            :exp         => 16250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Feuerunkensammler",
   
             :en_US => "Firebellytoadcollector",
-                
-          },
-        },             #   END OF 
-        {              #  5
-          :id          => 5, 
-          :exp         => 25500,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  5
+            :id          => 5,
+            :exp         => 25500,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Steinzeitrattenkuschler",
   
             :en_US => "Junior-Stoneageratcuddler",
-                
-          },
-        },             #   END OF 
-        {              #  6
-          :id          => 6, 
-          :exp         => 37500,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  6
+            :id          => 6,
+            :exp         => 37500,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Steinzeitrattenkuschler",
   
             :en_US => "Stoneageratcuddler",
-                
-          },
-        },             #   END OF 
-        {              #  7
-          :id          => 7, 
-          :exp         => 52750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  7
+            :id          => 7,
+            :exp         => 52750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Hülsenwirblerverwirbler",
   
             :en_US => "Junior-Shell-whirlerswirler",
-                
-          },
-        },             #   END OF 
-        {              #  8
-          :id          => 8, 
-          :exp         => 71500,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  8
+            :id          => 8,
+            :exp         => 71500,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Hülsenwirblerverwirbler",
   
             :en_US => "Shell-whirlerswirler",
-                
-          },
-        },             #   END OF 
-        {              #  9
-          :id          => 9, 
-          :exp         => 94250,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  9
+            :id          => 9,
+            :exp         => 94250,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Erdferkelentdecker",
   
             :en_US => "Junior-Aardvarkdiscoverer",
-                
-          },
-        },             #   END OF 
-        {              #  10
-          :id          => 10, 
-          :exp         => 121250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  10
+            :id          => 10,
+            :exp         => 121250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Erdferkelentdecker",
   
             :en_US => "Aardvarkdiscoverer",
-                
-          },
-        },             #   END OF 
-        {              #  11
-          :id          => 11, 
-          :exp         => 153000,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  11
+            :id          => 11,
+            :exp         => 153000,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Dodoherdenhüter",
   
             :en_US => "Junior-Dodoherdkeeper",
-                
-          },
-        },             #   END OF 
-        {              #  12
-          :id          => 12, 
-          :exp         => 189750,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  12
+            :id          => 12,
+            :exp         => 189750,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Dodoherdenhüter",
   
             :en_US => "Dodoherdkeeper",
-                
-          },
-        },             #   END OF 
-        {              #  13
-          :id          => 13, 
-          :exp         => 232000,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  13
+            :id          => 13,
+            :exp         => 232000,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Säbelzahnkatzenbesänftiger",
   
             :en_US => "Junior-Sabre-toothedcatappeaser",
-                
-          },
-        },             #   END OF 
-        {              #  14
-          :id          => 14, 
-          :exp         => 280000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  14
+            :id          => 14,
+            :exp         => 280000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Säbelzahnkatzenbesänftiger",
   
             :en_US => "Sabre-toothedcatappeaser",
-                
-          },
-        },             #   END OF 
-        {              #  15
-          :id          => 15, 
-          :exp         => 334250,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  15
+            :id          => 15,
+            :exp         => 334250,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Vielfraßversteher",
   
             :en_US => "Junior-Wolverinewhisperer",
-                
-          },
-        },             #   END OF 
-        {              #  16
-          :id          => 16, 
-          :exp         => 395000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  16
+            :id          => 16,
+            :exp         => 395000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Vielfraßversteher",
   
             :en_US => "Wolverinewhisperer",
-                
-          },
-        },             #   END OF 
-        {              #  17
-          :id          => 17, 
-          :exp         => 462500,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  17
+            :id          => 17,
+            :exp         => 462500,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Rothundzähmer",
   
             :en_US => "Junior-Dholetamer",
-                
-          },
-        },             #   END OF 
-        {              #  18
-          :id          => 18, 
-          :exp         => 537000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  18
+            :id          => 18,
+            :exp         => 537000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Rothundzähmer",
   
             :en_US => "Dholetamer",
-                
-          },
-        },             #   END OF 
-        {              #  19
-          :id          => 19, 
-          :exp         => 618750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  19
+            :id          => 19,
+            :exp         => 618750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Mähnenwolfschmuser",
   
             :en_US => "Junior-Manedwolfsnuggler",
-                
-          },
-        },             #   END OF 
-        {              #  20
-          :id          => 20, 
-          :exp         => 708000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  20
+            :id          => 20,
+            :exp         => 708000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Mähnenwolfschmuser",
   
             :en_US => "Manedwolfsnuggler",
-                
-          },
-        },             #   END OF 
-        {              #  21
-          :id          => 21, 
-          :exp         => 804750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  21
+            :id          => 21,
+            :exp         => 804750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Urschweinkrauler",
   
             :en_US => "Junior-Primevalpigfondler",
-                
-          },
-        },             #   END OF 
-        {              #  22
-          :id          => 22, 
-          :exp         => 909250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  22
+            :id          => 22,
+            :exp         => 909250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Urschweinkrauler",
   
             :en_US => "Primevalpigfondler",
-                
-          },
-        },             #   END OF 
-        {              #  23
-          :id          => 23, 
-          :exp         => 1021500,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  23
+            :id          => 23,
+            :exp         => 1021500,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Auerochsenstreichler",
   
             :en_US => "Junior-Aurochspetter",
-                
-          },
-        },             #   END OF 
-        {              #  24
-          :id          => 24, 
-          :exp         => 1141500,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  24
+            :id          => 24,
+            :exp         => 1141500,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Auerochsenstreichler",
   
             :en_US => "Aurochspetter",
-                
-          },
-        },             #   END OF 
-        {              #  25
-          :id          => 25, 
-          :exp         => 1269250,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  25
+            :id          => 25,
+            :exp         => 1269250,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Wildpferdflüsterer",
   
             :en_US => "Junior-wildhorsewhisperer",
-                
-          },
-        },             #   END OF 
-        {              #  26
-          :id          => 26, 
-          :exp         => 1404750,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  26
+            :id          => 26,
+            :exp         => 1404750,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Wildpferdflüsterer",
   
             :en_US => "Wildhorsewhisperer",
-                
-          },
-        },             #   END OF 
-        {              #  27
-          :id          => 27, 
-          :exp         => 1547750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  27
+            :id          => 27,
+            :exp         => 1547750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Höhlenlöwenschwichtiger",
   
             :en_US => "Junior-Cavelionappeaser",
-                
-          },
-        },             #   END OF 
-        {              #  28
-          :id          => 28, 
-          :exp         => 1689250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  28
+            :id          => 28,
+            :exp         => 1689250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Höhlenlöwenschwichtiger",
   
             :en_US => "Cavelionappeaser",
-                
-          },
-        },             #   END OF 
-        {              #  29
-          :id          => 29, 
-          :exp         => 1856000,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  29
+            :id          => 29,
+            :exp         => 1856000,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Wollnashornknuddler",
   
             :en_US => "Junior-Woollyrhinocuddle",
-                
-          },
-        },             #   END OF 
-        {              #  30
-          :id          => 30, 
-          :exp         => 2020750,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  30
+            :id          => 30,
+            :exp         => 2020750,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Wollnashornknuddler",
   
             :en_US => "Woollyrhinocuddle",
-                
-          },
-        },             #   END OF 
-        {              #  31
-          :id          => 31, 
-          :exp         => 2192250,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  31
+            :id          => 31,
+            :exp         => 2192250,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Steppenwisentliebkoser",
   
             :en_US => "Junior-Steppewisentcaresser",
-                
-          },
-        },             #   END OF 
-        {              #  32
-          :id          => 32, 
-          :exp         => 2370000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  32
+            :id          => 32,
+            :exp         => 2370000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Steppenwisentliebkoser",
   
             :en_US => "Steppewisentcaresser",
-                
-          },
-        },             #   END OF 
-        {              #  33
-          :id          => 33, 
-          :exp         => 2553750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  33
+            :id          => 33,
+            :exp         => 2553750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Riesenhirschtätschler",
   
             :en_US => "Junior-Megalocerospatter",
-                
-          },
-        },             #   END OF 
-        {              #  34
-          :id          => 34, 
-          :exp         => 2743250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  34
+            :id          => 34,
+            :exp         => 2743250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Riesenhirschtätschler",
   
             :en_US => "Megalocerospatter",
-                
-          },
-        },             #   END OF 
-        {              #  35
-          :id          => 35, 
-          :exp         => 2938000,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  35
+            :id          => 35,
+            :exp         => 2938000,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Säbelzahntigerbändiger",
   
             :en_US => "Junior-Sabre-toothedtigertamer",
-                
-          },
-        },             #   END OF 
-        {              #  36
-          :id          => 36, 
-          :exp         => 3137500,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  36
+            :id          => 36,
+            :exp         => 3137500,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Säbelzahntigerbändiger",
   
             :en_US => "Sabre-toothedtigertamer",
-                
-          },
-        },             #   END OF 
-        {              #  37
-          :id          => 37, 
-          :exp         => 3341250,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  37
+            :id          => 37,
+            :exp         => 3341250,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Brontotherienbeschützer",
   
             :en_US => "Junior-Brontotheresguardian",
-                
-          },
-        },             #   END OF 
-        {              #  38
-          :id          => 38, 
-          :exp         => 358750,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  38
+            :id          => 38,
+            :exp         => 358750,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Brontotherienbeschützer",
   
             :en_US => "Brontotheresguardian",
-                
-          },
-        },             #   END OF 
-        {              #  39
-          :id          => 39, 
-          :exp         => 379500,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  39
+            :id          => 39,
+            :exp         => 379500,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Wollmammuttreiber",
   
             :en_US => "Junior-Woollymammothdriver",
-                
-          },
-        },             #   END OF 
-        {              #  40
-          :id          => 40, 
-          :exp         => 3973000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  40
+            :id          => 40,
+            :exp         => 3973000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Wollmammuttreiber",
   
             :en_US => "Woollymammothdriver",
-                
-          },
-        },             #   END OF 
-        {              #  41
-          :id          => 41, 
-          :exp         => 4188750,
-          :settlement_points   => 0,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  41
+            :id          => 41,
+            :exp         => 4188750,
+            :settlement_points   => 0,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Nachwuchs-Allosaurusabrichter",
   
             :en_US => "Junior-Allosaurustrainer",
-                
-          },
-        },             #   END OF 
-        {              #  42
-          :id          => 42, 
-          :exp         => 4406250,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  42
+            :id          => 42,
+            :exp         => 4406250,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Allosaurusabrichter",
   
             :en_US => "Allosaurustrainer",
-                
-          },
-        },             #   END OF 
-        {              #  43
-          :id          => 43, 
-          :exp         => 4625000,
-          :settlement_points   => 1,
-          :minimum_sacred_rank => 0,
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  43
+            :id          => 43,
+            :exp         => 4625000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
             :de_DE => "Tyrannosaurustyrann",
   
             :en_US => "Tyrannosaurstyrant",
-                
-          },
-        },             #   END OF 
-      ],             # END OF MUNDANE CHARACTER RANKS
+  
+            },
+          },             #   END OF 
+        ],             # END OF MUNDANE CHARACTER RANKS
 
 # ## SACRED CHARACTER RANKS ##################################################
-      :skill_points_per_sacred_rank => 5,
-  
-      :sacred => [   # ALL SACRED CHARACTER RANKS
+        :skill_points_per_sacred_rank => 5,
 
-        {              #  0
-          :id          => 0, 
-          :name        => {
-            
+        :sacred => [   # ALL SACRED CHARACTER RANKS
+
+          {              #  0
+            :id          => 0,
+            :name        => {
+              
             :de_DE => "Unerkannt",
   
             :en_US => "Unrecognized",
-                
-          },
-        },             #   END OF 
-        {              #  1
-          :id          => 1, 
-          :name        => {
-            
+  
+            },
+          },             #   END OF 
+          {              #  1
+            :id          => 1,
+            :name        => {
+              
             :de_DE => "Weitgehend ignoriert",
   
             :en_US => "Almost always ignored",
-                
-          },
-        },             #   END OF 
-      ],             # END OF SACRED CHARACTER RANKS
+  
+            },
+          },             #   END OF 
+        ],             # END OF SACRED CHARACTER RANKS
 
       },
   
