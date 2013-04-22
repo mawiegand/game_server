@@ -79,6 +79,7 @@ class Training::JobsController < ApplicationController
     
     @training_job = Training::Job.new(@job)
     raise ForbiddenError.new('wrong requirements') unless @training_job.queueable?
+    raise ForbiddenError.new('quantity invalid') unless @training_job.quantity.to_i > 0
     queue = @training_job.queue
     @training_job.position = queue.max_position + 1
     @training_job.quantity_finished = 0
