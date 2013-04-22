@@ -5,7 +5,7 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
 require 'csv'
 
-log_directory = "/var/www/game_server/current/log"
+log_directory = "/var/www/game_server/current/log/"
 date =  Time.now.strftime("%d%m%Y")
 csv_column_separator = ";"
 
@@ -192,7 +192,7 @@ if no_referal == FALSE
     cols = ["id", "referal", "number"]
     csv << cols
 
-    @char_referer = Backend::SignInLogEntry.select("character_id, referer, count(referer) as ct").where("referer IS NOT null").group("referer")
+    @char_referer = Backend::SignInLogEntry.select("character_id, referer, count(referer) as ct").where("referer IS NOT null").group("character_id,referer")
     @char_referer.each do |cr|
       csv << [cr.character_id, cr.referer,cr.ct]
     end
