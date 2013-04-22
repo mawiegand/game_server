@@ -71,6 +71,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_victory_changes
   after_save  :propagate_defeat_changes
   after_save  :propagate_dislike_changes
+  after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
   
   after_commit :check_consistency_sometimes
@@ -743,6 +744,14 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
 
+  def propagate_gender_changes
+    if gender_changed? && !self.ranking.nil? && !self.ranking.frozen?
+      self.ranking.gender = gender || 'male'
+      self.ranking.save
+    end
+    true
+  end
+
   def propagate_fortress_count_changes
     fortress_count_change = self.changes[:fortress_count]
     if !fortress_count_change.nil?
@@ -957,7 +966,7 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
 
   def recalc_likes_count
-    likes_count = self.received_likes.count
+    self.received_likes.count
   end
   
   def check_and_apply_likes_count(likes_count)
@@ -968,7 +977,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def recalc_dislikes_count
-    dislikes_count = self.received_dislikes.count
+    self.received_dislikes.count
   end
   
   def check_and_apply_dislikes_count(dislikes_count)
