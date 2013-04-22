@@ -356,38 +356,38 @@ end
 
   <xsl:template match="MundaneRanks">
 # ## MUNDANE CHARACTER RANKS #################################################
-      :skill_points_per_mundane_rank => <xsl:value-of select="@skillPointsPerRank"/>,
+        :skill_points_per_mundane_rank => <xsl:value-of select="@skillPointsPerRank"/>,
   
-      :mundane => [  # ALL MUNDANE CHARACTER RANKS
+        :mundane => [  # ALL MUNDANE CHARACTER RANKS
 <xsl:for-each select="MundaneRank">
-        {              #  <xsl:value-of select="position()-1"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :exp         => <xsl:value-of select="@exp"/>,
-          :settlement_points   => <xsl:value-of select="@settlementPoints"/>,
-          :minimum_sacred_rank => <xsl:value-of select="@minimumSacredRank"/>,
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-        },             #   END OF <xsl:value-of select="@id"/>
+          {              #  <xsl:value-of select="position()-1"/>
+            :id          => <xsl:value-of select="position()-1"/>,
+            :exp         => <xsl:value-of select="@exp"/>,
+            :settlement_points   => <xsl:value-of select="@settlementPoints"/>,
+            :minimum_sacred_rank => <xsl:value-of select="@minimumSacredRank"/>,
+            :name        => {
+              <xsl:apply-templates select="Name" />
+            },
+          },             #   END OF <xsl:value-of select="@id"/>
 </xsl:for-each>
-      ],             # END OF MUNDANE CHARACTER RANKS
+        ],             # END OF MUNDANE CHARACTER RANKS
 </xsl:template>
 
 
 <xsl:template match="SacredRanks">
 # ## SACRED CHARACTER RANKS ##################################################
-      :skill_points_per_sacred_rank => <xsl:value-of select="@skillPointsPerRank"/>,
-  
-      :sacred => [   # ALL SACRED CHARACTER RANKS
+        :skill_points_per_sacred_rank => <xsl:value-of select="@skillPointsPerRank"/>,
+
+        :sacred => [   # ALL SACRED CHARACTER RANKS
 <xsl:for-each select="SacredRank">
-        {              #  <xsl:value-of select="position()-1"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
-          :name        => {
-            <xsl:apply-templates select="Name" />              
-          },
-        },             #   END OF <xsl:value-of select="@id"/>
+          {              #  <xsl:value-of select="position()-1"/>
+            :id          => <xsl:value-of select="position()-1"/>,
+            :name        => {
+              <xsl:apply-templates select="Name" />
+            },
+          },             #   END OF <xsl:value-of select="@id"/>
 </xsl:for-each>
-      ],             # END OF SACRED CHARACTER RANKS
+        ],             # END OF SACRED CHARACTER RANKS
 </xsl:template>
 
 
