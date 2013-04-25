@@ -76,14 +76,17 @@ class Training::JobsController < ApplicationController
   # POST /training/jobs.json
   def create
     @job = params[:training_job]
-    
-    @training_job = Training::Job.new(@job)
-    raise ForbiddenError.new('wrong requirements') unless @training_job.queueable?
-    raise ForbiddenError.new('quantity invalid') unless @training_job.quantity.to_i > 0
-    queue = @training_job.queue
-    @training_job.position = queue.max_position + 1
-    @training_job.quantity_finished = 0
-    @training_job.save
+
+    Training::Job.transaction do
+      @training_job = Training::Job.new(@job)
+      queue = @training_job.queue
+      queue.lock!
+      raise ForbiddenError.new('wrong requirements') unless @training_job.queueable?
+      raise ForbiddenError.new('quantity invalid') unless @training_job.quantity.to_i > 0
+      @training_job.position = queue.max_position + 1
+      @training_job.quantity_finished = 0
+      @training_job.save
+    end
     
     queue.reload
     queue.check_for_new_jobs
