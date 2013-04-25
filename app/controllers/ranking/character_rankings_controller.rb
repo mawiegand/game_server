@@ -35,7 +35,7 @@ class Ranking::CharacterRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_character_rankings = if params[:page].blank?
+    @ranking_character_rankings = if !params[:page].blank?
       Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
     else
       Ranking::CharacterRanking.order("#{sort} DESC, id ASC")
