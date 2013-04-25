@@ -77,6 +77,9 @@ class Training::JobsController < ApplicationController
   def create
     @job = params[:training_job]
 
+    @training_job = nil
+    queue = nil
+
     Training::Job.transaction do
       @training_job = Training::Job.new(@job)
       queue = @training_job.queue
@@ -87,10 +90,10 @@ class Training::JobsController < ApplicationController
       @training_job.quantity_finished = 0
       @training_job.save
     end
-    
+
     queue.reload
     queue.check_for_new_jobs
-        
+
     respond_to do |format|
       if @training_job.save
         format.html { redirect_to @training_job, notice: 'training job was successfully created.' }
