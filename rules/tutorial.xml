@@ -104,7 +104,7 @@
       <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst. Im Postkasten oben rechts hast Du eine Nachricht mit vielen Informationen erhalten.</RewardText>
       <RewardText locale="en_US">At the moment you should build your building at the small building slots. You got a mail in your mailbox with further information about the game.</RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Lies lieber die Nachricht, die ich Dir hinterlassen habe.</RewardFlavor>
-      <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
+      <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
       </RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
       <Rewards>
@@ -155,15 +155,15 @@
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
       <Task locale="de_DE">Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.</Task>
       <Description locale="de_DE">
-        <p>Finde den Questknopf beschriftet mit "Quest". Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>
+        <p>Finde den Questknopf beschriftet mit 'Quest'. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>
       </Description>
       <Description locale="en_US">
-        <p>Find the quest button labeled "Quest". That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>
+          <p>Find the quest button labeled 'Quest'. That's where you'll also find your current and completed quests whose reward you haven't yet claimed.</p>
       </Description>
       <Flavor locale="de_DE">Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.</Flavor>
       <Flavor locale="en_US">By the way, you can also see all your current quests in the quest overview whenever you like.</Flavor>
       <RewardText locale="de_DE">Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.</RewardText>
-      <RewardText locale="en_US">Take a look at the quest overview regularly, then you won’t lose track of them.  </RewardText>
+      <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
       <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
       <Requirement quest="quest_build_2gathererlvl3" />
