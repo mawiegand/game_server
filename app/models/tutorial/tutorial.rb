@@ -336,7 +336,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Lies lieber die Nachricht, die ich Dir hinterlassen habe.",
   
-            :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn’t it enough that your settlement is bigger and you can build a new building?
+            :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
       ",
                 
           },
@@ -466,9 +466,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Finde den Questknopf beschriftet mit "Quest". Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+            :de_DE => "<p>Finde den Questknopf beschriftet mit 'Quest'. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
   
-            :en_US => "<p>Find the quest button labeled "Quest". That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>",
+            :en_US => "<p>Find the quest button labeled 'Quest'. That's where you'll also find your current and completed quests whose reward you haven't yet claimed.</p>",
                 
           },          
           :reward_flavour => {
@@ -482,7 +482,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.",
   
-            :en_US => "Take a look at the quest overview regularly, then you won’t lose track of them.  ",
+            :en_US => "Take a look at the quest overview regularly, then you won't lose track of them.  ",
                 
           },
 
