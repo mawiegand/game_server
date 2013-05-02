@@ -35,7 +35,11 @@ class Ranking::CharacterRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+    @ranking_character_rankings = if !params[:page].blank? || !params[:per_page].blank?
+      Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+    else
+      Ranking::CharacterRanking.paginate(:page => 1, :per_page => Ranking::CharacterRanking.count, :order => "overall_score DESC, id ASC")
+    end
     
     nr = (page - 1) * per_page + 1
     returned_ranking_entries = @ranking_character_rankings.map do |ranking_entry|

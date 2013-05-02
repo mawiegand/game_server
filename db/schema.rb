@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328152311) do
+ActiveRecord::Schema.define(:version => 20130422173047) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2356,6 +2356,7 @@ ActiveRecord::Schema.define(:version => 20130328152311) do
     t.integer  "likes",                    :default => 0,   :null => false
     t.integer  "dislikes",                 :default => 0,   :null => false
     t.decimal  "like_ratio",               :default => 0.0, :null => false
+    t.string   "gender"
   end
 
   create_table "settlement_histories", :force => true do |t|
@@ -2672,6 +2673,7 @@ ActiveRecord::Schema.define(:version => 20130328152311) do
     t.boolean  "tutorial_completed",                      :default => false, :null => false
     t.datetime "displayed_tutorial_completion_notice_at"
     t.integer  "tutorial_states_completed",               :default => 0,     :null => false
+    t.boolean  "tutorial_finished",                       :default => false, :null => false
   end
 
 end
