@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="21" />
+    <Version major="0" minor="0" build="22" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -35,10 +35,10 @@
       <Task>Order a Hunter Gatherer Level 1.</Task>
       <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
       <Description locale="de_DE">
-        <p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz zu erkennen an dem orangen Rahmen, und wähle dort den Jäger und Sammler.</p>
+        <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
       </Description>
       <Description locale="en_US">
-        <p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there.</p>
+        <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
       </Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn’t it great? A bit empty, though.</Flavor>
@@ -64,10 +64,10 @@
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
       <Task locale="de_DE">Baue einen Jäger und Sammler auf Level 2 aus.</Task>
       <Description locale="de_DE">
-        <p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du oben den aktuellen Level, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>
+        <p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du den aktuellen Level, darunter die nächste Ausbaustufe. Drücke auf den 'Ausbauen' Knopf, um den Ausbau zu beginnen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Choose a Hunter Gatherer. At the top of the window that opens you’ll see the current status of your development, including the next upgrade level. Click on the “upgrade” button to start the upgrade.</p>
+        <p>Choose a Hunter Gatherer. In the window that opens you’ll see the current status of your development, including the next upgrade level. Press on the “upgrade” button to start the upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.</Flavor>
       <Flavor locale="en_US">Do you think you could upgrade a Hunter Gatherer to level 2? He’d feel better and give you more resources. </Flavor>
@@ -111,7 +111,6 @@
         <ResourceReward resource="resource_stone">100</ResourceReward>
         <ResourceReward resource="resource_wood">100</ResourceReward>
         <ResourceReward resource="resource_fur">100</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -153,13 +152,13 @@
     <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
-      <Task>Find the quest button and click on it. Then close the dialog and come back here.</Task>
+      <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
       <Task locale="de_DE">Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.</Task>
       <Description locale="de_DE">
-        <p>Der Questknopf ist oben rechts am Hauptmenü. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>
+        <p>Finde den Questknopf beschriftet mit "Quest". Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>
       </Description>
       <Description locale="en_US">
-        <p>The quest button is in the main menu, top right. That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>
+        <p>Find the quest button labeled "Quest". That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>
       </Description>
       <Flavor locale="de_DE">Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.</Flavor>
       <Flavor locale="en_US">By the way, you can also see all your current quests in the quest overview whenever you like.</Flavor>
@@ -183,10 +182,10 @@
       <Task>Change your name.</Task>
       <Task locale="de_DE">Ändere Deinen Namen.</Task>
       <Description locale="de_DE">
-        <p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
+        <p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
       </Description>
       <Description locale="en_US">
-        <p>Click on the profile button (the one with the head) top right. Then click on “Customization” and select “Choose you name”. The first two name changes are free.</p>
+        <p>Press the profile button. Then press the “Customization” button and select “Choose you name”. The first two name changes are free.</p>
       </Description>
       <Flavor locale="de_DE">Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen.
       </Flavor>
@@ -246,15 +245,15 @@
       <Task>Build a clubber.</Task>
       <Task locale="de_DE">Baue einen Krieger..</Task>
       <Description locale="de_DE">
-        <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
+        <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Warrior”. The recruited units land up in the settlement’s garrison.</p>
+        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.</RewardText>
-      <RewardText locale="en_US">You can train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’.</RewardText>
+      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du einfach die gewünschte Zahl an.</RewardText>
+      <RewardText locale="en_US">You can train several units at the same time: just select the number of units you want.</RewardText>
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything’s always difficult at first, you just have to stick with it. For now, I’ll let you have some of my warriors.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
@@ -274,12 +273,12 @@
       <Task>Go to the world map.</Task>
       <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
-        <p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p>
+        <p>Finde und drücke den Karteknopf.</p>
         <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p>
         <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p>
+        <p>Find and press the map button.</p>
         <p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>
       </Description>
       <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Wenn Du mal aus diesem Loch rauskommen würdest, wüsstest Du das auch. Worauf wartest Du? Geh!</Flavor>
@@ -396,10 +395,10 @@
       <Task>Get yourself back to your settlement.</Task>
       <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Drücke oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>
+        <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu  kommens.</p>
       </Description>
       <Description locale="en_US">
-        <p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>
+        <p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>
       </Description>
       <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
       <Flavor locale="en_US">Can’t you find your settlement? It’s quite easy, let me explain. Then you can try it yourself.</Flavor>
@@ -527,7 +526,7 @@
       <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
       <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
-      <RewardFlavor locale="en_US">Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of raw materials.</RewardFlavor>
+      <RewardFlavor locale="en_US">Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of resources.</RewardFlavor>
       <Requirement quest="quest_improve_production_1" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
@@ -574,12 +573,12 @@
       <Task>Assemble an army.</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p>
-        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Krieger in die Armee verschieben.</p>
+        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p>
+        <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
+        <p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can’t move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.</Flavor>
@@ -607,10 +606,10 @@
       <Task>Build a campfire.</Task>
       <Task locale="de_DE"> Baue ein Lagerfeuer.</Task>
       <Description locale="de_DE">
-        <p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
+        <p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
       </Description>
       <Description locale="en_US">
-        <p>Campfires are needed to write messages and start or enter into alliances. And it‘s where little chieftains are recruited.</p>
+        <p>Campfires are needed to start or enter into alliances. And it‘s where little chieftains are recruited.</p>
       </Description>
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don’t you think?

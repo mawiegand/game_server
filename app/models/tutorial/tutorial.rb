@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.21
+# Version: 0.0.22
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 21, 
+        :build => 22, 
       },
       
       :production_test_weights => {
@@ -129,9 +129,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, klicke auf einen Bauplatz zu erkennen an dem orangen Rahmen, und wähle dort den Jäger und Sammler.</p>",
+            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
   
-            :en_US => "<p>To order a Hunter Gatherer click on an empty building site, and click on Hunter Gatherer there.</p>",
+            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
                 
           },          
           :reward_flavour => {
@@ -225,9 +225,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du oben den aktuellen Level, darunter die nächste Ausbaustufe. Klicke auf 'Ausbauen', um den Ausbau zu beginnen.</p>",
+            :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du den aktuellen Level, darunter die nächste Ausbaustufe. Drücke auf den 'Ausbauen' Knopf, um den Ausbau zu beginnen.</p>",
   
-            :en_US => "<p>Choose a Hunter Gatherer. At the top of the window that opens you’ll see the current status of your development, including the next upgrade level. Click on the “upgrade” button to start the upgrade.</p>",
+            :en_US => "<p>Choose a Hunter Gatherer. In the window that opens you’ll see the current status of your development, including the next upgrade level. Press on the “upgrade” button to start the upgrade.</p>",
                 
           },          
           :reward_flavour => {
@@ -375,11 +375,6 @@ class Tutorial::Tutorial
                 :amount => 100,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 100,
@@ -457,7 +452,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Find the quest button and click on it. Then close the dialog and come back here.",
+            :en_US => "Find the quest button and press it. Then close the dialog and come back here.",
   
             :de_DE => "Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.",
                 
@@ -471,9 +466,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Questknopf ist oben rechts am Hauptmenü. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+            :de_DE => "<p>Finde den Questknopf beschriftet mit "Quest". Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
   
-            :en_US => "<p>The quest button is in the main menu, top right. That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>",
+            :en_US => "<p>Find the quest button labeled "Quest". That’s where you’ll also find your current and completed quests whose reward you haven’t yet claimed.</p>",
                 
           },          
           :reward_flavour => {
@@ -547,9 +542,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Klicke dazu auf den Profil-Knopf (der mit dem Kopf) oben rechts. Klicke dann auf Reiter 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
+            :de_DE => "<p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
   
-            :en_US => "<p>Click on the profile button (the one with the head) top right. Then click on “Customization” and select “Choose you name”. The first two name changes are free.</p>",
+            :en_US => "<p>Press the profile button. Then press the “Customization” button and select “Choose you name”. The first two name changes are free.</p>",
                 
           },          
           :reward_flavour => {
@@ -727,9 +722,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und klicke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
   
-            :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and click on “Recruit Warrior”. The recruited units land up in the settlement’s garrison.</p>",
+            :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>",
                 
           },          
           :reward_flavour => {
@@ -741,9 +736,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du die gewünschte Zahl anstatt der 1 ein und klickst dann auf 'Rekrutiere'.",
+            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du einfach die gewünschte Zahl an.",
   
-            :en_US => "You can train several units at the same time: just enter the number of units you want in place of ‘1’ and click on ‘recruit’.",
+            :en_US => "You can train several units at the same time: just select the number of units you want.",
                 
           },
 
@@ -815,9 +810,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu den Siedlungsknopf. Das ist der große Knopf, mit den Häusern, oben rechts in der Ecke.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
+            :de_DE => "<p>Finde und drücke den Karteknopf.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
   
-            :en_US => "<p>Just click on the settlement button. That’s the big button with the houses in the top right corner.</p><p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>",
+            :en_US => "<p>Find and press the map button.</p><p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>",
                 
           },          
           :reward_flavour => {
@@ -1188,9 +1183,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke oben rechts auf den Siedlungsknopf um die Karte auf Deiner Siedlung zu zentrieren. Zurück in Deine Siedlung kommst Du, indem Du die Siedlung anwählst und auf 'Betreten' drückst.</p>",
+            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu  kommens.</p>",
   
-            :en_US => "<p>Use the settlement button to center the map on your settlement. Then enter your settlement. To do that, click on the settlement button top right to center the map on your settlement. You can get back into your settlement by selecting the settlement and clicking on ‘Enter’.</p>",
+            :en_US => "<p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>",
                 
           },          
           :reward_flavour => {
@@ -1594,7 +1589,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.",
   
-            :en_US => "Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of raw materials.",
+            :en_US => "Isn’t it great, how your settlement is growing? I’ve even managed to persuade the boss to give you some of his huge stores of resources.",
                 
           },
           :reward_text => {
@@ -1774,9 +1769,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Wähle unten rechts im Inspektor 'Neue Armee'.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Mit den Pfeilen kannst Du die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
-            :en_US => "<p>Go to the map and select your settlement. In the Inspector below right select ‘New Army’. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army. Using the arrows, you can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
+            :en_US => "<p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on ‘Create’ to confirm.</p>",
                 
           },          
           :reward_flavour => {
@@ -1882,9 +1877,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt um Nachrichten zu schreiben und Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+            :de_DE => "<p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
   
-            :en_US => "<p>Campfires are needed to write messages and start or enter into alliances. And it‘s where little chieftains are recruited.</p>",
+            :en_US => "<p>Campfires are needed to start or enter into alliances. And it‘s where little chieftains are recruited.</p>",
                 
           },          
           :reward_flavour => {
