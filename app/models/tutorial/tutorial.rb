@@ -708,7 +708,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a clubber.",
+            :en_US => "Build a warrior.",
   
             :de_DE => "Baue einen Krieger..",
                 
@@ -724,7 +724,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
   
-            :en_US => "<p>Go to the training grounds, select a clubber from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>",
+            :en_US => "<p>Go to the training grounds, select a warrior from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>",
                 
           },          
           :reward_flavour => {
