@@ -148,7 +148,6 @@
       </Message>
     </Quest>
 
-    <!-- 
     <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
@@ -172,7 +171,7 @@
       <RewardTests>
         <CustomTest id="test_quest_button">quest button pressed</CustomTest>
       </RewardTests>
-    </Quest> -->
+    </Quest>
 
     <!-- 4 --> <!-- Tutorial 5 -->
     <Quest id="quest_profile" advisor="girl" tutorial="true">
