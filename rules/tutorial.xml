@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="22" />
+    <Version major="0" minor="0" build="23" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -148,7 +148,7 @@
       </Message>
     </Quest>
 
-    <!-- 2 --> <!-- Tutorial 3 -->
+    <!-- 
     <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
@@ -166,14 +166,13 @@
       <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
       <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
       <Rewards>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_quest_button">quest button pressed</CustomTest>
       </RewardTests>
-    </Quest>
+    </Quest> -->
 
     <!-- 4 --> <!-- Tutorial 5 -->
     <Quest id="quest_profile" advisor="girl" tutorial="true">
@@ -195,9 +194,9 @@
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spas miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we’re going to have loads of fun together!</RewardFlavor>
-      <Requirement quest="quest_quest_button" />
+      <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
-        <ExperienceReward>150</ExperienceReward>
+        <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
         <CustomTest id="test_profile">change profile text</CustomTest>
@@ -242,13 +241,13 @@
     <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
-      <Task>Build a clubber.</Task>
-      <Task locale="de_DE">Baue einen Krieger..</Task>
+      <Task>Build a warrior.</Task>
+      <Task locale="de_DE">Baue einen Krieger.</Task>
       <Description locale="de_DE">
         <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the training grounds, select a clubber from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>
+        <p>Go to the training grounds, select a warrior from the recruiting list at the bottom and start training. The recruited units land up in the settlement’s garrison.</p>
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
@@ -273,7 +272,7 @@
       <Task>Go to the world map.</Task>
       <Task locale="de_DE">Begib Dich auf die Weltkarte.</Task>
       <Description locale="de_DE">
-        <p>Finde und drücke den Karteknopf.</p>
+        <p>Finde und drücke den Kartenknopf.</p>
         <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p>
         <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
       </Description>
@@ -287,7 +286,7 @@
       <RewardText locale="en_US">On the world map you can see the other gamers around you.</RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So – did you learn anything? Here are a couple of resources, before you start asking for rewards again.</RewardFlavor>
-      <Requirement quest="quest_recruit_1clubbers" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
