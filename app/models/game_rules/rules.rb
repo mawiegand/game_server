@@ -1318,7 +1318,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>The stone throwers‘ motto is: 'The further you can throw the stone, the better!'</p>",
+            :en_US => "<p>The stone throwers' motto is: 'The further you can throw the stone, the better!'</p>",
   
             :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>",
                 
@@ -2351,7 +2351,7 @@ class GameRules::Rules
             
             :de_DE => "Häuptlingshütte",
   
-            :en_US => "Chieftain‘s Hut",
+            :en_US => "Chieftain's Hut",
                 
           },
           :flavour     => {
@@ -3648,7 +3648,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Don‘t feel like brawling or smelly animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
+            :en_US => "<p>Don't feel like brawling or smelly animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
   
             :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf dein Ding!</p>",
                 
@@ -4381,7 +4381,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit ‘em hard”.</p>",
+            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>",
   
             :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
                 
@@ -4390,7 +4390,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
   
-            :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit ‘em hard!” The command post increases a settlement's command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>",
+            :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit 'em hard!” The command post increases a settlement's command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>",
                 
           },
 

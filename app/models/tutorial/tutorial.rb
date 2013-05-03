@@ -402,7 +402,7 @@ class Tutorial::Tutorial
             
             :en => {
               :subject => 'Welcome to Wack-A-Doo',
-              :body => "<h2>Welcome to round 3 of Wack-A-Doo‘s public Beta.</h2>
+              :body => "<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
         <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
         As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
         Prepare to be surprised!</p>
@@ -916,7 +916,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
   
-            :en_US => "<p>Select your army, click on ‘move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+            :en_US => "<p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
                 
           },          
           :reward_flavour => {
@@ -1002,7 +1002,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ich bin ganz begeistert wie sich Deine Jäger und Sammler bemühen Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte weitere Ausbildung.",
   
-            :en_US => "I'm really impressed by your Hunter Gatherers‘ efforts to bring you raw materials. Why not give them some more training.  ",
+            :en_US => "I'm really impressed by your Hunter Gatherers' efforts to bring you raw materials. Why not give them some more training.  ",
                 
           },
           :description => {
@@ -1508,7 +1508,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>",
   
-            :en_US => "<p>You can speed up the chieftain‘s hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>",
+            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>",
                 
           },          
           :reward_flavour => {
@@ -1697,7 +1697,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
-            :en_US => "<p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on ‘Create' to confirm.</p>",
+            :en_US => "<p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>",
                 
           },          
           :reward_flavour => {
@@ -1805,7 +1805,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
   
-            :en_US => "<p>Campfires are needed to start or enter into alliances. And it‘s where little chieftains are recruited.</p>",
+            :en_US => "<p>Campfires are needed to start or enter into alliances. And it's where little chieftains are recruited.</p>",
                 
           },          
           :reward_flavour => {
@@ -2075,7 +2075,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade your chieftain‘s hut to level 5.",
+            :en_US => "Upgrade your chieftain's hut to level 5.",
   
             :de_DE => "Baue Deine Häuptlingshütte auf Level 5 aus.",
                 
@@ -2084,14 +2084,14 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?",
   
-            :en_US => "Hey, you're ready to upgrade your chieftain‘s hut again. Showing off a bit of style can't hurt, eh?",
+            :en_US => "Hey, you're ready to upgrade your chieftain's hut again. Showing off a bit of style can't hurt, eh?",
                 
           },
           :description => {
             
             :de_DE => "<p>Baue Deine Häuptlingshütte auf Level 5 aus. Ab Level 5 kannst Du die beiden spezialisierten Rohstoffproduzenten Steinbruch und Holzfäller bauen.</p>",
   
-            :en_US => "<p>Upgrade your chieftain‘s hut to level 5. With level 5 you can build quarry and logger to improve you raw material production.</p>",
+            :en_US => "<p>Upgrade your chieftain's hut to level 5. With level 5 you can build quarry and logger to improve you raw material production.</p>",
                 
           },          
           :reward_flavour => {

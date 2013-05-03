@@ -118,7 +118,7 @@
       </RewardTests>
       <Message>
         <Subject>Welcome to Wack-A-Doo</Subject>
-        <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo‘s public Beta.</h2>
+        <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
         <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
         As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
         Prepare to be surprised!</p>
@@ -336,7 +336,7 @@
         <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Select your army, click on ‘move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
+        <p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
       </Description>
       <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! </Flavor>
@@ -370,7 +370,7 @@
         <p>Make sure your population always has enough raw materials, so you should upgrade at least two of your Hunter Gatherers to level 3.</p>
       </Description>
       <Flavor locale="de_DE">Ich bin ganz begeistert wie sich Deine Jäger und Sammler bemühen Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte weitere Ausbildung.</Flavor>
-      <Flavor locale="en_US">I'm really impressed by your Hunter Gatherers‘ efforts to bring you raw materials. Why not give them some more training.  </Flavor>
+      <Flavor locale="en_US">I'm really impressed by your Hunter Gatherers' efforts to bring you raw materials. Why not give them some more training.  </Flavor>
       <RewardText locale="de_DE">Jäger und Sammler bauen ist immer eine gute Idee.</RewardText>
       <RewardText locale="en_US">Building Hunter Gatherers is always a good idea.</RewardText>
       <RewardFlavor locale="de_DE">Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.</RewardFlavor>
@@ -518,7 +518,7 @@
         <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>
       </Description>
       <Description locale="en_US">
-        <p>You can speed up the chieftain‘s hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>
+        <p>You can speed up the chieftain's hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>
       </Description>
       <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
       <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
@@ -577,7 +577,7 @@
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on ‘Create' to confirm.</p>
+        <p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can't move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.</Flavor>
@@ -608,7 +608,7 @@
         <p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
       </Description>
       <Description locale="en_US">
-        <p>Campfires are needed to start or enter into alliances. And it‘s where little chieftains are recruited.</p>
+        <p>Campfires are needed to start or enter into alliances. And it's where little chieftains are recruited.</p>
       </Description>
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
@@ -695,16 +695,16 @@
     <Quest id="quest_build_chiefcottagelvl5" advisor="girl" >
       <Name>Chieftain's hut level five</Name>
       <Name locale="de_DE">Häuptlingshütte Level 5</Name>
-      <Task>Upgrade your chieftain‘s hut to level 5.</Task>
+      <Task>Upgrade your chieftain's hut to level 5.</Task>
       <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 5 aus.</Task>
       <Description locale="de_DE">
         <p>Baue Deine Häuptlingshütte auf Level 5 aus. Ab Level 5 kannst Du die beiden spezialisierten Rohstoffproduzenten Steinbruch und Holzfäller bauen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Upgrade your chieftain‘s hut to level 5. With level 5 you can build quarry and logger to improve you raw material production.</p>
+        <p>Upgrade your chieftain's hut to level 5. With level 5 you can build quarry and logger to improve you raw material production.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Du bist wieder so weit Deine Häuptlingshütte auszubauen. Ein wenig Prunk kann nicht schaden, oder?</Flavor>
-      <Flavor locale="en_US">Hey, you're ready to upgrade your chieftain‘s hut again. Showing off a bit of style can't hurt, eh?</Flavor>
+      <Flavor locale="en_US">Hey, you're ready to upgrade your chieftain's hut again. Showing off a bit of style can't hurt, eh?</Flavor>
       <RewardText locale="de_DE">Jetzt kannst Du die beiden spezialisierten Rohstoffproduzenten Steinbruch und Holzfäller bauen!</RewardText>
       <RewardText locale="en_US">From now on you can build the specialised raw material assembler quarry and logger!</RewardText>
       <RewardFlavor locale="de_DE">Toll wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
@@ -3987,7 +3987,7 @@
    <p>Gehe auf die Karte und klicke auf den Enzyklopädie-Knopf unten links. Wähle dann 'Gebäude' aus und klicke auf Ausbildungsgelände. Suche dort die Holzkosten von Level 2 und gib sie hier ein.</p>
    </Description>
    <Description locale="en_US">
-   <p>Go to the map and click on the encyclopaedia button below left. Select ‘Building' and click on Training Camp. Look for the cost of wood for level 2 and enter the cost here.</p>
+   <p>Go to the map and click on the encyclopaedia button below left. Select 'Building' and click on Training Camp. Look for the cost of wood for level 2 and enter the cost here.</p>
    </Description>
    <Flavor locale="de_DE"> Hey, der Chef hat mich gefragt, wie viel Holz der Ausbau eines Ausbildungsgeländes kostet, aber ich finde es einfach nicht in der Enzyklopädie. Schau mal. Kannst Du bitte gucken, ob Du es findest? </Flavor>
    <Flavor locale="en_US">Hey, the boss asked me how much the wood costs for a training camp upgrade, but I can't find it in the encyclopaedia. Look. Can you see if you can find it?The encyclopaedia contains all the costs and construction completion times for all the units, as well as other really useful information.</Flavor>
@@ -4008,7 +4008,7 @@
    <Message>
    <Subject>Welcome to Wack-a-Doo.</Subject>
    <Body><![CDATA[<h2>Welcome to the open Beta version.</h2>
-   <p>Our game, ‘Wack-a-Doo' is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it's lots of fun.</p>
+   <p>Our game, 'Wack-a-Doo' is currently in development. In its present form, Wack-a-Doo is already fully playable as a finished game, and the first tests have shown that it's lots of fun.</p>
    <p>During this test phase, we want to introduce plenty of add-ons  and new game mechanics and improve the gaming experience. You're in for a surprise!</p>
    <p>To orientate yourself better we suggest that you take a look at the overview in the encyclopaedia  and the explanations for the user interface:</p>
    <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>
@@ -4083,7 +4083,7 @@
    <p>Make sure your population always has enough raw materials, so you should upgrade at least two of your Hunter Gatherers to level 3.</p>
    </Description>
    <Flavor locale="de_DE">Ich bin ganz begeistert wie sich Deine Jäger und Sammler bemühen Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte weitere Ausbildung.</Flavor>
-   <Flavor locale="en_US">I'm really impressed by your Hunter Gatherers‘ efforts to bring you raw materials. Why not give them some more training.  </Flavor>
+   <Flavor locale="en_US">I'm really impressed by your Hunter Gatherers' efforts to bring you raw materials. Why not give them some more training.  </Flavor>
    <RewardText locale="de_DE">Jäger und Sammler bauen ist immer eine gute Idee.</RewardText>
    <RewardText locale="en_US">Building Hunter Gatherers is always a good idea.</RewardText>
    <RewardFlavor locale="de_DE">Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.</RewardFlavor>
@@ -4552,7 +4552,7 @@
    <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
    </Description>
    <Description locale="en_US">
-   <p>The chieftain‘s hut is the big building in the middle of the settlement. </p>
+   <p>The chieftain's hut is the big building in the middle of the settlement. </p>
    </Description>
    <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort! Bau sie aus und ich gebe Dir eine Belohnung.</Flavor>
    <Flavor locale="en_US">Demigod? And what's that supposed to be? My chieftain's hut? You think I'm going to live in that? Ha! Change it immediately! Upgrade it and I'll give you a reward.</Flavor>
@@ -4574,7 +4574,7 @@
    <p>Die Häuptlingshütte liefert Dir für jedes Level vier weitere Bauplätze.</p>
    </Description>
    <Description locale="en_US">
-   <p>At each level, the chieftain‘s hut gives you four more construction sites.</p>
+   <p>At each level, the chieftain's hut gives you four more construction sites.</p>
    </Description>
    <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
    <Flavor locale="en_US">Your settlement is coming along nicely. But you must upgrade your chieftain's hut if you want to make progress. </Flavor>
@@ -4673,7 +4673,7 @@
    <p>Wähle Deine gerade erstellte Armee aus. Wähle dann unten rechts im Inspektor 'Verstärken'. Benutze die Pfeile, um alle Einheiten in die Armee zu verschieben. Wenn Du fertig bist, drücke auf 'Ändern'.</p>
    </Description>
    <Description locale="en_US">
-   <p>Select the army you have just created. Then select ‘Reinforce' in the inspector, below right. Use the arrows to move all the units into the army. When you are finished, click on ‘Change'.</p>
+   <p>Select the army you have just created. Then select 'Reinforce' in the inspector, below right. Use the arrows to move all the units into the army. When you are finished, click on 'Change'.</p>
    </Description>
    <Flavor locale="de_DE">Drei Einheiten soll eine Armee sein? So kleine Armeen werden doch einfach überrannt! Verstärke die Armee.</Flavor>
    <Flavor locale="en_US">An army with three units? It'll be crushed within seconds! Reinforce your army.</Flavor>
@@ -4704,7 +4704,7 @@
         <p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
       </Description>
       <Description locale="en_US">
-        <p>When you're ready, select your army, click on ‘move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
+        <p>When you're ready, select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
       </Description>
       <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>

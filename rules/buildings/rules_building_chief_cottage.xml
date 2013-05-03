@@ -3,7 +3,7 @@
 
 <Building id="building_chief_cottage" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6">
   <Name lang="de_DE">Häuptlingshütte</Name>
-  <Name lang="en_US">Chieftain‘s Hut</Name>
+  <Name lang="en_US">Chieftain's Hut</Name>
   <Description lang="de_DE">
     <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>
     <p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 12 und 20.</p>
