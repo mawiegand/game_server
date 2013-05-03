@@ -1083,6 +1083,10 @@ class Fundamental::Character < ActiveRecord::Base
     check_consistency
   end
 
+  def first_start
+    login_count < 1
+  end
+
   def beginner
     login_count <= 1
   end
@@ -1097,7 +1101,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
   
