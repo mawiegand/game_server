@@ -936,6 +936,7 @@ end
 <xsl:apply-templates select="ArmySizeBonus" />
 <xsl:apply-templates select="UnlockDiplomacy" />
 <xsl:apply-templates select="UnlockArtifactInitiation" />
+<xsl:apply-templates select="AllianceExtension" />
           },
 </xsl:template>
 
@@ -975,6 +976,10 @@ end
 <xsl:if test="@foundAllianceLevel">
             :unlock_alliance_creation => <xsl:value-of select="@foundAllianceLevel" />,
 </xsl:if>
+</xsl:template>
+
+<xsl:template match="AllianceExtension">
+            :alliance_size_bonus => "<xsl:apply-templates />",
 </xsl:template>
 
 <xsl:template match="UnlockArtifactInitiation">
