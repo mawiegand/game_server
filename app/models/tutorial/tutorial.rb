@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.23
+# Version: 0.0.24
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 23, 
+        :build => 24, 
       },
       
       :production_test_weights => {
@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 17,
+      :num_tutorial_quests => 18,
   
       :quests => [  # ALL QUESTS
 
@@ -354,7 +354,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 9, ],
+          :successor_quests => [5, 10, ],
 
           :rewards => {
             
@@ -435,8 +435,76 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_chiefcottagelvl2
-        {               #   quest_profile
+        {               #   quest_quest_button
           :id                => 3, 
+          :symbolic_id       => :quest_quest_button,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "Quest button",
+  
+            :de_DE => "Questknopf",
+                
+          },
+          :task => {
+            
+            :en_US => "Find the quest button and press it. Then close the dialog and come back here.",
+  
+            :de_DE => "Finde und drücke den Questknopf. Schließe dann den Dialog und komm hierher zurück.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.",
+  
+            :en_US => "By the way, you can also see all your current quests in the quest overview whenever you like.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Finde den Questknopf beschriftet mit 'Quest'. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+  
+            :en_US => "<p>Find the quest button labeled 'Quest'. That's where you'll also find your current and completed quests whose reward you haven't yet claimed.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Klasse, jetzt hast Du alle Quests auf einen Blick. ",
+  
+            :en_US => "Great – now you can see all your quests at a glance.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.",
+  
+            :en_US => "Take a look at the quest overview regularly, then you won't lose track of them.  ",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :experience_reward => 50,
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_quest_button',
+            },
+
+          },          
+
+        },              #   END OF quest_quest_button
+        {               #   quest_profile
+          :id                => 4, 
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -494,7 +562,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [6, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -512,7 +580,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_build_1barrackslvl1
-          :id                => 4, 
+          :id                => 5, 
           :symbolic_id       => :quest_build_1barrackslvl1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -572,7 +640,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [5, ],
+          :successor_quests => [6, ],
 
           :rewards => {
             
@@ -618,7 +686,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
-          :id                => 5, 
+          :id                => 6, 
           :symbolic_id       => :quest_recruit_1clubbers,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -674,7 +742,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -706,7 +774,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_settlement_button1
-          :id                => 6, 
+          :id                => 7, 
           :symbolic_id       => :quest_settlement_button1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -762,7 +830,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, ],
+          :successor_quests => [17, ],
 
           :rewards => {
             
@@ -782,7 +850,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
-          :id                => 7, 
+          :id                => 8, 
           :symbolic_id       => :quest_build_1storagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -838,7 +906,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [17, ],
+          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -884,7 +952,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
-          :id                => 8, 
+          :id                => 9, 
           :symbolic_id       => :quest_army_move,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -940,7 +1008,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [10, ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -977,7 +1045,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
-          :id                => 9, 
+          :id                => 10, 
           :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1033,7 +1101,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, ],
+          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1079,7 +1147,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2gathererlvl3
         {               #   quest_settlement_button2
-          :id                => 10, 
+          :id                => 11, 
           :symbolic_id       => :quest_settlement_button2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1164,7 +1232,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button2
         {               #   quest_build_chiefcottagelvl3
-          :id                => 11, 
+          :id                => 12, 
           :symbolic_id       => :quest_build_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1220,7 +1288,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [12, ],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -1266,7 +1334,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_cottagelvl1
-          :id                => 12, 
+          :id                => 13, 
           :symbolic_id       => :quest_build_cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1322,7 +1390,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [13, ],
+          :successor_quests => [14, ],
 
           :rewards => {
             
@@ -1368,7 +1436,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_cottagelvl1
         {               #   quest_improve_production_1
-          :id                => 13, 
+          :id                => 14, 
           :symbolic_id       => :quest_improve_production_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1424,7 +1492,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [14, 15, ],
+          :successor_quests => [15, 16, ],
 
           :rewards => {
             
@@ -1476,7 +1544,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_improve_production_1
         {               #   quest_build_chiefcottagelvl4
-          :id                => 14, 
+          :id                => 15, 
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1532,7 +1600,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -1578,7 +1646,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
-          :id                => 15, 
+          :id                => 16, 
           :symbolic_id       => :quest_queue_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => true,
@@ -1665,7 +1733,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
-          :id                => 16, 
+          :id                => 17, 
           :symbolic_id       => :quest_army_create,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -1721,7 +1789,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [8, ],
+          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -1772,7 +1840,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_create
         {               #   quest_build_1campfirelvl1
-          :id                => 17, 
+          :id                => 18, 
           :symbolic_id       => :quest_build_1campfirelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1829,7 +1897,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [18, 19, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -1880,7 +1948,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
-          :id                => 18, 
+          :id                => 19, 
           :symbolic_id       => :quest_alliance,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1961,7 +2029,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_resourcescore_0
-          :id                => 19, 
+          :id                => 20, 
           :symbolic_id       => :quest_resourcescore_0,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2017,7 +2085,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [20, 102, ],
+          :successor_quests => [21, 103, ],
 
           :rewards => {
             
@@ -2059,7 +2127,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_0
         {               #   quest_build_chiefcottagelvl5
-          :id                => 20, 
+          :id                => 21, 
           :symbolic_id       => :quest_build_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2115,7 +2183,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 22, 23, 79, ],
+          :successor_quests => [22, 23, 24, 80, ],
 
           :rewards => {
             
@@ -2163,7 +2231,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl2
-          :id                => 21, 
+          :id                => 22, 
           :symbolic_id       => :quest_build_1quarrylvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2219,7 +2287,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [36, ],
+          :successor_quests => [37, ],
 
           :rewards => {
             
@@ -2260,7 +2328,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1quarrylvl2
         {               #   quest_build_1loggerlvl2
-          :id                => 22, 
+          :id                => 23, 
           :symbolic_id       => :quest_build_1loggerlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2316,7 +2384,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [57, ],
+          :successor_quests => [58, ],
 
           :rewards => {
             
@@ -2357,7 +2425,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1loggerlvl2
         {               #   quest_build_chiefcottagelvl6
-          :id                => 23, 
+          :id                => 24, 
           :symbolic_id       => :quest_build_chiefcottagelvl6,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -2413,7 +2481,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [24, 25, 27, ],
+          :successor_quests => [25, 26, 28, ],
 
           :rewards => {
             
@@ -2459,7 +2527,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl6
         {               #   quest_build_training_cave
-          :id                => 24, 
+          :id                => 25, 
           :symbolic_id       => :quest_build_training_cave,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -2561,7 +2629,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_training_cave
         {               #   quest_build_chiefcottagelvl7
-          :id                => 25, 
+          :id                => 26, 
           :symbolic_id       => :quest_build_chiefcottagelvl7,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -2617,7 +2685,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [26, 28, ],
+          :successor_quests => [27, 29, ],
 
           :rewards => {
             
@@ -2668,7 +2736,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl7
         {               #   quest_fortress
-          :id                => 26, 
+          :id                => 27, 
           :symbolic_id       => :quest_fortress,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -2775,7 +2843,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress
         {               #   quest_build_1barrackslvl5
-          :id                => 27, 
+          :id                => 28, 
           :symbolic_id       => :quest_build_1barrackslvl5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -2831,7 +2899,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [125, ],
+          :successor_quests => [126, ],
 
           :rewards => {
             
@@ -2881,7 +2949,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl5
         {               #   quest_build_chiefcottagelvl8
-          :id                => 28, 
+          :id                => 29, 
           :symbolic_id       => :quest_build_chiefcottagelvl8,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2937,7 +3005,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [29, 30, ],
+          :successor_quests => [30, 31, ],
 
           :rewards => {
             
@@ -2985,7 +3053,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_1furrierlvl2
-          :id                => 29, 
+          :id                => 30, 
           :symbolic_id       => :quest_build_1furrierlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3087,7 +3155,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1furrierlvl2
         {               #   quest_build_chiefcottagelvl9
-          :id                => 30, 
+          :id                => 31, 
           :symbolic_id       => :quest_build_chiefcottagelvl9,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3143,7 +3211,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [31, 32, ],
+          :successor_quests => [32, 33, ],
 
           :rewards => {
             
@@ -3189,7 +3257,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl9
         {               #   quest_outpost
-          :id                => 31, 
+          :id                => 32, 
           :symbolic_id       => :quest_outpost,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3287,7 +3355,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_outpost
         {               #   quest_build_chiefcottagelvl10
-          :id                => 32, 
+          :id                => 33, 
           :symbolic_id       => :quest_build_chiefcottagelvl10,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -3344,7 +3412,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [33, ],
+          :successor_quests => [34, ],
 
           :rewards => {
             
@@ -3390,7 +3458,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl10
         {               #   quest_build_copper_smelter
-          :id                => 33, 
+          :id                => 34, 
           :symbolic_id       => :quest_build_copper_smelter,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -3446,7 +3514,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [34, ],
+          :successor_quests => [35, ],
 
           :rewards => {
             
@@ -3497,7 +3565,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_copper_smelter
         {               #   quest_build_firing_range
-          :id                => 34, 
+          :id                => 35, 
           :symbolic_id       => :quest_build_firing_range,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3553,7 +3621,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [35, ],
+          :successor_quests => [36, ],
 
           :rewards => {
             
@@ -3608,7 +3676,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_firing_range
         {               #   quest_build_stud
-          :id                => 35, 
+          :id                => 36, 
           :symbolic_id       => :quest_build_stud,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3719,7 +3787,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_stud
         {               #   quest_charkills_1
-          :id                => 36, 
+          :id                => 37, 
           :symbolic_id       => :quest_charkills_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3775,7 +3843,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [37, ],
+          :successor_quests => [38, ],
 
           :rewards => {
             
@@ -3812,7 +3880,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 37, 
+          :id                => 38, 
           :symbolic_id       => :quest_charkills_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3868,7 +3936,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [38, ],
+          :successor_quests => [39, ],
 
           :rewards => {
             
@@ -3905,7 +3973,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 38, 
+          :id                => 39, 
           :symbolic_id       => :quest_charkills_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -3961,7 +4029,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [39, ],
+          :successor_quests => [40, ],
 
           :rewards => {
             
@@ -4003,7 +4071,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 39, 
+          :id                => 40, 
           :symbolic_id       => :quest_charkills_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4059,7 +4127,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [40, ],
+          :successor_quests => [41, ],
 
           :rewards => {
             
@@ -4101,7 +4169,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_4
         {               #   quest_charkills_5
-          :id                => 40, 
+          :id                => 41, 
           :symbolic_id       => :quest_charkills_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4157,7 +4225,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [41, ],
+          :successor_quests => [42, ],
 
           :rewards => {
             
@@ -4194,7 +4262,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_5
         {               #   quest_charkills_6
-          :id                => 41, 
+          :id                => 42, 
           :symbolic_id       => :quest_charkills_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4250,7 +4318,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [42, ],
+          :successor_quests => [43, ],
 
           :rewards => {
             
@@ -4287,7 +4355,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_6
         {               #   quest_charkills_7
-          :id                => 42, 
+          :id                => 43, 
           :symbolic_id       => :quest_charkills_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4343,7 +4411,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [43, ],
+          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -4380,7 +4448,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_7
         {               #   quest_charkills_8
-          :id                => 43, 
+          :id                => 44, 
           :symbolic_id       => :quest_charkills_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4436,7 +4504,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [44, ],
+          :successor_quests => [45, ],
 
           :rewards => {
             
@@ -4473,7 +4541,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_8
         {               #   quest_charkills_9
-          :id                => 44, 
+          :id                => 45, 
           :symbolic_id       => :quest_charkills_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4529,7 +4597,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [45, ],
+          :successor_quests => [46, ],
 
           :rewards => {
             
@@ -4566,7 +4634,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_9
         {               #   quest_charkills_10
-          :id                => 45, 
+          :id                => 46, 
           :symbolic_id       => :quest_charkills_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4622,7 +4690,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [46, ],
+          :successor_quests => [47, ],
 
           :rewards => {
             
@@ -4659,7 +4727,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_10
         {               #   quest_charkills_11
-          :id                => 46, 
+          :id                => 47, 
           :symbolic_id       => :quest_charkills_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4715,7 +4783,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [47, ],
+          :successor_quests => [48, ],
 
           :rewards => {
             
@@ -4752,7 +4820,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_11
         {               #   quest_charkills_12
-          :id                => 47, 
+          :id                => 48, 
           :symbolic_id       => :quest_charkills_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4808,7 +4876,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [48, ],
+          :successor_quests => [49, ],
 
           :rewards => {
             
@@ -4845,7 +4913,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_12
         {               #   quest_charkills_13
-          :id                => 48, 
+          :id                => 49, 
           :symbolic_id       => :quest_charkills_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4901,7 +4969,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [49, ],
+          :successor_quests => [50, ],
 
           :rewards => {
             
@@ -4938,7 +5006,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_13
         {               #   quest_charkills_14
-          :id                => 49, 
+          :id                => 50, 
           :symbolic_id       => :quest_charkills_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -4994,7 +5062,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [50, ],
+          :successor_quests => [51, ],
 
           :rewards => {
             
@@ -5036,7 +5104,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_14
         {               #   quest_charkills_15
-          :id                => 50, 
+          :id                => 51, 
           :symbolic_id       => :quest_charkills_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5092,7 +5160,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [51, ],
+          :successor_quests => [52, ],
 
           :rewards => {
             
@@ -5134,7 +5202,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_15
         {               #   quest_charkills_16
-          :id                => 51, 
+          :id                => 52, 
           :symbolic_id       => :quest_charkills_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5190,7 +5258,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [52, ],
+          :successor_quests => [53, ],
 
           :rewards => {
             
@@ -5232,7 +5300,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_16
         {               #   quest_charkills_17
-          :id                => 52, 
+          :id                => 53, 
           :symbolic_id       => :quest_charkills_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5288,7 +5356,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [53, ],
+          :successor_quests => [54, ],
 
           :rewards => {
             
@@ -5330,7 +5398,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_17
         {               #   quest_charkills_18
-          :id                => 53, 
+          :id                => 54, 
           :symbolic_id       => :quest_charkills_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5386,7 +5454,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [54, ],
+          :successor_quests => [55, ],
 
           :rewards => {
             
@@ -5428,7 +5496,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_18
         {               #   quest_charkills_19
-          :id                => 54, 
+          :id                => 55, 
           :symbolic_id       => :quest_charkills_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5484,7 +5552,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [55, ],
+          :successor_quests => [56, ],
 
           :rewards => {
             
@@ -5521,7 +5589,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_19
         {               #   quest_charkills_20
-          :id                => 55, 
+          :id                => 56, 
           :symbolic_id       => :quest_charkills_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5577,7 +5645,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [56, ],
+          :successor_quests => [57, ],
 
           :rewards => {
             
@@ -5619,7 +5687,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_20
         {               #   quest_charkills_21
-          :id                => 56, 
+          :id                => 57, 
           :symbolic_id       => :quest_charkills_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5717,7 +5785,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_21
         {               #   quest_armyXP_1
-          :id                => 57, 
+          :id                => 58, 
           :symbolic_id       => :quest_armyXP_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5773,7 +5841,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [58, ],
+          :successor_quests => [59, ],
 
           :rewards => {
             
@@ -5810,7 +5878,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_1
         {               #   quest_armyXP_2
-          :id                => 58, 
+          :id                => 59, 
           :symbolic_id       => :quest_armyXP_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5866,7 +5934,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [59, ],
+          :successor_quests => [60, ],
 
           :rewards => {
             
@@ -5903,7 +5971,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_2
         {               #   quest_armyXP_3
-          :id                => 59, 
+          :id                => 60, 
           :symbolic_id       => :quest_armyXP_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -5959,7 +6027,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [60, ],
+          :successor_quests => [61, ],
 
           :rewards => {
             
@@ -5996,7 +6064,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_3
         {               #   quest_armyXP_4
-          :id                => 60, 
+          :id                => 61, 
           :symbolic_id       => :quest_armyXP_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6052,7 +6120,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [61, ],
+          :successor_quests => [62, ],
 
           :rewards => {
             
@@ -6094,7 +6162,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_4
         {               #   quest_armyXP_5
-          :id                => 61, 
+          :id                => 62, 
           :symbolic_id       => :quest_armyXP_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6150,7 +6218,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [62, ],
+          :successor_quests => [63, ],
 
           :rewards => {
             
@@ -6187,7 +6255,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_5
         {               #   quest_armyXP_6
-          :id                => 62, 
+          :id                => 63, 
           :symbolic_id       => :quest_armyXP_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6243,7 +6311,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [63, ],
+          :successor_quests => [64, ],
 
           :rewards => {
             
@@ -6280,7 +6348,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_6
         {               #   quest_armyXP_7
-          :id                => 63, 
+          :id                => 64, 
           :symbolic_id       => :quest_armyXP_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6336,7 +6404,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [64, ],
+          :successor_quests => [65, ],
 
           :rewards => {
             
@@ -6373,7 +6441,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_7
         {               #   quest_armyXP_8
-          :id                => 64, 
+          :id                => 65, 
           :symbolic_id       => :quest_armyXP_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6429,7 +6497,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [65, ],
+          :successor_quests => [66, ],
 
           :rewards => {
             
@@ -6466,7 +6534,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_8
         {               #   quest_armyXP_9
-          :id                => 65, 
+          :id                => 66, 
           :symbolic_id       => :quest_armyXP_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6522,7 +6590,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [66, ],
+          :successor_quests => [67, ],
 
           :rewards => {
             
@@ -6559,7 +6627,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_9
         {               #   quest_armyXP_10
-          :id                => 66, 
+          :id                => 67, 
           :symbolic_id       => :quest_armyXP_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6615,7 +6683,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [67, ],
+          :successor_quests => [68, ],
 
           :rewards => {
             
@@ -6657,7 +6725,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_10
         {               #   quest_armyXP_11
-          :id                => 67, 
+          :id                => 68, 
           :symbolic_id       => :quest_armyXP_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6713,7 +6781,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [68, ],
+          :successor_quests => [69, ],
 
           :rewards => {
             
@@ -6750,7 +6818,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_11
         {               #   quest_armyXP_12
-          :id                => 68, 
+          :id                => 69, 
           :symbolic_id       => :quest_armyXP_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6806,7 +6874,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [69, ],
+          :successor_quests => [70, ],
 
           :rewards => {
             
@@ -6843,7 +6911,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_12
         {               #   quest_armyXP_13
-          :id                => 69, 
+          :id                => 70, 
           :symbolic_id       => :quest_armyXP_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6899,7 +6967,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [70, ],
+          :successor_quests => [71, ],
 
           :rewards => {
             
@@ -6936,7 +7004,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_13
         {               #   quest_armyXP_14
-          :id                => 70, 
+          :id                => 71, 
           :symbolic_id       => :quest_armyXP_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -6992,7 +7060,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [71, ],
+          :successor_quests => [72, ],
 
           :rewards => {
             
@@ -7029,7 +7097,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_14
         {               #   quest_armyXP_15
-          :id                => 71, 
+          :id                => 72, 
           :symbolic_id       => :quest_armyXP_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7085,7 +7153,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [72, ],
+          :successor_quests => [73, ],
 
           :rewards => {
             
@@ -7127,7 +7195,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_15
         {               #   quest_armyXP_16
-          :id                => 72, 
+          :id                => 73, 
           :symbolic_id       => :quest_armyXP_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7183,7 +7251,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [73, ],
+          :successor_quests => [74, ],
 
           :rewards => {
             
@@ -7220,7 +7288,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_16
         {               #   quest_armyXP_17
-          :id                => 73, 
+          :id                => 74, 
           :symbolic_id       => :quest_armyXP_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7276,7 +7344,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [74, ],
+          :successor_quests => [75, ],
 
           :rewards => {
             
@@ -7318,7 +7386,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_17
         {               #   quest_armyXP_18
-          :id                => 74, 
+          :id                => 75, 
           :symbolic_id       => :quest_armyXP_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7374,7 +7442,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [75, ],
+          :successor_quests => [76, ],
 
           :rewards => {
             
@@ -7411,7 +7479,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_18
         {               #   quest_armyXP_19
-          :id                => 75, 
+          :id                => 76, 
           :symbolic_id       => :quest_armyXP_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7467,7 +7535,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [76, ],
+          :successor_quests => [77, ],
 
           :rewards => {
             
@@ -7509,7 +7577,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_19
         {               #   quest_armyXP_20
-          :id                => 76, 
+          :id                => 77, 
           :symbolic_id       => :quest_armyXP_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7565,7 +7633,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [77, ],
+          :successor_quests => [78, ],
 
           :rewards => {
             
@@ -7602,7 +7670,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_20
         {               #   quest_armyXP_21
-          :id                => 77, 
+          :id                => 78, 
           :symbolic_id       => :quest_armyXP_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7658,7 +7726,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [78, ],
+          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -7700,7 +7768,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_21
         {               #   quest_armyXP_22
-          :id                => 78, 
+          :id                => 79, 
           :symbolic_id       => :quest_armyXP_22,
           :advisor           => :warrior,
           :hide_start_dialog => false,
@@ -7798,7 +7866,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_22
         {               #   quest_score_0
-          :id                => 79, 
+          :id                => 80, 
           :symbolic_id       => :quest_score_0,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7854,7 +7922,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [80, ],
+          :successor_quests => [81, ],
 
           :rewards => {
             
@@ -7891,7 +7959,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_0
         {               #   quest_score_1
-          :id                => 80, 
+          :id                => 81, 
           :symbolic_id       => :quest_score_1,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -7947,7 +8015,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [81, ],
+          :successor_quests => [82, ],
 
           :rewards => {
             
@@ -7984,7 +8052,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_1
         {               #   quest_score_2
-          :id                => 81, 
+          :id                => 82, 
           :symbolic_id       => :quest_score_2,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8040,7 +8108,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [82, ],
+          :successor_quests => [83, ],
 
           :rewards => {
             
@@ -8077,7 +8145,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_2
         {               #   quest_score_3
-          :id                => 82, 
+          :id                => 83, 
           :symbolic_id       => :quest_score_3,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8133,7 +8201,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [83, ],
+          :successor_quests => [84, ],
 
           :rewards => {
             
@@ -8170,7 +8238,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_3
         {               #   quest_score_4
-          :id                => 83, 
+          :id                => 84, 
           :symbolic_id       => :quest_score_4,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8226,7 +8294,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [84, ],
+          :successor_quests => [85, ],
 
           :rewards => {
             
@@ -8263,7 +8331,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_4
         {               #   quest_score_5
-          :id                => 84, 
+          :id                => 85, 
           :symbolic_id       => :quest_score_5,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8319,7 +8387,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [85, ],
+          :successor_quests => [86, ],
 
           :rewards => {
             
@@ -8361,7 +8429,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_5
         {               #   quest_score_6
-          :id                => 85, 
+          :id                => 86, 
           :symbolic_id       => :quest_score_6,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8417,7 +8485,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [86, ],
+          :successor_quests => [87, ],
 
           :rewards => {
             
@@ -8454,7 +8522,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_6
         {               #   quest_score_7
-          :id                => 86, 
+          :id                => 87, 
           :symbolic_id       => :quest_score_7,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8510,7 +8578,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [87, ],
+          :successor_quests => [88, ],
 
           :rewards => {
             
@@ -8547,7 +8615,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_7
         {               #   quest_score_8
-          :id                => 87, 
+          :id                => 88, 
           :symbolic_id       => :quest_score_8,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8603,7 +8671,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [88, ],
+          :successor_quests => [89, ],
 
           :rewards => {
             
@@ -8640,7 +8708,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_8
         {               #   quest_score_9
-          :id                => 88, 
+          :id                => 89, 
           :symbolic_id       => :quest_score_9,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8696,7 +8764,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [89, ],
+          :successor_quests => [90, ],
 
           :rewards => {
             
@@ -8733,7 +8801,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_9
         {               #   quest_score_10
-          :id                => 89, 
+          :id                => 90, 
           :symbolic_id       => :quest_score_10,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8789,7 +8857,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [90, ],
+          :successor_quests => [91, ],
 
           :rewards => {
             
@@ -8831,7 +8899,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_10
         {               #   quest_score_11
-          :id                => 90, 
+          :id                => 91, 
           :symbolic_id       => :quest_score_11,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8887,7 +8955,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [91, ],
+          :successor_quests => [92, ],
 
           :rewards => {
             
@@ -8924,7 +8992,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_11
         {               #   quest_score_12
-          :id                => 91, 
+          :id                => 92, 
           :symbolic_id       => :quest_score_12,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -8980,7 +9048,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [92, ],
+          :successor_quests => [93, ],
 
           :rewards => {
             
@@ -9017,7 +9085,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_12
         {               #   quest_score_13
-          :id                => 92, 
+          :id                => 93, 
           :symbolic_id       => :quest_score_13,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9073,7 +9141,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [93, ],
+          :successor_quests => [94, ],
 
           :rewards => {
             
@@ -9110,7 +9178,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_13
         {               #   quest_score_14
-          :id                => 93, 
+          :id                => 94, 
           :symbolic_id       => :quest_score_14,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9166,7 +9234,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [94, ],
+          :successor_quests => [95, ],
 
           :rewards => {
             
@@ -9203,7 +9271,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_14
         {               #   quest_score_15
-          :id                => 94, 
+          :id                => 95, 
           :symbolic_id       => :quest_score_15,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9259,7 +9327,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [95, ],
+          :successor_quests => [96, ],
 
           :rewards => {
             
@@ -9301,7 +9369,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_15
         {               #   quest_score_16
-          :id                => 95, 
+          :id                => 96, 
           :symbolic_id       => :quest_score_16,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9357,7 +9425,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [96, ],
+          :successor_quests => [97, ],
 
           :rewards => {
             
@@ -9394,7 +9462,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_16
         {               #   quest_score_17
-          :id                => 96, 
+          :id                => 97, 
           :symbolic_id       => :quest_score_17,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9450,7 +9518,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [97, ],
+          :successor_quests => [98, ],
 
           :rewards => {
             
@@ -9492,7 +9560,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_17
         {               #   quest_score_18
-          :id                => 97, 
+          :id                => 98, 
           :symbolic_id       => :quest_score_18,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9548,7 +9616,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [98, ],
+          :successor_quests => [99, ],
 
           :rewards => {
             
@@ -9585,7 +9653,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_18
         {               #   quest_score_19
-          :id                => 98, 
+          :id                => 99, 
           :symbolic_id       => :quest_score_19,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9641,7 +9709,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [99, ],
+          :successor_quests => [100, ],
 
           :rewards => {
             
@@ -9683,7 +9751,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_19
         {               #   quest_score_20
-          :id                => 99, 
+          :id                => 100, 
           :symbolic_id       => :quest_score_20,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9739,7 +9807,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [100, ],
+          :successor_quests => [101, ],
 
           :rewards => {
             
@@ -9776,7 +9844,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_20
         {               #   quest_score_21
-          :id                => 100, 
+          :id                => 101, 
           :symbolic_id       => :quest_score_21,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9832,7 +9900,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [101, ],
+          :successor_quests => [102, ],
 
           :rewards => {
             
@@ -9874,7 +9942,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_21
         {               #   quest_score_22
-          :id                => 101, 
+          :id                => 102, 
           :symbolic_id       => :quest_score_22,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -9972,7 +10040,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_22
         {               #   quest_resourcescore_1
-          :id                => 102, 
+          :id                => 103, 
           :symbolic_id       => :quest_resourcescore_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10028,7 +10096,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [103, ],
+          :successor_quests => [104, ],
 
           :rewards => {
             
@@ -10065,7 +10133,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_resourcescore_2
-          :id                => 103, 
+          :id                => 104, 
           :symbolic_id       => :quest_resourcescore_2,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10121,7 +10189,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [104, ],
+          :successor_quests => [105, ],
 
           :rewards => {
             
@@ -10158,7 +10226,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_2
         {               #   quest_resourcescore_3
-          :id                => 104, 
+          :id                => 105, 
           :symbolic_id       => :quest_resourcescore_3,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10214,7 +10282,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [105, ],
+          :successor_quests => [106, ],
 
           :rewards => {
             
@@ -10251,7 +10319,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_3
         {               #   quest_resourcescore_4
-          :id                => 105, 
+          :id                => 106, 
           :symbolic_id       => :quest_resourcescore_4,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10307,7 +10375,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [106, ],
+          :successor_quests => [107, ],
 
           :rewards => {
             
@@ -10344,7 +10412,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_4
         {               #   quest_resourcescore_5
-          :id                => 106, 
+          :id                => 107, 
           :symbolic_id       => :quest_resourcescore_5,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10400,7 +10468,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [107, ],
+          :successor_quests => [108, ],
 
           :rewards => {
             
@@ -10442,7 +10510,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_5
         {               #   quest_resourcescore_6
-          :id                => 107, 
+          :id                => 108, 
           :symbolic_id       => :quest_resourcescore_6,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10498,7 +10566,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [108, ],
+          :successor_quests => [109, ],
 
           :rewards => {
             
@@ -10535,7 +10603,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_6
         {               #   quest_resourcescore_7
-          :id                => 108, 
+          :id                => 109, 
           :symbolic_id       => :quest_resourcescore_7,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10591,7 +10659,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [109, ],
+          :successor_quests => [110, ],
 
           :rewards => {
             
@@ -10628,7 +10696,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_7
         {               #   quest_resourcescore_8
-          :id                => 109, 
+          :id                => 110, 
           :symbolic_id       => :quest_resourcescore_8,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10684,7 +10752,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [110, ],
+          :successor_quests => [111, ],
 
           :rewards => {
             
@@ -10721,7 +10789,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_8
         {               #   quest_resourcescore_9
-          :id                => 110, 
+          :id                => 111, 
           :symbolic_id       => :quest_resourcescore_9,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10777,7 +10845,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [111, ],
+          :successor_quests => [112, ],
 
           :rewards => {
             
@@ -10814,7 +10882,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_9
         {               #   quest_resourcescore_10
-          :id                => 111, 
+          :id                => 112, 
           :symbolic_id       => :quest_resourcescore_10,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10870,7 +10938,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [112, ],
+          :successor_quests => [113, ],
 
           :rewards => {
             
@@ -10907,7 +10975,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_10
         {               #   quest_resourcescore_11
-          :id                => 112, 
+          :id                => 113, 
           :symbolic_id       => :quest_resourcescore_11,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -10963,7 +11031,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [113, ],
+          :successor_quests => [114, ],
 
           :rewards => {
             
@@ -11005,7 +11073,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_11
         {               #   quest_resourcescore_12
-          :id                => 113, 
+          :id                => 114, 
           :symbolic_id       => :quest_resourcescore_12,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11061,7 +11129,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [114, ],
+          :successor_quests => [115, ],
 
           :rewards => {
             
@@ -11098,7 +11166,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_12
         {               #   quest_resourcescore_13
-          :id                => 114, 
+          :id                => 115, 
           :symbolic_id       => :quest_resourcescore_13,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11154,7 +11222,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [115, ],
+          :successor_quests => [116, ],
 
           :rewards => {
             
@@ -11191,7 +11259,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_13
         {               #   quest_resourcescore_14
-          :id                => 115, 
+          :id                => 116, 
           :symbolic_id       => :quest_resourcescore_14,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11247,7 +11315,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [116, ],
+          :successor_quests => [117, ],
 
           :rewards => {
             
@@ -11284,7 +11352,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_14
         {               #   quest_resourcescore_15
-          :id                => 116, 
+          :id                => 117, 
           :symbolic_id       => :quest_resourcescore_15,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11340,7 +11408,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [117, ],
+          :successor_quests => [118, ],
 
           :rewards => {
             
@@ -11377,7 +11445,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_15
         {               #   quest_resourcescore_16
-          :id                => 117, 
+          :id                => 118, 
           :symbolic_id       => :quest_resourcescore_16,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11433,7 +11501,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [118, ],
+          :successor_quests => [119, ],
 
           :rewards => {
             
@@ -11475,7 +11543,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_16
         {               #   quest_resourcescore_17
-          :id                => 118, 
+          :id                => 119, 
           :symbolic_id       => :quest_resourcescore_17,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11531,7 +11599,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [119, ],
+          :successor_quests => [120, ],
 
           :rewards => {
             
@@ -11568,7 +11636,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_17
         {               #   quest_resourcescore_18
-          :id                => 119, 
+          :id                => 120, 
           :symbolic_id       => :quest_resourcescore_18,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11624,7 +11692,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [120, ],
+          :successor_quests => [121, ],
 
           :rewards => {
             
@@ -11666,7 +11734,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_18
         {               #   quest_resourcescore_19
-          :id                => 120, 
+          :id                => 121, 
           :symbolic_id       => :quest_resourcescore_19,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11722,7 +11790,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [121, ],
+          :successor_quests => [122, ],
 
           :rewards => {
             
@@ -11759,7 +11827,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_19
         {               #   quest_resourcescore_20
-          :id                => 121, 
+          :id                => 122, 
           :symbolic_id       => :quest_resourcescore_20,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11815,7 +11883,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [122, ],
+          :successor_quests => [123, ],
 
           :rewards => {
             
@@ -11857,7 +11925,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_20
         {               #   quest_resourcescore_21
-          :id                => 122, 
+          :id                => 123, 
           :symbolic_id       => :quest_resourcescore_21,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -11913,7 +11981,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [123, ],
+          :successor_quests => [124, ],
 
           :rewards => {
             
@@ -11950,7 +12018,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_21
         {               #   quest_resourcescore_22
-          :id                => 123, 
+          :id                => 124, 
           :symbolic_id       => :quest_resourcescore_22,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -12006,7 +12074,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [124, ],
+          :successor_quests => [125, ],
 
           :rewards => {
             
@@ -12048,7 +12116,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_22
         {               #   quest_resourcescore_23
-          :id                => 124, 
+          :id                => 125, 
           :symbolic_id       => :quest_resourcescore_23,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -12146,7 +12214,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_23
         {               #   quest_build_1barrackslvl10
-          :id                => 125, 
+          :id                => 126, 
           :symbolic_id       => :quest_build_1barrackslvl10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
