@@ -67,6 +67,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
+  after_save  :propagate_information_to_alliance
 
 
   def self.find_fortress_by_name_case_insensitive(name)
@@ -1328,6 +1329,13 @@ class Settlement::Settlement < ActiveRecord::Base
       if self.garrison_size_max_changed? && !self.garrison_army.nil? && !self.garrison_army.frozen?
         self.garrison_army.size_max = self.garrison_size_max
         self.garrison_army.save
+      end
+    end
+    
+    def propagate_information_to_alliance
+      if self.alliance_size_bonus_changed? && !self.alliance.nil?
+        self.alliance.size_bonus = self.alliance_size_bonus
+        self.alliance.save
       end
     end
     

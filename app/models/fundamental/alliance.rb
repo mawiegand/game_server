@@ -24,7 +24,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at,       :as => :default
+  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus,       :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
@@ -108,7 +108,11 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def full?
-    self.members.count >= GameRules::Rules.the_rules.alliance_max_members
+    self.members.count >= self.size_max?
+  end
+  
+  def size_max?
+    GameRules::Rules.the_rules.alliance_max_members + self.size_bonus
   end
   
   def add_unique_invitation_code
