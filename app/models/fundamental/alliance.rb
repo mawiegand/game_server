@@ -79,6 +79,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     self.increment!(:members_count)
     character.save
     
+    self.recalculate_size_bonus
+    
     cmd = Messaging::JabberCommand.grant_access(character, self.tag) 
     cmd.character_id = character.id
     cmd.save
@@ -101,6 +103,7 @@ class Fundamental::Alliance < ActiveRecord::Base
       determine_new_leader
     end
     self.save
+    self.recalculate_size_bonus
     
     cmd = Messaging::JabberCommand.revoke_access(character, self.tag) 
     cmd.character_id = character.id
@@ -130,6 +133,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     check_and_apply_ranking_fortress_count
     check_and_apply_member_count
     check_and_apply_victory_progresses
+    recalculate_size_bonus
 
     if self.changed?
       logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
@@ -173,6 +177,17 @@ class Fundamental::Alliance < ActiveRecord::Base
       self[attribute] -= amount
       propagate_bonus_changes
       self.save!
+    end
+  end
+  
+  def recalculate_size_bonus
+    new_size_bonus = 0
+    self.members.each do |member|
+      new_size_bonus = [new_size_bonus, member.alliance_size_bonus].max
+    end
+    if self.size_bonus != new_size_bonus
+      self.size_bonus = new_size_bonus
+      self.save
     end
   end
 

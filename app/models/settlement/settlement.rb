@@ -67,7 +67,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
-  after_save  :propagate_information_to_alliance
+  after_save  :propagate_information_to_owner
 
 
   def self.find_fortress_by_name_case_insensitive(name)
@@ -1332,10 +1332,10 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
-    def propagate_information_to_alliance
-      if self.alliance_size_bonus_changed? && !self.alliance.nil?
-        self.alliance.size_bonus = self.alliance_size_bonus
-        self.alliance.save
+    def propagate_information_to_owner
+      if self.alliance_size_bonus_changed? && !self.owner.nil?
+        self.owner.alliance_size_bonus = self.alliance_size_bonus
+        self.owner.save
       end
     end
     
