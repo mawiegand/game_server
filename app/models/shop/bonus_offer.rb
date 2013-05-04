@@ -2,7 +2,7 @@ class Shop::BonusOffer < ActiveRecord::Base
   
   def effect_for_character(character)
     effects = Effect::ResourceEffect.where(:resource_pool_id => character.resource_pool.id, :type_id => Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SHOP, :resource_id => self.resource_id)
-    raise BadAccessError.new('more than one bonus active for same resource') if effects.count > 1
+    raise BadRequestError.new('more than one bonus active for same resource') if effects.count > 1
     
     if effects.count == 1
       return effects.first
@@ -15,7 +15,7 @@ class Shop::BonusOffer < ActiveRecord::Base
     # check if same effects is already active
     effects = Effect::ResourceEffect.where(:resource_pool_id => character.resource_pool.id, :type_id => Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SHOP, :resource_id => self.resource_id)
     
-    raise BadAccessError.new('more than one bonus active for same resource') if effects.count > 1
+    raise BadRequestError.new('more than one bonus active for same resource') if effects.count > 1
     
     if effects.count == 1
       effect = effects.first
@@ -23,7 +23,7 @@ class Shop::BonusOffer < ActiveRecord::Base
       effect.save
       
       event = effect.event
-      raise BadAccessError.new('more than one bonus active for same resource') if event.nil?
+      raise BadRequestError.new('more than one bonus active for same resource') if event.nil?
       event.execute_at += self.duration * 3600
       event.save
     else

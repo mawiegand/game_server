@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412093749) do
+ActiveRecord::Schema.define(:version => 20130422173047) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2356,6 +2356,7 @@ ActiveRecord::Schema.define(:version => 20130412093749) do
     t.integer  "likes",                    :default => 0,   :null => false
     t.integer  "dislikes",                 :default => 0,   :null => false
     t.decimal  "like_ratio",               :default => 0.0, :null => false
+    t.string   "gender"
   end
 
   create_table "settlement_histories", :force => true do |t|

@@ -242,7 +242,7 @@ class Settlement::Settlement < ActiveRecord::Base
     end
 
     self.slots.each do |slot|
-      if !slot.building_id.nil? && slot.level = 0
+      if !slot.building_id.nil? && slot.level == 0
         slot.building_id = nil
         slot.save
       end
