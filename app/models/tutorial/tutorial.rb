@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.24
+# Version: 0.0.25
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 24, 
+        :build => 25, 
       },
       
       :production_test_weights => {
@@ -566,6 +566,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
             :experience_reward => 200,
 
           },          
@@ -1513,11 +1522,6 @@ class Tutorial::Tutorial
                 :amount => 125,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 100,
@@ -1709,6 +1713,21 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 165,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 120,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -1794,16 +1813,6 @@ class Tutorial::Tutorial
           :rewards => {
             
             :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 165,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 150,
-              },
 
               {
                 :resource => :resource_fur,
@@ -1911,11 +1920,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_wood,
                 :amount => 75,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 120,
               },
 
               {
@@ -2104,11 +2108,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 125,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
               },
 
             ],
@@ -2303,6 +2302,11 @@ class Tutorial::Tutorial
                 :amount => 274,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :experience_reward => 125,
@@ -2398,6 +2402,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_wood,
                 :amount => 137,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
@@ -2654,7 +2663,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Halbgott? Ich brauche einen Raum, in dem ich Gäste empfangen kann. Verstanden?",
   
-            :en_US => "Demigod? I need a room to invite my guets to. Get it?",
+            :en_US => "Demigod? I need a room to invite my guests to. Got it?",
                 
           },
           :description => {
@@ -2693,27 +2702,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 2250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 2250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2250,
               },
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 450,
 
           },          
 
@@ -2796,30 +2800,11 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 250,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 250,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 600,
-              },
-
-            ],
-
             :unit_rewards => [
 
               {
                 :unit => :unit_clubbers,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -3234,7 +3219,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 650,
 
           },          
 
@@ -3435,7 +3420,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 500,
+            :experience_reward => 800,
 
           },          
 
@@ -3522,27 +3507,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 3,
+                :amount => 3750,
               },
 
             ],
 
-            :experience_reward => 750,
+            :experience_reward => 900,
 
           },          
 
@@ -3637,18 +3617,13 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :unit_rewards => [
 
               {
                 :unit => :unit_thrower,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -3748,18 +3723,13 @@ class Tutorial::Tutorial
                 :amount => 2000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :unit_rewards => [
 
               {
                 :unit => :unit_light_cavalry,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -4050,11 +4020,6 @@ class Tutorial::Tutorial
                 :amount => 1000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 320,
@@ -4146,11 +4111,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 1500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
               },
 
             ],
@@ -5083,11 +5043,6 @@ class Tutorial::Tutorial
                 :amount => 7000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -5179,11 +5134,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 7500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
               },
 
             ],
@@ -5279,11 +5229,6 @@ class Tutorial::Tutorial
                 :amount => 8000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -5377,11 +5322,6 @@ class Tutorial::Tutorial
                 :amount => 8500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 6480,
@@ -5473,11 +5413,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 9000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 6,
               },
 
             ],
@@ -5666,11 +5601,6 @@ class Tutorial::Tutorial
                 :amount => 10000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -5762,11 +5692,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 15000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 10,
               },
 
             ],
@@ -6139,11 +6064,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 1500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
               },
 
             ],
@@ -6704,11 +6624,6 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 2000,
@@ -7174,11 +7089,6 @@ class Tutorial::Tutorial
                 :amount => 7500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -7363,11 +7273,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 8500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 4,
               },
 
             ],
@@ -7556,11 +7461,6 @@ class Tutorial::Tutorial
                 :amount => 9500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -7747,11 +7647,6 @@ class Tutorial::Tutorial
                 :amount => 12000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -7843,11 +7738,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 15000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 10,
               },
 
             ],
@@ -8408,11 +8298,6 @@ class Tutorial::Tutorial
                 :amount => 2000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 500,
@@ -8876,11 +8761,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 5000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
               },
 
             ],
@@ -9348,11 +9228,6 @@ class Tutorial::Tutorial
                 :amount => 7500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -9537,11 +9412,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 8500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 4,
               },
 
             ],
@@ -9730,11 +9600,6 @@ class Tutorial::Tutorial
                 :amount => 9500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -9921,11 +9786,6 @@ class Tutorial::Tutorial
                 :amount => 12000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -10017,11 +9877,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 15000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 10,
               },
 
             ],
@@ -10487,11 +10342,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 1500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
               },
 
             ],
@@ -11052,11 +10902,6 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 2000,
@@ -11522,11 +11367,6 @@ class Tutorial::Tutorial
                 :amount => 7000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -11713,11 +11553,6 @@ class Tutorial::Tutorial
                 :amount => 8000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -11808,7 +11643,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7000,
+                :amount => 8500,
               },
 
             ],
@@ -11902,11 +11737,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 9000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 6,
               },
 
             ],
@@ -12095,11 +11925,6 @@ class Tutorial::Tutorial
                 :amount => 10000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -12191,11 +12016,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 12000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 10,
               },
 
             ],

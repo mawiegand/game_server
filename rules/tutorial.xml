@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="24" />
+    <Version major="0" minor="0" build="25" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -195,6 +195,7 @@
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -498,7 +499,6 @@
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">125</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -557,6 +557,9 @@
       <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
       <Requirement quest="quest_improve_production_1" />
       <Rewards>
+          <ResourceReward resource="resource_stone">165</ResourceReward>
+          <ResourceReward resource="resource_wood">150</ResourceReward>
+          <ResourceReward resource="resource_fur">120</ResourceReward>
         <ResourceReward resource="resource_cash">2</ResourceReward>
       </Rewards>
       <RewardTests>
@@ -586,8 +589,6 @@
       <RewardFlavor locale="en_US">Call that an army? Rather small, don't you think?</RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">165</ResourceReward>
-        <ResourceReward resource="resource_wood">150</ResourceReward>
         <ResourceReward resource="resource_fur">150</ResourceReward>
         <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>300</ExperienceReward>
@@ -620,7 +621,6 @@
       <Rewards>
         <ResourceReward resource="resource_stone">75</ResourceReward>
         <ResourceReward resource="resource_wood">75</ResourceReward>
-        <ResourceReward resource="resource_fur">120</ResourceReward>
         <ResourceReward resource="resource_cash">3</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
@@ -682,7 +682,6 @@
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">125</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -743,6 +742,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">137</ResourceReward>
         <ResourceReward resource="resource_wood">274</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -772,6 +772,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">274</ResourceReward>
         <ResourceReward resource="resource_wood">137</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -852,18 +853,17 @@
         <p>Four more buildingslots and the option to build a artifact stand.</p>
       </Description>
       <Flavor locale="de_DE">Halbgott? Ich brauche einen Raum, in dem ich Gäste empfangen kann. Verstanden?</Flavor>
-      <Flavor locale="en_US">Demigod? I need a room to invite my guets to. Get it?</Flavor>
+      <Flavor locale="en_US">Demigod? I need a room to invite my guests to. Got it?</Flavor>
       <RewardText locale="de_DE">Jetzt kannst Du einen Artefakt Stand bauen. Nur mit einem Artfakt Stand kannst Du ein erobertes Artefakt in einem Ritual initiieren.</RewardText>
       <RewardText locale="en_US">Now you can build a artifact stand. That´s great!</RewardText>
       <RewardFlavor locale="de_DE">Ähm? So klein? Wie soll ich denn da einen ordentlichen Empfang veranstalten? Allein die Nachbarn kommen mit über zwanzig Leuten...</RewardFlavor>
       <RewardFlavor locale="en_US">Äh? That small? It´s impossible to seat alle our guests in here. The neighbours are at least twenty...</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">2000</ResourceReward>
-        <ResourceReward resource="resource_wood">2000</ResourceReward>
-        <ResourceReward resource="resource_fur">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
-        <ExperienceReward>400</ExperienceReward>
+        <ResourceReward resource="resource_stone">2250</ResourceReward>
+        <ResourceReward resource="resource_wood">2250</ResourceReward>
+        <ResourceReward resource="resource_fur">2250</ResourceReward>
+        <ExperienceReward>450</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="7" />
@@ -890,10 +890,7 @@
       <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl7" />
       <Rewards>
-        <ResourceReward resource="resource_stone">250</ResourceReward>
-        <ResourceReward resource="resource_wood">250</ResourceReward>
-        <ResourceReward resource="resource_fur">600</ResourceReward>
-        <UnitReward unit="unit_clubbers">20</UnitReward>
+        <UnitReward unit="unit_clubbers">30</UnitReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1015,7 +1012,7 @@
         <ResourceReward resource="resource_stone">3000</ResourceReward>
         <ResourceReward resource="resource_wood">3000</ResourceReward>
         <ResourceReward resource="resource_fur">3000</ResourceReward>
-        <ExperienceReward>250</ExperienceReward>
+        <ExperienceReward>650</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="9" />
@@ -1078,7 +1075,7 @@
         <ResourceReward resource="resource_stone">4000</ResourceReward>
         <ResourceReward resource="resource_wood">4000</ResourceReward>
         <ResourceReward resource="resource_fur">4000</ResourceReward>
-        <ExperienceReward>500</ExperienceReward>
+        <ExperienceReward>800</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="10" />
@@ -1105,11 +1102,10 @@
       <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl10" />
       <Rewards>
-        <ResourceReward resource="resource_stone">3000</ResourceReward>
-        <ResourceReward resource="resource_wood">3000</ResourceReward>
-        <ResourceReward resource="resource_fur">3000</ResourceReward>
-        <ResourceReward resource="resource_cash">3</ResourceReward>
-        <ExperienceReward>750</ExperienceReward>
+        <ResourceReward resource="resource_stone">3750</ResourceReward>
+        <ResourceReward resource="resource_wood">3750</ResourceReward>
+        <ResourceReward resource="resource_fur">3750</ResourceReward>
+        <ExperienceReward>900</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_copper_smelter" min_level="1" />
@@ -1134,8 +1130,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
         <ResourceReward resource="resource_wood">4000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
-        <UnitReward unit="unit_thrower">20</UnitReward>
+        <UnitReward unit="unit_thrower">30</UnitReward>
         <ExperienceReward>750</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1161,8 +1156,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
         <ResourceReward resource="resource_wood">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
-        <UnitReward unit="unit_light_cavalry">20</UnitReward>
+        <UnitReward unit="unit_light_cavalry">30</UnitReward>
         <ExperienceReward>1000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1256,7 +1250,6 @@
         <ResourceReward resource="resource_stone">1000</ResourceReward>
         <ResourceReward resource="resource_wood">1000</ResourceReward>
         <ResourceReward resource="resource_fur">1000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1287,7 +1280,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1588,7 +1580,6 @@
         <ResourceReward resource="resource_stone">7000</ResourceReward>
         <ResourceReward resource="resource_wood">7000</ResourceReward>
         <ResourceReward resource="resource_fur">7000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1619,7 +1610,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>5120</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1650,7 +1640,6 @@
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
         <ResourceReward resource="resource_fur">8000</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1681,7 +1670,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>6480</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1712,7 +1700,6 @@
         <ResourceReward resource="resource_stone">9000</ResourceReward>
         <ResourceReward resource="resource_wood">9000</ResourceReward>
         <ResourceReward resource="resource_fur">9000</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1773,7 +1760,6 @@
         <ResourceReward resource="resource_stone">10000</ResourceReward>
         <ResourceReward resource="resource_wood">10000</ResourceReward>
         <ResourceReward resource="resource_fur">10000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1804,7 +1790,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1928,7 +1913,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2109,7 +2093,6 @@
         <ResourceReward resource="resource_stone">4500</ResourceReward>
         <ResourceReward resource="resource_wood">4500</ResourceReward>
         <ResourceReward resource="resource_fur">4500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2260,7 +2243,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2321,7 +2303,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2382,7 +2363,6 @@
         <ResourceReward resource="resource_stone">9500</ResourceReward>
         <ResourceReward resource="resource_wood">9500</ResourceReward>
         <ResourceReward resource="resource_fur">9500</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2443,7 +2423,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2474,7 +2453,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2658,7 +2636,6 @@
         <ResourceReward resource="resource_stone">2000</ResourceReward>
         <ResourceReward resource="resource_wood">2000</ResourceReward>
         <ResourceReward resource="resource_fur">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2809,7 +2786,6 @@
         <ResourceReward resource="resource_stone">5000</ResourceReward>
         <ResourceReward resource="resource_wood">5000</ResourceReward>
         <ResourceReward resource="resource_fur">5000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2960,7 +2936,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3021,7 +2996,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3082,7 +3056,6 @@
         <ResourceReward resource="resource_stone">9500</ResourceReward>
         <ResourceReward resource="resource_wood">9500</ResourceReward>
         <ResourceReward resource="resource_fur">9500</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3143,7 +3116,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3174,7 +3146,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3327,7 +3298,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3508,7 +3478,6 @@
         <ResourceReward resource="resource_stone">4500</ResourceReward>
         <ResourceReward resource="resource_wood">4500</ResourceReward>
         <ResourceReward resource="resource_fur">4500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3659,7 +3628,6 @@
         <ResourceReward resource="resource_stone">7000</ResourceReward>
         <ResourceReward resource="resource_wood">7000</ResourceReward>
         <ResourceReward resource="resource_fur">7000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3720,7 +3688,6 @@
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
         <ResourceReward resource="resource_fur">8000</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3750,7 +3717,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
-        <ResourceReward resource="resource_fur">7000</ResourceReward>
+        <ResourceReward resource="resource_fur">8500</ResourceReward>
         <ExperienceReward>6480</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3781,7 +3748,6 @@
         <ResourceReward resource="resource_stone">9000</ResourceReward>
         <ResourceReward resource="resource_wood">9000</ResourceReward>
         <ResourceReward resource="resource_fur">9000</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3842,7 +3808,6 @@
         <ResourceReward resource="resource_stone">10000</ResourceReward>
         <ResourceReward resource="resource_wood">10000</ResourceReward>
         <ResourceReward resource="resource_fur">10000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3873,7 +3838,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
