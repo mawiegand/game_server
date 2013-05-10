@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="26" />
+    <Version major="0" minor="0" build="27" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -394,7 +394,7 @@
       <Task>Get yourself back to your settlement.</Task>
       <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu  kommens.</p>
+        <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>
       </Description>
       <Description locale="en_US">
         <p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>
