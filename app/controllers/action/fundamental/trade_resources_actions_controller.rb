@@ -74,8 +74,11 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
       end
 
       # unless job_id is -1 check for new jobs
-      unless params[:job_id].to_i == -1
-        Construction::Job.lock.find(params[:job_id].to_i).queue.check_for_new_jobs
+      unless params[:job_id] == nil
+        job = Construction::Job.lock.find_by_id(params[:job_id].to_i)
+        raise ForbiddenError.new('job is nil') if job == nil
+        raise ForbiddenError.new('not owner of job') unless job.queue.settlement.owner == current_character
+        job.queue.check_for_new_jobs
       end
     end
     
