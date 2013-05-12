@@ -72,6 +72,9 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
         # save new values
         pool.save
       end
+
+      # unless job_id is -1 check for new jobs
+      Construction::Job.lock.find(params[:job_id]).queue.check_for_new_job unless params[:job_id] == -1
     end
     
     respond_to do |format|
