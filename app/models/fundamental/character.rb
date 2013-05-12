@@ -603,7 +603,9 @@ class Fundamental::Character < ActiveRecord::Base
       set_clause = { }
       set_clause[:alliance_id]  = alliance_change[1]        unless alliance_change.nil?
       set_clause[:alliance_tag] = alliance_tag_change[1]    unless alliance_tag_change.nil?
-            
+      set_clause[:updated_at]   = DateTime.now
+
+
       redundancies.each do |entry| 
         if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
           entry[:model].where(entry[:field] => self.id).each do |item|
@@ -633,8 +635,6 @@ class Fundamental::Character < ActiveRecord::Base
           new_bonus = new_alliance.nil? ? 0 : new_alliance[resource_type[:symbolic_id].to_s + '_production_bonus_effects']
 
           pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
-
-          logger.debug "------> propagate_alliance_membership_changes_to_resource_pool #{old_bonus} #{new_bonus} #{pool_attribute} "
 
           self.resource_pool.lock!
           self.resource_pool.increment(pool_attribute, new_bonus - old_bonus)
@@ -674,7 +674,8 @@ class Fundamental::Character < ActiveRecord::Base
       
       redundancies.each do |entry| 
         set_clause = { }
-        set_clause[entry[:name_field] || :owner_name]  = name_change[1]    
+        set_clause[entry[:name_field] || :owner_name]  = name_change[1]
+        set_clause[:updated_at]                        = DateTime.now
 
         if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
           entry[:model].where(entry[:field] => self.id).each do |item|
@@ -1083,6 +1084,10 @@ class Fundamental::Character < ActiveRecord::Base
     check_consistency
   end
 
+  def first_start
+    login_count < 1
+  end
+
   def beginner
     login_count <= 1
   end
@@ -1097,7 +1102,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
   
