@@ -260,6 +260,7 @@ class Military::Army < ActiveRecord::Base
   
   def self.base_move_duration
     (GAME_SERVER_CONFIG['movement_duration'] * GAME_SERVER_CONFIG['base_time_factor']).to_f
+  end
   
   # returns the time needed for a move to the presently set target_region
   def move_duration_to_target
