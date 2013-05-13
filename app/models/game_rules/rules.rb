@@ -5396,8 +5396,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             },
 
             {
-              :symbolic_id => 'building_campfire',
-              :id => 5,
+              :symbolic_id => 'building_alliance_hall',
+              :id => 29,
               :type => 'building',
 
               :min_level => 0,

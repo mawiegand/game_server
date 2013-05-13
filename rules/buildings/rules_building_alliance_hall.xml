@@ -24,7 +24,7 @@
   <RequirementGroup>
     <Requirement id="building_chief_cottage"  min_level="11" />
     <Requirement id="building_copper_smelter" min_level="1" />
-    <Requirement id="building_campfire"       max_level="0" />
+    <Requirement id="building_alliance_hall"  max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*10+10000</Cost>  
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000</Cost>
