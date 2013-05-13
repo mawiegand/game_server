@@ -73,6 +73,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_dislike_changes
   after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
+  after_save  :propagate_alliance_bonus_to_alliance
   
   after_commit :check_consistency_sometimes
   
@@ -653,6 +654,12 @@ class Fundamental::Character < ActiveRecord::Base
       self.artifact.save
     end
     true
+  end
+  
+  def propagate_alliance_bonus_to_alliance
+    if self.alliance_size_bonus_changed? && !self.alliance.nil?
+      self.alliance.recalculate_size_bonus
+    end
   end
 
   # Function for propagating change of character name to redundant fields.

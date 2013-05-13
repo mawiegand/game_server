@@ -24,7 +24,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at,       :as => :default
+  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus,       :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
@@ -79,6 +79,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     self.increment!(:members_count)
     character.save
     
+    self.recalculate_size_bonus
+    
     cmd = Messaging::JabberCommand.grant_access(character, self.tag) 
     cmd.character_id = character.id
     cmd.save
@@ -101,6 +103,7 @@ class Fundamental::Alliance < ActiveRecord::Base
       determine_new_leader
     end
     self.save
+    self.recalculate_size_bonus
     
     cmd = Messaging::JabberCommand.revoke_access(character, self.tag) 
     cmd.character_id = character.id
@@ -108,7 +111,11 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def full?
-    self.members.count >= GameRules::Rules.the_rules.alliance_max_members
+    self.members.count >= self.size_max?
+  end
+  
+  def size_max?
+    GameRules::Rules.the_rules.alliance_max_members + self.size_bonus
   end
   
   def add_unique_invitation_code
@@ -126,6 +133,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     check_and_apply_ranking_fortress_count
     check_and_apply_member_count
     check_and_apply_victory_progresses
+    recalculate_size_bonus
 
     if self.changed?
       logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
@@ -169,6 +177,17 @@ class Fundamental::Alliance < ActiveRecord::Base
       self[attribute] -= amount
       propagate_bonus_changes
       self.save!
+    end
+  end
+  
+  def recalculate_size_bonus
+    new_size_bonus = 0
+    self.members.each do |member|
+      new_size_bonus = [new_size_bonus, member.alliance_size_bonus].max
+    end
+    if self.size_bonus != new_size_bonus
+      self.size_bonus = new_size_bonus
+      self.save
     end
   end
 

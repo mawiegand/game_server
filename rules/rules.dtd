@@ -168,7 +168,7 @@
 <!ELEMENT RequiredRegionsRatio (#PCDATA)>
 
 <!--Abilities of Buildings, Sciences-->
-<!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots?, UnlockArtifactInitiation?)>
+<!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots?, UnlockArtifactInitiation?, AllianceExtension?)>
 
 <!ELEMENT PreventTakeover EMPTY>
 <!ATTLIST PreventTakeover 
@@ -216,6 +216,8 @@
 <!ELEMENT ArmySizeBonus (#PCDATA)>
 
 <!ELEMENT UnlockArtifactInitiation (#PCDATA)>
+
+<!ELEMENT AllianceExtension (#PCDATA)>
 
 <!--Buildings-->
 

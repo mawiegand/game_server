@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.1.25
+# Version: 0.2.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -113,8 +113,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 1,
-                    :build => 25,
+                    :minor => 2,
+                    :build => 1,
       },
       :battle => {
         :calculation => {
@@ -3041,6 +3041,8 @@ class GameRules::Rules
 
             :unlock_alliance_creation => 2,
 
+            :alliance_size_bonus => "MAX(LEVEL-5,0)",
+
           },
 
         },              #   END OF Lagerfeuer
@@ -5333,6 +5335,103 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Festungsgarnison
+        {               #   Große Stammeshalle
+          :id          => 29, 
+          :symbolic_id => :building_alliance_hall,
+					:category    => 6,
+          :db_field    => :building_alliance_hall,
+          :name        => {
+            
+            :de_DE => "Große Stammeshalle",
+  
+            :en_US => "Tribe's Large Hall",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+  
+            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen.</p><p>Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Besonderes große Hallen erlauben es, weitere Spieler in die Allianz aufzunehmen.</p>",
+  
+            :en_US => "<p>In the Large Hall, leaders of allied tribes gather in sociable groups and discuss important arrangements.</p><p>Or bowl, if it's long enough.</p><p>Very large halls allow to accept more alliance members.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*10+10000',
+            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000',
+            2 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))*10+7200',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :alliance_size_bonus => "MAX(LEVEL,0)",
+
+          },
+
+        },              #   END OF Große Stammeshalle
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
