@@ -1334,7 +1334,7 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_information_to_owner
       if self.alliance_size_bonus_changed? && !self.owner.nil?
-        self.owner.alliance_size_bonus = self.alliance_size_bonus
+        self.propagate_change_of_attribute_to_character('alliance_size_bonus')
         self.owner.save
       end
     end

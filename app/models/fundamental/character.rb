@@ -657,7 +657,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   def propagate_alliance_bonus_to_alliance
     if self.alliance_size_bonus_changed? && !self.alliance.nil?
-      self.alliance.check_and_apply_size_bonus
+      self.alliance.recalculate_size_bonus
     end
   end
 
