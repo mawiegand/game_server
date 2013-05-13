@@ -111,10 +111,10 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def full?
-    self.members.count >= self.size_max?
+    self.members.count >= self.size_max
   end
   
-  def size_max?
+  def size_max
     GameRules::Rules.the_rules.alliance_max_members + self.size_bonus
   end
   
