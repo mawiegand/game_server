@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.1
+# Version: 0.2.2
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -114,11 +114,11 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 2,
-                    :build => 1,
+                    :build => 2,
       },
       :battle => {
         :calculation => {
-          :round_time => 30,
+          :round_time => 20,
           :retreat_probability => 0.5,
           },
       },
@@ -1548,7 +1548,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.2,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1643,7 +1643,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.3,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1747,7 +1747,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.4,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1860,7 +1860,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.5,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -2044,7 +2044,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 0.85,
           :action_points => 4,
           :initiative  => 10,
           :effectiveness => {
