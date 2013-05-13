@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="25" />
+    <Version major="0" minor="1" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
