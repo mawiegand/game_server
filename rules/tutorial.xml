@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="24" />
+    <Version major="0" minor="0" build="27" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -33,7 +33,7 @@
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Order a Hunter Gatherer Level 1.</Task>
-      <Task locale="de_DE"> Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
+      <Task locale="de_DE">Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
       <Description locale="de_DE">
         <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
       </Description>
@@ -44,7 +44,7 @@
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
       <RewardText locale="de_DE">Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.</RewardText>
       <RewardText locale="en_US">The Hunter Gatherer gathers small quantities of all kinds of raw materials: stone, wood and fur. </RewardText>
-      <RewardFlavor locale="de_DE"> Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
+      <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
       <Rewards>
         <ResourceReward resource="resource_stone">25</ResourceReward>
@@ -195,6 +195,7 @@
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -298,7 +299,7 @@
     <!-- 8 --> <!-- Tutorial 16 -->
     <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true" >
       <Name>Raw materials store</Name>
-      <Name locale="de_DE"> Rohstofflager </Name>
+      <Name locale="de_DE">Rohstofflager </Name>
       <Task>Build a raw materials store.</Task>
       <Task locale="de_DE">Baue ein Rohstofflager.</Task>
       <Description locale="de_DE">
@@ -310,7 +311,7 @@
       <Flavor locale="de_DE">Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
       <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
       <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.</RewardText>
-      <RewardText locale="en_US"> The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
+      <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
       <RewardFlavor locale="de_DE">Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
@@ -393,7 +394,7 @@
       <Task>Get yourself back to your settlement.</Task>
       <Task locale="de_DE">Begib Dich zurück in Deine Siedlung.</Task>
       <Description locale="de_DE">
-        <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu  kommens.</p>
+        <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>
       </Description>
       <Description locale="en_US">
         <p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>
@@ -498,7 +499,6 @@
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">125</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -510,7 +510,7 @@
     <!-- 15 --> <!-- Tutorial 16 -->
     <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
       <Name>The chieftain's hut again</Name>
-      <Name locale="de_DE"> Und wieder die Häuptlingshütte</Name>
+      <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
       <Task>Upgrade your chieftain's hut to level 4.</Task>
       <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
       <Description locale="de_DE">
@@ -557,6 +557,9 @@
       <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
       <Requirement quest="quest_improve_production_1" />
       <Rewards>
+          <ResourceReward resource="resource_stone">165</ResourceReward>
+          <ResourceReward resource="resource_wood">150</ResourceReward>
+          <ResourceReward resource="resource_fur">120</ResourceReward>
         <ResourceReward resource="resource_cash">2</ResourceReward>
       </Rewards>
       <RewardTests>
@@ -586,8 +589,6 @@
       <RewardFlavor locale="en_US">Call that an army? Rather small, don't you think?</RewardFlavor>
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
-        <ResourceReward resource="resource_stone">165</ResourceReward>
-        <ResourceReward resource="resource_wood">150</ResourceReward>
         <ResourceReward resource="resource_fur">150</ResourceReward>
         <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>300</ExperienceReward>
@@ -602,7 +603,7 @@
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
-      <Task locale="de_DE"> Baue ein Lagerfeuer.</Task>
+      <Task locale="de_DE">Baue ein Lagerfeuer.</Task>
       <Description locale="de_DE">
         <p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
       </Description>
@@ -620,7 +621,6 @@
       <Rewards>
         <ResourceReward resource="resource_stone">75</ResourceReward>
         <ResourceReward resource="resource_wood">75</ResourceReward>
-        <ResourceReward resource="resource_fur">120</ResourceReward>
         <ResourceReward resource="resource_cash">3</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
@@ -672,7 +672,7 @@
         <p>More Hunter Gatherer would be helpful. All three resources stone, wood and fur are worth one resource point.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -682,7 +682,6 @@
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
         <ResourceReward resource="resource_fur">125</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -743,6 +742,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">137</ResourceReward>
         <ResourceReward resource="resource_wood">274</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -772,6 +772,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">274</ResourceReward>
         <ResourceReward resource="resource_wood">137</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>125</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -852,18 +853,17 @@
         <p>Four more buildingslots and the option to build a artifact stand.</p>
       </Description>
       <Flavor locale="de_DE">Halbgott? Ich brauche einen Raum, in dem ich Gäste empfangen kann. Verstanden?</Flavor>
-      <Flavor locale="en_US">Demigod? I need a room to invite my guets to. Get it?</Flavor>
+      <Flavor locale="en_US">Demigod? I need a room to invite my guests to. Got it?</Flavor>
       <RewardText locale="de_DE">Jetzt kannst Du einen Artefakt Stand bauen. Nur mit einem Artfakt Stand kannst Du ein erobertes Artefakt in einem Ritual initiieren.</RewardText>
       <RewardText locale="en_US">Now you can build a artifact stand. That´s great!</RewardText>
       <RewardFlavor locale="de_DE">Ähm? So klein? Wie soll ich denn da einen ordentlichen Empfang veranstalten? Allein die Nachbarn kommen mit über zwanzig Leuten...</RewardFlavor>
       <RewardFlavor locale="en_US">Äh? That small? It´s impossible to seat alle our guests in here. The neighbours are at least twenty...</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">2000</ResourceReward>
-        <ResourceReward resource="resource_wood">2000</ResourceReward>
-        <ResourceReward resource="resource_fur">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
-        <ExperienceReward>400</ExperienceReward>
+        <ResourceReward resource="resource_stone">2250</ResourceReward>
+        <ResourceReward resource="resource_wood">2250</ResourceReward>
+        <ResourceReward resource="resource_fur">2250</ResourceReward>
+        <ExperienceReward>450</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="7" />
@@ -890,10 +890,7 @@
       <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl7" />
       <Rewards>
-        <ResourceReward resource="resource_stone">250</ResourceReward>
-        <ResourceReward resource="resource_wood">250</ResourceReward>
-        <ResourceReward resource="resource_fur">600</ResourceReward>
-        <UnitReward unit="unit_clubbers">20</UnitReward>
+        <UnitReward unit="unit_clubbers">30</UnitReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -905,7 +902,7 @@
     <Quest id="quest_build_1barrackslvl5" advisor="warrior">
       <Name>Training Grounds level 5</Name>
       <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
-      <Task> Upgrade a training grounds to level 5.</Task>
+      <Task>Upgrade a training grounds to level 5.</Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 5.</Task>
       <Description locale="de_DE">
         <p>Auf Level 5 können im Ausbildungsgelände die Keulenkrieger ausgebildet werden.</p>
@@ -1015,7 +1012,7 @@
         <ResourceReward resource="resource_stone">3000</ResourceReward>
         <ResourceReward resource="resource_wood">3000</ResourceReward>
         <ResourceReward resource="resource_fur">3000</ResourceReward>
-        <ExperienceReward>250</ExperienceReward>
+        <ExperienceReward>650</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="9" />
@@ -1068,7 +1065,8 @@
       </Description>
       <Flavor locale="de_DE">Jetzt hat Deine Hauptsiedlung die volle Größe!</Flavor>
       <Flavor locale="en_US">You got all of your 40 buildingslots.</Flavor>
-      <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p> <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
+      <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
+        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
       <RewardText locale="en_US"><p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
         <p>At Level 12 you will recieve another command point for another army.</p></RewardText>
       <RewardFlavor locale="de_DE">Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!</RewardFlavor>
@@ -1078,7 +1076,7 @@
         <ResourceReward resource="resource_stone">4000</ResourceReward>
         <ResourceReward resource="resource_wood">4000</ResourceReward>
         <ResourceReward resource="resource_fur">4000</ResourceReward>
-        <ExperienceReward>500</ExperienceReward>
+        <ExperienceReward>800</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="10" />
@@ -1105,11 +1103,10 @@
       <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl10" />
       <Rewards>
-        <ResourceReward resource="resource_stone">3000</ResourceReward>
-        <ResourceReward resource="resource_wood">3000</ResourceReward>
-        <ResourceReward resource="resource_fur">3000</ResourceReward>
-        <ResourceReward resource="resource_cash">3</ResourceReward>
-        <ExperienceReward>750</ExperienceReward>
+        <ResourceReward resource="resource_stone">3750</ResourceReward>
+        <ResourceReward resource="resource_wood">3750</ResourceReward>
+        <ResourceReward resource="resource_fur">3750</ResourceReward>
+        <ExperienceReward>900</ExperienceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_copper_smelter" min_level="1" />
@@ -1134,8 +1131,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
         <ResourceReward resource="resource_wood">4000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
-        <UnitReward unit="unit_thrower">20</UnitReward>
+        <UnitReward unit="unit_thrower">30</UnitReward>
         <ExperienceReward>750</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1161,8 +1157,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
         <ResourceReward resource="resource_wood">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
-        <UnitReward unit="unit_light_cavalry">20</UnitReward>
+        <UnitReward unit="unit_light_cavalry">30</UnitReward>
         <ExperienceReward>1000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1186,7 +1181,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1216,7 +1211,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1246,7 +1241,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1256,7 +1251,6 @@
         <ResourceReward resource="resource_stone">1000</ResourceReward>
         <ResourceReward resource="resource_wood">1000</ResourceReward>
         <ResourceReward resource="resource_fur">1000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1277,7 +1271,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1287,7 +1281,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1308,7 +1301,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1338,7 +1331,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1368,7 +1361,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1398,7 +1391,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1428,7 +1421,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1458,7 +1451,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1488,7 +1481,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1518,7 +1511,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1548,7 +1541,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1578,7 +1571,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1588,7 +1581,6 @@
         <ResourceReward resource="resource_stone">7000</ResourceReward>
         <ResourceReward resource="resource_wood">7000</ResourceReward>
         <ResourceReward resource="resource_fur">7000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1609,7 +1601,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1619,7 +1611,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>5120</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1640,7 +1631,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1650,7 +1641,6 @@
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
         <ResourceReward resource="resource_fur">8000</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1671,7 +1661,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1681,7 +1671,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>6480</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1702,7 +1691,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1712,7 +1701,6 @@
         <ResourceReward resource="resource_stone">9000</ResourceReward>
         <ResourceReward resource="resource_wood">9000</ResourceReward>
         <ResourceReward resource="resource_fur">9000</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1733,7 +1721,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1763,7 +1751,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1773,7 +1761,6 @@
         <ResourceReward resource="resource_stone">10000</ResourceReward>
         <ResourceReward resource="resource_wood">10000</ResourceReward>
         <ResourceReward resource="resource_fur">10000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1794,7 +1781,7 @@
         <p>You can check how many Units you have already killed by visiting the Ranking.</p>
       </Description>
       <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-      <Flavor locale="en_US"> Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
+      <Flavor locale="en_US">Your enemies are strong, that has to change! Destroy their units. That will weaken them.</Flavor>
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
@@ -1804,7 +1791,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1828,7 +1814,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -1858,7 +1844,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -1888,7 +1874,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -1918,7 +1904,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -1928,7 +1914,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -1949,7 +1934,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -1979,7 +1964,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2009,7 +1994,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2039,7 +2024,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2069,7 +2054,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2099,7 +2084,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2109,7 +2094,6 @@
         <ResourceReward resource="resource_stone">4500</ResourceReward>
         <ResourceReward resource="resource_wood">4500</ResourceReward>
         <ResourceReward resource="resource_fur">4500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2130,7 +2114,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2160,7 +2144,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2190,7 +2174,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2220,7 +2204,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2250,7 +2234,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2260,7 +2244,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2281,7 +2264,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2311,7 +2294,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2321,7 +2304,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2342,7 +2324,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2372,7 +2354,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2382,7 +2364,6 @@
         <ResourceReward resource="resource_stone">9500</ResourceReward>
         <ResourceReward resource="resource_wood">9500</ResourceReward>
         <ResourceReward resource="resource_fur">9500</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2403,7 +2384,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2433,7 +2414,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2443,7 +2424,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2464,7 +2444,7 @@
         <p>An army gains experience for each unit it looses.</p>
       </Description>
       <Flavor locale="de_DE">Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.</Flavor>
-      <Flavor locale="en_US"> Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
+      <Flavor locale="en_US">Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.</Flavor>
       <RewardText locale="de_DE">Armeen bekommen mit jedem zusätzlichen Rang Boni auf ihre Kampfkraft.</RewardText>
       <RewardText locale="en_US">With each increase in the rank of an army, all units in the army get a bonus to their attributes.</RewardText>
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
@@ -2474,7 +2454,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2488,7 +2467,7 @@
     <!-- 300 -->
     <Quest id="quest_score_0" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 200</Task>
       <Task locale="de_DE">Erreiche 200 Einwohner</Task>
       <Description locale="de_DE">
@@ -2498,7 +2477,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
@@ -2518,7 +2497,7 @@
     <!-- 301 -->
     <Quest id="quest_score_1" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 400</Task>
       <Task locale="de_DE">Erreiche 400 Einwohner</Task>
       <Description locale="de_DE">
@@ -2528,7 +2507,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
@@ -2548,7 +2527,7 @@
     <!-- 302 -->
     <Quest id="quest_score_2" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 500</Task>
       <Task locale="de_DE">Erreiche 500 Einwohner</Task>
       <Description locale="de_DE">
@@ -2558,7 +2537,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2578,7 +2557,7 @@
     <!-- 303 -->
     <Quest id="quest_score_3" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 700</Task>
       <Task locale="de_DE">Erreiche 700 Einwohner</Task>
       <Description locale="de_DE">
@@ -2588,7 +2567,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2608,7 +2587,7 @@
     <!-- 304 -->
     <Quest id="quest_score_4" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 1.000</Task>
       <Task locale="de_DE">Erreiche 1.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2618,7 +2597,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2638,7 +2617,7 @@
     <!-- 305 -->
     <Quest id="quest_score_5" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 1.500</Task>
       <Task locale="de_DE">Erreiche 1.500 Einwohner</Task>
       <Description locale="de_DE">
@@ -2648,7 +2627,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2658,7 +2637,6 @@
         <ResourceReward resource="resource_stone">2000</ResourceReward>
         <ResourceReward resource="resource_wood">2000</ResourceReward>
         <ResourceReward resource="resource_fur">2000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2669,7 +2647,7 @@
     <!-- 306 -->
     <Quest id="quest_score_6" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 2.000</Task>
       <Task locale="de_DE">Erreiche 2.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2679,7 +2657,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2699,7 +2677,7 @@
     <!-- 307 -->
     <Quest id="quest_score_7" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 2.800</Task>
       <Task locale="de_DE">Erreiche 2.800 Einwohner</Task>
       <Description locale="de_DE">
@@ -2709,7 +2687,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2729,7 +2707,7 @@
     <!-- 308 -->
     <Quest id="quest_score_8" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 4.000</Task>
       <Task locale="de_DE">Erreiche 4.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2739,7 +2717,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2759,7 +2737,7 @@
     <!-- 309 -->
     <Quest id="quest_score_9" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 6.000</Task>
       <Task locale="de_DE">Erreiche 6.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2769,7 +2747,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2789,7 +2767,7 @@
     <!-- 310 -->
     <Quest id="quest_score_10" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 10.000</Task>
       <Task locale="de_DE">Erreiche 10.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2799,7 +2777,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2809,7 +2787,6 @@
         <ResourceReward resource="resource_stone">5000</ResourceReward>
         <ResourceReward resource="resource_wood">5000</ResourceReward>
         <ResourceReward resource="resource_fur">5000</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2820,7 +2797,7 @@
     <!-- 311 -->
     <Quest id="quest_score_11" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 15.000</Task>
       <Task locale="de_DE">Erreiche 15.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2830,7 +2807,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2850,7 +2827,7 @@
     <!-- 312 -->
     <Quest id="quest_score_12" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 22.500</Task>
       <Task locale="de_DE">Erreiche 22.500 Einwohner</Task>
       <Description locale="de_DE">
@@ -2860,7 +2837,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2880,7 +2857,7 @@
     <!-- 313 -->
     <Quest id="quest_score_13" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 30.000</Task>
       <Task locale="de_DE">Erreiche 30.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2890,7 +2867,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2910,7 +2887,7 @@
     <!-- 314 -->
     <Quest id="quest_score_14" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 40.000</Task>
       <Task locale="de_DE">Erreiche 40.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2920,7 +2897,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2940,7 +2917,7 @@
     <!-- 315 -->
     <Quest id="quest_score_15" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 50.000</Task>
       <Task locale="de_DE">Erreiche 50.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2950,7 +2927,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -2960,7 +2937,6 @@
         <ResourceReward resource="resource_stone">7500</ResourceReward>
         <ResourceReward resource="resource_wood">7500</ResourceReward>
         <ResourceReward resource="resource_fur">7500</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -2971,7 +2947,7 @@
     <!-- 316 -->
     <Quest id="quest_score_16" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 60.000</Task>
       <Task locale="de_DE">Erreiche 60.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -2981,7 +2957,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3001,7 +2977,7 @@
     <!-- 317 -->
     <Quest id="quest_score_17" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 75.000</Task>
       <Task locale="de_DE">Erreiche 75.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3011,7 +2987,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3021,7 +2997,6 @@
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
         <ResourceReward resource="resource_fur">8500</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3032,7 +3007,7 @@
     <!-- 318 -->
     <Quest id="quest_score_18" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 80.000</Task>
       <Task locale="de_DE">Erreiche 80.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3042,7 +3017,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3062,7 +3037,7 @@
     <!-- 319 -->
     <Quest id="quest_score_19" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 100.000</Task>
       <Task locale="de_DE">Erreiche 100.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3072,7 +3047,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3082,7 +3057,6 @@
         <ResourceReward resource="resource_stone">9500</ResourceReward>
         <ResourceReward resource="resource_wood">9500</ResourceReward>
         <ResourceReward resource="resource_fur">9500</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3093,7 +3067,7 @@
     <!-- 320 -->
     <Quest id="quest_score_20" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 150.000</Task>
       <Task locale="de_DE">Erreiche 150.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3103,7 +3077,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3123,7 +3097,7 @@
     <!-- 321 -->
     <Quest id="quest_score_21" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 250.000</Task>
       <Task locale="de_DE">Erreiche 250.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3133,7 +3107,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3143,7 +3117,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3154,7 +3127,7 @@
     <!-- 322 -->
     <Quest id="quest_score_22" advisor="chef">
       <Name>Population</Name>
-      <Name locale="de_DE"> Einwohner </Name>
+      <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 500.000</Task>
       <Task locale="de_DE">Erreiche 500.000 Einwohner</Task>
       <Description locale="de_DE">
@@ -3164,7 +3137,7 @@
         <p>You gain additional population for each building you build or upgrade.</p>
       </Description>
       <Flavor locale="de_DE">Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!</Flavor>
-      <Flavor locale="en_US"> Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
+      <Flavor locale="en_US">Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">The ranking is sorted by population by default.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
@@ -3174,7 +3147,6 @@
         <ResourceReward resource="resource_stone">15000</ResourceReward>
         <ResourceReward resource="resource_wood">15000</ResourceReward>
         <ResourceReward resource="resource_fur">15000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3197,7 +3169,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3217,7 +3189,7 @@
     <!-- 402 -->
     <Quest id="quest_resourcescore_2" advisor="girl">
       <Name>Resource Production</Name>
-      <Name locale="de_DE">Rohstoffproduktion</Name> 
+      <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 240 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunkte nach Steuern. </Task>
       <Description locale="de_DE">
@@ -3227,7 +3199,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3257,7 +3229,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3287,7 +3259,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3317,7 +3289,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3327,7 +3299,6 @@
         <ResourceReward resource="resource_stone">1500</ResourceReward>
         <ResourceReward resource="resource_wood">1500</ResourceReward>
         <ResourceReward resource="resource_fur">1500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>320</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3348,7 +3319,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3378,7 +3349,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3408,7 +3379,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3438,7 +3409,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3468,7 +3439,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3498,7 +3469,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3508,7 +3479,6 @@
         <ResourceReward resource="resource_stone">4500</ResourceReward>
         <ResourceReward resource="resource_wood">4500</ResourceReward>
         <ResourceReward resource="resource_fur">4500</ResourceReward>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>2000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3529,7 +3499,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3559,7 +3529,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3589,7 +3559,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3619,7 +3589,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3649,7 +3619,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3659,7 +3629,6 @@
         <ResourceReward resource="resource_stone">7000</ResourceReward>
         <ResourceReward resource="resource_wood">7000</ResourceReward>
         <ResourceReward resource="resource_fur">7000</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>4500</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3680,7 +3649,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3710,7 +3679,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3720,7 +3689,6 @@
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
         <ResourceReward resource="resource_fur">8000</ResourceReward>
-        <ResourceReward resource="resource_cash">4</ResourceReward>
         <ExperienceReward>5780</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3741,7 +3709,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3750,7 +3718,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
         <ResourceReward resource="resource_wood">8500</ResourceReward>
-        <ResourceReward resource="resource_fur">7000</ResourceReward>
+        <ResourceReward resource="resource_fur">8500</ResourceReward>
         <ExperienceReward>6480</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3771,7 +3739,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3781,7 +3749,6 @@
         <ResourceReward resource="resource_stone">9000</ResourceReward>
         <ResourceReward resource="resource_wood">9000</ResourceReward>
         <ResourceReward resource="resource_fur">9000</ResourceReward>
-        <ResourceReward resource="resource_cash">6</ResourceReward>
         <ExperienceReward>7220</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3802,7 +3769,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3832,7 +3799,7 @@
         <p>All three resources stone, wood and fur are worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3842,7 +3809,6 @@
         <ResourceReward resource="resource_stone">10000</ResourceReward>
         <ResourceReward resource="resource_wood">10000</ResourceReward>
         <ResourceReward resource="resource_fur">10000</ResourceReward>
-        <ResourceReward resource="resource_cash">8</ResourceReward>
         <ExperienceReward>10000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3863,7 +3829,7 @@
         <p>All three resources stone, wood and fur are worth one resource point.</p>
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
-      <Flavor locale="en_US"> Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
+      <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
       <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
@@ -3873,7 +3839,6 @@
         <ResourceReward resource="resource_stone">12000</ResourceReward>
         <ResourceReward resource="resource_wood">12000</ResourceReward>
         <ResourceReward resource="resource_fur">12000</ResourceReward>
-        <ResourceReward resource="resource_cash">10</ResourceReward>
         <ExperienceReward>15000</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -3885,7 +3850,7 @@
     <Quest id="quest_build_1barrackslvl10" advisor="warrior">
       <Name>Training Grounds level 10</Name>
       <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
-      <Task> Upgrade a training grounds to level 10.</Task>
+      <Task>Upgrade a training grounds to level 10.</Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 10.</Task>
       <Description locale="de_DE">
         <p>Auf Level 10 können im Ausbildungsgelände neue Einheiten ausgebildet werden.</p>

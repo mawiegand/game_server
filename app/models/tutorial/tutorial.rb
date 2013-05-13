@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.24
+# Version: 0.0.27
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 24, 
+        :build => 27, 
       },
       
       :production_test_weights => {
@@ -117,7 +117,7 @@ class Tutorial::Tutorial
             
             :en_US => "Order a Hunter Gatherer Level 1.",
   
-            :de_DE => " Gib einen Jäger und Sammler Level 1 in Auftrag.",
+            :de_DE => "Gib einen Jäger und Sammler Level 1 in Auftrag.",
                 
           },
           :flavour => {
@@ -136,7 +136,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => " Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
+            :de_DE => "Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
   
             :en_US => "Hey – that looks much better, don't you think? ",
                 
@@ -566,6 +566,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
             :experience_reward => 200,
 
           },          
@@ -861,7 +870,7 @@ class Tutorial::Tutorial
             
             :en_US => "Raw materials store",
   
-            :de_DE => " Rohstofflager ",
+            :de_DE => "Rohstofflager ",
                 
           },
           :task => {
@@ -896,7 +905,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.",
   
-            :en_US => " The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
+            :en_US => "The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
                 
           },
 
@@ -1177,7 +1186,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu  kommens.</p>",
+            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>",
   
             :en_US => "<p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>",
                 
@@ -1513,11 +1522,6 @@ class Tutorial::Tutorial
                 :amount => 125,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 100,
@@ -1555,7 +1559,7 @@ class Tutorial::Tutorial
             
             :en_US => "The chieftain's hut again",
   
-            :de_DE => " Und wieder die Häuptlingshütte",
+            :de_DE => "Und wieder die Häuptlingshütte",
                 
           },
           :task => {
@@ -1709,6 +1713,21 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 165,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 120,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -1796,16 +1815,6 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => :resource_stone,
-                :amount => 165,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 150,
-              },
-
-              {
                 :resource => :resource_fur,
                 :amount => 150,
               },
@@ -1858,7 +1867,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a campfire.",
   
-            :de_DE => " Baue ein Lagerfeuer.",
+            :de_DE => "Baue ein Lagerfeuer.",
                 
           },
           :flavour => {
@@ -1911,11 +1920,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_wood,
                 :amount => 75,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 120,
               },
 
               {
@@ -2054,7 +2058,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -2104,11 +2108,6 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_fur,
                 :amount => 125,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
               },
 
             ],
@@ -2303,6 +2302,11 @@ class Tutorial::Tutorial
                 :amount => 274,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :experience_reward => 125,
@@ -2398,6 +2402,11 @@ class Tutorial::Tutorial
               {
                 :resource => :resource_wood,
                 :amount => 137,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
               },
 
             ],
@@ -2654,7 +2663,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Halbgott? Ich brauche einen Raum, in dem ich Gäste empfangen kann. Verstanden?",
   
-            :en_US => "Demigod? I need a room to invite my guets to. Get it?",
+            :en_US => "Demigod? I need a room to invite my guests to. Got it?",
                 
           },
           :description => {
@@ -2693,27 +2702,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 2000,
+                :amount => 2250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2000,
+                :amount => 2250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2250,
               },
 
             ],
 
-            :experience_reward => 400,
+            :experience_reward => 450,
 
           },          
 
@@ -2796,30 +2800,11 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 250,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 250,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 600,
-              },
-
-            ],
-
             :unit_rewards => [
 
               {
                 :unit => :unit_clubbers,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -2859,7 +2844,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => " Upgrade a training grounds to level 5.",
+            :en_US => "Upgrade a training grounds to level 5.",
   
             :de_DE => "Baue ein Ausbildungsgelände auf Level 5.",
                 
@@ -3234,7 +3219,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 250,
+            :experience_reward => 650,
 
           },          
 
@@ -3399,7 +3384,8 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p> <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+            :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
+        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
             :en_US => "<p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
         <p>At Level 12 you will recieve another command point for another army.</p>",
@@ -3435,7 +3421,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 500,
+            :experience_reward => 800,
 
           },          
 
@@ -3522,27 +3508,22 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 3000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 3000,
+                :amount => 3750,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 3,
+                :amount => 3750,
               },
 
             ],
 
-            :experience_reward => 750,
+            :experience_reward => 900,
 
           },          
 
@@ -3637,18 +3618,13 @@ class Tutorial::Tutorial
                 :amount => 4000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :unit_rewards => [
 
               {
                 :unit => :unit_thrower,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -3748,18 +3724,13 @@ class Tutorial::Tutorial
                 :amount => 2000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :unit_rewards => [
 
               {
                 :unit => :unit_light_cavalry,
-                :amount => 20,
+                :amount => 30,
               },
 
             ],
@@ -3812,7 +3783,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -3905,7 +3876,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -3998,7 +3969,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4050,11 +4021,6 @@ class Tutorial::Tutorial
                 :amount => 1000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 320,
@@ -4096,7 +4062,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4148,11 +4114,6 @@ class Tutorial::Tutorial
                 :amount => 1500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 500,
@@ -4194,7 +4155,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4287,7 +4248,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4380,7 +4341,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4473,7 +4434,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4566,7 +4527,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4659,7 +4620,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4752,7 +4713,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4845,7 +4806,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -4938,7 +4899,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5031,7 +4992,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5083,11 +5044,6 @@ class Tutorial::Tutorial
                 :amount => 7000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -5129,7 +5085,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5181,11 +5137,6 @@ class Tutorial::Tutorial
                 :amount => 7500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 5120,
@@ -5227,7 +5178,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5279,11 +5230,6 @@ class Tutorial::Tutorial
                 :amount => 8000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -5325,7 +5271,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5377,11 +5323,6 @@ class Tutorial::Tutorial
                 :amount => 8500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 6480,
@@ -5423,7 +5364,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5475,11 +5416,6 @@ class Tutorial::Tutorial
                 :amount => 9000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -5521,7 +5457,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5614,7 +5550,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5666,11 +5602,6 @@ class Tutorial::Tutorial
                 :amount => 10000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -5712,7 +5643,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
   
-            :en_US => " Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Your enemies are strong, that has to change! Destroy their units. That will weaken them.",
                 
           },
           :description => {
@@ -5764,11 +5695,6 @@ class Tutorial::Tutorial
                 :amount => 15000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 10,
-              },
-
             ],
 
             :experience_reward => 15000,
@@ -5810,7 +5736,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -5903,7 +5829,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -5996,7 +5922,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6089,7 +6015,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6141,11 +6067,6 @@ class Tutorial::Tutorial
                 :amount => 1500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 320,
@@ -6187,7 +6108,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6280,7 +6201,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6373,7 +6294,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6466,7 +6387,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6559,7 +6480,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6652,7 +6573,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6704,11 +6625,6 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 2000,
@@ -6750,7 +6666,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6843,7 +6759,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -6936,7 +6852,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7029,7 +6945,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7122,7 +7038,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7174,11 +7090,6 @@ class Tutorial::Tutorial
                 :amount => 7500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -7220,7 +7131,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7313,7 +7224,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7365,11 +7276,6 @@ class Tutorial::Tutorial
                 :amount => 8500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -7411,7 +7317,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7504,7 +7410,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7556,11 +7462,6 @@ class Tutorial::Tutorial
                 :amount => 9500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -7602,7 +7503,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7695,7 +7596,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7747,11 +7648,6 @@ class Tutorial::Tutorial
                 :amount => 12000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -7793,7 +7689,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Armeen haben nicht genug Kampferfahrung. Zeig ihnen, wie eine Schlacht aussieht. Das wird sie stärker machen.",
   
-            :en_US => " Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
+            :en_US => "Your armies are lacking battle experience. Show them what a fight looks like. That will strengthen them.",
                 
           },
           :description => {
@@ -7845,11 +7741,6 @@ class Tutorial::Tutorial
                 :amount => 15000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 10,
-              },
-
             ],
 
             :experience_reward => 15000,
@@ -7877,7 +7768,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -7891,7 +7782,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -7970,7 +7861,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -7984,7 +7875,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8063,7 +7954,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8077,7 +7968,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8156,7 +8047,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8170,7 +8061,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8249,7 +8140,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8263,7 +8154,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8342,7 +8233,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8356,7 +8247,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8408,11 +8299,6 @@ class Tutorial::Tutorial
                 :amount => 2000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 500,
@@ -8440,7 +8326,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8454,7 +8340,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8533,7 +8419,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8547,7 +8433,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8626,7 +8512,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8640,7 +8526,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8719,7 +8605,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8733,7 +8619,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8812,7 +8698,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8826,7 +8712,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -8878,11 +8764,6 @@ class Tutorial::Tutorial
                 :amount => 5000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 2000,
@@ -8910,7 +8791,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -8924,7 +8805,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9003,7 +8884,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9017,7 +8898,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9096,7 +8977,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9110,7 +8991,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9189,7 +9070,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9203,7 +9084,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9282,7 +9163,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9296,7 +9177,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9348,11 +9229,6 @@ class Tutorial::Tutorial
                 :amount => 7500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -9380,7 +9256,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9394,7 +9270,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9473,7 +9349,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9487,7 +9363,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9539,11 +9415,6 @@ class Tutorial::Tutorial
                 :amount => 8500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -9571,7 +9442,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9585,7 +9456,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9664,7 +9535,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9678,7 +9549,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9730,11 +9601,6 @@ class Tutorial::Tutorial
                 :amount => 9500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -9762,7 +9628,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9776,7 +9642,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9855,7 +9721,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9869,7 +9735,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -9921,11 +9787,6 @@ class Tutorial::Tutorial
                 :amount => 12000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -9953,7 +9814,7 @@ class Tutorial::Tutorial
             
             :en_US => "Population",
   
-            :de_DE => " Einwohner ",
+            :de_DE => "Einwohner",
                 
           },
           :task => {
@@ -9967,7 +9828,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Dein Stamm ist vielleicht gewachsen, aber er ist immer noch nicht groß genug. Guck Dir mal die ganzen anderen Stämme an, die sind viel größer. Vergrößere Deinen Stamm!",
   
-            :en_US => " Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
+            :en_US => "Your tribe might have grown but it is not big enough. Just take a look at the other tribes. They are way bigger! Change this by acquiring a bigger population",
                 
           },
           :description => {
@@ -10019,11 +9880,6 @@ class Tutorial::Tutorial
                 :amount => 15000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 10,
-              },
-
             ],
 
             :experience_reward => 15000,
@@ -10065,7 +9921,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10158,7 +10014,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10251,7 +10107,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10344,7 +10200,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10437,7 +10293,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10489,11 +10345,6 @@ class Tutorial::Tutorial
                 :amount => 1500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 320,
@@ -10535,7 +10386,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10628,7 +10479,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10721,7 +10572,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10814,7 +10665,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -10907,7 +10758,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11000,7 +10851,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11052,11 +10903,6 @@ class Tutorial::Tutorial
                 :amount => 4500,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
             ],
 
             :experience_reward => 2000,
@@ -11098,7 +10944,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11191,7 +11037,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11284,7 +11130,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11377,7 +11223,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11470,7 +11316,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11522,11 +11368,6 @@ class Tutorial::Tutorial
                 :amount => 7000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
             ],
 
             :experience_reward => 4500,
@@ -11568,7 +11409,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11661,7 +11502,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11713,11 +11554,6 @@ class Tutorial::Tutorial
                 :amount => 8000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
             ],
 
             :experience_reward => 5780,
@@ -11759,7 +11595,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11808,7 +11644,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 7000,
+                :amount => 8500,
               },
 
             ],
@@ -11852,7 +11688,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -11904,11 +11740,6 @@ class Tutorial::Tutorial
                 :amount => 9000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
             ],
 
             :experience_reward => 7220,
@@ -11950,7 +11781,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -12043,7 +11874,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -12095,11 +11926,6 @@ class Tutorial::Tutorial
                 :amount => 10000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
             ],
 
             :experience_reward => 10000,
@@ -12141,7 +11967,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
   
-            :en_US => " Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
+            :en_US => "Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?",
                 
           },
           :description => {
@@ -12193,11 +12019,6 @@ class Tutorial::Tutorial
                 :amount => 12000,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 10,
-              },
-
             ],
 
             :experience_reward => 15000,
@@ -12230,7 +12051,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => " Upgrade a training grounds to level 10.",
+            :en_US => "Upgrade a training grounds to level 10.",
   
             :de_DE => "Baue ein Ausbildungsgelände auf Level 10.",
                 
