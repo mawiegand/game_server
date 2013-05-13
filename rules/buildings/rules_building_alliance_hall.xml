@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_alliance_hall" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">  
+  <Name lang="de_DE">Große Stammeshalle</Name>
+  <Name lang="en_US">Tribe's Large Hall</Name>
+  <Description lang="de_DE">
+    <p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen.</p>
+    <p>Oder zum Bowling, wenn die Halle denn lang genug ist.</p>
+    <p>Besonderes große Hallen erlauben es, weitere Spieler in die Allianz aufzunehmen.</p>
+   </Description>
+  <Description lang="en_US">
+    <p>In the Large Hall, leaders of allied tribes gather in sociable groups and discuss important arrangements.</p>
+    <p>Or bowl, if it's long enough.</p>
+    <p>Very large halls allow to accept more alliance members.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>
+  </Flavour> 
+<Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))</Population>
+  <RequirementGroup>
+    <Requirement id="building_chief_cottage"  min_level="11" />
+    <Requirement id="building_copper_smelter" min_level="1" />
+    <Requirement id="building_campfire"       max_level="0" />
+  </RequirementGroup>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*10+10000</Cost>  
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000</Cost>
+    <Cost id="resource_fur" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000</Cost>
+  <ProductionTime shortenable="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))*10+7200</ProductionTime>            
+  <Abilities> <!-- just for grouping -->
+    <AllianceExtension>MAX(LEVEL,0)</AllianceExtension>
+  </Abilities>
+</Building>
+
