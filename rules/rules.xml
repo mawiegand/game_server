@@ -82,7 +82,7 @@
       <Domain id="alliance" />
     </Domains>
     <Battle>
-      <Calculation roundTime="30" retreatProbability="0.5" />
+      <Calculation roundTime="20" retreatProbability="0.5" />
     </Battle>
     <CharacterCreation>
       <StartResource id="resource_wood">200</StartResource>

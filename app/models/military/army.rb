@@ -258,6 +258,22 @@ class Military::Army < ActiveRecord::Base
     (self.rank || 0) * 0.02     
   end 
   
+  def self.base_move_duration
+    (GAME_SERVER_CONFIG['movement_duration'] * GAME_SERVER_CONFIG['base_time_factor']).to_f
+  
+  # returns the time needed for a move to the presently set target_region
+  def move_duration_to_target
+    relation = relation_to(self.target_region)
+    
+    relation_factor = if relation == Fundamental::Relation::RELATION_TYPE_SELF || relation == Fundamental::Relation::RELATION_TYPE_SAME_ALLIANCE
+      0.15
+    else 
+      0.0
+    end
+    
+    Military::Army.base_move_duration / ((self.velocity || 1.0) + relation_factor)
+  end
+  
   def relation_to(other_army)
     if other_army.nil?
       return Fundamental::Relation::RELATION_TYPE_UNKNOWN
@@ -318,6 +334,7 @@ class Military::Army < ActiveRecord::Base
     
     started_battles
   end
+
   
   # checks if the current army is in the same existing alliance as other_army
   def same_alliance_as?(other_army)

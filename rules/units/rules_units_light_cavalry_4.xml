@@ -20,7 +20,7 @@
       <Cost id="resource_wood" round="true">135</Cost>
       <Cost id="resource_fur" round="true">505</Cost>
       <ProductionTime shortenable="true">3000</ProductionTime>
-      <Velocity>1</Velocity>
+      <Velocity>1.5</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>
       <Attack>10</Attack>
