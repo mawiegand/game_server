@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="27" />
+    <Version major="0" minor="0" build="28" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -101,9 +101,9 @@
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod? And what's that supposed to be? My chieftain's hut? You think I'm going to live in that? Ha! Change it immediately!</Flavor>
-      <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst. Im Postkasten oben rechts hast Du eine Nachricht mit vielen Informationen erhalten.</RewardText>
-      <RewardText locale="en_US">At the moment you should build your building at the small building slots. You got a mail in your mailbox with further information about the game.</RewardText>
-      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Lies lieber die Nachricht, die ich Dir hinterlassen habe.</RewardFlavor>
+      <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.</RewardText>
+      <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
+      <RewardFlavor locale="de_DE">Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung?</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
       </RewardFlavor>
       <Requirement quest="quest_build_1gathererlvl2" />
