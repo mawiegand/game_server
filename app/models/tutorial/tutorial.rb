@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.27
+# Version: 0.0.28
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 27, 
+        :build => 28, 
       },
       
       :production_test_weights => {
@@ -334,7 +334,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung? Lies lieber die Nachricht, die ich Dir hinterlassen habe.",
+            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung?",
   
             :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
       ",
@@ -342,9 +342,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst. Im Postkasten oben rechts hast Du eine Nachricht mit vielen Informationen erhalten.",
+            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
   
-            :en_US => "At the moment you should build your building at the small building slots. You got a mail in your mailbox with further information about the game.",
+            :en_US => "At the moment you should build your building at the small building slots.",
                 
           },
 

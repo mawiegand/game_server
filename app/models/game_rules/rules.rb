@@ -2093,6 +2093,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
           :can_create => [
@@ -3043,6 +3056,11 @@ class GameRules::Rules
 
             :alliance_size_bonus => "MAX(LEVEL-5,0)",
 
+          },
+
+          :conversion_option => {
+            :building              => :building_alliance_hall,
+            :target_level_formula  => "1", 
           },
 
         },              #   END OF Lagerfeuer
@@ -5364,7 +5382,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
+	        :population  => "LESS(LEVEL,11)*150+LEVEL*50",
   
           :buyable     => true,
           :demolishable=> false,
@@ -5396,6 +5414,15 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             },
 
             {
+              :symbolic_id => 'building_campfire',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
               :symbolic_id => 'building_alliance_hall',
               :id => 29,
               :type => 'building',
@@ -5411,13 +5438,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*10+10000',
-            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000',
-            2 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)*10+10000',
+            0 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
+            1 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
+            2 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))*10+7200',
+          :production_time => 'LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
+      ',
           :production  => [
             
           ],
@@ -5426,6 +5454,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 6,
+                :queue_type_id_sym => :queue_special,
+                :level             => 1,
+              },
+
+            ],
+
+            :unlock_diplomacy     => 1,
+
+            :unlock_alliance_creation => 1,
 
             :alliance_size_bonus => "MAX(LEVEL,0)",
 
