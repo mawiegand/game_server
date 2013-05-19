@@ -3054,8 +3054,6 @@ class GameRules::Rules
 
             :unlock_alliance_creation => 2,
 
-            :alliance_size_bonus => "MAX(LEVEL-5,0)",
-
           },
 
           :conversion_option => {

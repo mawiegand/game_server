@@ -801,6 +801,9 @@ class Fundamental::Character < ActiveRecord::Base
     dislikes_count = recalc_dislikes_count
     check_and_apply_dislikes_count(dislikes_count)
     
+    correct_alliance_size_bonus = recalc_alliance_size_bonus
+    check_and_apply_alliance_size_bonus(correct_alliance_size_bonus)
+    
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
       self.save
@@ -993,6 +996,28 @@ class Fundamental::Character < ActiveRecord::Base
       logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_dislikes_count} Corrected: #{dislikes_count}.")
       self.received_dislikes_count = dislikes_count
     end    
+  end
+  
+  
+  # ##########################################################################
+  #
+  #   Alliance Size Bonus
+  #
+  # ##########################################################################
+
+  def recalc_alliance_size_bonus
+    bonus = 0
+    self.settlements.each do |settlement|
+      bonus += (settlement.alliance_size_bonus || 0)
+    end
+    return bonus
+  end
+  
+  def check_and_apply_alliance_size_bonus(bonus)
+    if (self.alliance_size_bonus || 0) != bonus
+      logger.warn(">>> CONSISTENCY ERROR: ALLIANCE SIZE BONUS RECALC DIFFERS for character #{self.id}. Old: #{self.alliance_size_bonus} Corrected: #{bonus}.")
+      self.alliance_size_bonus = bonus
+    end
   end
 
   # ##########################################################################

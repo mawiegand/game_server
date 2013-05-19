@@ -29,7 +29,6 @@
   <Abilities> <!-- just for grouping -->
     <UnlockQueue queue="queue_special" />
     <UnlockDiplomacy level="1" foundAllianceLevel="2" />
-    <AllianceExtension>MAX(LEVEL-5,0)</AllianceExtension>
   </Abilities>
   <ConversionOption building="building_alliance_hall" level="1" />
 </Building>
