@@ -30,6 +30,5 @@
     <UnlockQueue queue="queue_special" />
     <UnlockDiplomacy level="1" foundAllianceLevel="2" />
   </Abilities>
-  <ConversionOption building="building_alliance_hall" level="1" />
 </Building>
 

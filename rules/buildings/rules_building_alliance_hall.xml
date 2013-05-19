@@ -33,8 +33,6 @@
   <ProductionTime shortenable="true">LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
       </ProductionTime>
   <Abilities> <!-- just for grouping -->
-      <UnlockQueue queue="queue_special" />
-      <UnlockDiplomacy level="1" foundAllianceLevel="1" />
       <AllianceExtension>MAX(LEVEL,0)</AllianceExtension>
   </Abilities>
 </Building>
