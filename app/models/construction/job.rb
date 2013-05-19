@@ -159,7 +159,7 @@ class Construction::Job < ActiveRecord::Base
     # requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
     
     # don't test self.slot for requirements of converted building
-    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
+    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement) # do not exclude the slot itself on conversions, because the requirement may be met by the slot itself
     
     # level anhand formel testen
     formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])
