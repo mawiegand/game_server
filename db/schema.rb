@@ -2080,6 +2080,7 @@ ActiveRecord::Schema.define(:version => 20130515112415) do
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
     t.datetime "attack_protection_ends_at"
+    t.decimal  "ap_rate",                         :default => 1.0,   :null => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"

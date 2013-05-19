@@ -55,9 +55,12 @@ class Action::Military::MoveArmyActionsController < ApplicationController
       army.consume_ap(1)  # consume one action point
       army.target_location_id = @action_military_move_army_action.target_location_id
       army.target_region_id = @action_military_move_army_action.target_region_id
+      
+      move_duration = army.move_duration_to_target
+      
       army.mode = Military::Army::MODE_MOVING # 1: moving?
       army.stance = Military::Army::STANCE_DEFENDING_NONE
-      army.target_reached_at = DateTime.now.advance(:seconds => GAME_SERVER_CONFIG['movement_duration'] * GAME_SERVER_CONFIG['base_time_factor']) # for first tests, should be 15 minutes in future
+      army.target_reached_at = DateTime.now.advance(:seconds => move_duration)
       army.attack_protection_ends_at = nil
 
       unless army.save # save army first; better have no movement action than a movement action without the army being properly set (could result in second movement action)

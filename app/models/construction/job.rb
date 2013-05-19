@@ -101,7 +101,9 @@ class Construction::Job < ActiveRecord::Base
             converted_costs[resource_id] += f.apply(level)
             # logger.debug "---> conv.cost #{resource_id.to_s} " + converted_costs[resource_id].inspect
           end
-          costs[resource_id] = [converted_costs[resource_id] - costs[resource_id], converted_costs[resource_id] * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor])].max
+          costs[resource_id] = [(converted_costs[resource_id] || 0.0) - (costs[resource_id] || 0.0), 
+                                (converted_costs[resource_id] || 0.0) * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor]), 
+                                0.0].max
           # logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
         end
       end
@@ -159,7 +161,7 @@ class Construction::Job < ActiveRecord::Base
     # requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
     
     # don't test self.slot for requirements of converted building
-    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
+    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement) # do not exclude the slot itself on conversions, because the requirement may be met by the slot itself
     
     # level anhand formel testen
     formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])

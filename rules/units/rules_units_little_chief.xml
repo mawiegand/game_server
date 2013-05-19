@@ -21,7 +21,7 @@
   <Cost id="resource_wood" round="true">5000</Cost>    
   <Cost id="resource_fur" round="true">4000</Cost>    
   <ProductionTime shortenable="true">43200</ProductionTime>
-  <Velocity>1</Velocity>
+  <Velocity>0.85</Velocity>
   <ActionPoints>4</ActionPoints>
   <Initiative>10</Initiative>
   <Attack>1</Attack>
@@ -36,6 +36,9 @@
   <Effectiveness category="unitcategory_special">1</Effectiveness>
   <RequirementGroup>
     <Requirement id="building_campfire" min_level="10" />  
+  </RequirementGroup>
+  <RequirementGroup>
+      <Requirement id="building_alliance_hall" min_level="1" />
   </RequirementGroup>
   <!-- add ability to found settlement here not in category -->    
   <CanCreate id="settlement_outpost" />
