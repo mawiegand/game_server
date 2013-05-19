@@ -101,7 +101,9 @@ class Construction::Job < ActiveRecord::Base
             converted_costs[resource_id] += f.apply(level)
             # logger.debug "---> conv.cost #{resource_id.to_s} " + converted_costs[resource_id].inspect
           end
-          costs[resource_id] = ([converted_costs[resource_id] || 0.0) - (costs[resource_id] || 0.0), (converted_costs[resource_id] || 0.0) * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor]), 0.0].max
+          costs[resource_id] = [(converted_costs[resource_id] || 0.0) - (costs[resource_id] || 0.0), 
+                                (converted_costs[resource_id] || 0.0) * (1 - GameRules::Rules.the_rules.building_conversion[:cost_factor]), 
+                                0.0].max
           # logger.debug "---> cost #{resource_id.to_s} " + costs[resource_id].inspect
         end
       end
