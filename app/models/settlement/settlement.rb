@@ -1291,10 +1291,13 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_changes_to_character
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
-      if (!self.owner_id.nil? && self.owner_id > 0 && 
-          (propagate_change_of_attribute_to_character('exp_production_rate') ||
-           propagate_change_of_attribute_to_character('alliance_size_bonus')))
-        self.owner.save                                        # only save character, if there hase been a change!
+      if (!self.owner_id.nil? && self.owner_id > 0)
+        
+        changed = false
+        changed = propagate_change_of_attribute_to_character('exp_production_rate') || changed
+        changed = propagate_change_of_attribute_to_character('alliance_size_bonus') || changed
+        
+        self.owner.save   if changed                          # only save character, if there hase been a change!
       end
       
       true
