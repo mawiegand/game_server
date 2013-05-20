@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_fortress_garrison" group="military" category="building_category_fortress_special" buyable="true" destructable="false" demolishable="false" tier="2" hidden="1">  
+<Building id="building_fortress_garrison" group="military" category="building_category_fortress_special" buyable="true" destructable="false" demolishable="false" tier="2" >  
   <Name lang="de_DE">Festungsgarnison</Name>
   <Name lang="en_US">Fortressgarrison</Name>
   <Description lang="de_DE">
