@@ -203,6 +203,18 @@ class Settlement::Slot < ActiveRecord::Base
 
     Util::Formula.parse_from_formula(building_type[:abilities][:garrison_size_bonus]).apply(self.level)
   end
+  
+  # returns the garrison size bonus the building on this slot provides
+  def alliance_size_bonus
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
+
+    return 0   if building_type[:abilities][:alliance_size_bonus].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:alliance_size_bonus]).apply(self.level)
+  end
 
   def min_level
     return 0 if building_id.nil?
@@ -601,6 +613,9 @@ class Settlement::Slot < ActiveRecord::Base
       end
       if !building_type[:abilities][:unlock_artifact_initiation].blank?
         propagate_evaluatable_settlement_ability(:artifact_initiation_level, building_type[:abilities][:unlock_artifact_initiation], old_level, new_level)
+      end
+      if !building_type[:abilities][:alliance_size_bonus].blank?
+        propagate_evaluatable_settlement_ability(:alliance_size_bonus, building_type[:abilities][:alliance_size_bonus], old_level, new_level)
       end
     end
   end

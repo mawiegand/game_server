@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.0
+# Version: 0.5.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -113,12 +113,12 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 2,
+                    :minor => 5,
                     :build => 0,
       },
       :battle => {
         :calculation => {
-          :round_time => 30,
+          :round_time => 20,
           :retreat_probability => 0.5,
           },
       },
@@ -1548,7 +1548,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.2,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1643,7 +1643,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.3,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1747,7 +1747,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.4,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -1860,7 +1860,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 1.5,
           :action_points => 4,
           :initiative  => 26,
           :effectiveness => {
@@ -2044,7 +2044,7 @@ class GameRules::Rules
 
           :trainable   => true,
 
-          :velocity    => 1,
+          :velocity    => 0.85,
           :action_points => 4,
           :initiative  => 10,
           :effectiveness => {
@@ -2088,6 +2088,19 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 1,
 
             },
 
@@ -5298,7 +5311,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 
           },
 
-          :hidden      => 1,
+          :hidden      => 0,
 
 	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
@@ -5333,6 +5346,113 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Festungsgarnison
+        {               #   Große Stammeshalle
+          :id          => 29, 
+          :symbolic_id => :building_alliance_hall,
+					:category    => 6,
+          :db_field    => :building_alliance_hall,
+          :name        => {
+            
+            :de_DE => "Große Stammeshalle",
+  
+            :en_US => "Tribe's Large Hall",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+  
+            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen.</p><p>Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Besonderes große Hallen erlauben es, weitere Spieler in die Allianz aufzunehmen.</p>",
+  
+            :en_US => "<p>In the Large Hall, leaders of allied tribes gather in sociable groups and discuss important arrangements.</p><p>Or bowl, if it's long enough.</p><p>Very large halls allow to accept more alliance members.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*200",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            1 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            2 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
+      ',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :alliance_size_bonus => "MAX(LEVEL,0)",
+
+          },
+
+        },              #   END OF Große Stammeshalle
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################

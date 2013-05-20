@@ -63,15 +63,16 @@
               Sascha Lange <sascha@5dlab.com>,
               Patrick Fox <patrick@5dlab.com>,
               Hajo Runne <hajo@5dlab.com>,
-              Max Buck <max@5dlab.com>
+              Max Buck <max@5dlab.com>,
+              Jan Kegel <jan@5dlab.com>
      
-     All rights reserved, (c) 5D Lab GmbH, 2012. 
+     All rights reserved, (c) 5D Lab GmbH, 2012,2013. 
      
 -->
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="0" />
+    <Version major="0" minor="5" build="0" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
@@ -82,7 +83,7 @@
       <Domain id="alliance" />
     </Domains>
     <Battle>
-      <Calculation roundTime="30" retreatProbability="0.5" />
+      <Calculation roundTime="20" retreatProbability="0.5" />
     </Battle>
     <CharacterCreation>
       <StartResource id="resource_wood">200</StartResource>

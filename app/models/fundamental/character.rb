@@ -48,8 +48,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
-  attr_readable *readable_attributes(:default),                                                                                :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :as => :owner
+  attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -73,6 +73,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_dislike_changes
   after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
+  after_save  :propagate_alliance_bonus_to_alliance
   
   after_commit :check_consistency_sometimes
   
@@ -654,6 +655,12 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  def propagate_alliance_bonus_to_alliance
+    if self.alliance_size_bonus_changed? && !self.alliance.nil?
+      self.alliance.recalculate_size_bonus
+    end
+  end
 
   # Function for propagating change of character name to redundant fields.
   # This uses update_all direct queries because the Rails way of looping
@@ -793,6 +800,9 @@ class Fundamental::Character < ActiveRecord::Base
     
     dislikes_count = recalc_dislikes_count
     check_and_apply_dislikes_count(dislikes_count)
+    
+    correct_alliance_size_bonus = recalc_alliance_size_bonus
+    check_and_apply_alliance_size_bonus(correct_alliance_size_bonus)
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -986,6 +996,28 @@ class Fundamental::Character < ActiveRecord::Base
       logger.warn(">>> CONSISTENCY ERROR: DISLIKES COUNT RECALC DIFFERS for character #{self.id}. Old: #{self.received_dislikes_count} Corrected: #{dislikes_count}.")
       self.received_dislikes_count = dislikes_count
     end    
+  end
+  
+  
+  # ##########################################################################
+  #
+  #   Alliance Size Bonus
+  #
+  # ##########################################################################
+
+  def recalc_alliance_size_bonus
+    bonus = 0
+    self.settlements.each do |settlement|
+      bonus += (settlement.alliance_size_bonus || 0)
+    end
+    return bonus
+  end
+  
+  def check_and_apply_alliance_size_bonus(bonus)
+    if (self.alliance_size_bonus || 0) != bonus
+      logger.warn(">>> CONSISTENCY ERROR: ALLIANCE SIZE BONUS RECALC DIFFERS for character #{self.id}. Old: #{self.alliance_size_bonus} Corrected: #{bonus}.")
+      self.alliance_size_bonus = bonus
+    end
   end
 
   # ##########################################################################

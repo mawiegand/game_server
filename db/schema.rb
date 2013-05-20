@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422173047) do
+ActiveRecord::Schema.define(:version => 20130516164041) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1677,6 +1677,7 @@ ActiveRecord::Schema.define(:version => 20130422173047) do
     t.decimal  "resource_wood_production_bonus_effects",        :default => 0.0
     t.decimal  "resource_fur_production_bonus_effects",         :default => 0.0
     t.decimal  "resource_cash_production_bonus_effects",        :default => 0.0
+    t.integer  "size_bonus",                                    :default => 0
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1783,6 +1784,8 @@ ActiveRecord::Schema.define(:version => 20130422173047) do
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
+    t.integer  "alliance_size_bonus",                      :default => 0
+    t.string   "lang",                                     :default => "en",  :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -2077,6 +2080,7 @@ ActiveRecord::Schema.define(:version => 20130422173047) do
     t.decimal  "unitcategory_special_strength",   :default => 0.0,   :null => false
     t.datetime "suspension_ends_at"
     t.datetime "attack_protection_ends_at"
+    t.decimal  "ap_rate",                         :default => 1.0,   :null => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2460,6 +2464,7 @@ ActiveRecord::Schema.define(:version => 20130422173047) do
     t.datetime "last_takeover_at"
     t.integer  "artifact_initiation_level",                      :default => 0,            :null => false
     t.integer  "name_change_count",                              :default => 0
+    t.integer  "alliance_size_bonus",                            :default => 0
   end
 
   create_table "settlement_slots", :force => true do |t|
