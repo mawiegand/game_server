@@ -47,6 +47,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     returned_ranking_entries = @ranking_character_rankings.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
+      ranking_entry_hash[:mundane_rank]  = ranking_entry.character.mundane_rank
       ranking_entry_hash[:artifact_id]   = ranking_entry.character.artifact.id unless ranking_entry.character.artifact.nil?
       ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name][:de_DE] unless ranking_entry.character.artifact.nil?
       nr += 1
