@@ -4,11 +4,11 @@ class Ranking::CharacterRankingsController < ApplicationController
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
-    if current_character
-      @marked_character = current_character
-    elsif !params[:mark].blank?
+    if !params[:mark].blank?
       char = Fundamental::Character.find_by_id(params[:mark])
-      @marked_character = char   unless char.nil?
+      @marked_character = char unless char.nil?
+    elsif current_character
+      @marked_character = current_character
     end
     
     per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
