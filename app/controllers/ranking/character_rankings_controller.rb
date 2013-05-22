@@ -28,7 +28,7 @@ class Ranking::CharacterRankingsController < ApplicationController
         @marked_character.ranking[sort.to_sym],
         @marked_character.id,
       ).count
-      page = num_before - 1 / per_page + 1
+      page = num_before / per_page + 1
     elsif !params[:page].blank?
       page = params[:page].to_i
     else
