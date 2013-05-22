@@ -4,11 +4,11 @@ class Ranking::AllianceRankingsController < ApplicationController
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
-    if current_character
-      @marked_alliance = current_character.alliance
-    elsif !params[:mark].blank?
+    if !params[:mark].blank?
       alliance = Fundamental::Alliance.find_by_id(params[:mark])
-      @marked_alliance = alliance   unless alliance.nil?
+      @marked_alliance = alliance unless alliance.nil?
+    elsif current_character
+      @marked_alliance = current_character.alliance
     end
     
     per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
