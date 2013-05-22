@@ -52,7 +52,7 @@ class Fundamental::CharactersController < ApplicationController
   
 
   def self
-    external_referer = request.env["HTTP_X_ALT_REFERER"]
+    external_referer = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
     request_url = request.env["HTTP_X_ALT_REQUEST"]
     
     if !current_character && request_access_token &&  request_access_token.valid? &&
