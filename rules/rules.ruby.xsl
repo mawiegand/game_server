@@ -79,7 +79,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
+  attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
@@ -89,6 +89,7 @@ class GameRules::Rules
     { 
       'version'                     => version,
       'battle'                      => battle,
+      'app_control'                 => app_control,
       'domains'                     => domains,
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
@@ -162,6 +163,8 @@ class GameRules::Rules
       :version => { :major => <xsl:value-of select="//General/Version/@major" />,
                     :minor => <xsl:value-of select="//General/Version/@minor" />,
                     :build => <xsl:value-of select="//General/Version/@build" />,
+      },
+      :app_control => { :debug_tracking => <xsl:value-of select="//General/AppControl/@debugTracking" />,
       },
       :battle => {
         :calculation => {
