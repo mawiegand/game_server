@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.6.2
+# Version: 0.6.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -115,7 +115,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 6,
-                    :build => 2,
+                    :build => 3,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -7384,6 +7384,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :de_DE => "Tyrannosaurustyrann",
   
             :en_US => "Tyrannosaurstyrant",
+  
+            },
+          },             #   END OF 
+          {              #  44
+            :id          => 44,
+            :exp         => 99999999,
+            :settlement_points   => 5,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Tyrannosaurusmeistertyrann",
+  
+            :en_US => "Tyrannosaursmastertyrant",
   
             },
           },             #   END OF 
