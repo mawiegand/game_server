@@ -4,11 +4,11 @@ class Ranking::CharacterRankingsController < ApplicationController
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
-    if current_character
-      @marked_character = current_character
-    elsif !params[:mark].blank?
+    if !params[:mark].blank?
       char = Fundamental::Character.find_by_id(params[:mark])
-      @marked_character = char   unless char.nil?
+      @marked_character = char unless char.nil?
+    elsif current_character
+      @marked_character = current_character
     end
     
     per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
@@ -35,16 +35,19 @@ class Ranking::CharacterRankingsController < ApplicationController
       page = 1
     end
 
-    @ranking_character_rankings = if !params[:page].blank? || !params[:per_page].blank?
-      Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
-    else
-      Ranking::CharacterRanking.paginate(:page => 1, :per_page => Ranking::CharacterRanking.count, :order => "overall_score DESC, id ASC")
-    end
-    
+    @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+
+    #@ranking_character_rankings = if !params[:page].blank? || !params[:per_page].blank?
+    #                                Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
+    #                              else
+    #                                Ranking::CharacterRanking.paginate(:page => 1, :per_page => Ranking::CharacterRanking.count, :order => "overall_score DESC, id ASC")
+    #                              end
+
     nr = (page - 1) * per_page + 1
     returned_ranking_entries = @ranking_character_rankings.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
       ranking_entry_hash[:rank] = nr
+      ranking_entry_hash[:mundane_rank]  = ranking_entry.character.mundane_rank
       ranking_entry_hash[:artifact_id]   = ranking_entry.character.artifact.id unless ranking_entry.character.artifact.nil?
       ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name][:de_DE] unless ranking_entry.character.artifact.nil?
       nr += 1

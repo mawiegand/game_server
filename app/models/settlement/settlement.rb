@@ -67,7 +67,6 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
-  after_save  :propagate_information_to_owner
 
 
   def self.find_fortress_by_name_case_insensitive(name)
@@ -512,6 +511,9 @@ class Settlement::Settlement < ActiveRecord::Base
     n_garrison_size_max = recalc_garrison_size_max
     check_and_apply_garrison_size_max(n_garrison_size_max)
 
+    n_alliance_size_bonus = recalc_alliance_size_bonus
+    check_and_apply_alliance_size_bonus(n_alliance_size_bonus)
+
     n_army_size_max = recalc_army_size_max
     check_and_apply_army_size_max(n_army_size_max)
 
@@ -819,6 +821,22 @@ class Settlement::Settlement < ActiveRecord::Base
         self.garrison_size_max = gs
       end
     end
+
+    def recalc_alliance_size_bonus
+      alliance_bonus = 0
+      self.slots.each do |slot|
+        alliance_bonus += slot.alliance_size_bonus
+      end
+      alliance_bonus    
+    end
+
+    def check_and_apply_alliance_size_bonus(asb)
+      if (self.alliance_size_bonus != asb) 
+        logger.warn(">>> ALLIANCE SIZE BONUS RECALC DIFFERS. Old: #{self.alliance_size_bonus} Corrected: #{asb}.")
+        self.alliance_size_bonus = asb
+      end
+    end
+
   
     ############################################################################
     #
@@ -1273,8 +1291,13 @@ class Settlement::Settlement < ActiveRecord::Base
     
     def propagate_changes_to_character
       return true    if self.owner_id_changed?                 # will be handled by a different after-save handler
-      if (!self.owner_id.nil? && self.owner_id > 0 && propagate_change_of_attribute_to_character('exp_production_rate'))
-        self.owner.save                                        # only save character, if there hase been a change!
+      if (!self.owner_id.nil? && self.owner_id > 0)
+        
+        changed = false
+        changed = propagate_change_of_attribute_to_character('exp_production_rate') || changed
+        changed = propagate_change_of_attribute_to_character('alliance_size_bonus') || changed
+        
+        self.owner.save   if changed                          # only save character, if there hase been a change!
       end
       
       true
@@ -1332,13 +1355,7 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
     
-    def propagate_information_to_owner
-      if self.alliance_size_bonus_changed? && !self.owner.nil?
-        self.propagate_change_of_attribute_to_character('alliance_size_bonus')
-        self.owner.save
-      end
-    end
-    
+        
     ##########################################################################
     #
     #  SPREADING A CHANGE OF OWNERSHIP TO RELATED MODELS  (AFTER_SAVE)
@@ -1474,6 +1491,7 @@ class Settlement::Settlement < ActiveRecord::Base
         new_owner = owner_change[1].nil? ? nil : Fundamental::Character.find_by_id(owner_change[1])
 
         propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'alliance_size_bonus')
 
         old_owner.save   unless old_owner.nil?
         new_owner.save   unless new_owner.nil?

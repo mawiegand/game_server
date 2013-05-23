@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.2
+# Version: 0.4.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -113,8 +113,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 2,
-                    :build => 2,
+                    :minor => 4,
+                    :build => 0,
       },
       :battle => {
         :calculation => {
@@ -3054,13 +3054,6 @@ class GameRules::Rules
 
             :unlock_alliance_creation => 2,
 
-            :alliance_size_bonus => "MAX(LEVEL-5,0)",
-
-          },
-
-          :conversion_option => {
-            :building              => :building_alliance_hall,
-            :target_level_formula  => "1", 
           },
 
         },              #   END OF Lagerfeuer
@@ -5382,7 +5375,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*150+LEVEL*50",
+	        :population  => "LESS(LEVEL,11)*200",
   
           :buyable     => true,
           :demolishable=> false,
@@ -5438,9 +5431,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
-            1 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
-            2 => 'LESS(LEVEL,11)*25000*POW((LEVEL-1),1.25)',
+            0 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            1 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            2 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
             
           },
 
@@ -5454,20 +5447,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :abilities   => {
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 6,
-                :queue_type_id_sym => :queue_special,
-                :level             => 1,
-              },
-
-            ],
-
-            :unlock_diplomacy     => 1,
-
-            :unlock_alliance_creation => 1,
 
             :alliance_size_bonus => "MAX(LEVEL,0)",
 
