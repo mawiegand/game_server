@@ -150,7 +150,7 @@
   <!-- 29 -->
   <MundaneRank exp="1856000" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Wollnashornknuddler</Name>
-    <Name lang="en_US">Junior-Woollyrhinocuddle</Name>
+    <Name lang="en_US">Junior-Woollyrhinocuddler</Name>
   </MundaneRank>
   <!-- 30 -->
   <MundaneRank exp="2020750" settlementPoints="1" minimumSacredRank="0">
@@ -158,67 +158,67 @@
     <Name lang="en_US">Woollyrhinocuddle</Name>
   </MundaneRank>
   <!-- 31 -->
-  <MundaneRank exp="2192250" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="2220750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Steppenwisentliebkoser</Name>
     <Name lang="en_US">Junior-Steppewisentcaresser</Name>
   </MundaneRank>
   <!-- 32 -->
-  <MundaneRank exp="2370000" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="2442750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Steppenwisentliebkoser</Name>
     <Name lang="en_US">Steppewisentcaresser</Name>
   </MundaneRank>
   <!-- 33 -->
-  <MundaneRank exp="2553750" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="2686750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Riesenhirschtätschler</Name>
     <Name lang="en_US">Junior-Megalocerospatter</Name>
   </MundaneRank>
   <!-- 34 -->
-  <MundaneRank exp="2743250" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="2952750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Riesenhirschtätschler</Name>
     <Name lang="en_US">Megalocerospatter</Name>
   </MundaneRank>
   <!-- 35 -->
-  <MundaneRank exp="2938000" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="3240750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Säbelzahntigerbändiger</Name>
     <Name lang="en_US">Junior-Sabre-toothedtigertamer</Name>
   </MundaneRank>
   <!-- 36 -->
-  <MundaneRank exp="3137500" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="3550750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Säbelzahntigerbändiger</Name>
     <Name lang="en_US">Sabre-toothedtigertamer</Name>
   </MundaneRank>
   <!-- 37 -->
-  <MundaneRank exp="3341250" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="3882750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Brontotherienbeschützer</Name>
     <Name lang="en_US">Junior-Brontotheresguardian</Name>
   </MundaneRank>
   <!-- 38 -->
-  <MundaneRank exp="358750" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="4236750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Brontotherienbeschützer</Name>
     <Name lang="en_US">Brontotheresguardian</Name>
   </MundaneRank>
   <!-- 39 -->
-  <MundaneRank exp="379500" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="4612750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Wollmammuttreiber</Name>
     <Name lang="en_US">Junior-Woollymammothdriver</Name>
   </MundaneRank>
   <!-- 40 -->
-  <MundaneRank exp="3973000" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="5010750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Wollmammuttreiber</Name>
     <Name lang="en_US">Woollymammothdriver</Name>
   </MundaneRank>
   <!-- 41 -->
-  <MundaneRank exp="4188750" settlementPoints="0" minimumSacredRank="0">
+  <MundaneRank exp="5430750" settlementPoints="0" minimumSacredRank="0">
     <Name lang="de_DE">Nachwuchs-Allosaurusabrichter</Name>
     <Name lang="en_US">Junior-Allosaurustrainer</Name>
   </MundaneRank>
   <!-- 42 -->
-  <MundaneRank exp="4406250" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="5872750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Allosaurusabrichter</Name>
     <Name lang="en_US">Allosaurustrainer</Name>
   </MundaneRank>
   <!-- 43 -->
-  <MundaneRank exp="4625000" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="6336750" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Tyrannosaurustyrann</Name>
     <Name lang="en_US">Tyrannosaurstyrant</Name>
   </MundaneRank>
