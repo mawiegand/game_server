@@ -147,7 +147,8 @@
         <p>Das Wack-A-Doo Team</p>]]></Body>
       </Message>
     </Quest>
-
+    
+    <!-- 3 --> <!-- not in -->
     <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
@@ -173,7 +174,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 4 --> <!-- Tutorial 5 -->
+    <!-- 4 --> <!-- Tutorial 6 -->
     <Quest id="quest_profile" advisor="girl" tutorial="true">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
@@ -203,7 +204,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 5 -->  <!-- Tutorial 6 -->
+    <!-- 5 -->  <!-- Tutorial 4 -->
     <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
@@ -237,7 +238,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 6 --> <!-- Tutorial 7 -->
+    <!-- 6 --> <!-- Tutorial 5 -->
     <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
@@ -265,7 +266,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 7 --> <!-- Tutorial 8 -->
+    <!-- 7 --> <!-- Tutorial 7 -->
     <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
@@ -296,7 +297,7 @@
       <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
-    <!-- 8 --> <!-- Tutorial 16 -->
+    <!-- 8 --> <!-- Tutorial 17 -->
     <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true" >
       <Name>Raw materials store</Name>
       <Name locale="de_DE">Rohstofflager </Name>
@@ -326,7 +327,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 9 --> <!-- Tutorial 10 -->
+    <!-- 9 --> <!-- Tutorial 9 -->
     <Quest id="quest_army_move" advisor="warrior" tutorial="true">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
@@ -387,7 +388,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 11 --> <!-- Tutorial 12 -->
+    <!-- 11 --> <!-- Tutorial 10 -->
     <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
@@ -416,7 +417,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 12 --> <!-- Tutorial 13 -->
+    <!-- 12 --> <!-- Tutorial 12 -->
     <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="true">
       <Name>An even bigger chieftain's hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
@@ -446,7 +447,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 13 --> <!-- Tutorial 14 -->
+    <!-- 13 --> <!-- Tutorial 13 -->
     <Quest id="quest_build_cottagelvl1" advisor="girl" tutorial="true">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
@@ -476,7 +477,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 14 --> <!-- Tutorial 15 -->
+    <!-- 14 --> <!-- Tutorial 14 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
@@ -507,7 +508,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 15 --> <!-- Tutorial 16 -->
+    <!-- 15 --> <!-- Tutorial 15 -->
     <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
       <Name>The chieftain's hut again</Name>
       <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
@@ -537,7 +538,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 16 -->
+    <!-- 16 --> <!-- Tutorial 16 -->
     <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
       <Name>And another chieftain's hut upgrade</Name>
       <Name locale="de_DE">Hurtig!</Name>
@@ -567,7 +568,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 17--> <!-- Tutorial 9 -->
+    <!-- 17--> <!-- Tutorial 8 -->
     <Quest id="quest_army_create" advisor="warrior" tutorial="true">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
@@ -598,7 +599,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 18 --> <!-- Tutorial 17 -->
+    <!-- 18 --> <!-- Tutorial 18 -->
     <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
