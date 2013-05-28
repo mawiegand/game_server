@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="4" />
+    <Version major="0" minor="2" build="5" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -158,7 +158,7 @@
     </Quest>
     
     <!-- 3 --> <!-- not in -->
-    <Quest id="quest_quest_button" advisor="girl" tutorial="true">
+    <Quest id="quest_quest_button" advisor="girl" tutorial="false">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -184,7 +184,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true">
+    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -216,7 +216,7 @@
     </Quest>
 
     <!-- 5 -->  <!-- Tutorial 4 -->
-    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
+    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true" priority="2">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task>Build a Training Grounds.</Task>
@@ -253,7 +253,7 @@
     </Quest>
 
     <!-- 6 --> <!-- Tutorial 5 -->
-    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
+    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a warrior.</Task>
@@ -284,7 +284,7 @@
     </Quest>
 
     <!-- 7 --> <!-- Tutorial 7 -->
-    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
+    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true" priority="2">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task>Go to the world map.</Task>
@@ -346,7 +346,7 @@
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
-    <Quest id="quest_army_move" advisor="warrior" tutorial="true">
+    <Quest id="quest_army_move" advisor="warrior" tutorial="true" priority="2">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task>Move your army to the fortress.</Task>
@@ -380,7 +380,7 @@
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="2">
+    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task>Upgrade two Hunter Gatherers to level 3.</Task>
@@ -410,7 +410,7 @@
     </Quest>
 
     <!-- 11 --> <!-- Tutorial 10 -->
-    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
+    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true" priority="2">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task>Get yourself back to your settlement.</Task>
@@ -591,7 +591,7 @@
     </Quest>
 
     <!-- 17--> <!-- Tutorial 8 -->
-    <Quest id="quest_army_create" advisor="warrior" tutorial="true">
+    <Quest id="quest_army_create" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army.</Task>
