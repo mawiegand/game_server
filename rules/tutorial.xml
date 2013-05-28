@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="2" />
+    <Version major="0" minor="2" build="3" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -122,6 +122,9 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
       <Message>
         <Subject>Welcome to Wack-A-Doo</Subject>
         <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
@@ -208,6 +211,8 @@
       <RewardTests>
         <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
+      <UIMarker>mark_profile</UIMarker>
+      <UIMarker>mark_name_change</UIMarker>
     </Quest>
 
     <!-- 5 -->  <!-- Tutorial 4 -->
@@ -242,6 +247,9 @@
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 6 --> <!-- Tutorial 5 -->
@@ -270,6 +278,9 @@
       <RewardTests>
         <TrainingQueueTest unit="unit_warrior" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_units_button</UIMarker>
+      <UIMarker>mark_training_dialog_flow</UIMarker>
     </Quest>
 
     <!-- 7 --> <!-- Tutorial 7 -->
@@ -300,6 +311,7 @@
       <RewardTests>
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
       <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
@@ -362,6 +374,9 @@
       <RewardTests>
         <MovementTest />
       </RewardTests>
+        <UIMarker>mark_map</UIMarker>
+        <UIMarker>mark_select_own_army</UIMarker>
+        <UIMarker>mark_move_own_army</UIMarker>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
@@ -421,6 +436,7 @@
       <RewardTests>
         <CustomTest id="test_settlement_button2">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
     <!-- 12 --> <!-- Tutorial 12 -->
@@ -603,6 +619,10 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
+      <UIMarker>mark_slect_own_home_settlement</UIMarker>
+      <UIMarker>mark_create_army</UIMarker>
+      <UIMarker>mark_create_army_dialog_flow</UIMarker>
     </Quest>
 
     <!-- 18 --> <!-- Tutorial 18 -->

@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.2
+# Version: 0.2.3
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 2, 
+        :build => 3, 
       },
       
       :production_test_weights => {
@@ -408,6 +408,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
           :message => {
             
             :en => {
@@ -601,6 +603,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_profile', 'mark_name_change', ],
+
         },              #   END OF quest_profile
         {               #   quest_build_1barrackslvl1
           :id                => 5,
@@ -709,6 +713,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
           :id                => 6,
@@ -799,6 +805,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
+
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_settlement_button1
           :id                => 7,
@@ -874,6 +882,8 @@ class Tutorial::Tutorial
             },
 
           },          
+
+          :uimarker => ['mark_map', ],
 
           :place_npcs => 1,         
 
@@ -1076,6 +1086,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
+
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
           :id                => 10,
@@ -1266,6 +1278,8 @@ class Tutorial::Tutorial
             },
 
           },          
+
+          :uimarker => ['mark_home_settlement', ],
 
         },              #   END OF quest_settlement_button2
         {               #   quest_build_chiefcottagelvl3
@@ -1886,6 +1900,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_map', 'mark_slect_own_home_settlement', 'mark_create_army', 'mark_create_army_dialog_flow', ],
 
         },              #   END OF quest_army_create
         {               #   quest_build_1campfirelvl1
