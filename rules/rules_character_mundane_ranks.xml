@@ -222,4 +222,9 @@
     <Name lang="de_DE">Tyrannosaurustyrann</Name>
     <Name lang="en_US">Tyrannosaurstyrant</Name>
   </MundaneRank>
+  <!-- 44 -->
+  <MundaneRank exp="99999999" settlementPoints="5" minimumSacredRank="0">
+    <Name lang="de_DE">Tyrannosaurusmeistertyrann</Name>
+    <Name lang="en_US">Tyrannosaursmastertyrant</Name>
+  </MundaneRank>
 </MundaneRanks>
