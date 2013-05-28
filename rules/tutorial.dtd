@@ -60,6 +60,7 @@
   tutorial           CDATA "false"
   tutorial_end_quest CDATA "false"
   priority           CDATA "0"
+  blocking           CDATA "false"
 >
 
 <!ELEMENT Requirement EMPTY>

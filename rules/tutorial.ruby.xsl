@@ -203,6 +203,7 @@ end
           :tutorial          => <xsl:value-of select="@tutorial"/>,
           :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
           :priority          => <xsl:value-of select="@priority"/>,
+          :blocking          => <xsl:value-of select="@blocking"/>,
 
           :name => {
             <xsl:apply-templates select="Name" />              

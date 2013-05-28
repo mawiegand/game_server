@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="1" />
+    <Version major="0" minor="2" build="2" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -29,7 +29,7 @@
 
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Order a Hunter Gatherer Level 1.</Task>
@@ -61,7 +61,7 @@
     </Quest>
 
     <!-- 1 --> <!-- Tutorial 2 -->
-    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true" priority="1" blocking="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
@@ -88,6 +88,9 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 2 --> <!-- Tutorial 3 -->

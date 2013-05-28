@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.1
+# Version: 0.2.2
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 1, 
+        :build => 2, 
       },
       
       :production_test_weights => {
@@ -106,6 +106,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 1,
+          :blocking          => true,
 
           :name => {
             
@@ -204,7 +205,8 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 1,
+          :blocking          => true,
 
           :name => {
             
@@ -299,6 +301,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
         },              #   END OF quest_build_1gathererlvl2
         {               #   quest_build_chiefcottagelvl2
           :id                => 2,
@@ -308,6 +312,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -448,6 +453,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -517,6 +523,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -603,6 +610,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -710,6 +718,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -799,6 +808,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -876,6 +886,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -979,6 +990,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1073,6 +1085,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1176,6 +1189,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1262,6 +1276,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1365,6 +1380,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1468,6 +1484,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1572,6 +1589,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1675,6 +1693,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1778,6 +1797,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1876,6 +1896,7 @@ class Tutorial::Tutorial
           :tutorial          => true,
           :tutorial_end_quest => true,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -1980,6 +2001,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2062,6 +2084,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2156,6 +2179,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2261,6 +2285,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2364,6 +2389,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2467,6 +2493,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2570,6 +2597,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2673,6 +2701,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2776,6 +2805,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2865,6 +2895,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -2972,6 +3003,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3077,6 +3109,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3180,6 +3213,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3283,6 +3317,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3382,6 +3417,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3487,6 +3523,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3590,6 +3627,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3697,6 +3735,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3804,6 +3843,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3898,6 +3938,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -3992,6 +4033,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4086,6 +4128,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4180,6 +4223,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4274,6 +4318,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4368,6 +4413,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4462,6 +4508,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4556,6 +4603,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4650,6 +4698,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4744,6 +4793,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4838,6 +4888,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -4932,6 +4983,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5026,6 +5078,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5120,6 +5173,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5214,6 +5268,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5308,6 +5363,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5402,6 +5458,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5496,6 +5553,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5590,6 +5648,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5684,6 +5743,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5778,6 +5838,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5872,6 +5933,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -5966,6 +6028,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6060,6 +6123,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6154,6 +6218,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6248,6 +6313,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6342,6 +6408,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6436,6 +6503,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6530,6 +6598,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6624,6 +6693,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6718,6 +6788,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6812,6 +6883,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -6906,6 +6978,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7000,6 +7073,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7094,6 +7168,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7188,6 +7263,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7282,6 +7358,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7376,6 +7453,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7470,6 +7548,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7564,6 +7643,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7658,6 +7738,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7752,6 +7833,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7846,6 +7928,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -7940,6 +8023,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8034,6 +8118,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8128,6 +8213,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8222,6 +8308,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8316,6 +8403,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8410,6 +8498,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8504,6 +8593,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8598,6 +8688,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8692,6 +8783,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8786,6 +8878,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8880,6 +8973,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -8974,6 +9068,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9068,6 +9163,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9162,6 +9258,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9256,6 +9353,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9350,6 +9448,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9444,6 +9543,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9538,6 +9638,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9632,6 +9733,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9726,6 +9828,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9820,6 +9923,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -9914,6 +10018,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10008,6 +10113,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10102,6 +10208,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10196,6 +10303,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10290,6 +10398,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10384,6 +10493,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10478,6 +10588,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10572,6 +10683,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10666,6 +10778,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10760,6 +10873,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10854,6 +10968,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -10948,6 +11063,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11042,6 +11158,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11136,6 +11253,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11230,6 +11348,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11324,6 +11443,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11418,6 +11538,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11512,6 +11633,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11606,6 +11728,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11700,6 +11823,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11794,6 +11918,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11888,6 +12013,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -11982,6 +12108,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -12076,6 +12203,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
@@ -12170,6 +12298,7 @@ class Tutorial::Tutorial
           :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
+          :blocking          => false,
 
           :name => {
             
