@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="3" />
+    <Version major="0" minor="2" build="4" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -380,7 +380,7 @@
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true">
+    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="2">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task>Upgrade two Hunter Gatherers to level 3.</Task>
