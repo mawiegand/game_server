@@ -19,7 +19,9 @@ class Action::Military::ChangeArmyActionsController < ApplicationController
     visible_army = Military::Army.find(@action[:visible_army_id])
     raise BadRequestError.new('army at settlement not found') if visible_army.nil?
     raise BadRequestError.new('not owner of visible army') unless visible_army.owner == current_character
-    
+
+    raise BadRequestError.new('settlement at location is not home of army') unless visible_army.home == location.settlement
+
     raise ForbiddenError.new('garrison is not idle')   unless garrison_army.mode == Military::Army::MODE_IDLE
     raise ForbiddenError.new('garrison is fighting')   unless garrison_army.battle_id.nil?
 
