@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.0
+# Version: 0.2.1
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 0, 
+        :build => 1, 
       },
       
       :production_test_weights => {
@@ -194,7 +194,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['settlement', 'army', ],
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_queue_1gathererlvl1
         {               #   quest_build_1gathererlvl2

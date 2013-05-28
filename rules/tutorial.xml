@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="0" />
+    <Version major="0" minor="2" build="1" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -55,8 +55,9 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
-      <UIMarker>settlement</UIMarker>
-      <UIMarker>army</UIMarker>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 1 --> <!-- Tutorial 2 -->
