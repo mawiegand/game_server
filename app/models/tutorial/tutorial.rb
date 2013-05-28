@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.3
+# Version: 0.2.5
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 3, 
+        :build => 5, 
       },
       
       :production_test_weights => {
@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 17,
   
       :quests => [  # ALL QUESTS
 
@@ -452,7 +452,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -524,7 +524,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -613,7 +613,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -723,7 +723,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -815,7 +815,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -999,7 +999,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -1200,7 +1200,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
@@ -1810,7 +1810,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
+          :priority          => 2,
           :blocking          => false,
 
           :name => {
