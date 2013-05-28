@@ -7201,7 +7201,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
             :de_DE => "Nachwuchs-Wollnashornknuddler",
   
-            :en_US => "Junior-Woollyrhinocuddle",
+            :en_US => "Junior-Woollyrhinocuddler",
   
             },
           },             #   END OF 
@@ -7220,7 +7220,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  31
             :id          => 31,
-            :exp         => 2192250,
+            :exp         => 2220750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7233,7 +7233,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  32
             :id          => 32,
-            :exp         => 2370000,
+            :exp         => 2442750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7246,7 +7246,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  33
             :id          => 33,
-            :exp         => 2553750,
+            :exp         => 2686750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7259,7 +7259,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  34
             :id          => 34,
-            :exp         => 2743250,
+            :exp         => 2952750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7272,7 +7272,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  35
             :id          => 35,
-            :exp         => 2938000,
+            :exp         => 3240750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7285,7 +7285,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  36
             :id          => 36,
-            :exp         => 3137500,
+            :exp         => 3550750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7298,7 +7298,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  37
             :id          => 37,
-            :exp         => 3341250,
+            :exp         => 3882750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7311,7 +7311,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  38
             :id          => 38,
-            :exp         => 358750,
+            :exp         => 4236750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7324,7 +7324,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  39
             :id          => 39,
-            :exp         => 379500,
+            :exp         => 4612750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7337,7 +7337,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  40
             :id          => 40,
-            :exp         => 3973000,
+            :exp         => 5010750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7350,7 +7350,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  41
             :id          => 41,
-            :exp         => 4188750,
+            :exp         => 5430750,
             :settlement_points   => 0,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7363,7 +7363,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  42
             :id          => 42,
-            :exp         => 4406250,
+            :exp         => 5872750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -7376,7 +7376,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  43
             :id          => 43,
-            :exp         => 4625000,
+            :exp         => 6336750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
