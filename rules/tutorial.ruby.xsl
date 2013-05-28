@@ -196,13 +196,14 @@ end
       :quests => [  # ALL QUESTS
 <xsl:for-each select="Quest">
         {               #   <xsl:value-of select="@id"/>
-          :id                => <xsl:value-of select="position()-1"/>, 
+          :id                => <xsl:value-of select="position()-1"/>,
           :symbolic_id       => :<xsl:value-of select="@id"/>,
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
           :tutorial          => <xsl:value-of select="@tutorial"/>,
           :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
-          
+          :priority          => <xsl:value-of select="@priority"/>,
+
           :name => {
             <xsl:apply-templates select="Name" />              
           },
@@ -239,6 +240,9 @@ end
           :reward_tests => {
             <xsl:apply-templates select="RewardTests" />
           },          
+</xsl:if>
+<xsl:if test="UIMarker">
+          :uimarker => [<xsl:for-each select="UIMarker">'<xsl:value-of select="." />', </xsl:for-each>],
 </xsl:if>
 <xsl:if test="PlaceNpcs">
           :place_npcs => <xsl:apply-templates select="PlaceNpcs" />,         

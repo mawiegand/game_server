@@ -99,13 +99,14 @@ class Tutorial::Tutorial
       :quests => [  # ALL QUESTS
 
         {               #   quest_queue_1gathererlvl1
-          :id                => 0, 
+          :id                => 0,
           :symbolic_id       => :quest_queue_1gathererlvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 1,
+
           :name => {
             
             :en_US => "The first building",
@@ -193,15 +194,18 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['settlement', 'army', ],
+
         },              #   END OF quest_queue_1gathererlvl1
         {               #   quest_build_1gathererlvl2
-          :id                => 1, 
+          :id                => 1,
           :symbolic_id       => :quest_build_1gathererlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade",
@@ -297,13 +301,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1gathererlvl2
         {               #   quest_build_chiefcottagelvl2
-          :id                => 2, 
+          :id                => 2,
           :symbolic_id       => :quest_build_chiefcottagelvl2,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade of the chieftain's hut",
@@ -436,13 +441,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl2
         {               #   quest_quest_button
-          :id                => 3, 
+          :id                => 3,
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Quest button",
@@ -504,13 +510,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_quest_button
         {               #   quest_profile
-          :id                => 4, 
+          :id                => 4,
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Name and profile",
@@ -589,13 +596,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_build_1barrackslvl1
-          :id                => 5, 
+          :id                => 5,
           :symbolic_id       => :quest_build_1barrackslvl1,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Training Grounds",
@@ -695,13 +703,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl1
         {               #   quest_recruit_1clubbers
-          :id                => 6, 
+          :id                => 6,
           :symbolic_id       => :quest_recruit_1clubbers,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Your first unit",
@@ -783,13 +792,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_1clubbers
         {               #   quest_settlement_button1
-          :id                => 7, 
+          :id                => 7,
           :symbolic_id       => :quest_settlement_button1,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "On the map",
@@ -859,13 +869,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
-          :id                => 8, 
+          :id                => 8,
           :symbolic_id       => :quest_build_1storagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Raw materials store",
@@ -961,13 +972,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
-          :id                => 9, 
+          :id                => 9,
           :symbolic_id       => :quest_army_move,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Army movement",
@@ -1054,13 +1066,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
-          :id                => 10, 
+          :id                => 10,
           :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "More Hunter Gatherers",
@@ -1156,13 +1169,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2gathererlvl3
         {               #   quest_settlement_button2
-          :id                => 11, 
+          :id                => 11,
           :symbolic_id       => :quest_settlement_button2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Back to the settlement",
@@ -1241,13 +1255,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_settlement_button2
         {               #   quest_build_chiefcottagelvl3
-          :id                => 12, 
+          :id                => 12,
           :symbolic_id       => :quest_build_chiefcottagelvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "An even bigger chieftain's hut",
@@ -1343,13 +1358,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_cottagelvl1
-          :id                => 13, 
+          :id                => 13,
           :symbolic_id       => :quest_build_cottagelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "The small huts",
@@ -1445,13 +1461,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_cottagelvl1
         {               #   quest_improve_production_1
-          :id                => 14, 
+          :id                => 14,
           :symbolic_id       => :quest_improve_production_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Improve your raw materials production",
@@ -1548,13 +1565,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_improve_production_1
         {               #   quest_build_chiefcottagelvl4
-          :id                => 15, 
+          :id                => 15,
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "The chieftain's hut again",
@@ -1650,13 +1668,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
-          :id                => 16, 
+          :id                => 16,
           :symbolic_id       => :quest_queue_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => true,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "And another chieftain's hut upgrade",
@@ -1752,13 +1771,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
-          :id                => 17, 
+          :id                => 17,
           :symbolic_id       => :quest_army_create,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Your first army",
@@ -1849,13 +1869,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_army_create
         {               #   quest_build_1campfirelvl1
-          :id                => 18, 
+          :id                => 18,
           :symbolic_id       => :quest_build_1campfirelvl1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => true,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Campfire",
@@ -1952,13 +1973,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
-          :id                => 19, 
+          :id                => 19,
           :symbolic_id       => :quest_alliance,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Alliance",
@@ -2033,13 +2055,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_resourcescore_0
-          :id                => 20, 
+          :id                => 20,
           :symbolic_id       => :quest_resourcescore_0,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -2126,13 +2149,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_0
         {               #   quest_build_chiefcottagelvl5
-          :id                => 21, 
+          :id                => 21,
           :symbolic_id       => :quest_build_chiefcottagelvl5,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Chieftain's hut level five",
@@ -2230,13 +2254,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_1quarrylvl2
-          :id                => 22, 
+          :id                => 22,
           :symbolic_id       => :quest_build_1quarrylvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Quarry",
@@ -2332,13 +2357,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1quarrylvl2
         {               #   quest_build_1loggerlvl2
-          :id                => 23, 
+          :id                => 23,
           :symbolic_id       => :quest_build_1loggerlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Logger",
@@ -2434,13 +2460,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1loggerlvl2
         {               #   quest_build_chiefcottagelvl6
-          :id                => 24, 
+          :id                => 24,
           :symbolic_id       => :quest_build_chiefcottagelvl6,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Chieftain's hut level 6",
@@ -2536,13 +2563,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl6
         {               #   quest_build_training_cave
-          :id                => 25, 
+          :id                => 25,
           :symbolic_id       => :quest_build_training_cave,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Trainingcave",
@@ -2638,13 +2666,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_training_cave
         {               #   quest_build_chiefcottagelvl7
-          :id                => 26, 
+          :id                => 26,
           :symbolic_id       => :quest_build_chiefcottagelvl7,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade of the chieftain's hut",
@@ -2740,13 +2769,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl7
         {               #   quest_fortress
-          :id                => 27, 
+          :id                => 27,
           :symbolic_id       => :quest_fortress,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Fortress ",
@@ -2828,13 +2858,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress
         {               #   quest_build_1barrackslvl5
-          :id                => 28, 
+          :id                => 28,
           :symbolic_id       => :quest_build_1barrackslvl5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Training Grounds level 5",
@@ -2934,13 +2965,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1barrackslvl5
         {               #   quest_build_chiefcottagelvl8
-          :id                => 29, 
+          :id                => 29,
           :symbolic_id       => :quest_build_chiefcottagelvl8,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade of the chieftain's hut",
@@ -3038,13 +3070,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_1furrierlvl2
-          :id                => 30, 
+          :id                => 30,
           :symbolic_id       => :quest_build_1furrierlvl2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Furrier",
@@ -3140,13 +3173,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_1furrierlvl2
         {               #   quest_build_chiefcottagelvl9
-          :id                => 31, 
+          :id                => 31,
           :symbolic_id       => :quest_build_chiefcottagelvl9,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade of the chieftain's hut",
@@ -3242,13 +3276,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl9
         {               #   quest_outpost
-          :id                => 32, 
+          :id                => 32,
           :symbolic_id       => :quest_outpost,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Encampment",
@@ -3340,13 +3375,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_outpost
         {               #   quest_build_chiefcottagelvl10
-          :id                => 33, 
+          :id                => 33,
           :symbolic_id       => :quest_build_chiefcottagelvl10,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Upgrade of the chieftain's hut",
@@ -3444,13 +3480,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl10
         {               #   quest_build_copper_smelter
-          :id                => 34, 
+          :id                => 34,
           :symbolic_id       => :quest_build_copper_smelter,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Copper smelter",
@@ -3546,13 +3583,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_copper_smelter
         {               #   quest_build_firing_range
-          :id                => 35, 
+          :id                => 35,
           :symbolic_id       => :quest_build_firing_range,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Firing Range",
@@ -3652,13 +3690,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_firing_range
         {               #   quest_build_stud
-          :id                => 36, 
+          :id                => 36,
           :symbolic_id       => :quest_build_stud,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Smelly barn",
@@ -3758,13 +3797,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_stud
         {               #   quest_charkills_1
-          :id                => 37, 
+          :id                => 37,
           :symbolic_id       => :quest_charkills_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -3851,13 +3891,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 38, 
+          :id                => 38,
           :symbolic_id       => :quest_charkills_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -3944,13 +3985,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 39, 
+          :id                => 39,
           :symbolic_id       => :quest_charkills_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4037,13 +4079,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 40, 
+          :id                => 40,
           :symbolic_id       => :quest_charkills_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4130,13 +4173,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_4
         {               #   quest_charkills_5
-          :id                => 41, 
+          :id                => 41,
           :symbolic_id       => :quest_charkills_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4223,13 +4267,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_5
         {               #   quest_charkills_6
-          :id                => 42, 
+          :id                => 42,
           :symbolic_id       => :quest_charkills_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4316,13 +4361,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_6
         {               #   quest_charkills_7
-          :id                => 43, 
+          :id                => 43,
           :symbolic_id       => :quest_charkills_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4409,13 +4455,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_7
         {               #   quest_charkills_8
-          :id                => 44, 
+          :id                => 44,
           :symbolic_id       => :quest_charkills_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4502,13 +4549,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_8
         {               #   quest_charkills_9
-          :id                => 45, 
+          :id                => 45,
           :symbolic_id       => :quest_charkills_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4595,13 +4643,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_9
         {               #   quest_charkills_10
-          :id                => 46, 
+          :id                => 46,
           :symbolic_id       => :quest_charkills_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4688,13 +4737,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_10
         {               #   quest_charkills_11
-          :id                => 47, 
+          :id                => 47,
           :symbolic_id       => :quest_charkills_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4781,13 +4831,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_11
         {               #   quest_charkills_12
-          :id                => 48, 
+          :id                => 48,
           :symbolic_id       => :quest_charkills_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4874,13 +4925,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_12
         {               #   quest_charkills_13
-          :id                => 49, 
+          :id                => 49,
           :symbolic_id       => :quest_charkills_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -4967,13 +5019,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_13
         {               #   quest_charkills_14
-          :id                => 50, 
+          :id                => 50,
           :symbolic_id       => :quest_charkills_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5060,13 +5113,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_14
         {               #   quest_charkills_15
-          :id                => 51, 
+          :id                => 51,
           :symbolic_id       => :quest_charkills_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5153,13 +5207,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_15
         {               #   quest_charkills_16
-          :id                => 52, 
+          :id                => 52,
           :symbolic_id       => :quest_charkills_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5246,13 +5301,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_16
         {               #   quest_charkills_17
-          :id                => 53, 
+          :id                => 53,
           :symbolic_id       => :quest_charkills_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5339,13 +5395,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_17
         {               #   quest_charkills_18
-          :id                => 54, 
+          :id                => 54,
           :symbolic_id       => :quest_charkills_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5432,13 +5489,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_18
         {               #   quest_charkills_19
-          :id                => 55, 
+          :id                => 55,
           :symbolic_id       => :quest_charkills_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5525,13 +5583,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_19
         {               #   quest_charkills_20
-          :id                => 56, 
+          :id                => 56,
           :symbolic_id       => :quest_charkills_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5618,13 +5677,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_20
         {               #   quest_charkills_21
-          :id                => 57, 
+          :id                => 57,
           :symbolic_id       => :quest_charkills_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Decimate enemy units",
@@ -5711,13 +5771,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_21
         {               #   quest_armyXP_1
-          :id                => 58, 
+          :id                => 58,
           :symbolic_id       => :quest_armyXP_1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -5804,13 +5865,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_1
         {               #   quest_armyXP_2
-          :id                => 59, 
+          :id                => 59,
           :symbolic_id       => :quest_armyXP_2,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -5897,13 +5959,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_2
         {               #   quest_armyXP_3
-          :id                => 60, 
+          :id                => 60,
           :symbolic_id       => :quest_armyXP_3,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -5990,13 +6053,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_3
         {               #   quest_armyXP_4
-          :id                => 61, 
+          :id                => 61,
           :symbolic_id       => :quest_armyXP_4,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6083,13 +6147,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_4
         {               #   quest_armyXP_5
-          :id                => 62, 
+          :id                => 62,
           :symbolic_id       => :quest_armyXP_5,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6176,13 +6241,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_5
         {               #   quest_armyXP_6
-          :id                => 63, 
+          :id                => 63,
           :symbolic_id       => :quest_armyXP_6,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6269,13 +6335,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_6
         {               #   quest_armyXP_7
-          :id                => 64, 
+          :id                => 64,
           :symbolic_id       => :quest_armyXP_7,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6362,13 +6429,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_7
         {               #   quest_armyXP_8
-          :id                => 65, 
+          :id                => 65,
           :symbolic_id       => :quest_armyXP_8,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6455,13 +6523,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_8
         {               #   quest_armyXP_9
-          :id                => 66, 
+          :id                => 66,
           :symbolic_id       => :quest_armyXP_9,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6548,13 +6617,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_9
         {               #   quest_armyXP_10
-          :id                => 67, 
+          :id                => 67,
           :symbolic_id       => :quest_armyXP_10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6641,13 +6711,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_10
         {               #   quest_armyXP_11
-          :id                => 68, 
+          :id                => 68,
           :symbolic_id       => :quest_armyXP_11,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6734,13 +6805,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_11
         {               #   quest_armyXP_12
-          :id                => 69, 
+          :id                => 69,
           :symbolic_id       => :quest_armyXP_12,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6827,13 +6899,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_12
         {               #   quest_armyXP_13
-          :id                => 70, 
+          :id                => 70,
           :symbolic_id       => :quest_armyXP_13,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -6920,13 +6993,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_13
         {               #   quest_armyXP_14
-          :id                => 71, 
+          :id                => 71,
           :symbolic_id       => :quest_armyXP_14,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7013,13 +7087,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_14
         {               #   quest_armyXP_15
-          :id                => 72, 
+          :id                => 72,
           :symbolic_id       => :quest_armyXP_15,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7106,13 +7181,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_15
         {               #   quest_armyXP_16
-          :id                => 73, 
+          :id                => 73,
           :symbolic_id       => :quest_armyXP_16,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7199,13 +7275,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_16
         {               #   quest_armyXP_17
-          :id                => 74, 
+          :id                => 74,
           :symbolic_id       => :quest_armyXP_17,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7292,13 +7369,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_17
         {               #   quest_armyXP_18
-          :id                => 75, 
+          :id                => 75,
           :symbolic_id       => :quest_armyXP_18,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7385,13 +7463,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_18
         {               #   quest_armyXP_19
-          :id                => 76, 
+          :id                => 76,
           :symbolic_id       => :quest_armyXP_19,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7478,13 +7557,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_19
         {               #   quest_armyXP_20
-          :id                => 77, 
+          :id                => 77,
           :symbolic_id       => :quest_armyXP_20,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7571,13 +7651,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_20
         {               #   quest_armyXP_21
-          :id                => 78, 
+          :id                => 78,
           :symbolic_id       => :quest_armyXP_21,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7664,13 +7745,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_21
         {               #   quest_armyXP_22
-          :id                => 79, 
+          :id                => 79,
           :symbolic_id       => :quest_armyXP_22,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Experienced armies",
@@ -7757,13 +7839,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_armyXP_22
         {               #   quest_score_0
-          :id                => 80, 
+          :id                => 80,
           :symbolic_id       => :quest_score_0,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -7850,13 +7933,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_0
         {               #   quest_score_1
-          :id                => 81, 
+          :id                => 81,
           :symbolic_id       => :quest_score_1,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -7943,13 +8027,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_1
         {               #   quest_score_2
-          :id                => 82, 
+          :id                => 82,
           :symbolic_id       => :quest_score_2,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8036,13 +8121,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_2
         {               #   quest_score_3
-          :id                => 83, 
+          :id                => 83,
           :symbolic_id       => :quest_score_3,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8129,13 +8215,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_3
         {               #   quest_score_4
-          :id                => 84, 
+          :id                => 84,
           :symbolic_id       => :quest_score_4,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8222,13 +8309,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_4
         {               #   quest_score_5
-          :id                => 85, 
+          :id                => 85,
           :symbolic_id       => :quest_score_5,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8315,13 +8403,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_5
         {               #   quest_score_6
-          :id                => 86, 
+          :id                => 86,
           :symbolic_id       => :quest_score_6,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8408,13 +8497,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_6
         {               #   quest_score_7
-          :id                => 87, 
+          :id                => 87,
           :symbolic_id       => :quest_score_7,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8501,13 +8591,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_7
         {               #   quest_score_8
-          :id                => 88, 
+          :id                => 88,
           :symbolic_id       => :quest_score_8,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8594,13 +8685,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_8
         {               #   quest_score_9
-          :id                => 89, 
+          :id                => 89,
           :symbolic_id       => :quest_score_9,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8687,13 +8779,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_9
         {               #   quest_score_10
-          :id                => 90, 
+          :id                => 90,
           :symbolic_id       => :quest_score_10,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8780,13 +8873,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_10
         {               #   quest_score_11
-          :id                => 91, 
+          :id                => 91,
           :symbolic_id       => :quest_score_11,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8873,13 +8967,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_11
         {               #   quest_score_12
-          :id                => 92, 
+          :id                => 92,
           :symbolic_id       => :quest_score_12,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -8966,13 +9061,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_12
         {               #   quest_score_13
-          :id                => 93, 
+          :id                => 93,
           :symbolic_id       => :quest_score_13,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9059,13 +9155,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_13
         {               #   quest_score_14
-          :id                => 94, 
+          :id                => 94,
           :symbolic_id       => :quest_score_14,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9152,13 +9249,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_14
         {               #   quest_score_15
-          :id                => 95, 
+          :id                => 95,
           :symbolic_id       => :quest_score_15,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9245,13 +9343,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_15
         {               #   quest_score_16
-          :id                => 96, 
+          :id                => 96,
           :symbolic_id       => :quest_score_16,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9338,13 +9437,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_16
         {               #   quest_score_17
-          :id                => 97, 
+          :id                => 97,
           :symbolic_id       => :quest_score_17,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9431,13 +9531,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_17
         {               #   quest_score_18
-          :id                => 98, 
+          :id                => 98,
           :symbolic_id       => :quest_score_18,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9524,13 +9625,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_18
         {               #   quest_score_19
-          :id                => 99, 
+          :id                => 99,
           :symbolic_id       => :quest_score_19,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9617,13 +9719,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_19
         {               #   quest_score_20
-          :id                => 100, 
+          :id                => 100,
           :symbolic_id       => :quest_score_20,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9710,13 +9813,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_20
         {               #   quest_score_21
-          :id                => 101, 
+          :id                => 101,
           :symbolic_id       => :quest_score_21,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9803,13 +9907,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_21
         {               #   quest_score_22
-          :id                => 102, 
+          :id                => 102,
           :symbolic_id       => :quest_score_22,
           :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Population",
@@ -9896,13 +10001,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_score_22
         {               #   quest_resourcescore_1
-          :id                => 103, 
+          :id                => 103,
           :symbolic_id       => :quest_resourcescore_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -9989,13 +10095,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_resourcescore_2
-          :id                => 104, 
+          :id                => 104,
           :symbolic_id       => :quest_resourcescore_2,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10082,13 +10189,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_2
         {               #   quest_resourcescore_3
-          :id                => 105, 
+          :id                => 105,
           :symbolic_id       => :quest_resourcescore_3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10175,13 +10283,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_3
         {               #   quest_resourcescore_4
-          :id                => 106, 
+          :id                => 106,
           :symbolic_id       => :quest_resourcescore_4,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10268,13 +10377,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_4
         {               #   quest_resourcescore_5
-          :id                => 107, 
+          :id                => 107,
           :symbolic_id       => :quest_resourcescore_5,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10361,13 +10471,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_5
         {               #   quest_resourcescore_6
-          :id                => 108, 
+          :id                => 108,
           :symbolic_id       => :quest_resourcescore_6,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10454,13 +10565,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_6
         {               #   quest_resourcescore_7
-          :id                => 109, 
+          :id                => 109,
           :symbolic_id       => :quest_resourcescore_7,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10547,13 +10659,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_7
         {               #   quest_resourcescore_8
-          :id                => 110, 
+          :id                => 110,
           :symbolic_id       => :quest_resourcescore_8,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10640,13 +10753,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_8
         {               #   quest_resourcescore_9
-          :id                => 111, 
+          :id                => 111,
           :symbolic_id       => :quest_resourcescore_9,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10733,13 +10847,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_9
         {               #   quest_resourcescore_10
-          :id                => 112, 
+          :id                => 112,
           :symbolic_id       => :quest_resourcescore_10,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10826,13 +10941,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_10
         {               #   quest_resourcescore_11
-          :id                => 113, 
+          :id                => 113,
           :symbolic_id       => :quest_resourcescore_11,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -10919,13 +11035,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_11
         {               #   quest_resourcescore_12
-          :id                => 114, 
+          :id                => 114,
           :symbolic_id       => :quest_resourcescore_12,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11012,13 +11129,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_12
         {               #   quest_resourcescore_13
-          :id                => 115, 
+          :id                => 115,
           :symbolic_id       => :quest_resourcescore_13,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11105,13 +11223,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_13
         {               #   quest_resourcescore_14
-          :id                => 116, 
+          :id                => 116,
           :symbolic_id       => :quest_resourcescore_14,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11198,13 +11317,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_14
         {               #   quest_resourcescore_15
-          :id                => 117, 
+          :id                => 117,
           :symbolic_id       => :quest_resourcescore_15,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11291,13 +11411,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_15
         {               #   quest_resourcescore_16
-          :id                => 118, 
+          :id                => 118,
           :symbolic_id       => :quest_resourcescore_16,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11384,13 +11505,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_16
         {               #   quest_resourcescore_17
-          :id                => 119, 
+          :id                => 119,
           :symbolic_id       => :quest_resourcescore_17,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11477,13 +11599,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_17
         {               #   quest_resourcescore_18
-          :id                => 120, 
+          :id                => 120,
           :symbolic_id       => :quest_resourcescore_18,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11570,13 +11693,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_18
         {               #   quest_resourcescore_19
-          :id                => 121, 
+          :id                => 121,
           :symbolic_id       => :quest_resourcescore_19,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11663,13 +11787,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_19
         {               #   quest_resourcescore_20
-          :id                => 122, 
+          :id                => 122,
           :symbolic_id       => :quest_resourcescore_20,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11756,13 +11881,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_20
         {               #   quest_resourcescore_21
-          :id                => 123, 
+          :id                => 123,
           :symbolic_id       => :quest_resourcescore_21,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11849,13 +11975,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_21
         {               #   quest_resourcescore_22
-          :id                => 124, 
+          :id                => 124,
           :symbolic_id       => :quest_resourcescore_22,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -11942,13 +12069,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_22
         {               #   quest_resourcescore_23
-          :id                => 125, 
+          :id                => 125,
           :symbolic_id       => :quest_resourcescore_23,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Resource Production",
@@ -12035,13 +12163,14 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_23
         {               #   quest_build_1barrackslvl10
-          :id                => 126, 
+          :id                => 126,
           :symbolic_id       => :quest_build_1barrackslvl10,
           :advisor           => :warrior,
           :hide_start_dialog => false,
           :tutorial          => false,
           :tutorial_end_quest => false,
-          
+          :priority          => 0,
+
           :name => {
             
             :en_US => "Training Grounds level 10",

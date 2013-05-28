@@ -29,7 +29,7 @@
 
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Order a Hunter Gatherer Level 1.</Task>
@@ -55,6 +55,8 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
+      <UIMarker>settlement</UIMarker>
+      <UIMarker>army</UIMarker>
     </Quest>
 
     <!-- 1 --> <!-- Tutorial 2 -->

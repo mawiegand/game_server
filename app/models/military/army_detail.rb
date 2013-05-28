@@ -39,7 +39,7 @@ class Military::ArmyDetail < ActiveRecord::Base
         n += self[unit_type[:db_field]] || 0
       end
       logger.debug "army size #{ n }, max size #{ army.size_max }"
-      raise ForbiddenError.new "army would be larger than the presently imposed size limit" unless n <= army.size_max
+      raise ForbiddenError.new "qqarmy would be larger than the presently imposed size limit" unless n <= army.size_max
     end
   
     def update_army

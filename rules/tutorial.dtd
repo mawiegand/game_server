@@ -52,13 +52,14 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, Message*, PlaceNpcs?)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, UIMarker*, Message*, PlaceNpcs?)>
 <!ATTLIST Quest
-  id ID #REQUIRED
-  advisor IDREF "warrior"
-  hide_start_dialog CDATA "false"
-  tutorial CDATA "false"
-  tutorial_end_quest CDATA "false"  
+  id                 ID #REQUIRED
+  advisor            IDREF "warrior"
+  hide_start_dialog  CDATA "false"
+  tutorial           CDATA "false"
+  tutorial_end_quest CDATA "false"
+  priority           CDATA "0"
 >
 
 <!ELEMENT Requirement EMPTY>
@@ -162,6 +163,8 @@
 <!ATTLIST SettlementProductionTest
   min_resources CDATA #REQUIRED
 >
+
+<!ELEMENT UIMarker (#PCDATA)>
 
 <!ELEMENT PlaceNpcs (#PCDATA)>
 
