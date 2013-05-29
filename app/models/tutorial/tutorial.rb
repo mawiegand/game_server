@@ -1901,7 +1901,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_map', 'mark_slect_own_home_settlement', 'mark_create_army', 'mark_create_army_dialog_flow', ],
+          :uimarker => ['mark_map', 'mark_select_own_home_settlement', 'mark_create_army', 'mark_create_army_dialog_flow', ],
 
         },              #   END OF quest_army_create
         {               #   quest_build_1campfirelvl1

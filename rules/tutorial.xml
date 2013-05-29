@@ -620,7 +620,7 @@
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
       <UIMarker>mark_map</UIMarker>
-      <UIMarker>mark_slect_own_home_settlement</UIMarker>
+      <UIMarker>mark_select_own_home_settlement</UIMarker>
       <UIMarker>mark_create_army</UIMarker>
       <UIMarker>mark_create_army_dialog_flow</UIMarker>
     </Quest>
