@@ -72,7 +72,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     @ranking_character_ranking[:rank] = num_before + 1
     
     respond_to do |format|
-      format.json { render json: include_root(@ranking_character_ranking, :character_ranking) }
+      format.json { render json: @ranking_character_ranking }
     end
   end
 end
