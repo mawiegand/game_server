@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.6.3
+# Version: 0.6.4
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -115,7 +115,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 6,
-                    :build => 3,
+                    :build => 4,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -4524,7 +4524,7 @@ class GameRules::Rules
             
             :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>",
   
-            :de_DE => "<p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustösst!</p>",
+            :de_DE => "<p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustößt!</p>",
                 
           },
           :description => {
