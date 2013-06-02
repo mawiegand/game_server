@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 
 <!-- Stylesheet specifing transformation to generate a Ruby source file 
      from the rules.xml. 
@@ -186,6 +186,7 @@ class GameRules::Rules
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="//General/TradingSpeedupCost" />
+  <xsl:apply-templates select="//General/AvatarConfig" />
   <xsl:apply-templates select="//General/ChangeCharacterName" />
   <xsl:apply-templates select="//General/ChangeCharacterGender" />
   <xsl:apply-templates select="//General/ChangeSettlementName" />
@@ -314,6 +315,31 @@ end
       :trading_speedup => {
         :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
         :amount      => <xsl:value-of select="@amount"/>,
+      },
+</xsl:template>
+
+
+
+<xsl:template match="AvatarConfig">
+# ## AVATAR CONFIG ###################################################
+
+      :avatar_config => {
+        :max_chains_male => <xsl:value-of select="@max_chains_male" />,
+        :max_chains_female => <xsl:value-of select="@max_chains_female" />,
+        :max_eyes_male => <xsl:value-of select="@max_eyes_male" />,
+        :max_eyes_female => <xsl:value-of select="@max_eyes_female" />,
+        :max_hair_male => <xsl:value-of select="@max_hair_male" />,
+        :max_hair_female => <xsl:value-of select="@max_hair_female" />,
+        :max_mouths_male => <xsl:value-of select="@max_mouths_male" />,
+        :max_mouths_female => <xsl:value-of select="@max_mouths_female" />,
+        :max_heads_male => <xsl:value-of select="@max_heads_male" />,
+        :max_heads_female => <xsl:value-of select="@max_heads_female" />,
+        :max_beards_male => <xsl:value-of select="@max_beards_male" />,
+        :max_beards_female => <xsl:value-of select="@max_beards_female" />,
+        :max_veilchens_male => <xsl:value-of select="@max_veilchens_male" />,
+        :max_veilchens_female => <xsl:value-of select="@max_veilchens_female" />,
+        :max_tattoos_male => <xsl:value-of select="@max_tattoos_male" />,
+        :max_tattoos_female => <xsl:value-of select="@max_tattoos_female" />,
       },
 </xsl:template>
 
