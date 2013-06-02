@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="5" />
+    <Version major="0" minor="2" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -374,9 +374,10 @@
       <RewardTests>
         <MovementTest />
       </RewardTests>
-        <UIMarker>mark_map</UIMarker>
-        <UIMarker>mark_select_own_army</UIMarker>
-        <UIMarker>mark_move_own_army</UIMarker>
+      <UIMarker>mark_map</UIMarker>
+      <UIMarker>mark_select_own_army</UIMarker>
+      <UIMarker>mark_select_other_army</UIMarker>
+      <UIMarker>mark_attack_button</UIMarker>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
