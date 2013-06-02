@@ -124,6 +124,7 @@
       <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedupCost resource="resource_cash" amount="1" />
+    <AvatarConfig maxChainsFemale="4" maxEyesMale="8" maxEyesFemale="8" maxHairMale="8" maxHairFemale="12" maxMouthsMale="4" maxMouthsFemale="8" maxHeadsMale="1" maxHeadsFemale="1" maxBeardsMale="12" maxVeilchensMale="8" maxVeilchensFemale="0" maxTattoosMale="8" maxTattoosFemale="8" />
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
     <ChangeCharacterGender free_changes="2" resource="resource_cash" amount="20" />
     <ResourceExchange resource="resource_cash" amount="2" />
