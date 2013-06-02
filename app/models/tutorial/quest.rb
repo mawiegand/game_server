@@ -65,7 +65,7 @@ class Tutorial::Quest < ActiveRecord::Base
     quest_message = (self.quest || {})[:message]
 
     if !quest_message.nil? && self.status < STATE_DISPLAYED
-      Messaging::Message.create_tutorial_message(self.owner, quest_message[self.owner.lang][:subject], quest_message[self.owner.lang][:body])
+      Messaging::Message.create_tutorial_message(self.owner, quest_message[self.owner.lang.to_sym][:subject], quest_message[self.owner.lang.to_sym][:body])
     end
   end
   
