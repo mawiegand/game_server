@@ -54,10 +54,10 @@ module GameState
       @avatar_string[10]
     end
 
-    def create_random_avatar_string(gender = 'm')
-      @avatar_string  = gender.downcase
+    def create_random_avatar_string(is_male)
+      @avatar_string  = is_male ? 'm' : 'f'
 
-      if(gender == 'm')
+      if(is_male)
         @avatar_string += '0' #chains
         @avatar_string += rand(7).to_s # eyes
         @avatar_string += rand(7).to_s # hair
@@ -82,7 +82,7 @@ module GameState
         @avatar_string += '0' #head
         @avatar_string += '0' #beard
         @avatar_string += '0' #veilchen
-        @avatar_string += rand(7) #tattoos
+        @avatar_string += rand(7).to_s #tattoos
       end
     end
   end
