@@ -53,5 +53,37 @@ module GameState
     def tattoo
       @avatar_string[10]
     end
+
+    def create_random_avatar_string(gender = 'm')
+      @avatar_string  = gender.downcase
+
+      if(gender == 'm')
+        @avatar_string += '0' #chains
+        @avatar_string += rand(7).to_s # eyes
+        @avatar_string += rand(7).to_s # hair
+        @avatar_string += rand(3).to_s # mouth
+        @avatar_string += '0' #head
+        #beard
+        random_number = rand(11)
+        @avatar_string += '0' if(random_number < 10)
+        @avatar_string += random_number.to_s
+
+        @avatar_string += rand(7).to_s #veilchen
+        @avatar_string += rand(7).to_s #tattoos
+      else
+        @avatar_string += rand(4).to_s #chains
+        @avatar_string += rand(7).to_s # eyes
+        #hair
+        random_number = rand(11)
+        @avatar_string += '0' if(random_number < 10)
+        @avatar_string += random_number.to_s
+
+        @avatar_string += rand(7).to_s # mouth
+        @avatar_string += '0' #head
+        @avatar_string += '0' #beard
+        @avatar_string += '0' #veilchen
+        @avatar_string += rand(7) #tattoos
+      end
+    end
   end
 end
