@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfig, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -40,6 +40,25 @@
 
 <!ELEMENT AllianceMaxMembers (#PCDATA)>
 
+<!ELEMENT AvatarConfig EMPTY>
+<!ATTLIST AvatarConfig
+  maxChainsMale       CDATA "0"
+  maxChainsFemale     CDATA #REQUIRED
+  maxEyesMale         CDATA #REQUIRED
+  maxEyesFemale       CDATA #REQUIRED
+  maxHairMale         CDATA #REQUIRED
+  maxHairFemale       CDATA #REQUIRED
+  maxMouthsMale       CDATA #REQUIRED
+  maxMouthsFemale     CDATA #REQUIRED
+  maxHeadsMale        CDATA #REQUIRED
+  maxHeadsFemale      CDATA #REQUIRED
+  maxBeardsMale       CDATA #REQUIRED
+  maxBeardsFemale     CDATA "0"
+  maxVeilchensMale    CDATA #REQUIRED
+  maxVeilchensFemale  CDATA #REQUIRED
+  maxTattoosMale      CDATA #REQUIRED
+  maxTattoosFemale    CDATA #REQUIRED
+>
 <!ELEMENT ChangeCharacterName EMPTY>
 <!ATTLIST ChangeCharacterName
   free_changes CDATA #REQUIRED
