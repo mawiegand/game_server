@@ -19,39 +19,39 @@ module GameState
     def gender
       #TODO add check if char is 'm' or 'f' and if necessary
       #     throw an exception
-      avatar_string[0].downcase
+      @avatar_string[0].downcase
     end
 
     def chain
-      avatar_string[1]
+      @avatar_string[1]
     end
 
     def eyes
-      avatar_string[2]
+      @avatar_string[2]
     end
 
     def hair
-      avatar_string[3..4]
+      @avatar_string[3..4]
     end
 
     def mouth
-      avatar_string[5]
+      @avatar_string[5]
     end
 
     def head
-      avatar_string[6]
+      @avatar_string[6]
     end
 
     def beard
-      avatar_string[7..8]
+      @avatar_string[7..8]
     end
 
     def veilchen
-      avatar_string[9]
+      @avatar_string[9]
     end
 
     def tattoo
-      avatar_string[10]
+      @avatar_string[10]
     end
   end
 end
