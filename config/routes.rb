@@ -13,6 +13,8 @@ GameServer::Application.routes.draw do
         resources :fortress_rankings,  :only => [ :index ]
         resources :artifact_rankings,  :only => [ :index ]
         resource  :ranking_info,       :only => [ :show ]
+        
+        match '/character_rankings/self', :to => 'character_rankings#self'
       end
 
 

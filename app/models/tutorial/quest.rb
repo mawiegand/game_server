@@ -62,10 +62,10 @@ class Tutorial::Quest < ActiveRecord::Base
   end
 
   def send_message
-    quest_message = self.quest[:message]
+    quest_message = (self.quest || {})[:message]
 
     if !quest_message.nil? && self.status < STATE_DISPLAYED
-      Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body])
+      Messaging::Message.create_tutorial_message(self.owner, quest_message[self.owner.lang.to_sym][:subject], quest_message[self.owner.lang.to_sym][:body])
     end
   end
   

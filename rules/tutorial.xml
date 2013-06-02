@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="28" />
+    <Version major="0" minor="2" build="5" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -29,7 +29,7 @@
 
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Order a Hunter Gatherer Level 1.</Task>
@@ -55,10 +55,13 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 1 --> <!-- Tutorial 2 -->
-    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true" priority="1" blocking="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
@@ -85,6 +88,9 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 2 --> <!-- Tutorial 3 -->
@@ -116,6 +122,9 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
       <Message>
         <Subject>Welcome to Wack-A-Doo</Subject>
         <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
@@ -124,7 +133,7 @@
         Prepare to be surprised!</p>
         <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
         <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree='_blank'>Unit Overview</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
         <p>We invite you to register and help keep our Wiki up to date.</p>
         <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
@@ -149,7 +158,7 @@
     </Quest>
     
     <!-- 3 --> <!-- not in -->
-    <Quest id="quest_quest_button" advisor="girl" tutorial="true">
+    <Quest id="quest_quest_button" advisor="girl" tutorial="false">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -175,7 +184,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true">
+    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -202,10 +211,12 @@
       <RewardTests>
         <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
+      <UIMarker>mark_profile</UIMarker>
+      <UIMarker>mark_name_change</UIMarker>
     </Quest>
 
     <!-- 5 -->  <!-- Tutorial 4 -->
-    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
+    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true" priority="2">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task>Build a Training Grounds.</Task>
@@ -236,10 +247,13 @@
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 6 --> <!-- Tutorial 5 -->
-    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
+    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a warrior.</Task>
@@ -264,10 +278,13 @@
       <RewardTests>
         <TrainingQueueTest unit="unit_warrior" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_units_button</UIMarker>
+      <UIMarker>mark_training_dialog_flow</UIMarker>
     </Quest>
 
     <!-- 7 --> <!-- Tutorial 7 -->
-    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
+    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true" priority="2">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task>Go to the world map.</Task>
@@ -294,6 +311,7 @@
       <RewardTests>
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
       <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
@@ -328,7 +346,7 @@
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
-    <Quest id="quest_army_move" advisor="warrior" tutorial="true">
+    <Quest id="quest_army_move" advisor="warrior" tutorial="true" priority="2">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task>Move your army to the fortress.</Task>
@@ -356,10 +374,13 @@
       <RewardTests>
         <MovementTest />
       </RewardTests>
+        <UIMarker>mark_map</UIMarker>
+        <UIMarker>mark_select_own_army</UIMarker>
+        <UIMarker>mark_move_own_army</UIMarker>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true">
+    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task>Upgrade two Hunter Gatherers to level 3.</Task>
@@ -389,7 +410,7 @@
     </Quest>
 
     <!-- 11 --> <!-- Tutorial 10 -->
-    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
+    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true" priority="2">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task>Get yourself back to your settlement.</Task>
@@ -415,6 +436,7 @@
       <RewardTests>
         <CustomTest id="test_settlement_button2">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
     <!-- 12 --> <!-- Tutorial 12 -->
@@ -569,7 +591,7 @@
     </Quest>
 
     <!-- 17--> <!-- Tutorial 8 -->
-    <Quest id="quest_army_create" advisor="warrior" tutorial="true">
+    <Quest id="quest_army_create" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army.</Task>
@@ -597,6 +619,10 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
+      <UIMarker>mark_select_own_home_settlement</UIMarker>
+      <UIMarker>mark_create_army</UIMarker>
+      <UIMarker>mark_create_army_dialog_flow</UIMarker>
     </Quest>
 
     <!-- 18 --> <!-- Tutorial 18 -->
