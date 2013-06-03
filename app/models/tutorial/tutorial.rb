@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.7
+# Version: 0.2.8
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 7, 
+        :build => 8, 
       },
       
       :production_test_weights => {
@@ -430,15 +430,22 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
-              :body => "<p>'Wack-A-Doo' - Das Cross-Platform Spielerlebnis<br/>
-          Log Dich im Browser unter <a href='https://wack-a-doo.de' target='_blank'>Wack-A-Doo.de</a> ein und lade die App für iPhone, iPad und iPod touch.</p>
-          <p>Die wichtigsten Spielmechanismen werden auf diesen Seiten erläutert:
-          <ul><li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
-          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
-          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampf</a></li>
-          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/second_settlement' target='_blank'>Zweite Siedlung</a></li>
-          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/make_account_portable' target='_blank'>Acoount portabel machen</a></li></ul><br/>
-          Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
+              :body => "<p>Herzlich willkommen in der 'Wack-A-Doo'-Community!<p/>
+          <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>        
+          <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten 
+             im Detail und mit Bildern erläutert:
+          <ul>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/second_settlement' target='_blank'>Zweite Siedlung</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+          </ul></p>
+          <p>
+          Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
+          iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+          <a href='https://ios.wack-a-doo.com/de/encyclopedia/make_account_portable' target='_blank'>Account portabel machen</a>.</p>
           <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
           <p>Das Wack-A-Doo Team</p>",
             },
