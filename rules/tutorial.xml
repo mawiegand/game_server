@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="6" />
+    <Version major="0" minor="2" build="7" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -142,18 +142,17 @@
       </Message>
       <Message lang="de">
         <Subject>Willkommen bei Wack-A-Doo</Subject>
-        <Body><![CDATA[<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
-        <p>Unser Spiel 'Wack-A-Doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin in der Entwicklung.<br/>
-        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern.<br/>
-        Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
-        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
-        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
-        <p>Das Wack-A-Doo Team</p>]]></Body>
+        <Body><![CDATA[<p>'Wack-A-Doo' - Das Cross-Platform Spielerlebnis<br/>
+          Log Dich im Browser unter <a href='https://wack-a-doo.de' target='_blank'>Wack-A-Doo.de</a> ein und lade die App für iPhone, iPad und iPod touch.</p>
+          <p>Die wichtigsten Spielmechanismen werden auf diesen Seiten erläutert:
+          <ul><li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampf</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/second_settlement' target='_blank'>Zweite Siedlung</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/make_account_portable' target='_blank'>Acoount portabel machen</a></li></ul><br/>
+          Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
+          <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
+          <p>Das Wack-A-Doo Team</p>]]></Body>
       </Message>
     </Quest>
     
