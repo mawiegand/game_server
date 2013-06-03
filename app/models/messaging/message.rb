@@ -39,7 +39,7 @@ class Messaging::Message < ActiveRecord::Base
   # creates inbox and outbox entries for the message
   def deliver_message
     if self.type_id == ANNOUNCEMENT_TYPE_ID
-      Fundamental::Character.non_banned.non_npc.each do |character|
+      Fundamental::Character.non_banned.not_deleted.non_npc.each do |character|
         if !character.inbox.nil?
           character.inbox.entries.create({
             sender_id:  nil,
