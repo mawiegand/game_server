@@ -56,8 +56,17 @@ class Tutorial::Quest < ActiveRecord::Base
   end
   
   def mark_displayed
+    self.send_message
     self.displayed_at = Time.now        if self.displayed_at.nil?
     self.status = STATE_DISPLAYED       if self.status < STATE_DISPLAYED
+  end
+
+  def send_message
+    quest_message = (self.quest || {})[:message]
+
+    if !quest_message.nil? && self.status < STATE_DISPLAYED
+      Messaging::Message.create_tutorial_message(self.owner, quest_message[self.owner.lang.to_sym][:subject], quest_message[self.owner.lang.to_sym][:body])
+    end
   end
   
   def mark_reward_displayed

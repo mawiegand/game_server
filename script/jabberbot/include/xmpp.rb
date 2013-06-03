@@ -51,20 +51,20 @@ class Xmpp
           'muc#roomconfig_roomname'                => command.room , # Raumname
           'muc#roomconfig_roomdesc'                => command.room == "global" ? "WorldWide Chat" : "Raum des Stammes #{ command.room }", # Raum Beschreibung
           'muc#roomconfig_persistentroom'          => 1,    # Raum persistent machen
-          'muc#roomconfig_publicroom'              => 0,    # Raum öffentlich suchbar machen
+          'muc#roomconfig_publicroom'              => 0,    # Raum ï¿½ffentlich suchbar machen
           'muc#roomconfig_passwordprotectedroom'   => 0,    # Raum mit Passwort schuetzen
           'muc#roomconfig_roomsecret'              => '',   # Passwort
           'muc#roomconfig_maxusers'                => command.room == "global" ? 10000 : 1000,  # Maximale Anzahl von Teilnehmern
-          'muc#roomconfig_whois'                   => "moderators", # Echte Jabber-IDs anzeigen für
-          'muc#roomconfig_membersonly'             => 1,    # Raum nur für Mitglieder zugänglich machen
+          'muc#roomconfig_whois'                   => "moderators", # Echte Jabber-IDs anzeigen fï¿½r
+          'muc#roomconfig_membersonly'             => 1,    # Raum nur fï¿½r Mitglieder zugï¿½nglich machen
           'muc#roomconfig_moderatedroom'           => 1,    # Raum moderiert machen
-          'muc#roomconfig_changesubject'           => 1,    # Erlaube Benutzern das Thema zu ändern
+          'muc#roomconfig_changesubject'           => 1,    # Erlaube Benutzern das Thema zu ï¿½ndern
           'muc#roomconfig_allowinvites'            => 0,    # Erlaube Benutzern Einladungen zu senden
-          'muc#roomconfig_allowvisitorstatus'      => 1,    # Erlaube Besuchern einen Text bei Statusänderung zu senden
-          'muc#roomconfig_allowvisitornickchange'  => 0,    # Erlaube Besuchern ihren Spitznamen zu ändern
-          'muc#roomconfig_allowvoicerequests'      => 0,    # Anfragen von Sprachrechten für Benutzer erlauben
-          'muc#roomconfig_voicerequestmininterval' => 1800, # Mindestdauer zwischen Anfragen für Sprachrechte (in Sekunden)
-          'muc#roomconfig_captcha_whitelist'       => ''    # Vom CAPTCHA Überprüfung ausgeschlossene Jabber IDs
+          'muc#roomconfig_allowvisitorstatus'      => 1,    # Erlaube Besuchern einen Text bei Statusï¿½nderung zu senden
+          'muc#roomconfig_allowvisitornickchange'  => 0,    # Erlaube Besuchern ihren Spitznamen zu ï¿½ndern
+          'muc#roomconfig_allowvoicerequests'      => 0,    # Anfragen von Sprachrechten fï¿½r Benutzer erlauben
+          'muc#roomconfig_voicerequestmininterval' => 1800, # Mindestdauer zwischen Anfragen fï¿½r Sprachrechte (in Sekunden)
+          'muc#roomconfig_captcha_whitelist'       => ''    # Vom CAPTCHA ï¿½berprï¿½fung ausgeschlossene Jabber IDs
         )
         muc.exit
 
@@ -91,7 +91,7 @@ class Xmpp
         muc.say('Hi an alle. Dieser Raum wird nun geloescht.')
 
         #
-        # TODO: Script zum löschen des Raumes
+        # TODO: Script zum lï¿½schen des Raumes
         #
         iq = Jabber::Iq.new_query();
         iq.type = :set
@@ -172,7 +172,7 @@ class Xmpp
 
         muc.exit
 
-        @logger.info "Userrechte fuer #{comamnd.character.name} bei Raum #{command.room} entfernt"
+        @logger.info "Userrechte fuer #{command.character.name} bei Raum #{command.room} entfernt"
       else
         @logger.info "Fehlerhafte Berechtigung beim Rechte entfernen von #{command.character.name} im Raume #{command.room}"
       end

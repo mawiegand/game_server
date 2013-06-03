@@ -136,6 +136,7 @@
     <th>Activity</th>
     <th>Playtime</th>
 <% end %>
+    <th>Lang</th>
     <th>Solved Quests</th>
     <th>Open Quests</th>
     <th>Conversion</th>
@@ -171,6 +172,7 @@
     </td>
     <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
 <% end %>
+    <td><%= fundamental_character.lang %></td>
     <td><%= fundamental_character.num_finished_quests %></td>
     <td>
       <% fundamental_character.tutorial_state.open_quests.each do |quest| %>

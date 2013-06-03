@@ -1,6 +1,8 @@
 class Ranking::CharacterRankingsController < ApplicationController
   layout "ranking"
   
+  before_filter :authenticate, :only => [:self]
+  
   # GET /ranking/character_rankings
   # GET /ranking/character_rankings.json
   def index
@@ -37,12 +39,6 @@ class Ranking::CharacterRankingsController < ApplicationController
 
     @ranking_character_rankings = Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
 
-    #@ranking_character_rankings = if !params[:page].blank? || !params[:per_page].blank?
-    #                                Ranking::CharacterRanking.paginate(:page => page, :per_page => per_page, :order => "#{sort} DESC, id ASC")
-    #                              else
-    #                                Ranking::CharacterRanking.paginate(:page => 1, :per_page => Ranking::CharacterRanking.count, :order => "overall_score DESC, id ASC")
-    #                              end
-
     nr = (page - 1) * per_page + 1
     returned_ranking_entries = @ranking_character_rankings.map do |ranking_entry|
       ranking_entry_hash = ranking_entry.attributes
@@ -59,4 +55,27 @@ class Ranking::CharacterRankingsController < ApplicationController
       format.json { render json: include_root(returned_ranking_entries, :character_ranking) }
     end
   end
+
+  def self
+    raise NotFoundError.new "Not Found."   unless current_character
+    character = current_character
+    sort = "overall_score"
+
+    num_before = Ranking::CharacterRanking.where(
+      "#{ sort } > ? or (#{ sort } = ? and id < ?)",
+      character.ranking[sort.to_sym],
+      character.ranking[sort.to_sym],
+      character.id,
+      ).count
+
+    @ranking_character_ranking = Ranking::CharacterRanking.find_by_character_id(character.id)
+    @ranking_character_ranking[:rank] = num_before + 1
+    
+    respond_to do |format|
+      format.json { render json: @ranking_character_ranking }
+    end
+  end
 end
+
+
+
