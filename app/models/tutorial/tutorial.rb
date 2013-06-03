@@ -439,13 +439,13 @@ class Tutorial::Tutorial
             <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
             <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
             <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/second_settlement' target='_blank'>Zweite Siedlung</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
             <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
           </ul></p>
           <p>
           Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
           iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
-          <a href='https://ios.wack-a-doo.com/de/encyclopedia/make_account_portable' target='_blank'>Account portabel machen</a>.</p>
+          <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
           <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
           <p>Das Wack-A-Doo Team</p>",
             },
