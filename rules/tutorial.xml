@@ -152,7 +152,7 @@
         <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
         <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
+        <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
         <p>Das Wack-A-Doo Team</p>]]></Body>
       </Message>
     </Quest>
@@ -201,7 +201,7 @@
       </Flavor>
       <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen. </RewardText>
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
-      <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spass miteinander haben.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>

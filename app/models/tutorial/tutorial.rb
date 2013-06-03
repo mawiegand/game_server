@@ -440,7 +440,7 @@ class Tutorial::Tutorial
         <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
         <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
+        <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
         <p>Das Wack-A-Doo Team</p>",
             },
 
@@ -559,7 +559,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spass miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
