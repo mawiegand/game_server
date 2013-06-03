@@ -83,7 +83,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -95,6 +95,7 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
       'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
