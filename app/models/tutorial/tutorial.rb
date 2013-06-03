@@ -439,7 +439,7 @@ class Tutorial::Tutorial
           <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/second_settlement' target='_blank'>Zweite Siedlung</a></li>
           <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/make_account_portable' target='_blank'>Acoount portabel machen</a></li></ul><br/>
           Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
-          <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
+          <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
           <p>Das Wack-A-Doo Team</p>",
             },
 
@@ -558,7 +558,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spass miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
