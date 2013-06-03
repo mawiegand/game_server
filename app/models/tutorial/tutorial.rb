@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.5
+# Version: 0.2.6
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 5, 
+        :build => 6, 
       },
       
       :production_test_weights => {
@@ -559,7 +559,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spass miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
@@ -885,8 +885,6 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', ],
 
-          :place_npcs => 1,         
-
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
           :id                => 8,
@@ -1087,6 +1085,8 @@ class Tutorial::Tutorial
           },          
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
+
+          :place_npcs => 1,         
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
@@ -1308,7 +1308,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.",
                 

@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="5" />
+    <Version major="0" minor="2" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -201,7 +201,7 @@
       </Flavor>
       <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen. </RewardText>
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
-      <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spas miteinander haben.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spass miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
@@ -312,7 +312,6 @@
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
       <UIMarker>mark_map</UIMarker>
-      <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
     <!-- 8 --> <!-- Tutorial 17 -->
@@ -377,6 +376,7 @@
         <UIMarker>mark_map</UIMarker>
         <UIMarker>mark_select_own_army</UIMarker>
         <UIMarker>mark_move_own_army</UIMarker>
+        <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
@@ -451,7 +451,7 @@
       <Description locale="en_US">
         <p>By upgrading your chieftain's hut you can build more and different buildings.</p>
       </Description>
-      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
+      <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
       <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.</Flavor>
       <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
       <RewardText locale="en_US">Upgrading the chieftain's hut gives access to new buildings, so you can construct more buildings.</RewardText>
