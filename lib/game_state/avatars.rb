@@ -12,6 +12,10 @@ module GameState
     #   10  => tattoo
     attr_accessor :avatar_string
 
+    def initialize
+      @rules = GameRules::Rules.the_rules.avatar_config
+    end
+
     # TODO: add a setter method for avatar_string to
     #       check if the string has a proper length
     #       according to the AvatarConfig rules
@@ -58,32 +62,31 @@ module GameState
       @avatar_string  = is_male ? 'm' : 'f'
 
       if(is_male)
-        @avatar_string += '0' #chains
-        @avatar_string += rand(7).to_s # eyes
-        @avatar_string += rand(7).to_s # hair
-        @avatar_string += rand(3).to_s # mouth
-        @avatar_string += '0' #head
-        #beard
-        random_number = rand(11)
-        @avatar_string += '0' if(random_number < 10)
-        @avatar_string += random_number.to_s
-
-        @avatar_string += rand(7).to_s #veilchen
-        @avatar_string += rand(7).to_s #tattoos
+        @avatar_string += random_number :max_chains_male
+        @avatar_string += random_number :max_eyes_male
+        @avatar_string += random_number :max_hair_male
+        @avatar_string += random_number :max_mouths_male
+        @avatar_string += random_number :max_heads_male
+        @avatar_string += random_number :max_beards_male
+        @avatar_string += random_number :max_veilchens_male
+        @avatar_string += random_number :max_tattos_male
       else
-        @avatar_string += rand(4).to_s #chains
-        @avatar_string += rand(7).to_s # eyes
-        #hair
-        random_number = rand(11)
-        @avatar_string += '0' if(random_number < 10)
-        @avatar_string += random_number.to_s
-
-        @avatar_string += rand(7).to_s # mouth
-        @avatar_string += '0' #head
-        @avatar_string += '0' #beard
-        @avatar_string += '0' #veilchen
-        @avatar_string += rand(7).to_s #tattoos
+        @avatar_string += random_number :max_chains_female
+        @avatar_string += random_number :max_eyes_female
+        @avatar_string += random_number :max_hair_female
+        @avatar_string += random_number :max_mouths_female
+        @avatar_string += random_number :max_heads_female
+        @avatar_string += random_number :max_beards_female
+        @avatar_string += random_number :max_veilchens_female
+        @avatar_string += random_number :max_tattos_female
       end
+    end
+
+    # returns a random number (as string) or '0' according to it's rules
+    private
+    def random_number(rule)
+      value = @rules[rule].to_i
+      value >= 10 ? "%02d" % rand(value) : rand(value).to_i.to_s
     end
   end
 end
