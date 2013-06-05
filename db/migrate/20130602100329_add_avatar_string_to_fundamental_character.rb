@@ -1,4 +1,4 @@
-require 'game_state/avatars'
+require_relative '../../lib/game_state/avatars'
 
 class AddAvatarStringToFundamentalCharacter < ActiveRecord::Migration
   def change
