@@ -200,12 +200,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def redeem_tutorial_end_rewards
-    Shop::BonusOffer.all.each do |bonus_offer|
-      bonus_offer.credit_to(self)
-    end
-    
-    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
-    platinum_offer.credit_to(self) unless platinum_offer.nil?
+    self.extend_premium_atomically(Tutorial::Tutorial.the_tutorial.tutorial_reward[:platinum_duration])
   end
 
   def locale
@@ -823,9 +818,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   def extend_premium_atomically(duration)
     if self.premium_expiration.nil? || self.premium_expiration < Time.now
-      self.premium_expiration = Time.now.advance(:hours => duration)
+      self.premium_expiration = Time.now.advance(:hours => duration.to_i)
     else
-      self.premium_expiration = self.premium_expiration.advance(:hours => duration)
+      self.premium_expiration = self.premium_expiration.advance(:hours => duration.to_i)
     end
     self.save
   end

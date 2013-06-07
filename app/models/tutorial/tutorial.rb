@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.8
+# Version: 0.3.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -27,7 +27,7 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights, :tutorial_reward
   
   def attributes 
     { 
@@ -36,6 +36,7 @@ class Tutorial::Tutorial
       'updated_at'               => updated_at,
       'num_tutorial_quests'      => num_tutorial_quests,
       'production_test_weights'  => production_test_weights,
+      'tutorial_reward'          => tutorial_reward,
     }
   end
   
@@ -77,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 2, 
-        :build => 8, 
+        :minor => 3, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -87,6 +88,10 @@ class Tutorial::Tutorial
         :resource_stone => 1,
         :resource_fur => 1,
         :resource_cash => 0,
+      },
+      
+      :tutorial_reward => {
+        :platinum_duration => 72      
       },
       
       :updated_at => File.ctime(__FILE__),
