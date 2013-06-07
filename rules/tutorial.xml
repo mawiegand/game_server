@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="28" />
+    <Version major="0" minor="0" build="29" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -358,11 +358,11 @@
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl3" advisor="girl" tutorial="true">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
-      <Task>Upgrade two Hunter Gatherers to level 3.</Task>
-      <Task locale="de_DE">Baue zwei Jäger und Sammler auf Level 3 aus.</Task>
+      <Task>Upgrade a Hunter Gatherer to level 3.</Task>
+      <Task locale="de_DE">Baue einen Jäger und Sammler auf Level 3 aus.</Task>
       <Description locale="de_DE">
         <p>Sorge doch bitte dafür, dass Du immer genug Rohstoffe hast. Baue und verbessere dafür mindestens zwei Deiner Jäger und Sammler auf Level 3.</p>
       </Description>
@@ -383,7 +383,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <BuildingTest building="building_gatherer" min_level="3" min_count="2"/>
+        <BuildingTest building="building_gatherer" min_level="3" min_count="1"/>
       </RewardTests>
     </Quest>
 
@@ -434,7 +434,7 @@
       <RewardText locale="en_US">Upgrading the chieftain's hut gives access to new buildings, so you can construct more buildings.</RewardText>
       <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
       <RewardFlavor locale="en_US">Great! Some more building slots and you can build a small hut now.</RewardFlavor>
-      <Requirement quest="quest_build_2gathererlvl3" />
+      <Requirement quest="quest_build_1gathererlvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">175</ResourceReward>
         <ResourceReward resource="resource_wood">175</ResourceReward>
@@ -480,13 +480,13 @@
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
-      <Task>Improve your stone and wood production to at least 18 units per hour</Task>
-      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 18 Rohstoffeinheiten pro Stunde.</Task>
+      <Task>Improve your stone and wood production to at least 12 units per hour</Task>
+      <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.</Task>
       <Description locale="de_DE">
-        <p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
+        <p>Du solltest zum Erreichen des Ziels 3 oder 4 Jäger und Sammler bauen und  auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>
       </Description>
       <Description locale="en_US">
-        <p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or 3. You can see your current production at raw materials display at the top.</p>
+        <p>To do this you should build 3 or 4 Hunter Gatheres and upgrade  them to level 2 or 3. You can see your current production at raw materials display at the top.</p>
       </Description>
       <Flavor locale="de_DE">Rohstoffe sind die halbe Miete. Wir brauchen dringend eine Produktion!</Flavor>
       <Flavor locale="en_US">We need a higher raw materials production.</Flavor>
@@ -502,70 +502,71 @@
         <ExperienceReward>100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <ResourceProductionTest resource="resource_wood">18</ResourceProductionTest>
-        <ResourceProductionTest resource="resource_stone">18</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
+        <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
     </Quest>
 
     <!-- 15 --> <!-- Tutorial 16 -->
-    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
-      <Name>The chieftain's hut again</Name>
-      <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
-      <Task>Upgrade your chieftain's hut to level 4.</Task>
-      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
-      <Description locale="de_DE">
-        <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>You can speed up the chieftain's hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>
-      </Description>
-      <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
-      <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
-      <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
-      <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
-      <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
-      <RewardFlavor locale="en_US">Isn't it great, how your settlement is growing? I've even managed to persuade the boss to give you some of his huge stores of resources.</RewardFlavor>
-      <Requirement quest="quest_improve_production_1" />
-      <Rewards>
-        <ResourceReward resource="resource_stone">250</ResourceReward>
-        <ResourceReward resource="resource_wood">250</ResourceReward>
-        <ResourceReward resource="resource_fur">250</ResourceReward>
-        <ExperienceReward>300</ExperienceReward>
-      </Rewards>
-      <RewardTests>
-        <BuildingTest building="building_chief_cottage" min_level="4" />
-      </RewardTests>
-    </Quest>
+      <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" tutorial="true">
+          <Name>And another chieftain's hut upgrade</Name>
+          <Name locale="de_DE">Noch einmal die Häuptlingshütte</Name>
+          <Task>I think it's time for a bigger chieftain's hut. Why not order an upgrade.</Task>
+          <Task locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Task>
+          <Description locale="de_DE">
+              <p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>
+          </Description>
+          <Description locale="en_US">
+              <p>Upgrade your Chieftain's Hut to gain more advantages.</p>
+          </Description>
+          <Flavor locale="de_DE"></Flavor>
+          <Flavor locale="en_US"> </Flavor>
+          <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
+          <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
+          <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
+          <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
+          <Requirement quest="quest_improve_production_1" />
+          <Rewards>
+              <ResourceReward resource="resource_stone">165</ResourceReward>
+              <ResourceReward resource="resource_wood">150</ResourceReward>
+              <ResourceReward resource="resource_fur">120</ResourceReward>
+              <ResourceReward resource="resource_cash">2</ResourceReward>
+          </Rewards>
+          <RewardTests>
+              <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
+          </RewardTests>
+      </Quest>
 
+    
     <!-- 16 -->
-    <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" hide_start_dialog="true">
-      <Name>And another chieftain's hut upgrade</Name>
-      <Name locale="de_DE">Hurtig!</Name>
-      <Task>Two golden frogs!</Task>
-      <Task locale="de_DE">Du hast zwei Kröten erhalten!</Task>
-      <Description locale="de_DE">
-        <p></p>
-      </Description>
-      <Description locale="en_US">
-        <p></p>
-      </Description>
-      <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Flavor>
-      <Flavor locale="en_US">I think it's time for a bigger chieftain's hut. Why not order an upgrade. </Flavor>
-      <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
-      <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
-      <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
-      <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
-      <Requirement quest="quest_improve_production_1" />
-      <Rewards>
-          <ResourceReward resource="resource_stone">165</ResourceReward>
-          <ResourceReward resource="resource_wood">150</ResourceReward>
-          <ResourceReward resource="resource_fur">120</ResourceReward>
-        <ResourceReward resource="resource_cash">2</ResourceReward>
-      </Rewards>
-      <RewardTests>
-        <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
-      </RewardTests>
-    </Quest>
+      <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
+          <Name>The chieftain's hut again</Name>
+          <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
+          <Task>Upgrade your chieftain's hut to level 4.</Task>
+          <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
+          <Description locale="de_DE">
+              <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>
+          </Description>
+          <Description locale="en_US">
+              <p>You can speed up the chieftain's hut upgrade with golden frogs.</p>
+          </Description>
+          <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
+          <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
+          <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
+          <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
+          <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
+          <RewardFlavor locale="en_US">Isn't it great, how your settlement is growing? I've even managed to persuade the boss to give you some of his huge stores of resources.</RewardFlavor>
+          <Requirement quest="quest_queue_chiefcottagelvl4" />
+          <Rewards>
+              <ResourceReward resource="resource_stone">250</ResourceReward>
+              <ResourceReward resource="resource_wood">250</ResourceReward>
+              <ResourceReward resource="resource_fur">250</ResourceReward>
+              <ExperienceReward>300</ExperienceReward>
+          </Rewards>
+          <RewardTests>
+              <BuildingTest building="building_chief_cottage" min_level="4" />
+          </RewardTests>
+      </Quest>
 
     <!-- 17--> <!-- Tutorial 9 -->
     <Quest id="quest_army_create" advisor="warrior" tutorial="true">
@@ -663,8 +664,8 @@
     <Quest id="quest_resourcescore_0" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 90 resource points.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.</Task>
+      <Task>Increase the resource production of one settlement to 80 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 80 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
         <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
       </Description>
@@ -685,7 +686,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="90" />
+        <SettlementProductionTest min_resources="80" />
       </RewardTests>
     </Quest>
 
@@ -3160,8 +3161,8 @@
     <Quest id="quest_resourcescore_1" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 150 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.</Task>
+      <Task>Increase the resource production of one settlement to 120 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 120 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3182,7 +3183,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="150" />
+        <SettlementProductionTest min_resources="120" />
       </RewardTests>
     </Quest>
 
@@ -3190,8 +3191,8 @@
     <Quest id="quest_resourcescore_2" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 240 resource points after taxes.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunkte nach Steuern. </Task>
+      <Task>Increase the resource production of one settlement to 210 resource points after taxes.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 210 Rohstoffpunkte nach Steuern. </Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
@@ -3212,7 +3213,7 @@
         <ExperienceReward>60</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="240" />
+        <SettlementProductionTest min_resources="210" />
       </RewardTests>
     </Quest>
 

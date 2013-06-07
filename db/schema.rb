@@ -1785,7 +1785,6 @@ ActiveRecord::Schema.define(:version => 20130516164041) do
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
     t.integer  "alliance_size_bonus",                      :default => 0
-    t.string   "lang",                                     :default => "en",  :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|

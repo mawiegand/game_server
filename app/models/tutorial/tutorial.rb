@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.0.28
+# Version: 0.0.29
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 0, 
-        :build => 28, 
+        :build => 29, 
       },
       
       :production_test_weights => {
@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -1053,9 +1053,9 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_army_move
-        {               #   quest_build_2gathererlvl3
+        {               #   quest_build_1gathererlvl3
           :id                => 10, 
-          :symbolic_id       => :quest_build_2gathererlvl3,
+          :symbolic_id       => :quest_build_1gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
@@ -1070,9 +1070,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade two Hunter Gatherers to level 3.",
+            :en_US => "Upgrade a Hunter Gatherer to level 3.",
   
-            :de_DE => "Baue zwei Jäger und Sammler auf Level 3 aus.",
+            :de_DE => "Baue einen Jäger und Sammler auf Level 3 aus.",
                 
           },
           :flavour => {
@@ -1146,7 +1146,7 @@ class Tutorial::Tutorial
 
                 :min_level => 3,
 
-                :min_count => 2,
+                :min_count => 1,
 
               },
 
@@ -1154,7 +1154,7 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_build_2gathererlvl3
+        },              #   END OF quest_build_1gathererlvl3
         {               #   quest_settlement_button2
           :id                => 11, 
           :symbolic_id       => :quest_settlement_button2,
@@ -1293,7 +1293,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_build_1gathererlvl3',
 
           },
 
@@ -1461,9 +1461,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 18 units per hour",
+            :en_US => "Improve your stone and wood production to at least 12 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 18 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -1475,9 +1475,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
+            :de_DE => "<p>Du solltest zum Erreichen des Ziels 3 oder 4 Jäger und Sammler bauen und  auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
   
-            :en_US => "<p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or 3. You can see your current production at raw materials display at the top.</p>",
+            :en_US => "<p>To do this you should build 3 or 4 Hunter Gatheres and upgrade  them to level 2 or 3. You can see your current production at raw materials display at the top.</p>",
                 
           },          
           :reward_flavour => {
@@ -1501,7 +1501,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [15, 16, ],
+          :successor_quests => [15, ],
 
           :rewards => {
             
@@ -1534,12 +1534,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 18,
+                :minimum  => 12,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 18,
+                :minimum  => 12,
               },
 
             ],
@@ -1547,8 +1547,110 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_improve_production_1
-        {               #   quest_build_chiefcottagelvl4
+        {               #   quest_queue_chiefcottagelvl4
           :id                => 15, 
+          :symbolic_id       => :quest_queue_chiefcottagelvl4,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          
+          :name => {
+            
+            :en_US => "And another chieftain's hut upgrade",
+  
+            :de_DE => "Noch einmal die Häuptlingshütte",
+                
+          },
+          :task => {
+            
+            :en_US => "I think it's time for a bigger chieftain's hut. Why not order an upgrade.",
+  
+            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "",
+  
+            :en_US => " ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>",
+  
+            :en_US => "<p>Upgrade your Chieftain's Hut to gain more advantages.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.",
+  
+            :en_US => "The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
+  
+            :en_US => "Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_improve_production_1',
+
+          },
+
+          :successor_quests => [16, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 165,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 120,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+                :min_level => 4,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_queue_chiefcottagelvl4
+        {               #   quest_build_chiefcottagelvl4
+          :id                => 16, 
           :symbolic_id       => :quest_build_chiefcottagelvl4,
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1578,9 +1680,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>",
+            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>",
   
-            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>",
+            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs.</p>",
                 
           },          
           :reward_flavour => {
@@ -1600,7 +1702,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_queue_chiefcottagelvl4',
 
           },
 
@@ -1649,108 +1751,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_chiefcottagelvl4
-        {               #   quest_queue_chiefcottagelvl4
-          :id                => 16, 
-          :symbolic_id       => :quest_queue_chiefcottagelvl4,
-          :advisor           => :girl,
-          :hide_start_dialog => true,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          
-          :name => {
-            
-            :en_US => "And another chieftain's hut upgrade",
-  
-            :de_DE => "Hurtig!",
-                
-          },
-          :task => {
-            
-            :en_US => "Two golden frogs!",
-  
-            :de_DE => "Du hast zwei Kröten erhalten!",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
-  
-            :en_US => "I think it's time for a bigger chieftain's hut. Why not order an upgrade. ",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p></p>",
-  
-            :en_US => "<p></p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.",
-  
-            :en_US => "The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
-  
-            :en_US => "Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_improve_production_1',
-
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 165,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 150,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 120,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :construction_queue_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-                :min_count => 1,
-                :min_level => 4,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
           :id                => 17, 
           :symbolic_id       => :quest_army_create,
@@ -2049,9 +2049,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 90 resource points.",
+            :en_US => "Increase the resource production of one settlement to 80 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 80 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2119,7 +2119,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 90,
+              :min_resources => 80,
             },
 
           },          
@@ -9912,9 +9912,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 150 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 120 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 120 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -9982,7 +9982,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 150,
+              :min_resources => 120,
             },
 
           },          
@@ -10005,9 +10005,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 240 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 210 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunkte nach Steuern. ",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 210 Rohstoffpunkte nach Steuern. ",
                 
           },
           :flavour => {
@@ -10075,7 +10075,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 240,
+              :min_resources => 210,
             },
 
           },          
