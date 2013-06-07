@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="0" build="29" />
+    <Version major="0" minor="2" build="7" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -29,7 +29,7 @@
 
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Order a Hunter Gatherer Level 1.</Task>
@@ -55,10 +55,13 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 1 --> <!-- Tutorial 2 -->
-    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true">
+    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true" priority="1" blocking="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
@@ -85,6 +88,9 @@
       <RewardTests>
         <BuildingTest building="building_gatherer" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 2 --> <!-- Tutorial 3 -->
@@ -116,6 +122,9 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="2" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
       <Message>
         <Subject>Welcome to Wack-A-Doo</Subject>
         <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
@@ -124,7 +133,7 @@
         Prepare to be surprised!</p>
         <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
         <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree='_blank'>Unit Overview</a></p>
+        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
         <p>We invite you to register and help keep our Wiki up to date.</p>
         <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
         <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
@@ -147,8 +156,9 @@
         <p>Das Wack-A-Doo Team</p>]]></Body>
       </Message>
     </Quest>
-
-    <Quest id="quest_quest_button" advisor="girl" tutorial="true">
+    
+    <!-- 3 --> <!-- not in -->
+    <Quest id="quest_quest_button" advisor="girl" tutorial="false">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -173,8 +183,8 @@
       </RewardTests>
     </Quest>
 
-    <!-- 4 --> <!-- Tutorial 5 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true">
+    <!-- 4 --> <!-- Tutorial 6 -->
+    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -201,10 +211,12 @@
       <RewardTests>
         <CustomTest id="test_profile">change profile text</CustomTest>
       </RewardTests>
+      <UIMarker>mark_profile</UIMarker>
+      <UIMarker>mark_name_change</UIMarker>
     </Quest>
 
-    <!-- 5 -->  <!-- Tutorial 6 -->
-    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true">
+    <!-- 5 -->  <!-- Tutorial 4 -->
+    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true" priority="2">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task>Build a Training Grounds.</Task>
@@ -235,10 +247,13 @@
       <RewardTests>
         <BuildingTest building="building_barracks" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
-    <!-- 6 --> <!-- Tutorial 7 -->
-    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true">
+    <!-- 6 --> <!-- Tutorial 5 -->
+    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a warrior.</Task>
@@ -263,10 +278,13 @@
       <RewardTests>
         <TrainingQueueTest unit="unit_warrior" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_units_button</UIMarker>
+      <UIMarker>mark_training_dialog_flow</UIMarker>
     </Quest>
 
-    <!-- 7 --> <!-- Tutorial 8 -->
-    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true">
+    <!-- 7 --> <!-- Tutorial 7 -->
+    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true" priority="2">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task>Go to the world map.</Task>
@@ -293,10 +311,11 @@
       <RewardTests>
         <CustomTest id="test_settlement_button1">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
       <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
-    <!-- 8 --> <!-- Tutorial 16 -->
+    <!-- 8 --> <!-- Tutorial 17 -->
     <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true" >
       <Name>Raw materials store</Name>
       <Name locale="de_DE">Rohstofflager </Name>
@@ -326,8 +345,8 @@
       </RewardTests>
     </Quest>
 
-    <!-- 9 --> <!-- Tutorial 10 -->
-    <Quest id="quest_army_move" advisor="warrior" tutorial="true">
+    <!-- 9 --> <!-- Tutorial 9 -->
+    <Quest id="quest_army_move" advisor="warrior" tutorial="true" priority="2">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task>Move your army to the fortress.</Task>
@@ -355,10 +374,14 @@
       <RewardTests>
         <MovementTest />
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
+      <UIMarker>mark_select_own_army</UIMarker>
+      <UIMarker>mark_select_other_army</UIMarker>
+      <UIMarker>mark_attack_button</UIMarker>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_1gathererlvl3" advisor="girl" tutorial="true">
+    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task>Upgrade a Hunter Gatherer to level 3.</Task>
@@ -387,8 +410,8 @@
       </RewardTests>
     </Quest>
 
-    <!-- 11 --> <!-- Tutorial 12 -->
-    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true">
+    <!-- 11 --> <!-- Tutorial 10 -->
+    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true" priority="2">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task>Get yourself back to your settlement.</Task>
@@ -414,9 +437,10 @@
       <RewardTests>
         <CustomTest id="test_settlement_button2">settlement button pressed</CustomTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
-    <!-- 12 --> <!-- Tutorial 13 -->
+    <!-- 12 --> <!-- Tutorial 12 -->
     <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="true">
       <Name>An even bigger chieftain's hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
@@ -434,7 +458,7 @@
       <RewardText locale="en_US">Upgrading the chieftain's hut gives access to new buildings, so you can construct more buildings.</RewardText>
       <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
       <RewardFlavor locale="en_US">Great! Some more building slots and you can build a small hut now.</RewardFlavor>
-      <Requirement quest="quest_build_1gathererlvl3" />
+      <Requirement quest="quest_build_2gathererlvl3" />
       <Rewards>
         <ResourceReward resource="resource_stone">175</ResourceReward>
         <ResourceReward resource="resource_wood">175</ResourceReward>
@@ -446,7 +470,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 13 --> <!-- Tutorial 14 -->
+    <!-- 13 --> <!-- Tutorial 13 -->
     <Quest id="quest_build_cottagelvl1" advisor="girl" tutorial="true">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
@@ -476,7 +500,7 @@
       </RewardTests>
     </Quest>
 
-    <!-- 14 --> <!-- Tutorial 15 -->
+    <!-- 14 --> <!-- Tutorial 14 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="true">
       <Name>Improve your raw materials production</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
@@ -507,69 +531,70 @@
       </RewardTests>
     </Quest>
 
-    <!-- 15 --> <!-- Tutorial 16 -->
-      <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" tutorial="true">
-          <Name>And another chieftain's hut upgrade</Name>
-          <Name locale="de_DE">Noch einmal die Häuptlingshütte</Name>
-          <Task>I think it's time for a bigger chieftain's hut. Why not order an upgrade.</Task>
-          <Task locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Task>
-          <Description locale="de_DE">
-              <p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>
-          </Description>
-          <Description locale="en_US">
-              <p>Upgrade your Chieftain's Hut to gain more advantages.</p>
-          </Description>
-          <Flavor locale="de_DE"></Flavor>
-          <Flavor locale="en_US"> </Flavor>
-          <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
-          <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
-          <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
-          <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
-          <Requirement quest="quest_improve_production_1" />
-          <Rewards>
-              <ResourceReward resource="resource_stone">165</ResourceReward>
-              <ResourceReward resource="resource_wood">150</ResourceReward>
-              <ResourceReward resource="resource_fur">120</ResourceReward>
-              <ResourceReward resource="resource_cash">2</ResourceReward>
-          </Rewards>
-          <RewardTests>
-              <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
-          </RewardTests>
-      </Quest>
 
-    
-    <!-- 16 -->
-      <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
-          <Name>The chieftain's hut again</Name>
-          <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
-          <Task>Upgrade your chieftain's hut to level 4.</Task>
-          <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
-          <Description locale="de_DE">
-              <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>
-          </Description>
-          <Description locale="en_US">
-              <p>You can speed up the chieftain's hut upgrade with golden frogs.</p>
-          </Description>
-          <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
-          <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
-          <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
-          <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
-          <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
-          <RewardFlavor locale="en_US">Isn't it great, how your settlement is growing? I've even managed to persuade the boss to give you some of his huge stores of resources.</RewardFlavor>
-          <Requirement quest="quest_queue_chiefcottagelvl4" />
-          <Rewards>
-              <ResourceReward resource="resource_stone">250</ResourceReward>
-              <ResourceReward resource="resource_wood">250</ResourceReward>
-              <ResourceReward resource="resource_fur">250</ResourceReward>
-              <ExperienceReward>300</ExperienceReward>
-          </Rewards>
-          <RewardTests>
-              <BuildingTest building="building_chief_cottage" min_level="4" />
-          </RewardTests>
-      </Quest>
+    <!-- 15 --> <!-- Tutorial 15 -->
+    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
+        <Name>The chieftain's hut again</Name>
+        <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
+        <Task>Upgrade your chieftain's hut to level 4.</Task>
+        <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
+        <Description locale="de_DE">
+            <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>
+        </Description>
+        <Description locale="en_US">
+            <p>You can speed up the chieftain's hut upgrade with golden frogs.</p>
+        </Description>
+        <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
+        <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
+        <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
+        <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
+        <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
+        <RewardFlavor locale="en_US">Isn't it great, how your settlement is growing? I've even managed to persuade the boss to give you some of his huge stores of resources.</RewardFlavor>
+        <Requirement quest="quest_queue_chiefcottagelvl4" />
+        <Rewards>
+            <ResourceReward resource="resource_stone">250</ResourceReward>
+            <ResourceReward resource="resource_wood">250</ResourceReward>
+            <ResourceReward resource="resource_fur">250</ResourceReward>
+            <ExperienceReward>300</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+            <BuildingTest building="building_chief_cottage" min_level="4" />
+        </RewardTests>
+    </Quest>
 
-    <!-- 17--> <!-- Tutorial 9 -->
-    <Quest id="quest_army_create" advisor="warrior" tutorial="true">
+    <!-- 16 --> <!-- Tutorial 16 -->
+    <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" tutorial="true">
+        <Name>And another chieftain's hut upgrade</Name>
+        <Name locale="de_DE">Noch einmal die Häuptlingshütte</Name>
+        <Task>I think it's time for a bigger chieftain's hut. Why not order an upgrade.</Task>
+        <Task locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Task>
+        <Description locale="de_DE">
+            <p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>
+        </Description>
+        <Description locale="en_US">
+            <p>Upgrade your Chieftain's Hut to gain more advantages.</p>
+        </Description>
+        <Flavor locale="de_DE"></Flavor>
+        <Flavor locale="en_US"> </Flavor>
+        <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
+        <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
+        <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
+        <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
+        <Requirement quest="quest_improve_production_1" />
+        <Rewards>
+            <ResourceReward resource="resource_stone">165</ResourceReward>
+            <ResourceReward resource="resource_wood">150</ResourceReward>
+            <ResourceReward resource="resource_fur">120</ResourceReward>
+            <ResourceReward resource="resource_cash">2</ResourceReward>
+        </Rewards>
+        <RewardTests>
+            <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
+        </RewardTests>
+    </Quest>
+
+
+    <!-- 17--> <!-- Tutorial 8 -->
+    <Quest id="quest_army_create" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army.</Task>
@@ -597,9 +622,13 @@
       <RewardTests>
         <ArmyTest type="visible" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_map</UIMarker>
+      <UIMarker>mark_select_own_home_settlement</UIMarker>
+      <UIMarker>mark_create_army</UIMarker>
+      <UIMarker>mark_create_army_dialog_flow</UIMarker>
     </Quest>
 
-    <!-- 18 --> <!-- Tutorial 17 -->
+    <!-- 18 --> <!-- Tutorial 18 -->
     <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>

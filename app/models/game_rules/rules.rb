@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.4.0
+# Version: 0.6.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -32,7 +32,7 @@ class GameRules::Rules
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
+  attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
@@ -42,6 +42,7 @@ class GameRules::Rules
     { 
       'version'                     => version,
       'battle'                      => battle,
+      'app_control'                 => app_control,
       'domains'                     => domains,
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
@@ -113,8 +114,10 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 4,
-                    :build => 0,
+                    :minor => 6,
+                    :build => 3,
+      },
+      :app_control => { :debug_tracking => 1,
       },
       :battle => {
         :calculation => {
@@ -5311,7 +5314,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
                 
           },
 
-          :hidden      => 1,
+          :hidden      => 0,
 
 	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
@@ -7381,6 +7384,19 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :de_DE => "Tyrannosaurustyrann",
   
             :en_US => "Tyrannosaurstyrant",
+  
+            },
+          },             #   END OF 
+          {              #  44
+            :id          => 44,
+            :exp         => 99999999,
+            :settlement_points   => 5,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Tyrannosaurusmeistertyrann",
+  
+            :en_US => "Tyrannosaursmastertyrant",
   
             },
           },             #   END OF 
