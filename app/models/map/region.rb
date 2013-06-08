@@ -18,6 +18,8 @@ class Map::Region < ActiveRecord::Base
   
   before_create :add_unique_invitation_code
   
+  before_save   :prevent_empty_movement_password
+ 
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
@@ -82,4 +84,11 @@ class Map::Region < ActiveRecord::Base
       info.regions_count = Map::Region.count
       info.save
     end  
+    
+    def prevent_empty_movement_password
+      if self.movement_password.nil?
+        self.movement_password = Util.make_random_string(6)
+      end
+      true
+    end
 end
