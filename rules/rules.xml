@@ -127,24 +127,24 @@
     <TradingSpeedupCost resource="resource_cash" amount="1" />
     <AvatarConfigs>
       <AvatarConfig gender="male">
+        <AvatarLayer max="6"  optional="true" chars="2">beards</AvatarLayer>
         <AvatarLayer max="0"  optional="true">chains</AvatarLayer>
-        <AvatarLayer max="8"  optional="false" chars="2">eyes</AvatarLayer>
-        <AvatarLayer max="8"  optional="true"  chars="2">hairs</AvatarLayer>
+        <AvatarLayer max="3"  optional="false" chars="2">eyes</AvatarLayer>
+        <AvatarLayer max="5"  optional="true"  chars="2">hairs</AvatarLayer>
         <AvatarLayer max="4"  optional="false" chars="2">mouths</AvatarLayer>
         <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
-        <AvatarLayer max="12" optional="true" chars="2">beards</AvatarLayer>
-        <AvatarLayer max="8"  optional="true">veilchens</AvatarLayer>
-        <AvatarLayer max="8"  optional="true" chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="3"  optional="true" chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="4"  optional="true">veilchens</AvatarLayer>
       </AvatarConfig>
       <AvatarConfig gender="female">
-        <AvatarLayer max="4"  optional="true">chains</AvatarLayer>
-        <AvatarLayer max="8"  optional="false" chars="2">eyes</AvatarLayer>
-        <AvatarLayer max="8"  optional="true"  chars="2">hairs</AvatarLayer>
-        <AvatarLayer max="4"  optional="false" chars="2">mouths</AvatarLayer>
+        <AvatarLayer max="0" optional="true"  chars="2">beards</AvatarLayer>
+        <AvatarLayer max="2"  optional="true">chains</AvatarLayer>
+        <AvatarLayer max="4"  optional="false" chars="2">eyes</AvatarLayer>
+        <AvatarLayer max="11" optional="true"  chars="2">hairs</AvatarLayer>
         <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
-        <AvatarLayer max="12" optional="true"  chars="2">beards</AvatarLayer>
-        <AvatarLayer max="8"  optional="true">veilchens</AvatarLayer>
-        <AvatarLayer max="8"  optional="true"  chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="5"  optional="false" chars="2">mouths</AvatarLayer>
+        <AvatarLayer max="3"  optional="true"  chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="0"  optional="true">veilchens</AvatarLayer>
       </AvatarConfig>
    </AvatarConfigs>
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
