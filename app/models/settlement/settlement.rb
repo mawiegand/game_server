@@ -257,7 +257,9 @@ class Settlement::Settlement < ActiveRecord::Base
 
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
-
+    
+    self.region.movement_password = Util.make_random_string(6)if self.fortress?
+    
     self.owner        = character
     self.alliance_id  = character.alliance_id
     self.alliance_tag = character.alliance_tag
