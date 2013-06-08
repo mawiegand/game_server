@@ -7,6 +7,7 @@ class AddAvatarStringToFundamentalCharacter < ActiveRecord::Migration
     avatar = GameState::Avatars.new
     Fundamental::Character.all.each do |char|
       char.avatar_string = avatar.create_random_avatar_string(char.male?)
+      char.save
     end
   end
 end
