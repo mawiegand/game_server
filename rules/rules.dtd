@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfig, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
+<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfigs, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -44,24 +44,19 @@
 
 <!ELEMENT AllianceMaxMembers (#PCDATA)>
 
-<!ELEMENT AvatarConfig EMPTY>
+
+<!ELEMENT AvatarConfigs (AvatarConfig*)>
+
+<!ELEMENT AvatarConfig (AvatarLayer+)>
 <!ATTLIST AvatarConfig
-  max_chains_male       CDATA "0"
-  max_chains_female     CDATA #REQUIRED
-  max_eyes_male         CDATA #REQUIRED
-  max_eyes_female       CDATA #REQUIRED
-  max_hair_male         CDATA #REQUIRED
-  max_hair_female       CDATA #REQUIRED
-  max_mouths_male       CDATA #REQUIRED
-  max_mouths_female     CDATA #REQUIRED
-  max_heads_male        CDATA #REQUIRED
-  max_heads_female      CDATA #REQUIRED
-  max_beards_male       CDATA #REQUIRED
-  max_beards_female     CDATA "0"
-  max_veilchens_male    CDATA #REQUIRED
-  max_veilchens_female  CDATA #REQUIRED
-  max_tattoos_male      CDATA #REQUIRED
-  max_tattoos_female    CDATA #REQUIRED
+  gender CDATA #REQUIRED
+>
+
+<!ELEMENT AvatarLayer (#PCDATA)>
+<!ATTLIST AvatarLayer
+  max      CDATA #REQUIRED
+  optional (true | false) "false"
+  chars    (1|2) "1"
 >
 <!ELEMENT ChangeCharacterName EMPTY>
 <!ATTLIST ChangeCharacterName

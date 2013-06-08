@@ -190,7 +190,7 @@ class GameRules::Rules
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="//General/TradingSpeedupCost" />
-  <xsl:apply-templates select="//General/AvatarConfig" />
+  <xsl:apply-templates select="//General/AvatarConfigs" />
   <xsl:apply-templates select="//General/ChangeCharacterName" />
   <xsl:apply-templates select="//General/ChangeCharacterGender" />
   <xsl:apply-templates select="//General/ChangeSettlementName" />
@@ -324,26 +324,21 @@ end
 
 
 
-<xsl:template match="AvatarConfig">
+<xsl:template match="AvatarConfigs">
 # ## AVATAR CONFIG ###################################################
 
       :avatar_config => {
-        :max_chains_male => <xsl:value-of select="@max_chains_male" />,
-        :max_chains_female => <xsl:value-of select="@max_chains_female" />,
-        :max_eyes_male => <xsl:value-of select="@max_eyes_male" />,
-        :max_eyes_female => <xsl:value-of select="@max_eyes_female" />,
-        :max_hair_male => <xsl:value-of select="@max_hair_male" />,
-        :max_hair_female => <xsl:value-of select="@max_hair_female" />,
-        :max_mouths_male => <xsl:value-of select="@max_mouths_male" />,
-        :max_mouths_female => <xsl:value-of select="@max_mouths_female" />,
-        :max_heads_male => <xsl:value-of select="@max_heads_male" />,
-        :max_heads_female => <xsl:value-of select="@max_heads_female" />,
-        :max_beards_male => <xsl:value-of select="@max_beards_male" />,
-        :max_beards_female => <xsl:value-of select="@max_beards_female" />,
-        :max_veilchens_male => <xsl:value-of select="@max_veilchens_male" />,
-        :max_veilchens_female => <xsl:value-of select="@max_veilchens_female" />,
-        :max_tattoos_male => <xsl:value-of select="@max_tattoos_male" />,
-        :max_tattoos_female => <xsl:value-of select="@max_tattoos_female" />,
+      <xsl:for-each select="AvatarConfig">
+        :<xsl:value-of select="@gender" /> => {
+        <xsl:for-each select="AvatarLayer">
+          :<xsl:apply-templates/> => {
+            :max       => <xsl:value-of select="@max" />,
+            :optional  => <xsl:value-of select="@optional" />,
+            :num_chars => <xsl:value-of select="@chars" />,
+          },
+        </xsl:for-each>        
+        },
+      </xsl:for-each>
       },
 </xsl:template>
 

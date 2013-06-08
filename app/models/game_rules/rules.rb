@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.6.5
+# Version: 0.7.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -115,8 +115,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 6,
-                    :build => 5,
+                    :minor => 7,
+                    :build => 0,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -347,22 +347,111 @@ class GameRules::Rules
 # ## AVATAR CONFIG ###################################################
 
       :avatar_config => {
-        :max_chains_male => 0,
-        :max_chains_female => 4,
-        :max_eyes_male => 8,
-        :max_eyes_female => 8,
-        :max_hair_male => 8,
-        :max_hair_female => 12,
-        :max_mouths_male => 4,
-        :max_mouths_female => 8,
-        :max_heads_male => 1,
-        :max_heads_female => 1,
-        :max_beards_male => 12,
-        :max_beards_female => 0,
-        :max_veilchens_male => 8,
-        :max_veilchens_female => 0,
-        :max_tattoos_male => 8,
-        :max_tattoos_female => 8,
+      
+        :male => {
+        
+          :chains => {
+            :max       => 0,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 8,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 12,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
+        :female => {
+        
+          :chains => {
+            :max       => 4,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 8,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 12,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
       },
 
 # ## CHANGE CHARACTER NAME ###################################################

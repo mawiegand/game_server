@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="6" build="5" />
+    <Version major="0" minor="7" build="0" />
     <AppControl debugTracking="1" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -125,7 +125,28 @@
       <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedupCost resource="resource_cash" amount="1" />
-    <AvatarConfig max_chains_female="4" max_eyes_male="8" max_eyes_female="8" max_hair_male="8" max_hair_female="12" max_mouths_male="4" max_mouths_female="8" max_heads_male="1" max_heads_female="1" max_beards_male="12" max_veilchens_male="8" max_veilchens_female="0" max_tattoos_male="8" max_tattoos_female="8" />
+    <AvatarConfigs>
+      <AvatarConfig gender="male">
+        <AvatarLayer max="0"  optional="true">chains</AvatarLayer>
+        <AvatarLayer max="8"  optional="false" chars="2">eyes</AvatarLayer>
+        <AvatarLayer max="8"  optional="true"  chars="2">hairs</AvatarLayer>
+        <AvatarLayer max="4"  optional="false" chars="2">mouths</AvatarLayer>
+        <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
+        <AvatarLayer max="12" optional="true" chars="2">beards</AvatarLayer>
+        <AvatarLayer max="8"  optional="true">veilchens</AvatarLayer>
+        <AvatarLayer max="8"  optional="true" chars="2">tattoos</AvatarLayer>
+      </AvatarConfig>
+      <AvatarConfig gender="female">
+        <AvatarLayer max="4"  optional="true">chains</AvatarLayer>
+        <AvatarLayer max="8"  optional="false" chars="2">eyes</AvatarLayer>
+        <AvatarLayer max="8"  optional="true"  chars="2">hairs</AvatarLayer>
+        <AvatarLayer max="4"  optional="false" chars="2">mouths</AvatarLayer>
+        <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
+        <AvatarLayer max="12" optional="true"  chars="2">beards</AvatarLayer>
+        <AvatarLayer max="8"  optional="true">veilchens</AvatarLayer>
+        <AvatarLayer max="8"  optional="true"  chars="2">tattoos</AvatarLayer>
+      </AvatarConfig>
+   </AvatarConfigs>
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
     <ChangeCharacterGender free_changes="2" resource="resource_cash" amount="20" />
     <ResourceExchange resource="resource_cash" amount="2" />
