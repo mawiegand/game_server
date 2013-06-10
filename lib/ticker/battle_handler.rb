@@ -167,21 +167,27 @@ class Ticker::BattleHandler
             end
           end
 
+          runloop.say "Calculate XP for both factions"
+          battle.calculate_character_results
+
+          runloop.say "Propagate XP to characters"
+          battle.propagate_character_results_to_character
+
+          runloop.say "Count victory and defeat in participating characters"
+          battle.count_victory_and_defeat
+
+          ## generate message for participants
+          runloop.say "Battle done, starting to send out messages"
+          battle_summary = Ticker::BattleHandler::BattleSummary.new(battle)
+          battle_summary.send_battle_report_messages()
+
+      # TODO:
+      #
+      # else
+      #
+      #   handle the situation where both faction where killed at once in the same round => no winner faction
+      #
         end
-
-        runloop.say "Calculate XP for both factions"
-        battle.calculate_character_results
-        
-        runloop.say "Propagate XP to characters"
-        battle.propagate_character_results_to_character
-
-        runloop.say "Count victory and defeat in participating characters"
-        battle.count_victory_and_defeat
-        
-        ## generate message for participants
-        runloop.say "Battle done, starting to send out messages"
-        battle_summary = Ticker::BattleHandler::BattleSummary.new(battle)
-        battle_summary.send_battle_report_messages()
 
         runloop.say "Cleanup armies and battle"
 
