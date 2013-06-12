@@ -511,7 +511,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def ten_minutes?
-    logged_in_once? && (playtime / 60.0) >= 10.0
+    ((playtime || 0.0) / 60.0) >= 10.0
   end
   
   # logged-in at least once
