@@ -208,6 +208,16 @@ class Settlement::Settlement < ActiveRecord::Base
     self
   end
 
+  def move_settlement_to_region(new_region)
+    self.location_id = new_region.find_empty_location.id
+    self.region_id = new_region.id
+    self.node_id = new_region.node_id
+    self.garrison_army.location_id = self.location_id
+    self.garrison_army.region_id = self.region_id
+    self.garrison_army.save
+    self.save
+  end
+
   ############################################################################
   #
   #  OWNERSHIP 
@@ -258,7 +268,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
     
-    self.region.movement_password = Util.make_random_string(6)if self.fortress?
+    self.region.moving_password = Util.make_random_string(6)if self.fortress?
     
     self.owner        = character
     self.alliance_id  = character.alliance_id

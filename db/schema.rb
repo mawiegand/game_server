@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608161133) do
+ActiveRecord::Schema.define(:version => 20130608195921) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1893,7 +1893,7 @@ ActiveRecord::Schema.define(:version => 20130608161133) do
     t.integer  "settlement_type_id"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
-    t.string   "movement_password"
+    t.string   "moving_password"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"

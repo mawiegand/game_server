@@ -18,7 +18,7 @@ class Map::Region < ActiveRecord::Base
   
   before_create :add_unique_invitation_code
   
-  before_save   :prevent_empty_movement_password
+  before_save   :prevent_empty_moving_password
  
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
@@ -36,6 +36,23 @@ class Map::Region < ActiveRecord::Base
   
   def settleable_by?(character)
     return non_fortress_locations_owned_by(character).count == 0
+  end
+  
+  def owned_by_alliance?(alliance)
+    self.alliance == alliance
+  end
+  
+  def check_moving_password?(moving_password)
+    self.moving_password == moving_password
+  end
+  
+  def is_moving_allowed?(alliance, moving_password)
+    check_moving_password?(moving_password) or self.owned_by_alliance?(alliance)
+  end
+  
+  def find_empty_location
+    free_locations = self.locations.empty.count
+    self.locations.empty.offset(Random.rand(free_locations)).first
   end
 
   # sets the owner_id and alliance_id to the new values. If theses
@@ -63,7 +80,7 @@ class Map::Region < ActiveRecord::Base
       self.name = self.fortress.name
     end
   end
-
+  
   def check_consistency
     check_and_repair_name
 
@@ -85,9 +102,9 @@ class Map::Region < ActiveRecord::Base
       info.save
     end  
     
-    def prevent_empty_movement_password
-      if self.movement_password.nil?
-        self.movement_password = Util.make_random_string(6)
+    def prevent_empty_moving_password
+      if self.moving_password.nil?
+        self.moving_password = Util.make_random_string(6)
       end
       true
     end
