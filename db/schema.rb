@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516164041) do
+ActiveRecord::Schema.define(:version => 20130614150009) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1785,6 +1785,9 @@ ActiveRecord::Schema.define(:version => 20130516164041) do
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
     t.integer  "alliance_size_bonus",                      :default => 0
+    t.string   "lang",                                     :default => "en",  :null => false
+    t.datetime "insider_since"
+    t.boolean  "first_round"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -2665,6 +2668,7 @@ ActiveRecord::Schema.define(:version => 20130516164041) do
     t.decimal  "playtime_started"
     t.datetime "reward_displayed_at"
     t.integer  "character_id"
+    t.boolean  "message_sent",        :default => false, :null => false
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"
