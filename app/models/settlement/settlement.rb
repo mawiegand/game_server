@@ -393,6 +393,10 @@ class Settlement::Settlement < ActiveRecord::Base
     !self.command_points.nil? && self.command_points > (self.armies_count-1)  # don't count garrison army 
   end
   
+  def fighting?
+    return self.garrison_army.fighting?
+  end
+  
   ############################################################################
   #
   #  BATTLE

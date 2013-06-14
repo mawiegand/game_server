@@ -13,6 +13,7 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
     old_base_location = Map::Location.find(current_character.base_location_id)
 
     home_base = Settlement::Settlement.find_by_location_id(current_character.base_location_id)
+    raise BadRequestError.new("home_base is fighting") if home_base.fighting?
     home_base.move_settlement_to_region(region)
     current_character.base_location_id = home_base.location_id
     current_character.base_region_id = home_base.location.region_id
