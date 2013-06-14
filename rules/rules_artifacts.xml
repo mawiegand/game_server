@@ -140,7 +140,7 @@
       <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
-    <ArtifactAmount>20</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
     </Effects>
