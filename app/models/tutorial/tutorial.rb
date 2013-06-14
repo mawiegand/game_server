@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.6
+# Version: 0.2.9
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 6, 
+        :build => 9, 
       },
       
       :production_test_weights => {
@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 17,
+      :num_tutorial_quests => 18,
   
       :quests => [  # ALL QUESTS
 
@@ -364,7 +364,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [5, 10, ],
+          :successor_quests => [5, ],
 
           :rewards => {
             
@@ -1108,9 +1108,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade two Hunter Gatherers to level 3.",
+            :en_US => "Upgrade a Hunter Gatherer to level 3.",
   
-            :de_DE => "Baue zwei Jäger und Sammler auf Level 3 aus.",
+            :de_DE => "Baue einen Jäger und Sammler auf Level 3 aus.",
                 
           },
           :flavour => {
@@ -1142,13 +1142,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl2',
-
-          },
-
-          :successor_quests => [12, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1184,7 +1178,7 @@ class Tutorial::Tutorial
 
                 :min_level => 3,
 
-                :min_count => 2,
+                :min_count => 1,
 
               },
 
@@ -1252,7 +1246,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1337,7 +1331,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_settlement_button2',
 
           },
 
@@ -1509,9 +1503,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your stone and wood production to at least 18 units per hour",
+            :en_US => "Improve your stone and wood production to at least 12 units per hour",
   
-            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 18 Rohstoffeinheiten pro Stunde.",
+            :de_DE => "Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.",
                 
           },
           :flavour => {
@@ -1523,9 +1517,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du solltest zum Erreichen des Ziels 4 oder 5 Jäger und Sammler bauen und einige auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
+            :de_DE => "<p>Du solltest zum Erreichen des Ziels 3 oder 4 Jäger und Sammler bauen und  auf Level 2 oder 3 ausbauen. Die Produktionsrate pro Stunde siehst Du oben bei den Rohstoffanzeigen.</p>",
   
-            :en_US => "<p>To do this you should build 4 or 5 Hunter Gatheres and upgrade some of them to level 2 or 3. You can see your current production at raw materials display at the top.</p>",
+            :en_US => "<p>To do this you should build 3 or 4 Hunter Gatheres and upgrade  them to level 2 or 3. You can see your current production at raw materials display at the top.</p>",
                 
           },          
           :reward_flavour => {
@@ -1549,7 +1543,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [15, 16, ],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -1582,12 +1576,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => 'resource_wood',
-                :minimum  => 18,
+                :minimum  => 12,
               },
 
               {
                 :resource => 'resource_stone',
-                :minimum  => 18,
+                :minimum  => 12,
               },
 
             ],
@@ -1628,9 +1622,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt. Du bekommst gleich ein paar Kröten.</p>",
+            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>",
   
-            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs. You will get some golden frogs so you can try it out.</p>",
+            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs.</p>",
                 
           },          
           :reward_flavour => {
@@ -1650,7 +1644,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_queue_chiefcottagelvl4',
 
           },
 
@@ -1703,8 +1697,8 @@ class Tutorial::Tutorial
           :id                => 16,
           :symbolic_id       => :quest_queue_chiefcottagelvl4,
           :advisor           => :girl,
-          :hide_start_dialog => true,
-          :tutorial          => false,
+          :hide_start_dialog => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -1713,28 +1707,28 @@ class Tutorial::Tutorial
             
             :en_US => "And another chieftain's hut upgrade",
   
-            :de_DE => "Hurtig!",
+            :de_DE => "Noch einmal die Häuptlingshütte",
                 
           },
           :task => {
             
-            :en_US => "Two golden frogs!",
+            :en_US => "I think it's time for a bigger chieftain's hut. Why not order an upgrade.",
   
-            :de_DE => "Du hast zwei Kröten erhalten!",
+            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
                 
           },
           :flavour => {
             
-            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
+            :de_DE => "",
   
-            :en_US => "I think it's time for a bigger chieftain's hut. Why not order an upgrade. ",
+            :en_US => " ",
                 
           },
           :description => {
             
-            :de_DE => "<p></p>",
+            :de_DE => "<p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>",
   
-            :en_US => "<p></p>",
+            :en_US => "<p>Upgrade your Chieftain's Hut to gain more advantages.</p>",
                 
           },          
           :reward_flavour => {
@@ -1758,7 +1752,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [15, ],
 
           :rewards => {
             
@@ -2111,9 +2105,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 90 resource points.",
+            :en_US => "Increase the resource production of one settlement to 70 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 90 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2181,7 +2175,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 90,
+              :min_resources => 70,
             },
 
           },          
@@ -10140,9 +10134,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 150 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 120 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 150 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 120 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
@@ -10210,7 +10204,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 150,
+              :min_resources => 120,
             },
 
           },          
@@ -10235,9 +10229,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 240 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 210 resource points after taxes.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 240 Rohstoffpunkte nach Steuern. ",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 210 Rohstoffpunkte nach Steuern. ",
                 
           },
           :flavour => {
@@ -10305,7 +10299,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 240,
+              :min_resources => 210,
             },
 
           },          

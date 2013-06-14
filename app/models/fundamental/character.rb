@@ -50,7 +50,7 @@ class Fundamental::Character < ActiveRecord::Base
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string,     :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
   attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :as => :owner
-  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
+  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
 
@@ -253,7 +253,7 @@ class Fundamental::Character < ActiveRecord::Base
   def male?
     !female?   # presently, due to community structure, male is the default in case nothing is set
   end
-  
+
   def platinum_account?
     !premium_expiration.nil? && premium_expiration > DateTime.now
   end
@@ -1124,6 +1124,14 @@ class Fundamental::Character < ActiveRecord::Base
     login_count <= 1
   end
 
+  def insider
+    !insider_since.nil? && insider_since < DateTime.now
+  end
+
+  def chat_beginner
+    self.settlements.count < 2
+  end
+
   def open_chat_pane
     login_count <= 3
   end
@@ -1134,7 +1142,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['first_start', 'beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
   

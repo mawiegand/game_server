@@ -72,8 +72,8 @@ class Fundamental::CharactersController < ApplicationController
       if response.code == 200
         identity = response.parsed_response
       end
-      
-      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'    
+
+      character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'
 
       # set character properties to default values
       start_resource_modificator = 1.0
@@ -125,7 +125,9 @@ class Fundamental::CharactersController < ApplicationController
         remote_ip:          request.remote_ip,
         sign_up:            true,
       })
-      
+
+      character.insider_since = identity['insider_since']
+      character.first_round = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
       character.lang = I18n.locale || "en"
       character.last_login_at = DateTime.now
       character.increment(:login_count)
