@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'identity_provider/access'
+require 'game_state/avatars'
 
 class Fundamental::Character < ActiveRecord::Base
 
@@ -392,6 +393,10 @@ class Fundamental::Character < ActiveRecord::Base
     self.gender = new_gender == "female" ? "female" : "male"
     self.increment(:gender_change_count)  
 
+    avatar = GameState::Avatars.new
+    avatar.create_avatar_string_from_id_and_gender(id, (new_gender == "male" ? true : false))
+    self.avatar_string = avatar.avatar_string
+    
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
     
     unless free_change
