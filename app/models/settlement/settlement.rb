@@ -90,7 +90,11 @@ class Settlement::Settlement < ActiveRecord::Base
   def fortress?
     self.type_id == TYPE_FORTRESS
   end
-
+  
+  def home_base?
+    self.type_id == TYPE_HOME_BASE
+  end
+  
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
     
@@ -209,6 +213,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
 
   def move_settlement_to_region(new_region)
+    return false if !self.home_base?
     self.location_id = new_region.find_empty_location.id
     self.region_id = new_region.id
     self.node_id = new_region.node_id
