@@ -6,9 +6,10 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
     
   	raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequest.new('missing parameter(s)') if params[:move_settlement_action].nil? || params[:move_settlement_action][:region_name].blank?
-  	#raise ConflictError.new('already moved') unless current_character.moved_at.nil?
+  	raise BadRequestError.new('already moved') unless current_character.moved_at.nil?
     
     region = Map::Region.find_by_name(params[:move_settlement_action][:region_name])
+    raise ConflictError.new("already exists one settlement in region") unless region.settleable_by?(current_character)
     raise ConflictError.new("moving is not allowed") unless region.is_moving_allowed?(current_character.alliance, params[:move_settlement_action][:region_password])
     old_base_location = Map::Location.find(current_character.base_location_id)
 
