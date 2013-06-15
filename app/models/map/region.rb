@@ -39,7 +39,7 @@ class Map::Region < ActiveRecord::Base
   end
   
   def owned_by_alliance?(alliance)
-    self.alliance == alliance
+    self.alliance == alliance and !self.alliance.nil?
   end
   
   def check_moving_password?(moving_password)
