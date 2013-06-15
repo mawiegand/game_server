@@ -33,6 +33,7 @@ class Messaging::Message < ActiveRecord::Base
   MESSAGE_TYPE_ARTIFACT_CAPTURED  = 14
   MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
   MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
+  INDIVIDUAL_ANNOUNCEMENT_TYPE_ID = 17
 
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
@@ -81,7 +82,7 @@ class Messaging::Message < ActiveRecord::Base
         end
       end
     
-      unless self.sender.nil?
+      unless self.sender.nil? && self.type_id == INDIVIDUAL_ANNOUNCEMENT_TYPE_ID
         @character = Fundamental::Character.find(self.sender_id)
         if !@character.nil? && !@character.outbox.nil?
           @character.outbox.entries.create({
