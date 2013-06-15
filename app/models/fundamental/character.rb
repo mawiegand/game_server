@@ -61,6 +61,8 @@ class Fundamental::Character < ActiveRecord::Base
 
   #before_save :update_alliance_leave_to_artifact
 
+  after_save  :propagate_insider_since_changes_to_chat
+
   after_save  :propagate_alliance_membership_changes_to_resource_pool
   after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
@@ -334,6 +336,12 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.character_id = character.id
       cmd.save
       cmd = Messaging::JabberCommand.grant_access(character, 'help')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
       cmd.character_id = character.id
       cmd.save
     end
@@ -616,6 +624,20 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
     true
+  end
+  
+  def propagate_insider_since_changes_to_chat
+    if self.insider_since_changed?
+      if self.insider_since.nil?
+        cmd = Messaging::JabberCommand.revoke_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      else
+        cmd = Messaging::JabberCommand.grant_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      end
+    end
   end
 
   def propagate_alliance_membership_changes_to_resource_pool
