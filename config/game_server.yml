@@ -58,6 +58,7 @@ defaults: &defaults
 
   artifact_jump_probability:             0.1     # probability of artifact to jump after a won battle
   artifact_capture_probability_factor:   0.05    # probability factor of artifact to be captured by attacker after every battle round
+  artifact_capture_disable_time: 24 #hours to disable artifact capture after settlement move
 
   battle_xp_winner_bonus_factor:         2.0
 
