@@ -82,7 +82,7 @@ class Messaging::Message < ActiveRecord::Base
         end
       end
     
-      unless self.sender.nil? || self.type_id == INDIVIDUAL_ANNOUNCEMENT_TYPE_ID
+      if !self.sender.nil? && self.type_id != INDIVIDUAL_ANNOUNCEMENT_TYPE_ID
         @character = Fundamental::Character.find(self.sender_id)
         if !@character.nil? && !@character.outbox.nil?
           @character.outbox.entries.create({
