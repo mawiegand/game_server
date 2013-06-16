@@ -115,6 +115,7 @@ class Ticker::BattleHandler::BattleSummary
 	def send_battle_report_messages()
 		@character_army_summaries.each do |character_id, army_summaries|
 			first_army_summary_key = army_summaries.keys.first
+		  Rails.logger.debug "send battle report message for cid #{character_id} and army #{first_army_summary_key}"
 			if !first_army_summary_key.nil?
 			  army = army_summaries[first_army_summary_key].army
 				character = army.nil? ? Fundamental::Character.find_by_id(character_id) : army.owner

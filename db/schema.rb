@@ -1786,6 +1786,7 @@ ActiveRecord::Schema.define(:version => 20130614150009) do
     t.datetime "last_deleted_at"
     t.integer  "alliance_size_bonus",                      :default => 0
     t.string   "lang",                                     :default => "en",  :null => false
+    t.string   "avatar_string"
     t.datetime "insider_since"
     t.boolean  "first_round"
   end
