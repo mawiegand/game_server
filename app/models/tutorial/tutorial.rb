@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.9
+# Version: 0.2.10
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 2, 
-        :build => 9, 
+        :build => 10, 
       },
       
       :production_test_weights => {
@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 17,
   
       :quests => [  # ALL QUESTS
 
@@ -522,7 +522,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 2,
           :blocking          => false,
@@ -574,11 +574,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -775,7 +775,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -863,7 +863,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
@@ -990,6 +990,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1379,6 +1381,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_cottagelvl1
           :id                => 13,
@@ -1482,6 +1486,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_cottagelvl1
         {               #   quest_improve_production_1
@@ -1588,6 +1594,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', ],
+
         },              #   END OF quest_improve_production_1
         {               #   quest_build_chiefcottagelvl4
           :id                => 15,
@@ -1692,6 +1700,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
           :id                => 16,
@@ -1795,6 +1805,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
@@ -1958,7 +1970,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [4, 19, 20, ],
 
           :rewards => {
             
@@ -2001,6 +2013,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
@@ -12408,6 +12422,70 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1barrackslvl10
+        {               #   quest_crossplatform
+          :id                => 127,
+          :symbolic_id       => :quest_crossplatform,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Crossplatform",
+  
+            :de_DE => "Multiplatform",
+                
+          },
+          :task => {
+            
+            :en_US => "Sign in to the HTML client.",
+  
+            :de_DE => "Log Dich im HTML Spiel ein.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
+  
+            :en_US => "We can't stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Auf dem Start Bildschirm drücke den "Wechsel" Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>",
+  
+            :en_US => "<p>On the start screen press the "change" button" and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ab jetzt kannst Du von überall aus spielen, solange du einen Browser zur Verfügung hast.",
+  
+            :en_US => "From now on you can play on any device that supports a web browser with ease. ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
+  
+            :en_US => "The thick-skinned clubber! Reinforcement for your melee fighters.",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF quest_crossplatform
       ],                # END OF QUESTS
 
     )

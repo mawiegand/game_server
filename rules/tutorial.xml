@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="9" />
+    <Version major="0" minor="2" build="10" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -184,7 +184,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2">
+    <Quest id="quest_profile" advisor="girl" tutorial="false" priority="2">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -203,7 +203,7 @@
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spas miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
-      <Requirement quest="quest_recruit_1clubbers" />
+      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
@@ -304,7 +304,7 @@
       <RewardText locale="en_US">On the world map you can see the other gamers around you.</RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So – did you learn anything? Here are a couple of resources, before you start asking for rewards again.</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
@@ -343,6 +343,9 @@
       <RewardTests>
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
@@ -380,7 +383,7 @@
       <UIMarker>mark_attack_button</UIMarker>
     </Quest>
 
-    <!-- 10 --> <!-- Tutorial 11 -->
+    <!-- 10 --> <!-- Not In -->
     <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -467,6 +470,9 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="3" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 13 --> <!-- Tutorial 13 -->
@@ -497,6 +503,9 @@
       <RewardTests>
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 14 --> <!-- Tutorial 14 -->
@@ -528,6 +537,7 @@
         <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
         <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
 
@@ -559,6 +569,9 @@
         <RewardTests>
             <BuildingTest building="building_chief_cottage" min_level="4" />
         </RewardTests>
+        <UIMarker>mark_home_settlement</UIMarker>
+        <UIMarker>mark_upgradable_building</UIMarker>
+        <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 16 --> <!-- Tutorial 16 -->
@@ -589,6 +602,8 @@
         <RewardTests>
             <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
         </RewardTests>
+        <UIMarker>mark_home_settlement</UIMarker>
+        <UIMarker>mark_upgradable_building</UIMarker>
     </Quest>
 
 
@@ -656,6 +671,9 @@
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 19 -->
@@ -3905,6 +3923,32 @@
       </RewardTests>
     </Quest>
     
+      <!-- 501 -->
+      <Quest id="quest_crossplatform" advisor="girl">
+          <Name>Crossplatform</Name>
+          <Name locale="de_DE">Multiplatform</Name>
+          <Task>Sign in to the HTML client.</Task>
+          <Task locale="de_DE">Log Dich im HTML Spiel ein.</Task>
+          <Description locale="de_DE">
+              <p>Auf dem Start Bildschirm drücke den "Wechsel" Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>
+          </Description>
+          <Description locale="en_US">
+              <p>On the start screen press the "change" button" and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>
+          </Description>
+          <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
+          <Flavor locale="en_US">We can't stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
+          <RewardText locale="de_DE">Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
+          <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
+          <RewardFlavor locale="de_DE">Ab jetzt kannst Du von überall aus spielen, solange du einen Browser zur Verfügung hast.</RewardFlavor>
+          <RewardFlavor locale="en_US">From now on you can play on any device that supports a web browser with ease. </RewardFlavor>
+          <Rewards>
+            
+          </Rewards>
+          <RewardTests>
+              
+          </RewardTests>
+      </Quest>
+      
     <!-- NOT IN
    <Quest id="quest_rank" advisor="chef">
    <Name>Rank</Name>
