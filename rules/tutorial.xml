@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="2" build="10" />
+    <Version major="0" minor="3" build="2" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -429,7 +429,7 @@
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn't it?!</RewardFlavor>
-      <Requirement quest="quest_npc_battle" />
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
@@ -3950,7 +3950,7 @@
 
       
       <!-- 502 -->
-      <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+      <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
           <Name>First battle</Name>
           <Name locale="de_DE">Der erste Kampf</Name>
           <Task>Fight for the first time and defeat at least one unit!</Task>
@@ -3982,7 +3982,7 @@
               <UIMarker>mark_select_own_home_settlement</UIMarker>
               <UIMarker>mark_attack_button</UIMarker>
               <UIMarker>mark_select_other_army</UIMarker>
-          </Quest >
+          </Quest -->
 
       
     <!-- NOT IN
