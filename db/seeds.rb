@@ -98,9 +98,15 @@ Messaging::JabberCommand.create({
   processed: false,
 })
 
-Messaging::JabberCommand.create({
+Messaging::JabberCommand.create({  # german everything-on-topic
   command:   'muc_create',
   room:      'plauderhöhle',
+  processed: false,
+})
+
+Messaging::JabberCommand.create({  # english everyhting-on-topic
+  command:   'muc_create',
+  room:      'whisperingcavern',
   processed: false,
 })
 
@@ -109,6 +115,21 @@ Messaging::JabberCommand.create({
   room:      'handel',
   processed: false,
 })
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'insider',
+  processed: false,
+})
+
+Messaging::JabberCommand.create({
+  command:   'muc_create',
+  room:      'beginner',
+  processed: false,
+})
+
+
+
 
 # ############################################################################
 # 

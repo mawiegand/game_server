@@ -64,8 +64,12 @@ class Tutorial::Quest < ActiveRecord::Base
   def send_message
     quest_message = (self.quest || {})[:message]
 
-    if !quest_message.nil? && self.status < STATE_DISPLAYED
+    if !quest_message.nil? && !self.message_sent?
+      logger.debug "creating tutorial message #{ self.quest[:id] || -1 } for character #{ self.owner.id }: #{ self.owner.name }."
       Messaging::Message.create_tutorial_message(self.owner, quest_message[self.owner.lang.to_sym][:subject], quest_message[self.owner.lang.to_sym][:body])
+      self.message_sent = true
+    else
+      logger.debug "WARNING: NOT creating tutorial message #{ self.quest[:id] || -1 } for character #{ self.owner.id }: #{ self.owner.name }."
     end
   end
   
@@ -75,6 +79,7 @@ class Tutorial::Quest < ActiveRecord::Base
   
   # quest auf beendet setzen
   def set_finished
+    self.send_message
     
     self.status = if self.rewards.nil?
       STATE_CLOSED    # close directly, as there is nothing to redeem. client should NOT even show a quest-end dialog

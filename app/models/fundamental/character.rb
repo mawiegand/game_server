@@ -62,6 +62,8 @@ class Fundamental::Character < ActiveRecord::Base
 
   #before_save :update_alliance_leave_to_artifact
 
+  after_save  :propagate_insider_since_changes_to_chat
+
   after_save  :propagate_alliance_membership_changes_to_resource_pool
   after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
@@ -201,12 +203,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def redeem_tutorial_end_rewards
-    Shop::BonusOffer.all.each do |bonus_offer|
-      bonus_offer.credit_to(self)
-    end
-    
-    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
-    platinum_offer.credit_to(self) unless platinum_offer.nil?
+    self.extend_premium_atomically(Tutorial::Tutorial.the_tutorial.tutorial_reward[:platinum_duration])
   end
 
   def locale
@@ -340,6 +337,12 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.character_id = character.id
       cmd.save
       cmd = Messaging::JabberCommand.grant_access(character, 'help')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
       cmd.character_id = character.id
       cmd.save
     end
@@ -521,7 +524,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def ten_minutes?
-    logged_in_once? && (playtime / 60.0) >= 10.0
+    ((playtime || 0.0) / 60.0) >= 10.0
   end
   
   # logged-in at least once
@@ -626,6 +629,20 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
     true
+  end
+  
+  def propagate_insider_since_changes_to_chat
+    if self.insider_since_changed?
+      if self.insider_since.nil?
+        cmd = Messaging::JabberCommand.revoke_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      else
+        cmd = Messaging::JabberCommand.grant_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      end
+    end
   end
 
   def propagate_alliance_membership_changes_to_resource_pool
@@ -828,9 +845,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   def extend_premium_atomically(duration)
     if self.premium_expiration.nil? || self.premium_expiration < Time.now
-      self.premium_expiration = Time.now.advance(:hours => duration)
+      self.premium_expiration = Time.now.advance(:hours => duration.to_i)
     else
-      self.premium_expiration = self.premium_expiration.advance(:hours => duration)
+      self.premium_expiration = self.premium_expiration.advance(:hours => duration.to_i)
     end
     self.save
   end
