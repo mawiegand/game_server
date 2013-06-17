@@ -27,7 +27,10 @@ print "DELETE PLAYERS: deleting players "
 
 deleted_count = 0
 Fundamental::Character.non_npc.deletable(now).each do |c|
-  if deleted_count < max_players
+  if deleted_count < max_players &&
+      !c.last_retention_mail.nil? &&
+      c.last_retention_mail.mail_type == 'getting_deleted' &&
+      c.last_retention_mail.created_at < Time.now.advance(:days => -1)
     @report[:deleted_players] << c
     
     # call delete method of character
