@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'capistrano', '~> 2.14.0'
 gem 'thin'
 gem 'httparty'
-gem 'rb-readline'	
+gem 'rb-readline', '0.4.2'	
 gem 'gravatar_image_tag'
 
 gem 'highline', '>= 1.6.12'

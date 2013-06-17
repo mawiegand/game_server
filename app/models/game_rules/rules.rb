@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.6.3
+# Version: 0.7.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -36,7 +36,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -48,6 +48,7 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
       'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
@@ -114,8 +115,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 6,
-                    :build => 3,
+                    :minor => 7,
+                    :build => 0,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -341,6 +342,116 @@ class GameRules::Rules
       :trading_speedup => {
         :resource_id => 3,
         :amount      => 1,
+      },
+
+# ## AVATAR CONFIG ###################################################
+
+      :avatar_config => {
+      
+        :male => {
+        
+          :chains => {
+            :max       => 0,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 8,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 12,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
+        :female => {
+        
+          :chains => {
+            :max       => 4,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 8,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 12,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 8,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
       },
 
 # ## CHANGE CHARACTER NAME ###################################################
