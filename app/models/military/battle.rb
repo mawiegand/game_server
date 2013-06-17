@@ -329,6 +329,14 @@ class Military::Battle < ActiveRecord::Base
   def loser_faction
     other_faction(winner_faction.id)
   end
+  
+  def winner_faction_or_faction_A
+    winner_faction || self.factions[0]
+  end
+  
+  def loser_faction_or_faction_B
+    other_faction(winner_faction_or_faction_A.id)
+  end
 
   def xp_for_character_and_faction(character, faction)
     character_result = self.character_results.where(['character_id = ? and faction_id = ?', character.id, faction.id]).first
@@ -390,7 +398,7 @@ class Military::Battle < ActiveRecord::Base
   #
   ################################################################################
 
-  def calculate_character_results
+  def calculate_character_results    
     winner_units_count = 0
     winner_faction.participants.each do |participant|
       winner_units_count += participant.results.first.units_count unless participant.results.empty?
@@ -432,6 +440,8 @@ class Military::Battle < ActiveRecord::Base
           character_result.save
         end
       end
+      
+      # where's the xp of the loser calculated?
     end
   end
 
@@ -443,8 +453,13 @@ class Military::Battle < ActiveRecord::Base
   end
 
   def count_victory_and_defeat
-    winner_faction.count_victory
-    loser_faction.count_defeat
+    if (winner_faction.nil?)
+      winner_faction_or_faction_A.count_defeat
+      loser_faction_or_faction_B.count_defeat
+    else
+      winner_faction.count_victory
+      loser_faction.count_defeat
+    end
   end
 
   protected

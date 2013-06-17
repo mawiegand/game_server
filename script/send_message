@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+#
+# Helper that creates a new stats entry.
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+
+    Messaging::Message.create({
+      type_id:   12,
+      subject:   "Dienstag: App-Release-Tag in Deutschland und Österreich!",
+      body:      "<h1>Liebe Whackys,</h1><p>die Spannung steigt: heute erscheint im Laufe des Tages Wack-A-Doo für iPhone, iPad und iPod touch in Deutschland und Österreich! Ihr seid sicher schon genauso gespannt wie wir!</p><p>Wenn Ihr ein iOS-Gerät besitzt, könnt Ihr uns mächtig helfen, indem Ihr die App herunterladet, sie bewertet und vielleicht sogar ein Review hinterlasst. Das hilft uns schon sehr. Über viele Sterne freuen wir uns besonders mächtig! Gerne dürft ihr auch Eure Freunde im wahren Leben oder bei Facebook auf die App aufmerksam machen.</p><p>Als kleines Dankeschön für Eure frühe Teilnahme und Eure Hilfe in der Beta bieten wir allen <b>jetzt bereits bestehenden</b> Nutzern eine besondere Aktion zum App-Start:<br/>Für jeden InApp - Kauf innerhalb der neuen iOS App, den ihr <b>bis zum Mittwoch, den 5. Juni bis 23:59</b> tätigt, verdoppeln wir Euch als Dankeschön die Anzahl erhaltener Credits (manuell)!<br/><b>Beispiel:</b> Kauft in der App 1.000 Credits und erhaltet noch mal 1.000 Credits oben drauf!<br/>Die zusätzlichen Bonus-Credits werden Euch binnen 24h nach Eurem Einkauf von uns manuell zusätzlich gutgeschrieben.</p><p>Vielen Dank bis hierher für Eure tolle Unterstützung. Drückt die Daumen, dass Wack-A-Doo auf iOS gut anläuft. Wir hoffen, dass wir mit Eurer Hilfe eine gute Platzierung in Apples App Store erreichen.</p><p>Euer Wack-A-Doo Team.</p>",
+      send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
+    })

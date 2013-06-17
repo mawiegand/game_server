@@ -2669,6 +2669,7 @@ ActiveRecord::Schema.define(:version => 20130614150009) do
     t.decimal  "playtime_started"
     t.datetime "reward_displayed_at"
     t.integer  "character_id"
+    t.boolean  "message_sent",        :default => false, :null => false
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"

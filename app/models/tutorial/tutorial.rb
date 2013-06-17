@@ -27,7 +27,7 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights, :tutorial_reward
   
   def attributes 
     { 
@@ -36,6 +36,7 @@ class Tutorial::Tutorial
       'updated_at'               => updated_at,
       'num_tutorial_quests'      => num_tutorial_quests,
       'production_test_weights'  => production_test_weights,
+      'tutorial_reward'          => tutorial_reward,
     }
   end
   
@@ -87,6 +88,10 @@ class Tutorial::Tutorial
         :resource_stone => 1,
         :resource_fur => 1,
         :resource_cash => 0,
+      },
+      
+      :tutorial_reward => {
+        :platinum_duration => 72      
       },
       
       :updated_at => File.ctime(__FILE__),
@@ -430,18 +435,24 @@ class Tutorial::Tutorial
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
-              :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
-        <p>Unser Spiel 'Wack-A-Doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin in der Entwicklung.<br/>
-        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern.<br/>
-        Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
-        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
-        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
-        <p>Das Wack-A-Doo Team</p>",
+              :body => "<p>Herzlich willkommen in der 'Wack-A-Doo'-Community!<p/>
+          <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>        
+          <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten 
+             im Detail und mit Bildern erläutert:
+          <ul>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
+            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+          </ul></p>
+          <p>
+          Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
+          iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+          <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
+          <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
+          <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -559,7 +570,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
@@ -885,8 +896,6 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', ],
 
-          :place_npcs => 1,         
-
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
           :id                => 8,
@@ -1089,6 +1098,8 @@ class Tutorial::Tutorial
           },          
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
+
+          :place_npcs => 1,         
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
@@ -1304,7 +1315,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.",
                 
