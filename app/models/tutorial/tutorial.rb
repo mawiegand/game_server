@@ -94,7 +94,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 17,
+      :num_tutorial_quests => 18,
   
       :quests => [  # ALL QUESTS
 
@@ -1053,7 +1053,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, ],
+          :successor_quests => [128, ],
 
           :rewards => {
             
@@ -1244,7 +1244,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_move',
+            :quest => 'quest_npc_battle',
 
           },
 
@@ -12486,6 +12486,95 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
+        {               #   quest_npc_battle
+          :id                => 128,
+          :symbolic_id       => :quest_npc_battle,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "First battle",
+  
+            :de_DE => "Der erste Kampf",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight for the first time and defeat at least one unit!",
+  
+            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
+  
+            :en_US => "An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>",
+  
+            :en_US => "<p>1. Select your army and press 'attack'. </p><p>2. Select the marked neanderthals. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
+  
+            :en_US => "You cann that a fight? Atleast you beat a few enemies.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
+  
+            :en_US => "In Wack-A-Doo you can fight with as man armies as you want. ",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_army_move',
+
+          },
+
+          :successor_quests => [11, ],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 5,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+            :action_point_reward => true,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 1,
+            },
+
+          },          
+
+          :uimarker => ['mark_map', 'mark_select_own_home_settlement', 'mark_attack_button', 'mark_select_other_army', ],
+
+        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )

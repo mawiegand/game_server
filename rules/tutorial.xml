@@ -429,7 +429,7 @@
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn't it?!</RewardFlavor>
-      <Requirement quest="quest_army_move" />
+      <Requirement quest="quest_npc_battle" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
@@ -3950,7 +3950,7 @@
 
       
       <!-- 502 -->
-      <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
+      <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
           <Name>First battle</Name>
           <Name locale="de_DE">Der erste Kampf</Name>
           <Task>Fight for the first time and defeat at least one unit!</Task>
@@ -3961,7 +3961,7 @@
           </Description>
           <Description locale="en_US">
               <p>1. Select your army and press 'attack'. </p>
-              <p>2. Select the marked neanderthals.
+              <p>2. Select the marked neanderthals. </p>
               </Description>
               <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
               <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
@@ -3969,9 +3969,9 @@
               <RewardText locale="en_US">In Wack-A-Doo you can fight with as man armies as you want. </RewardText>
               <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
               <RewardFlavor locale="en_US">You cann that a fight? Atleast you beat a few enemies.</RewardFlavor>
-              <Requirement quest="quest_army_create" />
+              <Requirement quest="quest_army_move" />
               <Rewards>
-                  <UnitReward unit="unit_clubbers">10</UnitReward>
+                  <UnitReward unit="unit_clubbers">5</UnitReward>
                   <ExperienceReward>250</ExperienceReward>
                   <ActionPointReward></ActionPointReward>
               </Rewards>
@@ -3979,10 +3979,10 @@
                   <KillTest min_units="1" />
               </RewardTests>
               <UIMarker>mark_map</UIMarker>
-              <UIMarker>mark_select_own_army</UIMarker>
+              <UIMarker>mark_select_own_home_settlement</UIMarker>
               <UIMarker>mark_attack_button</UIMarker>
-              <UIMarker>mark_select_other_army</UImarker>
-          </Quest -->
+              <UIMarker>mark_select_other_army</UIMarker>
+          </Quest >
 
       
     <!-- NOT IN
