@@ -578,7 +578,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [20, ],
 
           :rewards => {
             
@@ -783,7 +783,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_warrior,
-                :amount => 5,
+                :amount => 10,
               },
 
             ],
@@ -1088,7 +1088,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
@@ -1970,7 +1970,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 19, 20, ],
+          :successor_quests => [4, 19, ],
 
           :rewards => {
             
@@ -2155,7 +2155,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
@@ -12455,9 +12455,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Start Bildschirm drücke den "Wechsel" Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>",
+            :de_DE => "<p>Auf dem Start Bildschirm drücke den 'Wechsel' Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>",
   
-            :en_US => "<p>On the start screen press the "change" button" and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>",
+            :en_US => "<p>On the start screen press the 'change' button and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>",
                 
           },          
           :reward_flavour => {

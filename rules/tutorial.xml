@@ -272,7 +272,7 @@
       <RewardFlavor locale="en_US">Everything's always difficult at first, you just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <UnitReward unit="unit_warrior">5</UnitReward>
+        <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -379,8 +379,7 @@
       </RewardTests>
       <UIMarker>mark_map</UIMarker>
       <UIMarker>mark_select_own_army</UIMarker>
-      <UIMarker>mark_select_other_army</UIMarker>
-      <UIMarker>mark_attack_button</UIMarker>
+      <UIMarker>mark_move_own_army</UIMarker>
     </Quest>
 
     <!-- 10 --> <!-- Not In -->
@@ -724,7 +723,7 @@
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
@@ -3930,10 +3929,10 @@
           <Task>Sign in to the HTML client.</Task>
           <Task locale="de_DE">Log Dich im HTML Spiel ein.</Task>
           <Description locale="de_DE">
-              <p>Auf dem Start Bildschirm drücke den "Wechsel" Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>
+              <p>Auf dem Start Bildschirm drücke den 'Wechsel' Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>
           </Description>
           <Description locale="en_US">
-              <p>On the start screen press the "change" button" and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>
+              <p>On the start screen press the 'change' button and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>
           </Description>
           <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
           <Flavor locale="en_US">We can't stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
@@ -3948,6 +3947,43 @@
               
           </RewardTests>
       </Quest>
+
+      
+      <!-- 502 -->
+      <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
+          <Name>First battle</Name>
+          <Name locale="de_DE">Der erste Kampf</Name>
+          <Task>Fight for the first time and defeat at least one unit!</Task>
+          <Task locale="de_DE">Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!</Task>
+          <Description locale="de_DE">
+              <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
+              <p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>
+          </Description>
+          <Description locale="en_US">
+              <p>1. Select your army and press 'attack'. </p>
+              <p>2. Select the marked neanderthals.
+              </Description>
+              <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
+              <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
+              <RewardText locale="de_DE">In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!</RewardText>
+              <RewardText locale="en_US">In Wack-A-Doo you can fight with as man armies as you want. </RewardText>
+              <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
+              <RewardFlavor locale="en_US">You cann that a fight? Atleast you beat a few enemies.</RewardFlavor>
+              <Requirement quest="quest_army_create" />
+              <Rewards>
+                  <UnitReward unit="unit_clubbers">10</UnitReward>
+                  <ExperienceReward>250</ExperienceReward>
+                  <ActionPointReward></ActionPointReward>
+              </Rewards>
+              <RewardTests>
+                  <KillTest min_units="1" />
+              </RewardTests>
+              <UIMarker>mark_map</UIMarker>
+              <UIMarker>mark_select_own_army</UIMarker>
+              <UIMarker>mark_attack_button</UIMarker>
+              <UIMarker>mark_select_other_army</UImarker>
+          </Quest -->
+
       
     <!-- NOT IN
    <Quest id="quest_rank" advisor="chef">
@@ -4731,35 +4767,7 @@
    </Quest>
    -->
 
-    <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
-      <Name>First battle</Name>
-      <Name locale="de_DE">Der erste Kampf</Name>
-      <Task>Fight for the first time and defeat at least two units!</Task>
-      <Task locale="de_DE">Kämpfe Deinen ersten Kampf und besiege mindestens zwei Einheiten!</Task>
-      <Description locale="de_DE">
-        <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
-        <p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>When you're ready, select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
-      </Description>
-      <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
-      <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
-      <RewardText locale="de_DE">In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!</RewardText>
-      <RewardText locale="en_US">Under your army you'll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
-      <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
-      <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
-      <Rewards>
-        <UnitReward unit="unit_clubbers">10</UnitReward>
-        <ExperienceReward>250</ExperienceReward>
-        <ActionPointReward></ActionPointReward>
-      </Rewards>
-      <RewardTests>
-        <KillTest min_units="2" />
-      </RewardTests>
-    </Quest>
-
-    <Quest id="quest_change_settlementname" advisor="girl">
+    <!--Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>
       <Task></Task>

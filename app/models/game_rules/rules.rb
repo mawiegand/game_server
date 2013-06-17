@@ -357,13 +357,13 @@ class GameRules::Rules
           },
         
           :eyes => {
-            :max       => 8,
+            :max       => 3,
             :optional  => false,
             :num_chars => 2,
           },
         
           :hairs => {
-            :max       => 8,
+            :max       => 5,
             :optional  => true,
             :num_chars => 2,
           },
@@ -381,19 +381,19 @@ class GameRules::Rules
           },
         
           :beards => {
-            :max       => 12,
+            :max       => 6,
             :optional  => true,
             :num_chars => 2,
           },
         
           :veilchens => {
-            :max       => 8,
+            :max       => 4,
             :optional  => true,
             :num_chars => 1,
           },
         
           :tattoos => {
-            :max       => 8,
+            :max       => 3,
             :optional  => true,
             :num_chars => 2,
           },
@@ -403,25 +403,25 @@ class GameRules::Rules
         :female => {
         
           :chains => {
-            :max       => 4,
+            :max       => 2,
             :optional  => true,
             :num_chars => 1,
           },
         
           :eyes => {
-            :max       => 8,
+            :max       => 4,
             :optional  => false,
             :num_chars => 2,
           },
         
           :hairs => {
-            :max       => 8,
+            :max       => 11,
             :optional  => true,
             :num_chars => 2,
           },
         
           :mouths => {
-            :max       => 4,
+            :max       => 5,
             :optional  => false,
             :num_chars => 2,
           },
@@ -433,19 +433,19 @@ class GameRules::Rules
           },
         
           :beards => {
-            :max       => 12,
+            :max       => 0,
             :optional  => true,
             :num_chars => 2,
           },
         
           :veilchens => {
-            :max       => 8,
+            :max       => 0,
             :optional  => true,
             :num_chars => 1,
           },
         
           :tattoos => {
-            :max       => 8,
+            :max       => 3,
             :optional  => true,
             :num_chars => 2,
           },
