@@ -344,7 +344,7 @@ class Military::Army < ActiveRecord::Base
   
   # checks if the current army has the same owner as other_army
   def same_owner_as?(other_army)
-    !self.owner.nil? && !other_army.owner.nil? && self.owner == owner.alliance
+    !self.owner.nil? && !other_army.owner.nil? && self.owner == other_army.owner
   end
 
   # implement an arbitrary formula calculating the unit's strength here. is
