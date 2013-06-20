@@ -12,6 +12,7 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
     raise ConflictError.new("already exists one settlement in region") unless region.settleable_by?(current_character)
     raise ConflictError.new("moving is not allowed") unless region.is_moving_allowed?(current_character.alliance, params[:move_settlement_action][:region_password])
     old_base_location = Map::Location.find(current_character.base_location_id)
+		current_character.old_base_location_id = current_character.base_location_id
 
     home_base = Settlement::Settlement.find_by_location_id(current_character.base_location_id)
     raise BadRequestError.new("home_base is fighting") if home_base.fighting?
