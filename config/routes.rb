@@ -251,6 +251,7 @@ GameServer::Application.routes.draw do
         resources :transactions
         resources :money_transactions
         resources :credit_transactions
+        resources :special_offers_transactions
         resources :accounts, :only => [ :show ]
         resource :info, :controller => 'info', :only => [:show]
       end
