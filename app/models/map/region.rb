@@ -50,6 +50,10 @@ class Map::Region < ActiveRecord::Base
     check_moving_password?(moving_password) or self.owned_by_alliance?(alliance)
   end
   
+	def last_takeover_at
+		self.fortress.last_takeover_at
+	end
+
   def find_empty_location
     free_locations = self.locations.empty.count
     self.locations.empty.offset(Random.rand(free_locations)).first

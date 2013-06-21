@@ -9,8 +9,10 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
   	raise BadRequestError.new('already moved') unless current_character.moved_at.nil?
     
     region = Map::Region.find_by_name(params[:move_settlement_action][:region_name])
-    raise ConflictError.new("already exists one settlement in region") unless region.settleable_by?(current_character)
+    raise BadRequestError.new("already exists one settlement in region") unless region.settleable_by?(current_character)
     raise ConflictError.new("moving is not allowed") unless region.is_moving_allowed?(current_character.alliance, params[:move_settlement_action][:region_password])
+    raise BadRequestError.new("already exists one settlement in region") if !region.last_takeover_at.nil? and region.last_takeover_at >= GAME_SERVER_CONFIG['moving_disable_time_after_region_takeove'].hours.ago
+
     old_base_location = Map::Location.find(current_character.base_location_id)
 		current_character.old_base_location_id = current_character.base_location_id
 
