@@ -77,6 +77,13 @@ class Map::Region < ActiveRecord::Base
       self.invitation_code = Util.make_random_string(16, true)
     end while !Map::Region.find_by_invitation_code(self.invitation_code).nil?
   end
+  
+  def self.find_by_id_or_name(region_identifier)
+    region = Map::Region.find_by_id(region_identifier) if Map::Region.valid_id?(region_identifier)
+    region = Map::Region.find_by_name(region_identifier) if region.nil?
+    
+    region
+  end
 
   def check_and_repair_name
     if self.fortress.name != self.name
@@ -99,6 +106,9 @@ class Map::Region < ActiveRecord::Base
   end
 
   private
+    def self.valid_id?(id)
+      id.index(/^[1-9]\d*$/) != nil
+    end
   
     def propagate_regions_count_to_round_info
       info = Fundamental::RoundInfo.the_round_info
