@@ -1,4 +1,9 @@
 class Shop::SpecialOffersTransactionsController < ApplicationController
+
+  before_filter :authenticate
+  before_filter :deny_api,             :except => [:create]
+  #before_filter :authorize_bytro_shop, :only   => [:create]
+
   # GET /shop/special_offers_transactions
   # GET /shop/special_offers_transactions.json
   def index
@@ -40,16 +45,16 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
   # POST /shop/special_offers_transactions
   # POST /shop/special_offers_transactions.json
   def create
-    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
+    #@shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
 
     respond_to do |format|
-      if @shop_special_offers_transaction.save
-        format.html { redirect_to @shop_special_offers_transaction, notice: 'Special offers transaction was successfully created.' }
-        format.json { render json: @shop_special_offers_transaction, status: :created, location: @shop_special_offers_transaction }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity }
-      end
+      #if @shop_special_offers_transaction.save
+      #  format.html { redirect_to @shop_special_offers_transaction, notice: 'Special offers transaction was successfully created.' }
+        format.json { render json: {:callback => 'successful', :schoene => 'gruesse'}, status: :created }
+      #else
+      #  format.html { render action: "new" }
+      #  format.json { render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity }
+      #end
     end
   end
 
