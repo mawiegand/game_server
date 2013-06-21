@@ -245,7 +245,7 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   def female?
-    return !self.gender.blank? && self.gender == "female"
+    !self.gender.blank? && self.gender == "female"
   end
   
   def male?
@@ -310,7 +310,7 @@ class Fundamental::Character < ActiveRecord::Base
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
 
       avatar = GameState::Avatars.new
-      character.avatar_string = avatar.create_random_avatar_string(character.gender)
+      character.avatar_string = avatar.create_random_avatar_string(character.gender || 'male')
 
       character
     end
