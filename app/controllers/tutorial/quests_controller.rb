@@ -102,11 +102,11 @@ class Tutorial::QuestsController < ApplicationController
       attributes_to_update[:displayed_at] = Time.now
 
       # Send Mail if required
-      quest_message = @tutorial_quest.quest[:message]
-      
-      if !quest_message.nil? && @tutorial_quest.status < Tutorial::Quest::STATE_DISPLAYED
-        Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body])
-      end
+      #quest_message = @tutorial_quest.quest[:message]
+      #
+      #if !quest_message.nil? && @tutorial_quest.status < Tutorial::Quest::STATE_DISPLAYED
+      #  Messaging::Message.create_tutorial_message(current_character, quest_message[I18n.locale][:subject], quest_message[I18n.locale][:body])
+      #end
     end
     
     if attributes_sent.has_key?(:reward_displayed)
