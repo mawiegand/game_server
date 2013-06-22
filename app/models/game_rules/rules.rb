@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.6.4
+# Version: 0.7.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -36,7 +36,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -48,6 +48,7 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
       'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
@@ -114,8 +115,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 6,
-                    :build => 4,
+                    :minor => 7,
+                    :build => 1,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -341,6 +342,116 @@ class GameRules::Rules
       :trading_speedup => {
         :resource_id => 3,
         :amount      => 1,
+      },
+
+# ## AVATAR CONFIG ###################################################
+
+      :avatar_config => {
+      
+        :male => {
+        
+          :chains => {
+            :max       => 0,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 3,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 5,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 6,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 4,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 3,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
+        :female => {
+        
+          :chains => {
+            :max       => 2,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :eyes => {
+            :max       => 4,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :hairs => {
+            :max       => 11,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :mouths => {
+            :max       => 5,
+            :optional  => false,
+            :num_chars => 2,
+          },
+        
+          :heads => {
+            :max       => 1,
+            :optional  => false,
+            :num_chars => 1,
+          },
+        
+          :beards => {
+            :max       => 0,
+            :optional  => true,
+            :num_chars => 2,
+          },
+        
+          :veilchens => {
+            :max       => 0,
+            :optional  => true,
+            :num_chars => 1,
+          },
+        
+          :tattoos => {
+            :max       => 3,
+            :optional  => true,
+            :num_chars => 2,
+          },
+                
+        },
+      
       },
 
 # ## CHANGE CHARACTER NAME ###################################################
@@ -2434,7 +2545,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*40+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*25+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
           :production  => [
             
               {
@@ -4932,7 +5043,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3)",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)",
   
           :buyable     => true,
           :demolishable=> false,
@@ -5024,7 +5135,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -5042,7 +5153,7 @@ class GameRules::Rules
               :id => 24,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 1,
 
             },
 
@@ -5121,7 +5232,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -5218,7 +5329,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
           :demolishable=> true,
@@ -6531,7 +6642,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '20',
+          :amount      => '5',
 
           :experience_production => 'MRANK',
 
@@ -6577,7 +6688,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1-(0.005*(MAX(DAYS-53,0)))',
+            :required_regions_ratio => '1',
 
             :duration => 5,
           },

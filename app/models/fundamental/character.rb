@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'identity_provider/access'
+require 'game_state/avatars'
 
 class Fundamental::Character < ActiveRecord::Base
 
@@ -47,7 +48,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string,     :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
   attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
@@ -244,7 +245,7 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   def female?
-    return !self.gender.blank? && self.gender == "female"
+    !self.gender.blank? && self.gender == "female"
   end
   
   def male?
@@ -307,6 +308,9 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_node_id = location.region.node_id
 
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+
+      avatar = GameState::Avatars.new
+      character.avatar_string = avatar.create_random_avatar_string(character.gender || 'male')
 
       character
     end
@@ -395,6 +399,10 @@ class Fundamental::Character < ActiveRecord::Base
     self.gender = new_gender == "female" ? "female" : "male"
     self.increment(:gender_change_count)  
 
+    avatar = GameState::Avatars.new
+    avatar.create_avatar_string_from_id_and_gender(id, (new_gender == "male" ? true : false))
+    self.avatar_string = avatar.avatar_string
+    
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
     
     unless free_change

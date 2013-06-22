@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="3" />
+    <Version major="0" minor="3" build="4" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -191,7 +191,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2">
+    <Quest id="quest_profile" advisor="girl" tutorial="false" priority="2">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -210,7 +210,7 @@
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
-      <Requirement quest="quest_recruit_1clubbers" />
+      <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
@@ -279,7 +279,7 @@
       <RewardFlavor locale="en_US">Everything's always difficult at first, you just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
-        <UnitReward unit="unit_warrior">5</UnitReward>
+        <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -311,7 +311,7 @@
       <RewardText locale="en_US">On the world map you can see the other gamers around you.</RewardText>
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So – did you learn anything? Here are a couple of resources, before you start asking for rewards again.</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_recruit_1clubbers" />
       <Rewards>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
@@ -349,6 +349,9 @@
       <RewardTests>
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
@@ -386,7 +389,7 @@
       <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
-    <!-- 10 --> <!-- Tutorial 11 -->
+    <!-- 10 --> <!-- Not In -->
     <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="true" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
@@ -473,6 +476,9 @@
       <RewardTests>
         <BuildingTest building="building_chief_cottage" min_level="3" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_upgradable_building</UIMarker>
+      <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 13 --> <!-- Tutorial 13 -->
@@ -503,6 +509,9 @@
       <RewardTests>
         <BuildingTest building="building_cottage" min_level="1" min_count="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 14 --> <!-- Tutorial 14 -->
@@ -534,6 +543,7 @@
         <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
         <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
 
@@ -565,6 +575,9 @@
         <RewardTests>
             <BuildingTest building="building_chief_cottage" min_level="4" />
         </RewardTests>
+        <UIMarker>mark_home_settlement</UIMarker>
+        <UIMarker>mark_upgradable_building</UIMarker>
+        <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
     <!-- 16 --> <!-- Tutorial 16 -->
@@ -595,6 +608,8 @@
         <RewardTests>
             <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
         </RewardTests>
+        <UIMarker>mark_home_settlement</UIMarker>
+        <UIMarker>mark_upgradable_building</UIMarker>
     </Quest>
 
 
@@ -662,6 +677,9 @@
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 19 -->
@@ -698,8 +716,8 @@
     <Quest id="quest_resourcescore_0" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 80 resource points.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 80 Rohstoffpunkte.</Task>
+      <Task>Increase the resource production of one settlement to 70 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
         <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
       </Description>
@@ -712,7 +730,7 @@
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
@@ -720,7 +738,7 @@
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <SettlementProductionTest min_resources="80" />
+        <SettlementProductionTest min_resources="70" />
       </RewardTests>
     </Quest>
 
@@ -3911,6 +3929,69 @@
       </RewardTests>
     </Quest>
     
+      <!-- 501 -->
+      <Quest id="quest_crossplatform" advisor="girl">
+          <Name>Crossplatform</Name>
+          <Name locale="de_DE">Multiplatform</Name>
+          <Task>Sign in to the HTML client.</Task>
+          <Task locale="de_DE">Log Dich im HTML Spiel ein.</Task>
+          <Description locale="de_DE">
+              <p>Auf dem Start Bildschirm drücke den 'Wechsel' Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>
+          </Description>
+          <Description locale="en_US">
+              <p>On the start screen press the 'change' button and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>
+          </Description>
+          <Flavor locale="de_DE">Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.</Flavor>
+          <Flavor locale="en_US">We can't stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.</Flavor>
+          <RewardText locale="de_DE">Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.</RewardText>
+          <RewardText locale="en_US">The thick-skinned clubber! Reinforcement for your melee fighters.</RewardText>
+          <RewardFlavor locale="de_DE">Ab jetzt kannst Du von überall aus spielen, solange du einen Browser zur Verfügung hast.</RewardFlavor>
+          <RewardFlavor locale="en_US">From now on you can play on any device that supports a web browser with ease. </RewardFlavor>
+          <Rewards>
+            
+          </Rewards>
+          <RewardTests>
+              
+          </RewardTests>
+      </Quest>
+
+      
+      <!-- 502 -->
+      <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+          <Name>First battle</Name>
+          <Name locale="de_DE">Der erste Kampf</Name>
+          <Task>Fight for the first time and defeat at least one unit!</Task>
+          <Task locale="de_DE">Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!</Task>
+          <Description locale="de_DE">
+              <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
+              <p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>
+          </Description>
+          <Description locale="en_US">
+              <p>1. Select your army and press 'attack'. </p>
+              <p>2. Select the marked neanderthals. </p>
+              </Description>
+              <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
+              <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
+              <RewardText locale="de_DE">In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!</RewardText>
+              <RewardText locale="en_US">In Wack-A-Doo you can fight with as man armies as you want. </RewardText>
+              <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
+              <RewardFlavor locale="en_US">You cann that a fight? Atleast you beat a few enemies.</RewardFlavor>
+              
+              <Rewards>
+                  <UnitReward unit="unit_clubbers">5</UnitReward>
+                  <ExperienceReward>250</ExperienceReward>
+                  <ActionPointReward></ActionPointReward>
+              </Rewards>
+              <RewardTests>
+                  <KillTest min_units="1" />
+              </RewardTests>
+              <UIMarker>mark_map</UIMarker>
+              <UIMarker>mark_select_own_home_settlement</UIMarker>
+              <UIMarker>mark_attack_button</UIMarker>
+              <UIMarker>mark_select_other_army</UIMarker>
+          </Quest >
+
+      
     <!-- NOT IN
    <Quest id="quest_rank" advisor="chef">
    <Name>Rank</Name>
@@ -4693,35 +4774,7 @@
    </Quest>
    -->
 
-    <!--Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
-      <Name>First battle</Name>
-      <Name locale="de_DE">Der erste Kampf</Name>
-      <Task>Fight for the first time and defeat at least two units!</Task>
-      <Task locale="de_DE">Kämpfe Deinen ersten Kampf und besiege mindestens zwei Einheiten!</Task>
-      <Description locale="de_DE">
-        <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
-        <p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>When you're ready, select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
-      </Description>
-      <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
-      <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
-      <RewardText locale="de_DE">In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!</RewardText>
-      <RewardText locale="en_US">Under your army you'll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. </RewardText>
-      <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
-      <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.</RewardFlavor>
-      <Rewards>
-        <UnitReward unit="unit_clubbers">10</UnitReward>
-        <ExperienceReward>250</ExperienceReward>
-        <ActionPointReward></ActionPointReward>
-      </Rewards>
-      <RewardTests>
-        <KillTest min_units="2" />
-      </RewardTests>
-    </Quest>
-
-    <Quest id="quest_change_settlementname" advisor="girl">
+    <!--Quest id="quest_change_settlementname" advisor="girl">
       <Name></Name>
       <Name locale="de_DE">Siedlungsname</Name>
       <Task></Task>
