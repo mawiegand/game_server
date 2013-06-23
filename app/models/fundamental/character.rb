@@ -401,7 +401,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:gender_change_count)  
 
     avatar = GameState::Avatars.new
-    avatar.create_random_avatar_string(self.gender || 'male')
+    avatar.create_random_avatar_string(new_gender == "male")
     self.avatar_string = avatar.avatar_string
     
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
