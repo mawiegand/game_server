@@ -1,15 +1,5 @@
 module GameState
   class Avatars
-    # avatar_string structure
-    #   0   => gender (m/f)
-    #   1   => chain
-    #   2   => eyes
-    #   3-4 => hair
-    #   5   => mouth
-    #   6   => head
-    #   7-8 => beard
-    #   9   => veilchen
-    #   10  => tattoo
     attr_accessor :avatar_string
 
     def initialize
