@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.4
+# Version: 0.3.6
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 4, 
+        :build => 6, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -533,8 +533,8 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
+          :tutorial          => true,
+          :tutorial_end_quest => true,
           :priority          => 2,
           :blocking          => false,
 
@@ -589,7 +589,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [20, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -760,7 +760,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'.</p>",
   
             :en_US => "<p>Go to the training grounds, select a warrior from the recruiting list at the bottom and start training. The recruited units land up in the settlement's garrison.</p>",
                 
@@ -1000,7 +1000,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1036,9 +1036,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
+            :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert.</p>",
   
-            :en_US => "<p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+            :en_US => "<p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. </p>",
                 
           },          
           :reward_flavour => {
@@ -1605,8 +1605,6 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', ],
-
         },              #   END OF quest_improve_production_1
         {               #   quest_build_chiefcottagelvl4
           :id                => 15,
@@ -1711,7 +1709,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
@@ -1817,7 +1815,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
@@ -1927,7 +1925,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
 
@@ -1981,7 +1979,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 19, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -2025,7 +2023,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', ],
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
@@ -2083,7 +2081,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 

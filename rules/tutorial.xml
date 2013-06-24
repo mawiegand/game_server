@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="4" />
+    <Version major="0" minor="3" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -191,7 +191,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="false" priority="2">
+    <Quest id="quest_profile" advisor="girl" priority="2" tutorial="true" tutorial_end_quest="true">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -266,7 +266,7 @@
       <Task>Build a warrior.</Task>
       <Task locale="de_DE">Baue einen Krieger.</Task>
       <Description locale="de_DE">
-        <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
+        <p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the training grounds, select a warrior from the recruiting list at the bottom and start training. The recruited units land up in the settlement's garrison.</p>
@@ -350,8 +350,8 @@
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
-      <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker>
+      <!--UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker -->
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
@@ -361,10 +361,10 @@
       <Task>Move your army to the fortress.</Task>
       <Task locale="de_DE">Bewege Deine Armee zur Festung.</Task>
       <Description locale="de_DE">
-        <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>
+        <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert.</p>
       </Description>
       <Description locale="en_US">
-        <p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>
+        <p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. </p>
       </Description>
       <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! </Flavor>
@@ -543,7 +543,6 @@
         <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
         <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
-      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
 
@@ -577,7 +576,7 @@
         </RewardTests>
         <UIMarker>mark_home_settlement</UIMarker>
         <UIMarker>mark_upgradable_building</UIMarker>
-        <UIMarker>mark_upgrade_button</UIMarker>
+        
     </Quest>
 
     <!-- 16 --> <!-- Tutorial 16 -->
@@ -610,6 +609,7 @@
         </RewardTests>
         <UIMarker>mark_home_settlement</UIMarker>
         <UIMarker>mark_upgradable_building</UIMarker>
+        <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
 
@@ -649,7 +649,7 @@
     </Quest>
 
     <!-- 18 --> <!-- Tutorial 18 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
+    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" >
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
@@ -678,8 +678,8 @@
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
-      <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker>
+      <!--UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker -->
     </Quest>
 
     <!-- 19 -->
@@ -702,7 +702,7 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>

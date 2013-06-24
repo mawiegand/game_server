@@ -1,0 +1,29 @@
+<%= form_for(@shop_special_offer) do |f| %>
+  <% if @shop_special_offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop_special_offer.errors.count, "error") %> prohibited this shop_special_offer from being saved:</h2>
+
+      <ul>
+      <% @shop_special_offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :startet_at %><br />
+    <%= f.datetime_select :startet_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_at %><br />
+    <%= f.datetime_select :ends_at %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -2607,6 +2607,20 @@ ActiveRecord::Schema.define(:version => 20130622143432) do
     t.datetime "updated_at"
   end
 
+  create_table "shop_special_offers", :force => true do |t|
+    t.datetime "startet_at"
+    t.datetime "ends_at"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_special_offers_transactions", :force => true do |t|
+    t.integer  "offer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shop_transactions", :force => true do |t|
     t.integer  "character_id"
     t.integer  "credit_amount_booked"
