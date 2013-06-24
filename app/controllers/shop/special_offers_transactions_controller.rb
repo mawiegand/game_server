@@ -45,17 +45,18 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
   # POST /shop/special_offers_transactions
   # POST /shop/special_offers_transactions.json
   def create
-    #@shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
+    # create shop transaction
+    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
 
-    respond_to do |format|
-      #if @shop_special_offers_transaction.save
-      #  format.html { redirect_to @shop_special_offers_transaction, notice: 'Special offers transaction was successfully created.' }
-        format.json { render json: {:callback => 'successful', :schoene => 'gruesse'}, status: :created }
-      #else
-      #  format.html { render action: "new" }
-      #  format.json { render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity }
-      #end
+    # TODO set transaction attributes
+
+    # create shop_transaction event
+    if !@shop_special_offers_transaction.create_transaction_event(current_character) || !@shop_special_offers_transaction.save
+      render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
     end
+
+    # answer with 201
+    render json: {:callback => 'successful', :schoene => 'gruesse'}, status: :created
   end
 
   # PUT /shop/special_offers_transactions/1
