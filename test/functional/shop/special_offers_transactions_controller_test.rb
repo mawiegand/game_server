@@ -22,7 +22,7 @@ class Shop::SpecialOffersTransactionsControllerTest < ActionController::TestCase
       post :create, shop_special_offers_transaction: @shop_special_offers_transaction.attributes
     end
 
-    assert_redirected_to shop_special_offers_transaction_path(assigns(:shop_special_offers_transaction))
+    assert_response :success
   end
 
   test "should show shop_special_offers_transaction" do
