@@ -47,23 +47,33 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
   # POST /shop/special_offers_transactions.json
   def create
     # create shop transaction
-    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new()
+    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new
 
+    # TODO params is an escaped json string an thus, it cannot be parsed properly
     logger.debug "-----> Parameters: " + params.inspect
 
-    # Transaction füllen:
+    # fill transaction
     @shop_special_offers_transaction.character = Fundamental::Character.find_by_id_or_identifier('OGvYwFVEMESYXCLT')
     @shop_special_offers_transaction.offer_id = 4711
-
-    # TODO set transaction attributes
+    @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
 
     # create shop_transaction event
-    if !@shop_special_offers_transaction.save
+    unless @shop_special_offers_transaction.save
       render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
     end
 
-    # answer with 201
-    render json: {:callback => 'successful', :schoene => 'gruesse'}, status: :created
+    @shop_purchase = Shop::Purchase.new
+    @shop_purchase.character_id = @shop_special_offers_transaction.character_id
+    @shop_purchase.offer_id = @shop_special_offers_transaction.offer_id
+    @shop_purchase.special_offers_transaction_id = @shop_special_offers_transaction.id
+
+    # create purchase object
+    unless @shop_purchase.save
+      render json: @shop_purchase.errors, status: :unprocessable_entity
+    end
+
+      # answer with 201
+    render json: {:status => 'created'}, status: :created
   end
 
   # PUT /shop/special_offers_transactions/1

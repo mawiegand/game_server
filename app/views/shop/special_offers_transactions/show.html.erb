@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Character:</b>
+  <%= @shop_special_offers_transaction.character_id %>
+</p>
+
+<p>
   <b>Offer:</b>
   <%= @shop_special_offers_transaction.offer_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= Shop::Transaction::STATES[@shop_special_offers_transaction.state] %>
 </p>
 
 

@@ -4,7 +4,9 @@
   <tr>
     <th>Offer type</th>
     <th>Offer</th>
+    <th>Character</th>
     <th>Redeemed at</th>
+    <th>Special Offer Transaction</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +16,9 @@
   <tr>
     <td><%= shop_purchase.offer_type %></td>
     <td><%= shop_purchase.offer_id %></td>
+    <td><%= shop_purchase.character_id %></td>
     <td><%= shop_purchase.redeemed_at %></td>
+    <td><%= shop_purchase.special_offers_transaction_id %></td>
     <td><%= link_to 'Show', shop_purchase %></td>
     <td><%= link_to 'Edit', edit_shop_purchase_path(shop_purchase) %></td>
     <td><%= link_to 'Destroy', shop_purchase, confirm: 'Are you sure?', method: :delete %></td>
