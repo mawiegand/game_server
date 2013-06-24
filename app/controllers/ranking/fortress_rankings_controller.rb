@@ -18,7 +18,7 @@ class Ranking::FortressRankingsController < ApplicationController
     per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i
     page     = params[:page].blank?     ? 1  : params[:page].to_i
 
-    @fortresses = @fortresses.paginate(:page => page, :per_page => per_page)
+    @fortresses = @fortresses.includes(:owner).includes(:region).paginate(:page => page, :per_page => per_page)
     
     nr = (page - 1) * per_page + 1
     returned_ranking_entries = @fortresses.map do |ranking_entry|
