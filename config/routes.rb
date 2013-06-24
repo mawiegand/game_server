@@ -245,6 +245,7 @@ GameServer::Application.routes.draw do
       
       namespace :shop do
         resources :offers
+        resources :purchases
         resources :resource_offers
         resources :bonus_offers
         resources :platinum_offers

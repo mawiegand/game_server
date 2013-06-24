@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Offer type:</b>
+  <%= @shop_purchase.offer_type %>
+</p>
+
+<p>
+  <b>Offer:</b>
+  <%= @shop_purchase.offer_id %>
+</p>
+
+<p>
+  <b>Redeemed at:</b>
+  <%= @shop_purchase.redeemed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_purchase_path(@shop_purchase) %> |
+<%= link_to 'Back', shop_purchases_path %>

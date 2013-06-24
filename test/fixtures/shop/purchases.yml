@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offer_type: MyString
+  offer_id: 1
+  redeemed_at: 2013-06-24 23:00:46
+
+two:
+  offer_type: MyString
+  offer_id: 1
+  redeemed_at: 2013-06-24 23:00:46
