@@ -1,6 +1,6 @@
 class Shop::SpecialOffersTransactionsController < ApplicationController
 
-  before_filter :authenticate
+  before_filter :authenticate,         :except => [:create]
   before_filter :deny_api,             :except => [:create]
   #before_filter :authorize_bytro_shop, :only   => [:create]
 
