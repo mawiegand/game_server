@@ -26,6 +26,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id", :inverse_of => :character
+  has_many :special_offers_transactions, :class_name => "Shop::SpecialOffersTransaction", :foreign_key => "character_id", :inverse_of => :character
+  has_many :purchases,         :class_name => "Shop::Purchase",             :foreign_key => "character_id", :inverse_of => :character
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTRESS]
   has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
