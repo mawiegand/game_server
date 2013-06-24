@@ -48,6 +48,8 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # create shop transaction
     @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
 
+    logger.debug "-----> Parameters: " + params.inspect
+
     # TODO set transaction attributes
 
     # create shop_transaction event
