@@ -51,7 +51,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # TODO set transaction attributes
 
     # create shop_transaction event
-    if !@shop_special_offers_transaction.create_transaction_event(current_character) || !@shop_special_offers_transaction.save
+    if !@shop_special_offers_transaction.save
       render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
     end
 
