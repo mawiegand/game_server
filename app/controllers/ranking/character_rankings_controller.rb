@@ -45,7 +45,8 @@ class Ranking::CharacterRankingsController < ApplicationController
       ranking_entry_hash[:rank] = nr
       ranking_entry_hash[:mundane_rank]  = ranking_entry.character.mundane_rank
       ranking_entry_hash[:artifact_id]   = ranking_entry.character.artifact.id unless ranking_entry.character.artifact.nil?
-      ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name][:de_DE] unless ranking_entry.character.artifact.nil?
+      ranking_entry_hash[:artifact_name] = ranking_entry.character.artifact.artifact_type[:name] unless ranking_entry.character.artifact.nil?
+      ranking_entry_hash[:avatar_string] = ranking_entry.character.avatar_string
       nr += 1
       ranking_entry_hash
     end
