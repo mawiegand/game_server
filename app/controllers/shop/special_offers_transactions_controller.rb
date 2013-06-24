@@ -47,9 +47,13 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
   # POST /shop/special_offers_transactions.json
   def create
     # create shop transaction
-    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new(params[:shop_special_offers_transaction])
+    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new()
 
     logger.debug "-----> Parameters: " + params.inspect
+
+    # Transaction füllen:
+    @shop_special_offers_transaction.character = Fundamental::Character.find_by_id_or_identifier('OGvYwFVEMESYXCLT')
+    @shop_special_offers_transaction.offer_id = 4711
 
     # TODO set transaction attributes
 
