@@ -3,6 +3,7 @@ require 'test_helper'
 class Shop::SpecialOffersControllerTest < ActionController::TestCase
   setup do
     @shop_special_offer = shop_special_offers(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do
