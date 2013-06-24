@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="4" />
+    <Version major="0" minor="3" build="5" />
 
     <Languages>
       <Language lang="en">English</Language>
@@ -192,7 +192,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="false" priority="2">
+    <Quest id="quest_profile" advisor="girl" priority="2" tutorial="true" tutorial_end_quest="true">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -350,9 +350,9 @@
       <RewardTests>
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
-      <UIMarker>mark_home_settlement</UIMarker>
+      <!--UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker>
+      <UIMarker>mark_building_option</UIMarker -->
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
@@ -544,7 +544,6 @@
         <ResourceProductionTest resource="resource_wood">12</ResourceProductionTest>
         <ResourceProductionTest resource="resource_stone">12</ResourceProductionTest>
       </RewardTests>
-      <UIMarker>mark_home_settlement</UIMarker>
     </Quest>
 
 
@@ -578,7 +577,7 @@
         </RewardTests>
         <UIMarker>mark_home_settlement</UIMarker>
         <UIMarker>mark_upgradable_building</UIMarker>
-        <UIMarker>mark_upgrade_button</UIMarker>
+        
     </Quest>
 
     <!-- 16 --> <!-- Tutorial 16 -->
@@ -611,6 +610,7 @@
         </RewardTests>
         <UIMarker>mark_home_settlement</UIMarker>
         <UIMarker>mark_upgradable_building</UIMarker>
+        <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
 
 
@@ -650,7 +650,7 @@
     </Quest>
 
     <!-- 18 --> <!-- Tutorial 18 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" tutorial_end_quest="true">
+    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true" >
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
@@ -678,9 +678,9 @@
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
-      <UIMarker>mark_home_settlement</UIMarker>
+      <!--UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker>
+      <UIMarker>mark_building_option</UIMarker -->
     </Quest>
 
     <!-- 19 -->
@@ -703,7 +703,7 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
-      <Requirement quest="quest_build_1campfirelvl1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>

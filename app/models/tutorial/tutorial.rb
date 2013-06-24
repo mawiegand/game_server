@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.4
+# Version: 0.3.5
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 4, 
+        :build => 5, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -533,8 +533,8 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_profile,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
+          :tutorial          => true,
+          :tutorial_end_quest => true,
           :priority          => 2,
           :blocking          => false,
 
@@ -589,7 +589,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [20, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -999,8 +999,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1605,8 +1603,6 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', ],
-
         },              #   END OF quest_improve_production_1
         {               #   quest_build_chiefcottagelvl4
           :id                => 15,
@@ -1711,7 +1707,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
@@ -1817,7 +1813,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
@@ -1927,7 +1923,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
 
@@ -1981,7 +1977,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, 19, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -2024,8 +2020,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
@@ -2083,7 +2077,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
