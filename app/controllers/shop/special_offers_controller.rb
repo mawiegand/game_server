@@ -1,4 +1,8 @@
 class Shop::SpecialOffersController < ApplicationController
+  layout 'shop'
+
+  before_filter
+
   # GET /shop/special_offers
   # GET /shop/special_offers.json
   def index

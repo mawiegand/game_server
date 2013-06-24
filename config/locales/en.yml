@@ -100,6 +100,8 @@ en:
         bonus_offers: Bonus Offers
         platinum_offers: Platinum Offers
         transactions: Ingame Transactions
+        special_offers: Special Offers
+        special_offers_transactions: Special Offers Transactions
         credit_transactions: Bytro Credit Transactions
         money_transactions: Bytro Money Transactions
       tutorial:
