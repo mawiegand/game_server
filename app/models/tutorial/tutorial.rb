@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.8
+# Version: 0.3.9
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 8, 
+        :build => 9, 
       },
       
       :production_test_weights => {
@@ -1097,7 +1097,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
