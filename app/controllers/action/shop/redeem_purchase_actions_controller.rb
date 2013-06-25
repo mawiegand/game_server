@@ -16,6 +16,8 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
     raise ForbiddenError.new('tried to redeem purchase that is already redeemed.') unless purchase.redeemed?
 
     purchase.special_offer.credit_to(current_character)
+    purchase.redeemed_at = Time.now
+    purchase.save
 
     respond_to do |format|
       format.json { render json: {}, status: :ok }
