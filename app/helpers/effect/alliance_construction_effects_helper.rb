@@ -1,0 +1,2 @@
+module Effect::AllianceConstructionEffectsHelper
+end
