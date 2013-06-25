@@ -17,7 +17,7 @@ class Shop::PurchasesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @shop_purchases }
+      format.json { render json: include_root(@shop_purchases, :purchases) }
     end
   end
 
