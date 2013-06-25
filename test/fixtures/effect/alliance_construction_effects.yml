@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  finished_at: 2013-06-25 18:10:54
+  type_id: 1
+  bonus: 9.99
+  alliance_id: 1
+  origin_id: 1
+
+two:
+  finished_at: 2013-06-25 18:10:54
+  type_id: 1
+  bonus: 9.99
+  alliance_id: 1
+  origin_id: 1

@@ -1,0 +1,31 @@
+<h1>Listing effect_alliance_construction_effects</h1>
+
+<table>
+  <tr>
+    <th>Finished at</th>
+    <th>Type</th>
+    <th>Bonus</th>
+    <th>Alliance</th>
+    <th>Origin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @effect_alliance_construction_effects.each do |effect_alliance_construction_effect| %>
+  <tr>
+    <td><%= effect_alliance_construction_effect.finished_at %></td>
+    <td><%= effect_alliance_construction_effect.type_id %></td>
+    <td><%= effect_alliance_construction_effect.bonus %></td>
+    <td><%= effect_alliance_construction_effect.alliance_id %></td>
+    <td><%= effect_alliance_construction_effect.origin_id %></td>
+    <td><%= link_to 'Show', effect_alliance_construction_effect %></td>
+    <td><%= link_to 'Edit', edit_effect_alliance_construction_effect_path(effect_alliance_construction_effect) %></td>
+    <td><%= link_to 'Destroy', effect_alliance_construction_effect, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Alliance construction effect', new_effect_alliance_construction_effect_path %>

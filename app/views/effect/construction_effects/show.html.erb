@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @effect_construction_effect.finished_at %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @effect_construction_effect.type_id %>
+</p>
+
+<p>
+  <b>Bonus:</b>
+  <%= @effect_construction_effect.bonus %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%= @effect_construction_effect.character_id %>
+</p>
+
+<p>
+  <b>Origin:</b>
+  <%= @effect_construction_effect.origin_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_effect_construction_effect_path(@effect_construction_effect) %> |
+<%= link_to 'Back', effect_construction_effects_path %>
