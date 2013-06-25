@@ -1,5 +1,6 @@
 GameServer::Application.routes.draw do
 
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -31,6 +32,8 @@ GameServer::Application.routes.draw do
       end
 
       namespace :effect do 
+        resources :alliance_construction_effects
+        resources :construction_effects
         resources :alliance_resource_effects
         resources :resource_effects
       end
@@ -92,6 +95,10 @@ GameServer::Application.routes.draw do
 
       resources :resource_effects, :path => "/fundamental/resource_pools/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
       resources :alliance_resource_effects, :path => "/fundamental/alliances/:alliance_id/alliance_resource_effects", :module => 'effect',   :only => [:index]
+    
+      resources :construction_effects, :path => "/fundamental/characters/:character_id/construction_effects", :module => 'effect',   :only => [:index]
+      resources :alliance_construction_effects, :path => "/fundamental/alliances/:alliance_id/alliance_construction_effects", :module => 'effect',   :only => [:index]
+
 
       namespace :messaging do 
         resources :archives do

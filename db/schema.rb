@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624230639) do
+ActiveRecord::Schema.define(:version => 20130625161054) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1600,6 +1600,16 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
+  create_table "effect_alliance_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "alliance_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1608,6 +1618,16 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "origin_id"
+  end
+
+  create_table "effect_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "character_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "effect_resource_effects", :force => true do |t|

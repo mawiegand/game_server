@@ -87,6 +87,8 @@ en:
         jobs: Jobs
         active_jobs: Act. Jobs
       effect:
+        alliance_construction_effects: Ally Construction
+        construction_effects: Construction
         alliance_resource_effects: Alliance Res. Effects
         resource_effects: Character Res. Effects
         category: Effect

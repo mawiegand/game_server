@@ -1,5 +1,7 @@
 <% content_for :effect_links do %>
   <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.effect.alliance_construction_effects"), effect_alliance_construction_effects_path %></li>
+    <li><%= link_to I18n.translate("application.layout.effect.construction_effects"), effect_construction_effects_path %></li>
     <li><%= link_to I18n.translate("application.layout.effect.alliance_resource_effects"), effect_alliance_resource_effects_path %></li>
     <li><%= link_to I18n.translate("application.layout.effect.resource_effects"), effect_resource_effects_path %></li>
   </ul>
