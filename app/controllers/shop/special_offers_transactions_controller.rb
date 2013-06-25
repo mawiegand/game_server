@@ -53,7 +53,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     logger.debug "-----> Parameters: " + params.inspect
 
     # fill transaction
-    @shop_special_offers_transaction.character = 220
+    @shop_special_offers_transaction.character_id = 220
     @shop_special_offers_transaction.offer_id = 4711
     @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
 
