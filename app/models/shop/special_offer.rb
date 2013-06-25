@@ -122,6 +122,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
     
     # credit construction speedup effect
     
+    
   end
 
 end
