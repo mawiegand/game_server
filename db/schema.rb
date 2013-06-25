@@ -1917,7 +1917,6 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.datetime "armies_changed_at"
     t.integer  "right_of_way"
     t.integer  "settlement_score",   :default => 0, :null => false
-    t.string   "avatar_string"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -1959,7 +1958,6 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.integer  "settlement_type_id"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
-    t.string   "avatar_string"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -2087,7 +2085,6 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.datetime "suspension_ends_at"
     t.datetime "attack_protection_ends_at"
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
-    t.string   "avatar_string"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2368,7 +2365,6 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.integer  "dislikes",                 :default => 0,   :null => false
     t.decimal  "like_ratio",               :default => 0.0, :null => false
     t.string   "gender"
-    t.string   "avatar_string"
   end
 
   create_table "settlement_histories", :force => true do |t|
