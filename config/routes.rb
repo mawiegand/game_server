@@ -82,9 +82,9 @@ GameServer::Application.routes.draw do
         resources :retention_mails
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
-      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states',   :only => [:show]
       resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
-      resources :purchases,       :path => "/fundamental/characters/:character_id/purchases",       :module => 'shop',       :only => [:index]
+      resources :purchases,       :path => "/fundamental/characters/:character_id/purchases",       :module => 'shop',       :controller => 'purchases',:only => [:index]
 
       resource  :shop_account,    :path => "/fundamental/characters/:character_id/shop_account",    :module => 'shop',       :controller => 'accounts', :only => [:show]
 
