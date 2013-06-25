@@ -1,4 +1,5 @@
 class Shop::SpecialOffersTransactionsController < ApplicationController
+  layout 'shop'
 
   before_filter :authenticate,         :except => [:create]
   before_filter :deny_api,             :except => [:create]

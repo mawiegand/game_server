@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="6" />
+    <Version major="0" minor="3" build="7" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -350,8 +350,8 @@
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
-      <!--UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker -->
+      <!--UIMarker>mark_free_construction_slot</UIMarker -->
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
@@ -620,12 +620,12 @@
       <Task>Assemble an army.</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p>
+        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Armee Erzeugen' Knopf.</p>
         <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
       <Description locale="en_US">
-        <p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>
+        <p>Go to the map and select your settlement. Press the 'Create Army' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can't move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.</Flavor>
@@ -678,8 +678,8 @@
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
-      <!--UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker -->
+      <!--UIMarker>mark_free_construction_slot</UIMarker-->
+      <UIMarker>mark_building_option</UIMarker >
     </Quest>
 
     <!-- 19 -->

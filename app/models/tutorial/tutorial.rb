@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.6
+# Version: 0.3.7
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 6, 
+        :build => 7, 
       },
       
       :production_test_weights => {
@@ -1000,7 +1000,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', ],
+          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1851,9 +1851,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Armee Erzeugen' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
-            :en_US => "<p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>",
+            :en_US => "<p>Go to the map and select your settlement. Press the 'Create Army' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>",
                 
           },          
           :reward_flavour => {
@@ -2023,7 +2023,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', ],
+          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
