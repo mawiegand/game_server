@@ -2,7 +2,7 @@ class Shop::PurchasesController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api
+  before_filter :deny_api, :except => [:index]
 
   # GET /shop/purchases
   # GET /shop/purchases.json
