@@ -65,6 +65,7 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_mundane_rank
   
   before_save :update_experience_on_production_rate_changes
+  before_save :update_construction_bonus_total
 
   #before_save :update_alliance_leave_to_artifact
 
@@ -84,8 +85,9 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
   after_save  :propagate_alliance_bonus_to_alliance
+  after_save  :propagate_production_bonus
   after_save  :manage_assignments_on_level_change
-  
+
   after_commit :check_consistency_sometimes
   
   after_find  :update_experience_if_necessary
@@ -1280,6 +1282,53 @@ class Fundamental::Character < ActiveRecord::Base
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
     options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
+  end
+  
+  
+  # ##########################################################################
+  #
+  #   CONSTRUCTION EFFECTS
+  #
+  # ##########################################################################
+  
+  # adds a construction bonus effect to the character.
+  def add_construction_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+      self.construction_bonus_effect += amount
+      self.save!
+    end
+  end
+  
+  # adds a construction bonus effect to the character.
+  def remove_construction_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+      self.construction_bonus_effect = (self.construction_bonus_effect || 0.0) + amount
+      self.save!
+    end    
+  end
+  
+  def update_construction_bonus_total
+    self.construction_bonus_total = self.construction_bonus_effect # later add character abilities
+  end
+  
+  def propagate_production_bonus
+    if construction_bonus_total_changed?
+
+      delta = (construction_bonus_total_change[1] || 0.0) - (construction_bonus_total_change[0] || 0.0)
+
+      self.settlements.each do |settlement| 
+        
+        GameRules::Rules.the_rules().queue_types.each do |queue_type|
+          if queue_type[:category] == :queue_category_construction
+            settlement.propagate_speedup_to_queue(:building, queue_type, delta)
+          end
+        end
+      end
+    end
   end
   
   protected

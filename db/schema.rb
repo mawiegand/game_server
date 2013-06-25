@@ -1681,6 +1681,16 @@ ActiveRecord::Schema.define(:version => 20130707192554) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
+  create_table "effect_alliance_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "alliance_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1689,6 +1699,16 @@ ActiveRecord::Schema.define(:version => 20130707192554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "origin_id"
+  end
+
+  create_table "effect_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "character_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "effect_resource_effects", :force => true do |t|
@@ -1878,6 +1898,8 @@ ActiveRecord::Schema.define(:version => 20130707192554) do
     t.datetime "premium_expiration_displayed_at"
     t.datetime "special_offer_displayed_at"
     t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
+    t.decimal  "construction_bonus_effect",                :default => 0.0,   :null => false
+    t.decimal  "construction_bonus_total",                 :default => 0.0,   :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
