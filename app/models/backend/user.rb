@@ -55,7 +55,7 @@ class Backend::User < ActiveRecord::Base
   @login_regex   = /^[^\d\s]+[^\s]*$/i
   
   validates :email, :presence   => true,
-                    :format     => { :with => @email_regex },
+#                    :format     => { :with => @email_regex },
                     :uniqueness => { :case_sensitive => false }
                     
   validates :login,     :length       => { :maximum => 20 },
