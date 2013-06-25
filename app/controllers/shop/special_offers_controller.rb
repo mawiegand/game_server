@@ -2,7 +2,8 @@ class Shop::SpecialOffersController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api
+  before_filter :deny_api,        :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
 
   # GET /shop/special_offers
   # GET /shop/special_offers.json
