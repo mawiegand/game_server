@@ -75,7 +75,7 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights, :tutorial_reward
   
   def attributes 
     { 
@@ -84,6 +84,7 @@ class Tutorial::Tutorial
       'updated_at'               => updated_at,
       'num_tutorial_quests'      => num_tutorial_quests,
       'production_test_weights'  => production_test_weights,
+      'tutorial_reward'          => tutorial_reward,
     }
   end
   
@@ -131,6 +132,10 @@ class Tutorial::Tutorial
       
       :production_test_weights => {
   <xsl:apply-templates select="//ProductionTestWeights" />
+      },
+      
+      :tutorial_reward => {
+        :platinum_duration => <xsl:apply-templates select="//General/TutorialReward/@platinumDuration" />      
       },
       
       :updated_at => File.ctime(__FILE__),

@@ -1,0 +1,27 @@
+<h1>Listing shop_special_offers_transactions</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Offer</th>
+    <th>State</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_special_offers_transactions.each do |shop_special_offers_transaction| %>
+  <tr>
+    <td><%= shop_special_offers_transaction.character_id %></td>
+    <td><%= shop_special_offers_transaction.offer_id %></td>
+    <td><%= Shop::Transaction::STATES[shop_special_offers_transaction.state] %></td>
+    <td><%= link_to 'Show', shop_special_offers_transaction %></td>
+    <td><%= link_to 'Edit', edit_shop_special_offers_transaction_path(shop_special_offers_transaction) %></td>
+    <td><%= link_to 'Destroy', shop_special_offers_transaction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Special offers transaction', new_shop_special_offers_transaction_path %>

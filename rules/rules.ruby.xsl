@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 
 <!-- Stylesheet specifing transformation to generate a Ruby source file 
      from the rules.xml. 
@@ -83,7 +83,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
-    :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
     { 
@@ -95,6 +95,7 @@ class GameRules::Rules
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
       'trading_speedup'             => trading_speedup,
+      'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
       'change_character_gender'     => change_character_gender,
       'change_settlement_name'      => change_settlement_name,
@@ -189,6 +190,7 @@ class GameRules::Rules
   <xsl:apply-templates select="//General/TrainingSpeedup" />
   <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="//General/TradingSpeedupCost" />
+  <xsl:apply-templates select="//General/AvatarConfigs" />
   <xsl:apply-templates select="//General/ChangeCharacterName" />
   <xsl:apply-templates select="//General/ChangeCharacterGender" />
   <xsl:apply-templates select="//General/ChangeSettlementName" />
@@ -317,6 +319,26 @@ end
       :trading_speedup => {
         :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
         :amount      => <xsl:value-of select="@amount"/>,
+      },
+</xsl:template>
+
+
+
+<xsl:template match="AvatarConfigs">
+# ## AVATAR CONFIG ###################################################
+
+      :avatar_config => {
+      <xsl:for-each select="AvatarConfig">
+        :<xsl:value-of select="@gender" /> => {
+        <xsl:for-each select="AvatarLayer">
+          :<xsl:apply-templates/> => {
+            :max       => <xsl:value-of select="@max" />,
+            :optional  => <xsl:value-of select="@optional" />,
+            :num_chars => <xsl:value-of select="@chars" />,
+          },
+        </xsl:for-each>        
+        },
+      </xsl:for-each>
       },
 </xsl:template>
 

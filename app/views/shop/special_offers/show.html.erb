@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>BytroOfferID:</b>
+  <%= @shop_special_offer.bytro_offer_id %>
+</p>
+
+<p>
+  <b>Startet at:</b>
+  <%= @shop_special_offer.startet_at %>
+</p>
+
+<p>
+  <b>Ends at:</b>
+  <%= @shop_special_offer.ends_at %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @shop_special_offer.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_special_offer_path(@shop_special_offer) %> |
+<%= link_to 'Back', shop_special_offers_path %>

@@ -6,17 +6,17 @@ class Ranking::ArtifactRankingsController < ApplicationController
   def index
     
     @artifacts = if params[:sort] == 'name'
-      Fundamental::Artifact.visible.order('type_id asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).order('type_id asc')
     elsif params[:sort] == 'owner_name'
-      Fundamental::Artifact.visible.joins(:owner).order('fundamental_characters.name asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).joins(:owner).order('fundamental_characters.name asc')
     elsif params[:sort] == 'region_name'
-      Fundamental::Artifact.visible.joins(:region).order('map_regions.name asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).joins(:region).order('map_regions.name asc')
     elsif params[:sort] == 'last_captured_at'
-      Fundamental::Artifact.visible.order('last_captured_at asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).order('last_captured_at asc')
     elsif params[:sort] == 'last_initiated_at'
-      Fundamental::Artifact.visible.order('last_initiated_at asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).order('last_initiated_at asc')
     else
-      Fundamental::Artifact.visible.order('id asc')
+      Fundamental::Artifact.visible.includes(:owner).includes(:region).order('id asc')
     end
 
     per_page = params[:per_page].blank? ? 25 : params[:per_page].to_i

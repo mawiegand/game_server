@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.2.7
+# Version: 0.3.8
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -27,7 +27,7 @@ class Tutorial::Tutorial
   extend ActiveModel::Naming
   self.include_root_in_json = false
 
-  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights
+  attr_accessor :version, :quests, :updated_at, :num_tutorial_quests, :production_test_weights, :tutorial_reward
   
   def attributes 
     { 
@@ -36,6 +36,7 @@ class Tutorial::Tutorial
       'updated_at'               => updated_at,
       'num_tutorial_quests'      => num_tutorial_quests,
       'production_test_weights'  => production_test_weights,
+      'tutorial_reward'          => tutorial_reward,
     }
   end
   
@@ -77,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 2, 
-        :build => 7, 
+        :minor => 3, 
+        :build => 8, 
       },
       
       :production_test_weights => {
@@ -87,6 +88,10 @@ class Tutorial::Tutorial
         :resource_stone => 1,
         :resource_fur => 1,
         :resource_cash => 0,
+      },
+      
+      :tutorial_reward => {
+        :platinum_duration => 72      
       },
       
       :updated_at => File.ctime(__FILE__),
@@ -347,7 +352,7 @@ class Tutorial::Tutorial
             :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung?",
   
             :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
-      ",
+            ",
                 
           },
           :reward_text => {
@@ -364,7 +369,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [5, 10, ],
+          :successor_quests => [5, ],
 
           :rewards => {
             
@@ -415,33 +420,39 @@ class Tutorial::Tutorial
             :en => {
               :subject => 'Welcome to Wack-A-Doo',
               :body => "<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
-        <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
-        As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
-        Prepare to be surprised!</p>
-        <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
-        <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
-        <p>We invite you to register and help keep our Wiki up to date.</p>
-        <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
-        <p>We hope you have lots of fun with Wack-A-Doo.</p>
-        <p>The Wack-A-Doo Team</p>",
+                    <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
+                    As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+                    Prepare to be surprised!</p>
+                    <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
+                    <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+                    <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
+                    <p>We invite you to register and help keep our Wiki up to date.</p>
+                    <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
+                    <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
+                    <p>We hope you have lots of fun with Wack-A-Doo.</p>
+                    <p>The Wack-A-Doo Team</p>",
             },
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
-              :body => "<h2>Willkommen in Runde 3 von Wack-A-Doo.</h2>
-        <p>Unser Spiel 'Wack-A-Doo' hat die erste öffentliche Beta-Runde hinter sich, befindet sich aber weiterhin in der Entwicklung.<br/>
-        Auch im Laufe dieser Runde werden wir viele neue Erweiterungen und Spielmechaniken einführen und das Spielerlebnis verbessern.<br/>
-        Lass Dich überraschen!</p>
-        <p>Wir empfehlen Dir das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen. Fragen beantworten andere Spieler im Chat wie Global oder Plauderhöhle und später natürlich im eigenen Allianz-Chat.</p>
-        <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in der Enzyklopädie und in unserem Wiki zusammengefasst:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>Wack-A-Doo Wiki</a> ; <a href='http://wiki.wack-a-doo.de/Gebäudegraph' target='_blank'>Gebäude-Graph (Tech-Tree)</a> ; <a href='http://wiki.wack-a-doo.de/Einheitengraph' target='_blank'>Einheiten-Graph</a></p>
-        <p>Das Wiki ist lange nicht vollständig. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf ein hohes Niveau zu bringen. Dafür ist eine Anmeldung erforderlich.</p>
-        <p>Wir bitten Dich uns jeden Fehler zu melden. Auch an Feedback, Ideen oder konstruktive Meinungen sind wir sehr interessiert. Dafür wurde uns für Wack-A-Doo von Shadow-Dragon ein Bereich im Uga-Agga Forum eingerichtet:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo im Uga Agga Forum</a></p>
-        <p>Wir wünschen Dir viel Spass bei Wack-A-Doo.</p>
-        <p>Das Wack-A-Doo Team</p>",
+              :body => "<p>Herzlich willkommen in der 'Wack-A-Doo'-Community!<p/>
+                    <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
+                    <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten
+                    im Detail und mit Bildern erläutert:
+                    <ul>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+                    </ul></p>
+                    <p>
+                    Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
+                    iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+                    <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
+                    <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
+                    <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -544,10 +555,10 @@ class Tutorial::Tutorial
           :flavour => {
             
             :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen.
-      ",
+            ",
   
             :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
-      ",
+            ",
                 
           },
           :description => {
@@ -633,10 +644,10 @@ class Tutorial::Tutorial
           :flavour => {
             
             :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
-      ",
+            ",
   
             :en_US => "You can build a training grounds but you're not doing it? Build one now and I'll give you something from my treasure chest.
-      ",
+            ",
                 
           },
           :description => {
@@ -649,7 +660,7 @@ class Tutorial::Tutorial
           :reward_flavour => {
             
             :de_DE => "Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.
-      ",
+            ",
   
             :en_US => "Finished? About time, too. There's your reward – that's all there is. Push off.",
                 
@@ -659,7 +670,7 @@ class Tutorial::Tutorial
             :de_DE => "Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.",
   
             :en_US => "The training grounds speeds up the recruiting time of melee fighters.
-      ",
+            ",
                 
           },
 
@@ -1142,13 +1153,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl2',
-
-          },
-
-          :successor_quests => [12, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1252,7 +1257,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1337,7 +1342,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_2gathererlvl3',
+            :quest => 'quest_settlement_button2',
 
           },
 
@@ -1933,7 +1938,7 @@ class Tutorial::Tutorial
             :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
             :en_US => "Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
-      ",
+            ",
                 
           },
           :description => {
@@ -2111,9 +2116,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 80 resource points.",
+            :en_US => "Increase the resource production of one settlement to 70 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 80 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2181,7 +2186,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 80,
+              :min_resources => 70,
             },
 
           },          
@@ -3473,10 +3478,10 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+                <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
             :en_US => "<p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
-        <p>At Level 12 you will recieve another command point for another army.</p>",
+                <p>At Level 12 you will recieve another command point for another army.</p>",
                 
           },
 

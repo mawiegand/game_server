@@ -4,7 +4,7 @@
 
 
 <!-- General -->
-<!ELEMENT General (Game, Version, Languages, Locales, Advisors, ProductionTestWeights)>
+<!ELEMENT General (Game, Version, Languages, Locales, Advisors, ProductionTestWeights, TutorialReward)>
 
 <!ELEMENT Game (#PCDATA)>
 <!ATTLIST Game 
@@ -46,6 +46,11 @@
 <!ELEMENT ResourceFactor (#PCDATA)>
 <!ATTLIST ResourceFactor
   resource ID #REQUIRED
+>
+
+<!ELEMENT TutorialReward (#PCDATA)>
+<!ATTLIST TutorialReward
+  platinumDuration CDATA #REQUIRED
 >
 
 

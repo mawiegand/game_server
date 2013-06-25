@@ -453,7 +453,6 @@ class Settlement::Slot < ActiveRecord::Base
       end
 
       experience = (sum.to_f * (building_type[:experience_factor] || 1)).floor
-      logger.debug "AAAAAA 1 #{building_id_old} #{building_id_new} #{old_level} #{new_level} #{experience}"
     elsif building_id_old != building_id_new
       building_type_old = GameRules::Rules.the_rules.building_types[building_id_old]
       sum_old = 0
@@ -470,8 +469,6 @@ class Settlement::Slot < ActiveRecord::Base
       exp_new = (sum_new.to_f * (building_type_new[:experience_factor] || 1)).floor
 
       experience = exp_new - exp_old if exp_new > exp_old
-
-      logger.debug "AAAAAA 2 #{building_id_old} #{building_id_new} #{old_level} #{new_level} #{experience}"
     end
 
     if experience > 0

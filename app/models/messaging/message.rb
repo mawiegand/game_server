@@ -33,13 +33,14 @@ class Messaging::Message < ActiveRecord::Base
   MESSAGE_TYPE_ARTIFACT_CAPTURED  = 14
   MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
   MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
+  INDIVIDUAL_ANNOUNCEMENT_TYPE_ID = 17
 
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
   # creates inbox and outbox entries for the message
   def deliver_message
     if self.type_id == ANNOUNCEMENT_TYPE_ID
-      Fundamental::Character.non_banned.non_npc.each do |character|
+      Fundamental::Character.non_banned.not_deleted.non_npc.each do |character|
         if !character.inbox.nil?
           character.inbox.entries.create({
             sender_id:  nil,
@@ -81,7 +82,7 @@ class Messaging::Message < ActiveRecord::Base
         end
       end
     
-      unless self.sender.nil?
+      if !self.sender.nil? && self.type_id != INDIVIDUAL_ANNOUNCEMENT_TYPE_ID
         @character = Fundamental::Character.find(self.sender_id)
         if !@character.nil? && !@character.outbox.nil?
           @character.outbox.entries.create({

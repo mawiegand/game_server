@@ -17,7 +17,7 @@
     <Flavour lang="de_DE">
     <p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>
   </Flavour>
-  <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5))</Population>
+  <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))</Population>
   <RequirementGroup>
     <Requirement id="building_fortress_fortification" min_level="5" />  
   </RequirementGroup>

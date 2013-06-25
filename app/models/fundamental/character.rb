@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'identity_provider/access'
+require 'game_state/avatars'
 
 class Fundamental::Character < ActiveRecord::Base
 
@@ -25,6 +26,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
   has_many :shop_transactions, :class_name => "Shop::Transaction",          :foreign_key => "character_id", :inverse_of => :character
+  has_many :special_offers_transactions, :class_name => "Shop::SpecialOffersTransaction", :foreign_key => "character_id", :inverse_of => :character
+  has_many :purchases,         :class_name => "Shop::Purchase",             :foreign_key => "character_id", :inverse_of => :character
   has_many :settlements,       :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :fortresses,        :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_FORTRESS]
   has_many :bases,             :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_HOME_BASE]
@@ -47,10 +50,10 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats,     :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string,     :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
   attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :as => :owner
-  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total,    :as => :staff
+  attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
 
@@ -60,6 +63,8 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_experience_on_production_rate_changes
 
   #before_save :update_alliance_leave_to_artifact
+
+  after_save  :propagate_insider_since_changes_to_chat
 
   after_save  :propagate_alliance_membership_changes_to_resource_pool
   after_save  :propagate_alliance_membership_changes_to_artifact
@@ -200,12 +205,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def redeem_tutorial_end_rewards
-    Shop::BonusOffer.all.each do |bonus_offer|
-      bonus_offer.credit_to(self)
-    end
-    
-    platinum_offer = Shop::PlatinumOffer.order('duration asc').first
-    platinum_offer.credit_to(self) unless platinum_offer.nil?
+    self.extend_premium_atomically(Tutorial::Tutorial.the_tutorial.tutorial_reward[:platinum_duration])
   end
 
   def locale
@@ -247,13 +247,13 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   def female?
-    return !self.gender.blank? && self.gender == "female"
+    !self.gender.blank? && self.gender == "female"
   end
   
   def male?
     !female?   # presently, due to community structure, male is the default in case nothing is set
   end
-  
+
   def platinum_account?
     !premium_expiration.nil? && premium_expiration > DateTime.now
   end
@@ -311,6 +311,9 @@ class Fundamental::Character < ActiveRecord::Base
 
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
 
+      avatar = GameState::Avatars.new
+      character.avatar_string = avatar.create_random_avatar_string(character.gender || 'male')
+
       character
     end
     
@@ -339,6 +342,12 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.character_id = character.id
       cmd.save
       cmd = Messaging::JabberCommand.grant_access(character, 'help')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
       cmd.character_id = character.id
       cmd.save
     end
@@ -392,6 +401,10 @@ class Fundamental::Character < ActiveRecord::Base
     self.gender = new_gender == "female" ? "female" : "male"
     self.increment(:gender_change_count)  
 
+    avatar = GameState::Avatars.new
+    avatar.create_avatar_string_from_id_and_gender(id, (new_gender == "male" ? true : false))
+    self.avatar_string = avatar.avatar_string
+    
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
     
     unless free_change
@@ -516,7 +529,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def ten_minutes?
-    logged_in_once? && (playtime / 60.0) >= 10.0
+    ((playtime || 0.0) / 60.0) >= 10.0
   end
   
   # logged-in at least once
@@ -621,6 +634,20 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
     true
+  end
+  
+  def propagate_insider_since_changes_to_chat
+    if self.insider_since_changed?
+      if self.insider_since.nil?
+        cmd = Messaging::JabberCommand.revoke_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      else
+        cmd = Messaging::JabberCommand.grant_access(self, 'insider')
+        cmd.character_id = self.id
+        cmd.save
+      end
+    end
   end
 
   def propagate_alliance_membership_changes_to_resource_pool
@@ -823,9 +850,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   def extend_premium_atomically(duration)
     if self.premium_expiration.nil? || self.premium_expiration < Time.now
-      self.premium_expiration = Time.now.advance(:hours => duration)
+      self.premium_expiration = Time.now.advance(:hours => duration.to_i)
     else
-      self.premium_expiration = self.premium_expiration.advance(:hours => duration)
+      self.premium_expiration = self.premium_expiration.advance(:hours => duration.to_i)
     end
     self.save
   end
@@ -1124,6 +1151,14 @@ class Fundamental::Character < ActiveRecord::Base
     login_count <= 1
   end
 
+  def insider
+    !insider_since.nil? && insider_since < DateTime.now
+  end
+
+  def chat_beginner
+    self.settlements.count < 2
+  end
+
   def open_chat_pane
     login_count <= 3
   end
@@ -1134,7 +1169,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['first_start', 'beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
   

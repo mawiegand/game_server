@@ -7,20 +7,23 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'envi
 
 STDOUT.sync = true
 
-ROOM = 'handel'
+ROOMS = ['whisperingcavern', 'beginner']
 
 puts
-puts "This script recreates all jabber commands for the public channel #{ ROOM }."
+puts "This script recreates all jabber commands for the public channel #{ ROOMS.inspect }."
 
-Messaging::JabberCommand.open_room(ROOM).save
+ROOMS.each do |room|
 
+ # Messaging::JabberCommand.open_room(room).save
 
-Fundamental::Character.all.each do |character|
-  unless character.npc?
-    cmd = Messaging::JabberCommand.grant_access(character, ROOM) 
-    cmd.character_id = character.id
-    cmd.save  
-  end
+ Fundamental::Character.all.each do |character|
+   unless character.npc?
+     cmd = Messaging::JabberCommand.grant_access(character, room) 
+     cmd.character_id = character.id
+     cmd.save  
+   end
+ end
+ 
 end  
 
 puts "Done."

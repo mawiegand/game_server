@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608195921) do
+ActiveRecord::Schema.define(:version => 20130624230639) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1786,6 +1786,10 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.datetime "last_deleted_at"
     t.integer  "alliance_size_bonus",                      :default => 0
     t.string   "lang",                                     :default => "en",  :null => false
+    t.string   "avatar_string"
+    t.datetime "insider_since"
+    t.boolean  "first_round"
+    t.datetime "tutorial_finished_at"
     t.datetime "moved_at"
     t.integer  "old_base_location_id"
   end
@@ -1915,6 +1919,7 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.datetime "armies_changed_at"
     t.integer  "right_of_way"
     t.integer  "settlement_score",   :default => 0, :null => false
+    t.string   "avatar_string"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -1956,6 +1961,7 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.integer  "settlement_type_id"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
+    t.string   "avatar_string"
     t.string   "moving_password"
   end
 
@@ -2084,6 +2090,7 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.datetime "suspension_ends_at"
     t.datetime "attack_protection_ends_at"
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
+    t.string   "avatar_string"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2364,6 +2371,7 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.integer  "dislikes",                 :default => 0,   :null => false
     t.decimal  "like_ratio",               :default => 0.0, :null => false
     t.string   "gender"
+    t.string   "avatar_string"
   end
 
   create_table "settlement_histories", :force => true do |t|
@@ -2592,6 +2600,16 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.datetime "updated_at"
   end
 
+  create_table "shop_purchases", :force => true do |t|
+    t.string   "offer_type"
+    t.integer  "offer_id"
+    t.datetime "redeemed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "special_offers_transaction_id"
+    t.integer  "character_id"
+  end
+
   create_table "shop_resource_offers", :force => true do |t|
     t.string   "title"
     t.integer  "price"
@@ -2601,6 +2619,23 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.datetime "ends_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "shop_special_offers", :force => true do |t|
+    t.datetime "startet_at"
+    t.datetime "ends_at"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "bytro_offer_id"
+  end
+
+  create_table "shop_special_offers_transactions", :force => true do |t|
+    t.integer  "offer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "character_id"
+    t.integer  "state"
   end
 
   create_table "shop_transactions", :force => true do |t|
@@ -2669,6 +2704,7 @@ ActiveRecord::Schema.define(:version => 20130608195921) do
     t.decimal  "playtime_started"
     t.datetime "reward_displayed_at"
     t.integer  "character_id"
+    t.boolean  "message_sent",        :default => false, :null => false
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"

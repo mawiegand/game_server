@@ -246,12 +246,15 @@ GameServer::Application.routes.draw do
       
       namespace :shop do
         resources :offers
+        resources :purchases
         resources :resource_offers
         resources :bonus_offers
         resources :platinum_offers
+        resources :special_offers
         resources :transactions
         resources :money_transactions
         resources :credit_transactions
+        resources :special_offers_transactions
         resources :accounts, :only => [ :show ]
         resource :info, :controller => 'info', :only => [:show]
       end
