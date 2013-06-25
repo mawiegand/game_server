@@ -242,6 +242,9 @@ GameServer::Application.routes.draw do
           resources :redeem_rewards_actions,              :only => [ :create ]    
           resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
+        namespace :shop do
+          resources :redeem_purchase_actions,             :only => [ :create ]
+        end
       end
       
       namespace :shop do
