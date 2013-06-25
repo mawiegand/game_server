@@ -89,6 +89,10 @@ class Tutorial::Quest < ActiveRecord::Base
     
     self.finished_at = Time.now
     self.save
+
+    if self.quest[:tutorial_end_quest]
+      self.owner.tutorial_finished_at = self.finished_at
+    end
   end  
   
 

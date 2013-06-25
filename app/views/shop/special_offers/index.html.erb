@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>BytroOfferID</th>
     <th>Startet at</th>
     <th>Ends at</th>
     <th>Title</th>
@@ -12,6 +13,7 @@
 
 <% @shop_special_offers.each do |shop_special_offer| %>
   <tr>
+    <td><%= shop_special_offer.bytro_offer_id %></td>
     <td><%= shop_special_offer.startet_at %></td>
     <td><%= shop_special_offer.ends_at %></td>
     <td><%= shop_special_offer.title %></td>
