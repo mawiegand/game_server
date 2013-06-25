@@ -1324,7 +1324,7 @@ class Fundamental::Character < ActiveRecord::Base
         
         GameRules::Rules.the_rules().queue_types.each do |queue_type|
           if queue_type[:category] == :queue_category_construction
-            settlement.propagate_speedup_to_queue(:building, queue_type, delta)
+            settlement.propagate_speedup_to_queue(:effects, queue_type, delta)
           end
         end
       end
