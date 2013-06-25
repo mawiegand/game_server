@@ -235,11 +235,14 @@ GameServer::Application.routes.draw do
           #resources :archive_entries_actions#, :only => [ :create]
         end
         namespace :tutorial do
-          resources :check_quest_actions,                 :only => [ :create ]    
-          resources :mark_quest_displayed_actions,        :only => [ :create ]    
-          resources :mark_quest_reward_displayed_actions, :only => [ :create ]    
-          resources :redeem_rewards_actions,              :only => [ :create ]    
-          resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
+          resources :check_quest_actions,                 :only => [ :create ]
+          resources :mark_quest_displayed_actions,        :only => [ :create ]
+          resources :mark_quest_reward_displayed_actions, :only => [ :create ]
+          resources :redeem_rewards_actions,              :only => [ :create ]
+          resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]
+        end
+        namespace :shop do
+          resources :redeem_purchase_actions,             :only => [ :create ]
         end
       end
       
