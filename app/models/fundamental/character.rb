@@ -835,6 +835,9 @@ class Fundamental::Character < ActiveRecord::Base
     correct_alliance_size_bonus = recalc_alliance_size_bonus
     check_and_apply_alliance_size_bonus(correct_alliance_size_bonus)
     
+    production_bonus = recalc_construction_bonus_effect
+    check_and_apply_construction_bonus_effect(production_bonus)
+    
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
       self.save
@@ -844,6 +847,23 @@ class Fundamental::Character < ActiveRecord::Base
 
     true      
   end  
+  
+  def recalc_construction_bonus_effect
+    bonus = 0.0
+    self.construction_effects.each do |effect|
+      bonus += effect[:bonus] || 0.0
+    end
+    return bonus
+  end
+
+  def check_and_apply_construction_bonus_effect(recalc)
+    present = self.construction_bonus_effect
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> CONSTRUCTION BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.construction_bonus_effect = recalc
+    end
+  end
   
   ############################################################################
   #
