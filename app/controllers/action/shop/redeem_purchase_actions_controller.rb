@@ -13,7 +13,7 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
 
     raise NotFoundError.new ("purchase with id #{params[:action_redeem_purchase_action][:purchase_id]} not Found.") if purchase.nil?
     raise ForbiddenError.new('tried to redeem purchase of foreign character.') unless purchase.character == current_character
-    raise ForbiddenError.new('tried to redeem purchase that is already redeemed.') unless purchase.redeemed?
+    raise ForbiddenError.new('tried to redeem purchase that is already redeemed.') if purchase.redeemed?
 
     purchase.special_offer.credit_to(current_character)
     purchase.redeemed_at = Time.now
