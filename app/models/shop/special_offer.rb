@@ -1,8 +1,8 @@
 class Shop::SpecialOffer < ActiveRecord::Base
   
   
-  def find_settleable_location_near_home_base(character, home_base)
-    
+  def find_settleable_location_near_home_base(character)
+    Map::Location.location_for_oupost_in_starter_package(character)
   end
   
 
@@ -26,7 +26,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
     slots = {
       1 => {
         id: 21,
-        level: 6,
+        level: 10,
       },
       2 => {
         id: 23,
@@ -34,14 +34,42 @@ class Shop::SpecialOffer < ActiveRecord::Base
       },
       3 => {
         id: 1,
+        level: 10,
+      },
+      4 => {
+        id: 1,
+        level: 10,
+      },
+      5 => {
+        id: 1,
+        level: 10,
+      },
+      6 => {
+        id: 1,
+        level: 10,
+      },
+      7 => {
+        id: 1,
+        level: 10,
+      },
+      8 => {
+        id: 1,
         level: 9,
+      },
+      9 => {
+        id: 1,
+        level: 8,
+      },
+      10 => {
+        id: 4,
+        level: 7,
       },
     }
         
     home_base = character.bases[0]
 
     # create outpost
-    location = find_settleable_location_near_home_base(character, home_base)
+    location = find_settleable_location_near_home_base(character)
     settlement = Settlement::Settlement.create_settlement_at_location(location, 3, character)  # 3: outpost
     
     slots.each do |slot_num, specs|
@@ -83,6 +111,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
     Effect::ResourceEffect.create_or_extend_shop_effect(character, fur_id,   production_bonus_amount, production_bonus_duration)
     
     # credit construction speedup effect
+    
     
   end
 
