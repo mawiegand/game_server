@@ -12,7 +12,7 @@ class Effect::ResourceEffectsController < ApplicationController
     if params.has_key?(:resource_pool_id)
       pool = Fundamental::ResourcePool.find(params[:resource_pool_id])
       raise NotFoundError.new('Page Not Found') if pool.nil?
-      raise ForbiddenError.new('Access Forbidden') if pool.owner != current_character
+      raise ForbiddenError.new('Access Forbidden') if !admin? && !staff? && !developer? && pool.owner != current_character
       @effect_resource_effects = pool.resource_effects
       #last_modified = pool.updated_at
     else

@@ -1872,8 +1872,10 @@ ActiveRecord::Schema.define(:version => 20130707192554) do
     t.boolean  "first_round"
     t.datetime "tutorial_finished_at"
     t.integer  "assignment_level",                         :default => 0,     :null => false
-    t.datetime "premium_expiration_displayed_at"
+    t.datetime "moved_at"
+    t.integer  "old_base_location_id"
     t.integer  "special_offer_dialog_count",               :default => 0
+    t.datetime "premium_expiration_displayed_at"
     t.datetime "special_offer_displayed_at"
     t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
   end
@@ -2046,6 +2048,7 @@ ActiveRecord::Schema.define(:version => 20130707192554) do
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
     t.string   "avatar_string"
+    t.string   "moving_password"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"

@@ -12,7 +12,7 @@ class Effect::AllianceResourceEffectsController < ApplicationController
     if params.has_key?(:alliance_id)
       alliance = Fundamental::Alliance.find(params[:alliance_id])
       raise NotFoundError.new('Page Not Found') if alliance.nil?
-      raise ForbiddenError.new('Access Forbidden') if alliance != current_character.alliance
+      raise ForbiddenError.new('Access Forbidden') if  !admin? && !staff? && !developer? && alliance != current_character.alliance
       @effect_alliance_resource_effects = alliance.resource_effects
       #last_modified = pool.updated_at
     else
