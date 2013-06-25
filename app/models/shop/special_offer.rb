@@ -20,8 +20,11 @@ class Shop::SpecialOffer < ActiveRecord::Base
     unit2_id        =    4
     unit2_amount    =   50
     
-    production_bonus_amount   = 0.15
-    production_bonus_duration = 120
+    production_bonus_amount   = 0.15     #  15%
+    production_bonus_duration = 120      #   5 days
+    
+    construction_bonus_amount   =   1.0  # 100%
+    construction_bonus_duration = 120    #   5 days
     
     slots = {
       1 => {
@@ -111,7 +114,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
     Effect::ResourceEffect.create_or_extend_shop_effect(character, fur_id,   production_bonus_amount, production_bonus_duration)
     
     # credit construction speedup effect
-    
+    Effect::ConstructionEffect.create_or_extend_shop_effect(character, construction_bonus_amount, construction_bonus_duration)
     
   end
 
