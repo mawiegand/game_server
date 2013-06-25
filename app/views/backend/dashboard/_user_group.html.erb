@@ -175,7 +175,7 @@
     <td><%= fundamental_character.lang %></td>
     <td><%= fundamental_character.num_finished_quests %></td>
     <td>
-      <% unless fundamental_character.tutorial_state.open_quests.nil? %>
+      <% if !fundamental_character.tutorial_state.nil? && !fundamental_character.tutorial_state.open_quests.nil? %>
         <% fundamental_character.tutorial_state.open_quests.each do |quest| %>
           <%= quest.quest_id %>
         <% end %>
