@@ -1,0 +1,33 @@
+<h1>Listing assignment_special_assignment_frequencies</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Type</th>
+    <th>Num failed</th>
+    <th>Last ended at</th>
+    <th>Execution count</th>
+    <th>Halved count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assignment_special_assignment_frequencies.each do |assignment_special_assignment_frequency| %>
+  <tr>
+    <td><%= assignment_special_assignment_frequency.character_id %></td>
+    <td><%= assignment_special_assignment_frequency.type_id %></td>
+    <td><%= assignment_special_assignment_frequency.num_failed %></td>
+    <td><%= assignment_special_assignment_frequency.last_ended_at %></td>
+    <td><%= assignment_special_assignment_frequency.execution_count %></td>
+    <td><%= assignment_special_assignment_frequency.halved_count %></td>
+    <td><%= link_to 'Show', assignment_special_assignment_frequency %></td>
+    <td><%= link_to 'Edit', edit_assignment_special_assignment_frequency_path(assignment_special_assignment_frequency) %></td>
+    <td><%= link_to 'Destroy', assignment_special_assignment_frequency, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Special assignment frequency', new_assignment_special_assignment_frequency_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@assignment_special_assignment_frequency) do |f| %>
+  <% if @assignment_special_assignment_frequency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment_special_assignment_frequency.errors.count, "error") %> prohibited this assignment_special_assignment_frequency from being saved:</h2>
+
+      <ul>
+      <% @assignment_special_assignment_frequency.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :num_failed %><br />
+    <%= f.number_field :num_failed %>
+  </div>
+  <div class="field">
+    <%= f.label :last_ended_at %><br />
+    <%= f.datetime_select :last_ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :execution_count %><br />
+    <%= f.number_field :execution_count %>
+  </div>
+  <div class="field">
+    <%= f.label :halved_count %><br />
+    <%= f.number_field :halved_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

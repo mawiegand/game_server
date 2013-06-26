@@ -50,6 +50,7 @@
   <xi:include href="buildings/rules_building_fortress_garrison.xml" />
 
 
-  <xi:include href="buildings/rules_building_alliance_hall.xml" />  
+  <xi:include href="buildings/rules_building_alliance_hall.xml" />
+  <xi:include href="buildings/rules_building_tavern.xml" />
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

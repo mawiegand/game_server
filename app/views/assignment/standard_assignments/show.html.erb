@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @assignment_standard_assignment.character_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @assignment_standard_assignment.type_id %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @assignment_standard_assignment.started_at %>
+</p>
+
+<p>
+  <b>Ended at:</b>
+  <%= @assignment_standard_assignment.ended_at %>
+</p>
+
+<p>
+  <b>Halved at:</b>
+  <%= @assignment_standard_assignment.halved_at %>
+</p>
+
+<p>
+  <b>Execution count:</b>
+  <%= @assignment_standard_assignment.execution_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_standard_assignment_path(@assignment_standard_assignment) %> |
+<%= link_to 'Back', assignment_standard_assignments_path %>

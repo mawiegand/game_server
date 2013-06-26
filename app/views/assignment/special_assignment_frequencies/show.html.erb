@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @assignment_special_assignment_frequency.character_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @assignment_special_assignment_frequency.type_id %>
+</p>
+
+<p>
+  <b>Num failed:</b>
+  <%= @assignment_special_assignment_frequency.num_failed %>
+</p>
+
+<p>
+  <b>Last ended at:</b>
+  <%= @assignment_special_assignment_frequency.last_ended_at %>
+</p>
+
+<p>
+  <b>Execution count:</b>
+  <%= @assignment_special_assignment_frequency.execution_count %>
+</p>
+
+<p>
+  <b>Halved count:</b>
+  <%= @assignment_special_assignment_frequency.halved_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_special_assignment_frequency_path(@assignment_special_assignment_frequency) %> |
+<%= link_to 'Back', assignment_special_assignment_frequencies_path %>
