@@ -33,7 +33,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -61,6 +61,7 @@ class GameRules::Rules
       'resource_types'              => resource_types,
       'building_types'              => building_types,
       'science_types'               => science_types,  
+      'assignment_types'            => assignment_types,  
       'settlement_types'            => settlement_types,  
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -6476,6 +6477,60 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
+
+# ## ASSIGNMENT TYPES ##########################################################
+  
+      :assignment_types => [  # ALL ASSIGMENT TYPES
+
+        {              #   The first building
+          :id          => 0, 
+          :symbolic_id => :assignment_hunt,
+          :level       => 1,
+          :name        => {
+            
+            :en_US => "The first building",
+  
+            :de_DE => "Der erste Jäger und Sammler",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+  
+            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
+  
+            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
+  
+            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '10',
+            1 => '20',
+            
+          },
+
+          :unit_deposits => {
+            0 => '10',
+            
+          },
+
+          :duration => 600,
+
+        },              #   END OF The first building
+      ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
   

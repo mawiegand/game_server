@@ -24,6 +24,7 @@
     </Description>
     
     <Cost id="resource_stone">10</Cost>
+    <Cost id="resource_wood">20</Cost>
     <UnitDeposit id="clubbers">10</UnitDeposit>
     
     <Rewards>
