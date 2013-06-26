@@ -15,6 +15,7 @@ end %>
     <th>Identifier</th>
     <th>Bytro InvoiceID</th>
     <th>Bytro offerID</th>
+    <th>Category</th>
     <th>Provider</th>
     <th>Country</th>
     <th>Currency</th>
@@ -41,6 +42,7 @@ end %>
     <td><%= link_to money_transaction.partner_user_id, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{money_transaction.partner_user_id}" %></td>
     <td><%= money_transaction.invoice_id %></td>
     <td><%= money_transaction.offer_id %></td>
+    <td><%= money_transaction.offer_category %></td>
     <td><%= money_transaction.method %></td>
     <td><%= money_transaction.country %></td>
     <td><%= money_transaction.gross_currency %></td>
