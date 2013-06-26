@@ -24,14 +24,14 @@
     </Description>
     
     <Cost id="resource_stone">10</Cost>
-    <UnitDeposit id="club_warrior">10</UnitDeposit>
+    <UnitDeposit id="clubbers">10</UnitDeposit>
     
     <Rewards>
       <ResourceReward resource="resource_stone">25</ResourceReward>
       <ResourceReward resource="resource_wood">25</ResourceReward>
       <ResourceReward resource="resource_fur">25</ResourceReward>
-      <ExperienceReward>25</ExperienceReward>
       <UnitReward unit="stone_thrower">25</UnitReward>
+      <ExperienceReward>25</ExperienceReward>
     </Rewards>
     
     <Duration>600</Duration>
