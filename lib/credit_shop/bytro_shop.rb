@@ -185,7 +185,8 @@ module CreditShop
             money_transaction.touch
             money_transaction.save
 
-            money_transaction.send_chargeback_alert if money_transaction.unsent_chargeback_alert?
+            money_transaction.send_chargeback_alert    if money_transaction.unsent_chargeback_alert?
+            money_transaction.send_special_offer_alert if money_transaction.unsent_special_offer_alert?
           end
         end
       end

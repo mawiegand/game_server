@@ -15,6 +15,7 @@ end %>
     <th>Identifier</th>
     <th>Bytro InvoiceID</th>
     <th>Bytro offerID</th>
+    <th>Category</th>
     <th>Provider</th>
     <th>Country</th>
     <th>Currency</th>
@@ -41,6 +42,7 @@ end %>
     <td><%= link_to money_transaction.partner_user_id, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{money_transaction.partner_user_id}" %></td>
     <td><%= money_transaction.invoice_id %></td>
     <td><%= money_transaction.offer_id %></td>
+    <td><%= money_transaction.offer_category %></td>
     <td><%= money_transaction.method %></td>
     <td><%= money_transaction.country %></td>
     <td><%= money_transaction.gross_currency %></td>
@@ -52,7 +54,13 @@ end %>
     <td><%= money_transaction.ebp.round(3) %></td>
     <td><%= money_transaction.earnings.round(3) %></td>
     <td><%= money_transaction.transaction_state %></td>
-    <td style="text-align: center; color: red;"><b><%= money_transaction.chargeback > 0.5 ? 'X' : '' %></b></td>
+    <% if 2.5 > money_transaction.chargeback && money_transaction.chargeback > 1.5 %>
+      <td style="text-align: center; color: green;"><b>x</b></td>
+    <% elsif 1.5 > money_transaction.chargeback && money_transaction.chargeback > 0.5 %>
+      <td style="text-align: center; color: red;"><b>X</b></td>
+    <% else %>
+      <td></td>
+    <% end %>
     <td><%= money_transaction.transaction_payed %></td>
     <td><%= money_transaction.payer_first_name %></td>
     <td><%= money_transaction.payer_last_name %></td>

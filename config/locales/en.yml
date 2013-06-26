@@ -69,6 +69,12 @@ en:
         queues: Queues
         jobs: Jobs
         active_jobs: Act. Jobs
+      assignment:
+        category:  Assignment
+        standard:  Standard
+        special:   Special
+        frequency: Frequency
+
       military:
         category: Military
         armies: Armies
@@ -96,10 +102,13 @@ en:
         notifications: Notifications
       shop:
         category: Shop
+        purchases: Purchases
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
         platinum_offers: Platinum Offers
         transactions: Ingame Transactions
+        special_offers: Special Offers
+        special_offers_transactions: Special Offers Transactions
         credit_transactions: Bytro Credit Transactions
         money_transactions: Bytro Money Transactions
       tutorial:

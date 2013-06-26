@@ -39,6 +39,7 @@
       <li><%= link_to I18n.translate("application.layout.map.category"), map_nodes_path %></li>
       <li><%= link_to I18n.translate("application.layout.settlement.category"), settlement_settlements_path %></li>
       <li><%= link_to I18n.translate("application.layout.construction.category"), construction_jobs_path %></li>
+      <li><%= link_to I18n.translate("application.layout.assignment.category"), assignment_standard_assignments_path %></li>
       <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
       <li><%= link_to I18n.translate("application.layout.training.category"), training_jobs_path %></li>
       <li><%= link_to I18n.translate("application.layout.like_system.category"), like_system_likes_path %></li>
@@ -64,6 +65,7 @@
       <%= yield :map_links %>
       <%= yield :settlement_links %>
       <%= yield :construction_links %>
+      <%= yield :assignment_links %>
       <%= yield :military_links %>
       <%= yield :training_links %>
       <%= yield :like_system_links %>

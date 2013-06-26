@@ -1,5 +1,7 @@
 GameServer::Application.routes.draw do
 
+
+
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -15,6 +17,13 @@ GameServer::Application.routes.draw do
         resource  :ranking_info,       :only => [ :show ]
         
         match '/character_rankings/self', :to => 'character_rankings#self'
+      end
+      
+      
+      namespace :assignment do 
+        resources :special_assignment_frequencies 
+        resources :special_assignments
+        resources :standard_assignments       
       end
 
 
@@ -46,7 +55,7 @@ GameServer::Application.routes.draw do
         resources :characters do
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
-          resource  :resource_pool,                            :only => [ :show ] 
+          resource  :resource_pool,                            :only => [ :show ]
           resource  :artifact,                                 :only => [ :show ]
           resources :settings
           resources :history_events,                           :only => [ :index ]
@@ -82,8 +91,11 @@ GameServer::Application.routes.draw do
         resources :retention_mails
       end
       resources :settlements,     :path => "/fundamental/characters/:character_id/settlements",     :module => 'settlement', :only => [:index]            
-      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states', :only => [:show]
+      resource  :tutorial_state,  :path => "/fundamental/characters/:character_id/tutorial_state",  :module => 'tutorial',   :controller => 'states',   :only => [:show]
       resources :quests,          :path => "/fundamental/characters/:character_id/quests",          :module => 'tutorial',   :only => [:index]
+      resources :purchases,       :path => "/fundamental/characters/:character_id/purchases",       :module => 'shop',       :controller => 'purchases',:only => [:index]
+      resources :standard_assignments, :path => "/fundamental/characters/:character_id/standard_assignments",          :module => 'assignment',   :only => [:index]
+      resource  :special_assignment,   :path => "/fundamental/characters/:character_id/special_assignment",            :module => 'assignment',   :only => [:show]
 
       resource  :shop_account,    :path => "/fundamental/characters/:character_id/shop_account",    :module => 'shop',       :controller => 'accounts', :only => [:show]
 
@@ -241,10 +253,14 @@ GameServer::Application.routes.draw do
           resources :redeem_rewards_actions,              :only => [ :create ]    
           resources :redeem_tutorial_end_rewards_actions, :only => [ :create ]    
         end
+        namespace :shop do
+          resources :redeem_purchase_actions,             :only => [ :create ]
+        end
       end
       
       namespace :shop do
         resources :offers
+        resources :purchases
         resources :resource_offers
         resources :bonus_offers
         resources :platinum_offers

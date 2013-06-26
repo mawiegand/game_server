@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, VictoryTypes?, ArtifactTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?)>
+<!ELEMENT Rules (General, VictoryTypes?, ArtifactTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?, AssignmentTypes?, SpecialAssignmentTypes?)>
 <!ATTLIST Rules
   xmlns:xi CDATA #REQUIRED
 >
@@ -91,6 +91,8 @@
 <!--Types-->
 <!ELEMENT VictoryTypes (Victory*)>
 <!ELEMENT ResourceTypes (Resource*)>
+<!ELEMENT AssignmentTypes (AssignmentType*)>
+<!ELEMENT SpecialAssignmentTypes (SpecialAssignmentType*)>
 <!ELEMENT SettlementTypes (Settlement*)>
 <!ELEMENT BuildingTypes (Building*)>
 <!ATTLIST BuildingTypes
@@ -266,6 +268,16 @@
 	xml:base CDATA #REQUIRED
 >
 
+
+<!ELEMENT AssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, Rewards, Duration)>
+
+<!ATTLIST AssignmentType 
+  id ID #REQUIRED 
+  advisor CDATA "chef"
+  level CDATA #REQUIRED
+>
+
+
 <!ELEMENT Population (#PCDATA)>
 
 <!ELEMENT ConversionOption EMPTY>
@@ -371,14 +383,40 @@
   shortenable (true | false) "true" 
 >
 
+<!ELEMENT Duration (#PCDATA)>
+<!ATTLIST Duration 
+  shortenable (true | false) "true" 
+>
+
+
+
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+
+<!ELEMENT ResourceReward (#PCDATA)>
+<!ATTLIST ResourceReward
+  resource CDATA #REQUIRED
+>
+
+<!ELEMENT UnitReward (#PCDATA)>
+<!ATTLIST UnitReward
+  unit     CDATA #REQUIRED
+>
+
+<!ELEMENT ExperienceReward (#PCDATA)>
 
 
 <!--Webinterface: Production-->
 <!ELEMENT Cost (#PCDATA | object)*>
 <!ATTLIST Cost
   id IDREF #REQUIRED
-  round CDATA #REQUIRED
+  round CDATA "false"
 >
+
+<!ELEMENT UnitDeposit (#PCDATA | object)*>
+<!ATTLIST UnitDeposit
+  id IDREF #REQUIRED
+>
+
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
 

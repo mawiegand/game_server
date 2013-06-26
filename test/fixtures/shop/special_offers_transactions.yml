@@ -2,6 +2,8 @@
 
 one:
   offer_id: 1
+  state: 1
 
 two:
   offer_id: 1
+  state: 1

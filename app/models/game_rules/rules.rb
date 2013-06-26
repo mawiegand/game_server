@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.7.1
+# Version: 0.7.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -33,7 +33,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -61,6 +61,7 @@ class GameRules::Rules
       'resource_types'              => resource_types,
       'building_types'              => building_types,
       'science_types'               => science_types,  
+      'assignment_types'            => assignment_types,  
       'settlement_types'            => settlement_types,  
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -116,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 7,
-                    :build => 1,
+                    :build => 3,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -2545,7 +2546,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*25+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*15+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
           :production  => [
             
               {
@@ -2702,7 +2703,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*30+EQUAL(LEVEL,4)*180+GREATER(LEVEL,4)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*120+GREATER(LEVEL,4)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)',
           :production  => [
             
               {
@@ -5567,6 +5568,92 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
         },              #   END OF Große Stammeshalle
+        {               #   Taverne
+          :id          => 30, 
+          :symbolic_id => :building_tavern,
+					:category    => 6,
+          :db_field    => :building_tavern,
+          :name        => {
+            
+            :de_DE => "Taverne",
+  
+            :en_US => "Tavern",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Placeholder</p>",
+  
+            :de_DE => "<p>Placeholder</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Placeholder</p>",
+  
+            :en_US => "<p>Placeholder</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
+  
+          :buyable     => true,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 3,
+
+            },
+
+            {
+              :symbolic_id => 'building_tavern',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*(MIN(LEVEL+1,2)-MIN(LEVEL,2))*15+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1*1.5+0.5)',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Taverne
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -6390,6 +6477,91 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Lagerstätte
       ],                # END OF SETTLEMENT TYPES
+
+# ## ASSIGNMENT TYPES ##########################################################
+  
+      :assignment_types => [  # ALL ASSIGMENT TYPES
+
+        {              #   Stonegatherers
+          :id          => 0, 
+          :symbolic_id => :assignment_stone,
+          :level       => 1,
+          :name        => {
+            
+            :en_US => "Stonegatherers",
+  
+            :de_DE => "Steinesammler",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
+  
+            :en_US => "Just a little bit of motivation and look at those gatherers go!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
+  
+            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+  
+            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+  
+          },
+
+          :duration => 600,
+
+        },              #   END OF Stonegatherers
+        {              #   Überfall
+          :id          => 1, 
+          :symbolic_id => :assignment_raid,
+          :level       => 5,
+          :name        => {
+            
+            :en_US => "Überfall",
+  
+            :de_DE => "Raid",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+  
+            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Nimm deine truppen und Überfalle die Neandertaler</p>",
+  
+            :en_US => "<p>Gather your troops and raid a neanderthal camp.</p>",
+  
+          },
+
+          :unit_deposits => {
+            0 => '25',
+            
+          },
+
+          :duration => 3600,
+
+        },              #   END OF Überfall
+      ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
   

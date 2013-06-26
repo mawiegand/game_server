@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_tavern" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="12">
+  <Name lang="de_DE">Taverne</Name>
+  <Name lang="en_US">Tavern</Name>
+  <Description lang="de_DE">
+    <p>Placeholder</p>
+   </Description>
+  <Description lang="en_US">
+    <p>Placeholder</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Placeholder</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Placeholder</p>
+   </Flavour> 
+ <Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))</Population>
+  <RequirementGroup>
+    <Requirement id="building_chief_cottage" min_level="3" />
+    <Requirement id="building_tavern" max_level="0" />
+  </RequirementGroup>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>  
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>   
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost> 
+  <ProductionTime shortenable="false">LESS(LEVEL,11)*(MIN(LEVEL+1,2)-MIN(LEVEL,2))*15+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1*1.5+0.5)</ProductionTime>        
+  <Abilities>
+  </Abilities>
+</Building>
+

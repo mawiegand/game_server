@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.5
+# Version: 0.3.10
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 5, 
+        :build => 10, 
       },
       
       :production_test_weights => {
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -258,7 +258,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -352,7 +352,7 @@ class Tutorial::Tutorial
             :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung?",
   
             :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
-      ",
+            ",
                 
           },
           :reward_text => {
@@ -420,39 +420,39 @@ class Tutorial::Tutorial
             :en => {
               :subject => 'Welcome to Wack-A-Doo',
               :body => "<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
-        <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
-        As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
-        Prepare to be surprised!</p>
-        <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
-        <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-        <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
-        <p>We invite you to register and help keep our Wiki up to date.</p>
-        <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
-        <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
-        <p>We hope you have lots of fun with Wack-A-Doo.</p>
-        <p>The Wack-A-Doo Team</p>",
+                    <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
+                    As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+                    Prepare to be surprised!</p>
+                    <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
+                    <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+                    <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
+                    <p>We invite you to register and help keep our Wiki up to date.</p>
+                    <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
+                    <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
+                    <p>We hope you have lots of fun with Wack-A-Doo.</p>
+                    <p>The Wack-A-Doo Team</p>",
             },
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
               :body => "<p>Herzlich willkommen in der 'Wack-A-Doo'-Community!<p/>
-          <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>        
-          <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten 
-             im Detail und mit Bildern erläutert:
-          <ul>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
-            <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
-          </ul></p>
-          <p>
-          Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
-          iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
-          <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
-          <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
-          <p>Das Wack-A-Doo Team</p>",
+                    <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
+                    <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten
+                    im Detail und mit Bildern erläutert:
+                    <ul>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
+                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+                    </ul></p>
+                    <p>
+                    Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
+                    iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+                    <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
+                    <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
+                    <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -463,7 +463,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -511,7 +511,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
+
+          :successor_quests => [1, ],
 
           :rewards => {
             
@@ -527,6 +533,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_quest_button', 'mark_hurry_button', ],
+
         },              #   END OF quest_quest_button
         {               #   quest_profile
           :id                => 4,
@@ -534,7 +542,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
           :priority          => 2,
           :blocking          => false,
 
@@ -555,10 +563,10 @@ class Tutorial::Tutorial
           :flavour => {
             
             :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen.
-      ",
+            ",
   
             :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
-      ",
+            ",
                 
           },
           :description => {
@@ -570,7 +578,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
@@ -585,11 +593,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -644,10 +652,10 @@ class Tutorial::Tutorial
           :flavour => {
             
             :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
-      ",
+            ",
   
             :en_US => "You can build a training grounds but you're not doing it? Build one now and I'll give you something from my treasure chest.
-      ",
+            ",
                 
           },
           :description => {
@@ -660,7 +668,7 @@ class Tutorial::Tutorial
           :reward_flavour => {
             
             :de_DE => "Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.
-      ",
+            ",
   
             :en_US => "Finished? About time, too. There's your reward – that's all there is. Push off.",
                 
@@ -670,7 +678,7 @@ class Tutorial::Tutorial
             :de_DE => "Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.",
   
             :en_US => "The training grounds speeds up the recruiting time of melee fighters.
-      ",
+            ",
                 
           },
 
@@ -786,7 +794,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -794,7 +802,7 @@ class Tutorial::Tutorial
 
               {
                 :unit => :unit_warrior,
-                :amount => 10,
+                :amount => 5,
               },
 
             ],
@@ -874,7 +882,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_profile',
 
           },
 
@@ -895,6 +903,8 @@ class Tutorial::Tutorial
           },          
 
           :uimarker => ['mark_map', ],
+
+          :place_npcs => 1,         
 
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
@@ -1096,8 +1106,6 @@ class Tutorial::Tutorial
           },          
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
-
-          :place_npcs => 1,         
 
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
@@ -1313,7 +1321,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.",
                 
@@ -1389,8 +1397,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
 
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_cottagelvl1
@@ -1495,8 +1501,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_cottagelvl1
         {               #   quest_improve_production_1
@@ -1707,7 +1711,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', ],
+          :uimarker => ['mark_hurry_button', ],
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
@@ -1812,8 +1816,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
 
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
@@ -1923,7 +1925,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
           :priority          => 0,
           :blocking          => false,
 
@@ -1946,7 +1948,7 @@ class Tutorial::Tutorial
             :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
             :en_US => "Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
-      ",
+            ",
                 
           },
           :description => {
@@ -1977,7 +1979,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -2077,7 +2079,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -2160,7 +2162,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
@@ -3371,7 +3373,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszubilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p><p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>",
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszu bilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p><p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>",
   
             :en_US => "<p>To start an encampment you have to train a little chieftain at a campfire levle 10 and move him together with an army to a free field.</p><p>But you can only have one encampment per region, and you need a free settlement point.</p>",
                 
@@ -3486,10 +3488,10 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+                <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
             :en_US => "<p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
-        <p>At Level 12 you will recieve another command point for another army.</p>",
+                <p>At Level 12 you will recieve another command point for another army.</p>",
                 
           },
 
@@ -12427,153 +12429,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1barrackslvl10
-        {               #   quest_crossplatform
-          :id                => 127,
-          :symbolic_id       => :quest_crossplatform,
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Crossplatform",
-  
-            :de_DE => "Multiplatform",
-                
-          },
-          :task => {
-            
-            :en_US => "Sign in to the HTML client.",
-  
-            :de_DE => "Log Dich im HTML Spiel ein.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Nur mit Kriegern und Keulenkriegern können wir uns nicht behaupten! Wir brauchen auch die Dicken Keulen. Es mag lange dauern, aber sorge für den Ausbau des Ausbildungsgeländes.",
-  
-            :en_US => "We can't stand our ground with clubbers alone! We need thick-skinned clubbers too. It might take a while, but make sure you upgrade the training grounds.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Auf dem Start Bildschirm drücke den 'Wechsel' Knopf und gib dann dein Email-Adresse und ein Passwort an um deinen Account mobil zu machen. Nachdem Du das getan hast kannst du dich jederzeit </p>",
-  
-            :en_US => "<p>On the start screen press the 'change' button and then enter your email and a password in order to make your account mobile. After you have done that you can log in to Wack-A-Doo  at https://wack-a-doo.de/en/index .</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ab jetzt kannst Du von überall aus spielen, solange du einen Browser zur Verfügung hast.",
-  
-            :en_US => "From now on you can play on any device that supports a web browser with ease. ",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Dickhäutige Keulenkrieger! Mehr Kraft für Deine Nahkämpfer.",
-  
-            :en_US => "The thick-skinned clubber! Reinforcement for your melee fighters.",
-                
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF quest_crossplatform
-        {               #   quest_npc_battle
-          :id                => 128,
-          :symbolic_id       => :quest_npc_battle,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => true,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "First battle",
-  
-            :de_DE => "Der erste Kampf",
-                
-          },
-          :task => {
-            
-            :en_US => "Fight for the first time and defeat at least one unit!",
-  
-            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
-  
-            :en_US => "An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>",
-  
-            :en_US => "<p>1. Select your army and press 'attack'. </p><p>2. Select the marked neanderthals. </p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
-  
-            :en_US => "You cann that a fight? Atleast you beat a few enemies.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
-  
-            :en_US => "In Wack-A-Doo you can fight with as man armies as you want. ",
-                
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 5,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
-            :action_point_reward => true,
-
-          },          
-
-          :reward_tests => {
-            
-            :kill_test => {
-              :min_units => 1,
-            },
-
-          },          
-
-          :uimarker => ['mark_map', 'mark_select_own_home_settlement', 'mark_attack_button', 'mark_select_other_army', ],
-
-        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )
