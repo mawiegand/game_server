@@ -143,6 +143,29 @@ Fundamental::Character.all.each do |character|
 end
 puts " done."
 
+
+# ############################################################################
+#
+#   CONSTRUCTION QUEUES
+#
+# ############################################################################
+
+print "CHECKING Construction Queues "
+
+step = Construction::Queue.count / 10 
+step = step > 0 ? step : 1
+count = 0
+
+Construction::Queue.all.each do |queue|
+	if count.modulo(step) == 0 
+	  print "." 
+	  sleep(1)
+	end
+	queue.check_consistency
+	count += 1 
+end
+puts " done."
+
 # ############################################################################
 #
 #   ARMIES

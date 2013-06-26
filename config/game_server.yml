@@ -43,6 +43,7 @@ defaults: &defaults
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
+  queue_speed_recalc_probability:   0.2
   
   cookie_name: 'gs_remember_token'  
   
@@ -83,6 +84,7 @@ development:
   settlement_recalc_probability:    0.5
   character_recalc_probability:     0.5
   resource_pool_recalc_probability: 0.1
+  queue_speed_recalc_probability:   0.5
 
   status_email_recipient: 'p@trick-fox.de'
   chargeback_email_recipient: 'p@trick-fox.de'
@@ -137,6 +139,7 @@ production:
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
+  queue_speed_recalc_probability:   0.2
   
   cookie_name: 'wackadoo_r2_remember_token'  
 

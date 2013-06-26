@@ -7,6 +7,8 @@ class Construction::Queue < ActiveRecord::Base
   
   before_save :update_speed
   
+  after_commit :check_consistency_sometimes
+  
   def working?
     aj = find_active_jobs
     !aj.nil? && aj.count > 0
@@ -105,6 +107,48 @@ class Construction::Queue < ActiveRecord::Base
     })
     super(options)
   end
+  
+  
+  
+  
+  def check_consistency_sometimes
+    return         unless rand(100) / 100.0 < GAME_SERVER_CONFIG['queue_speed_recalc_probability']       # do the check only seldomly (determined by random event)  
+    check_consistency
+  end
+    
+  def check_consistency
+    logger.info(">>> COMPLETE RECALC of SPEED in queue #{self.id}.")
+
+    effects = recalc_construction_effects
+    check_and_apply_construction_effects(effects)
+
+    if self.changed?
+      logger.warn(">>> SAVING QUEUE AFTER DETECTING ERRORS.")
+      self.save
+    else
+      logger.info(">>> QUEUE OK.")
+    end
+
+    true      
+  end
+
+  def recalc_construction_effects
+    self.settlement.owner.construction_bonus_total   # presently, there's only one source of effects
+  end
+
+  def check_and_apply_construction_effects(effects)
+    present = self.speedup_effects
+    recalc  = effects
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> CONSTRUCTION BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.speedup_effects = recalc
+    end
+  end  
+  
+  
+  
+  
 
   protected
 

@@ -1209,7 +1209,7 @@ class Fundamental::Character < ActiveRecord::Base
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
       amount = effect[:bonus]
-      self.construction_bonus_effect += amount
+      self.construction_bonus_effect = (self.construction_bonus_effect || 0.0) + amount
       self.save!
     end
   end
@@ -1219,7 +1219,7 @@ class Fundamental::Character < ActiveRecord::Base
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
       amount = effect[:bonus]
-      self.construction_bonus_effect = (self.construction_bonus_effect || 0.0) + amount
+      self.construction_bonus_effect = (self.construction_bonus_effect || 0.0) - amount
       self.save!
     end    
   end
