@@ -4,7 +4,7 @@
     
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="9" />
+        <Version major="0" minor="3" build="10" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -79,7 +79,8 @@
             <RewardText locale="en_US">You should build more Hunter Gatherers to improve your raw material production.</RewardText>
             <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Außerdem erhältst Du wertvolle Erfahrung.</RewardFlavor>
             <RewardFlavor locale="en_US">Oh that's nice of you! The Hunter Gatherer is really happy. He gave me some raw materials to give you.</RewardFlavor>
-            <Requirement quest="quest_queue_1gathererlvl1" />
+          <!-- Hack für Stefan <Requirement quest="quest_queue_1gathererlvl1" /> -->
+            <Requirement quest="quest_quest_button" />
             <Rewards>
                 <ResourceReward resource="resource_stone">25</ResourceReward>
                 <ResourceReward resource="resource_wood">25</ResourceReward>
@@ -165,7 +166,7 @@
         </Quest>
         
         <!-- 3 --> <!-- not in -->
-        <Quest id="quest_quest_button" advisor="girl" tutorial="false">
+        <Quest id="quest_quest_button" advisor="girl" tutorial="true">
             <Name>Quest button</Name>
             <Name locale="de_DE">Questknopf</Name>
             <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -182,12 +183,17 @@
             <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
             <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
             <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
+            <!-- Hack für Stefan -->
+            <Requirement quest="quest_queue_1gathererlvl1" />
+            <!-- Hack Ende -->
             <Rewards>
                 <ExperienceReward>50</ExperienceReward>
             </Rewards>
             <RewardTests>
                 <CustomTest id="test_quest_button">quest button pressed</CustomTest>
             </RewardTests>
+            <UIMarker>mark_quest_button</UIMarker>
+            <UIMarker>mark_hurry_button</UIMarker>
         </Quest>
         
         <!-- 4 --> <!-- Tutorial 6 -->

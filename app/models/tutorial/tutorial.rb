@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.9
+# Version: 0.3.10
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 9, 
+        :build => 10, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -258,7 +258,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -463,7 +463,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -511,7 +511,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
+
+          :successor_quests => [1, ],
 
           :rewards => {
             
@@ -526,6 +532,8 @@ class Tutorial::Tutorial
             },
 
           },          
+
+          :uimarker => ['mark_quest_button', 'mark_hurry_button', ],
 
         },              #   END OF quest_quest_button
         {               #   quest_profile
