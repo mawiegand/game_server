@@ -1,7 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -216,6 +214,7 @@ GameServer::Application.routes.draw do
           resources :leave_alliance_actions    
           resources :create_alliance_actions    
           resources :kick_alliance_member_actions,           :only => [ :create ]
+          resources :change_avatar_actions,                  :only => [ :index, :create ]
           resources :change_character_notified_rank_actions, :only => [ :create ]    
           resources :change_character_name_actions,          :only => [ :create ]
           resources :change_character_same_ip_actions,       :only => [ :create ]
