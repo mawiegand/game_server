@@ -11,7 +11,7 @@ class Backend::StatusMailer < ActionMailer::Base
   end
 
   def sent_special_offer_alert(transaction)
-    if Rails.env.production? || true
+    if Rails.env.production?
       @transaction = transaction
 
       mail(:to      => GAME_SERVER_CONFIG['sales_email_recipient'],
