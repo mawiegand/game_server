@@ -33,5 +33,7 @@
       <ExperienceReward>25</ExperienceReward>
       <UnitReward unit="stone_thrower">25</UnitReward>
     </Rewards>
+    
+    <Duration>600</Duration>
   </AssignmentType>
 </AssignmentTypes>
