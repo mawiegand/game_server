@@ -1,0 +1,2 @@
+module Assignment::SpecialAssignmentsHelper
+end

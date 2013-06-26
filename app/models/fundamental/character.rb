@@ -21,6 +21,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :archive,           :class_name => "Messaging::Archive",         :foreign_key => "owner_id",     :inverse_of => :owner
 
   has_many :quests,            :class_name => "Tutorial::Quest",            :foreign_key => "state_id",     :inverse_of => :owner
+  has_many :standard_assignments,  :class_name => "Assignment::StandardAssignment",  :foreign_key => "character_id",  :inverse_of => :character
+  has_one  :special_assignment,    :class_name => "Assignment::SpecialAssignment",   :foreign_key => "character_id",  :inverse_of => :character
   has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
@@ -52,7 +54,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string,     :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :assignment_level, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin

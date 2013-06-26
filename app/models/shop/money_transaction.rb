@@ -14,7 +14,7 @@ class Shop::MoneyTransaction < ActiveRecord::Base
   end
 
   def unsent_chargeback_alert?
-    self.chargeback > 0.5 && !self.sent_mail_alert?
+    1.5 > self.chargeback && self.chargeback > 0.5 && !self.sent_mail_alert?
   end
   
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  type_id: 1
+  started_at: 2013-06-26 10:16:06
+  ended_at: 2013-06-26 10:16:06
+  halved_at: 2013-06-26 10:16:06
+  execution_count: 1
+
+two:
+  character_id: 1
+  type_id: 1
+  started_at: 2013-06-26 10:16:06
+  ended_at: 2013-06-26 10:16:06
+  halved_at: 2013-06-26 10:16:06
+  execution_count: 1

@@ -171,4 +171,5 @@
   <xi:include href="rules_sciencecategories.xml" />
   <xi:include href="rules_character_mundane_ranks.xml" />
   <xi:include href="rules_character_sacred_ranks.xml" />
+  <xi:include href="rules_assignments.xml" />
 </Rules>
