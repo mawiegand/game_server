@@ -4,7 +4,7 @@
     
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="9" />
+        <Version major="0" minor="3" build="10" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -565,6 +565,7 @@
             <RewardTests>
                 <BuildingTest building="building_chief_cottage" min_level="4" />
             </RewardTests>
+          <UIMarker>mark_hurry_button</UIMarker>
         </Quest>
         
         <!-- 16 --> <!-- Tutorial 16 -->
@@ -595,6 +596,7 @@
             <RewardTests>
                 <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
             </RewardTests>
+            
         </Quest>
         
         

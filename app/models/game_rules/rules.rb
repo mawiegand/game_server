@@ -6482,54 +6482,85 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :assignment_types => [  # ALL ASSIGMENT TYPES
 
-        {              #   The first building
+        {              #   Stonegatherers
           :id          => 0, 
-          :symbolic_id => :assignment_hunt,
+          :symbolic_id => :assignment_stone,
           :level       => 1,
           :name        => {
             
-            :en_US => "The first building",
+            :en_US => "Stonegatherers",
   
-            :de_DE => "Der erste Jäger und Sammler",
+            :de_DE => "Steinesammler",
                 
           },
           :flavour     => {
             
-            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+            :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
   
-            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+            :en_US => "Just a little bit of motivation and look at those gatherers go!",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
+            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
   
-            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
+            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
   
-            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
+            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
   
-          },
-
-          :costs      => {
-            0 => '10',
-            1 => '20',
-            
-          },
-
-          :unit_deposits => {
-            0 => '10',
-            
           },
 
           :duration => 600,
 
-        },              #   END OF The first building
+        },              #   END OF Stonegatherers
+        {              #   Überfall
+          :id          => 1, 
+          :symbolic_id => :assignment_raid,
+          :level       => 5,
+          :name        => {
+            
+            :en_US => "Überfall",
+  
+            :de_DE => "Raid",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+  
+            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Nimm deine truppen und Überfalle die Neandertaler</p>",
+  
+            :en_US => "<p>Gather your troops and raid a neanderthal camp.</p>",
+  
+          },
+
+          :unit_deposits => {
+            0 => '25',
+            
+          },
+
+          :duration => 3600,
+
+        },              #   END OF Überfall
       ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
