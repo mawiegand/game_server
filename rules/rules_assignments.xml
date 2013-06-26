@@ -60,7 +60,7 @@
     </Description>
     
     <!-- Cost id="resource_stone">10</Cost -->
-    <UnitDeposit id="club_warrior">25</UnitDeposit>
+    <UnitDeposit id="clubbers">25</UnitDeposit>
     
     <Rewards>
       <ResourceReward resource="resource_stone">500</ResourceReward>
