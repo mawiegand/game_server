@@ -269,19 +269,12 @@
 >
 
 
-<!ATTLIST Building 
+<!ELEMENT AssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, Rewards, Duration)>
+
+<!ATTLIST AssignmentType 
   id ID #REQUIRED 
-  category IDREF #REQUIRED
-  group IDREF #REQUIRED
-	buyable (false | true) "true"
-	demolishable (false | true) "true"
-	destructable (false | true) "true"
-	takeoverDestroy CDATA "false"
-	takeoverDowngradeByLevels CDATA "1"
-	experienceFactor CDATA "1"
-  hidden (0 | 1) "0"
-	tier CDATA #IMPLIED
-	xml:base CDATA #REQUIRED
+  advisor CDATA "chef"
+  level CDATA #REQUIRED
 >
 
 
@@ -398,6 +391,12 @@
   id IDREF #REQUIRED
   round CDATA #REQUIRED
 >
+
+<!ELEMENT UnitDeposit (#PCDATA | object)*>
+<!ATTLIST UnitDeposit
+  id IDREF #REQUIRED
+>
+
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
 

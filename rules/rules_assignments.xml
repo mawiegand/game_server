@@ -4,26 +4,26 @@
 <AssignmentTypes>
   <AssignmentType id="assignment_hunt" advisor="girl" level="1">
     <Name>The first building</Name>
-    <Name locale="de_DE">Der erste Jäger und Sammler</Name>
+    <Name lang="de_DE">Der erste Jäger und Sammler</Name>
     
-    <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
-    <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
+    <Flavour lang="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavour>
+    <Flavour lang="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavour>
     
-    <ShortDescription locale="de_DE">
+    <ShortDescription lang="de_DE">
       <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
     </ShortDescription>
-    <ShortDescription locale="en_US">
+    <ShortDescription lang="en_US">
       <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
     </ShortDescription>
     
-    <Description locale="de_DE">
+    <Description lang="de_DE">
       <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
     </Description>
-    <Description locale="en_US">
+    <Description lang="en_US">
       <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
     </Description>
     
-    <ResourceCost id="resource_stone" round="true">10</ResourceCost>
+    <Cost id="resource_stone">10</Cost>
     <UnitDeposit id="club_warrior" round="true">10</UnitDeposit>
     
     <Rewards>
