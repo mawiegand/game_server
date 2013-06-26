@@ -1,14 +1,39 @@
 class Assignment::StandardAssignmentsController < ApplicationController
   layout 'assignment'
 
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :index]
+
   # GET /assignment/standard_assignments
   # GET /assignment/standard_assignments.json
   def index
-    @assignment_standard_assignments = Assignment::StandardAssignment.all
+  
+    last_modified = nil 
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @assignment_standard_assignments }
+    if params.has_key?(:character_id)  
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Page Not Found')    if @character.nil?
+      raise ForbiddenError.new('Access Forbidden') if !admin? && !staff? && !developer? && @character != current_character
+      @assignment_standard_assignments = @character.standard_assignments
+      # todo -> determine last_modified
+    else 
+      @asked_for_index = true
+    end   
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          if @assignment_standard_assignments.nil?
+            @assignment_standard_assignments =  Assignment::StandardAssignment.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
+          @assignment_standard_assignments = [] if @assignment_standard_assignments.nil?  # necessary? or ok to send 'null' ?
+          render json: @assignment_standard_assignments
+        end
+      end
     end
   end
 

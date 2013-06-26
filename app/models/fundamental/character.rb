@@ -21,6 +21,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :archive,           :class_name => "Messaging::Archive",         :foreign_key => "owner_id",     :inverse_of => :owner
 
   has_many :quests,            :class_name => "Tutorial::Quest",            :foreign_key => "state_id",     :inverse_of => :owner
+  has_many :standard_assignments,  :class_name => "Assignment::StandardAssignment",  :foreign_key => "character_id",  :inverse_of => :character
+  has_one  :special_assignment,    :class_name => "Assignment::SpecialAssignment",   :foreign_key => "character_id",  :inverse_of => :character
   has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id",     :inverse_of => :owner
   has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"

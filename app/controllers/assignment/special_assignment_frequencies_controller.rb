@@ -1,6 +1,9 @@
 class Assignment::SpecialAssignmentFrequenciesController < ApplicationController
   layout 'assignment'
   
+  before_filter :authenticate
+  before_filter :deny_api
+  
   # GET /assignment/special_assignment_frequencies
   # GET /assignment/special_assignment_frequencies.json
   def index
