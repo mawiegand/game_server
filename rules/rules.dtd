@@ -389,7 +389,7 @@
 <!ELEMENT Cost (#PCDATA | object)*>
 <!ATTLIST Cost
   id IDREF #REQUIRED
-  round CDATA #REQUIRED
+  round CDATA "false"
 >
 
 <!ELEMENT UnitDeposit (#PCDATA | object)*>

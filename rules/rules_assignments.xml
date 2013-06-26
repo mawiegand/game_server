@@ -24,7 +24,7 @@
     </Description>
     
     <Cost id="resource_stone">10</Cost>
-    <UnitDeposit id="club_warrior" round="true">10</UnitDeposit>
+    <UnitDeposit id="club_warrior">10</UnitDeposit>
     
     <Rewards>
       <ResourceReward resource="resource_stone">25</ResourceReward>
