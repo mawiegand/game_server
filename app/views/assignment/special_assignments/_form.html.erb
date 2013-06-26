@@ -1,0 +1,49 @@
+<%= form_for(@assignment_special_assignment) do |f| %>
+  <% if @assignment_special_assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment_special_assignment.errors.count, "error") %> prohibited this assignment_special_assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment_special_assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :started_at %><br />
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_at %><br />
+    <%= f.datetime_select :ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :halved_at %><br />
+    <%= f.datetime_select :halved_at %>
+  </div>
+  <div class="field">
+    <%= f.label :execution_count %><br />
+    <%= f.number_field :execution_count %>
+  </div>
+  <div class="field">
+    <%= f.label :displayed_until %><br />
+    <%= f.datetime_select :displayed_until %>
+  </div>
+  <div class="field">
+    <%= f.label :seen_at %><br />
+    <%= f.datetime_select :seen_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

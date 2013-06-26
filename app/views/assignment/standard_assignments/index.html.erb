@@ -1,0 +1,33 @@
+<h1>Listing assignment_standard_assignments</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Type</th>
+    <th>Started at</th>
+    <th>Ended at</th>
+    <th>Halved at</th>
+    <th>Execution count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assignment_standard_assignments.each do |assignment_standard_assignment| %>
+  <tr>
+    <td><%= assignment_standard_assignment.character_id %></td>
+    <td><%= assignment_standard_assignment.type_id %></td>
+    <td><%= assignment_standard_assignment.started_at %></td>
+    <td><%= assignment_standard_assignment.ended_at %></td>
+    <td><%= assignment_standard_assignment.halved_at %></td>
+    <td><%= assignment_standard_assignment.execution_count %></td>
+    <td><%= link_to 'Show', assignment_standard_assignment %></td>
+    <td><%= link_to 'Edit', edit_assignment_standard_assignment_path(assignment_standard_assignment) %></td>
+    <td><%= link_to 'Destroy', assignment_standard_assignment, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Standard assignment', new_assignment_standard_assignment_path %>
