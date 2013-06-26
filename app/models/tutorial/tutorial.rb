@@ -1711,6 +1711,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_hurry_button', ],
+
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
           :id                => 16,

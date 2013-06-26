@@ -571,6 +571,7 @@
             <RewardTests>
                 <BuildingTest building="building_chief_cottage" min_level="4" />
             </RewardTests>
+          <UIMarker>mark_hurry_button</UIMarker>
         </Quest>
         
         <!-- 16 --> <!-- Tutorial 16 -->
@@ -601,6 +602,7 @@
             <RewardTests>
                 <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
             </RewardTests>
+            
         </Quest>
         
         
