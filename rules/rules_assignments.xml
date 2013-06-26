@@ -2,39 +2,74 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <AssignmentTypes>
-  <AssignmentType id="assignment_hunt" advisor="girl" level="1">
-    <Name>The first building</Name>
-    <Name lang="de_DE">Der erste Jäger und Sammler</Name>
+  <AssignmentType id="assignment_stone" advisor="girl" level="1">
+    <Name>Stonegatherers</Name>
+    <Name lang="de_DE">Steinesammler</Name>
     
-    <Flavour lang="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavour>
-    <Flavour lang="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavour>
+    <Flavour lang="de_DE">Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.</Flavour>
+    <Flavour lang="en_US">Just a little bit of motivation and look at those gatherers go!</Flavour>
     
     <ShortDescription lang="de_DE">
-      <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
+      <p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
+      <p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
-      <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
+      <p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>
     </Description>
     <Description lang="en_US">
-      <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
+      <p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>
     </Description>
     
-    <Cost id="resource_stone">10</Cost>
-    <Cost id="resource_wood">20</Cost>
-    <UnitDeposit id="clubbers">10</UnitDeposit>
+    <!-- Cost id="resource_stone">10</Cost>
+    <UnitDeposit id="club_warrior">10</UnitDeposit -->
     
     <Rewards>
-      <ResourceReward resource="resource_stone">25</ResourceReward>
-      <ResourceReward resource="resource_wood">25</ResourceReward>
-      <ResourceReward resource="resource_fur">25</ResourceReward>
-      <UnitReward unit="stone_thrower">25</UnitReward>
-      <ExperienceReward>25</ExperienceReward>
+      <ResourceReward resource="resource_stone">100</ResourceReward>
+      <!-- ResourceReward resource="resource_wood">25</ResourceReward>
+      <ResourceReward resource="resource_fur">25</ResourceReward -->
+      <ExperienceReward>3</ExperienceReward>
+      <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+
     </Rewards>
     
     <Duration>600</Duration>
+  </AssignmentType>
+  
+  <AssignmentType id="assignment_raid" advisor="warrior" level="5">
+    <Name>Überfall</Name>
+    <Name lang="de_DE">Raid</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Nimm deine truppen und Überfalle die Neandertaler</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Gather your troops and raid a neanderthal camp.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <!-- Cost id="resource_stone">10</Cost -->
+    <UnitDeposit id="clubbers">25</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_stone">500</ResourceReward>
+      <ResourceReward resource="resource_wood">500</ResourceReward>
+      <ResourceReward resource="resource_fur">500</ResourceReward>
+      <ExperienceReward>50</ExperienceReward>
+      <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+    </Rewards>
+    
+    <Duration>3600</Duration>
   </AssignmentType>
 </AssignmentTypes>

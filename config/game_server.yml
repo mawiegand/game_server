@@ -48,6 +48,7 @@ defaults: &defaults
   
   status_email_recipient: 'cron@5dlab.com'
   chargeback_email_recipient: 'chargeback@5dlab.com'
+  sales_email_recipient: 'sales@5dlab.com'
 
   platinum_additional_construction_jobs : 3
   platinum_additional_training_jobs     : 3
@@ -86,6 +87,7 @@ development:
 
   status_email_recipient: 'p@trick-fox.de'
   chargeback_email_recipient: 'p@trick-fox.de'
+  sales_email_recipient: 'p@trick-fox.de'
 
 test:
   <<: *defaults
@@ -107,7 +109,7 @@ staging:
     admin_jid: shadow-dragon@jabber3.wack-a-doo.com
   
   base_url: 'https://test1.wack-a-doo.com'
-  
+
   scope: 'wackadoo-testround3'
   
   ap_regeneration_duration: 120           # time needed to regenerate a single action point in minutes
