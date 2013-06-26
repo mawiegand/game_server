@@ -1,4 +1,6 @@
 class Assignment::StandardAssignmentsController < ApplicationController
+  layout 'assignment'
+
   # GET /assignment/standard_assignments
   # GET /assignment/standard_assignments.json
   def index

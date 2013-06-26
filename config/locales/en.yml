@@ -69,6 +69,12 @@ en:
         queues: Queues
         jobs: Jobs
         active_jobs: Act. Jobs
+      assignment:
+        category:  Assignment
+        standard:  Standard
+        special:   Special
+        frequency: Frequency
+
       military:
         category: Military
         armies: Armies

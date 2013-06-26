@@ -1,4 +1,6 @@
 class Assignment::SpecialAssignmentFrequenciesController < ApplicationController
+  layout 'assignment'
+  
   # GET /assignment/special_assignment_frequencies
   # GET /assignment/special_assignment_frequencies.json
   def index
