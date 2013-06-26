@@ -16,5 +16,16 @@ class Shop::MoneyTransaction < ActiveRecord::Base
   def unsent_chargeback_alert?
     1.5 > self.chargeback && self.chargeback > 0.5 && !self.sent_mail_alert?
   end
-  
+
+  def send_special_offer_alert
+    self.sent_special_offer_alert = true
+    self.save
+
+    Backend::StatusMailer.sent_special_offer_alert(self).deliver
+  end
+
+  def unsent_special_offer_alert?
+    self.offer_category == "1" && self.chargeback < 0.5 && !self.sent_special_offer_alert?
+  end
+
 end

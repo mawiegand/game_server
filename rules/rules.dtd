@@ -383,6 +383,26 @@
   shortenable (true | false) "true" 
 >
 
+<!ELEMENT Duration (#PCDATA)>
+<!ATTLIST Duration 
+  shortenable (true | false) "true" 
+>
+
+
+
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+
+<!ELEMENT ResourceReward (#PCDATA)>
+<!ATTLIST ResourceReward
+  resource CDATA #REQUIRED
+>
+
+<!ELEMENT UnitReward (#PCDATA)>
+<!ATTLIST UnitReward
+  unit     CDATA #REQUIRED
+>
+
+<!ELEMENT ExperienceReward (#PCDATA)>
 
 
 <!--Webinterface: Production-->

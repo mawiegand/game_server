@@ -32,6 +32,7 @@
       <ResourceReward resource="resource_fur">25</ResourceReward -->
       <ExperienceReward>3</ExperienceReward>
       <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+
     </Rewards>
     
     <Duration>600</Duration>
