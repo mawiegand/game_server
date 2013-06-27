@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.7.4
+# Version: 0.8.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -116,8 +116,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 7,
-                    :build => 4,
+                    :minor => 8,
+                    :build => 0,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -6517,6 +6517,23 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 100,
+              },
+
+          ],
+
+            :experience_reward => 3,
+
+          },          
+
 
         },              #   END OF Stonegatherers
         {              #   Überfall
@@ -6559,6 +6576,33 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 3600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+          ],
+
+            :experience_reward => 50,
+
+          },          
+
 
         },              #   END OF Überfall
       ],                # END OF ASSIGNMENT TYPES
