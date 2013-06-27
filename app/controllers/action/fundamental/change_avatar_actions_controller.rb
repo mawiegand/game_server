@@ -20,6 +20,7 @@ class Action::Fundamental::ChangeAvatarActionsController < ApplicationController
   def create
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:avatar_string].nil?
+    raise BadRequestError.new('blank parameter(s)') if params[:avatar_string].blank?
 
     #check if avatar string is conform
     current_character.avatar_string = params[:avatar_string]
