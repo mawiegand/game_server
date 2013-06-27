@@ -4,7 +4,7 @@
 
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="9" />
+        <Version major="0" minor="3" build="10" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -350,6 +350,8 @@
             <RewardTests>
                 <BuildingTest building="building_storage" min_level="1" />
             </RewardTests>
+            <UIMarker>mark_home_settlement</UIMarker>
+            <UIMarker>mark_building_option</UIMarker>
         </Quest>
 
         <!-- 9 --> <!-- Tutorial 9 -->
@@ -473,6 +475,9 @@
             <RewardTests>
                 <BuildingTest building="building_chief_cottage" min_level="3" />
             </RewardTests>
+            <UIMarker>mark_home_settlement</UIMarker>
+            <UIMarker>mark_upgradable_building</UIMarker>
+            <UIMarker>mark_upgrade_button</UIMarker>
         </Quest>
 
         <!-- 13 --> <!-- Tutorial 13 -->
@@ -503,6 +508,9 @@
             <RewardTests>
                 <BuildingTest building="building_cottage" min_level="1" min_count="1" />
             </RewardTests>
+            <UIMarker>mark_home_settlement</UIMarker>
+            <UIMarker>mark_free_construction_slot</UIMarker>
+            <UIMarker>mark_building_option</UIMarker>
         </Quest>
 
         <!-- 14 --> <!-- Tutorial 14 -->
@@ -595,6 +603,9 @@
             <RewardTests>
                 <ConstructionQueueTest building="building_chief_cottage" min_count="1" min_level="4" />
             </RewardTests>
+            <UIMarker>mark_home_settlement</UIMarker>
+            <UIMarker>mark_upgradable_building</UIMarker>
+            <UIMarker>mark_upgrade_button</UIMarker>
         </Quest>
 
 
@@ -662,6 +673,8 @@
             <RewardTests>
                 <BuildingTest building="building_campfire" min_level="1" />
             </RewardTests>
+            <UIMarker>mark_home_settlement</UIMarker>
+            <UIMarker>mark_building_option</UIMarker>
         </Quest>
 
         <!-- 19 -->
