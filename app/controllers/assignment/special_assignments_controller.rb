@@ -1,7 +1,7 @@
 class Assignment::SpecialAssignmentsController < ApplicationController
   layout 'assignment'
 
-  before_filter :authenticate
+ # before_filter :authenticate
   before_filter :deny_api, :except => [:show, :index]
 
   # GET /assignment/special_assignments

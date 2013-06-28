@@ -123,9 +123,8 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     units = self.unit_hash_from_rewards(unit_rewards)
     
     if units.count > 0 
-      garrison_army = self.tutorial_state.owner.home_location.garrison_army
+      garrison_army = self.character.home_location.garrison_army
       garrison_army.lock!
-      raise BadRequestError.new("home location of character #{self.tutorial_state.owner.id} has no garrison army") if garrison_army.nil?
 
       # check if resources and units can be rewarded
       logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
