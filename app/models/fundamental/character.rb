@@ -82,6 +82,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
   after_save  :propagate_alliance_bonus_to_alliance
+  after_save  :manage_assignments_on_level_change
   
   after_commit :check_consistency_sometimes
   
@@ -845,6 +846,12 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
   
+  def manage_assignments_on_level_change
+    return true     unless assignment_level_changed?
+    
+    Assignment::StandardAssignment.manage_on_level_change(self, assignment_level_change[0], assignment_level_change[1])
+  end
+  
   ############################################################################
   #
   #  C O N S I S T E N C Y   C H E C K S
@@ -877,6 +884,10 @@ class Fundamental::Character < ActiveRecord::Base
     
     correct_alliance_size_bonus = recalc_alliance_size_bonus
     check_and_apply_alliance_size_bonus(correct_alliance_size_bonus)
+
+    correct_assignment_level = recalc_assignment_level
+    check_and_apply_assignment_level(correct_assignment_level)
+
     
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
@@ -1091,6 +1102,29 @@ class Fundamental::Character < ActiveRecord::Base
     if (self.alliance_size_bonus || 0) != bonus
       logger.warn(">>> CONSISTENCY ERROR: ALLIANCE SIZE BONUS RECALC DIFFERS for character #{self.id}. Old: #{self.alliance_size_bonus} Corrected: #{bonus}.")
       self.alliance_size_bonus = bonus
+    end
+  end
+
+
+
+  # ##########################################################################
+  #
+  #   Assignment Level
+  #
+  # ##########################################################################
+
+  def recalc_assignment_level
+    bonus = 0
+    self.settlements.each do |settlement|
+      bonus += (settlement.assignment_level || 0)
+    end
+    return bonus
+  end
+  
+  def check_and_apply_assignment_level(bonus)
+    if (self.assignment_level || 0) != bonus
+      logger.warn(">>> CONSISTENCY ERROR: ASSIGNMENT LEVEL RECALC DIFFERS for character #{self.id}. Old: #{self.assignment_level} Corrected: #{bonus}.")
+      self.assignment_level = bonus
     end
   end
 
