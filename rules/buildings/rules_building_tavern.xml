@@ -26,6 +26,7 @@
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
   <ProductionTime shortenable="false">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</ProductionTime>
   <Abilities>
+    <AssignmentLevel>LEVEL</AssignmentLevel>
   </Abilities>
 </Building>
 

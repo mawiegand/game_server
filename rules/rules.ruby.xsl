@@ -1104,6 +1104,11 @@ end
             :defense_bonus => "<xsl:apply-templates />",
 </xsl:template>
 
+<xsl:template match="AssignmentLevel">
+            :assignment_level => "<xsl:apply-templates />",
+</xsl:template>
+
+
 <xsl:template match="CommandPoints">
             :command_points => "<xsl:apply-templates />",
 </xsl:template>
