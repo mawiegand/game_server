@@ -1,3 +1,5 @@
+require 'game_state/rewards.rb'
+
 class Assignment::StandardAssignment < ActiveRecord::Base
   
   belongs_to :character,  :class_name => "Fundamental::Character",  :foreign_key => "character_id",    :inverse_of => :standard_assignments
@@ -49,7 +51,30 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def assignment_type
     GameRules::Rules.the_rules.assignment_types[self.type_id || 0]
   end
+
+
+  # ##########################################################################
+  #
+  #   PROCESSING COSTS, DEPOSITS, AND REWARDS
+  #
+  # ##########################################################################
   
+  def self.resource_hash_from_rewards(resource_rewards)
+    GameState::Rewards.resource_hash_from_rewards(resource_rewards)
+  end
+    
+  def self.unit_hash_from_rewards(unit_rewards)
+    GameState::Rewards.unit_hash_from_rewards(unit_rewards)
+  end
+
+  
+  # ##########################################################################
+  #
+  #   STARTING, HALVING AND ENDING
+  #
+  # ##########################################################################
+  
+
   # halves the duration of an ongoing assignment
   def speedup_now
     return         if self.started_at.nil?
@@ -58,6 +83,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     self.halved_at = DateTime.now 
     self.halved_count += 1
   end
+  
     
   # starts the assignment now, uses the duration as specified in the 
   # game rules and sets the start and end time appropriately
@@ -69,6 +95,64 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     self.ended_at   = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i)
     self.execution_count += 1
   end
+  
+  
+  def end_now
+    self.started_at = nil
+    self.halved_at = nil
+    self.ended_at = nil
+  end
+  
+  
+  def redeem_rewards!
+    rewards            = self.assignment_type[:rewars]
+    
+    resource_rewards   = rewards[:resource_rewards]
+    unit_rewards       = rewards[:unit_rewards]
+    experience_rewards = rewards[:experience_reward]
+    
+    resources = self.resource_hash_from_rewards(resource_rewards) 
+    units = self.unit_hash_from_rewards(unit_rewards)
+    
+    if units.count > 0 
+      garrison_army = self.tutorial_state.owner.home_location.garrison_army
+      garrison_army.lock!
+      raise BadRequestError.new("home location of character #{self.tutorial_state.owner.id} has no garrison army") if garrison_army.nil?
+
+      # check if resources and units can be rewarded
+      logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
+      garrison_army.add_units(units)
+    end
+    
+    if resources.count > 0
+      self.tutorial_state.owner.resource_pool.add_resources_transaction(resources) 
+    end   
+        
+    unless experience_rewards.nil?
+      self.character.increment(:exp, rewards[:experience_reward])
+      self.character.save!
+    end
+  end
+  
+  
+  def redeem_rewards_and_end_transaction
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      if !self.ended_at.nil?
+        self.end_now
+        self.save!
+        self.redeem_rewards!
+      end
+    end
+  end
+  
+  
+  # ##########################################################################
+  #
+  #   MANAGING THE CORRSPONDING EVENT
+  #
+  # ##########################################################################
+  
 
   # creates an event for the ongoing assignment
   def create_event

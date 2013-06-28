@@ -313,7 +313,8 @@ class Fundamental::ResourcePool < ActiveRecord::Base
 
           if !to_check.nil? && to_check.length > 0
             self.owner.settlements.each do |settlement|
-              settlement.lock!
+              settlement.
+              
               to_check.each do |bonus|
                 settlement.increment(bonus[:attribute_settlement], self.changes[bonus[:attribute]][1] - self.changes[bonus[:attribute]][0])
               end
