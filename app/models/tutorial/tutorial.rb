@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.10
+# Version: 0.3.11
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 10, 
+        :build => 11, 
       },
       
       :production_test_weights => {
@@ -1315,7 +1315,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
   
             :en_US => "Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.",
                 
@@ -1632,16 +1632,16 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.",
+            :de_DE => "Mit ein paar Kröten lässt sich so einiges bewirken.",
   
-            :en_US => "I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.",
+            :en_US => "With a few golfen frogs you can get quite a bit done.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>",
+            :de_DE => "<p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>",
   
-            :en_US => "<p>You can speed up the chieftain's hut upgrade with golden frogs.</p>",
+            :en_US => "<p>Use these golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</p>",
                 
           },          
           :reward_flavour => {
@@ -1736,9 +1736,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "",
+            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.",
   
-            :en_US => " ",
+            :en_US => "I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.",
                 
           },
           :description => {
@@ -1750,16 +1750,16 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.",
+            :de_DE => "Jetzt muss es nurnoch fertig werden.",
   
-            :en_US => "The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.",
+            :en_US => "Now it just has to be finished.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.",
+            :de_DE => "Das ist ein größeres Projekt als wir bisher hatten und dauert eine Weile.",
   
-            :en_US => "Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.",
+            :en_US => "This is a bigger project than the ones we had before and it takes some time to get done.",
                 
           },
 

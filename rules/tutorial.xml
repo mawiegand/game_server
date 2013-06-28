@@ -4,7 +4,7 @@
 
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="10" />
+        <Version major="0" minor="3" build="11" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -459,7 +459,7 @@
             <Description locale="en_US">
                 <p>By upgrading your chieftain's hut you can build more and different buildings.</p>
             </Description>
-            <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du muss jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
+            <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
             <Flavor locale="en_US">Your settlement is coming along nicely. But now you have to upgrade the chieftain's hut in order to make some progress.</Flavor>
             <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
             <RewardText locale="en_US">Upgrading the chieftain's hut gives access to new buildings, so you can construct more buildings.</RewardText>
@@ -552,13 +552,13 @@
             <Task>Upgrade your chieftain's hut to level 4.</Task>
             <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
             <Description locale="de_DE">
-                <p>Du kannst den Ausbau der Häuptlingshütte beschleunigen, indem Du 'Hurtig!' drückst und Kröten einsetzt.</p>
+                <p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>
             </Description>
             <Description locale="en_US">
-                <p>You can speed up the chieftain's hut upgrade with golden frogs.</p>
+                <p>Use these golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</p>
             </Description>
-            <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
-            <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
+            <Flavor locale="de_DE">Mit ein paar Kröten lässt sich so einiges bewirken.</Flavor>
+            <Flavor locale="en_US">With a few golfen frogs you can get quite a bit done.</Flavor>
             <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
             <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
             <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
@@ -587,12 +587,12 @@
             <Description locale="en_US">
                 <p>Upgrade your Chieftain's Hut to gain more advantages.</p>
             </Description>
-            <Flavor locale="de_DE"></Flavor>
-            <Flavor locale="en_US"> </Flavor>
-            <RewardText locale="de_DE">Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</RewardText>
-            <RewardText locale="en_US">Use the golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</RewardText>
-            <RewardFlavor locale="de_DE">Der Ausbau dauert seine Zeit, nutze diese Kröten um den Ausbau sofort abschließen.</RewardFlavor>
-            <RewardFlavor locale="en_US">The upgrade is in progress – with this golden frogs you can immediately finish the upgrade.</RewardFlavor>
+            <Flavor locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Baue sie doch bitte aus, dann haben wir mehr Platz.</Flavor>
+            <Flavor locale="en_US">I think it's time to build another big chieftain's hut. Upgrade this one and then we'll have more space.</Flavor>
+            <RewardText locale="de_DE">Das ist ein größeres Projekt als wir bisher hatten und dauert eine Weile.</RewardText>
+            <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
+            <RewardFlavor locale="de_DE">Jetzt muss es nurnoch fertig werden.</RewardFlavor>
+            <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
             <Requirement quest="quest_improve_production_1" />
             <Rewards>
                 <ResourceReward resource="resource_stone">165</ResourceReward>
