@@ -486,6 +486,9 @@ class Settlement::Settlement < ActiveRecord::Base
     n_command_points = recalc_command_points
     check_and_apply_command_points(n_command_points)
 
+    n_assignement_level = recalc_assignment_level
+    check_and_apply_assignment_level(n_assignement_level)
+
     check_and_repair_armies_count
 
     n_trading_carts = recalc_trading_carts
@@ -691,6 +694,23 @@ class Settlement::Settlement < ActiveRecord::Base
         self.command_points = cp
       end
     end
+    
+    
+    def recalc_assignment_level
+      cp = 0
+      self.slots.each do |slot|
+        cp += slot.assignment_level
+      end
+      cp    
+    end
+    
+    def check_and_apply_assignment_level(cp)
+      if (self.assignment_level != cp) 
+        logger.warn(">>> ASSIGNEMENT LEVEL RECALC DIFFERS. Old: #{self.assignment_level} Corrected: #{cp}.")
+        self.assignment_level = cp
+      end
+    end
+    
     
     def check_and_repair_armies_count
       if (self.armies_count != self.armies.count) 
@@ -1296,6 +1316,7 @@ class Settlement::Settlement < ActiveRecord::Base
         changed = false
         changed = propagate_change_of_attribute_to_character('exp_production_rate') || changed
         changed = propagate_change_of_attribute_to_character('alliance_size_bonus') || changed
+        changed = propagate_change_of_attribute_to_character('assignment_level') || changed
         
         self.owner.save   if changed                          # only save character, if there hase been a change!
       end
@@ -1492,6 +1513,7 @@ class Settlement::Settlement < ActiveRecord::Base
 
         propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'exp_production_rate')
         propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'alliance_size_bonus')
+        propagate_change_of_attribute_to_character_on_changed_possession(old_owner, new_owner, 'assignment_level')
 
         old_owner.save   unless old_owner.nil?
         new_owner.save   unless new_owner.nil?
