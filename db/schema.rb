@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624230639) do
+ActiveRecord::Schema.define(:version => 20130628180501) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -56,6 +56,81 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.integer  "resource_cash_amount"
     t.boolean  "send_hurried"
     t.boolean  "return_hurried"
+  end
+
+  create_table "assignment_special_assignment_frequencies", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "type_id"
+    t.integer  "num_failed"
+    t.datetime "last_ended_at"
+    t.integer  "execution_count", :default => 0, :null => false
+    t.integer  "halved_count",    :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "assignment_special_assignments", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "type_id"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "halved_at"
+    t.integer  "execution_count",              :default => 0, :null => false
+    t.datetime "displayed_until"
+    t.datetime "seen_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "experience_reward"
+    t.integer  "resource_stone_cost"
+    t.integer  "resource_stone_reward"
+    t.integer  "resource_wood_cost"
+    t.integer  "resource_wood_reward"
+    t.integer  "resource_fur_cost"
+    t.integer  "resource_fur_reward"
+    t.integer  "resource_cash_cost"
+    t.integer  "resource_cash_reward"
+    t.integer  "unit_clubbers_deposit"
+    t.integer  "unit_clubbers_reward"
+    t.integer  "unit_clubbers_2_deposit"
+    t.integer  "unit_clubbers_2_reward"
+    t.integer  "unit_clubbers_3_deposit"
+    t.integer  "unit_clubbers_3_reward"
+    t.integer  "unit_tree_huggers_deposit"
+    t.integer  "unit_tree_huggers_reward"
+    t.integer  "unit_thrower_deposit"
+    t.integer  "unit_thrower_reward"
+    t.integer  "unit_thrower_2_deposit"
+    t.integer  "unit_thrower_2_reward"
+    t.integer  "unit_thrower_3_deposit"
+    t.integer  "unit_thrower_3_reward"
+    t.integer  "unit_thrower_4_deposit"
+    t.integer  "unit_thrower_4_reward"
+    t.integer  "unit_light_cavalry_deposit"
+    t.integer  "unit_light_cavalry_reward"
+    t.integer  "unit_light_cavalry_2_deposit"
+    t.integer  "unit_light_cavalry_2_reward"
+    t.integer  "unit_light_cavalry_3_deposit"
+    t.integer  "unit_light_cavalry_3_reward"
+    t.integer  "unit_light_cavalry_4_deposit"
+    t.integer  "unit_light_cavalry_4_reward"
+    t.integer  "unit_neanderthal_deposit"
+    t.integer  "unit_neanderthal_reward"
+    t.integer  "unit_little_chief_deposit"
+    t.integer  "unit_little_chief_reward"
+    t.integer  "unit_warrior_deposit"
+    t.integer  "unit_warrior_reward"
+  end
+
+  create_table "assignment_standard_assignments", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "type_id"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "halved_at"
+    t.integer  "execution_count", :default => 0, :null => false
+    t.integer  "halved_count",    :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -1600,6 +1675,16 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
+  create_table "effect_alliance_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "alliance_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1608,6 +1693,16 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "origin_id"
+  end
+
+  create_table "effect_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "character_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "effect_resource_effects", :force => true do |t|
@@ -1790,6 +1885,9 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.datetime "insider_since"
     t.boolean  "first_round"
     t.datetime "tutorial_finished_at"
+    t.decimal  "construction_bonus_effect",                :default => 0.0,   :null => false
+    t.decimal  "construction_bonus_total",                 :default => 0.0,   :null => false
+    t.integer  "assignment_level",                         :default => 0,     :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -2473,6 +2571,7 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.integer  "artifact_initiation_level",                      :default => 0,            :null => false
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
+    t.integer  "assignment_level",                               :default => 0,            :null => false
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -2573,7 +2672,8 @@ ActiveRecord::Schema.define(:version => 20130624230639) do
     t.string   "partner_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "sent_mail_alert",         :default => false
+    t.boolean  "sent_mail_alert",          :default => false
+    t.boolean  "sent_special_offer_alert"
   end
 
   add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true

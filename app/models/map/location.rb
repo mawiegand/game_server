@@ -106,6 +106,47 @@ class Map::Location < ActiveRecord::Base
 
     nil
   end  
+  
+  # this method iteratively searches a given nodes neighbours in a breadth-first search.
+  # it uses a list to remember nodes that wait to be expanded and a hash to remember
+  # already visited nodes. will return a location in the first region that has at
+  # least two empty spots and is not already settled by the character. 
+  def self.location_for_oupost_in_starter_package(character)
+    home_base = character.bases[0]
+    home_node = home_base.region.node
+    
+    visited_node_ids = { home_node.id => true }
+    
+    nodes            = home_node.neighbor_nodes
+    
+    target           = nil
+    
+    begin
+      node, *tail = nodes                  # pop the first node in the queue
+      tail = tail || []                    # make sure it's always an array and never nil
+      
+      if visited_node_ids[node.id].nil?
+        visited_node_ids[node.id] = true
+        
+        if node.region.locations.empty.count > 1 && node.region.settleable_by?(character)
+          target = node
+        else
+          tail.push(*node.neighbor_nodes)  # flatten the result array and push them to the end of the list.
+        end
+      end
+      
+      nodes = tail
+      
+    end while target.nil? && !nodes.empty?
+    
+    if !target.nil?
+      target.region.locations.empty[0]
+    else 
+      nil
+    end
+    
+  end
+  
     
 
 

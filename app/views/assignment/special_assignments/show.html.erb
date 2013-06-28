@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @assignment_special_assignment.character_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @assignment_special_assignment.type_id %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%= @assignment_special_assignment.started_at %>
+</p>
+
+<p>
+  <b>Ended at:</b>
+  <%= @assignment_special_assignment.ended_at %>
+</p>
+
+<p>
+  <b>Halved at:</b>
+  <%= @assignment_special_assignment.halved_at %>
+</p>
+
+<p>
+  <b>Execution count:</b>
+  <%= @assignment_special_assignment.execution_count %>
+</p>
+
+<p>
+  <b>Displayed until:</b>
+  <%= @assignment_special_assignment.displayed_until %>
+</p>
+
+<p>
+  <b>Seen at:</b>
+  <%= @assignment_special_assignment.seen_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_special_assignment_path(@assignment_special_assignment) %> |
+<%= link_to 'Back', assignment_special_assignments_path %>

@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [1, 3, ],
 
           :rewards => {
             
@@ -463,7 +463,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -511,6 +511,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
+
           :successor_quests => [],
 
           :rewards => {
@@ -526,6 +532,8 @@ class Tutorial::Tutorial
             },
 
           },          
+
+          :uimarker => ['mark_quest_button', ],
 
         },              #   END OF quest_quest_button
         {               #   quest_profile
@@ -1708,6 +1716,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_hurry_button', ],
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4

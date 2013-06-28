@@ -49,6 +49,13 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_global_effects',   :type => ':decimal', :options => { :default => 0.0 } },
   ],  # add unlock count and resource-production fields to settlements
 
+  Assignment::SpecialAssignment => [ 
+                                  { :prefix => 'unit_',            :postfix => '_deposit',                    :type => ':integer' },
+                                  { :prefix => 'resource_',        :postfix => '_cost',                       :type => ':integer' },
+                                  { :prefix => 'unit_',            :postfix => '_reward',                     :type => ':integer' },
+                                  { :prefix => 'resource_',        :postfix => '_reward',                     :type => ':integer' }],
+
+
   Fundamental::ResourcePool  => [ { :prefix => 'resource_',        :postfix => '_amount',                     :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_capacity',                   :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_rate',            :type => ':decimal', :options => { :default => 0.0 } }, 

@@ -2,12 +2,18 @@ class Shop::PurchasesController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api
+  before_filter :deny_api, :except => [:index]
 
   # GET /shop/purchases
   # GET /shop/purchases.json
   def index
-    @shop_purchases = Shop::Purchase.all
+    if params.has_key?(:character_id)
+      @character = Fundamental::Character.find(params[:character_id])
+      raise NotFoundError.new('Page Not Found') if @character.nil?
+      @shop_purchases = @character.purchases
+    else
+      @shop_purchases = Shop::Purchase.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

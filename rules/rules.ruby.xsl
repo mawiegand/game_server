@@ -21,7 +21,7 @@
 <xsl:output method="text" encoding="UTF-8"/>
 
 <!-- text elements -->
-<xsl:strip-space elements="Name Description Flavour p"/>
+<xsl:strip-space elements="Name Description ShortDescription Flavour p"/>
 
 <!-- replace-string -->
 <xsl:template name="replace-string">
@@ -80,7 +80,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -108,6 +108,7 @@ class GameRules::Rules
       'resource_types'              => resource_types,
       'building_types'              => building_types,
       'science_types'               => science_types,  
+      'assignment_types'            => assignment_types,  
       'settlement_types'            => settlement_types,  
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -201,6 +202,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingCategories" />
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
+  <xsl:apply-templates select="AssignmentTypes" />
   <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
@@ -239,6 +241,10 @@ end
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
 <xsl:template match="Description">
+            :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
+  </xsl:template> <!-- indentation needed for proper layout in output. -->
+
+<xsl:template match="ShortDescription">
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
@@ -697,6 +703,85 @@ end
 </xsl:template>
 
 
+
+<xsl:template match="AssignmentTypes">
+# ## ASSIGNMENT TYPES ##########################################################
+  
+      :assignment_types => [  # ALL ASSIGMENT TYPES
+<xsl:for-each select="AssignmentType">
+        {              #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :level       => <xsl:value-of select="@level"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />              
+          },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />              
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />              
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
+<xsl:if test="Cost">
+          :costs      => {
+            <xsl:apply-templates select="Cost" />
+          },
+</xsl:if>
+<xsl:if test="UnitDeposit">
+          :unit_deposits => {
+            <xsl:apply-templates select="UnitDeposit" />
+          },
+</xsl:if>
+          :duration => <xsl:value-of select="Duration"/>,
+          
+<xsl:if test="Rewards">
+          :rewards => {
+            <xsl:apply-templates select="Rewards" />
+          },          
+</xsl:if>
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF ASSIGNMENT TYPES
+</xsl:template>
+
+
+<xsl:template match="Rewards">
+<xsl:if test="ResourceReward">
+          :resource_rewards => [
+            <xsl:apply-templates select="ResourceReward" />
+          ],
+</xsl:if>
+<xsl:if test="UnitReward">
+          :unit_rewards => [
+            <xsl:apply-templates select="UnitReward" />
+          ],
+</xsl:if>
+<xsl:if test="ExperienceReward">
+            :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
+</xsl:if>
+</xsl:template>
+
+<xsl:template match="ResourceReward">
+              {
+                :resource => :<xsl:value-of select="@resource" />,
+                :amount => <xsl:value-of select="." />,
+              },
+</xsl:template>
+
+<xsl:template match="UnitReward">
+              {
+                :unit => :<xsl:value-of select="@unit" />,
+                :amount => <xsl:value-of select="." />,
+              },
+</xsl:template>
+
+
 <xsl:template match="Requirement">
             {
               :symbolic_id => '<xsl:value-of select="@id" />',
@@ -713,6 +798,10 @@ end
 
 
 <xsl:template match="Cost">
+            <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
+            </xsl:template> <!-- indentation needed for proper layout in output. -->
+
+<xsl:template match="UnitDeposit">
             <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
             </xsl:template> <!-- indentation needed for proper layout in output. -->
 
@@ -1014,6 +1103,11 @@ end
 <xsl:template match="DefenseBonus">
             :defense_bonus => "<xsl:apply-templates />",
 </xsl:template>
+
+<xsl:template match="AssignmentLevel">
+            :assignment_level => "<xsl:apply-templates />",
+</xsl:template>
+
 
 <xsl:template match="CommandPoints">
             :command_points => "<xsl:apply-templates />",

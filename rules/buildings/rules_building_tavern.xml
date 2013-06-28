@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_tavern" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="12">
+  <Name lang="de_DE">Taverne</Name>
+  <Name lang="en_US">Tavern</Name>
+  <Description lang="de_DE">
+    <p>Placeholder</p>
+   </Description>
+  <Description lang="en_US">
+    <p>Placeholder</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Placeholder</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Placeholder</p>
+   </Flavour> 
+ <Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))</Population>
+  <RequirementGroup>
+    <Requirement id="building_chief_cottage" min_level="1" />
+    <Requirement id="building_tavern" max_level="0" />
+  </RequirementGroup>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
+  <ProductionTime shortenable="false">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</ProductionTime>
+  <Abilities>
+    <AssignmentLevel>LEVEL</AssignmentLevel>
+  </Abilities>
+</Building>
+

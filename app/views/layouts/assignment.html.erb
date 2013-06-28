@@ -1,0 +1,13 @@
+<% content_for :assignment_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.assignment.standard"),  assignment_standard_assignments_path %></li>
+    <li><%= link_to I18n.translate("application.layout.assignment.special"),   assignment_special_assignments_path %></li>
+    <li><%= link_to I18n.translate("application.layout.assignment.frequency"), assignment_special_assignment_frequencies_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:assignment_content) ? yield(:assignment_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
