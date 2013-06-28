@@ -51,6 +51,10 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def assignment_type
     GameRules::Rules.the_rules.assignment_types[self.type_id || 0]
   end
+  
+  def hurried?
+    !halved_at.nil?
+  end
 
 
   # ##########################################################################
@@ -152,7 +156,6 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   #   MANAGING THE CORRSPONDING EVENT
   #
   # ##########################################################################
-  
 
   # creates an event for the ongoing assignment
   def create_event
