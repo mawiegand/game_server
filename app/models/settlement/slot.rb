@@ -156,6 +156,18 @@ class Settlement::Slot < ActiveRecord::Base
     Util::Formula.parse_from_formula(building_type[:abilities][:command_points]).apply(self.level)
   end
   
+  def assignment_level
+    return 0   if building_id.nil?
+    
+    building_type = GameRules::Rules.the_rules().building_types[building_id]
+    raise InternalServerError.new("did not find building id #{building_id} in rules.") if building_type.nil?
+
+    return 0   if building_type[:abilities][:assignment_level].blank?
+
+    Util::Formula.parse_from_formula(building_type[:abilities][:assignment_level]).apply(self.level)
+  end
+    
+  
   # returns the number of command points the building on this slot provides
   def defense_bonus
     return 0   if building_id.nil?
@@ -580,6 +592,9 @@ class Settlement::Slot < ActiveRecord::Base
       end
       if !building_type[:abilities][:command_points].blank?
         propagate_evaluatable_settlement_ability(:command_points, building_type[:abilities][:command_points], old_level, new_level)
+      end
+      if !building_type[:abilities][:assignment_level].blank?
+        propagate_evaluatable_settlement_ability(:assignment_level, building_type[:abilities][:assignment_level], old_level, new_level)
       end
       if !building_type[:abilities][:trading_carts].blank?
         propagate_evaluatable_settlement_ability(:trading_carts, building_type[:abilities][:trading_carts], old_level, new_level)
