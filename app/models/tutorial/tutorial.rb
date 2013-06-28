@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [3, ],
+          :successor_quests => [1, 3, ],
 
           :rewards => {
             
@@ -258,7 +258,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_quest_button',
+            :quest => 'quest_queue_1gathererlvl1',
 
           },
 
@@ -517,7 +517,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -533,7 +533,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_quest_button', 'mark_hurry_button', ],
+          :uimarker => ['mark_quest_button', ],
 
         },              #   END OF quest_quest_button
         {               #   quest_profile
