@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.7.3
+# Version: 0.8.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -116,8 +116,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 7,
-                    :build => 3,
+                    :minor => 8,
+                    :build => 0,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -5615,7 +5615,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 0,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 1,
 
             },
 
@@ -5635,13 +5635,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
-            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
-            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
+            0 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
+            1 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
+            2 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(MIN(LEVEL+1,2)-MIN(LEVEL,2))*15+(MIN(LEVEL,2)-MIN(LEVEL,1))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*1.1*1.5+0.5)',
+          :production_time => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
           :production  => [
             
           ],
@@ -6517,6 +6517,23 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 100,
+              },
+
+          ],
+
+            :experience_reward => 3,
+
+          },          
+
 
         },              #   END OF Stonegatherers
         {              #   Überfall
@@ -6559,6 +6576,33 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 3600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+          ],
+
+            :experience_reward => 50,
+
+          },          
+
 
         },              #   END OF Überfall
       ],                # END OF ASSIGNMENT TYPES

@@ -738,10 +738,47 @@ end
           },
 </xsl:if>
           :duration => <xsl:value-of select="Duration"/>,
+          
+<xsl:if test="Rewards">
+          :rewards => {
+            <xsl:apply-templates select="Rewards" />
+          },          
+</xsl:if>
 
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ASSIGNMENT TYPES
+</xsl:template>
+
+
+<xsl:template match="Rewards">
+<xsl:if test="ResourceReward">
+          :resource_rewards => [
+            <xsl:apply-templates select="ResourceReward" />
+          ],
+</xsl:if>
+<xsl:if test="UnitReward">
+          :unit_rewards => [
+            <xsl:apply-templates select="UnitReward" />
+          ],
+</xsl:if>
+<xsl:if test="ExperienceReward">
+            :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
+</xsl:if>
+</xsl:template>
+
+<xsl:template match="ResourceReward">
+              {
+                :resource => :<xsl:value-of select="@resource" />,
+                :amount => <xsl:value-of select="." />,
+              },
+</xsl:template>
+
+<xsl:template match="UnitReward">
+              {
+                :unit => :<xsl:value-of select="@unit" />,
+                :amount => <xsl:value-of select="." />,
+              },
 </xsl:template>
 
 
