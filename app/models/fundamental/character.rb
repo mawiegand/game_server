@@ -72,6 +72,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
   after_save  :propagate_name_changes
+  after_save  :propagate_avatar_changes
   after_save  :propagate_score_changes
   after_save  :propagate_kills_changes
   after_save  :propagate_like_changes
@@ -404,7 +405,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:gender_change_count)  
 
     avatar = GameState::Avatars.new
-    avatar.create_avatar_string_from_id_and_gender(id, (new_gender == "male" ? true : false))
+    avatar.create_random_avatar_string(new_gender == "male")
     self.avatar_string = avatar.avatar_string
     
     raise InternalServerError.new 'Could not save new gender.' unless self.save 
@@ -726,6 +727,50 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
+  
+  
+  # Function for propagating change of character name to redundant fields.
+  # This uses update_all direct queries because the Rails way of looping
+  # through models (selecting, instantiating, saving) would potentially take
+  # too long (there might be several hundreds of settlements, locations and
+  # armies involved).
+  def propagate_avatar_changes
+    propagate_avatar_string_on_change_only(true)
+  end
+  
+  def propagate_avatar_string_on_change_only(on_change_only)
+    avatar_change = self.changes[:avatar_string]
+    
+    redundancies = [
+      { :model => Map::Location,             :field => :owner_id },
+      { :model => Map::Region,               :field => :owner_id },
+      { :model => Military::Army,            :field => :owner_id },      
+      { :model => Ranking::CharacterRanking, :field => :character_id, :handlers_needed => true },
+    ]
+    
+    if !avatar_change.blank? || !on_change_only
+      
+      new_string = self.avatar_string
+      
+      redundancies.each do |entry| 
+        set_clause = { }
+        set_clause[:avatar_string]   = new_string
+        set_clause[:updated_at]      = DateTime.now
+
+        if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
+          entry[:model].where(entry[:field] => self.id).each do |item|
+            item[:avatar_string]  = new_string         
+            item.save
+          end
+        else
+          where_clause = ["#{ entry[:field].to_s } = ?", self.id]
+          entry[:model].update_all(set_clause, where_clause) 
+        end
+      end
+    end
+    true
+  end
+  
   
   def propagate_kills_changes
     kills_change = self.changes[:kills]

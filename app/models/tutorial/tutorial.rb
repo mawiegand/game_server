@@ -1010,6 +1010,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
+
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
           :id                => 9,
@@ -1398,6 +1400,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
         },              #   END OF quest_build_chiefcottagelvl3
         {               #   quest_build_cottagelvl1
           :id                => 13,
@@ -1501,6 +1505,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_cottagelvl1
         {               #   quest_improve_production_1
@@ -1817,6 +1823,8 @@ class Tutorial::Tutorial
 
           },          
 
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
         },              #   END OF quest_queue_chiefcottagelvl4
         {               #   quest_army_create
           :id                => 17,
@@ -2022,6 +2030,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
 
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
