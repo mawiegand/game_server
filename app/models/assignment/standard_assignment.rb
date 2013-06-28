@@ -55,6 +55,10 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def hurried?
     !halved_at.nil?
   end
+  
+  def ongoing?
+    !self.started_at.nil?
+  end
 
 
   # ##########################################################################

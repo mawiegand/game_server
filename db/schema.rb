@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628102731) do
+ActiveRecord::Schema.define(:version => 20130628180501) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -75,11 +75,50 @@ ActiveRecord::Schema.define(:version => 20130628102731) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "halved_at"
-    t.integer  "execution_count", :default => 0, :null => false
+    t.integer  "execution_count",              :default => 0, :null => false
     t.datetime "displayed_until"
     t.datetime "seen_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "experience_reward"
+    t.integer  "resource_stone_cost"
+    t.integer  "resource_stone_reward"
+    t.integer  "resource_wood_cost"
+    t.integer  "resource_wood_reward"
+    t.integer  "resource_fur_cost"
+    t.integer  "resource_fur_reward"
+    t.integer  "resource_cash_cost"
+    t.integer  "resource_cash_reward"
+    t.integer  "unit_clubbers_deposit"
+    t.integer  "unit_clubbers_reward"
+    t.integer  "unit_clubbers_2_deposit"
+    t.integer  "unit_clubbers_2_reward"
+    t.integer  "unit_clubbers_3_deposit"
+    t.integer  "unit_clubbers_3_reward"
+    t.integer  "unit_tree_huggers_deposit"
+    t.integer  "unit_tree_huggers_reward"
+    t.integer  "unit_thrower_deposit"
+    t.integer  "unit_thrower_reward"
+    t.integer  "unit_thrower_2_deposit"
+    t.integer  "unit_thrower_2_reward"
+    t.integer  "unit_thrower_3_deposit"
+    t.integer  "unit_thrower_3_reward"
+    t.integer  "unit_thrower_4_deposit"
+    t.integer  "unit_thrower_4_reward"
+    t.integer  "unit_light_cavalry_deposit"
+    t.integer  "unit_light_cavalry_reward"
+    t.integer  "unit_light_cavalry_2_deposit"
+    t.integer  "unit_light_cavalry_2_reward"
+    t.integer  "unit_light_cavalry_3_deposit"
+    t.integer  "unit_light_cavalry_3_reward"
+    t.integer  "unit_light_cavalry_4_deposit"
+    t.integer  "unit_light_cavalry_4_reward"
+    t.integer  "unit_neanderthal_deposit"
+    t.integer  "unit_neanderthal_reward"
+    t.integer  "unit_little_chief_deposit"
+    t.integer  "unit_little_chief_reward"
+    t.integer  "unit_warrior_deposit"
+    t.integer  "unit_warrior_reward"
   end
 
   create_table "assignment_standard_assignments", :force => true do |t|

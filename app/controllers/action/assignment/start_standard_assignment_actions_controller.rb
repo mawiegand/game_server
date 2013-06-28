@@ -4,33 +4,32 @@ class Action::Training::SpeedupJobActionsController < ApplicationController
   before_filter :authenticate
 
   def create
-    Training::Job.transaction do
+    @values = params[:assignment_standard_assignment]
 
-      @training_job = Training::Job.lock.find(params[:action_training_speedup_job_actions][:job_id])
-      raise ForbiddenError.new('not owner of job')       unless @training_job.queue.settlement.owner == current_character
-      raise BadRequestError.new('no active job')         if @training_job.active_job.nil?
-      raise BadRequestError.new('already hurried job')   if @training_job.hurried?
-      
-      speedup_costs = GameRules::Rules.the_rules.training_speedup
-      entry = nil
-      
-      speedup_costs.each do |item|
-        entry = item    if entry.nil? && @training_job.active_job.finished_total_at < Time.now + item[:hours].hours
-      end
+    raise ForbiddenError.new "No current character"                              if current_character.nil?
 
-      raise BadRequestError.new('job cannot be speedup; it takes to long.')  if entry.nil?
-
-      price = { entry[:resource_id] => entry[:amount] }
-
-      raise ForbiddenError.new('not enough resources to pay for finishing job') unless current_character.resource_pool.have_at_least_resources(price)
+    type_id = @values{:type_id} || -1
+    assignment_type = GameRules::Rules.the_rules.assignment_types[type_id] || {}
+    level = current_character.assignment_level || 0
     
-      queue = @training_job.queue
-      @training_job.speedup
-      current_character.resource_pool.remove_resources_transaction(price)
+    raise ForbiddenError.new "Character cannot solve assignments of this level"  if level < assignment_type[:level]
+    
+    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, type)
+    
+    Assignment::StandardAssignment.transaction do
+      
+      raise ConflictError.new "There is already an ongoing assignment of this type"    if @assignment.ongoing?
+      
+      # todo remove costs and deposit
+      
+      @assignment.lock!
+      @assignment.start_now
+      @assignment.save!
     end
-    
+
     respond_to do |format|
       format.json { render json: {}, status: :ok }
     end
   end
+
 end
