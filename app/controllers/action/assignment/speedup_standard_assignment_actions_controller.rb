@@ -4,7 +4,7 @@ class Action::Assignment::SpeedupStandardAssignmentActionsController < Applicati
   before_filter :authenticate
 
   def create
-    Assignement::StandardAssignment.transaction do
+    Assignment::StandardAssignment.transaction do
 
       @assignment = Assignment::StandardAssignment.lock.find(params[:action_assignment_standard_assignment_actions][:assignment_id])
 
