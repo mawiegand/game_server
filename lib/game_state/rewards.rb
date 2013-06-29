@@ -17,7 +17,7 @@ module GameState
 
           resource_type = nil
           GameRules::Rules.the_rules().resource_types.each do |type|
-            logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
+            # Rails.logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
             if type[:symbolic_id].to_s == resource_symbolic_id.to_s
               resource_type = type
               break

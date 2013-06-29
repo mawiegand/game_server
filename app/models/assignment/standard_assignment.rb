@@ -127,7 +127,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
       garrison_army.lock!
 
       # check if resources and units can be rewarded
-      logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
+      Rails.logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
       garrison_army.add_units(units)
     end
     
