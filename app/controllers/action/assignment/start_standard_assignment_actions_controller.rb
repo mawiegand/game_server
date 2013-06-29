@@ -1,4 +1,4 @@
-class Action::Training::SpeedupJobActionsController < ApplicationController
+class Action::Training::StartStandardAssignmentActionsController < ApplicationController
   layout 'action'
 
   before_filter :authenticate
