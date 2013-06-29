@@ -8,7 +8,7 @@ class Action::Assignment::StartStandardAssignmentActionsController < Application
 
     raise ForbiddenError.new "No current character"                              if current_character.nil?
 
-    type_id = @values[:type_id] || -1
+    type_id = @values[:type_id].to_i || -1
     assignment_type = GameRules::Rules.the_rules.assignment_types[type_id] || {}
     level = current_character.assignment_level || 0
     
