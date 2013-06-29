@@ -14,7 +14,7 @@ class Action::Assignment::StartStandardAssignmentActionsController < Application
     
     raise ForbiddenError.new "Character cannot solve assignments of this level"  if level < assignment_type[:level]
     
-    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, type)
+    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, assignment_type)
     
     Assignment::StandardAssignment.transaction do
       
