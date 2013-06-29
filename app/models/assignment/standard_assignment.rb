@@ -132,7 +132,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     end
     
     if resources.count > 0
-      self.tutorial_state.owner.resource_pool.add_resources_transaction(resources) 
+      self.character.resource_pool.add_resources_transaction(resources) 
     end   
         
     unless experience_rewards.nil?
