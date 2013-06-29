@@ -1,4 +1,4 @@
-class Action::Training::StartStandardAssignmentActionsController < ApplicationController
+class Action::Assignment::StartStandardAssignmentActionsController < ApplicationController
   layout 'action'
 
   before_filter :authenticate
