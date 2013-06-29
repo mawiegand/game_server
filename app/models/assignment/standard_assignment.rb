@@ -113,7 +113,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   
   def redeem_rewards!
-    rewards            = self.assignment_type[:rewars]
+    rewards            = self.assignment_type[:rewards] || {}
     
     resource_rewards   = rewards[:resource_rewards]
     unit_rewards       = rewards[:unit_rewards]
