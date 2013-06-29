@@ -30,7 +30,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def self.create_if_not_existing(character, type)
-    assignment = character.standard_assignments.with_type(type)
+    assignment = character.standard_assignments.with_type(type).first
     if (assignment.nil?)
       assignment = character.standard_assignments.create({
         type_id: type[:id],
@@ -40,7 +40,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def self.destroy_if_existing(character, type)
-    assignment = character.standard_assignments.with_type(type)
+    assignment = character.standard_assignments.with_type(type).first
     unless assignment.nil?
       logger.info "Destroying assignment #{type[:id]} for character #{character.id}"
       assignment.destroy
