@@ -87,7 +87,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def speedup_now
     return         if self.started_at.nil?
     
-    self.endet_at  = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
+    self.ended_at  = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
     self.halved_at = DateTime.now 
     self.halved_count += 1
   end
