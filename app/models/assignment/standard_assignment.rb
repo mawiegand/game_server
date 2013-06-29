@@ -67,11 +67,11 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   #
   # ##########################################################################
   
-  def self.resource_hash_from_rewards(resource_rewards)
+  def resource_hash_from_rewards(resource_rewards)
     GameState::Rewards.resource_hash_from_rewards(resource_rewards)
   end
     
-  def self.unit_hash_from_rewards(unit_rewards)
+  def unit_hash_from_rewards(unit_rewards)
     GameState::Rewards.unit_hash_from_rewards(unit_rewards)
   end
 
