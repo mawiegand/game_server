@@ -4,9 +4,9 @@ class Action::Assignment::SpeedupStandardAssignmentActionsController < Applicati
   before_filter :authenticate
 
   def create
-    Assignement::StandardAssignment.transaction do
+    Assignment::StandardAssignment.transaction do
 
-      @assignment = Assignment::StandardAssignment.lock.find(params[:action_assignment_standard_assignment_actions][:assignment_id])
+      @assignment = Assignment::StandardAssignment.lock.find(params[:speedup_standard_assignment][:standard_assignment_id])
 
       raise ForbiddenError.new('not owner of assignment')  unless @assignment.character == current_character
       raise BadRequestError.new('assignment not active')   if @assignment.ended_at.nil?

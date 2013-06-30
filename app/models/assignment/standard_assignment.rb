@@ -30,7 +30,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def self.create_if_not_existing(character, type)
-    assignment = character.standard_assignments.with_type(type)
+    assignment = character.standard_assignments.with_type(type).first
     if (assignment.nil?)
       assignment = character.standard_assignments.create({
         type_id: type[:id],
@@ -40,7 +40,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def self.destroy_if_existing(character, type)
-    assignment = character.standard_assignments.with_type(type)
+    assignment = character.standard_assignments.with_type(type).first
     unless assignment.nil?
       logger.info "Destroying assignment #{type[:id]} for character #{character.id}"
       assignment.destroy
@@ -67,11 +67,11 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   #
   # ##########################################################################
   
-  def self.resource_hash_from_rewards(resource_rewards)
+  def resource_hash_from_rewards(resource_rewards)
     GameState::Rewards.resource_hash_from_rewards(resource_rewards)
   end
     
-  def self.unit_hash_from_rewards(unit_rewards)
+  def unit_hash_from_rewards(unit_rewards)
     GameState::Rewards.unit_hash_from_rewards(unit_rewards)
   end
 
@@ -87,7 +87,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def speedup_now
     return         if self.started_at.nil?
     
-    self.endet_at  = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
+    self.ended_at  = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
     self.halved_at = DateTime.now 
     self.halved_count += 1
   end
@@ -113,7 +113,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   
   def redeem_rewards!
-    rewards            = self.assignment_type[:rewars]
+    rewards            = self.assignment_type[:rewards] || {}
     
     resource_rewards   = rewards[:resource_rewards]
     unit_rewards       = rewards[:unit_rewards]
@@ -127,12 +127,12 @@ class Assignment::StandardAssignment < ActiveRecord::Base
       garrison_army.lock!
 
       # check if resources and units can be rewarded
-      logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
+      Rails.logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(total_unit_amount)
       garrison_army.add_units(units)
     end
     
     if resources.count > 0
-      self.tutorial_state.owner.resource_pool.add_resources_transaction(resources) 
+      self.character.resource_pool.add_resources_transaction(resources) 
     end   
         
     unless experience_rewards.nil?

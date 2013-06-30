@@ -1042,6 +1042,7 @@ end
 <xsl:apply-templates select="DefenseBonus" />    
 <xsl:apply-templates select="UnlockGarrison" />    
 <xsl:apply-templates select="CommandPoints" />    
+<xsl:apply-templates select="AssignmentLevel" />    
 <xsl:apply-templates select="TradingCarts" />    
 <xsl:apply-templates select="UnlockP2PTrade" />    
 <xsl:apply-templates select="UnlockBuildingSlots" />    

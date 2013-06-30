@@ -239,6 +239,10 @@ GameServer::Application.routes.draw do
         namespace :training do
           resources :speedup_job_actions    
         end
+        namespace :assignment do
+          resources :speedup_standard_assignment_actions, :only => [ :create ]    
+          resources :start_standard_assignment_actions, :only => [ :create ]    
+        end
         namespace :settlement do
           resources :change_tax_rate_actions, :only => [ :create ] 
           resources :abandon_outpost_actions, :only => [ :create ]

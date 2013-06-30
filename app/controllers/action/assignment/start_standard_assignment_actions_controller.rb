@@ -1,4 +1,4 @@
-class Action::Training::SpeedupJobActionsController < ApplicationController
+class Action::Assignment::StartStandardAssignmentActionsController < ApplicationController
   layout 'action'
 
   before_filter :authenticate
@@ -8,13 +8,13 @@ class Action::Training::SpeedupJobActionsController < ApplicationController
 
     raise ForbiddenError.new "No current character"                              if current_character.nil?
 
-    type_id = @values[:type_id] || -1
+    type_id = @values[:type_id].to_i || -1
     assignment_type = GameRules::Rules.the_rules.assignment_types[type_id] || {}
     level = current_character.assignment_level || 0
     
     raise ForbiddenError.new "Character cannot solve assignments of this level"  if level < assignment_type[:level]
     
-    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, type)
+    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, assignment_type)
     
     Assignment::StandardAssignment.transaction do
       
