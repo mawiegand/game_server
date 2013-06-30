@@ -104,13 +104,61 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     self.execution_count += 1
   end
   
+  def costs
+    assignment_type[:costs] 
+  end
+  
+  def unit_deposits
+    deposit    = assignment_type[:unit_deposits]     
+    return nil if deposit.nil?
+    
+    unit_types = GameRules::Rules.the_rules.unit_types
+    result     = {}
+    deposit.each do | unit_id, amount |
+      unit_type = unit_types[unit_id]
+      result[unit_type[:db_field]] = amount
+    end
+    
+    result
+  end
+  
+  def pay_for_assignment
+    costs.nil? || self.character.resource_pool.remove_resources_transaction(self.costs)
+  end
+  
+  def deposit_for_assignment
+    deposits = self.unit_deposits
+    garrison_army = self.character.home_location.garrison_army
+    return false  if garrison_army.nil?
+    deposits.nil? || garrison_army.reduce_units(deposits)   
+  end
+  
+  def redeem_deposit
+    deposits = self.unit_deposits
+    garrison_army = self.character.home_location.garrison_army
+    return false  if garrison_army.nil?
+    deposits.nil? || garrison_army.add_units(deposits)   
+  end    
+  
+  def pay_deposit_and_start_transaction
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      if !self.ongoing?
+        if pay_for_assignment && deposit_for_assignment
+          self.start_now
+          self.save!
+        else
+          raise ForbiddenError.new "Could not start assignment due to lack of resources and / or units."
+        end
+      end
+    end
+  end
   
   def end_now
     self.started_at = nil
     self.halved_at = nil
     self.ended_at = nil
   end
-  
   
   def redeem_rewards!
     rewards            = self.assignment_type[:rewards] || {}
@@ -142,13 +190,16 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   
-  def redeem_rewards_and_end_transaction
+  def redeem_rewards_deposit_and_end_transaction
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
       if !self.ended_at.nil?
         self.end_now
         self.save!
         self.redeem_rewards!
+        if !self.redeem_deposit
+          raise BadRequestError.new "Could not redeem deposit"
+        end
       end
     end
   end

@@ -6,7 +6,7 @@ class Action::Assignment::StartStandardAssignmentActionsController < Application
   def create
     @values = params[:assignment_standard_assignment]
 
-    raise ForbiddenError.new "No current character"                              if current_character.nil?
+    raise ForbiddenError.new "No current character"                                  if current_character.nil?
 
     type_id = @values[:type_id].to_i || -1
     assignment_type = GameRules::Rules.the_rules.assignment_types[type_id] || {}
@@ -16,17 +16,10 @@ class Action::Assignment::StartStandardAssignmentActionsController < Application
     
     @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, assignment_type)
     
-    Assignment::StandardAssignment.transaction do
-      
-      raise ConflictError.new "There is already an ongoing assignment of this type"    if @assignment.ongoing?
-      
-      # todo remove costs and deposit
-      
-      @assignment.lock!
-      @assignment.start_now
-      @assignment.save!
-    end
-
+    raise ConflictError.new "There is already an ongoing assignment of this type"    if @assignment.ongoing?
+    
+    @assignment.pay_deposit_and_start_transaction
+    
     respond_to do |format|
       format.json { render json: {}, status: :ok }
     end
