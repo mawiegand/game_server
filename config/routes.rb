@@ -225,6 +225,7 @@ GameServer::Application.routes.draw do
           resources :send_like_actions,                      :only => [ :create ]
           resources :send_dislike_actions,                   :only => [ :create ]
           resources :speedup_artifact_initiation_actions,    :only => [ :create ]
+          resources :displayed_premium_expiration_actions,   :only => [ :create ]
         end
         namespace :construction do
           resources :finish_job_actions    

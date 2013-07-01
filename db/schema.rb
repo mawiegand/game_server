@@ -1869,6 +1869,7 @@ ActiveRecord::Schema.define(:version => 20130701172445) do
     t.datetime "moved_at"
     t.integer  "old_base_location_id"
     t.integer  "special_offer_dialog_count",               :default => 0
+    t.datetime "premium_expiration_displayed_at"
   end
 
   create_table "fundamental_guilds", :force => true do |t|
