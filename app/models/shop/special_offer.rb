@@ -5,11 +5,10 @@ class Shop::SpecialOffer < ActiveRecord::Base
   end
 
   def self.buyable_by_character(character)
-    if character.show_special_offers?
-
-      # gekaufte special offers rausnehmen
-
-      Shop::SpecialOffer.all
+    if character.show_special_offers?         # if character is in dialog time interval (after finished tutorial)
+      Shop::SpecialOffer.all.map do |offer|   # show offers, that the user didn't buy yet
+        character.purchases.where('offer_id = ?', offer.bytro_offer_id).empty?
+      end
     else
       []
     end
