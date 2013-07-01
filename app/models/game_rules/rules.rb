@@ -6488,6 +6488,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :id          => 0, 
           :symbolic_id => :assignment_stone,
           :level       => 1,
+          :advisor     => "girl",
           :name        => {
             
             :en_US => "Stonegatherers",
@@ -6649,7 +6650,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #   Überfall
           :id          => 3, 
           :symbolic_id => :assignment_raid,
-          :level       => 4,
+          :level       => 5,
+          :advisor     => "warrior",
           :name        => {
             
             :en_US => "Überfall",
