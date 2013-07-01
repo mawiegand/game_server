@@ -8,7 +8,11 @@ class Shop::SpecialOffersController < ApplicationController
   # GET /shop/special_offers
   # GET /shop/special_offers.json
   def index
-    @shop_special_offers = Shop::SpecialOffer.all
+    if api_request?
+      @shop_special_offers = Shop::SpecialOffer.all
+    else
+      @shop_special_offers = Shop::SpecialOffer.buyable_by_character(current_character)
+    end
 
     respond_to do |format|
       format.html # index.html.erb

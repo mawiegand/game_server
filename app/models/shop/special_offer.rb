@@ -1,10 +1,14 @@
 class Shop::SpecialOffer < ActiveRecord::Base
-  
-  
+
   def find_settleable_location_near_home_base(character)
     Map::Location.location_for_oupost_in_starter_package(character)
   end
-  
+
+  def self.buyable_by_character(character)
+    if character.show_special_offers?
+      Shop::SpecialOffer.all
+    end
+  end
 
   def credit_to(character)
     stone_id        =    0
