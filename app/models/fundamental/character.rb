@@ -270,6 +270,9 @@ class Fundamental::Character < ActiveRecord::Base
     (settlement_points_used || 0) < (settlement_points_total || 0)
   end
 
+  def show_special_offers?
+    !tutorial_finished_at.nil? && tutorial_finished_at.advance(:days => GAME_SERVER_CONFIG['special_offer_interval']) > DateTime.now
+  end
   
   def can_found_outpost?
     settlement_point_available?
