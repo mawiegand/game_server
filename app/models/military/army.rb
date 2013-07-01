@@ -156,7 +156,7 @@ class Military::Army < ActiveRecord::Base
       self.ap_next = Time.now.advance(:seconds => Military::Army.regeneration_duration)     # regeneration time
     end
   end
-  
+    
   def owned_by?(character_id)
     self.owner_id === character_id
   end
