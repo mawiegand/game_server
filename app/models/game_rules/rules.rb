@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.2
+# Version: 0.8.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -117,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 8,
-                    :build => 2,
+                    :build => 3,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -6488,6 +6488,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :id          => 0, 
           :symbolic_id => :assignment_stone,
           :level       => 1,
+          :advisor     => "girl",
           :name        => {
             
             :en_US => "Stonegatherers",
@@ -6542,6 +6543,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :id          => 1, 
           :symbolic_id => :assignment_raid,
           :level       => 5,
+          :advisor     => "warrior",
           :name        => {
             
             :en_US => "Überfall",
