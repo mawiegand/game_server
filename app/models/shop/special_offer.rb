@@ -6,6 +6,9 @@ class Shop::SpecialOffer < ActiveRecord::Base
 
   def self.buyable_by_character(character)
     if character.show_special_offers?
+
+      # gekaufte special offers rausnehmen
+
       Shop::SpecialOffer.all
     else
       []

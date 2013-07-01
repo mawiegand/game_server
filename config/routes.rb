@@ -258,6 +258,7 @@ GameServer::Application.routes.draw do
         end
         namespace :shop do
           resources :redeem_purchase_actions,             :only => [ :create ]
+          resources :special_offer_dialog_shown_actions,  :only =>[:create]
         end
       end
       
