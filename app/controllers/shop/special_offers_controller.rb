@@ -9,9 +9,9 @@ class Shop::SpecialOffersController < ApplicationController
   # GET /shop/special_offers.json
   def index
     if api_request?
-      @shop_special_offers = Shop::SpecialOffer.all
-    else
       @shop_special_offers = Shop::SpecialOffer.buyable_by_character(current_character)
+    else
+      @shop_special_offers = Shop::SpecialOffer.all
     end
 
     respond_to do |format|
