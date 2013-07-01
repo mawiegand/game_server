@@ -17,20 +17,20 @@
     </ShortDescription>
     
     <Description lang="de_DE">
-      <p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>
+      <p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Du könntest ihnen vielleicht helfen motivierter zu sein, immerhin motiviert nichts so sehr wie ein ordentlicher Schlag ins Gesicht und blau sind sie sowieso schon.</p>
     </Description>
     <Description lang="en_US">
-      <p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>
+      <p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. Maybe you want to help them become a bit more motivated and you could use the workout anyways.</p>
     </Description>
     
     <!-- Cost id="resource_stone">10</Cost>
     <UnitDeposit id="club_warrior">10</UnitDeposit -->
     
     <Rewards>
-      <ResourceReward resource="resource_stone">100</ResourceReward>
+      <ResourceReward resource="resource_stone">50</ResourceReward>
       <!-- ResourceReward resource="resource_wood">25</ResourceReward>
       <ResourceReward resource="resource_fur">25</ResourceReward -->
-      <ExperienceReward>3</ExperienceReward>
+      <ExperienceReward>5</ExperienceReward>
       <!-- UnitReward unit="stone_thrower">25</UnitReward -->
 
     </Rewards>
@@ -38,7 +38,79 @@
     <Duration>600</Duration>
   </AssignmentType>
   
-  <AssignmentType id="assignment_raid" advisor="warrior" level="5">
+  <AssignmentType id="assignment_wood" advisor="girl" level="2">
+    <Name>Klopf auf Holz</Name>
+    <Name lang="de_DE">Knock on wood</Name>
+    
+    <Flavour lang="de_DE">Pass nur auf, dass du dir keinen Splitter einziehst.</Flavour>
+    <Flavour lang="en_US">Take care not to get any splinters.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>
+    </Description>
+    
+    <!-- Cost id="resource_stone">10</Cost>
+     <UnitDeposit id="club_warrior">10</UnitDeposit -->
+    
+    <Rewards>
+      <!-- ResourceReward resource="resource_stone">50</ResourceReward -->
+      <ResourceReward resource="resource_wood">50</ResourceReward>
+       <!-- ResourceReward resource="resource_fur">25</ResourceReward -->
+      <ExperienceReward>5</ExperienceReward>
+      <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+      
+    </Rewards>
+    
+    <Duration>600</Duration>
+  </AssignmentType>
+
+  <AssignmentType id="assignment_fur" advisor="girl" level="3">
+    <Name>Stonegatherers</Name>
+    <Name lang="de_DE">Steinesammler</Name>
+    
+    <Flavour lang="de_DE">Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.</Flavour>
+    <Flavour lang="en_US">Just a little bit of motivation and look at those gatherers go!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>
+    </Description>
+    
+    <!-- Cost id="resource_stone">10</Cost>
+     <UnitDeposit id="club_warrior">10</UnitDeposit -->
+    
+    <Rewards>
+      <!-- ResourceReward resource="resource_stone">50</ResourceReward>
+      <ResourceReward resource="resource_wood">25</ResourceReward-->
+      <ResourceReward resource="resource_fur">50</ResourceReward>
+      <ExperienceReward>5</ExperienceReward>
+      <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+      
+    </Rewards>
+    
+    <Duration>600</Duration>
+  </AssignmentType>
+
+  <AssignmentType id="assignment_raid" advisor="warrior" level="4">
     <Name>Überfall</Name>
     <Name lang="de_DE">Raid</Name>
     
@@ -53,7 +125,7 @@
     </ShortDescription>
     
     <Description lang="de_DE">
-      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
     </Description>
     <Description lang="en_US">
       <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
@@ -71,5 +143,42 @@
     </Rewards>
     
     <Duration>3600</Duration>
+  </AssignmentType>
+  
+  <AssignmentType id="assignment_investment" advisor="warrior" level="6">
+    <Name>Investition</Name>
+    <Name lang="de_DE">Investment</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Eine klevere Investition</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Gather your troops and raid a neanderthal camp.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <Cost id="resource_stone">1000</Cost>
+    <Cost id="resource_wood">1000</Cost>
+    <Cost id="resource_fur">1000</Cost>
+    <!-- UnitDeposit id="clubbers">25</UnitDeposit-->
+    
+    <Rewards>
+      <ResourceReward resource="resource_stone">2500</ResourceReward>
+      <ResourceReward resource="resource_wood">2500</ResourceReward>
+      <ResourceReward resource="resource_fur">2500</ResourceReward>
+      <ExperienceReward>100</ExperienceReward>
+      <!-- UnitReward unit="stone_thrower">25</UnitReward -->
+    </Rewards>
+    
+    <Duration>28800</Duration>
   </AssignmentType>
 </AssignmentTypes>

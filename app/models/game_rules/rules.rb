@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.2
+# Version: 0.8.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -117,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 8,
-                    :build => 2,
+                    :build => 3,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -5582,16 +5582,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :en_US => "<p>Placeholder</p>",
+            :en_US => "<p>A quiet seat, a cool beer and somewhat friendly company - what else could one wish for?</p>",
   
-            :de_DE => "<p>Placeholder</p>",
+            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier und mehr oder weniger angenehme Gesellschaft - was könnte man sich mehr wünschen?</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Placeholder</p>",
+            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Wer weiß, vielleicht findet sich auch die eine oder andere Verdienstmöglichkeit.</p>",
   
-            :en_US => "<p>Placeholder</p>",
+            :en_US => "<p>The Tavern. You will never find a more wretched hive of scum and villainy. So its basically ideal to relax, have a drink and laze around on your day of. And who knows, a job may even come run into you here.</p>",
                 
           },
 
@@ -5615,7 +5615,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 3,
 
             },
 
@@ -5635,13 +5635,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
-            1 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
-            2 => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
+            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            2 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*30+EQUAL(LEVEL,3)*90+EQUAL(LEVEL,4)*660+EQUAL(LEVEL,5)*2700+GREATER(LEVEL,5)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*1.43*(25*POW(LEVEL,2)-50*LEVEL+40)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5))',
           :production  => [
             
           ],
@@ -6504,6 +6504,60 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
+            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Du könntest ihnen vielleicht helfen motivierter zu sein, immerhin motiviert nichts so sehr wie ein ordentlicher Schlag ins Gesicht und blau sind sie sowieso schon.</p>",
+  
+            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. Maybe you want to help them become a bit more motivated and you could use the workout anyways.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+  
+            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+  
+          },
+
+          :duration => 600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+          ],
+
+            :experience_reward => 5,
+
+          },          
+
+
+        },              #   END OF Stonegatherers
+        {              #   Klopf auf Holz
+          :id          => 1, 
+          :symbolic_id => :assignment_wood,
+          :level       => 2,
+          :name        => {
+            
+            :en_US => "Klopf auf Holz",
+  
+            :de_DE => "Knock on wood",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Pass nur auf, dass du dir keinen Splitter einziehst.",
+  
+            :en_US => "Take care not to get any splinters.",
+                
+          },
+          :description => {
+            
             :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
   
             :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
@@ -6526,22 +6580,76 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :resource_rewards => [
             
               {
-                :resource => :resource_stone,
-                :amount => 100,
+                :resource => :resource_wood,
+                :amount => 50,
               },
 
           ],
 
-            :experience_reward => 3,
+            :experience_reward => 5,
+
+          },          
+
+
+        },              #   END OF Klopf auf Holz
+        {              #   Stonegatherers
+          :id          => 2, 
+          :symbolic_id => :assignment_fur,
+          :level       => 3,
+          :name        => {
+            
+            :en_US => "Stonegatherers",
+  
+            :de_DE => "Steinesammler",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
+  
+            :en_US => "Just a little bit of motivation and look at those gatherers go!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
+  
+            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+  
+            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+  
+          },
+
+          :duration => 600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_fur,
+                :amount => 50,
+              },
+
+          ],
+
+            :experience_reward => 5,
 
           },          
 
 
         },              #   END OF Stonegatherers
         {              #   Überfall
-          :id          => 1, 
+          :id          => 3, 
           :symbolic_id => :assignment_raid,
-          :level       => 5,
+          :level       => 4,
           :name        => {
             
             :en_US => "Überfall",
@@ -6558,7 +6666,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
   
             :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
                 
@@ -6607,6 +6715,77 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Überfall
+        {              #   Investition
+          :id          => 4, 
+          :symbolic_id => :assignment_investment,
+          :level       => 6,
+          :name        => {
+            
+            :en_US => "Investition",
+  
+            :de_DE => "Investment",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+  
+            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Eine klevere Investition</p>",
+  
+            :en_US => "<p>Gather your troops and raid a neanderthal camp.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '1000',
+            1 => '1000',
+            2 => '1000',
+            
+          },
+
+          :duration => 28800,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2500,
+              },
+
+          ],
+
+            :experience_reward => 100,
+
+          },          
+
+
+        },              #   END OF Investition
       ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################

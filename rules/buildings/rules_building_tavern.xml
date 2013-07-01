@@ -5,26 +5,26 @@
   <Name lang="de_DE">Taverne</Name>
   <Name lang="en_US">Tavern</Name>
   <Description lang="de_DE">
-    <p>Placeholder</p>
+    <p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Wer weiß, vielleicht findet sich auch die eine oder andere Verdienstmöglichkeit.</p>
    </Description>
   <Description lang="en_US">
-    <p>Placeholder</p>
+    <p>The Tavern. You will never find a more wretched hive of scum and villainy. So its basically ideal to relax, have a drink and laze around on your day of. And who knows, a job may even come run into you here.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Placeholder</p>
+    <p>A quiet seat, a cool beer and somewhat friendly company - what else could one wish for?</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Placeholder</p>
+    <p>Ein ruhiger Sitz, ein kühles Bier und mehr oder weniger angenehme Gesellschaft - was könnte man sich mehr wünschen?</p>
    </Flavour> 
  <Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))</Population>
   <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="1" />
+    <Requirement id="building_chief_cottage" min_level="3" />
     <Requirement id="building_tavern" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
-  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
-  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</Cost>
-  <ProductionTime shortenable="false">LESS(LEVEL,11)*EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*1+EQUAL(LEVEL,3)*1+EQUAL(LEVEL,4)*1+EQUAL(LEVEL,5)*1+EQUAL(LEVEL,6)*1+EQUAL(LEVEL,7)*1+EQUAL(LEVEL,8)*1+EQUAL(LEVEL,9)*1+EQUAL(LEVEL,10)*1</ProductionTime>
+  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)</Cost>
+  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)</Cost>
+  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)</Cost>
+  <ProductionTime shortenable="false">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*30+EQUAL(LEVEL,3)*90+EQUAL(LEVEL,4)*660+EQUAL(LEVEL,5)*2700+GREATER(LEVEL,5)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*1.43*(25*POW(LEVEL,2)-50*LEVEL+40)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5))</ProductionTime>
   <Abilities>
     <AssignmentLevel>LEVEL</AssignmentLevel>
   </Abilities>
