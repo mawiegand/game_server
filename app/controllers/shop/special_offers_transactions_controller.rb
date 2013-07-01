@@ -52,9 +52,19 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # TODO params is an escaped json string an thus, it cannot be parsed properly
     logger.debug "-----> Parameters: " + params.inspect
 
+    character = Fundamental::Character.find_by_identifier(params[:partnerUserID])
+    if character.nil?
+      render json: {:error => 'character not found'}, status: :unprocessable_entity
+    end
+
+    special_offer = Shop::SpecialOffer.find_by_bytro_offer_id(params[:offerID])
+    if special_offer.nil?
+      render json: {:error => 'special offer not found'}, status: :unprocessable_entity
+    end
+
     # fill transaction
-    @shop_special_offers_transaction.character_id = 221
-    @shop_special_offers_transaction.offer_id = 4711
+    @shop_special_offers_transaction.character_id = character.id
+    @shop_special_offers_transaction.offer_id = special_offer.bytro_offer_id
     @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
 
     # create shop_transaction event
