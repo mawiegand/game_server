@@ -58,8 +58,8 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     end
 
     special_offer = Shop::SpecialOffer.find_by_bytro_offer_id(params[:offerID])
-    if special_offer.nil?
-      render json: {:error => 'special offer not found'}, status: :unprocessable_entity
+    if special_offer.nil? # there is no special offer for this id, callback was sent based on a regular credit offer
+      render json: {:status => 'created'}, status: :created
     end
 
     # fill transaction
