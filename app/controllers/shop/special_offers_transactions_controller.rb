@@ -57,14 +57,14 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
       render json: {:error => 'character not found'}, status: :unprocessable_entity
     end
 
-    special_offer = Shop::SpecialOffer.find_by_bytro_offer_id(params[:offerID])
+    special_offer = Shop::SpecialOffer.find_by_external_offer_id(params[:offerID])
     if special_offer.nil? # there is no special offer for this id, callback was sent based on a regular credit offer
       render json: {:status => 'created'}, status: :created
     end
 
     # fill transaction
     @shop_special_offers_transaction.character_id = character.id
-    @shop_special_offers_transaction.offer_id = special_offer.bytro_offer_id
+    @shop_special_offers_transaction.external_offer_id = special_offer.external_offer_id
     @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
 
     # create shop_transaction event
@@ -74,7 +74,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
 
     @shop_purchase = Shop::Purchase.new
     @shop_purchase.character_id = @shop_special_offers_transaction.character_id
-    @shop_purchase.offer_id = @shop_special_offers_transaction.offer_id
+    @shop_purchase.external_offer_id = @shop_special_offers_transaction.external_offer_id
     @shop_purchase.special_offers_transaction_id = @shop_special_offers_transaction.id
 
     # create purchase object

@@ -14,9 +14,11 @@ class Shop::SpecialOffersController < ApplicationController
       @shop_special_offers = Shop::SpecialOffer.all
     end
 
+    logger.debug "AAAAA " + include_root(@shop_special_offers, :special_offer).inspect
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @shop_special_offers }
+      format.json { render json: include_root(@shop_special_offers, :special_offer)  }
     end
   end
 
