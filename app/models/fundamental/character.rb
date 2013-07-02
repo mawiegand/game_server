@@ -273,6 +273,10 @@ class Fundamental::Character < ActiveRecord::Base
   def show_special_offers?
     !tutorial_finished_at.nil? && tutorial_finished_at.advance(:days => GAME_SERVER_CONFIG['special_offer_interval']) > DateTime.now
   end
+
+  def show_special_offer_dialog
+    self.special_offer_dialog_count < GAME_SERVER_CONFIG['special_offer_dialog_max_count']
+  end
   
   def can_found_outpost?
     settlement_point_available?
@@ -1253,7 +1257,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker', 'show_special_offer_dialog']
     super(options)
   end
   
