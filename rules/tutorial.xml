@@ -4,7 +4,7 @@
 
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="11" />
+        <Version major="0" minor="3" build="12" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -3926,6 +3926,43 @@
                 <BuildingTest building="building_barracks" min_level="10" />
             </RewardTests>
         </Quest>
+      
+      
+      <!-- 502 -->
+      <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+        <Name>First battle</Name>
+        <Name locale="de_DE">Der erste Kampf</Name>
+        <Task>Fight for the first time and defeat at least one unit!</Task>
+        <Task locale="de_DE">Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!</Task>
+        <Description locale="de_DE">
+          <p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p>
+          <p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>1. Select your army and press 'attack'. </p>
+          <p>2. Select the marked neanderthals. </p>
+        </Description>
+        <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
+        <Flavor locale="en_US">An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. </Flavor>
+        <RewardText locale="de_DE">In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!</RewardText>
+        <RewardText locale="en_US">In Wack-A-Doo you can fight with as man armies as you want. </RewardText>
+        <RewardFlavor locale="de_DE">Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.</RewardFlavor>
+        <RewardFlavor locale="en_US">You cann that a fight? Atleast you beat a few enemies.</RewardFlavor>
+        <Requirement quest="quest_army_move" />
+        <Rewards>
+          <UnitReward unit="unit_clubbers">5</UnitReward>
+          <ExperienceReward>250</ExperienceReward>
+          <ActionPointReward></ActionPointReward>
+        </Rewards>
+        <RewardTests>
+          <KillTest min_units="1" />
+        </RewardTests>
+        <UIMarker>mark_map</UIMarker>
+        <UIMarker>mark_select_own_home_settlement</UIMarker>
+        <UIMarker>mark_attack_button</UIMarker>
+        <UIMarker>mark_select_other_army</UIMarker>
+      </Quest >
+
 
         <!-- NOT IN
          <Quest id="quest_rank" advisor="chef">
