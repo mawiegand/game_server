@@ -62,7 +62,19 @@
     
     <!-- Cost id="resource_stone">10</Cost -->
     <UnitDeposit id="clubbers">1</UnitDeposit>
-    <UnitDeposit id="warrior">1</UnitDeposit>
+    <UnitDeposit id="warrior">2</UnitDeposit>
+    <UnitDeposit id="clubbers_2">3</UnitDeposit>
+    <UnitDeposit id="clubbers_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_4">1</UnitDeposit>
+    <UnitDeposit id="tree_huggers">1</UnitDeposit>
+    <UnitDeposit id="thrower">1</UnitDeposit>
+    <UnitDeposit id="thrower_2">1</UnitDeposit>
+    <UnitDeposit id="thrower_3">1</UnitDeposit>
+    <UnitDeposit id="thrower_4">1</UnitDeposit>
+    <UnitDeposit id="little_chief">1</UnitDeposit>
 
     
     <Rewards>
@@ -75,6 +87,197 @@
     
     <Duration>300</Duration>
   </AssignmentType>
+  
+  <!-- DIES IST EIN TEST ASSIGNMENT -->
+  <AssignmentType id="assignment_deposittest2" advisor="chief" level="1">
+    <Name>Deposittest2</Name>
+    <Name lang="de_DE">Deposittest2</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Dies ist ein test</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>This is a test</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <!-- Cost id="resource_stone">10</Cost -->
+    
+    <UnitDeposit id="warrior">1</UnitDeposit>
+    
+    <Rewards>
+      <!--ResourceReward resource="resource_stone">500</ResourceReward>
+       <ResourceReward resource="resource_wood">500</ResourceReward>
+       <ResourceReward resource="resource_fur">500</ResourceReward-->
+      <UnitReward unit="unit_clubbers">25</UnitReward>
+      <ExperienceReward>50</ExperienceReward>
+    </Rewards>
+    
+    <Duration>10</Duration>
+  </AssignmentType>
+
+  <!-- DIES IST EIN TEST ASSIGNMENT -->
+  <AssignmentType id="assignment_resource1" advisor="chief" level="1">
+    <Name>Resourcetest1</Name>
+    <Name lang="de_DE">Resourcetest1</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Dies ist ein test</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>This is a test</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <Cost id="resource_stone">10</Cost>
+    <!--UnitDeposit id="clubbers">1</UnitDeposit>
+    <UnitDeposit id="warrior">1</UnitDeposit>
+    <UnitDeposit id="clubbers_2">1</UnitDeposit>
+    <UnitDeposit id="clubbers_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_4">1</UnitDeposit>
+    <UnitDeposit id="tree_huggers">1</UnitDeposit>
+    <UnitDeposit id="thrower">1</UnitDeposit>
+    <UnitDeposit id="thrower_2">1</UnitDeposit>
+    <UnitDeposit id="thrower_3">1</UnitDeposit>
+    <UnitDeposit id="thrower_4">1</UnitDeposit>
+    <UnitDeposit id="little_chief">1</UnitDeposit-->
+    
+    
+    <Rewards>
+      <!--ResourceReward resource="resource_stone">500</ResourceReward>
+       <ResourceReward resource="resource_wood">500</ResourceReward>
+       <ResourceReward resource="resource_fur">500</ResourceReward-->
+      <UnitReward unit="unit_clubbers">25</UnitReward>
+      <ExperienceReward>50</ExperienceReward>
+    </Rewards>
+    
+    <Duration>300</Duration>
+  </AssignmentType>
+  
+  <!-- DIES IST EIN TEST ASSIGNMENT -->
+  <AssignmentType id="assignment_resource2" advisor="chief" level="1">
+    <Name>Resourcetest2</Name>
+    <Name lang="de_DE">Resourcetest2</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Dies ist ein test</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>This is a test</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <Cost id="resource_stone">10</Cost>
+    <Cost id="resource_wood">10</Cost>
+    <!--UnitDeposit id="clubbers">1</UnitDeposit>
+    <UnitDeposit id="warrior">1</UnitDeposit>
+    <UnitDeposit id="clubbers_2">1</UnitDeposit>
+    <UnitDeposit id="clubbers_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_4">1</UnitDeposit>
+    <UnitDeposit id="tree_huggers">1</UnitDeposit>
+    <UnitDeposit id="thrower">1</UnitDeposit>
+    <UnitDeposit id="thrower_2">1</UnitDeposit>
+    <UnitDeposit id="thrower_3">1</UnitDeposit>
+    <UnitDeposit id="thrower_4">1</UnitDeposit>
+    <UnitDeposit id="little_chief">1</UnitDeposit-->
+    
+    
+    <Rewards>
+      <!--ResourceReward resource="resource_stone">500</ResourceReward>
+       <ResourceReward resource="resource_wood">500</ResourceReward>
+       <ResourceReward resource="resource_fur">500</ResourceReward-->
+      <!-- UnitReward unit="unit_clubbers">25</UnitReward-->
+      <ExperienceReward>50</ExperienceReward>
+    </Rewards>
+    
+    <Duration>300</Duration>
+  </AssignmentType>
+  
+  <!-- DIES IST EIN TEST ASSIGNMENT -->
+  <AssignmentType id="assignment_resource3" advisor="chief" level="1">
+    <Name>Resourcetest3</Name>
+    <Name lang="de_DE">Resourcetest3</Name>
+    
+    <Flavour lang="de_DE">Wir werden mit Sicherheit einige Rohstoffe erbeuten!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Dies ist ein test</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>This is a test</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>
+    </Description>
+    
+    <Cost id="resource_stone">10</Cost>
+    <Cost id="resource_wood">10</Cost>
+    <Cost id="resource_fur">10</Cost>
+    <!--UnitDeposit id="clubbers">1</UnitDeposit>
+    <UnitDeposit id="warrior">1</UnitDeposit>
+    <UnitDeposit id="clubbers_2">1</UnitDeposit>
+    <UnitDeposit id="clubbers_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_4">1</UnitDeposit>
+    <UnitDeposit id="tree_huggers">1</UnitDeposit>
+    <UnitDeposit id="thrower">1</UnitDeposit>
+    <UnitDeposit id="thrower_2">1</UnitDeposit>
+    <UnitDeposit id="thrower_3">1</UnitDeposit>
+    <UnitDeposit id="thrower_4">1</UnitDeposit>
+    <UnitDeposit id="little_chief">1</UnitDeposit-->
+    
+    
+    <Rewards>
+      <!--ResourceReward resource="resource_stone">500</ResourceReward>
+       <ResourceReward resource="resource_wood">500</ResourceReward>
+       <ResourceReward resource="resource_fur">500</ResourceReward-->
+      <!--UnitReward unit="unit_clubbers">25</UnitReward-->
+      <ExperienceReward>50</ExperienceReward>
+    </Rewards>
+    
+    <Duration>300</Duration>
+  </AssignmentType>
+
   
   <AssignmentType id="assignment_wood" advisor="girl" level="2">
     <Name>Klopf auf Holz</Name>
