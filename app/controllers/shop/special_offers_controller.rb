@@ -16,7 +16,7 @@ class Shop::SpecialOffersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: include_root(@shop_special_offers, :shop_special_offer)  }
+      format.json { render json: include_root(@shop_special_offers, :special_offer)  }
     end
   end
 
