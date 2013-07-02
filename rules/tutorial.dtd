@@ -91,7 +91,7 @@
 
 
 
-<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, BattleTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT BuildingTest EMPTY>
 <!ATTLIST BuildingTest
@@ -149,6 +149,8 @@
 <!ATTLIST KillTest
   min_units CDATA #REQUIRED
 >
+
+<!ELEMENT BattleTest EMPTY>
 
 <!ELEMENT ArmyExperienceTest EMPTY>
 <!ATTLIST ArmyExperienceTest

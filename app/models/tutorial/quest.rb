@@ -192,14 +192,21 @@ class Tutorial::Quest < ActiveRecord::Base
           return false
         end
       end
-      
+
       unless reward_tests[:kill_test].nil?
         kill_test = reward_tests[:kill_test]
         unless check_kills(kill_test)
           return false
         end
       end
-      
+
+      unless reward_tests[:battle_test].nil?
+        battle_test = reward_tests[:battle_test]
+        unless check_battle(battle_test)
+          return false
+        end
+      end
+
       unless reward_tests[:army_experience_test].nil?
         army_experience_test = reward_tests[:army_experience_test]
         unless check_army_experience(army_experience_test)
@@ -507,15 +514,25 @@ class Tutorial::Quest < ActiveRecord::Base
     false
   end
 
-  def check_kills(kill_test) 
+  def check_kills(kill_test)
     return false if kill_test[:min_units].nil?
-    
+
     logger.debug "check_kills: check if min #{kill_test[:min_units]} units are already killed"
-    
+
     self.tutorial_state.owner.kills >= kill_test[:min_units]
   end
 
-  def check_army_experience(army_experience_test) 
+  def check_battle(battle_test)
+    logger.debug "check_battle: check if min 1 unit is fighting"
+    armies = self.tutorial_state.owner.armies
+    if armies.nil?
+      false
+    else
+      armies.where(mode: Military::Army::MODE_FIGHTING).count > 0
+    end
+  end
+
+  def check_army_experience(army_experience_test)
     return false if army_experience_test[:min_experience].nil?
     
     logger.debug "check_army_experience: check if one army has at least #{army_experience_test[:min_experience]} XP"
