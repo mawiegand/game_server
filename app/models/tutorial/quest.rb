@@ -89,11 +89,7 @@ class Tutorial::Quest < ActiveRecord::Base
     
     self.finished_at = Time.now
     self.save
-
-    if self.quest[:tutorial_end_quest]
-      self.owner.tutorial_finished_at = self.finished_at
-    end
-  end  
+  end
   
 
   def check_for_rewards(answer_text)
@@ -668,6 +664,8 @@ class Tutorial::Quest < ActiveRecord::Base
       if self.tutorial_end_quest?
         self.tutorial_state.tutorial_finished = true
         self.tutorial_state.save
+        self.owner.tutorial_finished_at = Time.now
+        self.owner.save
       end
   
       # reward resources, units, experience and action points
