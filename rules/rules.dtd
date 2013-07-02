@@ -115,7 +115,8 @@
 <!--Resource-->
 <!ELEMENT Resource (Name+, Flavour+, Description+)>
 <!ATTLIST Resource 
-  id ID #REQUIRED hidden (0 | 1) "0"
+  id ID #REQUIRED 
+  hidden (0 | 1) "0"
 	ratingValue CDATA "1"
 	stealable (true | false) "true"
 	taxable (true | false) "true"

@@ -62,8 +62,8 @@
     
     <!-- Cost id="resource_stone">10</Cost -->
     <UnitDeposit id="clubbers">1</UnitDeposit>
-    <UnitDeposit id="warrior">1</UnitDeposit>
-    <UnitDeposit id="clubbers_2">1</UnitDeposit>
+    <UnitDeposit id="warrior">2</UnitDeposit>
+    <UnitDeposit id="clubbers_2">3</UnitDeposit>
     <UnitDeposit id="clubbers_3">1</UnitDeposit>
     <UnitDeposit id="light_cavalry">1</UnitDeposit>
     <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
