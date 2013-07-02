@@ -15,7 +15,7 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
     raise ForbiddenError.new('tried to redeem purchase of foreign character.') unless purchase.character == current_character
     raise ForbiddenError.new('tried to redeem purchase that is already redeemed.') if purchase.redeemed?
 
-    #purchase.special_offer.credit_to(current_character)
+    purchase.special_offer.credit_to(current_character)
     purchase.redeemed_at = Time.now
     purchase.save
 
