@@ -69,7 +69,7 @@
       <!--ResourceReward resource="resource_stone">500</ResourceReward>
       <ResourceReward resource="resource_wood">500</ResourceReward>
       <ResourceReward resource="resource_fur">500</ResourceReward-->
-      <UnitReward unit="clubbers">25</UnitReward>
+      <UnitReward unit="unit_clubbers">25</UnitReward>
       <ExperienceReward>50</ExperienceReward>
     </Rewards>
     
