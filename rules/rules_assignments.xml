@@ -63,6 +63,18 @@
     <!-- Cost id="resource_stone">10</Cost -->
     <UnitDeposit id="clubbers">1</UnitDeposit>
     <UnitDeposit id="warrior">1</UnitDeposit>
+    <UnitDeposit id="clubbers_2">1</UnitDeposit>
+    <UnitDeposit id="clubbers_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_2">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">1</UnitDeposit>
+    <UnitDeposit id="light_cavalry_4">1</UnitDeposit>
+    <UnitDeposit id="tree_huggers">1</UnitDeposit>
+    <UnitDeposit id="thrower">1</UnitDeposit>
+    <UnitDeposit id="thrower_2">1</UnitDeposit>
+    <UnitDeposit id="thrower_3">1</UnitDeposit>
+    <UnitDeposit id="thrower_4">1</UnitDeposit>
+    <UnitDeposit id="little_chief">1</UnitDeposit>
 
     
     <Rewards>
