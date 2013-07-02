@@ -3,6 +3,7 @@ require 'test_helper'
 class Assignment::SpecialAssignmentsControllerTest < ActionController::TestCase
   setup do
     @assignment_special_assignment = assignment_special_assignments(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do
