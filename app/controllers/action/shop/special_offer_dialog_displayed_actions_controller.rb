@@ -1,4 +1,4 @@
-class Action::Shop::SpecialOfferDialogShownActionsController < ApplicationController
+class Action::Shop::SpecialOfferDialogDisplayedActionsController < ApplicationController
   layout 'action'
 
   before_filter :authenticate
