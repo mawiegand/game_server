@@ -4,7 +4,7 @@
 
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="11" />
+        <Version major="0" minor="3" build="12" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -386,6 +386,32 @@
             <UIMarker>mark_map</UIMarker>
             <UIMarker>mark_select_own_army</UIMarker>
             <UIMarker>mark_move_own_army</UIMarker>
+          <Message>
+            <Subject>Moving and battle</Subject>
+            <Body><![CDATA[
+              <p>The real action in Wack-A-Doo happens on the worldmap. Wack-A-Doo is a strategy game focusing on battling your enemies and conquering their lands. To that end you have to build up your settlement and recruit units.</p>
+              <p></p>
+              <p>There are two ways to gain additional settlements. You can found them yourselves by moving an army that includes a little chief to an empty field on the map and then hit then found button. Alternatively you can conqer your enemies camps with your armies. You can also conquer fortresses and take control of the area.</p>
+              <p></p>
+            ]]></Body>
+          </Message>
+          <Message lang="de">
+            <Subject>Bewegen und Kämpfen</Subject>
+            <Body><![CDATA[
+              <p>Die richtige Action in Wack-A-Doo findet auf der Weltkarte statt. Wack-A-Doo ist ein Strategiespiel in dem der Aufbau der Siedlung der Rekrutierung von Einheiten und dem Aufstellen von Armeen dient.</p>
+              <p></p>
+              <p>Wichtige Hilfestellungen erhälst Du hier:</p>
+              <p>- Rekrutierung von Einheiten und Aufstellen von Armeen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='blank'>Armee aufstellen</a></p>
+              <p>- Armee Bewegen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='blank'>Armee bewegen</a></p>
+              <p>- Kämpfe:<a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='blank'>Kämpfen</a></p>
+              <p></p>
+              <p>Weitere Siedlungen kannst Du auf zwei Arten erhalten.</p>
+              <p>Lagerstätten kannst Du mit Hilfe eines Kleinen Häuptlings gründen. Bestehenden Lagerstätten und Festungen kannst Du auch von anderen Spielern klauen.</p>
+              <p>Weitere Info's erhälst du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
+              <p></p>
+              <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
+            ]]></Body>
+          </Message>
         </Quest>
 
         <!-- 10 --> <!-- Tutorial 11 -->
@@ -470,7 +496,7 @@
                 <ResourceReward resource="resource_stone">175</ResourceReward>
                 <ResourceReward resource="resource_wood">175</ResourceReward>
                 <ResourceReward resource="resource_fur">175</ResourceReward>
-                <ExperienceReward>175</ExperienceReward>
+                <ExperienceReward>225</ExperienceReward>
             </Rewards>
             <RewardTests>
                 <BuildingTest building="building_chief_cottage" min_level="3" />
@@ -503,7 +529,7 @@
                 <ResourceReward resource="resource_stone">120</ResourceReward>
                 <ResourceReward resource="resource_wood">100</ResourceReward>
                 <ResourceReward resource="resource_fur">100</ResourceReward>
-                <ExperienceReward>100</ExperienceReward>
+                <ExperienceReward>150</ExperienceReward>
             </Rewards>
             <RewardTests>
                 <BuildingTest building="building_cottage" min_level="1" min_count="1" />
@@ -531,7 +557,6 @@
             <RewardText locale="en_US">Remember to increase your raw materials production. You should use every free and otherwise unused building slot.</RewardText>
             <RewardFlavor locale="de_DE">Super! Das ist schon mal ein Anfang.</RewardFlavor>
             <RewardFlavor locale="en_US">Great! That's a start.</RewardFlavor>
-            <Requirement quest="quest_build_cottagelvl1" />
             <Rewards>
                 <ResourceReward resource="resource_stone">125</ResourceReward>
                 <ResourceReward resource="resource_wood">125</ResourceReward>
@@ -593,7 +618,7 @@
             <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
             <RewardFlavor locale="de_DE">Jetzt muss es nurnoch fertig werden.</RewardFlavor>
             <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
-            <Requirement quest="quest_improve_production_1" />
+            <Requirement quest="quest_build_cottagelvl1" />
             <Rewards>
                 <ResourceReward resource="resource_stone">165</ResourceReward>
                 <ResourceReward resource="resource_wood">150</ResourceReward>
@@ -675,6 +700,39 @@
             </RewardTests>
             <UIMarker>mark_home_settlement</UIMarker>
             <UIMarker>mark_building_option</UIMarker>
+          <Message>
+            <Subject>Alliances</Subject>
+            <Body><![CDATA[<p>Alliances play an important part in Wack-A-Doo.<p/>
+              <p>Look around and contact players and alliances near you. Surely you will find a nice place for you to join. In order to join an alliance you have to enter its tag and password in your campfire.</p>
+              <p/>
+              <p>The advantages of an alliance are:</p>
+              <p>- alliance chat</p>
+              <p>- increased movementspeed in your alliances territories</p>
+              <p>- defend your alliances fortresses together</p>
+              <p>- become involved in the alliance ranking</p>
+              <p>- ability to win the round</p>
+              <p/>
+              <p>You can also found your own alliance once you upgrade your campfire to level 2.</p>
+              ]]></Body>
+          </Message>
+          <Message lang="de">
+            <Subject>Allianz</Subject>
+            <Body><![CDATA[<p>In Wack-A-Doo steht die Allianz als Zusammenschluss von Einzelspielern im Vordergrund<p/>
+              <p>Schaue Dich in Deiner Umgebung um und schreibe die Spieler in Deiner direkten Nachbarschaft an. Sicher findest Du einen netten Kontakt und kannst in einer Allianz unterkommen. Zum Beitreten in eine Allianz benötigst Du das Passwort Deiner Wunschallianz zur Eingabe im Lagerfeuer.</p>
+              <p/>
+              <p>Vorteile einer Allianz sind:</p>
+              <p>- Ein eigener Allianz-Chat</p>
+              <p>- Erhöhte Geschwindigkeit aller Bewegungen im Territorium der Allianz</p>
+              <p>- Gemeinsames Verteidigen der Festungen der Allianz</p>
+              <p>- Teilnahme am Allianz-Ranking</p>
+              <p>- Teilnahme an den Siegbedingungen zum Gewinn der Runde</p>
+              <p/>
+              <p>Du kannst auch eine eigene Allianz mit Lagerfeuer Level 2 gründen, aber der Beitritt in eine bestehende Allianz ist vorzuziehen.</p>
+              <ul>
+              <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+              <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+              </ul>]]></Body>
+          </Message>
         </Quest>
 
         <!-- 19 -->
@@ -711,8 +769,8 @@
         <Quest id="quest_resourcescore_0" advisor="girl">
             <Name>Resource Production</Name>
             <Name locale="de_DE">Rohstoffproduktion</Name>
-            <Task>Increase the resource production of one settlement to 70 resource points.</Task>
-            <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.</Task>
+            <Task>Increase the resource production of one settlement to 50 resource points.</Task>
+            <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 50 Rohstoffpunkte.</Task>
             <Description locale="de_DE">
                 <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
             </Description>
@@ -727,13 +785,13 @@
             <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
             <Requirement quest="quest_build_1campfirelvl1" />
             <Rewards>
-                <ResourceReward resource="resource_stone">125</ResourceReward>
-                <ResourceReward resource="resource_wood">125</ResourceReward>
-                <ResourceReward resource="resource_fur">125</ResourceReward>
-                <ExperienceReward>50</ExperienceReward>
+                <ResourceReward resource="resource_stone">250</ResourceReward>
+                <ResourceReward resource="resource_wood">250</ResourceReward>
+                <ResourceReward resource="resource_fur">250</ResourceReward>
+                <ExperienceReward>75</ExperienceReward>
             </Rewards>
             <RewardTests>
-                <SettlementProductionTest min_resources="70" />
+                <SettlementProductionTest min_resources="50" />
             </RewardTests>
         </Quest>
 
