@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.11
+# Version: 0.3.12
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 11, 
+        :build => 12, 
       },
       
       :production_test_weights => {
@@ -1101,6 +1101,38 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
+          :message => {
+            
+            :en => {
+              :subject => 'Moving and battle',
+              :body => "
+              <p>The real action in Wack-A-Doo happens on the worldmap. Wack-A-Doo is a strategy game focusing on battling your enemies and conquering their lands. To that end you have to build up your settlement and recruit units.</p>
+              <p></p>
+              <p>There are two ways to gain additional settlements. You can found them yourselves by moving an army that includes a little chief to an empty field on the map and then hit then found button. Alternatively you can conqer your enemies camps with your armies. You can also conquer fortresses and take control of the area.</p>
+              <p></p>
+            ",
+            },
+
+            :de => {
+              :subject => 'Bewegen und Kämpfen',
+              :body => "
+              <p>Die richtige Action in Wack-A-Doo findet auf der Weltkarte statt. Wack-A-Doo ist ein Strategiespiel in dem der Aufbau der Siedlung der Rekrutierung von Einheiten und dem Aufstellen von Armeen dient.</p>
+              <p></p>
+              <p>Wichtige Hilfestellungen erhälst Du hier:</p>
+              <p>- Rekrutierung von Einheiten und Aufstellen von Armeen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='blank'>Armee aufstellen</a></p>
+              <p>- Armee Bewegen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='blank'>Armee bewegen</a></p>
+              <p>- Kämpfe:<a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='blank'>Kämpfen</a></p>
+              <p></p>
+              <p>Weitere Siedlungen kannst Du auf zwei Arten erhalten.</p>
+              <p>Lagerstätten kannst Du mit Hilfe eines Kleinen Häuptlings gründen. Bestehenden Lagerstätten und Festungen kannst Du auch von anderen Spielern klauen.</p>
+              <p>Weitere Info's erhälst du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
+              <p></p>
+              <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
+            ",
+            },
+
+          },          
+
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
           :id                => 10,
@@ -1371,7 +1403,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 175,
+            :experience_reward => 225,
 
           },          
 
@@ -1454,7 +1486,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [14, ],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -1477,7 +1509,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 150,
 
           },          
 
@@ -1554,13 +1586,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_cottagelvl1',
-
-          },
-
-          :successor_quests => [16, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1765,7 +1791,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_build_cottagelvl1',
 
           },
 
@@ -2023,6 +2049,45 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_home_settlement', 'mark_building_option', ],
 
+          :message => {
+            
+            :en => {
+              :subject => 'Alliances',
+              :body => "<p>Alliances play an important part in Wack-A-Doo.<p/>
+              <p>Look around and contact players and alliances near you. Surely you will find a nice place for you to join. In order to join an alliance you have to enter its tag and password in your campfire.</p>
+              <p/>
+              <p>The advantages of an alliance are:</p>
+              <p>- alliance chat</p>
+              <p>- increased movementspeed in your alliances territories</p>
+              <p>- defend your alliances fortresses together</p>
+              <p>- become involved in the alliance ranking</p>
+              <p>- ability to win the round</p>
+              <p/>
+              <p>You can also found your own alliance once you upgrade your campfire to level 2.</p>
+              ",
+            },
+
+            :de => {
+              :subject => 'Allianz',
+              :body => "<p>In Wack-A-Doo steht die Allianz als Zusammenschluss von Einzelspielern im Vordergrund<p/>
+              <p>Schaue Dich in Deiner Umgebung um und schreibe die Spieler in Deiner direkten Nachbarschaft an. Sicher findest Du einen netten Kontakt und kannst in einer Allianz unterkommen. Zum Beitreten in eine Allianz benötigst Du das Passwort Deiner Wunschallianz zur Eingabe im Lagerfeuer.</p>
+              <p/>
+              <p>Vorteile einer Allianz sind:</p>
+              <p>- Ein eigener Allianz-Chat</p>
+              <p>- Erhöhte Geschwindigkeit aller Bewegungen im Territorium der Allianz</p>
+              <p>- Gemeinsames Verteidigen der Festungen der Allianz</p>
+              <p>- Teilnahme am Allianz-Ranking</p>
+              <p>- Teilnahme an den Siegbedingungen zum Gewinn der Runde</p>
+              <p/>
+              <p>Du kannst auch eine eigene Allianz mit Lagerfeuer Level 2 gründen, aber der Beitritt in eine bestehende Allianz ist vorzuziehen.</p>
+              <ul>
+              <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+              <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+              </ul>",
+            },
+
+          },          
+
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
           :id                => 19,
@@ -2126,9 +2191,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 70 resource points.",
+            :en_US => "Increase the resource production of one settlement to 50 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 50 Rohstoffpunkte.",
                 
           },
           :flavour => {
@@ -2174,29 +2239,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 125,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 125,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 125,
+                :amount => 250,
               },
 
             ],
 
-            :experience_reward => 50,
+            :experience_reward => 75,
 
           },          
 
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 70,
+              :min_resources => 50,
             },
 
           },          
